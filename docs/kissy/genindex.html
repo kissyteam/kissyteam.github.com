@@ -1,0 +1,124 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Index &mdash; Quick Start Guide v0.1 documentation</title>
+    <link rel="stylesheet" href="static/kissy.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <!-- add kissy lib by liz -->
+    <script src="http://github.com/kissyteam/kissy/raw/master/build/packages/kissy.js"></script>
+    <script src="docs/demo/show.js"></script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <link rel="top" title="Quick Start Guide v0.1 documentation" href="index.html" /> 
+  </head>
+  <body><div class="headwrap">
+<div class="header">
+    <h1 class="logo"><a href="/"><img src="http://kissyteam.github.com/kissy.png" /></a></h1>
+    <ul class="navigation">
+        <li><a href="http://github.com/kissyteam">首页</a><b></b><s></s></li>
+        <li><a href="http://kissyui.com/">官方网站</a><b></b><s></s></li>
+        <li><a href="http://kissyui.com/forum/">论坛</a><b></b><s></s></li>
+        <li><a href="#">关于</a></li>
+    </ul>
+</div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="toc">
+        <script>
+            KISSY.ready(function(S){
+                var DOM = S.DOM,
+                    Event = S.Event;
+                
+                Event.on('#J_toc', 'click', function(e){
+                    e.halt();
+                    var p = DOM.parent(DOM.parent(this));
+                    //DOM.toggleClass(p, 'tocshow');
+                    if (DOM.hasClass(p, 'tocshow')) {
+                        S.slideUp('#J_tList', 1, function(){
+                            DOM.removeClass(p, 'tocshow');
+                        });
+                    } else {
+                        DOM.addClass(p, 'tocshow');
+                        S.slideDown('#J_tList', 1);
+                    }
+                });
+            });
+        </script>
+        </div>
+        <div class="body">
+            
+
+   <h1 id="index">Index</h1>
+
+   <div class="genindex-jumpbox">
+   
+   </div>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+<ul id="J_relbar" class="myrelbar">
+<!--
+    <li>
+      <a href="#" title="General Index"
+         accesskey="I">index</a>
+    </li>
+ -->
+
+</ul>
+<script>
+    KISSY.ready(function(S){
+        var DOM = S.DOM,
+            Event = S.Event;
+        
+        var relbar = DOM.get('#J_relbar');
+        var _center = function(){
+            DOM.offset(relbar, {top: (DOM.viewportHeight() - DOM.height(relbar)) / 2 + DOM.scrollTop()});
+        };
+        
+        DOM.offset(relbar, {top: (DOM.viewportHeight()-DOM.height(relbar))/2});
+        if (S.UA.ie === 6) Event.on(window, 'scroll', _center);
+        else DOM.addClass(relbar, 'fixed');
+        
+    });
+    
+</script>
+<div class="searchbox" style="display: none"  id="searchbox">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" class="ipt"/>
+      <input type="submit" value="搜索" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+    <div class="footer">
+        &copy; Copyright 2010, kissyteam.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.
+    </div>
+  </body>
+</html>
+
