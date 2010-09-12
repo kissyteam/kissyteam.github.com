@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+    img {
+        display: none;
+    }   
+</style>
+<link href="http://github.com/kissyteam/kissy/raw/master/build/cssbase/base.css" rel="stylesheet"/>
+<script src="http://github.com/kissyteam/kissy/raw/master/build/packages/kissy.js"></script>
+<script src="show.js"></script>
+</head>
+<body>
+<img src="http://farm3.static.flickr.com/2592/3673304464_09ceeb6851_t.jpg">
+<img src="http://farm3.static.flickr.com/2592/3673304464_09ceeb6851_t.jpg">
+<script>
+    KISSY.ready(function(S){
+        var DOM = S.DOM,
+            Event = S.Event;
+        
+        function imgOnLoad(img, callback) {
+            if (img.complete) callback();
+            else S.Event.on(img, 'load', callback);
+        }
+        //var img = DOM.get('img');
+        S.each(DOM.query('img'), function(img){
+            imgOnLoad(img, function(){
+                
+                S.show(img, 2, function(){
+                    S.hide(img, 2, function(){
+                        /*S.fadeIn(img, 2, function(){
+                            S.fadeOut(img, 2, function(){
+                                S.slideDown(img, 2, function(){
+                                    S.slideUp(img, 2, function(){*/
+                                        alert('hi');
+                        /*            });
+                                });
+                            });
+                        });*/
+                    });
+                });
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Demo</title>
+    <link href="http://github.com/kissyteam/kissy/raw/master/build/cssbase/base.css" rel="stylesheet"/>
+    <style>
+        .imgwrap {
+            position: relative;
+            padding: 10px;
+            background: #E9F4FF;
+            height: 110px;
+        }
+        #J_kissy {
+            position: absolute;
+            left: 400px;
+            top: 0;
+            line-height: 2;
+            opacity: 0;
+            filter: alpha(opacity:0);
+        }
+        #J_img {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+    </style>
+    
+    <script src="http://github.com/kissyteam/kissy/raw/master/build/packages/kissy.js"></script>
+</head>
+<body>
+    <div id="page">
+        <div class="demo">
+            <button type="button" id="J_click">Click Me!</button>
+            <div class="imgwrap">
+                <img id="J_img" src="http://kissyteam.github.com/kissy/docs/assets/logo.png" />
+                <h2 id="J_kissy">Hello Kissy, NOT Kitty!</h2>
+            </div>
+        </div>
+    </div>
+    <script>
+        KISSY.ready(function(S){
+            var DOM = S.DOM,
+                Event = S.Event;
+            
+            var btn = DOM.get('#J_click');
+            
+            Event.on(btn, 'click', function(e) {
+                DOM.attr(btn, 'disabled', true);
+                S.one('#J_img').animate(
+                        {'left': '400px', 'opacity': '0'},
+                        2,
+                        S.Easing.easeOut,
+                        function(){
+                            S.one('#J_kissy').animate(
+                                    {'left': '0px', 'opacity': '1', 'font-size': '28px'},
+                                    2,
+                                    S.Easing.easeOut, 
+                                    function(){
+                                        DOM.removeAttr(btn, 'disabled');
+                                    });
+                        });
+            });
+            
+        
+        });
+    </script>
+</body>
+</html>

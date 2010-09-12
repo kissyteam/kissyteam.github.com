@@ -1,0 +1,480 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Anim &mdash; Quick Start Guide v0.1 documentation</title>
+    <link rel="stylesheet" href="../static/kissy.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <!-- add kissy lib by liz -->
+    <script src="http://github.com/kissyteam/kissy/raw/master/build/packages/kissy.js"></script>
+    <script src="demo/show.js"></script>
+    <link rel="top" title="Quick Start Guide v0.1 documentation" href="../index.html" />
+    <link rel="up" title="Getting Started With KISSY" href="index.html" />
+    <link rel="next" title="组件" href="widgets.html" />
+    <link rel="prev" title="Ajax" href="ajax.html" /> 
+  </head>
+  <body><div class="headwrap">
+<div class="header">
+    <h1 class="logo"><a href="/"><img src="http://kissyteam.github.com/kissy.png" /></a></h1>
+    <ul class="navigation">
+        <li><a href="http://github.com/kissyteam">首页</a><b></b><s></s></li>
+        <li><a href="http://kissyui.com/">官方网站</a><b></b><s></s></li>
+        <li><a href="http://kissyui.com/forum/">论坛</a><b></b><s></s></li>
+        <li><a href="#">关于</a></li>
+    </ul>
+</div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="toc">
+  <h3><a id="J_toc" href="../index.html">內容目录</a></h3>
+  <div id="J_tList"><ul>
+<li><a class="reference internal" href="#">Anim</a><ul>
+<li><a class="reference internal" href="#s-anim">S.Anim</a></li>
+<li><a class="reference internal" href="#show-hide-fadein-fadeout">show()/hide()/fadeIn()/fadeOut()</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        <script>
+            KISSY.ready(function(S){
+                var DOM = S.DOM,
+                    Event = S.Event;
+                
+                Event.on('#J_toc', 'click', function(e){
+                    e.halt();
+                    var p = DOM.parent(DOM.parent(this));
+                    //DOM.toggleClass(p, 'tocshow');
+                    if (DOM.hasClass(p, 'tocshow')) {
+                        S.slideUp('#J_tList', 1, function(){
+                            DOM.removeClass(p, 'tocshow');
+                        });
+                    } else {
+                        DOM.addClass(p, 'tocshow');
+                        S.slideDown('#J_tList', 1);
+                    }
+                });
+            });
+        </script>
+        </div>
+        <div class="body">
+            
+  <div class="section" id="anim">
+<span id="id1"></span><h1>Anim<a class="headerlink" href="#anim" title="永久链接至标题">¶</a></h1>
+<p>关于js中的动画, 让我映象最为深刻的就是 JQuery 首页上最经典的例子 <tt class="docutils literal"><span class="pre">$(&quot;p.neat&quot;).addClass(&quot;ohmy&quot;).show(&quot;slow&quot;);</span></tt></p>
+<p>相当简单的一行代码就可以出现元素的渐隐效果, 从那时她就已经深深吸引了当初只知道flash能做动画的我;</p>
+<div class="section" id="s-anim">
+<h2>S.Anim<a class="headerlink" href="#s-anim" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt>KISSY 中也提供了基本的动画特效支持. 主要由三个子模块组成 <a class="footnote-reference" href="#id5" id="id2">[1]</a> :</dt>
+<dd><ol class="first last arabic simple">
+<li><tt class="docutils literal"><span class="pre">anim</span></tt>, 动画的基础模块;</li>
+<li><tt class="docutils literal"><span class="pre">anim-easing</span></tt>, 提供easeIn/Out, elasticIn/Out, backIn/Out, bounceIn/Out 等平滑函数;</li>
+<li><tt class="docutils literal"><span class="pre">anim-node-plugin</span></tt>, 对 <tt class="docutils literal"><span class="pre">Node/NodeList</span></tt> 的动画支持;</li>
+</ol>
+</dd>
+<dt>核心的动画函数 <tt class="docutils literal"><span class="pre">S.Anim(elem,</span> <span class="pre">props,</span> <span class="pre">duration,</span> <span class="pre">easing,</span> <span class="pre">callback)</span></tt> , 5个参数分别为:</dt>
+<dd><ol class="first last arabic simple">
+<li><tt class="docutils literal"><span class="pre">elem</span></tt> : 指定动画的目标元素;</li>
+<li><tt class="docutils literal"><span class="pre">props</span></tt> : 动画属性, 可以是字符串或者普通对象;</li>
+<li><tt class="docutils literal"><span class="pre">duration</span></tt> : 动画时长, 以秒为单位;</li>
+<li><tt class="docutils literal"><span class="pre">easing</span></tt> : 动画平滑函数, 可以取 <a class="footnote-reference" href="#id7" id="id3">[2]</a> , 不同的函数呈现不同的变化效果;</li>
+<li><tt class="docutils literal"><span class="pre">callback</span></tt> : 动画完毕后的回调函数;</li>
+</ol>
+</dd>
+</dl>
+<p>其实, 这两个函数很简单, 在这个文档的第一节就已经使用到了最基本的功能. 更多类似的小例子可见 <a class="footnote-reference" href="#id9" id="id4">[3]</a> .</p>
+<p>动画的原理都是一样的, 但要实现一些很酷的动画效果, 首先得分析出动画每个部分的状态, 再把它们有顺序的组合起来.</p>
+</div>
+<div class="section" id="show-hide-fadein-fadeout">
+<h2>show()/hide()/fadeIn()/fadeOut()<a class="headerlink" href="#show-hide-fadein-fadeout" title="永久链接至标题">¶</a></h2>
+<p>看一下 JQuery 关于这部分的源码, 可以看到 <tt class="docutils literal"><span class="pre">show()/hide()</span></tt> 和 <tt class="docutils literal"><span class="pre">fadeIn()/fadeOut()</span></tt> 是操作 <tt class="docutils literal"><span class="pre">display</span></tt>, <tt class="docutils literal"><span class="pre">overflow</span></tt>, <tt class="docutils literal"><span class="pre">height</span></tt>, <tt class="docutils literal"><span class="pre">width</span></tt>, <tt class="docutils literal"><span class="pre">opacity</span></tt> 这几个 css 属性实现的. 比如: 元素 <tt class="docutils literal"><span class="pre">show</span></tt> 之前设置 <tt class="docutils literal"><span class="pre">display</span></tt> 为 <tt class="docutils literal"><span class="pre">block</span></tt> , 设置 <tt class="docutils literal"><span class="pre">overflow</span></tt> 为 <tt class="docutils literal"><span class="pre">hidden</span></tt>, 防止溢出, 设置 <tt class="docutils literal"><span class="pre">opacity</span></tt> 为0, 使其不可见, 然后, 获取元素的原始宽高度, 之后宽高度清0, 动画开始, 从宽高度透明度渐变到元素正常的设置; 元素 <tt class="docutils literal"><span class="pre">hide</span></tt> 刚好相反;</p>
+<p><tt class="docutils literal"><span class="pre">fadeIn/fadeOut</span></tt> 比较 <tt class="docutils literal"><span class="pre">show/hide</span></tt> , 不需要重设宽高度, 只需要调节透明度即可;</p>
+<p>完整源码:</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91</pre></div></td><td class="code"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;display&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">,</span>
+        <span class="nx">E</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Event</span><span class="p">,</span>
+        <span class="nx">DISPLAY</span> <span class="o">=</span> <span class="s1">&#39;display&#39;</span><span class="p">,</span> <span class="nx">BLOCK</span> <span class="o">=</span> <span class="s1">&#39;block&#39;</span><span class="p">,</span> <span class="nx">NONE</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">,</span>
+        <span class="nx">OVERFLOW</span> <span class="o">=</span> <span class="s1">&#39;overflow&#39;</span><span class="p">,</span> <span class="nx">HIDDEN</span> <span class="o">=</span> <span class="s1">&#39;hidden&#39;</span><span class="p">,</span>
+        <span class="nx">OPCACITY</span> <span class="o">=</span> <span class="s1">&#39;opacity&#39;</span><span class="p">,</span>
+        <span class="nx">HEIGHT</span> <span class="o">=</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span>
+        <span class="nx">WIDTH</span> <span class="o">=</span> <span class="s1">&#39;width&#39;</span><span class="p">,</span>
+        <span class="nx">AUTO</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span><span class="p">,</span>
+        <span class="nx">FX</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;show&#39;</span><span class="o">:</span> <span class="p">[</span><span class="nx">OVERFLOW</span><span class="p">,</span> <span class="nx">OPCACITY</span><span class="p">,</span> <span class="nx">HEIGHT</span><span class="p">,</span> <span class="nx">WIDTH</span><span class="p">],</span>
+            <span class="s1">&#39;fade&#39;</span><span class="o">:</span> <span class="p">[</span><span class="nx">OPCACITY</span><span class="p">],</span>
+            <span class="s1">&#39;slide&#39;</span><span class="o">:</span> <span class="p">[</span><span class="nx">OVERFLOW</span><span class="p">,</span> <span class="nx">HEIGHT</span><span class="p">]</span>
+            <span class="p">};</span>
+    
+    <span class="kd">function</span> <span class="nx">_fx</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">f</span><span class="p">,</span> <span class="nx">which</span><span class="p">,</span> <span class="nx">speed</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// obj 转成 node 形式</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">isString</span><span class="p">(</span><span class="nx">obj</span><span class="p">))</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">nodeType</span><span class="o">!==</span><span class="nx">S</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">TYPE</span><span class="p">)</span> <span class="nx">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Node</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">obj</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+        
+        <span class="c1">// 动画参数</span>
+        <span class="kd">var</span> <span class="nx">ani</span> <span class="o">=</span> <span class="p">{};</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="nx">f</span><span class="p">)</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">DISPLAY</span><span class="p">,</span> <span class="nx">BLOCK</span><span class="p">);</span>
+        <span class="c1">// 根据不同类型设置初始 css 属性, 并设置动画参数</span>
+        <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">FX</span><span class="p">[</span><span class="nx">which</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">efct</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">efct</span> <span class="o">===</span> <span class="nx">OVERFLOW</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">obj</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">OVERFLOW</span><span class="p">,</span> <span class="nx">HIDDEN</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">efct</span> <span class="o">===</span> <span class="nx">OPCACITY</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">ani</span><span class="p">.</span><span class="nx">opacity</span> <span class="o">=</span> <span class="nx">f</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">f</span><span class="p">)</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">OPCACITY</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">efct</span> <span class="o">===</span> <span class="nx">HEIGHT</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">ani</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="p">(</span><span class="nx">f</span> <span class="o">?</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">height</span><span class="p">()</span><span class="o">||</span><span class="nx">obj</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">naturalHeight</span> <span class="o">:</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">f</span><span class="p">)</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">height</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">efct</span> <span class="o">===</span> <span class="nx">WIDTH</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">ani</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="p">(</span><span class="nx">f</span> <span class="o">?</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">width</span><span class="p">()</span><span class="o">||</span><span class="nx">obj</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">naturalWidth</span> <span class="o">:</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">f</span><span class="p">)</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+        <span class="c1">// 开始动画</span>
+        <span class="nx">obj</span><span class="p">.</span><span class="nx">animate</span><span class="p">(</span><span class="nx">ani</span><span class="p">,</span>
+                    <span class="nx">speed</span><span class="p">,</span>
+                    <span class="nx">S</span><span class="p">.</span><span class="nx">Easing</span><span class="p">.</span><span class="nx">easeOut</span><span class="p">,</span>
+                    <span class="kd">function</span><span class="p">(){</span>
+                        <span class="c1">// 如果是隐藏, 需要恢复一些 css 属性, 或者删除不相关的属性</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">f</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="nx">obj</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">DISPLAY</span><span class="p">,</span> <span class="nx">NONE</span><span class="p">);</span>
+                            <span class="nx">obj</span><span class="p">.</span><span class="nx">height</span><span class="p">(</span><span class="nx">AUTO</span><span class="p">);</span>
+                            <span class="nx">obj</span><span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="nx">AUTO</span><span class="p">);</span>
+                            <span class="nx">obj</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">OVERFLOW</span><span class="p">,</span> <span class="nx">AUTO</span><span class="p">);</span>
+                            <span class="nx">obj</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">OPCACITY</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+                        <span class="p">}</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="nx">callback</span><span class="o">&amp;&amp;</span><span class="nx">S</span><span class="p">.</span><span class="nx">isFunction</span><span class="p">(</span><span class="nx">callback</span><span class="p">))</span> <span class="nx">callback</span><span class="p">();</span>
+                    <span class="p">});</span>
+        
+    <span class="p">}</span>
+    <span class="cm">/*</span>
+<span class="cm">    show/hide           display; overflow; opacity, height, width, </span>
+<span class="cm">    </span>
+<span class="cm">    fadeIn/fadeOut      display; opacity</span>
+<span class="cm">    </span>
+<span class="cm">    slideDown/slideUp   display; overflow; height;</span>
+<span class="cm">    */</span>
+    
+    <span class="nx">S</span><span class="p">.</span><span class="nx">show</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">speed</span><span class="p">,</span> <span class="nx">fn</span><span class="p">){</span>
+        <span class="nx">_fx</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s1">&#39;show&#39;</span><span class="p">,</span> <span class="nx">speed</span><span class="p">,</span> <span class="nx">fn</span><span class="p">);</span>
+    <span class="p">};</span>
+    
+    <span class="nx">S</span><span class="p">.</span><span class="nx">hide</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">speed</span><span class="p">,</span> <span class="nx">fn</span><span class="p">){</span>
+        <span class="nx">_fx</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="s1">&#39;show&#39;</span><span class="p">,</span> <span class="nx">speed</span><span class="p">,</span> <span class="nx">fn</span><span class="p">);</span>
+    <span class="p">};</span>
+    
+    <span class="nx">S</span><span class="p">.</span><span class="nx">fadeIn</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">speed</span><span class="p">,</span> <span class="nx">fn</span><span class="p">){</span>
+        <span class="nx">_fx</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s1">&#39;fade&#39;</span><span class="p">,</span> <span class="nx">speed</span><span class="p">,</span> <span class="nx">fn</span><span class="p">);</span>
+    <span class="p">};</span>
+    
+    <span class="nx">S</span><span class="p">.</span><span class="nx">fadeOut</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">speed</span><span class="p">,</span> <span class="nx">fn</span><span class="p">){</span>
+        <span class="nx">_fx</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="s1">&#39;fade&#39;</span><span class="p">,</span> <span class="nx">speed</span><span class="p">,</span> <span class="nx">fn</span><span class="p">);</span>
+    <span class="p">};</span>
+    
+    <span class="nx">S</span><span class="p">.</span><span class="nx">slideDown</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">speed</span><span class="p">,</span> <span class="nx">fn</span><span class="p">){</span>
+        <span class="nx">_fx</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s1">&#39;slide&#39;</span><span class="p">,</span> <span class="nx">speed</span><span class="p">,</span> <span class="nx">fn</span><span class="p">);</span>
+    <span class="p">};</span>
+    
+    <span class="nx">S</span><span class="p">.</span><span class="nx">slideUp</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">speed</span><span class="p">,</span> <span class="nx">fn</span><span class="p">){</span>
+        <span class="nx">_fx</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="s1">&#39;slide&#39;</span><span class="p">,</span> <span class="nx">speed</span><span class="p">,</span> <span class="nx">fn</span><span class="p">);</span>
+    <span class="p">};</span>
+    
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>在上一节的图片获取的例子中, 点击按钮之后, 图片一下子的跑出来了, 感觉不是很好, 现在, 我们利用刚才实现好的 <tt class="docutils literal"><span class="pre">show()/hide()</span></tt> 和 <tt class="docutils literal"><span class="pre">fadeIn()/fadeOut()</span></tt> , 让图片完全加载完毕后逐渐显示出来;</p>
+<div class="demo">
+     <style>
+         #J_photo-list img  {
+             display: none;
+             border: 1px solid grey;
+             padding: 4px;
+             margin: 8px;
+             float: left;
+         }
+         .ks-clear:after { content: '\20'; display: block; height: 0; clear: both; }
+         .ks-clear { *zoom: 1; }
+
+         #J_button {
+             height: 40px;
+             width: 120px;
+             text-align: center;
+             border: none;
+             cursor: pointer;
+         }
+         .loading {
+             background: transparent url(http://www.iconfinder.com/design/images/ajax-loader10.gif) no-repeat;
+         }
+     </style>
+     <button id="J_button" type="button">Fetch Photo</button>
+
+     <div id="J_photo-list" class="ks-clear"></div>
+     <script src="demo/show.js"></script>
+
+     <script>
+         KISSY.ready(function(S){
+              var btn = S.one('#J_button'),
+                  photoList = S.one('#J_photo-list');
+
+              btn.on('click', function(){
+                  btn.attr('disabled', true);
+                  btn.html('');
+                  btn.addClass('loading');
+                  var data = {
+                      'method': 'flickr.favorites.getPublicList',
+                      'api_key': '5d93c2e473e39e9307e86d4a01381266',
+                      'user_id': '26211501@N07',
+                      'per_page': 10,
+                      'format': 'json',
+                      'jsoncallback': 'getFavorites'
+                      },
+                      URL = 'http://api.flickr.com/services/rest/?';
+                  S.getScript(URL+S.param(data), function(){
+                      btn.removeAttr('disabled');
+                  });
+              });
+
+              function imgOnLoad(img, callback) {
+                  if (img.complete) callback();
+                  else S.Event.on(img, 'load', callback);
+              }
+
+             function getFavorites(jdata){
+                 var imgUrlList = [];
+                 if (jdata.stat === 'ok'){
+                      var s = '';
+                      if (jdata.stat === 'ok'){
+                          S.each(jdata.photos.photo, function(t,i){
+                             s += '<img src="http://farm'+t.farm+'.static.flickr.com/'+t.server+'/'+t.id+'_'+t.secret+'_t.jpg" />';
+                          });
+                      } else {
+                         s = 'fetch photo failed, pls try again!'
+                      }
+                      photoList.html(s);
+
+                      S.each(photoList.all('img'), function(img){
+                          imgOnLoad(img, function(){
+                              S.fadeIn(img);
+                          });
+                      });
+
+                 }
+                 setTimeout(function(){
+                     btn.removeClass('loading');
+                     btn.html('Fetch Photo');
+                 }, 1000);
+             }
+             window.getFavorites = getFavorites;
+         });
+     </script>
+</div><p>每张图片获取之后, 先不显示出来, 等图片加载完成之后, 调用 <tt class="docutils literal"><span class="pre">S.fadeIn</span></tt> 渐进显示, 部分代码:</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">photoList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">img</span><span class="p">){</span>
+    <span class="nx">imgOnLoad</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">S</span><span class="p">.</span><span class="nx">fadeIn</span><span class="p">(</span><span class="nx">img</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<ol class="last arabic simple">
+<li>动画属性 <tt class="docutils literal"><span class="pre">props</span></tt> 须是连续型的数值, 如果是 <tt class="docutils literal"><span class="pre">display</span></tt> 这种 &#8220;离散型&#8221; 的, 可以利用 <tt class="docutils literal"><span class="pre">opacity</span></tt> 设置透明度这种方式, 在 <tt class="docutils literal"><span class="pre">display:</span> <span class="pre">block</span></tt> 之后获取 <tt class="docutils literal"><span class="pre">height/width</span></tt>, 设置元素宽高度及透明度;</li>
+<li>像 <tt class="docutils literal"><span class="pre">height/width</span></tt> 这种属性, 需要加上单位, 不能光光是数字;</li>
+<li><tt class="docutils literal"><span class="pre">S.Easing</span></tt> 取值可以根据你的需要选取, 默认不写也是可以的;</li>
+</ol>
+</div>
+<p>关于动画, 先介绍到这里吧, 其他更炫的效果, 等你来实现!</p>
+<p>下一节, 将会介绍 KISSY 的第一个功能强大, 且在 Taobao 上经常能够看到的组件 &#8211; <tt class="docutils literal"><span class="pre">Switchable</span></tt> , 并会介绍 <a class="reference internal" href="widgets.html#widgets"><em>KISSY组件</em></a>  的组织方式...</p>
+<p class="rubric">参考链接</p>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td><a class="reference external" href="http://kissyteam.github.com/kissy/docs/anim/">Anim 文档</a> ;</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id7" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td><a class="reference external" href="http://kissyteam.github.com/kissy/docs/anim/anim-easing.html">平滑函数</a> ;</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id9" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[3]</a></td><td><a class="reference external" href="http://kissyteam.github.com/kissy/src/anim/test.html">动画示例</a> ;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+<ul id="J_relbar" class="myrelbar">
+<!--
+    <li>
+      <a href="../genindex.html" title="总目录"
+         accesskey="I">索引</a>
+    </li>
+    <li>
+      <a href="widgets.html" title="组件"
+         accesskey="N">下一页</a>
+    </li>
+    <li>
+      <a href="ajax.html" title="Ajax"
+         accesskey="P">上一页</a>
+    </li>
+ -->
+    <li><a title="Ajax" href="ajax.html">前一章</a></li>
+    <li><a title="组件" href="widgets.html">后一章</a></li>
+
+</ul>
+<script>
+    KISSY.ready(function(S){
+        var DOM = S.DOM,
+            Event = S.Event;
+        
+        var relbar = DOM.get('#J_relbar');
+        var _center = function(){
+            DOM.offset(relbar, {top: (DOM.viewportHeight() - DOM.height(relbar)) / 2 + DOM.scrollTop()});
+        };
+        
+        DOM.offset(relbar, {top: (DOM.viewportHeight()-DOM.height(relbar))/2});
+        if (S.UA.ie === 6) Event.on(window, 'scroll', _center);
+        else DOM.addClass(relbar, 'fixed');
+        
+    });
+</script>
+<!--
+<div class="searchbox" id="searchbox">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" class="ipt"/>
+      <input type="submit" value="搜索" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>  -->
+
+    <div class="footer">
+        &copy; 版权所有 2010, kissyteam.
+      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.
+    </div>
+  </body>
+</html>
+

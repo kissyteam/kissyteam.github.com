@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>kwicks</title>
+    <link href="http://github.com/kissyteam/kissy/raw/master/build/cssbase/base.css" rel="stylesheet"/>
+    <script src="http://github.com/kissyteam/kissy/raw/master/build/packages/kissy.js"></script>
+    <script src="http://github.com/kissyteam/kissy/raw/master/src/switchable/switchable.js"></script>
+    <script src="kwicks.js"></script>
+    
+    <style>
+        .demo {
+            width: 600px;
+            height: 420px;
+            overflow: hidden;
+            position: relative;
+        }
+        .demo li {
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="page">
+        <div class="demo">
+            <ul id="J_kwicks">
+                <li class="ks-switchable-trigger ks-switchable-panel"><img height="420" width="450" src="http://eyedraw.eu/wp-content/uploads/2009/05/squidchef2.png"></li>
+                <li class="ks-switchable-trigger ks-switchable-panel"><img height="420" width="450" src="http://eyedraw.eu/wp-content/uploads/2009/05/photomoose.png"></li>
+                <li class="ks-switchable-trigger ks-switchable-panel"><img height="420" width="450" src="http://eyedraw.eu/wp-content/uploads/2009/01/hackfest1.png"></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        KISSY.ready(function(S) {
+            new S.Kwicks('#J_kwicks');
+        });
+    </script>
+</body>
+</html>
