@@ -1,7 +1,7 @@
 .. _index:
 
 
-KISSY DOCS
+KISSY Docs
 =============================
 
 
@@ -42,13 +42,13 @@ KISSY DOCS
             line-height: 120px;
         }
         .fp .docs .gt {
-            background: url("http://cdn.iconfinder.net/data/icons/mnml/photoshop.png") no-repeat scroll 0 0 transparent;
+            background: url(static/photoshop.png) no-repeat scroll 0 0 transparent;
         }
-        .fp .docs .ref {
-            background: url("http://cdn.iconfinder.net/data/icons/mnml/maps.png") no-repeat scroll 0 0 transparent; 
+        .fp .docs .src {
+            background: url(static/source.png) no-repeat scroll 0 0 transparent;
         }
         .fp .docs .api {
-            background: url("http://cdn.iconfinder.net/data/icons/mnml/camera.png") no-repeat scroll 0 0 transparent;
+            background: url(static/maps.png) no-repeat scroll 0 0 transparent;
         }
         /*
         http://cdn.iconfinder.net/data/icons/mnml/chrome.png
@@ -95,9 +95,9 @@ KISSY DOCS
     </style>
     <div class="fp">
         <ul class="docs ks-clear">
-            <li class="gt"><a href="quickstart/index.html">快速入门教程</a></li>
-            <li class="ref"><a href="reference/index.html">Reference Guide</a></li>
-            <li class="api"><a href="api/index.html">API 文档</a></li>
+            <li class="gt"><a href="quickstart/index.html">快速入门</a></li>
+            <li class="api"><a href="/kissy/docs/">API 文档</a></li>
+            <li class="src"><a href="http://github.com/kissyteam/kissy">开放源码</a></li>
         </ul>
 
         <div class="linklist ks-clear">
