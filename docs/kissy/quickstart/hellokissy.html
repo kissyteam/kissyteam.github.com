@@ -5,25 +5,25 @@
   <head>
     <meta charset="utf-8" />
     
-    <title>Hello KISSY &mdash; Quick Start Guide v0.1 documentation</title>
+    <title>Hello KISSY</title>
+    
     <link rel="stylesheet" href="../static/kissy.css" />
     <link rel="stylesheet" href="../static/pygments.css" />
+    <link rel="top" title="None" href="../index.html" />
+    <link rel="up" title="Getting Started with KISSY" href="index.html" />
+    <link rel="next" title="Node 初步" href="node.html" />
+    <link rel="prev" title="Setup" href="setup.html" />
+
     <script>
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.1',
+        VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-    <!-- add kissy lib by liz -->
-    <script src="http://github.com/kissyteam/kissy/raw/master/build/packages/kissy.js"></script>
-    <script src="demo/show.js"></script>
-    <link rel="top" title="Quick Start Guide v0.1 documentation" href="../index.html" />
-    <link rel="up" title="Getting Started With KISSY" href="index.html" />
-    <link rel="next" title="Node初步" href="node.html" />
-    <link rel="prev" title="Setup" href="setup.html" /> 
+    <script src="http://kissyteam.github.com/kissy/build/kissy-min.js"></script> 
   </head>
   <body><div class="headwrap">
 <div class="header">
@@ -32,7 +32,7 @@
         <li><a href="http://kissyteam.github.com/docs/kissy">首页</a><b></b><s></s></li>
         <li><a href="http://kissyteam.github.com/docs/kissy/quickstart/">入门</a><b></b><s></s></li>
         <li><a href="http://kissyteam.github.com/kissy/docs">API</a><b></b><s></s></li>
-        <li><a href="http://github.com/kissyteam/kissy">源码</a></li>
+        <li><a href="http://github.com/kissyteam/kissy#readme">关于</a></li>
     </ul>
 </div>
 </div>
@@ -41,41 +41,11 @@
 
     <div class="document">
       <div class="documentwrapper">
-        <div class="toc">
-  <h3><a id="J_toc" href="../index.html">內容目录</a></h3>
-  <div id="J_tList"><ul>
-<li><a class="reference internal" href="#">Hello KISSY</a><ul>
-<li><a class="reference internal" href="#dom-event">DOM/Event</a></li>
-</ul>
-</li>
-</ul>
-</div>
-        <script>
-            KISSY.ready(function(S){
-                var DOM = S.DOM,
-                    Event = S.Event;
-                
-                Event.on('#J_toc', 'click', function(e){
-                    e.halt();
-                    var p = DOM.parent(DOM.parent(this));
-                    //DOM.toggleClass(p, 'tocshow');
-                    if (DOM.hasClass(p, 'tocshow')) {
-                        S.slideUp('#J_tList', 1, function(){
-                            DOM.removeClass(p, 'tocshow');
-                        });
-                    } else {
-                        DOM.addClass(p, 'tocshow');
-                        S.slideDown('#J_tList', 1);
-                    }
-                });
-            });
-        </script>
-        </div>
         <div class="body">
             
   <div class="section" id="hello-kissy">
 <span id="hellokissy"></span><h1>Hello KISSY<a class="headerlink" href="#hello-kissy" title="永久链接至标题">¶</a></h1>
-<p>在前一小节中的示例, 用到了 KISSY 常用的 <tt class="docutils literal"><span class="pre">DOM</span></tt>, <tt class="docutils literal"><span class="pre">Event</span></tt>, <tt class="docutils literal"><span class="pre">Anim</span></tt> 等功能,</p>
+<p>在前一小节的示例中, 用到了 KISSY 常用的 <tt class="docutils literal"><span class="pre">DOM</span></tt>, <tt class="docutils literal"><span class="pre">Event</span></tt>, <tt class="docutils literal"><span class="pre">Anim</span></tt> 等功能.</p>
 <p>完整代码如下:</p>
 <div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -90,180 +60,50 @@
 11
 12
 13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35</pre></div></td><td class="code"><div class="highlight"><pre>     <span class="nx">KISSY</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
-         <span class="kd">var</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">,</span>
-             <span class="nx">Event</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Event</span><span class="p">;</span>
+14</pre></div></td><td class="code"><div class="highlight"><pre> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
+     <span class="kd">var</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">,</span> <span class="nx">Event</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Event</span><span class="p">,</span>
+         <span class="nx">btn</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;#demo-btn&#39;</span><span class="p">);</span>
 
-         <span class="kd">var</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;#J_click&#39;</span><span class="p">);</span>
+     <span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">btn</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+         <span class="nx">DOM</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="nx">btn</span><span class="p">,</span> <span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 
-         <span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">btn</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-             <span class="nx">DOM</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="nx">btn</span><span class="p">,</span> <span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-             <span class="kd">var</span> <span class="nx">flag</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;#J_img&#39;</span><span class="p">),</span> <span class="s1">&#39;left&#39;</span><span class="p">),</span>
-                 <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;0px&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;#J_img&#39;</span><span class="p">,</span> <span class="s1">&#39;#J_kissy&#39;</span><span class="p">],</span>
-                         <span class="s1">&#39;400px&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;#J_kissy&#39;</span><span class="p">,</span> <span class="s1">&#39;#J_img&#39;</span><span class="p">]},</span>
-                 <span class="nx">anim</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;0px&#39;</span><span class="o">:</span> <span class="p">[],</span>
-                         <span class="s1">&#39;400px&#39;</span><span class="o">:</span> <span class="p">[]};</span>
-             <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">flag</span><span class="p">))</span> <span class="p">{</span>
-                 <span class="nx">anim</span><span class="p">[</span><span class="nx">flag</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;left&#39;</span><span class="o">:</span> <span class="s1">&#39;400px&#39;</span><span class="p">,</span> <span class="s1">&#39;opacity&#39;</span><span class="o">:</span> <span class="s1">&#39;0&#39;</span><span class="p">};</span>
-                 <span class="nx">anim</span><span class="p">[</span><span class="nx">flag</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;left&#39;</span><span class="o">:</span> <span class="s1">&#39;0px&#39;</span><span class="p">,</span> <span class="s1">&#39;opacity&#39;</span><span class="o">:</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;font-size&#39;</span><span class="o">:</span> <span class="s1">&#39;28px&#39;</span><span class="p">};</span>
-             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                 <span class="nx">anim</span><span class="p">[</span><span class="nx">flag</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;left&#39;</span><span class="o">:</span> <span class="s1">&#39;400px&#39;</span><span class="p">,</span> <span class="s1">&#39;opacity&#39;</span><span class="o">:</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;font-size&#39;</span><span class="o">:</span> <span class="s1">&#39;14px&#39;</span><span class="p">};</span>
-                 <span class="nx">anim</span><span class="p">[</span><span class="nx">flag</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;left&#39;</span><span class="o">:</span> <span class="s1">&#39;0px&#39;</span><span class="p">,</span> <span class="s1">&#39;opacity&#39;</span><span class="o">:</span> <span class="s1">&#39;1&#39;</span><span class="p">};</span>
-             <span class="p">}</span>
-             <span class="nx">S</span><span class="p">.</span><span class="nx">Anim</span><span class="p">(</span><span class="nx">obj</span><span class="p">[</span><span class="nx">flag</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
-                     <span class="nx">anim</span><span class="p">[</span><span class="nx">flag</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
-                     <span class="mi">2</span><span class="p">,</span>
-                     <span class="nx">S</span><span class="p">.</span><span class="nx">Easing</span><span class="p">.</span><span class="nx">easeOut</span><span class="p">,</span>
-                     <span class="kd">function</span><span class="p">(){</span>
-                         <span class="nx">S</span><span class="p">.</span><span class="nx">Anim</span><span class="p">(</span><span class="nx">obj</span><span class="p">[</span><span class="nx">flag</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
-                                 <span class="nx">anim</span><span class="p">[</span><span class="nx">flag</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
-                                 <span class="mi">2</span><span class="p">,</span>
-                                 <span class="nx">S</span><span class="p">.</span><span class="nx">Easing</span><span class="p">.</span><span class="nx">easeOut</span><span class="p">,</span>
-                                 <span class="kd">function</span><span class="p">(){</span>
-                                     <span class="nx">DOM</span><span class="p">.</span><span class="nx">removeAttr</span><span class="p">(</span><span class="nx">btn</span><span class="p">,</span> <span class="s1">&#39;disabled&#39;</span><span class="p">);</span>
-                                 <span class="p">}).</span><span class="nx">run</span><span class="p">();</span>
-                     <span class="p">}).</span><span class="nx">run</span><span class="p">();</span>
-         <span class="p">});</span>
+         <span class="nx">S</span><span class="p">.</span><span class="nx">Anim</span><span class="p">(</span><span class="s1">&#39;#demo-img&#39;</span><span class="p">,</span> <span class="s1">&#39;left: 400px; opacity: 0&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;easeOut&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+             <span class="nx">S</span><span class="p">.</span><span class="nx">Anim</span><span class="p">(</span><span class="s1">&#39;#demo-txt&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;left: 0; opacity: 1; fontSize: 28px&#39;</span><span class="p">,</span>
+                    <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;bounceOut&#39;</span><span class="p">).</span><span class="nx">run</span><span class="p">();</span>
+         <span class="p">}).</span><span class="nx">run</span><span class="p">();</span>
      <span class="p">});</span>
+ <span class="p">});</span>
 </pre></div>
 </td></tr></table></div>
 <dl class="docutils">
 <dt>这个例子中,</dt>
 <dd><ol class="first last arabic simple">
-<li><tt class="docutils literal"><span class="pre">KISSY.ready()</span></tt> 指在DOM加载完毕之后执行代码. 就像jQuery中的 <tt class="docutils literal"><span class="pre">$(document).ready()</span></tt> ;</li>
-<li><tt class="docutils literal"><span class="pre">KISSY.DOM</span></tt> , KISSY的DOM模块 <a class="footnote-reference" href="#id3" id="id1">[1]</a> , 提供基本的DOM操作功能, 如元素的选择和遍历, css 属性的获取和修改, 还能获取位置大小等;</li>
-<li><tt class="docutils literal"><span class="pre">KISSY.Event</span></tt> , KISSY的Event模块 <a class="footnote-reference" href="#id4" id="id2">[2]</a> , 提供事件处理功能, 如基本的事件添加删除功能, 另外还更好的支持 <tt class="docutils literal"><span class="pre">mouseenter/mouseleave</span></tt> , <tt class="docutils literal"><span class="pre">focusin/focusout</span></tt> 事件, 在这个例子中, 给按钮添加 <tt class="docutils literal"><span class="pre">click</span></tt> 事件;</li>
-<li><tt class="docutils literal"><span class="pre">DOM.get(selector,</span> <span class="pre">context)</span></tt> , 在 <tt class="docutils literal"><span class="pre">context</span></tt> 中, 根据给出的 <tt class="docutils literal"><span class="pre">selector</span></tt> 获取DOM树上对应的 <strong>一个节点</strong> , <tt class="docutils literal"><span class="pre">context</span></tt> 不是必需的; 另外还有一个类似的方法叫做 <tt class="docutils literal"><span class="pre">DOM.query(selector,</span> <span class="pre">context)</span></tt> , 与前者不同的是, 得到 <strong>所有</strong> 符合条件的元素;</li>
-<li><tt class="docutils literal"><span class="pre">DOM.css()</span></tt>, 获取/设置元素某个css属性, 这里获得元素的 <tt class="docutils literal"><span class="pre">left</span></tt> 属性;</li>
-<li><tt class="docutils literal"><span class="pre">DOM.attr()/DOM.removeAttr()</span></tt>, 获取/设置元素某个属性, 这里, 在动画开始前给按钮设置不可用状态, 当动画结束时恢复可用状态;</li>
-<li><tt class="docutils literal"><span class="pre">KISSY.Anim()</span></tt>, 提供动画效果, 通过给元素设定参数, 就可以让这个元素动态的从当前参数变化到设定的目标参数;</li>
+<li><tt class="docutils literal"><span class="pre">KISSY.ready()</span></tt> 指在 DOM 加载完毕之后执行代码. 就像 jQuery 中的 <tt class="docutils literal"><span class="pre">$(document).ready()</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">S.DOM</span></tt>, KISSY 的 DOM 模块 <a class="footnote-reference" href="#id3" id="id1">[1]</a> , 提供常用 DOM 操作, 如元素选择/遍历, 样式的获取/修改等等.</li>
+<li><tt class="docutils literal"><span class="pre">S.Event</span></tt>, KISSY 的 Event 模块 <a class="footnote-reference" href="#id4" id="id2">[2]</a> , 提供事件处理功能, 如事件添加/删除, <tt class="docutils literal"><span class="pre">mouseenter/mouseleave</span></tt> 事件的支持等.</li>
+<li><tt class="docutils literal"><span class="pre">DOM.get(selector)</span></tt>, 根据给出的 <tt class="docutils literal"><span class="pre">selector</span></tt> 获取符合条件的 <strong>第一个节点</strong>; 另外还有一个类似的方法叫做 <tt class="docutils literal"><span class="pre">DOM.query(selector)</span></tt> , 与前者不同的是, 得到的是 <strong>所有</strong> 符合条件的元素.</li>
+<li><tt class="docutils literal"><span class="pre">DOM.attr(elem,</span> <span class="pre">name,</span> <span class="pre">val)</span></tt>, 获取/设置元素某个属性, 这里, 在动画开始前给按钮设置不可用状态.</li>
+<li><tt class="docutils literal"><span class="pre">S.Anim()</span></tt>, 提供动画效果, 通过给元素设定参数, 就可以让这个元素动态地从当前参数变化到设定的目标参数.</li>
+<li><tt class="docutils literal"><span class="pre">DOM.get/DOM.query</span></tt> 也可以直接用 <tt class="docutils literal"><span class="pre">S.get/S.query</span></tt> 来调用，是一样的.</li>
 </ol>
 </dd>
 </dl>
-<div class="section" id="dom-event">
-<h2>DOM/Event<a class="headerlink" href="#dom-event" title="永久链接至标题">¶</a></h2>
-<p>经过上面的例子, 应该让你了解了 KISSY 最基本的 <tt class="docutils literal"><span class="pre">DOM/Event</span></tt> 的使用. 下面, 再来看另外一个例子, 加深下映象吧!</p>
-<p>我们在做导航栏时经常需要处理包含二级导航的情况, 例如下面的效果:</p>
-<div class="demo">
-    <style>
-        .menu, .menu li {
-            list-style: none;
-        }
-        .menu a {
-            color: white;
-            text-shadow: 1px 1px 2px black;
-        }
-        .menu li {
-            background: #fd8c01;
-            background: -webkit-gradient(linear, left top, left bottom, from(#fedc89), to(#fd8c01));
-            background: -moz-linear-gradient(top, #fedc89, #fd8c01);
-            /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#fedc89', endColorstr = '#fd8c01');*/
-            text-align:center;
-            width:100px;
-        }
-        .menu {
-            *height: 40px;
-        }
-        .menu .headlink {
-            display: inline-block;
-            *display: block;
-            *float: left;
-            position: relative;
-            zoom:1;
-        }
-        .submenu {
-            padding-left: 0;
-            position: absolute;
-            left: 0;
-            *top: 22px;
-            border: 4px solid #CCC;
-        }
-        .hide {
-            display: none;
-        }
-    </style>
-    <ul id="J_menu" class="menu">
-        <li class="headlink"><a href="#">Home</a></li>
-        <li class="headlink">
-            <a href="#">Widgets</a>
-            <ul class="submenu hide">
-                <li><a href="#">Switchable</a></li>
-                <li><a href="#">Suggest</a></li>
-            </ul>
-        </li>
-        <li class="headlink">
-            <a href="#">Experiments</a>
-            <ul class="submenu hide">
-                <li><a href="#">Editor</a></li>
-                <li><a href="#">Overlay</a></li>
-            </ul>
-        </li>
-    </ul>
-    <script>
-        KISSY.ready(function(S){
-            var DOM = S.DOM,
-                Event = S.Event;
-
-            Event.on('.headlink', 'mouseenter', function(e) {
-                DOM.removeClass(DOM.get('.submenu', this), 'hide');
-            });
-            Event.on('.headlink', 'mouseleave', function(e) {
-                DOM.addClass(DOM.get('.submenu', this), 'hide');
-            });
-
-        });
-    </script>
-</div><p>虽说, 我们也可以用 <tt class="docutils literal"><span class="pre">:hover</span></tt> 伪类来实现二级导航, 但在IE6下只有 <tt class="docutils literal"><span class="pre">a</span></tt> 支持 <tt class="docutils literal"><span class="pre">hover</span></tt> 伪类, 所以还是得稍加一些 js 来实现:</p>
-<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;.headlink&#39;</span><span class="p">,</span> <span class="s1">&#39;mouseenter&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">DOM</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;.submenu&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">),</span> <span class="s1">&#39;hide&#39;</span><span class="p">);</span>
-<span class="p">});</span>
-<span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;.headlink&#39;</span><span class="p">,</span> <span class="s1">&#39;mouseleave&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">DOM</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;.submenu&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">),</span> <span class="s1">&#39;hide&#39;</span><span class="p">);</span>
-<span class="p">});</span>
-</pre></div>
-</td></tr></table></div>
-<p>这里, KISSY 内置了 <tt class="docutils literal"><span class="pre">mouseenter/mouseleave</span></tt> 事件, 可以像使用原生事件一样的使用她们.</p>
-<p><tt class="docutils literal"><span class="pre">DOM/Event</span></tt> 是最基本的功能了, 掌握了这两个, 就能最基本的使用KISSY了, 接下来将介绍和 jQuery/YUI3 中类似的 <a class="reference internal" href="node.html#usenode"><em>Node</em></a> 对象的使用.</p>
+<p><tt class="docutils literal"><span class="pre">DOM/Event</span></tt> 是最基本的功能, 掌握了这两个, 就能基本使用 KISSY 了.
+接下来将介绍 <a class="reference internal" href="node.html#usenode"><em>Node</em></a> 对象的使用.</p>
 <p class="rubric">参考链接</p>
 <table class="docutils footnote" frame="void" id="id3" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="http://KISSYteam.github.com/KISSY/docs/dom/index.html">DOM文档</a> ;</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="http://KISSYteam.github.com/KISSY/docs/dom/index.html">DOM API 文档</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id4" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="http://KISSYteam.github.com/KISSY/docs/event/index.html">Event文档</a> ;</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="http://KISSYteam.github.com/KISSY/docs/event/index.html">Event API 文档</a></td></tr>
 </tbody>
 </table>
-</div>
 </div>
 
 
@@ -271,53 +111,6 @@
       </div>
       <div class="clearer"></div>
     </div>
-
-<ul id="J_relbar" class="myrelbar">
-<!--
-    <li>
-      <a href="../genindex.html" title="总目录"
-         accesskey="I">索引</a>
-    </li>
-    <li>
-      <a href="node.html" title="Node初步"
-         accesskey="N">下一页</a>
-    </li>
-    <li>
-      <a href="setup.html" title="Setup"
-         accesskey="P">上一页</a>
-    </li>
- -->
-    <li><a title="Setup" href="setup.html">前一章</a></li>
-    <li><a title="Node初步" href="node.html">后一章</a></li>
-
-</ul>
-<script>
-    KISSY.ready(function(S){
-        var DOM = S.DOM,
-            Event = S.Event;
-        
-        var relbar = DOM.get('#J_relbar');
-        var _center = function(){
-            DOM.offset(relbar, {top: (DOM.viewportHeight() - DOM.height(relbar)) / 2 + DOM.scrollTop()});
-        };
-        
-        DOM.offset(relbar, {top: (DOM.viewportHeight()-DOM.height(relbar))/2});
-        if (S.UA.ie === 6) Event.on(window, 'scroll', _center);
-        else DOM.addClass(relbar, 'fixed');
-        
-    });
-</script>
-<!--
-<div class="searchbox" id="searchbox">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" class="ipt"/>
-      <input type="submit" value="搜索" class="btn"/>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>  -->
-
     <div class="footer">
         &copy; Copyright 2010, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
     </div>

@@ -5,25 +5,25 @@
   <head>
     <meta charset="utf-8" />
     
-    <title>组件 &mdash; Quick Start Guide v0.1 documentation</title>
+    <title>组件</title>
+    
     <link rel="stylesheet" href="../static/kissy.css" />
     <link rel="stylesheet" href="../static/pygments.css" />
+    <link rel="top" title="None" href="../index.html" />
+    <link rel="up" title="Getting Started with KISSY" href="index.html" />
+    <link rel="next" title="自定义组件" href="yourwidgets.html" />
+    <link rel="prev" title="Anim" href="anim.html" />
+
     <script>
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.1',
+        VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-    <!-- add kissy lib by liz -->
-    <script src="http://github.com/kissyteam/kissy/raw/master/build/packages/kissy.js"></script>
-    <script src="demo/show.js"></script>
-    <link rel="top" title="Quick Start Guide v0.1 documentation" href="../index.html" />
-    <link rel="up" title="Getting Started With KISSY" href="index.html" />
-    <link rel="next" title="自定义组件" href="yourwidgets.html" />
-    <link rel="prev" title="Anim" href="anim.html" /> 
+    <script src="http://kissyteam.github.com/kissy/build/kissy-min.js"></script> 
   </head>
   <body><div class="headwrap">
 <div class="header">
@@ -32,7 +32,7 @@
         <li><a href="http://kissyteam.github.com/docs/kissy">首页</a><b></b><s></s></li>
         <li><a href="http://kissyteam.github.com/docs/kissy/quickstart/">入门</a><b></b><s></s></li>
         <li><a href="http://kissyteam.github.com/kissy/docs">API</a><b></b><s></s></li>
-        <li><a href="http://github.com/kissyteam/kissy">源码</a></li>
+        <li><a href="http://github.com/kissyteam/kissy#readme">关于</a></li>
     </ul>
 </div>
 </div>
@@ -41,39 +41,6 @@
 
     <div class="document">
       <div class="documentwrapper">
-        <div class="toc">
-  <h3><a id="J_toc" href="../index.html">內容目录</a></h3>
-  <div id="J_tList"><ul>
-<li><a class="reference internal" href="#">组件</a><ul>
-<li><a class="reference internal" href="#switchable">Switchable</a></li>
-<li><a class="reference internal" href="#slide">使用 Slide</a></li>
-<li><a class="reference internal" href="#carousel">使用 Carousel</a></li>
-<li><a class="reference internal" href="#config">Config 选项</a></li>
-</ul>
-</li>
-</ul>
-</div>
-        <script>
-            KISSY.ready(function(S){
-                var DOM = S.DOM,
-                    Event = S.Event;
-                
-                Event.on('#J_toc', 'click', function(e){
-                    e.halt();
-                    var p = DOM.parent(DOM.parent(this));
-                    //DOM.toggleClass(p, 'tocshow');
-                    if (DOM.hasClass(p, 'tocshow')) {
-                        S.slideUp('#J_tList', 1, function(){
-                            DOM.removeClass(p, 'tocshow');
-                        });
-                    } else {
-                        DOM.addClass(p, 'tocshow');
-                        S.slideDown('#J_tList', 1);
-                    }
-                });
-            });
-        </script>
-        </div>
         <div class="body">
             
   <div class="section" id="widgets">
@@ -410,53 +377,6 @@
       </div>
       <div class="clearer"></div>
     </div>
-
-<ul id="J_relbar" class="myrelbar">
-<!--
-    <li>
-      <a href="../genindex.html" title="总目录"
-         accesskey="I">索引</a>
-    </li>
-    <li>
-      <a href="yourwidgets.html" title="自定义组件"
-         accesskey="N">下一页</a>
-    </li>
-    <li>
-      <a href="anim.html" title="Anim"
-         accesskey="P">上一页</a>
-    </li>
- -->
-    <li><a title="Anim" href="anim.html">前一章</a></li>
-    <li><a title="自定义组件" href="yourwidgets.html">后一章</a></li>
-
-</ul>
-<script>
-    KISSY.ready(function(S){
-        var DOM = S.DOM,
-            Event = S.Event;
-        
-        var relbar = DOM.get('#J_relbar');
-        var _center = function(){
-            DOM.offset(relbar, {top: (DOM.viewportHeight() - DOM.height(relbar)) / 2 + DOM.scrollTop()});
-        };
-        
-        DOM.offset(relbar, {top: (DOM.viewportHeight()-DOM.height(relbar))/2});
-        if (S.UA.ie === 6) Event.on(window, 'scroll', _center);
-        else DOM.addClass(relbar, 'fixed');
-        
-    });
-</script>
-<!--
-<div class="searchbox" id="searchbox">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" class="ipt"/>
-      <input type="submit" value="搜索" class="btn"/>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>  -->
-
     <div class="footer">
         &copy; Copyright 2010, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
     </div>

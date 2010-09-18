@@ -5,24 +5,24 @@
   <head>
     <meta charset="utf-8" />
     
-    <title>Getting Started With KISSY &mdash; Quick Start Guide v0.1 documentation</title>
+    <title>Getting Started with KISSY</title>
+    
     <link rel="stylesheet" href="../static/kissy.css" />
     <link rel="stylesheet" href="../static/pygments.css" />
+    <link rel="top" title="None" href="../index.html" />
+    <link rel="next" title="Setup" href="setup.html" />
+    <link rel="prev" title="KISSY Docs" href="../index.html" />
+
     <script>
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.1',
+        VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-    <!-- add kissy lib by liz -->
-    <script src="http://github.com/kissyteam/kissy/raw/master/build/packages/kissy.js"></script>
-    <script src="demo/show.js"></script>
-    <link rel="top" title="Quick Start Guide v0.1 documentation" href="../index.html" />
-    <link rel="next" title="Setup" href="setup.html" />
-    <link rel="prev" title="KISSY Docs" href="../index.html" /> 
+    <script src="http://kissyteam.github.com/kissy/build/kissy-min.js"></script> 
   </head>
   <body><div class="headwrap">
 <div class="header">
@@ -31,7 +31,7 @@
         <li><a href="http://kissyteam.github.com/docs/kissy">首页</a><b></b><s></s></li>
         <li><a href="http://kissyteam.github.com/docs/kissy/quickstart/">入门</a><b></b><s></s></li>
         <li><a href="http://kissyteam.github.com/kissy/docs">API</a><b></b><s></s></li>
-        <li><a href="http://github.com/kissyteam/kissy">源码</a></li>
+        <li><a href="http://github.com/kissyteam/kissy#readme">关于</a></li>
     </ul>
 </div>
 </div>
@@ -40,56 +40,22 @@
 
     <div class="document">
       <div class="documentwrapper">
-        <div class="toc">
-  <h3><a id="J_toc" href="../index.html">內容目录</a></h3>
-  <div id="J_tList"><ul>
-<li><a class="reference internal" href="#">Getting Started With KISSY</a><ul>
-<li><a class="reference internal" href="#kissy">KISSY愿景</a></li>
-<li><a class="reference internal" href="#id2">主要内容</a><ul>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id3">索引及搜索</a></li>
-</ul>
-</div>
-        <script>
-            KISSY.ready(function(S){
-                var DOM = S.DOM,
-                    Event = S.Event;
-                
-                Event.on('#J_toc', 'click', function(e){
-                    e.halt();
-                    var p = DOM.parent(DOM.parent(this));
-                    //DOM.toggleClass(p, 'tocshow');
-                    if (DOM.hasClass(p, 'tocshow')) {
-                        S.slideUp('#J_tList', 1, function(){
-                            DOM.removeClass(p, 'tocshow');
-                        });
-                    } else {
-                        DOM.addClass(p, 'tocshow');
-                        S.slideDown('#J_tList', 1);
-                    }
-                });
-            });
-        </script>
-        </div>
         <div class="body">
             
   <div class="section" id="getting-started-with-kissy">
-<span id="quickstart"></span><h1>Getting Started With KISSY<a class="headerlink" href="#getting-started-with-kissy" title="永久链接至标题">¶</a></h1>
-<p>这是一份介绍如何使用KISSY的入门教程, 教你从最基本的地方开始熟悉这可爱的KISSY.</p>
-<p>如果你是如下情况之一的开发人员, 都可以通过这份文档慢慢使用起KISSY!</p>
+<span id="quickstart"></span><h1>Getting Started with KISSY<a class="headerlink" href="#getting-started-with-kissy" title="永久链接至标题">¶</a></h1>
+<p>这是一份介绍如何使用 KISSY 的入门教程, 教你从最基本的地方开始熟悉这可爱的 KISSY ^o^</p>
+<p>如果你是如下情况之一的开发人员, 都可以通过这份文档慢慢使用起 KISSY:</p>
 <blockquote>
 <ol class="arabic simple">
-<li>以前就学习过 <a class="reference external" href="http://jquery.com/">JQuery</a> , <a class="reference external" href="http://developer.yahoo.com/yui/">YUI</a> , <a class="reference external" href="http://www.sencha.com/products/js/">Ext</a> 等其他JS框架, 但现在想尝试个新鲜点的框架;</li>
-<li>js新手, 只有可怜的一点js基础, 正好想学一个JS框架来提高自身技能;</li>
-<li>完全是个菜鸟, 也没关系! 学习KISSY会让你逐渐对前端技术产生足够的兴趣;</li>
-<li>至于前端大牛,, 直接进入KISSY的 <a class="reference external" href="http://github.com/kissyteam/kissy/tree/master/src/">源码世界</a> 研究吧!</li>
+<li>以前使用过 <a class="reference external" href="http://jquery.com/">JQuery</a> , <a class="reference external" href="http://developer.yahoo.com/yui/">YUI</a> , <a class="reference external" href="http://www.sencha.com/products/js/">Ext</a> 等前端类库, 但都不是很满意，想尝试个新鲜点的类库;</li>
+<li>前端开发新手, 只有基本的 JS 基础, 正好想学一个 JS 类库来提高自身技能;</li>
+<li>完全是个菜鸟, 也没关系! 学习 KISSY 会让你逐渐对前端技术产生足够的兴趣;</li>
+<li>至于前端大牛, 直接进入KISSY的 <a class="reference external" href="http://github.com/kissyteam/kissy/tree/master/src/">源码世界</a> 贡献你的智慧吧!</li>
 </ol>
 </blockquote>
 <div class="section" id="kissy">
-<h2>KISSY愿景<a class="headerlink" href="#kissy" title="永久链接至标题">¶</a></h2>
+<h2>KISSY 愿景<a class="headerlink" href="#kissy" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <p>小巧灵活, 简洁实用, 使用起来让人感觉愉悦.</p>
 <blockquote>
@@ -100,20 +66,17 @@
 <p>Yeah!</p>
 </blockquote>
 </blockquote>
-<p>下面就开始我们的KISSY新奇之旅吧~~</p>
+<p>下面就开始我们的 KISSY 新奇之旅吧~~</p>
 </div>
 <div class="section" id="id2">
-<h2>主要内容<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>内容大纲<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hellokissy.html">Hello KISSY</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="hellokissy.html#dom-event">DOM/Event</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="node.html">Node初步</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="node.html#node-api">Node API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="node.html#id2">Node使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hellokissy.html">Hello KISSY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node.html">Node 初步</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="node.html#api">简易 API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node.html#id1">使用范例</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ajax.html">Ajax</a><ul>
@@ -167,67 +130,12 @@
 </div>
 </div>
 </div>
-<div class="section" id="id3">
-<h1>索引及搜索<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h1>
-<ul class="simple">
-<li><a class="reference internal" href="../genindex.html"><em>索引</em></a></li>
-<li><a class="reference internal" href="../py-modindex.html"><em>模块索引</em></a></li>
-<li><a class="reference internal" href="../search.html"><em>搜索页面</em></a></li>
-</ul>
-</div>
 
 
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-
-<ul id="J_relbar" class="myrelbar">
-<!--
-    <li>
-      <a href="../genindex.html" title="总目录"
-         accesskey="I">索引</a>
-    </li>
-    <li>
-      <a href="setup.html" title="Setup"
-         accesskey="N">下一页</a>
-    </li>
-    <li>
-      <a href="../index.html" title="KISSY Docs"
-         accesskey="P">上一页</a>
-    </li>
- -->
-    <li><a title="KISSY Docs" href="../index.html">前一章</a></li>
-    <li><a title="Setup" href="setup.html">后一章</a></li>
-
-</ul>
-<script>
-    KISSY.ready(function(S){
-        var DOM = S.DOM,
-            Event = S.Event;
-        
-        var relbar = DOM.get('#J_relbar');
-        var _center = function(){
-            DOM.offset(relbar, {top: (DOM.viewportHeight() - DOM.height(relbar)) / 2 + DOM.scrollTop()});
-        };
-        
-        DOM.offset(relbar, {top: (DOM.viewportHeight()-DOM.height(relbar))/2});
-        if (S.UA.ie === 6) Event.on(window, 'scroll', _center);
-        else DOM.addClass(relbar, 'fixed');
-        
-    });
-</script>
-<!--
-<div class="searchbox" id="searchbox">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" class="ipt"/>
-      <input type="submit" value="搜索" class="btn"/>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>  -->
-
     <div class="footer">
         &copy; Copyright 2010, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
     </div>

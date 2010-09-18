@@ -5,23 +5,23 @@
   <head>
     <meta charset="utf-8" />
     
-    <title>KISSY Docs &mdash; Quick Start Guide v0.1 documentation</title>
+    <title>KISSY Docs</title>
+    
     <link rel="stylesheet" href="static/kissy.css" />
     <link rel="stylesheet" href="static/pygments.css" />
+    <link rel="top" title="None" href="#" />
+    <link rel="next" title="Getting Started with KISSY" href="quickstart/index.html" />
+
     <script>
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.1',
+        VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-    <!-- add kissy lib by liz -->
-    <script src="http://github.com/kissyteam/kissy/raw/master/build/packages/kissy.js"></script>
-    <script src="quickstart/demo/show.js"></script>
-    <link rel="top" title="Quick Start Guide v0.1 documentation" href="#" />
-    <link rel="next" title="Getting Started With KISSY" href="quickstart/index.html" /> 
+    <script src="http://kissyteam.github.com/kissy/build/kissy-min.js"></script> 
   </head>
   <body><div class="headwrap">
 <div class="header">
@@ -30,7 +30,7 @@
         <li><a href="http://kissyteam.github.com/docs/kissy">首页</a><b></b><s></s></li>
         <li><a href="http://kissyteam.github.com/docs/kissy/quickstart/">入门</a><b></b><s></s></li>
         <li><a href="http://kissyteam.github.com/kissy/docs">API</a><b></b><s></s></li>
-        <li><a href="http://github.com/kissyteam/kissy">源码</a></li>
+        <li><a href="http://github.com/kissyteam/kissy#readme">关于</a></li>
     </ul>
 </div>
 </div>
@@ -39,36 +39,13 @@
 
     <div class="document">
       <div class="documentwrapper">
-        <div class="toc">
-        <script>
-            KISSY.ready(function(S){
-                var DOM = S.DOM,
-                    Event = S.Event;
-                
-                Event.on('#J_toc', 'click', function(e){
-                    e.halt();
-                    var p = DOM.parent(DOM.parent(this));
-                    //DOM.toggleClass(p, 'tocshow');
-                    if (DOM.hasClass(p, 'tocshow')) {
-                        S.slideUp('#J_tList', 1, function(){
-                            DOM.removeClass(p, 'tocshow');
-                        });
-                    } else {
-                        DOM.addClass(p, 'tocshow');
-                        S.slideDown('#J_tList', 1);
-                    }
-                });
-            });
-        </script>
-        </div>
         <div class="body">
             
   <div class="section" id="kissy-docs">
 <span id="index"></span><h1>KISSY Docs<a class="headerlink" href="#kissy-docs" title="永久链接至标题">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="quickstart/index.html">Getting Started With KISSY</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart/index.html#id3">索引及搜索</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/index.html">Getting Started with KISSY</a></li>
 </ul>
 </div>
 <!-- 首页样式 -->
@@ -126,11 +103,11 @@
         _height: 200px;
     }
     .fp .linklist li {
-        list-style: square outside url(http://cdn.iconfinder.net/data/icons/lullacons/bullet-square.png);
+        list-style: square outside url(static/bullet-square.png);
         margin-left: 20px;
     }
     .fp .linklist a {
-        color: #999;
+        color: #666;
     }
     .fp .linklist a:hover {
         color: #0088cc;
@@ -158,30 +135,36 @@
 
     <div class="linklist ks-clear">
         <div class="link left">
-            <h5>Kissyteam 相关工程</h5>
+            <h5>项目</h5>
             <ul>
-                <li><a href="http://github.com/kissyteam">kissyteam projects</a></li>
-                <li><a href="http://github.com/kissyteam/kissy">kissy src</a></li>
-                <li><a href="http://github.com/kissyteam/kissy-tools">kissy tools</a></li>
-                <li><a href="http://github.com/kissyteam/kissy-editor">kissy editor</a></li>
-                <li><a href="http://github.com/kissyteam/kissy-ajbridge">kissy ajbridge</a></li>
-                <li><a href="http://github.com/kissyteam/kissy-dpl">kissy dpl</a></li>
-                <li><a href="http://github.com/kissyteam/kissy-gallery">kissy gallery</a></li>
-                <li><a href="http://github.com/kissyteam/kissy-sandbox">kissy sandbox</a></li>
+                <li><a href="http://kissyteam.github.com/team.png">overview</a></li>
+                <li><a href="http://github.com/kissyteam/kissy">kissy</a></li>
+                <li><a href="http://github.com/kissyteam/kissy-sandbox">kissy-sandbox</a></li>
+                <li><a href="http://github.com/kissyteam/kissy-gallery">kissy-gallery</a></li>
+                <li><a href="http://github.com/kissyteam/kissy-dpl">kissy-dpl</a></li>
+                <li><a href="http://github.com/kissyteam/kissy-editor">kissy-editor</a></li>
+                <li><a href="http://github.com/kissyteam/kissy-ajbridge">kissy-ajbridge</a></li>
+                <li><a href="http://github.com/kissyteam/kissy-tools">kissy-tools</a></li>
             </ul>
         </div>
         <div class="link center">
             <h5>资源</h5>
             <ul>
-                <li><a href="http://kissyui.com/">Official Site</a></li>
-                <li><a href="http://github.com/kissyteam/kissy/issues">issues</a></li>
+                <li><a href="http://lifesinger.org/blog/tag/kissy-briefings/">KISSY 快讯</a></li>
+                <li><a href="http://www.slideshare.net/lijing00333/kissy-5223489">从 YUI3 到 KISSY</a></li>
+                <li><a href="http://www.slideshare.net/lifesinger/thinking-in-kissy">Thinking in KISSY</a></li>
+                <li><a href="http://www.slideshare.net/lifesinger/intro-to-kissy">Into to KISSY</a></li>
             </ul>
         </div>
         <div class="link right">
-            <h5>联系</h5>
+            <h5>支持</h5>
             <ul>
-                <li><a href="mailto:kissyteam@gmail.com">kissyteam邮件列表</a></li>
-                <!--<li><a href="mailto:lifesinger@gmail.com">玉伯</a></li>-->
+                <li><a href="http://github.com/kissyteam/kissy/downloads">打包下载</a></li>
+                <li><a href="http://github.com/kissyteam/kissy/blob/master/CHANGELOG">版本更新</a></li>
+                <li><a href="http://github.com/kissyteam/kissy/issues">提交 Bug</a></li>
+                <li><a href="http://github.com/kissyteam/kissy#readme">关于 KISSY</a></li>
+                <li><a href="http://github.com/kissyteam/kissy/blob/master/LICENSE">版权</a></li>
+                <li><a href="mailto:kissyteam@gmail.com">kissyteam(at)gmail.com</a></li>
             </ul>
         </div>
     </div>
@@ -192,48 +175,6 @@
       </div>
       <div class="clearer"></div>
     </div>
-
-<ul id="J_relbar" class="myrelbar">
-<!--
-    <li>
-      <a href="genindex.html" title="总目录"
-         accesskey="I">索引</a>
-    </li>
-    <li>
-      <a href="quickstart/index.html" title="Getting Started With KISSY"
-         accesskey="N">下一页</a>
-    </li>
- -->
-    <li><a title="Getting Started With KISSY" href="quickstart/index.html">后一章</a></li>
-
-</ul>
-<script>
-    KISSY.ready(function(S){
-        var DOM = S.DOM,
-            Event = S.Event;
-        
-        var relbar = DOM.get('#J_relbar');
-        var _center = function(){
-            DOM.offset(relbar, {top: (DOM.viewportHeight() - DOM.height(relbar)) / 2 + DOM.scrollTop()});
-        };
-        
-        DOM.offset(relbar, {top: (DOM.viewportHeight()-DOM.height(relbar))/2});
-        if (S.UA.ie === 6) Event.on(window, 'scroll', _center);
-        else DOM.addClass(relbar, 'fixed');
-        
-    });
-</script>
-<!--
-<div class="searchbox" id="searchbox">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" size="18" class="ipt"/>
-      <input type="submit" value="搜索" class="btn"/>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>  -->
-
     <div class="footer">
         &copy; Copyright 2010, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
     </div>

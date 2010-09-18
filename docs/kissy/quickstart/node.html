@@ -5,25 +5,25 @@
   <head>
     <meta charset="utf-8" />
     
-    <title>Node初步 &mdash; Quick Start Guide v0.1 documentation</title>
+    <title>Node 初步</title>
+    
     <link rel="stylesheet" href="../static/kissy.css" />
     <link rel="stylesheet" href="../static/pygments.css" />
+    <link rel="top" title="None" href="../index.html" />
+    <link rel="up" title="Getting Started with KISSY" href="index.html" />
+    <link rel="next" title="Ajax" href="ajax.html" />
+    <link rel="prev" title="Hello KISSY" href="hellokissy.html" />
+
     <script>
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.1',
+        VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-    <!-- add kissy lib by liz -->
-    <script src="http://github.com/kissyteam/kissy/raw/master/build/packages/kissy.js"></script>
-    <script src="demo/show.js"></script>
-    <link rel="top" title="Quick Start Guide v0.1 documentation" href="../index.html" />
-    <link rel="up" title="Getting Started With KISSY" href="index.html" />
-    <link rel="next" title="Ajax" href="ajax.html" />
-    <link rel="prev" title="Hello KISSY" href="hellokissy.html" /> 
+    <script src="http://kissyteam.github.com/kissy/build/kissy-min.js"></script> 
   </head>
   <body><div class="headwrap">
 <div class="header">
@@ -32,7 +32,7 @@
         <li><a href="http://kissyteam.github.com/docs/kissy">首页</a><b></b><s></s></li>
         <li><a href="http://kissyteam.github.com/docs/kissy/quickstart/">入门</a><b></b><s></s></li>
         <li><a href="http://kissyteam.github.com/kissy/docs">API</a><b></b><s></s></li>
-        <li><a href="http://github.com/kissyteam/kissy">源码</a></li>
+        <li><a href="http://github.com/kissyteam/kissy#readme">关于</a></li>
     </ul>
 </div>
 </div>
@@ -41,64 +41,34 @@
 
     <div class="document">
       <div class="documentwrapper">
-        <div class="toc">
-  <h3><a id="J_toc" href="../index.html">內容目录</a></h3>
-  <div id="J_tList"><ul>
-<li><a class="reference internal" href="#">Node初步</a><ul>
-<li><a class="reference internal" href="#node-api">Node API</a></li>
-<li><a class="reference internal" href="#id2">Node使用</a></li>
-</ul>
-</li>
-</ul>
-</div>
-        <script>
-            KISSY.ready(function(S){
-                var DOM = S.DOM,
-                    Event = S.Event;
-                
-                Event.on('#J_toc', 'click', function(e){
-                    e.halt();
-                    var p = DOM.parent(DOM.parent(this));
-                    //DOM.toggleClass(p, 'tocshow');
-                    if (DOM.hasClass(p, 'tocshow')) {
-                        S.slideUp('#J_tList', 1, function(){
-                            DOM.removeClass(p, 'tocshow');
-                        });
-                    } else {
-                        DOM.addClass(p, 'tocshow');
-                        S.slideDown('#J_tList', 1);
-                    }
-                });
-            });
-        </script>
-        </div>
         <div class="body">
             
   <div class="section" id="node">
-<span id="usenode"></span><h1>Node初步<a class="headerlink" href="#node" title="永久链接至标题">¶</a></h1>
-<p>如果你已经熟悉了jQuery, YUI3.0 或是 Ext , 那就应该对其链式风格的使用非常了解.  链式风格的书写让人使用更加方便, 代码看起来也非常整洁.</p>
-<p>Kissy 也提供了这种链式风格的支持 <a class="footnote-reference" href="#id5" id="id1">[1]</a>.</p>
-<div class="section" id="node-api">
-<h2>Node API<a class="headerlink" href="#node-api" title="永久链接至标题">¶</a></h2>
+<span id="usenode"></span><h1>Node 初步<a class="headerlink" href="#node" title="永久链接至标题">¶</a></h1>
+<p>如果你使用过 jQuery, YUI3 或 Ext, 那对链式风格应该已有了解. 链式风格的书写让人使用更加方便, 代码看起来也更整洁.</p>
+<p>KISSY 也提供了这种链式风格的支持.</p>
+<div class="section" id="api">
+<h2>简易 API<a class="headerlink" href="#api" title="永久链接至标题">¶</a></h2>
 <dl class="docutils">
-<dt>Kissy提供两种使用方式:</dt>
+<dt>KISSY 提供两种使用方式:</dt>
 <dd><ol class="first last arabic simple">
 <li><tt class="docutils literal"><span class="pre">S.one</span></tt>  -  根据 css selector, 返回 <tt class="docutils literal"><span class="pre">Node</span></tt> 对象;</li>
 <li><tt class="docutils literal"><span class="pre">S.all</span></tt>  -  根据 css selector, 返回 <tt class="docutils literal"><span class="pre">NodeList</span></tt> 对象;</li>
 </ol>
 </dd>
 </dl>
-<p>上面两个方法, 和 <tt class="docutils literal"><span class="pre">S.get</span></tt> / <tt class="docutils literal"><span class="pre">S.query</span></tt> 是遥相呼应的, 唯一的不同是, <tt class="docutils literal"><span class="pre">get/query</span></tt> 返回的是原生 DOM <tt class="docutils literal"><span class="pre">Node/NodeList</span></tt>.</p>
+<p>上面两个方法, 和 <tt class="docutils literal"><span class="pre">S.get</span></tt> / <tt class="docutils literal"><span class="pre">S.query</span></tt> 是遥相呼应的.
+唯一的不同是, <tt class="docutils literal"><span class="pre">get/query</span></tt> 返回的是原生 DOM <tt class="docutils literal"><span class="pre">Node/NodeList</span></tt>.</p>
 <p>而 <tt class="docutils literal"><span class="pre">KISSY.Node/NodeList</span></tt> 类似 jQuery 全局对象, 但只包含 DOM/Event 等方法, 我们可以这样写代码：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#test&#39;</span><span class="p">).</span><span class="nx">parent</span><span class="p">().</span><span class="nx">next</span><span class="p">().</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;&lt;p&gt;&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">});</span>
 </pre></div>
 </div>
-<p>基本上和 jQuery 的语法风格是一样的,甚至 API 也是一样的。</p>
+<p>基本上和 jQuery 的语法风格是一样的, 大部分 API 也是一样的。</p>
 </div>
-<div class="section" id="id2">
-<h2>Node使用<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>这里我们拿先前玉伯博客 <a class="footnote-reference" href="#id7" id="id3">[2]</a> 上的 <tt class="docutils literal"><span class="pre">KISSY.all('.good-student')</span></tt> 举个 node 使用的小例子.</p>
-<p>实现的效果就是, 点击按钮之后, 好多好学生都慢慢漂入 Taobao 中.</p>
+<div class="section" id="id1">
+<h2>使用范例<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>这里我们拿先前玉伯博客 <a class="footnote-reference" href="#id5" id="id2">[2]</a> 上的 <tt class="docutils literal"><span class="pre">KISSY.all('.good-student')</span></tt> 举个 Node 使用的小例子.</p>
+<p>实现的效果就是, 点击按钮之后, 好多好学生都慢慢漂入 Taobao 中^o^</p>
 <div class="demo">
      <style>
          .demo {
@@ -171,7 +141,7 @@
      })
      </script>
 
-</div><p>再来看看源码,</p>
+</div><p>再来看看源码:</p>
 <div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -223,33 +193,28 @@
 <span class="p">})</span>
 </pre></div>
 </td></tr></table></div>
-<p>在这个小例子中, 先从21行开始看:</p>
+<p>在这个小例子中, 先从 21 行开始看:</p>
 <blockquote>
 <ol class="arabic simple">
-<li><tt class="docutils literal"><span class="pre">S.one('#go').on('click',</span> <span class="pre">function(){});</span></tt> , 选择id为 <tt class="docutils literal"><span class="pre">go</span></tt> 的元素, 即button元素, 作为一个 <tt class="docutils literal"><span class="pre">Kissy</span> <span class="pre">Node</span></tt> 对象返回, 然后绑定点击事件;</li>
-<li><tt class="docutils literal"><span class="pre">S.all('.good-student').appendTo('#taobao').icanfly();</span></tt> , 获取所有class为good-student的元素, 即那些所有蓝色背景的小框, 作为 <tt class="docutils literal"><span class="pre">Kissy</span> <span class="pre">NodeList</span></tt> 对象返回, 并且 <tt class="docutils literal"><span class="pre">appendTo</span></tt> 到id为taobao的容器中, 在 <tt class="docutils literal"><span class="pre">appendTo</span></tt> 过程中执行第4行定义的 <tt class="docutils literal"><span class="pre">icanfly</span></tt> 动作.</li>
-<li><tt class="docutils literal"><span class="pre">S.NodeList.prototype.icanfly</span></tt> , 为 <tt class="docutils literal"><span class="pre">Kissy</span> <span class="pre">NodeList</span></tt> 添加一个 <tt class="docutils literal"><span class="pre">icanfly</span></tt> 方法, 再给 <tt class="docutils literal"><span class="pre">NodeList</span></tt> 中每个对象设置一个随机运动速度的定时器 <tt class="docutils literal"><span class="pre">timer</span></tt>, 然后定时器不断修改该对象的位置, 到达目标区域时清楚定时器.</li>
-<li>另外, 普通 <tt class="docutils literal"><span class="pre">DOM</span> <span class="pre">HTMLElement</span></tt> 和Node对象相互转换, 可以使用 <tt class="docutils literal"><span class="pre">new</span> <span class="pre">S.Node(anElment)</span></tt> 将 <tt class="docutils literal"><span class="pre">anElement</span></tt> 转换成 <tt class="docutils literal"><span class="pre">Node</span></tt> 对象; 而可以使用 <tt class="docutils literal"><span class="pre">aNode.getDOMNode()</span></tt> 获得对应的 <tt class="docutils literal"><span class="pre">DOM</span> <span class="pre">HTMLElement</span></tt>; 对于 <tt class="docutils literal"><span class="pre">NodeList</span></tt> 也有对应的方法, 移步见 <a class="footnote-reference" href="#id5" id="id4">[1]</a> ;</li>
+<li><tt class="docutils literal"><span class="pre">S.one('#go').on('click',</span> <span class="pre">function(){});</span></tt>, 选择 id 为 <tt class="docutils literal"><span class="pre">go</span></tt> 的元素, 即 button, 然后绑定点击事件.</li>
+<li><tt class="docutils literal"><span class="pre">S.all('.good-student').appendTo('#taobao').icanfly();</span></tt>, 获取所有 class 为 good-student 的元素, 即那些所有蓝色背景的小框, 然后 <tt class="docutils literal"><span class="pre">appendTo</span></tt> 到 id 为 taobao 的容器中, 最后执行第 4 行定义的 <tt class="docutils literal"><span class="pre">icanfly</span></tt> 动作.</li>
+<li><tt class="docutils literal"><span class="pre">S.NodeList.prototype.icanfly</span></tt>, 为 <tt class="docutils literal"><span class="pre">NodeList</span></tt> 添加一个 <tt class="docutils literal"><span class="pre">icanfly</span></tt> 方法, 再给 <tt class="docutils literal"><span class="pre">NodeList</span></tt> 中每个对象设置一个随机运动速度的定时器 <tt class="docutils literal"><span class="pre">timer</span></tt>, 然后定时器不断修改该对象的位置, 到达目标区域时清楚定时器.</li>
+<li>另外, 原生 <tt class="docutils literal"><span class="pre">DOMNode</span></tt> 和 Node 对象的相互转换, 可以使用 <tt class="docutils literal"><span class="pre">new</span> <span class="pre">S.Node(anElment)</span></tt> 将 <tt class="docutils literal"><span class="pre">DOMNode</span></tt> 转换成 <tt class="docutils literal"><span class="pre">Node</span></tt> 对象; 使用 <tt class="docutils literal"><span class="pre">node.getDOMNode()</span></tt> 获得对应的 <tt class="docutils literal"><span class="pre">DOMNode</span></tt>; 对于 <tt class="docutils literal"><span class="pre">NodeList</span></tt> 也有对应的方法, 移步见 <a class="footnote-reference" href="#id4" id="id3">[1]</a>.</li>
 </ol>
 </blockquote>
-<div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p>关于 node 的性能问题.</p>
-<p class="last">KISSY 目前采用的是类 jQuery 的原生 push 机制, 性能基本上不是问题, 函数层级之间的调用也不多. 这一点尽可放心, 目前测试下来, node 的性能问题不是问题. 可以看下 <a class="reference external" href="http://github.com/kissyteam/kissy/raw/master/src/node/node-attatch.js">http://github.com/kissyteam/kissy/raw/master/src/node/node-attatch.js</a> 的实现就明白了.</p>
-</div>
 <p>使用 <tt class="docutils literal"><span class="pre">Node</span></tt> 可以让你一直 <tt class="docutils literal"><span class="pre">.</span></tt> 下去, 只要你愿意!</p>
-<p>好了, 关于 <tt class="docutils literal"><span class="pre">Node</span></tt> 就告一段落, 下面会讲述目前Web站点中经常被使用的技术 &#8212;  <a class="reference internal" href="ajax.html#ajax"><em>Ajax</em></a> 异步请求!</p>
+<p>好了, 关于 <tt class="docutils literal"><span class="pre">Node</span></tt> 就告一段落, 下面会讲述目前 Web 站点中经常被使用的技术 &#8211;  <a class="reference internal" href="ajax.html#ajax"><em>Ajax</em></a> 异步请求!</p>
 <p class="rubric">参考链接</p>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[1]</a></td><td><a class="reference external" href="http://kissy.googlecode.com/svn/trunk/docs/node/index.html">Node API 文档</a></td></tr>
+</tbody>
+</table>
 <table class="docutils footnote" frame="void" id="id5" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> <a class="reference external" href="http://kissy.googlecode.com/svn/trunk/docs/node/index.html">Node 文档</a> ;</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id7" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td><a class="reference external" href="http://lifesinger.org/blog/2010/07/kissy-all-good-student/">Join Taobao</a> ;</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="http://lifesinger.org/blog/2010/07/kissy-all-good-student/">Join Taobao 例子</a></td></tr>
 </tbody>
 </table>
 </div>
@@ -260,53 +225,6 @@
       </div>
       <div class="clearer"></div>
     </div>
-
-<ul id="J_relbar" class="myrelbar">
-<!--
-    <li>
-      <a href="../genindex.html" title="总目录"
-         accesskey="I">索引</a>
-    </li>
-    <li>
-      <a href="ajax.html" title="Ajax"
-         accesskey="N">下一页</a>
-    </li>
-    <li>
-      <a href="hellokissy.html" title="Hello KISSY"
-         accesskey="P">上一页</a>
-    </li>
- -->
-    <li><a title="Hello KISSY" href="hellokissy.html">前一章</a></li>
-    <li><a title="Ajax" href="ajax.html">后一章</a></li>
-
-</ul>
-<script>
-    KISSY.ready(function(S){
-        var DOM = S.DOM,
-            Event = S.Event;
-        
-        var relbar = DOM.get('#J_relbar');
-        var _center = function(){
-            DOM.offset(relbar, {top: (DOM.viewportHeight() - DOM.height(relbar)) / 2 + DOM.scrollTop()});
-        };
-        
-        DOM.offset(relbar, {top: (DOM.viewportHeight()-DOM.height(relbar))/2});
-        if (S.UA.ie === 6) Event.on(window, 'scroll', _center);
-        else DOM.addClass(relbar, 'fixed');
-        
-    });
-</script>
-<!--
-<div class="searchbox" id="searchbox">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" class="ipt"/>
-      <input type="submit" value="搜索" class="btn"/>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>  -->
-
     <div class="footer">
         &copy; Copyright 2010, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
     </div>

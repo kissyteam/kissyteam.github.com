@@ -5,25 +5,25 @@
   <head>
     <meta charset="utf-8" />
     
-    <title>Setup &mdash; Quick Start Guide v0.1 documentation</title>
+    <title>Setup</title>
+    
     <link rel="stylesheet" href="../static/kissy.css" />
     <link rel="stylesheet" href="../static/pygments.css" />
+    <link rel="top" title="None" href="../index.html" />
+    <link rel="up" title="Getting Started with KISSY" href="index.html" />
+    <link rel="next" title="Hello KISSY" href="hellokissy.html" />
+    <link rel="prev" title="Getting Started with KISSY" href="index.html" />
+
     <script>
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.1',
+        VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-    <!-- add kissy lib by liz -->
-    <script src="http://github.com/kissyteam/kissy/raw/master/build/packages/kissy.js"></script>
-    <script src="demo/show.js"></script>
-    <link rel="top" title="Quick Start Guide v0.1 documentation" href="../index.html" />
-    <link rel="up" title="Getting Started With KISSY" href="index.html" />
-    <link rel="next" title="Hello KISSY" href="hellokissy.html" />
-    <link rel="prev" title="Getting Started With KISSY" href="index.html" /> 
+    <script src="http://kissyteam.github.com/kissy/build/kissy-min.js"></script> 
   </head>
   <body><div class="headwrap">
 <div class="header">
@@ -32,7 +32,7 @@
         <li><a href="http://kissyteam.github.com/docs/kissy">首页</a><b></b><s></s></li>
         <li><a href="http://kissyteam.github.com/docs/kissy/quickstart/">入门</a><b></b><s></s></li>
         <li><a href="http://kissyteam.github.com/kissy/docs">API</a><b></b><s></s></li>
-        <li><a href="http://github.com/kissyteam/kissy">源码</a></li>
+        <li><a href="http://github.com/kissyteam/kissy#readme">关于</a></li>
     </ul>
 </div>
 </div>
@@ -41,107 +41,61 @@
 
     <div class="document">
       <div class="documentwrapper">
-        <div class="toc">
-        <script>
-            KISSY.ready(function(S){
-                var DOM = S.DOM,
-                    Event = S.Event;
-                
-                Event.on('#J_toc', 'click', function(e){
-                    e.halt();
-                    var p = DOM.parent(DOM.parent(this));
-                    //DOM.toggleClass(p, 'tocshow');
-                    if (DOM.hasClass(p, 'tocshow')) {
-                        S.slideUp('#J_tList', 1, function(){
-                            DOM.removeClass(p, 'tocshow');
-                        });
-                    } else {
-                        DOM.addClass(p, 'tocshow');
-                        S.slideDown('#J_tList', 1);
-                    }
-                });
-            });
-        </script>
-        </div>
         <div class="body">
             
   <div class="section" id="setup">
 <span id="id1"></span><h1>Setup<a class="headerlink" href="#setup" title="永久链接至标题">¶</a></h1>
 <p>如何使用 KISSY ?</p>
 <ul class="simple">
-<li>先将kissy.js, <a class="reference external" href="http://github.com/kissyteam/kissy/raw/master/build/packages/kissy.js">http://github.com/kissyteam/kissy/raw/master/build/packages/kissy.js</a> 引入到你的页面上;</li>
-<li>接着, <strong>稍加</strong> 编写一些js, 就可以实现下面的效果了;</li>
+<li>先将 <a class="reference external" href="http://kissyteam.github.com/kissy/build/kissy-min.js">http://kissyteam.github.com/kissy/build/kissy-min.js</a> 引入到你的页面;</li>
+<li>接着, <strong>稍加</strong> 编写一些代码, 就可以实现下面的效果了:</li>
 </ul>
 <div class="demo">
     <style>
-        .imgwrap {
+        .demo-wrap {
             position: relative;
-            padding: 10px;
+            margin-top: 20px;
             height: 110px;
         }
-        #J_kissy {
+        #demo-txt {
             position: absolute;
             left: 400px;
             top: 0;
+            color:#333333;
+            font: normal 26px/2 Futura,"Century Gothic",AppleGothic,sans-serif;
             opacity: 0;
-            font-size: 14px;
-            line-height: 2;
             filter: alpha(opacity:0);
         }
-        #J_img {
+        #demo-img {
             position: absolute;
             left: 0;
             top: 0;
         }
-
     </style>
 
-    <button type="button" id="J_click">Click Me!</button>
-    <div class="imgwrap">
-        <img id="J_img" src="http://kissyteam.github.com/kissy/docs/assets/logo.png" />
-        <h2 id="J_kissy">Hello Kissy, NOT Kitty!</h2>
+    <button type="button" id="demo-btn" autocomplete="off">Click Me!</button>
+    <div class="demo-wrap">
+        <img id="demo-img" src="http://kissyteam.github.com/kissy/docs/assets/logo.png" />
+        <h2 id="demo-txt">Hello KISSY, NOT KITTY!</h2>
     </div>
-
     <script>
         KISSY.ready(function(S){
-            var DOM = S.DOM,
-                Event = S.Event;
+            var DOM = S.DOM, Event = S.Event,
+                btn = DOM.get('#demo-btn');
 
-            var btn = DOM.get('#J_click');
-
-            Event.on(btn, 'click', function(e) {
+            Event.on(btn, 'click', function() {
                 DOM.attr(btn, 'disabled', true);
-                var flag = DOM.css(DOM.get('#J_img'), 'left'),
-                    obj = {'0px': ['#J_img', '#J_kissy'],
-                            '400px': ['#J_kissy', '#J_img']},
-                    anim = {'0px': [],
-                            '400px': []};
-                if (!parseInt(flag)) {
-                    anim[flag][0] = {'left': '400px', 'opacity': '0'};
-                    anim[flag][1] = {'left': '0px', 'opacity': '1', 'font-size': '28px'};
-                } else {
-                    anim[flag][0] = {'left': '400px', 'opacity': '0', 'font-size': '14px'};
-                    anim[flag][1] = {'left': '0px', 'opacity': '1'};
-                }
-                S.Anim(obj[flag][0],
-                        anim[flag][0],
-                        2,
-                        S.Easing.easeOut,
-                        function(){
-                            S.Anim(obj[flag][1],
-                                    anim[flag][1],
-                                    2,
-                                    S.Easing.easeOut,
-                                    function(){
-                                        DOM.removeAttr(btn, 'disabled');
-                                    }).run();
-                        }).run();
+
+                S.Anim('#demo-img', 'left: 400px; opacity: 0', 2, 'easeOut', function() {
+                    S.Anim('#demo-txt',
+                           'left: 0; opacity: 1; fontSize: 28px',
+                           2, 'bounceOut').run();
+                }).run();
             });
         });
     </script>
-
-</div><p>使用 KISSY 实现上面的效果, 只需要不到20行的代码, 下面的章节会一步一步地教你学习 KISSY !</p>
-<p>下一节将会详细介绍本节中出现的示例  <a class="reference internal" href="hellokissy.html#hellokissy"><em>Hello Kissy</em></a> ~</p>
+</div><p>使用 KISSY 实现上面的效果, 只需大约 10 行代码.</p>
+<p>下一节将会详细介绍上面的示例，请看  <a class="reference internal" href="hellokissy.html#hellokissy"><em>Hello KISSY</em></a> ~</p>
 </div>
 
 
@@ -149,53 +103,6 @@
       </div>
       <div class="clearer"></div>
     </div>
-
-<ul id="J_relbar" class="myrelbar">
-<!--
-    <li>
-      <a href="../genindex.html" title="总目录"
-         accesskey="I">索引</a>
-    </li>
-    <li>
-      <a href="hellokissy.html" title="Hello KISSY"
-         accesskey="N">下一页</a>
-    </li>
-    <li>
-      <a href="index.html" title="Getting Started With KISSY"
-         accesskey="P">上一页</a>
-    </li>
- -->
-    <li><a title="Getting Started With KISSY" href="index.html">前一章</a></li>
-    <li><a title="Hello KISSY" href="hellokissy.html">后一章</a></li>
-
-</ul>
-<script>
-    KISSY.ready(function(S){
-        var DOM = S.DOM,
-            Event = S.Event;
-        
-        var relbar = DOM.get('#J_relbar');
-        var _center = function(){
-            DOM.offset(relbar, {top: (DOM.viewportHeight() - DOM.height(relbar)) / 2 + DOM.scrollTop()});
-        };
-        
-        DOM.offset(relbar, {top: (DOM.viewportHeight()-DOM.height(relbar))/2});
-        if (S.UA.ie === 6) Event.on(window, 'scroll', _center);
-        else DOM.addClass(relbar, 'fixed');
-        
-    });
-</script>
-<!--
-<div class="searchbox" id="searchbox">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" class="ipt"/>
-      <input type="submit" value="搜索" class="btn"/>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>  -->
-
     <div class="footer">
         &copy; Copyright 2010, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
     </div>

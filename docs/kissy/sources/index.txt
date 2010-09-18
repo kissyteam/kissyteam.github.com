@@ -70,11 +70,11 @@ KISSY Docs
             _height: 200px;
         }
         .fp .linklist li {
-            list-style: square outside url(http://cdn.iconfinder.net/data/icons/lullacons/bullet-square.png);
+            list-style: square outside url(static/bullet-square.png);
             margin-left: 20px;
         }
         .fp .linklist a {
-            color: #999;
+            color: #666;
         }
         .fp .linklist a:hover {
             color: #0088cc;
@@ -102,30 +102,36 @@ KISSY Docs
 
         <div class="linklist ks-clear">
             <div class="link left">
-                <h5>Kissyteam 相关工程</h5>
+                <h5>项目</h5>
                 <ul>
-                    <li><a href="http://github.com/kissyteam">kissyteam projects</a></li>
-                    <li><a href="http://github.com/kissyteam/kissy">kissy src</a></li>
-                    <li><a href="http://github.com/kissyteam/kissy-tools">kissy tools</a></li>
-                    <li><a href="http://github.com/kissyteam/kissy-editor">kissy editor</a></li>
-                    <li><a href="http://github.com/kissyteam/kissy-ajbridge">kissy ajbridge</a></li>
-                    <li><a href="http://github.com/kissyteam/kissy-dpl">kissy dpl</a></li>
-                    <li><a href="http://github.com/kissyteam/kissy-gallery">kissy gallery</a></li>
-                    <li><a href="http://github.com/kissyteam/kissy-sandbox">kissy sandbox</a></li>
+                    <li><a href="http://kissyteam.github.com/team.png">overview</a></li>
+                    <li><a href="http://github.com/kissyteam/kissy">kissy</a></li>
+                    <li><a href="http://github.com/kissyteam/kissy-sandbox">kissy-sandbox</a></li>
+                    <li><a href="http://github.com/kissyteam/kissy-gallery">kissy-gallery</a></li>
+                    <li><a href="http://github.com/kissyteam/kissy-dpl">kissy-dpl</a></li>
+                    <li><a href="http://github.com/kissyteam/kissy-editor">kissy-editor</a></li>
+                    <li><a href="http://github.com/kissyteam/kissy-ajbridge">kissy-ajbridge</a></li>
+                    <li><a href="http://github.com/kissyteam/kissy-tools">kissy-tools</a></li>
                 </ul>
             </div>
             <div class="link center">
                 <h5>资源</h5>
                 <ul>
-                    <li><a href="http://kissyui.com/">Official Site</a></li>
-                    <li><a href="http://github.com/kissyteam/kissy/issues">issues</a></li>
+                    <li><a href="http://lifesinger.org/blog/tag/kissy-briefings/">KISSY 快讯</a></li>
+                    <li><a href="http://www.slideshare.net/lijing00333/kissy-5223489">从 YUI3 到 KISSY</a></li>
+                    <li><a href="http://www.slideshare.net/lifesinger/thinking-in-kissy">Thinking in KISSY</a></li>
+                    <li><a href="http://www.slideshare.net/lifesinger/intro-to-kissy">Into to KISSY</a></li>
                 </ul>
             </div>
             <div class="link right">
-                <h5>联系</h5>
+                <h5>支持</h5>
                 <ul>
-                    <li><a href="mailto:kissyteam@gmail.com">kissyteam邮件列表</a></li>
-                    <!--<li><a href="mailto:lifesinger@gmail.com">玉伯</a></li>-->
+                    <li><a href="http://github.com/kissyteam/kissy/downloads">打包下载</a></li>
+                    <li><a href="http://github.com/kissyteam/kissy/blob/master/CHANGELOG">版本更新</a></li>
+                    <li><a href="http://github.com/kissyteam/kissy/issues">提交 Bug</a></li>
+                    <li><a href="http://github.com/kissyteam/kissy#readme">关于 KISSY</a></li>
+                    <li><a href="http://github.com/kissyteam/kissy/blob/master/LICENSE">版权</a></li>
+                    <li><a href="mailto:kissyteam@gmail.com">kissyteam(at)gmail.com</a></li>
                 </ul>
             </div>
         </div>
