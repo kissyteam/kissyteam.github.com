@@ -38,12 +38,12 @@ Hello KISSY
 
 
 ``DOM/Event`` 是最基本的功能, 掌握了这两个, 就能基本使用 KISSY 了.
-接下来将介绍 :ref:`Node <usenode>` 对象的使用.
+接下来将介绍 `Node <node.html>`_ 对象的使用.
 
 
 
 .. rubric:: 参考链接
 
-.. [1] `DOM API 文档 <http://KISSYteam.github.com/KISSY/docs/dom/index.html>`_
-.. [2] `Event API 文档 <http://KISSYteam.github.com/KISSY/docs/event/index.html>`_
+.. [1] `DOM API 文档 <http://kissyteam.github.com/kissy/docs/dom/index.html>`_
+.. [2] `Event API 文档 <http://kissyteam.github.com/kissy/docs/event/index.html>`_
 
