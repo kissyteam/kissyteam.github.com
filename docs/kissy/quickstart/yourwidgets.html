@@ -25,7 +25,10 @@
     </script>
     <script src="http://a.tbcdn.cn/s/kissy/1.1.5/kissy-min.js"></script> 
   </head>
-  <body><div class="headwrap">
+  <body><a href="http://github.com/kissyteam/kissy" style="display:block; position: absolute; top: 0; right: 0; width: 150px; height: 150px; z-index: 10000;border: none;" >
+    <img  src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+</a>
+<div class="headwrap">
 <div class="header">
     <h1 class="logo"><a href="http://kissyteam.github.com/docs/kissy"><img src="http://kissyteam.github.com/kissy.png" /></a></h1>
     <ul class="navigation">
@@ -302,13 +305,14 @@
 <li>这次重构是针对扩展来得, 在避免修改核心代码的前提下, 编写适合特定需求的扩展代码.</li>
 </ol>
 <p>我们需要避免这些问题(需求不明确, 盲目动手, 代码冗长, 写了后面的忘了前面的逻辑, 导致可扩展性差, 可复用性也差). HOW?</p>
-<p>以前听人提过 <tt class="docutils literal"><span class="pre">Literate</span> <span class="pre">Programming(文学化编程)</span></tt> <a class="footnote-reference" href="#id15" id="id4">[1]</a> 一词, 说的是:</p>
+<p>以前听人提过 <tt class="docutils literal"><span class="pre">Literate</span> <span class="pre">Programming(文学化编程)</span></tt> <a class="footnote-reference" href="#id17" id="id4">[1]</a> 一词, 说的是:</p>
 <p>Literate Programming</p>
 <blockquote>
 文学编程自由地表达逻辑, 而且它用人类日常使用的语言写出来, 就好像一篇文章一样, 让开发者用他们自己思维内在的逻辑和流程所要求的顺序开发程序.</blockquote>
 <p>现在越来越觉得, 其实, 写代码和写文章一样, 一个代码完成, 给别人阅读, 就得像看书一样, 从头至尾地, 能清晰的让阅读的人知道这代码实现的功能是什么, 适合/不适合哪些情况, 在使用时有哪些需要注意的地方;</p>
-<p>在实际开发中, 除了给代码加注释外, 还有很多代码不能做的事情, 需要更多的文档来支持开发, 下面拿 ImageZoom slide <a class="footnote-reference" href="#id17" id="id5">[2]</a> 为例说明一下:</p>
-<div class="section" id="id6">
+<p>在实际开发中, 除了给代码加注释外, 还有很多代码不能做的事情, 需要更多的文档来支持开发, 下面拿 ImageZoom slide <a class="footnote-reference" href="#id19" id="id5">[2]</a> 为例说明一下:</p>
+<p>总体流程, 如下所示:</p>
+<p><a href="demo/assets/flowC.jpg" title="完整大图" target="_blank"><img src="demo/assets/flow.jpg" style="width:720px"/></a></p><div class="section" id="id6">
 <h3>应用场景分析<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>一个需求到来, 比如这个图片放大效果, 首先我们需要这个功能能用在哪些地方, 或哪些网站上已经使用了, 如果有的话, 就对比一下不同的情况下不同的要求, 如 #slide4 . 这样以后, 对比自己的需求, 想好要实现什么功能, 哪些功能保留, 哪些功能不需要, &#8212;- 明确需求;</p>
 </div>
@@ -340,42 +344,94 @@
 </div>
 <div class="section" id="id12">
 <h2>KISSY 组件目录及代码组织<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
-<p>关于代码组织, <a class="footnote-reference" href="#id18" id="id13">[4]</a> 和 KISSY 工程 README 中都有些简单介绍, 下面简单说明下推荐的目录结构:</p>
+<p>关于代码组织, <a class="footnote-reference" href="#id20" id="id13">[4]</a> 和 KISSY 工程 README 中都有些简单介绍, 下面简单说明下推荐的目录结构:</p>
 <div class="section" id="id14">
 <h3>目录结构<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <ul>
 <li><dl class="first docutils">
 <dt>widget-name</dt>
+<dd><ul class="first last">
+<li><p class="first">assets:                      存放 css, img 等相关文件</p>
+</li>
+<li><p class="first">build.properties/build.xml:  打包配置文件</p>
+</li>
+<li><p class="first">widget-name.js:              组件核心代码</p>
+</li>
+<li><p class="first">slide.html:                  上面所说的调研文档</p>
+</li>
+<li><p class="first">test.html:                   测试文件</p>
+</li>
+<li><dl class="first docutils">
+<dt>tests:                       测试用例目录</dt>
 <dd><ul class="first last simple">
-<li>assets:                      存放 css, img 等相关文件</li>
-<li>build.properties/build.xml:  打包配置文件</li>
-<li>widget-name.js:              组件核心代码</li>
-<li>test.html:                   测试文件</li>
-<li>slide.html:                  上面所说的调研文档</li>
+<li>widget-name-spec.js:     测试用例脚本文件, 可以有多个, 但务必以-spec为后缀</li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </dd>
 </dl>
 </li>
 </ul>
 </blockquote>
+</div>
+<div class="section" id="id15">
+<h3>代码组织<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<blockquote>
+<ul class="simple">
+<li>内部代码组织：采用 module, sub module 来分拆和组织代码</li>
+<li>外部调用接口：component 形式，包括工具型组件 utils 和 UI 型组件 widgets</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="id16">
+<h3>命名约定<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<p>原则：尽量避免潜在冲突，同时力求精简短小和见名知意。</p>
+<blockquote>
+<ul>
+<li><p class="first">全局变量:       g_ks_comp_xxx        比如: g_ks_suggest_callback</p>
+</li>
+<li><p class="first">class/id 命名: ks-comp[-xxx]        比如: ks-editor-toolbar-item</p>
+</li>
+<li><p class="first">data 属性命名:  data-ks-comp[-xxx]   比如: data-ks-suggest</p>
+</li>
+<li><p class="first">hook 规范:     KS_Comp              比如: KS_Switchable</p>
+</li>
+<li><dl class="first docutils">
+<dt>config 属性:</dt>
+<dd><ul class="first last simple">
+<li>以小驼峰形式, 比如 minDate;</li>
+<li>常用 config 属性, 如trigger, container, containerCls, triggerType, type, 固定名字, 所有组件保持一致;</li>
+<li>config 的属性值, 对于位置, 用数组形式, 比如 offset: [10, 20];</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<blockquote>
+<p><strong>注意:</strong> 为了避免太冗长, 在保持清晰和无潜在冲突的情况下, 可以打破原则, 比如：</p>
+<p><tt class="docutils literal"><span class="pre">&lt;div</span> <span class="pre">class=&quot;KS_Widget&quot;</span> <span class="pre">data-widget-type=&quot;Tabs&quot;</span> <span class="pre">data-widget-config=&quot;{...}&quot;&gt;</span></tt></p>
+</blockquote>
+</blockquote>
 <p>罗罗嗦嗦这么一大堆后, 不知道你是否觉得简单? 非常推荐基于 KISSY 尝试去实现一个组件, 一切都很简单的^o^</p>
-<p>注意：上面的 StarScore 组件仅是示范，实际应用中，还更复杂些，这个组件将会在 KISSY 1.2 时正式发布.</p>
+<p><strong>注意:</strong> 上面的 StarScore 组件仅是示范，实际应用中，还更复杂些，这个组件将会在 KISSY 1.2 时正式发布.</p>
 <p>下一节将介绍如何对现有的 KISSY 组件进行扩展 &#8212;- <a class="reference external" href="extendwidgets.html">扩展 Switchable</a></p>
 <p class="rubric">参考链接</p>
-<table class="docutils footnote" frame="void" id="id15" rules="none">
+<table class="docutils footnote" frame="void" id="id17" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id4">[1]</a></td><td><a class="reference external" href="http://zh.wikipedia.org/zh-cn/%E6%96%87%E5%AD%A6%E7%BC%96%E7%A8%8B">文学编程</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id17" rules="none">
+<table class="docutils footnote" frame="void" id="id19" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id5">[2]</a></td><td><a class="reference external" href="http://kissyteam.github.com/kissy/src/imagezoom/slide.html">ImageZoom 调研文档</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id18" rules="none">
+<table class="docutils footnote" frame="void" id="id20" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id13">[4]</a></td><td><a class="reference external" href="http://kissyteam.github.com/kissy/docs/workflow.html">组件开发流程</a></td></tr>

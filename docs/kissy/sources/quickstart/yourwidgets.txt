@@ -295,6 +295,11 @@ Literate Programming
 在实际开发中, 除了给代码加注释外, 还有很多代码不能做的事情, 需要更多的文档来支持开发, 下面拿 ImageZoom slide [2]_ 为例说明一下:
 
 
+总体流程, 如下所示:
+
+.. raw:: html
+
+    <p><a href="demo/assets/flowC.jpg" title="完整大图" target="_blank"><img src="demo/assets/flow.jpg" style="width:720px"/></a></p>
 
 应用场景分析
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -355,15 +360,40 @@ KISSY 组件目录及代码组织
     * assets:                      存放 css, img 等相关文件
     * build.properties/build.xml:  打包配置文件
     * widget-name.js:              组件核心代码
-    * test.html:                   测试文件
     * slide.html:                  上面所说的调研文档
+    * test.html:                   测试文件
+    * tests:                       测试用例目录
+        * widget-name-spec.js:     测试用例脚本文件, 可以有多个, 但务必以-spec为后缀
+
+代码组织
+~~~~~~~~~~~~~~~~~~~~~~
+
+ * 内部代码组织：采用 module, sub module 来分拆和组织代码
+ * 外部调用接口：component 形式，包括工具型组件 utils 和 UI 型组件 widgets
+
+命名约定
+~~~~~~~~~~~~~~~~~~~~~~
+
+原则：尽量避免潜在冲突，同时力求精简短小和见名知意。
+
+ * 全局变量:       g_ks_comp_xxx        比如: g_ks_suggest_callback
+ * class/id 命名: ks-comp[-xxx]        比如: ks-editor-toolbar-item
+ * data 属性命名:  data-ks-comp[-xxx]   比如: data-ks-suggest
+ * hook 规范:     KS_Comp              比如: KS_Switchable
+ * config 属性:
+     * 以小驼峰形式, 比如 minDate;
+     * 常用 config 属性, 如trigger, container, containerCls, triggerType, type, 固定名字, 所有组件保持一致;
+     * config 的属性值, 对于位置, 用数组形式, 比如 offset: [10, 20];
 
 
+  **注意:** 为了避免太冗长, 在保持清晰和无潜在冲突的情况下, 可以打破原则, 比如：
+
+  ``<div class="KS_Widget" data-widget-type="Tabs" data-widget-config="{...}">``
 
 
 罗罗嗦嗦这么一大堆后, 不知道你是否觉得简单? 非常推荐基于 KISSY 尝试去实现一个组件, 一切都很简单的^o^
 
-注意：上面的 StarScore 组件仅是示范，实际应用中，还更复杂些，这个组件将会在 KISSY 1.2 时正式发布.
+**注意:** 上面的 StarScore 组件仅是示范，实际应用中，还更复杂些，这个组件将会在 KISSY 1.2 时正式发布.
 
 
 下一节将介绍如何对现有的 KISSY 组件进行扩展 ---- `扩展 Switchable <extendwidgets.html>`_
