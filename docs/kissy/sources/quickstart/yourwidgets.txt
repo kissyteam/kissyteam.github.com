@@ -313,7 +313,7 @@ Literate Programming
 需求明确之后, 查找现有的同类组件, 看看他们针对这个问题, 是怎么实现的, 实现哪些功能, 哪些可以借鉴的地方, 哪些不足的地方要避免或者改进, 如 #slide6 , ---- 明确要实现的功能有哪些;
 
 
-功能点分析
+功能点梳理
 ~~~~~~~~~~~~~~~~~~~~~~
 
 分离出完成整个功能需要的几个核心功能点, 并针对各个功能点逐个描述, 如 #slide8 , 这也可以帮你理清思路,  ---- 进一步明确待实现功能;
@@ -337,21 +337,24 @@ Public API
 简略或者详细的制定一个开发计划, 及发布的版本和时间等, ---- 明确进度;
 
 
-其他
+预研报告
 ~~~~~~~~~~~~~~~~~~~~~~
 
-可选的部分, 用于记录所有开发过程中碰到的杂类问题或者和其他同学的讨论.
+预研过程后总结一个报告, 可将报告分享给大家, 供大家一起讨论.
 
 
 
 我们建议每个 KISSY 组件下, 都存放一个 slide.html, 其内容包含上述几部分内容. 这个 slide 随着你的开发过程的推进, 也会不断添加更新, 最后发布时连同组件源代码一起, 形成非常好的知识体系, 这样, 给别人或是几十年后的自己阅读, 也会像看文章一样的有条理.
 
+.. note::
+
+    关于组件开发流程, 我们在上述基础上, 增补了更详细的开发流程图, 具体请见 [3]_ 上链接.
 
 
 KISSY 组件目录及代码组织
 -------------------------------
 
-关于代码组织, [4]_ 和 KISSY 工程 README 中都有些简单介绍, 下面简单说明下推荐的目录结构:
+关于代码组织, KISSY 工程 README 中都有些简单介绍, 下面简单说明下推荐的目录结构:
 
 目录结构
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -390,6 +393,10 @@ KISSY 组件目录及代码组织
 
   ``<div class="KS_Widget" data-widget-type="Tabs" data-widget-config="{...}">``
 
+.. note::
+
+    关于组件代码规范, 后来我们参照了 `Google 代码风格 <http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml>`_ , 更新了 KISSY 的代码规范, 具体请见 [4]_ 上链接.
+
 
 罗罗嗦嗦这么一大堆后, 不知道你是否觉得简单? 非常推荐基于 KISSY 尝试去实现一个组件, 一切都很简单的^o^
 
@@ -404,5 +411,6 @@ KISSY 组件目录及代码组织
 .. rubric:: 参考链接
 .. [1] `文学编程 <http://zh.wikipedia.org/zh-cn/%E6%96%87%E5%AD%A6%E7%BC%96%E7%A8%8B>`_
 .. [2] `ImageZoom 调研文档 <http://kissyteam.github.com/kissy/src/imagezoom/slide.html>`_
-.. [4] `组件开发流程 <http://kissyteam.github.com/kissy/docs/workflow.html>`_
+.. [3] `流程文档更新版 <http://kissyui.com/blog/2010/10/kissy-development-flow/>`_
+.. [4] `组件代码规范更新版 <http://kissyui.com/blog/2010/10/kissy-coding-style/>`_
 
