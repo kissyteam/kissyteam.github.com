@@ -16,7 +16,7 @@ Getting Started with KISSY
 
 KISSY 愿景
 ------------------------
-   小巧灵活, 简洁实用, 使用起来让人感觉愉悦.
+    小巧灵活, 简洁实用, 使用起来让人感觉愉悦.
 
     Keep It
         Simple & Stupid, Short & Sweet, Slim & Sexy...

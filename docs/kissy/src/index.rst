@@ -9,8 +9,7 @@ KISSY Docs
    :maxdepth: 1
 
    quickstart/index.rst
-   reference/index.rst
-   api/index.rst
+   editorguide/index.rst
 
 
 .. raw:: html
@@ -70,6 +69,7 @@ KISSY Docs
             _height: 200px;
         }
         .fp .linklist li {
+            position: relative;
             list-style: square outside url(static/bullet-square.png);
             margin-left: 20px;
         }
@@ -91,6 +91,16 @@ KISSY Docs
         }
         .ks-clear:after { content: '\20'; display: block; height: 0; clear: both; }
         .ks-clear { *zoom: 1; }
+
+        .new-icon {
+            background:url("http://img01.taobaocdn.com/tps/i1/T1qOFLXnVjXXXXXXXX-24-14.gif") no-repeat scroll 0 0 transparent;
+            display:block;
+            height:12px;
+            position:absolute;
+            right:70px;
+            top:0;
+            width:22px;
+        }
         
     </style>
     <div class="fp">
@@ -121,6 +131,7 @@ KISSY Docs
                     <li><a href="http://www.slideshare.net/lijing00333/kissy-5223489">从 YUI3 到 KISSY</a></li>
                     <li><a href="http://www.slideshare.net/lifesinger/thinking-in-kissy">Thinking in KISSY</a></li>
                     <li><a href="http://www.slideshare.net/lifesinger/intro-to-kissy">Into to KISSY</a></li>
+                    <li><a href="editorguide/index.html">KISSY 编辑文档</a><b class="new-icon"></b></li>
                 </ul>
             </div>
             <div class="link right">
