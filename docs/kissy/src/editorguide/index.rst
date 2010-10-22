@@ -18,3 +18,8 @@ by 承玉<yiminghe@gmail.com>, 玉伯<lifesinger@gmail.com> 2010-10-21
    install.rst
    usage.rst
 
+
+demo
+----------------------
+
+http://kissyteam.github.com/kissy-editor/demo/static-min-cdn.html
