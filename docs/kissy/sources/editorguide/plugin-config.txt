@@ -14,6 +14,8 @@ pluginConfig: 为各个插件的具体配置, 配置形式为:
 图片插件配置
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+通过 multipart/form-data 格式的 form 提交
+
 .. code-block:: javascript
 
     pluginConfig:{
@@ -24,42 +26,29 @@ pluginConfig: 为各个插件的具体配置, 配置形式为:
                 //返回格式
                 //正确：{"imgUrl":""}
                 //错误：{"error":""}
-                //中文 \uxxxx 转义
                 //接受图片的服务器
                 //发送一个文件过去，格式为 multipart/form-data
-                //具体后端配置咨询：石冲
                 serverUrl:"/code/upload/upload.jsp",
                 //传给服务器的格外参数，是函数则传递函数执行结果
                 serverParams: {
-                    // cookie 只能通过参数传递
-                    cookie:document.cookie,
-                    watermark:function() {
-                        return S.one("#ke_img_up_watermark_1")[0].checked;
-                        }
+                    yy:function() {
+                        return "xx";
+                    }
                 },
-                 //传递给server的文件域名字
+                //传递给server的文件域名字
                 fileInput:"Filedata",
-                 //限制上传的文件大小，单位KB
+                //限制上传的文件大小，单位KB，
+                //无法客户端限制，只能作为提示信息
                 sizeLimit:1000,//k
-                 //自己想要添加的其他输入域
-                extraHtml:"<p style='margin-top:5px;'><input type='checkbox' id='ke_img_up_watermark_1'> 图片加水印，防止别人盗用</p>"
+                //自己想要添加的其他输入域
+                extraHtml:"<p style='margin-top:5px;'>"+
+                "<input type='checkbox' name='ke_img_up_watermark_1'> 图片加水印，防止别人盗用</p>"
             }
         }
     }
 
-.. _editorusage-plugin-config-image-notice:
 
-注意：必须在根域名下提供 crossdomain.xml ，例如 http://www.taobao.com/crossdomain.xml ，内容如下
 
-.. code-block:: xml
-
-    <cross-domain-policy>
-        <allow-access-from domain="*.taobao.com"/>
-        <allow-access-from domain="*.taobao.net"/>
-        <allow-access-from domain="*.taobaocdn.com"/>
-        <allow-access-from domain="*.tbcdn.cn"/>
-        <allow-access-from domain="*.allyes.com"/>
-    </cross-domain-policy>
 
 
 模板配置
@@ -186,24 +175,45 @@ pluginConfig: 为各个插件的具体配置, 配置形式为:
     {
     "bangpai-upload":{
                      //同图片上传插件配置
+                     //返回格式
+                     //正确：{"imgUrl":""}
+                     //错误：{"error":""}
+                     //注意：中文 \uxxxx 转义
+                     //发送一个文件过去，格式为 multipart/form-data
+                     
+                     //接受图片的服务器
                      serverUrl:"/code/upload/upload.jsp",
+                     //同图片配置
                      serverParams:{
-                                waterMark:function() {
-                                    return S.one("#ke_img_up_watermark_2")[0].checked;
-                                }
-                      },
+                         waterMark:function() {
+                            return S.one("#ke_img_up_watermark_2")[0].checked;
+                         }
+                     },
+                     //同图片配置
                      extraHtml:"<p style='margin-top:10px;'>" +
                                     "<input type='checkbox' " +
                                     "style='vertical-align:middle;margin:0 5px;' " +
                                     "id='ke_img_up_watermark_2'>" +
                                     "<span style='vertical-align:middle;'>图片加水印，防止别人盗用</span></p>",
+                     //客户端 flash 验证
                      sizeLimit:1000//k,
                      //新增配置：可同时显示的图片列表个数
                      numberLimit:15
                  },
     }
 
-注意：同 image 插件配置，必须提供 :ref:`crossdomain.xml <editorusage-plugin-config-image-notice>`
+注意：该插件使用 flash 技术，
+必须在根域名下提供 crossdomain.xml ，例如 http://www.taobao.com/crossdomain.xml ，内容如下
+
+.. code-block:: xml
+
+    <cross-domain-policy>
+        <allow-access-from domain="*.taobao.com"/>
+        <allow-access-from domain="*.taobao.net"/>
+        <allow-access-from domain="*.taobaocdn.com"/>
+        <allow-access-from domain="*.tbcdn.cn"/>
+        <allow-access-from domain="*.allyes.com"/>
+    </cross-domain-policy>
 
  
 
