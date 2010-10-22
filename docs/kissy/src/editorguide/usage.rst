@@ -56,7 +56,9 @@ cfg: 为编辑器的全局配置以及加载插件的插件配置, 例如:
 
 
 .. toctree::
+    :titlesonly:
 
-        plugin.rst
-        plugin-config.rst
-        notice.rst
+    plugin.rst
+    plugin-config.rst
+    notice.rst
+
