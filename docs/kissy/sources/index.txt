@@ -131,7 +131,7 @@ KISSY Docs
                     <li><a href="http://www.slideshare.net/lijing00333/kissy-5223489">从 YUI3 到 KISSY</a></li>
                     <li><a href="http://www.slideshare.net/lifesinger/thinking-in-kissy">Thinking in KISSY</a></li>
                     <li><a href="http://www.slideshare.net/lifesinger/intro-to-kissy">Into to KISSY</a></li>
-                    <li><a href="editorguide/index.html">KISSY 编辑文档</a><b class="new-icon"></b></li>
+                    <li><a href="editorguide/index.html">KISSY 编辑器文档</a><b class="new-icon"></b></li>
                 </ul>
             </div>
             <div class="link right">
