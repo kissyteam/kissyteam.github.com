@@ -53,7 +53,9 @@
 <h2>初始化<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>基本形式:</p>
 <div class="highlight-html"><pre>&lt;script&gt;
-    KISSY.Editor(“#textareaId”,cfg).use(plugins);
+    KISSY.ready(function(S){
+        S.Editor(“#textareaId”,cfg).use(plugins);
+    });
 &lt;/script&gt;</pre>
 </div>
 </div>

@@ -49,7 +49,10 @@
             
   <div class="section" id="id1">
 <h1>一般配置<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>KISSY.Editor(&#8220;#textareaId&#8221;,cfg).use(plugins);</p>
+<div class="highlight-javascript"><pre>KISSY.ready(function(S){
+    S.Editor(“#textareaId”,cfg).use(plugins);
+});</pre>
+</div>
 <div class="section" id="textareaid">
 <h2>#textareaId<a class="headerlink" href="#textareaid" title="永久链接至标题">¶</a></h2>
 <blockquote>
@@ -58,7 +61,7 @@
 <div class="section" id="plugins">
 <h2>plugins<a class="headerlink" href="#plugins" title="永久链接至标题">¶</a></h2>
 <p>为需要加载的插件名称, 多个以,号分隔, 例如:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KE</span><span class="p">(</span><span class="s2">&quot;#textareaId&quot;</span><span class="p">).</span><span class="nx">Use</span><span class="p">(</span><span class="s2">&quot;font,image,separator&quot;</span><span class="p">)</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">S</span><span class="p">.</span><span class="nx">Editor</span><span class="p">(</span><span class="s2">&quot;#textareaId&quot;</span><span class="p">).</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;font,image,separator&quot;</span><span class="p">)</span>
 
 <span class="c1">// separator 为在当前位置插入分隔符</span>
 </pre></div>

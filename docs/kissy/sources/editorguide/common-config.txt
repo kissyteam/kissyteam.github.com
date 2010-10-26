@@ -1,7 +1,14 @@
-﻿一般配置
+一般配置
 ====================================
 
-KISSY.Editor("#textareaId",cfg).use(plugins);
+
+.. code-block:: javascript
+
+    KISSY.ready(function(S){
+        S.Editor(“#textareaId”,cfg).use(plugins);
+    });
+
+
 
 #textareaId
 ---------------------------------------
@@ -17,7 +24,7 @@ plugins
 
 .. code-block:: javascript
 
-    KE("#textareaId").Use("font,image,separator")
+    S.Editor("#textareaId").use("font,image,separator")
 
     // separator 为在当前位置插入分隔符
 

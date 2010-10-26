@@ -11,7 +11,9 @@
 .. code-block:: html
 
     <script>
-        KISSY.Editor(“#textareaId”,cfg).use(plugins);
+        KISSY.ready(function(S){
+            S.Editor(“#textareaId”,cfg).use(plugins);
+        });
     </script>
 
 
