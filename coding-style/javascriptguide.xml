@@ -819,7 +819,7 @@
           <p>事实上, 除了
             <a href="#Array_and_Object_literals">
               初始化数组和对象
-            </a>, 和传递匿名函数外, 所有被拆开的多行文本应该与之前的文本保持左对齐, 并且以4个,不是2个空格作为一缩进层次.</p>
+            </a>, 和传递匿名函数外, 所有被拆开的多行文本要么选择与之前的表达式左对齐, 要么以4个（而不是2个）空格作为一缩进层次.</p>
 
           <CODE_SNIPPET>
             someWonderfulHtml = '<div class="' + getClassesForWonderfulHtml()'">' +
@@ -848,7 +848,7 @@
           </CODE_SNIPPET>
         </SUBSECTION>
         <SUBSECTION title="空行">
-          <p>逻辑上独立的代码块使用空行来分隔.</p>
+          <p>使用空行来划分一组逻辑上相关联的代码片段.</p>
           <CODE_SNIPPET>
             doSomethingTo(x);
             doSomethingElseTo(x);
@@ -860,7 +860,7 @@
           </CODE_SNIPPET>
         </SUBSECTION>
         <SUBSECTION title="二元和三元操作符">
-          <p>操作符始终跟随着前行, 这样就不用顾虑分号的隐式插入问题. 如果一行实在放不下, 还是上述的缩进风格来换行.</p>
+          <p>操作符始终跟随着前行, 这样就不用顾虑分号的隐式插入问题. 如果一行实在放不下, 还是按照上述的缩进风格来换行.</p>
           <CODE_SNIPPET>
             var x = a ? b : c;  // All on one line if it will fit.
 
@@ -996,7 +996,7 @@
           </a>
          和 JS1.x 类型规范.</p>
         <SUBSECTION title="JavaScript 类型语言">
-          <p>虽然 JS2 规范中包含了表示 JavaScript 的类型语言, 但这里, 我们遵循 JSDoc 中的规范来表示函数参数和返回值的类型.</p>
+          <p>JS2 提议中包含了一种描述 JavaScript 类型的规范语法, 这里我们在 JSDoc 中采用其来描述函数参数和返回值的类型.</p>
 
           <p>JSDoc 的类型语言, 按照 JS2 规范, 也进行了适当改变, 但编译器仍然支持旧语法.</p>
 
@@ -1006,7 +1006,7 @@
                 <th>名称</th>
                 <th>语法</th>
                 <th>描述</th>
-                <th>已过时的语法</th>
+                <th>弃用语法</th>
               </tr>
             </thead>
             <tbody>
@@ -1025,15 +1025,15 @@
                 <td>
                   <code>{Array.&lt;string&gt;}</code><br/>字符串数组.<p/>
                   <code>{Object.&lt;string, number&gt;}</code>
-                  <br/>键为字符串或整数的对象类型.
+                  <br/>键为字符串值为整数的对象类型.
                 </td>
-                <td>参数化类型, 提供类型的"类型参数". 类似于 Java 中的泛型.
+                <td>参数化类型, 即指定了该类型中包含的一系列"类型参数". 类似于 Java 中的泛型.
                 </td>
                 <td/>
               </tr>
 
               <tr>
-                <td>类型集合</td>
+                <td>联合类型</td>
                 <td>
                   <code>{(number|boolean)}</code><br/>一个整数或者布尔值.
                 </td>
@@ -1052,7 +1052,7 @@
                   <br/>由现有类型组成的类型.
                 </td>
                 <td>
-                  <p>表示包含指定类型成员的值. 这个例子中, <code>myNum</code> 为 <code>number</code> 类型 和 <code>myObject</code> 为任意类型.</p>
+                  <p>表示包含指定成员及类型的值. 这个例子中, <code>myNum</code> 为 <code>number</code> 类型, <code>myObject</code> 为任意类型.</p>
                   <p>注意大括号为类型语法的一部分. 比如, <code>Array.&lt;{length}&gt;</code>,
                       表示一具有 <code>length</code> 属性的 <code>Array</code> 对象.</p>
                 </td>
@@ -1116,7 +1116,7 @@
               </tr>
 
               <tr>
-                <td>可变长的参数</td>
+                <td>可变参数</td>
                 <td>
                   <code>{function(string, ...[number]): number}</code><br/>
                   带一个参数 (字符类型) 的函数类型, 并且函数的参数个数可变, 但参数类型必须为 number.
@@ -1132,7 +1132,7 @@
                 </td>
                 <td>
                   <code>@param {...number} var_args</code><br/>
-                  函数可变长的整型参数.
+                  函数参数个数可变.
                 </td>
                 <td>
                   使用标记, 说明函数具有不定长参数.
@@ -1208,7 +1208,7 @@
                 </td>
                 <td>
                   <a href="#Wrapper_objects_for_primitive_types">
-                    整型对象
+                    Number 对象
                   </a>
                 </td>
               </tr>
@@ -1517,7 +1517,7 @@
 
         <SUBSECTION title="可空 vs. 可选 参数和属性">
           <a name="optional"/>
-          <p>JavaScript 是一种松类型语言, 明白可选, 非空和未定义参数或属性之间的细微差别还是很重要的.</p>
+          <p>JavaScript 是一种弱类型语言, 明白可选, 非空和未定义参数或属性之间的细微差别还是很重要的.</p>
 
           <p>对象类型(引用类型)默认非空. 注意: 函数类型默认不能为空.
               除了字符串, 整型, 布尔, undefined 和 null 外, 对象可以是任何类型.</p>
@@ -2348,7 +2348,7 @@
                   表示该变量可在编译时被编译器重新赋值.
                   在上面例子中, BUILD 文件中指定了
                   <tt>--define='goog.userAgent.ASSUME_IE=true'</tt>
-                  这个编译之后, 常量 <tt>goog.userAgent.ASSUME_IE</tt> 重新赋值为 <tt>true</tt>.
+                  这个编译之后, 常量 <tt>goog.userAgent.ASSUME_IE</tt> 将被全部直接替换为 <tt>true</tt>.
                 </td>
                 <td>不需要.</td>
               </tr>
@@ -2377,8 +2377,8 @@
                   使用 <tt>@export</tt> 标记时, 应该</p>
                   <ol>
                     <li>包含 <tt>//javascript/closure/base.js</tt>, 或者</li>
-                    <li>同时定义 <tt>goog.exportSymbol</tt> 和
-                      <tt>goog.exportProperty</tt> , 并且他们需要用相同的方法进行签名.</li>
+                    <li>在代码库中自定义 <tt>goog.exportSymbol</tt> 和
+                      <tt>goog.exportProperty</tt> 两个方法, 并保证有相同的调用方式.</li>
                   </ol>
                 </td>
                 <td>不需要.</td>
@@ -2409,7 +2409,7 @@
                      虽然 jsdoc.org 上列出的 @final 标记作用等价于 @const , 但不建议使用.
                     @const 与 JS1.5 中的 const 关键字一致.
                       注意, 编译器不禁止修改常量对象的属性(这与 C++ 中的常量定义不一样).
-                    可以忽略常量的类型声明, 因为编译器可以推断出它是什么类型. 如果指定了类型, 应该也写在同一行上.
+                    如果可以准确推测出常量类型的话，那么类型申明可以忽略. 如果指定了类型, 应该也写在同一行上.
                       变量的额外注释可写可不写.</p>
                 </td>
                 <td>支持.</td>
@@ -2738,7 +2738,7 @@
             }
           </CODE_SNIPPET>
 
-          <p>甚至可以:</p>
+          <p>不过这样就有点儿过头了:</p>
           <BAD_CODE_SNIPPET>
             node &amp;&amp; node.kids &amp;&amp; node.kids[index] &amp;&amp; foo(node.kids[index]);
           </BAD_CODE_SNIPPET>
