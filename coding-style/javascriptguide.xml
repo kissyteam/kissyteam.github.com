@@ -44,8 +44,8 @@
       <BODY>
         <DECISION>
             当你没有写 <code>var</code>, 变量就会暴露在全局上下文中, 这样很可能会和现有变量冲突.
-            另外, 如果没有, 很难明确该变量的作用域是什么. 另外, 变量也很可能像在局部作用域中, 很轻易地泄漏到 Document 或者 Window 中,
-            所以总是用 <code>var</code> 去声明变量.
+            另外, 如果没有加上, 很难明确该变量的作用域是什么, 变量也很可能像在局部作用域中, 很轻易地泄漏到 Document 或者 Window 中,
+            所以务必用 <code>var</code> 去声明变量.
         </DECISION>
       </BODY>
     </STYLEPOINT>
@@ -198,7 +198,7 @@
             alert('hi');  // Shows 'hi'.
           }
         </BAD_CODE_SNIPPET>
-        <p>千万不要这样做! 但是用于类型转换时, 还是不错的选择.</p>
+        <p>除非明确用于类型转换, 其他情况请千万不要这样做！</p>
         <CODE_SNIPPET>
           var x = Boolean(0);
           if (x) {
