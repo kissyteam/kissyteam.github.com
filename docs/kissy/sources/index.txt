@@ -10,6 +10,7 @@ KISSY Docs
 
    quickstart/index.rst
    editorguide/index.rst
+   styleguide/index.rst
 
 
 .. raw:: html
@@ -97,7 +98,7 @@ KISSY Docs
             display:block;
             height:12px;
             position:absolute;
-            right:70px;
+            right:56px;
             top:0;
             width:22px;
         }
@@ -132,6 +133,7 @@ KISSY Docs
                     <li><a href="http://www.slideshare.net/lifesinger/thinking-in-kissy">Thinking in KISSY</a></li>
                     <li><a href="http://www.slideshare.net/lifesinger/intro-to-kissy">Into to KISSY</a></li>
                     <li><a href="editorguide/index.html">KISSY 编辑器文档</a><b class="new-icon"></b></li>
+                    <!--<li><a href="styleguide/index.html">KISSY 编码规范</a><b class="new-icon"></b></li>-->
                 </ul>
             </div>
             <div class="link right">
