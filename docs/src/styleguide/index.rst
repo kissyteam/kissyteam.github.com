@@ -1,19 +1,11 @@
 .. _styleguide:
 
 
-KISSY 类库编码规范 [1]_
+KISSY 编码规范
 ===============================================
 
-已有 JavaScript 规范
------------------------
 
-* `Google JavaScript 编码规范 <http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml>`_
-* `Google JavaScript 编码规范(中文版) <http://kissyteam.github.com/coding-style/javascriptguide.xml>`_
-* `jQuery编码规范 <http://yi-programmer.com/blog/2010-10-16_jquery-style-guidelines.html>`_
-* `Dojo Javascript 编程规范 <http://blog.bingo929.com/dojo-javascript-style-guide.html>`_
-
-
-内容
+内容大纲
 ------------------------
 
 .. toctree::
@@ -25,6 +17,12 @@ KISSY 类库编码规范 [1]_
 
 
 
-.. rubric:: 相关文章
+相关链接
+-----------------------
 
-.. [1] `KISSY 类库编码规范介绍 <http://kissyui.com/blog/2010/10/kissy-coding-style/>`_
+* `KISSY 类库编码规范介绍 <http://kissyui.com/blog/2010/10/kissy-coding-style/>`_
+* `Google JavaScript 编码规范 <http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml>`_
+* `Google JavaScript 编码规范(中文版) <http://kissyteam.github.com/coding-style/javascriptguide.xml>`_
+* `jQuery 编码规范 <http://docs.jquery.com/JQuery_Core_Style_Guidelines>`_
+* `Dojo Javascript 编程规范 <http://blog.bingo929.com/dojo-javascript-style-guide.html>`_
+
