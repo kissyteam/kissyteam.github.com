@@ -1,0 +1,246 @@
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>Node 初步</title>
+    
+    <link rel="stylesheet" href="../static/kissy.css" />
+    <link rel="stylesheet" href="../static/pygments.css" />
+    <link rel="top" title="None" href="../index.html" />
+    <link rel="up" title="Getting Started with KISSY" href="index.html" />
+    <link rel="next" title="Ajax" href="ajax.html" />
+    <link rel="prev" title="Hello KISSY" href="hellokissy.html" />
+
+    <script>
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script src="http://a.tbcdn.cn/s/kissy/1.1.5/kissy-min.js"></script> 
+  </head>
+  <body><a href="http://github.com/kissyteam" style="display:block; position: absolute; top: 0; right: 0; width: 150px; height: 150px; z-index: 10000;border: none;" >
+    <img  src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+</a>
+<div class="headwrap">
+<div class="header">
+    <h1 class="logo"><img src="http://kissyteam.github.com/kissy.png" /></h1>
+    <ul class="navigation">
+        <li><a href="http://kissyteam.github.com/">Home</a><b></b><s></s></li>
+        <li><a href="http://kissyui.com/blog/">Blog</a><b></b><s></s></li>
+        <li><a href="http://github.com/kissyteam/kissy#readme">About</a></li>
+    </ul>
+</div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="body">
+            
+  <div class="section" id="node">
+<span id="usenode"></span><h1>Node 初步<a class="headerlink" href="#node" title="永久链接至标题">¶</a></h1>
+<p>如果你使用过 jQuery, YUI3 或 Ext, 那对链式风格应该已有了解. 链式风格的书写让人使用更加方便, 代码看起来也更整洁.</p>
+<p>KISSY 也提供了这种链式风格的支持.</p>
+<div class="section" id="api">
+<h2>简易 API<a class="headerlink" href="#api" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt>KISSY 提供两种使用方式:</dt>
+<dd><ol class="first last arabic simple">
+<li><tt class="docutils literal"><span class="pre">S.one</span></tt>  -  根据 css selector, 返回 <tt class="docutils literal"><span class="pre">Node</span></tt> 对象;</li>
+<li><tt class="docutils literal"><span class="pre">S.all</span></tt>  -  根据 css selector, 返回 <tt class="docutils literal"><span class="pre">NodeList</span></tt> 对象;</li>
+</ol>
+</dd>
+</dl>
+<p>上面两个方法, 和 <tt class="docutils literal"><span class="pre">S.get</span></tt> / <tt class="docutils literal"><span class="pre">S.query</span></tt> 是遥相呼应的.
+唯一的不同是, <tt class="docutils literal"><span class="pre">get/query</span></tt> 返回的是原生 DOM <tt class="docutils literal"><span class="pre">Node/NodeList</span></tt>.</p>
+<p>而 <tt class="docutils literal"><span class="pre">KISSY.Node/NodeList</span></tt> 类似 jQuery 全局对象, 但只包含 DOM/Event 等方法, 我们可以这样写代码：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#test&#39;</span><span class="p">).</span><span class="nx">parent</span><span class="p">().</span><span class="nx">next</span><span class="p">().</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;&lt;p&gt;&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">});</span>
+</pre></div>
+</div>
+<p>基本上和 jQuery 的语法风格是一样的, 大部分 API 也一样.</p>
+</div>
+<div class="section" id="id1">
+<h2>使用范例<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>这里我们拿先前玉伯博客 <a class="footnote-reference" href="#id5" id="id2">[2]</a> 上的 <tt class="docutils literal"><span class="pre">KISSY.all('.good-student')</span></tt> 举个 Node 使用的小例子.</p>
+<p>实现的效果就是, 点击按钮之后, 好多好学生都慢慢漂入 Taobao 中^o^</p>
+<div class="demo">
+     <style>
+         .demo {
+             position: relative;
+             height: 500px;
+         }
+         .good-student {
+             background:none repeat scroll 0 0 #E6FFFF;
+             border:1px solid #CCCCCC;
+             float:left;
+             padding:5px;
+             position:absolute;
+         }
+         #taobao {
+             height:300px;
+             left:50px;
+             position:absolute;
+             top:200px;
+             width:700px;
+         }
+         #dest {
+             border:1px dashed #CCCCCC;
+             bottom:0;
+             height:200px;
+             position:absolute;
+             right:0;
+             width:200px;
+         }
+     </style>
+     <button id="go">Go!</button>
+
+     <div class="good-student">Alan Turing</div>
+     <div class="good-student">You</div>
+     <div class="good-student">马云</div>
+     <div class="good-student">Bill Gates</div>
+     <div class="good-student">Ted Hoff</div>
+     <div class="good-student">Steve Wozniak</div>
+     <div class="good-student">Bob Bemer</div>
+     <div class="good-student">Gary Kildall</div>
+     <div class="good-student">Vint Cerf</div>
+     <div class="good-student">老陆</div>
+
+     <div id="taobao"><div id="dest"></div></div>
+
+     <script>
+     KISSY.ready(function(S) {
+         var DOM = S.DOM, Event = S.Event, timers = [];
+
+         S.NodeList.prototype.icanfly = function() {
+             var targetX = 500, targetY = 100,
+                 maxX = 650, maxY = 250;
+
+             S.each(this, function(item, i) {
+                 var x = 0, y = 0, speed = Math.random() * 80;
+                 timers[i] = S.later(function() {
+                     x += Math.random() * speed * (x > maxX ? -1 : 1);
+                     y += Math.random() * speed * (y > maxY ? -1 : 1);
+                     DOM.css(item, { left: x, top: y });
+                     if(x > targetX && y > targetY && x < maxX && y < maxY) {
+                         timers[i].cancel();
+                     }
+                 }, 100, true);
+             });
+         };
+
+         S.one('#go').on('click', function() {
+             S.each(timers, function(timer) { timer.cancel() });
+             S.all('.good-student').appendTo('#taobao').icanfly();
+         });
+     })
+     </script>
+
+</div><p>再来看看源码:</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">,</span> <span class="nx">Event</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Event</span><span class="p">,</span> <span class="nx">timers</span> <span class="o">=</span> <span class="p">[];</span>
+
+    <span class="nx">S</span><span class="p">.</span><span class="nx">NodeList</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">icanfly</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">targetX</span> <span class="o">=</span> <span class="mi">600</span><span class="p">,</span> <span class="nx">targetY</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span>
+            <span class="nx">maxX</span> <span class="o">=</span> <span class="mi">750</span><span class="p">,</span> <span class="nx">maxY</span> <span class="o">=</span> <span class="mi">350</span><span class="p">;</span>
+
+        <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">speed</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">80</span><span class="p">;</span>
+            <span class="nx">timers</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">later</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">x</span> <span class="o">+=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">speed</span> <span class="o">*</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="nx">maxX</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="mi">1</span><span class="p">);</span>
+                <span class="nx">y</span> <span class="o">+=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">speed</span> <span class="o">*</span> <span class="p">(</span><span class="nx">y</span> <span class="o">&gt;</span> <span class="nx">maxY</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="mi">1</span><span class="p">);</span>
+                <span class="nx">DOM</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="p">{</span> <span class="nx">left</span><span class="o">:</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">top</span><span class="o">:</span> <span class="nx">y</span> <span class="p">});</span>
+                <span class="k">if</span><span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="nx">targetX</span> <span class="o">&amp;&amp;</span> <span class="nx">y</span> <span class="o">&gt;</span> <span class="nx">targetY</span> <span class="o">&amp;&amp;</span> <span class="nx">x</span> <span class="o">&lt;</span> <span class="nx">maxX</span> <span class="o">&amp;&amp;</span> <span class="nx">y</span> <span class="o">&lt;</span> <span class="nx">maxY</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">timers</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">cancel</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">},</span> <span class="mi">100</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">};</span>
+
+    <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#go&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">timers</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">timer</span><span class="p">)</span> <span class="p">{</span> <span class="nx">timer</span><span class="p">.</span><span class="nx">cancel</span><span class="p">()</span> <span class="p">});</span>
+        <span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;.good-student&#39;</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="s1">&#39;#taobao&#39;</span><span class="p">).</span><span class="nx">icanfly</span><span class="p">();</span>
+    <span class="p">});</span>
+<span class="p">})</span>
+</pre></div>
+</td></tr></table></div>
+<p>在这个小例子中, 先从 21 行开始看:</p>
+<blockquote>
+<ol class="arabic simple">
+<li><tt class="docutils literal"><span class="pre">S.one('#go').on('click',</span> <span class="pre">function(){});</span></tt>, 选择 id 为 <tt class="docutils literal"><span class="pre">go</span></tt> 的元素, 即 button, 然后绑定点击事件.</li>
+<li><tt class="docutils literal"><span class="pre">S.all('.good-student').appendTo('#taobao').icanfly();</span></tt>, 获取所有 class 为 good-student 的元素, 即那些所有蓝色背景的小框, 然后 <tt class="docutils literal"><span class="pre">appendTo</span></tt> 到 id 为 taobao 的容器中, 最后执行第 4 行定义的 <tt class="docutils literal"><span class="pre">icanfly</span></tt> 动作.</li>
+<li><tt class="docutils literal"><span class="pre">S.NodeList.prototype.icanfly</span></tt>, 为 <tt class="docutils literal"><span class="pre">NodeList</span></tt> 添加一个 <tt class="docutils literal"><span class="pre">icanfly</span></tt> 方法, 再给 <tt class="docutils literal"><span class="pre">NodeList</span></tt> 中每个对象设置一个随机运动速度的定时器 <tt class="docutils literal"><span class="pre">timer</span></tt>, 然后定时器不断修改该对象的位置, 到达目标区域时清楚定时器.</li>
+<li>另外, 原生 <tt class="docutils literal"><span class="pre">DOMNode</span></tt> 和 Node 对象的相互转换, 可以使用 <tt class="docutils literal"><span class="pre">new</span> <span class="pre">S.Node(anElment)</span></tt> 将 <tt class="docutils literal"><span class="pre">DOMNode</span></tt> 转换成 <tt class="docutils literal"><span class="pre">Node</span></tt> 对象; 使用 <tt class="docutils literal"><span class="pre">node.getDOMNode()</span></tt> 获得对应的 <tt class="docutils literal"><span class="pre">DOMNode</span></tt>; 对于 <tt class="docutils literal"><span class="pre">NodeList</span></tt> 也有对应的方法, 移步见 <a class="footnote-reference" href="#id4" id="id3">[1]</a>.</li>
+</ol>
+</blockquote>
+<p>使用 <tt class="docutils literal"><span class="pre">Node</span></tt> 可以让你一直 <tt class="docutils literal"><span class="pre">.</span></tt> 下去, 只要你愿意!</p>
+<p>好了, 关于 <tt class="docutils literal"><span class="pre">Node</span></tt> 就告一段落, 下面会讲述目前 Web 站点中经常被使用的技术 &#8211; <a class="reference external" href="ajax.html">Ajax</a> 异步请求!</p>
+<p class="rubric">参考链接</p>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[1]</a></td><td><a class="reference external" href="http://kissy.googlecode.com/svn/trunk/docs/node/index.html">Node API 文档</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="http://lifesinger.org/blog/2010/07/kissy-all-good-student/">Join Taobao 例子</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+            <div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">
+        google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+        google.setOnLoadCallback(function() {
+            var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+            customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+            customSearchControl.draw('cse');
+        }, true);
+    </script>
+</div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+    </div>
+  </body>
+</html>
