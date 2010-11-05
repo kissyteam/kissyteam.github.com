@@ -3,6 +3,50 @@
 
  编译说明：
 
-   - 乔花补充下
+ - 依赖关系, 务必确保本机有以下程序:
+    * Python 2.x (http://www.python.org/), 并将 Python 加入到 Path中;
+    * Setup Tools: Python 的一个包安装/管理工具(http://pypi.python.org/pypi/setuptools);
+    * cmd下运行: easy_install -U Sphinx;
+    * sphinx-to-github: Sphinx 生成的文档需要做些调整才能直接发布到 github 上,
+        - clone 到本地: https://github.com/michaeljones/sphinx-to-github
+        - 如果你的系统是 windows, 请先将 sphinx-to-github/sphinxtogithub.py 33 行函数替换为:
+            def __init__(self, from_, to):
 
- 
+                if os.sys.platform == 'win32':
+                    from_ = from_.replace('\\', '/')
+                    to = to.replace('\\', '/')
+
+                self.from_ = from_
+                self.to = to
+        - cmd 下进入 sphinx-to-github 本地目录: python setup.py install
+
+ - 编译文档:
+    * kissyteam 下的文档组织结构:
+        | -- docs               编译生成目录
+            | -- html           生成多文件文档
+            | -- doctrees       sphinx build 时自动生成的文档解析树, 可忽略
+        | -- source             文档源码目录
+            | -- theme          kissy 模板主题
+            | -- _static        静态资源, 其中新建名为文档名的子目录放置其自己的文件, 一些公共文件放直接放在其下
+            | -- quickstart     快速入门源文档
+            | -- editorguide    编辑器源文档
+            | -- styleguide     编码规范源文档
+            | -- index.rst      首页
+            | -- conf.py        sphinx 工程配置文件
+        | -- make.bat/Makefile  编译脚本
+        | -- index.html         首页
+        | -- README/TODO
+
+
+    * cmd 进入 src, 运行 make.bat html 即可生成新的文档
+    * git commit -a
+
+ - 编辑时注意:
+    * rst 中的静态资源, 统一放在 source 下的 _static 目录中, 引用时使用相对于 _static 的路径;
+    * rst 嵌入图片, 使用:
+
+        .. image:: ../_static/styleguide/javascript-type.jpg
+            :width: 720px
+
+    * ...
+
