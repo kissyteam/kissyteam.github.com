@@ -23,11 +23,12 @@
  - 编译文档:
     * kissyteam 下的文档组织结构:
         | -- docs               编译生成目录
-            | -- html           生成多文件文档
+            | -- html           生成的最终文档
             | -- doctrees       sphinx build 时自动生成的文档解析树, 可忽略
         | -- source             文档源码目录
-            | -- theme          kissy 模板主题
             | -- _static        静态资源, 其中新建名为文档名的子目录放置其自己的文件, 一些公共文件放直接放在其下
+            | -- _images
+            | -- theme          kissy 模板主题
             | -- quickstart     快速入门源文档
             | -- editorguide    编辑器源文档
             | -- styleguide     编码规范源文档
@@ -38,15 +39,24 @@
         | -- README/TODO
 
 
-    * cmd 进入 src, 运行 make.bat html 即可生成新的文档
+    * cmd 进入 src, 运行 make.bat html , 在 docs 下生成 html (多页)
+    * cmd 进入 src, 运行 make.bat singlehtml, 在 docs 下生成 singlehtml (单页)
     * git commit -a
 
  - 编辑时注意:
-    * rst 中的静态资源, 统一放在 source 下的 _static 目录中, 引用时使用相对于 _static 的路径;
-    * rst 嵌入图片, 使用:
+    * rst 嵌入静态资源的方式:
+        - 1) 将图片放在 _images 目录 ( 仅限 **图片文件** ):
 
-        .. image:: ../_static/styleguide/javascript-type.jpg
-            :width: 720px
+            .. image:: /_images/styleguide/javascript-type.jpg
+                :width: 720px
 
-    * ...
+            即相对于 _images 的路径.
+
+        - 2) 将css/js/image 放在 _static 目录:
+
+            .. raw:: html
+
+                <img height="420" width="450" src="../_static/quickstart/squidchef2.png">
+
+            即相对于 _static 的路径.
 
