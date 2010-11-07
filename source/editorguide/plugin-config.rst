@@ -195,6 +195,16 @@ pluginConfig: 为各个插件的具体配置, 配置形式为:
                                     "style='vertical-align:middle;margin:0 5px;' " +
                                     "id='ke_img_up_watermark_2'>" +
                                     "<span style='vertical-align:middle;'>图片加水印，防止别人盗用</span></p>",
+                     //缩略图的后缀名
+                     //原图:http://xx.com/yy.jpg
+                     //则加入后缀名时变为：
+                     //http://xx.com/yy_80x80.jpg
+                     previewSuffix:"_80x80",
+
+                     //缩略图窗口宽度，高度根据图片自适应
+                     //若不需要缩略图功能，不配置即可
+                     previewWidth:"80px",
+
                      //客户端 flash 验证
                      sizeLimit:1000//k,
                      //新增配置：可同时显示的图片列表个数
