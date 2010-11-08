@@ -20,6 +20,9 @@ JavaScript 编码风格
 #. 数值操作符(如, ``+/-/*/%`` 等)两边留空, 如果一行太长, 则适当减少空格;
 #. 起始大括号的左边总是留一空格;
 #. 赋值操作符/等价判断符两边留一空格;
+#. for 循环条件中, 分号后留一空格;
+#. 变量声明语句, 数组值, 对象值及函数参数值中的逗号后留一空格;
+#. 匿名函数定义时, 关键字 function 与 () 之间保留空格;
 #. 空行不要有空格;
 #. 行尾不要有空格;
 #. 逗号和冒号后一定要跟空格;
@@ -167,3 +170,7 @@ KISSY 类库目录组织规范
     :width: 720px
 
 
+
+.. rubric:: Footnotes
+
+.. [#f1] 部分来自: http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/

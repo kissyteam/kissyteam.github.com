@@ -1,4 +1,4 @@
-.. _ajax:
+﻿.. _ajax:
 
 
 Ajax
@@ -30,7 +30,7 @@ KISSY 中提供了 Ajax 异步请求功能, 下面仅介绍最常用的 ``getScr
                 margin: 8px;
             }
             .loading {
-                background: transparent url(../static/loading.gif) no-repeat;
+                background: transparent url(../_static/loading.gif) no-repeat;
                 width: 100px;
                 height: 100px;
                 margin: 20px;
@@ -124,7 +124,7 @@ KISSY 中提供了 Ajax 异步请求功能, 下面仅介绍最常用的 ``getScr
 
 .. rubric:: 参考链接
 
-.. [1] `Ajax API 文档 <http://KISSYteam.github.com/KISSY/docs/ajax/index.html>`_
+.. [1] `Ajax API 文档 <http://kissyteam.github.com/KISSY/docs/ajax/index.html>`_
 .. [2] `JSON 介绍 <http://en.wikipedia.org/wiki/JSON>`_
 .. [3] `Flickr API <http://www.flickr.com/services/api/>`_
 
