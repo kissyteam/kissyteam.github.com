@@ -1,0 +1,299 @@
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>插件配置 &mdash; KISSY Docs v2,0 documentation</title>
+    
+    <link rel="stylesheet" href="../static/kissy.css" />
+    <link rel="stylesheet" href="../static/pygments.css" />
+    <link rel="top" title="KISSY Docs v2,0 documentation" href="../index.html" />
+    <link rel="up" title="使用" href="usage.html" />
+    <link rel="next" title="展示注意" href="notice.html" />
+    <link rel="prev" title="插件名称列表" href="plugin.html" />
+
+    <script>
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2,0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script src="http://a.tbcdn.cn/s/kissy/1.1.5/kissy-min.js"></script> 
+  </head>
+  <body><a href="http://github.com/kissyteam" style="display:block; position: absolute; top: 0; right: 0; width: 150px; height: 150px; z-index: 10000;border: none;" >
+    <img  src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+</a>
+<div class="headwrap">
+<div class="header">
+	<h1 class="logo"><a href="http://kissyteam.github.com/"><img src="http://kissyteam.github.com/kissy.png" /></a></h1>
+    <ul class="navigation">
+        <li><a href="http://kissyteam.github.com/">Home</a><b></b><s></s></li>
+        <li><a href="http://kissyui.com/blog/">Blog</a><b></b><s></s></li>
+        <li><a href="http://github.com/kissyteam/kissy#readme">About</a></li>
+    </ul>
+</div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="body">
+            
+  <div class="section" id="editorusage-plugin-config">
+<span id="id1"></span><h1>插件配置<a class="headerlink" href="#editorusage-plugin-config" title="Permalink to this headline">¶</a></h1>
+<p>pluginConfig: 为各个插件的具体配置, 配置形式为:</p>
+<div class="highlight-javascript"><pre>{
+"插件名":插件配置
+}</pre>
+</div>
+<div class="section" id="id2">
+<h2>图片插件配置<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>通过 <tt class="docutils literal"><span class="pre">multipart/form-data</span></tt> 格式的 form 提交</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">pluginConfig</span><span class="o">:</span><span class="p">{</span>
+    <span class="c1">// 图片插件配置</span>
+    <span class="s2">&quot;image&quot;</span><span class="o">:</span><span class="p">{</span>
+        <span class="c1">//上传图片配置，不需要上传功能可不配置</span>
+        <span class="nx">upload</span><span class="o">:</span><span class="p">{</span>
+            <span class="c1">//返回格式</span>
+            <span class="c1">//正确：{&quot;imgUrl&quot;:&quot;&quot;}</span>
+            <span class="c1">//错误：{&quot;error&quot;:&quot;&quot;}</span>
+            <span class="c1">//接受图片的服务器</span>
+            <span class="c1">//发送一个文件过去，格式为 multipart/form-data</span>
+            <span class="nx">serverUrl</span><span class="o">:</span><span class="s2">&quot;/code/upload/upload.jsp&quot;</span><span class="p">,</span>
+            <span class="c1">//传给服务器的格外参数，是函数则传递函数执行结果</span>
+            <span class="nx">serverParams</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">yy</span><span class="o">:</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="s2">&quot;xx&quot;</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="c1">//传递给server的文件域名字</span>
+            <span class="nx">fileInput</span><span class="o">:</span><span class="s2">&quot;Filedata&quot;</span><span class="p">,</span>
+            <span class="c1">//限制上传的文件大小，单位KB，</span>
+            <span class="c1">//无法客户端限制，只能作为提示信息</span>
+            <span class="nx">sizeLimit</span><span class="o">:</span><span class="mi">1000</span><span class="p">,</span><span class="c1">//k</span>
+            <span class="c1">//自己想要添加的其他输入域</span>
+            <span class="nx">extraHtml</span><span class="o">:</span><span class="s2">&quot;&lt;p style=&#39;margin-top:5px;&#39;&gt;&quot;</span><span class="o">+</span>
+            <span class="s2">&quot;&lt;input type=&#39;checkbox&#39; name=&#39;ke_img_up_watermark_1&#39;&gt; 图片加水印，防止别人盗用&lt;/p&gt;&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>模板配置<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>不需要模板功能不需要配置</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+<span class="s2">&quot;templates&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="c1">//显示模板的简单介绍</span>
+                <span class="nx">demo</span><span class="o">:</span> <span class="s2">&quot;模板1效果演示html&quot;</span>  <span class="p">,</span>
+                <span class="c1">//插入到编辑器区域的具体内容</span>
+                <span class="nx">html</span><span class="o">:</span> <span class="s2">&quot;&lt;div style=&#39;border:1px solid red&#39;&gt;模板1效果演示html&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nx">demo</span><span class="o">:</span> <span class="s2">&quot;模板2效果演示html&quot;</span><span class="p">,</span>
+                <span class="nx">html</span><span class="o">:</span> <span class="s2">&quot;&lt;div style=&#39;border:1px solid red&#39;&gt;模板2效果演示html&lt;/div&gt;&quot;</span>
+            <span class="p">}</span>
+           <span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>字体大小配置<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>不要限制字体大小不需要配置</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;font-size&quot;</span><span class="o">:</span><span class="p">{</span>
+         <span class="c1">//字体大小下拉框的配置</span>
+         <span class="nx">items</span><span class="o">:</span><span class="p">[{</span>
+             <span class="c1">//真实的字体大小值</span>
+             <span class="nx">value</span><span class="o">:</span><span class="s2">&quot;14px&quot;</span><span class="p">,</span>
+             <span class="c1">//字体大小选项框样式，可不配置</span>
+             <span class="nx">attrs</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">style</span><span class="o">:</span><span class="s1">&#39;position: relative; border: 1px solid #DDDDDD; margin: 2px; padding: 2px;&#39;</span>
+             <span class="p">},</span>
+             <span class="c1">//单个字体大小的显示值</span>
+              <span class="nx">name</span><span class="o">:</span><span class="s2">&quot; &lt;span style=&#39;font-size:14px&#39;&gt;标准&lt;/span&gt;&quot;</span> <span class="o">+</span>
+                    <span class="s2">&quot;&lt;span style=&#39;position:absolute;top:1px;right:3px;&#39;&gt;14px&lt;/span&gt;&quot;</span>
+         <span class="p">}]</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>字体种类配置<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>不需要限制字体种类可不配置.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;font-family&quot;</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">items</span><span class="o">:</span><span class="p">[{</span>
+            <span class="c1">//显示值</span>
+            <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;宋体&quot;</span><span class="p">,</span>
+            <span class="c1">//真实值</span>
+            <span class="nx">value</span><span class="o">:</span><span class="s2">&quot;SimSun&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="s2">&quot;黑体&quot;</span><span class="p">,</span><span class="nx">value</span><span class="o">:</span><span class="s2">&quot;SimHei&quot;</span><span class="p">},</span>
+        <span class="p">]}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>草稿箱<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>不需要草稿箱功能可不配置.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+<span class="s2">&quot;draft&quot;</span><span class="o">:</span><span class="p">{</span>
+         <span class="c1">//分钟设置：每隔几分钟保存一次</span>
+         <span class="nx">interval</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span>
+         <span class="c1">//最多保存几条历史记录?</span>
+         <span class="nx">limit</span><span class="o">:</span><span class="mi">10</span><span class="p">,</span>
+         <span class="c1">//草稿箱帮助文案，可不设置</span>
+         <span class="nx">helpHtml</span><span class="o">:</span>  <span class="s2">&quot;&lt;div &quot;</span> <span class="o">+</span>
+                   <span class="s2">&quot;style=&#39;width:200px;&#39;&gt;&quot;</span> <span class="o">+</span>
+                   <span class="s2">&quot;&lt;div style=&#39;padding:5px;&#39;&gt;草稿箱能够自动保存您最新编辑的内容，&quot;</span> <span class="o">+</span>
+                   <span class="s2">&quot;如果发现内容丢失，&quot;</span> <span class="o">+</span>
+                   <span class="s2">&quot;请选择恢复编辑历史&lt;/div&gt;&lt;/div&gt;&quot;</span>
+         <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>拖放<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>不需要可不设置.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;resize&quot;</span><span class="o">:</span><span class="p">{</span>
+         <span class="c1">//只能在y轴拖放，[“x”,”y”]表示任意拖放</span>
+         <span class="nx">direction</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>帮派插件<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>单独为帮派开发的插件, 若需要使用请引入外部js</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.1.5/editor/biz/bangpai/editor-plugin-pkg-min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="id9">
+<h3>图片批量上传:<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+<span class="s2">&quot;bangpai-upload&quot;</span><span class="o">:</span><span class="p">{</span>
+                 <span class="c1">//同图片上传插件配置</span>
+                 <span class="c1">//返回格式</span>
+                 <span class="c1">//正确：{&quot;imgUrl&quot;:&quot;&quot;}</span>
+                 <span class="c1">//错误：{&quot;error&quot;:&quot;&quot;}</span>
+                 <span class="c1">//注意：中文 \uxxxx 转义</span>
+                 <span class="c1">//发送一个文件过去，格式为 multipart/form-data</span>
+
+                 <span class="c1">//接受图片的服务器</span>
+                 <span class="nx">serverUrl</span><span class="o">:</span><span class="s2">&quot;/code/upload/upload.jsp&quot;</span><span class="p">,</span>
+                 <span class="c1">//同图片配置</span>
+                 <span class="nx">serverParams</span><span class="o">:</span><span class="p">{</span>
+                     <span class="nx">waterMark</span><span class="o">:</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#ke_img_up_watermark_2&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">checked</span><span class="p">;</span>
+                     <span class="p">}</span>
+                 <span class="p">},</span>
+                 <span class="c1">//同图片配置</span>
+                 <span class="nx">extraHtml</span><span class="o">:</span><span class="s2">&quot;&lt;p style=&#39;margin-top:10px;&#39;&gt;&quot;</span> <span class="o">+</span>
+                                <span class="s2">&quot;&lt;input type=&#39;checkbox&#39; &quot;</span> <span class="o">+</span>
+                                <span class="s2">&quot;style=&#39;vertical-align:middle;margin:0 5px;&#39; &quot;</span> <span class="o">+</span>
+                                <span class="s2">&quot;id=&#39;ke_img_up_watermark_2&#39;&gt;&quot;</span> <span class="o">+</span>
+                                <span class="s2">&quot;&lt;span style=&#39;vertical-align:middle;&#39;&gt;图片加水印，防止别人盗用&lt;/span&gt;&lt;/p&gt;&quot;</span><span class="p">,</span>
+                 <span class="c1">//缩略图的后缀名</span>
+                 <span class="c1">//原图:http://xx.com/yy.jpg</span>
+                 <span class="c1">//则加入后缀名时变为：</span>
+                 <span class="c1">//http://xx.com/yy_80x80.jpg</span>
+                 <span class="nx">previewSuffix</span><span class="o">:</span><span class="s2">&quot;_80x80&quot;</span><span class="p">,</span>
+
+                 <span class="c1">//缩略图窗口宽度，高度根据图片自适应</span>
+                 <span class="c1">//若不需要缩略图功能，不配置即可</span>
+                 <span class="nx">previewWidth</span><span class="o">:</span><span class="s2">&quot;80px&quot;</span><span class="p">,</span>
+
+                 <span class="c1">//客户端 flash 验证</span>
+                 <span class="nx">sizeLimit</span><span class="o">:</span><span class="mi">1000</span><span class="c1">//k,</span>
+                 <span class="c1">//新增配置：可同时显示的图片列表个数</span>
+                 <span class="nx">numberLimit</span><span class="o">:</span><span class="mi">15</span>
+             <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>注意：该插件使用 flash 技术，
+必须在根域名下提供 crossdomain.xml ，例如 <a class="reference external" href="http://www.taobao.com/crossdomain.xml">http://www.taobao.com/crossdomain.xml</a> ，内容如下</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;cross-domain-policy&gt;</span>
+    <span class="nt">&lt;allow-access-from</span> <span class="na">domain=</span><span class="s">&quot;*.taobao.com&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;allow-access-from</span> <span class="na">domain=</span><span class="s">&quot;*.taobao.net&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;allow-access-from</span> <span class="na">domain=</span><span class="s">&quot;*.taobaocdn.com&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;allow-access-from</span> <span class="na">domain=</span><span class="s">&quot;*.tbcdn.cn&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;allow-access-from</span> <span class="na">domain=</span><span class="s">&quot;*.allyes.com&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/cross-domain-policy&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>国内视频插入<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>可直接输入tudou,youku,ku6的url进行视频粘贴.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+<span class="s2">&quot;bangpai-video&quot;</span><span class="o">:</span><span class="p">{</span>
+               <span class="nx">urlCfg</span><span class="o">:</span><span class="p">[</span>
+                     <span class="p">{</span>
+                      <span class="nx">reg</span><span class="o">:</span><span class="sr">/tudou\.com/i</span><span class="p">,</span>
+                      <span class="c1">//地址配置后端咨询：石冲</span>
+                      <span class="nx">url</span><span class="o">:</span><span class="s2">&quot;http://bangpai.daily.taobao.net/json/getTudouVideo.htm?&quot;</span> <span class="o">+</span>
+                           <span class="s2">&quot;url=@url@&amp;callback=@callback@&quot;</span>
+                     <span class="p">}</span>
+                     <span class="p">]</span>
+               <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>虾米音乐插入<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>无需配置, 只要 use 即可.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;bangpai-music&quot;</span><span class="o">:</span><span class="p">{}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+            <p style="text-align:center;margin-top: 40px;">
+                <a href="plugin.html" title="插件名称列表"> 上一页 </a> |
+                <a href="usage.html" title="使用">回到上层</a> |
+                <a href="notice.html" title="展示注意"> 下一页 </a>
+            </p>
+            <div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">
+        google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+        google.setOnLoadCallback(function() {
+            var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+            customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+            customSearchControl.draw('cse');
+        }, true);
+    </script>
+</div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+    </div>
+  </body>
+</html>
