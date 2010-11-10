@@ -133,4 +133,4 @@ KISSY 提供的动画特效支持主要由三个子模块组成 [1]_ :
 
 .. [1] `Anim API 文档 <http://kissyteam.github.com/kissy/docs/anim/>`_
 .. [2] `平滑函数 <http://kissyteam.github.com/kissy/docs/anim/anim-easing.html>`_
-.. [3] `动画示例 <http://kissyteam.github.com/kissy/src/anim/test.html>`_
+.. [3] `动画示例 <http://kissyteam.github.com/kissy/src/anim/demo.html>`_
