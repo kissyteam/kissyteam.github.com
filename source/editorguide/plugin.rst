@@ -206,4 +206,47 @@ maximize
     将编辑器充满整个屏幕.
 
     .. image:: /_images/editorguide/maximize.gif
-    
+
+帮派自定义插件
+--------------------------
+如果要使用以下插件，需要引入另外的 javascript 文件
+
+.. code-block:: html
+
+    <script src="http://a.tbcdn.cn/s/kissy/1.1.5/editor/biz/bangpai/editor-plugin-pkg-min.js"></script>
+
+
+bangpai-upload
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    多图同时上传功能
+
+    .. image:: /_images/editorguide/mul-upload.png
+
+    具体弹窗交互：
+
+    .. image:: /_images/editorguide/mul-upload_win.png
+
+
+
+国内视频插入
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    方便直接输入url插入国内视频 flash
+
+    .. image:: /_images/editorguide/video.png
+
+    具体弹窗交互：
+
+    .. image:: /_images/editorguide/video_win.png
+
+虾米音乐插入
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    可通过搜索插入虾米音乐
+
+    .. image:: /_images/editorguide/xiami.png
+
+    具体弹窗交互：
+
+    .. image:: /_images/editorguide/xiami_win.png
