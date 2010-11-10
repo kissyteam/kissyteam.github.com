@@ -1,7 +1,7 @@
 .. _styleguide:
 
 
-KISSY 编码规范
+KISSY 开发规范
 ===============================================
 
 
@@ -9,20 +9,22 @@ KISSY 编码规范
 ------------------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-   js-spec.rst
-   coding-spec.rst
-   tools.rst
+   common-conventions.rst
+   html-coding-style.rst
+   css-coding-style.rst
+   js-lang-rules.rst
+   js-style-rules.rst
+   kissy-components-style-guide.rst
 
 
-
-相关链接
+参考文档
 -----------------------
 
-* `KISSY 类库编码规范介绍 <http://kissyui.com/blog/2010/10/kissy-coding-style/>`_
-* `Google JavaScript 编码规范 <http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml>`_
-* `Google JavaScript 编码规范(中文版) <http://kissyteam.github.com/coding-style/javascriptguide.xml>`_
-* `jQuery 编码规范 <http://docs.jquery.com/JQuery_Core_Style_Guidelines>`_
-* `Dojo Javascript 编程规范 <http://blog.bingo929.com/dojo-javascript-style-guide.html>`_
+* `Google JavaScript Style Guide <http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml>`_ | `中译版 <http://kissyteam.github.com/docs/html/styleguide/google/javascriptguide.xml>`_
+* `Annotating JavaScript for the Closure Compiler <http://code.google.com/closure/compiler/docs/js-for-compiler.html>`_
+* `jQuery Core Style Guidelines <http://docs.jquery.com/JQuery_Core_Style_Guidelines>`_
+* `Dojo Style Guide <http://o.dojotoolkit.org/developer/StyleGuide>`_
+* `Apple JavaScript Coding Guidelines <https://developer.apple.com/library/mac/#documentation/ScriptingAutomation/Conceptual/JSCodingGuide/Advanced/Advanced.html>`_
 

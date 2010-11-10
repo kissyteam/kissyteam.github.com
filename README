@@ -1,14 +1,14 @@
 
- KISSY 相关文档，请访问：http://kissyteam.github.com/
+ KISSY 文档中心，请访问：http://kissyteam.github.com/
 
  编译说明：
 
  - 依赖关系, 务必确保本机有以下程序:
     * Python 2.x (http://www.python.org/), 并将 Python 加入到 Path 中;
     * Setup Tools: Python 的一个包安装/管理工具(http://pypi.python.org/pypi/setuptools);
-    * cmd下运行: easy_install -U Sphinx;
-    * sphinx-to-github: Sphinx 生成的文档需要做些调整才能直接发布到 github 上,
-        - clone 到本地: https://github.com/michaeljones/sphinx-to-github
+    * cmd 下运行: easy_install -U Sphinx;
+    * sphinx-to-github: Sphinx 生成的文档需要做些调整才能直接发布到 github 上:
+        - clone 到本地: http://github.com/michaeljones/sphinx-to-github
         - 如果你的系统是 windows, 请先将 sphinx-to-github/sphinxtogithub.py 33 行函数替换为:
             def __init__(self, from_, to):
 
@@ -36,7 +36,7 @@
             | -- conf.py        sphinx 工程配置文件
         | -- make.bat/Makefile  编译脚本
         | -- index.html         首页
-        | -- README/TODO
+        | -- README
 
 
     * cmd 进入 kissyteam 目录, 运行 make.bat html , 在 docs 下生成 html (多页)
@@ -60,80 +60,6 @@
 
             即相对于 _static 目录的路径.
 
-    * reST 标记速记
-        - 一级标题: =============================
-        - 二级标题: -----------------------------
-        - 三级标题: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        - 四五六标题, 使用 ' , `, ^, * 字符, 不同字符没有等级区别, 只是你在使用时, 需要统一一种等级标记
-        - 有序列表: #. 或直接使用数字 1. 2. 3. 依次
-        - 无序列表: *
-        - 缩进层次:
-            * 四个/二个空格作为一个缩进层次
-            * 不同缩进层次以空行间隔
-            * 无序/有序列表的嵌套, 使用缩进表示
-        - 外部链接:  `源码世界 <http://github.com/kissyteam/kissy/tree/master/src/>`_
-        - 内部链接:
-            * 设定全局唯一的引用id, 如,  .. _ID:
-            * 在其他页面就可以使用这个id来引用, 如, :ref:`提示文字 <ID>`
-        - 加粗: **bold**
-        - 斜体: *italics*
-        - 代码: ``code``
-        - 定义列表:
-
-            term
-
-                description.
-
-        - 嵌入图片:
-
-            .. image:: picture.jpeg
-               :height: 100px
-               :width: 200 px
-               :scale: 50 %
-               :alt: alternate text
-               :align: right
-
-        - 嵌入 HTML 源代码:
-
-            .. raw:: html
-               :file: inclusion.html
-
-            or
-
-            .. raw:: html
-
-                <a href="/kissy/docs/">KISSY 文档</a>
-
-        - 嵌入 JS/CSS 等源代码, 及高亮显示( http://pygments.org/ 上列出了支持的语言):
-
-            ::
-
-                alert('hi');
-
-            or
-
-            .. code-block:: js
-
-                alert('hi');
-
-        - 脚注, 一般在文档末尾创建:
-
-            Lorem ipsum [#f1]_ dolor sit amet ... [#f2]_
-
-            .. rubric:: Footnotes
-
-            .. [#f1] Text of the first footnote.
-            .. [#f2] Text of the second footnote.
-            
-        - 表格:
-
-            =====  =====  =======
-              A      B    A and B
-            =====  =====  =======
-            False  False  False
-            True   False  False
-            False  True   False
-            True   True   True
-            =====  =====  =======
+    * reST 使用说明：http://sphinx.pocoo.org/rest.html
 
 

@@ -38,11 +38,10 @@ KISSY 提供两种使用方式:
    
 .. raw:: html
    
-   <div class="demo">
+   <div class="demo" style="height: 500px;">
         <style>
             .demo {
                 position: relative;
-                height: 500px;
             }
             .good-student {
                 background:none repeat scroll 0 0 #E6FFFF;

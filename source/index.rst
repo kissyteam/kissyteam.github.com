@@ -8,9 +8,10 @@ KISSY Docs
 .. toctree::
    :maxdepth: 1
 
+   styleguide/index.rst
+   workflow/index.rst
    quickstart/index.rst
    editorguide/index.rst
-   styleguide/index.rst
 
 
 .. raw:: html

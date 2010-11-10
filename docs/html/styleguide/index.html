@@ -5,13 +5,13 @@
   <head>
     <meta charset="utf-8" />
     
-    <title>KISSY 编码规范 &mdash; KISSY Docs v2,0 documentation</title>
+    <title>KISSY 开发规范 &mdash; KISSY Docs v2,0 documentation</title>
     
     <link rel="stylesheet" href="../static/kissy.css" />
     <link rel="stylesheet" href="../static/pygments.css" />
     <link rel="top" title="KISSY Docs v2,0 documentation" href="../index.html" />
-    <link rel="next" title="JavaScript 语言规范" href="js-spec.html" />
-    <link rel="prev" title="展示注意" href="../editorguide/notice.html" />
+    <link rel="next" title="通用约定" href="common-conventions.html" />
+    <link rel="prev" title="KISSY Docs" href="../index.html" />
 
     <script>
       var DOCUMENTATION_OPTIONS = {
@@ -29,7 +29,7 @@
 </a>
 <div class="headwrap">
 <div class="header">
-    <h1 class="logo"><img src="http://kissyteam.github.com/kissy.png" /></h1>
+	<h1 class="logo"><a href="http://kissyteam.github.com/"><img src="http://kissyteam.github.com/kissy.png" /></a></h1>
     <ul class="navigation">
         <li><a href="http://kissyteam.github.com/">Home</a><b></b><s></s></li>
         <li><a href="http://kissyui.com/blog/">Blog</a><b></b><s></s></li>
@@ -45,40 +45,28 @@
         <div class="body">
             
   <div class="section" id="kissy">
-<span id="styleguide"></span><h1>KISSY 编码规范<a class="headerlink" href="#kissy" title="Permalink to this headline">¶</a></h1>
+<span id="styleguide"></span><h1>KISSY 开发规范<a class="headerlink" href="#kissy" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2>内容大纲<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="js-spec.html">JavaScript 语言规范</a></li>
-<li class="toctree-l1"><a class="reference internal" href="coding-spec.html">JavaScript 编码风格</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="coding-spec.html#id1">行与缩进</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coding-spec.html#id6">括号</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coding-spec.html#id7">变量</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coding-spec.html#id8">字符串</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coding-spec.html#id9">命名规范</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coding-spec.html#id10">类型语言</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coding-spec.html#id12">注释风格</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="coding-spec.html#kissy">KISSY 类库目录组织规范</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html">工具</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tools.html#jsdoc-toolkit">JSDoc-Toolkit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tools.html#closure-compiler">closure-compiler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tools.html#closure-linter">closure linter</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="common-conventions.html">通用约定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="html-coding-style.html">HTML 编码规范</a></li>
+<li class="toctree-l1"><a class="reference internal" href="css-coding-style.html">CSS 编码规范</a></li>
+<li class="toctree-l1"><a class="reference internal" href="js-lang-rules.html">JavaScript 语言规范</a></li>
+<li class="toctree-l1"><a class="reference internal" href="js-style-rules.html">JavaScript 编码风格</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kissy-components-style-guide.html">KISSY 组件开发规范</a></li>
 </ul>
 </div>
 </div>
 <div class="section" id="id2">
-<h2>相关链接<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>参考文档<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="http://kissyui.com/blog/2010/10/kissy-coding-style/">KISSY 类库编码规范介绍</a></li>
-<li><a class="reference external" href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google JavaScript 编码规范</a></li>
-<li><a class="reference external" href="http://kissyteam.github.com/coding-style/javascriptguide.xml">Google JavaScript 编码规范(中文版)</a></li>
-<li><a class="reference external" href="http://docs.jquery.com/JQuery_Core_Style_Guidelines">jQuery 编码规范</a></li>
-<li><a class="reference external" href="http://blog.bingo929.com/dojo-javascript-style-guide.html">Dojo Javascript 编程规范</a></li>
+<li><a class="reference external" href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google JavaScript Style Guide</a> | <a class="reference external" href="http://kissyteam.github.com/docs/html/styleguide/google/javascriptguide.xml">中译版</a></li>
+<li><a class="reference external" href="http://code.google.com/closure/compiler/docs/js-for-compiler.html">Annotating JavaScript for the Closure Compiler</a></li>
+<li><a class="reference external" href="http://docs.jquery.com/JQuery_Core_Style_Guidelines">jQuery Core Style Guidelines</a></li>
+<li><a class="reference external" href="http://o.dojotoolkit.org/developer/StyleGuide">Dojo Style Guide</a></li>
+<li><a class="reference external" href="https://developer.apple.com/library/mac/#documentation/ScriptingAutomation/Conceptual/JSCodingGuide/Advanced/Advanced.html">Apple JavaScript Coding Guidelines</a></li>
 </ul>
 </div>
 </div>
@@ -86,8 +74,8 @@
 
 
             <p style="text-align:center;margin-top: 40px;">
-                <a href="../editorguide/notice.html" title="展示注意"> 上一页 </a> |
-                <a href="js-spec.html" title="JavaScript 语言规范"> 下一页 </a>
+                <a href="../index.html" title="KISSY Docs"> 上一页 </a> |
+                <a href="common-conventions.html" title="通用约定"> 下一页 </a>
             </p>
             <div id="google-search-box">
     <div id="cse" style="width: 100%;">Loading</div>

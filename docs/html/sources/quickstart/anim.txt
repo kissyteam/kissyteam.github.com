@@ -54,13 +54,13 @@ KISSY 提供的动画特效支持主要由三个子模块组成 [1]_ :
                 margin: 8px;
             }
             .loading {
-                background: transparent url(../static/loading.gif) no-repeat;
+                background: transparent url(../_static/loading.gif) no-repeat;
                 width: 100px;
                 height: 100px !important;
                 margin: 20px;
             }
         </style>
-        <button id="fetch-btn" autocomplete="off">Fetch Photo</button>
+        <button id="fetch-btn-anim" autocomplete="off">Fetch Photo</button>
         <div id="photo-list"></div>
 
         <script>
@@ -76,7 +76,7 @@ KISSY 提供的动画特效支持主要由三个子模块组成 [1]_ :
                     },
                     photoList = S.one('#photo-list');
 
-                S.one('#fetch-btn').on('click', function() {
+                S.one('#fetch-btn-anim').on('click', function() {
                     this.attr('disabled', true);
                     photoList.addClass('loading');
                     S.getScript(API + S.param(params));
