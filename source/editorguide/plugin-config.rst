@@ -24,8 +24,8 @@ pluginConfig: 为各个插件的具体配置, 配置形式为:
             //上传图片配置，不需要上传功能可不配置
             upload:{
                 //返回格式
-                //正确：{"imgUrl":""}
-                //错误：{"error":""}
+                //正确：{"imgUrl":"http://xx.com/yy.jpg"}
+                //错误：{"error":"i am error!"}
                 //接受图片的服务器
                 //发送一个文件过去，格式为 multipart/form-data
                 serverUrl:"/code/upload/upload.jsp",
@@ -47,7 +47,22 @@ pluginConfig: 为各个插件的具体配置, 配置形式为:
         }
     }
 
+注意：
 
+如果页面中设置了 document.domain='xx.com'，那么这时上传图片服务器要返回一段设置 domain 的 html，例如
+
+.. code-block:: html
+    
+    <html>
+    <head>
+    <script>
+        document.domain="xx.com";
+    </script>
+    </head>
+    <body>
+    {"imgUrl":"http://img03.taobaocdn.com/sns_album/i3/T13fhRXftcXXb1upjX.jpg"}
+    </body>
+    </html>
 
 
 

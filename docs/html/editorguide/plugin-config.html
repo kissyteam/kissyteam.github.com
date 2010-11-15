@@ -61,8 +61,8 @@
         <span class="c1">//上传图片配置，不需要上传功能可不配置</span>
         <span class="nx">upload</span><span class="o">:</span><span class="p">{</span>
             <span class="c1">//返回格式</span>
-            <span class="c1">//正确：{&quot;imgUrl&quot;:&quot;&quot;}</span>
-            <span class="c1">//错误：{&quot;error&quot;:&quot;&quot;}</span>
+            <span class="c1">//正确：{&quot;imgUrl&quot;:&quot;http://xx.com/yy.jpg&quot;}</span>
+            <span class="c1">//错误：{&quot;error&quot;:&quot;i am error!&quot;}</span>
             <span class="c1">//接受图片的服务器</span>
             <span class="c1">//发送一个文件过去，格式为 multipart/form-data</span>
             <span class="nx">serverUrl</span><span class="o">:</span><span class="s2">&quot;/code/upload/upload.jsp&quot;</span><span class="p">,</span>
@@ -83,6 +83,20 @@
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
+</pre></div>
+</div>
+<p>注意：</p>
+<p>如果页面中设置了 document.domain=&#8217;xx.com&#8217;，那么这时上传图片服务器要返回一段设置 domain 的 html，例如</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">domain</span><span class="o">=</span><span class="s2">&quot;xx.com&quot;</span><span class="p">;</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+{&quot;imgUrl&quot;:&quot;http://img03.taobaocdn.com/sns_album/i3/T13fhRXftcXXb1upjX.jpg&quot;}
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </div>
 </div>
