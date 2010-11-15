@@ -104,4 +104,4 @@ Switchable 组件先介绍到这里. 更多关于 Switchable 相关的例子见 
 .. rubric:: 参考链接
 
 .. [1] `Switchable API 文档 <http://kissyteam.github.com/kissy/docs/switchable/index.html>`_
-.. [2] `Switchable Demo 页面 <http://kissyteam.github.com/kissy/src/switchable/test.html>`_
+.. [2] `Switchable Demo 页面 <http://kissyteam.github.com/kissy/src/switchable/demo.html>`_
