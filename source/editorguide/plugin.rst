@@ -90,15 +90,12 @@ format
 
     .. image:: /_images/editorguide/format.gif
 
-forecolor ( kissy 1.1.7 以后改为 color )
+color
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     设置选择区域的文本颜色.
 
     .. image:: /_images/editorguide/forecolor.gif
-
-bgcolor ( kissy 1.1.7 以后改为 color )
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     设置选择区域的背景颜色.
 
@@ -207,16 +204,16 @@ maximize
 
     .. image:: /_images/editorguide/maximize.gif
 
-帮派自定义插件
+扩展插件
 --------------------------
 如果要使用以下插件，需要引入另外的 javascript 文件
 
 .. code-block:: html
 
-    <script src="http://a.tbcdn.cn/s/kissy/1.1.5/editor/biz/bangpai/editor-plugin-pkg-min.js"></script>
+    <script src="http://a.tbcdn.cn/s/kissy/1.1.7/editor/biz/ext/editor-plugin-pkg-min.js"></script>
 
 
-bangpai-upload
+multi-upload
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     多图同时上传功能
@@ -229,10 +226,10 @@ bangpai-upload
 
 
 
-国内视频插入
+video
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    方便直接输入url插入国内视频 flash
+    国内视频插入,方便直接输入url插入国内视频 flash
 
     .. image:: /_images/editorguide/video.png
 
@@ -240,10 +237,10 @@ bangpai-upload
 
     .. image:: /_images/editorguide/video_win.png
 
-虾米音乐插入
+xiami-music
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    可通过搜索插入虾米音乐
+    虾米音乐插入,可通过搜索插入虾米音乐
 
     .. image:: /_images/editorguide/xiami.png
 
