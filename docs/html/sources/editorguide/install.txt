@@ -33,9 +33,7 @@
 
 .. code-block:: html
 
-    <script src="http://a.tbcdn.cn/s/kissy/1.1.7/kissy-min.js"></script>
-    <script src="http://a.tbcdn.cn/s/kissy/1.1.7/editor/editor-all-pkg-min.js"></script>
-
+    <script src="http://a.tbcdn.cn/s/kissy/1.1.7/??kissy-min.js,uibase/uibase-pkg-min.js,dd/dd-pkg-min.js,overlay/overlay-pkg-min.js,editor/editor-all-pkg-min.js"></script>
 
 
 加入 textarea
