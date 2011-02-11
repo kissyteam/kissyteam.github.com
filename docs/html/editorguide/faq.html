@@ -1,0 +1,109 @@
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>FAQ &mdash; KISSY Docs v2,0 documentation</title>
+    
+    <link rel="stylesheet" href="../static/kissy.css" />
+    <link rel="stylesheet" href="../static/pygments.css" />
+    <link rel="top" title="KISSY Docs v2,0 documentation" href="../index.html" />
+    <link rel="up" title="KISSY Editor 使用手册" href="index.html" />
+    <link rel="prev" title="注意" href="notice.html" />
+
+    <script>
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2,0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script src="http://a.tbcdn.cn/s/kissy/1.1.5/kissy-min.js"></script> 
+  </head>
+  <body><a href="http://github.com/kissyteam" style="display:block; position: absolute; top: 0; right: 0; width: 150px; height: 150px; z-index: 10000;border: none;" >
+    <img  src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+</a>
+<div class="headwrap">
+<div class="header">
+	<h1 class="logo"><a href="http://kissyteam.github.com/"><img src="http://kissyteam.github.com/kissy.png" /></a></h1>
+    <ul class="navigation">
+        <li><a href="http://kissyteam.github.com/">Home</a><b></b><s></s></li>
+        <li><a href="http://kissyui.com/blog/">Blog</a><b></b><s></s></li>
+        <li><a href="http://github.com/kissyteam/kissy#readme">About</a></li>
+    </ul>
+</div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="body">
+            
+  <div class="section" id="faq">
+<span id="editorusage"></span><h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>数据同步<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="form">
+<h3>form 同步<a class="headerlink" href="#form" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<p>如果后端通过 form 提交（submit）来获得用户输入数据，则只需配置参数：</p>
+<p><a class="reference external" href="http://docs.kissyui.com/docs/html/editorguide/common-config.html#cfg">http://docs.kissyui.com/docs/html/editorguide/common-config.html#cfg</a></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//是否监控编辑器所属的表单提交</span>
+<span class="s2">&quot;attachForm&quot;</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>编辑器自动会监控 form 的 sbumit 事件进行同步</p>
+</blockquote>
+</div>
+<div class="section" id="id2">
+<h3>手动同步<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<p>涉及三个 api</p>
+<p>editor 为调用 KISSY.Editor 返回的编辑器实例</p>
+<p>editor.sync() : 手动同步编辑器内容到对应 textarea</p>
+<p>editor.getData() : 获得当前编辑器的内容</p>
+<p>editor.setData(html:string) :设置当前编辑器的内容，参数为html，类型为 string 字符串</p>
+</blockquote>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>自动保存<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<p>自动保存为 localStorage/flash 机制，保存在本地，可配置参数</p>
+<p><a class="reference external" href="http://docs.kissyui.com/docs/html/editorguide/plugin-config.html#id6">http://docs.kissyui.com/docs/html/editorguide/plugin-config.html#id6</a></p>
+</blockquote>
+</div>
+</div>
+
+
+
+            <p style="text-align:center;margin-top: 40px;">
+                <a href="notice.html" title="注意"> 上一页 </a> |
+                <a href="index.html" title="KISSY Editor 使用手册">回到上层</a> |
+            </p>
+            <div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">
+        google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+        google.setOnLoadCallback(function() {
+            var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+            customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+            customSearchControl.draw('cse');
+        }, true);
+    </script>
+</div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+    </div>
+  </body>
+</html>
