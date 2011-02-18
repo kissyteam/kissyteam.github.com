@@ -216,8 +216,8 @@
         <span class="c1">//错误：{&quot;error&quot;:&quot;&quot;}</span>
         <span class="c1">//注意：中文 \uxxxx 转义</span>
         <span class="c1">//发送一个文件过去，格式为 multipart/form-data</span>
-        <span class="c1">//接受图片的服务器</span>
-        <span class="nx">serverUrl</span><span class="o">:</span> <span class="s2">&quot;/code/upload/upload.jsp&quot;</span><span class="p">,</span>
+        <span class="c1">//接受图片的服务器，注意必须绝对地址</span>
+        <span class="nx">serverUrl</span><span class="o">:</span> <span class="s2">&quot;http://xx.com/code/upload/upload.jsp&quot;</span><span class="p">,</span>
         <span class="c1">//同图片配置</span>
         <span class="nx">serverParams</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">waterMark</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
@@ -244,8 +244,9 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>注意：该插件使用 flash 技术，
-必须在根域名下提供 crossdomain.xml ，例如 <a class="reference external" href="http://www.taobao.com/crossdomain.xml">http://www.taobao.com/crossdomain.xml</a> ，内容如下</p>
+<div class="section" id="id11">
+<h4>注意<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<p>1.该插件使用 flash 技术，必须在根域名下提供 crossdomain.xml ，例如 <a class="reference external" href="http://www.taobao.com/crossdomain.xml">http://www.taobao.com/crossdomain.xml</a> ，内容如下</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;cross-domain-policy&gt;</span>
     <span class="nt">&lt;allow-access-from</span> <span class="na">domain=</span><span class="s">&quot;*.taobao.com&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;allow-access-from</span> <span class="na">domain=</span><span class="s">&quot;*.taobao.net&quot;</span><span class="nt">/&gt;</span>
@@ -255,9 +256,11 @@
 <span class="nt">&lt;/cross-domain-policy&gt;</span>
 </pre></div>
 </div>
+<p>2.serverUrl 必须使用绝对地址，否则如果编辑器组件和应用页面不在同一个hostname时，firefox下请求会发到编辑器组件所在的hostname。</p>
 </div>
-<div class="section" id="id11">
-<h3>国内视频插入<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id12">
+<h3>国内视频插入<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p>可直接输入tudou,youku,ku6的url进行视频粘贴.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;video&quot;</span><span class="o">:</span> <span class="p">{</span>
@@ -292,8 +295,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id12">
-<h3>虾米音乐插入<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h3>虾米音乐插入<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <p>无需配置, 只要 use 即可.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;xiami-music&quot;</span><span class="o">:</span><span class="p">{}</span>
