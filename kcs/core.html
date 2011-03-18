@@ -1,0 +1,432 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>KISSY core Cheet Sheet</title>
+<link href="http://a.tbcdn.cn/s/kissy/1.1.6/cssbase/base-min.css" rel="stylesheet"/>
+<link href="./kcs.css" rel="stylesheet" rel="stylesheet"/>
+<script src="http://a.tbcdn.cn/s/kissy/1.1.6/seed-min.js"></script>
+<script src="./kcs.js"></script>
+</head>
+<body class="core">
+<div id="header">
+    <h1>KISSY Core Cheet Sheet</h1>
+</div>
+<div id="content">
+<div class="layout">
+    <h2>OOP</h2>
+    <dl id="ks-OOP" class="api">
+        <dt>S.mix(r, s, ov, wl): {Object} 将 s 对象的成员复制到 r 对象上.</dt>
+        <dd>
+            <ul>
+                <li>ov {Boolean} override, 表示复制时是否采用覆盖模式, 默认为 true. </li>
+                <li>wl {Array} whitelist, 非空时, 表示仅添加该列表中的成员. </li>
+            </ul>
+        </dd>
+        <dt>S.merge(arguments): {Object} 合并多个对象, 返回合并后的新对象.</dt>
+        <dd></dd>
+        <dt>S.augment(r, s1, s2, ..., ov, wl): {Object} 将s.prototype 的成员复制到 r.prototype 对象上</dt>
+        <dd>ov, wl, 同 mix.</dd>
+        <dt>S.extend(r, s, px, sx): {Object} 让函数对象 r 继承函数对象 s. </dt>
+        <dd>
+            <ul>
+                <li>r {Function}, 子类</li>
+                <li>s {Function}, 父类</li>
+                <li>px {Object}, 需要添加/覆盖的原型成员</li>
+                <li>sx {Object}, 需要添加/覆盖的静态成员</li>
+            </ul>
+        </dd>
+        <dt>S.clone(o): 创建一个普通对象或数组的深拷贝, 并且返回</dt>
+        <dd></dd>
+    </dl>
+
+    <h2>模块化相关</h2>
+    <dl id="ks-module" class="api">
+        <dt>S.add(name, fn): 添加模块到 KISSY 对象</dt>
+        <dd></dd>
+        <dt>S.app(name, sx): 创建应用对象</dt>
+        <dd>
+            <ul>
+                <li>name {String} 应用名</li>
+                <li>sx {Object} 需要添加/覆盖的静态成员</li>
+            </ul>
+        </dd>
+        <dt>S.use(modNames, callback, cfg): 获取某个模块, 当某个模块加载后, 执行 callback</dt>
+        <dd></dd>
+        <dt>S.require(moduleNmae): 获取某个模块, 并把这个模块返回</dt>
+        <dd></dd>
+        <dt>S.namespace(arguments): 创建命名空间</dt>
+        <dd>
+            <pre>
+S.name('app', 'test');
+S.name('app.test');
+</pre>
+        </dd>
+    </dl>
+
+    <h2>功能函数</h2>
+    <dl id="ks-function" class="api">
+        <dt>S.ready(fn): 当DOM加载完毕时执行 fn.</dt>
+        <dd></dd>
+        <dt>S.available(id, fn): 当 id 元素可用时立刻执行fn. id必须要元素的id, 或者是id数组.</dt>
+        <dd></dd>
+        <dt>S.each(object, fn, context): 对 object 的每个对象, 执行fn</dt>
+        <dd></dd>
+        <dt>S.filter(arr, fn, context): 过滤context下的 arr 中符合 fn 的元素</dt>
+        <dd></dd>
+        <dt>S.globalEval(data): 在全局环境里执行代码片段</dt>
+        <dd></dd>
+        <dt>S.guid(pre): 返回全局唯一的 id</dt>
+        <dd>
+            <ul>
+                <li>pre {String} 这个 id 的前缀, 可选</li>
+            </ul>
+        </dd>
+        <dt>S.inArray(item, arr): 判断 item 是否在 arr 中</dt>
+        <dd></dd>
+        <dt>S.indexOf(item, arr): 获取 item 在 arr 中第一次出现的索引序号, 无则返回 -1</dt>
+        <dd></dd>
+        <dt>S.lastIndexOf(item, arr): 获取 item 在 arr 中最后次出现的索引序号, 无则返回 -1</dt>
+        <dd></dd>
+        <dt>S.later(fn, when, periodic, o, data): 延迟执行</dt>
+        <dd>
+            <ul>
+                <li>fn {Function}: 延迟执行的函数</li>
+                <li>when {Number}: 延迟时间</li>
+                <li>periodic {Boolean}: 是否重复执行</li>
+                <li>o {Object}: 上下文</li>
+                <li>data {Array}: 传递给fn的参数</li>
+            </ul>
+        </dd>
+        <dt>S.now(): 返回当前时间</dt>
+        <dd></dd>
+        <dt>S.log(msg, cat, src): 输出调试信息</dt>
+        <dd>
+            <ul>
+                <li>msg {String} 提示信息</li>
+                <li>cat {String} 类别, 可以取info, warn, error, dir, time 等 console 对象的方法名, 默认为 logo</li>
+                <li>src {String} 调试代码所在的原信息</li>
+            </ul>
+        </dd>
+        <dt>S.error(msg): 抛出名为 msg 的错误异常</dt>
+        <dd>
+            <ul>
+                <li>msg {String} 错误异常名</li>
+            </ul>
+        </dd>
+        <dt>S.param(o, sep): 序列化对象 o, 以 sep 为分隔符</dt>
+        <dd>
+            <ul>
+                <li>o {Object}: 被序列化的对象</li>
+                <li>sep {String}: 分隔符, 默认是 '&'</li>
+            </ul>
+        </dd>
+        <dt>S.unparam(str, sep): 解析类似URI的字符串, 并返回一对象, 与 S.param 互逆</dt>
+        <dd>
+            <ul>
+                <li>str {String}: 类 URI 的字符串</li>
+                <li>sep {String}: 分隔符, 默认是 '&'</li>
+            </ul>
+        </dd>
+        <dt>S.substitute(str, o, regexp): 字符串模板替换</dt>
+        <dd></dd>
+        <dt>S.trim(str): 去除字符串开头/末尾空白</dt>
+        <dd></dd>
+        <dt>S.unique(a, override): 对数组中的元素去重</dt>
+        <dd>
+            <ul>
+                <li>a {Array}: 待去重的数组</li>
+                <li>override {Boolean}: 默认是保留重复出现对象的第一个, 但当override 为true, 保留重复出现对象的最后一个 </li>
+            </ul>
+        </dd>
+        <dt>S.makeArray(o): 将 o 转成数组对象</dt>
+        <dd></dd>
+        <dt>S.config(o): 调用自己的方法 </dt>
+        <dd>
+            <pre>
+S.config({xx:yy}); // 等价于 S.xx(yy)
+</pre>
+        </dd>
+        <dt>S.getScript(url, success, charset): 请求脚本并执行</dt>
+        <dd></dd>
+    </dl>
+
+</div>
+<div class="layout">
+    <h2>KISSY 成员</h2>
+    <dl id="ks-member" class="api">
+
+            <dt>S.version: {String} 返回版本信息.</dt>
+            <dd></dd>
+            <dt>S.Config: {Object} 配置信息.</dt>
+            <dd>
+                <ul>
+                    <li>base: {String} 系统模块的路径 </li>
+                    <li>debug: {Boolean} 是否开启调试模式, 和 url 加上 ks-debug.</li>
+                    <li>timeout: {Number} 默认延迟时间</li>
+                </ul>
+            </dd>
+            <dt>S.Env: {Object} 环境信息.</dt>
+            <dd>
+                 <ul>
+                     <li>mods: 提供模块信息及其间依赖关系</li>
+                     <li>mods.XXX.name: {String} 模块的名字</li>
+                     <li>mods.XXX.path: {String} 模块所在的 js 文件路径</li>
+                     <li>mods.XXX.csspath: {String} 模块关联的 css 文件路径</li>
+                     <li>mods.XXX.charset: {String} 模块相关的文件编码</li>
+                     <li>mods.XXX.requires: {Array<String>} 指定依赖的模块</li>
+                 </ul>
+            </dd>
+        </dl>
+    <h2>语言类型函数</h2>
+    <dl id="ks-lang" class="api">
+        <dt>S.type(o): 获得 o 的类型</dt>
+        <dd></dd>
+        <dt>S.isEmptyObject(o): 判断 o 是否为空对象(没有任何可遍历的属性)</dt>
+        <dd></dd>
+        <dt>S.isFunction(o): 判断 o 是否为函数</dt>
+        <dd></dd>
+        <dt>S.isNull(o): 判断 o 是否为 null</dt>
+        <dd></dd>
+        <dt>S.isPlainObject(o): 判断 o 是否为普通对象(用 { } 或 new Object 创建的对象)</dt>
+        <dd></dd>
+        <dt>S.isUndefined(o): 判断 o 是否为 undefined</dt>
+        <dd></dd>
+        <dt>S.isString(o): 判断 o 是否为字符串, 类似的, 还有Boolean Number Function Array Date RegExp Object</dt>
+        <dd></dd>
+        <dt>S.isWindow(o): 判断 o 是否为 window</dt>
+        <dd></dd>
+    </dl>
+
+    <h2>S.UA</h2>
+    <dl id="ks-ua" class="api">
+        <dt>S.UA.trident/S.UA.webkit/S.UA.gecko/S.UA.presto: {Number} 返回各浏览器核心版本</dt>
+        <dd></dd>
+        <dt>S.UA.chrome/S.UA.safari/S.UA.firefox/S.UA.ie/S.UA.opera/S.UA.se360S.UA./maxthon/S.UA.tt/S.UA.theworld/S.UA.sougou: {Number} 返回各浏览器版本</dt>
+        <dd></dd>
+        <dt>S.UA.mobile/S.UA.core/S.UA.shell: {String} 返回各浏览器的内核标识</dt>
+        <dd></dd>
+    </dl>
+    <h2>JSON,  Cookie and Anim</h2>
+    <dl id="ks-jsco" class="api">
+        <dt>S.JSON.parse(text): 将 text 字符串解析成 Object</dt>
+        <dd></dd>
+        <dd>S.JSON.stringify(value, replacer, space): 将 js 值转换成 JSON 串</dd>
+        <dd>
+            <ul>
+                <li>value: {Object} 处理的值</li>
+                <li>replacer: {Function|Array<String>} 可选, 定义如何转换值</li>
+                <li>space: {Number|String} 可选, 指定空白符</li>
+            </ul>
+        </dd>
+
+        <dt>S.Cookie.get(name): 获取Cookie值</dt>
+        <dd>
+            <ul>
+                <li>name: {String} cookie 名</li>
+            </ul>
+        </dd>
+        <dt>S.Cookie.set(name, val, expires, domain, path, secure): 设置Cookie值</dt>
+        <dd>
+            <ul>
+                <li>name: {String} cookie 名</li>
+                <li>value: {String} cookie 值</li>
+                <li>expires: {Date|Number} 过期日期</li>
+                <li>domain: {String} 所在域</li>
+                <li>path: {String} 指定路径</li>
+                <li>secure: {Boolean} 是否加密, http or https 发送 </li>
+            </ul>
+        </dd>
+        <dt>S.Cookie.remove(name, domain, path, secure)</dt>
+        <dd>
+            各参数同 set
+        </dd>
+
+        <dt>new Anim ( elem, props, duration, easing, callback ).run().stop() </dt>
+        <dd>
+            <ul>
+                <li>elem: {HTMLElement|String} 动画元素, 元素或选择器</li>
+                <li>props: {String|Object} 动画属性, 字符串或普通对象</li>
+                <li>duration: {Number} 动画时长</li>
+                <li>easing: {String|Function} 平滑函数, 可取easeNone, easeIn, easeOut, easeBoth, easeInStrong, easeOutStrong, easeBothStrong, elasticIn, elasticOut, elasticBoth, backIn, backOut, backBoth, bounceIn, bounceOut, bounceBoth</li>
+                <li>callback: {Function} 回调函数</li>
+            </ul>
+        </dd>
+    </dl>
+
+</div>
+<div class="layout">
+    <h2>S.DOM / Sizzle 支持</h2>
+    <dl id="ks-dom" class="api">
+        <dt>S.get(selector, context)/S.DOM.get(selector, context): 在 context 筛选 selector 的一个元素</dt>
+        <dd>引入Sizzle 模块后, 如 S.use('sizzle', fn), 即可使用 jQuery 中所有的选择器 </dd>
+        <dt>S.query(selector, context)/S.DOM.query(selector, context): 在 context 筛选 selector 的所有元素</dt>
+        <dd></dd>
+        <dt>S.DOM.filter(selector, filter, context): 在 context 筛选 selector 的, 满足 filter 的元素</dt>
+        <dd></dd>
+        <dt>S.DOM.hasClass(selector, value): 判断目标元素是否包含某个 Class</dt>
+        <dd></dd>
+        <dt>S.DOM.removeClass(selector, value): 删除目标元素的某个 Class</dt>
+        <dd></dd>
+        <dt>S.DOM.replaceClass(selector, oldClassName, newClassName): 替换目标元素的 Class 中名为 oldClassName 为 newClassName</dt>
+        <dd></dd>
+        <dt>S.DOM.toggleClass(selector, value, state): 切换目标元素的名为 value 的 Class</dt>
+        <dd></dd>
+        <dt>S.DOM.create(html, props, ownerDoc): 根据 html, 创建元素</dt>
+        <dd></dd>
+        <dt>S.DOM.html(selector, val, loadScripts, callback)获取目标元素的 html 内容</dt>
+        <dd></dd>
+        <dt>S.DOM.remove(selector): 删除目标元素</dt>
+        <dd></dd>
+        <dt>S.DOM.attr(selector, name, val, pass): 获取/设置目标元素名为 name 的属性值</dt>
+        <dd></dd>
+        <dt>S.DOM.removeAttr(selector, name): 删除目标元素名为 name 的属性</dt>
+        <dd></dd>
+        <dt>S.DOM.hasAttr(selector, name): 判断目标元素是否具有 name 该属性</dt>
+        <dd></dd>
+        <dt>S.DOM.val(selector, value)/text(selector, value): 设置/获取目标元素的值</dt>
+        <dd></dd>
+
+        <dt>S.DOM.css(selector, name, val): 设置/获取目标元素的名为 name 的样式值</dt>
+        <dd></dd>
+        <dt>S.DOM.width(selector, value)/height(selector, value): 设置/获取目标元素的宽度/高度</dt>
+        <dd></dd>
+        <dt>S.DOM.show(selector)/hide(selector)/toggle(selector): 显示/隐藏/切换目标元素</dt>
+        <dd></dd>
+        <dt>S.DOM.addStyleSheet(cssText, id): 将 cssText 字符串作为样式添加到文档中, id 可选, 作为 style 标签的id</dt>
+        <dd></dd>
+
+        <!--<dt>S.DOM.unselectable(selector): </dt>
+        <dd></dd>-->
+        <dt>S.DOM.data(selector, name, val): 获取/设置目标元素名为 name 的值</dt>
+        <dd></dd>
+        <dt>S.DOM.removeData(selector, name): 删除目标元素的名为 name 的值</dt>
+        <dd></dd>
+        <dt>S.DOM.insertBefore(newNode, refNode): 在 refNode 之前插入 newNode</dt>
+        <dd></dd>
+        <dt>S.DOM.insertAfter(newNode, refNode): 在 refNode 之后插入 newNode</dt>
+        <dd></dd>
+        <dt>S.DOM.append(node, parent): 在 parent 的最后一个孩子元素之后加入 node</dt>
+        <dd></dd>
+        <dt>S.DOM.prepend(node, parent): 在 parent 的第一个孩子元素之前加入 node</dt>
+        <dd></dd>
+        <dt>S.DOM.parent(selector, filter): 获取符合条件的元素的父亲元素</dt>
+        <dd></dd>
+        <dt>S.DOM.next(selector, filter): 获取符合条件的元素的下一个兄弟元素</dt>
+        <dd></dd>
+        <dt>S.DOM.prev(selector, filter): 获取符合条件的元素的上一个兄弟元素</dt>
+        <dd></dd>
+        <dt>S.DOM.silblings(selector, filter): 获取符合条件的元素的所有兄弟元素</dt>
+        <dd></dd>
+        <dt>S.DOM.children(selector, filter): 获取符合条件的元素的所有孩子元素</dt>
+        <dd></dd>
+        <dt>S.DOM.contains(container, contained): 判断 container 是否包含 contained 元素</dt>
+        <dd></dd>
+        <dt>S.DOM.offset(elem, val)获取/设置 elem 的相对 page 的 offset 值</dt>
+        <dd></dd>
+        <dt>S.DOM.scrollIntoView(elem, container, top, hscroll): 让 container 中的 elem 滚动到视窗的可显示部分</dt>
+        <dd></dd>
+        <dt>S.DOM.scrollLeft()/scrollTop(): 获取 document 的 scrollLeft/scrollTop 值</dt>
+        <dd></dd>
+        <dt>S.DOM.docWidth()/docHeight(): 获取 document 的 width/height 值</dt>
+        <dd></dd>
+        <dt>S.DOM.viewportWidth()/viewportHeight(): 获取当前 viewport 的 width/height 值</dt>
+        <dd></dd>
+        <!-- S.Node -->
+        <dt>new S.Node(selector|HTMLElement) 获得符合条件的 Node 对象, 支持链式操作</dt>
+        <dd></dd>
+        <dt>S.one(selector) 获取符合条件的一个 Node 对象, </dt>
+        <dd></dd>
+        <dt>new S.NodeList(selector|HTMLElement) 获得符合条件的 NodeList 对象, 支持链式操作</dt>
+        <dd></dd>
+        <dt>S.all(selector) 获取符合条件的 NodeList 对象</dt>
+        <dd></dd>
+    </dl>
+
+</div>
+<div class="layout">
+    <h2>S.Event</h2>
+    <dl id="ks-event" class="api">
+        <dt>S.Event.on/add(target, type, fn, scope)</dt>
+        <dd>
+            <ul>
+                <li>target: {HTMLElement} 被监听的元素</li>
+                <li>type: {String} 监听事件类型</li>
+                <li>fn: {Function} 事件触发后的回调函数</li>
+                <li>scope: {Object} 可选, 指明回调函数在哪个作用域下执行, 默认是 this. </li>
+            </ul>
+        </dd>
+        <dt>S.Event.remove(target, type, fn, scope)</dt>
+        <dd>
+            <ul>
+                <li>target: {HTMLElement} 被监听的元素</li>
+                <li>type: {String} 可选, 同 add</li>
+                <li>fn: {Function} 可选, 同 add</li>
+                <li>scope: {Object} 可选, 同 add </li>
+            </ul>
+        </dd>
+    </dl>
+
+    <h2>S.ajax</h2>
+    <dl id="ks-ajax" class="api">
+        <dt>S.io.ajax(cfg)</dt>
+        <dd>
+            <ul>
+                <li>type: {String} 请求类型, 可以取值为 GET,POST 等,默认为 GET</li>
+                <li>url: {String} 请求地址</li>
+                <li>contentType: {String}</li>
+                <li>async: {Boolean} 是否为异步, 默认为 true</li>
+                <li>data: {Object|String} 发起请求需要附加的数据,默认为 null</li>
+                <!--<li>xhr: {}</li>
+                <li>accepts: {}</li>-->
+                <li>success: {Function} 请求成功的回调,回调参数为 data(内容),textStatus(请求状态),xhr(ajax对象)</li>
+                <li>complete: {Function} 请求完成的回调, 在 success 调用之后触发,参数同 success</li>
+                <li>error: {Function} 请求错误时的回调</li>
+                <li>jsonp: {String} 指定 callback 的别名,请求url会生成 "url?{$jsonp}=jsonp123456"</li>
+                <li>jsonpCallback: {String} 指定 callback 的参数, 请求 url 会生成 "url?callback={$jsonpCallback}"</li>
+                <li>dataType: {String} 请求数据类型,将决定返回值 data 的类型,若不指定,返回值data的类型由响应头决定, 可取值为 json | jsonp | script | xml | html | text</li>
+                <!--<li>context</li>-->
+            </ul>
+        </dd>
+        <dt>S.io.get(url, data, callback, dataType)</dt>
+        <dd>
+            <ul>
+                <li>url: {String} 请求地址</li>
+                <li>data: {Object|String} 发起请求需要附加的数据,默认为 null</li>
+                <li>callback: {Function} 回调函数, 各参数分别为 data(返回数据),textStatus(文本状态),xhr(ajax 对象)</li>
+                <li>dataType: {String} 可取值为 json,jsonp,script,xml,html,text,其中如果值为json,回调参数data为对象; 如果值为xml,回调参数为xml对象,其他情况的回调参数皆为字符串</li>
+            </ul>
+        </dd>
+        <dt>S.io.post(url, data, callback, dataType)</dt>
+        <dd>各参数同 get</dd>
+        <dt>S.io.jsonp(url, data, callback)</dt>
+        <dd>各参数同 get</dd>
+        <dt>S.io.on(type, callback)</dt>
+        <dd>
+            <ul>
+                <li>type: {String} 监听事件类型, 可取值为 start,complete,stop,send</li>
+                <li>callback: {Function} 回调函数</li>
+            </ul>
+        </dd>
+    </dl>
+    <h2>其他</h2><!-- 这块内容不知改归为哪类 -->
+    <dl id="ks-other" class="api">
+        <dt>S.Attribute/S.Base: 提供 getter/setter 支持, 对 Config 统一管理.</dt>
+        <dd>
+            <ul>
+                <li>obj.get(name): 获取 obj 名为 name 的值</li>
+                <li>obj.set(name, val): 给 obj 设置名为 name 的值为 val, 且调用此方法会触发 beforeNameChange / afterNameChange 事件, 事件回调函数的参数分别为, attrName(属性名), prevVal(旧值), newVal(新值)</li>
+                <li>obj.reset(name): 将 obj 的变量 name 的值重置为默认值或 undefined</li>
+            </ul>
+        </dd>
+    </dl>
+
+</div>
+<a href="#" id="J_toggle">展开全部</a>
+</div>
+<div id="footer">
+    <a href="kissyteam.github.com">kissyteam.github.com</a>
+</div>
+</body>
+</html>
+

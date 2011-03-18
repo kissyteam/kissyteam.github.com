@@ -1,0 +1,442 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>KISSY Widget Cheet Sheet</title>
+<link href="http://a.tbcdn.cn/s/kissy/1.1.6/cssbase/base-min.css" rel="stylesheet"/>
+<link href="./kcs.css" rel="stylesheet"/>
+<script src="http://a.tbcdn.cn/s/kissy/1.1.6/seed-min.js"></script>
+<script src="./kcs.js"></script>
+</head>
+<body class="widget">
+<div id="header">
+    <h1>KISSY Widget Cheet Sheet</h1>
+</div>
+<div id="content">
+<div class="layout">
+    <!-- 组件开始 -->
+    <h2>S.DataLazyload</h2>
+    <dl id="ks-datalazyload" class="api">
+        <dt>new S.DataLazyload(containers, config): 延迟加载</dt>
+        <dd>
+            <h3>配置</h3>
+            <pre>
+mod: {String}  懒处理模式, 可取'auto'(自动化. html 输出时, 不对 img.src 做任何处理)
+               和'manual'(输出 html 时, 已经将需要延迟加载的图片的 src
+               属性替换为 data-ks-lazyload),注: 对于 textarea 数据, 只有手动模式
+diff: {Number} 当前视窗往下, diff px 外的 img/textarea 延迟加载, 适当设置此值,可以
+               让用户在拖动时感觉数据已经加载好, 默认为为当前视窗高度(两屏以外的才延迟加载)
+placeholder: {String} 设置图像的占位图, 指定图像未加载前的展位图片路径, 默认无
+execScript: {Boolean} 是否执行 textarea 里面的脚本, 默认为 true
+</pre>
+            <h3>成员</h3>
+            <pre>
+containers: {Array.&lt;HTMLElement&gt;} 图片所在容器)可以多个), 默认为 [doc]
+images: {Array.&lt;HTMLElement&gt;} 需要延迟下载的图片
+areaes: {Array.&lt;HTMLElement&gt;} 需要延迟延迟处理的 textarea
+callbacks: {object}  和延迟项绑定的回调函数
+threshold: {Number} 开始延迟的 Y 坐标
+</pre>
+
+            <h3>方法</h3>
+            <pre>
+addCallback(el, fn): 添加回调函数. 当 el 即将出现在视图中时, 触发 fn
+loadCustomLazyData(containers, type): 在容器 containers 中,
+                加载自定义(根据内容类型 type )延迟数据
+</pre>
+        </dd>
+    </dl>
+
+    <h2>S.Switchable</h2>
+    <dl id="ks-switchable" class="api">
+        <dt>new S.Switchable(container, config) : Switchable 核心类, S.Tabs/S.Slide/S.Accordion/S.Carousel 都是扩展 S.Switchable</dt>
+        <dd>
+            <h3>所有 S.Switchable 类通用配置</h3>
+            <pre>
+markupType: {Number} 默认为0 markup 的类型, 取值如下:
+
+// 0 - 默认结构: 通过 nav 和 content 来获取 triggers 和 panels
+navCls: {String}, triggers 所在容器的 class, 默认为 'ks-switchable-nav',
+contentCls: {String}, panels 所在容器的 class, 默认为'ks-switchable-content',
+
+// 1 - 适度灵活：通过 cls 来获取 triggers 和 panels
+triggerCls: {String}, 默认为 'ks-switchable-trigger',
+panelCls: {String}, 默认为 'ks-switchable-panel',
+
+// 2 - 完全自由: 直接传入 triggers 和 panels
+triggers: {Array}, 默认为 [],
+panels: {Array}, 默认为 [],
+
+hasTriggers: {Boolean}, 默认为 true, 是否有触点
+triggerType: {String} 'mouse' 或 'click' , 默认为 'mouse' 触发类型
+
+delay: {Number} 触发延迟 默认为 .1 , 即 100ms
+
+activeIndex: {Number} markup 的默认激活项, 应该与此 index 一致 默认为 0,
+activeTriggerCls: {String} 激活某个 trigger 时设置的 class , 默认是 'ks-active',
+steps: {Number} 步长, 表示每次切换要间隔多少个 panels, 默认为 1,
+
+viewSize: {Array} 默认为 [] 可见视图区域的大小. 一般不需要设定此值,
+                仅当获取值不正确时, 用于手工指定大小
+</pre>
+
+            <h3>S.Tabs 配置同 S.Switchable </h3>
+
+            <h3>S.Slide 配置同 S.Switchable, 默认配置</h3>
+            <pre>
+autoplay: {Boolean} 是否自动切换, 默认为 true
+circular: {Boolean} 是否循环切换, 默认true
+</pre>
+
+            <h3>S.Accordion 默认及额外的配置</h3>
+            <pre>
+markupType: {Number} 同上, 但默认为1, 选择自定义 trigger 和 panel 的 class
+triggerType: {String} 同上, 但默认为 'click', 点击触发
+multiple: {Booelan} 是否开启同时展开多个面板功能, 默认为 false
+</pre>
+
+            <h3>S.Carousel 默认及额外的配置</h3>
+            <pre>
+circular: {Booelan} 是否循环切换, 默认为 true
+prevBtnCls: {String} 前一个触发器的 cls, 默认为 'ks-switchable-prev-btn'
+nextBtnCls: {String} 后一个触发器的 cls, 默认为 'ks-switchable-next-btn'
+disableBtnCls: {String} 触发器不可用时的 cls, 默认为 'ks-switchable-disable-btn' //
+</pre>
+
+            <h3>各插件(自动播放, 循环播放, 切换效果, 延迟加载)的配置</h3>
+            <pre>
+// autoplay
+autoplay: {Boolean} 是否自动切换, 默认为 false
+interval: {Number} 自动播放间隔时间, 5
+pauseOnHover: {Boolean} 默认为 true, triggerType 为 mouse 时,
+                        鼠标悬停在 slide 上是否暂停自动播放
+
+// circular
+circular: {Boolean} , 是否循环切换, 默认为 false
+
+// effect
+effect: {String} 动画效果函数, 默认没有特效, 可取 'scrollx', 'scrolly', 'fade'
+                 或者直接传入 custom effect fn
+duration: {Number} 动画的时长, 默认为 .5
+easing: {String|Function} 动画效果, 同 anim, 默认为 'easeNone'
+
+// lazyload, 需要引入 S.Datalazyload
+lazyDataType: {String} 默认为 'area-data', 设置延迟加载时使用的数据类型,
+                可取 'area-data', 即 textarea 标签 或 'img-src', 即 img 标签
+</pre>
+    <!--
+    // countdown
+    countdown: false, // 是否启动倒计时功能
+    countdownFromStyle: '', // 倒计时的初始样式
+    countdownToStyle: 'width: 0' // 初始样式由用户在 css 里指定，配置里仅需要传入有变化的最终样式
+    -->
+
+            <h3>成员</h3>
+            <pre>
+container: {HTMlElement} 容器
+triggers: {Array&lt;HTMLElement&gt;} 触发器数组
+panels: {Array&lt;HTMLElement&gt;} 各内容项数组
+length: {Number} length = panels.length / steps
+content: {HTMlElement} 各内容项的父层
+activeIndex: {Number} 当前激活的 index
+</pre>
+
+            <h3>方法</h3>
+            <pre>
+switchTo(index, direction) 切换到 index (从0开始计数)个,
+                direction 表明从哪个方向, 可取 'forward' or 'backward',
+                当不设置方向时, 根据 index 来计算
+prev() 切换到前一个
+next() 切换到后一个
+    </pre>
+
+            <h3>事件</h3>
+            <pre>
+beforeSwitch: 切换前时触发
+switch: 切换后触发
+</pre>
+        </dd>
+    </dl>
+    <h2>S.Suggest</h2>
+    <dl id="ks-suggest" class="api">
+        <dt>new S.Suggest(textInput, dataSource, config) : 提示补全</dt>
+        <dd>
+            <h3>配置</h3>
+            <pre>
+containerCls: {String} 用户附加给悬浮提示层的 class, 默认无
+resultFormat: {String} 结果格式, 默认为 '%result%'
+closeBtn: {Boolean} 是否显示关闭按钮, 默认不显示
+closeBtnText: {String} 关闭按钮上的文字, 默认为 '关闭'
+shim: {Boolean} 是否需要 iframe, 默认只在 ie6 下显示
+autoFocus: {Boolean} 页面初始化后, 是否自动激活, 默认为 false
+submitOnSelect: {Boolean} 选择某项时, 是否自动提交表单, 默认为 true
+offset: {Number} 提示悬浮层和输入框的垂直偏离, 默认向上偏差 1px,
+                使得悬浮层刚好覆盖输入框的下边框
+charset: {String} 数据接口返回数据的编码, 默认为 'utf-8'
+callbackName: {String} 数据源中回调函数的参数名, 默认是 'callback'
+callbackFn: {String} 回调函数的名字
+queryName: {String} 数据源中查询的参数名
+</pre>
+            <h3>成员</h3>
+            <pre>
+textInput: {HTMLElement} 文本输入框
+dataSource: {String|Object} 获取数据的 URL
+returnedData: {Object} 通过 jsonp 返回的数据
+container: {HTMLElement} 存放提示信息的容器
+content: {HTMLElement} 存放提示信息的容器, 正文部分
+footer: {HTMLElement} 存放提示信息的容器, 尾部
+query: {String} 输入框的值
+queryParams: {String} 获取数据时的参数
+dataScript: {HTMLElement} 获取数据的 script 元素
+selectedItem: {HTMLElement} 提示层的当前选中项
+</pre>
+            <h3>方法</h3>
+            <pre>
+show(): 显示提示层
+hide(): 隐藏提示层
+isVisible(): 判断提示层是否显示
+start(): 启动计时器，开始监听用户输入
+stop(): 停止计时器
+</pre>
+            <h3>事件</h3>
+            <pre>
+beforeStart: 监控计时器开始前触发，可以用来做条件触发
+itemSelect: 选中某项时触发，可以用来添加监控埋点等参数
+beforeSubmit: 表单提交前触发，可以用来取消提交或添加特定参数
+beforeDataRequest: 请求数据前触发，可以用来动态修改请求 url 和参数
+dataReturn: 获得返回数据时触发，可以用来动态修正数据
+updateFooter: 更新底部内容时触发，可以用来动态添加自定义内容
+beforeShow: 显示提示层前触发，可以用来动态修改提示层数据
+</pre>
+        </dd>
+    </dl>
+</div>
+<div class="layout">
+    <h2>S.UIBase</h2>
+    <dl id="ks-uibase" class="api">
+        <dt>new S.Overlay(cfg): 浮出层</dt>
+        <dd>
+            <h3>配置</h3>
+<!--
+//render: {String|Node} 渲染容器
+//rendered: {Boolean} 是否已经渲染过
+el: {String|Node} 容器元素
+elCls: {String} 容器的 class
+elStyle: {String} 容器的行内样式
+elAttrs: {Object} 容器的属性
+elTagName: {String} 容器使用的标签
+elOrder: {0|1} 在哪插入到容器, 0 为 prepend, 1 为 append, 默认为 1
+html: {String} 容器元素的内容
+width: {Number} 宽度
+height: {Number} 高度
+-->
+            <pre>
+srcNode: {HTMLElement} 从已有节点中渲染
+prefixCls: {String} 已有节点的 Class 前缀, 这样,
+                通过该前缀加上 header/body/footer/content 寻找各部分
+disabled: {Boolean} 是否禁用, 默认为 false
+
+contentElAttrs: {Object} 内容容器的属性
+contentElStyle: {Object} 内容容器的样式
+contentTagName: {String} 内容容器使用的标签
+content: {String} 内容容器中的内容
+
+mask: {Boolean} 是否显示遮罩层, 默认不显示
+x: {Number} 指定水平方向绝对位置
+y: {Number} 指定垂直方向绝对位置
+zIndex: {Number} z-index 层高
+visible: {Boolean} 是否可见, 默认不可见
+
+shim: {Boolean} 是否需要垫片, 默认需要
+
+// align 支持
+align: {Object}, 具体以下子选项
+node: null,  参考元素, falsy 值为可视区域, 'trigger' 为触发元素, 其他为指定元素
+points: ['tr', 'tl'], 默认是['cc', 'cc']
+        表示 overlay 的 tl 与参考节点的 tr 对齐
+offset: [0, 0] 有效值为 [n, m]
+</pre>
+
+            <h3>成员</h3>
+            <pre>
+el: {Node} 指向容器元素, 通过 get("el") 获取
+contentEl: {Node} 指向内容容器元素, 通过 get("contentEl") 获取
+content: {String} 获取内容, 通过 get("content") 获取
+</pre>
+            <h3>方法</h3>
+            <pre>
+move(x, y): 移动到绝对位置上, 可以是 move(x), move([x, y])
+show(): 显示
+hide(): 隐藏
+
+align(node, points, offset): 参数同配置项 align
+center(node): 居中显示到可视区域 或 某节点中
+loading(): 等待状态
+unloading(): 取消等待状态
+</pre>
+
+            <h3>事件</h3>
+            <pre>
+renderUI: 在渲染 UI 时, 其实是之前
+afterRenderUI: 在渲染 UI 后
+bindUI: 在绑定 UI 时, 其实是之前
+afterBindUI: 在绑定 UI 后
+syncUI: 在同步 UI 时, 其实是之前
+afterSyncUI: 在同步 UI 后
+show: 每次显示后
+hide: 每次隐藏后
+</pre>
+        </dd>
+
+        <dt>new S.Dialog(cfg) 对话框, 扩展自 S.Overlay</dt>
+        <dd>
+            <h3>包含 S.Overlay 中所有的配置, 方法和事件, 除了上述外, 还有:</h3>
+            <h3>配置</h3>
+            <pre>
+headerStyle: {Object} 设置 header 的内联样式
+headerContent: {String|Node} 设置对应 header 部分的内容
+bodyStyle: {Object} 设置 body 的内联样式
+bodyContent: {String|Node} 设置对应 body 部分的内容
+footerStyle: {Object} 设置 footer 的内联样式
+footerContent: {String|Node} 设置对应 footer 部分的内容
+
+// Drag 支持
+draggable: {Boolean} 是否开启可拖动, 默认开启
+handlers: {Array} 同 Draggable
+
+closable: {Boolean} 是否需要关闭元素, 默认需要
+
+// constrain 支持
+constrain: {Boolean|String|HTMLElement|Node} 默认为 false,
+                表示不做限制; 如果为 true, 表示限制在 viewport 中,
+                如果为某个节点, 表示限制在该节点中,
+</pre>
+
+            <h3>成员</h3>
+            <pre>
+header: {Node} 指向头元素, 通过 get("header") 获取
+body: {Node} 指向体元素, 通过 get("body") 获取
+footer: {Node} 指向尾元素, 通过 get("footer") 获取
+</pre>
+        </dd>
+
+        <!-- S.Overlay2
+        <dt>1.1.5 版延用到1.1.6中的 S.Overlay, 接口有些差异, 推荐用新版, 但如果实在需要用旧版, 联系我</dt>-->
+
+        <!-- S.Imagezoom -->
+        <dt>new S.Imagezoom(cfg) 图像放大组件(ks-1.1.6)</dt>
+        <dd>
+            <h3>配置</h3>
+            <pre>
+type: {String} 类型, 可取 'standard' 或 'inner', 标准方式还是内部放大方式, 默认是标准
+bigImageSrc: {String} 大图路径, 默认为 '', 会取触点上的 data-ks-imagezoom 属性值
+bigImageSize: {Array.&lt;Number&gt;} 大图高宽, 大图高宽是指在没有加载完大图前,
+                使用这个值来替代计算, 等加载完后会重新更新镜片大小,
+                具体场景下, 设置个更合适的值
+position: {String} 大图显示位置, 默认是 'right'
+alignTo: {String|Element} parent or Element 大图显示位置相对于哪个元素,
+                默认不设置, 相对于小图位置, 如果取 PARENT, 为小图的 offsetParent 元素
+offset: {Array.&lt;Number&gt;} 大图位置的偏移量, 默认为 [10, 0]
+preload: {Boolean} 是否预加载大图, 默认需要预加载
+zoomSize: {Array.&lt;Number&gt;} [w, h] or wh 放大区域宽高
+lensIcon: {Boolean} 是否显示放大镜提示图标, 默认显示
+zoomCls: {String} 放大区域额外样式
+hasZoom: {Boolean} 显示放大区域标志
+</pre>
+<!-- 基于 UIBase 重构的
+            <pre>
+type: {String} 类型, 可取 'standard' 或 'inner', 标准方式还是内部放大方式, 默认是标准
+imageNode: {String|Node} 小图元素
+wrapClass: {String} 小图外层的 Class, 会自动给小图加个包裹层
+width: {Number} 显示区域的宽度, 默认为小图的宽度
+height: {Number} 显示区域的高度, 默认为小图的高度
+elCls: {String} 显示区域外层 Class, 默认为 'ks-imagezoom-viewer'
+elStyle: {String} 显示区域外层的内联样式, 默认为 {overflow: 'hidden', position: 'absolute'}
+preload: {Boolean} 是否预加载大图, 默认需要预加载
+bigImageSrc: {String} 大图路径, 默认取触点上的 data-ks-imagezoom 属性值
+bigImageHeight/bigImageWidth: {Number} 大图高宽, 大图高宽是指在没有加载完大图前, 使用这个值来替代计算, 等加载完后会重新更新镜片大小, 具体场景下, 设置个更合适的值
+hasZoom: {Boolean} 是否显示放大区域标志
+
+showIcon: {Boolean} 是否显示放大镜提示图标, 默认显示
+iconClass: {String} 放大镜图标的样式, 默认为 'ks-imagezoom-icon'
+</pre> -->
+
+            <h3>成员</h3>
+            <pre>
+image: {HTMLElement} 小图元素
+lensIcon: {HTMLElement} 放大镜图标元素
+viewer: {HTMLElement} 放大区域容器元素
+bigImage: {HTMLElement} 大图元素
+lens: {HTMLElement} 覆盖镜片元素
+</pre>
+
+            <h3>方法</h3>
+            <pre>
+show(): 显示
+hide(): 隐藏
+refreshRegion(): 调整放大区域位置, 在外部改变小图位置时, 需要对应更新放大区域的位置
+changeImageSrc(src): 改变小图元素的 src
+            </pre>
+
+            <h3>事件</h3>
+            <pre>
+show: 显示之后
+hide: 隐藏之后
+</pre>
+        </dd>
+        <!-- S.Selectable
+        <dt>new S.Selectable</dt>
+        <dd></dd> -->
+    </dl>
+
+    <h2>S.Draggable</h2>
+    <dl id="ks-draggable" class="api">
+        <dt>new S.Draggable(cfg): 可拖拽组件</dt>
+        <dd>
+            <h3>配置</h3>
+            <pre>
+node: {String|HTMLElement} 拖放节点
+shim: {Boolean} 默认为 true, 是否需要遮罩跨越 iframe
+mode: {String} 可选:
+  - intersect : 区域相交就算 enter
+  - strict : drag 区域完全在 drop 区域内才算
+  - point : 鼠标在 drop 区域内
+handlers: {Array} 拖动 handlers, 以拖动 node 节点, 注意: handlers 暂时必须在 node 里面
+</pre>
+            <h3>事件</h3>
+            <pre>
+drag: 正在拖动
+dragend: 拖动结束
+dragstart: 拖动开始
+</pre>
+        </dd>
+        <!-- S.Droppable
+        <dt></dt> -->
+
+        <!-- S.Resizable -->
+    </dl>
+
+    <h2>S.Calendar , S.Template and Flash</h2>
+    <dl id="ks-more" class="api">
+        <dt>new S.Calendar(selector, config): 日历组件</dt>
+        <dd>
+            <a href="http://docs.kissyui.com/kissy/docs/calendar/index.html">详细见 Calendar 文档</a>
+        </dd>
+
+        <dt>S.Template('Hello, {{#if showName}}{{name}}.{{#else}}{{nick}}{{/if}})').render({showName: false, name: 'Frank', nick: 'yyfrankyy'}): 模板机制</dt>
+        <dd><a href="http://docs.kissyui.com/kissy/docs/template/index.html">详细见 Template 文档</a></dd>
+
+        <!-- Flash -->
+        <dt>Flash 支持</dt>
+        <dd><a href="http://docs.kissyui.com/kissy/docs/flash/index.html">详细见 Flash 文档</a></dd>
+    </dl>
+
+</div>
+    <a href="#" id="J_toggle">展开全部</a>
+</div>
+<div id="footer">
+    <a href="kissyteam.github.com">kissyteam.github.com</a>
+</div>
+</body>
+</html>
+
