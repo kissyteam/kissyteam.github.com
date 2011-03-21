@@ -1,0 +1,162 @@
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>api &mdash; KISSY Docs v2,0 documentation</title>
+    
+    <link rel="stylesheet" href="../../static/kissy.css" />
+    <link rel="stylesheet" href="../../static/pygments.css" />
+    <link rel="top" title="KISSY Docs v2,0 documentation" href="../../index.html" />
+
+    <script>
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2,0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script src="http://yiminghe.github.com/kissy/build/kissy.js"></script> 
+  </head>
+  <body><a href="http://github.com/kissyteam" style="display:block; position: absolute; top: 0; right: 0; width: 150px; height: 150px; z-index: 10000;border: none;" >
+    <img  src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+</a>
+<div class="headwrap">
+<div class="header">
+	<h1 class="logo"><a href="http://kissyteam.github.com/"><img src="http://kissyteam.github.com/kissy.png" /></a></h1>
+    <ul class="navigation">
+        <li><a href="http://kissyteam.github.com/">Home</a><b></b><s></s></li>
+        <li><a href="http://kissyui.com/blog/">Blog</a><b></b><s></s></li>
+        <li><a href="http://github.com/kissyteam/kissy#readme">About</a></li>
+    </ul>
+</div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="body">
+            
+  <div class="section" id="api">
+<h1>api<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>获取动画构造器<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>页面引入 kissy.js :</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>通过 use 加载 anim 模块：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;anim&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">Anim</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">Anim</span><span class="p">;</span>
+    <span class="c1">//使用 Anim 构造器</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="section" id="kissy-1-2">
+<h3>KISSY 1.2 新增使用模块方法<a class="headerlink" href="#kissy-1-2" title="Permalink to this headline">¶</a></h3>
+<p>可直接通过依赖注入，从函数参数中取得</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;anim&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">Anim</span><span class="p">){</span>
+    <span class="c1">//使用 Anim 构造器</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>构造器接口<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Anim</span> <span class="kd">function</span> <span class="nx">Anim</span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span> <span class="nx">props</span><span class="p">,</span> <span class="nx">duration</span><span class="p">,</span> <span class="nx">easing</span><span class="p">,</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">nativeSupport</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">elem</span> <span class="pre">(必填)</span></tt>: 类型选择器字符串或是通过S.get 获得的原生 dom 节点</p>
+<p><tt class="docutils literal"><span class="pre">props</span> <span class="pre">(必填)</span></tt>: 类型 object,动画结束的 dom 样式值，例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">width</span><span class="o">:</span><span class="s2">&quot;100px&quot;</span><span class="p">,</span>
+    <span class="nx">height</span><span class="o">:</span><span class="s2">&quot;100px&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>表示节点将从当前宽高经过动画平滑变化到宽100px与高100px</p>
+<p><tt class="docutils literal"><span class="pre">duration</span> <span class="pre">(optional)</span></tt>: 类型整数，动画持续时间，以秒为单元，默认为1秒</p>
+<p><tt class="docutils literal"><span class="pre">easing</span> <span class="pre">(optional)</span></tt>:类型字符串，动画平滑函数，可取值 &#8220;easeNone&#8221;,&#8221;easeIn&#8221;,&#8221;easeOut&#8221;,
+&#8220;easeBoth&#8221;,&#8221;easeInStrong&#8221;,&#8221;easeOutStrong&#8221;,&#8221;easeBothStrong&#8221;,&#8221;elasticIn&#8221;,&#8221;elasticOut&#8221;,&#8221;elasticBoth&#8221;,&#8221;backIn&#8221;,
+&#8220;backOut&#8221;,&#8221;backBoth&#8221;,&#8221;bounceIn&#8221;,&#8221;bounceOut&#8221;,&#8221;bounceBoth&#8221;，默认 &#8220;easeNone&#8221;，具体效果可自行尝试</p>
+<p><tt class="docutils literal"><span class="pre">callback</span> <span class="pre">(optional)</span></tt>:类型函数，动画结束时调用</p>
+<p><a href="#id3"><span class="problematic" id="id4">``</span></a>nativeSupport:类型 bool``，是否在支持css动画的浏览器上使用原生机制，默认 true</p>
+<div class="section" id="id5">
+<h3>实例动画对象<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>通过 <tt class="docutils literal"><span class="pre">var</span> <span class="pre">anim=Anim(...)</span></tt> 来实例化一个动画对象。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>实例方法<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">run</span> <span class="pre">:</span> <span class="pre">void</span> <span class="pre">function(){}</span></tt>:在动画实例上调用，开始当前动画实例的动画.</p>
+<p><tt class="docutils literal"><span class="pre">stop</span> <span class="pre">:</span> <span class="pre">void</span> <span class="pre">function(){}</span></tt>:在动画实例上调用，结束当前动画实例的动画.</p>
+</div>
+<div class="section" id="id7">
+<h2>在节点实例上开始动画<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>调用接口<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">S</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">animate</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">props</span><span class="p">,</span><span class="nx">duration</span><span class="p">,</span><span class="nx">easing</span><span class="p">,</span><span class="nx">callback</span><span class="p">,</span><span class="nx">nativeSupport</span><span class="p">){</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>参数可见构造器接口部分</p>
+</div>
+<div class="section" id="id9">
+<h3>快捷方法<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="show-hide">
+<h4>show/hide<a class="headerlink" href="#show-hide" title="Permalink to this headline">¶</a></h4>
+<p><tt class="docutils literal"><span class="pre">show</span> <span class="pre">:</span> <span class="pre">Node</span> <span class="pre">function(speed,callback){}</span></tt> : 元素动画效果显示</p>
+<p><tt class="docutils literal"><span class="pre">hide</span> <span class="pre">:</span> <span class="pre">Node</span> <span class="pre">function(speed,callback){}</span></tt> : 元素动画效果隐藏</p>
+<p><tt class="docutils literal"><span class="pre">toogle</span> <span class="pre">:</span> <span class="pre">Node</span> <span class="pre">function(speed,callback){}</span></tt> : 当前元素为显示时动画效果隐藏，否则动画效果显示</p>
+<p>speed (optional):类型整数，不设置，则无动画过程</p>
+<p>callback (optional):类型函数，要求设置 speed ，动画结束后调用</p>
+</div>
+<div class="section" id="fadein-out">
+<h4>fadeIn/Out<a class="headerlink" href="#fadein-out" title="Permalink to this headline">¶</a></h4>
+<p><tt class="docutils literal"><span class="pre">fadeIn</span> <span class="pre">:</span> <span class="pre">Node</span> <span class="pre">function(speed,callback){}</span></tt> : 元素渐隐效果显示，设置opacity</p>
+<p><tt class="docutils literal"><span class="pre">fadeOut</span> <span class="pre">:</span> <span class="pre">Node</span> <span class="pre">function(speed,callback){}</span></tt> : 元素渐隐效果隐藏，设置opacity</p>
+<p>speed (optional):类型整数，默认为1，动画时长，单位为秒</p>
+<p>callback (optional):类型函数，动画结束后调用</p>
+</div>
+<div class="section" id="slidedown-up">
+<h4>slideDown/Up<a class="headerlink" href="#slidedown-up" title="Permalink to this headline">¶</a></h4>
+<p><tt class="docutils literal"><span class="pre">slideDown</span> <span class="pre">:</span> <span class="pre">Node</span> <span class="pre">function(speed,callback){}</span></tt> : 元素从上到下滑动显示，设置height</p>
+<p><tt class="docutils literal"><span class="pre">slideUp</span> <span class="pre">:</span> <span class="pre">Node</span> <span class="pre">function(speed,callback){}</span></tt> : 元素从下到上隐藏，设置height</p>
+<p>speed (optional):类型整数，默认为1，动画时长，单位为秒</p>
+<p>callback (optional):类型函数，动画结束后调用</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+            <p style="text-align:center;margin-top: 40px;">
+            </p>
+            <div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">
+        google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+        google.setOnLoadCallback(function() {
+            var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+            customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+            customSearchControl.draw('cse');
+        }, true);
+    </script>
+</div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+    </div>
+  </body>
+</html>

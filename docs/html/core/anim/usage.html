@@ -1,0 +1,223 @@
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>使用示例 &mdash; KISSY Docs v2,0 documentation</title>
+    
+    <link rel="stylesheet" href="../../static/kissy.css" />
+    <link rel="stylesheet" href="../../static/pygments.css" />
+    <link rel="top" title="KISSY Docs v2,0 documentation" href="../../index.html" />
+
+    <script>
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2,0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script src="http://yiminghe.github.com/kissy/build/kissy.js"></script> 
+  </head>
+  <body><a href="http://github.com/kissyteam" style="display:block; position: absolute; top: 0; right: 0; width: 150px; height: 150px; z-index: 10000;border: none;" >
+    <img  src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+</a>
+<div class="headwrap">
+<div class="header">
+	<h1 class="logo"><a href="http://kissyteam.github.com/"><img src="http://kissyteam.github.com/kissy.png" /></a></h1>
+    <ul class="navigation">
+        <li><a href="http://kissyteam.github.com/">Home</a><b></b><s></s></li>
+        <li><a href="http://kissyui.com/blog/">Blog</a><b></b><s></s></li>
+        <li><a href="http://github.com/kissyteam/kissy#readme">About</a></li>
+    </ul>
+</div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="body">
+            
+  <div class="section" id="id1">
+<h1>使用示例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>使用构造器生成动画实例操作<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<button id="test1-btn">demo1:开始动画</button>
+
+<div id="test1" style="width: 10px; height: 20px; position: absolute; top: 20px; left: 120px; text-align: center; color: #999">^o^</div>
+
+<script>
+    KISSY.use("anim,node",function(S,Anim,Node){
+        //KISSY 1.2 以前可通过 var Node=S.Node ; var Anim=S.Anim
+
+         var anim = Anim(
+                    '#test1',
+                    {
+                        'background-color':'#fcc',
+                        //'border': '5px dashed #999',
+                        'border-wdith':'5px',
+                        'border-color':"#999999",
+                        'border-style':"dashed",
+                        'width': '100px',
+                        'height': '50px',
+                        'left': '900px',
+                        'top': '285px',
+                        'opacity': '.5',
+                        'font-size': '48px',
+                        'padding': '30px 0',
+                        'color': '#FF3333'
+                    },5,
+                    'bounceOut',function(){
+                        alert('demo1 结束');
+                    });
+         S.one("#test1-btn").on("click",function(){
+            anim.run();
+         });
+    });
+</script><p>源码：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;anim,node&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Anim</span><span class="p">,</span><span class="nx">Node</span><span class="p">){</span>
+    <span class="c1">//KISSY 1.2 以前可通过 var Node=S.Node ; var Anim=S.Anim</span>
+     <span class="kd">var</span> <span class="nx">anim</span> <span class="o">=</span> <span class="nx">Anim</span><span class="p">(</span>
+                <span class="s1">&#39;#test1&#39;</span><span class="p">,</span>
+                <span class="p">{</span>
+                    <span class="s1">&#39;background-color&#39;</span><span class="o">:</span><span class="s1">&#39;#fcc&#39;</span><span class="p">,</span>
+                    <span class="c1">//&#39;border&#39;: &#39;5px dashed #999&#39;,</span>
+                    <span class="s1">&#39;border-wdith&#39;</span><span class="o">:</span><span class="s1">&#39;5px&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;border-color&#39;</span><span class="o">:</span><span class="s2">&quot;#999999&quot;</span><span class="p">,</span>
+                    <span class="s1">&#39;border-style&#39;</span><span class="o">:</span><span class="s2">&quot;dashed&quot;</span><span class="p">,</span>
+                    <span class="s1">&#39;width&#39;</span><span class="o">:</span> <span class="s1">&#39;100px&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;height&#39;</span><span class="o">:</span> <span class="s1">&#39;50px&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;left&#39;</span><span class="o">:</span> <span class="s1">&#39;900px&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;top&#39;</span><span class="o">:</span> <span class="s1">&#39;285px&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;opacity&#39;</span><span class="o">:</span> <span class="s1">&#39;.5&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;font-size&#39;</span><span class="o">:</span> <span class="s1">&#39;48px&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;padding&#39;</span><span class="o">:</span> <span class="s1">&#39;30px 0&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;color&#39;</span><span class="o">:</span> <span class="s1">&#39;#FF3333&#39;</span>
+                <span class="p">},</span><span class="mi">5</span><span class="p">,</span>
+                <span class="s1">&#39;bounceOut&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+                    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;demo1 结束&#39;</span><span class="p">);</span>
+                <span class="p">});</span>
+     <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#test1-btn&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">anim</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
+     <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>节点实例动画操作<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div style='width:100px;height:100px;border:1px solid red;' id='anim_show'>
+    show/hide 动画
+</div>
+ <br/>
+<button id='demo_show'>show/hide</button>
+ <br/>
+<div style='width:100px;height:100px;border:1px solid red;' id='anim_slide'>
+    slideUp/slideDown 动画
+</div>
+ <br/>
+<button id='demo_slide'>slideUp/slideDown</button>
+ <br/>
+<div style='width:100px;height:100px;border:1px solid red;' id='anim_fade'>
+    fadeIn/fadeOut 动画
+</div>
+ <br/>
+<button id='demo_fade'>fadeIn/fadeOut</button>
+
+<script>
+     KISSY.use("anim",function(S,Anim){
+         var demo_show=S.one("#demo_show"),
+         demo_slide=S.one("#demo_slide"),
+         demo_fade=S.one("#demo_fade");
+
+         var anim_show=S.one("#anim_show"),
+         anim_slide=S.one("#anim_slide"),
+         anim_fade=S.one("#anim_fade");
+
+         demo_show.on("click",function(){
+             if(anim_show.css("display")==="none")
+             anim_show.show(1);
+             else
+             anim_show.hide(1);
+         });
+
+         demo_slide.on("click",function(){
+             if(anim_slide.css("display")==="none")
+             anim_slide.slideDown();
+             else
+             anim_slide.slideUp();
+         });
+
+         demo_fade.on("click",function(){
+             if(anim_fade.css("display")==="none")
+             anim_fade.fadeIn();
+             else
+             anim_fade.fadeOut();
+         });
+     });
+</script><p>源码：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;anim,node&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Anim</span><span class="p">,</span><span class="nx">Node</span><span class="p">){</span>
+    <span class="c1">//KISSY 1.2 以前可通过 var Node=S.Node ; var Anim=S.Anim</span>
+    <span class="kd">var</span> <span class="nx">demo_show</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#demo_show&quot;</span><span class="p">),</span>
+    <span class="nx">demo_slide</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#demo_slide&quot;</span><span class="p">),</span>
+    <span class="nx">demo_fade</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#demo_fade&quot;</span><span class="p">);</span>
+
+    <span class="kd">var</span> <span class="nx">anim_show</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#anim_show&quot;</span><span class="p">),</span>
+    <span class="nx">anim_slide</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#anim_slide&quot;</span><span class="p">),</span>
+    <span class="nx">anim_fade</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#anim_fade&quot;</span><span class="p">);</span>
+
+    <span class="nx">demo_show</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">anim_show</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;display&quot;</span><span class="p">)</span><span class="o">===</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+        <span class="nx">anim_show</span><span class="p">.</span><span class="nx">show</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+        <span class="k">else</span>
+        <span class="nx">anim_show</span><span class="p">.</span><span class="nx">hide</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="nx">demo_slide</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">anim_slide</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;display&quot;</span><span class="p">)</span><span class="o">===</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+        <span class="nx">anim_slide</span><span class="p">.</span><span class="nx">slideDown</span><span class="p">();</span>
+        <span class="k">else</span>
+        <span class="nx">anim_slide</span><span class="p">.</span><span class="nx">slideUp</span><span class="p">();</span>
+    <span class="p">});</span>
+
+    <span class="nx">demo_fade</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">anim_fade</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;display&quot;</span><span class="p">)</span><span class="o">===</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+        <span class="nx">anim_fade</span><span class="p">.</span><span class="nx">fadeIn</span><span class="p">();</span>
+        <span class="k">else</span>
+        <span class="nx">anim_fade</span><span class="p">.</span><span class="nx">fadeOut</span><span class="p">();</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+
+            <p style="text-align:center;margin-top: 40px;">
+            </p>
+            <div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">
+        google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+        google.setOnLoadCallback(function() {
+            var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+            customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+            customSearchControl.draw('cse');
+        }, true);
+    </script>
+</div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+    </div>
+  </body>
+</html>
