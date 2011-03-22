@@ -2,66 +2,220 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>kissyteam@github</title>
+<title>KISSY - Keep It Simple &amp; Stupid, Short &amp; Sweet, Slim &amp; Sexy...</title>
+<link rel="stylesheet" href="../kissy/build/cssreset-grids/reset-grids.css"/>
+<link rel="stylesheet" href="http://assets.taobaocdn.com/tbsp/core/grids.css"/>
+<link rel="stylesheet" href="../kissy-dpl/build/packages/dpl-pkg.css"/>
 <style>
-body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0;}body,button,input,select,textarea{font:12px/1.5 tahoma,arial,\5b8b\4f53,sans-serif;}h1,h2,h3,h4,h5,h6{font-size:100%;}address,cite,dfn,em,var{font-style:normal;}code,kbd,pre,samp{font-family:courier new,courier,monospace;}small{font-size:12px;}ul,ol{list-style:none;}a{text-decoration:none;}a:hover{text-decoration:underline;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}legend{color:#000;}fieldset,img{border:0;}button,input,select,textarea{font-size:100%;}table{border-collapse:collapse;border-spacing:0;}
-body { margin: 20px 50px; }
-pre {
-    color: #666;
-    font: 14px/1.5em Monaco,"Andale Mono","Lucida Console","Bitstream Vera Sans Mono","Courier New",monospace;
-    margin: 20px;
-}
-a { color: #1F75CC; }
-a:active, a:hover { text-decoration: underline; }
+	body{font-size:14px;}
+	#header,
+	#content,
+	#footer{width:950px;margin:0 auto;}
+	#header{overflow:hidden;}
+	#header .logo{float:left;margin-top:10px;}
+	#header .sub-title{float:left;margin-top:45px;font-size:15px;}
+	#header .rel-nav{float:right;margin-top:45px;}
+	#footer{margin-top:10px;padding:10px 0 20px 0;text-align:center;color:#666;;border-top:1px solid #ddd;}
+
+	.h{color:#f30;}
+	.box .box-hd{border:none;border-bottom:1px dashed #a3d0ef;background:#d1e8fa;}
+	.box .box-hd h3{font-size:15px;font-family:"Microsoft YaHei";}
+	.box .box-bd{padding:10px;border:none;}
+	.sub-title{display:block;color: #335974;font-family:"Microsoft YaHei";font-size: 18px;font-weight: normal;}
+	.quick-tips{padding-left:1em;font-size:12px;}
+	.desc{text-indent:2em;color:#666;}	
+	
+	.col-sub-left{float:left;width:50%;}
+	.col-sub-right{float:right;width:48%;}
+	
+	.api .list{margin-left:3em;list-style-type: disc;}
 </style>
+<base target="_blank" />
 </head>
 <body>
-<img src="kissy.png" alt="KISSY" />
-<pre>
-~:    
-    <a href="/kissy/docs/">KISSY API 文档</a>
-
-    <a href="docs/html/core/">KISSY Core文档</a>
-    
-    <a href="docs/html/seed/">KISSY Seed文档</a>
-
-    <a href="docs/html/quickstart/">KISSY 快速入门</a>
-    
-    <a href="kcs/core.html">KISSY Core 作弊条</a>
-    
-    <a href="kcs/widget.html">KISSY Widget 作弊条</a>
-
-    <a href="docs/html/editorguide/">Editor 使用手册</a>
-
-    <a href="/kissy-ajbridge/docs/">AJBridge 文档</a>
-
-    <a href="/kissy-dpl/">KISSY DPL</a>
-    
-    <a href="docs/html/styleguide/">规范</a>
-    <a href="docs/html/workflow/">流程</a>
-    <a href="https://github.com/kissyteam/kissy-tools#readme">工具</a>
-
-    <a href="http://github.com/kissyteam">源码</a>
-    <a href="http://kissyui.com/blog/">博客</a>
-
-    kissyteam(at)gmail.com
-</pre>
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
-
-    // The following are highly recommended additional parameters. Remove the slashes in front to use.
-     //var disqus_identifier = '/anim';
-     //var disqus_url = window.location;
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
+	<div id="header">
+        <a class="logo" href="index.html"><img src="kissy.png" alt="KISSY"/></a>
+		<p class="sub-title">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+        <p class="rel-nav">
+            <a href="http://github.com/kissyteam">源码</a> |
+			<a href="http://kissyui.com/blog/">博客</a>
+        </p>
+    </div>
+    <div id="content">
+		<!-- {{{ layout -->
+		<div class="layout grid-c3e">
+			<div class="col-main">
+				<div class="main-wrap">
+					<!-- {{{ box -->
+					<div class="box">
+						<div class="box-hd">
+							<h3>快速入门</h3>
+						</div>
+						<div class="box-bd">
+							<div class="desc">
+								<P>KISSY是由淘宝前端攻城师们发起的一个开源项目。</P>
+								<p>KISSY提供了设计模式库、脚本库和最佳开发流程等工具，致力于减少重复开发，提高开发效率。</p>
+								<p>我们为你准备了一份快速入门教程, 教你从最基本的地方开始<a class="h" href="../kissy/docs/html/quickstart/">熟悉可爱的KISSY</a> ^o^。</p>
+							</div>
+						</div>
+					</div>
+					<!-- box }}} -->
+                    <!-- {{{ box -->
+					<div class="box api">
+						<div class="box-hd">
+							<h3>API文档 &amp; 范例</h3>
+						</div>
+						<div class="box-bd">
+							<div class="col-sub-left">
+								<h3 class="sub-title">Seed</h3> 
+								<p class="desc">种子</p>
+								<ul class="list"> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/seed/kissy.html">kissy</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/seed/lang.html">lang</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/seed/loader.html">loader</a> <a href="docs/html/seed/loader/index.html" class="quick-tips">详细</a></li> 
+								</ul> 
+								<h3 class="sub-title">Core<a class="quick-tips" href="http://docs.kissyui.com/kcs/core.html">作弊条</a></h3> 
+								<p class="desc">核心文件</p>
+								<ul class="list"> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/ua/index.html">ua</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/dom/index.html">dom</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/event/index.html">event</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/node/index.html">node</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/json/index.html">json</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/ajax/index.html">ajax</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/anim/index.html">anim</a> <a href="docs/html/core/anim/index.html" class="quick-tips">详细</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/cookie/index.html">cookie</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/base/index.html">base</a></li> 
+								</ul>
+							</div>
+							<div class="col-sub-right">
+								<h3 class="sub-title">Components<a class="quick-tips" href="http://docs.kissyui.com/kcs/widget.html">作弊条</a></h3>
+								<p class="desc">UI组件</p>							
+								<ul class="list"> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/cssreset/index.html">cssreset</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/cssgrids/index.html">cssgrids</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/csscommon/index.html">csscommon</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/sizzle/index.html">sizzle</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/template/index.html">template</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/datalazyload/index.html">datalazyload</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/flash/index.html">flash</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/switchable/index.html">switchable</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/suggest/index.html">suggest</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/calendar/index.html">calendar</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/imagezoom/index.html">imagezoom</a></li> 
+									<li><a href="http://docs.kissyui.com/kissy/docs/overlay/index.html">overlay</a></li> 
+								</ul> 
+								<h3 class="sub-title">Related Projects</h3> 
+								<p class="desc">独立子项目</p>
+								<ul class="list"> 
+									<li><a href="http://docs.kissyui.com/kissy-dpl/">DPL</a></li> 
+									<li><a href="http://kissyteam.github.com/docs/html/editorguide/">Editor</a></li> 
+									<li><a href="http://kissyteam.github.com/kissy-ajbridge/docs/">AJBridge</a></li> 
+								</ul> 	
+							</div>
+						</div>
+					</div>
+					<!-- box }}} -->
+				</div>
+			</div>
+			<div class="col-sub">
+				<!-- {{{ box -->
+				<div class="box best-practice">
+					<div class="box-hd">
+						<h3>编码最佳实践</h3>
+					</div>
+					<div class="box-bd">
+						<ul class="list"> 
+							<li><a href="http://docs.kissyui.com/docs/html/styleguide/common-conventions.html">通用约定</a></li> 
+							<li><a href="http://docs.kissyui.com/docs/html/styleguide/html-coding-style.html">HTML 编码规范</a></li> 
+							<li><a href="http://docs.kissyui.com/docs/html/styleguide/css-coding-style.html">CSS 编码规范</a></li> 
+							<li><a href="http://docs.kissyui.com/docs/html/styleguide/js-lang-rules.html">JavaScript 语言规范</a></li> 
+							<li><a href="http://docs.kissyui.com/docs/html/styleguide/js-style-rules.html">JavaScript 编码风格</a></li> 
+							<li><a href="http://docs.kissyui.com/docs/html/styleguide/kissy-components-style-guide.html">KISSY 组件开发规范</a></li> 
+						</ul> 
+					</div>
+				</div>
+				<!-- box }}} -->
+				<!-- {{{ box -->
+				<div class="box best-practice">
+					<div class="box-hd">
+						<h3>常用工具</h3>
+					</div>
+					<div class="box-bd">
+						<ul class="list"> 
+							<li><a href="http://code.google.com/intl/zh-CN/closure/compiler/">Closure Compiler: </a><span class="desc">JS压缩</span></li> 
+							<li><a href="http://developer.yahoo.com/yui/compressor/">YUI Compressor: </a><span class="desc">CSS压缩</span></li> 
+							<li><a href="http://code.google.com/p/jsdoc-toolkit/">JsDoc Toolkit:</a><span class="desc">文档生成</span></li> 
+							<li><a href="http://code.google.com/closure/utilities/">Closure Linter:</a><span class="desc">检查校验</span></li> 
+							<li><a href="http://ant.apache.org/">Ant: </a><span class="desc">自动配置、打包</span></li> 
+							<li>iDebug:<span class="desc">页面调试</span></li>							
+							<li>CSSEmbed:<span class="desc">图片转DataURI</span></li> 
+							<li>ConvertZ:<span class="desc">繁简转换</span></li> 
+							<li>PNGOut:<span class="desc">PNG优化</span></li> 							
+						</ul> 
+					</div>
+				</div>
+				<!-- box }}} -->
+			</div>
+			<div class="col-extra">
+				<!-- {{{ box -->
+				<div class="box">
+					<div class="box-hd">
+						<h3>开发计划</h3>
+					</div>
+					<div class="box-bd">
+						KISSY的新闻、更新、发布公告
+					</div>
+				</div>
+				<!-- box }}} -->
+				<!-- {{{ box -->
+				<div class="box join-us">
+					<div class="box-hd">
+						<h3>加入我们</h3>
+					</div>
+					<div class="box-bd">						
+						<ul>
+							<li>旺旺群：29676575</li>
+							<li>邮箱：kissyteam@gmail.com</li>
+						</ul>
+						<br/>
+						<p class="desc">如果你想贡献你的代码，你可以先了解<a href="http://docs.kissyui.com/docs/html/workflow/">KISSY的开发流程</a>。</p>
+					</div>
+				</div>
+				<!-- box }}} -->
+				<!-- {{{ box -->
+				<div class="box">
+					<div class="box-hd">
+						<h3>最新评论</h3>
+					</div>
+					<div class="box-bd">
+						<div id="disqus_thread"></div> 
+						<script type="text/javascript"> 
+							/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+							var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+						 
+							// The following are highly recommended additional parameters. Remove the slashes in front to use.
+							 //var disqus_identifier = '/anim';
+							 //var disqus_url = window.location;
+						 
+							/* * * DON'T EDIT BELOW THIS LINE * * */
+							(function() {
+								var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+								dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+								(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+							})();
+						</script> 
+					</div>
+				</div>
+				<!-- box }}} -->
+				
+			</div>
+		</div>
+		<!-- layout }}} -->
+    </div>
+    <div id="footer">
+        <p class="copyright">&copy; 2009 - 2029 KISSY UI LIBRARY</p>
+        <p class="copyright">HOMEPAGE DESIGNED BY FOOL2FISH</p>
+    </div>
 </body>
 </html>
