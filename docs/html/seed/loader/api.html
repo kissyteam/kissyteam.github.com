@@ -2,27 +2,32 @@
 <!doctype html>
 
 <html>
-  <head>
-    <meta charset="utf-8" />
-    
-    <title>API &mdash; KISSY Docs v2,0 documentation</title>
-    
-    <link rel="stylesheet" href="../../static/kissy.css" />
-    <link rel="stylesheet" href="../../static/pygments.css" />
-    <link rel="top" title="KISSY Docs v2,0 documentation" href="../../index.html" />
+<head>
+<meta charset="utf-8"/>
 
-    <script>
-      var DOCUMENTATION_OPTIONS = {
+<title>API &mdash; KISSY Docs v2,0 documentation</title>
+
+<link rel="stylesheet" href="../../static/kissy.css"/>
+<link rel="stylesheet" href="../../static/pygments.css"/>
+<link rel="top" title="KISSY Docs v2,0 documentation" href="../../index.html"/>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
         VERSION:     '2,0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
-      };
-    </script>
-    <script src="http://yiminghe.github.com/kissy/build/kissy.js"></script> 
-  </head>
-  <body><a href="http://github.com/kissyteam" style="display:block; position: absolute; top: 0; right: 0; width: 150px; height: 150px; z-index: 10000;border: none;" >
+    }
+    ;
+</script>
+
+<script src="http://yiminghe.github.com/kissy/build/kissy.js"></script>
+<!--
+    <script src="http://localhost/kissy_git/kissy/build/kissy.js"></script>
+--> 
+</head>
+<body><a href="http://github.com/kissyteam" style="display:block; position: absolute; top: 0; right: 0; width: 150px; height: 150px; z-index: 10000;border: none;" >
     <img  src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
 </a>
 <div class="headwrap">
@@ -38,8 +43,8 @@
 
 
 
-    <div class="document">
-      <div class="documentwrapper">
+<div class="document">
+    <div class="documentwrapper">
         <div class="body">
             
   <div class="section" id="api">
@@ -75,6 +80,7 @@
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;custommod&quot;</span><span class="o">:</span><span class="p">{</span>
         <span class="nx">fullpath</span><span class="o">:</span><span class="s2">&quot;http://xx.com/custommod.js&quot;</span><span class="p">,</span>
+        <span class="nx">cssfullpath</span><span class="o">:</span><span class="s2">&quot;http://xx.com/custommod.css&quot;</span><span class="p">,</span>
         <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;depmod1&quot;</span><span class="p">,</span><span class="s2">&quot;depmod2&quot;</span><span class="p">]</span>
     <span class="p">},</span>
     <span class="s2">&quot;custommod2&quot;</span><span class="o">:</span><span class="p">{</span>
@@ -84,7 +90,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>指明了模块 <tt class="docutils literal"><span class="pre">custommod</span></tt> 与 <tt class="docutils literal"><span class="pre">custommod2</span></tt> 的模块文件路径以及其依赖的模块名称，那么当 <tt class="docutils literal"><span class="pre">use</span></tt> 该模块时时就会从 <tt class="docutils literal"><span class="pre">fullpath</span></tt> 中载入模块定义以及加载其依赖模块的定义，</p>
+<p>指明了模块 <tt class="docutils literal"><span class="pre">custommod</span></tt> 与 <tt class="docutils literal"><span class="pre">custommod2</span></tt> 的模块文件路径以及其依赖的模块名称，那么当 <tt class="docutils literal"><span class="pre">use</span></tt> 该模块时时就会从 <tt class="docutils literal"><span class="pre">fullpath</span></tt> 中载入模块定义和其依赖模块的定义，以及从``cssfullpath``中载入模块的样式表</p>
 <p>注意依赖的模块也要进行注册。</p>
 <p>该函数用在模块注册文件中,kissy 1.2 使用包机制取代模块注册，仍然兼容1.2以前模块注册方式。</p>
 </div>
@@ -106,7 +112,7 @@
 <p>config (optional):类型对象，表示该模块的一些格外属性，包括 attach(bool),requires(Array&lt;String&gt;)，例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="nx">attach</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span><span class="c1">//模块定义时不会执行定义函数 fn，只有在 use 时才执行，懒加载原则</span>
-
+    <span class="nx">csspath</span><span class="o">:</span><span class="s2">&quot;./mod.css&quot;</span><span class="p">,</span> <span class="c1">//相对当前模块的js文件地址</span>
     <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;depMod1&#39;</span><span class="p">,</span><span class="s1">&#39;depMod2&#39;</span><span class="p">]</span> <span class="c1">//该模块的一些依赖项</span>
 <span class="p">}</span>
 </pre></div>
@@ -227,11 +233,11 @@
     </script>
 </div>
         </div>
-      </div>
-      <div class="clearer"></div>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
-    </div>
-  </body>
+    <div class="clearer"></div>
+</div>
+<div class="footer">
+    &copy; Copyright 2010, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
 </html>

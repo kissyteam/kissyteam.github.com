@@ -16,7 +16,8 @@ KISSY 1.2 前
             fullpath:"http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/dep.js"
        },
        "1.1x-mod":{
-            fullpath:"http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/mod.js",
+            fullpath:"http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/mod.js",            
+            cssfullpath:"http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/mod.css",
             requires:["1.1x-dep"]
        } 
     });    
@@ -65,6 +66,7 @@ demo
            },
            "1.1x-mod":{
                 fullpath:"http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/mod.js",
+                cssfullpath:"http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/mod.css",
                 requires:["1.1x-dep"]
            } 
         });  
@@ -113,6 +115,7 @@ KISSY 1.2
     KISSY.add("1.2/mod",function(){
         alert("1.2/mod loaded");
     },{
+        csspath:"./mod.css", //相对于模块js 定位
         requires:["./dep"]
     });
         
