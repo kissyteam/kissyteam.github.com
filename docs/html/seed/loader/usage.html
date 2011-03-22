@@ -164,6 +164,32 @@
     });
 </script></div>
 </div>
+<div class="section" id="id12">
+<h2>如何进行代码更新<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p>由于动态加载的 js 文件不是写在页面中，所以不方便加时间戳，推荐的做法是更改包路径，每次更新都挪动全部 js 文件到新的目录中，
+例如最初版本包设置为：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+    <span class="nx">packages</span><span class="o">:</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;1.2&quot;</span><span class="p">,</span> <span class="c1">//包名</span>
+            <span class="nx">path</span><span class="o">:</span><span class="s2">&quot;http://xx.com/1.0&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>当更改包内模块后，更改包路径为</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+    <span class="nx">packages</span><span class="o">:</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;1.2&quot;</span><span class="p">,</span> <span class="c1">//包名</span>
+            <span class="nx">path</span><span class="o">:</span><span class="s2">&quot;http://xx.com/1.1&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
