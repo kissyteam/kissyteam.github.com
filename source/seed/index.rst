@@ -1,13 +1,13 @@
-.. _kissy_core:
+.. _kissy_seed:
 
 
-KISSY Core Docs
+KISSY Seed Docs
 =============================
 
 
 .. toctree::
    :maxdepth: 1
 
-   anim/index.rst
+   loader/index.rst
 
 

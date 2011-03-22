@@ -1,0 +1,237 @@
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>API &mdash; KISSY Docs v2,0 documentation</title>
+    
+    <link rel="stylesheet" href="../../static/kissy.css" />
+    <link rel="stylesheet" href="../../static/pygments.css" />
+    <link rel="top" title="KISSY Docs v2,0 documentation" href="../../index.html" />
+
+    <script>
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2,0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script src="http://yiminghe.github.com/kissy/build/kissy.js"></script> 
+  </head>
+  <body><a href="http://github.com/kissyteam" style="display:block; position: absolute; top: 0; right: 0; width: 150px; height: 150px; z-index: 10000;border: none;" >
+    <img  src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+</a>
+<div class="headwrap">
+<div class="header">
+	<h1 class="logo"><a href="http://kissyteam.github.com/"><img src="http://kissyteam.github.com/kissy.png" /></a></h1>
+    <ul class="navigation">
+        <li><a href="http://kissyteam.github.com/">Home</a><b></b><s></s></li>
+        <li><a href="http://kissyui.com/blog/">Blog</a><b></b><s></s></li>
+        <li><a href="http://github.com/kissyteam/kissy#readme">About</a></li>
+    </ul>
+</div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="body">
+            
+  <div class="section" id="api">
+<h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>引入<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>页面引入 kissy.js :</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>添加模块<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>函数接口<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h4>添加模块定义<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="nx">fn</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">name</span></tt> :类型字符串，表示模块名称</p>
+<p><tt class="docutils literal"><span class="pre">fn</span></tt> :类型函数，表示模块定义函数，若该模块的所有依赖项都已经载入完毕，则 <tt class="docutils literal"><span class="pre">fn</span></tt> 立即执行</p>
+<p>该函数用在模块定义文件中</p>
+</div>
+<div class="section" id="id5">
+<h4>注册模块<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id6">
+<h5>接口1<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">config</span></tt> :类型对象，表示模块描述信息，例如如下格式</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;custommod&quot;</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">fullpath</span><span class="o">:</span><span class="s2">&quot;http://xx.com/custommod.js&quot;</span><span class="p">,</span>
+        <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;depmod1&quot;</span><span class="p">,</span><span class="s2">&quot;depmod2&quot;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;custommod2&quot;</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">fullpath</span><span class="o">:</span><span class="s2">&quot;http://xx.com/custommod2.js&quot;</span><span class="p">,</span>
+        <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;depmod1&quot;</span><span class="p">,</span><span class="s2">&quot;depmod2&quot;</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>指明了模块 <tt class="docutils literal"><span class="pre">custommod</span></tt> 与 <tt class="docutils literal"><span class="pre">custommod2</span></tt> 的模块文件路径以及其依赖的模块名称，那么当 <tt class="docutils literal"><span class="pre">use</span></tt> 该模块时时就会从 <tt class="docutils literal"><span class="pre">fullpath</span></tt> 中载入模块定义以及加载其依赖模块的定义，</p>
+<p>注意依赖的模块也要进行注册。</p>
+<p>该函数用在模块注册文件中,kissy 1.2 使用包机制取代模块注册，仍然兼容1.2以前模块注册方式。</p>
+</div>
+<div class="section" id="id7">
+<h5>接口2<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="nx">config</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>相当于调用接口1的 <tt class="docutils literal"><span class="pre">KISSY.add({name:config})</span></tt>;</p>
+</div>
+</div>
+</div>
+<div class="section" id="kissy-1-2">
+<h3>KISSY 1.2 新增接口<a class="headerlink" href="#kissy-1-2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="nx">fn</span><span class="p">,</span><span class="nx">config</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>新增 config 参数</p>
+<p>config (optional):类型对象，表示该模块的一些格外属性，包括 attach(bool),requires(Array&lt;String&gt;)，例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">attach</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span><span class="c1">//模块定义时不会执行定义函数 fn，只有在 use 时才执行，懒加载原则</span>
+
+    <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;depMod1&#39;</span><span class="p">,</span><span class="s1">&#39;depMod2&#39;</span><span class="p">]</span> <span class="c1">//该模块的一些依赖项</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>如果模块 <tt class="docutils literal"><span class="pre">depMod1</span></tt> 以及 <tt class="docutils literal"><span class="pre">depMod2</span></tt> 的定义函数有返回值，例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;depMod1&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">function</span> <span class="nx">Mod</span><span class="p">(){}</span>
+    <span class="k">return</span> <span class="nx">Mod</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;depMod2&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">function</span> <span class="nx">Mod</span><span class="p">(){}</span>
+    <span class="k">return</span> <span class="nx">Mod</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>那么该返回值会作为参数传入依赖 depMod1 以及 depMod2 的模块的定义函数，例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;custommode&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DepMod1</span><span class="p">,</span><span class="nx">DepMod2</span><span class="p">){</span>
+    <span class="c1">//use DepMod1 to refer depmod1&#39;s return value</span>
+<span class="p">},{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;depmod1&quot;</span><span class="p">,</span><span class="s2">&quot;depmod2&quot;</span><span class="p">]});</span>
+</pre></div>
+</div>
+<p>当模块名称 name 为包内模块&lt;参见下文1.2包配置&gt;时，则requires的模块名称可使用相对路径 refer 包内其他模块</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// tc/mods/mod1 依赖于 tc/mods/mod2</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;tc/mods/mod1&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){},</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;./mod2&#39;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>使用模块<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h3>函数接口<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">modNames</span><span class="p">,</span><span class="nx">callback</span><span class="p">){}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">modNames</span></tt> :类型字符串，以 <tt class="docutils literal"><span class="pre">,</span></tt> 分割的模块名称集合字符串,例如 <tt class="docutils literal"><span class="pre">KISSY.use(&quot;custommod,custommod2&quot;);</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">callback</span></tt> (optional):类型函数，当 <tt class="docutils literal"><span class="pre">modNames</span></tt> 中所有模块加载完毕后执行。</p>
+<p>注意 kissy 1.2 以前使用模块前必须注册</p>
+</div>
+<div class="section" id="id10">
+<h3>kissy 1.2 新增接口<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h4>包配置<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<p>目的是为了摆脱模块必须使用前注册的繁琐</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">config</span><span class="p">){}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">config</span> <span class="pre">(optional)</span></tt>:类型对象，当包含 key 为 <tt class="docutils literal"><span class="pre">packages</span></tt> 的配置项，例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+    <span class="nx">packages</span><span class="o">:</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;tc&quot;</span><span class="p">,</span> <span class="c1">//包名</span>
+            <span class="nx">path</span><span class="o">:</span><span class="s2">&quot;../&quot;</span><span class="p">,</span> <span class="c1">//包对应路径，相对路径指相对于当前页面路径</span>
+            <span class="nx">charset</span><span class="o">:</span><span class="s2">&quot;gbk&quot;</span> <span class="c1">//包里模块文件编码格式</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">packages</span></tt> :类型数组，每个数组项为一个包的配置，一个包配置包括三项：</p>
+<p><tt class="docutils literal"><span class="pre">name</span></tt> :类型字符串，表示包名。</p>
+<p><tt class="docutils literal"><span class="pre">path</span></tt> :类型字符串，表示包所在的 <tt class="docutils literal"><span class="pre">url</span></tt> 路径，相对路径表示相对于当前页面路径</p>
+<p><tt class="docutils literal"><span class="pre">charset</span></tt> :类型字符串，表示宝贝所有模块定义文件的编码格式</p>
+<p>当要在包内添加模块时，必须遵守一些约定：</p>
+<p>1.一个模块的文件必须放在以包名命名的目录中</p>
+<p>2.模块的名字必须取名从包目录开始到当前模块文件的文件路径名称，例如 <tt class="docutils literal"><span class="pre">mod1.js</span></tt> 位于 <tt class="docutils literal"><span class="pre">tc/mods</span></tt> 下，则 <tt class="docutils literal"><span class="pre">mod1.js</span></tt> 的模块取名：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;tc/mods/mod1&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h4>使用模块<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<p>如果模块定义函数有返回值，则该模块返回值作为参数直接传入回调函数，例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;depMod1,depMod2&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DepMod1</span><span class="p">,</span><span class="nx">DepMod2</span><span class="p">){</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>如果使用经过配置的包内的模块，则这些包内模块不需要事先注册，直接 <tt class="docutils literal"><span class="pre">use</span></tt> 即可</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+            <p style="text-align:center;margin-top: 40px;">
+            </p>
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">
+        google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+        google.setOnLoadCallback(function() {
+            var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+            customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+            customSearchControl.draw('cse');
+        }, true);
+    </script>
+</div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+    </div>
+  </body>
+</html>
