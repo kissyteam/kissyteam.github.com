@@ -3,31 +3,31 @@
 <head>
 <meta charset="utf-8">
 <title>KISSY core Cheet Sheet</title>
-<link href="http://a.tbcdn.cn/s/kissy/1.1.6/cssbase/base-min.css" rel="stylesheet"/>
+<link href="http://a.tbcdn.cn/s/kissy/1.1.6/cssbase/base-min.css" rel="stylesheet" media="all" />
 <link href="./kcs.css" rel="stylesheet" rel="stylesheet"/>
 <script src="http://a.tbcdn.cn/s/kissy/1.1.6/seed-min.js"></script>
 <script src="./kcs.js"></script>
 </head>
 <body class="core">
 <div id="header">
-    <h1>KISSY Seed/Core Cheet Sheet</h1>
+    <h1>KISSY 1.1.6 Seed/Core Cheet Sheet</h1>
 </div>
 <div id="content">
 <div class="layout">
     <h2 class="ks-seed">OOP</h2>
     <dl id="ks-OOP" class="api ks-seed">
-        <dt><strong>S.mix(r, s, ov, wl):</strong> {Object} 将 s 对象的成员复制到 r 对象上.</dt>
+        <dt><strong>S.mix(r, s, ov, wl)</strong> {Object} 将 s 对象的成员复制到 r 对象上.</dt>
         <dd>
             <ul>
                 <li>ov {Boolean} override, 表示复制时是否采用覆盖模式, 默认为 true. </li>
                 <li>wl {Array} whitelist, 非空时, 表示仅添加该列表中的成员. </li>
             </ul>
         </dd>
-        <dt><strong>S.merge(arguments):</strong> {Object} 合并多个对象, 返回合并后的新对象.</dt>
+        <dt><strong>S.merge(arguments)</strong> {Object} 合并多个对象, 返回合并后的新对象.</dt>
         <dd></dd>
-        <dt><strong>S.augment(r, s1, s2, ..., ov, wl):</strong> {Object} 将s.prototype 的成员复制到 r.prototype 对象上</dt>
+        <dt><strong>S.augment(r, s1, s2, ..., ov, wl)</strong> {Object} 将s.prototype 的成员复制到 r.prototype 对象上</dt>
         <dd>ov, wl, 同 mix.</dd>
-        <dt><strong>S.extend(r, s, px, sx):</strong> {Object} 让函数对象 r 继承函数对象 s. </dt>
+        <dt><strong>S.extend(r, s, px, sx)</strong> {Object} 让函数对象 r 继承函数对象 s. </dt>
         <dd>
             <ul>
                 <li>r {Function}, 子类</li>
@@ -36,26 +36,26 @@
                 <li>sx {Object}, 需要添加/覆盖的静态成员</li>
             </ul>
         </dd>
-        <dt><strong>S.clone(o):</strong> 创建一个普通对象或数组的深拷贝, 并且返回</dt>
+        <dt><strong>S.clone(o)</strong> 创建一个普通对象或数组的深拷贝, 并且返回</dt>
         <dd></dd>
     </dl>
 
     <h2 class="ks-seed">模块化相关</h2>
     <dl id="ks-module" class="api ks-seed">
-        <dt><strong>S.add(name, fn):</strong> 添加模块到 KISSY 对象</dt>
+        <dt><strong>S.add(name, fn)</strong> 添加模块到 KISSY 对象</dt>
         <dd></dd>
-        <dt><strong>S.app(name, sx):</strong> 创建应用对象</dt>
+        <dt><strong>S.app(name, sx)</strong> 创建应用对象</dt>
         <dd>
             <ul>
                 <li>name {String} 应用名</li>
                 <li>sx {Object} 需要添加/覆盖的静态成员</li>
             </ul>
         </dd>
-        <dt><strong>S.use(modNames, callback, cfg):</strong> 获取某个模块, 当某个模块加载后, 执行 callback</dt>
+        <dt><strong>S.use(modNames, callback, cfg)</strong> 获取某个模块, 当某个模块加载后, 执行 callback</dt>
         <dd></dd>
-        <dt><strong>S.require(moduleNmae):</strong> 获取某个模块, 并把这个模块返回</dt>
+        <dt><strong>S.require(moduleNmae)</strong> 获取某个模块, 并把这个模块返回</dt>
         <dd></dd>
-        <dt><strong>S.namespace(arguments):</strong> 创建命名空间</dt>
+        <dt><strong>S.namespace(arguments)</strong> 创建命名空间</dt>
         <dd>
             <pre>
 S.name('app', 'test');
@@ -66,29 +66,29 @@ S.name('app.test');
 
     <h2 class="ks-seed">功能函数</h2>
     <dl id="ks-function" class="api ks-seed">
-        <dt><strong>S.ready(fn):</strong> 当DOM加载完毕时执行 fn.</dt>
+        <dt><strong>S.ready(fn)</strong> 当DOM加载完毕时执行 fn.</dt>
         <dd></dd>
-        <dt><strong>S.available(id, fn):</strong> 当 id 元素可用时立刻执行fn. id必须要元素的id, 或者是id数组.</dt>
+        <dt><strong>S.available(id, fn)</strong> 当 id 元素可用时立刻执行fn. id必须要元素的id, 或者是id数组.</dt>
         <dd></dd>
-        <dt><strong>S.each(object, fn, context):</strong> 对 object 的每个对象, 执行fn</dt>
+        <dt><strong>S.each(object, fn, context)</strong> 对 object 的每个对象, 执行fn</dt>
         <dd></dd>
-        <dt><strong>S.filter(arr, fn, context):</strong> 过滤context下的 arr 中符合 fn 的元素</dt>
+        <dt><strong>S.filter(arr, fn, context)</strong> 过滤context下的 arr 中符合 fn 的元素</dt>
         <dd></dd>
-        <dt><strong>S.globalEval(data):</strong> 在全局环境里执行代码片段</dt>
+        <dt><strong>S.globalEval(data)</strong> 在全局环境里执行代码片段</dt>
         <dd></dd>
-        <dt><strong>S.guid(pre):</strong> 返回全局唯一的 id</dt>
+        <dt><strong>S.guid(pre)</strong> 返回全局唯一的 id</dt>
         <dd>
             <ul>
                 <li>pre {String} 这个 id 的前缀, 可选</li>
             </ul>
         </dd>
-        <dt><strong>S.inArray(item, arr):</strong> 判断 item 是否在 arr 中</dt>
+        <dt><strong>S.inArray(item, arr)</strong> 判断 item 是否在 arr 中</dt>
         <dd></dd>
-        <dt><strong>S.indexOf(item, arr):</strong> 获取 item 在 arr 中第一次出现的索引序号, 无则返回 -1</dt>
+        <dt><strong>S.indexOf(item, arr)</strong> 获取 item 在 arr 中第一次出现的索引序号, 无则返回 -1</dt>
         <dd></dd>
-        <dt><strong>S.lastIndexOf(item, arr):</strong> 获取 item 在 arr 中最后次出现的索引序号, 无则返回 -1</dt>
+        <dt><strong>S.lastIndexOf(item, arr)</strong> 获取 item 在 arr 中最后次出现的索引序号, 无则返回 -1</dt>
         <dd></dd>
-        <dt><strong>S.later(fn, when, periodic, o, data):</strong> 延迟执行</dt>
+        <dt><strong>S.later(fn, when, periodic, o, data)</strong> 延迟执行</dt>
         <dd>
             <ul>
                 <li>fn {Function}: 延迟执行的函数</li>
@@ -98,9 +98,9 @@ S.name('app.test');
                 <li>data {Array}: 传递给fn的参数</li>
             </ul>
         </dd>
-        <dt><strong>S.now():</strong> 返回当前时间</dt>
+        <dt><strong>S.now()</strong> 返回当前时间</dt>
         <dd></dd>
-        <dt><strong>S.log(msg, cat, src):</strong> 输出调试信息</dt>
+        <dt><strong>S.log(msg, cat, src)</strong> 输出调试信息</dt>
         <dd>
             <ul>
                 <li>msg {String} 提示信息</li>
@@ -108,46 +108,46 @@ S.name('app.test');
                 <li>src {String} 调试代码所在的原信息</li>
             </ul>
         </dd>
-        <dt><strong>S.error(msg):</strong> 抛出名为 msg 的错误异常</dt>
+        <dt><strong>S.error(msg)</strong> 抛出名为 msg 的错误异常</dt>
         <dd>
             <ul>
                 <li>msg {String} 错误异常名</li>
             </ul>
         </dd>
-        <dt><strong>S.param(o, sep):</strong> 序列化对象 o, 以 sep 为分隔符</dt>
+        <dt><strong>S.param(o, sep)</strong> 序列化对象 o, 以 sep 为分隔符</dt>
         <dd>
             <ul>
                 <li>o {Object}: 被序列化的对象</li>
                 <li>sep {String}: 分隔符, 默认是 '&'</li>
             </ul>
         </dd>
-        <dt><strong>S.unparam(str, sep):</strong> 解析类似URI的字符串, 并返回一对象, 与 S.param 互逆</dt>
+        <dt><strong>S.unparam(str, sep)</strong> 解析类似URI的字符串, 并返回一对象, 与 S.param 互逆</dt>
         <dd>
             <ul>
                 <li>str {String}: 类 URI 的字符串</li>
                 <li>sep {String}: 分隔符, 默认是 '&'</li>
             </ul>
         </dd>
-        <dt><strong>S.substitute(str, o, regexp):</strong> 字符串模板替换</dt>
+        <dt><strong>S.substitute(str, o, regexp)</strong> 字符串模板替换</dt>
         <dd></dd>
-        <dt><strong>S.trim(str):</strong> 去除字符串开头/末尾空白</dt>
+        <dt><strong>S.trim(str)</strong> 去除字符串开头/末尾空白</dt>
         <dd></dd>
-        <dt><strong>S.unique(a, override):</strong> 对数组中的元素去重</dt>
+        <dt><strong>S.unique(a, override)</strong> 对数组中的元素去重</dt>
         <dd>
             <ul>
                 <li>a {Array}: 待去重的数组</li>
                 <li>override {Boolean}: 默认是保留重复出现对象的第一个, 但当override 为true, 保留重复出现对象的最后一个 </li>
             </ul>
         </dd>
-        <dt><strong>S.makeArray(o):</strong> 将 o 转成数组对象</dt>
+        <dt><strong>S.makeArray(o)</strong> 将 o 转成数组对象</dt>
         <dd></dd>
-        <dt><strong>S.config(o):</strong> 调用自己的方法 </dt>
+        <dt><strong>S.config(o)</strong> 调用自己的方法 </dt>
         <dd>
             <pre>
 S.config({xx:yy}); // 等价于 S.xx(yy)
 </pre>
         </dd>
-        <dt><strong>S.getScript(url, success, charset):</strong> 请求脚本并执行</dt>
+        <dt><strong>S.getScript(url, success, charset)</strong> 请求脚本并执行</dt>
         <dd></dd>
     </dl>
 
@@ -156,9 +156,9 @@ S.config({xx:yy}); // 等价于 S.xx(yy)
     <h2 class="ks-seed">KISSY 成员</h2>
     <dl id="ks-member" class="api ks-seed">
 
-        <dt><strong>S.version:</strong> {String} 返回版本信息.</dt>
+        <dt><strong>S.version</strong> {String} 返回版本信息.</dt>
         <dd></dd>
-        <dt><strong>S.Config:</strong> {Object} 配置信息.</dt>
+        <dt><strong>S.Config</strong> {Object} 配置信息.</dt>
         <dd>
             <ul>
                 <li>base: {String} 系统模块的路径</li>
@@ -166,7 +166,7 @@ S.config({xx:yy}); // 等价于 S.xx(yy)
                 <li>timeout: {Number} 默认延迟时间</li>
             </ul>
         </dd>
-        <dt><strong>S.Env:</strong> {Object} 环境信息.</dt>
+        <dt><strong>S.Env</strong> {Object} 环境信息.</dt>
         <dd>
             <ul>
                 <li>mods: 提供模块信息及其间依赖关系</li>
@@ -181,39 +181,39 @@ S.config({xx:yy}); // 等价于 S.xx(yy)
     </dl>
     <h2 class="ks-seed">语言类型函数</h2>
     <dl id="ks-lang" class="api ks-seed">
-        <dt><strong>S.type(o):</strong> 获得 o 的类型</dt>
+        <dt><strong>S.type(o)</strong> 获得 o 的类型</dt>
         <dd></dd>
-        <dt><strong>S.isEmptyObject(o):</strong> 判断 o 是否为空对象(没有任何可遍历的属性)</dt>
+        <dt><strong>S.isEmptyObject(o)</strong> 判断 o 是否为空对象(没有任何可遍历的属性)</dt>
         <dd></dd>
-        <dt><strong>S.isFunction(o):</strong> 判断 o 是否为函数</dt>
+        <dt><strong>S.isFunction(o)</strong> 判断 o 是否为函数</dt>
         <dd></dd>
-        <dt><strong>S.isNull(o):</strong> 判断 o 是否为 null</dt>
+        <dt><strong>S.isNull(o)</strong> 判断 o 是否为 null</dt>
         <dd></dd>
-        <dt><strong>S.isPlainObject(o):</strong> 判断 o 是否为普通对象(用 { } 或 new Object 创建的对象)</dt>
+        <dt><strong>S.isPlainObject(o)</strong> 判断 o 是否为普通对象(用 { } 或 new Object 创建的对象)</dt>
         <dd></dd>
-        <dt><strong>S.isUndefined(o):</strong> 判断 o 是否为 undefined</dt>
+        <dt><strong>S.isUndefined(o)</strong> 判断 o 是否为 undefined</dt>
         <dd></dd>
-        <dt><strong>S.isString(o):</strong> 判断 o 是否为字符串, 类似的, 还有Boolean Number Function Array Date RegExp Object</dt>
+        <dt><strong>S.isString(o)</strong> 判断 o 是否为字符串, 类似的, 还有Boolean Number Function Array Date RegExp Object</dt>
         <dd></dd>
-        <dt><strong>S.isWindow(o):</strong> 判断 o 是否为 window</dt>
+        <dt><strong>S.isWindow(o)</strong> 判断 o 是否为 window</dt>
         <dd></dd>
     </dl>
 
     <div class="split"></div>
     <h2 class="ks-core">S.UA</h2>
     <dl id="ks-ua" class="api ks-core">
-        <dt><strong>S.UA.trident/S.UA.webkit/ S.UA.gecko/S.UA.presto:</strong> {Number} 返回各浏览器核心版本</dt>
+        <dt><strong>S.UA.trident/S.UA.webkit/ S.UA.gecko/S.UA.presto</strong> {Number} 返回各浏览器核心版本</dt>
         <dd></dd>
-        <dt><strong>S.UA.chrome/S.UA.safari/ S.UA.firefox/S.UA.ie/S.UA.opera/ S.UA.se360/S.UA.maxthon/ S.UA.tt/S.UA.theworld/S.UA.sougou:</strong> {Number} 返回各浏览器版本</dt>
+        <dt><strong>S.UA.chrome/S.UA.safari/ S.UA.firefox/S.UA.ie/S.UA.opera/ S.UA.se360/S.UA.maxthon/ S.UA.tt/S.UA.theworld/S.UA.sougou</strong> {Number} 返回各浏览器版本</dt>
         <dd></dd>
-        <dt><strong>S.UA.mobile/S.UA.core/S.UA.shell:</strong> {String} 返回各浏览器的内核标识</dt>
+        <dt><strong>S.UA.mobile/S.UA.core/S.UA.shell</strong> {String} 返回各浏览器的内核标识</dt>
         <dd></dd>
     </dl>
     <h2 class="ks-core">JSON,  Cookie </h2>
     <dl id="ks-jsco" class="api ks-core">
-        <dt><strong>S.JSON.parse(text):</strong> 将 text 字符串解析成 Object</dt>
+        <dt><strong>S.JSON.parse(text)</strong> 将 text 字符串解析成 Object</dt>
         <dd></dd>
-        <dd><strong>S.JSON.stringify(value, replacer, space):</strong> 将 js 值转换成 JSON 串</dd>
+        <dd><strong>S.JSON.stringify(value, replacer, space)</strong> 将 js 值转换成 JSON 串</dd>
         <dd>
             <ul>
                 <li>value: {Object} 处理的值</li>
@@ -222,13 +222,13 @@ S.config({xx:yy}); // 等价于 S.xx(yy)
             </ul>
         </dd>
 
-        <dt><strong>S.Cookie.get(name):</strong> 获取Cookie值</dt>
+        <dt><strong>S.Cookie.get(name)</strong> 获取Cookie值</dt>
         <dd>
             <ul>
                 <li>name: {String} cookie 名</li>
             </ul>
         </dd>
-        <dt><strong>S.Cookie.set(name, val, expires, domain, path, secure):</strong> 设置Cookie值</dt>
+        <dt><strong>S.Cookie.set(name, val, expires, domain, path, secure)</strong> 设置Cookie值</dt>
         <dd>
             <ul>
                 <li>name: {String} cookie 名</li>
@@ -247,7 +247,7 @@ S.config({xx:yy}); // 等价于 S.xx(yy)
 
     <h2 class="ks-core">其他</h2><!-- 这块内容不知改归为哪类 -->
     <dl id="ks-other" class="api ks-core">
-        <dt><strong>S.Attribute/S.Base:</strong> 提供 getter/setter 支持, 对 Config 统一管理.</dt>
+        <dt><strong>S.Attribute/S.Base</strong> 提供 getter/setter 支持, 对 Config 统一管理.</dt>
         <dd>
             <ul>
                 <li>obj.get(name): 获取 obj 名为 name 的值</li>
@@ -259,98 +259,116 @@ S.config({xx:yy}); // 等价于 S.xx(yy)
 
 </div>
 <div class="layout">
-    <h2 class="ks-core">S.DOM / Sizzle 支持</h2>
+    <h2 class="ks-core">DOM / Sizzle 支持</h2>
     <dl id="ks-dom" class="api ks-core">
-        <dt><strong>S.get(selector, context)/S.DOM.get(selector, context):</strong> 在 context 筛选 selector 的一个元素</dt>
-        <dd>引入Sizzle 模块后, 如 S.use('sizzle', fn), 即可使用 jQuery 中所有的选择器 </dd>
-        <dt><strong>S.query(selector, context)/S.DOM.query(selector, context):</strong> 在 context 筛选 selector 的所有元素</dt>
+        <dt><strong>DOM.get(selector, context)</strong> 在 context 筛选 selector 的一个元素</dt>
+        <dd>
+            默认支持一下选择器
+            <pre>
+#id    // 支持 , 号分组
+tag    // tag 可以为 * 字符
+.cls
+#id tag
+#id .cls
+tag.cls
+#id tag.cls
+#id.cls
+</pre>
+            当 选择器不支持时, 抛出异常. 可以引入Sizzle 模块, 如 S.use('sizzle', fn), 即可使用类似于 jQuery 中所有的选择器. </dd>
+        <dt><strong>DOM.query(selector, context)</strong> 在 context 筛选 selector 的所有元素</dt>
         <dd></dd>
-        <dt><strong>S.DOM.filter(selector, filter, context):</strong> 在 context 筛选 selector 的, 满足 filter 的元素</dt>
+        <dt><strong>DOM.filter(selector, filter, context)</strong> 在 context 筛选 selector 的, 满足 filter 的元素</dt>
         <dd></dd>
-        <dt><strong>S.DOM.hasClass(selector, value):</strong> 判断目标元素是否包含某个 Class</dt>
+        <dt><strong>DOM.hasClass(selector, value)</strong> 判断目标元素是否包含某个 Class</dt>
         <dd></dd>
-        <dt><strong>S.DOM.removeClass(selector, value):</strong> 删除目标元素的某个 Class</dt>
+        <dt><strong>DOM.addClass(selector, value)</strong> 添加目标元素的某个 Class</dt>
         <dd></dd>
-        <dt><strong>S.DOM.replaceClass(selector, oldClassName, newClassName):</strong> 替换目标元素的 Class 中名为 oldClassName 为 newClassName</dt>
+        <dt><strong>DOM.removeClass(selector, value)</strong> 删除目标元素的某个 Class</dt>
         <dd></dd>
-        <dt><strong>S.DOM.toggleClass(selector, value, state):</strong> 切换目标元素的名为 value 的 Class</dt>
+        <dt><strong>DOM.replaceClass(selector, oldClassName, newClassName)</strong> 替换目标元素的 Class 中名为 oldClassName 为 newClassName</dt>
         <dd></dd>
-        <dt><strong>S.DOM.create(html, props, ownerDoc):</strong> 根据 html, 创建元素</dt>
+        <dt><strong>DOM.toggleClass(selector, value, state)</strong> 切换目标元素的名为 value 的 Class</dt>
         <dd></dd>
-        <dt><strong>S.DOM.html(selector, val, loadScripts, callback):</strong> 获取目标元素的 html 内容</dt>
+        <dt><strong>DOM.create(html, props, ownerDoc)</strong> 根据 html, 创建元素</dt>
         <dd></dd>
-        <dt><strong>S.DOM.remove(selector):</strong> 删除目标元素</dt>
+        <dt><strong>DOM.html(selector, val, loadScripts, callback)</strong> 获取目标元素的 html 内容</dt>
         <dd></dd>
-        <dt><strong>S.DOM.attr(selector, name, val, pass):</strong> 获取/设置目标元素名为 name 的属性值</dt>
+        <dt><strong>DOM.remove(selector)</strong> 删除目标元素</dt>
         <dd></dd>
-        <dt><strong>S.DOM.removeAttr(selector, name):</strong> 删除目标元素名为 name 的属性</dt>
+        <dt><strong>DOM.attr(selector, name, val, pass)</strong> 获取/设置目标元素名为 name 的属性值</dt>
         <dd></dd>
-        <dt><strong>S.DOM.hasAttr(selector, name):</strong> 判断目标元素是否具有 name 该属性</dt>
+        <dt><strong>DOM.removeAttr(selector, name)</strong> 删除目标元素名为 name 的属性</dt>
         <dd></dd>
-        <dt><strong>S.DOM.val(selector, value)/text(selector, value):</strong> 设置/获取目标元素的值</dt>
+        <dt><strong>DOM.hasAttr(selector, name)</strong> 判断目标元素是否具有 name 该属性</dt>
+        <dd></dd>
+        <dt><strong>DOM.val(selector, value)</strong> 设置/获取目标元素的值</dt>
+        <dd></dd>
+        <dt><strong>DOM.text(selector, value)</strong> 设置/获取目标元素的包含文本值</dt>
         <dd></dd>
 
-        <dt><strong>S.DOM.css(selector, name, val):</strong> 设置/获取目标元素的名为 name 的样式值</dt>
+        <dt><strong>DOM.css(selector, name, val)</strong> 设置/获取目标元素的名为 name 的样式值</dt>
         <dd></dd>
-        <dt><strong>S.DOM.width(selector, value)/height(selector, value):</strong> 设置/获取目标元素的宽度/高度</dt>
+        <dt><strong>DOM.width(selector, value)/height(selector, value)</strong> 设置/获取目标元素的宽度/高度</dt>
         <dd></dd>
-        <dt><strong>S.DOM.show(selector)/hide(selector)/toggle(selector):</strong> 显示/隐藏/切换目标元素</dt>
+        <dt><strong>DOM.show(selector)/hide(selector)/toggle(selector)</strong> 显示/隐藏/切换目标元素</dt>
         <dd></dd>
-        <dt><strong>S.DOM.addStyleSheet(cssText, id):</strong> 将 cssText 字符串作为样式添加到文档中, id 可选, 作为 style 标签的id</dt>
+        <dt><strong>DOM.addStyleSheet(cssText, id)</strong> 将 cssText 字符串作为样式添加到文档中, id 可选, 作为 style 标签的id</dt>
         <dd></dd>
 
-        <!--<dt>S.DOM.unselectable(selector): </dt>
+        <!--<dt>DOM.unselectable(selector) </dt>
         <dd></dd>-->
-        <dt><strong>S.DOM.data(selector, name, val):</strong> 获取/设置目标元素名为 name 的值</dt>
+        <dt><strong>DOM.data(selector, name, val)</strong> 获取/设置目标元素名为 name 的值</dt>
         <dd></dd>
-        <dt><strong>S.DOM.removeData(selector, name):</strong> 删除目标元素的名为 name 的值</dt>
+        <dt><strong>DOM.removeData(selector, name)</strong> 删除目标元素的名为 name 的值</dt>
         <dd></dd>
-        <dt><strong>S.DOM.insertBefore(newNode, refNode):</strong> 在 refNode 之前插入 newNode</dt>
+        <dt><strong>DOM.insertBefore(newNode, refNode)</strong> 在 refNode 之前插入 newNode</dt>
         <dd></dd>
-        <dt><strong>S.DOM.insertAfter(newNode, refNode):</strong> 在 refNode 之后插入 newNode</dt>
+        <dt><strong>DOM.insertAfter(newNode, refNode)</strong> 在 refNode 之后插入 newNode</dt>
         <dd></dd>
-        <dt><strong>S.DOM.append(node, parent):</strong> 在 parent 的最后一个孩子元素之后加入 node</dt>
+        <dt><strong>DOM.append(node, parent)</strong> 在 parent 的最后一个孩子元素之后加入 node</dt>
         <dd></dd>
-        <dt><strong>S.DOM.prepend(node, parent):</strong> 在 parent 的第一个孩子元素之前加入 node</dt>
+        <dt><strong>DOM.prepend(node, parent)</strong> 在 parent 的第一个孩子元素之前加入 node</dt>
         <dd></dd>
-        <dt><strong>S.DOM.parent(selector, filter):</strong> 获取符合条件的元素的父亲元素</dt>
+        <dt><strong>DOM.parent(selector, filter)</strong> 获取符合条件的元素的父亲元素</dt>
         <dd></dd>
-        <dt><strong>S.DOM.next(selector, filter):</strong> 获取符合条件的元素的下一个兄弟元素</dt>
+        <dt><strong>DOM.next(selector, filter)</strong> 获取符合条件的元素的下一个兄弟元素</dt>
         <dd></dd>
-        <dt><strong>S.DOM.prev(selector, filter):</strong> 获取符合条件的元素的上一个兄弟元素</dt>
+        <dt><strong>DOM.prev(selector, filter)</strong> 获取符合条件的元素的上一个兄弟元素</dt>
         <dd></dd>
-        <dt><strong>S.DOM.silblings(selector, filter):</strong> 获取符合条件的元素的所有兄弟元素</dt>
+        <dt><strong>DOM.silblings(selector, filter)</strong> 获取符合条件的元素的所有兄弟元素</dt>
         <dd></dd>
-        <dt><strong>S.DOM.children(selector, filter):</strong> 获取符合条件的元素的所有孩子元素</dt>
+        <dt><strong>DOM.children(selector, filter)</strong> 获取符合条件的元素的所有孩子元素</dt>
         <dd></dd>
-        <dt><strong>S.DOM.contains(container, contained):</strong> 判断 container 是否包含 contained 元素</dt>
+        <dt><strong>DOM.contains(container, contained)</strong> 判断 container 是否包含 contained 元素</dt>
         <dd></dd>
-        <dt><strong>S.DOM.offset(elem, val):</strong>获取/设置 elem 的相对 page 的 offset 值</dt>
+    </dl>
+</div>
+<div class="layout">
+    <dl id="ks-dom" class="api ks-core" style="margin-top: 0;border-top-width: 4px;">
+        <dt><strong>DOM.offset(elem, val)</strong>获取/设置 elem 的相对 page 的 offset 值</dt>
         <dd></dd>
-        <dt><strong>S.DOM.scrollIntoView(elem, container, top, hscroll):</strong> 让 container 中的 elem 滚动到视窗的可显示部分</dt>
+        <dt><strong>DOM.scrollIntoView(elem, container, top, hscroll)</strong> 让 container 中的 elem 滚动到视窗的可显示部分</dt>
         <dd></dd>
-        <dt><strong>S.DOM.scrollLeft()/scrollTop():</strong> 获取 document 的 scrollLeft/scrollTop 值</dt>
+        <dt><strong>DOM.scrollLeft()/scrollTop()</strong> 获取 document 的 scrollLeft/scrollTop 值</dt>
         <dd></dd>
-        <dt><strong>S.DOM.docWidth()/docHeight():</strong> 获取 document 的 width/height 值</dt>
+        <dt><strong>DOM.docWidth()/docHeight()</strong> 获取 document 的 width/height 值</dt>
         <dd></dd>
-        <dt><strong>S.DOM.viewportWidth()/viewportHeight():</strong> 获取当前 viewport 的 width/height 值</dt>
+        <dt><strong>DOM.viewportWidth()/viewportHeight()</strong> 获取当前 viewport 的 width/height 值</dt>
         <dd></dd>
         <!-- S.Node -->
-        <dt><strong>new S.Node(selector|HTMLElement):</strong> 获得符合条件的 Node 对象, 支持链式操作</dt>
+        <dt><strong>new S.Node(selector|HTMLElement)</strong> 获得符合条件的 Node 对象, 支持链式操作</dt>
         <dd></dd>
-        <dt><strong>S.one(selector):</strong> 获取符合条件的一个 Node 对象, </dt>
+        <dt><strong>S.one(selector)</strong> 获取符合条件的一个 Node 对象, </dt>
         <dd></dd>
-        <dt><strong>new S.NodeList(selector|HTMLElement):</strong> 获得符合条件的 NodeList 对象, 支持链式操作</dt>
+        <dt><strong>new S.NodeList(selector|HTMLElement)</strong> 获得符合条件的 NodeList 对象, 支持链式操作</dt>
         <dd></dd>
-        <dt><strong>S.all(selector):</strong> 获取符合条件的 NodeList 对象</dt>
+        <dt><strong>S.all(selector)</strong> 获取符合条件的 NodeList 对象</dt>
         <dd></dd>
     </dl>
 
-</div>
-<div class="layout">
     <h2 class="ks-core">S.Event</h2>
     <dl id="ks-event" class="api ks-core">
-        <dt><strong>S.Event.on/add(target, type, fn, scope)</strong></dt>
+        <dt><strong>Event.on/add(target, type, fn, scope)</strong></dt>
         <dd>
             <ul>
                 <li>target: {HTMLElement} 被监听的元素</li>
@@ -359,7 +377,7 @@ S.config({xx:yy}); // 等价于 S.xx(yy)
                 <li>scope: {Object} 可选, 指明回调函数在哪个作用域下执行, 默认是 this. </li>
             </ul>
         </dd>
-        <dt><strong>S.Event.remove(target, type, fn, scope)</strong></dt>
+        <dt><strong>Event.remove(target, type, fn, scope)</strong></dt>
         <dd>
             <ul>
                 <li>target: {HTMLElement} 被监听的元素</li>
@@ -368,10 +386,20 @@ S.config({xx:yy}); // 等价于 S.xx(yy)
                 <li>scope: {Object} 可选, 同 add </li>
             </ul>
         </dd>
+        <dt><strong>EventTarget</strong>事件目标对象</dt>
+        <dd>该对象有 altKey attrChange attrName bubbles button cancelable charCode
+            clientX clientY ctrlKey currentTarget data detail eventPhase fromElement
+            handler keyCode layerX layerY metaKey newValue offsetX offsetY originalTarget
+            pageX pageY prevValue relatedNode relatedTarget screenX screenY shiftKey
+            srcElement target toElement view wheelDelta which 成员</dd>
+        <dt><strong>obj.fire(type, eventData)</strong>触发自定义事件</dt>
+        <dd></dd>
+        <dt><strong>obj.detach(type, fn)</strong>移除监听函数</dt>
+        <dd></dd>
     </dl>
     <h2 class="ks-core">Anim</h2>
     <dl id="ks-anim" class="api ks-core">
-        <dt>new Anim ( elem, props, duration, easing, callback ).run().stop()</dt>
+        <dt><strong>new Anim ( elem, props, duration, easing, callback )</strong></dt>
         <dd>
             <ul>
                 <li>elem: {HTMLElement|String} 动画元素, 元素或选择器</li>
@@ -381,6 +409,10 @@ S.config({xx:yy}); // 等价于 S.xx(yy)
                 <li>callback: {Function} 回调函数</li>
             </ul>
         </dd>
+        <dt><strong>animObj.run()</strong></dt>
+        <dd></dd>
+        <dt><strong>animObj.stop()</strong></dt>
+        <dd></dd>
     </dl>
 
     <h2 class="ks-core">S.ajax</h2>
@@ -431,7 +463,7 @@ S.config({xx:yy}); // 等价于 S.xx(yy)
 <a href="#" id="J_toggle">展开全部</a>
 </div>
 <div id="footer">
-    <p><a href="http://kissyteam.github.com">kissyteam.github.com</a></p>
+    <p>by qiaohua # <a href="http://kissyteam.github.com">kissyteam.github.com</a></p>
     <p>黄色虚线之前是 Seed 部分, 之后是 Core 部分</p>
 </div>
 </body>
