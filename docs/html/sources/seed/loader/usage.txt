@@ -89,6 +89,7 @@ KISSY 1.2
         packages:[
             {
                 name:"1.2", //包名
+                tag:"20110323",//时间戳，添加在动态脚本路径后面，用于更新包内模块代码
                 path:"http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/", //包对应路径，相对路径指相对于当前页面路径
                 charset:"gbk" //包里模块文件编码格式
             }
@@ -140,6 +141,7 @@ demo
             packages:[
                 {
                     name:"1.2", //包名
+                    tag:"20110323",//时间戳，添加在动态脚本路径后面，用于更新包内模块代码
                     path:"http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/", //包对应路径，相对路径指相对于当前页面路径
                     charset:"gbk" //包里模块文件编码格式
                 }
@@ -151,27 +153,11 @@ demo
     </script>     
     
     
-如何进行代码更新
+KISSY loader 1.2 如何进行代码更新
 ------------------------------------
 
-
-由于动态加载的 js 文件不是写在页面中，所以不方便加时间戳，推荐的做法是更改包路径，每次更新都挪动全部 js 文件到新的目录中，
-例如最初版本包设置为：   
-
-
-.. code-block:: javascript
-
-    KISSY.config({
-        packages:[
-            {
-                name:"1.2", //包名
-                path:"http://xx.com/1.0"
-            }
-        ]
-    });
-    
-    
-当更改包内模块后，更改包路径为
+由于动态加载的 js 文件不是写在页面中，所以不能从页面添加时间戳，并且1.2 loader新增的约定加载也不能配置具体模块文件路径，因此
+1.2 loader 提供了在包级别添加时间戳的机制
 
 
 .. code-block:: javascript
@@ -180,11 +166,29 @@ demo
         packages:[
             {
                 name:"1.2", //包名
-                path:"http://xx.com/1.1"
+                path:"http://xx.com/"
             }
         ]
     });
     
+    
+当更改包内模块后，只需修改tag属性。
+
+
+.. code-block:: javascript
+
+    KISSY.config({
+        packages:[
+            {
+                name:"1.2", //包名
+                tag:"20110323",
+                path:"http://xx.com/"
+            }
+        ]
+    });
+    
+那么下载动态加载的 js 文件路径后面会自动加上： ``?t=20110323``
+
     
 静态部署
 ----------------------------------------------------
