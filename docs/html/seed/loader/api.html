@@ -166,6 +166,7 @@
     <span class="nx">packages</span><span class="o">:</span><span class="p">[</span>
         <span class="p">{</span>
             <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;tc&quot;</span><span class="p">,</span> <span class="c1">//包名</span>
+            <span class="nx">tag</span><span class="o">:</span><span class="s2">&quot;20110323&quot;</span><span class="p">,</span> <span class="c1">//动态加载包内的模块js文件时，自动加上 ?t=20110323，用于文件更新</span>
             <span class="nx">path</span><span class="o">:</span><span class="s2">&quot;../&quot;</span><span class="p">,</span> <span class="c1">//包对应路径，相对路径指相对于当前页面路径</span>
             <span class="nx">charset</span><span class="o">:</span><span class="s2">&quot;gbk&quot;</span> <span class="c1">//包里模块文件编码格式</span>
         <span class="p">}</span>
@@ -175,6 +176,7 @@
 </div>
 <p><tt class="docutils literal"><span class="pre">packages</span></tt> :类型数组，每个数组项为一个包的配置，一个包配置包括三项：</p>
 <p><tt class="docutils literal"><span class="pre">name</span></tt> :类型字符串，表示包名。</p>
+<p><tt class="docutils literal"><span class="pre">tag</span></tt> :类型字符串，最好为时间戳，用于刷新客户端本包的模块文件缓存</p>
 <p><tt class="docutils literal"><span class="pre">path</span></tt> :类型字符串，表示包所在的 <tt class="docutils literal"><span class="pre">url</span></tt> 路径，相对路径表示相对于当前页面路径</p>
 <p><tt class="docutils literal"><span class="pre">charset</span></tt> :类型字符串，表示宝贝所有模块定义文件的编码格式，默认 utf-8</p>
 <p>当要在包内添加模块时，必须遵守一些约定：</p>
@@ -191,7 +193,13 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>如果使用经过配置的包内的模块，则这些包内模块不需要事先注册，直接 <tt class="docutils literal"><span class="pre">use</span></tt> 即可</p>
+<p>如果使用经过配置的包内的模块，则这些包内模块不需要事先注册，直接 <tt class="docutils literal"><span class="pre">use</span></tt> 即可，如果模块名以 <tt class="docutils literal"><span class="pre">/</span></tt> 结尾，则自动加后缀 index ，例如
+<tt class="docutils literal"><span class="pre">use(&quot;mods/m1/&quot;)</span></tt> 相当于 <tt class="docutils literal"><span class="pre">use(&quot;mods/m1/index&quot;)</span></tt> ，即自动加载 <tt class="docutils literal"><span class="pre">m1</span></tt> 目录下的 <tt class="docutils literal"><span class="pre">index.js</span></tt></p>
+</div>
+<div class="section" id="id13">
+<h4>压缩模块<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<p>若线上环境使用 <tt class="docutils literal"><span class="pre">kissy-min.js</span></tt> ，则请使用 closure compiler 对所有模块文件进行压缩，
+例如 <tt class="docutils literal"><span class="pre">mod.js</span></tt> 压缩为 <tt class="docutils literal"><span class="pre">mod-min.js</span></tt> ，放在模块文件的同级目录下。</p>
 </div>
 </div>
 </div>
