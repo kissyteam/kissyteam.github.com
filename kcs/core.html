@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>KISSY core Cheet Sheet</title>
+<title>KISSY Core Cheet Sheet</title>
 <link href="http://a.tbcdn.cn/s/kissy/1.1.6/cssbase/base-min.css" rel="stylesheet" media="all" />
 <link href="./kcs.css" rel="stylesheet" rel="stylesheet"/>
 <script src="http://a.tbcdn.cn/s/kissy/1.1.6/seed-min.js"></script>
@@ -259,12 +259,12 @@ S.config({xx:yy}); // 等价于 S.xx(yy)
 
 </div>
 <div class="layout">
-    <h2 class="ks-core">DOM / Sizzle 支持</h2>
+    <h2 class="ks-core">DOM</h2>
     <dl id="ks-dom" class="api ks-core">
-        <dt><strong>DOM.get(selector, context)</strong> 在 context 筛选 selector 的一个元素</dt>
-        <dd>
-            默认支持一下选择器
-            <pre>
+        <dt>
+            <strong>DOM.get(selector, context)</strong>
+        <pre>
+默认支持一下选择器
 #id    // 支持 , 号分组
 tag    // tag 可以为 * 字符
 .cls
@@ -274,6 +274,8 @@ tag.cls
 #id tag.cls
 #id.cls
 </pre>
+            在 context 筛选 selector 的一个元素 </dt>
+        <dd>
             当 选择器不支持时, 抛出异常. 可以引入Sizzle 模块, 如 S.use('sizzle', fn), 即可使用类似于 jQuery 中所有的选择器. </dd>
         <dt><strong>DOM.query(selector, context)</strong> 在 context 筛选 selector 的所有元素</dt>
         <dd></dd>
@@ -331,6 +333,10 @@ tag.cls
         <dd></dd>
         <dt><strong>DOM.parent(selector, filter)</strong> 获取符合条件的元素的父亲元素</dt>
         <dd></dd>
+    </dl>
+</div>
+<div class="layout">
+    <dl id="ks-dom" class="api ks-core" style="margin-top: 0;border-top-width: 4px;">
         <dt><strong>DOM.next(selector, filter)</strong> 获取符合条件的元素的下一个兄弟元素</dt>
         <dd></dd>
         <dt><strong>DOM.prev(selector, filter)</strong> 获取符合条件的元素的上一个兄弟元素</dt>
@@ -341,10 +347,7 @@ tag.cls
         <dd></dd>
         <dt><strong>DOM.contains(container, contained)</strong> 判断 container 是否包含 contained 元素</dt>
         <dd></dd>
-    </dl>
-</div>
-<div class="layout">
-    <dl id="ks-dom" class="api ks-core" style="margin-top: 0;border-top-width: 4px;">
+
         <dt><strong>DOM.offset(elem, val)</strong>获取/设置 elem 的相对 page 的 offset 值</dt>
         <dd></dd>
         <dt><strong>DOM.scrollIntoView(elem, container, top, hscroll)</strong> 让 container 中的 elem 滚动到视窗的可显示部分</dt>
@@ -463,8 +466,6 @@ tag.cls
 <a href="#" id="J_toggle">展开全部</a>
 </div>
 <div id="footer">
-    <p>by qiaohua # <a href="http://kissyteam.github.com">kissyteam.github.com</a></p>
-    <p>黄色虚线之前是 Seed 部分, 之后是 Core 部分</p>
 </div>
 </body>
 </html>
