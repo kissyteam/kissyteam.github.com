@@ -6,13 +6,16 @@ S.use('core,sizzle', function() {
         var dd = new S.Node(elem), dt = dd.prev('dt');
 
         // 隐藏描述
-        var prt = dt[0],
+        /*var prt = dt[0],
             children = prt.childNodes,
             textNode = children[children.length-1];
         if (S.DOM._nodeTypeIs(textNode, 3)) {
             S.DOM.append(new S.Node('<span>'+textNode.textContent+'</span>'), prt);
             prt.removeChild(textNode);
-        }
+        }*/
+        var prt = new S.Node(dt[0]);
+        prt.html(prt.html().replace(/(<.*>.*<\/.*>)(.*)/g,"$1<span>$2</span>"));
+        
 
         //if (S.trim(dd.html()).length > 0) {
             dt.prepend('<a href="#" class="J_toggle">+</a>');
