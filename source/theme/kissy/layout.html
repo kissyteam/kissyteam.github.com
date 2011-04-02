@@ -120,8 +120,7 @@ kissy/layout.html
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
         HAS_SOURCE:  {{ has_source | lower }}
-    }
-    ;
+    };
 </script>
 
 <script src="http://yiminghe.github.com/kissy/build/kissy.js"></script>
@@ -139,9 +138,10 @@ kissy/layout.html
 {%- block relbar1 %}{% endblock %}
 
 {%- block content %}
-{%- block sidebar1 %}{% endblock %}
-
 <div class="document">
+    {%- block sidebar1 %}
+    {{ sidebar() }}
+    {% endblock %}
     {%- block document %}
     <div class="documentwrapper">
         <div class="body">
@@ -160,7 +160,7 @@ kissy/layout.html
                 <a href="{{ next.link|e }}" title="{{ next.title|striptags|e }}"> 下一页 </a>
                 {%- endif %}
             </p>
-            {% include "search.html" %}
+            <!--{% include "search.html" %}-->
         </div>
     </div>
     {%- endblock %}
@@ -172,7 +172,7 @@ kissy/layout.html
 
 {%- block footer %}
 <div class="footer">
-    &copy; Copyright 2010, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
 </div>
 {%- endblock %}
 </body>
