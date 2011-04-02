@@ -24,7 +24,7 @@ KISSY 1.2 新增使用模块方法
 
 .. code-block:: javascript
 
-    KISSY.use("anim",function(Anim){
+    KISSY.use("anim",function(S,Anim){
         //使用 Anim 构造器
     });
 
@@ -49,7 +49,7 @@ KISSY 1.2 新增使用模块方法
         height:"100px"
     }
 
-表示节点将从当前宽高经过动画平滑变化到宽100px与高100px
+表示节点将从当前宽高经过动画平滑变化到宽 100px 与高 100px
 
 ``duration (optional)``: 类型整数，动画持续时间，以秒为单元，默认为1秒
 

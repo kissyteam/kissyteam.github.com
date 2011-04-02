@@ -65,7 +65,7 @@
 <div class="section" id="kissy-1-2">
 <h3>KISSY 1.2 新增使用模块方法<a class="headerlink" href="#kissy-1-2" title="Permalink to this headline">¶</a></h3>
 <p>可直接通过依赖注入，从函数参数中取得</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;anim&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">Anim</span><span class="p">){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;anim&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Anim</span><span class="p">){</span>
     <span class="c1">//使用 Anim 构造器</span>
 <span class="p">});</span>
 </pre></div>
@@ -85,7 +85,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>表示节点将从当前宽高经过动画平滑变化到宽100px与高100px</p>
+<p>表示节点将从当前宽高经过动画平滑变化到宽 100px 与高 100px</p>
 <p><tt class="docutils literal"><span class="pre">duration</span> <span class="pre">(optional)</span></tt>: 类型整数，动画持续时间，以秒为单元，默认为1秒</p>
 <p><tt class="docutils literal"><span class="pre">easing</span> <span class="pre">(optional)</span></tt>:类型字符串，动画平滑函数，可取值 &#8220;easeNone&#8221;,&#8221;easeIn&#8221;,&#8221;easeOut&#8221;,
 &#8220;easeBoth&#8221;,&#8221;easeInStrong&#8221;,&#8221;easeOutStrong&#8221;,&#8221;easeBothStrong&#8221;,&#8221;elasticIn&#8221;,&#8221;elasticOut&#8221;,&#8221;elasticBoth&#8221;,&#8221;backIn&#8221;,

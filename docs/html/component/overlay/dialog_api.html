@@ -1,0 +1,203 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>对话框 api &mdash; KISSY Docs v2,0 documentation</title>
+
+<link rel="stylesheet" href="../../static/kissy.css"/>
+<link rel="stylesheet" href="../../static/pygments.css"/>
+<link rel="top" title="KISSY Docs v2,0 documentation" href="../../index.html"/>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2,0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+    }
+    ;
+</script>
+
+<script src="http://yiminghe.github.com/kissy/build/kissy.js"></script>
+<!--
+    <script src="http://localhost/kissy_git/kissy/build/kissy.js"></script>
+--> 
+</head>
+<body><a href="http://github.com/kissyteam" style="display:block; position: absolute; top: 0; right: 0; width: 150px; height: 150px; z-index: 10000;border: none;" >
+    <img  src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+</a>
+<div class="headwrap">
+<div class="header">
+	<h1 class="logo"><a href="http://kissyteam.github.com/"><img src="http://kissyteam.github.com/kissy.png" /></a></h1>
+    <ul class="navigation">
+        <li><a href="http://kissyteam.github.com/">Home</a><b></b><s></s></li>
+        <li><a href="http://kissyui.com/blog/">Blog</a><b></b><s></s></li>
+        <li><a href="http://github.com/kissyteam/kissy#readme">About</a></li>
+    </ul>
+</div>
+</div>
+
+
+
+<div class="document">
+    <div class="documentwrapper">
+        <div class="body">
+            
+  <div class="section" id="api">
+<h1>对话框 api<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>获取对话框构造器<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>页面引入 kissy.js :</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>Dialog 属于 overlay 模块，通过 use 加载 overlay 模块：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">Dialog</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">;</span>
+    <span class="c1">//使用 Dialog 构造器</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="section" id="kissy-1-2">
+<h3>KISSY 1.2 新增使用模块方法<a class="headerlink" href="#kissy-1-2" title="Permalink to this headline">¶</a></h3>
+<p>可直接通过依赖注入，从函数参数中取得</p>
+<blockquote>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
+    <span class="c1">//使用 Overlay 构造器</span>
+    <span class="kd">var</span> <span class="nx">Dialog</span><span class="o">=</span><span class="nx">Overlay</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>构造器接口<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Dialog</span> <span class="kd">function</span> <span class="nx">Dialog</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">config</span></tt> : 类型对象，实例对象所需的配置，例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">width</span><span class="o">:</span><span class="s2">&quot;200px&quot;</span><span class="p">,</span>
+    <span class="nx">render</span><span class="o">:</span><span class="s2">&quot;#container&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="dom">
+<h3>对话框的 DOM 结构<a class="headerlink" href="#dom" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div&gt;</span> <span class="c">&lt;!-- 对话框根节点 --&gt;</span>
+    <span class="nt">&lt;div&gt;</span> <span class="c">&lt;!-- 对话框内容节点 --&gt;</span>
+        <span class="nt">&lt;div&gt;</span> <span class="c">&lt;!-- 对话框标题节点 --&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;div&gt;</span> <span class="c">&lt;!-- 对话框体节点 --&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;div&gt;</span> <span class="c">&lt;!-- 对话框底部节点 --&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="config">
+<h3>config 配置项详解<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h3>
+<p>除了 <tt class="docutils literal"><span class="pre">content</span></tt> 配置项外与 <tt class="docutils literal"><span class="pre">overlay</span></tt> 的配置项完全相同，但是 <tt class="docutils literal"><span class="pre">Dialog</span></tt> 新增了一些配置项，如下所示：</p>
+<p><tt class="docutils literal"><span class="pre">headerContent</span></tt> : 类型字符串，对话框的标题 html.</p>
+<p><tt class="docutils literal"><span class="pre">bodyContent</span></tt> : 类型字符串，对话框的体 html。</p>
+<p><tt class="docutils literal"><span class="pre">footerContent</span></tt> : 类型字符串，对话框的底部 html。</p>
+<p><tt class="docutils literal"><span class="pre">closable</span></tt> : 类型 boolean，对话框右上角是否包括关闭按钮</p>
+<p><tt class="docutils literal"><span class="pre">draggable</span></tt> : 类型 boolean，是否允许拖动头部移动，注意启用时需同时 <a href="#id3"><span class="problematic" id="id4">``</span></a>use(&#8220;dd&#8221;)``，例如</p>
+<blockquote>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd,overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
+    <span class="k">new</span> <span class="nx">Overlay</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
+        <span class="nx">draggable</span> <span class="o">:</span> <span class="kc">true</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</blockquote>
+<p><tt class="docutils literal"><span class="pre">constrain</span></tt> : 类型 boolean 或者选择器字符串 ，和 draggable 配合，限制拖动的范围，</p>
+<blockquote>
+<p>取值 true 时，只能在当前视窗范围内拖动。</p>
+<p>取值选择器字符串时，则在限制拖动范围为根据该选择器字符串取到的第一个节点所在区域。</p>
+<p>取值 false 时，可任意移动，例如：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd,overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
+    <span class="k">new</span> <span class="nx">Overlay</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
+        <span class="nx">draggable</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">contrain</span><span class="o">:</span><span class="kc">true</span> <span class="c1">// 限制拖动区域为当前视窗范围</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd,overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
+    <span class="k">new</span> <span class="nx">Overlay</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
+        <span class="nx">draggable</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">contrain</span><span class="o">:</span><span class="s2">&quot;#container&quot;</span> <span class="c1">// 限制拖动区域为 container 节点所占据区域</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>实例属性<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>对话框 Dialog 实例可以获得弹出层 Overlay 实例的所有属性，除此之外还有：</p>
+<p><tt class="docutils literal"><span class="pre">header</span></tt> （只读）: 类型 <tt class="docutils literal"><span class="pre">KISSY.Node</span></tt> ，获得对话框的头部节点。</p>
+<p><tt class="docutils literal"><span class="pre">body</span></tt> （只读）: 类型 <tt class="docutils literal"><span class="pre">KISSY.Node</span></tt> ，获得对话框的体部节点。</p>
+<p><tt class="docutils literal"><span class="pre">footer</span></tt> （只读）: 类型 <tt class="docutils literal"><span class="pre">KISSY.Node</span></tt> ，获得对话框的底部节点。</p>
+<p>注意：以上三个属性在获取前必须调用过 <tt class="docutils literal"><span class="pre">render()</span></tt> 方法。</p>
+<p><tt class="docutils literal"><span class="pre">closable</span></tt> （读写）: 同相应配置项，设置右上角拖放区域有无。</p>
+<p><tt class="docutils literal"><span class="pre">draggable</span></tt> （读写）: 同相应配置项，设置头部是否可以拖放。</p>
+<p><tt class="docutils literal"><span class="pre">constrain</span></tt> （读写）： 同相应配置项，设置拖放区域范围。</p>
+</div>
+</div>
+
+
+
+            <p style="text-align:center;margin-top: 40px;">
+            </p>
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">
+        google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+        google.setOnLoadCallback(function() {
+            var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+            customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+            customSearchControl.draw('cse');
+        }, true);
+    </script>
+</div>
+        </div>
+    </div>
+    <div class="clearer"></div>
+</div>
+<div class="footer">
+    &copy; Copyright 2010, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>
