@@ -233,4 +233,11 @@
             
         });
     </script>            
-                  
+
+
+全部 demo
+-------------------------------------------------------------------------------
+
+`KISSY.Overlay 1.20 <http://yiminghe.github.com/kissy/src/overlay/demo.html>`_        
+
+`KISSY.Overlay < 1.20 <http://kissyteam.github.com/kissy/src/overlay/demo.html>`_            
