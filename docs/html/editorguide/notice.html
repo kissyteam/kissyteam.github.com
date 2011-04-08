@@ -72,13 +72,21 @@
 <span id="id1"></span><h1>注意<a class="headerlink" href="#editorusage-notice" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
 <h2>应用样式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>展示页面同样需要引入 <tt class="docutils literal"><span class="pre">editor</span> <span class="pre">css</span></tt>, 并且将从数据库中得到的编辑器生成内容用</p>
+<p>展示页面同样需要引入编辑器外部样式 :</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="c">&lt;!--[if lt IE 8]&gt;</span>
+<span class="c">&lt;link href=&quot;http://a.tbcdn.cn/s/kissy/1.1.7/editor/theme/cool/editor-pkg-min-mhtml.css&quot; rel=&quot;stylesheet&quot;/&gt;</span>
+<span class="c">&lt;![endif]--&gt;</span>
+<span class="c">&lt;!--[if gte IE 8]&gt;&lt;!--&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.1.7/editor/theme/cool/editor-pkg-min-datauri.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span><span class="nt">/&gt;</span>
+<span class="c">&lt;!--&lt;![endif]--&gt;</span>
+</pre></div>
+</div>
+<p>并且将从数据库中得到的编辑器生成内容用</p>
 <p><tt class="docutils literal"><span class="pre">&lt;div</span> <span class="pre">class=&quot;ke-post&quot;&gt;&lt;/div&gt;</span></tt></p>
 <p>包裹起来.</p>
 <p>如果使用了 <a class="reference internal" href="common-config.html#editorusage-common-cfg"><em>一般配置中的自定义样式</em></a> ，
 则需要在展示页面编辑器外部样式后重新定义你的自定义样式：</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;.../editor.css&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
     <span class="nc">.ke-post</span> <span class="nt">p</span> <span class="p">{</span>
         <span class="k">color</span><span class="o">:</span><span class="nb">red</span><span class="p">;</span>
     <span class="p">}</span>
