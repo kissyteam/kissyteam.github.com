@@ -48,7 +48,8 @@
   <div id="J_tList"><ul>
 <li><a class="reference internal" href="#">使用示例</a><ul>
 <li><a class="reference internal" href="#id2">使用构造器生成动画实例操作</a></li>
-<li><a class="reference internal" href="#id3">节点实例动画操作</a></li>
+<li><a class="reference internal" href="#id3">滚动属性动画实例</a></li>
+<li><a class="reference internal" href="#id4">节点实例动画操作</a></li>
 </ul>
 </li>
 </ul>
@@ -126,7 +127,60 @@
 </div>
 </div>
 <div class="section" id="id3">
-<h2>节点实例动画操作<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>滚动属性动画实例<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<button id="test-scroll">run scroll animation</button>
+
+<div id="test8" style="width:100px;overflow:hidden;border:1px solid red;margin:20px;">
+
+    <div style="width:500px;">
+        1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,
+        6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,
+        3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,
+        0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,
+        6,7,8,9,0,1,2,3,4,5
+        ,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,
+        3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,
+    </div>
+
+</div>
+
+<script>
+    KISSY.use("anim",function(S,Anim){
+        S.one("#test-scroll").on("click", function() {
+            S.one("#test-scroll")[0].disabled = true;
+            Anim(S.get("#test8"),{
+                scrollLeft:500
+            }, 5, undefined, function() {
+                Anim(S.get("#test8"),{
+                    scrollLeft:0
+                }, 5, undefined, function() {
+                    S.one("#test-scroll")[0].disabled = false;
+                }).run();
+            }).run();
+        });
+    });
+
+</script><p>源码：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;anim&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Anim</span><span class="p">){</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#test-scroll&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#test-scroll&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">disabled</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="nx">Anim</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;#test8&quot;</span><span class="p">),{</span>
+            <span class="c1">//设置 scrollLeft 或者 scrollTop 属性</span>
+            <span class="nx">scrollLeft</span><span class="o">:</span><span class="mi">500</span>
+        <span class="p">},</span> <span class="mi">5</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">Anim</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;#test8&quot;</span><span class="p">),{</span>
+                <span class="nx">scrollLeft</span><span class="o">:</span><span class="mi">0</span>
+            <span class="p">},</span> <span class="mi">5</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#test-scroll&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">disabled</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="p">}).</span><span class="nx">run</span><span class="p">();</span>
+        <span class="p">}).</span><span class="nx">run</span><span class="p">();</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>节点实例动画操作<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <div style='width:100px;height:100px;border:1px solid red;' id='anim_show'>
     show/hide 动画
 </div>
