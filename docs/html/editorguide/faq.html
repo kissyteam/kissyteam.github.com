@@ -56,6 +56,7 @@
 </li>
 <li><a class="reference internal" href="#id3">自动保存</a></li>
 <li><a class="reference internal" href="#id4">字数统计</a></li>
+<li><a class="reference internal" href="#ctrol-enter">绑定 ctrol-enter</a></li>
 </ul>
 </li>
 </ul>
@@ -110,6 +111,22 @@
 <p><a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/wordCount.html">http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/wordCount.html</a></p>
 <p>其中`小插件脚本代码&lt;<a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/word-count.js">http://docs.kissyui.com/kissy-editor/demo/word-count.js</a>&gt;`自行下载，随意修改。</p>
 </blockquote>
+</div>
+<div class="section" id="ctrol-enter">
+<h2>绑定 ctrol-enter<a class="headerlink" href="#ctrol-enter" title="Permalink to this headline">¶</a></h2>
+<p>不少的应用场景要求在编辑器编辑区域内按下 ctrol+enter 按键时，编辑器所在表单会自动提交，解决方案是监控编辑器的文档按键事件：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">editor</span><span class="p">.</span><span class="nb">document</span><span class="p">,</span> <span class="s2">&quot;keydown&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">ev</span><span class="p">.</span><span class="nx">keyCode</span> <span class="o">==</span> <span class="mi">13</span> <span class="o">&amp;&amp;</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">ctrlKey</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">editor</span><span class="p">.</span><span class="nx">sync</span><span class="p">();</span>
+            <span class="nx">editor</span><span class="p">.</span><span class="nx">textarea</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">form</span><span class="p">.</span><span class="nx">submit</span><span class="p">();</span>
+
+        <span class="p">}</span>
+    <span class="p">})</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>其中 editor 为编辑器实例的对象，通过 <tt class="docutils literal"><span class="pre">var</span> <span class="pre">editor=KISSY.Editor(&quot;#id&quot;,cfg)</span></tt> 获取而来。</p>
 </div>
 </div>
 
