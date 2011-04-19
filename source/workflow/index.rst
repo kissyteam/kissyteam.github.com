@@ -4,7 +4,7 @@
 KISSY 组件开发流程
 ===============================================
 
-.. image:: ../_static/workflow/workflow-s.png
+.. image:: /_static/workflow/workflow-s.png
 
 `点击查看详细大图 <../static/workflow/workflow.png>`_
 
