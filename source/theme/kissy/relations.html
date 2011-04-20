@@ -8,13 +8,23 @@
     :license: BSD, see LICENSE for details.
 #}
 {%- if prev %}
-  <h4>{{ _('Previous topic') }}</h4>
-  <p class="topless"><a href="{{ prev.link|e }}"
-                        title="{{ _('previous chapter') }}">{{ prev.title }}</a></p>
+	<div class="s-box">
+		<div class="s-box-hd">
+			<h3>{{ _('Previous topic') }}</h3>
+		</div>
+		<div class="s-box-bd">
+			<a href="{{ prev.link|e }}" title="{{ _('previous chapter') }}">{{ prev.title }}</a>
+		</div>
+	</div>
 {%- endif %}
 {%- if next %}
-  <h4>{{ _('Next topic') }}</h4>
-  <p class="topless"><a href="{{ next.link|e }}"
-                        title="{{ _('next chapter') }}">{{ next.title }}</a></p>
+	<div class="s-box">
+		<div class="s-box-hd">
+			<h3>{{ _('Next topic') }}</h3>
+		</div>
+		<div class="s-box-bd">
+			<a href="{{ next.link|e }}" title="{{ _('next chapter') }}">{{ next.title }}</a>
+		</div>
+	</div>
 {%- endif %}
 

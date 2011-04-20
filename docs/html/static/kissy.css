@@ -1,148 +1,326 @@
-/*
- * sphinxdoc.css_t
- * ~~~~~~~~~~~~~~~
- *
- * Sphinx stylesheet -- sphinxdoc theme.  Originally created by
- * Armin Ronacher for Werkzeug.
- *
- * :copyright: Copyright 2007-2010 by the Sphinx team, see AUTHORS.
- * :license: BSD, see LICENSE for details.
- *
- */
-
-@import url("basic.css");
-
-/* -- page layout ----------------------------------------------------------- */
-
-body {
-	font: 14px/1.5  Arial;
-    text-align: center;
-    color: #333333;
-    padding: 0;
-    margin: 0;
-    /*background: url("http://www.genocom.nl/images/bg.png") repeat-x scroll -70% 0 white;*/
+ /*****************************************************************************
+ * 文档样式
+ *****************************************************************************/
+.highlight-html{margin-bottom:10px;}
+.field-list ul {
+    padding-left: 1em;
 }
 
-div.document {
+.first {
+    margin-top: 0 !important;
+}
+
+p.rubric {
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.align-left {
     text-align: left;
-    margin: 0 auto;
-    width: 900px;
 }
 
-div.bodywrapper {
-    margin: 0 240px 0 0;
-}
-
-div.body {
-    margin: 0;
-    padding: 0.5em 20px 20px ;
-}
-
-div.related {
-    background:url("navigation.png") repeat scroll 0 0 transparent;
-    border-bottom:1px solid #111111;
-    color:#AAAAAA;
-}
-div.related ul li a {
-    margin: 0;
-    padding: 0 5px 0 5px;
-    line-height: 1.75em;
-    color: #AAA;
-}
-
-div.related ul li a:hover {
-    color: #3CA8E7;
-}
-
-div.sphinxsidebarwrapper {
-    padding: 10px;
-}
-
-div.sphinxsidebar {
-    width: 210px;
-    float: right;
-    background-color: #eee;
-    opacity: 0.8;
-    margin: 0;
-}
-
-div.sphinxsidebar h3, div.sphinxsidebar h4 {
-    margin:0;
-}
-
-div.sphinxsidebar h3 a {
-    color: black;
-}
-
-div.sphinxsidebar ul {
-    padding-left: 1.5em;
-    margin-top: 7px;
-    padding: 0;
-    line-height: 130%;
-}
-
-div.sphinxsidebar ul ul {
-    margin-left: 20px;
-}
-
-div.footer {
-    color: #AAA;
-    padding: 3px 8px 20px 0;
+.align-center {
     clear: both;
-    font-size: 0.8em;
-    /*
-    background: -webkit-gradient(linear, left top, left bottom, from(white), to(#E9F4FF));
-    background: -moz-linear-gradient(top, white, #E9F4FF);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = 'white', endColorstr = '#E9F4FF');
-    */
-}
-div.footer a { color: #aaa  }
-
-/* -- body styles ----------------------------------------------------------- */
-
-p {    
-    margin: 0.8em 0 0.5em 0;
+    text-align: center;
 }
 
-a {
-    color: #1F75CC;
-    text-decoration: none;
+.align-right {
+    text-align: right;
 }
 
-a:hover {
-    color: #73b6e8;
+
+/* -- topics ---------------------------------------------------------------- */
+
+div.topic {
+    border: 1px solid #ccc;
+    padding: 7px 7px 0 7px;
+    margin: 10px 0 10px 0;
 }
 
-h1 {
-    color:#335974;
-	font-family: Futura, 'Microsoft YaHei', 华文黑体, STHeiti, Georgia, 'Times New Roman', Times, serif;
-    font-size: 22px;
-    font-weight:normal;
+p.topic-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
-h2 {
-    margin: 1.3em 0 0.2em 0;
-    font-size: 18px;
-	font-family: Futura, 'Microsoft YaHei', 华文黑体, STHeiti, Georgia, 'Times New Roman', Times, serif;
-	font-weight: normal;
-    padding: 0;
-    color: #335974;
+/* -- admonitions ----------------------------------------------------------- */
+
+div.admonition {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 7px;
 }
 
-h3 {
-    margin: 1em 0 -0.3em 0;
+div.admonition dt {
+    font-weight: bold;
+}
+
+div.admonition dl {
+    margin-bottom: 0;
+}
+
+p.admonition-title {
+    margin: 0px 10px 5px 0px;
+    font-weight: bold;
+}
+
+/* -- tables ---------------------------------------------------------------- */
+
+table.docutils {
+    border: 0;
+    border-collapse: collapse;
+}
+
+table.docutils td, table.docutils th {
+    padding: 1px 8px 1px 5px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #aaa;
+}
+
+table.field-list td, table.field-list th {
+    border: 0 !important;
+}
+
+table.footnote td, table.footnote th {
+    border: 0 !important;
+}
+
+th {
+    text-align: left;
+    padding-right: 5px;
+}
+
+table.citation {
+    border-left: solid 1px gray;
+    margin-left: 1px;
+}
+
+table.citation td {
+    border-bottom: none;
+}
+
+/* -- other body styles ----------------------------------------------------- */
+
+ol.arabic {
+    list-style: decimal;
+}
+
+ol.loweralpha {
+    list-style: lower-alpha;
+}
+
+ol.upperalpha {
+    list-style: upper-alpha;
+}
+
+ol.lowerroman {
+    list-style: lower-roman;
+}
+
+ol.upperroman {
+    list-style: upper-roman;
+}
+
+dl {
+    margin-bottom: 15px;
+}
+
+dd p {
+    margin-top: 0px;
+}
+
+dd ul, dd table {
+    margin-bottom: 10px;
+}
+
+dd {
+    margin-top: 3px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+
+dt:target, .highlighted {
+    background-color: #fbe54e;
+}
+
+dl.glossary dt {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.field-list ul {
+    margin: 0;
+    padding-left: 1em;
+}
+
+.field-list p {
+    margin: 0;
+}
+
+.refcount {
+    color: #060;
+}
+
+.optional {
+    font-size: 1.3em;
+}
+
+.versionmodified {
+    font-style: italic;
+}
+
+.system-message {
+    background-color: #fda;
+    padding: 5px;
+    border: 3px solid red;
+}
+
+.footnote:target {
+    background-color: #ffa
+}
+
+.line-block {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.line-block .line-block {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 1.5em;
+}
+
+.guilabel, .menuselection {
+    font-family: sans-serif;
+}
+
+.accelerator {
+    text-decoration: underline;
+}
+
+.classifier {
+    font-style: oblique;
+}
+
+/* -- code displays --------------------------------------------------------- */
+
+pre {
+    overflow: auto;
+}
+
+td.linenos pre {
+    padding: 5px 0px;
+    border: 0;
+    background-color: transparent;
+    color: #aaa;
+}
+
+table.highlighttable {
+    margin-left: 0.5em;
+}
+
+table.highlighttable td {
+    padding: 0 0.5em 0 0.5em;
+}
+
+tt.descname {
+    background-color: transparent;
+    font-weight: bold;
     font-size: 1.2em;
 }
 
-/*div.body h1 a, div.body h2 a, div.body h3 a, div.body h4 a, div.body h5 a, div.body h6 a {
-    color: black!important;
-}*/
+tt.descclassname {
+    background-color: transparent;
+}
+
+tt.xref, a tt {
+    background-color: transparent;
+    font-weight: bold;
+}
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+    background-color: transparent;
+}
+
+.viewcode-link {
+    float: right;
+}
+
+.viewcode-back {
+    float: right;
+    font-family: sans-serif;
+}
+
+div.viewcode-block:target {
+    margin: -1px -10px;
+    padding: 0 10px;
+}
+
+/* -- math display ---------------------------------------------------------- */
+
+img.math {
+    vertical-align: middle;
+}
+
+span.eqno {
+    float: right;
+}
+
+/* general styles */
+a:link, a:visited{color:#00a0e9;}
+a:hover, a:active{color:#f60;}
+
+ul ul{margin-left:20px}
+ul li{list-style:inside url(bullet.gif);}
+ul li li{list-style:inside url(sub-bullet.gif);}
+
+ol {
+    line-height: 1.5em;
+    margin: .3em 0 0 3.2em;
+    padding: 0;
+    list-style-image: none;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+a.headerlink {
+    visibility: hidden;
+}
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink,
+dt:hover > a.headerlink {
+    visibility: visible;
+}
+
+
+
+/* -- body styles ----------------------------------------------------------- */
+
+.section .section .section {padding-left:30px;}
+p {
+    margin: 0.8em 0 0.5em 0;
+}
+
+h1,h2,h3{margin-bottom:8px;padding:8px 0;font:bold 22px "Microsoft YaHei";}
+h1{border-bottom:1px solid #ddd;}
+h2{font-size:18px;}
+h3,h4{font-size:16px;}
 
 h1 a.anchor, h2 a.anchor, h3 a.anchor, h4 a.anchor, h5 a.anchor, h6 a.anchor {
     display: none;
     margin: 0 0 0 0.3em;
     padding: 0 0.2em 0 0.2em;
-    color: #aaa!important;
+    color: #aaa !important;
 }
 
 h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor,
@@ -157,16 +335,16 @@ h5 a.anchor:hover, h6 a.anchor:hover {
 }
 
 a.headerlink {
-    color: #c60f0f!important;
+    color: #c60f0f !important;
     font-size: 1em;
     margin-left: 6px;
     padding: 0 4px 0 4px;
-    text-decoration: none!important;
+    text-decoration: none !important;
 }
 
 a.headerlink:hover {
     background-color: #ccc;
-    color: white!important;
+    color: white !important;
 }
 
 li {
@@ -174,15 +352,13 @@ li {
 }
 
 cite, code, tt {
-    font-family: 'Consolas', 'Deja Vu Sans Mono',
-                 'Bitstream Vera Sans Mono', monospace;
+    font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
     font-size: 0.95em;
     letter-spacing: 0.01em;
 }
 
 tt {
     background-color: #f2f2f2;
-    /*border-bottom: 1px solid #ddd;*/
     color: #333;
     padding: 2px 5px;
 }
@@ -244,8 +420,9 @@ table {
 table td, table th {
     padding: 0.2em 0.5em 0.2em 0.5em;
 }
+
 table.highlighttable {
-    width:100%;
+    width: 100%;
 }
 
 div.admonition, div.warning {
@@ -281,6 +458,7 @@ div.warning {
 div.warning p.admonition-title {
     background-color: #CF0000;
     border-bottom-color: #940000;
+    color: white;
 }
 
 div.admonition ul, div.admonition ol,
@@ -299,8 +477,7 @@ div.versioninfo {
 }
 
 .viewcode-back {
-    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva',
-                 'Verdana', sans-serif;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
 }
 
 div.viewcode-block:target {
@@ -312,171 +489,158 @@ div.viewcode-block:target {
 div.describ {
     padding: 10px;
     border: 1px solid #d1d1d1;
-    
+
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
 }
+
 div.demo {
     padding: 10px;
     background: #F8F8F6;
     border: 1px solid #d1d1d1;
-    
+
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
 }
-.toc h3 {
-    float: right;
-    font-size: 14px;
-    margin: 0;
-}
-.toc h3 a {
-    color: #777777;
-}
-.toc h3 a:hover {
-    color: #333;
-}
-.toc ul {
-    display: none;
-}
-.tocshow {
-    zoom: 1;
-    padding:5px;
-    background:rgba(22, 22, 22, 0.6);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#7f161616',endColorStr='#7f161616');
-    /*opacity: 0.4;*/
-}
-.tocshow ul {
-    display: block;
-}
-.tocshow h3 a {
-    color: #BBB;
-}
-.toc a {
-    color: white;
-}
-.toc a:hover {
-    text-decoration: underline;
-}
-.header {
-    width: 900px;
-    height: 88px;
-    overflow: hidden;
-    position: relative;
-    margin: 0 auto;
-    padding-bottom:20px;
-    text-align:left;
-    border: 1px solid #EEEEEE;
-    
-    -moz-border-top-radius: 4px;
-    -webkit-border-top-radius: 4px;
-    border-top-radius: 4px;
-    
-}
-div.document {
-    border: 1px solid #EEE;
-    border-top: none;
-}
-
-.header .logo a {
-    display: block;
-}
-.header .logo a:hover {
-    color: #444;
-}
-
-.searchbox {
-    padding: 20px 0;
-}
-
-.searchbox input {
-    -webkit-box-shadow:0 0 3px #A4DEFF;
-    -moz-box-shadow:0 0 3px #A4DEFF;
-    box-shadow:0 0 3px #A4DEFF;
-    border: 1px solid #bbb;
-    height: 26px;
-}
-.searchbox .ipt {
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    border-radius: 6px;
-    
-    width: 300px;
-    font-size:16px;
-}
-.searchbox .btn {
-    -moz-border-radius: 16px;
-    -webkit-border-radius: 16px;
-    border-radius: 16px;
-    
-}
-.headwrap {
-    /*background: url("http://typeof.net/wp-content/themes/huaise_obox/images/bg.jpg") repeat-x scroll 0 0 transparent;*/
-    position: relative;
-    padding-top:20px;
-    
-    /*background: -webkit-gradient(linear, left top, left bottom, from(#E9F4FF), to(white));
-    background: -moz-linear-gradient(top, #E9F4FF, white);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#E9F4FF', endColorstr = 'white');*/
-    
-}
-.logo {
-    float:left;
-    margin-left:10px;
-    margin-top:10px;
-    
-}
-
-.navigation {
-    position: absolute;
-    top: 32px;
-    right: 0;
-    margin: 0;
-    list-style: none outside none;
-}
-.navigation li {
-    float: left;
-    padding: 0 16px 0 10px;
-    position: relative;
-}
-
-.navigation li b , .navigation li s {
-    position: absolute;
-    top: 4px;
-    right: 1px;
-    height: 0;
-    width: 0;
-    font-size: 0;
-    line-height: 0;
-    overflow: hidden;
-}
-.navigation li b  {
-    border-top: 14px dashed transparent;
-    border-right: 10px solid #BBB;
-}
-
-.navigation li s  {
-    border-top: 14px dashed transparent;
-    border-right: 10px solid white;
-    right: 0;
-}
-.myrelbar {
-    float:left;
-    list-style: none outside none;
-    position: absolute;
-    top: 0;
-    right: 20px;
-    margin: 0;
-    padding: 0;
-}
-.fixed {
-    position: fixed;
-}
 
 .highlight .c1,
-.highlight .cm { font-style: normal !important; }
+.highlight .cm {
+    font-style: normal !important;
+}
 
-#google-search-box {
-    margin-top: 50px;
+
+/*****************************************************************************
+ * 布局
+ *****************************************************************************/
+
+/** 布局基础样式 **/
+.col-main {
+    float: left;
+    width: 100%;
+    /* bug fix: 主栏没有内容时，在 Firefox 和 Chrome 等浏览器下，布局不对 */
+    min-height: 1px;
+}
+.col-sub, .col-extra {
+    float: left;
+    /*position: relative;  按需设置，仅在需要时添加 */
+}
+
+/** 清除浮动 **/
+.layout:after, .main-wrap:after, .col-sub:after, .col-extra:after {
+	content: '\20';
+	display: block;
+	height: 0;
+	clear: both;
+}
+.layout, .main-wrap, .col-sub, .col-extra {
+    *zoom: 1;
+}
+.grid-s6m0 .main-wrap {
+    margin-left: 240px;
+	padding-left:10px;
+}
+
+.grid-s6m0 .col-sub {
+    width: 230px;
+    margin-left: -100%;
+}
+
+/*****************************************************************************
+ * 页头尾
+ *****************************************************************************/
+ 
+#header, #footer, #content {width: 950px;margin:0 auto;}
+
+#header {overflow:hidden;background:url(toy.jpg) no-repeat 82% 0;border-bottom: 1px solid #ace;}
+#header .logo{float:left;margin:20px 0 0 0;padding:0;border:none;}
+#header .desc{float:left;margin-top:60px;margin-left:5px;font-size:15px;color:#80c269;font-weight:bold;font-family: "Microsoft YaHei";}
+#header  .navigation {float:right;margin:0;list-style:none;overflow:hidden;}
+#header  .navigation li {float:left;margin-top:60px;margin-left:-1px;padding: 0 15px;line-height:1em;border-left:1px solid #ddd;}
+
+#content{margin-bottom:10px;}
+.col-sub{border: 1px solid #ace;border-top:none;background:#f2f8fa;}
+
+#footer {clear:both;padding:30px 0;text-align:center;color:#888;border-top:1px dotted #ddd;}
+#footer a {color: #888}
+
+ /*****************************************************************************
+ * 公共模块
+ *****************************************************************************/
+/*盒子*/ 
+.s-box .s-box-hd{border-bottom:1px dotted #ccc;}
+.s-box .s-box-hd h3{margin:0;font:bold 16px "Microsoft YaHei";}
+.s-box .s-box-bd{padding:8px 0;overflow:hidden;}
+
+.col-sub .s-box{margin-left:10px;margin-right:10px;}
+.col-sub .s-box .box-hd{border-bottom:1px dotted #ace;}
+
+/*上一页下一页*/
+.relative-links{border-top:1px solid #ddd;}
+.relative-links .prev{float:left;}
+.relative-links .next{float:right;}
+
+
+/*navigation - related*/
+
+
+div.related {
+    width: 100%;
+    font-size: 90%;
+}
+
+div.related h3 {
+    display: none;
+}
+
+div.related ul {
+    margin: 0;
+    padding: 0 0 0 10px;
+    list-style: none;
+}
+
+div.related li {
+    display: inline;
+}
+
+div.related li.right {
+    float: right;
+    margin-right: 5px;
+}
+
+div.related {
+    font-size: 1em;
+}
+
+div.related ul {
+    background-image: url(navigation.png);
+    height: 2em;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    list-style:none;
+}
+
+div.related ul li {
+    margin: 0;
+    padding: 0;
+    height: 2em;
+    float: left;
+    list-style:none;
+}
+
+div.related ul li.right {
+    float: right;
+    margin-right: 5px;
+}
+
+div.related ul li a {
+    margin: 0;
+    padding: 0 5px 0 5px;
+    line-height: 1.75em;
+    color: #EE9816;
+}
+
+div.related ul li a:hover {
+    color: #3CA8E7;
 }

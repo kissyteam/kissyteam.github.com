@@ -8,9 +8,12 @@
     :license: BSD, see LICENSE for details.
 #}
 {%- if show_source and has_source and sourcename %}
-  <h3>{{ _('This Page') }}</h3>
-  <ul class="this-page-menu">
-    <li><a href="{{ pathto('_sources/' + sourcename, true)|e }}"
-           rel="nofollow">{{ _('Show Source') }}</a></li>
-  </ul>
+	<div class="s-box">
+		<div class="s-box-hd">
+			<h3>{{ _('This Page') }}</h3>
+		</div>
+		<div class="s-box-bd">
+			<a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow">{{ _('Show Source') }}</a>
+		</div>
+	</div>
 {%- endif %}
