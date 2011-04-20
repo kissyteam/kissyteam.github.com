@@ -1,5 +1,7 @@
 .. _loader
 
+.. py:module:: Loader
+
 KISSY Loader 文档
 ===============================
 
