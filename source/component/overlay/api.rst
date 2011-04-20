@@ -1,6 +1,8 @@
 弹出层 api
 ===================================================================
 
+.. py:module:: Overlay
+
 获取构造器
 --------------------------------------------------------------------
 页面引入 kissy.js :
@@ -32,66 +34,83 @@ KISSY 1.2 新增使用模块方法
 构造器接口
 ---------------------------------------------------------------------
 
-.. code-block:: javascript
+.. py:class:: Overlay(config)
 
-    Overlay function Overlay(config) {}
-
-
-``config`` : 类型对象，实例对象所需的配置，例如
-
-.. code-block:: javascript
-
-    {
-        width:"200px",
-        render:"#container"
-    }
+    :param object config: 类型对象，实例对象所需的配置
+    
+    例如一个简单的配置项：
+    
+    .. code-block:: javascript
+    
+        {
+            width:"200px",
+            render:"#container"
+        }
 
 
 config 配置项详解
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``prefixCls`` (optional): kissy 1.2 新增，类型字符串，默认值为 "ks-"，样式类名前缀，如默认弹出层根元素会加上样式类："ks-overlay"，
-kissy 1.2 版本以前设置无效，都为 "ks-".
+.. py:attribute:: prefixCls
 
-``srcNode`` (optional): 类型选择器字符串，取第一个节点作为弹出层根节点的已存在页面节点，例如设置
+    (optional): kissy 1.2 新增，类型字符串，默认值为 "ks-"，样式类名前缀，如默认弹出层根元素会加上样式类："ks-overlay"，
+    kissy 1.2 版本以前设置无效，都为 "ks-".
 
-.. code-block:: javascript
+.. py:attribute:: srcNode
 
-    {
-        srcNode : "#overlay_test"
-    }
+    (optional): 类型选择器字符串，取第一个节点作为弹出层根节点的已存在页面节点，例如设置
 
-作用于页面
+    .. code-block:: javascript
+    
+        {
+            srcNode : "#overlay_test"
+        }
 
-.. code-block:: html
+    作用于页面
 
-    <div id='overlay_test'>
-        从页面已有元素中渲染而来
-    </div>
+    .. code-block:: html
+    
+        <div id='overlay_test'>
+            从页面已有元素中渲染而来
+        </div>
 
-则会把 ``overlay_test`` 转化为弹出层根节点。
+    则会把 ``overlay_test`` 转化为弹出层根节点。
 
-``width`` (optional): 类型字符串或者整数，弹出层宽度。整数表示单元为 px。
+.. py:attribute:: width
 
-``height`` (optional): 类型字符串或者整数，弹出层高度。整数表示单元为 px。
+    (optional): 类型字符串或者整数，弹出层宽度。整数表示单元为 px。
 
-``elCls`` (optional): 类型字符串，将要添加到弹出层根元素的样式类。
+.. py:attribute:: height
 
-``content`` (optional): 类型字符串，设置弹出层的内容 html。
+    (optional): 类型字符串或者整数，弹出层高度。整数表示单元为 px。
 
-``zIndex`` (optional): 类型整数，设置弹出层的 ``z-index`` css属性值。默认 9999。
+.. py:attribute:: elCls
 
-``x`` (optional): 类型整数，设置弹出层相对于文档根节点的 x 坐标。
+    (optional): 类型字符串，将要添加到弹出层根元素的样式类。
 
-``y`` (optional): 类型整数，设置弹出层相对于文档根节点的 y 坐标。
+.. py:attribute:: content
 
-``xy`` (optional): 类型整数数组，相当于将数组第一个元素设置为 ``x`` 的值，将数组的第二个元素设置为 ``y`` 的值。
+    (optional): 类型字符串，设置弹出层的内容 html。
 
+.. py:attribute:: zIndex
 
-对齐配置
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    (optional): 类型整数，设置弹出层的 ``z-index`` css属性值。默认 9999。
 
-``align`` (optional): 类型对象，弹出层对齐的相关配置，例如
+.. py:attribute:: x
+
+    (optional): 类型整数，设置弹出层相对于文档根节点的 x 坐标。
+
+.. py:attribute:: y
+
+    (optional): 类型整数，设置弹出层相对于文档根节点的 y 坐标。
+
+.. py:attribute:: xy
+
+    (optional): 类型整数数组，相当于将数组第一个元素设置为 :py:attr:`x` 的值，将数组的第二个元素设置为 :py:attr:`y` 的值。
+
+.. py:attribute:: align
+
+    (optional): 类型对象，弹出层对齐的相关配置，例如
     
     .. code-block:: javascript
     
@@ -111,11 +130,9 @@ kissy 1.2 版本以前设置无效，都为 "ks-".
     
         .. image:: /_images/overlay/align.png
     
-    
-拖动调整大小配置
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    
-``resize`` (optional): kissy 1.2 新增，拖动调整大小的配置，例如：
+.. py:attribute:: resize
+
+    (optional): kissy 1.2 新增，拖动调整大小的配置，例如：
     
     .. code-block:: javascript
     
@@ -149,19 +166,33 @@ kissy 1.2 版本以前设置无效，都为 "ks-".
 可获取属性列表
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``x`` （读写）：相对于页面绝对横坐标，类型参见配置
+.. py:attribute:: x
 
-``y`` （读写）：相对于页面绝对纵坐标，类型参见配置
+    （读写）：相对于页面绝对横坐标，类型参见配置
 
-``xy`` （读写）：相当与一次同时读写 ``x`` 和 ``y`` 属性，类型参见配置
+.. py:attribute:: y
 
-``align`` （读写）：弹出层的对齐信息，类型参见配置
+    （读写）：相对于页面绝对纵坐标，类型参见配置
 
-``visible`` （读写）：弹出层的显示与否，类型 boolean
+.. py:attribute:: xy
 
-``el`` （只读）：获取弹出层的根节点，类型 KISSY.Node，注意必须在调用 ``render()`` 方法之后才可以获取
+    （读写）：相当与一次同时读写 :py:attr:`x` 和 :py:attr:`y` 属性，类型参见配置
 
-``contentEl`` （只读）：获取弹出层真正内容所在的节点，类型 ``KISSY.Node`` ，注意必须在调用  ``render()`` 方法之后才可以获取，弹出层的 html 结构如下
+.. py:attribute:: align
+
+    （读写）：弹出层的对齐信息，类型参见配置
+
+.. py:attribute:: visible
+
+    （读写）：弹出层的显示与否，类型 boolean
+
+.. py:attribute:: el
+
+    （只读）：获取弹出层的根节点，类型 ``KISSY.Node``，注意必须在调用 :py:meth:`render` 方法之后才可以获取
+
+.. py:attribute:: contentEl
+
+    （只读）：获取弹出层真正内容所在的节点，类型 ``KISSY.Node`` ，注意必须在调用  :py:meth:`render` 方法之后才可以获取，弹出层的 html 结构如下
 
     .. code-block:: html
     
@@ -171,20 +202,32 @@ kissy 1.2 版本以前设置无效，都为 "ks-".
             </div>
         </div>
         
-一般调用弹出层的 ``render()`` 方法后，可通过获取 ``contentEl`` 属性获取内容所在节点，来动态修改弹出层的内容。
+    一般调用弹出层的 :py:meth:`render` 方法后，可通过获取 :py:attr:`contentEl` 属性获取内容所在节点，来动态修改弹出层的内容。
 
 
 
 实例方法
 ----------------------------------------------------------------------------------------------------------
 
-``void render()`` : 渲染当前实例，生成对应的 dom 节点并添加到页面文档树中，注意取 ``el`` 与 ``contentEl`` 属性值前必须调用过该方法。
+.. py:method:: Overlay.render()
 
-``void show()`` : 显示弹窗，位置根据 ``align`` 或者 ``xy`` 确定。
+    渲染当前实例，生成对应的 dom 节点并添加到页面文档树中，注意取 :py:attr:`el` 与 :py:attr:`contentEl` 属性值前必须调用过该方法。
 
-``void hide()`` : 隐藏弹窗
+.. py:method:: Overlay.show()
 
-``void align(node,points,offset)`` : 相当于调用
+    显示弹窗，位置根据 :py:attr:`align` 或者 :py:attr:`xy` 确定。
+
+.. py:method:: Overlay.hide()
+
+    隐藏弹窗
+
+.. py:method:: Overlay.align(node,points,offset)
+    :param string|KISSY.Node|HTMLDOMNode node: 对齐的参考元素
+    :param Array<string> points: 对齐的参考位置
+    :param Array<number> offset: 相对对齐元素的偏移
+
+
+    相当于调用
 
     .. code-block:: javascript
 
@@ -198,11 +241,17 @@ kissy 1.2 版本以前设置无效，都为 "ks-".
             }
         });
         
-    注意：调用该方法前请先调用 ``render()``.    
+    注意：调用该方法前请先调用 :py:meth:`render`.    
     
-``void center()`` : 将弹出层放在当前视窗中央。注意：调用该方法前请先调用 ``render()``.      
+.. py:method:: Overlay.center()
 
-``void move(x,y)`` : 相当于调用
+    将弹出层放在当前视窗中央。注意：调用该方法前请先调用 :py:meth:`~Overlay.render`.      
+
+.. py:method:: Overlay.move(x,y)
+    :param number x: 相对文档左上角横坐标
+    :param number y: 相对文档左上角纵坐标
+
+    相当于调用
 
     .. code-block:: javascript
 

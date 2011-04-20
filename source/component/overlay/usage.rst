@@ -6,7 +6,7 @@
 
 最常见的场景，弹出层 html 已经在页面 html 中，前端要做的是适时将它显示出来，例如页面中存在以下 html ：
 
-.. code-block:: html
+.. code-block:: html    
 
     <style>
         #popup1 {
@@ -28,7 +28,7 @@
 代码分解
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: javascript
+.. code-block:: html
 
     <style>
         #popup1 {
@@ -47,7 +47,8 @@
 
 通过 srcNode 配置项配置从已存的 dom 节点来生成 overlay 对象 :
 
-.. code-block:: javascript   
+.. code-block:: javascript
+    :linenos:   
 
     KISSY.use("overlay",function(S,Overlay){
         // 对于 kissy < 1.2 ,可使用 Overlay = S.Overlay; 获取构造器
@@ -69,6 +70,7 @@
 当点击 Show 按钮时会触发弹出层的显示，以及点击 Hide 按钮时会触发弹出层的隐藏。
 
 .. code-block:: javascript
+    :linenos: 
 
     S.one('#btn1').on('click', function() {
         // 根据对齐属性，显示在 Hide 按钮旁
@@ -88,6 +90,7 @@
 
 
 .. raw:: html
+    
 
     <style>
         button {
@@ -154,6 +157,7 @@
 注意：要使得弹出对话框头部可拖动，需要 ``use("dd")`` 使用拖放模块:
 
 .. code-block:: javascript
+    :linenos:
 
     KISSY.use("overlay,dd",function(S,Overlay){
         
@@ -184,6 +188,7 @@
 当点击按钮时，首先调用 ``render()`` 渲染 dialog 对象，使得 dialog 生成的 dom 节点加入到文档树中，再调用 ``center()`` 使得对话框位置在当前视窗中央，最后调用 ``show()`` 显示 dialog：
 
 .. code-block:: javascript
+    :linenos: 
 
     S.one("#btn4").on("click", function() {
         dialog.render();
