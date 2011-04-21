@@ -83,7 +83,7 @@ config 配置项详解
 
 ``closable`` : 类型 boolean，对话框右上角是否包括关闭按钮
 
-``draggable`` : 类型 boolean，是否允许拖动头部移动，注意启用时需同时 ``use("dd")``，例如
+``draggable`` : 类型 boolean，是否允许拖动头部移动，注意启用时需同时 ``use("dd")`` ，例如
 
     .. code-block:: javascript
     

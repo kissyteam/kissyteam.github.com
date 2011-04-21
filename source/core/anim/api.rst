@@ -63,7 +63,7 @@ KISSY 1.2 新增使用模块方法
 ``callback (optional)``:类型函数，动画结束时调用
 
 
-``nativeSupport:类型 bool``，是否在支持css动画的浏览器上使用原生机制，默认 true
+``nativeSupport:类型 bool`` ，是否在支持css动画的浏览器上使用原生机制，默认 true
 
 实例动画对象
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

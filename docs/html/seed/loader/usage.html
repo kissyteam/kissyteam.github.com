@@ -81,13 +81,13 @@
 </div>
 <div class="section" id="id3">
 <h3>定义模块<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/dep.js">被依赖模块 dep</a></p>
+<p><a class="reference external" href="http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/dep.js">被依赖模块 1.1x dep</a></p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;1.1x-dep&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
     <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;1.1x-dep loaded&quot;</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/mod.js">主模块 mod</a></p>
+<p><a class="reference external" href="http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/mod.js">主模块 1.1x mod</a></p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;1.1x-mod&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
     <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;1.1x-mod loaded&quot;</span><span class="p">);</span>
 <span class="p">});</span>
@@ -138,13 +138,13 @@
 </div>
 <div class="section" id="id7">
 <h3>定义模块<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.2/dep.js">被依赖模块 dep</a></p>
+<p><a class="reference external" href="http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.2/dep.js">被依赖模块 1.2 dep</a></p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;1.2/dep&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
     <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;1.2/dep loaded&quot;</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.2/mod.js">主模块 mod</a></p>
+<p><a class="reference external" href="http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.2/mod.js">主模块 1.2 mod</a></p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;1.2/mod&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
     <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;1.2/mod loaded&quot;</span><span class="p">);</span>
 <span class="p">},{</span>
@@ -154,14 +154,14 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id10">
-<h3>使用模块<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>使用模块<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;1.2/mod&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id11">
-<h3>demo<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3>demo<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <button id='k12'>1.2 启动主模块</button>
 <script>
     KISSY.config({
@@ -207,8 +207,8 @@
 </div>
 <p>那么下载动态加载的 js 文件路径后面会自动加上： <tt class="docutils literal"><span class="pre">?t=20110323</span></tt></p>
 </div>
-<div class="section" id="id12">
-<h2>静态部署<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h2>静态部署<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <p>部署时也可以不采用动态加载，仅仅将 kissy loader 作为代码组织的一种方式，将所有的模块打包到一个文件静态引入放在页面中，
 当使用 <tt class="docutils literal"><span class="pre">KISSY.use</span></tt> 时如果模块已经过静态引入在页面中，则不会发送请求，这时建议所有模块的属性都设置为</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;custommod&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){},{</span><span class="nx">attach</span><span class="o">:</span><span class="kc">false</span><span class="p">});</span>
@@ -279,12 +279,12 @@
 <li><a class="reference internal" href="#id5">KISSY 1.2</a><ul>
 <li><a class="reference internal" href="#id6">包配置</a></li>
 <li><a class="reference internal" href="#id7">定义模块</a></li>
-<li><a class="reference internal" href="#id10">使用模块</a></li>
-<li><a class="reference internal" href="#id11">demo</a></li>
+<li><a class="reference internal" href="#id8">使用模块</a></li>
+<li><a class="reference internal" href="#id9">demo</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#kissy-loader-1-2">KISSY loader 1.2 如何进行代码更新</a></li>
-<li><a class="reference internal" href="#id12">静态部署</a></li>
+<li><a class="reference internal" href="#id10">静态部署</a></li>
 </ul>
 </li>
 </ul>

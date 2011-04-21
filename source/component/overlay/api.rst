@@ -1,8 +1,6 @@
 弹出层 api
 ===================================================================
 
-.. py:module:: Overlay
-
 获取构造器
 --------------------------------------------------------------------
 页面引入 kissy.js :
@@ -194,7 +192,7 @@ config 配置项详解
 
 .. py:attribute:: el
 
-    （只读）：获取弹出层的根节点，类型 ``KISSY.Node``。
+    （只读）：获取弹出层的根节点，类型 ``KISSY.Node`` 。
     
     .. note::
     
@@ -242,7 +240,8 @@ config 配置项详解
     隐藏弹窗
 
 .. py:method:: Overlay.align(node,points,offset)
-    :param string|KISSY.Node|HTMLDOMNode node: 对齐的参考元素
+
+    :param string|KISSY.Node|HTMLDOMNode node: 类型对齐的参考元素
     :param Array<string> points: 对齐的参考位置
     :param Array<number> offset: 相对对齐元素的偏移
 
@@ -274,6 +273,7 @@ config 配置项详解
         调用该方法前请先调用 :py:meth:`~Overlay.render`.      
 
 .. py:method:: Overlay.move(x,y)
+
     :param number x: 相对文档左上角横坐标
     :param number y: 相对文档左上角纵坐标
 

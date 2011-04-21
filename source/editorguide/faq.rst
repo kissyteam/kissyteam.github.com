@@ -1,4 +1,3 @@
-.. _editorusage:
 
 
 FAQ
@@ -49,7 +48,7 @@ form 同步
 
     http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/wordCount.html
 
-    其中 `小插件脚本代码 <http://docs.kissyui.com/kissy-editor/demo/word-count.js>`_ 自行下载，随意修改。
+    其中 `wordcount 代码 <http://docs.kissyui.com/kissy-editor/demo/word-count.js>`_ 自行下载，随意修改。
 	
 绑定 ctrol-enter
 ----------------------------------
@@ -73,10 +72,10 @@ form 同步
 
 
 placeholder(tip) 功能
--------------------
+-------------------------------
 
     可参考以下 demo  :
 
     http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/tip.html
 
-    其中 `小插件脚本代码 <http://docs.kissyui.com/kissy-editor/demo/tip.js>`_ 自行下载，随意修改。 
+    其中 `tip 代码 <http://docs.kissyui.com/kissy-editor/demo/tip.js>`_ 自行下载，随意修改。 

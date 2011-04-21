@@ -26,7 +26,7 @@ KISSY 1.2 前
 定义模块
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`被依赖模块 dep <http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/dep.js>`_
+`被依赖模块 1.1x dep <http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/dep.js>`_
 
 .. code-block:: javascript
 
@@ -35,7 +35,7 @@ KISSY 1.2 前
     });
 
 
-`主模块 mod <http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/mod.js>`_
+`主模块 1.1x mod <http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/mod.js>`_
 
 .. code-block:: javascript
     
@@ -100,7 +100,7 @@ KISSY 1.2
 定义模块
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`被依赖模块 dep <http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.2/dep.js>`_
+`被依赖模块 1.2 dep <http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.2/dep.js>`_
 
 .. code-block:: javascript
 
@@ -109,7 +109,7 @@ KISSY 1.2
     });
 
 
-`主模块 mod <http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.2/mod.js>`_
+`主模块 1.2 mod <http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.2/mod.js>`_
 
 .. code-block:: javascript
     
