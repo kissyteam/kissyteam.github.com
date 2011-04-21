@@ -1,3 +1,5 @@
+.. py:currentmodule:: Anim
+
 api
 ===================================
 
@@ -18,52 +20,57 @@ api
         //使用 Anim 构造器
     });
 
-KISSY 1.2 新增使用模块方法
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-可直接通过依赖注入，从函数参数中取得
+.. versionadded:: 1.2
+    KISSY 1.2 可直接通过依赖注入，从函数参数中取得
 
-.. code-block:: javascript
+    .. code-block:: javascript
+    
+        KISSY.use("anim",function(S,Anim){
+            //使用 Anim 构造器
+        });
 
-    KISSY.use("anim",function(S,Anim){
-        //使用 Anim 构造器
-    });
+.. seealso::
 
-
+    KISSY 1.2 :mod:`Loader` 新增功能
 
 构造器接口
 ----------------------------------------------
 
-.. code-block:: javascript
+.. class:: Anim(elem,props[,duration=1,easing='easeNone',callback,nativeSupport=true])
 
-    Anim function Anim(elem, props, duration, easing, callback, nativeSupport) {}
+    得到绑定于某个 dom 节点的动画实例
+    
+    :param props: 动画结束的 dom 样式值，例如
+    
+        .. code-block:: javascript
 
-``elem (必填)``: 类型选择器字符串或是通过S.get 获得的原生 dom 节点
+            {
+                width:"100px",
+                height:"100px"
+            }
+            
+        表示节点将从当前宽高经过动画平滑变化到宽 100px 与高 100px
+        
+        .. note::
+        
+            也可以设置 scrollLeft 或者 scrollTop，这时会直接对元素的滚动属性产生动画。
+                
+    :type props: object
+    :param elem: 作用动画的元素节点
+    :type elem: 选择器字符串或是通过 ``S.get`` 获得的原生 dom 节点             
+    :param duration: 动画持续时间，以秒为单元
+    :type duration: number
+    :param easing: 动画平滑函数，可取值
+                   "easeNone","easeIn","easeOut","easeBoth","easeInStrong",
+                   "easeOutStrong","easeBothStrong","elasticIn","elasticOut",
+                   "elasticBoth","backIn","backOut","backBoth",
+                   "bounceIn","bounceOut","bounceBoth"
+    :type easing: string
+    :param callback: 动画结束回调
+    :type callback: function
+    :param nativeSupport: 是否在支持css动画的浏览器上使用原生机制
+    :type nativeSupport: boolean
 
-
-``props (必填)``: 类型 object,动画结束的 dom 样式值，例如
-
-.. code-block:: javascript
-
-    {
-        width:"100px",
-        height:"100px"
-    }
-
-表示节点将从当前宽高经过动画平滑变化到宽 100px 与高 100px，
-但是有两个例外：也可以设置 scrollLeft 或者 scrollTop，这时会直接对元素的滚动属性产生动画。
-
-``duration (optional)``: 类型整数，动画持续时间，以秒为单元，默认为1秒
-
-
-``easing (optional)``:类型字符串，动画平滑函数，可取值 "easeNone","easeIn","easeOut",
-"easeBoth","easeInStrong","easeOutStrong","easeBothStrong","elasticIn","elasticOut","elasticBoth","backIn",
-"backOut","backBoth","bounceIn","bounceOut","bounceBoth"，默认 "easeNone"，具体效果可自行尝试
-
-
-``callback (optional)``:类型函数，动画结束时调用
-
-
-``nativeSupport:类型 bool`` ，是否在支持css动画的浏览器上使用原生机制，默认 true
 
 实例动画对象
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -74,64 +81,70 @@ KISSY 1.2 新增使用模块方法
 实例方法
 ---------------------------------------------------------------
 
-``run : void function(){}``:在动画实例上调用，开始当前动画实例的动画.
+.. method:: Anim.run()
 
+    在动画实例上调用，开始当前动画实例的动画.
+    
+.. method:: Anim.stop()
 
-``stop : void function(){}``:在动画实例上调用，结束当前动画实例的动画.
+    在动画实例上调用，结束当前动画实例的动画.        
 
 
 在节点实例上开始动画
 ----------------------------------------------------------------
 
-调用接口
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. code-block:: javascript
 
-    S.Node.prototype.animate = function(props,duration,easing,callback,nativeSupport){
-    }
+.. method:: Node.animate(props[,duration=1,easing='easeNone',callback,nativeSupport=true])
 
-参数可见构造器接口部分
+    在当前节点作用动画
 
-快捷方法
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+参数可见 :class:`构造器<Anim.Anim>` 接口部分
 
-show/hide
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.. method:: Node.show([speed,callback])    
 
-``show : Node function(speed,callback){}`` : 元素动画效果显示
+    元素以动画效果显示
+    
+    :param number speed: 动画持续时间，设置无动画
+    :param function callback: 动画结束后回调函数
+    
+.. method:: Node.hide([speed,callback])
 
-``hide : Node function(speed,callback){}`` : 元素动画效果隐藏
+    元素以动画效果隐藏
+    
+    :param number speed: 动画持续时间，设置无动画
+    :param function callback: 动画结束后回调函数
+    
+.. method:: Node.toggle([speed,callback])
 
-``toggle : Node function(speed,callback){}`` : 当前元素为显示时动画效果隐藏，否则动画效果显示
+    当前元素为显示时动画效果隐藏，否则动画效果显示
+    
+    :param number speed: 动画持续时间，设置无动画
+    :param function callback: 动画结束后回调函数        
 
-speed (optional):类型整数，不设置，则无动画过程
+.. method:: Node.fadeIn([speed=1,callback])
 
-callback (optional):类型函数，要求设置 speed ，动画结束后调用
+    元素渐隐效果显示
+    
+    :param number speed: 单位秒，动画持续时间，设置无动画
+    :param function callback: 动画结束后回调函数
+    
+.. method:: Node.fadeOut([speed=1,callback])
 
-fadeIn/Out
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    元素渐隐效果隐藏
+    
+    :param number speed: 单位秒，动画持续时间，设置无动画
+    :param function callback: 动画结束后回调函数    
 
-``fadeIn : Node function(speed,callback){}`` : 元素渐隐效果显示，设置opacity
+.. method:: Node.slideDown([speed=1,callback])
 
-``fadeOut : Node function(speed,callback){}`` : 元素渐隐效果隐藏，设置opacity
+    元素从上到下滑动显示
+    
+    :param number speed: 单位秒，动画持续时间，设置无动画
+    :param function callback: 动画结束后回调函数
+    
+.. method:: Node.slideUp([speed=1,callback])
 
-speed (optional):类型整数，默认为1，动画时长，单位为秒
-
-callback (optional):类型函数，动画结束后调用
-
-
-
-slideDown/Up
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-``slideDown : Node function(speed,callback){}`` : 元素从上到下滑动显示，设置height
-
-``slideUp : Node function(speed,callback){}`` : 元素从下到上隐藏，设置height
-
-speed (optional):类型整数，默认为1，动画时长，单位为秒
-
-callback (optional):类型函数，动画结束后调用
-
-
-
-
+    元素从下到上隐藏
+    
+    :param number speed: 单位秒，动画持续时间，设置无动画
+    :param function callback: 动画结束后回调函数

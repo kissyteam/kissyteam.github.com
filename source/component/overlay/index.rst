@@ -1,6 +1,5 @@
 .. py:module:: Overlay
 
-
 KISSY.Overlay & Dialog 文档
 ===============================
 

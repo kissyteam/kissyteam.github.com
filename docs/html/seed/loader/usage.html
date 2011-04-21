@@ -63,7 +63,7 @@
   <div class="section" id="id1">
 <h1>使用示例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="kissy-1-2">
-<h2>KISSY 1.2 前<a class="headerlink" href="#kissy-1-2" title="Permalink to this headline">¶</a></h2>
+<h2>KISSY &lt; 1.2<a class="headerlink" href="#kissy-1-2" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
 <h3>注册模块<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>
@@ -179,8 +179,8 @@
     });
 </script></div>
 </div>
-<div class="section" id="kissy-loader-1-2">
-<h2>KISSY loader 1.2 如何进行代码更新<a class="headerlink" href="#kissy-loader-1-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h2>KISSY 1.2 代码更新机制<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <p>由于动态加载的 js 文件不是写在页面中，所以不能从页面添加时间戳，并且1.2 loader新增的约定加载也不能配置具体模块文件路径，因此
 1.2 loader 提供了在包级别添加时间戳的机制</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
@@ -207,8 +207,8 @@
 </div>
 <p>那么下载动态加载的 js 文件路径后面会自动加上： <tt class="docutils literal"><span class="pre">?t=20110323</span></tt></p>
 </div>
-<div class="section" id="id10">
-<h2>静态部署<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h2>静态部署<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
 <p>部署时也可以不采用动态加载，仅仅将 kissy loader 作为代码组织的一种方式，将所有的模块打包到一个文件静态引入放在页面中，
 当使用 <tt class="docutils literal"><span class="pre">KISSY.use</span></tt> 时如果模块已经过静态引入在页面中，则不会发送请求，这时建议所有模块的属性都设置为</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;custommod&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){},{</span><span class="nx">attach</span><span class="o">:</span><span class="kc">false</span><span class="p">});</span>
@@ -269,7 +269,7 @@
 		<div class="s-box-bd">
 			<ul>
 <li><a class="reference internal" href="#">使用示例</a><ul>
-<li><a class="reference internal" href="#kissy-1-2">KISSY 1.2 前</a><ul>
+<li><a class="reference internal" href="#kissy-1-2">KISSY &lt; 1.2</a><ul>
 <li><a class="reference internal" href="#id2">注册模块</a></li>
 <li><a class="reference internal" href="#id3">定义模块</a></li>
 <li><a class="reference internal" href="#id4">使用模块</a></li>
@@ -283,8 +283,8 @@
 <li><a class="reference internal" href="#id9">demo</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#kissy-loader-1-2">KISSY loader 1.2 如何进行代码更新</a></li>
-<li><a class="reference internal" href="#id10">静态部署</a></li>
+<li><a class="reference internal" href="#id10">KISSY 1.2 代码更新机制</a></li>
+<li><a class="reference internal" href="#id11">静态部署</a></li>
 </ul>
 </li>
 </ul>

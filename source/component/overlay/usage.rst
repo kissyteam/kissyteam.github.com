@@ -45,7 +45,7 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-通过 srcNode 配置项配置从已存的 dom 节点来生成 overlay 对象 :
+通过 srcNode 配置项配置从已存的 dom 节点来生成 :class:`~Overlay.Overlay` 对象 :
 
 .. code-block:: javascript
     :linenos:   
@@ -148,7 +148,7 @@
 全新创建一个 Dialog
 ----------------------------------------------------------------------
 
-有时可能弹窗本身并没有在 html 中存在，而是由脚本完全生成的，这时就不需要 srcNode 配置了，直接配置相关属性后即可完全由脚本生成所需的 dom 节点。 
+有时可能弹窗本身并没有在 html 中存在，而是由脚本完全生成的，这时就不需要 :attr:`~Overlay.srcNode` 配置了，直接配置相关属性后即可完全由脚本生成所需的 dom 节点。 
 
 
 生成 dialog 对象
@@ -185,7 +185,7 @@
 触发 dialog 对象显示
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     
-当点击按钮时，首先调用 ``render()`` 渲染 dialog 对象，使得 dialog 生成的 dom 节点加入到文档树中，再调用 ``center()`` 使得对话框位置在当前视窗中央，最后调用 ``show()`` 显示 dialog：
+当点击按钮时，首先调用 :meth:`~Overlay.Overlay.render` 渲染 :class:`~Overlay.Dialog` 对象，使得 dialog 生成的 dom 节点加入到文档树中，再调用 :meth:`~Overlay.Overlay.center` 使得对话框位置在当前视窗中央，最后调用 :meth:`~Overlay.Overlay.show` 显示 dialog：
 
 .. code-block:: javascript
     :linenos: 
@@ -243,6 +243,6 @@
 全部 demo
 -------------------------------------------------------------------------------
 
-`KISSY.Overlay 1.20 <http://yiminghe.github.com/kissy/src/overlay/demo.html>`_        
+:ref:`KISSY.Overlay 1.20 <http://yiminghe.github.com/kissy/src/overlay/demo.html>`       
 
-`KISSY.Overlay < 1.20 <http://kissyteam.github.com/kissy/src/overlay/demo.html>`_            
+:ref:`KISSY.Overlay < 1.20 <http://kissyteam.github.com/kissy/src/overlay/demo.html>`         

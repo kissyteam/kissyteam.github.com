@@ -71,25 +71,33 @@
 </div>
 <div class="section" id="id2">
 <h2>添加模块<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>函数接口<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id4">
-<h4>添加模块定义<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="nx">fn</span><span class="p">)</span> <span class="p">{}</span>
-</pre></div>
-</div>
-<p><tt class="docutils literal"><span class="pre">name</span></tt> :类型字符串，表示模块名称</p>
-<p><tt class="docutils literal"><span class="pre">fn</span></tt> :类型函数，表示模块定义函数，若该模块的所有依赖项都已经载入完毕，则 <tt class="docutils literal"><span class="pre">fn</span></tt> 立即执行</p>
-<p>该函数用在模块定义文件中</p>
-</div>
-<div class="section" id="id5">
-<h4>注册模块<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id6">
-<h5>接口1<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span> <span class="p">{}</span>
-</pre></div>
-</div>
-<p><tt class="docutils literal"><span class="pre">config</span></tt> :类型对象，表示模块描述信息，例如如下格式</p>
+<dl class="function">
+<dt id="Loader.KISSY.add">
+<tt class="descclassname">KISSY.</tt><tt class="descname">add</tt><big>(</big><em>name</em>, <em>fn</em><big>)</big><a class="headerlink" href="#Loader.KISSY.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>添加模块定义</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>string</em>) &#8211; 模块名称</li>
+<li><strong>fn</strong> (<em>function</em>) &#8211; 模块定义函数，若该模块的所有依赖项都已经载入完毕，则 <tt class="docutils literal"><span class="pre">fn</span></tt> 立即执行</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="kissy-add-config"></span><dl class="function">
+<dt>
+<tt class="descclassname">KISSY.</tt><tt class="descname">add</tt><big>(</big><em>config</em><big>)</big></dt>
+<dd><p>注册模块方式1</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<em>object</em>) &#8211; <p>模块描述信息，例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;custommod&quot;</span><span class="o">:</span><span class="p">{</span>
         <span class="nx">fullpath</span><span class="o">:</span><span class="s2">&quot;http://xx.com/custommod.js&quot;</span><span class="p">,</span>
@@ -103,29 +111,60 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>指明了模块 <tt class="docutils literal"><span class="pre">custommod</span></tt> 与 <tt class="docutils literal"><span class="pre">custommod2</span></tt> 的模块文件路径以及其依赖的模块名称，那么当 <tt class="docutils literal"><span class="pre">use</span></tt> 该模块时时就会从 <tt class="docutils literal"><span class="pre">fullpath</span></tt> 中载入模块定义和其依赖模块的定义，以及从 <tt class="docutils literal"><span class="pre">cssfullpath</span></tt> 中载入模块的样式表</p>
-<p>注意依赖的模块也要进行注册。</p>
-<p>该函数用在模块注册文件中,kissy 1.2 使用包机制取代模块注册，仍然兼容1.2以前模块注册方式。</p>
+<p>指明了模块 <tt class="docutils literal"><span class="pre">custommod</span></tt> 与 <tt class="docutils literal"><span class="pre">custommod2</span></tt> 的模块文件路径以及其依赖的模块名称，
+那么当 <tt class="docutils literal"><span class="pre">use</span></tt> 该模块时就会从 <tt class="docutils literal"><span class="pre">fullpath</span></tt> 中载入模块定义和其依赖模块的定义，
+以及从 <tt class="docutils literal"><span class="pre">cssfullpath</span></tt> 中载入模块的样式表</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">注意依赖的模块也要进行注册。该函数用在模块注册文件中,kissy 1.2 使用包机制取代模块注册，仍然兼容1.2以前模块注册方式。</p>
 </div>
-<div class="section" id="id7">
-<h5>接口2<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="nx">config</span><span class="p">)</span> <span class="p">{}</span>
-</pre></div>
-</div>
-<p>相当于调用接口1的 <tt class="docutils literal"><span class="pre">KISSY.add({name:config})</span></tt>;</p>
-</div>
-</div>
-</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<tt class="descclassname">KISSY.</tt><tt class="descname">add</tt><big>(</big><em>name</em>, <em>config</em><big>)</big></dt>
+<dd><p>注册模块方式2, 注册单个模块，相当于 <a class="reference internal" href="#kissy-add-config"><em>KISSY.add({name:config})</em></a></p>
+</dd></dl>
+
 <div class="section" id="kissy-1-2">
 <h3>KISSY 1.2 新增接口<a class="headerlink" href="#kissy-1-2" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="nx">fn</span><span class="p">,</span><span class="nx">config</span><span class="p">)</span> <span class="p">{}</span>
-</pre></div>
-</div>
-<p>新增 config 参数</p>
-<p>config (optional):类型对象，表示该模块的一些格外属性，包括 attach(bool),requires(Array&lt;String&gt;)，例如</p>
+<dl class="function">
+<dt>
+<tt class="descclassname">KISSY.</tt><tt class="descname">add</tt><big>(</big><em>name</em>, <em>fn</em><span class="optional">[</span>, <em>config</em><span class="optional">]</span><big>)</big></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>string</em>) &#8211; 模块名</li>
+<li><strong>fn</strong> (<em>function</em>) &#8211; 模块定义函数</li>
+<li><strong>config</strong> (<em>object</em>) &#8211; <p>模块的一些格外属性，包括</p>
+<dl class="attribute">
+<dt id="Loader.config.attach">
+<tt class="descclassname">config.</tt><tt class="descname">attach</tt><a class="headerlink" href="#Loader.config.attach" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型 bool,默认 true,表示模块定义时是否执行定义函数 fn，只有在 use 时才执行，懒加载原则</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Loader.config.csspath">
+<tt class="descclassname">config.</tt><tt class="descname">csspath</tt><a class="headerlink" href="#Loader.config.csspath" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型 string,该模块对应的css文件，相对路径表示相对于该模块js文件。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Loader.config.requires">
+<tt class="descclassname">config.</tt><tt class="descname">requires</tt><a class="headerlink" href="#Loader.config.requires" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型 Array&lt;string&gt;,模块的一些依赖项</p>
+</dd></dl>
+
+<p>示例:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="nx">attach</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span><span class="c1">//模块定义时不会执行定义函数 fn，只有在 use 时才执行，懒加载原则</span>
-    <span class="nx">csspath</span><span class="o">:</span><span class="s2">&quot;./mod.css&quot;</span><span class="p">,</span> <span class="c1">//相对当前模块的js文件地址</span>
+    <span class="nx">csspath</span><span class="o">:</span><span class="s1">&#39;./mod.css&#39;</span><span class="p">,</span><span class="c1">//载入和模块 js 同目录下的 mod.css</span>
     <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;depMod1&#39;</span><span class="p">,</span><span class="s1">&#39;depMod2&#39;</span><span class="p">]</span> <span class="c1">//该模块的一些依赖项</span>
 <span class="p">}</span>
 </pre></div>
@@ -148,33 +187,57 @@
 <span class="p">},{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;depmod1&quot;</span><span class="p">,</span><span class="s2">&quot;depmod2&quot;</span><span class="p">]});</span>
 </pre></div>
 </div>
-<p>当模块名称 name 为包内模块&lt;参见下文1.2包配置&gt;时，则requires的模块名称可使用相对路径 refer 包内其他模块</p>
+<p>当模块名称 name 为包内模块&lt; 参见 <a class="reference internal" href="#Loader.KISSY.config" title="Loader.KISSY.config"><tt class="xref py py-func docutils literal"><span class="pre">下文包配置</span></tt></a> &gt;时，则requires的模块名称可使用相对路径 refer 包内其他模块</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// tc/mods/mod1 依赖于 tc/mods/mod2</span>
 <span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;tc/mods/mod1&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){},</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;./mod2&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 </div>
-<div class="section" id="id8">
-<h2>使用模块<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id9">
-<h3>函数接口<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">modNames</span><span class="p">,</span><span class="nx">callback</span><span class="p">){}</span>
-</pre></div>
+<div class="section" id="id3">
+<h2>使用模块<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="Loader.KISSY.use">
+<tt class="descclassname">KISSY.</tt><tt class="descname">use</tt><big>(</big><em>modNames</em><span class="optional">[</span>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Loader.KISSY.use" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>modNames</strong> (<em>string</em>) &#8211; 以 <tt class="docutils literal"><span class="pre">,</span></tt> 分割的模块名称集合字符串,例如 <tt class="docutils literal"><span class="pre">KISSY.use(&quot;custommod,custommod2&quot;);</span></tt></li>
+<li><strong>callback</strong> (<em>function</em>) &#8211; 当 <tt class="docutils literal"><span class="pre">modNames</span></tt> 中所有模块加载完毕后执行</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">注意 kissy &lt; 1.2 时使用模块前必须注册</p>
 </div>
-<p><tt class="docutils literal"><span class="pre">modNames</span></tt> :类型字符串，以 <tt class="docutils literal"><span class="pre">,</span></tt> 分割的模块名称集合字符串,例如 <tt class="docutils literal"><span class="pre">KISSY.use(&quot;custommod,custommod2&quot;);</span></tt></p>
-<p><tt class="docutils literal"><span class="pre">callback</span></tt> (optional):类型函数，当 <tt class="docutils literal"><span class="pre">modNames</span></tt> 中所有模块加载完毕后执行。</p>
-<p>注意 kissy 1.2 以前使用模块前必须注册</p>
-</div>
-<div class="section" id="id10">
-<h3>kissy 1.2 新增接口<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id11">
-<h4>包配置<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id4">
+<h3>kissy 1.2 新增接口<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h4>包配置<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <p>目的是为了摆脱模块必须使用前注册的繁琐</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">config</span><span class="p">){}</span>
-</pre></div>
-</div>
-<p><tt class="docutils literal"><span class="pre">config</span> <span class="pre">(optional)</span></tt>:类型对象，当包含 key 为 <tt class="docutils literal"><span class="pre">packages</span></tt> 的配置项，例如</p>
+<dl class="function">
+<dt id="Loader.KISSY.config">
+<tt class="descclassname">KISSY.</tt><tt class="descname">config</tt><big>(</big><em>config</em><big>)</big><a class="headerlink" href="#Loader.KISSY.config" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<em>object</em>) &#8211; <p>包含 key 为 <tt class="docutils literal"><span class="pre">packages</span></tt> 的配置项，如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
     <span class="nx">packages</span><span class="o">:</span><span class="p">[</span>
         <span class="p">{</span>
@@ -187,20 +250,59 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">packages</span></tt> :类型数组，每个数组项为一个包的配置，一个包配置包括三项：</p>
-<p><tt class="docutils literal"><span class="pre">name</span></tt> :类型字符串，表示包名。</p>
-<p><tt class="docutils literal"><span class="pre">tag</span></tt> :类型字符串，最好为时间戳，用于刷新客户端本包的模块文件缓存</p>
-<p><tt class="docutils literal"><span class="pre">path</span></tt> :类型字符串，表示包所在的 <tt class="docutils literal"><span class="pre">url</span></tt> 路径，相对路径表示相对于当前页面路径</p>
-<p><tt class="docutils literal"><span class="pre">charset</span></tt> :类型字符串，表示宝贝所有模块定义文件的编码格式，默认 utf-8</p>
+<dl class="attribute">
+<dt id="Loader.config.packages">
+<tt class="descclassname">config.</tt><tt class="descname">packages</tt><a class="headerlink" href="#Loader.config.packages" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型数组，每个数组项为一个包的配置，一个包配置包括 4 项：</p>
+<blockquote>
+<dl class="attribute">
+<dt id="Loader.config.packages.name">
+<tt class="descclassname">packages.</tt><tt class="descname">name</tt><a class="headerlink" href="#Loader.config.packages.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型字符串，表示包名</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Loader.config.packages.tag">
+<tt class="descclassname">packages.</tt><tt class="descname">tag</tt><a class="headerlink" href="#Loader.config.packages.tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型字符串，最好为时间戳，用于刷新客户端本包的模块文件缓存</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Loader.config.packages.path">
+<tt class="descclassname">packages.</tt><tt class="descname">path</tt><a class="headerlink" href="#Loader.config.packages.path" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型字符串，表示包所在的 <tt class="docutils literal"><span class="pre">url</span></tt> 路径，相对路径表示相对于当前页面路径</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Loader.config.packages.charset">
+<tt class="descclassname">packages.</tt><tt class="descname">charset</tt><a class="headerlink" href="#Loader.config.packages.charset" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型字符串，表示宝贝所有模块定义文件的编码格式，默认 utf-8</p>
+</dd></dl>
+
+</blockquote>
+</dd></dl>
+
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <p>当要在包内添加模块时，必须遵守一些约定：</p>
-<p>1.一个模块的文件必须放在以包名命名的目录中</p>
-<p>2.模块的名字必须取名从包目录开始到当前模块文件的文件路径名称，例如 <tt class="docutils literal"><span class="pre">mod1.js</span></tt> 位于 <tt class="docutils literal"><span class="pre">tc/mods</span></tt> 下，则 <tt class="docutils literal"><span class="pre">mod1.js</span></tt> 的模块取名：</p>
+<ol class="arabic">
+<li><p class="first">一个模块的文件必须放在以包名命名的目录中</p>
+</li>
+<li><p class="first">模块的名字必须取名从包目录开始到当前模块文件的文件路径名称，例如 <tt class="docutils literal"><span class="pre">mod1.js</span></tt> 位于 <tt class="docutils literal"><span class="pre">tc/mods</span></tt> 下，则 <tt class="docutils literal"><span class="pre">mod1.js</span></tt> 的模块取名：</p>
+<blockquote>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;tc/mods/mod1&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){});</span>
 </pre></div>
 </div>
+</blockquote>
+</li>
+</ol>
 </div>
-<div class="section" id="id12">
-<h4>使用模块<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id6">
+<h4>使用模块<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <p>如果模块定义函数有返回值，则该模块返回值作为参数直接传入回调函数，例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;depMod1,depMod2&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DepMod1</span><span class="p">,</span><span class="nx">DepMod2</span><span class="p">){</span>
 <span class="p">});</span>
@@ -209,12 +311,12 @@
 <p>如果使用经过配置的包内的模块，则这些包内模块不需要事先注册，直接 <tt class="docutils literal"><span class="pre">use</span></tt> 即可，如果模块名以 <tt class="docutils literal"><span class="pre">/</span></tt> 结尾，则自动加后缀 index ，例如
 <tt class="docutils literal"><span class="pre">use(&quot;mods/m1/&quot;)</span></tt> 相当于 <tt class="docutils literal"><span class="pre">use(&quot;mods/m1/index&quot;)</span></tt> ，即自动加载 <tt class="docutils literal"><span class="pre">m1</span></tt> 目录下的 <tt class="docutils literal"><span class="pre">index.js</span></tt></p>
 </div>
-<div class="section" id="id13">
-<h4>压缩模块<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>压缩模块<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p>若线上环境使用 <tt class="docutils literal"><span class="pre">kissy-min.js</span></tt> ，则请使用 closure compiler 对所有模块文件进行压缩，
 例如 <tt class="docutils literal"><span class="pre">mod.js</span></tt> 压缩为 <tt class="docutils literal"><span class="pre">mod-min.js</span></tt> ，放在模块文件的同级目录下。</p>
-</div>
-</div>
 </div>
 </div>
 
@@ -271,28 +373,18 @@
 <li><a class="reference internal" href="#">API</a><ul>
 <li><a class="reference internal" href="#id1">引入</a></li>
 <li><a class="reference internal" href="#id2">添加模块</a><ul>
-<li><a class="reference internal" href="#id3">函数接口</a><ul>
-<li><a class="reference internal" href="#id4">添加模块定义</a></li>
-<li><a class="reference internal" href="#id5">注册模块</a><ul>
-<li><a class="reference internal" href="#id6">接口1</a></li>
-<li><a class="reference internal" href="#id7">接口2</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li><a class="reference internal" href="#kissy-1-2">KISSY 1.2 新增接口</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id8">使用模块</a><ul>
-<li><a class="reference internal" href="#id9">函数接口</a></li>
-<li><a class="reference internal" href="#id10">kissy 1.2 新增接口</a><ul>
-<li><a class="reference internal" href="#id11">包配置</a></li>
-<li><a class="reference internal" href="#id12">使用模块</a></li>
-<li><a class="reference internal" href="#id13">压缩模块</a></li>
+<li><a class="reference internal" href="#id3">使用模块</a><ul>
+<li><a class="reference internal" href="#id4">kissy 1.2 新增接口</a><ul>
+<li><a class="reference internal" href="#id5">包配置</a></li>
+<li><a class="reference internal" href="#id6">使用模块</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><a class="reference internal" href="#id7">压缩模块</a></li>
 </ul>
 </li>
 </ul>

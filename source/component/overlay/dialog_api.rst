@@ -1,3 +1,5 @@
+.. py:currentmodule:: Overlay
+
 对话框 api
 ===================================================================
 
@@ -18,9 +20,8 @@ Dialog 属于 overlay 模块，通过 use 加载 overlay 模块：
         //使用 Dialog 构造器
     });
 
-KISSY 1.2 新增使用模块方法
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-可直接通过依赖注入，从函数参数中取得
+.. versionadded:: 1.2
+    KISSY 1.2 可直接通过依赖注入，从函数参数中取得
     
     .. code-block:: javascript
     
@@ -33,19 +34,18 @@ KISSY 1.2 新增使用模块方法
 构造器接口
 ---------------------------------------------------------------------
 
-.. code-block:: javascript
+.. py:class:: Dialog(config)
 
-    Dialog function Dialog(config) {}
-
-
-``config`` : 类型对象，实例对象所需的配置，例如
-
-.. code-block:: javascript
-
-    {
-        width:"200px",
-        render:"#container"
-    }
+    :param object config: 类型对象，实例对象所需的配置
+    
+    例如一个简单的配置项：
+    
+    .. code-block:: javascript
+    
+        {
+            width:"200px",
+            render:"#container"
+        }
 
 对话框的 DOM 结构
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,20 +70,27 @@ KISSY 1.2 新增使用模块方法
 config 配置项详解
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-除了 ``content`` 配置项外与 ``overlay`` 的配置项完全相同，但是 ``Dialog`` 新增了一些配置项，如下所示：
+除了 :attr:`~Overlay.content` 配置项外与 :class:`~Overlay.Overlay` 的配置项完全相同，但是 :class:`Dialog` 新增了一些配置项，如下所示：
 
+.. attribute:: headerContent
 
+    类型字符串，对话框的标题 html.
 
+.. attribute:: bodyContent
 
-``headerContent`` : 类型字符串，对话框的标题 html.
+    类型字符串，对话框的体 html。
 
-``bodyContent`` : 类型字符串，对话框的体 html。
+.. attribute:: footerContent
 
-``footerContent`` : 类型字符串，对话框的底部 html。
+    类型字符串，对话框的底部 html。
 
-``closable`` : 类型 boolean，对话框右上角是否包括关闭按钮
+.. attribute:: closable
 
-``draggable`` : 类型 boolean，是否允许拖动头部移动，注意启用时需同时 ``use("dd")`` ，例如
+    类型 boolean，对话框右上角是否包括关闭按钮
+
+.. attribute:: draggable
+
+    类型 boolean，是否允许拖动头部移动，注意启用时需同时 ``use("dd")`` ，例如
 
     .. code-block:: javascript
     
@@ -93,13 +100,15 @@ config 配置项详解
             });
         });
         
-``constrain`` : 类型 boolean 或者选择器字符串 ，和 draggable 配合，限制拖动的范围，
+.. attribute:: constrain
 
-    取值 true 时，只能在当前视窗范围内拖动。
+    类型 boolean 或者选择器字符串 ，和 draggable 配合，限制拖动的范围，
+
+    * 取值 true 时，只能在当前视窗范围内拖动。
     
-    取值选择器字符串时，则在限制拖动范围为根据该选择器字符串取到的第一个节点所在区域。
+    * 取值选择器字符串时，则在限制拖动范围为根据该选择器字符串取到的第一个节点所在区域。
     
-    取值 false 时，可任意移动，例如：
+    * 取值 false 时，可任意移动，例如：
 
     .. code-block:: javascript
     
@@ -122,7 +131,7 @@ config 配置项详解
 实例方法
 ----------------------------------------------------------------------------------------------------------
 
-同 overlay。
+同 :class:`~Overlay.Overlay` 。
         
         
 实例属性
@@ -132,23 +141,37 @@ config 配置项详解
 
 
         
-``header`` （只读）: 类型 ``KISSY.Node`` ，获得对话框的头部节点。
+.. attribute:: header
 
-``body`` （只读）: 类型 ``KISSY.Node`` ，获得对话框的体部节点。
+    （只读）类型 ``KISSY.Node`` ，获得对话框的头部节点。
 
-``footer`` （只读）: 类型 ``KISSY.Node`` ，获得对话框的底部节点。
+.. attribute:: body
 
-注意：以上三个属性在获取前必须调用过 ``render()`` 方法。
+    （只读）类型 ``KISSY.Node`` ，获得对话框的体部节点。
+
+.. attribute:: footer
+
+    （只读）: 类型 ``KISSY.Node`` ，获得对话框的底部节点。
+
+.. note::
+
+    以上三个属性在获取前必须调用过 ``render()`` 方法。
 
 
-``closable`` （读写）: 同相应配置项，设置右上角拖放区域有无。
+.. attribute:: closable
 
-``draggable`` （读写）: 同相应配置项，设置头部是否可以拖放。
+    （读写）同相应配置项，设置右上角拖放区域有无。
 
-``constrain`` （读写）： 同相应配置项，设置拖放区域范围。
+.. attribute:: draggable
+
+    （读写）同相应配置项，设置头部是否可以拖放。
+
+.. attribute:: constrain
+
+    （读写）同相应配置项，设置拖放区域范围。
 
 
 触发事件
 -----------------------------------------------------------------------------------------------------
 
-同弹出层 Overlay，包括 ``show`` , ``hide`` , ``beforeVisibleChange``
+同弹出层 :class:`~Overlay.Overlay` ，包括 :attr:`show` , :attr:`hide` , :attr:`beforeVisibleChange` .
