@@ -52,24 +52,73 @@
       <a href="plugin.html" title="插件名称列表"
          accesskey="P">previous</a> | </li>
     <li><a href="../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="index.html" >KISSY Editor 使用手册</a> &#187; </li>
-      <li><a href="usage.html" accesskey="U">使用</a> &#187; </li> 
+      <li><a href="index.html" >KISSY Editor Manual</a> &#187; </li>
+      <li><a href="usage.html" accesskey="U">初始化编辑器</a> &#187; </li> 
     </ul>
 </div>
 	<div  class="layout grid-s6m0">
 			<div class="col-main">
 				<div class="main-wrap">
 					
-  <div class="section" id="editorusage-plugin-config">
-<span id="id1"></span><h1>插件配置<a class="headerlink" href="#editorusage-plugin-config" title="Permalink to this headline">¶</a></h1>
-<p>pluginConfig: 为各个插件的具体配置, 配置形式为:</p>
+  <div class="section" id="id1">
+<h1>插件配置<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<dl class="attribute">
+<dt>
+<tt class="descname">config.pluginConfig:</tt></dt>
+<dd><p>类型为各个插件的具体配置, 配置形式为:</p>
 <div class="highlight-javascript"><pre>{
-    "插件名":插件配置
+        "插件名":插件配置
 }</pre>
 </div>
-<div class="section" id="id2">
-<h2>图片插件配置<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>通过 <tt class="docutils literal"><span class="pre">multipart/form-data</span></tt> 格式的 form 提交</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Editor.pluginConfig.image.upload">
+<tt class="descclassname">pluginConfig.image.</tt><tt class="descname">upload</tt><a class="headerlink" href="#Editor.pluginConfig.image.upload" title="Permalink to this definition">¶</a></dt>
+<dd><p>上传图片配置，不需要上传功能可不配置，包括以下子配置</p>
+<blockquote>
+<dl class="attribute">
+<dt id="Editor.pluginConfig.image.upload.serverUrl">
+<tt class="descclassname">upload.</tt><tt class="descname">serverUrl</tt><a class="headerlink" href="#Editor.pluginConfig.image.upload.serverUrl" title="Permalink to this definition">¶</a></dt>
+<dd><p>接受文件数据的服务器端程序地址，格式为 multipart/form-data ，返回格式为：</p>
+<ul class="simple">
+<li>正确：{&#8220;imgUrl&#8221;:&#8221;<a class="reference external" href="http://xx.com/yy.jpg">http://xx.com/yy.jpg</a>&#8220;}</li>
+<li>错误：{&#8220;error&#8221;:&#8221;i am error!&#8221;}</li>
+</ul>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Editor.pluginConfig.image.upload.serverParams">
+<tt class="descclassname">upload.</tt><tt class="descname">serverParams</tt><a class="headerlink" href="#Editor.pluginConfig.image.upload.serverParams" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型object，键值对。传给服务器的格外参数，如果 value 是函数则传递函数执行结果</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Editor.pluginConfig.image.upload.suffix">
+<tt class="descclassname">upload.</tt><tt class="descname">suffix</tt><a class="headerlink" href="#Editor.pluginConfig.image.upload.suffix" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型字符串，允许图片的后缀名</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Editor.pluginConfig.image.upload.fileInput">
+<tt class="descclassname">upload.</tt><tt class="descname">fileInput</tt><a class="headerlink" href="#Editor.pluginConfig.image.upload.fileInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型字符串，传给服务器的文件域名</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Editor.pluginConfig.image.upload.sizeLimit">
+<tt class="descclassname">upload.</tt><tt class="descname">sizeLimit</tt><a class="headerlink" href="#Editor.pluginConfig.image.upload.sizeLimit" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型整数，限制上传的文件大小，单位 KB，ie 下只能作为提示。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Editor.pluginConfig.image.upload.extraHtml">
+<tt class="descclassname">upload.</tt><tt class="descname">extraHtml</tt><a class="headerlink" href="#Editor.pluginConfig.image.upload.extraHtml" title="Permalink to this definition">¶</a></dt>
+<dd><p>放入图片上传区域的其他 html</p>
+</dd></dl>
+
+</blockquote>
+<p>例如：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">pluginConfig</span><span class="o">:</span> <span class="p">{</span>
     <span class="c1">// 图片插件配置</span>
     <span class="s2">&quot;image&quot;</span><span class="o">:</span> <span class="p">{</span>
@@ -102,24 +151,43 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>注意：</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
 <p>如果页面中设置了 document.domain=&#8217;xx.com&#8217;，那么这时上传图片服务器要返回一段设置 domain 的 html，例如</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-<span class="nt">&lt;script&gt;</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nx">domain</span><span class="o">=</span><span class="s2">&quot;xx.com&quot;</span><span class="p">;</span>
-<span class="nt">&lt;/script&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-{&quot;imgUrl&quot;:&quot;http://img03.taobaocdn.com/sns_album/i3/T13fhRXftcXXb1upjX.jpg&quot;}
-<span class="nt">&lt;/body&gt;</span>
+<div class="last highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">domain</span><span class="o">=</span><span class="s2">&quot;xx.com&quot;</span><span class="p">;</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        {&quot;imgUrl&quot;:&quot;http://img03.taobaocdn.com/sns_album/i3/T13fhRXftcXXb1upjX.jpg&quot;}
+    <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>模板配置<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>不需要模板功能不需要配置</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Editor.pluginConfig.templates">
+<tt class="descclassname">pluginConfig.</tt><tt class="descname">templates</tt><a class="headerlink" href="#Editor.pluginConfig.templates" title="Permalink to this definition">¶</a></dt>
+<dd><p>模板 (templates) 配置，类型数组，数组每个元素为单个模板的配置，单个配置包括</p>
+<blockquote>
+<dl class="attribute">
+<dt id="Editor.pluginConfig.templates.demo">
+<tt class="descclassname">templates.</tt><tt class="descname">demo</tt><a class="headerlink" href="#Editor.pluginConfig.templates.demo" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型字符串，模板的简单介绍</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Editor.pluginConfig.templates.html">
+<tt class="descclassname">templates.</tt><tt class="descname">html</tt><a class="headerlink" href="#Editor.pluginConfig.templates.html" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型字符串，将要插入到编辑器区域的具体内容</p>
+</dd></dl>
+
+</blockquote>
+<p>例如：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;templates&quot;</span><span class="o">:</span> <span class="p">[{</span>
         <span class="c1">//显示模板的简单介绍</span>
@@ -134,23 +202,41 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id4">
-<h2>字体格式化配置<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s2">&quot;font-bold&quot;</span> <span class="o">:</span> <span class="kc">false</span> <span class="p">,</span> <span class="c1">//不显示粗体按钮，默认 true</span>
-    <span class="s2">&quot;font-italic&quot;</span> <span class="o">:</span> <span class="kc">false</span> <span class="p">,</span> <span class="c1">//不显示斜体按钮，默认 true</span>
-    <span class="s2">&quot;font-underline&quot;</span> <span class="o">:</span> <span class="kc">false</span> <span class="p">,</span> <span class="c1">//不显示下划线按钮，默认 true</span>
-    <span class="s2">&quot;font-strikeThrough&quot;</span> <span class="o">:</span> <span class="kc">false</span> <span class="p">,</span> <span class="c1">//不显示删除线按钮，默认 true</span>
-    <span class="s2">&quot;font-size&quot;</span> <span class="o">:</span> <span class="kc">false</span> <span class="p">,</span> <span class="c1">//不显示字体大小下拉框，其他配置见 ``字体大小配置``</span>
-    <span class="s2">&quot;font-family&quot;</span> <span class="o">:</span> <span class="kc">false</span> <span class="c1">//不显示字体种类下拉框，其他配置见 ``字体种类配置``</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="id5">
-<h2>字体大小配置<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<p>不要限制字体大小不需要配置</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">font-size</tt></dt>
+<dd><p>字体大小配置，类型 object 或 boolean。当为 false 时，则该按钮不出现在编辑器中。当为 object 时，包含子配置</p>
+<blockquote>
+<dl class="attribute">
+<dt id="Editor.items">
+<tt class="descclassname">Editor.</tt><tt class="descname">items</tt><a class="headerlink" href="#Editor.items" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型对象数组，数组每一项的配置为：</p>
+<blockquote>
+<dl class="attribute">
+<dt id="Editor.items.value">
+<tt class="descclassname">items.</tt><tt class="descname">value</tt><a class="headerlink" href="#Editor.items.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型 string，真实的字体大小</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Editor.items.attrs">
+<tt class="descclassname">items.</tt><tt class="descname">attrs</tt><a class="headerlink" href="#Editor.items.attrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型 object，键值对添加到每个字体的对应节点上</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Editor.items.name">
+<tt class="descclassname">items.</tt><tt class="descname">name</tt><a class="headerlink" href="#Editor.items.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型 string，字体大小的显示值</p>
+</dd></dl>
+
+</blockquote>
+</dd></dl>
+
+</blockquote>
+<p>例如：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;font-size&quot;</span><span class="o">:</span> <span class="p">{</span>
         <span class="c1">//字体大小下拉框的配置</span>
@@ -169,10 +255,35 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id6">
-<h2>字体种类配置<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<p>不需要限制字体种类可不配置.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">font-family</tt></dt>
+<dd><p>字体种类配置，类型 object，包含子配置项</p>
+<blockquote>
+<dl class="attribute">
+<dt>
+<tt class="descclassname">Editor.</tt><tt class="descname">items</tt></dt>
+<dd><p>类型对象数组，字体种类配置，单个配置包含</p>
+<blockquote>
+<dl class="attribute">
+<dt>
+<tt class="descclassname">items.</tt><tt class="descname">name</tt></dt>
+<dd><p>字体显示值</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descclassname">items.</tt><tt class="descname">value</tt></dt>
+<dd><p>设置到编辑元素的真实值</p>
+</dd></dl>
+
+</blockquote>
+</dd></dl>
+
+</blockquote>
+<p>例如：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;font-family&quot;</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">items</span><span class="o">:</span> <span class="p">[{</span>
@@ -189,10 +300,37 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id7">
-<h2>草稿箱<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
-<p>不需要草稿箱功能可不配置.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">font-bold</tt></dt>
+<dd><p>是否显示粗体按钮，默认 true</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">font-italic</tt></dt>
+<dd><p>是否显示斜体按钮，默认 true</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">font-underline</tt></dt>
+<dd><p>是否显示下划线按钮，默认 true</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">font-strikeThrough</tt></dt>
+<dd><p>是否显示删除线按钮，默认 true</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Editor.pluginConfig.draft">
+<tt class="descclassname">pluginConfig.</tt><tt class="descname">draft</tt><a class="headerlink" href="#Editor.pluginConfig.draft" title="Permalink to this definition">¶</a></dt>
+<dd><p>草稿箱</p>
+<p>例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;draft&quot;</span><span class="o">:</span> <span class="p">{</span>
         <span class="c1">//分钟设置：每隔几分钟保存一次</span>
@@ -205,10 +343,13 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id8">
-<h2>拖放调节大小<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-<p>不需要可不设置.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Editor.pluginConfig.resize">
+<tt class="descclassname">pluginConfig.</tt><tt class="descname">resize</tt><a class="headerlink" href="#Editor.pluginConfig.resize" title="Permalink to this definition">¶</a></dt>
+<dd><p>右下角调整大小的配置</p>
+<p>例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;resize&quot;</span><span class="o">:</span> <span class="p">{</span>
         <span class="c1">//只能在y轴拖放，[“x”,”y”]表示任意拖放</span>
@@ -217,25 +358,32 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id9">
-<h2>音乐插件<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
-<p>支持音乐文件地址输入，可播放mp3</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Editor.pluginConfig.music">
+<tt class="descclassname">pluginConfig.</tt><tt class="descname">music</tt><a class="headerlink" href="#Editor.pluginConfig.music" title="Permalink to this definition">¶</a></dt>
+<dd><p>音乐插件配置，支持音乐文件地址输入，直接播放mp3</p>
+<p>例如：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">music</span><span class="o">:</span> <span class="p">{</span>
     <span class="c1">//必须和网址url同域而不是类库同域</span>
     <span class="nx">musicPlayer</span><span class="o">:</span> <span class="s2">&quot;/music/niftyplayer.swf&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id10">
-<h2>扩展插件<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+</dd></dl>
+
+<div class="section" id="id2">
+<h2>扩展插件<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>一些包含格外功能的插件, 若需要使用请引入外部js</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.1.7/editor/biz/ext/editor-plugin-pkg-min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 </div>
-<div class="section" id="id11">
-<h3>图片批量上传:<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<dl class="attribute">
+<dt>
+<tt class="descname">pluginConfig.multi-upload</tt></dt>
+<dd><p>图片批量上传</p>
+<p>例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;multi-upload&quot;</span><span class="o">:</span> <span class="p">{</span>
         <span class="c1">//同图片上传插件配置</span>
@@ -268,13 +416,13 @@
         <span class="nx">sizeLimit</span><span class="o">:</span> <span class="mi">1000</span> <span class="c1">//k,</span>
         <span class="c1">//新增配置：可同时显示的图片列表个数</span>
         <span class="nx">numberLimit</span><span class="o">:</span> <span class="mi">15</span>
-    <span class="p">},</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="section" id="id12">
-<h4>注意<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
-<p>1.该插件使用 flash 技术，必须在根域名下提供 crossdomain.xml ，例如 <a class="reference external" href="http://www.taobao.com/crossdomain.xml">http://www.taobao.com/crossdomain.xml</a> ，内容如下</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>#.该插件使用 flash 技术，必须在根域名下提供 crossdomain.xml ，例如 <a class="reference external" href="http://www.taobao.com/crossdomain.xml">http://www.taobao.com/crossdomain.xml</a> ，内容如下</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;cross-domain-policy&gt;</span>
     <span class="nt">&lt;allow-access-from</span> <span class="na">domain=</span><span class="s">&quot;*.taobao.com&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;allow-access-from</span> <span class="na">domain=</span><span class="s">&quot;*.taobao.net&quot;</span><span class="nt">/&gt;</span>
@@ -284,12 +432,15 @@
 <span class="nt">&lt;/cross-domain-policy&gt;</span>
 </pre></div>
 </div>
-<p>2.serverUrl 必须使用绝对地址，否则如果编辑器组件和应用页面不在同一个hostname时，firefox下请求会发到编辑器组件所在的hostname。</p>
+<p class="last">#.serverUrl 必须使用绝对地址，否则如果编辑器组件和应用页面不在同一个hostname时，firefox下请求会发到编辑器组件所在的hostname。</p>
 </div>
-</div>
-<div class="section" id="id13">
-<h3>国内视频插入<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
-<p>可直接输入tudou,youku,ku6的url进行视频粘贴.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Editor.pluginConfig.video">
+<tt class="descclassname">pluginConfig.</tt><tt class="descname">video</tt><a class="headerlink" href="#Editor.pluginConfig.video" title="Permalink to this definition">¶</a></dt>
+<dd><p>国内视频插入，可直接输入tudou,youku,ku6的url进行视频粘贴.</p>
+<p>例如：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;video&quot;</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">urlCfg</span><span class="o">:</span> <span class="p">[{</span>
@@ -321,16 +472,14 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id14">
-<h3>虾米音乐插入<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
-<p>无需配置, 只要 use 即可.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s2">&quot;xiami-music&quot;</span><span class="o">:</span><span class="p">{}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">xiami-music</tt></dt>
+<dd><p>虾米音乐插入，无需配置, 只要 use 即可.</p>
+</dd></dl>
+
 </div>
 </div>
 
@@ -339,7 +488,7 @@
 					<div class="s-box relative-links">
 						<div class="s-box-bd">
                             <a href="plugin.html" title="插件名称列表"> 上一页 </a> |
-                            <a href="usage.html" title="使用">回到上层</a> |
+                            <a href="usage.html" title="初始化编辑器">回到上层</a> |
                             <a href="notice.html" title="注意"> 下一页 </a>
 						</div>
 					</div>
@@ -385,23 +534,7 @@
 		<div class="s-box-bd">
 			<ul>
 <li><a class="reference internal" href="#">插件配置</a><ul>
-<li><a class="reference internal" href="#id2">图片插件配置</a></li>
-<li><a class="reference internal" href="#id3">模板配置</a></li>
-<li><a class="reference internal" href="#id4">字体格式化配置</a></li>
-<li><a class="reference internal" href="#id5">字体大小配置</a></li>
-<li><a class="reference internal" href="#id6">字体种类配置</a></li>
-<li><a class="reference internal" href="#id7">草稿箱</a></li>
-<li><a class="reference internal" href="#id8">拖放调节大小</a></li>
-<li><a class="reference internal" href="#id9">音乐插件</a></li>
-<li><a class="reference internal" href="#id10">扩展插件</a><ul>
-<li><a class="reference internal" href="#id11">图片批量上传:</a><ul>
-<li><a class="reference internal" href="#id12">注意</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id13">国内视频插入</a></li>
-<li><a class="reference internal" href="#id14">虾米音乐插入</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#id2">扩展插件</a></li>
 </ul>
 </li>
 </ul>
@@ -447,7 +580,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../seed/index.html">KISSY Seed Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/index.html">KISSY Core Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../component/index.html">KISSY Component Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">KISSY Editor 使用手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">KISSY Editor Manual</a></li>
 </ul>
 
 	</div>

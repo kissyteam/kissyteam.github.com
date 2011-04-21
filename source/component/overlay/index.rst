@@ -3,7 +3,7 @@
 KISSY.Overlay & Dialog 文档
 ===============================
 
-by `承玉<yiminghe@gmail.com>`
+by `承玉 <yiminghe@gmail.com>`_
 
 
 .. toctree::

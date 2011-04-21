@@ -1,4 +1,4 @@
-.. _editorusage-plugin:
+.. currentmodule:: Editor
 
 
 插件名称列表
@@ -205,7 +205,8 @@ maximize
     .. image:: /_images/editorguide/maximize.gif
 
 扩展插件
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 如果要使用以下插件，需要引入另外的 javascript 文件
 
 .. code-block:: html
@@ -214,7 +215,7 @@ maximize
 
 
 multi-upload
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`````````````````````````````````
 
     多图同时上传功能
 
@@ -226,14 +227,14 @@ multi-upload
 
 
 checkbox-sourcearea
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`````````````````````````````````
 
 		勾选交互的源码切换功能
 		
 		.. image:: /_images/editorguide/checkbox-sourcearea.png
 
 video
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```````````````````````````````
 
     国内视频插入,方便直接输入url插入国内视频 flash
 
@@ -244,7 +245,7 @@ video
     .. image:: /_images/editorguide/video_win.png
 
 xiami-music
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```````````````````````````````````
 
     虾米音乐插入,可通过搜索插入虾米音乐
 

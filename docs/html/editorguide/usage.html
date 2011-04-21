@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>使用 &mdash; KISSY Docs valpha documentation</title>
+<title>初始化编辑器 &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../static/reset.css"/>
 <link rel="stylesheet" href="../static/kissy.css"/>
@@ -46,13 +46,13 @@
       <a href="../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="common-config.html" title="一般配置"
+      <a href="plugin-api.html" title="api"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="install.html" title="引入"
          accesskey="P">previous</a> | </li>
     <li><a href="../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="index.html" accesskey="U">KISSY Editor 使用手册</a> &#187; </li> 
+      <li><a href="index.html" accesskey="U">KISSY Editor Manual</a> &#187; </li> 
     </ul>
 </div>
 	<div  class="layout grid-s6m0">
@@ -60,28 +60,85 @@
 				<div class="main-wrap">
 					
   <div class="section" id="id1">
-<h1>使用<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>初始化编辑器<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>构造器:</p>
+<dl class="class">
+<dt id="Editor.KISSY.Editor">
+<em class="property">class </em><tt class="descclassname">KISSY.</tt><tt class="descname">Editor</tt><big>(</big><em>textareaId</em>, <em>config</em><big>)</big><a class="headerlink" href="#Editor.KISSY.Editor" title="Permalink to this definition">¶</a></dt>
+<dd><p>获得编辑器实例</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>textareaId</strong> (<em>string</em>) &#8211; 编辑器装饰的文本输入框 id，注意 id前加 <tt class="docutils literal"><span class="pre">#</span></tt></li>
+<li><strong>config</strong> (<em>Object</em>) &#8211; <p>编辑器以及其插件的配置项。包括：</p>
+<dl class="attribute">
+<dt id="Editor.KISSY.Editor.config.attachForm">
+<tt class="descclassname">config.</tt><tt class="descname">attachForm</tt><a class="headerlink" href="#Editor.KISSY.Editor.config.attachForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型 boolean， 是否监控编辑器所属的表单提交</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Editor.KISSY.Editor.config.baseZIndex">
+<tt class="descclassname">config.</tt><tt class="descname">baseZIndex</tt><a class="headerlink" href="#Editor.KISSY.Editor.config.baseZIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型 number，编辑器内弹窗z-index下限。</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">为防止和其他页面元素互相覆盖, 请保证这个数字整个页面最高</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Editor.KISSY.Editor.config.customStyle">
+<tt class="descclassname">config.</tt><tt class="descname">customStyle</tt><a class="headerlink" href="#Editor.KISSY.Editor.config.customStyle" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型 string，编辑区域的自定义样式</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Editor.KISSY.Editor.config.focus">
+<tt class="descclassname">config.</tt><tt class="descname">focus</tt><a class="headerlink" href="#Editor.KISSY.Editor.config.focus" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型 boolean，是否编辑器初始自动聚焦（光标位于编辑器内）</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Editor.KISSY.Editor.config.pluginConfig">
+<tt class="descclassname">config.</tt><tt class="descname">pluginConfig</tt><a class="headerlink" href="#Editor.KISSY.Editor.config.pluginConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型 object，编辑器插件的相应配置</p>
+</dd></dl>
+
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>例如：</p>
+<div class="highlight-javascript"><pre>KISSY.ready(function(S){
+    S.Editor(“#textareaId”,{
+        // 是否监控编辑器所属的表单提交
+        "attachForm":true,
+
+        // 编辑器内弹窗z-index下限, 防止互相覆盖, 请保证这个数字整个页面最高
+        "baseZIndex":10000,
+
+        // 自定义样式，将自己的样式加入编辑器
+        customStyle:"p{color:red;}",
+
+        // 是否编辑器初始自动聚焦（光标位于编辑器内）
+        focus:true
+    }).use(plugins);
+});</pre>
+</div>
+</div>
 <div class="section" id="id2">
-<h2>初始化<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>基本形式:</p>
-<div class="highlight-html"><pre>&lt;script&gt;
-    KISSY.ready(function(S){
-        S.Editor(“#textareaId”,cfg).use(plugins);
-    });
-&lt;/script&gt;</pre>
-</div>
-</div>
-<div class="section" id="id3">
-<h2>参数解释<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h1>使用插件<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="common-config.html">一般配置</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="plugin-api.html">api</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plugin.html">插件名称列表</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="plugin.html#id2">扩展插件</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="plugin-config.html">插件配置</a><ul class="simple">
@@ -90,15 +147,14 @@
 </ul>
 </div>
 </div>
-</div>
 
 
 					
 					<div class="s-box relative-links">
 						<div class="s-box-bd">
                             <a href="install.html" title="引入"> 上一页 </a> |
-                            <a href="index.html" title="KISSY Editor 使用手册">回到上层</a> |
-                            <a href="common-config.html" title="一般配置"> 下一页 </a>
+                            <a href="index.html" title="KISSY Editor Manual">回到上层</a> |
+                            <a href="plugin-api.html" title="api"> 下一页 </a>
 						</div>
 					</div>
 					
@@ -142,11 +198,8 @@
 		</div>
 		<div class="s-box-bd">
 			<ul>
-<li><a class="reference internal" href="#">使用</a><ul>
-<li><a class="reference internal" href="#id2">初始化</a></li>
-<li><a class="reference internal" href="#id3">参数解释</a><ul>
-</ul>
-</li>
+<li><a class="reference internal" href="#">初始化编辑器</a></li>
+<li><a class="reference internal" href="#id2">使用插件</a><ul>
 </ul>
 </li>
 </ul>
@@ -167,7 +220,7 @@
 			<h3>Next topic</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="common-config.html" title="next chapter">一般配置</a>
+			<a href="plugin-api.html" title="next chapter">api</a>
 		</div>
 	</div>
 
@@ -192,7 +245,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../seed/index.html">KISSY Seed Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/index.html">KISSY Core Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../component/index.html">KISSY Component Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">KISSY Editor 使用手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">KISSY Editor Manual</a></li>
 </ul>
 
 	</div>

@@ -1,4 +1,4 @@
-.. _editorinstall:
+.. currentmodule:: Editor
 
 引入
 ===========
@@ -43,7 +43,8 @@
 
     <textarea id="textareaId" style="width:90%;height:200px"></textarea>
 
-该 textarea 将被编辑器组件替换, 注意：宽高一定要用行内样式设定，否则各个浏览器编辑器大小会有差别！
+该 textarea 将被编辑器组件替换。
 
+.. note::
 
-:ref:`下一节, 如何使用? <editorusage>` 
+    宽高一定要用行内样式设定，否则各个浏览器编辑器大小会有差别！

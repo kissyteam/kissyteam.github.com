@@ -1,4 +1,4 @@
-
+.. currentmodule:: Editor
 
 FAQ
 ===========
@@ -9,9 +9,7 @@ FAQ
 form 同步
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-	如果后端通过 form 提交（submit）来获得用户输入数据，则只需配置参数：
-
-	http://docs.kissyui.com/docs/html/editorguide/common-config.html#cfg
+	如果后端通过 form 提交（submit）来获得用户输入数据，则只需配置参数 :class:`attachForm <Editor.KISSY.Editor>`  .
 	
 	.. code-block:: javascript
 
@@ -28,18 +26,16 @@ form 同步
 	
 	editor 为调用 KISSY.Editor 返回的编辑器实例
 
-	editor.sync() : 手动同步编辑器内容到对应 textarea
+	``editor.sync()`` : 手动同步编辑器内容到对应 textarea
 
-	editor.getData() : 获得当前编辑器的内容
+	``editor.getData()`` : 获得当前编辑器的内容
 
-	editor.setData(html:string) :设置当前编辑器的内容，参数为html，类型为 string 字符串
+	``editor.setData(html:string)`` :设置当前编辑器的内容，参数为html，类型为 string 字符串
 
 自动保存
 -----------------
 	
-	自动保存为 localStorage/flash 机制，保存在本地，可配置参数
-	
-	http://docs.kissyui.com/docs/html/editorguide/plugin-config.html#id6
+	自动保存为 localStorage/flash 机制，保存在本地，可 :attr:`配置参数 <pluginConfig.draft>` .
 
 字数统计
 -------------------

@@ -1,7 +1,6 @@
-.. _editorguide:
+.. module:: Editor
 
-
-KISSY Editor 使用手册
+KISSY Editor Manual
 ===============================================
 
 by `承玉 <yiminghe@gmail.com>`_ , `玉伯 <lifesinger@gmail.com>`_
@@ -9,11 +8,11 @@ by `承玉 <yiminghe@gmail.com>`_ , `玉伯 <lifesinger@gmail.com>`_
 
 
 
-内容
+doc
 ------------------------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    install.rst
    usage.rst

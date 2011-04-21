@@ -3,7 +3,7 @@
 KISSY.Anim 文档
 ===============================
 
-by 承玉<yiminghe@gmail.com>
+by `承玉 <yiminghe@gmail.com>`_
 
 
 

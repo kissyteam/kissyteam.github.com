@@ -3,7 +3,7 @@
 KISSY Loader 文档
 ===============================
 
-by 承玉<yiminghe@gmail.com>
+by `承玉 <yiminghe@gmail.com>`_
 
 
 内容

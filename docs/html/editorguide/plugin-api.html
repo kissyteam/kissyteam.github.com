@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>一般配置 &mdash; KISSY Docs valpha documentation</title>
+<title>api &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../static/reset.css"/>
 <link rel="stylesheet" href="../static/kissy.css"/>
@@ -49,59 +49,35 @@
       <a href="plugin.html" title="插件名称列表"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="usage.html" title="使用"
+      <a href="usage.html" title="初始化编辑器"
          accesskey="P">previous</a> | </li>
     <li><a href="../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="index.html" >KISSY Editor 使用手册</a> &#187; </li>
-      <li><a href="usage.html" accesskey="U">使用</a> &#187; </li> 
+      <li><a href="index.html" >KISSY Editor Manual</a> &#187; </li>
+      <li><a href="usage.html" accesskey="U">初始化编辑器</a> &#187; </li> 
     </ul>
 </div>
 	<div  class="layout grid-s6m0">
 			<div class="col-main">
 				<div class="main-wrap">
 					
-  <div class="section" id="id1">
-<h1>一般配置<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-javascript"><pre>KISSY.ready(function(S){
-    S.Editor(“#textareaId”,cfg).use(plugins);
-});</pre>
-</div>
-<div class="section" id="textareaid">
-<h2>#textareaId<a class="headerlink" href="#textareaid" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<p>要替换为编辑器的 textarea 的 id;</p>
-<p>注意：一定要加 #</p>
-</blockquote>
-</div>
-<div class="section" id="plugins">
-<h2>plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h2>
-<p>需要加载的插件名称, 多个以,号分隔, 例如:</p>
+  <div class="section" id="api">
+<h1>api<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="Editor.KISSY.Editor.use">
+<tt class="descclassname">KISSY.Editor.</tt><tt class="descname">use</tt><big>(</big><em>plugins</em><big>)</big><a class="headerlink" href="#Editor.KISSY.Editor.use" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>plugins</strong> (<em>string</em>) &#8211; 需要加载的插件名称, 多个以 <tt class="docutils literal"><span class="pre">,</span></tt> 号分隔</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>例如：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">S</span><span class="p">.</span><span class="nx">Editor</span><span class="p">(</span><span class="s2">&quot;#textareaId&quot;</span><span class="p">).</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;font,image,separator&quot;</span><span class="p">)</span>
-
-<span class="c1">// separator 为在当前位置插入分隔符</span>
 </pre></div>
-</div>
-</div>
-<div class="section" id="cfg">
-<h2>cfg<a class="headerlink" href="#cfg" title="Permalink to this headline">¶</a></h2>
-<p id="editorusage-common-cfg">为编辑器的全局配置以及加载插件的插件配置, 例如:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-    <span class="c1">// 是否监控编辑器所属的表单提交</span>
-    <span class="s2">&quot;attachForm&quot;</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-
-    <span class="c1">// 编辑器内弹窗z-index下限, 防止互相覆盖, 请保证这个数字整个页面最高</span>
-    <span class="s2">&quot;baseZIndex&quot;</span><span class="o">:</span><span class="mi">10000</span><span class="p">,</span>
-
-    <span class="c1">// 自定义样式，将自己的样式加入编辑器</span>
-    <span class="nx">customStyle</span><span class="o">:</span><span class="s2">&quot;p{color:red;}&quot;</span><span class="p">,</span>
-
-    <span class="c1">// 是否编辑器初始自动聚焦（光标位于编辑器内）</span>
-    <span class="nx">focus</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-
-    <span class="s2">&quot;pluginConfig&quot;</span><span class="o">:</span> <span class="nx">pluginConfig</span>
-<span class="p">}</span>
-</pre></div>
-</div>
 </div>
 </div>
 
@@ -109,8 +85,8 @@
 					
 					<div class="s-box relative-links">
 						<div class="s-box-bd">
-                            <a href="usage.html" title="使用"> 上一页 </a> |
-                            <a href="usage.html" title="使用">回到上层</a> |
+                            <a href="usage.html" title="初始化编辑器"> 上一页 </a> |
+                            <a href="usage.html" title="初始化编辑器">回到上层</a> |
                             <a href="plugin.html" title="插件名称列表"> 下一页 </a>
 						</div>
 					</div>
@@ -149,29 +125,13 @@
 				</div>
 			</div>
 	<div class="col-sub">
-	<div class="s-box">
-		<div class="s-box-hd">
-			<h3>Table Of Current Page</h3>
-		</div>
-		<div class="s-box-bd">
-			<ul>
-<li><a class="reference internal" href="#">一般配置</a><ul>
-<li><a class="reference internal" href="#textareaid">#textareaId</a></li>
-<li><a class="reference internal" href="#plugins">plugins</a></li>
-<li><a class="reference internal" href="#cfg">cfg</a></li>
-</ul>
-</li>
-</ul>
-
-		</div>
-	</div>
 
 	<div class="s-box">
 		<div class="s-box-hd">
 			<h3>Previous topic</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="usage.html" title="previous chapter">使用</a>
+			<a href="usage.html" title="previous chapter">初始化编辑器</a>
 		</div>
 	</div>
 	<div class="s-box">
@@ -188,7 +148,7 @@
 			<h3>This Page</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="../sources/editorguide/common-config.txt" rel="nofollow">Show Source</a>
+			<a href="../sources/editorguide/plugin-api.txt" rel="nofollow">Show Source</a>
 		</div>
 	</div>
 
@@ -204,7 +164,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../seed/index.html">KISSY Seed Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/index.html">KISSY Core Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../component/index.html">KISSY Component Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">KISSY Editor 使用手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">KISSY Editor Manual</a></li>
 </ul>
 
 	</div>
