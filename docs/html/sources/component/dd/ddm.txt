@@ -41,7 +41,7 @@ DDM API
 属性
 ===========================================
 
-.. attribute:: bufferTimer
+.. attribute:: DDM.bufferTimer
 
     类型 number，默认 200，表示鼠标按下多长时间后触发 :data:`~Draggable.dragstart` 事件。
     可通过 ``DDM.set("bufferTimer",xx)`` 设置。
