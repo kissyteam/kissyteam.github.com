@@ -1,6 +1,6 @@
 .. py:module:: Overlay
 
-KISSY.Overlay & Dialog 文档
+KISSY.Overlay & Dialog Docs
 ===============================
 
 by `承玉 <yiminghe@gmail.com>`_

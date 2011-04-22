@@ -7,3 +7,4 @@ KISSY Component Docs
    :maxdepth: 2
 
    overlay/index.rst
+   dd/index.rst
