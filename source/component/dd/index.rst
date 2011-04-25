@@ -9,3 +9,4 @@ By `承玉 <yiminghe@gmail.com>`_
    :maxdepth: 2
 
    api.rst
+   usage.rst

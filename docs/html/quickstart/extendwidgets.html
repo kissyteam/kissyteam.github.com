@@ -19,8 +19,12 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
     };
-</script>
-<script src="http://yiminghe.github.com/kissy/build/kissy.js"></script> 
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){  
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script> 
 </head>
 <body><div id="header">
     <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../static/logo.png"/></a></h1>
@@ -174,6 +178,7 @@
 					
 					<div id="disqus_thread"></div>
 <script type="text/javascript">
+    if(window.location.hostname.indexOf("kissyui.com")!=-1){
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
 
@@ -187,20 +192,23 @@
         dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
+    }
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
 <div id="google-search-box">
-    <div id="cse" style="width: 100%;">Loading</div>
-    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <div id="cse" style="width: 100%;">Loading</div>    
     <script type="text/javascript">
-        google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
-        google.setOnLoadCallback(function() {
-            var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
-            customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-            customSearchControl.draw('cse');
-        }, true);
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){        
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');        
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
     </script>
 </div>
 				</div>

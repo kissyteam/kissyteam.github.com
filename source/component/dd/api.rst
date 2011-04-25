@@ -9,3 +9,7 @@ KISSY DD API
    draggable.rst
    droppable.rst
    ddm.rst
+   draggable-delegate.rst
+   droppable-delegate.rst
+   proxy.rst
+   scroll.rst
