@@ -11,7 +11,6 @@ KISSY DD Usage
    droppable-usage.rst
    draggable-delegate-usage.rst
    droppable-delegate-usage.rst
-   scroll-usage.rst
    
 
 更多   

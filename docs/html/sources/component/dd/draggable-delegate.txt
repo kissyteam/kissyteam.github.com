@@ -36,7 +36,7 @@ DraggableDelegate API
 
 .. class:: DraggableDelegate(config)
 
-    返回拖放实例，代理容器内的所有 Draggable 节点的拖放行为。    
+    返回拖放实例，委托容器内的所有 Draggable 节点的拖放行为。    
 
     :param object config: 实例化可拖放对象的配置项，包括
     
@@ -61,18 +61,18 @@ DraggableDelegate API
 
 .. note ::
 
-    对于代理的可拖节点，当和 Droppable 实例交互时， :attr:`~Draggable.config.mode` 统一为 :data:`~Draggable.POINTER`            
+    对于委托的可拖节点，当和 Droppable 实例交互时， :attr:`~Draggable.config.mode` 统一为 :data:`~Draggable.POINTER`            
     
 实例属性
 ============================================
 
 .. attribute:: DraggableDelegate.node
 
-    类型 ``KISSY.Node`` ，表示当前正在拖动的被代理的容器内子节点，在应用 ``DD.Proxy`` 时表示代理节点。
+    类型 ``KISSY.Node`` ，表示当前正在拖动的被委托的容器内子节点，在应用 ``DD.Proxy`` 时表示委托节点。
     
 .. attribute:: DraggableDelegate.dragNode
 
-    类型 ``KISSY.Node`` ，表示当前正在拖动的被代理的容器内子节点。    
+    类型 ``KISSY.Node`` ，表示当前正在拖动的被委托的容器内子节点。    
 
     
 .. note::
@@ -94,4 +94,4 @@ DraggableDelegate API
     
     .. note::
     
-        可以通过 :attr:`~DraggableDelegate.node` 来获得正在拖放的代理子节点（或代理节点），通过 :attr:`~DraggableDelegate.dragNode` 来获得正在拖放的代理真正子节点。
+        可以通过 :attr:`~DraggableDelegate.node` 来获得正在拖放的委托子节点（或委托节点的代理节点），通过 :attr:`~DraggableDelegate.dragNode` 来获得正在拖放的代理真正子节点。

@@ -67,6 +67,6 @@ DroppableDelegate API
     
 .. note::
 
-    可以通过 :attr:`~DroppableDelegate.node` 来获得当前正在和 :class:`Draggable` 对象交互的被代理的容器内的子节点。
+    可以通过 :attr:`~DroppableDelegate.node` 来获得当前正在和 :class:`Draggable` 对象交互的被委托的容器内的子节点。
 
                               
