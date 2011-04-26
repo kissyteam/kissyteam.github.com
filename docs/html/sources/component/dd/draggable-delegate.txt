@@ -61,7 +61,7 @@ DraggableDelegate API
 
 .. note ::
 
-    对于委托的可拖节点，当和 Droppable 实例交互时， :attr:`~Draggable.config.mode` 统一为 :data:`~Draggable.POINTER`            
+    对于委托的可拖节点，当和 Droppable 实例交互时， :attr:`~Draggable.config.mode` 统一为 :data:`~Draggable.POINT`            
     
 实例属性
 ============================================

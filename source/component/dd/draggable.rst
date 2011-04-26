@@ -68,9 +68,9 @@ Draggable API
 类常量
 ==========================================
 
-.. data:: Draggable.POINTER
+.. data:: Draggable.POINT
 
-    等于 "pointer"
+    等于 "point"
     
 .. data:: Draggable.INTERSECT
 
