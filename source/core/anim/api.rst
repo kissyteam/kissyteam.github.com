@@ -60,11 +60,15 @@ api
     :type elem: 选择器字符串或是通过 ``S.get`` 获得的原生 dom 节点             
     :param duration: 动画持续时间，以秒为单元
     :type duration: number
-    :param easing: 动画平滑函数，可取值
+    :param easing: 动画平滑函数，可取值 
                    "easeNone","easeIn","easeOut","easeBoth","easeInStrong",
                    "easeOutStrong","easeBothStrong","elasticIn","elasticOut",
                    "elasticBoth","backIn","backOut","backBoth",
                    "bounceIn","bounceOut","bounceBoth"
+                   
+                   效果预览，可以参考 Robert Penner 博士的：
+                   `easing_demo.html <http://www.robertpenner.com/easing/easing_demo.html>`_
+                   
     :type easing: string
     :param callback: 动画结束回调
     :type callback: function
@@ -85,10 +89,11 @@ api
 
     在动画实例上调用，开始当前动画实例的动画.
     
-.. method:: Anim.stop()
+.. method:: Anim.stop(finish=false)    
 
     在动画实例上调用，结束当前动画实例的动画.        
 
+    :param boolean finish: flasy 时，动画会在当前帧直接停止；为 true 时，动画停止时会立刻跳到最后一帧。
 
 在节点实例上开始动画
 ----------------------------------------------------------------
