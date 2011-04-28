@@ -117,14 +117,10 @@ config 配置项详解
     .. code-block:: javascript
     
         {
-            align:{
-                value:{
-                    node: null,         // 类型选择器字符串，对齐参考元素，falsy 值为可视区域
-                    points: ['tr','tl'], // 类型字符串数组，表示 overlay 的 tl 与参考节点的 tr 对齐
-                    offset: [0, 0]      // 类型整数数组，表示 overlay 最终位置与经 node 和 points 计算后位置的偏移，
-                                        // 数组第一个元素表示 x 轴偏移，第二个元素表示 y 轴偏移。
-                }
-            }
+            node: null,         // 类型选择器字符串，对齐参考元素，falsy 值为可视区域
+            points: ['tr','tl'], // 类型字符串数组，表示 overlay 的 tl 与参考节点的 tr 对齐
+            offset: [0, 0]      // 类型整数数组，表示 overlay 最终位置与经 node 和 points 计算后位置的偏移，
+                                // 数组第一个元素表示 x 轴偏移，第二个元素表示 y 轴偏移。                 
         }
         
     ``points`` 字符串数组元素的取值范围为  t,b,c 与 l,r,c 的两两组合，分别表示 top,bottom,center 与 left,right,center 的两两组合，
@@ -138,7 +134,7 @@ config 配置项详解
     
 .. py:attribute:: resize
 
-    (optional): kissy 1.2 新增，拖动调整大小的配置，例如：
+    (optional): 类型对象，kissy 1.2 新增，拖动调整大小的配置，例如：
     
     .. code-block:: javascript
     
@@ -252,14 +248,10 @@ config 配置项详解
 
     .. code-block:: javascript
 
-        set("align",{
-            align:{
-                value:{
-                    node: node,
-                    points: points,
-                    offset: offset
-                }
-            }
+        set("align",{          
+            node: node,
+            points: points,
+            offset: offset            
         });
         
     .. note::

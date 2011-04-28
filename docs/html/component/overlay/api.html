@@ -19,8 +19,12 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
     };
-</script>
-<script src="http://yiminghe.github.com/kissy/build/kissy.js"></script> 
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){  
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script> 
 </head>
 <body><div id="header">
     <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../../static/logo.png"/></a></h1>
@@ -189,14 +193,10 @@ kissy 1.2 版本以前设置无效，都为 &#8220;ks-&#8221;.</p>
 <tt class="descclassname">Overlay.</tt><tt class="descname">align</tt><a class="headerlink" href="#Overlay.align" title="Permalink to this definition">¶</a></dt>
 <dd><p>(optional): 类型对象，弹出层对齐的相关配置，例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nx">align</span><span class="o">:</span><span class="p">{</span>
-        <span class="nx">value</span><span class="o">:</span><span class="p">{</span>
-            <span class="nx">node</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>         <span class="c1">// 类型选择器字符串，对齐参考元素，falsy 值为可视区域</span>
-            <span class="nx">points</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;tr&#39;</span><span class="p">,</span><span class="s1">&#39;tl&#39;</span><span class="p">],</span> <span class="c1">// 类型字符串数组，表示 overlay 的 tl 与参考节点的 tr 对齐</span>
-            <span class="nx">offset</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>      <span class="c1">// 类型整数数组，表示 overlay 最终位置与经 node 和 points 计算后位置的偏移，</span>
-                                <span class="c1">// 数组第一个元素表示 x 轴偏移，第二个元素表示 y 轴偏移。</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+    <span class="nx">node</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>         <span class="c1">// 类型选择器字符串，对齐参考元素，falsy 值为可视区域</span>
+    <span class="nx">points</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;tr&#39;</span><span class="p">,</span><span class="s1">&#39;tl&#39;</span><span class="p">],</span> <span class="c1">// 类型字符串数组，表示 overlay 的 tl 与参考节点的 tr 对齐</span>
+    <span class="nx">offset</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>      <span class="c1">// 类型整数数组，表示 overlay 最终位置与经 node 和 points 计算后位置的偏移，</span>
+                        <span class="c1">// 数组第一个元素表示 x 轴偏移，第二个元素表示 y 轴偏移。</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -214,7 +214,7 @@ kissy 1.2 版本以前设置无效，都为 &#8220;ks-&#8221;.</p>
 <dl class="attribute">
 <dt id="Overlay.resize">
 <tt class="descclassname">Overlay.</tt><tt class="descname">resize</tt><a class="headerlink" href="#Overlay.resize" title="Permalink to this definition">¶</a></dt>
-<dd><p>(optional): kissy 1.2 新增，拖动调整大小的配置，例如：</p>
+<dd><p>(optional): 类型对象，kissy 1.2 新增，拖动调整大小的配置，例如：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="nx">minWidth</span><span class="o">:</span><span class="mi">100</span><span class="p">,</span> <span class="c1">//类型整数，表示拖动调整大小的最小宽度</span>
     <span class="nx">maxWidth</span><span class="o">:</span><span class="mi">1000</span><span class="p">,</span> <span class="c1">//类型整数，表示拖动调整大小的最大宽度</span>
@@ -348,13 +348,9 @@ kissy 1.2 版本以前设置无效，都为 &#8220;ks-&#8221;.</p>
 </table>
 <p>相当于调用</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;align&quot;</span><span class="p">,{</span>
-    <span class="nx">align</span><span class="o">:</span><span class="p">{</span>
-        <span class="nx">value</span><span class="o">:</span><span class="p">{</span>
-            <span class="nx">node</span><span class="o">:</span> <span class="nx">node</span><span class="p">,</span>
-            <span class="nx">points</span><span class="o">:</span> <span class="nx">points</span><span class="p">,</span>
-            <span class="nx">offset</span><span class="o">:</span> <span class="nx">offset</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+    <span class="nx">node</span><span class="o">:</span> <span class="nx">node</span><span class="p">,</span>
+    <span class="nx">points</span><span class="o">:</span> <span class="nx">points</span><span class="p">,</span>
+    <span class="nx">offset</span><span class="o">:</span> <span class="nx">offset</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -440,7 +436,8 @@ kissy 1.2 版本以前设置无效，都为 &#8220;ks-&#8221;.</p>
 					</div>
 					
 					<div id="disqus_thread"></div>
-<script type="text/javascript">
+<script>
+    if(window.location.hostname.indexOf("kissyui.com")!=-1){
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
 
@@ -454,20 +451,27 @@ kissy 1.2 版本以前设置无效，都为 &#8220;ks-&#8221;.</p>
         dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
+    }
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
 <div id="google-search-box">
     <div id="cse" style="width: 100%;">Loading</div>
-    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-    <script type="text/javascript">
-        google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
-        google.setOnLoadCallback(function() {
-            var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
-            customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-            customSearchControl.draw('cse');
-        }, true);
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){        
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');   
+        }    
+    </script>    
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
     </script>
 </div>
 				</div>

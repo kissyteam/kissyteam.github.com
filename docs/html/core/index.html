@@ -19,8 +19,12 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
     };
-</script>
-<script src="http://yiminghe.github.com/kissy/build/kissy.js"></script> 
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){  
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script> 
 </head>
 <body><div id="header">
     <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../static/logo.png"/></a></h1>
@@ -49,7 +53,7 @@
       <a href="anim/index.html" title="KISSY.Anim 文档"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../seed/loader/usage.html" title="使用示例"
+      <a href="../seed/kissy/extend.html" title="KISSY.extend"
          accesskey="P">previous</a> | </li>
     <li><a href="../index.html">KISSY Docs</a> &#187; </li> 
     </ul>
@@ -75,13 +79,14 @@
 					
 					<div class="s-box relative-links">
 						<div class="s-box-bd">
-                            <a href="../seed/loader/usage.html" title="使用示例"> 上一页 </a> |
+                            <a href="../seed/kissy/extend.html" title="KISSY.extend"> 上一页 </a> |
                             <a href="anim/index.html" title="KISSY.Anim 文档"> 下一页 </a>
 						</div>
 					</div>
 					
 					<div id="disqus_thread"></div>
-<script type="text/javascript">
+<script>
+    if(window.location.hostname.indexOf("kissyui.com")!=-1){
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
 
@@ -95,20 +100,27 @@
         dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
+    }
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
 <div id="google-search-box">
     <div id="cse" style="width: 100%;">Loading</div>
-    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-    <script type="text/javascript">
-        google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
-        google.setOnLoadCallback(function() {
-            var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
-            customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-            customSearchControl.draw('cse');
-        }, true);
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){        
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');   
+        }    
+    </script>    
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
     </script>
 </div>
 				</div>
@@ -120,7 +132,7 @@
 			<h3>Previous topic</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="../seed/loader/usage.html" title="previous chapter">使用示例</a>
+			<a href="../seed/kissy/extend.html" title="previous chapter">KISSY.extend</a>
 		</div>
 	</div>
 	<div class="s-box">

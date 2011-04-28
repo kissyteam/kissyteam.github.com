@@ -19,8 +19,12 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
     };
-</script>
-<script src="http://yiminghe.github.com/kissy/build/kissy.js"></script> 
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){  
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script> 
 </head>
 <body><div id="header">
     <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../static/logo.png"/></a></h1>
@@ -60,11 +64,32 @@
 					
   <div class="section" id="kissy-seed-docs">
 <span id="kissy-seed"></span><h1>KISSY Seed Docs<a class="headerlink" href="#kissy-seed-docs" title="Permalink to this headline">¶</a></h1>
+<p>by <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="loader/index.html">KISSY Loader 文档</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="loader/index.html#id2">内容</a></li>
-<li class="toctree-l2"><a class="reference internal" href="loader/index.html#id3">目标</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loader/api.html">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loader/usage.html">使用示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loader/index.html#id2">目标</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kissy/index.html">KISSY Seed 文档</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kissy/version.html">KISSY.version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kissy/Config.html">KISSY.Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kissy/mix.html">KISSY.mix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kissy/merge.html">KISSY.merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kissy/augment.html">KISSY.augment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kissy/extend.html">KISSY.extend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kissy/namespace.html">KISSY.namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kissy/app.html">KISSY.app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kissy/log.html">KISSY.log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kissy/error.html">KISSY.error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kissy/guid.html">KISSY.guid</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="web/index.html">KISSY Web 文档</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web/ready.html">KISSY.ready</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web/available.html">KISSY.available</a></li>
 </ul>
 </li>
 </ul>
@@ -81,7 +106,8 @@
 					</div>
 					
 					<div id="disqus_thread"></div>
-<script type="text/javascript">
+<script>
+    if(window.location.hostname.indexOf("kissyui.com")!=-1){
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
 
@@ -95,20 +121,27 @@
         dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
+    }
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
 <div id="google-search-box">
     <div id="cse" style="width: 100%;">Loading</div>
-    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-    <script type="text/javascript">
-        google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
-        google.setOnLoadCallback(function() {
-            var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
-            customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-            customSearchControl.draw('cse');
-        }, true);
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){        
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');   
+        }    
+    </script>    
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
     </script>
 </div>
 				</div>
@@ -152,6 +185,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Getting Started with KISSY</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">KISSY Seed Docs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="loader/index.html">KISSY Loader 文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kissy/index.html">KISSY Seed 文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web/index.html">KISSY Web 文档</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../core/index.html">KISSY Core Docs</a></li>
