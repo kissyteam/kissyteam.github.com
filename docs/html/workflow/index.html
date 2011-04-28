@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>KISSY 组件开发流程 &mdash; KISSY Docs valpha documentation</title>
+<title>KISSY 组件开发 &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../static/reset.css"/>
 <link rel="stylesheet" href="../static/kissy.css"/>
@@ -50,10 +50,10 @@
       <a href="../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../quickstart/index.html" title="Getting Started with KISSY"
+      <a href="workflow-simple.html" title="KISSY 组件开发流程"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../styleguide/kissy-components-style-guide.html" title="KISSY 组件开发规范"
+      <a href="../editorguide/faq.html" title="FAQ"
          accesskey="P">previous</a> | </li>
     <li><a href="../index.html">KISSY Docs</a> &#187; </li> 
     </ul>
@@ -63,41 +63,30 @@
 				<div class="main-wrap">
 					
   <div class="section" id="kissy">
-<span id="workflow"></span><h1>KISSY 组件开发流程<a class="headerlink" href="#kissy" title="Permalink to this headline">¶</a></h1>
-<img alt="../images/workflow-s.png" src="../images/workflow-s.png" />
-<p><a class="reference external" href="../static/workflow/workflow.png">点击查看详细大图</a></p>
-<div class="section" id="id2">
-<h2>步骤说明<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>请先阅读 <a class="reference external" href="http://kissyteam.github.com/kissy/src/imagezoom/slide.html">ImageZoom 调研文档</a></p>
-<div class="section" id="id3">
-<h3>应用场景分析<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p>一个需求到来, 比如这个图片放大效果, 首先我们需要这个功能能用在哪些地方, 或哪些网站上已经使用了, 如果有的话, 就对比一下不同的情况下不同的要求, 如 #slide4 . 这样以后, 对比自己的需求, 想好要实现什么功能, 哪些功能保留, 哪些功能不需要, &#8212;- 明确需求;</p>
-</div>
-<div class="section" id="id4">
-<h3>同类组件调研<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<p>需求明确之后, 查找现有的同类组件, 看看他们针对这个问题, 是怎么实现的, 实现哪些功能, 哪些可以借鉴的地方, 哪些不足的地方要避免或者改进, 如 #slide6 , &#8212;- 明确要实现的功能有哪些;</p>
-</div>
-<div class="section" id="id5">
-<h3>功能点梳理<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>分离出完成整个功能需要的几个核心功能点, 并针对各个功能点逐个描述, 如 #slide8 , 这也可以帮你理清思路,  &#8212;- 进一步明确待实现功能;</p>
-</div>
-<div class="section" id="id6">
-<h3>技术方案<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<p>针对上述的几个功能点, 分别给出实现方案, 或者其他的技术难点, 又或者是算法上的分析等, 如 #slide9 , &#8212; 明确如何实现;</p>
-</div>
-<div class="section" id="public-api">
-<h3>Public API<a class="headerlink" href="#public-api" title="Permalink to this headline">¶</a></h3>
-<p>设计好的公共 API , 并在此说明, 也可以根据使用场景, 给出一些范例来说明 API 的使用, 如 #slide14 , 这里可以在开始时设计的尽量精简些, &#8212;- 明确 API 接口;</p>
-</div>
-<div class="section" id="id7">
-<h3>开发计划<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<p>简略或者详细的制定一个开发计划, 及发布的版本和时间等, &#8212;- 明确进度;</p>
-</div>
-<div class="section" id="id8">
-<h3>预研报告<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<p>预研过程后总结一个报告, 可将报告分享给大家, 供大家一起讨论.</p>
-<p>我们建议每个 KISSY 组件下, 都存放一个 slide.html, 其内容包含上述几部分内容. 这个 slide 随着你的开发过程的推进, 也会不断添加更新, 最后发布时连同组件源代码一起, 形成非常好的知识体系, 这样, 给别人或是几十年后的自己阅读, 也会像看文章一样的有条理.</p>
-</div>
+<span id="workflow"></span><h1>KISSY 组件开发<a class="headerlink" href="#kissy" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="workflow-simple.html">KISSY 组件开发流程</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="workflow-simple.html#id1">1、检出源码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow-simple.html#id2">2、初始化工作文件夹</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow-simple.html#id3">3、编码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow-simple.html#id4">4、提交</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="workflow-full.html">KISSY 组件开发流程（完整版）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="workflow-full.html#id2">步骤说明</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-spec.html">KISSY 组件开发规范</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-spec.html#api">确定 API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-spec.html#id2">模块编写</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-spec.html#demo">demo 编写</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-spec.html#readme-txt">readme.txt 编写</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-spec.html#id3">文档编写</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-spec.html#id6">单元测试编写</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 
@@ -105,8 +94,8 @@
 					
 					<div class="s-box relative-links">
 						<div class="s-box-bd">
-                            <a href="../styleguide/kissy-components-style-guide.html" title="KISSY 组件开发规范"> 上一页 </a> |
-                            <a href="../quickstart/index.html" title="Getting Started with KISSY"> 下一页 </a>
+                            <a href="../editorguide/faq.html" title="FAQ"> 上一页 </a> |
+                            <a href="workflow-simple.html" title="KISSY 组件开发流程"> 下一页 </a>
 						</div>
 					</div>
 					
@@ -152,36 +141,13 @@
 				</div>
 			</div>
 	<div class="col-sub">
-	<div class="s-box">
-		<div class="s-box-hd">
-			<h3>Table Of Current Page</h3>
-		</div>
-		<div class="s-box-bd">
-			<ul>
-<li><a class="reference internal" href="#">KISSY 组件开发流程</a><ul>
-<li><a class="reference internal" href="#id2">步骤说明</a><ul>
-<li><a class="reference internal" href="#id3">应用场景分析</a></li>
-<li><a class="reference internal" href="#id4">同类组件调研</a></li>
-<li><a class="reference internal" href="#id5">功能点梳理</a></li>
-<li><a class="reference internal" href="#id6">技术方案</a></li>
-<li><a class="reference internal" href="#public-api">Public API</a></li>
-<li><a class="reference internal" href="#id7">开发计划</a></li>
-<li><a class="reference internal" href="#id8">预研报告</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-		</div>
-	</div>
 
 	<div class="s-box">
 		<div class="s-box-hd">
 			<h3>Previous topic</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="../styleguide/kissy-components-style-guide.html" title="previous chapter">KISSY 组件开发规范</a>
+			<a href="../editorguide/faq.html" title="previous chapter">FAQ</a>
 		</div>
 	</div>
 	<div class="s-box">
@@ -189,7 +155,7 @@
 			<h3>Next topic</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="../quickstart/index.html" title="next chapter">Getting Started with KISSY</a>
+			<a href="workflow-simple.html" title="next chapter">KISSY 组件开发流程</a>
 		</div>
 	</div>
 
@@ -208,16 +174,17 @@
 	</div>
 	<div class="s-box-bd">
 		<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../styleguide/index.html">KISSY Code Style</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">KISSY 组件开发流程</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">步骤说明</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Getting Started with KISSY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../seed/index.html">KISSY Seed Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/index.html">KISSY Core Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../component/index.html">KISSY Component Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../editorguide/index.html">KISSY Editor Manual</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">KISSY 组件开发</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="workflow-simple.html">KISSY 组件开发流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow-full.html">KISSY 组件开发流程（完整版）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-spec.html">KISSY 组件开发规范</a></li>
+</ul>
+</li>
 </ul>
 
 	</div>

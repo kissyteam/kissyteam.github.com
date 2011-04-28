@@ -50,13 +50,10 @@
       <a href="../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../workflow/index.html" title="KISSY 组件开发流程"
-         accesskey="N">next</a> | </li>
-    <li class="right" >
-      <a href="js-style-rules.html" title="JavaScript 编码风格"
+      <a href="workflow-full.html" title="KISSY 组件开发流程（完整版）"
          accesskey="P">previous</a> | </li>
     <li><a href="../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="index.html" accesskey="U">KISSY Code Style</a> &#187; </li> 
+      <li><a href="index.html" accesskey="U">KISSY 组件开发</a> &#187; </li> 
     </ul>
 </div>
 	<div  class="layout grid-s6m0">
@@ -64,16 +61,16 @@
 				<div class="main-wrap">
 					
   <div class="section" id="kissy">
-<span id="styleguide-kissycomponentsstyleguide"></span><h1>KISSY 组件开发规范<a class="headerlink" href="#kissy" title="Permalink to this headline">¶</a></h1>
+<span id="workflow-dev-spec"></span><h1>KISSY 组件开发规范<a class="headerlink" href="#kissy" title="Permalink to this headline">¶</a></h1>
 <p>by <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></p>
-<p>开始之前请先阅读 <a class="reference external" href="http://docs.kissyui.com/docs/html/workflow/">KISSY 组件开发流程</a></p>
+<p>开始之前请先阅读 <a class="reference internal" href="workflow-simple.html#workflow-simple"><em>KISSY 组件开发流程</em></a>.</p>
 <div class="section" id="api">
 <h2>确定 API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <p>首先确定该组件需要公开的 api 接口包括属性名称，函数名，参数以及返回值，可参考 YUI3 ,Jquery 等类库的同类组件，尽量保持一致。
 比如 Overlay，那么其公开接口肯定包含方法 <tt class="docutils literal"><span class="pre">show</span></tt> ，``hide`` 以及弹层内容 <tt class="docutils literal"><span class="pre">content</span></tt> 属性配置.</p>
 </div>
-<div class="section" id="id3">
-<h2>模块编写<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>模块编写<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>必须。推荐的目录结构如下，例如组件为 Overlay 弹层，那么该组件的目录结构应为：</p>
 <img alt="../images/component-guide.png" src="../images/component-guide.png" />
 <p>src 目录中必须包含和组件名相同的一个模块文件，模块名为 <tt class="docutils literal"><span class="pre">gallery/overlay</span></tt> ,用来指明该组件依赖的子模块，子模块的名约定为 <tt class="docutils literal"><span class="pre">gallery/overlay/xx</span></tt> ,如果组件比较简单也可只有这一个源码文件。例如 overlay.js</p>
@@ -136,16 +133,16 @@
 <div class="section" id="readme-txt">
 <h2>readme.txt 编写<a class="headerlink" href="#readme-txt" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="id4">
-<h2>文档编写<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>文档编写<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>可选。在 <tt class="docutils literal"><span class="pre">docs</span></tt> 目录下编写组件文档，后缀名为 <tt class="docutils literal"><span class="pre">rst</span></tt> ，可参照 <tt class="docutils literal"><span class="pre">KISSY</span> <span class="pre">Overlay</span></tt> 的文档 <a class="reference external" href="http://docs.kissyui.com/source/component/overlay/index.rst">api</a>  以及
 <a class="reference external" href="http://docs.kissyui.com/source/component/overlay/usage.rst">使用文档</a> ，详细格式可参见 <a class="reference external" href="http://sphinx.pocoo.org/">sphinx</a> 。文档不做强求，也可直接写纯文本格式，在 demo.html 详细讲解即可。</p>
 </div>
-<div class="section" id="id7">
-<h2>单元测试编写<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>单元测试编写<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>可选。在 <tt class="docutils literal"><span class="pre">tests</span></tt> 目录下编写单元测试代码，单元测试包括两个部分，测试准备页面以及单元测试用例脚本。</p>
-<div class="section" id="id8">
-<h3>测试准备页面<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>测试准备页面<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>编写 test.html ，引入单元测试框架 jasmine (在 kissy/tools/ 下) ，例如：</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
@@ -176,8 +173,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id9">
-<h3>测试用例脚本编写<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>测试用例脚本编写<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>测试用例编写在脚本 <tt class="docutils literal"><span class="pre">overlay-spec.js</span></tt> 中，详细可参考 <a class="reference external" href="https://github.com/pivotal/jasmine/wiki">jasmine wiki</a> ，这里简单举个例子：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// 测试用例脚本可以包含很多 suit</span>
 <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;开始一个 suit&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
@@ -205,9 +202,8 @@
 					
 					<div class="s-box relative-links">
 						<div class="s-box-bd">
-                            <a href="js-style-rules.html" title="JavaScript 编码风格"> 上一页 </a> |
-                            <a href="index.html" title="KISSY Code Style">回到上层</a> |
-                            <a href="../workflow/index.html" title="KISSY 组件开发流程"> 下一页 </a>
+                            <a href="workflow-full.html" title="KISSY 组件开发流程（完整版）"> 上一页 </a> |
+                            <a href="index.html" title="KISSY 组件开发">回到上层</a> |
 						</div>
 					</div>
 					
@@ -261,13 +257,13 @@
 			<ul>
 <li><a class="reference internal" href="#">KISSY 组件开发规范</a><ul>
 <li><a class="reference internal" href="#api">确定 API</a></li>
-<li><a class="reference internal" href="#id3">模块编写</a></li>
+<li><a class="reference internal" href="#id2">模块编写</a></li>
 <li><a class="reference internal" href="#demo">demo 编写</a></li>
 <li><a class="reference internal" href="#readme-txt">readme.txt 编写</a></li>
-<li><a class="reference internal" href="#id4">文档编写</a></li>
-<li><a class="reference internal" href="#id7">单元测试编写</a><ul>
-<li><a class="reference internal" href="#id8">测试准备页面</a></li>
-<li><a class="reference internal" href="#id9">测试用例脚本编写</a></li>
+<li><a class="reference internal" href="#id3">文档编写</a></li>
+<li><a class="reference internal" href="#id6">单元测试编写</a><ul>
+<li><a class="reference internal" href="#id7">测试准备页面</a></li>
+<li><a class="reference internal" href="#id8">测试用例脚本编写</a></li>
 </ul>
 </li>
 </ul>
@@ -282,15 +278,7 @@
 			<h3>Previous topic</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="js-style-rules.html" title="previous chapter">JavaScript 编码风格</a>
-		</div>
-	</div>
-	<div class="s-box">
-		<div class="s-box-hd">
-			<h3>Next topic</h3>
-		</div>
-		<div class="s-box-bd">
-			<a href="../workflow/index.html" title="next chapter">KISSY 组件开发流程</a>
+			<a href="workflow-full.html" title="previous chapter">KISSY 组件开发流程（完整版）</a>
 		</div>
 	</div>
 
@@ -299,7 +287,7 @@
 			<h3>This Page</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="../sources/styleguide/kissy-components-style-guide.txt" rel="nofollow">Show Source</a>
+			<a href="../sources/workflow/dev-spec.txt" rel="nofollow">Show Source</a>
 		</div>
 	</div>
 
@@ -309,21 +297,17 @@
 	</div>
 	<div class="s-box-bd">
 		<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">KISSY Code Style</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="common-conventions.html">通用约定</a></li>
-<li class="toctree-l2"><a class="reference internal" href="css-coding-style.html">CSS 编码规范</a></li>
-<li class="toctree-l2"><a class="reference internal" href="html-coding-style.html">HTML 编码规范</a></li>
-<li class="toctree-l2"><a class="reference internal" href="js-lang-rules.html">JavaScript 语言规范</a></li>
-<li class="toctree-l2"><a class="reference internal" href="js-style-rules.html">JavaScript 编码风格</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">KISSY 组件开发规范</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../workflow/index.html">KISSY 组件开发流程</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Getting Started with KISSY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../seed/index.html">KISSY Seed Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/index.html">KISSY Core Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../component/index.html">KISSY Component Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../editorguide/index.html">KISSY Editor Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">KISSY 组件开发</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="workflow-simple.html">KISSY 组件开发流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow-full.html">KISSY 组件开发流程（完整版）</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">KISSY 组件开发规范</a></li>
+</ul>
+</li>
 </ul>
 
 	</div>

@@ -1,7 +1,7 @@
 ﻿.. _kissy_seed:
 
 
-KISSY Seed Docs
+KISSY Seed
 =============================
 
 by `承玉 <yiminghe@gmail.com>`_

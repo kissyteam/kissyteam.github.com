@@ -1,4 +1,4 @@
-.. _styleguide-kissycomponentsstyleguide:
+.. _workflow-dev-spec:
 
 KISSY 组件开发规范
 ========================================
@@ -6,7 +6,7 @@ KISSY 组件开发规范
 by `承玉 <yiminghe@gmail.com>`_
 
 
-开始之前请先阅读 `KISSY 组件开发流程 <http://docs.kissyui.com/docs/html/workflow/>`_
+开始之前请先阅读 :ref:`workflow-simple`.
 
 
 确定 API
