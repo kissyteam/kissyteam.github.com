@@ -12,4 +12,6 @@ by `承玉 <yiminghe@gmail.com>`_ , `玉伯 <lifesinger@gmail.com>`_
       
    ready.rst
    available.rst
+   isWindow.rst
+   globalEval.rst
  
