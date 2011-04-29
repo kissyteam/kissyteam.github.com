@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>KISSY.makeArray &mdash; KISSY Docs valpha documentation</title>
+<title>KISSY.later &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../static/reset.css"/>
 <link rel="stylesheet" href="../../static/kissy.css"/>
@@ -49,58 +49,68 @@
     <li class="right" >
       <a href="../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li class="right" >
-      <a href="substitute.html" title="KISSY.substitute"
-         accesskey="N">next</a> | </li>
-    <li class="right" >
-      <a href="isUndefined.html" title="KISSY.isUndefined"
-         accesskey="P">previous</a> | </li>
-    <li><a href="../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../index.html" >KISSY Seed</a> &#187; </li>
-      <li><a href="index.html" accesskey="U">KISSY Lang 文档</a> &#187; </li> 
+    <li><a href="../../index.html">KISSY Docs</a> &#187; </li> 
     </ul>
 </div>
 	<div  class="layout grid-s6m0">
 			<div class="col-main">
 				<div class="main-wrap">
 					
-  <div class="section" id="kissy-makearray">
-<h1>KISSY.makeArray<a class="headerlink" href="#kissy-makearray" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="kissy-later">
+<h1>KISSY.later<a class="headerlink" href="#kissy-later" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="Lang.KISSY.makeArray">
-<tt class="descclassname">KISSY.</tt><tt class="descname">makeArray</tt><big>(</big><em>o</em><big>)</big><a class="headerlink" href="#Lang.KISSY.makeArray" title="Permalink to this definition">¶</a></dt>
-<dd><p>将对象 o 转换为数组。</p>
+<dt id="Lang.KISSY.later">
+<tt class="descclassname">KISSY.</tt><tt class="descname">later</tt><big>(</big><em>fn</em><span class="optional">[</span>, <em>when</em>, <em>periodic</em>, <em>o</em>, <em>data</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Lang.KISSY.later" title="Permalink to this definition">¶</a></dt>
+<dd><p>延迟执行指定函数 fn</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>o</strong> &#8211; arguments, NodeList 等 array-like 对象或单个对象</td>
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fn</strong> (<em>function</em>) &#8211; 延迟执行的函数。</li>
+<li><strong>when</strong> (<em>number</em>) &#8211; 延迟时间，单位是毫秒。</li>
+<li><strong>periodic</strong> (<em>boolean</em>) &#8211; 是不是周期性执行。默认为 false.</li>
+<li><strong>o</strong> (<em>object</em>) &#8211; fn 上下文对象</li>
+<li><strong>data</strong> (<em>Array</em>) &#8211; 传递的参数。可以为单个对象，最后会转换成数组，依次传递给执行函数。</li>
+</ul>
+</td>
 </tr>
-<tr class="field"><th class="field-name">Returns:</th><td class="field-body">可以代表 o 的新数组</td>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p>timer 对象。包含属性
+.. attribute:: timer.interval</p>
+<blockquote>
+<p>是否周期执行</p>
+</blockquote>
+<dl class="attribute">
+<dt id="Lang.timer.cancel">
+<tt class="descclassname">timer.</tt><tt class="descname">cancel</tt><a class="headerlink" href="#Lang.timer.cancel" title="Permalink to this definition">¶</a></dt>
+<dd><p>取消定时器</p>
+</dd></dl>
+
+</p>
+</td>
 </tr>
-<tr class="field"><th class="field-name">Return type:</th><td class="field-body">Array</td>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">object</p>
+</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
 <p>例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">;</span>
-
-<span class="nx">S</span><span class="p">.</span><span class="nx">makeArray</span><span class="p">(</span><span class="s1">&#39;str&#39;</span><span class="p">);</span> <span class="c1">// =&gt; [&#39;str&#39;]</span>
-<span class="nx">S</span><span class="p">.</span><span class="nx">makeArray</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s1">&#39;.div&#39;</span><span class="p">));</span> <span class="c1">// =&gt; 由所有 div 元素组成的数组</span>
-<span class="nx">S</span><span class="p">.</span><span class="nx">makeArray</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span> <span class="c1">// =&gt; []</span>
-</pre></div>
-</div>
+<blockquote>
+<p>var S = KISSY;</p>
+<dl class="docutils">
+<dt>S.later(function(data) {</dt>
+<dd>S.log(data);</dd>
+</dl>
+<p>}, 0, false, null, &#8216;I am later data.&#8217;);</p>
+</blockquote>
 </div>
 
 
 					
 					<div class="s-box relative-links">
 						<div class="s-box-bd">
-                            <a href="isUndefined.html" title="KISSY.isUndefined"> 上一页 </a> |
-                            <a href="index.html" title="KISSY Lang 文档">回到上层</a> |
-                            <a href="substitute.html" title="KISSY.substitute"> 下一页 </a>
 						</div>
 					</div>
 					
@@ -147,29 +157,13 @@
 			</div>
 	<div class="col-sub">
 
-	<div class="s-box">
-		<div class="s-box-hd">
-			<h3>Previous topic</h3>
-		</div>
-		<div class="s-box-bd">
-			<a href="isUndefined.html" title="previous chapter">KISSY.isUndefined</a>
-		</div>
-	</div>
-	<div class="s-box">
-		<div class="s-box-hd">
-			<h3>Next topic</h3>
-		</div>
-		<div class="s-box-bd">
-			<a href="substitute.html" title="next chapter">KISSY.substitute</a>
-		</div>
-	</div>
 
 	<div class="s-box">
 		<div class="s-box-hd">
 			<h3>This Page</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="../../sources/seed/lang/makeArray.txt" rel="nofollow">Show Source</a>
+			<a href="../../sources/seed/lang/later.txt" rel="nofollow">Show Source</a>
 		</div>
 	</div>
 

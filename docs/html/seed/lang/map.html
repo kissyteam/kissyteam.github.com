@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>KISSY Lang 文档 &mdash; KISSY Docs valpha documentation</title>
+<title>KISSY.map &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../static/reset.css"/>
 <link rel="stylesheet" href="../../static/kissy.css"/>
@@ -50,55 +50,65 @@
       <a href="../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="clone.html" title="KISSY.clone"
+      <a href="inArray.html" title="KISSY.inArray"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../web/globalEval.html" title="KISSY.globalEval"
+      <a href="filter.html" title="KISSY.filter"
          accesskey="P">previous</a> | </li>
     <li><a href="../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">KISSY Seed</a> &#187; </li> 
+      <li><a href="../index.html" >KISSY Seed</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">KISSY Lang 文档</a> &#187; </li> 
     </ul>
 </div>
 	<div  class="layout grid-s6m0">
 			<div class="col-main">
 				<div class="main-wrap">
 					
-  <span class="target" id="module-Lang"></span><div class="section" id="kissy-lang">
-<h1>KISSY Lang 文档<a class="headerlink" href="#kissy-lang" title="Permalink to this headline">¶</a></h1>
-<p>by <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a> , <a class="reference external" href="mailto:lifesinger&#37;&#52;&#48;gmail&#46;com">玉伯</a></p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="clone.html">KISSY.clone</a></li>
-<li class="toctree-l1"><a class="reference internal" href="each.html">KISSY.each</a></li>
-<li class="toctree-l1"><a class="reference internal" href="later.html">KISSY.later</a></li>
-<li class="toctree-l1"><a class="reference internal" href="filter.html">KISSY.filter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="map.html">KISSY.map</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inArray.html">KISSY.inArray</a></li>
-<li class="toctree-l1"><a class="reference internal" href="indexOf.html">KISSY.indexOf</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lastIndexOf.html">KISSY.lastIndexOf</a></li>
-<li class="toctree-l1"><a class="reference internal" href="unique.html">KISSY.unique</a></li>
-<li class="toctree-l1"><a class="reference internal" href="isArray.html">KISSY.isArray</a></li>
-<li class="toctree-l1"><a class="reference internal" href="isBoolean.html">KISSY.isBoolean</a></li>
-<li class="toctree-l1"><a class="reference internal" href="isDate.html">KISSY.isDate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="isEmptyObject.html">KISSY.isEmptyObject</a></li>
-<li class="toctree-l1"><a class="reference internal" href="isFunction.html">KISSY.isFunction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="isNull.html">KISSY.isNull</a></li>
-<li class="toctree-l1"><a class="reference internal" href="isNumber.html">KISSY.isNumber</a></li>
-<li class="toctree-l1"><a class="reference internal" href="isObject.html">KISSY.isObject</a></li>
-<li class="toctree-l1"><a class="reference internal" href="isPlainObject.html">KISSY.isPlainObject</a></li>
-<li class="toctree-l1"><a class="reference internal" href="isRegExp.html">KISSY.isRegExp</a></li>
-<li class="toctree-l1"><a class="reference internal" href="isString.html">KISSY.isString</a></li>
-<li class="toctree-l1"><a class="reference internal" href="isUndefined.html">KISSY.isUndefined</a></li>
-<li class="toctree-l1"><a class="reference internal" href="makeArray.html">KISSY.makeArray</a></li>
-<li class="toctree-l1"><a class="reference internal" href="substitute.html">KISSY.substitute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="trim.html">KISSY.trim</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fromUnicode.html">KISSY.fromUnicode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="escapeHTML.html">KISSY.escapeHTML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="unEscapeHTML.html">KISSY.unEscapeHTML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="now.html">KISSY.now</a></li>
-<li class="toctree-l1"><a class="reference internal" href="param.html">KISSY.param</a></li>
-<li class="toctree-l1"><a class="reference internal" href="unparam.html">KISSY.unparam</a></li>
+  <div class="section" id="kissy-map">
+<h1>KISSY.map<a class="headerlink" href="#kissy-map" title="Permalink to this headline">¶</a></h1>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<dl class="function">
+<dt id="Lang.KISSY.map">
+<tt class="descclassname">KISSY.</tt><tt class="descname">map</tt><big>(</big><em>arr</em>, <em>fn</em><span class="optional">[</span>, <em>context</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Lang.KISSY.map" title="Permalink to this definition">¶</a></dt>
+<dd><p>创建一个新数组，数组结果是在对每个原数组元素调用指定函数的返回值。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> (<em>Array</em>) &#8211; 需要遍历的数组。</li>
+<li><strong>fn</strong> (<em>function</em>) &#8211; 能够根据原数组当前元素返回新数组元素的函数。</li>
+<li><strong>context</strong> (<em>object</em>) &#8211; 执行 <tt class="docutils literal"><span class="pre">fn</span></tt> 时的 <tt class="docutils literal"><span class="pre">this</span></tt> 值。</li>
 </ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">返回符合根据指定函数调用得到新数组</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Array</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">原数组保持不变</p>
+</div>
+<p>例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">makePseudoPlural</span><span class="p">(</span><span class="nx">single</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">single</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/o/g</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">singles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;foot&quot;</span><span class="p">,</span> <span class="s2">&quot;goose&quot;</span><span class="p">,</span> <span class="s2">&quot;moose&quot;</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">plurals</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">singles</span><span class="p">,</span> <span class="nx">makePseudoPlural</span><span class="p">);</span>  <span class="c1">// =&gt; [&quot;feet&quot;, &quot;geese&quot;, &quot;meese&quot;]</span>
+
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">x</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">});</span> <span class="c1">// =&gt; [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]</span>
+</pre></div>
 </div>
 </div>
 
@@ -106,9 +116,9 @@
 					
 					<div class="s-box relative-links">
 						<div class="s-box-bd">
-                            <a href="../web/globalEval.html" title="KISSY.globalEval"> 上一页 </a> |
-                            <a href="../index.html" title="KISSY Seed">回到上层</a> |
-                            <a href="clone.html" title="KISSY.clone"> 下一页 </a>
+                            <a href="filter.html" title="KISSY.filter"> 上一页 </a> |
+                            <a href="index.html" title="KISSY Lang 文档">回到上层</a> |
+                            <a href="inArray.html" title="KISSY.inArray"> 下一页 </a>
 						</div>
 					</div>
 					
@@ -160,7 +170,7 @@
 			<h3>Previous topic</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="../web/globalEval.html" title="previous chapter">KISSY.globalEval</a>
+			<a href="filter.html" title="previous chapter">KISSY.filter</a>
 		</div>
 	</div>
 	<div class="s-box">
@@ -168,7 +178,7 @@
 			<h3>Next topic</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="clone.html" title="next chapter">KISSY.clone</a>
+			<a href="inArray.html" title="next chapter">KISSY.inArray</a>
 		</div>
 	</div>
 
@@ -177,7 +187,7 @@
 			<h3>This Page</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="../../sources/seed/lang/index.txt" rel="nofollow">Show Source</a>
+			<a href="../../sources/seed/lang/map.txt" rel="nofollow">Show Source</a>
 		</div>
 	</div>
 
@@ -186,15 +196,9 @@
 		<h3>Table Of KISSY Docs</h3>
 	</div>
 	<div class="s-box-bd">
-		<ul class="current">
+		<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">快速上手</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">KISSY Seed</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../loader/index.html">KISSY Loader 文档</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../kissy/index.html">KISSY Seed 文档</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../web/index.html">KISSY Web 文档</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">KISSY Lang 文档</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">KISSY Seed</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../core/index.html">KISSY Core</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../component/index.html">KISSY Component</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../editorguide/index.html">KISSY Editor</a></li>

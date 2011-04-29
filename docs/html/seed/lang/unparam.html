@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>KISSY.makeArray &mdash; KISSY Docs valpha documentation</title>
+<title>KISSY.unparam &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../static/reset.css"/>
 <link rel="stylesheet" href="../../static/kissy.css"/>
@@ -49,58 +49,45 @@
     <li class="right" >
       <a href="../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li class="right" >
-      <a href="substitute.html" title="KISSY.substitute"
-         accesskey="N">next</a> | </li>
-    <li class="right" >
-      <a href="isUndefined.html" title="KISSY.isUndefined"
-         accesskey="P">previous</a> | </li>
-    <li><a href="../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../index.html" >KISSY Seed</a> &#187; </li>
-      <li><a href="index.html" accesskey="U">KISSY Lang 文档</a> &#187; </li> 
+    <li><a href="../../index.html">KISSY Docs</a> &#187; </li> 
     </ul>
 </div>
 	<div  class="layout grid-s6m0">
 			<div class="col-main">
 				<div class="main-wrap">
 					
-  <div class="section" id="kissy-makearray">
-<h1>KISSY.makeArray<a class="headerlink" href="#kissy-makearray" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="kissy-unparam">
+<h1>KISSY.unparam<a class="headerlink" href="#kissy-unparam" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="Lang.KISSY.makeArray">
-<tt class="descclassname">KISSY.</tt><tt class="descname">makeArray</tt><big>(</big><em>o</em><big>)</big><a class="headerlink" href="#Lang.KISSY.makeArray" title="Permalink to this definition">¶</a></dt>
-<dd><p>将对象 o 转换为数组。</p>
+<dt id="Lang.KISSY.unparam">
+<tt class="descclassname">KISSY.</tt><tt class="descname">unparam</tt><big>(</big><em>str</em><big>)</big><a class="headerlink" href="#Lang.KISSY.unparam" title="Permalink to this definition">¶</a></dt>
+<dd><p>将参数字符串 str 还原为对象。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>o</strong> &#8211; arguments, NodeList 等 array-like 对象或单个对象</td>
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>o</strong> (<em>object</em>) &#8211; 参数字符串</td>
 </tr>
-<tr class="field"><th class="field-name">Returns:</th><td class="field-body">可以代表 o 的新数组</td>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">参数的对象表示</td>
 </tr>
-<tr class="field"><th class="field-name">Return type:</th><td class="field-body">Array</td>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body">object</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
 <p>例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">;</span>
-
-<span class="nx">S</span><span class="p">.</span><span class="nx">makeArray</span><span class="p">(</span><span class="s1">&#39;str&#39;</span><span class="p">);</span> <span class="c1">// =&gt; [&#39;str&#39;]</span>
-<span class="nx">S</span><span class="p">.</span><span class="nx">makeArray</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s1">&#39;.div&#39;</span><span class="p">));</span> <span class="c1">// =&gt; 由所有 div 元素组成的数组</span>
-<span class="nx">S</span><span class="p">.</span><span class="nx">makeArray</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span> <span class="c1">// =&gt; []</span>
-</pre></div>
-</div>
+<blockquote>
+<p>var S = KISSY;</p>
+<p>S.unparam(&#8216;foo=1&amp;bar=2&#8217;); // =&gt; { foo: 1, bar: 2 }
+S.unparam(&#8216;foo=1&amp;bar[]=2&amp;bar[]=3&#8217;); // =&gt; { foo: 1, bar: [2, 3] }</p>
+</blockquote>
 </div>
 
 
 					
 					<div class="s-box relative-links">
 						<div class="s-box-bd">
-                            <a href="isUndefined.html" title="KISSY.isUndefined"> 上一页 </a> |
-                            <a href="index.html" title="KISSY Lang 文档">回到上层</a> |
-                            <a href="substitute.html" title="KISSY.substitute"> 下一页 </a>
 						</div>
 					</div>
 					
@@ -147,29 +134,13 @@
 			</div>
 	<div class="col-sub">
 
-	<div class="s-box">
-		<div class="s-box-hd">
-			<h3>Previous topic</h3>
-		</div>
-		<div class="s-box-bd">
-			<a href="isUndefined.html" title="previous chapter">KISSY.isUndefined</a>
-		</div>
-	</div>
-	<div class="s-box">
-		<div class="s-box-hd">
-			<h3>Next topic</h3>
-		</div>
-		<div class="s-box-bd">
-			<a href="substitute.html" title="next chapter">KISSY.substitute</a>
-		</div>
-	</div>
 
 	<div class="s-box">
 		<div class="s-box-hd">
 			<h3>This Page</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="../../sources/seed/lang/makeArray.txt" rel="nofollow">Show Source</a>
+			<a href="../../sources/seed/lang/unparam.txt" rel="nofollow">Show Source</a>
 		</div>
 	</div>
 
