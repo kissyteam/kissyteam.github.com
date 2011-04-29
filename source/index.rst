@@ -13,5 +13,5 @@ KISSY Docs
     core/index.rst
     component/index.rst   
     editorguide/index.rst
-	styleguide/index.rst 
+    styleguide/index.rst
     workflow/index.rst
