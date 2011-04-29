@@ -1,6 +1,6 @@
 .. module:: Editor
 
-KISSY Editor Manual
+KISSY Editor
 ===============================================
 
 by `承玉 <yiminghe@gmail.com>`_ , `玉伯 <lifesinger@gmail.com>`_

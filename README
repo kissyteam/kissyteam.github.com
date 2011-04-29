@@ -1,4 +1,4 @@
-
+﻿
  KISSY 文档中心，请访问：http://kissyteam.github.com/
 
  编译说明：
@@ -7,18 +7,7 @@
     * Python 2.x (http://www.python.org/), 并将 Python 加入到 Path 中;
     * Setup Tools: Python 的一个包安装/管理工具(http://pypi.python.org/pypi/setuptools);
     * cmd 下运行: easy_install -U Sphinx;
-    * sphinx-to-github: Sphinx 生成的文档需要做些调整才能直接发布到 github 上:
-        - clone 到本地: http://github.com/michaeljones/sphinx-to-github
-        - 如果你的系统是 windows, 请先将 sphinx-to-github/sphinxtogithub.py 33 行函数替换为:
-            def __init__(self, from_, to):
-
-                if os.sys.platform == 'win32':
-                    from_ = from_.replace('\\', '/')
-                    to = to.replace('\\', '/')
-
-                self.from_ = from_
-                self.to = to
-        - cmd 下进入 sphinx-to-github 本地目录: python setup.py install
+    * cmd 下进入kissyteam/tools/sphinx-to-github, 运行 python setup.py install
 
  - 编译文档:
     * kissyteam 下的文档组织结构:

@@ -10,4 +10,3 @@ KISSY Code Style
    html-coding-style.rst
    js-lang-rules.rst
    js-style-rules.rst
-   kissy-components-style-guide.rst

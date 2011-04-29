@@ -1,7 +1,7 @@
 .. _kissy_core:
 
 
-KISSY Core Docs
+KISSY Core
 =============================
 
 
