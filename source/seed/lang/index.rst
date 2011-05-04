@@ -40,5 +40,6 @@ by `承玉 <yiminghe@gmail.com>`_ , `玉伯 <lifesinger@gmail.com>`_
    now.rst
    param.rst
    unparam.rst
-   
+   startsWith.rst
+   endsWith.rst
  

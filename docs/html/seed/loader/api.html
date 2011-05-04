@@ -101,7 +101,13 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<em>object</em>) &#8211; <p>模块描述信息，例如</p>
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<em>object</em>) &#8211; 模块描述信息</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;custommod&quot;</span><span class="o">:</span><span class="p">{</span>
         <span class="nx">fullpath</span><span class="o">:</span><span class="s2">&quot;http://xx.com/custommod.js&quot;</span><span class="p">,</span>
@@ -120,14 +126,11 @@
 以及从 <tt class="docutils literal"><span class="pre">cssfullpath</span></tt> 中载入模块的样式表</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">注意依赖的模块也要进行注册。该函数用在模块注册文件中,kissy 1.2 使用包机制取代模块注册，仍然兼容1.2以前模块注册方式。</p>
+<ul class="last simple">
+<li><tt class="docutils literal"><span class="pre">fullpath</span></tt> 也可以直接是 css 文件，这时该模块为 css 模块，如果某个 js 模块依赖项配置了 css 模块，则 js 模块的初始化会等待 css 模块对应的 css 文件完毕，具体方法可见： <a class="reference external" href="http://lifesinger.wordpress.com/2011/05/02/seajs-css-support/">lifesinger 的探索</a> 。</li>
+<li>依赖的模块也要进行注册。该函数用在模块注册文件中,kissy 1.2 使用包机制取代模块注册，仍然兼容1.2以前模块注册方式。</li>
+</ul>
 </div>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
 <dl class="function">
 <dt>
 <tt class="descclassname">KISSY.</tt><tt class="descname">add</tt><big>(</big><em>name</em>, <em>config</em><big>)</big></dt>
@@ -136,6 +139,8 @@
 
 <div class="section" id="kissy-1-2">
 <h3>KISSY 1.2 新增接口<a class="headerlink" href="#kissy-1-2" title="Permalink to this headline">¶</a></h3>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
 <dl class="function">
 <dt>
 <tt class="descclassname">KISSY.</tt><tt class="descname">add</tt><big>(</big><em>name</em>, <em>fn</em><span class="optional">[</span>, <em>config</em><span class="optional">]</span><big>)</big></dt>
@@ -154,22 +159,24 @@
 </dd></dl>
 
 <dl class="attribute">
-<dt id="Loader.config.csspath">
-<tt class="descclassname">config.</tt><tt class="descname">csspath</tt><a class="headerlink" href="#Loader.config.csspath" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 string,该模块对应的css文件，相对路径表示相对于该模块js文件。</p>
-</dd></dl>
-
-<dl class="attribute">
 <dt id="Loader.config.requires">
 <tt class="descclassname">config.</tt><tt class="descname">requires</tt><a class="headerlink" href="#Loader.config.requires" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 Array&lt;string&gt;,模块的一些依赖项</p>
+<dd><p>类型 Array&lt;string&gt;,模块的一些依赖项，如果需要载入 css 则，数组项为 .css 结尾名字</p>
+</dd></dl>
+
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <p>示例:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nx">attach</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span><span class="c1">//模块定义时不会执行定义函数 fn，只有在 use 时才执行，懒加载原则</span>
-    <span class="nx">csspath</span><span class="o">:</span><span class="s1">&#39;./mod.css&#39;</span><span class="p">,</span><span class="c1">//载入和模块 js 同目录下的 mod.css</span>
-    <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;depMod1&#39;</span><span class="p">,</span><span class="s1">&#39;depMod2&#39;</span><span class="p">]</span> <span class="c1">//该模块的一些依赖项</span>
+    <span class="nx">attach</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span><span class="c1">// 模块定义时不会执行定义函数 fn，只有在 use 时才执行，懒加载原则</span>
+    <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;depMod1&#39;</span><span class="p">,</span><span class="s1">&#39;depMod2&#39;</span><span class="p">,</span><span class="s1">&#39;./mod.css&#39;</span><span class="p">]</span> <span class="c1">// 该模块的一些依赖项，</span>
+                                               <span class="c1">// 注意 css 为和模块 js 同目录下的 mod.css</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -196,14 +203,6 @@
 <span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;tc/mods/mod1&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){},</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;./mod2&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
-</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
 </div>
 </div>
 <div class="section" id="id3">
@@ -231,6 +230,8 @@
 </div>
 <div class="section" id="id4">
 <h3>kissy 1.2 新增接口<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
 <div class="section" id="id5">
 <h4>包配置<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <p>目的是为了摆脱模块必须使用前注册的繁琐</p>
@@ -241,19 +242,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<em>object</em>) &#8211; <p>包含 key 为 <tt class="docutils literal"><span class="pre">packages</span></tt> 的配置项，如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-    <span class="nx">packages</span><span class="o">:</span><span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;tc&quot;</span><span class="p">,</span> <span class="c1">//包名</span>
-            <span class="nx">tag</span><span class="o">:</span><span class="s2">&quot;20110323&quot;</span><span class="p">,</span> <span class="c1">//动态加载包内的模块js文件时，自动加上 ?t=20110323，用于文件更新</span>
-            <span class="nx">path</span><span class="o">:</span><span class="s2">&quot;../&quot;</span><span class="p">,</span> <span class="c1">//包对应路径，相对路径指相对于当前页面路径</span>
-            <span class="nx">charset</span><span class="o">:</span><span class="s2">&quot;gbk&quot;</span> <span class="c1">//包里模块文件编码格式</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">});</span>
-</pre></div>
-</div>
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<em>object</em>) &#8211; <p>包含 key 为 <tt class="docutils literal"><span class="pre">packages</span></tt> 的配置项，包括</p>
 <dl class="attribute">
 <dt id="Loader.config.packages">
 <tt class="descclassname">config.</tt><tt class="descname">packages</tt><a class="headerlink" href="#Loader.config.packages" title="Permalink to this definition">¶</a></dt>
@@ -292,6 +281,20 @@
 </table>
 </dd></dl>
 
+<p>例如：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+    <span class="nx">packages</span><span class="o">:</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;tc&quot;</span><span class="p">,</span> <span class="c1">// 包名</span>
+            <span class="nx">tag</span><span class="o">:</span><span class="s2">&quot;20110323&quot;</span><span class="p">,</span> <span class="c1">// 动态加载包内的模块js文件时，</span>
+                            <span class="c1">// 自动加上 ?t=20110323，用于文件更新</span>
+            <span class="nx">path</span><span class="o">:</span><span class="s2">&quot;../&quot;</span><span class="p">,</span> <span class="c1">// 包对应路径，相对路径指相对于当前页面路径</span>
+            <span class="nx">charset</span><span class="o">:</span><span class="s2">&quot;gbk&quot;</span> <span class="c1">// 包里模块文件编码格式</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+</pre></div>
+</div>
 <p>当要在包内添加模块时，必须遵守一些约定：</p>
 <ol class="arabic">
 <li><p class="first">一个模块的文件必须放在以包名命名的目录中</p>
@@ -441,6 +444,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../core/index.html">KISSY Core</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../component/index.html">KISSY Component</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../editorguide/index.html">KISSY Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../styleguide/index.html">KISSY Code Style</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../workflow/index.html">KISSY 组件开发</a></li>
 </ul>
 
