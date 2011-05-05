@@ -73,7 +73,7 @@
 这个过程如果模块多的话对于线上环境来说 HTTP 链接数不可承受，使用 KISSY module compiler 则可以达到所有模块压缩为一个文件，达到 http 链接数为 1 的目标。
 
 
-使用 module compiler
+使用 Module Compiler
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 简要如下:
