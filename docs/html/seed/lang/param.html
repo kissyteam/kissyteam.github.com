@@ -84,11 +84,13 @@
 </table>
 </dd></dl>
 
+<p class="versionchanged">
+<span class="versionmodified">Changed in version 1.2: </span>数组处理改变，不加 <tt class="docutils literal"><span class="pre">[]</span></tt> 如 <tt class="docutils literal"><span class="pre">{v:[1,2]}</span> <span class="pre">=&gt;</span> <span class="pre">v=1&amp;v=2</span></tt></p>
 <p>例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">;</span>
 
 <span class="nx">S</span><span class="p">.</span><span class="nx">param</span><span class="p">({</span> <span class="nx">foo</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">bar</span><span class="o">:</span> <span class="mi">2</span> <span class="p">});</span> <span class="c1">// =&gt; foo=1&amp;bar=2</span>
-<span class="nx">S</span><span class="p">.</span><span class="nx">param</span><span class="p">({</span> <span class="nx">foo</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">bar</span><span class="o">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="p">});</span> <span class="c1">// =&gt; foo=1&amp;bar%5B%5D=2&amp;bar%5B%5D=3</span>
+<span class="nx">S</span><span class="p">.</span><span class="nx">param</span><span class="p">({</span> <span class="nx">foo</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">bar</span><span class="o">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="p">});</span> <span class="c1">// =&gt; foo=1&amp;bar=2&amp;bar=3</span>
 <span class="nx">S</span><span class="p">.</span><span class="nx">param</span><span class="p">({</span> <span class="nx">foo</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">bar</span><span class="o">:</span> <span class="mi">2</span> <span class="p">});</span> <span class="c1">// =&gt; foo=&amp;bar=2</span>
 <span class="nx">S</span><span class="p">.</span><span class="nx">param</span><span class="p">({</span> <span class="nx">foo</span><span class="o">:</span> <span class="kc">undefined</span><span class="p">,</span> <span class="nx">bar</span><span class="o">:</span> <span class="mi">2</span> <span class="p">});</span> <span class="c1">// =&gt; foo=undefined&amp;bar=2</span>
 </pre></div>
