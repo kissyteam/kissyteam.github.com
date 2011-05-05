@@ -13,6 +13,8 @@ KISSY.param
     
 例如
 
+.. code-block:: javascript
+
     var S = KISSY;
 
     S.param({ foo: 1, bar: 2 }); // => foo=1&bar=2
