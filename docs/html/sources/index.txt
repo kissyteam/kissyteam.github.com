@@ -15,3 +15,4 @@ KISSY Docs
     editorguide/index.rst
     styleguide/index.rst
     workflow/index.rst
+    tools/module-compiler/index.rst
