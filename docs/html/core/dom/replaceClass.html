@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>DOM.query &mdash; KISSY Docs valpha documentation</title>
+<title>DOM.replaceClass &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../static/reset.css"/>
 <link rel="stylesheet" href="../../static/kissy.css"/>
@@ -50,10 +50,10 @@
       <a href="../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="get.html" title="DOM.get"
+      <a href="toggleClass.html" title="DOM.toggleClass"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="selector.html" title="KISSY selector"
+      <a href="removeClass.html" title="DOM.removeClass"
          accesskey="P">previous</a> | </li>
     <li><a href="../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../index.html" >KISSY Core</a> &#187; </li>
@@ -64,36 +64,25 @@
 			<div class="col-main">
 				<div class="main-wrap">
 					
-  <div class="section" id="dom-query">
-<h1>DOM.query<a class="headerlink" href="#dom-query" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="dom-replaceclass">
+<h1>DOM.replaceClass<a class="headerlink" href="#dom-replaceclass" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="DOM.DOM.query">
-<tt class="descclassname">DOM.</tt><tt class="descname">query</tt><big>(</big><em>selector</em><span class="optional">[</span>, <em>context=document</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#DOM.DOM.query" title="Permalink to this definition">¶</a></dt>
-<dd><p>获取符合选择器的所有元素。</p>
+<dt id="DOM.DOM.replaceClass">
+<tt class="descclassname">DOM.</tt><tt class="descname">replaceClass</tt><big>(</big><em>selector</em>, <em>oldClassName</em>, <em>newClassName</em><big>)</big><a class="headerlink" href="#DOM.DOM.replaceClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>将符合选择器的所有元素的老 class 替换为新 class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference external" href="dom-selector">KISSY selector</a></li>
-<li><strong>context</strong> (<em>string|HTMLElement</em>) &#8211; 选择器参考上下文，&#8217;#id&#8217; 或者 dom 节点。</li>
+<li><strong>oldClassName</strong> (<em>string</em>) &#8211; 样式类 class，多个用空格分隔 ，需要删除的样式类</li>
+<li><strong>newClassName</strong> (<em>string</em>) &#8211; 样式类 class，多个用空格分隔 ，需要添加的样式类</li>
 </ul>
-</td>
-</tr>
-<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">符合选择器字符串的 dom 节点数组</p>
-</td>
-</tr>
-<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Array&lt;HTMLElement&gt;</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="function">
-<dt id="DOM.KISSY.query">
-<tt class="descclassname">KISSY.</tt><tt class="descname">query</tt><big>(</big><em>selector</em><span class="optional">[</span>, <em>context=document</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#DOM.KISSY.query" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#DOM.DOM.query" title="DOM.DOM.query"><tt class="xref py py-func docutils literal"><span class="pre">DOM.query()</span></tt></a> 的快捷方式</p>
 </dd></dl>
 
 </div>
@@ -102,9 +91,9 @@
 					
 					<div class="s-box relative-links">
 						<div class="s-box-bd">
-                            <a href="selector.html" title="KISSY selector"> 上一页 </a> |
+                            <a href="removeClass.html" title="DOM.removeClass"> 上一页 </a> |
                             <a href="index.html" title="KISSY.DOM">回到上层</a> |
-                            <a href="get.html" title="DOM.get"> 下一页 </a>
+                            <a href="toggleClass.html" title="DOM.toggleClass"> 下一页 </a>
 						</div>
 					</div>
 					
@@ -156,7 +145,7 @@
 			<h3>Previous topic</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="selector.html" title="previous chapter">KISSY selector</a>
+			<a href="removeClass.html" title="previous chapter">DOM.removeClass</a>
 		</div>
 	</div>
 	<div class="s-box">
@@ -164,7 +153,7 @@
 			<h3>Next topic</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="get.html" title="next chapter">DOM.get</a>
+			<a href="toggleClass.html" title="next chapter">DOM.toggleClass</a>
 		</div>
 	</div>
 
@@ -173,7 +162,7 @@
 			<h3>This Page</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="../../sources/core/dom/query.txt" rel="nofollow">Show Source</a>
+			<a href="../../sources/core/dom/replaceClass.txt" rel="nofollow">Show Source</a>
 		</div>
 	</div>
 
