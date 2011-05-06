@@ -1,6 +1,6 @@
 .. py:module:: Lang
 
-KISSY Lang 文档
+KISSY Lang
 ===============================
 
 by `承玉 <yiminghe@gmail.com>`_ , `玉伯 <lifesinger@gmail.com>`_

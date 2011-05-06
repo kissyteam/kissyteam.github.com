@@ -1,6 +1,6 @@
 ﻿.. module:: DD
 
-KISSY DD Docs
+KISSY DD
 -------------------------------------------
 
 By `承玉 <yiminghe@gmail.com>`_

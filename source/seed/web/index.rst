@@ -1,6 +1,6 @@
 .. py:module:: Web
 
-KISSY Web 文档
+KISSY Web
 ===============================
 
 by `承玉 <yiminghe@gmail.com>`_ , `玉伯 <lifesinger@gmail.com>`_

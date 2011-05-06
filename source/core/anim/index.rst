@@ -1,6 +1,6 @@
 .. module:: Anim
 
-KISSY.Anim 文档
+KISSY.Anim
 ===============================
 
 by `承玉 <yiminghe@gmail.com>`_

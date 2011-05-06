@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>KISSY.Overlay &mdash; KISSY Docs valpha documentation</title>
+<title>DOM.filter &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../static/reset.css"/>
 <link rel="stylesheet" href="../../static/kissy.css"/>
@@ -50,76 +50,61 @@
       <a href="../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="api.html" title="弹出层 api"
+      <a href="test.html" title="DOM.test"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../index.html" title="KISSY Component"
+      <a href="get.html" title="DOM.get"
          accesskey="P">previous</a> | </li>
     <li><a href="../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">KISSY Component</a> &#187; </li> 
+      <li><a href="../index.html" >KISSY Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">KISSY.DOM</a> &#187; </li> 
     </ul>
 </div>
 	<div  class="layout grid-s6m0">
 			<div class="col-main">
 				<div class="main-wrap">
 					
-  <span class="target" id="module-Overlay"></span><div class="section" id="kissy-overlay">
-<h1>KISSY.Overlay<a class="headerlink" href="#kissy-overlay" title="Permalink to this headline">¶</a></h1>
-<p>by <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></p>
-<div class="toctree-wrapper compound">
+  <div class="section" id="dom-filter">
+<h1>DOM.filter<a class="headerlink" href="#dom-filter" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="DOM.DOM.filter">
+<tt class="descclassname">DOM.</tt><tt class="descname">filter</tt><big>(</big><em>selector</em>, <em>filter</em><span class="optional">[</span>, <em>context=document</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#DOM.DOM.filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>获取符合选择器以及过滤参数的所有元素。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>selector</strong> (<em>string</em>) &#8211; 选择器字符串，格式参见 <a class="reference external" href="dom-selector">KISSY selector</a></li>
+<li><strong>filter</strong> (<em>string|function</em>) &#8211; <p>过滤选择器或函数</p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="api.html">弹出层 api</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api.html#id1">获取构造器</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#id2">构造器接口</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api.html#config">config 配置项详解</a></li>
+<li>类型 string 时，格式为 tag.cls ，其他格式需要引入 <tt class="docutils literal"><span class="pre">sizzle</span></tt></li>
+<li>类型 function 时，传入参数当前 dom 节点，返回 <tt class="docutils literal"><span class="pre">true</span></tt> 表示保留</li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#id3">实例属性</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api.html#id4">可获取属性列表</a></li>
+<li><strong>context</strong> (<em>string|HTMLElement</em>) &#8211; 选择器参考上下文， <tt class="docutils literal"><span class="pre">#id</span></tt> 或者 dom 节点。</li>
 </ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#id5">实例方法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#id6">触发事件</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="dialog_api.html">对话框 api</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dialog_api.html#id1">获取对话框构造器</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dialog_api.html#id2">构造器接口</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dialog_api.html#dom">对话框的 DOM 结构</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dialog_api.html#config">config 配置项详解</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="dialog_api.html#id3">实例方法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dialog_api.html#id4">实例属性</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dialog_api.html#id5">触发事件</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">使用示例</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#markup-overlay">从 markup 中构建 overlay</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="usage.html#id2">代码分解</a></li>
-<li class="toctree-l3"><a class="reference internal" href="usage.html#demo">最终 demo</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#dialog">全新创建一个 Dialog</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="usage.html#id3">生成 dialog 对象</a></li>
-<li class="toctree-l3"><a class="reference internal" href="usage.html#id4">触发 dialog 对象显示</a></li>
-<li class="toctree-l3"><a class="reference internal" href="usage.html#id5">最终 demo</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#id6">全部 demo</a></li>
-</ul>
-</li>
-</ul>
-</div>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">符合选择器字符串以及过滤参数的 dom 节点数组</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Array&lt;HTMLElement&gt;</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 
 
 					
 					<div class="s-box relative-links">
 						<div class="s-box-bd">
-                            <a href="../index.html" title="KISSY Component"> 上一页 </a> |
-                            <a href="../index.html" title="KISSY Component">回到上层</a> |
-                            <a href="api.html" title="弹出层 api"> 下一页 </a>
+                            <a href="get.html" title="DOM.get"> 上一页 </a> |
+                            <a href="index.html" title="KISSY.DOM">回到上层</a> |
+                            <a href="test.html" title="DOM.test"> 下一页 </a>
 						</div>
 					</div>
 					
@@ -171,7 +156,7 @@
 			<h3>Previous topic</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="../index.html" title="previous chapter">KISSY Component</a>
+			<a href="get.html" title="previous chapter">DOM.get</a>
 		</div>
 	</div>
 	<div class="s-box">
@@ -179,7 +164,7 @@
 			<h3>Next topic</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="api.html" title="next chapter">弹出层 api</a>
+			<a href="test.html" title="next chapter">DOM.test</a>
 		</div>
 	</div>
 
@@ -188,7 +173,7 @@
 			<h3>This Page</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="../../sources/component/overlay/index.txt" rel="nofollow">Show Source</a>
+			<a href="../../sources/core/dom/filter.txt" rel="nofollow">Show Source</a>
 		</div>
 	</div>
 
@@ -197,15 +182,11 @@
 		<h3>Table Of KISSY Docs</h3>
 	</div>
 	<div class="s-box-bd">
-		<ul class="current">
+		<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">快速上手</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../seed/index.html">KISSY Seed</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../core/index.html">KISSY Core</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">KISSY Component</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">KISSY.Overlay</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dd/index.html">KISSY DD</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">KISSY Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../component/index.html">KISSY Component</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../editorguide/index.html">KISSY Editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../styleguide/index.html">KISSY Code Style</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../workflow/index.html">KISSY 组件开发</a></li>

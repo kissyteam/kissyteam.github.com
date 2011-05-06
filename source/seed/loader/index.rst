@@ -1,6 +1,6 @@
 .. py:module:: Loader
 
-KISSY Loader 文档
+KISSY Loader
 ===============================
 
 by `承玉 <yiminghe@gmail.com>`_
