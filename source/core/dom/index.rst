@@ -23,3 +23,4 @@ by `承玉 <yiminghe@gmail.com>`_
    val.rst
    text.rst
    css.rst
+   width.rst

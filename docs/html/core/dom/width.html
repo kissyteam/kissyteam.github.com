@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>KISSY.DOM &mdash; KISSY Docs valpha documentation</title>
+<title>DOM.width &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../static/reset.css"/>
 <link rel="stylesheet" href="../../static/kissy.css"/>
@@ -50,51 +50,85 @@
       <a href="../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="selector.html" title="KISSY selector"
+      <a href="../anim/index.html" title="KISSY.Anim"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../index.html" title="KISSY Core"
+      <a href="css.html" title="DOM.css"
          accesskey="P">previous</a> | </li>
     <li><a href="../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">KISSY Core</a> &#187; </li> 
+      <li><a href="../index.html" >KISSY Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">KISSY.DOM</a> &#187; </li> 
     </ul>
 </div>
 	<div  class="layout grid-s6m0">
 			<div class="col-main">
 				<div class="main-wrap">
 					
-  <span class="target" id="module-DOM"></span><div class="section" id="kissy-dom">
-<h1>KISSY.DOM<a class="headerlink" href="#kissy-dom" title="Permalink to this headline">¶</a></h1>
-<p>by <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="selector.html">KISSY selector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="query.html">DOM.query</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get.html">DOM.get</a></li>
-<li class="toctree-l1"><a class="reference internal" href="filter.html">DOM.filter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="test.html">DOM.test</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hasClass.html">DOM.hasClass</a></li>
-<li class="toctree-l1"><a class="reference internal" href="addClass.html">DOM.addClass</a></li>
-<li class="toctree-l1"><a class="reference internal" href="removeClass.html">DOM.removeClass</a></li>
-<li class="toctree-l1"><a class="reference internal" href="replaceClass.html">DOM.replaceClass</a></li>
-<li class="toctree-l1"><a class="reference internal" href="toggleClass.html">DOM.toggleClass</a></li>
-<li class="toctree-l1"><a class="reference internal" href="removeAttr.html">DOM.removeAttr</a></li>
-<li class="toctree-l1"><a class="reference internal" href="attr.html">DOM.attr</a></li>
-<li class="toctree-l1"><a class="reference internal" href="val.html">DOM.val</a></li>
-<li class="toctree-l1"><a class="reference internal" href="text.html">DOM.text</a></li>
-<li class="toctree-l1"><a class="reference internal" href="css.html">DOM.css</a></li>
-<li class="toctree-l1"><a class="reference internal" href="width.html">DOM.width</a></li>
-</ul>
+  <div class="section" id="dom-width">
+<h1>DOM.width<a class="headerlink" href="#dom-width" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="DOM.DOM.width">
+<tt class="descclassname">DOM.</tt><tt class="descname">width</tt><big>(</big><em>selector</em><big>)</big><a class="headerlink" href="#DOM.DOM.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>获取符合选择器的第一个元素的宽度值。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference external" href="dom-selector">KISSY selector</a></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">符合选择器的第一个元素的宽度值。</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">该方法始终返回像素值，例如</p>
 </div>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;width: 100px;&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;test&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 80%; height: 20px&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">,</span>
+    <span class="nx">elem</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;#test&#39;</span><span class="p">);</span>
+
+    <span class="nx">DOM</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">);</span> <span class="c1">// 返回 80%</span>
+    <span class="nx">DOM</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">);</span> <span class="c1">// 返回 20px</span>
+
+    <span class="nx">DOM</span><span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="nx">elem</span><span class="p">);</span> <span class="c1">// 返回 80</span>
+    <span class="nx">DOM</span><span class="p">.</span><span class="nx">height</span><span class="p">(</span><span class="nx">elem</span><span class="p">);</span> <span class="c1">// 返回 20</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt>
+<tt class="descclassname">DOM.</tt><tt class="descname">width</tt><big>(</big><em>selector</em>, <em>value</em><big>)</big></dt>
+<dd><p>给符合选择器的所有元素设置宽度值。相当于 <a class="reference internal" href="css.html#DOM.DOM.css" title="DOM.DOM.css"><tt class="xref py py-func docutils literal"><span class="pre">DOM.css(selector,&quot;width&quot;,value)</span></tt></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; <p>字符串格式参见 <a class="reference external" href="dom-selector">KISSY selector</a></p>
+</li>
+<li><strong>value</strong> (<em>string</em>) &#8211; 宽度值</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 
 
 					
 					<div class="s-box relative-links">
 						<div class="s-box-bd">
-                            <a href="../index.html" title="KISSY Core"> 上一页 </a> |
-                            <a href="../index.html" title="KISSY Core">回到上层</a> |
-                            <a href="selector.html" title="KISSY selector"> 下一页 </a>
+                            <a href="css.html" title="DOM.css"> 上一页 </a> |
+                            <a href="index.html" title="KISSY.DOM">回到上层</a> |
+                            <a href="../anim/index.html" title="KISSY.Anim"> 下一页 </a>
 						</div>
 					</div>
 					
@@ -146,7 +180,7 @@
 			<h3>Previous topic</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="../index.html" title="previous chapter">KISSY Core</a>
+			<a href="css.html" title="previous chapter">DOM.css</a>
 		</div>
 	</div>
 	<div class="s-box">
@@ -154,7 +188,7 @@
 			<h3>Next topic</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="selector.html" title="next chapter">KISSY selector</a>
+			<a href="../anim/index.html" title="next chapter">KISSY.Anim</a>
 		</div>
 	</div>
 
@@ -163,7 +197,7 @@
 			<h3>This Page</h3>
 		</div>
 		<div class="s-box-bd">
-			<a href="../../sources/core/dom/index.txt" rel="nofollow">Show Source</a>
+			<a href="../../sources/core/dom/width.txt" rel="nofollow">Show Source</a>
 		</div>
 	</div>
 
@@ -172,14 +206,10 @@
 		<h3>Table Of KISSY Docs</h3>
 	</div>
 	<div class="s-box-bd">
-		<ul class="current">
+		<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">快速上手</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../seed/index.html">KISSY Seed</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">KISSY Core</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">KISSY.DOM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../anim/index.html">KISSY.Anim</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">KISSY Core</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../component/index.html">KISSY Component</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../editorguide/index.html">KISSY Editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../styleguide/index.html">KISSY Code Style</a></li>
