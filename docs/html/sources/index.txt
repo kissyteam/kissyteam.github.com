@@ -1,7 +1,7 @@
 .. _index:
 
 
-KISSY Docs
+文档中心
 =============================
 
 
@@ -9,10 +9,8 @@ KISSY Docs
     :maxdepth: 2
   
     quickstart/index.rst
-    seed/index.rst
-    core/index.rst
-    component/index.rst   
-    editorguide/index.rst
+    api/index.rst
     styleguide/index.rst
+    tools/index.rst
     workflow/index.rst
-    tools/module-compiler/index.rst
+    
