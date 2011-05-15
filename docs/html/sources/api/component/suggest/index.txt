@@ -1,6 +1,6 @@
 ﻿.. module:: Suggest
 
-KISSY.Suggest - 搜索提示补全
+Suggest
 ======================================
 
 作者： `玉伯 <lifesinger@gmail.com>`_

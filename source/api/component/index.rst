@@ -1,5 +1,5 @@
 
-KISSY Component
+Component
 =============================
 
 
