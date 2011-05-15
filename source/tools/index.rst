@@ -7,4 +7,5 @@
 .. toctree::
     :maxdepth: 2
   
-    module-compiler/index.rst
+    module-compiler/index
+    use-sphinx

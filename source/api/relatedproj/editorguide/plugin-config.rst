@@ -1,3 +1,5 @@
+.. _editorusage-common-cfg:
+
 .. currentmodule:: Editor
 
 插件配置

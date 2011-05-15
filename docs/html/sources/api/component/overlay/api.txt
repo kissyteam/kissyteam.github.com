@@ -131,6 +131,7 @@ config 配置项详解
             第一个字符取值 t,b,c ，第二个字符取值 l,r,c。如下图所示
         
             .. image:: /_images/overlay/align.png
+                :width: 380 px
     
 .. py:attribute:: resize
 
