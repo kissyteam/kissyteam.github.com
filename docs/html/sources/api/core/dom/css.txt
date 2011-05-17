@@ -26,4 +26,8 @@ DOM.css
     给符合选择器的所有元素设置样式值。
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
-    :param object kv: 样式名与样式值的键值对          
+    :param object kv: 样式名与样式值的键值对，例如
+    
+        .. code-block:: javascript
+        
+            DOM.css('.widget', {position: 'absolute', top: '10px', left: '10px'});            

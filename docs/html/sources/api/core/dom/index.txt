@@ -3,7 +3,7 @@
 DOM
 ====================================
 
-by `承玉 <yiminghe@gmail.com>`_
+by `玉伯 <lifesinger@gmail.com>`_ , `承玉 <yiminghe@gmail.com>`_ 
 
 .. toctree::
    :maxdepth: 3
@@ -24,3 +24,32 @@ by `承玉 <yiminghe@gmail.com>`_
    text.rst
    css.rst
    width.rst
+   height.rst
+   addStyleSheet.rst
+   show.rst
+   hide.rst
+   toggle.rst
+   offset.rst
+   scrollTop.rst
+   scrollLeft.rst
+   docHeight.rst
+   docWidth.rst
+   viewportHeight.rst
+   viewportWidth.rst
+   scrollIntoView.rst
+   parent.rst
+   next.rst
+   prev.rst
+   siblings.rst
+   children.rst
+   contains.rst
+   create.rst
+   html.rst
+   remove.rst
+   insertBefore.rst
+   insertAfter.rst
+   append.rst
+   prepend.rst
+   data.rst
+   removeData.rst
+   unselectable.rst

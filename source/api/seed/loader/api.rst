@@ -64,7 +64,7 @@ API
     注册模块方式2, 注册单个模块，相当于 :ref:`KISSY.add({name:config}) <kissy-add-config>`
 
 
-KISSY 1.2 新增接口
+1.2 新增接口
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. versionadded:: 1.2
@@ -97,7 +97,7 @@ KISSY 1.2 新增接口
     {
     	attach:false,// 模块定义时不会执行定义函数 fn，只有在 use 时才执行，懒加载原则
     	requires:['depMod1','depMod2','./mod.css'] // 该模块的一些依赖项，
-    	                                           // 注意 css 为和模块 js 同目录下的 mod.css
+    	                      // 注意 css 为和模块 js 同目录下的 mod.css
     }
 
 
@@ -151,7 +151,7 @@ KISSY 1.2 新增接口
 
 
 
-kissy 1.2 新增接口
+1.2 新增接口
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. versionadded:: 1.2
@@ -180,7 +180,11 @@ kissy 1.2 新增接口
                     
                 .. attribute:: packages.path
                 
-                    类型字符串，表示包所在的 ``url`` 路径，相对路径表示相对于当前页面路径
+                    类型字符串，表示包所在的 ``url`` 路径，相对路径表示相对于当前页面路径，如果需要相对于当前执行脚本路径，则需要自己处理：
+                        .. code-block:: javascript
+                        
+                            var scripts=document.getElementsByTagName("script");
+                            alert(scripts[scripts.length-1].src);
                     
                 .. attribute:: packages.charset
                 
@@ -236,3 +240,56 @@ kissy 1.2 新增接口
 
 若线上环境使用 ``kissy-min.js`` ，则请使用 closure compiler 对所有模块文件进行压缩，
 例如 ``mod.js`` 压缩为 ``mod-min.js`` ，放在模块文件的同级目录下。
+
+
+1.2 代码更新机制
+------------------------------------
+
+由于动态加载的 js 文件不是写在页面中，所以不能从页面添加时间戳，并且1.2 loader新增的约定加载也不能配置具体模块文件路径，因此
+1.2 loader 提供了在包级别添加时间戳的机制
+
+
+.. code-block:: javascript
+
+    KISSY.config({
+        packages:[
+            {
+                name:"1.2", //包名
+                path:"http://xx.com/"
+            }
+        ]
+    });
+    
+    
+当更改包内模块后，只需修改tag属性。
+
+
+.. code-block:: javascript
+
+    KISSY.config({
+        packages:[
+            {
+                name:"1.2", //包名
+                tag:"20110323",
+                path:"http://xx.com/"
+            }
+        ]
+    });
+    
+那么下载动态加载的 js 文件路径后面会自动加上： ``?t=20110323``
+
+    
+静态部署
+----------------------------------------------------
+
+
+部署时也可以不采用动态加载，仅仅将 kissy loader 作为代码组织的一种方式，将所有的模块打包到一个文件静态引入放在页面中，
+当使用 ``KISSY.use`` 时如果模块已经过静态引入在页面中，则不会发送请求，这时建议所有模块的属性都设置为
+
+
+.. code-block:: javascript
+
+    KISSY.add("custommod",function(){},{attach:false});
+    
+
+``attach`` 设置为  false，表示只有在 ``use`` 时才会运行模块定义函数，消除模块过多而导致的页面初始化时的停滞问题。若定义模块时不写模块名则默认 ``attach`` 为 ``false`` .
