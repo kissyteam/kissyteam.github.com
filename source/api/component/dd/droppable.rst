@@ -1,6 +1,6 @@
 ﻿.. currentmodule:: DD
 
-Droppable API
+Droppable
 -----------------------------------------------
 
 引入

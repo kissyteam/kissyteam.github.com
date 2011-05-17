@@ -10,4 +10,3 @@ API文档
     seed/index.rst
     core/index.rst
     component/index.rst
-    relatedproj/index.rst
