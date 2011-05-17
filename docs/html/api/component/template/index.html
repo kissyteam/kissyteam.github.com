@@ -1,0 +1,388 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>Template &mdash; KISSY Docs valpha documentation</title>
+
+<link rel="stylesheet" href="../../../static/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="../../../static/favicon.ico"/>
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'alpha',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){  
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script> 
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../../../static/logo.png"/></a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+    <ul class="navigation">
+        <li><a href="http://kissyui.com/blog/">博客</a></li>
+        <li><a href="http://www.github.com/kissyteam">源码</a></li>
+        <!--<li><a href="../../../../html/about/index.html">关于</a></li>-->
+    </ul>
+</div>
+
+
+<div id="content">
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../../../demo/index.html" title="范例"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="../suggest/suggest.html" title="Suggest"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../index.html" accesskey="U">Component</a> &#187; </li> 
+    </ul>
+</div>
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+					
+  <span class="target" id="module-Template"></span><div class="section" id="template">
+<h1>Template<a class="headerlink" href="#template" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>特性<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<ul class="simple">
+<li>模板语法,从 <tt class="docutils literal"><span class="pre">{{#tagName}}</span></tt> 开始,由 <tt class="docutils literal"><span class="pre">{{/tagName}}</span></tt> 结束(如果有结束标签的话).</li>
+<li>模板变量, <tt class="docutils literal"><span class="pre">{{variable}}</span></tt> .</li>
+<li>原生支持 if/elseif/else/each/! 四个标签.</li>
+<li>支持嵌套.</li>
+<li>容错和调试.</li>
+<li>性能还不赖.</li>
+<li>容易扩展.</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="id2">
+<h2>模板语法和范例<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>变量<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>变量支持JavaScript语法里的任何有返回值的语句,比如  <tt class="docutils literal"><span class="pre">name</span></tt> ,  <tt class="docutils literal"><span class="pre">user.name</span></tt> ,  <tt class="docutils literal"><span class="pre">user[0].name</span></tt> , 甚至可以使用方法,  <tt class="docutils literal"><span class="pre">KISSY.one('#template').html()</span></tt></p>
+<div class="section" id="id4">
+<h4>语法<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{{</span><span class="nx">Variable</span><span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h4>范例<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{name}}.&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">render</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Frank&#39;</span><span class="p">});</span>
+
+<span class="nx">Hello</span><span class="p">,</span> <span class="nx">Frank</span><span class="p">.</span>
+
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{user.name}}.&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">render</span><span class="p">({</span><span class="nx">user</span><span class="o">:</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Frank&#39;</span><span class="p">}});</span>
+
+<span class="nx">Hello</span><span class="p">,</span> <span class="nx">Frank</span><span class="p">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="if">
+<h3>if 语句<a class="headerlink" href="#if" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h4>语法<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-javascript"><pre>{{#if conditions}}
+    BLOCK
+{{/if}}</pre>
+</div>
+</div>
+<div class="section" id="id7">
+<h4>范例<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{#if show}}{{name}}{{/if}})&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">render</span><span class="p">({</span><span class="nx">show</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Frank&#39;</span><span class="p">});</span>
+
+<span class="nx">Hello</span><span class="p">,</span> <span class="nx">Frank</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="elseelseif">
+<h3>else和elseif<a class="headerlink" href="#elseelseif" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h4>语法<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-javascript"><pre>{{#if conditions}}
+    BLOCK
+{{#elseif conditions}}
+    ELSEIF BLOCK
+{{#else}}
+    ELSE BLOCK
+{{/if}}</pre>
+</div>
+</div>
+<div class="section" id="id9">
+<h4>范例<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{#if showName}}{{name}}.{{#else}}{{nick}}{{/if}})&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">render</span><span class="p">({</span><span class="nx">showName</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Frank&#39;</span><span class="p">,</span> <span class="nx">nick</span><span class="o">:</span> <span class="s1">&#39;yyfrankyy&#39;</span><span class="p">});</span>
+
+<span class="nx">Hello</span><span class="p">,</span> <span class="nx">yyfrankyy</span><span class="p">.</span>
+
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{#if name}}{{name}}.{{#elseif nick}}{{nick}}{{/if}})&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">render</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Frank&#39;</span><span class="p">,</span> <span class="nx">nick</span><span class="o">:</span> <span class="s1">&#39;yyfrankyy&#39;</span><span class="p">});</span>
+
+<span class="nx">Hello</span><span class="p">,</span> <span class="nx">Frank</span><span class="p">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="each">
+<h3>each<a class="headerlink" href="#each" title="Permalink to this headline">¶</a></h3>
+<p>循环读取某个变量,直接调用 <tt class="docutils literal"><span class="pre">KISSY.each</span></tt> 方法进行遍历.</p>
+<div class="section" id="id10">
+<h4>语法<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-javascript"><pre>{{#each conditions as value index}}
+    BLOCK
+{{/each}}</pre>
+</div>
+<p>注意 <tt class="docutils literal"><span class="pre">as</span> <span class="pre">value</span> <span class="pre">index</span></tt> 可选</p>
+</div>
+<div class="section" id="id11">
+<h4>范例1(使用默认的循环参数)<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-javascript"><pre>KISSY.Template('Hello, {{#each users}}&lt;b color="{{_ks_value.color}}"&gt;{{_ks_value.user}}&lt;/b&gt;{{/each}})')
+    .render({users: [{name: 'Frank', color: 'red'}, {name: 'yyfrankyy', color: 'green']});
+
+Hello, &lt;b color="red"&gt;Frank&lt;/b&gt;&lt;b color="green"&gt;yyfrankyy&lt;/b&gt;</pre>
+</div>
+</div>
+<div class="section" id="id12">
+<h4>范例2(使用自定义参数,可选)<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-javascript"><pre>KISSY.Template('Hello, {{#each users as user}}&lt;b color="{{user.color}}"&gt;{{user.name}}&lt;/b&gt;{{/each}})')
+    .render({users: [{name: 'Frank', color: 'red'}, {name: 'yyfrankyy', color: 'green']});
+
+Hello, &lt;b color="red"&gt;Frank&lt;/b&gt;&lt;b color="green"&gt;yyfrankyy&lt;/b&gt;
+
+KISSY.Template('Hello, {{#each users as user index}}&lt;b color="{{user.color}}"&gt;{{index}}:{{user.name}}&lt;/b&gt;{{/each}})')
+    .render({users: [{name: 'Frank', color: 'red'}, {name: 'yyfrankyy', color: 'green']});
+
+Hello, &lt;b color="red"&gt;0:Frank&lt;/b&gt;&lt;b color="green"&gt;1:yyfrankyy&lt;/b&gt;</pre>
+</div>
+</div>
+<div class="section" id="id13">
+<h4>范例3(嵌套使用)<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-javascript"><pre>KISSY.Template('Hello, {{#each users as user}}&lt;b color="{{user.color}}"&gt;{{#each user.names as name}}{{name}}{{/each}}&lt;/b&gt;{{/each}})')
+    .render({users: [{names: ['Frank', 'Wang'], color: 'red'}, {names: ['Frank', 'Xu'], color: 'green']});
+
+Hello, &lt;b color="red"&gt;FrankWang&lt;/b&gt;&lt;b color="green"&gt;FrankXu&lt;/b&gt;</pre>
+</div>
+</div>
+</div>
+<div class="section" id="id14">
+<h3>单行注释<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id15">
+<h4>语法<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-javascript"><pre>{{#! comments}}</pre>
+</div>
+</div>
+<div class="section" id="id16">
+<h4>范例<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{#! here you go.}}{{name}}.&#39;</span><span class="p">).</span><span class="nx">render</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Frank&#39;</span><span class="p">});</span>
+
+<span class="nx">Hello</span><span class="p">,</span> <span class="nx">Frank</span><span class="p">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id17">
+<h3>标签嵌套<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<p>理论上支持任意标签嵌套,如果标签有关闭字符,记得关闭=,=,嵌套标签形成多代码块嵌套,作用域与JavaScript的作用域一致.</p>
+<div class="section" id="id18">
+<h4>语法<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-javascript"><pre>{{#each object}}
+    {{#if condition}}
+        BLOCK
+    {{/if}}
+{{/each}}</pre>
+</div>
+</div>
+<div class="section" id="id19">
+<h4>范例<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{#each users}}{{#if _ks_value.show}}{{_ks_value.name}}{{/if}}{{/each}}.&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">render</span><span class="p">({</span><span class="nx">users</span><span class="o">:</span> <span class="p">[{</span><span class="nx">show</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Frank&#39;</span><span class="p">},</span> <span class="p">{</span><span class="nx">show</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;yyfrankyy&#39;</span><span class="p">}]});</span>
+
+<span class="nx">Hello</span><span class="p">,</span> <span class="nx">yyfrankyy</span><span class="p">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id20">
+<h2>容错和调试.<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id21">
+<h3>容错<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<p>目前支持两种错误信息:</p>
+<ol class="arabic simple">
+<li>Syntax Error. 指模板在预编译阶段发生语法错误(模板编译后生成的脚本语法错误).</li>
+<li>Render Error. 指模板在渲染时发生错误(运行时错误,数据错误,或者模板变量错误等).</li>
+</ol>
+</div>
+<div class="section" id="id22">
+<h3>调试<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<p>默认情况下,模板将编译时和运行时的错误,直接返回到结果里.</p>
+<p>调试过程可调用 <tt class="docutils literal"><span class="pre">KISSY.Template.log()</span></tt> 方法输出渲染方法,定位脚本模板错误,并可通过引用 <tt class="docutils literal"><span class="pre">jsbeauty</span></tt> 来格式化生成的模板方法.</p>
+</div>
+</div>
+<div class="section" id="id23">
+<h2>模板性能对比<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://spreadsheets.google.com/ccc?key=0ApZFGfLktT7FdDgtcGdzWV9wSzRpX2FRTElzZmVoV2c&amp;hl=en#gid=3">https://spreadsheets.google.com/ccc?key=0ApZFGfLktT7FdDgtcGdzWV9wSzRpX2FRTElzZmVoV2c&amp;hl=en#gid=3</a></p>
+</div>
+<div class="section" id="id24">
+<h2>扩展<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h2>
+<p>模板方法仅依赖于KISSY的 <tt class="docutils literal"><span class="pre">core</span></tt> 部分,默认调用为:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;template here.&#39;</span><span class="p">).</span><span class="nx">render</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>而:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">templ</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Template</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>可直接预编译模板方法.</p>
+<div class="section" id="api">
+<h3>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="kissy-tmpl">
+<h4>KISSY.tmpl<a class="headerlink" href="#kissy-tmpl" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">tmpl</span><span class="p">(</span><span class="s1">&#39;#template&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Frank&#39;</span><span class="p">}).</span><span class="nx">appendTo</span><span class="p">(</span><span class="s1">&#39;#container&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id25">
+<h3>语法扩展<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<tt class="docutils literal"><span class="pre">KISSY.Template.addStatement()</span></tt> 方法,提供扩展语法的接口,目前支持标签语法开始,关闭及一个参数传递.</blockquote>
+<p>比如:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Template</span><span class="p">.</span><span class="nx">addStatement</span><span class="p">({</span><span class="s1">&#39;while&#39;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">start</span><span class="o">:</span> <span class="s1">&#39;while(KS_TEMPL_STAT_PARAM){&#39;</span><span class="p">,</span>
+    <span class="nx">end</span><span class="o">:</span> <span class="s1">&#39;}&#39;</span>
+<span class="p">}});</span>
+</pre></div>
+</div>
+<p>即可支持 <tt class="docutils literal"><span class="pre">while</span></tt> 语句</p>
+<div class="highlight-javascript"><pre>{{#while true}}
+    BLOCK
+{{/while}}</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+					
+					<div class="s-box relative-links">
+						<div class="s-box-bd">
+                            <a href="../suggest/suggest.html" title="Suggest"> 上一页 </a> |
+                            <a href="../index.html" title="Component">回到上层</a> |
+                            <a href="../../../demo/index.html" title="范例"> 下一页 </a>
+						</div>
+					</div>
+					
+					<div id="disqus_thread"></div>
+<script>
+    if(window.location.hostname.indexOf("kissyui.com")!=-1){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){        
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');   
+        }    
+    </script>    
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>
+				</div>
+			</div>
+	<div class="col-sub">
+
+<div class="s-box">
+	<div class="s-box-bd">
+		<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart/index.html">快速上手</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API文档</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../seed/index.html">Seed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../core/index.html">Core</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Component</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../overlay/index.html">Overlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dd/index.html">DD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../suggest/index.html">Suggest</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Template</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">特性</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">模板语法和范例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">容错和调试.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id23">模板性能对比</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id24">扩展</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../demo/index.html">范例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../relatedproj/index.html">子项目集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../styleguide/index.html">最佳编码实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">前端常用工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../workflow/index.html">组件开发指南</a></li>
+</ul>
+
+	</div>
+</div>
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>
