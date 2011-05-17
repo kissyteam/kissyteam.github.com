@@ -9,6 +9,4 @@ Suggest
    :maxdepth: 2
 
    desc.rst
-   demo.rst
-   usage.rst
    api.rst

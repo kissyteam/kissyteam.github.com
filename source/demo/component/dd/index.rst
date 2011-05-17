@@ -1,12 +1,19 @@
-﻿.. module:: DD
+﻿.. currentmodule:: DD
 
-DD
--------------------------------------------
-
-By `承玉 <yiminghe@gmail.com>`_
+KISSY DD Usage
+------------------------------------
 
 .. toctree::
    :maxdepth: 2
 
-   api.rst
-   usage.rst
+
+   draggable-usage.rst
+   droppable-usage.rst
+   draggable-delegate-usage.rst
+   droppable-delegate-usage.rst
+   
+
+更多   
+=========================
+
+`more on github <http://yiminghe.github.com/kissy/src/dd/demo.html>`_   

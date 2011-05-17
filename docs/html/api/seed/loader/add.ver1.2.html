@@ -72,79 +72,7 @@
 <h2>添加模块<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="Loader.KISSY.add">
-<<<<<<< HEAD:docs/html/api/seed/loader/add.ver1.2.html
 <tt class="descclassname">KISSY.</tt><tt class="descname">add</tt><big>(</big><em>name</em>, <em>fn</em><span class="optional">[</span>, <em>config</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Loader.KISSY.add" title="Permalink to this definition">¶</a></dt>
-=======
-<tt class="descclassname">KISSY.</tt><tt class="descname">add</tt><big>(</big><em>name</em>, <em>fn</em><big>)</big><a class="headerlink" href="#Loader.KISSY.add" title="Permalink to this definition">¶</a></dt>
-<dd><p>添加模块定义</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>string</em>) &#8211; 模块名称</li>
-<li><strong>fn</strong> (<em>function</em>) &#8211; 模块定义函数，若该模块的所有依赖项都已经载入完毕，则 <tt class="docutils literal"><span class="pre">fn</span></tt> 立即执行</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<span class="target" id="kissy-add-config"></span><dl class="function">
-<dt>
-<tt class="descclassname">KISSY.</tt><tt class="descname">add</tt><big>(</big><em>config</em><big>)</big></dt>
-<dd><p>注册模块方式1</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>object</em>) &#8211; 模块描述信息</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s2">&quot;custommod&quot;</span><span class="o">:</span><span class="p">{</span>
-        <span class="nx">fullpath</span><span class="o">:</span><span class="s2">&quot;http://xx.com/custommod.js&quot;</span><span class="p">,</span>
-        <span class="nx">cssfullpath</span><span class="o">:</span><span class="s2">&quot;http://xx.com/custommod.css&quot;</span><span class="p">,</span>
-        <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;depmod1&quot;</span><span class="p">,</span><span class="s2">&quot;depmod2&quot;</span><span class="p">]</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;custommod2&quot;</span><span class="o">:</span><span class="p">{</span>
-        <span class="nx">fullpath</span><span class="o">:</span><span class="s2">&quot;http://xx.com/custommod2.js&quot;</span><span class="p">,</span>
-        <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;depmod1&quot;</span><span class="p">,</span><span class="s2">&quot;depmod2&quot;</span><span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>指明了模块 <tt class="docutils literal"><span class="pre">custommod</span></tt> 与 <tt class="docutils literal"><span class="pre">custommod2</span></tt> 的模块文件路径以及其依赖的模块名称，
-那么当 <tt class="docutils literal"><span class="pre">use</span></tt> 该模块时就会从 <tt class="docutils literal"><span class="pre">fullpath</span></tt> 中载入模块定义和其依赖模块的定义，
-以及从 <tt class="docutils literal"><span class="pre">cssfullpath</span></tt> 中载入模块的样式表</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<ul class="last simple">
-<li><tt class="docutils literal"><span class="pre">fullpath</span></tt> 也可以直接是 css 文件，这时该模块为 css 模块，如果某个 js 模块依赖项配置了 css 模块，则 js 模块的初始化会等待 css 模块对应的 css 文件完毕，具体方法可见： <a class="reference external" href="http://lifesinger.wordpress.com/2011/05/02/seajs-css-support/">lifesinger 的探索</a> 。</li>
-<li>依赖的模块也要进行注册。该函数用在模块注册文件中,kissy 1.2 使用包机制取代模块注册，仍然兼容1.2以前模块注册方式。</li>
-</ul>
-</div>
-<dl class="function">
-<dt>
-<tt class="descclassname">KISSY.</tt><tt class="descname">add</tt><big>(</big><em>name</em>, <em>config</em><big>)</big></dt>
-<dd><p>注册模块方式2, 注册单个模块，相当于 <a class="reference internal" href="#kissy-add-config"><em>KISSY.add({name:config})</em></a></p>
-</dd></dl>
-
-<div class="section" id="id3">
-<h3>1.2 新增接口<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.2.</span></p>
-<dl class="function">
-<dt>
-<tt class="descclassname">KISSY.</tt><tt class="descname">add</tt><big>(</big><em>name</em>, <em>fn</em><span class="optional">[</span>, <em>config</em><span class="optional">]</span><big>)</big></dt>
->>>>>>> d9a4300e6420078eed2ae414b4956cb62052a223:docs/html/api/seed/loader/api.html
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -178,7 +106,6 @@
 <p class="first admonition-title">Note</p>
 <p class="last">模块名 <tt class="docutils literal"><span class="pre">name</span></tt> 也可以省略，不过部署阶段需要使用 <a class="reference internal" href="../../../tools/module-compiler/index.html#module-module-compiler" title="module-compiler"><tt class="xref py py-mod docutils literal"><span class="pre">KISSY</span> <span class="pre">Module</span> <span class="pre">Compiler</span></tt></a> .</p>
 </div>
-<<<<<<< HEAD:docs/html/api/seed/loader/add.ver1.2.html
 <div class="section" id="id3">
 <h3>范例: 添加模块<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;yourmod&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){},</span>
@@ -188,14 +115,6 @@
                                                    <span class="c1">// 注意 css 为和模块 js 同目录下的 mod.css</span>
     <span class="p">}</span>
 <span class="p">);</span>
-=======
-<p>示例:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nx">attach</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span><span class="c1">// 模块定义时不会执行定义函数 fn，只有在 use 时才执行，懒加载原则</span>
-    <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;depMod1&#39;</span><span class="p">,</span><span class="s1">&#39;depMod2&#39;</span><span class="p">,</span><span class="s1">&#39;./mod.css&#39;</span><span class="p">]</span> <span class="c1">// 该模块的一些依赖项，</span>
-                          <span class="c1">// 注意 css 为和模块 js 同目录下的 mod.css</span>
-<span class="p">}</span>
->>>>>>> d9a4300e6420078eed2ae414b4956cb62052a223:docs/html/api/seed/loader/api.html
 </pre></div>
 </div>
 <p>如果依赖的模块 <tt class="docutils literal"><span class="pre">depMod1</span></tt> 以及 <tt class="docutils literal"><span class="pre">depMod2</span></tt> 的定义函数有返回值，例如</p>
@@ -224,41 +143,8 @@
 </div>
 </div>
 <div class="section" id="id4">
-<<<<<<< HEAD:docs/html/api/seed/loader/add.ver1.2.html
 <h2>包配置<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>为了摆脱模块必须使用前注册的繁琐</p>
-=======
-<h2>使用模块<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="Loader.KISSY.use">
-<tt class="descclassname">KISSY.</tt><tt class="descname">use</tt><big>(</big><em>modNames</em><span class="optional">[</span>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Loader.KISSY.use" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>modNames</strong> (<em>string</em>) &#8211; 以 <tt class="docutils literal"><span class="pre">,</span></tt> 分割的模块名称集合字符串,例如 <tt class="docutils literal"><span class="pre">KISSY.use(&quot;custommod,custommod2&quot;);</span></tt></li>
-<li><strong>callback</strong> (<em>function</em>) &#8211; 当 <tt class="docutils literal"><span class="pre">modNames</span></tt> 中所有模块加载完毕后执行</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">注意 kissy &lt; 1.2 时使用模块前必须注册</p>
-</div>
-<div class="section" id="id5">
-<h3>1.2 新增接口<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.2.</span></p>
-<div class="section" id="id6">
-<h4>包配置<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
-<p>目的是为了摆脱模块必须使用前注册的繁琐</p>
->>>>>>> d9a4300e6420078eed2ae414b4956cb62052a223:docs/html/api/seed/loader/api.html
 <dl class="function">
 <dt id="Loader.KISSY.config">
 <tt class="descclassname">KISSY.</tt><tt class="descname">config</tt><big>(</big><em>config</em><big>)</big><a class="headerlink" href="#Loader.KISSY.config" title="Permalink to this definition">¶</a></dt>
@@ -288,14 +174,7 @@
 <dl class="attribute">
 <dt id="Loader.config.packages.path">
 <tt class="descclassname">packages.</tt><tt class="descname">path</tt><a class="headerlink" href="#Loader.config.packages.path" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>类型字符串，表示包所在的 <tt class="docutils literal"><span class="pre">url</span></tt> 路径，相对路径表示相对于当前页面路径，如果需要相对于当前执行脚本路径，则需要自己处理：</dt>
-<dd><div class="first last highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">scripts</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;script&quot;</span><span class="p">);</span>
-<span class="nx">alert</span><span class="p">(</span><span class="nx">scripts</span><span class="p">[</span><span class="nx">scripts</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="nx">src</span><span class="p">);</span>
-</pre></div>
-</div>
-</dd>
-</dl>
+<dd><p>类型字符串，表示包所在的 <tt class="docutils literal"><span class="pre">url</span></tt> 路径，相对路径表示相对于当前页面路径</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -341,65 +220,11 @@
 </li>
 </ol>
 </div>
-<<<<<<< HEAD:docs/html/api/seed/loader/add.ver1.2.html
 </div>
 <div class="section" id="id6">
 <h2>压缩模块<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-=======
-<div class="section" id="id7">
-<h4>使用模块<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
-<p>如果模块定义函数有返回值，则该模块返回值作为参数直接传入回调函数，例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;depMod1,depMod2&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DepMod1</span><span class="p">,</span><span class="nx">DepMod2</span><span class="p">){</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-<p>如果使用经过配置的包内的模块，则这些包内模块不需要事先注册，直接 <tt class="docutils literal"><span class="pre">use</span></tt> 即可，如果模块名以 <tt class="docutils literal"><span class="pre">/</span></tt> 结尾，则自动加后缀 index ，例如
-<tt class="docutils literal"><span class="pre">use(&quot;mods/m1/&quot;)</span></tt> 相当于 <tt class="docutils literal"><span class="pre">use(&quot;mods/m1/index&quot;)</span></tt> ，即自动加载 <tt class="docutils literal"><span class="pre">m1</span></tt> 目录下的 <tt class="docutils literal"><span class="pre">index.js</span></tt></p>
-</div>
-</div>
-</div>
-<div class="section" id="id8">
-<h2>压缩模块<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
->>>>>>> d9a4300e6420078eed2ae414b4956cb62052a223:docs/html/api/seed/loader/api.html
 <p>若线上环境使用 <tt class="docutils literal"><span class="pre">kissy-min.js</span></tt> ，则请使用 closure compiler 对所有模块文件进行压缩，
 例如 <tt class="docutils literal"><span class="pre">mod.js</span></tt> 压缩为 <tt class="docutils literal"><span class="pre">mod-min.js</span></tt> ，放在模块文件的同级目录下。</p>
-</div>
-<div class="section" id="id9">
-<h2>1.2 代码更新机制<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
-<p>由于动态加载的 js 文件不是写在页面中，所以不能从页面添加时间戳，并且1.2 loader新增的约定加载也不能配置具体模块文件路径，因此
-1.2 loader 提供了在包级别添加时间戳的机制</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-    <span class="nx">packages</span><span class="o">:</span><span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;1.2&quot;</span><span class="p">,</span> <span class="c1">//包名</span>
-            <span class="nx">path</span><span class="o">:</span><span class="s2">&quot;http://xx.com/&quot;</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-<p>当更改包内模块后，只需修改tag属性。</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-    <span class="nx">packages</span><span class="o">:</span><span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;1.2&quot;</span><span class="p">,</span> <span class="c1">//包名</span>
-            <span class="nx">tag</span><span class="o">:</span><span class="s2">&quot;20110323&quot;</span><span class="p">,</span>
-            <span class="nx">path</span><span class="o">:</span><span class="s2">&quot;http://xx.com/&quot;</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-<p>那么下载动态加载的 js 文件路径后面会自动加上： <tt class="docutils literal"><span class="pre">?t=20110323</span></tt></p>
-</div>
-<div class="section" id="id10">
-<h2>静态部署<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
-<p>部署时也可以不采用动态加载，仅仅将 kissy loader 作为代码组织的一种方式，将所有的模块打包到一个文件静态引入放在页面中，
-当使用 <tt class="docutils literal"><span class="pre">KISSY.use</span></tt> 时如果模块已经过静态引入在页面中，则不会发送请求，这时建议所有模块的属性都设置为</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;custommod&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){},{</span><span class="nx">attach</span><span class="o">:</span><span class="kc">false</span><span class="p">});</span>
-</pre></div>
-</div>
-<p><tt class="docutils literal"><span class="pre">attach</span></tt> 设置为  false，表示只有在 <tt class="docutils literal"><span class="pre">use</span></tt> 时才会运行模块定义函数，消除模块过多而导致的页面初始化时的停滞问题。若定义模块时不写模块名则默认 <tt class="docutils literal"><span class="pre">attach</span></tt> 为 <tt class="docutils literal"><span class="pre">false</span></tt> .</p>
 </div>
 </div>
 
@@ -463,33 +288,9 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API文档</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Seed</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Loader</a><ul class="current">
-<<<<<<< HEAD:docs/html/api/seed/loader/add.ver1.2.html
 <li class="toctree-l4"><a class="reference internal" href="add.html">KISSY.add</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="">KISSY.add (v1.2)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="use.html">KISSY.use</a></li>
-=======
-<li class="toctree-l4 current"><a class="current reference internal" href="">API</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id1">引入</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id2">添加模块</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="#id3">1.2 新增接口</a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="#id4">使用模块</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="#id5">1.2 新增接口</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="#id6">包配置</a></li>
-<li class="toctree-l7"><a class="reference internal" href="#id7">使用模块</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="#id8">压缩模块</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id9">1.2 代码更新机制</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id10">静态部署</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="usage.html">使用示例</a></li>
-<li class="toctree-l4"><a class="reference internal" href="index.html#id2">目标</a></li>
->>>>>>> d9a4300e6420078eed2ae414b4956cb62052a223:docs/html/api/seed/loader/api.html
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../kissy/index.html">Seed</a></li>
