@@ -6,7 +6,9 @@ import sys
 import os
 import glob
 try:
-    from distutils.core import setup, Command
+    from setuptools import setup
+    from distutils.core import Command
+    #from distutils.core import setup, Command
     from distutils.command.build import build
     from distutils.command.build_py import build_py
     if sys.version_info >= (3,):
