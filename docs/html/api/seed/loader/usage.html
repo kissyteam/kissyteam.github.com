@@ -1,0 +1,293 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>使用示例 &mdash; KISSY Docs valpha documentation</title>
+
+<link rel="stylesheet" href="../../../static/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="../../../static/favicon.ico"/>
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'alpha',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){  
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script> 
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../../../static/logo.png"/></a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+    <ul class="navigation">
+        <li><a href="http://kissyui.com/blog/">博客</a></li>
+        <li><a href="http://www.github.com/kissyteam">源码</a></li>
+        <!--<li><a href="../../../../html/about/index.html">关于</a></li>-->
+    </ul>
+</div>
+
+
+<div id="content">
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../kissy/index.html" title="Seed"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="api.html" title="API"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../index.html" >Seed</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Loader</a> &#187; </li> 
+    </ul>
+</div>
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+					
+  <div class="section" id="id1">
+<h1>使用示例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>&lt; 1.2<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>注册模块<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>
+   <span class="s2">&quot;1.1x-dep&quot;</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">fullpath</span><span class="o">:</span><span class="s2">&quot;http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/dep.js&quot;</span>
+   <span class="p">},</span>
+   <span class="s2">&quot;1.1x-mod&quot;</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">fullpath</span><span class="o">:</span><span class="s2">&quot;http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/mod.js&quot;</span><span class="p">,</span>
+        <span class="nx">cssfullpath</span><span class="o">:</span><span class="s2">&quot;http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/mod.css&quot;</span><span class="p">,</span>
+        <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;1.1x-dep&quot;</span><span class="p">]</span>
+   <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>定义模块<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/dep.js">被依赖模块 1.1x dep</a></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;1.1x-dep&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;1.1x-dep loaded&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/mod.js">主模块 1.1x mod</a></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;1.1x-mod&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;1.1x-mod loaded&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>使用模块<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;1.1x-mod&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="demo">
+<h3>demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h3>
+<button id='k11x'>1.1x 启动主模块</button>
+<script>
+    KISSY.add({
+       "1.1x-dep":{
+            fullpath:"http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/dep.js"
+       },
+       "1.1x-mod":{
+            fullpath:"http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/mod.js",
+            cssfullpath:"http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/mod.css",
+            requires:["1.1x-dep"]
+       }
+    });
+    KISSY.one("#k11x").on("click",function(){
+        KISSY.use("1.1x-mod");
+    });
+</script></div>
+</div>
+<div class="section" id="id6">
+<h2>1.2<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>包配置<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+    <span class="nx">packages</span><span class="o">:</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;1.2&quot;</span><span class="p">,</span> <span class="c1">//包名</span>
+            <span class="nx">tag</span><span class="o">:</span><span class="s2">&quot;20110323&quot;</span><span class="p">,</span><span class="c1">//时间戳，添加在动态脚本路径后面，用于更新包内模块代码</span>
+            <span class="nx">path</span><span class="o">:</span><span class="s2">&quot;http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/&quot;</span><span class="p">,</span> <span class="c1">//包对应路径，相对路径指相对于当前页面路径</span>
+            <span class="nx">charset</span><span class="o">:</span><span class="s2">&quot;gbk&quot;</span> <span class="c1">//包里模块文件编码格式</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>定义模块<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.2/dep.js">被依赖模块 1.2 dep</a></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;1.2/dep loaded&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.2/mod.js">主模块 1.2 mod</a></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;1.2/mod loaded&quot;</span><span class="p">);</span>
+<span class="p">},{</span>
+    <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;./dep&quot;</span><span class="p">,</span><span class="s2">&quot;./mod.css&quot;</span><span class="p">]</span> <span class="c1">//相对于当前模块js 定位</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>使用模块<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;1.2/mod&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>demo<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<button id='k12'>1.2 启动主模块</button>
+<script>
+    KISSY.config({
+        packages:[
+            {
+                name:"1.2", //包名
+                tag:"20110323",//时间戳，添加在动态脚本路径后面，用于更新包内模块代码
+                path:"http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/", //包对应路径，相对路径指相对于当前页面路径
+                charset:"gbk" //包里模块文件编码格式
+            }
+        ]
+    });
+    KISSY.one("#k12").on("click",function(){
+        KISSY.use("1.2/mod");
+    });
+</script></div>
+</div>
+</div>
+
+
+					
+					<div class="s-box relative-links">
+						<div class="s-box-bd">
+                            <a href="api.html" title="API"> 上一页 </a> |
+                            <a href="index.html" title="Loader">回到上层</a> |
+                            <a href="../kissy/index.html" title="Seed"> 下一页 </a>
+						</div>
+					</div>
+					
+					<div id="disqus_thread"></div>
+<script>
+    if(window.location.hostname.indexOf("kissyui.com")!=-1){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){        
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');   
+        }    
+    </script>    
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>
+				</div>
+			</div>
+	<div class="col-sub">
+
+<div class="s-box">
+	<div class="s-box-bd">
+		<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart/index.html">快速上手</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API文档</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Seed</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Loader</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">使用示例</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id2">&lt; 1.2</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#id3">注册模块</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#id4">定义模块</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#id5">使用模块</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#demo">demo</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#id6">1.2</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#id7">包配置</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#id8">定义模块</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#id9">使用模块</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#id10">demo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#id2">目标</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../kissy/index.html">Seed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../web/index.html">Web</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lang/index.html">Lang</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../core/index.html">Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../component/index.html">Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../relatedproj/index.html">Related Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../styleguide/index.html">最佳编码实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">前端常用工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../workflow/index.html">组件开发指南</a></li>
+</ul>
+
+	</div>
+</div>
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

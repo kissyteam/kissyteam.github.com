@@ -1,0 +1,408 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>api &mdash; KISSY Docs valpha documentation</title>
+
+<link rel="stylesheet" href="../../../static/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="../../../static/favicon.ico"/>
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'alpha',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){  
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script> 
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../../../static/logo.png"/></a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+    <ul class="navigation">
+        <li><a href="http://kissyui.com/blog/">博客</a></li>
+        <li><a href="http://www.github.com/kissyteam">源码</a></li>
+        <!--<li><a href="../../../../html/about/index.html">关于</a></li>-->
+    </ul>
+</div>
+
+
+<div id="content">
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="usage.html" title="使用示例"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="Anim"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Anim</a> &#187; </li> 
+    </ul>
+</div>
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+					
+  <div class="section" id="api">
+<h1>api<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>获取动画构造器<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>页面引入 kissy.js :</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>通过 use 加载 anim 模块：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;anim&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">Anim</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">Anim</span><span class="p">;</span>
+    <span class="c1">//使用 Anim 构造器</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2: </span>KISSY 1.2 可直接通过依赖注入，从函数参数中取得<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;anim&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Anim</span><span class="p">){</span>
+    <span class="c1">//使用 Anim 构造器</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</p>
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">KISSY 1.2 <a class="reference internal" href="../../seed/loader/index.html#module-Loader" title="Loader"><tt class="xref py py-mod docutils literal"><span class="pre">Loader</span></tt></a> 新增功能</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>构造器接口<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Anim.Anim">
+<em class="property">class </em><tt class="descclassname">Anim.</tt><tt class="descname">Anim</tt><big>(</big><em>elem</em>, <em>props</em><span class="optional">[</span>, <em>duration=1</em>, <em>easing='easeNone'</em>, <em>callback</em>, <em>nativeSupport=true</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Anim.Anim" title="Permalink to this definition">¶</a></dt>
+<dd><p>得到绑定于某个 dom 节点的动画实例</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>props</strong> (<em>object</em>) &#8211; <p>动画结束的 dom 样式值，例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">width</span><span class="o">:</span><span class="s2">&quot;100px&quot;</span><span class="p">,</span>
+    <span class="nx">height</span><span class="o">:</span><span class="s2">&quot;100px&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>表示节点将从当前宽高经过动画平滑变化到宽 100px 与高 100px</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">也可以设置 scrollLeft 或者 scrollTop，这时会直接对元素的滚动属性产生动画。</p>
+</div>
+</li>
+<li><strong>elem</strong> (选择器字符串或是通过 <tt class="docutils literal"><span class="pre">S.get</span></tt> 获得的原生 dom 节点) &#8211; 作用动画的元素节点</li>
+<li><strong>duration</strong> (<em>number</em>) &#8211; 动画持续时间，以秒为单元</li>
+<li><strong>easing</strong> (<em>string</em>) &#8211; <p>动画平滑函数，可取值
+&#8220;easeNone&#8221;,&#8221;easeIn&#8221;,&#8221;easeOut&#8221;,&#8221;easeBoth&#8221;,&#8221;easeInStrong&#8221;,
+&#8220;easeOutStrong&#8221;,&#8221;easeBothStrong&#8221;,&#8221;elasticIn&#8221;,&#8221;elasticOut&#8221;,
+&#8220;elasticBoth&#8221;,&#8221;backIn&#8221;,&#8221;backOut&#8221;,&#8221;backBoth&#8221;,
+&#8220;bounceIn&#8221;,&#8221;bounceOut&#8221;,&#8221;bounceBoth&#8221;</p>
+<p>效果预览，可以参考 Robert Penner 博士的：
+<a class="reference external" href="http://www.robertpenner.com/easing/easing_demo.html">easing_demo.html</a></p>
+</li>
+<li><strong>callback</strong> (<em>function</em>) &#8211; 动画结束回调</li>
+<li><strong>nativeSupport</strong> (<em>boolean</em>) &#8211; 是否在支持css动画的浏览器上使用原生机制</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="section" id="id3">
+<h3>实例动画对象<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>通过 <tt class="docutils literal"><span class="pre">var</span> <span class="pre">anim=Anim(...)</span></tt> 来实例化一个动画对象。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>实例方法<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="Anim.Anim.run">
+<tt class="descclassname">Anim.</tt><tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#Anim.Anim.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>在动画实例上调用，开始当前动画实例的动画.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Anim.Anim.stop">
+<tt class="descclassname">Anim.</tt><tt class="descname">stop</tt><big>(</big><em>finish=false</em><big>)</big><a class="headerlink" href="#Anim.Anim.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>在动画实例上调用，结束当前动画实例的动画.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>finish</strong> (<em>boolean</em>) &#8211; flasy 时，动画会在当前帧直接停止；为 true 时，动画停止时会立刻跳到最后一帧。</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id5">
+<h2>在节点实例上开始动画<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="Anim.Node.animate">
+<tt class="descclassname">Node.</tt><tt class="descname">animate</tt><big>(</big><em>props</em><span class="optional">[</span>, <em>duration=1</em>, <em>easing='easeNone'</em>, <em>callback</em>, <em>nativeSupport=true</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Anim.Node.animate" title="Permalink to this definition">¶</a></dt>
+<dd><p>在当前节点作用动画</p>
+</dd></dl>
+
+<p>参数可见 <a class="reference internal" href="#Anim.Anim" title="Anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">构造器</span></tt></a> 接口部分</p>
+<dl class="method">
+<dt id="Anim.Node.show">
+<tt class="descclassname">Node.</tt><tt class="descname">show</tt><big>(</big><span class="optional">[</span><em>speed</em>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Anim.Node.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>元素以动画效果显示</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>speed</strong> (<em>number</em>) &#8211; 动画持续时间，设置无动画</li>
+<li><strong>callback</strong> (<em>function</em>) &#8211; 动画结束后回调函数</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Anim.Node.hide">
+<tt class="descclassname">Node.</tt><tt class="descname">hide</tt><big>(</big><span class="optional">[</span><em>speed</em>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Anim.Node.hide" title="Permalink to this definition">¶</a></dt>
+<dd><p>元素以动画效果隐藏</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>speed</strong> (<em>number</em>) &#8211; 动画持续时间，设置无动画</li>
+<li><strong>callback</strong> (<em>function</em>) &#8211; 动画结束后回调函数</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Anim.Node.toggle">
+<tt class="descclassname">Node.</tt><tt class="descname">toggle</tt><big>(</big><span class="optional">[</span><em>speed</em>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Anim.Node.toggle" title="Permalink to this definition">¶</a></dt>
+<dd><p>当前元素为显示时动画效果隐藏，否则动画效果显示</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>speed</strong> (<em>number</em>) &#8211; 动画持续时间，设置无动画</li>
+<li><strong>callback</strong> (<em>function</em>) &#8211; 动画结束后回调函数</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Anim.Node.fadeIn">
+<tt class="descclassname">Node.</tt><tt class="descname">fadeIn</tt><big>(</big><span class="optional">[</span><em>speed=1</em>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Anim.Node.fadeIn" title="Permalink to this definition">¶</a></dt>
+<dd><p>元素渐隐效果显示</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>speed</strong> (<em>number</em>) &#8211; 单位秒，动画持续时间，设置无动画</li>
+<li><strong>callback</strong> (<em>function</em>) &#8211; 动画结束后回调函数</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Anim.Node.fadeOut">
+<tt class="descclassname">Node.</tt><tt class="descname">fadeOut</tt><big>(</big><span class="optional">[</span><em>speed=1</em>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Anim.Node.fadeOut" title="Permalink to this definition">¶</a></dt>
+<dd><p>元素渐隐效果隐藏</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>speed</strong> (<em>number</em>) &#8211; 单位秒，动画持续时间，设置无动画</li>
+<li><strong>callback</strong> (<em>function</em>) &#8211; 动画结束后回调函数</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Anim.Node.slideDown">
+<tt class="descclassname">Node.</tt><tt class="descname">slideDown</tt><big>(</big><span class="optional">[</span><em>speed=1</em>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Anim.Node.slideDown" title="Permalink to this definition">¶</a></dt>
+<dd><p>元素从上到下滑动显示</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>speed</strong> (<em>number</em>) &#8211; 单位秒，动画持续时间，设置无动画</li>
+<li><strong>callback</strong> (<em>function</em>) &#8211; 动画结束后回调函数</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Anim.Node.slideUp">
+<tt class="descclassname">Node.</tt><tt class="descname">slideUp</tt><big>(</big><span class="optional">[</span><em>speed=1</em>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Anim.Node.slideUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>元素从下到上隐藏</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>speed</strong> (<em>number</em>) &#8211; 单位秒，动画持续时间，设置无动画</li>
+<li><strong>callback</strong> (<em>function</em>) &#8211; 动画结束后回调函数</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+					
+					<div class="s-box relative-links">
+						<div class="s-box-bd">
+                            <a href="index.html" title="Anim"> 上一页 </a> |
+                            <a href="index.html" title="Anim">回到上层</a> |
+                            <a href="usage.html" title="使用示例"> 下一页 </a>
+						</div>
+					</div>
+					
+					<div id="disqus_thread"></div>
+<script>
+    if(window.location.hostname.indexOf("kissyui.com")!=-1){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){        
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');   
+        }    
+    </script>    
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>
+				</div>
+			</div>
+	<div class="col-sub">
+
+<div class="s-box">
+	<div class="s-box-bd">
+		<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart/index.html">快速上手</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API文档</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../seed/index.html">Seed</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Core</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../dom/index.html">DOM</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Anim</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">api</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id1">获取动画构造器</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id2">构造器接口</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#id3">实例动画对象</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#id4">实例方法</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id5">在节点实例上开始动画</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="usage.html">使用示例</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../component/index.html">Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../relatedproj/index.html">Related Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../styleguide/index.html">最佳编码实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">前端常用工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../workflow/index.html">组件开发指南</a></li>
+</ul>
+
+	</div>
+</div>
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>
