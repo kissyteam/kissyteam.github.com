@@ -58,8 +58,7 @@
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
       <li><a href="../index.html" >Component</a> &#187; </li>
-      <li><a href="index.html" >DD</a> &#187; </li>
-      <li><a href="api.html" accesskey="U">KISSY DD API</a> &#187; </li> 
+      <li><a href="index.html" accesskey="U">DD</a> &#187; </li> 
     </ul>
 </div>
 	<div  class="layout grid-s6m0">
@@ -95,27 +94,28 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<em>object</em>) &#8211; <p>实例化可拖放对象的配置项，包括</p>
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>object</em>) &#8211; <p>实例化可拖放对象的配置项，包括</p>
 <dl class="attribute">
 <dt id="DD.Proxy.config.node">
 <tt class="descclassname">config.</tt><tt class="descname">node</tt><a class="headerlink" href="#DD.Proxy.config.node" title="Permalink to this definition">¶</a></dt>
 <dd><p>类型函数，当 Draggable 对象需要代理节点时通过调用该函数产生代理节点，函数的参数为当前 Draggable 对象，
 返回值类型为 <tt class="docutils literal"><span class="pre">KISSY.Node</span></tt> 。该属性有默认值</p>
 <blockquote>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span><span class="p">(</span><span class="nx">drag</span><span class="p">)</span> <span class="p">{</span>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span><span class="p">(</span><span class="nx">drag</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nx">Node</span><span class="p">(</span><span class="nx">drag</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>即代理节点和当前节点保持一致。</p>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="DD.Proxy.config.destroyOnEnd">
 <tt class="descclassname">config.</tt><tt class="descname">destroyOnEnd</tt><a class="headerlink" href="#DD.Proxy.config.destroyOnEnd" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 boolean，默认 false。指明是否代理节点需要每次拖放前 <a class="reference internal" href="draggable.html#DD.Draggable.dragstart" title="DD.Draggable.dragstart"><tt class="xref py py-data docutils literal"><span class="pre">dragstart</span></tt></a> 生成，
-拖放后 <a class="reference internal" href="draggable.html#DD.Draggable.dragend" title="DD.Draggable.dragend"><tt class="xref py py-data docutils literal"><span class="pre">dragend</span></tt></a> 销毁。用于多 <a class="reference internal" href="draggable.html#DD.Draggable" title="DD.Draggable"><tt class="xref py py-class docutils literal"><span class="pre">Draggable</span></tt></a> 对象共享一个 Proxy 对象实例，且要求代理节点和单个 Draggable 对象关联，或者一个 <a class="reference internal" href="draggable-delegate.html#DD.DraggableDelegate" title="DD.DraggableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt></a> 对象共享一个 Proxy 对象实例。</p>
+<dd><p>类型 boolean，默认 false。指明是否代理节点需要每次拖放前 <a class="reference internal" href="../../../demo/component/dd/draggable.html#DD.Draggable.dragstart" title="DD.Draggable.dragstart"><tt class="xref py py-data docutils literal"><span class="pre">dragstart</span></tt></a> 生成，
+拖放后 <a class="reference internal" href="../../../demo/component/dd/draggable.html#DD.Draggable.dragend" title="DD.Draggable.dragend"><tt class="xref py py-data docutils literal"><span class="pre">dragend</span></tt></a> 销毁。用于多 <a class="reference internal" href="../../../demo/component/dd/draggable.html#DD.Draggable" title="DD.Draggable"><tt class="xref py py-class docutils literal"><span class="pre">Draggable</span></tt></a> 对象共享一个 Proxy 对象实例，且要求代理节点和单个 Draggable 对象关联，或者一个 <a class="reference internal" href="../../../demo/component/dd/draggable-delegate.html#DD.DraggableDelegate" title="DD.DraggableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt></a> 对象共享一个 Proxy 对象实例。</p>
 </dd></dl>
 
 </td>
@@ -135,7 +135,8 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>drag</strong> (<em>Draggable</em>) &#8211; 需要具备代理功能的 Draggable 对象</td>
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>drag</strong> (<em>Draggable</em>) &#8211; 需要具备代理功能的 Draggable 对象</td>
 </tr>
 </tbody>
 </table>
@@ -149,7 +150,8 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>drag</strong> (<em>Draggable</em>) &#8211; 具备代理功能的 Draggable 对象</td>
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>drag</strong> (<em>Draggable</em>) &#8211; 具备代理功能的 Draggable 对象</td>
 </tr>
 </tbody>
 </table>
@@ -169,7 +171,7 @@
 					<div class="s-box relative-links">
 						<div class="s-box-bd">
                             <a href="droppable-delegate.html" title="DroppableDelegate API"> 上一页 </a> |
-                            <a href="api.html" title="KISSY DD API">回到上层</a> |
+                            <a href="index.html" title="DD">回到上层</a> |
                             <a href="scroll.html" title="Scroll API"> 下一页 </a>
 						</div>
 					</div>
@@ -227,30 +229,22 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Component</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../overlay/index.html">Overlay</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">DD</a><ul class="current">
-<li class="toctree-l4 current"><a class="reference internal" href="api.html">KISSY DD API</a><ul class="current">
-<li class="toctree-l5"><a class="reference internal" href="draggable.html">Draggable API</a></li>
-<li class="toctree-l5"><a class="reference internal" href="droppable.html">Droppable API</a></li>
-<li class="toctree-l5"><a class="reference internal" href="ddm.html">DDM API</a></li>
-<li class="toctree-l5"><a class="reference internal" href="draggable-delegate.html">DraggableDelegate API</a></li>
-<li class="toctree-l5"><a class="reference internal" href="droppable-delegate.html">DroppableDelegate API</a></li>
-<li class="toctree-l5 current"><a class="current reference internal" href="">Proxy API</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="#id1">引入</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#id2">构造器</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#id3">实例方法</a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="scroll.html">Scroll API</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="usage.html">KISSY DD Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="draggable.html">Draggable API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="droppable.html">Droppable API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ddm.html">DDM API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="draggable-delegate.html">DraggableDelegate API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="droppable-delegate.html">DroppableDelegate API</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Proxy API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scroll.html">Scroll API</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../suggest/index.html">Suggest</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../relatedproj/index.html">Related Project</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../demo/index.html">范例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../relatedproj/index.html">子项目集</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../styleguide/index.html">最佳编码实践</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">前端常用工具</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../workflow/index.html">组件开发指南</a></li>

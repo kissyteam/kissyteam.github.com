@@ -53,13 +53,12 @@
       <a href="droppable.html" title="Droppable API"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="api.html" title="KISSY DD API"
+      <a href="index.html" title="DD"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
       <li><a href="../index.html" >Component</a> &#187; </li>
-      <li><a href="index.html" >DD</a> &#187; </li>
-      <li><a href="api.html" accesskey="U">KISSY DD API</a> &#187; </li> 
+      <li><a href="index.html" accesskey="U">DD</a> &#187; </li> 
     </ul>
 </div>
 	<div  class="layout grid-s6m0">
@@ -95,7 +94,8 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<em>object</em>) &#8211; <p>实例化可拖放对象的配置项，包括</p>
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>object</em>) &#8211; <p>实例化可拖放对象的配置项，包括</p>
 <dl class="attribute">
 <dt id="DD.Draggable.config.node">
 <tt class="descclassname">config.</tt><tt class="descname">node</tt><a class="headerlink" href="#DD.Draggable.config.node" title="Permalink to this definition">¶</a></dt>
@@ -108,11 +108,11 @@
 <dd><p>类型数组，数组每个元素是选择器字符串或者 HTMLElementNode ，作为鼠标在其上按下时触发节点拖放的钩子。
 如果不设置，则整个 <tt class="docutils literal"><span class="pre">node</span></tt> 作为触发钩子。</p>
 <blockquote>
-<div class="admonition note">
+<div><div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">handlers 的每个元素 dom 节点必须位于配置项 <tt class="docutils literal"><span class="pre">node</span></tt> dom 子树中。</p>
 </div>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="attribute">
@@ -172,7 +172,7 @@
 <dl class="attribute">
 <dt id="DD.Draggable.dragNode">
 <tt class="descclassname">Draggable.</tt><tt class="descname">dragNode</tt><a class="headerlink" href="#DD.Draggable.dragNode" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 <tt class="docutils literal"><span class="pre">KISSY.Node</span></tt> ，表示配置项中 <a class="reference internal" href="#DD.Draggable.config.node" title="DD.Draggable.config.node"><tt class="xref py py-attr docutils literal"><span class="pre">node</span></tt></a> 的值。</p>
+<dd><p>类型 <tt class="docutils literal"><span class="pre">KISSY.Node</span></tt> ，表示配置项中 <a class="reference internal" href="../../../demo/component/dd/draggable.html#DD.Draggable.config.node" title="DD.Draggable.config.node"><tt class="xref py py-attr docutils literal"><span class="pre">node</span></tt></a> 的值。</p>
 </dd></dl>
 
 <div class="admonition note">
@@ -196,13 +196,13 @@
 <tt class="descclassname">Draggable.</tt><tt class="descname">dragstart</tt><a class="headerlink" href="#DD.Draggable.dragstart" title="Permalink to this definition">¶</a></dt>
 <dd><p>当可拖放对象开始被用户拖放时触发，传给事件处理函数参数为事件对象 event ，包含</p>
 <blockquote>
-<dl class="attribute">
+<div><dl class="attribute">
 <dt id="DD.Draggable.dragstart.event.drag">
 <tt class="descclassname">Draggable.dragstart.event.</tt><tt class="descname">drag</tt><a class="headerlink" href="#DD.Draggable.dragstart.event.drag" title="Permalink to this definition">¶</a></dt>
 <dd><p>自身，当前拖放对象</p>
 </dd></dl>
 
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="data">
@@ -210,7 +210,7 @@
 <tt class="descclassname">Draggable.</tt><tt class="descname">drag</tt><a class="headerlink" href="#DD.Draggable.drag" title="Permalink to this definition">¶</a></dt>
 <dd><p>当可拖放对象拖放过程中触发，传给事件处理函数为事件对象 event ，包含</p>
 <blockquote>
-<dl class="attribute">
+<div><dl class="attribute">
 <dt id="DD.Draggable.drag.event.left">
 <tt class="descclassname">Draggable.drag.event.</tt><tt class="descname">left</tt><a class="headerlink" href="#DD.Draggable.drag.event.left" title="Permalink to this definition">¶</a></dt>
 <dd><p>type number , 拖放节点应该设置的相对文档根节点的横坐标位置。</p>
@@ -240,7 +240,7 @@
 <dd><p>自身，当前拖放对象</p>
 </dd></dl>
 
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="data">
@@ -248,37 +248,37 @@
 <tt class="descclassname">Draggable.</tt><tt class="descname">dragend</tt><a class="headerlink" href="#DD.Draggable.dragend" title="Permalink to this definition">¶</a></dt>
 <dd><p>当用户鼠标弹起放弃拖放时触发，传给事件处理函数参数为事件对象 event ，包含</p>
 <blockquote>
-<dl class="attribute">
+<div><dl class="attribute">
 <dt id="DD.Draggable.dragend.event.drag">
 <tt class="descclassname">Draggable.dragend.event.</tt><tt class="descname">drag</tt><a class="headerlink" href="#DD.Draggable.dragend.event.drag" title="Permalink to this definition">¶</a></dt>
 <dd><p>自身，当前拖放对象</p>
 </dd></dl>
 
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="data">
 <dt id="DD.Draggable.dragenter">
 <tt class="descclassname">Draggable.</tt><tt class="descname">dragenter</tt><a class="headerlink" href="#DD.Draggable.dragenter" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <a class="reference internal" href="droppable.html#DD.Droppable.dropenter" title="DD.Droppable.dropenter"><tt class="xref py py-data docutils literal"><span class="pre">Droppable.dropenter</span></tt></a> ，只不过该事件在当前 Draggable 对象上触发。</p>
+<dd><p>同 <a class="reference internal" href="../../../demo/component/dd/droppable.html#DD.Droppable.dropenter" title="DD.Droppable.dropenter"><tt class="xref py py-data docutils literal"><span class="pre">Droppable.dropenter</span></tt></a> ，只不过该事件在当前 Draggable 对象上触发。</p>
 </dd></dl>
 
 <dl class="data">
 <dt id="DD.Draggable.dragover">
 <tt class="descclassname">Draggable.</tt><tt class="descname">dragover</tt><a class="headerlink" href="#DD.Draggable.dragover" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <a class="reference internal" href="droppable.html#DD.Droppable.dropover" title="DD.Droppable.dropover"><tt class="xref py py-data docutils literal"><span class="pre">Droppable.dropover</span></tt></a> ，只不过该事件在当前 Draggable 对象上触发。</p>
+<dd><p>同 <a class="reference internal" href="../../../demo/component/dd/droppable.html#DD.Droppable.dropover" title="DD.Droppable.dropover"><tt class="xref py py-data docutils literal"><span class="pre">Droppable.dropover</span></tt></a> ，只不过该事件在当前 Draggable 对象上触发。</p>
 </dd></dl>
 
 <dl class="data">
 <dt id="DD.Draggable.dragexit">
 <tt class="descclassname">Draggable.</tt><tt class="descname">dragexit</tt><a class="headerlink" href="#DD.Draggable.dragexit" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <a class="reference internal" href="droppable.html#DD.Droppable.dropexit" title="DD.Droppable.dropexit"><tt class="xref py py-data docutils literal"><span class="pre">Droppable.dropexit</span></tt></a> ，只不过该事件在当前 Draggable 对象上触发。</p>
+<dd><p>同 <a class="reference internal" href="../../../demo/component/dd/droppable.html#DD.Droppable.dropexit" title="DD.Droppable.dropexit"><tt class="xref py py-data docutils literal"><span class="pre">Droppable.dropexit</span></tt></a> ，只不过该事件在当前 Draggable 对象上触发。</p>
 </dd></dl>
 
 <dl class="data">
 <dt id="DD.Draggable.dragdrophit">
 <tt class="descclassname">Draggable.</tt><tt class="descname">dragdrophit</tt><a class="headerlink" href="#DD.Draggable.dragdrophit" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <a class="reference internal" href="droppable.html#DD.Droppable.drophit" title="DD.Droppable.drophit"><tt class="xref py py-data docutils literal"><span class="pre">Droppable.drophit</span></tt></a> ，只不过该事件在当前 Draggable 对象上触发。</p>
+<dd><p>同 <a class="reference internal" href="../../../demo/component/dd/droppable.html#DD.Droppable.drophit" title="DD.Droppable.drophit"><tt class="xref py py-data docutils literal"><span class="pre">Droppable.drophit</span></tt></a> ，只不过该事件在当前 Draggable 对象上触发。</p>
 </dd></dl>
 
 <dl class="data">
@@ -287,26 +287,26 @@
 <dd><p>当用户鼠标弹起但是没有放置当前 <tt class="docutils literal"><span class="pre">Draggable</span></tt> 对象到一个 Droppable 对象时触发。
 传给事件处理函数参数为一个事件对象 event</p>
 <blockquote>
-<dl class="attribute">
+<div><dl class="attribute">
 <dt id="DD.Draggable.dragdropmiss.event.drag">
 <tt class="descclassname">Draggable.dragdropmiss.event.</tt><tt class="descname">drag</tt><a class="headerlink" href="#DD.Draggable.dragdropmiss.event.drag" title="Permalink to this definition">¶</a></dt>
 <dd><p>自身，当前拖放对象</p>
 </dd></dl>
 
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><tt class="docutils literal"><span class="pre">Draggble</span></tt> 实例化后仅表示会根据鼠标拖放触发相应的事件，但具体怎么处理仍需要调用者自己控制，
-例如可监听 <a class="reference internal" href="#DD.Draggable.drag" title="DD.Draggable.drag"><tt class="xref py py-data docutils literal"><span class="pre">drag</span></tt></a> 事件，根据事件对象参数的坐标设置拖放节点的具体位置。</p>
+例如可监听 <a class="reference internal" href="../../../demo/component/dd/draggable.html#DD.Draggable.drag" title="DD.Draggable.drag"><tt class="xref py py-data docutils literal"><span class="pre">drag</span></tt></a> 事件，根据事件对象参数的坐标设置拖放节点的具体位置。</p>
 <blockquote class="last">
-<div class="highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">Draggable</span><span class="p">({</span><span class="nx">node</span> <span class="o">:</span><span class="s2">&quot;#d&quot;</span><span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;drag&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">Draggable</span><span class="p">({</span><span class="nx">node</span> <span class="o">:</span><span class="s2">&quot;#d&quot;</span><span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;drag&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">).</span><span class="nx">offset</span><span class="p">({</span><span class="nx">left</span><span class="o">:</span><span class="nx">ev</span><span class="p">.</span><span class="nx">left</span><span class="p">,</span><span class="nx">top</span><span class="o">:</span><span class="nx">ev</span><span class="p">.</span><span class="nx">top</span><span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-</blockquote>
+</div></blockquote>
 </div>
 </div>
 </div>
@@ -315,8 +315,8 @@
 					
 					<div class="s-box relative-links">
 						<div class="s-box-bd">
-                            <a href="api.html" title="KISSY DD API"> 上一页 </a> |
-                            <a href="api.html" title="KISSY DD API">回到上层</a> |
+                            <a href="index.html" title="DD"> 上一页 </a> |
+                            <a href="index.html" title="DD">回到上层</a> |
                             <a href="droppable.html" title="Droppable API"> 下一页 </a>
 						</div>
 					</div>
@@ -374,33 +374,22 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Component</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../overlay/index.html">Overlay</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">DD</a><ul class="current">
-<li class="toctree-l4 current"><a class="reference internal" href="api.html">KISSY DD API</a><ul class="current">
-<li class="toctree-l5 current"><a class="current reference internal" href="">Draggable API</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="#id1">引入</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#id2">构造器</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#id3">类常量</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#id4">实例属性</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#id5">实例方法</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#draggable-events">触发事件</a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="droppable.html">Droppable API</a></li>
-<li class="toctree-l5"><a class="reference internal" href="ddm.html">DDM API</a></li>
-<li class="toctree-l5"><a class="reference internal" href="draggable-delegate.html">DraggableDelegate API</a></li>
-<li class="toctree-l5"><a class="reference internal" href="droppable-delegate.html">DroppableDelegate API</a></li>
-<li class="toctree-l5"><a class="reference internal" href="proxy.html">Proxy API</a></li>
-<li class="toctree-l5"><a class="reference internal" href="scroll.html">Scroll API</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="usage.html">KISSY DD Usage</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Draggable API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="droppable.html">Droppable API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ddm.html">DDM API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="draggable-delegate.html">DraggableDelegate API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="droppable-delegate.html">DroppableDelegate API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="proxy.html">Proxy API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scroll.html">Scroll API</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../suggest/index.html">Suggest</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../relatedproj/index.html">Related Project</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../demo/index.html">范例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../relatedproj/index.html">子项目集</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../styleguide/index.html">最佳编码实践</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">前端常用工具</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../workflow/index.html">组件开发指南</a></li>
