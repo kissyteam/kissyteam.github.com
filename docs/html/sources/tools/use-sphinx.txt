@@ -198,7 +198,11 @@ reST 是一种简单的标记语言, 规则非常简单.
 
 **特殊标记**
 
-* ``attention, caution, danger, error, hint, important, note, tip, warning, admonition`` (最常用 "note" 和 "warning")
+* ``attention``, ``caution``, ``danger``, ``error``, ``hint``, ``important``, ``note``, ``tip``, ``warning``, ``admonition`` (最常用 "note" 和 "warning"), 例如 ::
+
+    .. attention::
+
+       Please attention
 
 
 * 插入图片 ::
