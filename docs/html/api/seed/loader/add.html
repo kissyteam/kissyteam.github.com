@@ -67,14 +67,13 @@
 					
   <div class="section" id="kissy-add">
 <h1>KISSY.add<a class="headerlink" href="#kissy-add" title="Permalink to this headline">¶</a></h1>
-<p>by <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a> , <a class="reference external" href="mailto:fool2fish&#37;&#52;&#48;gmail&#46;com">fool2fish</a></p>
 <p>添加/注册模块,和KISSY.use一起使用，形成KISSY的模块加载体系</p>
-<div class="section" id="id2">
-<h2>定义单个模块<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>定义单个模块<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>当你需要编写一个新的模块来满足你的需求时,请使用此方式</p>
 <dl class="function">
-<dt id="Loader.KISSY.add">
-<tt class="descclassname">KISSY.</tt><tt class="descname">add</tt><big>(</big><em>name</em>, <em>fn</em><big>)</big><a class="headerlink" href="#Loader.KISSY.add" title="Permalink to this definition">¶</a></dt>
+<dt>
+<tt class="descclassname">KISSY.</tt><tt class="descname">add</tt><big>(</big><em>name</em>, <em>fn</em><big>)</big></dt>
 <dd><p>添加模块定义</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -91,8 +90,8 @@
 </table>
 </dd></dl>
 
-<div class="section" id="id3">
-<h3>范例: 一段典型的模块声明代码<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>范例: 一段典型的模块声明代码<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;yourmod&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
 
     <span class="kd">var</span> <span class="nx">D</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">,</span> <span class="nx">E</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Event</span>
@@ -135,8 +134,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="id4">
-<h2>注册单个模块<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>注册单个模块<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>当你需要注册某个已有模块时,请使用此方式</p>
 <dl class="function">
 <dt>
@@ -157,8 +156,8 @@
 </table>
 </dd></dl>
 
-<div class="section" id="id5">
-<h3>范例: 注册单个模块<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>范例: 注册单个模块<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;yourmod&#39;</span><span class="p">,{</span>
     <span class="nx">fullpath</span><span class="o">:</span><span class="s2">&quot;http://xx.com/custommod.js&quot;</span><span class="p">,</span>
     <span class="nx">cssfullpath</span><span class="o">:</span><span class="s2">&quot;http://xx.com/custommod.css&quot;</span><span class="p">,</span>
@@ -168,8 +167,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="id6">
-<h2>注册多个模块<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>注册多个模块<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>当你需要注册多个已有模块时,请使用此方式</p>
 <dl class="function">
 <dt>
@@ -186,8 +185,8 @@
 </table>
 </dd></dl>
 
-<div class="section" id="id7">
-<h3>范例: 注册多个模块<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>范例: 注册多个模块<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>
     <span class="s2">&quot;custommod&quot;</span><span class="o">:</span><span class="p">{</span>
         <span class="nx">fullpath</span><span class="o">:</span><span class="s2">&quot;http://xx.com/custommod.js&quot;</span><span class="p">,</span>

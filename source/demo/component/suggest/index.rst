@@ -1,4 +1,4 @@
-﻿.. module:: Suggest
+﻿.. currentmodule:: Suggest
 
 Suggest
 ======================================
@@ -8,5 +8,4 @@ Suggest
 .. toctree::
    :maxdepth: 2
 
-   desc.rst
-   api.rst
+   

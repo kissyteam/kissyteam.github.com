@@ -66,6 +66,7 @@
 					
   <div class="section" id="overlay">
 <h1>Overlay<a class="headerlink" href="#overlay" title="Permalink to this headline">¶</a></h1>
+<p>by <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></p>
 <div class="section" id="markup-overlay">
 <h2>从 markup 中构建 overlay<a class="headerlink" href="#markup-overlay" title="Permalink to this headline">¶</a></h2>
 <p>最常见的场景，弹出层 html 已经在页面 html 中，前端要做的是适时将它显示出来，例如页面中存在以下 html ：</p>
@@ -85,8 +86,8 @@
 <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;btn2&quot;</span><span class="nt">&gt;</span>Hide<span class="nt">&lt;/button&gt;</span>
 </pre></div>
 </div>
-<div class="section" id="id1">
-<h3>代码分解<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>代码分解<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
     <span class="nf">#popup1</span> <span class="p">{</span>
         <span class="k">position</span><span class="o">:</span><span class="k">absolute</span><span class="p">;</span>
@@ -97,8 +98,8 @@
 </pre></div>
 </div>
 <p>初始载入时，弹出层所在 div 是浮出在屏幕之外而隐藏的，当点击 Show 按钮时，该弹层对齐在 Hide 按钮旁边，当点击 Hide 按钮时，已经显示的弹层就隐藏了。</p>
-<div class="section" id="id2">
-<h4>获得 overlay 对象<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h4>获得 overlay 对象<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <p>通过 srcNode 配置项配置从已存的 dom 节点来生成 <a class="reference internal" href="../../../api/component/overlay/overlay.html#Overlay.Overlay" title="Overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> 对象 :</p>
 <div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -209,8 +210,8 @@
 <div class="section" id="dialog">
 <h2>全新创建一个 Dialog<a class="headerlink" href="#dialog" title="Permalink to this headline">¶</a></h2>
 <p>有时可能弹窗本身并没有在 html 中存在，而是由脚本完全生成的，这时就不需要 <a class="reference internal" href="../../../api/component/overlay/overlay.html#Overlay.srcNode" title="Overlay.srcNode"><tt class="xref py py-attr docutils literal"><span class="pre">srcNode</span></tt></a> 配置了，直接配置相关属性后即可完全由脚本生成所需的 dom 节点。</p>
-<div class="section" id="id3">
-<h3>生成 dialog 对象<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>生成 dialog 对象<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>注意：要使得弹出对话框头部可拖动，需要 <tt class="docutils literal"><span class="pre">use(&quot;dd&quot;)</span></tt> 使用拖放模块:</p>
 <div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -258,8 +259,8 @@
 </pre></div>
 </td></tr></table></div>
 </div>
-<div class="section" id="id4">
-<h3>触发 dialog 对象显示<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>触发 dialog 对象显示<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>当点击按钮时，首先调用 <a class="reference internal" href="../../../api/component/overlay/overlay.html#Overlay.Overlay.render" title="Overlay.Overlay.render"><tt class="xref py py-meth docutils literal"><span class="pre">render()</span></tt></a> 渲染 <a class="reference internal" href="../../../api/component/overlay/dialog.html#Overlay.Dialog" title="Overlay.Dialog"><tt class="xref py py-class docutils literal"><span class="pre">Dialog</span></tt></a> 对象，使得 dialog 生成的 dom 节点加入到文档树中，再调用 <a class="reference internal" href="../../../api/component/overlay/overlay.html#Overlay.Overlay.center" title="Overlay.Overlay.center"><tt class="xref py py-meth docutils literal"><span class="pre">center()</span></tt></a> 使得对话框位置在当前视窗中央，最后调用 <a class="reference internal" href="../../../api/component/overlay/overlay.html#Overlay.Overlay.show" title="Overlay.Overlay.show"><tt class="xref py py-meth docutils literal"><span class="pre">show()</span></tt></a> 显示 dialog：</p>
 <div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -273,8 +274,8 @@
 </pre></div>
 </td></tr></table></div>
 </div>
-<div class="section" id="id5">
-<h3>最终 demo<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>最终 demo<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <link rel="stylesheet" href="http://yiminghe.github.com/kissy/src/overlay/assets/cool.css"/>
 
 <div style='margin:10px 0;'>
@@ -312,8 +313,8 @@
     });
 </script></div>
 </div>
-<div class="section" id="id6">
-<h2>全部 demo<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h2>全部 demo<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="http://yiminghe.github.com/kissy/src/overlay/demo.html">KISSY.Overlay 1.20</a></p>
 <p><a class="reference external" href="http://kissyteam.github.com/kissy/src/overlay/demo.html">KISSY.Overlay 1.16</a></p>
 </div>
@@ -378,12 +379,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../quickstart/index.html">快速上手</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">API文档</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">范例</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../seed/index.html">Seed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../core/index.html">Core</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Component</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="">Overlay</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#markup-overlay">从 markup 中构建 overlay</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#dialog">全新创建一个 Dialog</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id6">全部 demo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">全部 demo</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../dd/index.html">DD</a></li>

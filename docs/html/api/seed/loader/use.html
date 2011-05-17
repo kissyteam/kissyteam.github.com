@@ -67,7 +67,6 @@
 					
   <div class="section" id="kissy-use">
 <h1>KISSY.use<a class="headerlink" href="#kissy-use" title="Permalink to this headline">¶</a></h1>
-<p>by <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a> , <a class="reference external" href="mailto:fool2fish&#37;&#52;&#48;gmail&#46;com">fool2fish</a></p>
 <p>使用模块,和KISSY.add一起使用，形成KISSY的模块加载体系</p>
 <dl class="function">
 <dt id="Loader.KISSY.use">
@@ -87,14 +86,15 @@
 </table>
 </dd></dl>
 
-<div class="section" id="id2">
-<h2>范例: 使用模块<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//function中的后两个参数DepMod1和DepMod2即为两个依赖模块的返回值</span>
+<div class="section" id="id1">
+<h2>范例: 使用模块<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//在 1.2 中 , function 中的后两个参数 DepMod1 和 DepMod2 即为两个依赖模块的返回值</span>
 <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;depMod1,depMod2&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DepMod1</span><span class="p">,</span><span class="nx">DepMod2</span><span class="p">){</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>如果使用经过配置的包内的模块，则这些包内模块不需要事先注册，直接 <tt class="docutils literal"><span class="pre">use</span></tt> 即可，如果模块名以 <tt class="docutils literal"><span class="pre">/</span></tt> 结尾，则自动加后缀 index ，例如
+<p>如果使用经过配置的包内的模块，则这些包内模块不需要事先注册，直接 <tt class="docutils literal"><span class="pre">use</span></tt> 即可，
+如果模块名以 <tt class="docutils literal"><span class="pre">/</span></tt> 结尾，则自动加后缀 index ，例如
 <tt class="docutils literal"><span class="pre">use(&quot;mods/m1/&quot;)</span></tt> 相当于 <tt class="docutils literal"><span class="pre">use(&quot;mods/m1/index&quot;)</span></tt> ，即自动加载 <tt class="docutils literal"><span class="pre">m1</span></tt> 目录下的 <tt class="docutils literal"><span class="pre">index.js</span></tt></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>

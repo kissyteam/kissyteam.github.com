@@ -3,7 +3,6 @@
 KISSY.add
 ======================================
 
-by `承玉 <yiminghe@gmail.com>`_ , `fool2fish <fool2fish@gmail.com>`_
 
 添加/注册模块,和KISSY.use一起使用，形成KISSY的模块加载体系
 
@@ -12,7 +11,8 @@ by `承玉 <yiminghe@gmail.com>`_ , `fool2fish <fool2fish@gmail.com>`_
 
 当你需要编写一个新的模块来满足你的需求时,请使用此方式
 
-.. function:: KISSY.add(name,fn)
+.. function:: KISSY.add(name,fn)   
+    :noindex: 
     
     添加模块定义    
 
@@ -71,6 +71,7 @@ by `承玉 <yiminghe@gmail.com>`_ , `fool2fish <fool2fish@gmail.com>`_
 当你需要注册某个已有模块时,请使用此方式
 
 .. function:: KISSY.add(name,config)
+    :noindex: 
     
     注册单个模块 
     
@@ -96,6 +97,7 @@ by `承玉 <yiminghe@gmail.com>`_ , `fool2fish <fool2fish@gmail.com>`_
 当你需要注册多个已有模块时,请使用此方式
 
 .. function:: KISSY.add(config)
+    :noindex: 
 
     注册多个模块
     
