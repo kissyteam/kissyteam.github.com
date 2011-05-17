@@ -21,9 +21,5 @@ Suggest
 .. toctree::
    :maxdepth: 2
 
-<<<<<<< HEAD
    suggest.rst
-=======
-   desc.rst
-   api.rst
->>>>>>> d9a4300e6420078eed2ae414b4956cb62052a223
+

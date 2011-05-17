@@ -1,6 +1,6 @@
 ﻿.. currentmodule:: DD
 
-Draggable & Proxy Usage
+Draggable & Proxy
 -----------------------------------------------
 
 

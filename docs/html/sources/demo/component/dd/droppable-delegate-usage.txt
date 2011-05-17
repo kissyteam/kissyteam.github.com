@@ -1,6 +1,6 @@
 ﻿.. currentmodule:: DD
 
-DroppableDelegate & Scroll Usage
+DroppableDelegate & Scroll
 -----------------------------------------------
 
 引入

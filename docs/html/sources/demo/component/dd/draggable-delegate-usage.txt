@@ -1,6 +1,6 @@
 ﻿.. currentmodule:: DD
 
-DraggableDelegate Usage
+DraggableDelegate
 -----------------------------------------------
 
 
