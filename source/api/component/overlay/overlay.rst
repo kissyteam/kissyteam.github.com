@@ -1,6 +1,6 @@
 .. py:currentmodule:: Overlay
 
-Overlay
+父类 Overlay
 ===================================================================
 
 获取构造器
@@ -60,7 +60,7 @@ config 配置项详解
 
 .. py:attribute:: srcNode
 
-    (optional): 类型选择器字符串，取第一个节点作为弹出层根节点的已存在页面节点，例如设置
+    (optional): 类型选择器字符串，取第一个节点作为弹出层的根节点，例如设置
 
     .. code-block:: javascript
     
@@ -76,7 +76,7 @@ config 配置项详解
             从页面已有元素中渲染而来
         </div>
 
-    则会把 ``overlay_test`` 转化为弹出层根节点。
+    则会把 ``overlay_test`` 转化为弹出层根节点。当不设置时表示新建一个 HTMLElement 插入到页面中.
 
 .. py:attribute:: width
 

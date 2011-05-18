@@ -40,21 +40,21 @@
 <div id="content">
 
 <div class='related'>
-    <h3>Navigation</h3>
+    <h3>导航</h3>
     
     <ul>
     <li class="right" style="margin-right: 10px">
-      <a href="../genindex.html" title="General Index"
-         accesskey="I">index</a></li>
+      <a href="../genindex.html" title="总目录"
+         accesskey="I">索引</a></li>
     <li class="right" >
       <a href="../py-modindex.html" title="Python Module Index"
-         >modules</a> | </li>
+         >模块</a> | </li>
     <li class="right" >
       <a href="../workflow/index.html" title="组件开发指南"
-         accesskey="N">next</a> | </li>
+         accesskey="N">下一页</a> | </li>
     <li class="right" >
       <a href="module-compiler/usage.html" title="使用说明"
-         accesskey="P">previous</a> | </li>
+         accesskey="P">上一页</a> | </li>
     <li><a href="../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="index.html" accesskey="U">前端常用工具</a> &#187; </li> 
     </ul>
@@ -64,37 +64,37 @@
 				<div class="main-wrap">
 					
   <div class="section" id="sphinx">
-<span id="usesphinx"></span><h1>Sphinx 使用介绍<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h1>
+<span id="usesphinx"></span><h1>Sphinx 使用介绍<a class="headerlink" href="#sphinx" title="永久链接至标题">¶</a></h1>
 <div class="section" id="sphinx-install">
-<span id="id1"></span><h2>安装及使用 Sphinx<a class="headerlink" href="#sphinx-install" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>安装及使用 Sphinx<a class="headerlink" href="#sphinx-install" title="永久链接至标题">¶</a></h2>
 <p><strong>解决依赖关系</strong></p>
 <blockquote>
-<ul class="simple">
+<div><ul class="simple">
 <li>Python 2.x (<a class="reference external" href="http://www.python.org/">http://www.python.org/</a>), 并将 Python 加入到 Path 中;</li>
 <li>Setup Tools: Python 的一个包安装/管理工具(<a class="reference external" href="http://pypi.python.org/pypi/setuptools">http://pypi.python.org/pypi/setuptools</a>, win 下有 exe, 直接安装即可);</li>
 <li>安装 docutils, cmd 下进入 kissyteam/tools/docutils-0.7, 运行 python setup.py install;</li>
 </ul>
-</blockquote>
+</div></blockquote>
 <p><strong>安装 Sphinx</strong></p>
 <blockquote>
-<ul class="simple">
+<div><ul class="simple">
 <li>cmd 下运行: easy_install -U Sphinx;</li>
 <li>cmd 下进入 kissyteam/tools/sphinx-to-github, 运行 python setup.py install;</li>
 </ul>
-</blockquote>
+</div></blockquote>
 <p><strong>编译文档</strong></p>
 <blockquote>
-<ul class="simple">
+<div><ul class="simple">
 <li>cmd 进入 kissyteam 目录, 运行 make.bat html , 在 docs 下生成 html;</li>
 <li>如果你想进一步了解如何创建 sphinx 工程, 见 <a class="reference external" href="http://code.google.com/p/pymotwcn/wiki/SphinxprojectHowto">http://code.google.com/p/pymotwcn/wiki/SphinxprojectHowto</a> ;</li>
 </ul>
-</blockquote>
+</div></blockquote>
 </div>
 <div class="section" id="rest">
-<span id="rst-primer"></span><h2>reST 入门<a class="headerlink" href="#rest" title="Permalink to this headline">¶</a></h2>
+<span id="rst-primer"></span><h2>reST 入门<a class="headerlink" href="#rest" title="永久链接至标题">¶</a></h2>
 <p>reST 是一种简单的标记语言, 规则非常简单.</p>
-<div class="admonition-see-also admonition seealso">
-<p class="first admonition-title">See also</p>
+<div class="admonition- admonition seealso">
+<p class="first admonition-title">也可以参考</p>
 <ul class="last simple">
 <li>完整的官方文档 <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText User Documentation</a></li>
 <li>中文翻译版本: <a class="reference external" href="http://wstudio.web.fc2.com/others/restructuredtext.html">http://wstudio.web.fc2.com/others/restructuredtext.html</a></li>
@@ -103,7 +103,7 @@
 <p><strong>段落</strong></p>
 <p>组织文档层次, 一般标题层次少于 4 级. 可以使用 :</p>
 <blockquote>
-<ul class="simple">
+<div><ul class="simple">
 <li><tt class="docutils literal"><span class="pre">#</span></tt> 部分</li>
 <li><tt class="docutils literal"><span class="pre">*</span></tt> 章节</li>
 <li><tt class="docutils literal"><span class="pre">=</span></tt>, 大节</li>
@@ -111,24 +111,24 @@
 <li><tt class="docutils literal"><span class="pre">^</span></tt>, 小小节</li>
 <li><tt class="docutils literal"><span class="pre">&quot;</span></tt>, 段落</li>
 </ul>
-</blockquote>
+</div></blockquote>
 <p>其实, 不同字符(#, =, &#8216; , `, ^, * )没有等级区别, 只是你在使用时, 需要统一一种等级标记即可.</p>
 <p><strong>行内标记</strong></p>
 <blockquote>
-<ul class="simple">
+<div><ul class="simple">
 <li>一个星号表示斜体: <tt class="docutils literal"><span class="pre">*text*</span></tt></li>
 <li>两个星号表示粗体: <tt class="docutils literal"><span class="pre">**text**</span></tt></li>
 <li>两个反斜号表示行内代码: <tt class="docutils literal"><span class="pre">``text``</span></tt></li>
 </ul>
-</blockquote>
+</div></blockquote>
 <p>使用上的限制:</p>
 <blockquote>
-<ul class="simple">
+<div><ul class="simple">
 <li>不能被嵌套,</li>
 <li>内容中不需要空白字符, 如: <tt class="docutils literal"><span class="pre">*</span> <span class="pre">text*</span></tt> , 这个是错误的写法,</li>
 <li>使用反斜杠进行转义: <tt class="docutils literal"><span class="pre">thisis\</span> <span class="pre">*one*\</span> <span class="pre">word</span></tt></li>
 </ul>
-</blockquote>
+</div></blockquote>
 <p><strong>无序/有序列表</strong></p>
 <div class="highlight-python"><pre>* This is a bulleted list.
 * It has two items, the second
@@ -193,7 +193,7 @@ It can span multiple lines.</pre>
 <p><strong>表格</strong></p>
 <p>生成这样的表格</p>
 <blockquote>
-<table border="1" class="docutils">
+<div><table border="1" class="docutils">
 <colgroup>
 <col width="29%" />
 <col width="29%" />
@@ -224,7 +224,7 @@ It can span multiple lines.</pre>
 </tr>
 </tbody>
 </table>
-</blockquote>
+</div></blockquote>
 <p>使用的语法是</p>
 <div class="highlight-python"><pre>=====  =====  =======
   A      B    A and B
@@ -243,11 +243,11 @@ True   True   True
 </div>
 <p><strong>内部链接</strong></p>
 <blockquote>
-<ul class="simple">
+<div><ul class="simple">
 <li>设定全局唯一的引用id, 如,  <tt class="docutils literal"><span class="pre">..</span> <span class="pre">_my-reference-label:</span></tt></li>
 <li>在其他页面就可以使用这个id来引用, 如, <tt class="docutils literal"><span class="pre">:ref:`提示文字</span> <span class="pre">&lt;my-reference-label&gt;`</span></tt></li>
 </ul>
-</blockquote>
+</div></blockquote>
 <p>例如</p>
 <div class="highlight-python"><pre>.. _my-reference-label:
 

@@ -40,21 +40,21 @@
 <div id="content">
 
 <div class='related'>
-    <h3>Navigation</h3>
+    <h3>导航</h3>
     
     <ul>
     <li class="right" style="margin-right: 10px">
-      <a href="../../../genindex.html" title="General Index"
-         accesskey="I">index</a></li>
+      <a href="../../../genindex.html" title="总目录"
+         accesskey="I">索引</a></li>
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
-         >modules</a> | </li>
+         >模块</a> | </li>
     <li class="right" >
       <a href="../suggest/index.html" title="Suggest"
-         accesskey="N">next</a> | </li>
+         accesskey="N">下一页</a> | </li>
     <li class="right" >
       <a href="draggable-delegate-usage.html" title="DraggableDelegate"
-         accesskey="P">previous</a> | </li>
+         accesskey="P">上一页</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >范例</a> &#187; </li>
       <li><a href="../index.html" >Component</a> &#187; </li>
@@ -66,28 +66,28 @@
 				<div class="main-wrap">
 					
   <div class="section" id="droppabledelegate-scroll">
-<h1>DroppableDelegate &amp; Scroll<a class="headerlink" href="#droppabledelegate-scroll" title="Permalink to this headline">¶</a></h1>
+<h1>DroppableDelegate &amp; Scroll<a class="headerlink" href="#droppabledelegate-scroll" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
-<h2>引入<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>引入<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>页面引入 kissy.js :</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 </div>
 <p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>通过 use 加载 dd 模块：<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">){</span>
+<span class="versionmodified">1.2 新版功能: </span>通过 use 加载 dd 模块：<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">){</span>
     <span class="kd">var</span> <span class="nx">DroppableDelegate</span> <span class="o">=</span> <span class="nx">DD</span><span class="p">.</span><span class="nx">DroppableDelegate</span><span class="p">,</span>
         <span class="nx">Scroll</span> <span class="o">=</span> <span class="nx">DD</span><span class="p">.</span><span class="nx">Scroll</span><span class="p">;</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 </p>
-<div class="admonition-see-also admonition seealso">
-<p class="first admonition-title">See also</p>
+<div class="admonition- admonition seealso">
+<p class="first admonition-title">也可以参考</p>
 <p class="last">KISSY 1.2 <a class="reference internal" href="../../../api/seed/loader/index.html#module-Loader" title="Loader"><tt class="xref py py-mod docutils literal"><span class="pre">Loader</span></tt></a> 新增功能</p>
 </div>
 </div>
 <div class="section" id="demo">
-<h2>demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
+<h2>demo<a class="headerlink" href="#demo" title="永久链接至标题">¶</a></h2>
 <p>基于拖放委托 + 容器自动滚动的拖放排序</p>
 <style>
     .container {
@@ -274,9 +274,9 @@
     });
 </script></div>
 <div class="section" id="id2">
-<h2>代码分解<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>代码分解<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id3">
-<h3>准备节点<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3>准备节点<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;container2&quot;</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;component&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;cheader&quot;</span><span class="nt">&gt;</span>
@@ -309,7 +309,7 @@
 </div>
 </div>
 <div class="section" id="dd">
-<h3>获取 dd 模块<a class="headerlink" href="#dd" title="Permalink to this headline">¶</a></h3>
+<h3>获取 dd 模块<a class="headerlink" href="#dd" title="永久链接至标题">¶</a></h3>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node,dd&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">DD</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="kd">var</span> <span class="nx">DDM</span> <span class="o">=</span> <span class="nx">DD</span><span class="p">.</span><span class="nx">DDM</span><span class="p">,</span>
@@ -325,7 +325,7 @@
 </div>
 </div>
 <div class="section" id="id4">
-<h3>初始化模块类实例<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>初始化模块类实例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>生成 <a class="reference internal" href="../../../api/component/dd/draggable-delegate.html#DD.DraggableDelegate" title="DD.DraggableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt></a> 对象</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">dragDelegate</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DraggableDelegate</span><span class="p">({</span>
     <span class="nx">container</span><span class="o">:</span><span class="s2">&quot;#container2&quot;</span><span class="p">,</span>
@@ -369,7 +369,7 @@
 </div>
 </div>
 <div class="section" id="id5">
-<h3>监控移动<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3>监控移动<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>在 <a class="reference internal" href="../../../api/component/dd/draggable-delegate.html#DD.DraggableDelegate" title="DD.DraggableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt></a> 上监听移动事件，并移动相应的被委托节点</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">dragDelegate</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;drag&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
 
@@ -384,7 +384,7 @@
 </div>
 </div>
 <div class="section" id="id6">
-<h3>交换节点位置<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h3>交换节点位置<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>当触发 <a class="reference internal" href="../../../api/component/dd/draggable.html#DD.Draggable.dragover" title="DD.Draggable.dragover"><tt class="xref py py-data docutils literal"><span class="pre">dragover</span></tt></a> 事件时，交换当前 DraggableDelegate 的被委托节点与对应 DroppableDelegate 的被委托节点</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">dragDelegate</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;dragover&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">drag</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">drag</span><span class="p">;</span>

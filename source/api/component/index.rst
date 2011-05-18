@@ -6,7 +6,8 @@ Component
 .. toctree::
    :maxdepth: 2
 
-   overlay/index.rst
-   dd/index.rst
-   suggest/index.rst
-   template/index.rst
+   overlay/index
+   switchable/index
+   dd/index
+   suggest/index
+   template/index

@@ -248,6 +248,7 @@ by `承玉 <yiminghe@gmail.com>`_
 全部 demo
 -------------------------------------------------------------------------------
 
-`KISSY.Overlay 1.20 <http://yiminghe.github.com/kissy/src/overlay/demo.html>`_       
+`KISSY.Overlay 1.1.6 <http://lizzie.github.com/kissy/src/overlay/demo/demo.html>`_
 
-`KISSY.Overlay 1.16 <http://kissyteam.github.com/kissy/src/overlay/demo.html>`_         
+
+`KISSY.Overlay 1.2.0 <http://kissyteam.github.com/kissy/src/overlay/demo.html>`_
