@@ -81,7 +81,7 @@ config 配置项详解
             });
         });
 
-.. attribute:: triggerType: {value:'click'}
+.. attribute:: triggerType
 
     触发类型, 可取 'click', 'mouse', 默认为 'click'.
 

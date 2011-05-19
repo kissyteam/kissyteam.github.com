@@ -50,7 +50,7 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >模块</a> | </li>
     <li class="right" >
-      <a href="tabs.html" title="子类 Tabs"
+      <a href="plugins.html" title="插件支持"
          accesskey="N">下一页</a> | </li>
     <li class="right" >
       <a href="index.html" title="Switchable"
@@ -125,21 +125,21 @@
 <div class="section" id="config">
 <h3>config 配置项详解<a class="headerlink" href="#config" title="永久链接至标题">¶</a></h3>
 <dl class="attribute">
-<dt id="Switchable.markupType">
-<tt class="descclassname">Switchable.</tt><tt class="descname">markupType</tt><a class="headerlink" href="#Switchable.markupType" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.markupType">
+<tt class="descclassname">Switchable.</tt><tt class="descname">markupType</tt><a class="headerlink" href="#Switchable.Switchable.markupType" title="永久链接至目标">¶</a></dt>
 <dd><p>(optional): {Number} 默认为0. 指明 DOM 结构标记的类型, 可取 0, 1, 2:</p>
 </dd></dl>
 
 <p>当取 0 时, 表示 DOM 是默认结构: 通过 nav 和 content 来获取 triggers 和 panels, 即通过配置以下两个参数获取.</p>
 <dl class="attribute">
-<dt id="Switchable.navCls">
-<tt class="descclassname">Switchable.</tt><tt class="descname">navCls</tt><a class="headerlink" href="#Switchable.navCls" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.navCls">
+<tt class="descclassname">Switchable.</tt><tt class="descname">navCls</tt><a class="headerlink" href="#Switchable.Switchable.navCls" title="永久链接至目标">¶</a></dt>
 <dd><p>(optional): {String}, triggers 所在容器的 class, 默认为 &#8216;ks-switchable-nav&#8217;,</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="Switchable.contentCls">
-<tt class="descclassname">Switchable.</tt><tt class="descname">contentCls</tt><a class="headerlink" href="#Switchable.contentCls" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.contentCls">
+<tt class="descclassname">Switchable.</tt><tt class="descname">contentCls</tt><a class="headerlink" href="#Switchable.Switchable.contentCls" title="永久链接至目标">¶</a></dt>
 <dd><p>(optional): {String}, panels 所在容器的 class, 默认为 &#8216;ks-switchable-content&#8217;,</p>
 </dd></dl>
 
@@ -164,14 +164,14 @@
 </blockquote>
 <p>当取 1 时,  表示 DOM 结构 可适度灵活：通过 cls 来获取 triggers 和 panels, 即通过配置以下两个参数获取.</p>
 <dl class="attribute">
-<dt id="Switchable.triggerCls">
-<tt class="descclassname">Switchable.</tt><tt class="descname">triggerCls</tt><a class="headerlink" href="#Switchable.triggerCls" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.triggerCls">
+<tt class="descclassname">Switchable.</tt><tt class="descname">triggerCls</tt><a class="headerlink" href="#Switchable.Switchable.triggerCls" title="永久链接至目标">¶</a></dt>
 <dd><p>(optional): {String}, 默认为 &#8216;ks-switchable-trigger&#8217;, 会在 container 下寻找指定 class 的元素作为触发器</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="Switchable.panelCls">
-<tt class="descclassname">Switchable.</tt><tt class="descname">panelCls</tt><a class="headerlink" href="#Switchable.panelCls" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.panelCls">
+<tt class="descclassname">Switchable.</tt><tt class="descname">panelCls</tt><a class="headerlink" href="#Switchable.Switchable.panelCls" title="永久链接至目标">¶</a></dt>
 <dd><p>(optional):  {String}, 默认为 &#8216;ks-switchable-panel&#8217;, 会在 container 下寻找指定 class 的元素作为面板</p>
 </dd></dl>
 
@@ -192,39 +192,39 @@
 </blockquote>
 <p>当取 2 时,  表示 DOM 结构 完全自由: 直接传入 triggers 和 panels, 即通过配置以下两个参数获取.</p>
 <dl class="attribute">
-<dt id="Switchable.triggers">
-<tt class="descclassname">Switchable.</tt><tt class="descname">triggers</tt><a class="headerlink" href="#Switchable.triggers" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.triggers">
+<tt class="descclassname">Switchable.</tt><tt class="descname">triggers</tt><a class="headerlink" href="#Switchable.Switchable.triggers" title="永久链接至目标">¶</a></dt>
 <dd><p>(optional): {Array}, 默认为 [], 触发器数组</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="Switchable.panels">
-<tt class="descclassname">Switchable.</tt><tt class="descname">panels</tt><a class="headerlink" href="#Switchable.panels" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.panels">
+<tt class="descclassname">Switchable.</tt><tt class="descname">panels</tt><a class="headerlink" href="#Switchable.Switchable.panels" title="永久链接至目标">¶</a></dt>
 <dd><p>(optional): {Array}, 默认为 [], 面板数组</p>
 </dd></dl>
 
 <p>这种方式下, DOM 结构就非常自由了, 传入什么内容有你自己定, 只需要 triggers 和 panels 的数量保持一致就好.</p>
 <dl class="attribute">
-<dt id="Switchable.hasTriggers">
-<tt class="descclassname">Switchable.</tt><tt class="descname">hasTriggers</tt><a class="headerlink" href="#Switchable.hasTriggers" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.hasTriggers">
+<tt class="descclassname">Switchable.</tt><tt class="descname">hasTriggers</tt><a class="headerlink" href="#Switchable.Switchable.hasTriggers" title="永久链接至目标">¶</a></dt>
 <dd><p>(optional): {Boolean}, 默认为 true, 是否有触点</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="Switchable.triggerType">
-<tt class="descclassname">Switchable.</tt><tt class="descname">triggerType</tt><a class="headerlink" href="#Switchable.triggerType" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.triggerType">
+<tt class="descclassname">Switchable.</tt><tt class="descname">triggerType</tt><a class="headerlink" href="#Switchable.Switchable.triggerType" title="永久链接至目标">¶</a></dt>
 <dd><p>(optional): {String} &#8216;mouse&#8217; 或 &#8216;click&#8217; , 默认为 &#8216;mouse&#8217; 触发类型</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="Switchable.delay">
-<tt class="descclassname">Switchable.</tt><tt class="descname">delay</tt><a class="headerlink" href="#Switchable.delay" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.delay">
+<tt class="descclassname">Switchable.</tt><tt class="descname">delay</tt><a class="headerlink" href="#Switchable.Switchable.delay" title="永久链接至目标">¶</a></dt>
 <dd><p>(optional): {Number} 触发延迟时间, 单位为s,  默认为 .1 , 即 100ms</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="Switchable.activeIndex">
-<tt class="descclassname">Switchable.</tt><tt class="descname">activeIndex</tt><a class="headerlink" href="#Switchable.activeIndex" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.activeIndex">
+<tt class="descclassname">Switchable.</tt><tt class="descname">activeIndex</tt><a class="headerlink" href="#Switchable.Switchable.activeIndex" title="永久链接至目标">¶</a></dt>
 <dd><p>(optional): {Number} markup 的默认激活项, 应该与此 index 一致, 默认为 0</p>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
@@ -233,14 +233,14 @@
 </dd></dl>
 
 <dl class="attribute">
-<dt id="Switchable.activeTriggerCls">
-<tt class="descclassname">Switchable.</tt><tt class="descname">activeTriggerCls</tt><a class="headerlink" href="#Switchable.activeTriggerCls" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.activeTriggerCls">
+<tt class="descclassname">Switchable.</tt><tt class="descname">activeTriggerCls</tt><a class="headerlink" href="#Switchable.Switchable.activeTriggerCls" title="永久链接至目标">¶</a></dt>
 <dd><p>(optional): {String} 激活某个 trigger 时设置的 class , 默认是 &#8216;ks-active&#8217;</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="Switchable.switchTo">
-<tt class="descclassname">Switchable.</tt><tt class="descname">switchTo</tt><a class="headerlink" href="#Switchable.switchTo" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.switchTo">
+<tt class="descclassname">Switchable.</tt><tt class="descname">switchTo</tt><a class="headerlink" href="#Switchable.Switchable.switchTo" title="永久链接至目标">¶</a></dt>
 <dd><p>(optional): : {Number} 初始话时, 自动切换到指定面板, 默认为 0 , 即第一个</p>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
@@ -253,21 +253,21 @@
 </dd></dl>
 
 <dl class="attribute">
-<dt id="Switchable.steps">
-<tt class="descclassname">Switchable.</tt><tt class="descname">steps</tt><a class="headerlink" href="#Switchable.steps" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.steps">
+<tt class="descclassname">Switchable.</tt><tt class="descname">steps</tt><a class="headerlink" href="#Switchable.Switchable.steps" title="永久链接至目标">¶</a></dt>
 <dd><p>(optional): {Number} 步长, 表示每次切换要间隔多少个 panels, 默认为 1</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="Switchable.viewSize">
-<tt class="descclassname">Switchable.</tt><tt class="descname">viewSize</tt><a class="headerlink" href="#Switchable.viewSize" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.viewSize">
+<tt class="descclassname">Switchable.</tt><tt class="descname">viewSize</tt><a class="headerlink" href="#Switchable.Switchable.viewSize" title="永久链接至目标">¶</a></dt>
 <dd><p>(optional): {Array} 可见视图区域的大小. 一般不需要设定此值, 仅当获取值不正确时, 用于手工指定大小, 默认为 []</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="Switchable.aria">
-<tt class="descclassname">Switchable.</tt><tt class="descname">aria</tt><a class="headerlink" href="#Switchable.aria" title="永久链接至目标">¶</a></dt>
-<dd><p>(optional): {Boolean} 无障碍访问支持, 默认为 false, 即不开启</p>
+<dt id="Switchable.Switchable.aria">
+<tt class="descclassname">Switchable.</tt><tt class="descname">aria</tt><a class="headerlink" href="#Switchable.Switchable.aria" title="永久链接至目标">¶</a></dt>
+<dd><p>(optional): {Boolean} 无障碍访问支持, 默认为 true, 开启</p>
 </dd></dl>
 
 </div>
@@ -275,14 +275,14 @@
 <div class="section" id="id3">
 <h2>实例属性<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <dl class="attribute">
-<dt id="Switchable.container">
-<tt class="descclassname">Switchable.</tt><tt class="descname">container</tt><a class="headerlink" href="#Switchable.container" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.container">
+<tt class="descclassname">Switchable.</tt><tt class="descname">container</tt><a class="headerlink" href="#Switchable.Switchable.container" title="永久链接至目标">¶</a></dt>
 <dd><p>(只读): {HTMLElement} 容器元素</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="Switchable.config">
-<tt class="descclassname">Switchable.</tt><tt class="descname">config</tt><a class="headerlink" href="#Switchable.config" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.config">
+<tt class="descclassname">Switchable.</tt><tt class="descname">config</tt><a class="headerlink" href="#Switchable.Switchable.config" title="永久链接至目标">¶</a></dt>
 <dd><p>(只读): {Object} 配置信息</p>
 </dd></dl>
 
@@ -299,14 +299,14 @@
 </dd></dl>
 
 <dl class="attribute">
-<dt id="Switchable.content">
-<tt class="descclassname">Switchable.</tt><tt class="descname">content</tt><a class="headerlink" href="#Switchable.content" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.content">
+<tt class="descclassname">Switchable.</tt><tt class="descname">content</tt><a class="headerlink" href="#Switchable.Switchable.content" title="永久链接至目标">¶</a></dt>
 <dd><p>(只读): {HTMLElement} 存放面板的容器元素</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="Switchable.length">
-<tt class="descclassname">Switchable.</tt><tt class="descname">length</tt><a class="headerlink" href="#Switchable.length" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.length">
+<tt class="descclassname">Switchable.</tt><tt class="descname">length</tt><a class="headerlink" href="#Switchable.Switchable.length" title="永久链接至目标">¶</a></dt>
 <dd><p>(只读): {Number} 触发器或面板的个数</p>
 </dd></dl>
 
@@ -317,8 +317,8 @@
 </dd></dl>
 
 <dl class="attribute">
-<dt id="Switchable.switchTimer">
-<tt class="descclassname">Switchable.</tt><tt class="descname">switchTimer</tt><a class="headerlink" href="#Switchable.switchTimer" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.switchTimer">
+<tt class="descclassname">Switchable.</tt><tt class="descname">switchTimer</tt><a class="headerlink" href="#Switchable.Switchable.switchTimer" title="永久链接至目标">¶</a></dt>
 <dd><p>(只读): {Object} 切换定时器, 一般作为内部使用</p>
 </dd></dl>
 
@@ -326,8 +326,8 @@
 <div class="section" id="id4">
 <h2>实例方法<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <dl class="method">
-<dt id="Switchable.Switchable.switchTo">
-<tt class="descclassname">Switchable.</tt><tt class="descname">switchTo</tt><big>(</big><em>index</em>, <em>direction</em>, <em>ev</em>, <em>callback</em><big>)</big><a class="headerlink" href="#Switchable.Switchable.switchTo" title="永久链接至目标">¶</a></dt>
+<dt>
+<tt class="descclassname">Switchable.</tt><tt class="descname">switchTo</tt><big>(</big><em>index</em>, <em>direction</em>, <em>ev</em>, <em>callback</em><big>)</big></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -380,8 +380,8 @@
 <div class="section" id="id5">
 <h2>触发事件<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <dl class="attribute">
-<dt id="Switchable.beforeSwitch">
-<tt class="descclassname">Switchable.</tt><tt class="descname">beforeSwitch</tt><a class="headerlink" href="#Switchable.beforeSwitch" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.beforeSwitch">
+<tt class="descclassname">Switchable.</tt><tt class="descname">beforeSwitch</tt><a class="headerlink" href="#Switchable.Switchable.beforeSwitch" title="永久链接至目标">¶</a></dt>
 <dd><p>切换前事件</p>
 <div class="admonition hint">
 <p class="first admonition-title">提示</p>
@@ -390,8 +390,8 @@
 </dd></dl>
 
 <dl class="attribute">
-<dt id="Switchable.switch">
-<tt class="descclassname">Switchable.</tt><tt class="descname">switch</tt><a class="headerlink" href="#Switchable.switch" title="永久链接至目标">¶</a></dt>
+<dt id="Switchable.Switchable.switch">
+<tt class="descclassname">Switchable.</tt><tt class="descname">switch</tt><a class="headerlink" href="#Switchable.Switchable.switch" title="永久链接至目标">¶</a></dt>
 <dd><p>切换事件</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">tabs</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Tabs</span><span class="p">(</span><span class="s1">&#39;#demo1&#39;</span><span class="p">);</span>
 
@@ -413,7 +413,7 @@
 						<div class="s-box-bd">
                             <a href="index.html" title="Switchable"> 上一页 </a> |
                             <a href="index.html" title="Switchable">回到上层</a> |
-                            <a href="tabs.html" title="子类 Tabs"> 下一页 </a>
+                            <a href="plugins.html" title="插件支持"> 下一页 </a>
 						</div>
 					</div>
 					
@@ -471,11 +471,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../overlay/index.html">Overlay</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Switchable</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="">父类 Switchable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plugins.html">插件支持</a></li>
 <li class="toctree-l4"><a class="reference internal" href="tabs.html">子类 Tabs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="slide.html">子类 Slide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="carousel.html">子类 Carousel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="accordion.html">子类 Accordion</a></li>
-<li class="toctree-l4"><a class="reference internal" href="plugins.html">插件支持</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../dd/index.html">DD</a></li>
