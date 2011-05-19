@@ -50,10 +50,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >模块</a> | </li>
     <li class="right" >
-      <a href="../dd/index.html" title="DD"
+      <a href="tabs.html" title="子类 Tabs"
          accesskey="N">下一页</a> | </li>
     <li class="right" >
-      <a href="accordion.html" title="子类 Accordion"
+      <a href="switchable.html" title="父类 Switchable"
          accesskey="P">上一页</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -67,15 +67,105 @@
 					
   <div class="section" id="id1">
 <h1>插件支持<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>自动播放<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h3>功能说明<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>初始化后, 不需要触发触发器, 即可自动播放</p>
+</div>
+<div class="section" id="config">
+<h3>新增 config 配置项<a class="headerlink" href="#config" title="永久链接至标题">¶</a></h3>
+<dl class="attribute">
+<dt id="Switchable.autoplay">
+<tt class="descclassname">Switchable.</tt><tt class="descname">autoplay</tt><a class="headerlink" href="#Switchable.autoplay" title="永久链接至目标">¶</a></dt>
+<dd><p>(optional):  {Boolean} 是否自动切换, 默认为 false</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Switchable.interval">
+<tt class="descclassname">Switchable.</tt><tt class="descname">interval</tt><a class="headerlink" href="#Switchable.interval" title="永久链接至目标">¶</a></dt>
+<dd><p>(optional):  {Number} 自动播放间隔时间, 以 s 为单位, 默认为 5,</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Switchable.pauseOnHover">
+<tt class="descclassname">Switchable.</tt><tt class="descname">pauseOnHover</tt><a class="headerlink" href="#Switchable.pauseOnHover" title="永久链接至目标">¶</a></dt>
+<dd><p>(optional):  {Boolean} triggerType 为 mouse 时, 鼠标悬停在 slide 上是否暂停自动播放, 默认为 true</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="id4">
+<h2>循环播放<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h3>功能说明<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>是否循环播放, 当切换到最初/最后一个时, 是否切换到最后/最初一个</p>
+</div>
+<div class="section" id="id6">
+<h3>新增 config 配置项<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<dl class="attribute">
+<dt id="Switchable.circular">
+<tt class="descclassname">Switchable.</tt><tt class="descname">circular</tt><a class="headerlink" href="#Switchable.circular" title="永久链接至目标">¶</a></dt>
+<dd><p>(optional):  {Boolean} 是否循环切换, 默认为 false</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="id7">
+<h2>动画效果<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id8">
+<h3>功能说明<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>支持上下切换(<tt class="docutils literal"><span class="pre">scrollx</span></tt>), 左右切换(<tt class="docutils literal"><span class="pre">scrolly</span></tt>), 渐入/渐出(<tt class="docutils literal"><span class="pre">fade</span></tt>), 或者直接自定义动画效果</p>
+</div>
+<div class="section" id="id9">
+<h3>新增 config 配置项<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<dl class="attribute">
+<dt id="Switchable.effect">
+<tt class="descclassname">Switchable.</tt><tt class="descname">effect</tt><a class="headerlink" href="#Switchable.effect" title="永久链接至目标">¶</a></dt>
+<dd><p>(optional):  {String} 动画效果函数, 默认没有特效, 可取 <tt class="docutils literal"><span class="pre">scrollx</span></tt>, <tt class="docutils literal"><span class="pre">scrolly</span></tt>, <tt class="docutils literal"><span class="pre">fade</span></tt> 或者直接传入自定义效果函数</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Switchable.duration">
+<tt class="descclassname">Switchable.</tt><tt class="descname">duration</tt><a class="headerlink" href="#Switchable.duration" title="永久链接至目标">¶</a></dt>
+<dd><p>(optional):  {Number} 动画的时长, 默认为 .5</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Switchable.easing">
+<tt class="descclassname">Switchable.</tt><tt class="descname">easing</tt><a class="headerlink" href="#Switchable.easing" title="永久链接至目标">¶</a></dt>
+<dd><p>(optional):  {String|Function} 动画效果, 详见 <tt class="xref py py-mod docutils literal"><span class="pre">Anim</span></tt>, 默认为 <tt class="docutils literal"><span class="pre">easeNone</span></tt></p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="id10">
+<h2>懒加载支持<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id11">
+<h3>功能说明<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<p>支持懒加载, 需要载入 S.Datalazyload</p>
+</div>
+<div class="section" id="id12">
+<h3>新增 config 配置项<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<dl class="attribute">
+<dt id="Switchable.lazyDataType">
+<tt class="descclassname">Switchable.</tt><tt class="descname">lazyDataType</tt><a class="headerlink" href="#Switchable.lazyDataType" title="永久链接至目标">¶</a></dt>
+<dd><p>(optional):  {String} 默认为 &#8216;area-data&#8217;, 设置延迟加载时使用的数据类型, 可取 <tt class="docutils literal"><span class="pre">area-data</span></tt>, 即 <tt class="docutils literal"><span class="pre">textarea</span></tt> 标签 或 <tt class="docutils literal"><span class="pre">img-src</span></tt>, 即 <tt class="docutils literal"><span class="pre">img</span></tt> 标签,</p>
+<blockquote>
+<div>详见 <tt class="xref py py-mod docutils literal"><span class="pre">Datalazyload</span></tt></div></blockquote>
+</dd></dl>
+
+</div>
+</div>
 </div>
 
 
 					
 					<div class="s-box relative-links">
 						<div class="s-box-bd">
-                            <a href="accordion.html" title="子类 Accordion"> 上一页 </a> |
+                            <a href="switchable.html" title="父类 Switchable"> 上一页 </a> |
                             <a href="index.html" title="Switchable">回到上层</a> |
-                            <a href="../dd/index.html" title="DD"> 下一页 </a>
+                            <a href="tabs.html" title="子类 Tabs"> 下一页 </a>
 						</div>
 					</div>
 					
@@ -133,11 +223,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../overlay/index.html">Overlay</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Switchable</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="switchable.html">父类 Switchable</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">插件支持</a></li>
 <li class="toctree-l4"><a class="reference internal" href="tabs.html">子类 Tabs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="slide.html">子类 Slide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="carousel.html">子类 Carousel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="accordion.html">子类 Accordion</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="">插件支持</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../dd/index.html">DD</a></li>

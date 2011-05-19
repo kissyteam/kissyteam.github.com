@@ -108,11 +108,11 @@
 <dd><p>类型数组，数组每个元素是选择器字符串或者 HTMLElementNode ，作为鼠标在其上按下时触发节点拖放的钩子。
 如果不设置，则整个 <tt class="docutils literal"><span class="pre">node</span></tt> 作为触发钩子。</p>
 <blockquote>
-<div class="admonition note">
+<div><div class="admonition note">
 <p class="first admonition-title">注解</p>
 <p class="last">handlers 的每个元素 dom 节点必须位于配置项 <tt class="docutils literal"><span class="pre">node</span></tt> dom 子树中。</p>
 </div>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="attribute">
@@ -196,13 +196,13 @@
 <tt class="descclassname">Draggable.</tt><tt class="descname">dragstart</tt><a class="headerlink" href="#DD.Draggable.dragstart" title="永久链接至目标">¶</a></dt>
 <dd><p>当可拖放对象开始被用户拖放时触发，传给事件处理函数参数为事件对象 event ，包含</p>
 <blockquote>
-<dl class="attribute">
+<div><dl class="attribute">
 <dt id="DD.Draggable.dragstart.event.drag">
 <tt class="descclassname">Draggable.dragstart.event.</tt><tt class="descname">drag</tt><a class="headerlink" href="#DD.Draggable.dragstart.event.drag" title="永久链接至目标">¶</a></dt>
 <dd><p>自身，当前拖放对象</p>
 </dd></dl>
 
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="data">
@@ -210,7 +210,7 @@
 <tt class="descclassname">Draggable.</tt><tt class="descname">drag</tt><a class="headerlink" href="#DD.Draggable.drag" title="永久链接至目标">¶</a></dt>
 <dd><p>当可拖放对象拖放过程中触发，传给事件处理函数为事件对象 event ，包含</p>
 <blockquote>
-<dl class="attribute">
+<div><dl class="attribute">
 <dt id="DD.Draggable.drag.event.left">
 <tt class="descclassname">Draggable.drag.event.</tt><tt class="descname">left</tt><a class="headerlink" href="#DD.Draggable.drag.event.left" title="永久链接至目标">¶</a></dt>
 <dd><p>type number , 拖放节点应该设置的相对文档根节点的横坐标位置。</p>
@@ -240,7 +240,7 @@
 <dd><p>自身，当前拖放对象</p>
 </dd></dl>
 
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="data">
@@ -248,13 +248,13 @@
 <tt class="descclassname">Draggable.</tt><tt class="descname">dragend</tt><a class="headerlink" href="#DD.Draggable.dragend" title="永久链接至目标">¶</a></dt>
 <dd><p>当用户鼠标弹起放弃拖放时触发，传给事件处理函数参数为事件对象 event ，包含</p>
 <blockquote>
-<dl class="attribute">
+<div><dl class="attribute">
 <dt id="DD.Draggable.dragend.event.drag">
 <tt class="descclassname">Draggable.dragend.event.</tt><tt class="descname">drag</tt><a class="headerlink" href="#DD.Draggable.dragend.event.drag" title="永久链接至目标">¶</a></dt>
 <dd><p>自身，当前拖放对象</p>
 </dd></dl>
 
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="data">
@@ -287,13 +287,13 @@
 <dd><p>当用户鼠标弹起但是没有放置当前 <tt class="docutils literal"><span class="pre">Draggable</span></tt> 对象到一个 Droppable 对象时触发。
 传给事件处理函数参数为一个事件对象 event</p>
 <blockquote>
-<dl class="attribute">
+<div><dl class="attribute">
 <dt id="DD.Draggable.dragdropmiss.event.drag">
 <tt class="descclassname">Draggable.dragdropmiss.event.</tt><tt class="descname">drag</tt><a class="headerlink" href="#DD.Draggable.dragdropmiss.event.drag" title="永久链接至目标">¶</a></dt>
 <dd><p>自身，当前拖放对象</p>
 </dd></dl>
 
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <div class="admonition note">
@@ -301,12 +301,12 @@
 <p><tt class="docutils literal"><span class="pre">Draggble</span></tt> 实例化后仅表示会根据鼠标拖放触发相应的事件，但具体怎么处理仍需要调用者自己控制，
 例如可监听 <a class="reference internal" href="#DD.Draggable.drag" title="DD.Draggable.drag"><tt class="xref py py-data docutils literal"><span class="pre">drag</span></tt></a> 事件，根据事件对象参数的坐标设置拖放节点的具体位置。</p>
 <blockquote class="last">
-<div class="highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">Draggable</span><span class="p">({</span><span class="nx">node</span> <span class="o">:</span><span class="s2">&quot;#d&quot;</span><span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;drag&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">Draggable</span><span class="p">({</span><span class="nx">node</span> <span class="o">:</span><span class="s2">&quot;#d&quot;</span><span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;drag&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">).</span><span class="nx">offset</span><span class="p">({</span><span class="nx">left</span><span class="o">:</span><span class="nx">ev</span><span class="p">.</span><span class="nx">left</span><span class="p">,</span><span class="nx">top</span><span class="o">:</span><span class="nx">ev</span><span class="p">.</span><span class="nx">top</span><span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-</blockquote>
+</div></blockquote>
 </div>
 </div>
 </div>
