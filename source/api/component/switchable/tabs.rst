@@ -4,5 +4,5 @@
 ===================================================================
 
 
-**S.Tabs 接口及配置项, 与 :attr:`~Switchable.Switchable` 完全相同!**
+S.Tabs 接口及配置项, 与 :attr:`~Switchable.Switchable` 完全相同!
 
