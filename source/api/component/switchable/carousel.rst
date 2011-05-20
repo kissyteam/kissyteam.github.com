@@ -5,13 +5,11 @@
 
 默认配置
 -------------------------------------------------------------
-S.Carousel 接口及配置项, 与 :attr:`~Switchable.Switchable` 相同, 其中以下四个配置项的默认值有所区别:
+S.Carousel 接口及配置项, 与 :attr:`~Switchable.Switchable` 相同, 其中以下配置项的默认值有所区别:
 
 
 
-.. attribute:: circular
-
-    (optional):  {Booelan} 是否循环切换, 默认为 true
+**Switchable.circular**    默认为 true, 即开启循环切换
 
 
 新增配置

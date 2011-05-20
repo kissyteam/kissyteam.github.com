@@ -14,7 +14,6 @@ by `玉伯 <lifesinger@gmail.com>`_
    :maxdepth: 3
 
    switchable
-   plugins
    tabs
    slide
    carousel

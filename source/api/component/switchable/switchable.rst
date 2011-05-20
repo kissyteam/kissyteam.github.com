@@ -177,9 +177,56 @@ config 配置项详解
 
     (optional): {Array} 可见视图区域的大小. 一般不需要设定此值, 仅当获取值不正确时, 用于手工指定大小, 默认为 []
 
-.. py:attribute:: Switchable.aria
 
-    (optional): {Boolean} 无障碍访问支持, 默认为 true, 开启
+.. py:attribute:: autoplay
+
+    (optional):  {Boolean} 是否自动切换, 默认为 false, 开启后, 不需要触发触发器, 即可自动播放
+
+
+.. py:attribute:: interval
+
+    (optional):  {Number} 自动播放间隔时间, 以 s 为单位, 默认为 5,
+
+.. py:attribute:: pauseOnHover
+
+    (optional):  {Boolean} triggerType 为 mouse 时, 鼠标悬停在 slide 上是否暂停自动播放, 默认为 true
+
+
+.. py:attribute:: circular
+
+    (optional):  {Boolean} 是否循环切换, 默认为 false, 是否循环播放, 当切换到最初/最后一个时, 是否切换到最后/最初一个
+
+
+
+.. py:attribute:: effect
+
+    (optional):  {String} 动画效果函数, 默认没有特效, 可取 ``scrollx``, ``scrolly``, ``fade`` 或者直接传入自定义效果函数
+
+.. py:attribute:: duration
+
+    (optional):  {Number} 动画的时长, 默认为 .5
+
+.. py:attribute:: easing
+
+    (optional):  {String|Function} 动画效果, 详见 :mod:`Anim`, 默认为 ``easeNone``
+
+
+.. py:attribute:: lazyDataType
+
+    (optional):  {String} 默认为 'area-data', 设置延迟加载时使用的数据类型, 可取 ``area-data``, 即 ``textarea`` 标签 或 ``img-src``, 即 ``img`` 标签
+
+.. note::
+
+    支持懒加载, 需要载入 S.Datalazyload, 详见 :mod:`Datalazyload`
+
+
+
+.. py:attribute:: aria
+
+    (optional): {Boolean} 无障碍访问支持, 默认为 false, 即关闭
+
+
+
 
 
 实例属性
