@@ -120,7 +120,7 @@ KISSY 中提供了 Ajax 异步请求功能, 下面仅介绍最常用的 ``getScr
    
 
 
-在简单介绍完 ``S.getScript`` 之后, 下面将讲述 KISSY 提供的动画支持 `Anim <anim.html>`_ ...
+在简单介绍完 ``S.getScript`` 之后, 下面将讲述 KISSY 提供的动画支持 :ref:`Anim <anim>` ...
 
 .. rubric:: 参考链接
 

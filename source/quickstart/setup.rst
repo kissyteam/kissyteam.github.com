@@ -7,7 +7,7 @@ Setup
 
 如何使用 KISSY ? 
 
-* 先将 `http://kissyteam.github.com/kissy/build/kissy-min.js <http://kissyteam.github.com/kissy/build/kissy-min.js>`_ 引入到你的页面;
+* 先将 `https://github.com/kissyteam/kissy/raw/master/build/kissy.js <https://github.com/kissyteam/kissy/raw/master/build/kissy.js>`_ 引入到你的页面;
 * 接着, **稍加** 编写一些代码, 就可以实现下面的效果了:
 
 .. raw:: html
@@ -62,7 +62,7 @@ Setup
 
 使用 KISSY 实现上面的效果, 只需大约 10 行代码.
 
-下一节将会详细介绍上面的示例，请看 `Hello KISSY <hellokissy.html>`_ ~
+下一节将会详细介绍上面的示例，请看 :ref:`Hello KISSY  <hellokissy>` ~
 
 
 

@@ -38,7 +38,7 @@ Hello KISSY
 
 
 ``DOM/Event`` 是最基本的功能, 掌握了这两个, 就能基本使用 KISSY 了.
-接下来将介绍 `Node <node.html>`_ 对象的使用.
+接下来将介绍 :ref:`Node <usenode>` 对象的使用.
 
 
 

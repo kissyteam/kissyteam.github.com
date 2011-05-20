@@ -258,5 +258,5 @@ KISSY 中, 通过 ``add( name, fn )`` 方法来添加新的模块. 在 KISSY 内
 **注意:** 上面的 StarScore 组件仅是示范，实际应用中，会更复杂些.
 
 
-下一节将介绍如何对现有的 KISSY 组件进行扩展 ---- `扩展 Switchable <extendwidgets.html>`_
+下一节将介绍如何对现有的 KISSY 组件进行扩展 ---- :ref:`扩展 Switchable <extendwidgets>`
 
