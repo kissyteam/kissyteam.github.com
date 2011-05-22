@@ -15,14 +15,14 @@ S.Carousel 接口及配置项, 与 :attr:`~Switchable.Switchable` 相同, 其中
 新增配置
 -------------------------------------------------------------
 
-.. attribute:: prevBtnCls
+.. attribute:: Carousel.prevBtnCls
 
     (optional):  {String} 前一个触发器的 cls, 默认为 'ks-switchable-prev-btn'
 
-.. attribute:: nextBtnCls
+.. attribute:: Carousel.nextBtnCls
 
     (optional): {String} 后一个触发器的 cls, 默认为 'ks-switchable-next-btn'
 
-.. attribute:: disableBtnCls
+.. attribute:: Carousel.disableBtnCls
 
     (optional): {String} 触发器不可用时的 cls, 默认为 'ks-switchable-disable-btn'

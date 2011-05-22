@@ -19,6 +19,6 @@ S.Accordion 接口及配置项, 与 :attr:`~Switchable.Switchable` 相同, 其�
 新增配置
 -------------------------------------------------------------
 
-.. attribute:: multiple
+.. attribute:: Accordion.multiple
 
     (optional): {Booelan} 是否开启同时展开多个面板功能, 默认为 false
