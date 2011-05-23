@@ -97,10 +97,15 @@
 
 <p class="versionchanged">
 <span class="versionmodified">在 1.2 版更改: </span>key 可以不加 <tt class="docutils literal"><span class="pre">[]</span></tt> 如 <tt class="docutils literal"><span class="pre">v=1&amp;v=2</span> <span class="pre">=&gt;</span> <span class="pre">{v:[1,2]}</span></tt></p>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">参数值如果是 gbk 编码的，则不会解码出对应的真实值。（用的原生 decodeURIComponent，请修改参数值为 utf-8 编码）。</p>
+</div>
 <p>例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">;</span>
 
 <span class="nx">S</span><span class="p">.</span><span class="nx">unparam</span><span class="p">(</span><span class="s1">&#39;foo=1&amp;bar=2&#39;</span><span class="p">);</span> <span class="c1">// =&gt; { foo: 1, bar: 2 }</span>
+<span class="nx">S</span><span class="p">.</span><span class="nx">unparam</span><span class="p">(</span><span class="s1">&#39;foo=%81%47&#39;</span><span class="p">);</span> <span class="c1">// gbk 编码 =&gt; { foo: &quot;%81%47&quot; } 而不是 {foo: &quot;丢&quot;}</span>
 <span class="nx">S</span><span class="p">.</span><span class="nx">unparam</span><span class="p">(</span><span class="s1">&#39;foo=1&amp;bar=2&amp;bar=3&#39;</span><span class="p">);</span> <span class="c1">// =&gt; { foo: 1, bar: [2, 3] }</span>
 <span class="nx">S</span><span class="p">.</span><span class="nx">unparam</span><span class="p">(</span><span class="s1">&#39;foo=1&amp;bar%5B%5D=2&amp;bar%5B%5D=3&#39;</span><span class="p">);</span> <span class="c1">// =&gt; { foo: 1, bar: [2, 3] }</span>
 </pre></div>
