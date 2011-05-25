@@ -12,7 +12,8 @@ by `承玉 <yiminghe@gmail.com>`_ , `fool2fish <fool2fish@gmail.com>`_
 
 .. toctree::
    :maxdepth: 1
-
+   
+   getScript.rst 
    add.rst
    add.ver1.2.rst
    use.rst

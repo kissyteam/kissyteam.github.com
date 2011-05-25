@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  p { margin:10px;padding:5px;border:2px solid #666; }
+  </style>
+  <script>
+    if(location.host=="localhost"){
+        document.writeln('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+    }else{
+        document.writeln('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+    }
+   </script>
+</head>
+<body>
+  <p>Hello</p><p></p>
+<script>
+    KISSY.use("node,sizzle",function(S,Node){
+        var p = Node.all("p:first");
+        Node.all("p:last").text( "scrollTop:" + p.scrollTop() );
+    });
+</script>    
+</body>
+</html>

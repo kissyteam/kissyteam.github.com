@@ -104,6 +104,13 @@ by `承玉 <yiminghe@gmail.com>`_
 .. method:: Node.animate(props[,duration=1,easing='easeNone',callback,nativeSupport=true])
 
     在当前节点作用动画
+    
+.. method:: Node.stop(finish)
+
+    .. versionadded:: 1.2 
+        停止在当前节点作用动画   
+        
+    :param boolean finish: flasy 时，动画会在当前帧直接停止；为 true 时，动画停止时会立刻跳到最后一帧。     
 
 参数可见 :class:`构造器<Anim.Anim>` 接口部分
 

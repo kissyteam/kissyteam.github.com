@@ -9,6 +9,7 @@ Core
    :maxdepth: 2
 
    dom/index.rst 
+   node/index.rst
    anim/index.rst
 
 
