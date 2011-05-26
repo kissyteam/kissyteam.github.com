@@ -13,4 +13,45 @@ NodeList
                                          * NodeList : 从当前 NodeList 对象中克隆一个新对象返回.
                                          
     :param object props: 属性键值对，对生成的 NodeList 对象代表的原生 DOM 节点设置属性。仅当 html 参数为 html 字符串时使用。
-    :param HTMLDocument ownerDocument: 该 NodeList 产生的原生 DOM 节点所属的文档对象。仅当 html 参数为 html 字符串时使用。        
+    :param HTMLDocument ownerDocument: 该 NodeList 产生的原生 DOM 节点所属的文档对象。仅当 html 参数为 html 字符串时使用。 
+    
+.. note::
+    .. versionadded:: 1.2
+        推荐除了需要生成文本节点的情况下，统统使用 :meth:`~NodeList.all` 代替。
+        
+例如：
+
+得到一个包装新文本节点的 KISSY NodeList
+
+.. code-block:: javascript
+
+    var nl=new NodeList("aaa");
+    nl.getDOMNode().nodeType ==3 // => true : Html Text Node
+    
+得到一个包装新 dom element 的 KISSY NodeList
+
+.. code-block:: javascript
+
+    var nl=NodeList.all("<div></div><p></p>");
+    var domNodes=nl.getDOMNodes();
+    domNodes[0].nodeType == 1 // => true : Html Element
+    
+得到一个包装现有 dom element 的 KISSY NodeList
+
+.. code-block:: javascript
+
+    var domNodes=document.getElementsByTagName("div");
+    var nl=NodeList.all(domNodes);
+    domNodes=nl.getDOMNodes();
+    domNodes[0].nodeType == 1 // => true : Html Element
+    domNodes[0].nodeType == 1 // => true : Html Element
+    
+当然 NodeList.all 可以直接获取选择器字符串匹配的节点列表
+
+.. code-block:: javascript
+
+    var nl=NodeList.all("div"); // 选择器功能而不是创建 text node
+    domNodes=nl.getDOMNodes();
+    domNodes[0].nodeType == 1 // => true : Html Element
+    domNodes[0].nodeType == 1 // => true : Html Element     
+                           
