@@ -9,12 +9,12 @@ append()
 
     将参数内容插入到当前节点列表中的每个元素的末尾.
     
-    :param HTMLELement|string|NodeList 将要插入的内容
+    :param HTMLELement|string|NodeList content: 将要插入的内容
     :rtype: NodeList
     
-该方法插入指定内容到当前节点列表的最后一个元素后面（如果要插入到第一个元素前面，请用 :meth:`prepend` ）.
+该方法插入指定内容到当前节点列表的最后一个元素后面（如果要插入到第一个元素前面，请用 :meth:`~NodeList.prepend` ）.
 
-该方法和 :meth:`appendTo` 功能一样。最大的区别在于语法不同以及参数意义不同。当使用 ``append`` 方法时，当前节点列表为参数内容的插入容器。
+该方法和 :meth:`~NodeList.appendTo` 功能一样。最大的区别在于语法不同以及参数意义不同。当使用 ``append`` 方法时，当前节点列表为参数内容的插入容器。
 而对于 ``appendTo``  当前节点列表则为要插入的元素，而参数则为目标容器.
 
 例如如下 HTML:
@@ -51,7 +51,7 @@ append()
       </div>
     </div>
     
-你可以把页面上已有的元素 ``append`` 到另外一个:
+你可以把页面上已有的元素 ``prepend`` 到另外一个:
 
 .. code-block:: javascript
     

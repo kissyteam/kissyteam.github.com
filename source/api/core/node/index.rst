@@ -22,3 +22,10 @@ by `承玉 <yiminghe@gmail.com>`_
    width.rst
    addStyleSheet.rst
    append.rst
+   appendTo.rst
+   prepend.rst
+   prependTo.rst
+   insertBefore.rst
+   before.rst
+   after.rst
+   insertAfter.rst

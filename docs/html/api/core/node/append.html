@@ -50,7 +50,7 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >模块</a> | </li>
     <li class="right" >
-      <a href="../anim/index.html" title="Anim"
+      <a href="prepend.html" title="prepend()"
          accesskey="N">下一页</a> | </li>
     <li class="right" >
       <a href="addStyleSheet.html" title="addStyleSheet()"
@@ -71,11 +71,21 @@
 <dt id="Node.NodeList.append">
 <tt class="descclassname">NodeList.</tt><tt class="descname">append</tt><big>(</big><em>content</em><big>)</big><a class="headerlink" href="#Node.NodeList.append" title="永久链接至目标">¶</a></dt>
 <dd><p>将参数内容插入到当前节点列表中的每个元素的末尾.</p>
-<p>:param HTMLELement|string|NodeList 将要插入的内容
-:rtype: NodeList</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">参数:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>content</strong> (<em>HTMLELement|string|NodeList</em>) &#8211; 将要插入的内容</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">返回类型:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">NodeList</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<p>该方法插入指定内容到当前节点列表的最后一个元素后面（如果要插入到第一个元素前面，请用 <tt class="xref py py-meth docutils literal"><span class="pre">prepend()</span></tt> ）.</p>
+<p>该方法插入指定内容到当前节点列表的最后一个元素后面（如果要插入到第一个元素前面，请用 <a class="reference internal" href="prepend.html#Node.NodeList.prepend" title="Node.NodeList.prepend"><tt class="xref py py-meth docutils literal"><span class="pre">prepend()</span></tt></a> ）.</p>
 <p>该方法和 <tt class="xref py py-meth docutils literal"><span class="pre">appendTo()</span></tt> 功能一样。最大的区别在于语法不同以及参数意义不同。当使用 <tt class="docutils literal"><span class="pre">append</span></tt> 方法时，当前节点列表为参数内容的插入容器。
 而对于 <tt class="docutils literal"><span class="pre">appendTo</span></tt>  当前节点列表则为要插入的元素，而参数则为目标容器.</p>
 <p>例如如下 HTML:</p>
@@ -106,7 +116,7 @@
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
 </div>
-<p>你可以把页面上已有的元素 <tt class="docutils literal"><span class="pre">append</span></tt> 到另外一个:</p>
+<p>你可以把页面上已有的元素 <tt class="docutils literal"><span class="pre">prepend</span></tt> 到另外一个:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">NodeList</span><span class="p">){</span>
     <span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;.container&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;h2&#39;</span><span class="p">));</span>
 <span class="p">});</span>
@@ -139,7 +149,7 @@
    <span class="nt">&lt;/script&gt;</span>
     <span class="nt">&lt;/head&gt;</span>
     <span class="nt">&lt;body&gt;</span>
-      <span class="nt">&lt;p&gt;</span>I would like to say: <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;p&gt;</span> is I would like to say <span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;script&gt;</span>
         <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">NodeList</span><span class="p">){</span>
             <span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;&lt;strong&gt;Hello&lt;/strong&gt;&quot;</span><span class="p">);</span>
@@ -218,7 +228,7 @@
 						<div class="s-box-bd">
                             <a href="addStyleSheet.html" title="addStyleSheet()"> 上一页 </a> |
                             <a href="index.html" title="Node">回到上层</a> |
-                            <a href="../anim/index.html" title="Anim"> 下一页 </a>
+                            <a href="prepend.html" title="prepend()"> 下一页 </a>
 						</div>
 					</div>
 					
@@ -282,6 +292,8 @@
 <li class="toctree-l4"><a class="reference internal" href="width.html">width()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="addStyleSheet.html">addStyleSheet()</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="">append()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="prepend.html">prepend()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="prependTo.html">prependTo()</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../anim/index.html">Anim</a></li>
