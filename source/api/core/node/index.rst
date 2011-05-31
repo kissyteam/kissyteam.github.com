@@ -11,6 +11,16 @@ by `承玉 <yiminghe@gmail.com>`_
     你只需要把 ``KISSY.all`` 看做 ``jquery`` 中的 ``$`` 就可以了，
     链式操作你会喜欢的！
     
+获取模块
+
+.. code-block:: javascript
+    
+    // 也可载入 kissy.js 后直接 KISSY.Node/KISSY.NodeList，实际上 KISSY.Node=KISSY.NodeList
+    KISSY.use("node",function(S,Node){
+        var NodeList=Node;        
+    });
+    
+    
 特色方法：  
     
 .. toctree::
@@ -18,6 +28,10 @@ by `承玉 <yiminghe@gmail.com>`_
 
    nodelist.rst
    all.rst
+   one.rst
+   add.rst
+   item.rst
+   slice.rst
    scrollTop.rst
    scrollLeft.rst
    height.rst

@@ -71,11 +71,22 @@
 <span class="versionmodified">在 1.2 版更改: </span>Node 包括 <a class="reference internal" href="../dom/index.html#module-DOM" title="DOM"><tt class="xref py py-mod docutils literal"><span class="pre">DOM</span></tt></a> 模块的所有功能，推荐采用 <tt class="docutils literal"><span class="pre">Node</span></tt> 模块取代 <tt class="docutils literal"><span class="pre">DOM</span></tt> 模块，
 你只需要把 <tt class="docutils literal"><span class="pre">KISSY.all</span></tt> 看做 <tt class="docutils literal"><span class="pre">jquery</span></tt> 中的 <tt class="docutils literal"><span class="pre">$</span></tt> 就可以了，
 链式操作你会喜欢的！</p>
+<p>获取模块</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// 也可载入 kissy.js 后直接 KISSY.Node/KISSY.NodeList，实际上 KISSY.Node=KISSY.NodeList</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Node</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">NodeList</span><span class="o">=</span><span class="nx">Node</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
 <p>特色方法：</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="nodelist.html">NodeList</a></li>
 <li class="toctree-l1"><a class="reference internal" href="all.html">all()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="one.html">one()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add.html">add()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="item.html">item()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slice.html">slice()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scrollTop.html">scrollTop()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scrollLeft.html">scrollLeft()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="height.html">height()</a></li>
@@ -198,6 +209,10 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="">Node</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="nodelist.html">NodeList</a></li>
 <li class="toctree-l4"><a class="reference internal" href="all.html">all()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="one.html">one()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="add.html">add()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="item.html">item()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="slice.html">slice()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="scrollTop.html">scrollTop()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="scrollLeft.html">scrollLeft()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="height.html">height()</a></li>

@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>NodeList &mdash; KISSY Docs valpha documentation</title>
+<title>item() &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -50,10 +50,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >模块</a> | </li>
     <li class="right" >
-      <a href="all.html" title="all()"
+      <a href="slice.html" title="slice()"
          accesskey="N">下一页</a> | </li>
     <li class="right" >
-      <a href="index.html" title="Node"
+      <a href="add.html" title="add()"
          accesskey="P">上一页</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -65,63 +65,37 @@
 			<div class="col-main">
 				<div class="main-wrap">
 					
-  <div class="section" id="nodelist">
-<h1>NodeList<a class="headerlink" href="#nodelist" title="永久链接至标题">¶</a></h1>
-<dl class="class">
-<dt id="Node.NodeList">
-<em class="property">class </em><tt class="descclassname">Node.</tt><tt class="descname">NodeList</tt><big>(</big><em>html</em><span class="optional">[</span>, <em>props</em>, <em>ownerDocument</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Node.NodeList" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+  <div class="section" id="item">
+<h1>item()<a class="headerlink" href="#item" title="永久链接至标题">¶</a></h1>
+<dl class="method">
+<dt id="Node.NodeList.item">
+<tt class="descclassname">NodeList.</tt><tt class="descname">item</tt><big>(</big><em>index</em><big>)</big><a class="headerlink" href="#Node.NodeList.item" title="永久链接至目标">¶</a></dt>
+<dd><p>获取包含当前节点列表 index 位置处的单个原生节点的新 NodeList 对象</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">参数:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>string|HTMLElement|Text|Window|HTMLDocument|HTMLCollection|ArrayList&lt;HTMLElement&gt;|NodeList</strong> &#8211; <ul>
-<li>string : html 字符串，例如 <tt class="docutils literal"><span class="pre">&lt;div&gt;</span></tt> ，根据该字符串生成 <tt class="docutils literal"><span class="pre">NodeList</span></tt> 对象，代表节点个数为 html 字符串实际产生的 DOM 节点个数.</li>
-<li>HTMLElement|Text|Window|HTMLDocument : 把原生 <tt class="docutils literal"><span class="pre">DOM</span></tt> 节点包装成一个 <tt class="docutils literal"><span class="pre">NodeList</span></tt> 对象，这个情景一般可用 <tt class="docutils literal"><span class="pre">S.all</span></tt> 代替.</li>
-<li>HTMLCollection|ArrayList&lt;HTMLElement&gt; : 将原生节点列表包装为一个 <tt class="docutils literal"><span class="pre">NodeList</span></tt> 对象.</li>
-<li>NodeList : 从当前 NodeList 对象中克隆一个新对象返回.</li>
-</ul>
-</li>
-<li><strong>props</strong> (<em>object</em>) &#8211; 属性键值对，对生成的 NodeList 对象代表的原生 DOM 节点设置属性。仅当 html 参数为 html 字符串时使用。</li>
-<li><strong>ownerDocument</strong> (<em>HTMLDocument</em>) &#8211; 该 NodeList 产生的原生 DOM 节点所属的文档对象。仅当 html 参数为 html 字符串时使用。</li>
-</ul>
-</td>
+<tr class="field"><th class="field-name" colspan="2">返回:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">null 或者包含一个原生节点的 NodeList 对象</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">返回类型:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">NodeList</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last versionadded">
-<span class="versionmodified">1.2 新版功能: </span>推荐除了需要生成文本节点的情况下，统统使用 <a class="reference internal" href="all.html#Node.NodeList.all" title="Node.NodeList.all"><tt class="xref py py-meth docutils literal"><span class="pre">all()</span></tt></a> 代替。</p>
-</div>
-<p>例如：</p>
-<p>得到一个包装新文本节点的 KISSY NodeList</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">nl</span><span class="o">=</span><span class="k">new</span> <span class="nx">NodeList</span><span class="p">(</span><span class="s2">&quot;aaa&quot;</span><span class="p">);</span>
-<span class="nx">nl</span><span class="p">.</span><span class="nx">getDOMNode</span><span class="p">().</span><span class="nx">nodeType</span> <span class="o">==</span><span class="mi">3</span> <span class="c1">// =&gt; true : Html Text Node</span>
-</pre></div>
-</div>
-<p>得到一个包装新 dom element 的 KISSY NodeList</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">nl</span><span class="o">=</span><span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;&lt;div&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">domNodes</span><span class="o">=</span><span class="nx">nl</span><span class="p">.</span><span class="nx">getDOMNodes</span><span class="p">();</span>
-<span class="nx">domNodes</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">nodeType</span> <span class="o">==</span> <span class="mi">1</span> <span class="c1">// =&gt; true : Html Element</span>
-</pre></div>
-</div>
-<p>得到一个包装现有 dom element 的 KISSY NodeList</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">domNodes</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">nl</span><span class="o">=</span><span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">domNodes</span><span class="p">);</span>
-<span class="nx">domNodes</span><span class="o">=</span><span class="nx">nl</span><span class="p">.</span><span class="nx">getDOMNodes</span><span class="p">();</span>
-<span class="nx">domNodes</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">nodeType</span> <span class="o">==</span> <span class="mi">1</span> <span class="c1">// =&gt; true : Html Element</span>
-<span class="nx">domNodes</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">nodeType</span> <span class="o">==</span> <span class="mi">1</span> <span class="c1">// =&gt; true : Html Element</span>
-</pre></div>
-</div>
-<p>当然 NodeList.all 可以直接获取选择器字符串匹配的节点列表</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">nl</span><span class="o">=</span><span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">);</span> <span class="c1">// 选择器功能而不是创建 text node</span>
-<span class="nx">domNodes</span><span class="o">=</span><span class="nx">nl</span><span class="p">.</span><span class="nx">getDOMNodes</span><span class="p">();</span>
-<span class="nx">domNodes</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">nodeType</span> <span class="o">==</span> <span class="mi">1</span> <span class="c1">// =&gt; true : Html Element</span>
-<span class="nx">domNodes</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">nodeType</span> <span class="o">==</span> <span class="mi">1</span> <span class="c1">// =&gt; true : Html Element</span>
+<p>例子:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;a&#39;</span> <span class="na">id=</span><span class="s">&#39;a&#39;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;a&#39;</span> <span class="na">id=</span><span class="s">&#39;b&#39;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;.a&quot;</span><span class="p">).</span><span class="nx">item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>  <span class="c1">// =&gt; a</span>
+    <span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;.a&quot;</span><span class="p">).</span><span class="nx">item</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>  <span class="c1">// =&gt; b</span>
+    <span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;.a&quot;</span><span class="p">).</span><span class="nx">item</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1">// =&gt; null</span>
+<span class="nt">&lt;/script&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -130,9 +104,9 @@
 					
 					<div class="s-box relative-links">
 						<div class="s-box-bd">
-                            <a href="index.html" title="Node"> 上一页 </a> |
+                            <a href="add.html" title="add()"> 上一页 </a> |
                             <a href="index.html" title="Node">回到上层</a> |
-                            <a href="all.html" title="all()"> 下一页 </a>
+                            <a href="slice.html" title="slice()"> 下一页 </a>
 						</div>
 					</div>
 					
@@ -188,11 +162,11 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Core</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../dom/index.html">DOM</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Node</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="">NodeList</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nodelist.html">NodeList</a></li>
 <li class="toctree-l4"><a class="reference internal" href="all.html">all()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="one.html">one()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="add.html">add()</a></li>
-<li class="toctree-l4"><a class="reference internal" href="item.html">item()</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">item()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="slice.html">slice()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="scrollTop.html">scrollTop()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="scrollLeft.html">scrollLeft()</a></li>
