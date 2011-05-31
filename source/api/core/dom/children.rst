@@ -3,7 +3,7 @@
 DOM.children
 =================================
 
-.. function:: DOM.children(selector [ , filter ])
+.. function:: children(selector [ , filter ])
 
    获取符合选择器的第一个元素的相应子节点。
     

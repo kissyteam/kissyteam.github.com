@@ -3,7 +3,7 @@
 DOM.height
 =================================
 
-.. function:: DOM.height( selector )
+.. function:: height( selector )
 
     获取符合选择器的第一个元素的高度值。
     
@@ -15,7 +15,7 @@ DOM.height
     该方法始终返回像素值
     
     
-.. function:: DOM.height( selector, value )
+.. function:: height( selector, value )
 
     给符合选择器的所有元素设置高度值。相当于 :func:`DOM.css(selector,"height",value) <DOM.css>`
     

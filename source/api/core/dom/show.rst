@@ -3,7 +3,7 @@
 DOM.show
 =================================
 
-.. function:: DOM.show( selector )
+.. function:: show( selector )
 
     显示符合选择器的所有元素。
     

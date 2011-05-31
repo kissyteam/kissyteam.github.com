@@ -3,7 +3,7 @@
 DOM.contains
 =================================
 
-.. function:: DOM.contains(container , contained)
+.. function:: contains(container , contained)
 
    判断某一容器（container）是否包含另一（contained）节点。
     

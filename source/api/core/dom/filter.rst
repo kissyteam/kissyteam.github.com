@@ -3,7 +3,7 @@
 DOM.filter
 =================================
 
-.. function:: DOM.filter( selector , filter [,context=document] )
+.. function:: filter( selector , filter [,context=document] )
 
     获取符合选择器以及过滤参数的所有元素。
     

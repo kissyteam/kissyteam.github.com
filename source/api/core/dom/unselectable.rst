@@ -5,7 +5,7 @@ DOM.unselectable
 
 .. versionadded:: 1.2
 
-.. function:: DOM.unselectable( selector )
+.. function:: unselectable( selector )
 
     使符合选择器的所有元素都不可以作为选择区域的开始。
     

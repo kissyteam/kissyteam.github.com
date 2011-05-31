@@ -3,7 +3,7 @@
 DOM.scrollTop
 =================================
 
-.. function:: DOM.scrollTop(node)
+.. function:: scrollTop(node)
 
    获取窗口或元素的 scrollTop 值。
     
@@ -11,7 +11,7 @@ DOM.scrollTop
    :rtype: number
    :returns: 窗口或元素的 scrollTop 值。
    
-.. function:: DOM.scrollTop(num)
+.. function:: scrollTop(num)
 
     .. versionadded:: 1.2
         设置窗口 scrollTop 值。
@@ -20,7 +20,7 @@ DOM.scrollTop
     :rtype: number
     :returns: 设置的值
     
-.. function:: DOM.scrollTop(node,num)
+.. function:: scrollTop(node,num)
 
     .. versionadded:: 1.2
         设置窗口或元素的 scrollTop 值。      

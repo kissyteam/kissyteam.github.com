@@ -3,7 +3,7 @@
 DOM.docHeight
 =================================
 
-.. function:: DOM.docHeight()
+.. function:: docHeight()
 
    获取页面文档 document 的总高度。
     

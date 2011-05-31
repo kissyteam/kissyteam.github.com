@@ -3,7 +3,7 @@
 DOM.text
 =================================
 
-.. function:: DOM.text( selector )
+.. function:: text( selector )
 
     获取符合选择器的第一个元素所包含的文本值。
     
@@ -11,7 +11,7 @@ DOM.text
     :returns: 获取符合选择器的第一个元素所包含的文本值。无值时，返回空字符串。
     
     
-.. function:: DOM.text( selector, value )
+.. function:: text( selector, value )
 
     给符合选择器的所有元素设置文本值。
     

@@ -3,7 +3,7 @@
 DOM.siblings
 =================================
 
-.. function:: DOM.siblings(selector [ , filter ])
+.. function:: siblings(selector [ , filter ])
 
    获取符合选择器的第一个元素的相应同级节点。
     

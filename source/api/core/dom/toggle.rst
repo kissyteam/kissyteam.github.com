@@ -3,7 +3,7 @@
 DOM.toggle
 =================================
 
-.. function:: DOM.toggle( selector )
+.. function:: toggle( selector )
 
     将符合选择器的所有元素切换显示/隐藏两个状态。
     

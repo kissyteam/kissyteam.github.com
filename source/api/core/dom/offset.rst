@@ -3,7 +3,7 @@
 DOM.offset
 =================================
 
-.. function:: DOM.offset( selector )
+.. function:: offset( selector )
 
     获取符合选择器的第一个元素相对页面文档左上角的偏移值。
     
@@ -20,7 +20,7 @@ DOM.offset
                 类型 number，相对页面文档左上角的纵坐标        
     
     
-.. function:: DOM.offset( selector, value )
+.. function:: offset( selector, value )
 
     给符合选择器的所有元素设置偏移值。
     

@@ -3,7 +3,7 @@
 DOM.insertBefore
 =================================
 
-.. function:: DOM.insertBefore( newNode, refNode )
+.. function:: insertBefore( newNode, refNode )
 
     将 newNode 插入到 refNode 之前。
     

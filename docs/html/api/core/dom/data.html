@@ -83,7 +83,11 @@
 </td>
 </tr>
 <tr class="field"><th class="field-name" colspan="2">返回:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><p class="first last">对应扩展属性名的属性值，如不指定扩展属性名，则取得所有扩展属性键值对像。</p>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last"><ul class="simple">
+<li>对应扩展属性名的属性值，如果不存在返回 <tt class="docutils literal"><span class="pre">undefined</span></tt></li>
+<li>如不指定扩展属性名，则取得所有扩展属性键值对象，如果当前还没设置过扩展属性，则返回空对象，可以直接在该空对象上设置</li>
+</ul>
+</p>
 </td>
 </tr>
 </tbody>
@@ -92,7 +96,8 @@
 
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
-<p class="last">embed，object，applet 这三个标签不能设置 expando 。</p>
+<p class="last">embed，object，applet 这三个标签不能设置 expando 。
+如果判断是否设置了扩展属性，请使用 <a class="reference internal" href="hasData.html#DOM.hasData" title="DOM.hasData"><tt class="xref py py-func docutils literal"><span class="pre">hasData()</span></tt></a></p>
 </div>
 <dl class="function">
 <dt>
@@ -122,6 +127,24 @@
 
 <span class="c1">// 获取第一个 img 元素中, 名为 data-size 的 expando 值;</span>
 <span class="nx">DOM</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">,</span> <span class="s1">&#39;data-size&#39;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">p</span><span class="o">=</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;&quot;</span><span class="p">);</span>
+
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">hasData</span><span class="p">(</span><span class="nx">p</span><span class="p">);</span> <span class="c1">// =&gt; false</span>
+
+<span class="kd">var</span> <span class="nx">store</span><span class="o">=</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">p</span><span class="p">);</span> <span class="c1">// =&gt; store={}</span>
+
+<span class="nx">store</span><span class="p">.</span><span class="nx">x</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">;</span> <span class="c1">// =&gt; 相当于 DOM.data(p,&quot;x&quot;,&quot;y&quot;);</span>
+
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">removeData</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="s2">&quot;x&quot;</span><span class="p">);</span>
+
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="s2">&quot;x&quot;</span><span class="p">);</span> <span class="c1">// =&gt; undefined</span>
+
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">hasData</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="s2">&quot;x&quot;</span><span class="p">);</span> <span class="c1">// =&gt; false</span>
+
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">hasData</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span> <span class="c1">// =&gt; false</span>
+
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span> <span class="c1">// =&gt; 返回存储对象</span>
 </pre></div>
 </div>
 </div>
@@ -232,6 +255,7 @@
 <li class="toctree-l4"><a class="reference internal" href="prepend.html">DOM.prepend</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="">DOM.data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="removeData.html">DOM.removeData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hasData.html">DOM.hasData</a></li>
 <li class="toctree-l4"><a class="reference internal" href="unselectable.html">DOM.unselectable</a></li>
 </ul>
 </li>

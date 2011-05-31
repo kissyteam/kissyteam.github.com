@@ -3,7 +3,7 @@
 DOM.toggleClass
 =================================
 
-.. function:: DOM.toggleClass( selector, value  )
+.. function:: toggleClass( selector, value  )
 
     操作符合选择器的所有元素，如果存在值为 value 的 class, 则移除掉，反之添加。
     

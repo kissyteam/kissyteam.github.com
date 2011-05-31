@@ -3,7 +3,7 @@
 DOM.get
 =================================
 
-.. function:: DOM.get(selector [,context=document] )
+.. function:: get(selector [,context=document] )
 
     获取符合选择器的第一个元素。相当于调用 :func:`DOM.query(selector,context)[0] <DOM.query>`
     

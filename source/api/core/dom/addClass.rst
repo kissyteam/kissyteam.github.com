@@ -3,7 +3,7 @@
 DOM.addClass
 =================================
 
-.. function:: DOM.addClass( selector , value )
+.. function:: addClass( selector , value )
 
     给符合选择器的所有元素添加指定 class.
     

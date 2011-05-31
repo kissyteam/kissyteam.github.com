@@ -3,7 +3,7 @@
 DOM.hide
 =================================
 
-.. function:: DOM.hide( selector )
+.. function:: hide( selector )
 
     隐藏符合选择器的所有元素。
     

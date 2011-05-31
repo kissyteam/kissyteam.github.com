@@ -3,7 +3,7 @@
 DOM.next
 =================================
 
-.. function:: DOM.next(selector [ , filter ])
+.. function:: next(selector [ , filter ])
 
    获取符合选择器的第一个元素的下一个同级节点。
     

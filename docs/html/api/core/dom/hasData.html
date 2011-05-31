@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>DOM.contains &mdash; KISSY Docs valpha documentation</title>
+<title>DOM.hasData &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -50,10 +50,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >模块</a> | </li>
     <li class="right" >
-      <a href="create.html" title="DOM.create"
+      <a href="unselectable.html" title="DOM.unselectable"
          accesskey="N">下一页</a> | </li>
     <li class="right" >
-      <a href="children.html" title="DOM.children"
+      <a href="removeData.html" title="DOM.removeData"
          accesskey="P">上一页</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -65,25 +65,22 @@
 			<div class="col-main">
 				<div class="main-wrap">
 					
-  <div class="section" id="dom-contains">
-<h1>DOM.contains<a class="headerlink" href="#dom-contains" title="永久链接至标题">¶</a></h1>
+  <div class="section" id="dom-hasdata">
+<h1>DOM.hasData<a class="headerlink" href="#dom-hasdata" title="永久链接至标题">¶</a></h1>
 <dl class="function">
-<dt id="DOM.contains">
-<tt class="descclassname">DOM.</tt><tt class="descname">contains</tt><big>(</big><em>container</em>, <em>contained</em><big>)</big><a class="headerlink" href="#DOM.contains" title="永久链接至目标">¶</a></dt>
-<dd><p>判断某一容器（container）是否包含另一（contained）节点。</p>
+<dt id="DOM.hasData">
+<tt class="descclassname">DOM.</tt><tt class="descname">hasData</tt><big>(</big><em>selector</em><span class="optional">[</span>, <em>name</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#DOM.hasData" title="永久链接至目标">¶</a></dt>
+<dd><p class="versionadded">
+<span class="versionmodified">1.2 新版功能: </span>判断是否符合选择器的所有元素中的一个存在对应的扩展属性( expando )值。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">参数:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
-<li><strong>container</strong> (<em>string|HTMLElement</em>) &#8211; 容器节点。字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a> 获取匹配的第一个元素。</li>
-<li><strong>contained</strong> (<em>string|HTMLElement</em>) &#8211; 检测节点。字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a> 获取匹配的第一个元素。</li>
+<li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
+<li><strong>name</strong> (<em>string</em>) &#8211; 扩展属性名称。如果指定 name，则判断是否存在指定的扩展属性值。否则判断是否存在任意扩展属性值</li>
 </ul>
-</td>
-</tr>
-<tr class="field"><th class="field-name" colspan="2">返回:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><p class="first">container 是否包含 contained 节点。</p>
 </td>
 </tr>
 <tr class="field"><th class="field-name" colspan="2">返回类型:</th></tr>
@@ -94,15 +91,16 @@
 </table>
 </dd></dl>
 
+<p>举例：</p>
 </div>
 
 
 					
 					<div class="s-box relative-links">
 						<div class="s-box-bd">
-                            <a href="children.html" title="DOM.children"> 上一页 </a> |
+                            <a href="removeData.html" title="DOM.removeData"> 上一页 </a> |
                             <a href="index.html" title="DOM">回到上层</a> |
-                            <a href="create.html" title="DOM.create"> 下一页 </a>
+                            <a href="unselectable.html" title="DOM.unselectable"> 下一页 </a>
 						</div>
 					</div>
 					
@@ -192,7 +190,7 @@
 <li class="toctree-l4"><a class="reference internal" href="prev.html">DOM.prev</a></li>
 <li class="toctree-l4"><a class="reference internal" href="siblings.html">DOM.siblings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="children.html">DOM.children</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="">DOM.contains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="contains.html">DOM.contains</a></li>
 <li class="toctree-l4"><a class="reference internal" href="create.html">DOM.create</a></li>
 <li class="toctree-l4"><a class="reference internal" href="html.html">DOM.html</a></li>
 <li class="toctree-l4"><a class="reference internal" href="remove.html">DOM.remove</a></li>
@@ -202,7 +200,7 @@
 <li class="toctree-l4"><a class="reference internal" href="prepend.html">DOM.prepend</a></li>
 <li class="toctree-l4"><a class="reference internal" href="data.html">DOM.data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="removeData.html">DOM.removeData</a></li>
-<li class="toctree-l4"><a class="reference internal" href="hasData.html">DOM.hasData</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">DOM.hasData</a></li>
 <li class="toctree-l4"><a class="reference internal" href="unselectable.html">DOM.unselectable</a></li>
 </ul>
 </li>

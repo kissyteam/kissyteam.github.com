@@ -3,7 +3,7 @@
 DOM.attr
 =================================
 
-.. function:: DOM.attr( selector, name )
+.. function:: attr( selector, name )
 
     获取符合选择器的第一个元素的属性值。
     
@@ -12,7 +12,7 @@ DOM.attr
     :returns: 对应属性名的属性值
     
     
-.. function:: DOM.attr( selector, name, value )
+.. function:: attr( selector, name, value )
 
     给符合选择器的所有元素设置属性值。
     
@@ -20,7 +20,7 @@ DOM.attr
     :param string name: 属性名称
     :param value: 属性值
     
-.. function:: DOM.attr( selector, kv )
+.. function:: attr( selector, kv )
 
     给符合选择器的所有元素设置属性值。
     

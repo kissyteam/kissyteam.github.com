@@ -3,7 +3,7 @@
 DOM.docWidth
 =================================
 
-.. function:: DOM.docWidth()
+.. function:: docWidth()
 
    获取页面文档 document 的总宽度。
     

@@ -9,11 +9,13 @@ DOM.data
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
     :param string name: 扩展属性名称
-    :returns: 对应扩展属性名的属性值，如不指定扩展属性名，则取得所有扩展属性键值对像。
+    :returns:   * 对应扩展属性名的属性值，如果不存在返回 ``undefined``
+                * 如不指定扩展属性名，则取得所有扩展属性键值对象，如果当前还没设置过扩展属性，则返回空对象，可以直接在该空对象上设置
     
 .. note::
 
     embed，object，applet 这三个标签不能设置 expando 。    
+    如果判断是否设置了扩展属性，请使用 :func:`~DOM.hasData`
     
 .. function:: DOM.data ( selector, name, data )
 
@@ -33,4 +35,22 @@ DOM.data
     DOM.data('img', 'data-size', 400);
     
     // 获取第一个 img 元素中, 名为 data-size 的 expando 值;
-    DOM.data('img', 'data-size');            
+    DOM.data('img', 'data-size');  
+    
+    var p=DOM.create("<p>");
+    
+    DOM.hasData(p); // => false
+    
+    var store=DOM.data(p); // => store={}
+    
+    store.x="y"; // => 相当于 DOM.data(p,"x","y");
+    
+    DOM.removeData(p,"x");
+    
+    DOM.data(p,"x"); // => undefined
+    
+    DOM.hasData(p,"x"); // => false
+    
+    DOM.hasData(p) // => false
+    
+    DOM.data("p") // => 返回存储对象          

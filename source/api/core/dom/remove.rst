@@ -3,7 +3,7 @@
 DOM.remove
 =================================
 
-.. function:: DOM.remove( selector )
+.. function:: remove( selector )
 
     将符合选择器的所有元素从 DOM 中移除。
     

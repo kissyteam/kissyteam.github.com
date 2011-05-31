@@ -5,7 +5,7 @@ DOM.hasAttr
 
 .. versionadded:: 1.2
 
-.. function:: DOM.hasAttr( selector , attrName )
+.. function:: hasAttr( selector , attrName )
 
     判断符合选择器的所有元素中是否有某个元素含有特定属性.
     

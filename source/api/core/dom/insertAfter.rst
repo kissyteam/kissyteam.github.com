@@ -3,7 +3,7 @@
 DOM.insertAfter
 =================================
 
-.. function:: DOM.insertAfter( newNode, refNode )
+.. function:: insertAfter( newNode, refNode )
 
     将 newNode 插入到 refNode 之后。
     

@@ -3,7 +3,7 @@
 DOM.removeAttr
 =================================
 
-.. function:: DOM.removeAttr( selector, name )
+.. function:: removeAttr( selector, name )
 
     移除符合选择器的所有元素的指定属性。
     

@@ -3,7 +3,7 @@
 DOM.scrollLeft
 =================================
 
-.. function:: DOM.scrollLeft(node)
+.. function:: scrollLeft(node)
 
    获取窗口或元素的 scrollLeft 值。
     
@@ -11,7 +11,7 @@ DOM.scrollLeft
    :rtype: number
    :returns: 窗口或元素的 scrollLeft 值。
    
-.. function:: DOM.scrollLeft(num)
+.. function:: scrollLeft(num)
 
     .. versionadded:: 1.2
         设置窗口 scrollLeft 值。
@@ -20,7 +20,7 @@ DOM.scrollLeft
     :rtype: number
     :returns: 设置的值
     
-.. function:: DOM.scrollLeft(node,num)
+.. function:: scrollLeft(node,num)
 
     .. versionadded:: 1.2
         设置窗口或元素的 scrollLeft 值。      

@@ -3,7 +3,7 @@
 DOM.append
 =================================
 
-.. function:: DOM.append( node, parent )
+.. function:: append( node, parent )
 
     将 node 追加到 parent 子节点最后。
     

@@ -3,7 +3,7 @@
 DOM.val
 =================================
 
-.. function:: DOM.val( selector )
+.. function:: val( selector )
 
     获取符合选择器的第一个元素所的 value 值。
     
@@ -11,7 +11,7 @@ DOM.val
     :returns: 获取符合选择器的第一个元素所的 value 值。无值时，返回空字符串。
     
     
-.. function:: DOM.val( selector, value )
+.. function:: val( selector, value )
 
     给符合选择器的所有元素设置 value 值。
     

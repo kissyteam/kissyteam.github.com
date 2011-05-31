@@ -3,7 +3,7 @@
 DOM.removeClass
 =================================
 
-.. function:: DOM.removeClass( selector , value )
+.. function:: removeClass( selector , value )
 
     给符合选择器的所有元素移除指定 class.
     

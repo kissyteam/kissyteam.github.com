@@ -3,7 +3,7 @@
 DOM.hasClass
 =================================
 
-.. function:: DOM.hasClass( selector , value )
+.. function:: hasClass( selector , value )
 
     判断符合选择器的所有元素中是否有某个元素含有特定 class.
     

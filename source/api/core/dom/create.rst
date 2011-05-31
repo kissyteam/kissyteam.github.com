@@ -3,7 +3,7 @@
 DOM.create
 =================================
 
-.. function:: DOM.create( html [ , props = {} , ownerDoc = document ] )
+.. function:: create( html [ , props = {} , ownerDoc = document ] )
 
     创建 dom 节点
     

@@ -3,7 +3,7 @@
 DOM.prepend
 =================================
 
-.. function:: DOM.prepend( node, parent )
+.. function:: prepend( node, parent )
 
     将 node 追加到 parent 子节点最前。
     

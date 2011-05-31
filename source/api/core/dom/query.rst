@@ -3,7 +3,7 @@
 DOM.query
 =================================
 
-.. function:: DOM.query(selector [,context=document] )
+.. function:: query(selector [,context=document] )
 
     获取符合选择器的所有元素。
     

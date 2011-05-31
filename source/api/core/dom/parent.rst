@@ -3,7 +3,7 @@
 DOM.parent
 =================================
 
-.. function:: DOM.parent(selector [ , filter ])
+.. function:: parent(selector [ , filter ])
 
    获取符合选择器的第一个元素的祖先元素。
     
