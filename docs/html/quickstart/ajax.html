@@ -104,7 +104,7 @@
                  photoList = S.one('#photo-list');
 
              S.one('#fetch-btn').on('click', function() {
-                 this.attr('disabled', true);
+                 S.one(this).attr('disabled', true);
                  photoList.addClass('loading');
                  S.getScript(API + S.param(params));
              });
@@ -167,7 +167,7 @@
          <span class="nx">photoList</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#photo-list&#39;</span><span class="p">);</span>
 
      <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#fetch-btn&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-         <span class="k">this</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+         <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
          <span class="nx">photoList</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;loading&#39;</span><span class="p">);</span>
          <span class="nx">S</span><span class="p">.</span><span class="nx">getScript</span><span class="p">(</span><span class="nx">API</span> <span class="o">+</span> <span class="nx">S</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="nx">params</span><span class="p">));</span>
      <span class="p">});</span>
