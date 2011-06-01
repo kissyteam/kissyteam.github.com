@@ -9,7 +9,7 @@ elementpaths
 
     主要用户开发, 显示光标处所在dom路径.
 
-    .. image:: /_images/editorguide/elementpaths.gif
+    .. image:: /_images/editorguide/elementpaths.png
 
 
 sourcearea
@@ -17,14 +17,14 @@ sourcearea
 
     点击后可以查看编辑器产生的html代码.
 
-    .. image:: /_images/editorguide/sourcearea.gif
+    .. image:: /_images/editorguide/sourcearea.png
 
 preview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     点击后可以弹出新窗口, 查看编辑器的内容预览.
 
-    .. image:: /_images/editorguide/preview.gif
+    .. image:: /_images/editorguide/preview.png
 
 
 templates
@@ -32,14 +32,14 @@ templates
 
     点击后可以弹出模板选择窗口, 选定后可以将模板代码插入到编辑器光标所在处.
 
-    .. image:: /_images/editorguide/templates.gif
+    .. image:: /_images/editorguide/templates.png
 
 separator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     间隔线.
 
-    .. image:: /_images/editorguide/separator.gif
+    .. image:: /_images/editorguide/separator.png
 
 
 undo
@@ -47,118 +47,118 @@ undo
 
     可以撤销重做.
 
-    .. image:: /_images/editorguide/undo.gif
+    .. image:: /_images/editorguide/undo.png
 
 removeformat
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     可以清除选择区域的编辑格式(字体, 大小, 加粗).
 
-    .. image:: /_images/editorguide/removeformat.gif
+    .. image:: /_images/editorguide/removeformat.png
 
 font
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     大小: 可以改变选择区域字体的大小.
 
-    .. image:: /_images/editorguide/fontsize.gif
+    .. image:: /_images/editorguide/fontsize.png
 
     字体: 可以改变选择区域的字体种类.
 
-    .. image:: /_images/editorguide/fontfamily.gif
+    .. image:: /_images/editorguide/fontfamily.png
 
     粗体: 可以将选择区域文字加粗.
 
-    .. image:: /_images/editorguide/fontbold.gif
+    .. image:: /_images/editorguide/fontbold.png
 
     斜体: 可以将选择区域文字倾斜.
 
-    .. image:: /_images/editorguide/fontitalic.gif
+    .. image:: /_images/editorguide/fontitalic.png
 
     下划线: 可以给选择区域文字加下划线.
 
-    .. image:: /_images/editorguide/fontunderline.gif
+    .. image:: /_images/editorguide/fontunderline.png
 
     删除线: 可以给选择区域文字加删除线.
 
-    .. image:: /_images/editorguide/fontdelete.gif
+    .. image:: /_images/editorguide/fontdelete.png
 
 format
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     可以将光标所在处块加入标题格式.
 
-    .. image:: /_images/editorguide/format.gif
+    .. image:: /_images/editorguide/format.png
 
 color
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     设置选择区域的文本颜色.
 
-    .. image:: /_images/editorguide/forecolor.gif
+    .. image:: /_images/editorguide/forecolor.png
 
     设置选择区域的背景颜色.
 
-    .. image:: /_images/editorguide/bgcolor.gif
+    .. image:: /_images/editorguide/bgcolor.png
 
 list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     为选择区域或光标所在处加上项目编号.
 
-    .. image:: /_images/editorguide/list1.gif
+    .. image:: /_images/editorguide/list1.png
 
     为选择区域或光标所在处加上列表编号.
 
-    .. image:: /_images/editorguide/list2.gif
+    .. image:: /_images/editorguide/list2.png
 
 indent
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     减少光标处的缩进量.
 
-    .. image:: /_images/editorguide/indent1.gif
+    .. image:: /_images/editorguide/indent1.png
 
     增加光标处的缩进量.
 
-    .. image:: /_images/editorguide/indent2.gif
+    .. image:: /_images/editorguide/indent2.png
 
 justify
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     左对齐: 光标所在块左对齐.
 
-    .. image:: /_images/editorguide/justify1.gif
+    .. image:: /_images/editorguide/justify1.png
 
     居中对齐: 光标所在块居中对齐.
 
-    .. image:: /_images/editorguide/justify2.gif
+    .. image:: /_images/editorguide/justify2.png
 
 
     右对齐: 光标所在块右对齐.
 
-    .. image:: /_images/editorguide/justify3.gif
+    .. image:: /_images/editorguide/justify3.png
 
 link
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     编辑选择区域的超链接.
 
-    .. image:: /_images/editorguide/link.gif
+    .. image:: /_images/editorguide/link.png
 
 image
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     输入图像地址将图像插入到光标所在处.
 
-    .. image:: /_images/editorguide/image.gif
+    .. image:: /_images/editorguide/image.png
 
 flash
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     输入flash地址将flash插入到光标所在处.
 
-    .. image:: /_images/editorguide/flash.gif
+    .. image:: /_images/editorguide/flash.png
 
 
 music
@@ -166,7 +166,7 @@ music
 
     输入音乐地址将音乐插入到光标所在处.
 
-    .. image:: /_images/editorguide/music.gif
+    .. image:: /_images/editorguide/music.png
 
 
 smiley
@@ -174,35 +174,35 @@ smiley
 
     选择表情并将对应表情插入到光标所在处.
 
-    .. image:: /_images/editorguide/smiley.gif
+    .. image:: /_images/editorguide/smiley.png
 
 table
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     输入表格相关参数并将对应表格插入到光标所在处.
 
-    .. image:: /_images/editorguide/table.gif
+    .. image:: /_images/editorguide/table.png
 
 resize
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     可拖动调整编辑区域大小.
 
-    .. image:: /_images/editorguide/resize.gif
+    .. image:: /_images/editorguide/resize.png
 
 pagebreak
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     插入分页标记.
 
-    .. image:: /_images/editorguide/pagebreak.gif
+    .. image:: /_images/editorguide/pagebreak.png
 
 maximize
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     将编辑器充满整个屏幕.
 
-    .. image:: /_images/editorguide/maximize.gif
+    .. image:: /_images/editorguide/maximize.png
 
 扩展插件
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
