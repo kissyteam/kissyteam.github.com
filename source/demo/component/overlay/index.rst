@@ -1,4 +1,4 @@
-.. currentmodule:: Overlay
+﻿.. currentmodule:: Overlay
 
 
 Overlay
@@ -248,7 +248,7 @@ by `承玉 <yiminghe@gmail.com>`_
 全部 demo
 -------------------------------------------------------------------------------
 
-`KISSY.Overlay 1.1.6 <http://kissyteam.github.com/kissy/src/overlay/demo/demo.html>`_
+* `KISSY.Overlay 1.1.6 <http://kissyteam.github.com/kissy/src/overlay/demo/demo.html>`_
 
 
-`KISSY.Overlay 1.2.0 <http://yiminghe.github.com/kissy/src/overlay/demo/demo.html>`_
+* `KISSY.Overlay 1.2.0 <http://yiminghe.github.com/kissy/src/overlay/demo/demo.html>`_

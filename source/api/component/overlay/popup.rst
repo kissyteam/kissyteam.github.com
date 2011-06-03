@@ -11,13 +11,13 @@
 
     <script src='kissy.js'></script>
 
-Popop 属于 overlay 模块, 通过 use 加载 overlay 模块：
+Popup 属于 overlay 模块, 通过 use 加载 overlay 模块：
 
 .. code-block:: javascript
 
     KISSY.use("overlay",function(){
-        var Popop = S.Popop;
-        // 使用 Popop 构造器
+        var Popup = S.Popup;
+        // 使用 Popup 构造器
     });
 
 .. versionadded:: 1.2
@@ -26,15 +26,15 @@ Popop 属于 overlay 模块, 通过 use 加载 overlay 模块：
     .. code-block:: javascript
     
         KISSY.use("overlay",function(S,Overlay){
-            //使用 Popop 构造器
-            var Popop = Overlay.Popop;
+            //使用 Popup 构造器
+            var Popup = Overlay.Popup;
         });
 
 
 构造器接口
 ---------------------------------------------------------------------
 
-.. py:class:: Popop(container, config)
+.. py:class:: Popup(container, config)
 
     :param object container: 容器对象, 可取:
 
