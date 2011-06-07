@@ -69,6 +69,8 @@ by `承玉 <yiminghe@gmail.com>`_
 * :func:`~DOM.removeAttr`
 * :func:`~DOM.attr`
 * :func:`~DOM.hasAttr`
+* :func:`~DOM.prop`
+* :func:`~DOM.hasProp`
 * :func:`~DOM.val`
 * :func:`~DOM.text`
 * :func:`~DOM.css`

@@ -40,21 +40,21 @@
 <div id="content">
 
 <div class='related'>
-    <h3>导航</h3>
+    <h3>Navigation</h3>
     
     <ul>
     <li class="right" style="margin-right: 10px">
-      <a href="../../genindex.html" title="总目录"
-         accesskey="I">索引</a></li>
+      <a href="../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
     <li class="right" >
       <a href="../../py-modindex.html" title="Python Module Index"
-         >模块</a> | </li>
+         >modules</a> | </li>
     <li class="right" >
       <a href="../../styleguide/index.html" title="最佳编码实践"
-         accesskey="N">下一页</a> | </li>
+         accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="notice.html" title="注意"
-         accesskey="P">上一页</a> | </li>
+         accesskey="P">previous</a> | </li>
     <li><a href="../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../index.html" >子项目集</a> &#187; </li>
       <li><a href="index.html" accesskey="U">Editor</a> &#187; </li> 
@@ -65,11 +65,11 @@
 				<div class="main-wrap">
 					
   <div class="section" id="faq">
-<h1>FAQ<a class="headerlink" href="#faq" title="永久链接至标题">¶</a></h1>
+<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>数据同步<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>数据同步<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="form">
-<h3>form 同步<a class="headerlink" href="#form" title="永久链接至标题">¶</a></h3>
+<h3>form 同步<a class="headerlink" href="#form" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>如果后端通过 form 提交（submit）来获得用户输入数据，则只需配置参数 <a class="reference internal" href="usage.html#Editor.KISSY.Editor" title="Editor.KISSY.Editor"><tt class="xref py py-class docutils literal"><span class="pre">attachForm</span></tt></a>  .</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//是否监控编辑器所属的表单提交</span>
@@ -80,7 +80,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="id2">
-<h3>手动同步<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<h3>手动同步<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>涉及三个 api</p>
 <p>editor 为调用 KISSY.Editor 返回的编辑器实例</p>
@@ -91,12 +91,12 @@
 </div>
 </div>
 <div class="section" id="id3">
-<h2>自动保存<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>自动保存<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div>自动保存为 localStorage/flash 机制，保存在本地，可 <a class="reference internal" href="plugin-config.html#Editor.pluginConfig.draft" title="Editor.pluginConfig.draft"><tt class="xref py py-attr docutils literal"><span class="pre">配置参数</span></tt></a> .</div></blockquote>
 </div>
 <div class="section" id="id4">
-<h2>字数统计<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>字数统计<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>可参考以下 demo  :</p>
 <p><a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/wordCount.html">http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/wordCount.html</a></p>
@@ -104,7 +104,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="ctrol-enter">
-<h2>绑定 ctrol-enter<a class="headerlink" href="#ctrol-enter" title="永久链接至标题">¶</a></h2>
+<h2>绑定 ctrol-enter<a class="headerlink" href="#ctrol-enter" title="Permalink to this headline">¶</a></h2>
 <p>不少的应用场景要求在编辑器编辑区域内按下 ctrol+enter 按键时，编辑器所在表单会自动提交，解决方案是监控编辑器的文档按键事件：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">editor</span><span class="p">.</span><span class="nb">document</span><span class="p">,</span> <span class="s2">&quot;keydown&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
@@ -120,7 +120,7 @@
 <p>其中 editor 为编辑器实例的对象，通过 <tt class="docutils literal"><span class="pre">var</span> <span class="pre">editor=KISSY.Editor(&quot;#id&quot;,cfg)</span></tt> 获取而来。</p>
 </div>
 <div class="section" id="placeholder-tip">
-<h2>placeholder(tip) 功能<a class="headerlink" href="#placeholder-tip" title="永久链接至标题">¶</a></h2>
+<h2>placeholder(tip) 功能<a class="headerlink" href="#placeholder-tip" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>可参考以下 demo  :</p>
 <p><a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/tip.html">http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/tip.html</a></p>

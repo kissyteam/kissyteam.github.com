@@ -40,21 +40,21 @@
 <div id="content">
 
 <div class='related'>
-    <h3>导航</h3>
+    <h3>Navigation</h3>
     
     <ul>
     <li class="right" style="margin-right: 10px">
-      <a href="../../../genindex.html" title="总目录"
-         accesskey="I">索引</a></li>
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
-         >模块</a> | </li>
+         >modules</a> | </li>
     <li class="right" >
       <a href="../overlay/index.html" title="Overlay"
-         accesskey="N">下一页</a> | </li>
+         accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="../index.html" title="Component"
-         accesskey="P">上一页</a> | </li>
+         accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
       <li><a href="../index.html" accesskey="U">Component</a> &#187; </li> 
@@ -65,18 +65,18 @@
 				<div class="main-wrap">
 					
   <span class="target" id="module-DataLazyload"></span><div class="section" id="datalazyload">
-<h1>DataLazyload<a class="headerlink" href="#datalazyload" title="永久链接至标题">¶</a></h1>
+<h1>DataLazyload<a class="headerlink" href="#datalazyload" title="Permalink to this headline">¶</a></h1>
 <p>数据延迟加载组件.</p>
 <div class="section" id="id1">
-<h2>构造器接口<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>构造器接口<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="DataLazyload.DataLazyload">
-<em class="property">class </em><tt class="descclassname">DataLazyload.</tt><tt class="descname">DataLazyload</tt><big>(</big><em>containers</em>, <em>config</em><big>)</big><a class="headerlink" href="#DataLazyload.DataLazyload" title="永久链接至目标">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">DataLazyload.</tt><tt class="descname">DataLazyload</tt><big>(</big><em>containers</em>, <em>config</em><big>)</big><a class="headerlink" href="#DataLazyload.DataLazyload" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">参数:</th></tr>
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
 <li><strong>containers</strong> (<em>object</em>) &#8211; array,  图片所在容器(可以多个), 默认为 [doc]</li>
 <li><strong>config</strong> (<em>object</em>) &#8211; 类型对象, 实例对象所需的配置, 详见下节列出的各项</li>
@@ -92,10 +92,10 @@
 </div>
 </div>
 <div class="section" id="id2">
-<h2>配置项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>配置项<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <dl class="attribute">
 <dt id="DataLazyload.mod">
-<tt class="descclassname">DataLazyload.</tt><tt class="descname">mod</tt><a class="headerlink" href="#DataLazyload.mod" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">DataLazyload.</tt><tt class="descname">mod</tt><a class="headerlink" href="#DataLazyload.mod" title="Permalink to this definition">¶</a></dt>
 <dd><p>(optional): {String} 懒处理模式, 默认是 &#8216;manul&#8217;, 可取:</p>
 <blockquote>
 <div><ul class="simple">
@@ -106,78 +106,78 @@
 </dd></dl>
 
 <div class="admonition attention">
-<p class="first admonition-title">注意</p>
+<p class="first admonition-title">Attention</p>
 <p class="last">对于 textarea 数据, 只有手动模式</p>
 </div>
 <dl class="attribute">
 <dt id="DataLazyload.diff">
-<tt class="descclassname">DataLazyload.</tt><tt class="descname">diff</tt><a class="headerlink" href="#DataLazyload.diff" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">DataLazyload.</tt><tt class="descname">diff</tt><a class="headerlink" href="#DataLazyload.diff" title="Permalink to this definition">¶</a></dt>
 <dd><p>(optional):  {Number} 当前视窗往下, diff px 外的 img/textarea 延迟加载, 适当设置此值, 可以让用户在拖动时感觉数据已经加载好, 默认为当前视窗高度(两屏以外的才延迟加载),</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="DataLazyload.placeholder">
-<tt class="descclassname">DataLazyload.</tt><tt class="descname">placeholder</tt><a class="headerlink" href="#DataLazyload.placeholder" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">DataLazyload.</tt><tt class="descname">placeholder</tt><a class="headerlink" href="#DataLazyload.placeholder" title="Permalink to this definition">¶</a></dt>
 <dd><p>(optional): {String} 图像的占位图, 默认无</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="DataLazyload.execScript">
-<tt class="descclassname">DataLazyload.</tt><tt class="descname">execScript</tt><a class="headerlink" href="#DataLazyload.execScript" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">DataLazyload.</tt><tt class="descname">execScript</tt><a class="headerlink" href="#DataLazyload.execScript" title="Permalink to this definition">¶</a></dt>
 <dd><p>(optional): {Boolean} 是否执行 textarea 里面的脚本, 默认为 true</p>
 </dd></dl>
 
 </div>
 <div class="section" id="id3">
-<h2>实例属性<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>实例属性<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <dl class="attribute">
 <dt id="DataLazyload.containers">
-<tt class="descclassname">DataLazyload.</tt><tt class="descname">containers</tt><a class="headerlink" href="#DataLazyload.containers" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">DataLazyload.</tt><tt class="descname">containers</tt><a class="headerlink" href="#DataLazyload.containers" title="Permalink to this definition">¶</a></dt>
 <dd><p>(读写)： {Array} 图片所在容器(可以多个), 默认为 [doc]</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="DataLazyload.config">
-<tt class="descclassname">DataLazyload.</tt><tt class="descname">config</tt><a class="headerlink" href="#DataLazyload.config" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">DataLazyload.</tt><tt class="descname">config</tt><a class="headerlink" href="#DataLazyload.config" title="Permalink to this definition">¶</a></dt>
 <dd><p>(读写)： {Object} 配置参数</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="DataLazyload.images">
-<tt class="descclassname">DataLazyload.</tt><tt class="descname">images</tt><a class="headerlink" href="#DataLazyload.images" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">DataLazyload.</tt><tt class="descname">images</tt><a class="headerlink" href="#DataLazyload.images" title="Permalink to this definition">¶</a></dt>
 <dd><p>(只读)： {Array&lt;String&gt;} 需要延迟下载的图片列表</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="DataLazyload.self.areaes">
-<tt class="descclassname">self.</tt><tt class="descname">areaes</tt><a class="headerlink" href="#DataLazyload.self.areaes" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">self.</tt><tt class="descname">areaes</tt><a class="headerlink" href="#DataLazyload.self.areaes" title="Permalink to this definition">¶</a></dt>
 <dd><p>(只读)： {Array&lt;String&gt;} 需要延迟处理的 textarea列表</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="DataLazyload.callbacks">
-<tt class="descclassname">DataLazyload.</tt><tt class="descname">callbacks</tt><a class="headerlink" href="#DataLazyload.callbacks" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">DataLazyload.</tt><tt class="descname">callbacks</tt><a class="headerlink" href="#DataLazyload.callbacks" title="Permalink to this definition">¶</a></dt>
 <dd><p>(只读): {Object} 和延迟项绑定的回调函数, 元素列表和函数列表一一对应</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="DataLazyload.threshold">
-<tt class="descclassname">DataLazyload.</tt><tt class="descname">threshold</tt><a class="headerlink" href="#DataLazyload.threshold" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">DataLazyload.</tt><tt class="descname">threshold</tt><a class="headerlink" href="#DataLazyload.threshold" title="Permalink to this definition">¶</a></dt>
 <dd><p>(只读): {Number} 需要开始延迟的 Y 坐标值</p>
 </dd></dl>
 
 </div>
 <div class="section" id="id4">
-<h2>实例方法<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>实例方法<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="DataLazyload.addCallback">
-<tt class="descclassname">DataLazyload.</tt><tt class="descname">addCallback</tt><big>(</big><em>el</em>, <em>fn</em><big>)</big><a class="headerlink" href="#DataLazyload.addCallback" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">DataLazyload.</tt><tt class="descname">addCallback</tt><big>(</big><em>el</em>, <em>fn</em><big>)</big><a class="headerlink" href="#DataLazyload.addCallback" title="Permalink to this definition">¶</a></dt>
 <dd><p>添加回调函数. 当 el 即将出现在视图中时, 触发 fn</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="DataLazyload.loadCustomLazyData">
-<tt class="descclassname">DataLazyload.</tt><tt class="descname">loadCustomLazyData</tt><big>(</big><em>containers</em>, <em>type</em><big>)</big><a class="headerlink" href="#DataLazyload.loadCustomLazyData" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">DataLazyload.</tt><tt class="descname">loadCustomLazyData</tt><big>(</big><em>containers</em>, <em>type</em><big>)</big><a class="headerlink" href="#DataLazyload.loadCustomLazyData" title="Permalink to this definition">¶</a></dt>
 <dd><p>static, 加载自定义延迟数据</p>
 </dd></dl>
 

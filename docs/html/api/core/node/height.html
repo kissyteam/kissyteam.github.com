@@ -40,21 +40,21 @@
 <div id="content">
 
 <div class='related'>
-    <h3>导航</h3>
+    <h3>Navigation</h3>
     
     <ul>
     <li class="right" style="margin-right: 10px">
-      <a href="../../../genindex.html" title="总目录"
-         accesskey="I">索引</a></li>
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
-         >模块</a> | </li>
+         >modules</a> | </li>
     <li class="right" >
       <a href="width.html" title="width()"
-         accesskey="N">下一页</a> | </li>
+         accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="scrollLeft.html" title="scrollLeft()"
-         accesskey="P">上一页</a> | </li>
+         accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
       <li><a href="../index.html" >Core</a> &#187; </li>
@@ -66,18 +66,18 @@
 				<div class="main-wrap">
 					
   <div class="section" id="height">
-<h1>height()<a class="headerlink" href="#height" title="永久链接至标题">¶</a></h1>
+<h1>height()<a class="headerlink" href="#height" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>读<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>读<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="Node.NodeList.height">
-<tt class="descclassname">NodeList.</tt><tt class="descname">height</tt><big>(</big><big>)</big><a class="headerlink" href="#Node.NodeList.height" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">NodeList.</tt><tt class="descname">height</tt><big>(</big><big>)</big><a class="headerlink" href="#Node.NodeList.height" title="Permalink to this definition">¶</a></dt>
 <dd><p>得到当前节点列表第一个节点的计算高度</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">返回类型:</th></tr>
+<tr class="field"><th class="field-name" colspan="2">Return type:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body">number</td>
 </tr>
 </tbody>
@@ -86,9 +86,9 @@
 
 <p>和 <tt class="docutils literal"><span class="pre">css('height')</span></tt> 的区别在于该函数返回不带单位的纯数值，而前者则返回带单位的原始值（例如 <tt class="docutils literal"><span class="pre">400px</span></tt> ）.
 当需要数值计算时，推荐该方法，如图所示：(from jquery)</p>
-<img alt="from jquery" src="../../../images/height.png" />
+<img alt="from jquery" src="../../../images/height1.png" />
 <p class="versionadded">
-<span class="versionmodified">1.2 新版功能: </span>该方法也可以用来得到 windw 和 document 的高度</p>
+<span class="versionmodified">New in version 1.2: </span>该方法也可以用来得到 windw 和 document 的高度</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Node</span><span class="p">){</span>
     <span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">height</span><span class="p">();</span> <span class="c1">// 得到浏览器可以区域的高度，相当于 DOM.viewportHeight()</span>
     <span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">height</span><span class="p">();</span> <span class="c1">//得到 html 文档的高度，相当于 DOM.docHeight()</span>
@@ -96,7 +96,7 @@
 </pre></div>
 </div>
 <div class="section" id="id2">
-<h3>例子<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<h3>例子<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>得到各种各样的高度，黄色高亮区域代表 iframe 体。</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
@@ -149,11 +149,11 @@
 </div>
 </div>
 <div class="section" id="id3">
-<h3>效果<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<h3>效果<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <iframe width="100%" height="135" src="../../../static/api/core/node/height-get.html"></iframe></div>
 </div>
 <div class="section" id="id4">
-<h2>写<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>写<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt>
 <tt class="descclassname">NodeList.</tt><tt class="descname">height</tt><big>(</big><em>value</em><big>)</big></dt>
@@ -162,7 +162,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">参数:</th></tr>
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><strong>value</strong> (<em>number|string</em>) &#8211; 代表像素的整数值，或数字加上其他单位的字符串值.</td>
 </tr>
 </tbody>
@@ -170,11 +170,11 @@
 </dd></dl>
 
 <div class="admonition note">
-<p class="first admonition-title">注解</p>
+<p class="first admonition-title">Note</p>
 <p class="last">在现代浏览器中，css height 属性不包括 padding , border 或者 margin.</p>
 </div>
 <div class="section" id="id5">
-<h3>例子<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<h3>例子<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
@@ -213,7 +213,7 @@
 </div>
 </div>
 <div class="section" id="id6">
-<h3>效果<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<h3>效果<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <iframe width="100%" height="135" src="../../../static/api/core/node/height-set.html"></iframe></div>
 </div>
 </div>

@@ -40,21 +40,21 @@
 <div id="content">
 
 <div class='related'>
-    <h3>导航</h3>
+    <h3>Navigation</h3>
     
     <ul>
     <li class="right" style="margin-right: 10px">
-      <a href="../../../genindex.html" title="总目录"
-         accesskey="I">索引</a></li>
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
-         >模块</a> | </li>
+         >modules</a> | </li>
     <li class="right" >
       <a href="log.html" title="KISSY.log"
-         accesskey="N">下一页</a> | </li>
+         accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="namespace.html" title="KISSY.namespace"
-         accesskey="P">上一页</a> | </li>
+         accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
       <li><a href="../index.html" >Seed</a> &#187; </li>
@@ -66,29 +66,29 @@
 				<div class="main-wrap">
 					
   <p class="deprecated">
-<span class="versionmodified">1.2 版后已移除.</span></p>
+<span class="versionmodified">Deprecated since version 1.2.</span></p>
 <div class="section" id="kissy-app">
-<h1>KISSY.app<a class="headerlink" href="#kissy-app" title="永久链接至标题">¶</a></h1>
+<h1>KISSY.app<a class="headerlink" href="#kissy-app" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="Seed.KISSY.app">
-<tt class="descclassname">KISSY.</tt><tt class="descname">app</tt><big>(</big><em>name</em><span class="optional">[</span>, <em>sx</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Seed.KISSY.app" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">KISSY.</tt><tt class="descname">app</tt><big>(</big><em>name</em><span class="optional">[</span>, <em>sx</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Seed.KISSY.app" title="Permalink to this definition">¶</a></dt>
 <dd><p>创建应用对象，为全局 window 中名字为 <cite>name</cite> 的变量。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">参数:</th></tr>
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
 <li><strong>name</strong> (<em>string</em>) &#8211; 应用对象名称</li>
 <li><strong>sx</strong> (<em>object</em>) &#8211; mix 到应用对象的属性以及值。</li>
 </ul>
 </td>
 </tr>
-<tr class="field"><th class="field-name" colspan="2">返回:</th></tr>
+<tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><p class="first">创建的应用对象</p>
 </td>
 </tr>
-<tr class="field"><th class="field-name" colspan="2">返回类型:</th></tr>
+<tr class="field"><th class="field-name" colspan="2">Return type:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><p class="first last">object</p>
 </td>
 </tr>
@@ -107,7 +107,7 @@
 </div>
 <p>app 方法为基于 KISSY 的应用提供了最基本的代码组织方式。通过 app 创建的应用对象，自动具有了 add 和 <tt class="xref py py-func docutils literal"><span class="pre">namespace()</span></tt> 方法。</p>
 <p class="deprecated">
-<span class="versionmodified">1.2 版后已移除: </span>简化架构，两层构建应用：应用 = KISSY 环境 + 业务模块。模块通过 <a class="reference internal" href="../loader/index.html#module-Loader" title="Loader"><tt class="xref py py-mod docutils literal"><span class="pre">kissy</span> <span class="pre">1.2</span> <span class="pre">loader</span></tt></a> 进行命名空间隔离，
+<span class="versionmodified">Deprecated since version 1.2: </span>简化架构，两层构建应用：应用 = KISSY 环境 + 业务模块。模块通过 <a class="reference internal" href="../loader/index.html#module-Loader" title="Loader"><tt class="xref py py-mod docutils literal"><span class="pre">kissy</span> <span class="pre">1.2</span> <span class="pre">loader</span></tt></a> 进行命名空间隔离，
 模块统统通过 <tt class="docutils literal"><span class="pre">KISSY.add</span></tt> 加入 KISSY 环境中。</p>
 </div>
 

@@ -40,21 +40,21 @@
 <div id="content">
 
 <div class='related'>
-    <h3>导航</h3>
+    <h3>Navigation</h3>
     
     <ul>
     <li class="right" style="margin-right: 10px">
-      <a href="../../../genindex.html" title="总目录"
-         accesskey="I">索引</a></li>
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
-         >模块</a> | </li>
+         >modules</a> | </li>
     <li class="right" >
       <a href="../suggest/index.html" title="Suggest"
-         accesskey="N">下一页</a> | </li>
+         accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="proxy.html" title="Proxy"
-         accesskey="P">上一页</a> | </li>
+         accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
       <li><a href="../index.html" >Component</a> &#187; </li>
@@ -66,55 +66,55 @@
 				<div class="main-wrap">
 					
   <div class="section" id="scroll">
-<h1>Scroll<a class="headerlink" href="#scroll" title="永久链接至标题">¶</a></h1>
+<h1>Scroll<a class="headerlink" href="#scroll" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>引入<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>引入<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>页面引入 kissy.js :</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 </div>
 <p class="versionadded">
-<span class="versionmodified">1.2 新版功能: </span>通过 use 加载 dd 模块：<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">){</span>
+<span class="versionmodified">New in version 1.2: </span>通过 use 加载 dd 模块：<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">){</span>
     <span class="kd">var</span> <span class="nx">Scroll</span> <span class="o">=</span> <span class="nx">DD</span><span class="p">.</span><span class="nx">Scroll</span><span class="p">;</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 </p>
-<div class="admonition- admonition seealso">
-<p class="first admonition-title">也可以参考</p>
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
 <p class="last">KISSY 1.2 <a class="reference internal" href="../../seed/loader/index.html#module-Loader" title="Loader"><tt class="xref py py-mod docutils literal"><span class="pre">Loader</span></tt></a> 新增功能</p>
 </div>
 </div>
 <div class="section" id="id2">
-<h2>构造器<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>构造器<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="DD.Scroll">
-<em class="property">class </em><tt class="descclassname">DD.</tt><tt class="descname">Scroll</tt><big>(</big><em>config</em><big>)</big><a class="headerlink" href="#DD.Scroll" title="永久链接至目标">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">DD.</tt><tt class="descname">Scroll</tt><big>(</big><em>config</em><big>)</big><a class="headerlink" href="#DD.Scroll" title="Permalink to this definition">¶</a></dt>
 <dd><p>监控容器关联的所有可拖放对象，必要时随着可拖放对象进行自动滚动。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">参数:</th></tr>
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>object</em>) &#8211; <p>实例化可拖放对象的配置项，包括</p>
 <dl class="attribute">
 <dt id="DD.Scroll.config.node">
-<tt class="descclassname">config.</tt><tt class="descname">node</tt><a class="headerlink" href="#DD.Scroll.config.node" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">config.</tt><tt class="descname">node</tt><a class="headerlink" href="#DD.Scroll.config.node" title="Permalink to this definition">¶</a></dt>
 <dd><p>类型选择器字符串或者 HTMLElememt，自动滚动容器，随其内的可拖放节点自动滚动。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="DD.Scroll.config.rate">
-<tt class="descclassname">config.</tt><tt class="descname">rate</tt><a class="headerlink" href="#DD.Scroll.config.rate" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">config.</tt><tt class="descname">rate</tt><a class="headerlink" href="#DD.Scroll.config.rate" title="Permalink to this definition">¶</a></dt>
 <dd><p>类型 Array&lt;number&gt;，长度为 2，默认值 <tt class="docutils literal"><span class="pre">[10,10]</span></tt> . 表示容器自动滚动的速度，数组元素 1 表示横向滚动的速度，数组元素 2 表示纵向滚动的速度。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="DD.Scroll.config.diff">
-<tt class="descclassname">config.</tt><tt class="descname">diff</tt><a class="headerlink" href="#DD.Scroll.config.diff" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">config.</tt><tt class="descname">diff</tt><a class="headerlink" href="#DD.Scroll.config.diff" title="Permalink to this definition">¶</a></dt>
 <dd><p>类型 Array&lt;number&gt;，长度为 2，默认值 <tt class="docutils literal"><span class="pre">[20,20]</span></tt> . 当鼠标进入容器内边缘区域时开始自动滚动。
 数组元素 1 表示横向容器内边缘宽度，数组元素 2 表示纵向容器内边缘宽度。如图所示</p>
-<img alt="../../../images/scroll.png" src="../../../images/scroll.png" />
+<img alt="../../../images/scroll1.png" src="../../../images/scroll1.png" />
 </dd></dl>
 
 </td>
@@ -125,16 +125,16 @@
 
 </div>
 <div class="section" id="id3">
-<h2>实例方法<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>实例方法<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="DD.Scroll.attach">
-<tt class="descclassname">Scroll.</tt><tt class="descname">attach</tt><big>(</big><em>drag</em><big>)</big><a class="headerlink" href="#DD.Scroll.attach" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">Scroll.</tt><tt class="descname">attach</tt><big>(</big><em>drag</em><big>)</big><a class="headerlink" href="#DD.Scroll.attach" title="Permalink to this definition">¶</a></dt>
 <dd><p>注册可拖放对象到当前容器。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">参数:</th></tr>
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><strong>drag</strong> (<em>Draggable</em>) &#8211; 需要使容器自动滚动的 Draggable 对象</td>
 </tr>
 </tbody>
@@ -143,13 +143,13 @@
 
 <dl class="method">
 <dt id="DD.Scroll.unAttach">
-<tt class="descclassname">Scroll.</tt><tt class="descname">unAttach</tt><big>(</big><em>drag</em><big>)</big><a class="headerlink" href="#DD.Scroll.unAttach" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">Scroll.</tt><tt class="descname">unAttach</tt><big>(</big><em>drag</em><big>)</big><a class="headerlink" href="#DD.Scroll.unAttach" title="Permalink to this definition">¶</a></dt>
 <dd><p>解除当前容器关联的可拖放对象。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">参数:</th></tr>
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><strong>drag</strong> (<em>Draggable</em>) &#8211; 使容器自动滚动的 Draggable 对象</td>
 </tr>
 </tbody>
@@ -158,7 +158,7 @@
 
 <dl class="method">
 <dt id="DD.Scroll.destroy">
-<tt class="descclassname">Scroll.</tt><tt class="descname">destroy</tt><big>(</big><big>)</big><a class="headerlink" href="#DD.Scroll.destroy" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">Scroll.</tt><tt class="descname">destroy</tt><big>(</big><big>)</big><a class="headerlink" href="#DD.Scroll.destroy" title="Permalink to this definition">¶</a></dt>
 <dd><p>解除当前容器关联的所有可拖放对象。</p>
 </dd></dl>
 

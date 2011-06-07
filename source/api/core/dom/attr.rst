@@ -11,6 +11,20 @@ DOM.attr
     :param string name: 属性名称
     :returns: 对应属性名的属性值
     
+.. note::
+    .. versionchanged:: 1.2 
+        对没有设置的属性返回 ``null`` . 判断属性设置与否可以使用 :func:`~DOM.hasAttr` .如果需要获取 DOM properties，请使用 :func:`~DOM.prop` 方法    
+    
+例如
+
+.. code-block:: javascript
+
+   var S = KISSY, DOM = S.DOM;
+   var c=DOM.create("<input type='checkbox' checked='checked'/>");
+   DOM.attr(c,"checked") // => "checked"
+   DOM.prop(c,"checked") // => true     
+        
+    
     
 .. function:: attr( selector, name, value )
 

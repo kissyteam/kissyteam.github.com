@@ -40,21 +40,21 @@
 <div id="content">
 
 <div class='related'>
-    <h3>导航</h3>
+    <h3>Navigation</h3>
     
     <ul>
     <li class="right" style="margin-right: 10px">
-      <a href="../../../genindex.html" title="总目录"
-         accesskey="I">索引</a></li>
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
-         >模块</a> | </li>
+         >modules</a> | </li>
     <li class="right" >
       <a href="../kissy/index.html" title="Seed"
-         accesskey="N">下一页</a> | </li>
+         accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="add.ver1.2.html" title="KISSY.add (v1.2)"
-         accesskey="P">上一页</a> | </li>
+         accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
       <li><a href="../index.html" >Seed</a> &#187; </li>
@@ -66,16 +66,16 @@
 				<div class="main-wrap">
 					
   <div class="section" id="kissy-use">
-<h1>KISSY.use<a class="headerlink" href="#kissy-use" title="永久链接至标题">¶</a></h1>
+<h1>KISSY.use<a class="headerlink" href="#kissy-use" title="Permalink to this headline">¶</a></h1>
 <p>使用模块,和KISSY.add一起使用，形成KISSY的模块加载体系</p>
 <dl class="function">
 <dt id="Loader.KISSY.use">
-<tt class="descclassname">KISSY.</tt><tt class="descname">use</tt><big>(</big><em>modNames</em><span class="optional">[</span>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Loader.KISSY.use" title="永久链接至目标">¶</a></dt>
+<tt class="descclassname">KISSY.</tt><tt class="descname">use</tt><big>(</big><em>modNames</em><span class="optional">[</span>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Loader.KISSY.use" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">参数:</th></tr>
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
 <li><strong>modNames</strong> (<em>string</em>) &#8211; 以 <tt class="docutils literal"><span class="pre">,</span></tt> 分割的模块名称集合字符串,例如 <tt class="docutils literal"><span class="pre">KISSY.use(&quot;custommod,custommod2&quot;);</span></tt></li>
 <li><strong>callback</strong> (<em>function</em>) &#8211; 当 <tt class="docutils literal"><span class="pre">modNames</span></tt> 中所有模块加载完毕后执行</li>
@@ -87,7 +87,7 @@
 </dd></dl>
 
 <div class="section" id="id1">
-<h2>范例: 使用模块<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>范例: 使用模块<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//在 1.2 中 , function 中的后两个参数 DepMod1 和 DepMod2 即为两个依赖模块的返回值</span>
 <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;depMod1,depMod2&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DepMod1</span><span class="p">,</span><span class="nx">DepMod2</span><span class="p">){</span>
 <span class="p">});</span>
@@ -97,7 +97,7 @@
 如果模块名以 <tt class="docutils literal"><span class="pre">/</span></tt> 结尾，则自动加后缀 index ，例如
 <tt class="docutils literal"><span class="pre">use(&quot;mods/m1/&quot;)</span></tt> 相当于 <tt class="docutils literal"><span class="pre">use(&quot;mods/m1/index&quot;)</span></tt> ，即自动加载 <tt class="docutils literal"><span class="pre">m1</span></tt> 目录下的 <tt class="docutils literal"><span class="pre">index.js</span></tt></p>
 <div class="admonition note">
-<p class="first admonition-title">注解</p>
+<p class="first admonition-title">Note</p>
 <p class="last">注意 kissy &lt; 1.2 时使用模块前必须注册</p>
 </div>
 </div>

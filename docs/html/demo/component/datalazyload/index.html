@@ -40,21 +40,21 @@
 <div id="content">
 
 <div class='related'>
-    <h3>导航</h3>
+    <h3>Navigation</h3>
     
     <ul>
     <li class="right" style="margin-right: 10px">
-      <a href="../../../genindex.html" title="总目录"
-         accesskey="I">索引</a></li>
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
-         >模块</a> | </li>
+         >modules</a> | </li>
     <li class="right" >
       <a href="../overlay/index.html" title="Overlay"
-         accesskey="N">下一页</a> | </li>
+         accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="../index.html" title="Component"
-         accesskey="P">上一页</a> | </li>
+         accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >范例</a> &#187; </li>
       <li><a href="../index.html" accesskey="U">Component</a> &#187; </li> 
@@ -65,9 +65,9 @@
 				<div class="main-wrap">
 					
   <span class="target" id="module-DataLazyload"></span><div class="section" id="datalazyload">
-<h1>DataLazyload<a class="headerlink" href="#datalazyload" title="永久链接至标题">¶</a></h1>
+<h1>DataLazyload<a class="headerlink" href="#datalazyload" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>基本使用<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>基本使用<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>最简单的调用方式</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;datalazyload&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">DataLazyload</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">S</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
@@ -79,7 +79,7 @@
 <p>这样, 页面加载时就会自动延迟所有图片的下载, 以及延迟特定 textarea 里的 html 渲染.</p>
 </div>
 <div class="section" id="id2">
-<h2>自动模式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>自动模式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>使用自动模式时, 设置配置项中的 <tt class="docutils literal"><span class="pre">mod</span></tt> 为 &#8216;auto&#8217; , 如下:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">dataLazyload</span> <span class="o">=</span><span class="nx">DataLazyload</span><span class="p">({</span>
     <span class="nx">placeholder</span> <span class="o">:</span> <span class="s2">&quot;占位.png&quot;</span>
@@ -94,7 +94,7 @@
 <p>会把当前视窗外的 img 的 src 保存在自定义属性中, 并将 src 替换为 placeholder (不指定为空), 当滚动导致该图片出现在当前视窗时将 src 设置已经保存的真实值.</p>
 </div>
 <div class="section" id="id3">
-<h2>手动模式<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>手动模式<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>采用手动模式时, 需要自行在输出页面时, 可以不设置 img 的 src 属性, 但是必须设置 img 的 <tt class="docutils literal"><span class="pre">data-ks-lazyload</span></tt> 自定义属性为真实图片地址,  如:</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;img</span> <span class="na">data-ks-lazyload=</span><span class="s">&quot;xx.jpg&quot;</span> <span class="nt">/&gt;</span>
 </pre></div>
@@ -102,9 +102,9 @@
 <p>当滚动导致该图片出现在当前视窗时会将 src 设置为真实地址.</p>
 </div>
 <div class="section" id="textarea">
-<h2>textarea 延迟加载<a class="headerlink" href="#textarea" title="永久链接至标题">¶</a></h2>
+<h2>textarea 延迟加载<a class="headerlink" href="#textarea" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">注解</p>
+<p class="first admonition-title">Note</p>
 <p class="last"><strong>这种情况下和模式的手动自动没关系!</strong></p>
 </div>
 <p>将页面中需要延迟的 DOM 节点, 放在</p>
@@ -119,7 +119,7 @@
 </ol>
 </div>
 <div class="section" id="id4">
-<h2>全部示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>全部示例<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="http://docs.kissyui.com/kissy/src/datalazyload/test.html">manual 模式</a></li>
 <li><a class="reference external" href="http://docs.kissyui.com/kissy/src/datalazyload/test-auto.html">auto 模式</a></li>
