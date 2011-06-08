@@ -205,7 +205,8 @@
 <button id='demo_fade'>fadeIn/fadeOut</button>
 
 <script>
-     KISSY.use("anim",function(S,Anim){
+     KISSY.use("anim,node",function(S,Anim,Node){
+         //KISSY 1.2 以前可通过 var Node=S.Node ; var Anim=S.Anim
          var demo_show=S.one("#demo_show"),
          demo_slide=S.one("#demo_slide"),
          demo_fade=S.one("#demo_fade");
@@ -214,25 +215,28 @@
          anim_slide=S.one("#anim_slide"),
          anim_fade=S.one("#anim_fade");
 
+         //firefox anim bug
+         var native=S.UA.firefox==4?false:undefined;
+
          demo_show.on("click",function(){
              if(anim_show.css("display")==="none")
-             anim_show.show(1);
+                 anim_show.show(1,undefined,undefined,native);
              else
-             anim_show.hide(1);
+                 anim_show.hide(1,undefined,undefined,native);
          });
 
          demo_slide.on("click",function(){
              if(anim_slide.css("display")==="none")
-             anim_slide.slideDown();
+                 anim_slide.slideDown(undefined,undefined,undefined,native);
              else
-             anim_slide.slideUp();
+                 anim_slide.slideUp(undefined,undefined,undefined,native);
          });
 
          demo_fade.on("click",function(){
              if(anim_fade.css("display")==="none")
-             anim_fade.fadeIn();
+                 anim_fade.fadeIn(undefined,undefined,undefined,native);
              else
-             anim_fade.fadeOut();
+                 anim_fade.fadeOut(undefined,undefined,undefined,native);
          });
      });
 </script><p>源码：</p>
@@ -246,30 +250,85 @@
     <span class="nx">anim_slide</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#anim_slide&quot;</span><span class="p">),</span>
     <span class="nx">anim_fade</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#anim_fade&quot;</span><span class="p">);</span>
 
+    <span class="c1">//firefox anim bug</span>
+    <span class="kd">var</span> <span class="kr">native</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">UA</span><span class="p">.</span><span class="nx">firefox</span><span class="o">==</span><span class="mi">4</span><span class="o">?</span><span class="kc">false</span><span class="o">:</span><span class="kc">undefined</span><span class="p">;</span>
+
     <span class="nx">demo_show</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
         <span class="k">if</span><span class="p">(</span><span class="nx">anim_show</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;display&quot;</span><span class="p">)</span><span class="o">===</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
-        <span class="nx">anim_show</span><span class="p">.</span><span class="nx">show</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+            <span class="nx">anim_show</span><span class="p">.</span><span class="nx">show</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kr">native</span><span class="p">);</span>
         <span class="k">else</span>
-        <span class="nx">anim_show</span><span class="p">.</span><span class="nx">hide</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+            <span class="nx">anim_show</span><span class="p">.</span><span class="nx">hide</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kr">native</span><span class="p">);</span>
     <span class="p">});</span>
 
     <span class="nx">demo_slide</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
         <span class="k">if</span><span class="p">(</span><span class="nx">anim_slide</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;display&quot;</span><span class="p">)</span><span class="o">===</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
-        <span class="nx">anim_slide</span><span class="p">.</span><span class="nx">slideDown</span><span class="p">();</span>
+            <span class="nx">anim_slide</span><span class="p">.</span><span class="nx">slideDown</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kr">native</span><span class="p">);</span>
         <span class="k">else</span>
-        <span class="nx">anim_slide</span><span class="p">.</span><span class="nx">slideUp</span><span class="p">();</span>
+            <span class="nx">anim_slide</span><span class="p">.</span><span class="nx">slideUp</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kr">native</span><span class="p">);</span>
     <span class="p">});</span>
 
     <span class="nx">demo_fade</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
         <span class="k">if</span><span class="p">(</span><span class="nx">anim_fade</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;display&quot;</span><span class="p">)</span><span class="o">===</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
-        <span class="nx">anim_fade</span><span class="p">.</span><span class="nx">fadeIn</span><span class="p">();</span>
+            <span class="nx">anim_fade</span><span class="p">.</span><span class="nx">fadeIn</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kr">native</span><span class="p">);</span>
         <span class="k">else</span>
-        <span class="nx">anim_fade</span><span class="p">.</span><span class="nx">fadeOut</span><span class="p">();</span>
+            <span class="nx">anim_fade</span><span class="p">.</span><span class="nx">fadeOut</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kr">native</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 </div>
+<div class="section" id="stop">
+<h2>节点上的 stop 示例<a class="headerlink" href="#stop" title="Permalink to this headline">¶</a></h2>
+<p>涉及 <a class="reference internal" href="../../../api/core/anim/index.html#Anim.Node.stop" title="Anim.Node.stop"><tt class="xref py py-meth docutils literal"><span class="pre">stop()</span></tt></a> 方法</p>
+<style>
+div.block {
+    position: absolute;
+    background-color: #abc;
+    left: 0px;
+    top:0px;
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+}
+</style>
+
+<button id="go">Go</button>
+<button id="stop">STOP!</button>
+<button id="back">Back</button>
+<div style='position:relative;height:72px;'>
+    <div class="block"></div>
+</div>
+<script>
+    $=KISSY.NodeList.all;
+    /* Start animation */
+    $("#go").on('click',function(e){
+        $("#go").prop("disabled",true);
+        $("#back").prop("disabled",true);
+        $(".block").animate({left: (parseInt($(".block").css("left"))+100)+'px'}, 2,undefined,function(){
+            $("#go").prop("disabled",false);
+            $("#back").prop("disabled",false);
+        });
+        e.halt();
+    });
+
+    /* Stop animation when button is clicked */
+    $("#stop").on('click',function(){
+        $("#go").prop("disabled",false);
+        $("#back").prop("disabled",false);
+        $(".block").stop();
+    });
+
+    /* Start animation in the opposite direction */
+    $("#back").on('click',function(e){
+        $("#go").prop("disabled",true);
+        $("#back").prop("disabled",true);
+        $(".block").animate({left: (parseInt($(".block").css("left"))-100)+'px'}, 2,undefined,function(){
+            $("#go").prop("disabled",false);
+            $("#back").prop("disabled",false);
+        });
+        e.halt();
+    });
+</script></div>
 </div>
 
 
@@ -337,6 +396,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#id2">使用构造器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id3">滚动属性动画实例</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id4">节点实例动画操作</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stop">节点上的 stop 示例</a></li>
 </ul>
 </li>
 </ul>
