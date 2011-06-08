@@ -27,6 +27,7 @@ by `承玉 <yiminghe@gmail.com>`_
    :maxdepth: 1
 
    nodelist.rst
+   equals.rst
    all.rst
    one.rst
    add.rst
@@ -91,3 +92,4 @@ by `承玉 <yiminghe@gmail.com>`_
 * :func:`~DOM.removeData`
 * :func:`~DOM.hasData`
 * :func:`~DOM.unselectable`  
+* :func:`~DOM.contains`
