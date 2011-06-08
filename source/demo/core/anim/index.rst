@@ -299,4 +299,39 @@ by `承玉 <yiminghe@gmail.com>`_
         });    
     </script>
 
-   
+
+源码：
+
+.. code-block:: javascript
+
+        $=KISSY.NodeList.all;
+        /* Start animation */
+        $("#go").on('click',function(e){          
+            $("#go").prop("disabled",true);
+            $("#back").prop("disabled",true);
+            $(".block").animate({left: (parseInt($(".block").css("left"))+100)+'px'},
+             2,undefined,function(){
+                $("#go").prop("disabled",false);
+                $("#back").prop("disabled",false);
+            });
+            e.halt();
+        });
+        
+        /* Stop animation when button is clicked */
+        $("#stop").on('click',function(){
+            $("#go").prop("disabled",false);
+            $("#back").prop("disabled",false);
+            $(".block").stop();
+        });
+        
+        /* Start animation in the opposite direction */
+        $("#back").on('click',function(e){
+            $("#go").prop("disabled",true);
+            $("#back").prop("disabled",true);
+            $(".block").animate({left: (parseInt($(".block").css("left"))-100)+'px'},
+             2,undefined,function(){
+                $("#go").prop("disabled",false);
+                $("#back").prop("disabled",false);
+            });
+            e.halt();
+        });       

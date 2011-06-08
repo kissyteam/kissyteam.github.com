@@ -328,7 +328,41 @@ div.block {
         });
         e.halt();
     });
-</script></div>
+</script><p>源码：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+<span class="cm">/* Start animation */</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#go&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#go&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#back&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.block&quot;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span><span class="nx">left</span><span class="o">:</span> <span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.block&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;left&quot;</span><span class="p">))</span><span class="o">+</span><span class="mi">100</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;px&#39;</span><span class="p">},</span>
+     <span class="mi">2</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#go&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span><span class="kc">false</span><span class="p">);</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#back&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span><span class="kc">false</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">halt</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="cm">/* Stop animation when button is clicked */</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#stop&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#go&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span><span class="kc">false</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#back&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span><span class="kc">false</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.block&quot;</span><span class="p">).</span><span class="nx">stop</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="cm">/* Start animation in the opposite direction */</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#back&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#go&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#back&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.block&quot;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span><span class="nx">left</span><span class="o">:</span> <span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.block&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;left&quot;</span><span class="p">))</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;px&#39;</span><span class="p">},</span>
+     <span class="mi">2</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#go&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span><span class="kc">false</span><span class="p">);</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#back&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span><span class="kc">false</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">halt</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
