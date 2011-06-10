@@ -1,15 +1,7 @@
- /*****************************************************************************
- * 文档样式
- *****************************************************************************/
-.highlight-html{margin-bottom:10px;}
-.field-list ul {
-    padding-left: 1em;
+body {
+    color: #444;
+    padding: 0 10px ;
 }
-
-.first {
-    margin-top: 0 !important;
-}
-
 p.rubric {
     margin-top: 30px;
     font-weight: bold;
@@ -60,7 +52,7 @@ div.admonition dl {
 }
 
 p.admonition-title {
-    margin: 0px 10px 5px 0px;
+    margin: 0 10px 5px 0;
     font-weight: bold;
 }
 
@@ -128,7 +120,7 @@ dl {
 }
 
 dd p {
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 dd ul, dd table {
@@ -212,7 +204,7 @@ pre {
 }
 
 td.linenos pre {
-    padding: 5px 0px;
+    padding: 5px 0;
     border: 0;
     background-color: transparent;
     color: #aaa;
@@ -224,26 +216,6 @@ table.highlighttable {
 
 table.highlighttable td {
     padding: 0 0.5em 0 0.5em;
-}
-
-tt.descname {
-    background-color: transparent;
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-tt.descclassname {
-    background-color: transparent;
-    display: none;
-}
-
-tt.xref, a tt {
-    background-color: transparent;
-    font-weight: bold;
-}
-
-h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
-    background-color: transparent;
 }
 
 .viewcode-link {
@@ -260,34 +232,9 @@ div.viewcode-block:target {
     padding: 0 10px;
 }
 
-/* -- math display ---------------------------------------------------------- */
-
-img.math {
-    vertical-align: middle;
-}
-
-span.eqno {
-    float: right;
-}
-
 /* general styles */
 a:link, a:visited{color:#00a0e9;}
 a:hover, a:active{color:#f60;}
-
-.section ul ul,.col-sub ul ul {margin-left:2em;}
-.section ul li,.col-sub ul li {list-style:inside url(bullet.gif);}
-.section ul li li,.col-sub ul li li {list-style:inside url(sub-bullet.gif);}
-
-ol {
-    line-height: 1.5em;
-    margin: .3em 0 0 3.2em;
-    padding: 0;
-    list-style-image: none;
-}
-
-li {
-    margin-bottom: 6px;
-}
 
 a.headerlink {
     visibility: hidden;
@@ -306,20 +253,17 @@ dt:hover > a.headerlink {
 
 
 /* -- body styles ----------------------------------------------------------- */
-
-
-p {
-    margin: 0.8em 0 0.5em 0;
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
 }
-h1,h2,h3{margin-bottom:8px;padding:8px 0;font:normal 26px "Microsoft YaHei";font-weight: bold;}
-h1{border-bottom:1px solid #ddd;}
+h1,h2,h3{padding:8px 0;}
+h1 {
+    font-size: 18px;
+}
 h2{
-    background: none repeat scroll 0 0 #EAEAEA;
-    border-bottom: 1px dashed #00A0E9;
-    font-size: 22px;
-    padding: 2px 0 2px 20px;
+    font-size: 16px;
 }
-h3,h4{font-size:18px;}
+h3,h4{font-size:14px;}
 
 h1 a.anchor, h2 a.anchor, h3 a.anchor, h4 a.anchor, h5 a.anchor, h6 a.anchor {
     display: none;
@@ -340,7 +284,6 @@ h5 a.anchor:hover, h6 a.anchor:hover {
 }
 
 a.headerlink {
-    color: #c60f0f !important;
     font-size: 1em;
     margin-left: 6px;
     padding: 0 4px 0 4px;
@@ -349,27 +292,7 @@ a.headerlink {
 
 a.headerlink:hover {
     background-color: #ccc;
-    color: white !important;
-}
-
-li {
-    margin-bottom: 5px;
-}
-
-cite, code, tt {
-    font-family: 'Arial';
-    font-size: 0.95em;
-    letter-spacing: 0.01em;
-}
-
-tt {
-    background-color: #f2f2f2;
-    color: #333;
-    padding: 2px 5px;
-}
-
-tt.descname, tt.descclassname, tt.xref {
-    border: 0;
+    color: white;
 }
 
 hr {
@@ -377,14 +300,6 @@ hr {
     margin: 2em;
 }
 
-a tt {
-    border: 0;
-    color: #CA7900;
-}
-
-a tt:hover {
-    color: #2491CF;
-}
 
 pre {
     font: 14px/1.5 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
@@ -581,10 +496,30 @@ div.demo {
  * 复写部分api相关样式
  *****************************************************************************/
 .highlight-javascript{margin-bottom:10px;}
-tt.descclassname, tt.descname{padding:0;font-size:16px;color:#00A0E9}
-.docutils{width:100%;}
-table.field-list th{border:1px dotted #ddd!important;color:#888;}
 
+.main-wrap > .section {
+    padding-bottom: 8px;
+    border-bottom: 1px dotted #ccc;
+    margin-bottom: 8px;
+}
+.main-wrap > .section > blockquote, .main-wrap > .section > dl, .section > .toctree-wrapper {
+    padding-left: 20px;
+}
+
+tt {
+    font-family: arial;
+}
+tt.descclassname, tt.descname {
+    color: #9f2a2a;
+}
+
+tt.descclassname, tt.descname, tt.xref {
+    font-weight: bold;
+}
+
+tt.descclassname {
+    display: none;
+}
 /*****************************************************************************
  * 布局
  *****************************************************************************/
@@ -612,27 +547,25 @@ table.field-list th{border:1px dotted #ddd!important;color:#888;}
     *zoom: 1;
 }
 .grid-s6m0 .main-wrap {
-    margin-left: 290px;
+    margin-left: 210px;
 	padding-left:10px;
+    padding-top: 10px;
 }
 
 .grid-s6m0 .col-sub {
-    width: 280px;
+    width: 200px;
     margin-left: -100%;
 }
 
 /*****************************************************************************
  * 页头尾
  *****************************************************************************/
-
-#header, #footer, #content {width:1000px;margin:0 auto;}
-
-#header {overflow:hidden;background:url(toy.jpg) no-repeat 82% 0;border-bottom: 1px solid #ace;}
+#header {overflow:hidden;border-bottom: 1px solid #ace;color:#888;}
 #header .logo{float:left;margin:20px 0 0 0;padding:0;border:none;}
 #header .sub-title{float:left;margin:45px 5px 0 5px;font:25px "Microsoft YaHei";color:#aaa;}
-#header .desc{float:left;margin-top:55px;margin-left:5px;font-size:15px;color:#80c269;font-weight:bold;font-family: "Microsoft YaHei";}
+#header .desc{float:left;margin-top:55px;margin-left:5px;font-size:15px;}
 #header  .navigation {float:right;margin:55px 0 0 0;overflow:hidden;list-style:none;}
-#header  .navigation li {float:left;margin-left:-1px;padding: 0 10px 0 25px;line-height:1em;border-left:1px solid #ddd;background:url(bullet.gif) no-repeat 12px 50%;}
+#header  .navigation li {float:left;margin-left:-1px;padding: 0 10px;line-height:1em;border-left:1px solid #ddd;}
 
 #content{margin-bottom:10px;}
 .col-sub{border: 1px solid #ace;border-top:none;background:#f2f8fa;}
@@ -651,71 +584,3 @@ table.field-list th{border:1px dotted #ddd!important;color:#888;}
 .col-sub .s-box{margin-left:10px;margin-right:10px;}
 .col-sub .s-box .box-hd{border-bottom:1px dotted #ace;}
 
-/*上一页下一页*/
-.relative-links{border-top:1px solid #ddd;}
-.relative-links .prev{float:left;}
-.relative-links .next{float:right;}
-
-
-/*navigation - related*/
-
-
-div.related {
-    width: 100%;
-    font-size: 90%;
-}
-
-div.related h3 {
-    display: none;
-}
-
-div.related ul {
-    margin: 0;
-    padding: 0 0 0 10px;
-    list-style: none;
-}
-
-div.related li {
-    display: inline;
-}
-
-div.related li.right {
-    float: right;
-    margin-right: 5px;
-}
-
-div.related {
-    font-size: 1em;
-}
-
-div.related ul {
-    background-image: url(navigation.png);
-    height: 2em;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    list-style:none;
-}
-
-div.related ul li {
-    margin: 0;
-    padding: 0;
-    height: 2em;
-    float: left;
-    list-style:none;
-}
-
-div.related ul li.right {
-    float: right;
-    margin-right: 5px;
-}
-
-div.related ul li a {
-    margin: 0;
-    padding: 0 5px 0 5px;
-    line-height: 1.75em;
-    color: #EE9816;
-}
-
-div.related ul li a:hover {
-    color: #3CA8E7;
-}

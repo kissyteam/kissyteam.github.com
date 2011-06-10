@@ -37,6 +37,7 @@ kissy/layout.html
 <link rel="stylesheet" href="{{ pathto('_static/kissy.css', 1) }}"/>
 <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}"/>
 <link rel="shortcut icon" href="{{ pathto('_static/favicon.ico', 1) }}"/>
+
 <script>
     var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '{{ url_root }}',
@@ -45,7 +46,7 @@ kissy/layout.html
         FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
         HAS_SOURCE: {{ has_source | lower }}
     };
-    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){  
+    if(window.location.href.indexOf("localhost/")!=-1){
         document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
     } else{
         document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
@@ -59,32 +60,15 @@ kissy/layout.html
 {%- include "header.html" %}
 {% endblock %}
 
-
 {%- block content %}
 <div id="content">
-    {%- include "related.html" %}
 	<div  class="layout grid-s6m0">
 		{%- block document %}
 			<div class="col-main">
 				<div class="main-wrap">
 					{% block body %} {% endblock %}
 					
-					<div class="s-box relative-links">
-						<div class="s-box-bd">
-							{%- if prev %}
-                            <a href="{{ prev.link|e }}" title="{{ prev.title|striptags|e }}"> 上一页 </a> |
-                            {%- endif %}
-            
-                            {%- if parents %}
-                            <a href="{{ parents[-1].link|e }}" title="{{ parents[-1].title|striptags|e }}">回到上层</a> |
-                            {%- endif %}
-            
-                            {%- if next %}
-                            <a href="{{ next.link|e }}" title="{{ next.title|striptags|e }}"> 下一页 </a>
-                            {%- endif %}
-						</div>
-					</div>
-					
+
 					{% include "search.html" %}
 				</div>
 			</div>

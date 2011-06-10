@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="static/kissy.css"/>
 <link rel="stylesheet" href="static/pygments.css"/>
 <link rel="shortcut icon" href="static/favicon.ico"/>
+
 <script>
     var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -19,7 +20,7 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
     };
-    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){  
+    if(window.location.href.indexOf("localhost/")!=-1){
         document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
     } else{
         document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
@@ -30,28 +31,16 @@
     <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="static/logo.png"/></a></h1>
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
+        <li><a href="../html/quickstart/index.html">快速上手</a></li>
+        <li><a href="http://kissyui.com/blog/">API</a></li>
+        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
         <li><a href="http://kissyui.com/blog/">博客</a></li>
+        <li><a href="#">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
-        <!--<li><a href="../html/about/index.html">关于</a></li>-->
     </ul>
 </div>
-
 
 <div id="content">
-
-<div class='related'>
-    <h3>Navigation</h3>
-    
-    <ul>
-    <li class="right" style="margin-right: 10px">
-      <a href="#" title="General Index"
-         accesskey="I">index</a></li>
-    <li class="right" >
-      <a href="py-modindex.html" title="Python Module Index"
-         >modules</a> | </li>
-    <li><a href="index.html">KISSY Docs</a> &#187; </li> 
-    </ul>
-</div>
 	<div  class="layout grid-s6m0">
 			<div class="col-main">
 				<div class="main-wrap">
@@ -185,8 +174,9 @@
     <dt><a href="api/seed/kissy/Config.html#Seed.KISSY.Config.debug">debug (Seed.KISSY.Config attribute)</a></dt>
     <dt><a href="api/component/switchable/switchable.html#Switchable.Switchable.delay">delay (Switchable.Switchable attribute)</a></dt>
     <dt><a href="relatedproj/editorguide/plugin-config.html#Editor.pluginConfig.templates.demo">demo (Editor.pluginConfig.templates attribute)</a></dt>
-    <dt><a href="api/component/dd/draggable.html#DD.Draggable.destroy">destroy() (DD.Draggable method)</a></dt>
+    <dt><a href="api/component/dd/draggable1.html#destroy">destroy() (built-in function)</a></dt>
     <dd><dl>
+      <dt><a href="api/component/dd/draggable.html#DD.Draggable.destroy">(DD.Draggable method)</a></dt>
       <dt><a href="api/component/dd/draggable-delegate.html#DD.DraggableDelegate.destroy">(DD.DraggableDelegate method)</a></dt>
       <dt><a href="api/component/dd/droppable.html#DD.Droppable.destroy">(DD.Droppable method)</a></dt>
       <dt><a href="api/component/dd/droppable-delegate.html#DD.DroppableDelegate.destroy">(DD.DroppableDelegate method)</a></dt>
@@ -202,8 +192,6 @@
     <dt><a href="api/component/switchable/carousel.html#Switchable.Carousel.disableBtnCls">disableBtnCls (Switchable.Carousel attribute)</a></dt>
     <dt><a href="api/core/dom/docHeight.html#DOM.docHeight">docHeight() (in module DOM)</a></dt>
     <dt><a href="api/core/dom/docWidth.html#DOM.docWidth">docWidth() (in module DOM)</a></dt>
-</dl></td>
-  <td style="width: 33%" valign="top"><dl>
     <dt><a href="api/core/dom/index.html#module-DOM">DOM (module)</a></dt>
     <dt><a href="relatedproj/editorguide/plugin-config.html#Editor.pluginConfig.draft">draft (Editor.pluginConfig attribute)</a></dt>
     <dt><a href="api/component/dd/draggable.html#DD.Draggable.drag.event.drag">drag (DD.Draggable.drag.event attribute)</a></dt>
@@ -216,6 +204,14 @@
       <dt><a href="api/component/dd/droppable.html#DD.Droppable.drophit.event.drag">(DD.Droppable.drophit.event attribute)</a></dt>
       <dt><a href="api/component/dd/droppable.html#DD.Droppable.dropover.event.drag">(DD.Droppable.dropover.event attribute)</a></dt>
   </dl></dd>
+    <dt><a href="api/component/dd/draggable1.html#drag">drag() (built-in function)</a></dt>
+</dl></td>
+  <td style="width: 33%" valign="top"><dl>
+    <dt><a href="api/component/dd/draggable1.html#dragdrophit">dragdrophit() (built-in function)</a></dt>
+    <dt><a href="api/component/dd/draggable1.html#dragdropmiss">dragdropmiss() (built-in function)</a></dt>
+    <dt><a href="api/component/dd/draggable1.html#dragend">dragend() (built-in function)</a></dt>
+    <dt><a href="api/component/dd/draggable1.html#dragenter">dragenter() (built-in function)</a></dt>
+    <dt><a href="api/component/dd/draggable1.html#dragexit">dragexit() (built-in function)</a></dt>
     <dt><a href="api/component/dd/draggable.html#DD.Draggable">Draggable (class in DD)</a></dt>
     <dt><a href="api/component/overlay/dialog.html#Overlay.draggable">draggable (in module Overlay)</a>, <a href="api/component/overlay/dialog.html#Overlay.draggable">[1]</a></dt>
     <dt><a href="api/component/dd/draggable.html#DD.Draggable.drag">Draggable.drag (in module DD)</a></dt>
@@ -233,7 +229,10 @@
     <dt><a href="api/component/dd/draggable.html#DD.Draggable.dragNode">dragNode (DD.Draggable attribute)</a></dt>
     <dd><dl>
       <dt><a href="api/component/dd/draggable-delegate.html#DD.DraggableDelegate.dragNode">(DD.DraggableDelegate attribute)</a></dt>
+      <dt><a href="api/component/dd/draggable1.html#dragNode">(None attribute)</a></dt>
   </dl></dd>
+    <dt><a href="api/component/dd/draggable1.html#dragover">dragover() (built-in function)</a></dt>
+    <dt><a href="api/component/dd/draggable1.html#dragstart">dragstart() (built-in function)</a></dt>
     <dt><a href="api/component/dd/droppable.html#DD.Droppable.dropenter.event.drop">drop (DD.Droppable.dropenter.event attribute)</a></dt>
     <dd><dl>
       <dt><a href="api/component/dd/droppable.html#DD.Droppable.dropexit.event.drop">(DD.Droppable.dropexit.event attribute)</a></dt>
@@ -344,6 +343,7 @@
   </dl></dd>
 </dl></td>
   <td style="width: 33%" valign="top"><dl>
+    <dt><a href="api/component/dd/draggable1.html#INTERSECT">INTERSECT (global variable or constant)</a></dt>
     <dt><a href="api/component/switchable/switchable.html#Switchable.interval">interval (in module Switchable)</a></dt>
     <dt><a href="api/core/node/item.html#Node.NodeList.item">item() (Node.NodeList method)</a></dt>
 </dl></td>
@@ -358,6 +358,7 @@
     <dt><a href="api/seed/web/available.html#Web.KISSY.available">KISSY.available() (in module Web)</a></dt>
     <dt><a href="api/seed/lang/clone.html#Lang.KISSY.clone">KISSY.clone() (in module Lang)</a></dt>
     <dt><a href="api/seed/loader/add.ver1.2.html#Loader.KISSY.config">KISSY.config() (in module Loader)</a></dt>
+    <dt><a href="api/component/dd/draggable1.html#KISSY.DD.Draggable">KISSY.DD.Draggable() (class)</a></dt>
     <dt><a href="api/seed/lang/each.html#Lang.KISSY.each">KISSY.each() (in module Lang)</a></dt>
     <dt><a href="relatedproj/editorguide/usage.html#Editor.KISSY.Editor">KISSY.Editor (class in Editor)</a></dt>
     <dt><a href="api/seed/lang/endsWith.html#Lang.KISSY.endsWith">KISSY.endsWith() (in module Lang)</a></dt>
@@ -378,9 +379,9 @@
     <dt><a href="api/seed/lang/isEmptyObject.html#Lang.KISSY.isEmptyObject">KISSY.isEmptyObject() (in module Lang)</a></dt>
     <dt><a href="api/seed/lang/isFunction.html#Lang.KISSY.isFunction">KISSY.isFunction() (in module Lang)</a></dt>
     <dt><a href="api/seed/lang/isNull.html#Lang.KISSY.isNull">KISSY.isNull() (in module Lang)</a></dt>
-    <dt><a href="api/seed/lang/isNumber.html#Lang.KISSY.isNumber">KISSY.isNumber() (in module Lang)</a></dt>
 </dl></td>
   <td style="width: 33%" valign="top"><dl>
+    <dt><a href="api/seed/lang/isNumber.html#Lang.KISSY.isNumber">KISSY.isNumber() (in module Lang)</a></dt>
     <dt><a href="api/seed/lang/isObject.html#Lang.KISSY.isObject">KISSY.isObject() (in module Lang)</a></dt>
     <dt><a href="api/seed/lang/isPlainObject.html#Lang.KISSY.isPlainObject">KISSY.isPlainObject() (in module Lang)</a></dt>
     <dt><a href="api/seed/lang/isRegExp.html#Lang.KISSY.isRegExp">KISSY.isRegExp() (in module Lang)</a></dt>
@@ -456,8 +457,6 @@
       <dt><a href="api/component/switchable/switchable.html#Switchable.Switchable.next">(Switchable.Switchable method)</a></dt>
   </dl></dd>
     <dt><a href="api/component/switchable/carousel.html#Switchable.Carousel.nextBtnCls">nextBtnCls (Switchable.Carousel attribute)</a></dt>
-</dl></td>
-  <td style="width: 33%" valign="top"><dl>
     <dt><a href="api/component/dd/draggable.html#DD.Draggable.node">node (DD.Draggable attribute)</a></dt>
     <dd><dl>
       <dt><a href="api/component/dd/draggable.html#DD.Draggable.config.node">(DD.Draggable.config attribute)</a></dt>
@@ -468,7 +467,10 @@
       <dt><a href="api/component/dd/proxy.html#DD.Proxy.config.node">(DD.Proxy.config attribute)</a></dt>
       <dt><a href="api/component/dd/scroll.html#DD.Scroll.config.node">(DD.Scroll.config attribute)</a></dt>
   </dl></dd>
+</dl></td>
+  <td style="width: 33%" valign="top"><dl>
     <dt><a href="api/core/node/index.html#module-Node">Node (module)</a></dt>
+    <dt><a href="api/component/dd/draggable1.html#node">node (None attribute)</a></dt>
     <dt><a href="api/core/node/nodelist.html#Node.NodeList">NodeList (class in Node)</a></dt>
     <dt><a href="api/core/node/one.html#Node.NodeList.one">NodeList.one() (in module Node)</a></dt>
 </dl></td>
@@ -499,9 +501,10 @@
     <dt><a href="api/seed/loader/add.ver1.2.html#Loader.config.packages.path">path (Loader.config.packages attribute)</a></dt>
     <dt><a href="api/component/switchable/switchable.html#Switchable.pauseOnHover">pauseOnHover (in module Switchable)</a></dt>
     <dt><a href="api/component/datalazyload/index.html#DataLazyload.placeholder">placeholder (in module DataLazyload)</a></dt>
+    <dt><a href="relatedproj/editorguide/usage.html#Editor.KISSY.Editor.config.pluginConfig">pluginConfig (Editor.KISSY.Editor.config attribute)</a></dt>
 </dl></td>
   <td style="width: 33%" valign="top"><dl>
-    <dt><a href="relatedproj/editorguide/usage.html#Editor.KISSY.Editor.config.pluginConfig">pluginConfig (Editor.KISSY.Editor.config attribute)</a></dt>
+    <dt><a href="api/component/dd/draggable1.html#POINT">POINT (global variable or constant)</a></dt>
     <dt><a href="api/component/overlay/popup.html#Overlay.Popup">Popup (class in Overlay)</a></dt>
     <dt><a href="api/component/overlay/overlay.html#Overlay.Overlay.prefixCls">prefixCls (Overlay.Overlay attribute)</a></dt>
     <dt><a href="api/core/dom/prepend.html#DOM.prepend">prepend() (in module DOM)</a></dt>
@@ -576,9 +579,9 @@
     <dt><a href="api/core/dom/siblings.html#DOM.siblings">siblings() (in module DOM)</a></dt>
     <dt><a href="relatedproj/editorguide/plugin-config.html#Editor.pluginConfig.image.upload.sizeLimit">sizeLimit (Editor.pluginConfig.image.upload attribute)</a></dt>
     <dt><a href="api/core/node/slice.html#Node.NodeList.slice">slice() (Node.NodeList method)</a></dt>
+    <dt><a href="api/core/anim/index.html#Anim.Node.slideDown">slideDown() (Anim.Node method)</a></dt>
 </dl></td>
   <td style="width: 33%" valign="top"><dl>
-    <dt><a href="api/core/anim/index.html#Anim.Node.slideDown">slideDown() (Anim.Node method)</a></dt>
     <dt><a href="api/core/anim/index.html#Anim.Node.slideUp">slideUp() (Anim.Node method)</a></dt>
     <dt><a href="api/component/overlay/overlay.html#Overlay.srcNode">srcNode (in module Overlay)</a></dt>
     <dt><a href="api/component/switchable/switchable.html#Switchable.Switchable.steps">steps (Switchable.Switchable attribute)</a></dt>
@@ -586,6 +589,7 @@
     <dd><dl>
       <dt><a href="api/core/anim/index.html#Anim.Node.stop">(Anim.Node method)</a></dt>
   </dl></dd>
+    <dt><a href="api/component/dd/draggable1.html#STRICT">STRICT (global variable or constant)</a></dt>
     <dt><a href="api/seed/loader/getScript.html#Loader.config.success">success (Loader.config attribute)</a></dt>
     <dt><a href="relatedproj/editorguide/plugin-config.html#Editor.pluginConfig.image.upload.suffix">suffix (Editor.pluginConfig.image.upload attribute)</a></dt>
     <dt><a href="api/component/suggest/index.html#module-Suggest">Suggest (module)</a></dt>
@@ -704,11 +708,7 @@
 
 
 					
-					<div class="s-box relative-links">
-						<div class="s-box-bd">
-						</div>
-					</div>
-					
+
 					<div id="disqus_thread"></div>
 <script>
     if(window.location.hostname.indexOf("kissyui.com")!=-1){
@@ -753,8 +753,8 @@
 	<div class="col-sub">
 
 <div class="s-box">
-	<div class="s-box-bd">
-		<ul>
+    <div class="s-box-bd">
+        <ul>
 <li class="toctree-l1"><a class="reference internal" href="quickstart/index.html">快速上手</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/index.html">API文档</a></li>
 <li class="toctree-l1"><a class="reference internal" href="demo/index.html">范例</a></li>
@@ -764,7 +764,7 @@
 <li class="toctree-l1"><a class="reference internal" href="workflow/index.html">组件开发指南</a></li>
 </ul>
 
-	</div>
+    </div>
 </div>
     </div>
 	</div>
