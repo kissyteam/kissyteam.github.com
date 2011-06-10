@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <style>
+p { background:yellow; font-weight:bold; cursor:pointer; 
+padding:5px; }
+p.over { background: #ccc; }
+span { color:red; }
+</style>
+<script>
+    if(location.host=="localhost"){
+        document.writeln('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+    }else{
+        document.writeln('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+    }
+   </script>
+</head>
+<body>
+  <p>Click or double click here.</p>
+<span></span>
+<script>
+    KISSY.use("node",function(S,Node){ 
+        var $=Node.all;       
+        $("p").on("click", function(event){
+            var str = "( " + event.pageX + ", " + event.pageY + " )";
+            $("span").text("Click happened! " + str);
+        });
+        $("p").on("dblclick", function(){
+            $("span").text("Double-click happened in " + this.nodeName);
+        });
+        $("p").on("mouseenter mouseleave", function(event){
+            $(this).toggleClass("over");
+        });
+    });
+</script>
+
+</body>
+</html>

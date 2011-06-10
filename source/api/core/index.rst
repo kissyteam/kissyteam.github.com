@@ -11,5 +11,6 @@ Core
    dom/index.rst 
    node/index.rst
    anim/index.rst
+   event/index.rst
 
 

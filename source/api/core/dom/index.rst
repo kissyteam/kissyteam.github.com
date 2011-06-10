@@ -7,8 +7,7 @@ by `玉伯 <lifesinger@gmail.com>`_ , `承玉 <yiminghe@gmail.com>`_
 
 
 .. versionchanged:: 1.2
-    DOM 不再接受  :mod:`Node` 以及 NodeList 类型的参数，DOM 只处理选择器以及原生 DOM 节点。
-    KISSY Node 以及  :class:`~Node.NodeList` 对象上的相关处理可直接调用其自身方法。
+    KISSY Node 以及  :class:`~Node.NodeList` 对象上的相关处理推荐直接调用其自身方法。
 
 .. toctree::
    :maxdepth: 3
