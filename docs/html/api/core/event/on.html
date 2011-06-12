@@ -69,7 +69,7 @@
 <h1>Event.on<a class="headerlink" href="#event-on" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="Event.on">
-<tt class="descclassname">Event.</tt><tt class="descname">on</tt><big>(</big><em>selector</em>, <em>eventType</em>, <em>fn</em>, <em>scope</em><big>)</big><a class="headerlink" href="#Event.on" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">Event.</tt><tt class="descname">on</tt><big>(</big><em>selector</em>, <em>eventType</em>, <em>fn</em><span class="optional">[</span>, <em>scope</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Event.on" title="Permalink to this definition">¶</a></dt>
 <dd><p>为符合匹配的 dom 节点的相应事件添加事件处理器</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -124,7 +124,7 @@
 </div>
 <div class="section" id="id3">
 <h2>事件对象<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>当事件发生时，事件处理器回调函数会被传递给一个事件对象参数.具体可见 <tt class="xref py py-class docutils literal"><span class="pre">EventObject</span></tt> .</p>
+<p>当事件发生时，事件处理器回调函数会被传递给一个事件对象参数.具体可见 <a class="reference internal" href="event-object.html#Event.Object" title="Event.Object"><tt class="xref py py-class docutils literal"><span class="pre">Object</span></tt></a> .</p>
 <p>返回 <tt class="docutils literal"><span class="pre">false</span></tt> 相当于调用了事件对象的 <tt class="xref py py-meth docutils literal"><span class="pre">preventDefault()</span></tt> 以及 <tt class="xref py py-meth docutils literal"><span class="pre">stopPropagation()</span></tt></p>
 <p>在事件处理器中使用事件对象举例：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;#foo&#39;</span><span class="p">,</span><span class="s1">&#39;mouseup mousedown&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
@@ -133,6 +133,10 @@
 </pre></div>
 </div>
 <p>这样就可以在绑定多事件时，明确知道当前哪个事件触发了.  .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">KISSY 也对 <tt class="docutils literal"><span class="pre">mouseenter/mouseleave</span> <span class="pre">focusin/focusout</span></tt> 进行了兼容处理，所有浏览器都可以使用这两个事件了.</p>
+</div>
 </div>
 <div class="section" id="id4">
 <h2>例子<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
@@ -255,6 +259,20 @@
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Event</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="">Event.on</a></li>
 <li class="toctree-l4"><a class="reference internal" href="detach.html">Event.detach</a></li>
+<li class="toctree-l4"><a class="reference internal" href="event-target.html">Event.Target</a></li>
+<li class="toctree-l4"><a class="reference internal" href="event-object.html">Event.Object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="currentTarget.html">event.currentTarget</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pageX.html">event.pageX/Y</a></li>
+<li class="toctree-l4"><a class="reference internal" href="relatedTarget.html">event.relatedTarget</a></li>
+<li class="toctree-l4"><a class="reference internal" href="target.html">event.target</a></li>
+<li class="toctree-l4"><a class="reference internal" href="type.html">event.type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="which.html">event.which</a></li>
+<li class="toctree-l4"><a class="reference internal" href="preventDefault.html">event.preventDefault</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stopImmediatePropagation.html">event.stopImmediatePropagation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stopPropagation.html">event.stopPropagation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="isDefaultPrevented.html">event.isDefaultPrevented</a></li>
+<li class="toctree-l4"><a class="reference internal" href="isImmediatePropagationStopped.html">event.isImmediatePropagationStopped</a></li>
+<li class="toctree-l4"><a class="reference internal" href="isPropagationStopped.html">event.isPropagationStopped</a></li>
 </ul>
 </li>
 </ul>

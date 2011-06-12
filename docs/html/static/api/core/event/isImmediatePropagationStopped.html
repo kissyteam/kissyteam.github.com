@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+    if(location.host=="localhost"){
+        document.writeln('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+    }else{
+        document.writeln('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+    }
+   </script>
+</head>
+<body>
+  
+  <button>click me</button>
+  <div id="stop-log"></div>
+  
+<script>
+var $=KISSY.Node.all;
+function immediatePropStopped(e) {
+  var msg = "";
+  if ( e.isImmediatePropagationStopped ) {
+    msg =  "called"
+  } else {
+    msg = "not called";
+  }
+  $("#stop-log").append( "<div>" + msg + "</div>" );
+}
+
+$("button").on('click',function(event) {
+  immediatePropStopped(event);
+  event.stopImmediatePropagation();
+  immediatePropStopped(event);
+});  
+</script>
+
+</body>
+</html>

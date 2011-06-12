@@ -3,7 +3,7 @@
 Event.on
 =================================
 
-.. function:: on ( selector , eventType , fn , scope )
+.. function:: on ( selector , eventType , fn [ , scope ] )
 
     为符合匹配的 dom 节点的相应事件添加事件处理器
     
@@ -58,7 +58,7 @@ Event.on
 事件对象
 ----------------------------------------
 
-当事件发生时，事件处理器回调函数会被传递给一个事件对象参数.具体可见 :class:`~Event.EventObject` .
+当事件发生时，事件处理器回调函数会被传递给一个事件对象参数.具体可见 :class:`~Event.Object` .
 
 返回 ``false`` 相当于调用了事件对象的 :meth:`~Event.EventObject.preventDefault` 以及 :meth:`~Event.EventObject.stopPropagation`
 
@@ -72,6 +72,9 @@ Event.on
      
 这样就可以在绑定多事件时，明确知道当前哪个事件触发了.  .
 
+.. note::
+
+    KISSY 也对 ``mouseenter/mouseleave focusin/focusout`` 进行了兼容处理，所有浏览器都可以使用这两个事件了.
 
 
 例子
