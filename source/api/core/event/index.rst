@@ -3,7 +3,7 @@
 Event
 ====================================
 
-by `玉伯 <lifesinger@gmail.com>`_  `承玉 <yiminghe@gmail.com>`_ 
+by `玉伯 <lifesinger@gmail.com>`_ , `承玉 <yiminghe@gmail.com>`_ 
 
 
 
@@ -11,7 +11,9 @@ by `玉伯 <lifesinger@gmail.com>`_  `承玉 <yiminghe@gmail.com>`_
    :maxdepth: 1
 
    on.rst
+   delegate.rst   
    detach.rst
+   undelegate.rst
    fire.rst
    event-target.rst
    event-object.rst

@@ -13,7 +13,7 @@ Event.Target
         
         :param string type: 要触发的自定义事件名称
         :param object eventData: 要混入触发事件对象的数据对象
-        :returns: this 当前对象
+        :returns: 如果其中一个事件处理器返回 false ，则返回 false，否则返回最后一个事件处理器的返回值
         
     .. method:: Target.on( type , fn [ , scope ] )
     
