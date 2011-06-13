@@ -16,14 +16,11 @@
 
 KISSY 愿景
 ------------------------
-    小巧灵活, 简洁实用, 使用起来让人感觉愉悦.
 
-    Keep It
-
-        Simple & Stupid, Short & Sweet, Slim & Sexy...
-
-    Yeah!
-
+|    小巧灵活, 简洁实用, 使用起来让人感觉愉悦.
+|    Keep It
+|        Simple & Stupid, Short & Sweet, Slim & Sexy...
+|    Yeah!
 
 下面就开始我们的 KISSY 新奇之旅吧~~
 

@@ -47,10 +47,6 @@ div.admonition dt {
     font-weight: bold;
 }
 
-div.admonition dl {
-    margin-bottom: 0;
-}
-
 p.admonition-title {
     margin: 0 10px 5px 0;
     font-weight: bold;
@@ -95,8 +91,11 @@ table.citation td {
 
 /* -- other body styles ----------------------------------------------------- */
 
+ul ul {
+    margin-left: 20px;
+}
 ol.arabic {
-    list-style: decimal;
+    list-style: decimal inside none;
 }
 
 ol.loweralpha {
@@ -115,17 +114,6 @@ ol.upperroman {
     list-style: upper-roman;
 }
 
-dl {
-    margin-bottom: 15px;
-}
-
-dd p {
-    margin-top: 0;
-}
-
-dd ul, dd table {
-    margin-bottom: 10px;
-}
 
 dd {
     margin-top: 3px;
@@ -135,20 +123,6 @@ dd {
 
 dt:target, .highlighted {
     background-color: #fbe54e;
-}
-
-dl.glossary dt {
-    font-weight: bold;
-    font-size: 1.1em;
-}
-
-.field-list ul {
-    margin: 0;
-    padding-left: 1em;
-}
-
-.field-list p {
-    margin: 0;
 }
 
 .refcount {
@@ -175,8 +149,6 @@ dl.glossary dt {
 
 .line-block {
     display: block;
-    margin-top: 1em;
-    margin-bottom: 1em;
 }
 
 .line-block .line-block {
@@ -253,16 +225,20 @@ dt:hover > a.headerlink {
 
 
 /* -- body styles ----------------------------------------------------------- */
-h1, h2, h3, h4, h5, h6 {
+/*h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
+}*/
+h1, h2, h3 {
+    padding: 8px 0;
+    font-family: 'Philosopher', arial, "Microsoft YaHei", sans-serif;
 }
-h1,h2,h3{padding:8px 0;}
 h1 {
-    font-size: 18px;
+    font-size: 20px;
 }
 h2{
-    font-size: 16px;
+    font-size: 18px;
 }
+h3{font-size:16px;}
 h3,h4{font-size:14px;}
 
 h1 a.anchor, h2 a.anchor, h3 a.anchor, h4 a.anchor, h5 a.anchor, h6 a.anchor {
@@ -296,8 +272,8 @@ a.headerlink:hover {
 }
 
 hr {
-    border: 1px solid #abc;
-    margin: 2em;
+    border: 1px solid #ccc;
+    margin: 10px 0;
 }
 
 
@@ -384,7 +360,7 @@ div.warning p.admonition-title {
 
 div.admonition ul, div.admonition ol,
 div.warning ul, div.warning ol {
-    margin: 0.1em 0.5em 0.5em 3em;
+    margin: 6px 0 6px 20px;
     padding: 0;
 }
 
@@ -498,12 +474,25 @@ div.demo {
 .highlight-javascript{margin-bottom:10px;}
 
 .main-wrap > .section {
-    padding-bottom: 8px;
-    border-bottom: 1px dotted #ccc;
     margin-bottom: 8px;
 }
-.main-wrap > .section > blockquote, .main-wrap > .section > dl, .section > .toctree-wrapper {
-    padding-left: 20px;
+.main-wrap > .section > .section > blockquote,
+.main-wrap > .section > .section > dl,
+.main-wrap > .section > .line-block,
+.versionchanged,
+.main-wrap > .section > .section > .toctree-wrapper {
+    margin-left: 20px;
+}
+.main-wrap > .section > .section {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.main-wrap > .section > .toctree-wrapper {
+    margin-top: 20px;
+}
+.main-wrap > .section > dl {
+    border-bottom: 1px dotted #ccc;
+    margin-bottom: 16px;
 }
 
 tt {
@@ -515,10 +504,6 @@ tt.descclassname, tt.descname {
 
 tt.descclassname, tt.descname, tt.xref {
     font-weight: bold;
-}
-
-tt.descclassname {
-    display: none;
 }
 /*****************************************************************************
  * 布局
@@ -548,8 +533,7 @@ tt.descclassname {
 }
 .grid-s6m0 .main-wrap {
     margin-left: 210px;
-	padding-left:10px;
-    padding-top: 10px;
+    padding-left:10px;
 }
 
 .grid-s6m0 .col-sub {
@@ -577,10 +561,15 @@ tt.descclassname {
  * 公共模块
  *****************************************************************************/
 /*盒子*/ 
-.s-box .s-box-hd{border-bottom:1px dotted #ccc;}
 .s-box .s-box-hd h3{margin:0;font:bold 16px "Microsoft YaHei";}
-.s-box .s-box-bd{padding:8px 0;overflow:hidden;}
+.s-box .s-box-bd{overflow:hidden;}
 
-.col-sub .s-box{margin-left:10px;margin-right:10px;}
-.col-sub .s-box .box-hd{border-bottom:1px dotted #ace;}
+.col-sub .s-box{margin-left:10px;margin-bottom: 10px;}
+.col-sub .s-box .box-hd{color: #444;}
 
+
+
+/* 隐藏某些元素 */
+.class .property {
+    display: none;
+}

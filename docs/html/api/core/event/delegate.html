@@ -1,0 +1,309 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>Event.delegate &mdash; KISSY Docs valpha documentation</title>
+
+<link rel="stylesheet" href="../../../static/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="../../../static/favicon.ico"/>
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'alpha',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+    if(window.location.href.indexOf("localhost/")!=-1){
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script> 
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../../../static/logo.png"/></a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+    <ul class="navigation">
+        <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
+        <li><a href="http://kissyui.com/blog/">API</a></li>
+        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
+        <li><a href="http://kissyui.com/blog/">博客</a></li>
+        <li><a href="#">论坛</a></li>
+        <li><a href="http://www.github.com/kissyteam">源码</a></li>
+    </ul>
+</div>
+
+<div id="content">
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+					
+  <div class="section" id="event-delegate">
+<h1>Event.delegate<a class="headerlink" href="#event-delegate" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="Event.delegate">
+<tt class="descclassname">Event.</tt><tt class="descname">delegate</tt><big>(</big><em>selector</em>, <em>eventType</em>, <em>filter</em>, <em>fn</em><span class="optional">[</span>, <em>scope</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Event.delegate" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="../dom/selector.html#dom-selector"><em>KISSY selector</em></a></li>
+<li><strong>eventType</strong> (<em>string</em>) &#8211; 包含一个或多个事件名称的字符串，多个事件名以空格分开</li>
+<li><strong>filter</strong> (<em>string</em>) &#8211; 可参见 <tt class="xref py py-func docutils literal"><span class="pre">DOM.filter()</span></tt> 的 filter 参数</li>
+<li><strong>fn</strong> (<em>function(eventObject)</em>) &#8211; 当事件触发时的回调函数</li>
+<li><strong>scope</strong> (<em>object</em>) &#8211; 回调函数的 this 值。如果不指定默认为绑定事件的当前元素</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">不能在 <tt class="docutils literal"><span class="pre">object</span></tt> , <tt class="docutils literal"><span class="pre">embed</span></tt> , <tt class="docutils literal"><span class="pre">applet</span></tt> 元素上注册事件.
+事件处理器回调函数中 this 指向 scope （没指定指向绑定事件的元素），传入的参数为 event ,
+event.target 指向事件触发源, event.currentTarget 指向当前事件处理器调用所在的匹配 filter 的元素.
+可以使用 <a class="reference internal" href="stopPropagation.html#Event.Object.stopPropagation" title="Event.Object.stopPropagation"><tt class="xref py py-meth docutils literal"><span class="pre">stopPropagation()</span></tt></a> 来停止事件的向上冒泡，这样就不会在同样符合 filter 条件的祖先节点上调用事件处理器。</p>
+</div>
+<div class="section" id="id1">
+<h2>简述<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>该方法是 <tt class="docutils literal"><span class="pre">on</span></tt> 方法的增强。当 on 方法被调用时，符合选择器的元素被绑定事件处理器，而后面添加的元素则没有，即他们需要另外一次绑定，例如</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;clickme&quot;</span><span class="nt">&gt;</span>
+    Click here
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</pre></div>
+</div>
+<p>绑定一个 click 事件的事件触发器：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;.clickme&#39;</span><span class="p">,</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Bound handler called.</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>当该元素被点击时，调用对应的事件处理器。但是如果新加入一个元素：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;clickme&quot;&gt;Another target&lt;/div&gt;&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>新元素匹配选择器 <tt class="docutils literal"><span class="pre">clickme</span></tt> ,但是他如果不再次 on ，则在他上面的点击不会有任何效果.</p>
+<p>delegate 方法提供了解决方法，如果这样调用：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="s1">&#39;.clickme&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+   <span class="c1">// Bound handler called.</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>这样的话如果今后又添加了一个元素</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;clickme&quot;&gt;Another target&lt;/div&gt;&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>在新元素上点击仍然会调用之前的事件处理器.</p>
+<p>可以使用 undelegate 来移除之前的绑定:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">d</span><span class="p">(){</span>
+<span class="p">}</span>
+
+<span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="s1">&#39;.clickme&#39;</span><span class="p">,</span><span class="nx">d</span><span class="p">);</span>
+
+<span class="nx">Event</span><span class="p">.</span><span class="nx">detach</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="s1">&#39;.clickme&#39;</span><span class="p">,</span><span class="nx">d</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>例子<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>委托实现点击通知<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;style&gt;</span>
+
+<span class="nt">button</span> <span class="p">{</span> <span class="k">margin</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">div</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span><span class="nb">blue</span><span class="p">;</span> <span class="k">font-weight</span><span class="o">:</span><span class="k">bold</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">span</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span><span class="nb">red</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+    <span class="nt">&lt;script&gt;</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">==</span><span class="s2">&quot;localhost&quot;</span><span class="p">){</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://localhost/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://yiminghe.github.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+   <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;out&#39;</span> <span class="na">id=</span><span class="s">&#39;i4&#39;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;inner&#39;</span> <span class="na">id=</span><span class="s">&#39;i3&#39;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;inner&#39;</span> <span class="na">id=</span><span class="s">&#39;i1&#39;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&#39;click_button&#39;</span><span class="nt">&gt;</span>click me<span class="nt">&lt;/button&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>    
+   <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;log&#39;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+    
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#i4&#39;</span><span class="p">).</span><span class="nx">delegate</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="s1">&#39;.inner&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">target</span><span class="o">=</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">,</span><span class="nx">currentTarget</span><span class="o">=</span><span class="nx">e</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#log&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;&lt;div style=&#39;margin:5px;&#39;&gt;invoked : &lt;br/&gt; this.id=&quot;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="o">+</span><span class="s2">&quot;&lt;br/&gt;event.target.id=&quot;</span><span class="o">+</span>
+        <span class="nx">target</span><span class="p">.</span><span class="nx">id</span><span class="o">+</span><span class="s2">&quot;&lt;br&gt;event.currentTarget.id=&quot;</span><span class="o">+</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">id</span><span class="o">+</span><span class="s2">&quot;&lt;/div&gt;&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<p>Demo</p>
+<iframe width="100%" height="135" src="../../../static/api/core/event/delegate.html"></iframe></div>
+<div class="section" id="id4">
+<h3>也可以阻止事件向上冒泡<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;style&gt;</span>
+
+<span class="nt">button</span> <span class="p">{</span> <span class="k">margin</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">div</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span><span class="nb">blue</span><span class="p">;</span> <span class="k">font-weight</span><span class="o">:</span><span class="k">bold</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">span</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span><span class="nb">red</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+    <span class="nt">&lt;script&gt;</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">==</span><span class="s2">&quot;localhost&quot;</span><span class="p">){</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://localhost/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://yiminghe.github.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+   <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;out&#39;</span> <span class="na">id=</span><span class="s">&#39;i4&#39;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;inner&#39;</span> <span class="na">id=</span><span class="s">&#39;i3&#39;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;inner&#39;</span> <span class="na">id=</span><span class="s">&#39;i1&#39;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&#39;click_button&#39;</span><span class="nt">&gt;</span>click me<span class="nt">&lt;/button&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>    
+   <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;log&#39;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+    
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#i4&#39;</span><span class="p">).</span><span class="nx">delegate</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="s1">&#39;.inner&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">target</span><span class="o">=</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">,</span><span class="nx">currentTarget</span><span class="o">=</span><span class="nx">e</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#log&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;&lt;div style=&#39;margin:5px;&#39;&gt;invoked : &lt;br/&gt; this.id=&quot;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="o">+</span><span class="s2">&quot;&lt;br/&gt;event.target.id=&quot;</span><span class="o">+</span>
+        <span class="nx">target</span><span class="p">.</span><span class="nx">id</span><span class="o">+</span><span class="s2">&quot;&lt;br&gt;event.currentTarget.id=&quot;</span><span class="o">+</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">id</span><span class="o">+</span><span class="s2">&quot;&lt;/div&gt;&quot;</span><span class="p">);</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<p>Demo</p>
+<iframe width="100%" height="135" src="../../../static/api/core/event/delegate_2.html"></iframe></div>
+</div>
+</div>
+
+
+					
+
+					<div id="disqus_thread"></div>
+<script>
+    if(window.location.hostname.indexOf("kissyui.com")!=-1){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){        
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');   
+        }    
+    </script>    
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/loader">Loader</a></li>
+        <li><a href="../../seed/kissy">kissy</a></li>
+        <li><a href="../../seed/lang">lang</a></li>
+        <li><a href="../../seed/web">web</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="../ua">ua</a></li>
+        <li><a href="../DOM">DOM</a></li>
+        <li><a href="#">event</a></li>
+        <li><a href="../node">node</a></li>
+        <li><a href="../json">json</a></li>
+        <li><a href="../ajax">ajax</a></li>
+        <li><a href="../cookie">cookie</a></li>
+        <li><a href="../base">base</a></li>
+        <li><a href="../anim">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../component/sizzle">sizzle</a></li>
+        <li><a href="../../component/template">template</a></li>
+        <li><a href="../../component/datalazyload">datalazyload</a></li>
+        <li><a href="../../component/flash">flash</a></li>
+        <li><a href="../../component/dd">dd</a></li>
+        <li><a href="../../component/switchable">switchable</a></li>
+        <li><a href="../../component/suggest">suggest</a></li>
+        <li><a href="../../component/calendar">calendar</a></li>
+        <li><a href="../../component/imagezoom">imagezoom</a></li>
+        <li><a href="../../component/overlay">overlay</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

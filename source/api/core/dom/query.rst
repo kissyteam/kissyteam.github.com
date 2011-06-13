@@ -1,18 +1,24 @@
 ﻿.. currentmodule:: DOM
 
-DOM.query
-=================================
+query
+====================================
 
-.. function:: query(selector [,context=document] )
+Class
+-----------------------------------------------
+
+  :js:data:`KISSY.DOM`
+
+Methods
+-----------------------------------------------
+
+.. js:function:: query(selector [,context=document] )
 
     获取符合选择器的所有元素。
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>` 
-    :param string|HTMLElement context: 选择器参考上下文，'#id' 或者 dom 节点。
-    :returns: 符合选择器字符串的 dom 节点数组
-    :rtype: Array<HTMLElement>
-    
+    :param string|HTMLElement context: 选择器参考上下文, '#id' 或者 dom 节点。
+    :returns:  Array<HTMLElement> - 符合选择器字符串的 dom 节点数组
 
-.. function:: KISSY.query(selector [,context=document] )
+.. js:function:: KISSY.query(selector [,context=document] )
 
-    :func:`DOM.query` 的快捷方式
+    :js:func:`query` 的快捷方式.

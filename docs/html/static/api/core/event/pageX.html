@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <style>body {background-color: #eef; }
+div { padding: 20px; }</style>
+
+<script>
+    if(location.host=="localhost"){
+        document.writeln('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+    }else{
+        document.writeln('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+    }
+   </script>
+</head>
+<body>
+  <div id="log"></div>
+<script>
+    var $=KISSY.Node.all;
+    $(document).on('mousemove',function(e){ 
+            $("#log").text("e.pageX: " + e.pageX + ", e.pageY: " + e.pageY); 
+}); 
+</script>
+
+</body>
+</html>

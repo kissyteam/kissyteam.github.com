@@ -3,62 +3,69 @@
 DOM
 ====================================
 
-by `玉伯 <lifesinger@gmail.com>`_ , `承玉 <yiminghe@gmail.com>`_ 
-
+|  作者: `玉伯 <lifesinger@gmail.com>`_ , `承玉 <yiminghe@gmail.com>`_
+|  源码: `查看 <../../../../../../kissy/src/dom/>`_
 
 .. versionchanged:: 1.2
-    DOM 不再接受  :mod:`Node` 以及 NodeList 类型的参数，DOM 只处理选择器以及原生 DOM 节点。
-    KISSY Node 以及  :class:`~Node.NodeList` 对象上的相关处理可直接调用其自身方法。
+    `KISSY Node` 以及  :js:class:`~Node.NodeList` 对象上的相关处理推荐直接调用其自身方法.
+
+Class
+-----------------------------------------------
+
+.. js:data:: KISSY.DOM
+
+Methods
+-----------------------------------------------
 
 .. toctree::
-   :maxdepth: 3
+   :titlesonly:
 
-   selector.rst
-   query.rst
-   get.rst
-   filter.rst
-   test.rst
-   hasClass.rst
-   addClass.rst
-   removeClass.rst
-   replaceClass.rst
-   toggleClass.rst
-   removeAttr.rst
-   attr.rst
-   hasAttr.rst
-   prop.rst
-   hasProp.rst
-   val.rst
-   text.rst
-   css.rst
-   width.rst
-   height.rst
-   addStyleSheet.rst
-   show.rst
-   hide.rst
-   toggle.rst
-   offset.rst
-   scrollTop.rst
-   scrollLeft.rst
-   docHeight.rst
-   docWidth.rst
-   viewportHeight.rst
-   viewportWidth.rst
-   scrollIntoView.rst
-   parent.rst
-   next.rst
-   prev.rst
-   siblings.rst
-   children.rst
-   contains.rst
-   create.rst
-   html.rst
-   remove.rst
-   insertBefore.rst
-   insertAfter.rst
-   append.rst
-   prepend.rst
-   data.rst
-   removeData.rst
-   hasData.rst
-   unselectable.rst
+   selector
+   query
+   get
+   filter
+   test
+   hasClass
+   addClass
+   removeClass
+   replaceClass
+   toggleClass
+   removeAttr
+   attr
+   hasAttr
+   prop
+   hasProp
+   val
+   text
+   css
+   width
+   height
+   addStyleSheet
+   show
+   hide
+   toggle
+   offset
+   scrollTop
+   scrollLeft
+   docHeight
+   docWidth
+   viewportHeight
+   viewportWidth
+   scrollIntoView
+   parent
+   next
+   prev
+   siblings
+   children
+   contains
+   create
+   html
+   remove
+   insertBefore
+   insertAfter
+   append
+   prepend
+   data
+   removeData
+   hasData
+   unselectable
