@@ -1,11 +1,20 @@
 ﻿.. currentmodule:: DOM
 
-DOM.viewportHeight
+.. _dom-viewportHeight:
+
+viewportHeight
 =================================
 
-.. function:: viewportHeight()
+Class
+-----------------------------------------------
 
-   获取当前可视区域(viewport)的高度值。
+  :js:data:`KISSY.DOM`
+
+Methods
+-----------------------------------------------
+
+.. js:function:: viewportHeight()
+
+   获取当前可视区域(viewport)的高度值.
     
-   :rtype: number
-   :returns: 当前可视区域(viewport)的高度值。
+   :returns: {Number} - 当前可视区域(viewport)的高度值.

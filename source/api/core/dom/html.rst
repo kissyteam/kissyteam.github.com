@@ -1,18 +1,27 @@
 ﻿.. currentmodule:: DOM
 
-DOM.html
+.. dom-html:
+
+html
 =================================
 
-.. function:: html( selector )
+Class
+-----------------------------------------------
+
+  :js:data:`KISSY.DOM`
+
+Methods
+-----------------------------------------------
+
+.. js:function:: html( selector )
 
     获取符合选择器的第一个元素的 innerHTML.
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
-    :returns: 符合选择器的第一个元素的 innerHTML.
-    :rtype: string
+    :returns: {String} - 符合选择器的第一个元素的 innerHTML.
+
     
-    
-.. function:: html( selector , html[ , loadScripts , callback ] )
+.. js:function:: html( selector , html[ , loadScripts , callback ] )
 
     给符合选择器的所有元素设置 innerHTML 值.        
     

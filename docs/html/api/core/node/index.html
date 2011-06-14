@@ -1,0 +1,226 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>Node &mdash; KISSY Docs valpha documentation</title>
+
+<link rel="stylesheet" href="../../../static/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="../../../static/favicon.ico"/>
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'alpha',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+    if(window.location.href.indexOf("localhost/")!=-1){
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script> 
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../../../static/logo.png"/></a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+    <ul class="navigation">
+        <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
+        <li><a href="http://kissyui.com/blog/">API</a></li>
+        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
+        <li><a href="http://kissyui.com/blog/">博客</a></li>
+        <li><a href="#">论坛</a></li>
+        <li><a href="http://www.github.com/kissyteam">源码</a></li>
+    </ul>
+</div>
+
+<div id="content">
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+					
+  <span class="target" id="module-Node"></span><div class="section" id="node">
+<h1>Node<a class="headerlink" href="#node" title="Permalink to this headline">¶</a></h1>
+<p>by <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></p>
+<p class="versionchanged">
+<span class="versionmodified">Changed in version 1.2: </span>Node 包括 <a class="reference internal" href="../dom/index.html#module-DOM" title="DOM"><tt class="xref py py-mod docutils literal"><span class="pre">DOM</span></tt></a> 模块的所有功能，推荐采用 <tt class="docutils literal"><span class="pre">Node</span></tt> 模块取代 <tt class="docutils literal"><span class="pre">DOM</span></tt> 模块，
+你只需要把 <tt class="docutils literal"><span class="pre">KISSY.all</span></tt> 看做 <tt class="docutils literal"><span class="pre">jquery</span></tt> 中的 <tt class="docutils literal"><span class="pre">$</span></tt> 就可以了，
+链式操作你会喜欢的！</p>
+<p>获取模块</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// 也可载入 kissy.js 后直接 KISSY.Node/KISSY.NodeList，实际上 KISSY.Node=KISSY.NodeList</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Node</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">NodeList</span><span class="o">=</span><span class="nx">Node</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>特色方法：</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nodelist.html">NodeList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="equals.html">equals()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="all.html">all()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="one.html">one()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add.html">add()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="item.html">item()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slice.html">slice()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scrollTop.html">scrollTop()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scrollLeft.html">scrollLeft()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="height.html">height()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="width.html">width()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="addStyleSheet.html">addStyleSheet()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="append.html">append()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendTo.html">appendTo()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prepend.html">prepend()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prependTo.html">prependTo()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="insertBefore.html">insertBefore()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="before.html">before()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="after.html">after()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="insertAfter.html">insertAfter()</a></li>
+</ul>
+</div>
+<p>转发方法:</p>
+<p>该类方法调用会被转发给 <a class="reference internal" href="../dom/index.html#module-DOM" title="DOM"><tt class="xref py py-mod docutils literal"><span class="pre">DOM</span></tt></a> ，原 <tt class="docutils literal"><span class="pre">DOM</span></tt> 对应方法的第一个参数传入一个原生 DOM 节点数组，而这个原生 DOM 节点数组则是由当前的 <tt class="docutils literal"><span class="pre">KISSY</span> <span class="pre">NodeList</span></tt> 对象得到的。</p>
+<p><tt class="docutils literal"><span class="pre">Node</span></tt> 模块会对返回值进行处理:</p>
+<ul class="simple">
+<li>如果返回值为单个节点或节点数组则包装为 <a class="reference internal" href="nodelist.html#Node.NodeList" title="Node.NodeList"><tt class="xref py py-class docutils literal"><span class="pre">NodeList</span></tt></a></li>
+<li>如果返回值为 <tt class="docutils literal"><span class="pre">undefined</span></tt> ，则返回调用者 <tt class="docutils literal"><span class="pre">NodeList</span></tt> 对象</li>
+<li>其他，直接返回</li>
+</ul>
+<p>具体方法包括：</p>
+<ul class="simple">
+<li><tt class="xref py py-func docutils literal"><span class="pre">filter()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">test()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">hasClass()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">addClass()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">removeClass()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">replaceClass()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">toggleClass()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">removeAttr()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">attr()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">hasAttr()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">prop()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">hasProp()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">val()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">text()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">css()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">show()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">hide()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">toggle()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">offset()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">scrollIntoView()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">parent()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">next()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">prev()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">siblings()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">children()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">contains()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">html()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">remove()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">data()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">removeData()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">hasData()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">unselectable()</span></tt></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">contains()</span></tt></li>
+</ul>
+</div>
+
+
+					
+
+					<div id="disqus_thread"></div>
+<script>
+    if(window.location.hostname.indexOf("kissyui.com")!=-1){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){        
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');   
+        }    
+    </script>    
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/loader/index.html">Loader</a></li>
+        <li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/lang/index.html">lang</a></li>
+        <li><a href="../../seed/web/index.html">web</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="../ua/index.html">ua</a></li>
+        <li><a href="../dom/index.html">DOM</a></li>
+        <li><a href="../event/index.html">event</a></li>
+        <li><a href="#">node</a></li>
+        <li><a href="../json/index.html">json</a></li>
+        <li><a href="../ajax/index.html">ajax</a></li>
+        <li><a href="../cookie/index.html">cookie</a></li>
+        <li><a href="../base/index.html">base</a></li>
+        <li><a href="../anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../component/sizzle/index.html">sizzle</a></li>
+        <li><a href="../../component/template/index.html">template</a></li>
+        <li><a href="../../component/datalazyload/index.html">datalazyload</a></li>
+        <li><a href="../../component/flash/index.html">flash</a></li>
+        <li><a href="../../component/dd/index.html">dd</a></li>
+        <li><a href="../../component/switchable/index.html">switchable</a></li>
+        <li><a href="../../component/suggest/index.html">suggest</a></li>
+        <li><a href="../../component/calendar/index.html">calendar</a></li>
+        <li><a href="../../component/imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../../component/overlay/index.html">overlay</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

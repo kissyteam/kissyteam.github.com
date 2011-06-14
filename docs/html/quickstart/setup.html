@@ -1,0 +1,186 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>Setup &mdash; KISSY Docs valpha documentation</title>
+
+<link rel="stylesheet" href="../static/reset.css"/>
+<link rel="stylesheet" href="../static/kissy.css"/>
+<link rel="stylesheet" href="../static/pygments.css"/>
+<link rel="shortcut icon" href="../static/favicon.ico"/>
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'alpha',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+    if(window.location.href.indexOf("localhost/")!=-1){
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script> 
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../static/logo.png"/></a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+    <ul class="navigation">
+        <li><a href="../../html/quickstart/index.html">快速上手</a></li>
+        <li><a href="http://kissyui.com/blog/">API</a></li>
+        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
+        <li><a href="http://kissyui.com/blog/">博客</a></li>
+        <li><a href="#">论坛</a></li>
+        <li><a href="http://www.github.com/kissyteam">源码</a></li>
+    </ul>
+</div>
+
+<div id="content">
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+					
+  <div class="section" id="setup">
+<span id="id1"></span><h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<p>如何使用 KISSY ?</p>
+<ul class="simple">
+<li>先将 <a class="reference external" href="https://github.com/kissyteam/kissy/raw/master/build/kissy.js">https://github.com/kissyteam/kissy/raw/master/build/kissy.js</a> 引入到你的页面;</li>
+<li>接着, <strong>稍加</strong> 编写一些代码, 就可以实现下面的效果了:</li>
+</ul>
+<div class="demo">
+    <style>
+        .demo-wrap {
+            position: relative;
+            margin-top: 20px;
+            height: 110px;
+        }
+        #demo-txt {
+            position: absolute;
+            left: 400px;
+            top: 0;
+            color:#333333;
+            font: normal 26px/2 Futura,"Century Gothic",AppleGothic,sans-serif;
+            opacity: 0;
+            filter: alpha(opacity:0);
+        }
+        #demo-img {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+
+    <button type="button" id="demo-btn" autocomplete="off">Click Me!</button>
+    <div class="demo-wrap">
+        <img id="demo-img" src="http://kissyteam.github.com/kissy/docs/assets/logo.png" />
+        <h2 id="demo-txt">Hello KISSY, NOT KITTY!</h2>
+    </div>
+    <script>
+        KISSY.ready(function(S){
+            var DOM = S.DOM, Event = S.Event,
+                btn = DOM.get('#demo-btn');
+
+            Event.on(btn, 'click', function() {
+                DOM.attr(btn, 'disabled', true);
+
+                S.Anim('#demo-img', 'left: 400px; opacity: 0', 2, 'easeOut', function() {
+                    S.Anim('#demo-txt',
+                           'left: 0; opacity: 1; fontSize: 28px',
+                           2, 'bounceOut').run();
+                }).run();
+            });
+        });
+    </script>
+</div><p>使用 KISSY 实现上面的效果, 只需大约 10 行代码.</p>
+<p>下一节将会详细介绍上面的示例，请看 <a class="reference internal" href="hellokissy.html#hellokissy"><em>Hello KISSY</em></a> ~</p>
+</div>
+
+
+					
+
+					<div id="disqus_thread"></div>
+<script>
+    if(window.location.hostname.indexOf("kissyui.com")!=-1){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){        
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');   
+        }    
+    </script>    
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>
+				</div>
+			</div>
+    <div class="col-sub">
+
+<div class="s-box">
+    <div class="s-box-bd">
+        <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">快速上手</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#kissy">KISSY 愿景</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#id3">内容大纲</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hellokissy.html">Hello KISSY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="node.html">Node 初步</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ajax.html">Ajax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="anim.html">Anim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="widgets.html">Widgets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yourwidgets.html">自定义组件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="extendwidgets.html">扩展已有组件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nextstep.html">下一步</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo/index.html">范例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relatedproj/index.html">子项目集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../styleguide/index.html">最佳编码实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">前端常用工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow/index.html">组件开发指南</a></li>
+</ul>
+
+    </div>
+</div>
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

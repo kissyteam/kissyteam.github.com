@@ -1,9 +1,19 @@
 ﻿.. currentmodule:: DOM
 
-DOM.addClass
-=================================
+..dom-addClass:
 
-.. function:: addClass( selector , value )
+addClass
+===============================================
+
+Class
+-----------------------------------------------
+
+  :js:data:`KISSY.DOM`
+
+Methods
+-----------------------------------------------
+
+.. js:function:: addClass( selector , value )
 
     给符合选择器的所有元素添加指定 class.
     

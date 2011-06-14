@@ -1,5 +1,7 @@
 ﻿.. currentmodule:: DOM
 
+.. _dom-get:
+
 get
 =================================
 
@@ -13,8 +15,7 @@ Methods
 
 .. js:function:: get(selector [,context=document] )
 
-    获取符合选择器的第一个元素。相当于调用 :js:func:`query(selector,context)[0] <query>`
-    
+    获取符合选择器的第一个元素。相当于调用 :ref:`query(selector,context)[0] <dom-query>`
 
 .. function:: KISSY.get(selector [,context=document] )
 

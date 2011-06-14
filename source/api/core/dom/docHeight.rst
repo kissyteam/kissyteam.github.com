@@ -1,11 +1,20 @@
 ﻿.. currentmodule:: DOM
 
-DOM.docHeight
+.. _dom-docHeight:
+
+docHeight
 =================================
 
-.. function:: docHeight()
+Class
+-----------------------------------------------
 
-   获取页面文档 document 的总高度。
+  :js:data:`KISSY.DOM`
+
+Methods
+-----------------------------------------------
+
+.. js:function:: docHeight()
+
+   获取页面文档 document 的总高度.
     
-   :rtype: number
-   :returns: 页面文档 document 的总高度。
+   :returns: {Number} 页面文档 document 的总高度.

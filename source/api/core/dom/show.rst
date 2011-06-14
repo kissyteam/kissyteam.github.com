@@ -1,10 +1,20 @@
 ﻿.. currentmodule:: DOM
 
-DOM.show
+.. _dom-show:
+
+show
 =================================
 
-.. function:: show( selector )
+Class
+-----------------------------------------------
 
-    显示符合选择器的所有元素。
+  :js:data:`KISSY.DOM`
+
+Methods
+-----------------------------------------------
+
+.. js:function:: show( selector )
+
+    显示符合选择器的所有元素.
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`

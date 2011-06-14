@@ -1,0 +1,25 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <style>
+      p { background:yellow; }
+    </style>
+     <script>
+    if(location.host=="localhost"){
+        document.writeln('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+    }else{
+        document.writeln('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+    }
+   </script>
+    </head>
+    <body>
+       <p> is I would like to say </p> <strong>Hello world!!!</strong>
+
+    <script>
+        KISSY.use("node",function(S,NodeList){
+            NodeList.all("p").prepend(NodeList.all("strong"));
+        });        
+    </script>
+    
+    </body>
+    </html>  

@@ -1,0 +1,197 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>FAQ &mdash; KISSY Docs valpha documentation</title>
+
+<link rel="stylesheet" href="../../static/reset.css"/>
+<link rel="stylesheet" href="../../static/kissy.css"/>
+<link rel="stylesheet" href="../../static/pygments.css"/>
+<link rel="shortcut icon" href="../../static/favicon.ico"/>
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     'alpha',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+    if(window.location.href.indexOf("localhost/")!=-1){
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script> 
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../../static/logo.png"/></a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+    <ul class="navigation">
+        <li><a href="../../../html/quickstart/index.html">快速上手</a></li>
+        <li><a href="http://kissyui.com/blog/">API</a></li>
+        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
+        <li><a href="http://kissyui.com/blog/">博客</a></li>
+        <li><a href="#">论坛</a></li>
+        <li><a href="http://www.github.com/kissyteam">源码</a></li>
+    </ul>
+</div>
+
+<div id="content">
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+					
+  <div class="section" id="faq">
+<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>数据同步<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="form">
+<h3>form 同步<a class="headerlink" href="#form" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>如果后端通过 form 提交（submit）来获得用户输入数据，则只需配置参数 <a class="reference internal" href="usage.html#Editor.KISSY.Editor" title="Editor.KISSY.Editor"><tt class="xref py py-class docutils literal"><span class="pre">attachForm</span></tt></a>  .</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//是否监控编辑器所属的表单提交</span>
+<span class="s2">&quot;attachForm&quot;</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>编辑器自动会监控 form 的 sbumit 事件进行同步</p>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h3>手动同步<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>涉及三个 api</p>
+<p>editor 为调用 KISSY.Editor 返回的编辑器实例</p>
+<p><tt class="docutils literal"><span class="pre">editor.sync()</span></tt> : 手动同步编辑器内容到对应 textarea</p>
+<p><tt class="docutils literal"><span class="pre">editor.getData()</span></tt> : 获得当前编辑器的内容</p>
+<p><tt class="docutils literal"><span class="pre">editor.setData(html:string)</span></tt> :设置当前编辑器的内容，参数为html，类型为 string 字符串</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>自动保存<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>自动保存为 localStorage/flash 机制，保存在本地，可 <a class="reference internal" href="plugin-config.html#Editor.pluginConfig.draft" title="Editor.pluginConfig.draft"><tt class="xref py py-attr docutils literal"><span class="pre">配置参数</span></tt></a> .</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h2>字数统计<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>可参考以下 demo  :</p>
+<p><a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/wordCount.html">http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/wordCount.html</a></p>
+<p>其中 <a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/word-count.js">wordcount 代码</a> 自行下载，随意修改。</p>
+</div></blockquote>
+</div>
+<div class="section" id="ctrol-enter">
+<h2>绑定 ctrol-enter<a class="headerlink" href="#ctrol-enter" title="Permalink to this headline">¶</a></h2>
+<p>不少的应用场景要求在编辑器编辑区域内按下 ctrol+enter 按键时，编辑器所在表单会自动提交，解决方案是监控编辑器的文档按键事件：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">editor</span><span class="p">.</span><span class="nb">document</span><span class="p">,</span> <span class="s2">&quot;keydown&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">ev</span><span class="p">.</span><span class="nx">keyCode</span> <span class="o">==</span> <span class="mi">13</span> <span class="o">&amp;&amp;</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">ctrlKey</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">editor</span><span class="p">.</span><span class="nx">sync</span><span class="p">();</span>
+            <span class="nx">editor</span><span class="p">.</span><span class="nx">textarea</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">form</span><span class="p">.</span><span class="nx">submit</span><span class="p">();</span>
+
+        <span class="p">}</span>
+    <span class="p">})</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>其中 editor 为编辑器实例的对象，通过 <tt class="docutils literal"><span class="pre">var</span> <span class="pre">editor=KISSY.Editor(&quot;#id&quot;,cfg)</span></tt> 获取而来。</p>
+</div>
+<div class="section" id="placeholder-tip">
+<h2>placeholder(tip) 功能<a class="headerlink" href="#placeholder-tip" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>可参考以下 demo  :</p>
+<p><a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/tip.html">http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/tip.html</a></p>
+<p>其中 <a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/tip.js">tip 代码</a> 自行下载，随意修改。</p>
+</div></blockquote>
+</div>
+</div>
+
+
+					
+
+					<div id="disqus_thread"></div>
+<script>
+    if(window.location.hostname.indexOf("kissyui.com")!=-1){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){        
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');   
+        }    
+    </script>    
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>
+				</div>
+			</div>
+    <div class="col-sub">
+
+<div class="s-box">
+    <div class="s-box-bd">
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">快速上手</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo/index.html">范例</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">子项目集</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Editor</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#doc">doc</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="install.html">引入</a></li>
+<li class="toctree-l4"><a class="reference internal" href="usage.html">初始化编辑器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="usage.html#id2">使用插件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="notice.html">注意</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#ppt">ppt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#demo">demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="http://docs.kissyui.com/kissy-ajbridge/docs/index.html">AJBridge</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../styleguide/index.html">最佳编码实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">前端常用工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../workflow/index.html">组件开发指南</a></li>
+</ul>
+
+    </div>
+</div>
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

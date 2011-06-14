@@ -1,29 +1,38 @@
 ﻿.. currentmodule:: DOM
 
-DOM.offset
+.. _dom-offset:
+
+offset
 =================================
 
-.. function:: offset( selector )
+Class
+-----------------------------------------------
 
-    获取符合选择器的第一个元素相对页面文档左上角的偏移值。
+  :js:data:`KISSY.DOM`
+
+Methods
+-----------------------------------------------
+
+.. js:function:: offset( selector )
+
+    获取符合选择器的第一个元素相对页面文档左上角的偏移值.
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
-    :rtype: object
-    :returns: 相对页面文档左上角的偏移值，包括两个属性
+    :returns: {Object} - 相对页面文档左上角的偏移值, 包括两个属性
     
-        .. attribute:: left
-                
-                类型 number，相对页面文档左上角的横坐标
-                
-        .. attribute:: top
-                
-                类型 number，相对页面文档左上角的纵坐标        
-    
-    
-.. function:: offset( selector, value )
+        .. js:data:: left
 
-    给符合选择器的所有元素设置偏移值。
+                {Number} - 相对页面文档左上角的横坐标
+                
+        .. js:data:: top
+
+                {Number} - 相对页面文档左上角的纵坐标
+    
+    
+.. js:function:: offset( selector, value )
+
+    给符合选择器的所有元素设置偏移值.
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
-    :param object value: 偏移对象，包括两个属性 ``left`` ,``top`` ，格式同获取偏移的返回值。
+    :param object value: 偏移对象, 包括两个属性 ``left`` ,``top`` ，格式同获取偏移的返回值.
     

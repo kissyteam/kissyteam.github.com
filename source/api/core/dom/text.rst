@@ -1,22 +1,32 @@
 ﻿.. currentmodule:: DOM
 
-DOM.text
+.. _dom-text:
+
+text
 =================================
 
-.. function:: text( selector )
+Class
+-----------------------------------------------
 
-    获取符合选择器的第一个元素所包含的文本值。
+  :js:data:`KISSY.DOM`
+
+Methods
+-----------------------------------------------
+
+.. js:function:: text( selector )
+
+    获取符合选择器的第一个元素所包含的文本值.
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
-    :returns: 获取符合选择器的第一个元素所包含的文本值。无值时，返回空字符串。
+    :returns: 获取符合选择器的第一个元素所包含的文本值. 无值时, 返回空字符串.
     
     
-.. function:: text( selector, value )
+.. js:function:: text( selector, value )
 
-    给符合选择器的所有元素设置文本值。
+    给符合选择器的所有元素设置文本值.
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
     :param string value: 将要设置的文本值
     
 .. centered::
-    相当与 ie 下调用 ``innerText`` 以及其他浏览器下调用 ``textContent`` .      
+    相当于 ie 下调用 ``innerText`` 以及其他浏览器下调用 ``textContent`` .
