@@ -3,7 +3,7 @@
 Ajax
 ===============================================
 
-    KISSY 中提供了 Ajax 异步请求功能, 下面仅介绍最常用的 :ref:`getScript() <loader-getScript>` 方法, 其他 ajax 模块中的方法, 如 ``get``, ``post`` 等，请参考 API 文档 [1]_ .
+    KISSY 中提供了 Ajax 异步请求功能, 下面仅介绍最常用的 :func:`~Loader.KISSY..getScript()` 方法, 其他 ajax 模块中的方法, 如 ``get``, ``post`` 等，请参考 API 文档 [1]_ .
 
     ``getScript`` 异步请求成功后, 可以执行请求回来的数据, 与 ``jQuery $.getScript`` 是一致的.
     
@@ -15,7 +15,7 @@ Ajax
 
 在日常 Web 应用中, 经常用到异步请求, 比如, 异步加载一些评论信息, 异步加载图片列表等, 这样可以减少页面初始加载时的请求, 减轻服务器压力, 也加快主页面的初始打开速度.
 
-下面介绍个如何通过 :ref:`getScript() <loader-getScript>` 方法去请求 flickr 上提供的图片数据.
+下面介绍个如何通过 ``getScript()`` 方法去请求 flickr 上提供的图片数据.
 
 先见示例:
 
@@ -113,7 +113,7 @@ Ajax
 
 稍加解释下:
  #. 当点击按钮时, 组装 API 参数后, 发送请求. ps: 这里各个参数可以在 flickr API 文档中找到 [3]_, 最后的 jsoncallback 指定回调函数的名字.
- #. 组装参数时, 使用到了 :ref:`S.param() <lang-param>` 方法, 是将对象 data 转换为 URL 中的参数字符串, 且是经过 encodeURI 编码的.
+ #. 组装参数时, 使用到了 :func:`~Lang.KISSY.param` 方法, 是将对象 data 转换为 URL 中的参数字符串, 且是经过 encodeURI 编码的.
  #. 在回调函数中, 获取传入的 json 数据, 稍加拼装就可以使用啦~
  #. 最后的 ``window.getFavorites`` 是将方法 ``getFavorites`` 暴露给全局, 因为当请求后调用的就是全局范围内的 ``getFavorites`` 函数, 如果是对象中的方法, 同样可以将该对象暴露给全局后再调用其方法.
    

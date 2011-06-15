@@ -1,4 +1,6 @@
-﻿.. _event:
+﻿.. module:: Event
+
+.. _event:
 
 Event
 ====================================
@@ -7,10 +9,10 @@ Event
 |  作者: `玉伯 <lifesinger@gmail.com>`_ , `承玉 <yiminghe@gmail.com>`_
 |  源码: `查看 <../../../../../../kissy/src/event/>`_
 
-Class
+Module
 -----------------------------------------------
 
-.. js:data:: KISSY.Event
+.. data:: KISSY.Event
 
 Methods
 -----------------------------------------------

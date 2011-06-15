@@ -1,3 +1,5 @@
+.. module:: DataLazyload
+
 .. _DataLazyload:
 
 DataLazyload

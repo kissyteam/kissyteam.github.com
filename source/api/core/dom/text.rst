@@ -1,4 +1,6 @@
-﻿.. _dom-text:
+﻿.. currentmodule:: DOM
+
+.. _dom-text:
 
 text
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: text( selector )
+.. function:: text( selector )
 
     获取符合选择器的第一个元素所包含的文本值.
     
@@ -19,7 +21,7 @@ Methods
     :returns: 获取符合选择器的第一个元素所包含的文本值. 无值时, 返回空字符串.
     
     
-.. js:function:: text( selector, value )
+.. function:: text( selector, value )
 
     给符合选择器的所有元素设置文本值.
     

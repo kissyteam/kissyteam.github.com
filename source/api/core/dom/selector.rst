@@ -1,4 +1,6 @@
-﻿.. _dom-selector:
+﻿.. currentmodule:: DOM
+
+.. _dom-selector:
 
 
 selector

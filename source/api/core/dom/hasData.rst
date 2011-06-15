@@ -1,4 +1,6 @@
-﻿.. _dom-hasData:
+﻿.. currentmodule:: DOM
+
+.. _dom-hasData:
 
 hasData
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: hasData( selector [ , name ] )
+.. function:: hasData( selector [ , name ] )
 
     .. versionadded:: 1.2
         判断是否符合选择器的所有元素中的一个存在对应的扩展属性( expando )值.

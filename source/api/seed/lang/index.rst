@@ -1,3 +1,5 @@
+.. module:: Lang
+
 .. _lang:
 
 lang

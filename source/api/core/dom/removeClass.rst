@@ -1,4 +1,6 @@
-﻿.. _dom-removeClass:
+﻿.. currentmodule:: DOM
+
+.. _dom-removeClass:
 
 removeClass
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: removeClass( selector , value )
+.. function:: removeClass( selector , value )
 
     给符合选择器的所有元素移除指定 class.
     

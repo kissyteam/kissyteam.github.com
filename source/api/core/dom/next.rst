@@ -1,4 +1,6 @@
-﻿.. _dom-next:
+﻿.. currentmodule:: DOM
+
+.. _dom-next:
 
 next
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: next(selector [ , filter ])
+.. function:: next(selector [ , filter ])
 
    获取符合选择器的第一个元素的下一个同级节点.
     

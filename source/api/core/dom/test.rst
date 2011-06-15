@@ -1,4 +1,6 @@
-﻿.. _dom-test:
+﻿.. currentmodule:: DOM
+
+.. _dom-test:
 
 test
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: test(selector , filter [,context=document] )
+.. function:: test(selector , filter [,context=document] )
 
     判断根据选择器获取的所有元素是否都符合过滤条件.
     

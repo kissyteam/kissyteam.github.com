@@ -1,4 +1,6 @@
-﻿.. _dom-addStyleSheet:
+﻿.. currentmodule:: DOM
+
+.. _dom-addStyleSheet:
 
 addStyleSheet
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: addStyleSheet( cssText [, id ] )
+.. function:: addStyleSheet( cssText [, id ] )
 
     将 cssText 字符串作为内联样式添加到文档中.
     

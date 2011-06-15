@@ -1,4 +1,6 @@
-﻿.. _dom-hide:
+﻿.. currentmodule:: DOM
+
+.. _dom-hide:
 
 hide
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: hide( selector )
+.. function:: hide( selector )
 
     隐藏符合选择器的所有元素.
     

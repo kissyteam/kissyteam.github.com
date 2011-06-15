@@ -1,4 +1,6 @@
-﻿.. _dom:
+﻿.. module:: DOM
+
+.. _dom:
 
 DOM
 ====================================
@@ -9,10 +11,10 @@ DOM
 .. versionchanged:: 1.2
     `KISSY Node` 以及  :js:class:`~Node.NodeList` 对象上的相关处理推荐直接调用其自身方法.
 
-Class
+Module
 -----------------------------------------------
 
-.. js:data:: KISSY.DOM
+.. data:: KISSY.DOM
 
 Methods
 -----------------------------------------------

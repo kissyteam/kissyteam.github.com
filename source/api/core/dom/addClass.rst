@@ -1,4 +1,6 @@
-﻿..dom-addClass:
+﻿.. currentmodule:: DOM
+
+..dom-addClass:
 
 addClass
 ===============================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: addClass( selector , value )
+.. function:: addClass( selector , value )
 
     给符合选择器的所有元素添加指定 class.
     

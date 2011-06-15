@@ -1,4 +1,6 @@
-﻿.. _dom-prev:
+﻿.. currentmodule:: DOM
+
+.. _dom-prev:
 
 prev
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: prev(selector [ , filter ])
+.. function:: prev(selector [ , filter ])
 
    获取符合选择器的第一个元素的上一个同级节点.
     

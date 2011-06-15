@@ -46,7 +46,7 @@ kissy/layout.html
         FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
         HAS_SOURCE: {{ has_source | lower }}
     };
-    if(window.location.href.indexOf("localhost/")!=-1){
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
         document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
     } else{
         document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
@@ -62,6 +62,7 @@ kissy/layout.html
 
 {%- block content %}
 <div id="content">
+    {%- include "related.html" %}
 	<div  class="layout grid-s6m0">
 		{%- block document %}
 			<div class="col-main">

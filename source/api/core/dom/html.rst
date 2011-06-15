@@ -1,4 +1,6 @@
-﻿.. dom-html:
+﻿.. currentmodule:: DOM
+
+.. dom-html:
 
 html
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: html( selector )
+.. function:: html( selector )
 
     获取符合选择器的第一个元素的 innerHTML.
     
@@ -19,7 +21,7 @@ Methods
     :returns: {String} - 符合选择器的第一个元素的 innerHTML.
 
     
-.. js:function:: html( selector , html[ , loadScripts , callback ] )
+.. function:: html( selector , html[ , loadScripts , callback ] )
 
     给符合选择器的所有元素设置 innerHTML 值.        
     

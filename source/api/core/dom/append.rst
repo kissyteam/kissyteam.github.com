@@ -1,4 +1,6 @@
-﻿.. _dom-append:
+﻿.. currentmodule:: DOM
+
+.. _dom-append:
 
 append
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: append( node, parent )
+.. function:: append( node, parent )
 
     将 node 追加到 parent 子节点最后. 
     

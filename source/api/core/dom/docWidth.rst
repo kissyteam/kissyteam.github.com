@@ -1,4 +1,6 @@
-﻿.. _dom-docWidth:
+﻿.. currentmodule:: DOM
+
+.. _dom-docWidth:
 
 docWidth
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: docWidth()
+.. function:: docWidth()
 
    获取页面文档 document 的总宽度.
     

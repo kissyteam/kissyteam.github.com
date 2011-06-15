@@ -21,7 +21,7 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
     };
-    if(window.location.href.indexOf("localhost/")!=-1){
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
         document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
     } else{
         document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
@@ -42,6 +42,29 @@
 </div>
 
 <div id="content">
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="test.html" title="test"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="get.html" title="get"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">DOM</a> &#187; </li> 
+    </ul>
+</div>
 	<div  class="layout grid-s6m0">
 			<div class="col-main">
 				<div class="main-wrap">
@@ -51,24 +74,24 @@
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><a class="reference internal" href="index.html#KISSY.DOM" title="KISSY.DOM"><tt class="xref js js-data docutils literal"><span class="pre">KISSY.DOM</span></tt></a></div></blockquote>
+<div><tt class="xref js js-data docutils literal"><span class="pre">KISSY.DOM</span></tt></div></blockquote>
 </div>
 <div class="section" id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt>
-<tt class="descname">filter</tt><big>(</big><em>selector</em>, <em>filter</em><span class="optional">[</span>, <em>context=document</em><span class="optional">]</span><big>)</big></dt>
+<dt id="DOM.filter">
+<tt class="descclassname">DOM.</tt><tt class="descname">filter</tt><big>(</big><em>selector</em>, <em>filter</em><span class="optional">[</span>, <em>context=document</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#DOM.filter" title="Permalink to this definition">¶</a></dt>
 <dd><p>获取符合选择器以及过滤参数的所有元素.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Arguments:</th></tr>
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
 <li><strong>selector</strong> (<em>string</em>) &#8211; 选择器字符串, 格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
 <li><strong>filter</strong> (<em>string|function</em>) &#8211; <p>过滤选择器或函数</p>
 <ul>
-<li>类型 string 时, 格式为 tag.cls , 其他格式需要引入 <em class="xref std std-ref">sizzle</em></li>
+<li>类型 string 时, 格式为 tag.cls , 其他格式需要引入模块 <tt class="docutils literal"><span class="pre">sizzle</span></tt> .</li>
 <li>类型 function 时, 传入参数当前 dom 节点, 返回 <tt class="docutils literal"><span class="pre">true</span></tt> 表示保留</li>
 </ul>
 </li>

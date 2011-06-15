@@ -1,4 +1,6 @@
-﻿.. _dom-removeData:
+﻿.. currentmodule:: DOM
+
+.. _dom-removeData:
 
 removeData
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: removeData( selector [ , name ] )
+.. function:: removeData( selector [ , name ] )
 
     将符合选择器的所有元素的对应扩展属性( expando )删除.
     

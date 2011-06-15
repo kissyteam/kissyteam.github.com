@@ -1,4 +1,6 @@
-﻿.. _dom-replaceClass:
+﻿.. currentmodule:: DOM
+
+.. _dom-replaceClass:
 
 replaceClass
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: replaceClass( selector, oldClassName, newClassName )
+.. function:: replaceClass( selector, oldClassName, newClassName )
 
     将符合选择器的所有元素的老 class 替换为新 class.
     

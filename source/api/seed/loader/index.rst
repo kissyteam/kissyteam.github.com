@@ -1,3 +1,5 @@
+.. module:: Loader
+
 .. _Loader:
 
 Loader

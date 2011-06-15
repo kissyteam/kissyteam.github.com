@@ -1,4 +1,6 @@
-﻿.. _dom-val:
+﻿.. currentmodule:: DOM
+
+.. _dom-val:
 
 val
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: val( selector )
+.. function:: val( selector )
 
     获取符合选择器的第一个元素所的 value 值.
     
@@ -19,7 +21,7 @@ Methods
     :returns: 获取符合选择器的第一个元素所的 value 值. 无值时, 返回空字符串.
     
     
-.. js:function:: val( selector, value )
+.. function:: val( selector, value )
 
     给符合选择器的所有元素设置 value 值.
     

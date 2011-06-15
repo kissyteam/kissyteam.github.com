@@ -1,4 +1,6 @@
-﻿.. _Suggest:
+﻿.. module:: Suggest
+
+.. _Suggest:
 
 Suggest
 ======================================

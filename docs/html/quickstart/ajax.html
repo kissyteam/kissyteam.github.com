@@ -21,7 +21,7 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
     };
-    if(window.location.href.indexOf("localhost/")!=-1){
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
         document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
     } else{
         document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
@@ -42,6 +42,27 @@
 </div>
 
 <div id="content">
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="anim.html" title="Anim"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="node.html" title="Node 初步"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">快速上手</a> &#187; </li> 
+    </ul>
+</div>
 	<div  class="layout grid-s6m0">
 			<div class="col-main">
 				<div class="main-wrap">
@@ -49,14 +70,14 @@
   <div class="section" id="ajax">
 <span id="quickstart-ajax"></span><h1>Ajax<a class="headerlink" href="#ajax" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><p>KISSY 中提供了 Ajax 异步请求功能, 下面仅介绍最常用的 <em class="xref std std-ref">getScript()</em> 方法, 其他 ajax 模块中的方法, 如 <tt class="docutils literal"><span class="pre">get</span></tt>, <tt class="docutils literal"><span class="pre">post</span></tt> 等，请参考 API 文档 <a class="footnote-reference" href="#id5" id="id1">[1]</a> .</p>
+<div><p>KISSY 中提供了 Ajax 异步请求功能, 下面仅介绍最常用的 <tt class="xref py py-func docutils literal"><span class="pre">getScript()</span></tt> 方法, 其他 ajax 模块中的方法, 如 <tt class="docutils literal"><span class="pre">get</span></tt>, <tt class="docutils literal"><span class="pre">post</span></tt> 等，请参考 API 文档 <a class="footnote-reference" href="#id5" id="id1">[1]</a> .</p>
 <p><tt class="docutils literal"><span class="pre">getScript</span></tt> 异步请求成功后, 可以执行请求回来的数据, 与 <tt class="docutils literal"><span class="pre">jQuery</span> <span class="pre">$.getScript</span></tt> 是一致的.</p>
 <p>这种请求方式, 我们一般称为 <tt class="docutils literal"><span class="pre">JSONP</span></tt>, 是最常用的跨域请求方式. 关于跨域可参见 <a class="footnote-reference" href="#id6" id="id2">[2]</a> .</p>
 </div></blockquote>
 <div class="section" id="id3">
 <h2>使用 Ajax<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>在日常 Web 应用中, 经常用到异步请求, 比如, 异步加载一些评论信息, 异步加载图片列表等, 这样可以减少页面初始加载时的请求, 减轻服务器压力, 也加快主页面的初始打开速度.</p>
-<p>下面介绍个如何通过 <em class="xref std std-ref">getScript()</em> 方法去请求 flickr 上提供的图片数据.</p>
+<p>下面介绍个如何通过 <tt class="docutils literal"><span class="pre">getScript()</span></tt> 方法去请求 flickr 上提供的图片数据.</p>
 <p>先见示例:</p>
 <div class="demo">
      <style>
@@ -176,7 +197,7 @@
 <dt>稍加解释下:</dt>
 <dd><ol class="first last arabic simple">
 <li>当点击按钮时, 组装 API 参数后, 发送请求. ps: 这里各个参数可以在 flickr API 文档中找到 <a class="footnote-reference" href="#id7" id="id4">[3]</a>, 最后的 jsoncallback 指定回调函数的名字.</li>
-<li>组装参数时, 使用到了 <em class="xref std std-ref">S.param()</em> 方法, 是将对象 data 转换为 URL 中的参数字符串, 且是经过 encodeURI 编码的.</li>
+<li>组装参数时, 使用到了 <a class="reference internal" href="../api/seed/lang/param.html#Lang.KISSY.param" title="Lang.KISSY.param"><tt class="xref py py-func docutils literal"><span class="pre">param()</span></tt></a> 方法, 是将对象 data 转换为 URL 中的参数字符串, 且是经过 encodeURI 编码的.</li>
 <li>在回调函数中, 获取传入的 json 数据, 稍加拼装就可以使用啦~</li>
 <li>最后的 <tt class="docutils literal"><span class="pre">window.getFavorites</span></tt> 是将方法 <tt class="docutils literal"><span class="pre">getFavorites</span></tt> 暴露给全局, 因为当请求后调用的就是全局范围内的 <tt class="docutils literal"><span class="pre">getFavorites</span></tt> 函数, 如果是对象中的方法, 同样可以将该对象暴露给全局后再调用其方法.</li>
 </ol>

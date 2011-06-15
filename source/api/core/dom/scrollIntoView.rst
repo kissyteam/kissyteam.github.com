@@ -1,4 +1,6 @@
-﻿.. _dom-scrollIntoView:
+﻿.. currentmodule:: DOM
+
+.. _dom-scrollIntoView:
 
 scrollIntoView
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: scrollIntoView( selector , [ container = window , top = true , hscroll = true ] )
+.. function:: scrollIntoView( selector , [ container = window , top = true , hscroll = true ] )
 
    使当前选择器匹配的第一个元素出现在指定容器可视区域内.
     

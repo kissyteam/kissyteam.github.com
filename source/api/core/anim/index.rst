@@ -1,3 +1,5 @@
+.. module:: Anim
+
 .. _anim:
 
 Anim
@@ -10,7 +12,7 @@ Anim
 Class
 -----------------------------------------------
 
-.. js:data:: KISSY.Event
+.. data:: KISSY.Anim
 
 
 

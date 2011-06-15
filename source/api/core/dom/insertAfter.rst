@@ -1,4 +1,6 @@
-﻿.. _dom-insertAfter:
+﻿.. currentmodule:: DOM
+
+.. _dom-insertAfter:
 
 
 insertAfter
@@ -12,7 +14,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: insertAfter( newNode, refNode )
+.. function:: insertAfter( newNode, refNode )
 
     将 newNode 插入到 refNode 之后.
     

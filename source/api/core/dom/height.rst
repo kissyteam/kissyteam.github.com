@@ -1,4 +1,6 @@
-﻿.. _dom-height:
+﻿.. currentmodule:: DOM
+
+.. _dom-height:
 
 height
 =================================
@@ -10,7 +12,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: height( selector )
+.. function:: height( selector )
 
     获取符合选择器的第一个元素的高度值.
     

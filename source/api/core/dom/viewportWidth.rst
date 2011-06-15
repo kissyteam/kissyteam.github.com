@@ -1,4 +1,6 @@
-﻿.. _dom-viewportWidth:
+﻿.. currentmodule:: DOM
+
+.. _dom-viewportWidth:
 
 viewportWidth
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: viewportWidth()
+.. function:: viewportWidth()
 
    获取当前可视区域(viewport)的宽度值.
     

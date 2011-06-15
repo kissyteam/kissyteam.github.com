@@ -1,4 +1,6 @@
-﻿.. _dom-hasProp:
+﻿.. currentmodule:: DOM
+
+.. _dom-hasProp:
 
 hasProp
 =================================
@@ -13,7 +15,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: hasProp( selector , propertyName )
+.. function:: hasProp( selector , propertyName )
 
     判断符合选择器的第一个元素是否含有特定 property 属性.
 

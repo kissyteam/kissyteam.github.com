@@ -1,4 +1,6 @@
-﻿.. _dom-prepend:
+﻿.. currentmodule:: DOM
+
+.. _dom-prepend:
 
 prepend
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: prepend( node, parent )
+.. function:: prepend( node, parent )
 
     将 node 追加到 parent 子节点最前.
     

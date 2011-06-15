@@ -1,3 +1,5 @@
+.. module:: Seed
+
 .. _KISSY:
 
 KISSY

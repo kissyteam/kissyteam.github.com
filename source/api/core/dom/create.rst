@@ -1,4 +1,6 @@
-﻿.. _dom-create:
+﻿.. currentmodule:: DOM
+
+.. _dom-create:
 
 create
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: create( html [ , props = {} , ownerDoc = document ] )
+.. function:: create( html [ , props = {} , ownerDoc = document ] )
 
     创建 dom 节点
     

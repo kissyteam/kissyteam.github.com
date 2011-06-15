@@ -1,4 +1,6 @@
-﻿.. _dom-width:
+﻿.. currentmodule:: DOM
+
+.. _dom-width:
 
 width
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: width( selector )
+.. function:: width( selector )
 
     获取符合选择器的第一个元素的宽度值。
     
@@ -39,7 +41,7 @@ Methods
             </script>
 
     
-.. js:function:: width( selector, value )
+.. function:: width( selector, value )
 
     给符合选择器的所有元素设置宽度值. 相当于 :ref:`DOM.css(selector,"width",value) <dom-css>`
     

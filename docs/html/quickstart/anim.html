@@ -21,7 +21,7 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
     };
-    if(window.location.href.indexOf("localhost/")!=-1){
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
         document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
     } else{
         document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
@@ -42,6 +42,27 @@
 </div>
 
 <div id="content">
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="widgets.html" title="Widgets"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="ajax.html" title="Ajax"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">快速上手</a> &#187; </li> 
+    </ul>
+</div>
 	<div  class="layout grid-s6m0">
 			<div class="col-main">
 				<div class="main-wrap">
@@ -64,7 +85,7 @@
 <li><tt class="docutils literal"><span class="pre">anim-node-plugin</span></tt>, 让 <tt class="docutils literal"><span class="pre">Node/NodeList</span></tt> 直接支持动画调用</li>
 </ol>
 </dd>
-<dt>核心动画函数是 <em class="xref std std-ref">S.Anim(elem, props, duration, easing, callback) &lt;anim&gt;`</em> , 5 个参数分别为:</dt>
+<dt>核心动画函数是 <a class="reference internal" href="../api/core/anim/index.html#Anim.Anim" title="Anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt></a> , 5 个参数分别为:</dt>
 <dd><ol class="first last arabic simple">
 <li><tt class="docutils literal"><span class="pre">elem</span></tt>: 指定动画的目标元素</li>
 <li><tt class="docutils literal"><span class="pre">props</span></tt>: 动画属性, 可以是字符串或者普通对象</li>
@@ -141,7 +162,7 @@
              }
          });
      </script>
-</div><p>每张图片获取之后, 先不显示出来, 等图片加载完成之后, 调用 <em class="xref std std-ref">S.fadeIn</em> 渐进显示, 部分代码:</p>
+</div><p>每张图片获取之后, 先不显示出来, 等图片加载完成之后, 调用 <a class="reference internal" href="../api/core/node/fadeIn.html#Node.NodeList.fadeIn" title="Node.NodeList.fadeIn"><tt class="xref py py-meth docutils literal"><span class="pre">fadeIn()</span></tt></a> 渐进显示, 部分代码:</p>
 <div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3

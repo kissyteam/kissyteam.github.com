@@ -1,4 +1,6 @@
-﻿.. _dom-prop:
+﻿.. currentmodule:: DOM
+
+.. _dom-prop:
 
 prop
 =================================
@@ -14,7 +16,7 @@ Methods
 -----------------------------------------------
 
 
-.. js:function:: prop( selector, name )
+.. function:: prop( selector, name )
 
     获取符合选择器的第一个元素的对应 property 值.
 
@@ -40,7 +42,7 @@ Methods
 
     
     
-.. js:function:: prop( selector, name, value )
+.. function:: prop( selector, name, value )
 
     给符合选择器的所有元素设置 property 值.
     
@@ -48,7 +50,7 @@ Methods
     :param string name: property 名称
     :param value: property 值
     
-.. js:function:: prop( selector, kv )
+.. function:: prop( selector, kv )
 
     给符合选择器的所有元素设置 property 值.
     

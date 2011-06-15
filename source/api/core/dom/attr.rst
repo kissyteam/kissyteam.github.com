@@ -1,4 +1,6 @@
-﻿.. _dom-attr:
+﻿.. currentmodule:: DOM
+
+.. _dom-attr:
 
 attr
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: attr( selector, name )
+.. function:: attr( selector, name )
 
     获取符合选择器的第一个元素的属性值.
     
@@ -32,7 +34,7 @@ Methods
     对没有设置的属性返回 ``null`` . 判断属性设置与否可以使用 :js:func:`hasAttr` . 如果需要获取 DOM properties，请使用 :ref:`prop <dom-prop>` 方法
     
     
-.. js:function:: attr( selector, name, value )
+.. function:: attr( selector, name, value )
 
     给符合选择器的所有元素设置属性值.
     
@@ -40,7 +42,7 @@ Methods
     :param string name: 属性名称
     :param value: 属性值
     
-.. js:function:: attr( selector, kv )
+.. function:: attr( selector, kv )
 
     给符合选择器的所有元素设置属性值.
     

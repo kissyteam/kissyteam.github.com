@@ -1,4 +1,6 @@
-﻿.. _dom-unselectable:
+﻿.. currentmodule:: DOM
+
+.. _dom-unselectable:
 
 unselectable
 =================================
@@ -13,7 +15,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: unselectable( selector )
+.. function:: unselectable( selector )
 
     使符合选择器的所有元素都不可以作为选择区域的开始.
     

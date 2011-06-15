@@ -1,4 +1,6 @@
-﻿.. _dom-show:
+﻿.. currentmodule:: DOM
+
+.. _dom-show:
 
 show
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: show( selector )
+.. function:: show( selector )
 
     显示符合选择器的所有元素.
     

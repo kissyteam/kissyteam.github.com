@@ -21,7 +21,7 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
     };
-    if(window.location.href.indexOf("localhost/")!=-1){
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
         document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
     } else{
         document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
@@ -42,6 +42,29 @@
 </div>
 
 <div id="content">
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="scrollTop.html" title="scrollTop"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="toggle.html" title="toggle"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">DOM</a> &#187; </li> 
+    </ul>
+</div>
 	<div  class="layout grid-s6m0">
 			<div class="col-main">
 				<div class="main-wrap">
@@ -51,39 +74,34 @@
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><a class="reference internal" href="index.html#KISSY.DOM" title="KISSY.DOM"><tt class="xref js js-data docutils literal"><span class="pre">KISSY.DOM</span></tt></a></div></blockquote>
+<div><tt class="xref js js-data docutils literal"><span class="pre">KISSY.DOM</span></tt></div></blockquote>
 </div>
 <div class="section" id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt>
-<tt class="descname">offset</tt><big>(</big><em>selector</em><big>)</big></dt>
+<dt id="DOM.offset">
+<tt class="descclassname">DOM.</tt><tt class="descname">offset</tt><big>(</big><em>selector</em><big>)</big><a class="headerlink" href="#DOM.offset" title="Permalink to this definition">¶</a></dt>
 <dd><p>获取符合选择器的第一个元素相对页面文档左上角的偏移值.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Arguments:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
-<li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
-</ul>
-</td>
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></td>
 </tr>
 <tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><p class="first last"><p>{Object} - 相对页面文档左上角的偏移值, 包括两个属性</p>
-<dl class="data">
-<dt id="left">
-<tt class="descname">left</tt><a class="headerlink" href="#left" title="Permalink to this definition">¶</a></dt>
+<tr><td>&nbsp;</td><td class="field-body">{Object} - 相对页面文档左上角的偏移值, 包括两个属性<dl class="data">
+<dt id="DOM.left">
+<tt class="descclassname">DOM.</tt><tt class="descname">left</tt><a class="headerlink" href="#DOM.left" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Number} - 相对页面文档左上角的横坐标</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="top">
-<tt class="descname">top</tt><a class="headerlink" href="#top" title="Permalink to this definition">¶</a></dt>
+<dt id="DOM.top">
+<tt class="descclassname">DOM.</tt><tt class="descname">top</tt><a class="headerlink" href="#DOM.top" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Number} - 相对页面文档左上角的纵坐标</p>
 </dd></dl>
 
-</p>
 </td>
 </tr>
 </tbody>
@@ -92,13 +110,13 @@
 
 <dl class="function">
 <dt>
-<tt class="descname">offset</tt><big>(</big><em>selector</em>, <em>value</em><big>)</big></dt>
+<tt class="descclassname">DOM.</tt><tt class="descname">offset</tt><big>(</big><em>selector</em>, <em>value</em><big>)</big></dt>
 <dd><p>给符合选择器的所有元素设置偏移值.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Arguments:</th></tr>
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
 <li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
 <li><strong>value</strong> (<em>object</em>) &#8211; 偏移对象, 包括两个属性 <tt class="docutils literal"><span class="pre">left</span></tt> ,``top`` ，格式同获取偏移的返回值.</li>

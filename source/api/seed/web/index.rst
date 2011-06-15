@@ -1,3 +1,5 @@
+.. module:: Web
+
 .. _web:
 
 web

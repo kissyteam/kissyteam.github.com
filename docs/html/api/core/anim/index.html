@@ -21,7 +21,7 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
     };
-    if(window.location.href.indexOf("localhost/")!=-1){
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
         document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
     } else{
         document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
@@ -42,11 +42,33 @@
 </div>
 
 <div id="content">
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../event/index.html" title="Event"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="../node/slideUp.html" title="slideUp()"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../index.html" accesskey="U">Core</a> &#187; </li> 
+    </ul>
+</div>
 	<div  class="layout grid-s6m0">
 			<div class="col-main">
 				<div class="main-wrap">
 					
-  <div class="section" id="anim">
+  <span class="target" id="module-Anim"></span><div class="section" id="anim">
 <span id="id1"></span><h1>Anim<a class="headerlink" href="#anim" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line">事件机制</div>
@@ -56,8 +78,8 @@
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <dl class="data">
-<dt id="KISSY.Event">
-<tt class="descclassname">KISSY.</tt><tt class="descname">Event</tt><a class="headerlink" href="#KISSY.Event" title="Permalink to this definition">¶</a></dt>
+<dt id="Anim.KISSY.Anim">
+<tt class="descclassname">KISSY.</tt><tt class="descname">Anim</tt><a class="headerlink" href="#Anim.KISSY.Anim" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -83,14 +105,14 @@
 </p>
 <div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">KISSY 1.2 <tt class="xref py py-mod docutils literal"><span class="pre">Loader</span></tt> 新增功能</p>
+<p class="last">KISSY 1.2 <a class="reference internal" href="../../seed/loader/index.html#module-Loader" title="Loader"><tt class="xref py py-mod docutils literal"><span class="pre">Loader</span></tt></a> 新增功能</p>
 </div>
 </div>
 <div class="section" id="id6">
 <h2>构造器接口<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="Anim">
-<em class="property">class </em><tt class="descname">Anim</tt><big>(</big><em>elem</em>, <em>props</em><span class="optional">[</span>, <em>duration=1</em>, <em>easing='easeNone'</em>, <em>callback</em>, <em>nativeSupport=true</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Anim" title="Permalink to this definition">¶</a></dt>
+<dt id="Anim.Anim">
+<em class="property">class </em><tt class="descclassname">Anim.</tt><tt class="descname">Anim</tt><big>(</big><em>elem</em>, <em>props</em><span class="optional">[</span>, <em>duration=1</em>, <em>easing='easeNone'</em>, <em>callback</em>, <em>nativeSupport=true</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Anim.Anim" title="Permalink to this definition">¶</a></dt>
 <dd><p>得到绑定于某个 dom 节点的动画实例</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -138,14 +160,14 @@
 <div class="section" id="id8">
 <h2>实例方法<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
-<dt id="Anim.run">
-<tt class="descclassname">Anim.</tt><tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#Anim.run" title="Permalink to this definition">¶</a></dt>
+<dt id="Anim.Anim.run">
+<tt class="descclassname">Anim.</tt><tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#Anim.Anim.run" title="Permalink to this definition">¶</a></dt>
 <dd><p>在动画实例上调用，开始当前动画实例的动画.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="Anim.stop">
-<tt class="descclassname">Anim.</tt><tt class="descname">stop</tt><big>(</big><em>finish=false</em><big>)</big><a class="headerlink" href="#Anim.stop" title="Permalink to this definition">¶</a></dt>
+<dt id="Anim.Anim.stop">
+<tt class="descclassname">Anim.</tt><tt class="descname">stop</tt><big>(</big><em>finish=false</em><big>)</big><a class="headerlink" href="#Anim.Anim.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>在动画实例上调用，结束当前动画实例的动画.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />

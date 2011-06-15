@@ -1,4 +1,6 @@
-﻿.. _dom-contains:
+﻿.. currentmodule:: DOM
+
+.. _dom-contains:
 
 contains
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: contains(container , contained)
+.. function:: contains(container , contained)
 
    判断某一容器(container)是否包含另一(contained)节点.
     

@@ -1,4 +1,6 @@
-﻿.. _Switchable:
+﻿.. module:: Switchable
+
+.. _Switchable:
 
 Switchable
 ===============================

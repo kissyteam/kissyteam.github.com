@@ -1,4 +1,6 @@
-﻿.. _dom-insertBefore:
+﻿.. currentmodule:: DOM
+
+.. _dom-insertBefore:
 
 insertBefore
 =================================
@@ -11,7 +13,7 @@ Class
 Methods
 -----------------------------------------------
 
-.. js:function:: insertBefore( newNode, refNode )
+.. function:: insertBefore( newNode, refNode )
 
     将 newNode 插入到 refNode 之前.
     

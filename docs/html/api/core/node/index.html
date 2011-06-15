@@ -21,7 +21,7 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
     };
-    if(window.location.href.indexOf("localhost/")!=-1){
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
         document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
     } else{
         document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
@@ -42,18 +42,40 @@
 </div>
 
 <div id="content">
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="nodelist.html" title="NodeList"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="../dom/unselectable.html" title="unselectable"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../index.html" accesskey="U">Core</a> &#187; </li> 
+    </ul>
+</div>
 	<div  class="layout grid-s6m0">
 			<div class="col-main">
 				<div class="main-wrap">
 					
-  <div class="section" id="node">
+  <span class="target" id="module-Node"></span><div class="section" id="node">
 <span id="id1"></span><h1>Node<a class="headerlink" href="#node" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line">作者: <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></div>
 <div class="line">源码: <a class="reference external" href="../../../../../../kissy/src/node/">查看</a></div>
 </div>
 <p class="versionchanged">
-<span class="versionmodified">Changed in version 1.2: </span>Node 包括 <tt class="xref py py-mod docutils literal"><span class="pre">DOM</span></tt> , <tt class="xref py py-mod docutils literal"><span class="pre">Event</span></tt> , <a class="reference internal" href="../anim/index.html#Anim" title="Anim"><tt class="xref py py-mod docutils literal"><span class="pre">Anim</span></tt></a> 模块的所有功能，推荐采用 <tt class="docutils literal"><span class="pre">Node</span></tt> 模块，
+<span class="versionmodified">Changed in version 1.2: </span>Node 包括 <a class="reference internal" href="../dom/index.html#module-DOM" title="DOM"><tt class="xref py py-mod docutils literal"><span class="pre">DOM</span></tt></a> , <a class="reference internal" href="../event/index.html#module-Event" title="Event"><tt class="xref py py-mod docutils literal"><span class="pre">Event</span></tt></a> , <a class="reference internal" href="../anim/index.html#module-Anim" title="Anim"><tt class="xref py py-mod docutils literal"><span class="pre">Anim</span></tt></a> 模块的所有功能，推荐采用 <tt class="docutils literal"><span class="pre">Node</span></tt> 模块，
 你只需要把 <tt class="docutils literal"><span class="pre">KISSY.all</span></tt> 看做 <tt class="docutils literal"><span class="pre">jquery</span></tt> 中的 <tt class="docutils literal"><span class="pre">$</span></tt> 就可以了，
 链式操作你会喜欢的！</p>
 <p>获取模块</p>
@@ -98,46 +120,46 @@
 </ul>
 </div>
 <p>转发方法:</p>
-<p>该类方法调用会被转发给 <tt class="xref py py-mod docutils literal"><span class="pre">DOM</span></tt> , <tt class="xref py py-mod docutils literal"><span class="pre">Event</span></tt> ，原 <tt class="docutils literal"><span class="pre">DOM</span></tt> , <tt class="docutils literal"><span class="pre">Event</span></tt> 对应方法的第一个参数传入一个原生 DOM 节点数组，而这个原生 DOM 节点数组则是由当前的 <tt class="docutils literal"><span class="pre">KISSY</span> <span class="pre">NodeList</span></tt> 对象得到的。</p>
+<p>该类方法调用会被转发给 <a class="reference internal" href="../dom/index.html#module-DOM" title="DOM"><tt class="xref py py-mod docutils literal"><span class="pre">DOM</span></tt></a> , <a class="reference internal" href="../event/index.html#module-Event" title="Event"><tt class="xref py py-mod docutils literal"><span class="pre">Event</span></tt></a> ，原 <tt class="docutils literal"><span class="pre">DOM</span></tt> , <tt class="docutils literal"><span class="pre">Event</span></tt> 对应方法的第一个参数传入一个原生 DOM 节点数组，而这个原生 DOM 节点数组则是由当前的 <tt class="docutils literal"><span class="pre">KISSY</span> <span class="pre">NodeList</span></tt> 对象得到的。</p>
 <p><tt class="docutils literal"><span class="pre">Node</span></tt> 模块会对返回值进行处理:</p>
 <ul class="simple">
-<li>如果返回值为单个节点或节点数组则包装为 <tt class="xref py py-class docutils literal"><span class="pre">NodeList</span></tt></li>
+<li>如果返回值为单个节点或节点数组则包装为 <a class="reference internal" href="nodelist.html#Node.NodeList" title="Node.NodeList"><tt class="xref py py-class docutils literal"><span class="pre">NodeList</span></tt></a></li>
 <li>如果返回值为 <tt class="docutils literal"><span class="pre">undefined</span></tt> ，则返回调用者 <tt class="docutils literal"><span class="pre">NodeList</span></tt> 对象</li>
 <li>其他，直接返回</li>
 </ul>
 <p>具体方法包括：</p>
 <ul class="simple">
-<li><tt class="xref py py-func docutils literal"><span class="pre">filter()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">test()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">hasClass()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">addClass()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">removeClass()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">replaceClass()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">toggleClass()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">removeAttr()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">attr()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">hasAttr()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">prop()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">hasProp()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">val()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">text()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">css()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">toggle()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">offset()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">scrollIntoView()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">parent()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">next()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">prev()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">siblings()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">children()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">contains()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">html()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">remove()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">data()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">removeData()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">hasData()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">unselectable()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">contains()</span></tt></li>
+<li><a class="reference internal" href="../dom/filter.html#DOM.filter" title="DOM.filter"><tt class="xref py py-func docutils literal"><span class="pre">filter()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/test.html#DOM.test" title="DOM.test"><tt class="xref py py-func docutils literal"><span class="pre">test()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/hasClass.html#DOM.hasClass" title="DOM.hasClass"><tt class="xref py py-func docutils literal"><span class="pre">hasClass()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/addClass.html#DOM.addClass" title="DOM.addClass"><tt class="xref py py-func docutils literal"><span class="pre">addClass()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/removeClass.html#DOM.removeClass" title="DOM.removeClass"><tt class="xref py py-func docutils literal"><span class="pre">removeClass()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/replaceClass.html#DOM.replaceClass" title="DOM.replaceClass"><tt class="xref py py-func docutils literal"><span class="pre">replaceClass()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/toggleClass.html#DOM.toggleClass" title="DOM.toggleClass"><tt class="xref py py-func docutils literal"><span class="pre">toggleClass()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/removeAttr.html#DOM.removeAttr" title="DOM.removeAttr"><tt class="xref py py-func docutils literal"><span class="pre">removeAttr()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/attr.html#DOM.attr" title="DOM.attr"><tt class="xref py py-func docutils literal"><span class="pre">attr()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/hasAttr.html#DOM.hasAttr" title="DOM.hasAttr"><tt class="xref py py-func docutils literal"><span class="pre">hasAttr()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/prop.html#DOM.prop" title="DOM.prop"><tt class="xref py py-func docutils literal"><span class="pre">prop()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/hasProp.html#DOM.hasProp" title="DOM.hasProp"><tt class="xref py py-func docutils literal"><span class="pre">hasProp()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/val.html#DOM.val" title="DOM.val"><tt class="xref py py-func docutils literal"><span class="pre">val()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/text.html#DOM.text" title="DOM.text"><tt class="xref py py-func docutils literal"><span class="pre">text()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/css.html#DOM.css" title="DOM.css"><tt class="xref py py-func docutils literal"><span class="pre">css()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/toggle.html#DOM.toggle" title="DOM.toggle"><tt class="xref py py-func docutils literal"><span class="pre">toggle()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/offset.html#DOM.offset" title="DOM.offset"><tt class="xref py py-func docutils literal"><span class="pre">offset()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/scrollIntoView.html#DOM.scrollIntoView" title="DOM.scrollIntoView"><tt class="xref py py-func docutils literal"><span class="pre">scrollIntoView()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/parent.html#DOM.parent" title="DOM.parent"><tt class="xref py py-func docutils literal"><span class="pre">parent()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/next.html#DOM.next" title="DOM.next"><tt class="xref py py-func docutils literal"><span class="pre">next()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/prev.html#DOM.prev" title="DOM.prev"><tt class="xref py py-func docutils literal"><span class="pre">prev()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/siblings.html#DOM.siblings" title="DOM.siblings"><tt class="xref py py-func docutils literal"><span class="pre">siblings()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/children.html#DOM.children" title="DOM.children"><tt class="xref py py-func docutils literal"><span class="pre">children()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/contains.html#DOM.contains" title="DOM.contains"><tt class="xref py py-func docutils literal"><span class="pre">contains()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/html.html#DOM.html" title="DOM.html"><tt class="xref py py-func docutils literal"><span class="pre">html()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/remove.html#DOM.remove" title="DOM.remove"><tt class="xref py py-func docutils literal"><span class="pre">remove()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/data.html#DOM.data" title="DOM.data"><tt class="xref py py-func docutils literal"><span class="pre">data()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/removeData.html#DOM.removeData" title="DOM.removeData"><tt class="xref py py-func docutils literal"><span class="pre">removeData()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/hasData.html#DOM.hasData" title="DOM.hasData"><tt class="xref py py-func docutils literal"><span class="pre">hasData()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/unselectable.html#DOM.unselectable" title="DOM.unselectable"><tt class="xref py py-func docutils literal"><span class="pre">unselectable()</span></tt></a></li>
+<li><a class="reference internal" href="../dom/contains.html#DOM.contains" title="DOM.contains"><tt class="xref py py-func docutils literal"><span class="pre">contains()</span></tt></a></li>
 <li><a class="reference internal" href="../event/on.html#Event.on" title="Event.on"><tt class="xref py py-func docutils literal"><span class="pre">on()</span></tt></a></li>
 <li><a class="reference internal" href="../event/detach.html#Event.detach" title="Event.detach"><tt class="xref py py-func docutils literal"><span class="pre">detach()</span></tt></a></li>
 <li><a class="reference internal" href="../event/fire.html#Event.fire" title="Event.fire"><tt class="xref py py-func docutils literal"><span class="pre">fire()</span></tt></a></li>
