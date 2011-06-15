@@ -1,4 +1,4 @@
-.. py:currentmodule:: Anim
+.. module:: Anim
 
 Anim
 ===================================
@@ -96,69 +96,3 @@ by `承玉 <yiminghe@gmail.com>`_
     在动画实例上调用，结束当前动画实例的动画.        
 
     :param boolean finish: flasy 时，动画会在当前帧直接停止；为 true 时，动画停止时会立刻跳到最后一帧。
-
-在节点实例上开始动画
-----------------------------------------------------------------
-
-
-.. method:: Node.animate(props[,duration=1,easing='easeNone',callback,nativeSupport=true])
-
-    在当前节点作用动画
-    
-.. method:: Node.stop(finish)
-
-    .. versionadded:: 1.2 
-        停止在当前节点作用动画   
-        
-    :param boolean finish: flasy 时，动画会在当前帧直接停止；为 true 时，动画停止时会立刻跳到最后一帧。     
-
-参数可见 :class:`构造器<Anim.Anim>` 接口部分
-
-.. method:: Node.show([speed,callback])    
-
-    元素以动画效果显示
-    
-    :param number speed: 动画持续时间，设置无动画
-    :param function callback: 动画结束后回调函数
-    
-.. method:: Node.hide([speed,callback])
-
-    元素以动画效果隐藏
-    
-    :param number speed: 动画持续时间，设置无动画
-    :param function callback: 动画结束后回调函数
-    
-.. method:: Node.toggle([speed,callback])
-
-    当前元素为显示时动画效果隐藏，否则动画效果显示
-    
-    :param number speed: 动画持续时间，设置无动画
-    :param function callback: 动画结束后回调函数        
-
-.. method:: Node.fadeIn([speed=1,callback])
-
-    元素渐隐效果显示
-    
-    :param number speed: 单位秒，动画持续时间，设置无动画
-    :param function callback: 动画结束后回调函数
-    
-.. method:: Node.fadeOut([speed=1,callback])
-
-    元素渐隐效果隐藏
-    
-    :param number speed: 单位秒，动画持续时间，设置无动画
-    :param function callback: 动画结束后回调函数    
-
-.. method:: Node.slideDown([speed=1,callback])
-
-    元素从上到下滑动显示
-    
-    :param number speed: 单位秒，动画持续时间，设置无动画
-    :param function callback: 动画结束后回调函数
-    
-.. method:: Node.slideUp([speed=1,callback])
-
-    元素从下到上隐藏
-    
-    :param number speed: 单位秒，动画持续时间，设置无动画
-    :param function callback: 动画结束后回调函数

@@ -68,7 +68,7 @@
 <h1>Node<a class="headerlink" href="#node" title="Permalink to this headline">¶</a></h1>
 <p>by <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></p>
 <p class="versionchanged">
-<span class="versionmodified">Changed in version 1.2: </span>Node 包括 <a class="reference internal" href="../dom/index.html#module-DOM" title="DOM"><tt class="xref py py-mod docutils literal"><span class="pre">DOM</span></tt></a> 模块的所有功能，推荐采用 <tt class="docutils literal"><span class="pre">Node</span></tt> 模块取代 <tt class="docutils literal"><span class="pre">DOM</span></tt> 模块，
+<span class="versionmodified">Changed in version 1.2: </span>Node 包括 <a class="reference internal" href="../dom/index.html#module-DOM" title="DOM"><tt class="xref py py-mod docutils literal"><span class="pre">DOM</span></tt></a> , <a class="reference internal" href="../event/index.html#module-Event" title="Event"><tt class="xref py py-mod docutils literal"><span class="pre">Event</span></tt></a> , <a class="reference internal" href="../anim/index.html#module-Anim" title="Anim"><tt class="xref py py-mod docutils literal"><span class="pre">Anim</span></tt></a> 模块的所有功能，推荐采用 <tt class="docutils literal"><span class="pre">Node</span></tt> 模块，
 你只需要把 <tt class="docutils literal"><span class="pre">KISSY.all</span></tt> 看做 <tt class="docutils literal"><span class="pre">jquery</span></tt> 中的 <tt class="docutils literal"><span class="pre">$</span></tt> 就可以了，
 链式操作你会喜欢的！</p>
 <p>获取模块</p>
@@ -101,10 +101,19 @@
 <li class="toctree-l1"><a class="reference internal" href="before.html">before()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="after.html">after()</a></li>
 <li class="toctree-l1"><a class="reference internal" href="insertAfter.html">insertAfter()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="animate.html">animate()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stop.html">stop()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="show.html">show()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hide.html">hide()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="toggle.html">toggle()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fadeIn.html">fadeIn()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fadeOut.html">fadeOut()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slideDown.html">slideDown()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slideUp.html">slideUp()</a></li>
 </ul>
 </div>
 <p>转发方法:</p>
-<p>该类方法调用会被转发给 <a class="reference internal" href="../dom/index.html#module-DOM" title="DOM"><tt class="xref py py-mod docutils literal"><span class="pre">DOM</span></tt></a> ，原 <tt class="docutils literal"><span class="pre">DOM</span></tt> 对应方法的第一个参数传入一个原生 DOM 节点数组，而这个原生 DOM 节点数组则是由当前的 <tt class="docutils literal"><span class="pre">KISSY</span> <span class="pre">NodeList</span></tt> 对象得到的。</p>
+<p>该类方法调用会被转发给 <a class="reference internal" href="../dom/index.html#module-DOM" title="DOM"><tt class="xref py py-mod docutils literal"><span class="pre">DOM</span></tt></a> , <a class="reference internal" href="../event/index.html#module-Event" title="Event"><tt class="xref py py-mod docutils literal"><span class="pre">Event</span></tt></a> ，原 <tt class="docutils literal"><span class="pre">DOM</span></tt> , <tt class="docutils literal"><span class="pre">Event</span></tt> 对应方法的第一个参数传入一个原生 DOM 节点数组，而这个原生 DOM 节点数组则是由当前的 <tt class="docutils literal"><span class="pre">KISSY</span> <span class="pre">NodeList</span></tt> 对象得到的。</p>
 <p><tt class="docutils literal"><span class="pre">Node</span></tt> 模块会对返回值进行处理:</p>
 <ul class="simple">
 <li>如果返回值为单个节点或节点数组则包装为 <a class="reference internal" href="nodelist.html#Node.NodeList" title="Node.NodeList"><tt class="xref py py-class docutils literal"><span class="pre">NodeList</span></tt></a></li>
@@ -128,8 +137,6 @@
 <li><a class="reference internal" href="../dom/val.html#DOM.val" title="DOM.val"><tt class="xref py py-func docutils literal"><span class="pre">val()</span></tt></a></li>
 <li><a class="reference internal" href="../dom/text.html#DOM.text" title="DOM.text"><tt class="xref py py-func docutils literal"><span class="pre">text()</span></tt></a></li>
 <li><a class="reference internal" href="../dom/css.html#DOM.css" title="DOM.css"><tt class="xref py py-func docutils literal"><span class="pre">css()</span></tt></a></li>
-<li><a class="reference internal" href="../dom/show.html#DOM.show" title="DOM.show"><tt class="xref py py-func docutils literal"><span class="pre">show()</span></tt></a></li>
-<li><a class="reference internal" href="../dom/hide.html#DOM.hide" title="DOM.hide"><tt class="xref py py-func docutils literal"><span class="pre">hide()</span></tt></a></li>
 <li><a class="reference internal" href="../dom/toggle.html#DOM.toggle" title="DOM.toggle"><tt class="xref py py-func docutils literal"><span class="pre">toggle()</span></tt></a></li>
 <li><a class="reference internal" href="../dom/offset.html#DOM.offset" title="DOM.offset"><tt class="xref py py-func docutils literal"><span class="pre">offset()</span></tt></a></li>
 <li><a class="reference internal" href="../dom/scrollIntoView.html#DOM.scrollIntoView" title="DOM.scrollIntoView"><tt class="xref py py-func docutils literal"><span class="pre">scrollIntoView()</span></tt></a></li>
@@ -146,7 +153,26 @@
 <li><a class="reference internal" href="../dom/hasData.html#DOM.hasData" title="DOM.hasData"><tt class="xref py py-func docutils literal"><span class="pre">hasData()</span></tt></a></li>
 <li><a class="reference internal" href="../dom/unselectable.html#DOM.unselectable" title="DOM.unselectable"><tt class="xref py py-func docutils literal"><span class="pre">unselectable()</span></tt></a></li>
 <li><a class="reference internal" href="../dom/contains.html#DOM.contains" title="DOM.contains"><tt class="xref py py-func docutils literal"><span class="pre">contains()</span></tt></a></li>
+<li><a class="reference internal" href="../event/on.html#Event.on" title="Event.on"><tt class="xref py py-func docutils literal"><span class="pre">on()</span></tt></a></li>
+<li><a class="reference internal" href="../event/detach.html#Event.detach" title="Event.detach"><tt class="xref py py-func docutils literal"><span class="pre">detach()</span></tt></a></li>
+<li><a class="reference internal" href="../event/fire.html#Event.fire" title="Event.fire"><tt class="xref py py-func docutils literal"><span class="pre">fire()</span></tt></a></li>
 </ul>
+<p class="versionchanged">
+<span class="versionmodified">Changed in version 1.2: </span><tt class="docutils literal"><span class="pre">Node</span></tt> 模块的 <tt class="docutils literal"><span class="pre">on</span></tt> 方法中的 <tt class="docutils literal"><span class="pre">this</span></tt> 关键字指向当前绑定事件的单个原生节点，事件对象的 <tt class="docutils literal"><span class="pre">target</span></tt> 和 <tt class="docutils literal"><span class="pre">relatedTarget</span></tt> 也指向对应的原生节点，
+例如：</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;d1&#39;</span> <span class="na">class=</span><span class="s">&#39;d&#39;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;d2&#39;</span> <span class="na">class=</span><span class="s">&#39;d&#39;</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;.d&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseenter&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="c1">// =&gt; d1 或者 d2</span>
+        <span class="nx">ev</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">id</span> <span class="c1">// =&gt; d1 或者 d2</span>
+        <span class="nx">ev</span><span class="p">.</span><span class="nx">relatedTarget</span> <span class="c1">// =&gt; d1 或者 d2 或者 document.body</span>
+                        <span class="c1">// 或者 document.documentElement</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
 </div>
 
 
@@ -231,6 +257,15 @@
 <li class="toctree-l4"><a class="reference internal" href="before.html">before()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="after.html">after()</a></li>
 <li class="toctree-l4"><a class="reference internal" href="insertAfter.html">insertAfter()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="animate.html">animate()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stop.html">stop()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="show.html">show()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hide.html">hide()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toggle.html">toggle()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fadeIn.html">fadeIn()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fadeOut.html">fadeOut()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="slideDown.html">slideDown()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="slideUp.html">slideUp()</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../anim/index.html">Anim</a></li>

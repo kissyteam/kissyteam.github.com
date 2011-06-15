@@ -53,7 +53,7 @@
       <a href="../event/index.html" title="Event"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../node/insertAfter.html" title="insertAfter()"
+      <a href="../node/slideUp.html" title="slideUp()"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -64,7 +64,7 @@
 			<div class="col-main">
 				<div class="main-wrap">
 					
-  <div class="section" id="anim">
+  <span class="target" id="module-Anim"></span><div class="section" id="anim">
 <h1>Anim<a class="headerlink" href="#anim" title="Permalink to this headline">¶</a></h1>
 <p>by <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></p>
 <div class="section" id="id2">
@@ -165,172 +165,13 @@
 </dd></dl>
 
 </div>
-<div class="section" id="id6">
-<h2>在节点实例上开始动画<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="Anim.Node.animate">
-<tt class="descclassname">Node.</tt><tt class="descname">animate</tt><big>(</big><em>props</em><span class="optional">[</span>, <em>duration=1</em>, <em>easing='easeNone'</em>, <em>callback</em>, <em>nativeSupport=true</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Anim.Node.animate" title="Permalink to this definition">¶</a></dt>
-<dd><p>在当前节点作用动画</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="Anim.Node.stop">
-<tt class="descclassname">Node.</tt><tt class="descname">stop</tt><big>(</big><em>finish</em><big>)</big><a class="headerlink" href="#Anim.Node.stop" title="Permalink to this definition">¶</a></dt>
-<dd><p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>停止在当前节点作用动画</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>finish</strong> (<em>boolean</em>) &#8211; flasy 时，动画会在当前帧直接停止；为 true 时，动画停止时会立刻跳到最后一帧。</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>参数可见 <a class="reference internal" href="#Anim.Anim" title="Anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">构造器</span></tt></a> 接口部分</p>
-<dl class="method">
-<dt id="Anim.Node.show">
-<tt class="descclassname">Node.</tt><tt class="descname">show</tt><big>(</big><span class="optional">[</span><em>speed</em>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Anim.Node.show" title="Permalink to this definition">¶</a></dt>
-<dd><p>元素以动画效果显示</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>speed</strong> (<em>number</em>) &#8211; 动画持续时间，设置无动画</li>
-<li><strong>callback</strong> (<em>function</em>) &#8211; 动画结束后回调函数</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="Anim.Node.hide">
-<tt class="descclassname">Node.</tt><tt class="descname">hide</tt><big>(</big><span class="optional">[</span><em>speed</em>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Anim.Node.hide" title="Permalink to this definition">¶</a></dt>
-<dd><p>元素以动画效果隐藏</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>speed</strong> (<em>number</em>) &#8211; 动画持续时间，设置无动画</li>
-<li><strong>callback</strong> (<em>function</em>) &#8211; 动画结束后回调函数</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="Anim.Node.toggle">
-<tt class="descclassname">Node.</tt><tt class="descname">toggle</tt><big>(</big><span class="optional">[</span><em>speed</em>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Anim.Node.toggle" title="Permalink to this definition">¶</a></dt>
-<dd><p>当前元素为显示时动画效果隐藏，否则动画效果显示</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>speed</strong> (<em>number</em>) &#8211; 动画持续时间，设置无动画</li>
-<li><strong>callback</strong> (<em>function</em>) &#8211; 动画结束后回调函数</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="Anim.Node.fadeIn">
-<tt class="descclassname">Node.</tt><tt class="descname">fadeIn</tt><big>(</big><span class="optional">[</span><em>speed=1</em>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Anim.Node.fadeIn" title="Permalink to this definition">¶</a></dt>
-<dd><p>元素渐隐效果显示</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>speed</strong> (<em>number</em>) &#8211; 单位秒，动画持续时间，设置无动画</li>
-<li><strong>callback</strong> (<em>function</em>) &#8211; 动画结束后回调函数</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="Anim.Node.fadeOut">
-<tt class="descclassname">Node.</tt><tt class="descname">fadeOut</tt><big>(</big><span class="optional">[</span><em>speed=1</em>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Anim.Node.fadeOut" title="Permalink to this definition">¶</a></dt>
-<dd><p>元素渐隐效果隐藏</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>speed</strong> (<em>number</em>) &#8211; 单位秒，动画持续时间，设置无动画</li>
-<li><strong>callback</strong> (<em>function</em>) &#8211; 动画结束后回调函数</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="Anim.Node.slideDown">
-<tt class="descclassname">Node.</tt><tt class="descname">slideDown</tt><big>(</big><span class="optional">[</span><em>speed=1</em>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Anim.Node.slideDown" title="Permalink to this definition">¶</a></dt>
-<dd><p>元素从上到下滑动显示</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>speed</strong> (<em>number</em>) &#8211; 单位秒，动画持续时间，设置无动画</li>
-<li><strong>callback</strong> (<em>function</em>) &#8211; 动画结束后回调函数</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="Anim.Node.slideUp">
-<tt class="descclassname">Node.</tt><tt class="descname">slideUp</tt><big>(</big><span class="optional">[</span><em>speed=1</em>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Anim.Node.slideUp" title="Permalink to this definition">¶</a></dt>
-<dd><p>元素从下到上隐藏</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>speed</strong> (<em>number</em>) &#8211; 单位秒，动画持续时间，设置无动画</li>
-<li><strong>callback</strong> (<em>function</em>) &#8211; 动画结束后回调函数</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-</div>
 </div>
 
 
 					
 					<div class="s-box relative-links">
 						<div class="s-box-bd">
-                            <a href="../node/insertAfter.html" title="insertAfter()"> 上一页 </a> |
+                            <a href="../node/slideUp.html" title="slideUp()"> 上一页 </a> |
                             <a href="../index.html" title="Core">回到上层</a> |
                             <a href="../event/index.html" title="Event"> 下一页 </a>
 						</div>
@@ -392,7 +233,6 @@
 <li class="toctree-l4"><a class="reference internal" href="#id2">获取动画构造器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id3">构造器接口</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id5">实例方法</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id6">在节点实例上开始动画</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../event/index.html">Event</a></li>
