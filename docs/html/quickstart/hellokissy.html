@@ -47,7 +47,7 @@
 				<div class="main-wrap">
 					
   <div class="section" id="hello-kissy">
-<span id="hellokissy"></span><h1>Hello KISSY<a class="headerlink" href="#hello-kissy" title="Permalink to this headline">¶</a></h1>
+<span id="quickstart-hellokissy"></span><h1>Hello KISSY<a class="headerlink" href="#hello-kissy" title="Permalink to this headline">¶</a></h1>
 <p>在前一小节的示例中, 用到了 KISSY 常用的 <tt class="docutils literal"><span class="pre">DOM</span></tt>, <tt class="docutils literal"><span class="pre">Event</span></tt>, <tt class="docutils literal"><span class="pre">Anim</span></tt> 等功能.</p>
 <p>完整代码如下:</p>
 <div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -82,29 +82,29 @@
 <dl class="docutils">
 <dt>这个例子中,</dt>
 <dd><ol class="first last arabic simple">
-<li><tt class="docutils literal"><span class="pre">KISSY.ready()</span></tt> 指在 DOM 加载完毕之后执行代码. 就像 jQuery 中的 <tt class="docutils literal"><span class="pre">$(document).ready()</span></tt>.</li>
-<li><tt class="docutils literal"><span class="pre">S.DOM</span></tt>, KISSY 的 DOM 模块 <a class="footnote-reference" href="#id3" id="id1">[1]</a> , 提供常用 DOM 操作, 如元素选择/遍历, 样式的获取/修改等等.</li>
-<li><tt class="docutils literal"><span class="pre">S.Event</span></tt>, KISSY 的 Event 模块 <a class="footnote-reference" href="#id4" id="id2">[2]</a> , 提供事件处理功能, 如事件添加/删除, <tt class="docutils literal"><span class="pre">mouseenter/mouseleave</span></tt> 事件的支持等.</li>
-<li><tt class="docutils literal"><span class="pre">DOM.get(selector)</span></tt>, 根据给出的 <tt class="docutils literal"><span class="pre">selector</span></tt> 获取符合条件的 <strong>第一个节点</strong>; 另外还有一个类似的方法叫做 <tt class="docutils literal"><span class="pre">DOM.query(selector)</span></tt> , 与前者不同的是, 得到的是 <strong>所有</strong> 符合条件的元素.</li>
-<li><tt class="docutils literal"><span class="pre">DOM.attr(elem,</span> <span class="pre">name,</span> <span class="pre">val)</span></tt>, 获取/设置元素某个属性, 这里, 在动画开始前给按钮设置不可用状态.</li>
-<li><tt class="docutils literal"><span class="pre">S.Anim()</span></tt>, 提供动画效果, 通过给元素设定参数, 就可以让这个元素动态地从当前参数变化到设定的目标参数.</li>
-<li><tt class="docutils literal"><span class="pre">DOM.get/DOM.query</span></tt> 也可以直接用 <tt class="docutils literal"><span class="pre">S.get/S.query</span></tt> 来调用，是一样的.</li>
+<li><em class="xref std std-ref">KISSY.ready()</em> 指在 DOM 加载完毕之后执行代码. 就像 jQuery 中的 <tt class="docutils literal"><span class="pre">$(document).ready()</span></tt>.</li>
+<li><a class="reference internal" href="../api/core/dom/index.html#dom"><em>S.DOM</em></a>, KISSY 的 DOM 模块 <a class="footnote-reference" href="#id3" id="id1">[1]</a> , 提供常用 DOM 操作, 如元素选择/遍历, 样式的获取/修改等等.</li>
+<li><a class="reference internal" href="../api/core/event/index.html#event"><em>S.Event</em></a>, KISSY 的 Event 模块 <a class="footnote-reference" href="#id4" id="id2">[2]</a> , 提供事件处理功能, 如事件添加/删除, <tt class="docutils literal"><span class="pre">mouseenter/mouseleave</span></tt> 事件的支持等.</li>
+<li><a class="reference internal" href="../api/core/dom/get.html#dom-get"><em>DOM.get(selector)</em></a>, 根据给出的 <tt class="docutils literal"><span class="pre">selector</span></tt> 获取符合条件的 <strong>第一个节点</strong>; 另外还有一个类似的方法叫做 <a class="reference internal" href="../api/core/dom/query.html#dom-query"><em>DOM.query(selector)</em></a> , 与前者不同的是, 得到的是 <strong>所有</strong> 符合条件的元素.</li>
+<li><a class="reference internal" href="../api/core/dom/attr.html#dom-attr"><em>DOM.attr(elem, name, val)</em></a>, 获取/设置元素某个属性, 这里, 在动画开始前给按钮设置不可用状态.</li>
+<li><a class="reference internal" href="../api/core/anim/index.html#anim"><em>S.Anim()</em></a>, 提供动画效果, 通过给元素设定参数, 就可以让这个元素动态地从当前参数变化到设定的目标参数.</li>
+<li><a class="reference internal" href="../api/core/dom/get.html#dom-get"><em>DOM.get</em></a>/<a class="reference internal" href="../api/core/dom/query.html#dom-query"><em>DOM.query</em></a> 也可以直接用 <tt class="docutils literal"><span class="pre">S.get/S.query</span></tt> 来调用, 是一样的.</li>
 </ol>
 </dd>
 </dl>
 <p><tt class="docutils literal"><span class="pre">DOM/Event</span></tt> 是最基本的功能, 掌握了这两个, 就能基本使用 KISSY 了.
-接下来将介绍 <a class="reference internal" href="node.html#usenode"><em>Node</em></a> 对象的使用.</p>
+接下来将介绍 <a class="reference internal" href="node.html#quickstart-usenode"><em>Node</em></a> 对象的使用.</p>
 <p class="rubric">参考链接</p>
 <table class="docutils footnote" frame="void" id="id3" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="http://kissyteam.github.com/kissy/docs/dom/index.html">DOM API 文档</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="dom">DOM API 文档</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id4" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="http://kissyteam.github.com/kissy/docs/event/index.html">Event API 文档</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="event">Event API 文档</a></td></tr>
 </tbody>
 </table>
 </div>

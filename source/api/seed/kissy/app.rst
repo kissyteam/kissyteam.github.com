@@ -1,4 +1,4 @@
-.. currentmodule:: Seed
+.. _kissy-app:
 
 .. deprecated:: 1.2
 

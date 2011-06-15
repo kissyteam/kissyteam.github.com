@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-contains:
+﻿.. _dom-contains:
 
 contains
 =================================

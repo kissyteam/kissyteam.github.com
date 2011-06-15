@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. dom-html:
+﻿.. dom-html:
 
 html
 =================================

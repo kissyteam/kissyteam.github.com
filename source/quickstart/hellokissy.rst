@@ -1,4 +1,4 @@
-.. _hellokissy:
+.. _quickstart-hellokissy:
 
 
 Hello KISSY
@@ -28,22 +28,22 @@ Hello KISSY
 
 
 这个例子中, 
- #. ``KISSY.ready()`` 指在 DOM 加载完毕之后执行代码. 就像 jQuery 中的 ``$(document).ready()``.
- #. ``S.DOM``, KISSY 的 DOM 模块 [1]_ , 提供常用 DOM 操作, 如元素选择/遍历, 样式的获取/修改等等.
- #. ``S.Event``, KISSY 的 Event 模块 [2]_ , 提供事件处理功能, 如事件添加/删除, ``mouseenter/mouseleave`` 事件的支持等.
- #. ``DOM.get(selector)``, 根据给出的 ``selector`` 获取符合条件的 **第一个节点**; 另外还有一个类似的方法叫做 ``DOM.query(selector)`` , 与前者不同的是, 得到的是 **所有** 符合条件的元素.
- #. ``DOM.attr(elem, name, val)``, 获取/设置元素某个属性, 这里, 在动画开始前给按钮设置不可用状态.
- #. ``S.Anim()``, 提供动画效果, 通过给元素设定参数, 就可以让这个元素动态地从当前参数变化到设定的目标参数.
- #. ``DOM.get/DOM.query`` 也可以直接用 ``S.get/S.query`` 来调用，是一样的.
+ #. :ref:`KISSY.ready() <kissy-ready>` 指在 DOM 加载完毕之后执行代码. 就像 jQuery 中的 ``$(document).ready()``.
+ #. :ref:`S.DOM <dom>`, KISSY 的 DOM 模块 [1]_ , 提供常用 DOM 操作, 如元素选择/遍历, 样式的获取/修改等等.
+ #. :ref:`S.Event <event>`, KISSY 的 Event 模块 [2]_ , 提供事件处理功能, 如事件添加/删除, ``mouseenter/mouseleave`` 事件的支持等.
+ #. :ref:`DOM.get(selector) <dom-get>`, 根据给出的 ``selector`` 获取符合条件的 **第一个节点**; 另外还有一个类似的方法叫做 :ref:`DOM.query(selector) <dom-query>` , 与前者不同的是, 得到的是 **所有** 符合条件的元素.
+ #. :ref:`DOM.attr(elem, name, val) <dom-attr>`, 获取/设置元素某个属性, 这里, 在动画开始前给按钮设置不可用状态.
+ #. :ref:`S.Anim() <anim>`, 提供动画效果, 通过给元素设定参数, 就可以让这个元素动态地从当前参数变化到设定的目标参数.
+ #. :ref:`DOM.get <dom-get>`/:ref:`DOM.query <dom-query>` 也可以直接用 ``S.get/S.query`` 来调用, 是一样的.
 
 
 ``DOM/Event`` 是最基本的功能, 掌握了这两个, 就能基本使用 KISSY 了.
-接下来将介绍 :ref:`Node <usenode>` 对象的使用.
+接下来将介绍 :ref:`Node <quickstart-usenode>` 对象的使用.
 
 
 
 .. rubric:: 参考链接
 
-.. [1] `DOM API 文档 <http://kissyteam.github.com/kissy/docs/dom/index.html>`_
-.. [2] `Event API 文档 <http://kissyteam.github.com/kissy/docs/event/index.html>`_
+.. [1] `DOM API 文档 <dom>`_
+.. [2] `Event API 文档 <event>`_
 

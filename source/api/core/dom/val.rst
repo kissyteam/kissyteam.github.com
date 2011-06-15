@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-val:
+﻿.. _dom-val:
 
 val
 =================================

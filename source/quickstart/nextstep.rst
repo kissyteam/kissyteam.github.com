@@ -1,4 +1,4 @@
-.. _nextstep:
+.. _quickstart-nextstep:
 
 
 下一步

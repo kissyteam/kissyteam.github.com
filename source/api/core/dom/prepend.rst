@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-prepend:
+﻿.. _dom-prepend:
 
 prepend
 =================================

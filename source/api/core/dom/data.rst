@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-data:
+﻿.. _dom-data:
 
 data
 =================================

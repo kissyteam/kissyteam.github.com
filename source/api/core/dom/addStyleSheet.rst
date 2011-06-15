@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-addStyleSheet:
+﻿.. _dom-addStyleSheet:
 
 addStyleSheet
 =================================

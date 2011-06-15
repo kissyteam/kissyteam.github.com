@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-removeAttr:
+﻿.. _dom-removeAttr:
 
 removeAttr
 =================================

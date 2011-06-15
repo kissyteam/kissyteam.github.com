@@ -1,18 +1,21 @@
-.. _widgets:
+.. _quickstart-widgets:
 
 
 Widgets
 ===============================================
-KISSY 提供种类丰富的 UI 组件, 下面介绍下强大的 ``Switchable``.
+
+KISSY 提供种类丰富的 UI 组件, 下面介绍下强大的 :ref:`Switchable <Switchable>`.
 
 
 Switchable
 -------------------
-``Switchable`` 是最基本的切换组件, 已有四种扩展组件 ``S.Tabs`` , ``S.Slide`` , ``S.Carousel`` , ``S.Accordin``, 能满足大多数应用需求.
+
+``Switchable`` 是最基本的切换组件, 已有四种扩展组件 :ref:`S.Tabs <Switchable-Tabs>` , :ref:`S.Slide <Switchable-Slide>` , :ref:S.Carousel <Switchable-Carousel>` , :ref:`S.Accordin <Switchable-Accordin>`, 能满足大多数应用需求.
 
 
 Slide 实例
 -------------------
+
 Slide 效果就是 Taobao 上最最经常见的多张图片切换效果, 如:
 
 .. raw:: html
@@ -98,10 +101,10 @@ Switchable 类组件, 提供了丰富的配置选项, 详见 API 文档 [1]_
 Switchable 组件先介绍到这里. 更多关于 Switchable 相关的例子见 [2]_
 
 
-下一节将介绍, 如果你需要自己写个组件, 该注意什么? -- :ref:`自定义组件 <yourwidgets>`  ...
+下一节将介绍, 如果你需要自己写个组件, 该注意什么? -- :ref:`自定义组件 <quickstart-yourwidgets>`  ...
 
 
 .. rubric:: 参考链接
 
-.. [1] `Switchable API 文档 <http://kissyteam.github.com/kissy/docs/switchable/index.html>`_
-.. [2] `Switchable Demo 页面 <http://kissyteam.github.com/kissy/src/switchable/demo.html>`_
+.. [1] `Switchable API 文档 <Switchable>`_
+.. [2] `Switchable Demo 页面 <demo-Switchable>`_

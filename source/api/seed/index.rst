@@ -1,13 +1,22 @@
-.. _kissy_seed:
+.. _seed:
 
-
-Seed
+seed
 =============================
 
-by `承玉 <yiminghe@gmail.com>`_
+|  作者: `承玉 <yiminghe@gmail.com>`_
+|  源码: `查看 <../../../../../../kissy/src/seed/>`_
+
+
+Class
+-----------------------------------------------
+
+.. js:data:: KISSY
+
+Methods
+-----------------------------------------------
 
 .. toctree::
-   :maxdepth: 2
+   :titlesonly:
 
    loader/index.rst
    kissy/index.rst

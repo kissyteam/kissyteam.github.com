@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-removeData:
+﻿.. _dom-removeData:
 
 removeData
 =================================

@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-scrollIntoView:
+﻿.. _dom-scrollIntoView:
 
 scrollIntoView
 =================================

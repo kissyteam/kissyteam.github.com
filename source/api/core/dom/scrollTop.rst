@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-scrollTop:
+﻿.. _dom-scrollTop:
 
 scrollTop
 =================================

@@ -1,24 +1,28 @@
-.. py:module:: Seed
+.. _kissy:
 
-Seed
+KISSY
 ===============================
 
-by `承玉 <yiminghe@gmail.com>`_ , `玉伯 <lifesinger@gmail.com>`_
+|  OO 实现
+|  作者: `玉伯 <lifesinger@gmail.com>`_ , `承玉 <yiminghe@gmail.com>`_
+|  源码: `查看 <../../../../../../kissy/src/seed/kissy.js>`_
 
+
+Methods
+-----------------------------------------------
 
 .. toctree::
-   :maxdepth: 3
-   
-      
-   version.rst
-   Config.rst
-   mix.rst
-   merge.rst
-   augment.rst
-   extend.rst
-   namespace.rst
-   app.rst
-   log.rst
-   error.rst
-   guid.rst 
-    
+   :titlesonly:
+
+   version
+   Config
+   mix
+   merge
+   augment
+   extend
+   namespace
+   app
+   log
+   error
+   guid
+

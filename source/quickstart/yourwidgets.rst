@@ -1,4 +1,4 @@
-.. _yourwidgets:
+.. _quickstart-yourwidgets:
 
 
 自定义组件
@@ -14,7 +14,7 @@
  #. 封装性好, 只提供 API 接口给外部调用
 
 
-KISSY 中, 通过 ``add( name, fn )`` 方法来添加新的模块. 在 KISSY 内部, 代码也是这么组织的.
+KISSY 中, 通过 :ref:`add( name, fn ) <loader-add>` 方法来添加新的模块. 在 KISSY 内部, 代码也是这么组织的.
 
 下面通过个小例子来说明如何开发自定义组件.
 
@@ -22,6 +22,7 @@ KISSY 中, 通过 ``add( name, fn )`` 方法来添加新的模块. 在 KISSY 内
 
 组件开发示例
 -------------------
+
 在淘宝交易结束前有个评价环节, 里面有一个星星打分功能, 如下示例, 在这里就把这个打分做成一个小 KISSY 组件.
 
 .. raw:: html
@@ -246,10 +247,10 @@ KISSY 中, 通过 ``add( name, fn )`` 方法来添加新的模块. 在 KISSY 内
 
 一些说明:
  #. 首先, 想好组件的名字, 见名知意, 模块名字统一小写, 而暴露给外部的组件名称使用单词首字母大写, 如 ``StarRating``;
- #. 通过 ``KISSY.add('starrating', function(S){ });`` 加入新模块到 KISSY 中, 这里也可以使用 ``KISSY.app('XXX');`` 创建特定的应用, 然后用 ``XXX.add('starrating', function(S){});`` 给特定应用 XXX 添加一个模块;
+ #. 通过 :ref:`KISSY.add('starrating', function(S){ }); <kissy-add>` 加入新模块到 KISSY 中, 这里也可以使用 ``KISSY.app('XXX');`` 创建特定的应用, 然后用 ``XXX.add('starrating', function(S){});`` 给特定应用 XXX 添加一个模块;
  #. 接下来是声明一些模块内的公共变量, 像 ``S.DOM, S.Event`` 都会用到, 另外一些如组件自己的 class 钩子;
  #. 默认的配置信息, ``defaultConfig``, 提供了使用者如果没有设置时的默认值;
- #. 通过 ``S.augment(StarRating, { });`` 添加属性及方法, 每个方法在注释中写明含义, 入口参数及其类型. 另外, 开发者需要想好哪些属性/方法需要对外提供及命名方式如何等. 在这个例子中, 只添加了 ``_init`` 私有方法, 用来构建所需 DOM, 绑定事件;
+ #. 通过 :ref:`S.augment(StarRating, { }); <kissy-augment>` 添加属性及方法, 每个方法在注释中写明含义, 入口参数及其类型. 另外, 开发者需要想好哪些属性/方法需要对外提供及命名方式如何等. 在这个例子中, 只添加了 ``_init`` 私有方法, 用来构建所需 DOM, 绑定事件;
  #. 最后, 在使用时只需要创建一个对象即可, 如, ``new S.StarRating('#J_Rating', config)``;
 
 
@@ -258,5 +259,5 @@ KISSY 中, 通过 ``add( name, fn )`` 方法来添加新的模块. 在 KISSY 内
 **注意:** 上面的 StarScore 组件仅是示范，实际应用中，会更复杂些.
 
 
-下一节将介绍如何对现有的 KISSY 组件进行扩展 ---- :ref:`扩展 Switchable <extendwidgets>`
+下一节将介绍如何对现有的 KISSY 组件进行扩展 ---- :ref:`扩展 Switchable <quickstart-extendwidgets>`
 

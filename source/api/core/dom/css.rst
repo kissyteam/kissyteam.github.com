@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-css:
+﻿.. _dom-css:
 
 css
 =================================

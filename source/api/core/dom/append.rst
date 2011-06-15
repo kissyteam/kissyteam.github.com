@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-append:
+﻿.. _dom-append:
 
 append
 =================================

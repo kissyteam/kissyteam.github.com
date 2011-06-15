@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-toggleClass:
+﻿.. _dom-toggleClass:
 
 toggleClass
 =================================

@@ -1,15 +1,17 @@
-.. py:module:: Lang
+.. _lang:
 
-Lang
+lang
 ===============================
 
-by `承玉 <yiminghe@gmail.com>`_ , `玉伯 <lifesinger@gmail.com>`_
+|  作者: `玉伯 <lifesinger@gmail.com>`_ , `承玉 <yiminghe@gmail.com>`_
+|  源码: `查看 <../../../../../../kissy/src/seed/lang.js>`_
 
+Methods
+-----------------------------------------------
 
 .. toctree::
-   :maxdepth: 3
-   
-      
+   :titlesonly:
+
    clone.rst
    each.rst
    later.rst

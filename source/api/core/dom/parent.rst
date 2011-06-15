@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-parent:
+﻿.. _dom-parent:
 
 parent
 =================================

@@ -1,4 +1,4 @@
-.. _setup:
+.. _quickstart-setup:
 
 Setup
 =============================
@@ -60,7 +60,7 @@ Setup
 
 使用 KISSY 实现上面的效果, 只需大约 10 行代码.
 
-下一节将会详细介绍上面的示例，请看 :ref:`Hello KISSY  <hellokissy>` ~
+下一节将会详细介绍上面的示例，请看 :ref:`Hello KISSY  <quickstart-hellokissy>` ~
 
 
 

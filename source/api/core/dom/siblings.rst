@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-siblings:
+﻿.. _dom-siblings:
 
 siblings
 =================================

@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-scrollLeft:
+﻿.. _dom-scrollLeft:
 
 scrollLeft
 =================================

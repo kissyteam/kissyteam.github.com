@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-insertAfter:
+﻿.. _dom-insertAfter:
 
 
 insertAfter

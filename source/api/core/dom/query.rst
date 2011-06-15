@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-query:
+﻿.. _dom-query:
 
 query
 ====================================

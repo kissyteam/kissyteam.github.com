@@ -47,14 +47,16 @@
 				<div class="main-wrap">
 					
   <div class="section" id="ajax">
-<span id="id1"></span><h1>Ajax<a class="headerlink" href="#ajax" title="Permalink to this headline">¶</a></h1>
-<p>KISSY 中提供了 Ajax 异步请求功能, 下面仅介绍最常用的 <tt class="docutils literal"><span class="pre">getScript</span></tt> 方法, 其他 ajax 模块中的方法, 如 <tt class="docutils literal"><span class="pre">get</span></tt>, <tt class="docutils literal"><span class="pre">post</span></tt> 等，请参考 API 文档 <a class="footnote-reference" href="#id6" id="id2">[1]</a> .</p>
+<span id="quickstart-ajax"></span><h1>Ajax<a class="headerlink" href="#ajax" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>KISSY 中提供了 Ajax 异步请求功能, 下面仅介绍最常用的 <em class="xref std std-ref">getScript()</em> 方法, 其他 ajax 模块中的方法, 如 <tt class="docutils literal"><span class="pre">get</span></tt>, <tt class="docutils literal"><span class="pre">post</span></tt> 等，请参考 API 文档 <a class="footnote-reference" href="#id5" id="id1">[1]</a> .</p>
 <p><tt class="docutils literal"><span class="pre">getScript</span></tt> 异步请求成功后, 可以执行请求回来的数据, 与 <tt class="docutils literal"><span class="pre">jQuery</span> <span class="pre">$.getScript</span></tt> 是一致的.</p>
-<p>这种请求方式, 我们一般称为 <tt class="docutils literal"><span class="pre">JSONP</span></tt>, 是最常用的跨域请求方式. 关于跨域可参见 <a class="footnote-reference" href="#id7" id="id3">[2]</a> .</p>
-<div class="section" id="id4">
-<h2>使用 Ajax<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>这种请求方式, 我们一般称为 <tt class="docutils literal"><span class="pre">JSONP</span></tt>, 是最常用的跨域请求方式. 关于跨域可参见 <a class="footnote-reference" href="#id6" id="id2">[2]</a> .</p>
+</div></blockquote>
+<div class="section" id="id3">
+<h2>使用 Ajax<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>在日常 Web 应用中, 经常用到异步请求, 比如, 异步加载一些评论信息, 异步加载图片列表等, 这样可以减少页面初始加载时的请求, 减轻服务器压力, 也加快主页面的初始打开速度.</p>
-<p>下面介绍个如何通过 <tt class="docutils literal"><span class="pre">getScript</span></tt> 方法去请求 flickr 上提供的图片数据.</p>
+<p>下面介绍个如何通过 <em class="xref std std-ref">getScript()</em> 方法去请求 flickr 上提供的图片数据.</p>
 <p>先见示例:</p>
 <div class="demo">
      <style>
@@ -173,31 +175,31 @@
 <dl class="docutils">
 <dt>稍加解释下:</dt>
 <dd><ol class="first last arabic simple">
-<li>当点击按钮时, 组装 API 参数后, 发送请求. ps: 这里各个参数可以在 flickr API 文档中找到 <a class="footnote-reference" href="#id8" id="id5">[3]</a>, 最后的 jsoncallback 指定回调函数的名字.</li>
-<li>组装参数时, 使用到了 <tt class="docutils literal"><span class="pre">S.param</span></tt> 方法, 是将对象 data 转换为 URL 中的参数字符串, 且是经过 encodeURI 编码的.</li>
+<li>当点击按钮时, 组装 API 参数后, 发送请求. ps: 这里各个参数可以在 flickr API 文档中找到 <a class="footnote-reference" href="#id7" id="id4">[3]</a>, 最后的 jsoncallback 指定回调函数的名字.</li>
+<li>组装参数时, 使用到了 <em class="xref std std-ref">S.param()</em> 方法, 是将对象 data 转换为 URL 中的参数字符串, 且是经过 encodeURI 编码的.</li>
 <li>在回调函数中, 获取传入的 json 数据, 稍加拼装就可以使用啦~</li>
 <li>最后的 <tt class="docutils literal"><span class="pre">window.getFavorites</span></tt> 是将方法 <tt class="docutils literal"><span class="pre">getFavorites</span></tt> 暴露给全局, 因为当请求后调用的就是全局范围内的 <tt class="docutils literal"><span class="pre">getFavorites</span></tt> 函数, 如果是对象中的方法, 同样可以将该对象暴露给全局后再调用其方法.</li>
 </ol>
 </dd>
 </dl>
-<p>在简单介绍完 <tt class="docutils literal"><span class="pre">S.getScript</span></tt> 之后, 下面将讲述 KISSY 提供的动画支持 <a class="reference internal" href="anim.html#anim"><em>Anim</em></a> ...</p>
+<p>在简单介绍完 <tt class="docutils literal"><span class="pre">S.getScript</span></tt> 之后, 下面将讲述 KISSY 提供的动画支持 <a class="reference internal" href="anim.html#quickstart-anim"><em>Anim</em></a> ...</p>
 <p class="rubric">参考链接</p>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="ajax">Ajax API 文档</a></td></tr>
+</tbody>
+</table>
 <table class="docutils footnote" frame="void" id="id6" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td><a class="reference external" href="http://kissyteam.github.com/KISSY/docs/ajax/index.html">Ajax API 文档</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/JSON">JSON 介绍</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id7" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/JSON">JSON 介绍</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id8" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[3]</a></td><td><a class="reference external" href="http://www.flickr.com/services/api/">Flickr API</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id4">[3]</a></td><td><a class="reference external" href="http://www.flickr.com/services/api/">Flickr API</a></td></tr>
 </tbody>
 </table>
 </div>
@@ -259,7 +261,7 @@
 <li class="toctree-l3"><a class="reference internal" href="hellokissy.html">Hello KISSY</a></li>
 <li class="toctree-l3"><a class="reference internal" href="node.html">Node 初步</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">Ajax</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id4">使用 Ajax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">使用 Ajax</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="anim.html">Anim</a></li>

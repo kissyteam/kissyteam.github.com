@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-docHeight:
+﻿.. _dom-docHeight:
 
 docHeight
 =================================

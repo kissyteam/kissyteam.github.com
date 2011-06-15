@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-viewportWidth:
+﻿.. _dom-viewportWidth:
 
 viewportWidth
 =================================

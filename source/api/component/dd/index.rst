@@ -1,4 +1,4 @@
-﻿.. module:: DD
+﻿.. _DD:
 
 DD
 ===============================================
@@ -8,7 +8,7 @@ DD
 |  作者: 承玉<chengyu@taobao.com>
 
 .. toctree::
-   :maxdepth: 2
+   :titlesonly:
 
    draggable.rst
    droppable.rst

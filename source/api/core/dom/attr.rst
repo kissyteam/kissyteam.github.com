@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-attr:
+﻿.. _dom-attr:
 
 attr
 =================================

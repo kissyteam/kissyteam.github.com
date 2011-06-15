@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-height:
+﻿.. _dom-height:
 
 height
 =================================

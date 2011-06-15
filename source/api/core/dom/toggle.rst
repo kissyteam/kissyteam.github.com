@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-toggle:
+﻿.. _dom-toggle:
 
 toggle
 =================================

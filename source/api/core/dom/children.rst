@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-children:
+﻿.. _dom-children:
 
 children
 =================================

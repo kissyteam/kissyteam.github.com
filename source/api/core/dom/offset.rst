@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-offset:
+﻿.. _dom-offset:
 
 offset
 =================================

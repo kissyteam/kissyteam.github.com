@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. dom-hasClass:
+﻿.. dom-hasClass:
 
 hasClass
 =================================

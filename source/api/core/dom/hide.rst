@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-hide:
+﻿.. _dom-hide:
 
 hide
 =================================

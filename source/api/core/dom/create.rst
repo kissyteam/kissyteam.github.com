@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-create:
+﻿.. _dom-create:
 
 create
 =================================

@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-viewportHeight:
+﻿.. _dom-viewportHeight:
 
 viewportHeight
 =================================

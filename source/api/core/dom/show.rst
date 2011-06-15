@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-show:
+﻿.. _dom-show:
 
 show
 =================================

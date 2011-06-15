@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-removeClass:
+﻿.. _dom-removeClass:
 
 removeClass
 =================================

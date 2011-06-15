@@ -1,10 +1,10 @@
+.. _component:
 
 Component
 =============================
 
-
 .. toctree::
-   :maxdepth: 2
+   :titlesonly:
 
    datalazyload/index
    overlay/index

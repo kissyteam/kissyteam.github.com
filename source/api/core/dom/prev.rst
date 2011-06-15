@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-prev:
+﻿.. _dom-prev:
 
 prev
 =================================

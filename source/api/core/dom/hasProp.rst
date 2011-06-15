@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-hasProp:
+﻿.. _dom-hasProp:
 
 hasProp
 =================================

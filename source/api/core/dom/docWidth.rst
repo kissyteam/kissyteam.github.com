@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-docWidth:
+﻿.. _dom-docWidth:
 
 docWidth
 =================================

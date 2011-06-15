@@ -47,7 +47,7 @@
 				<div class="main-wrap">
 					
   <div class="section" id="anim">
-<span id="id1"></span><h1>Anim<a class="headerlink" href="#anim" title="Permalink to this headline">¶</a></h1>
+<span id="quickstart-anim"></span><h1>Anim<a class="headerlink" href="#anim" title="Permalink to this headline">¶</a></h1>
 <p>关于 JS 中的动画, 让我映象最为深刻的就是 jQuery 首页上最经典的例子:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p.neat&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;ohmy&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">(</span><span class="s2">&quot;slow&quot;</span><span class="p">);</span>
 </pre></div>
@@ -57,28 +57,28 @@
 <div class="section" id="s-anim">
 <h2>S.Anim<a class="headerlink" href="#s-anim" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
-<dt>KISSY 提供的动画特效支持主要由三个子模块组成 <a class="footnote-reference" href="#id6" id="id2">[1]</a> :</dt>
+<dt>KISSY 提供的动画特效支持主要由三个子模块组成 <a class="footnote-reference" href="#id5" id="id1">[1]</a> :</dt>
 <dd><ol class="first last arabic simple">
 <li><tt class="docutils literal"><span class="pre">anim</span></tt>, 动画的基础模块</li>
 <li><tt class="docutils literal"><span class="pre">anim-easing</span></tt>, 提供 easeIn/Out, elasticIn/Out, backIn/Out, bounceIn/Out 等平滑函数</li>
 <li><tt class="docutils literal"><span class="pre">anim-node-plugin</span></tt>, 让 <tt class="docutils literal"><span class="pre">Node/NodeList</span></tt> 直接支持动画调用</li>
 </ol>
 </dd>
-<dt>核心动画函数是 <tt class="docutils literal"><span class="pre">S.Anim(elem,</span> <span class="pre">props,</span> <span class="pre">duration,</span> <span class="pre">easing,</span> <span class="pre">callback)</span></tt> , 5 个参数分别为:</dt>
+<dt>核心动画函数是 <em class="xref std std-ref">S.Anim(elem, props, duration, easing, callback) &lt;anim&gt;`</em> , 5 个参数分别为:</dt>
 <dd><ol class="first last arabic simple">
 <li><tt class="docutils literal"><span class="pre">elem</span></tt>: 指定动画的目标元素</li>
 <li><tt class="docutils literal"><span class="pre">props</span></tt>: 动画属性, 可以是字符串或者普通对象</li>
 <li><tt class="docutils literal"><span class="pre">duration</span></tt>: 动画时长, 以秒为单位</li>
-<li><tt class="docutils literal"><span class="pre">easing</span></tt>: 动画平滑函数, 可以取 <a class="footnote-reference" href="#id7" id="id3">[2]</a>, 不同的函数呈现不同的变化效果</li>
+<li><tt class="docutils literal"><span class="pre">easing</span></tt>: 动画平滑函数, 可以取 <a class="footnote-reference" href="#id6" id="id2">[2]</a>, 不同的函数呈现不同的变化效果</li>
 <li><tt class="docutils literal"><span class="pre">callback</span></tt>: 动画完毕后的回调函数</li>
 </ol>
 </dd>
 </dl>
-<p>其实, 这个函数很简单, 在该文档的第一节就已经使用到了最基本的功能. 更多类似的小例子可见 <a class="footnote-reference" href="#id9" id="id4">[3]</a>.</p>
+<p>其实, 这个函数很简单, 在该文档的第一节就已经使用到了最基本的功能. 更多类似的小例子可见 <a class="footnote-reference" href="#id8" id="id3">[3]</a>.</p>
 <p>动画的原理都是一样的, 但要实现一些很酷的动画效果, 首先得分析出动画每个部分的状态, 再把它们有顺序的组合起来.</p>
 </div>
-<div class="section" id="id5">
-<h2>改进版图片抓取<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>改进版图片抓取<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>除了直接调用 <tt class="docutils literal"><span class="pre">S.Anim</span></tt> 实现动画，还可以通过 DOM 或 Node 中的 <tt class="docutils literal"><span class="pre">show/hide/toggle</span></tt>, <tt class="docutils literal"><span class="pre">fadeIn/fadeOut</span></tt> 等方法来间接调用动画.</p>
 <p>在上一节的图片获取的例子中, 点击按钮之后, 图片一下子的跑出来了, 感觉不是很好.现在, 我们利用动画组件, 让图片完全加载完毕后逐渐显示出来:</p>
 <div class="demo">
@@ -141,7 +141,7 @@
              }
          });
      </script>
-</div><p>每张图片获取之后, 先不显示出来, 等图片加载完成之后, 调用 <tt class="docutils literal"><span class="pre">S.fadeIn</span></tt> 渐进显示, 部分代码:</p>
+</div><p>每张图片获取之后, 先不显示出来, 等图片加载完成之后, 调用 <em class="xref std std-ref">S.fadeIn</em> 渐进显示, 部分代码:</p>
 <div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -162,24 +162,24 @@
 </pre></div>
 </td></tr></table></div>
 <p>关于动画, 先介绍到这里. 其他更炫的效果, 等待你的想象与实现!</p>
-<p>下一节, 将会介绍 KISSY 的第一个功能强大, 且在淘宝上经常能够看到的组件 &#8211; <tt class="docutils literal"><span class="pre">Switchable</span></tt>, 并会介绍 <a class="reference internal" href="widgets.html#widgets"><em>KISSY 组件</em></a>  的组织方式...</p>
+<p>下一节, 将会介绍 KISSY 的第一个功能强大, 且在淘宝上经常能够看到的组件 &#8211; <a class="reference internal" href="../api/component/switchable/index.html#switchable"><em>Switchable</em></a>, 并会介绍 <a class="reference internal" href="widgets.html#quickstart-widgets"><em>KISSY 组件</em></a>  的组织方式...</p>
 <p class="rubric">参考链接</p>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="anim">Anim API 文档</a></td></tr>
+</tbody>
+</table>
 <table class="docutils footnote" frame="void" id="id6" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td><a class="reference external" href="http://kissyteam.github.com/kissy/docs/anim/">Anim API 文档</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="http://kissyteam.github.com/kissy/docs/anim/anim-easing.html">平滑函数</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id7" rules="none">
+<table class="docutils footnote" frame="void" id="id8" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td><a class="reference external" href="http://kissyteam.github.com/kissy/docs/anim/anim-easing.html">平滑函数</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id9" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[3]</a></td><td><a class="reference external" href="http://kissyteam.github.com/kissy/src/anim/demo.html">动画示例</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="demo-anim">动画示例</a></td></tr>
 </tbody>
 </table>
 </div>
@@ -243,7 +243,7 @@
 <li class="toctree-l3"><a class="reference internal" href="ajax.html">Ajax</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">Anim</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#s-anim">S.Anim</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id5">改进版图片抓取</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">改进版图片抓取</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="widgets.html">Widgets</a></li>

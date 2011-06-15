@@ -1,17 +1,20 @@
-.. py:module:: Web
+.. _web:
 
-Web
+web
 ===============================
 
-by `承玉 <yiminghe@gmail.com>`_ , `玉伯 <lifesinger@gmail.com>`_
+|  作者: `玉伯 <lifesinger@gmail.com>`_ , `承玉 <yiminghe@gmail.com>`_
+|  源码: `查看 <../../../../../../kissy/src/seed/web.js>`_
 
+
+Methods
+-----------------------------------------------
 
 .. toctree::
-   :maxdepth: 3
-   
-      
-   ready.rst
-   available.rst
-   isWindow.rst
-   globalEval.rst
+   :titlesonly:
+
+   ready
+   available
+   isWindow
+   globalEval
  

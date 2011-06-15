@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-unselectable:
+﻿.. _dom-unselectable:
 
 unselectable
 =================================

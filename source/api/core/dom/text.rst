@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-text:
+﻿.. _dom-text:
 
 text
 =================================

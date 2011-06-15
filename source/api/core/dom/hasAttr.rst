@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. dom-hasAttr:
+﻿.. dom-hasAttr:
 
 hasAttr
 =================================

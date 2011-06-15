@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-width:
+﻿.. _dom-width:
 
 width
 =================================

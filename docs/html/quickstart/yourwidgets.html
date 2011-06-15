@@ -46,8 +46,8 @@
 			<div class="col-main">
 				<div class="main-wrap">
 					
-  <div class="section" id="yourwidgets">
-<span id="id1"></span><h1>自定义组件<a class="headerlink" href="#yourwidgets" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="quickstart-yourwidgets">
+<span id="id1"></span><h1>自定义组件<a class="headerlink" href="#quickstart-yourwidgets" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
 <h2>为何要以组件形式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
@@ -59,7 +59,7 @@
 </ol>
 </dd>
 </dl>
-<p>KISSY 中, 通过 <tt class="docutils literal"><span class="pre">add(</span> <span class="pre">name,</span> <span class="pre">fn</span> <span class="pre">)</span></tt> 方法来添加新的模块. 在 KISSY 内部, 代码也是这么组织的.</p>
+<p>KISSY 中, 通过 <em class="xref std std-ref">add( name, fn )</em> 方法来添加新的模块. 在 KISSY 内部, 代码也是这么组织的.</p>
 <p>下面通过个小例子来说明如何开发自定义组件.</p>
 </div>
 <div class="section" id="id3">
@@ -283,17 +283,17 @@
 <dt>一些说明:</dt>
 <dd><ol class="first last arabic simple">
 <li>首先, 想好组件的名字, 见名知意, 模块名字统一小写, 而暴露给外部的组件名称使用单词首字母大写, 如 <tt class="docutils literal"><span class="pre">StarRating</span></tt>;</li>
-<li>通过 <tt class="docutils literal"><span class="pre">KISSY.add('starrating',</span> <span class="pre">function(S){</span> <span class="pre">});</span></tt> 加入新模块到 KISSY 中, 这里也可以使用 <tt class="docutils literal"><span class="pre">KISSY.app('XXX');</span></tt> 创建特定的应用, 然后用 <tt class="docutils literal"><span class="pre">XXX.add('starrating',</span> <span class="pre">function(S){});</span></tt> 给特定应用 XXX 添加一个模块;</li>
+<li>通过 <em class="xref std std-ref">KISSY.add(&#8216;starrating&#8217;, function(S){ });</em> 加入新模块到 KISSY 中, 这里也可以使用 <tt class="docutils literal"><span class="pre">KISSY.app('XXX');</span></tt> 创建特定的应用, 然后用 <tt class="docutils literal"><span class="pre">XXX.add('starrating',</span> <span class="pre">function(S){});</span></tt> 给特定应用 XXX 添加一个模块;</li>
 <li>接下来是声明一些模块内的公共变量, 像 <tt class="docutils literal"><span class="pre">S.DOM,</span> <span class="pre">S.Event</span></tt> 都会用到, 另外一些如组件自己的 class 钩子;</li>
 <li>默认的配置信息, <tt class="docutils literal"><span class="pre">defaultConfig</span></tt>, 提供了使用者如果没有设置时的默认值;</li>
-<li>通过 <tt class="docutils literal"><span class="pre">S.augment(StarRating,</span> <span class="pre">{</span> <span class="pre">});</span></tt> 添加属性及方法, 每个方法在注释中写明含义, 入口参数及其类型. 另外, 开发者需要想好哪些属性/方法需要对外提供及命名方式如何等. 在这个例子中, 只添加了 <tt class="docutils literal"><span class="pre">_init</span></tt> 私有方法, 用来构建所需 DOM, 绑定事件;</li>
+<li>通过 <em class="xref std std-ref">S.augment(StarRating, { });</em> 添加属性及方法, 每个方法在注释中写明含义, 入口参数及其类型. 另外, 开发者需要想好哪些属性/方法需要对外提供及命名方式如何等. 在这个例子中, 只添加了 <tt class="docutils literal"><span class="pre">_init</span></tt> 私有方法, 用来构建所需 DOM, 绑定事件;</li>
 <li>最后, 在使用时只需要创建一个对象即可, 如, <tt class="docutils literal"><span class="pre">new</span> <span class="pre">S.StarRating('#J_Rating',</span> <span class="pre">config)</span></tt>;</li>
 </ol>
 </dd>
 </dl>
 <p>罗罗嗦嗦这么一大堆后, 不知道你是否觉得简单? 非常推荐基于 KISSY 尝试去实现一个组件, 一切都很简单的^o^</p>
 <p><strong>注意:</strong> 上面的 StarScore 组件仅是示范，实际应用中，会更复杂些.</p>
-<p>下一节将介绍如何对现有的 KISSY 组件进行扩展 &#8212;- <a class="reference internal" href="extendwidgets.html#extendwidgets"><em>扩展 Switchable</em></a></p>
+<p>下一节将介绍如何对现有的 KISSY 组件进行扩展 &#8212;- <a class="reference internal" href="extendwidgets.html#quickstart-extendwidgets"><em>扩展 Switchable</em></a></p>
 </div>
 </div>
 

@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-..dom-addClass:
+﻿..dom-addClass:
 
 addClass
 ===============================================

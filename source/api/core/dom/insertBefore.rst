@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-insertBefore:
+﻿.. _dom-insertBefore:
 
 insertBefore
 =================================

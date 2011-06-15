@@ -1,4 +1,4 @@
-.. _usenode:
+.. _quickstart-usenode:
 
 
 Node 初步
@@ -13,10 +13,10 @@ KISSY 也提供了这种链式风格的支持.
 -------------------
 
 KISSY 提供两种使用方式:
- #. ``S.one``  -  根据 css selector, 返回 ``Node`` 对象;
- #. ``S.all``  -  根据 css selector, 返回 ``NodeList`` 对象;
+ #. :ref:`S.one <node-one>`  -  根据 css selector, 返回 :ref:`Node <node-Node>` 对象;
+ #. :ref:`S.all <node-all>`  -  根据 css selector, 返回 :ref:`NodeList <node-NodeList>` 对象;
 
-上面两个方法, 和 ``S.get`` / ``S.query`` 是遥相呼应的.
+上面两个方法, 和 :ref:`S.get <dom-get>` / :ref:`S.query <dom-query>` 是遥相呼应的.
 唯一的不同是, ``get/query`` 返回的是原生 DOM ``Node/NodeList``.
    
 而 ``KISSY.Node/NodeList`` 类似 jQuery 全局对象, 但只包含 DOM/Event 等方法, 我们可以这样写代码：
@@ -154,10 +154,10 @@ KISSY 提供两种使用方式:
 
 使用 ``Node`` 可以让你一直 ``.`` 下去, 只要你愿意! 
 
-好了, 关于 ``Node`` 就告一段落, 下面会讲述目前 Web 站点中经常被使用的技术 -- :ref:`Ajax <ajax>` 异步请求!
+好了, 关于 ``Node`` 就告一段落, 下面会讲述目前 Web 站点中经常被使用的技术 -- :ref:`Ajax <quickstart-ajax>` 异步请求!
 
 
 .. rubric:: 参考链接
 
-.. [1] `Node API 文档 <http://kissy.googlecode.com/svn/trunk/docs/node/index.html>`_
+.. [1] `Node API 文档 <node>`_
 .. [2] `Join Taobao 例子 <http://lifesinger.org/blog/2010/07/kissy-all-good-student/>`_

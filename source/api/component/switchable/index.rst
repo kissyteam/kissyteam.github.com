@@ -1,4 +1,4 @@
-﻿.. py:module:: Switchable
+﻿.. _Switchable:
 
 Switchable
 ===============================

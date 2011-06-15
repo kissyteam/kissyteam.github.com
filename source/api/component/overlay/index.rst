@@ -1,4 +1,4 @@
-.. py:module:: Overlay
+.. _Overlay:
 
 Overlay
 ===============================

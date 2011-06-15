@@ -1,19 +1,21 @@
-.. module:: Loader
+.. _loader:
 
-Loader
+loader
 ===============================
 
+|  弥补 javascript 语言机制的不足, 提供类似其他语言原生的模块化机制.
+|  作者: `玉伯 <lifesinger@gmail.com>`_ , `承玉 <yiminghe@gmail.com>`_
+|  源码: `查看 <../../../../../../kissy/src/seed/loader/>`_
+|  refer： `kissy模块化实践 <http://goo.gl/l6atd>`_
 
-by `承玉 <yiminghe@gmail.com>`_ , `fool2fish <fool2fish@gmail.com>`_
 
-
-    | 弥补 javascript 语言机制的不足，提供类似其他语言原生的模块化机制。
-    | refer： `kissy模块化实践 <http://goo.gl/l6atd>`_ 
+Methods
+-----------------------------------------------
 
 .. toctree::
-   :maxdepth: 1
-   
-   getScript.rst 
-   add.rst
-   add.ver1.2.rst
-   use.rst
+   :titlesonly:
+
+   getScript
+   add
+   add.ver1.2
+   use

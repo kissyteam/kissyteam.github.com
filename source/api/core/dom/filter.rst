@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-filter:
+﻿.. _dom-filter:
 
 filter
 =================================

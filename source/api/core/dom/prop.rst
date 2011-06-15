@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-prop:
+﻿.. _dom-prop:
 
 prop
 =================================

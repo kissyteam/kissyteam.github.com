@@ -1,4 +1,4 @@
-.. _anim:
+.. _quickstart-anim:
 
 
 Anim
@@ -23,7 +23,7 @@ KISSY 提供的动画特效支持主要由三个子模块组成 [1]_ :
  #. ``anim-easing``, 提供 easeIn/Out, elasticIn/Out, backIn/Out, bounceIn/Out 等平滑函数
  #. ``anim-node-plugin``, 让 ``Node/NodeList`` 直接支持动画调用
 
-核心动画函数是 ``S.Anim(elem, props, duration, easing, callback)`` , 5 个参数分别为:
+核心动画函数是 :ref:`S.Anim(elem, props, duration, easing, callback) <anim>`` , 5 个参数分别为:
  #. ``elem``: 指定动画的目标元素
  #. ``props``: 动画属性, 可以是字符串或者普通对象
  #. ``duration``: 动画时长, 以秒为单位
@@ -108,7 +108,7 @@ KISSY 提供的动画特效支持主要由三个子模块组成 [1]_ :
         </script>
    </div>
 
-每张图片获取之后, 先不显示出来, 等图片加载完成之后, 调用 ``S.fadeIn`` 渐进显示, 部分代码:
+每张图片获取之后, 先不显示出来, 等图片加载完成之后, 调用 :ref:`S.fadeIn <anim-fadeIn>` 渐进显示, 部分代码:
 
 .. code-block:: javascript
    :linenos:
@@ -126,11 +126,11 @@ KISSY 提供的动画特效支持主要由三个子模块组成 [1]_ :
 
 关于动画, 先介绍到这里. 其他更炫的效果, 等待你的想象与实现!
 
-下一节, 将会介绍 KISSY 的第一个功能强大, 且在淘宝上经常能够看到的组件 -- ``Switchable``, 并会介绍 :ref:`KISSY 组件 <widgets>`  的组织方式...
+下一节, 将会介绍 KISSY 的第一个功能强大, 且在淘宝上经常能够看到的组件 -- :ref:`Switchable <switchable>`, 并会介绍 :ref:`KISSY 组件 <quickstart-widgets>`  的组织方式...
 
 
 .. rubric:: 参考链接
 
-.. [1] `Anim API 文档 <http://kissyteam.github.com/kissy/docs/anim/>`_
+.. [1] `Anim API 文档 <anim>`_
 .. [2] `平滑函数 <http://kissyteam.github.com/kissy/docs/anim/anim-easing.html>`_
-.. [3] `动画示例 <http://kissyteam.github.com/kissy/src/anim/demo.html>`_
+.. [3] `动画示例 <demo-anim>`_

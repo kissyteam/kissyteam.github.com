@@ -1,10 +1,10 @@
-﻿.. module:: Node
+﻿.. _node:
 
 Node
 ====================================
 
-by `承玉 <yiminghe@gmail.com>`_ 
-
+|  作者: `承玉 <yiminghe@gmail.com>`_
+|  源码: `查看 <../../../../../../kissy/src/node/>`_
 
 .. versionchanged:: 1.2
     Node 包括 :mod:`DOM` 模块的所有功能，推荐采用 ``Node`` 模块取代 ``DOM`` 模块，

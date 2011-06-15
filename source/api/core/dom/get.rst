@@ -1,6 +1,4 @@
-﻿.. currentmodule:: DOM
-
-.. _dom-get:
+﻿.. _dom-get:
 
 get
 =================================

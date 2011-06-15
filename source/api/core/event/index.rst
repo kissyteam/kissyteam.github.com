@@ -1,14 +1,23 @@
-﻿.. module:: Event
+﻿.. _event:
 
 Event
 ====================================
 
-by `玉伯 <lifesinger@gmail.com>`_ , `承玉 <yiminghe@gmail.com>`_ 
+|  事件机制
+|  作者: `玉伯 <lifesinger@gmail.com>`_ , `承玉 <yiminghe@gmail.com>`_
+|  源码: `查看 <../../../../../../kissy/src/event/>`_
 
+Class
+-----------------------------------------------
 
+.. js:data:: KISSY.Event
+
+Methods
+-----------------------------------------------
 
 .. toctree::
-   :maxdepth: 1
+   :titlesonly:
+
 
    on.rst
    delegate.rst   
