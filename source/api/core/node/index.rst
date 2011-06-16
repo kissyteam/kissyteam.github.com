@@ -4,7 +4,7 @@ Node
 ====================================
 
 |  作者: `承玉 <yiminghe@gmail.com>`_
-|  源码: `查看 <../../../../../../kissy/src/node/>`_
+|  源码: `查看 <https://github.com/kissyteam/kissy/tree/master/src/node>`_
 
 .. versionchanged:: 1.2
     Node 包括 :mod:`DOM` , :mod:`Event` , :mod:`Anim` 模块的所有功能，推荐采用 ``Node`` 模块，
