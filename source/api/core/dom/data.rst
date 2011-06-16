@@ -1,14 +1,14 @@
 ﻿.. currentmodule:: DOM
 
-.. _dom-data:
-
 data
 =================================
 
-Class
+
+Module
 -----------------------------------------------
 
-  :js:data:`KISSY.DOM`
+  :mod:`DOM`
+
 
 Methods
 -----------------------------------------------
@@ -40,7 +40,7 @@ Methods
     .. note::
 
         embed, object, applet 这三个标签不能设置 expando .
-        如果判断是否设置了扩展属性, 请使用 :js:func:`hasData`
+        如果判断是否设置了扩展属性, 请使用 :func:`DOM.hasData`
 
 
     举例

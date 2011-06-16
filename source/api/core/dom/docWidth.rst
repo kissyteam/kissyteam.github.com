@@ -1,14 +1,13 @@
 ﻿.. currentmodule:: DOM
 
-.. _dom-docWidth:
-
 docWidth
 =================================
 
-Class
+Module
 -----------------------------------------------
 
-  :js:data:`KISSY.DOM`
+  :mod:`DOM`
+
 
 Methods
 -----------------------------------------------
@@ -17,4 +16,5 @@ Methods
 
    获取页面文档 document 的总宽度.
     
-   :returns: {Number} - 页面文档 document 的总宽度.
+   :returns:  页面文档 document 的总宽度.
+   :rtype: Number

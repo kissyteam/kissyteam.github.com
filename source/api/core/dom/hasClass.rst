@@ -1,14 +1,14 @@
 ﻿.. currentmodule:: DOM
 
-.. dom-hasClass:
 
 hasClass
 =================================
 
-Class
+Module
 -----------------------------------------------
 
-  :js:data:`KISSY.DOM`
+  :mod:`DOM`
+
 
 Methods
 -----------------------------------------------
@@ -19,4 +19,5 @@ Methods
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
     :param string value: 样式类 class，多个用空格分隔, 表示同时包含多个样式类
-    :returns: {Boolean} 是否符合选择器的元素中存在某个元素含有特定样式类 value
+    :returns: 是否符合选择器的元素中存在某个元素含有特定样式类 value
+    :rtype: Boolean

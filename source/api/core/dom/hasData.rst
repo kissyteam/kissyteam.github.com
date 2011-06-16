@@ -1,14 +1,13 @@
 ﻿.. currentmodule:: DOM
 
-.. _dom-hasData:
-
 hasData
 =================================
 
-Class
+Module
 -----------------------------------------------
 
-  :js:data:`KISSY.DOM`
+  :mod:`DOM`
+
 
 Methods
 -----------------------------------------------
@@ -19,8 +18,9 @@ Methods
         判断是否符合选择器的所有元素中的一个存在对应的扩展属性( expando )值.
 
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
-    :param string name: 扩展属性名称.如果指定 name，则判断是否存在指定的扩展属性值。否则判断是否存在任意扩展属性值
-    :returns: {Boolean} - 是否具有扩展属性.
+    :param string name: 扩展属性名称.如果指定 name, 则判断是否存在指定的扩展属性值. 否则判断是否存在任意扩展属性值
+    :returns: 是否具有扩展属性.
+    :rtype: Boolean
 
 
     举例：

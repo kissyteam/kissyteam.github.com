@@ -1,14 +1,13 @@
 ﻿.. currentmodule:: DOM
 
-.. _dom-filter:
-
 filter
 =================================
 
-Class
+Module
 -----------------------------------------------
 
-  :js:data:`KISSY.DOM`
+  :mod:`DOM`
+
 
 Methods
 -----------------------------------------------
@@ -24,4 +23,5 @@ Methods
        * 类型 function 时, 传入参数当前 dom 节点, 返回 ``true`` 表示保留
                                         
     :param string|HTMLElement context: 选择器参考上下文,  ``#id`` 或者 dom 节点.
-    :returns: {Array<HTMLElement>} - 符合选择器字符串以及过滤参数的 dom 节点数组
+    :returns: 符合选择器字符串以及过滤参数的 dom 节点数组
+    :rtype: Array<HTMLElement>

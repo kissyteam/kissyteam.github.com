@@ -1,14 +1,14 @@
 ﻿.. currentmodule:: DOM
 
-.. _dom-create:
-
 create
 =================================
 
-Class
+
+Module
 -----------------------------------------------
 
-  :js:data:`KISSY.DOM`
+  :mod:`DOM`
+
 
 Methods
 -----------------------------------------------
@@ -20,7 +20,8 @@ Methods
     :param string html: dom 节点的 html
     :param object props: 属性键值对象
     :param HTMLDocument ownerDoc: 节点所属文档
-    :returns: {HTMLFragment|HTMLElement} - 创建出的 dom 节点或碎片列表
+    :returns: 创建出的 dom 节点或碎片列表
+    :rtype: HTMLFragment|HTMLElement
     
     举例：
 

@@ -1,15 +1,13 @@
 ﻿.. currentmodule:: DOM
 
-.. _dom-insertAfter:
-
-
 insertAfter
 =================================
 
-Class
+Module
 -----------------------------------------------
 
-  :js:data:`KISSY.DOM`
+  :mod:`DOM`
+
 
 Methods
 -----------------------------------------------

@@ -1,14 +1,13 @@
 ﻿.. currentmodule:: DOM
 
-.. _dom-removeAttr:
-
 removeAttr
 =================================
 
-Class
+Module
 -----------------------------------------------
 
-  :js:data:`KISSY.DOM`
+  :mod:`DOM`
+
 
 Methods
 -----------------------------------------------

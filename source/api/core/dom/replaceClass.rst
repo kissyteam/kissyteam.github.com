@@ -1,14 +1,14 @@
 ﻿.. currentmodule:: DOM
 
-.. _dom-replaceClass:
 
 replaceClass
 =================================
 
-Class
+Module
 -----------------------------------------------
 
-  :js:data:`KISSY.DOM`
+  :mod:`DOM`
+
 
 Methods
 -----------------------------------------------

@@ -1,22 +1,21 @@
 ﻿.. currentmodule:: DOM
 
-.. _dom-get:
-
 get
 =================================
 
-Class
+Module
 -----------------------------------------------
 
-  :js:data:`KISSY.DOM`
+  :mod:`DOM`
+
 
 Methods
 -----------------------------------------------
 
 .. function:: get(selector [,context=document] )
 
-    获取符合选择器的第一个元素。相当于调用 :ref:`query(selector,context)[0] <dom-query>`
+    获取符合选择器的第一个元素。相当于调用 :func:`query(selector,context)[0] <DOM.query>`
 
 .. function:: KISSY.get(selector [,context=document] )
 
-    :js:func:`get` 的快捷方式
+    :func:`DOM.get` 的快捷方式

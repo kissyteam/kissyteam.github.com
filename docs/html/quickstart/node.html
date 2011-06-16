@@ -76,12 +76,12 @@
 <dl class="docutils">
 <dt>KISSY 提供两种使用方式:</dt>
 <dd><ol class="first last arabic simple">
-<li><em class="xref std std-ref">S.one</em>  -  根据 css selector, 返回 <em class="xref std std-ref">Node</em> 对象;</li>
-<li><em class="xref std std-ref">S.all</em>  -  根据 css selector, 返回 <em class="xref std std-ref">NodeList</em> 对象;</li>
+<li><a class="reference internal" href="../api/core/node/one.html#Node.NodeList.one" title="Node.NodeList.one"><tt class="xref py py-func docutils literal"><span class="pre">S.one</span></tt></a>  -  根据 css selector, 返回  <tt class="xref py py-class docutils literal"><span class="pre">NodeList</span></tt> 对象;</li>
+<li><a class="reference internal" href="../api/core/node/all.html#Node.NodeList.all" title="Node.NodeList.all"><tt class="xref py py-func docutils literal"><span class="pre">S.all</span></tt></a>  -  根据 css selector, 返回 <tt class="xref py py-class docutils literal"><span class="pre">NodeList</span></tt> 对象;</li>
 </ol>
 </dd>
 </dl>
-<p>上面两个方法, 和 <a class="reference internal" href="../api/core/dom/get.html#dom-get"><em>S.get</em></a> / <a class="reference internal" href="../api/core/dom/query.html#dom-query"><em>S.query</em></a> 是遥相呼应的.
+<p>上面两个方法, 和 <a class="reference internal" href="../api/core/dom/get.html#DOM.get" title="DOM.get"><tt class="xref py py-func docutils literal"><span class="pre">DOM.get()</span></tt></a> / <a class="reference internal" href="../api/core/dom/query.html#DOM.query" title="DOM.query"><tt class="xref py py-func docutils literal"><span class="pre">DOM.query()</span></tt></a> 是遥相呼应的.
 唯一的不同是, <tt class="docutils literal"><span class="pre">get/query</span></tt> 返回的是原生 DOM <tt class="docutils literal"><span class="pre">Node/NodeList</span></tt>.</p>
 <p>而 <tt class="docutils literal"><span class="pre">KISSY.Node/NodeList</span></tt> 类似 jQuery 全局对象, 但只包含 DOM/Event 等方法, 我们可以这样写代码：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#test&#39;</span><span class="p">).</span><span class="nx">parent</span><span class="p">().</span><span class="nx">next</span><span class="p">().</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;&lt;p&gt;&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">});</span>
@@ -231,7 +231,7 @@
 <table class="docutils footnote" frame="void" id="id4" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[1]</a></td><td><a class="reference external" href="node">Node API 文档</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id3">[1]</a></td><td><tt class="xref py py-mod docutils literal"><span class="pre">Node</span> <span class="pre">API`</span></tt></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id5" rules="none">

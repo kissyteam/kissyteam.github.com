@@ -1,16 +1,16 @@
 ﻿.. currentmodule:: DOM
 
-.. _dom-unselectable:
-
 unselectable
 =================================
 
 .. versionadded:: 1.2
 
-Class
+
+Module
 -----------------------------------------------
 
-  :js:data:`KISSY.DOM`
+  :mod:`DOM`
+
 
 Methods
 -----------------------------------------------

@@ -1,14 +1,13 @@
 ﻿.. currentmodule:: DOM
 
-.. _dom-insertBefore:
-
 insertBefore
 =================================
 
-Class
+Module
 -----------------------------------------------
 
-  :js:data:`KISSY.DOM`
+  :mod:`DOM`
+
 
 Methods
 -----------------------------------------------

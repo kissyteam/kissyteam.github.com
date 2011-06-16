@@ -1,14 +1,14 @@
 ﻿.. currentmodule:: DOM
 
-.. _dom-css:
 
 css
 =================================
 
-Class
+Module
 -----------------------------------------------
 
-  :js:data:`KISSY.DOM`
+  :mod:`DOM`
+
 
 Methods
 -----------------------------------------------
@@ -19,7 +19,8 @@ Methods
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
     :param string name: css 样式属性名  
-    :returns: {String} - 获取符合选择器的第一个元素的样式值.
+    :returns: 获取符合选择器的第一个元素的样式值.
+    :rtype: String
     
     
 .. function:: css( selector, name, value )

@@ -6,14 +6,14 @@
 selector
 ==================================
 
-|  KISSY 选择器内置仅支持 #id tag.class 常用形式，考虑 2/8 原则，支持以下选择器：
-|      * #id
-|      * tag
-|      * .cls
-|      * #id tag
-|      * #id .cls
-|      * tag.cls
-|      * #id tag.cls
+KISSY 选择器内置仅支持 #id tag.class 常用形式，考虑 2/8 原则，支持以下选择器：
+    * #id
+    * tag
+    * .cls
+    * #id tag
+    * #id .cls
+    * tag.cls
+    * #id tag.cls
 
 .. note::
 

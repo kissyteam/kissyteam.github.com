@@ -1,14 +1,12 @@
 ﻿.. currentmodule:: DOM
 
-.. _dom-offset:
-
 offset
 =================================
 
-Class
+Module
 -----------------------------------------------
 
-  :js:data:`KISSY.DOM`
+  :mod:`DOM`
 
 Methods
 -----------------------------------------------
@@ -18,13 +16,14 @@ Methods
     获取符合选择器的第一个元素相对页面文档左上角的偏移值.
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
-    :returns: {Object} - 相对页面文档左上角的偏移值, 包括两个属性
-    
-        .. data:: left
+    :returns: 相对页面文档左上角的偏移值, 包括两个属性
+    :rtype: Object
+
+        .. attribute:: left
 
                 {Number} - 相对页面文档左上角的横坐标
                 
-        .. data:: top
+        .. attribute:: top
 
                 {Number} - 相对页面文档左上角的纵坐标
     

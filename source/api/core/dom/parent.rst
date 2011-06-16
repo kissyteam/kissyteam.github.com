@@ -1,14 +1,13 @@
 ﻿.. currentmodule:: DOM
 
-.. _dom-parent:
-
 parent
 =================================
 
-Class
+Module
 -----------------------------------------------
 
-  :js:data:`KISSY.DOM`
+  :mod:`DOM`
+
 
 Methods
 -----------------------------------------------
@@ -18,8 +17,9 @@ Methods
    获取符合选择器的第一个元素的祖先元素.
     
    :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
-   :param number|string|function filter: 过滤条件, 整数外的例子参见 :js:func:`filter` 的相应参数
-   :returns: {HTMLElement} - 符合选择器的第一个元素的祖先元素。
+   :param number|string|function filter: 过滤条件, 整数外的例子参见 :func:`DOM.filter` 的相应参数
+   :returns: 符合选择器的第一个元素的祖先元素。
+   :rtype: HTMLElement
 
     举例：
 

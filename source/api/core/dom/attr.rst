@@ -1,14 +1,12 @@
 ﻿.. currentmodule:: DOM
 
-.. _dom-attr:
-
 attr
 =================================
 
-Class
+Module
 -----------------------------------------------
 
-  :js:data:`KISSY.DOM`
+  :mod:`DOM`
 
 Methods
 -----------------------------------------------
@@ -31,7 +29,7 @@ Methods
        DOM.prop(c,"checked") // => true
         
 .. versionchanged:: 1.2
-    对没有设置的属性返回 ``null`` . 判断属性设置与否可以使用 :js:func:`hasAttr` . 如果需要获取 DOM properties，请使用 :ref:`prop <dom-prop>` 方法
+    对没有设置的属性返回 ``null`` . 判断属性设置与否可以使用 :func:`DOM.hasAttr` . 如果需要获取 DOM properties，请使用 :func:`DOM.prop` 方法
     
     
 .. function:: attr( selector, name, value )

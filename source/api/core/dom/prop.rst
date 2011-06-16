@@ -1,16 +1,16 @@
 ﻿.. currentmodule:: DOM
 
-.. _dom-prop:
-
 prop
 =================================
 
 .. versionadded:: 1.2
 
-Class
+
+Module
 -----------------------------------------------
 
-  :js:data:`KISSY.DOM`
+  :mod:`DOM`
+
 
 Methods
 -----------------------------------------------
@@ -26,8 +26,8 @@ Methods
 
     .. note::
     
-        对于不存在的 property , 该方法返回 ``null`` , 如果要判断是否设置过, 可以使用 :js:func:`hasProp`,
-        注意区别该方法与 :js:func:`attr`, 也即区别 `DOM property 与 attribute <http://javascript.info/tutorial/attributes-and-custom-properties>`_ .
+        对于不存在的 property , 该方法返回 ``null`` , 如果要判断是否设置过, 可以使用 :func:`DOM.hasProp`,
+        注意区别该方法与 :func:`DOM.attr`, 也即区别 `DOM property 与 attribute <http://javascript.info/tutorial/attributes-and-custom-properties>`_ .
 
     例如
 
@@ -59,8 +59,8 @@ Methods
 
     .. note::
 
-        * - 请使用 :js:func:`data` 方法来处理自定义属性, 而不要使用 :js:func:`prop` 方法, 否则在 ie<9 下会有内存泄露.
-        * - ``prop`` 方法可以改变 ``DOM`` 元素的状态而不改变其对应的序列化 ``html`` 属性 ( IE <9 除外). 例如设置 ``input`` 或 ``button`` 的 ``disabled`` property 或者 ``checkbox`` 的 ``checked`` property . 最常见的情况即是用 ``prop`` 来设置 ``disabled`` 以及 ``checked`` 而不是 :js:func:`attr` . 而 :js:func:`val` 方法用来设置和读取 `value` property.
+        - 请使用 :func:`DOM.data` 方法来处理自定义属性, 而不要使用 :func:`DOM.prop` 方法, 否则在 ie<9 下会有内存泄露.
+        - ``prop`` 方法可以改变 ``DOM`` 元素的状态而不改变其对应的序列化 ``html`` 属性 ( IE <9 除外). 例如设置 ``input`` 或 ``button`` 的 ``disabled`` property 或者 ``checkbox`` 的 ``checked`` property . 最常见的情况即是用 ``prop`` 来设置 ``disabled`` 以及 ``checked`` 而不是 func:`DOM.attr` . 而 :func:`DOM.val` 方法用来设置和读取 `value` property.
 
     例如
 

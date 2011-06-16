@@ -1,14 +1,12 @@
 ﻿.. currentmodule:: DOM
 
-.. _dom-contains:
-
 contains
 =================================
 
-Class
+Module
 -----------------------------------------------
 
-  :js:data:`KISSY.DOM`
+  :mod:`DOM`
 
 Methods
 -----------------------------------------------
@@ -27,8 +25,9 @@ Methods
        * 字符串格式参见 :ref:`KISSY selector <dom-selector>` 获取匹配的第一个元素.
        * ArrayList<HTMLElement> : 取列表第一个元素
 
-   :returns: {Boolean} - container 是否包含 contained 节点.
+   :returns: container 是否包含 contained 节点.
+   :rtype: Boolean
 
-    .. note::
+.. note::
 
-        两个元素如果相等, 则返回 ``false``
+    两个元素如果相等, 则返回 ``false``
