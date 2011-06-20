@@ -1,118 +1,120 @@
-.. py:currentmodule:: Overlay
+.. module:: Overlay
 
-父类 Overlay
-===================================================================
+Overlay
+===============================================
 
-获取构造器
---------------------------------------------------------------------
-页面引入 kissy.js :
+|  悬浮的对话框
+|  作者: `承玉 <yiminghe@gmail.com>`_
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay>`_ 
 
-.. code-block:: html
+Class
+-----------------------------------------------
 
-    <script src='kissy.js'></script>
+  * :class:`KISSY.Overlay`
 
-通过 use 加载 overlay 模块：
+Config Attributes
+-----------------------------------------------
 
-.. code-block:: javascript
+  * :attr:`prefixCls`
+  * :attr:`srcNode`
+  * :attr:`width`
+  * :attr:`height`
+  * :attr:`elCls`
+  * :attr:`content`
+  * :attr:`zIndex`
+  * :attr:`x`
+  * :attr:`y`
+  * :attr:`xy`
+  * :attr:`align`
+  * :attr:`effect`
+  * :attr:`resize`
+  
+Properties
+-----------------------------------------------
 
-    KISSY.use("overlay",function(){
-        var Overlay=S.Overlay;
-        //使用 Overlay 构造器
-    });
+  * :data:`x`
+  * :data:`y`
+  * :data:`xy`
+  * :data:`align`
+  * :data:`visible`
+  * :data:`el`
+  * :data:`contentEl`
+  
+Methods
+-----------------------------------------------
 
-.. versionadded:: 1.2
-    KISSY 1.2 可直接通过依赖注入，从函数参数中取得
+  * :meth:`render`
+  * :meth:`show`
+  * :meth:`hide`
+  * :meth:`align`
+  * :meth:`center`
+  * :meth:`move`
+
+Events
+-----------------------------------------------
+
+  * :meth:`hide`
+  * :meth:`show`
+  * :meth:`beforeVisibleChange`
+
+
+Class Detail
+-----------------------------------------------
+
+.. class:: KISSY.Overlay
     
-    .. code-block:: javascript
+    | **KISSY.Overlay** (config)
     
-        KISSY.use("overlay",function(S,Overlay){
-            //使用 Overlay 构造器
-        });
+    :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
 
-.. seealso::
-
-    KISSY 1.2 :py:mod:`Loader` 新增功能
+Config Attributes Detail
+-----------------------------------------------
     
-构造器接口
----------------------------------------------------------------------
+.. attribute:: prefixCls
 
-.. py:class:: Overlay(config)
-
-    :param object config: 类型对象，实例对象所需的配置
+    {String} - 可选，默认为"ks-"，样式类名前缀，如悬浮层根元素会加上样式类："ks-overlay"。kissy 1.2 版本以前设置无效，都为 "ks-"。
     
-    例如一个简单的配置项：
-    
-    .. code-block:: javascript
-    
-        {
-            width:"200px",
-            render:"#container"
-        }
+    .. versionadded:: 1.2
 
+.. attribute:: srcNode
 
-config 配置项详解
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    {String} - 可选，用于取悬浮层根节点，可为"#id"或".class"。当不设置时表示新建一个 HTMLElement 插入到页面中。
 
-.. py:attribute:: Overlay.prefixCls
+.. attribute:: width
 
-    (optional): kissy 1.2 新增，类型字符串，默认值为 "ks-"，样式类名前缀，如默认弹出层根元素会加上样式类："ks-overlay"，
-    kissy 1.2 版本以前设置无效，都为 "ks-".
+    {Number | String} - 可选，悬浮层宽度。整数表示单元为 px。
 
-.. py:attribute:: srcNode
+.. attribute:: height
 
-    (optional): 类型选择器字符串，取第一个节点作为弹出层的根节点，例如设置
+    {Number | String} - 可选，悬浮层高度。整数表示单元为 px。
 
-    .. code-block:: javascript
-    
-        {
-            srcNode : "#overlay_test"
-        }
+.. attribute:: elCls
 
-    作用于页面
+    {String} - 可选，添加到悬浮层根元素的样式。
 
-    .. code-block:: html
-    
-        <div id='overlay_test'>
-            从页面已有元素中渲染而来
-        </div>
+.. attribute:: content
 
-    则会把 ``overlay_test`` 转化为弹出层根节点。当不设置时表示新建一个 HTMLElement 插入到页面中.
+    {String} - 可选，设置悬浮层的内容 html。
 
-.. py:attribute:: width
+.. attribute:: zIndex
 
-    (optional): 类型字符串或者整数，弹出层宽度。整数表示单元为 px。
+    {Number} - 可选，默认为 9999，设置悬浮层的 z-index 值。
 
-.. py:attribute:: height
+.. attribute:: x
 
-    (optional): 类型字符串或者整数，弹出层高度。整数表示单元为 px。
+    {Number} - 可选，悬浮层相对于文档根节点的 x 坐标。
 
-.. py:attribute:: elCls
+.. attribute:: y
 
-    (optional): 类型字符串，将要添加到弹出层根元素的样式类。
+    {Number} - 可选，浮层相对于文档根节点的 y 坐标。
 
-.. py:attribute:: content
+.. attribute:: xy
 
-    (optional): 类型字符串，设置弹出层的内容 html。
+    {Array<Number>} - 可选，相当于将数组第一个元素设置为 :attr:`x` 的值，将数组的第二个元素设置为 :attr:`y` 的值。
 
-.. py:attribute:: zIndex
+.. attribute:: align
 
-    (optional): 类型整数，设置弹出层的 ``z-index`` css属性值。默认 9999。
-
-.. py:attribute:: x
-
-    (optional): 类型整数，设置弹出层相对于文档根节点的 x 坐标。
-
-.. py:attribute:: y
-
-    (optional): 类型整数，设置弹出层相对于文档根节点的 y 坐标。
-
-.. py:attribute:: xy
-
-    (optional): 类型整数数组，相当于将数组第一个元素设置为 :py:attr:`x` 的值，将数组的第二个元素设置为 :py:attr:`y` 的值。
-
-.. py:attribute:: align
-
-    (optional): 类型对象，弹出层对齐的相关配置，例如
+    {Object} - 可选，悬浮层对齐的相关配置，例如：
     
     .. code-block:: javascript
     
@@ -135,25 +137,21 @@ config 配置项详解
                 
 .. attribute:: effect
 
-    .. versionadded:: 1.2    
-        类型对象。显示或隐藏时的特效支持，包括以下属性：
+    {Object} - 可选，显示或隐藏时的特效支持，例如：
     
-        .. attribute:: effect
-        
-            类型string，可取值 ``none`` （无特效）, ``fade`` （渐隐显示）, ``slide`` （滑动显示）。默认 ``none``
-            
-        .. attribute:: easing
-        
-            同 :class:`~Anim.Anim` 的 easing 参数配置。
-            
-        .. attribute:: duration
-            
-            类型 number，动画持续时间，以秒为单元                             
+    .. code-block:: javascript
     
-.. py:attribute:: resize
-
+        {
+            effect:'none',    // {String} - 可选，默认为'none'，'none'（无特效）, 'fade'（渐隐显示）, 'slide'（滑动显示）。
+            easing:'',        // {String} - 可选，同 KISSY.Anim 的 easing 参数配置。
+            duratiion:3       // {Number} - 可选，动画持续时间，以秒为单位。
+        }
+            
     .. versionadded:: 1.2    
-        (optional): 类型对象，拖动调整大小的配置，例如：
+    
+.. attribute:: resize
+        
+        {Object} - 可选，拖动调整大小的配置，例如：
     
     .. code-block:: javascript
     
@@ -166,159 +164,137 @@ config 配置项详解
         }    
           
     ``handlers`` 配置表示的数组元素可取上述八种值之一，t,b,l,r 分别表示 top,bottom,left,right，加上组合共八种取值，
-    可在上，下，左，右以及左上，左下，右上，右下进行拖动。          
+    可在上，下，左，右以及左上，左下，右上，右下进行拖动。   
+    
+    .. versionadded:: 1.2
+    
+Properties Detail
+-----------------------------------------------
 
-
-实例属性
------------------------------------------------------------------------------
 
 当根据配置实例化 overlay 得到当前实例后，可调用实例上的 get 方法得到实例的特定属性以及 set 方法设置属性的值，例如
 
     .. code-block:: javascript
     
         var o = new Overlay({ xy : [400,200] });
-        //alert 当前实例的绝对坐标
-        alert(o.get("xy"));
-        o.set("xy",[100,200]);
-        //alert 当前实例新的绝对坐标
-        alert(o.get("xy"));
+        o.set("xy",[100,200]);    //设置当前实例的绝对坐标
+        o.get("xy");    //获取当前实例的绝对坐标
     
+.. attribute:: x
 
-可获取属性列表
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    {Number} - 悬浮层相对于文档根节点的 x 坐标。
 
-.. py:attribute:: x
+.. attribute:: y
 
-    （读写）：相对于页面绝对横坐标，类型参见配置
+    {Number} - 浮层相对于文档根节点的 y 坐标。
 
-.. py:attribute:: y
+.. attribute:: xy
 
-    （读写）：相对于页面绝对纵坐标，类型参见配置
+    {Array<Number>} - 相当于将数组第一个元素设置为 :attr:`x` 的值，将数组的第二个元素设置为 :attr:`y` 的值。
 
-.. py:attribute:: xy
+.. attribute:: align
 
-    （读写）：相当与一次同时读写 :py:attr:`x` 和 :py:attr:`y` 属性，类型参见配置
+    {Object} - 悬浮层对齐的相关配置.
 
-.. py:attribute:: align
+.. attribute:: visible
 
-    （读写）：弹出层的对齐信息，类型参见配置
+    {Boolean} - 悬浮层的是否显示。
 
-.. py:attribute:: visible
+.. attribute:: el
 
-    （读写）：弹出层的显示与否，类型 boolean
-
-.. py:attribute:: el
-
-    （只读）：获取弹出层的根节点，类型 ``KISSY.Node`` 。
+    {KISSY.Node} - 获取悬浮层的根节点 。
     
     .. note::
     
-        必须在调用 :py:meth:`~Overlay.render` 方法之后才可以获取
+        必须在调用 :py:meth:`~render` 方法之后才可以获取。
 
-.. py:attribute:: contentEl
+.. attribute:: contentEl
 
-    （只读）：获取弹出层真正内容所在的节点，类型 ``KISSY.Node`` 。
+    {KISSY.Node} - 获取悬浮层真正内容所在的节点。
     
     .. note::
     
-        必须在调用  :py:meth:`~Overlay.render` 方法之后才可以获取。
+        必须在调用  :py:meth:`~render` 方法之后才可以获取。
         
-    弹出层的 html 结构如下
+    悬浮层的 html 结构如下
 
     .. code-block:: html
     
-        <div><!-- 弹出层根节点 -->
-            <div><!-- 弹出层内容节点 --->
-                <!-- 弹出层真正内容所在 -->
+        <div><!-- 悬浮层根节点 -->
+            <div><!-- 悬浮层内容节点 --->
+                <!-- 悬浮层真正内容所在 -->
             </div>
         </div>
         
-    一般调用弹出层的 :py:meth:`~Overlay.render` 方法后，可通过获取 :py:attr:`contentEl` 属性获取内容所在节点，来动态修改弹出层的内容。
+    一般调用悬浮层的 :py:meth:`~render` 方法后，可通过获取 :py:attr:`contentEl` 属性获取内容所在节点，来动态修改悬浮层的内容。
 
 
+Methods Detail
+-----------------------------------------------
 
-实例方法
-----------------------------------------------------------------------------------------------------------
+.. method:: render
 
-.. py:method:: Overlay.render()
+    | **render** ()
+    | 渲染当前实例，生成对应的 dom 节点并添加到页面文档树中。
 
-    渲染当前实例，生成对应的 dom 节点并添加到页面文档树中。
+.. method:: show
+
+    | **show** ()
+    | 显示悬浮层，位置根据 :py:attr:`align` 或者 :py:attr:`xy` 确定。
+
+.. method:: hide
+
+    | **hide** ()
+    | 隐藏悬浮层。
+
+.. method:: align
+
+    | **align** (node,points,offset)
+    | 设置对齐
     
-    .. note::
-    
-        取 :py:attr:`el` 与 :py:attr:`contentEl` 属性值前必须调用过该方法。
-
-.. py:method:: Overlay.show()
-
-    显示弹窗，位置根据 :py:attr:`align` 或者 :py:attr:`xy` 确定。
-
-.. py:method:: Overlay.hide()
-
-    隐藏弹窗
-
-.. py:method:: Overlay.align(node,points,offset)
-
     :param string|KISSY.Node|HTMLDOMNode node: 类型对齐的参考元素
     :param Array<string> points: 对齐的参考位置
     :param Array<number> offset: 相对对齐元素的偏移
-
-
-    相当于调用
-
-    .. code-block:: javascript
-
-        set("align",{          
-            node: node,
-            points: points,
-            offset: offset            
-        });
         
     .. note::
     
-        调用该方法前请先调用 :py:meth:`~Overlay.render`.    
+        调用该方法前请先调用 :py:meth:`~render`.    
     
-.. py:method:: Overlay.center()
+.. method:: center
 
-    将弹出层放在当前视窗中央。
+    | **center** ()
+    | 将悬浮层放在当前视窗中央。
     
     .. note::
     
-        调用该方法前请先调用 :py:meth:`~Overlay.render`.      
+        调用该方法前请先调用 :py:meth:`~render`.      
 
-.. py:method:: Overlay.move(x,y)
+.. method:: move(x,y)
 
-    :param number x: 相对文档左上角横坐标
-    :param number y: 相对文档左上角纵坐标
-
-    相当于调用
-
-    .. code-block:: javascript
-
-        set("xy",[x,y]);
-
-
-触发事件
-------------------------------------------------------------------------------------------
-
-.. attribute:: hide
+    | **move** (x,y)
+    | 设置悬浮层相对于文档左上角的坐标偏移
     
-    当弹出层隐藏时触发
+    :param number x: 横坐标偏移量
+    :param number y: 纵坐标偏移量
 
-.. attribute:: show
+Events Detail
+-----------------------------------------------
 
-    当弹出层显示时触发
-
-.. attribute:: beforeVisibleChange
-
-    当弹出层隐藏或显示前触发，传给事件处理函数的参数为一个对象，格式如下：
-
-    .. code-block:: javascript
+.. method:: hide
     
-        {
-            newVal : // 类型 boolean，将要隐藏时为 false，将要显示时为 true
-            prevVal : // 类型 boolean，当前弹出层显示与否
-        }
-        
-    .. note::
-    
-        当该事件的函数处理器返回 false ，则会阻止将要进行的显示或隐藏动作。   
+    | **hide** ()
+    | 当悬浮层隐藏时触发
+
+.. method:: show
+
+    | **show** ()
+    | 当悬浮层显示时触发
+
+.. method:: beforeVisibleChange
+
+    | **beforeVisibleChange** (ev)
+    | 当悬浮层隐藏或显示前触发
+
+    :param Boolean ev.newVal: 将要隐藏时为 false，将要显示时为 true
+    :param Boolean ev.prevVal: 当前悬浮层显示与否
+    :returns: {Boolean} - 返回 false 时，则会阻止将要进行的显示或隐藏动作。 
