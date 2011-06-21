@@ -1,19 +1,18 @@
-﻿.. currentmodule:: DD
+﻿.. module:: Draggable
 
 Draggable
 ===============================================
 
 |  拖拽功能
-|  依赖于: core
 |  作者: `承玉 <yiminghe@gmail.com>`_
-|  源码: `查看 <https://github.com/kissyteam/kissy/tree/master/src/dd/draggable.js>`_
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/draggable.js>`_ | `Demo <../../../demo/component/dd/draggable.html>`_
 
+.. versionadded:: 1.2
 
 Class
 -----------------------------------------------
 
   * :class:`KISSY.DD.Draggable`
-
 
 Config Attributes
 -----------------------------------------------
@@ -40,23 +39,24 @@ Methods
 Events
 -----------------------------------------------
 
-  * :data:`dragstart`
-  * :data:`drag`
-  * :data:`dragend`
-  * :data:`dragenter`
-  * :data:`dragover`
-  * :data:`dragexit`
-  * :data:`dragdrophit`
-  * :data:`dragdropmiss`
+  * :meth:`dragstart`
+  * :meth:`drag`
+  * :meth:`dragend`
+  * :meth:`dragenter`
+  * :meth:`dragover`
+  * :meth:`dragexit`
+  * :meth:`dragdrophit`
+  * :meth:`dragdropmiss`
 
 
 Class Detail
 -----------------------------------------------
 
-.. class:: KISSY.DD.Draggable(config)
-
+.. class:: KISSY.DD.Draggable
+    
+    | **KISSY.DD.Draggable** (config)
+    
     :param Object config: 实例化可拖放对象的配置项, 详细见下节.
-
 
 Config Attributes Detail
 -----------------------------------------------
@@ -117,78 +117,77 @@ Properties Detail
 Methods Detail
 -----------------------------------------------
 
-.. method:: destroy()
-
-    销毁当前可拖放对象实例, 清除绑定事件.     
+.. method:: destroy
+    
+    | **destroy** ()
+    | 销毁当前可拖放对象实例, 清除绑定事件.     
 
 Events Detail
 -----------------------------------------------
 
-.. data:: dragstart
+.. method:: dragstart
 
-    当可拖放对象开始被用户拖放时触发, 传给事件处理函数参数为事件对象 event .
-
-    .. attribute:: Draggable.dragstart.event.drag
-
-        {Object} - 自身, 当前拖放对象
-
-.. data:: drag
-
-    当可拖放对象拖放过程中触发, 传给事件处理函数为事件对象 event .
-
-    .. attribute:: Draggable.drag.event.left
-
-        {Number} - 拖放节点应该设置的相对文档根节点的横坐标位置.
-
-    .. attribute:: Draggable.drag.event.top
-
-        {Number} - 拖放节点应该设置的相对文档根节点的纵坐标位置.
-
-    .. attribute:: Draggable.drag.event.pageX
-
-        {Number} - 当前鼠标的绝对横坐标
-
-    .. attribute:: Draggable.drag.event.pageY
-
-        {Number} - 当前鼠标的绝对纵坐标
-
-    .. attribute:: Draggable.drag.event.drag
-
-        {Object} - 自身, 当前拖放对象
-
-.. data:: dragend
-
-    当用户鼠标弹起放弃拖放时触发 , 传给事件处理函数参数为事件对象 event.
-
-    .. attribute:: Draggable.dragend.event.drag
-
-        {Object} - 自身, 当前拖放对象
-
-
-.. data:: dragenter
-
-    同 :data:`~Droppable.dropenter` , 只不过该事件在当前 Draggable 对象上触发.
+    | **dragstart** ( ev )
+    | 当可拖放对象开始被用户拖放时触发.
     
-.. data:: dragover
+    :param Object ev.drag: 自身, 当前拖放对象.
 
-    同 :data:`~Droppable.dropover` , 只不过该事件在当前 Draggable 对象上触发.
+.. method:: drag
 
-.. data:: dragexit
-
-    同 :data:`~Droppable.dropexit` , 只不过该事件在当前 Draggable 对象上触发.
+    | **drag** ( ev )
+    | 当可拖放对象拖放过程中触发.
     
-.. data:: dragdrophit
+    :param Number ev.left: 拖放节点应该设置的相对文档根节点的横坐标位置.
+    :param Number ev.top: 拖放节点应该设置的相对文档根节点的纵坐标位置.
+    :param Number ev.pageX: 当前鼠标的绝对横坐标.
+    :param Number ev.pageY: 当前鼠标的绝对纵坐标.
+    :param Object ev.drag: 自身, 当前拖放对象.
 
-    同 :data:`~Droppable.drophit` , 只不过该事件在当前 Draggable 对象上触发.
+.. method:: dragend
+
+    | **dragend** ( ev )
+    | 当用户鼠标弹起放弃拖放时触发.
+
+    :param Object ev.drag: 自身, 当前拖放对象.
+
+.. method:: dragenter
+
+    | **dragenter** ( ev )
+    | 当前 Draggable 对象达到一个 Droppable 对象时触发，可简单理解成 mouseenter。
+
+    :param Object ev.drag: 自身, 当前拖放对象.
+    :param Object ev.drop: 当前交互的Droppable对象.
     
-.. data:: dragdropmiss
+.. method:: dragover
 
-    当用户鼠标弹起但是没有放置当前 ``Draggable`` 对象到一个 Droppable 对象时触发.
-    传给事件处理函数参数为一个事件对象 event
+    | **dragover** ( ev )
+    | 当前 Draggable 对象在一个 Droppable 实例上移动时触发，可简单理解成 mouseover。
 
-    .. attribute:: Draggable.dragdropmiss.event.drag
+    :param Object ev.drag: 自身, 当前拖放对象.
+    :param Object ev.drop: 当前交互的Droppable对象.
 
-        {Object} -  自身, 当前拖放对象
+.. method:: dragexit
+
+    | **dragexit** ( ev )
+    | 当前 Draggable 对象离开一个 Droppable 实例上移动时触发，可简单理解成 mouseleave。
+
+    :param Object ev.drag: 自身, 当前拖放对象.
+    :param Object ev.drop: 当前交互的Droppable对象.
+    
+.. method:: dragdrophit
+
+    | **dragdrophit** ( ev )
+    | 当前 Draggable 对象被放置在一个 Droppable 实例时触发。
+
+    :param Object ev.drag: 自身, 当前拖放对象.
+    :param Object ev.drop: 当前交互的Droppable对象.
+    
+.. method:: dragdropmiss
+
+    | **dragdropmiss** ( ev )
+    | 当用户鼠标弹起但是没有放置当前 ``Draggable`` 对象到一个 Droppable 对象时触发.
+
+    :param Object ev.drag: 自身, 当前拖放对象.
 
 .. note ::
 

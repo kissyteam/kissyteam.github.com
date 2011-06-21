@@ -60,7 +60,6 @@ table.docutils {
 }
 
 table.docutils td, table.docutils th {
-    padding: 1px 8px 1px 5px;
     border-top: 0;
     border-left: 0;
     border-right: 0;
@@ -70,6 +69,8 @@ table.docutils td, table.docutils th {
 table.field-list td, table.field-list th {
     border: 0 !important;
 }
+
+table .field-body{padding-left:20px;}
 
 table.footnote td, table.footnote th {
     border: 0 !important;
@@ -122,7 +123,7 @@ dd {
 }
 
 dt:target, .highlighted {
-    background-color: #fbe54e;
+    background-color: #fffcdb;
 }
 
 .refcount {
@@ -131,10 +132,6 @@ dt:target, .highlighted {
 
 .optional {
     font-weight: bold;
-}
-
-.versionmodified {
-    font-style: italic;
 }
 
 .system-message {
@@ -230,16 +227,13 @@ dt:hover > a.headerlink {
 }*/
 h1, h2, h3 {
     padding: 8px 0;
-    font-family: 'Philosopher', arial, "Microsoft YaHei", sans-serif;
+    font-family: tahoma, "Microsoft YaHei", sans-serif;
+    font-size:18px;
 }
-h1 {
-    font-size: 20px;
-}
-h2{
-    font-size: 18px;
-}
-h3{font-size:16px;}
-h3,h4{font-size:14px;}
+.main-wrap h1{display:none;}
+.main-wrap h1+*{margin-top:15px;}
+h3{font-size:16px;font-weight:bold;}
+h4{font-size:14px;font-weight:bold;}
 
 h1 a.anchor, h2 a.anchor, h3 a.anchor, h4 a.anchor, h5 a.anchor, h6 a.anchor {
     display: none;
@@ -258,6 +252,8 @@ h5 a.anchor:hover, h6 a.anchor:hover {
     color: #777;
     background-color: #eee;
 }
+
+.col-sub h2.s-box-hd{color:#888;}
 
 a.headerlink {
     font-size: 1em;
@@ -423,7 +419,6 @@ div.tip p.admonition-title {
     border-bottom-color: #9bd703;
 }
 
-
 div.versioninfo {
     margin: 1em 0 0 0;
     border: 1px solid #ccc;
@@ -468,10 +463,11 @@ div.demo {
     font-style: normal !important;
 }
 
+
 /*****************************************************************************
  * 复写部分api相关样式
  *****************************************************************************/
-.highlight-javascript{margin-bottom:10px;}
+.highlight-javascript， .highlight-html{margin:10px 0;}
 
 .main-wrap > .section {
     margin-bottom: 8px;
@@ -479,9 +475,11 @@ div.demo {
 .main-wrap > .section > .section > blockquote,
 .main-wrap > .section > .section > dl,
 .main-wrap > .section > .line-block,
+.line-block,
 .versionchanged,
+.versionadded,
 .main-wrap > .section > .section > .toctree-wrapper {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 .main-wrap > .section > .section {
     margin-top: 10px;
@@ -494,6 +492,7 @@ div.demo {
     border-bottom: 1px dotted #ccc;
     margin-bottom: 16px;
 }
+.section h1+div.line-block{font-size:12px;}
 
 tt {
     font-family: arial;
@@ -505,6 +504,47 @@ tt.descclassname, tt.descname {
 tt.descclassname, tt.descname, tt.xref {
     font-weight: bold;
 }
+
+.versionchanged tt{font-weight:normal;}
+.versionchanged, .versionadded{margin-top:10px;font-size:12px;color:#80c269;}
+
+.note, div.admonition, div.warning{font-size:12px;}
+
+dl.function{padding-bottom:15px;margin-bottom:15px;border-bottom:1px dotted #ccc;}
+dl.function dt{margin-bottom:10px;font-size:14px;}
+dl.function dt big{display:none;}
+dl.function dd{margin:0 0 0 30px;font-size:12px;}
+dl.function dd>.line-block{margin:0 0 10px 0;}
+dl.function .versionchanged,
+dl.function .versionadded{margin-left:0!important;}
+
+dl.class{padding-bottom:15px;margin-bottom:15px;border-bottom:1px dotted #ccc;}
+dl.class dt{margin-bottom:10px;font-size:14px;}
+dl.class dt big{display:none;}
+dl.class dd{margin:0 0 0 30px;font-size:12px;}
+dl.class dd>.line-block{margin:0 0 10px 0;}
+dl.class .versionchanged,
+dl.class .versionadded{margin-left:0!important;}
+
+dl.attribute{padding-bottom:15px;margin-bottom:15px;border-bottom:1px dotted #ccc;}
+dl.attribute dt{margin-bottom:10px;font-size:14px;}
+dl.attribute dd{margin:0 0 0 30px;font-size:12px;}
+dl.attribute .versionchanged,
+dl.attribute .versionadded{margin-left:0!important;}
+
+dl.data{padding-bottom:15px;margin-bottom:15px;border-bottom:1px dotted #ccc;}
+dl.data dt{margin-bottom:10px;font-size:14px;}
+dl.data dd{margin:0 0 0 30px;font-size:12px;}
+dl.data .versionchanged,
+dl.data .versionadded{margin-left:0!important;}
+
+dl.method{padding-bottom:15px;margin-bottom:15px;border-bottom:1px dotted #ccc;}
+dl.method dt{margin-bottom:10px;font-size:14px;}
+dl.method dt big{display:none;}
+dl.method dd{margin:0 0 0 30px;font-size:12px;}
+dl.method dd>.line-block{margin:0 0 10px 0;}
+dl.method .versionchanged,
+dl.method .versionadded{margin-left:0!important;}
 /*****************************************************************************
  * 布局
  *****************************************************************************/
@@ -544,17 +584,16 @@ tt.descclassname, tt.descname, tt.xref {
 /*****************************************************************************
  * 页头尾
  *****************************************************************************/
-#header {overflow:hidden;border-bottom: 1px solid #ace;color:#888;}
+#header {overflow:hidden;border-bottom: 1px solid #a4d3f2;color:#888;}
 #header .logo{float:left;margin:20px 0 0 0;padding:0;border:none;}
 #header .sub-title{float:left;margin:45px 5px 0 5px;font:25px "Microsoft YaHei";color:#aaa;}
-#header .desc{float:left;margin-top:55px;margin-left:5px;font-size:15px;}
-#header  .navigation {float:right;margin:55px 0 0 0;overflow:hidden;list-style:none;}
-#header  .navigation li {float:left;margin-left:-1px;padding: 0 10px;line-height:1em;border-left:1px solid #ddd;}
+#header .desc{float:left;margin-top:50px;margin-left:5px;font-size:14px;}
+#header  .navigation {float:right;margin:50px 0 0 0;overflow:hidden;list-style:none;}
+#header  .navigation li {float:left;margin-left:-1px;padding: 0 10px;line-height:1em;font-weight:bold;border-left:1px solid #ddd;}
 
-#content{margin-bottom:10px;}
-.col-sub{border: 1px solid #ace;border-top:none;background:#f2f8fa;}
+.col-sub{border: 1px solid #a4d3f2;border-top:none;background:#f2f8fa;}
 
-#footer {clear:both;padding:30px 0;text-align:center;color:#888;border-top:1px dotted #ddd;}
+#footer {clear:both;margin-top:20px;padding:30px 0;text-align:center;color:#888;border-top:1px solid #ccc;}
 #footer a {color: #888}
 
  /*****************************************************************************
@@ -606,10 +645,10 @@ div.related {
 }
 
 div.related ul {
-    background-image: url(navigation.png);
+    margin-top:3px;
+    padding:0;
     height: 2em;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px dotted #ccc;
     list-style:none;
 }
 
@@ -630,12 +669,13 @@ div.related ul li a {
     margin: 0;
     padding: 0 5px 0 5px;
     line-height: 1.75em;
-    color: #EE9816;
+    color: #80c269;
 }
 
 div.related ul li a:hover {
-    color: #3CA8E7;
+    color: #f60;
 }
+
 
 /*left menu donot wrap*/
 .col-sub li{

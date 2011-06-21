@@ -1,109 +1,88 @@
-.. py:currentmodule:: Overlay
+.. module:: Popup
 
-子类 Popup
-===================================================================
+Popup
+===============================================
 
-获取对话框构造器
---------------------------------------------------------------------
-页面引入 kissy.js :
 
-.. code-block:: html
+|  弹出层
+|  作者: `承玉 <yiminghe@gmail.com>`_
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay>`_ 
 
-    <script src='kissy.js'></script>
 
-Popup 属于 overlay 模块, 通过 use 加载 overlay 模块：
+Class
+-----------------------------------------------
 
-.. code-block:: javascript
+  * :class:`KISSY.Popup`
 
-    KISSY.use("overlay",function(){
-        var Popup = S.Popup;
-        // 使用 Popup 构造器
-    });
+  
+Config Attributes
+-----------------------------------------------
 
-.. versionadded:: 1.2
-    KISSY 1.2 可直接通过依赖注入, 从函数参数中取得
+  与 :class:`Overlay` 的配置项完全相同，其他新增配置项如下：
+  
+  * :attr:`trigger`
+  * :attr:`triggerType`
+ 
+ 
+Properties
+-----------------------------------------------
+
+  * 同 :class:`Overlay` 。
+
+  
+Methods
+-----------------------------------------------
+
+  * 同 :class:`Overlay` 。
+
+  
+Events
+-----------------------------------------------
+
+  * 同 :class:`Overlay` ，包括 :attr:`show` , :attr:`hide` , :attr:`beforeVisibleChange` .
+
+
+Class Detail
+-----------------------------------------------
+
+.. class:: KISSY.Popup
     
-    .. code-block:: javascript
+    | **KISSY.Popup** ([container,] config)
     
-        KISSY.use("overlay",function(S,Overlay){
-            //使用 Popup 构造器
-            var Popup = Overlay.Popup;
-        });
+    :param String|HTMLElement|KISSY.Node container: 可为'#id'、'.class'、DOM对象、KISSY.Node对象，为空时表示新建
+    :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
 
-
-构造器接口
----------------------------------------------------------------------
-
-.. py:class:: Popup(container, config)
-
-    :param object container: 容器对象, 可取:
-
-        * 选择器字符串, 此时会取第一个节点作为弹出层的根节点;
-
-        * HTMLElement 或直接传入 KISSY Node 对象;
-
-        * 也可不设置, 此时, 表示新建 HTMLElement;
-
-     :param object config: 类型对象, 实例对象所需的配置
     
-    例如一个简单的配置项：
+Config Attributes Detail
+-----------------------------------------------
+
+    与 :class:`Overlay` 的配置项完全相同，其他新增配置项如下：
     
-    .. code-block:: javascript
-    
-        {
-            width:"200px",
-            render:"#container"
-        }
-
-
-config 配置项详解
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-与 :class:`~Overlay.Overlay` 的配置项完全相同, 除此之外, 还有：
-
 .. attribute:: trigger
 
-    指定触发器, 类型为 选择器字符串 或 ``HTMLElement`` 或 ``KISSY Node`` 对象
-
-    .. code-block:: javascript
-    
-        KISSY.use("dd,overlay",function(S,DD,Overlay){
-            new Overlay.Dialog({
-                draggable : true,
-                contrain:true // 限制拖动区域为当前视窗范围
-            });
-        });
-        
-        KISSY.use("dd,overlay",function(S,DD,Overlay){
-            new Overlay.Dialog({
-                draggable : true,
-                contrain:"#container" // 限制拖动区域为 container 节点所占据区域
-            });
-        });
+    {String | HTMLElement | KISSY.Node} - 触点
 
 .. attribute:: triggerType
 
-    触发类型, 可取 'click', 'mouse', 默认为 'click'.
-
-    * 取 'click' 时, 表示当点击触发器元素时, 显示弹出层;
-
-    * 取 'mouse' 时, 表示当鼠标移入触发器元素时, 显示弹出层, 当鼠标离开触发器元素时, 隐藏弹出层;
+    {String} - 可选，默认为'click'，触发类型，可选'click'、'mouse'.
 
 
-实例方法
-----------------------------------------------------------------------------------------------------------
+Properties Detail
+-----------------------------------------------
 
-同 :class:`~Overlay.Overlay`.
-        
-        
-实例属性
-----------------------------------------------------------------------------------------------
-      
-同 :class:`~Overlay.Overlay`.
+    同 :class:`Overlay` 。
+    
+    
+Methods Detail
+-----------------------------------------------
 
+    同 :class:`Overlay` 。
+    
+    
+Events Detail
+-----------------------------------------------
 
+    同 :class:`Overlay` ，包括 :attr:`show` , :attr:`hide` , :attr:`beforeVisibleChange` .
 
-触发事件
------------------------------------------------------------------------------------------------------
+                              
 
-同 :class:`~Overlay.Overlay`, 包括 :attr:`show` , :attr:`hide` , :attr:`beforeVisibleChange` .
