@@ -67,6 +67,7 @@ Class Detail
     
     :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
 
+    
 Config Attributes Detail
 -----------------------------------------------
     
@@ -206,7 +207,7 @@ Properties Detail
     
     .. note::
     
-        必须在调用 :py:meth:`~render` 方法之后才可以获取。
+        必须在调用 :meth:`~render` 方法之后才可以获取。
 
 .. attribute:: contentEl
 
@@ -214,7 +215,7 @@ Properties Detail
     
     .. note::
     
-        必须在调用  :py:meth:`~render` 方法之后才可以获取。
+        必须在调用  :meth:`~render` 方法之后才可以获取。
         
     悬浮层的 html 结构如下
 
@@ -226,7 +227,7 @@ Properties Detail
             </div>
         </div>
         
-    一般调用悬浮层的 :py:meth:`~render` 方法后，可通过获取 :py:attr:`contentEl` 属性获取内容所在节点，来动态修改悬浮层的内容。
+    一般调用悬浮层的 :meth:`~render` 方法后，可通过获取 :attr:`contentEl` 属性获取内容所在节点，来动态修改悬浮层的内容。
 
 
 Methods Detail
@@ -240,7 +241,7 @@ Methods Detail
 .. method:: show
 
     | **show** ()
-    | 显示悬浮层，位置根据 :py:attr:`align` 或者 :py:attr:`xy` 确定。
+    | 显示悬浮层，位置根据 :attr:`align` 或者 :attr:`xy` 确定。
 
 .. method:: hide
 
@@ -258,7 +259,7 @@ Methods Detail
         
     .. note::
     
-        调用该方法前请先调用 :py:meth:`~render`.    
+        调用该方法前请先调用 :meth:`~render`.    
     
 .. method:: center
 
@@ -267,9 +268,9 @@ Methods Detail
     
     .. note::
     
-        调用该方法前请先调用 :py:meth:`~render`.      
+        调用该方法前请先调用 :meth:`~render`.      
 
-.. method:: move(x,y)
+.. method:: move
 
     | **move** (x,y)
     | 设置悬浮层相对于文档左上角的坐标偏移

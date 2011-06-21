@@ -1,4 +1,4 @@
-﻿.. currentmodule:: DD
+﻿.. module:: Draggable
 
 Draggable
 ===============================================
