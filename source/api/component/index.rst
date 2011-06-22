@@ -12,3 +12,5 @@ Component
    dd/index
    suggest/index
    template/index
+   calendar/index
+   imagezoom/index

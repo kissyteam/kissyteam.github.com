@@ -22,43 +22,43 @@ Suggest
 Class
 -----------------------------------------------
 
-  * :class:`KISSY.Suggest`
+  * :class:`Suggest`
 
   
 Config Attributes
 -----------------------------------------------
 
-  * :attr:`containerCls`
-  * :attr:`containerWidth`
-  * :attr:`resultFormat`
-  * :attr:`closeBtn`
-  * :attr:`closeBtnText`
-  * :attr:`shim`
-  * :attr:`autoFocus`
-  * :attr:`submitOnSelect`
-  * :attr:`offset`
-  * :attr:`charset`
-  * :attr:`callbackName`
-  * :attr:`callbackFn`
-  * :attr:`queryName`
-  * :attr:`dataType`
-  * :attr:`contentRender`
+  * :data:`containerCls`
+  * :data:`containerWidth`
+  * :data:`resultFormat`
+  * :data:`closeBtn`
+  * :data:`closeBtnText`
+  * :data:`shim`
+  * :data:`autoFocus`
+  * :data:`submitOnSelect`
+  * :data:`offset`
+  * :data:`charset`
+  * :data:`callbackName`
+  * :data:`callbackFn`
+  * :data:`queryName`
+  * :data:`dataType`
+  * :data:`contentRender`
  
  
 Properties
 -----------------------------------------------
 
-  * :data:`textInput`
-  * :data:`config`
-  * :data:`dataSource`
-  * :data:`returnedData`
-  * :data:`container`
-  * :data:`content`
-  * :data:`footer`
-  * :data:`query`
-  * :data:`queryParams`
-  * :data:`dataScript`
-  * :data:`selectedItem`
+  * :attr:`textInput`
+  * :attr:`config`
+  * :attr:`dataSource`
+  * :attr:`returnedData`
+  * :attr:`container`
+  * :attr:`content`
+  * :attr:`footer`
+  * :attr:`query`
+  * :attr:`queryParams`
+  * :attr:`dataScript`
+  * :attr:`selectedItem`
 
   
 Methods
@@ -86,79 +86,95 @@ Events
 Class Detail
 -----------------------------------------------
 
-.. class:: KISSY.Suggest
+.. class:: Suggest
     
-    | **KISSY.Suggest** (textInput, dataSource[, config])
+    | **Suggest** (textInput, dataSource[, config])
     
     :param String|HTMLElement textInput: 输入框。
     :param String|Array<Object> dataSource: 获取提示的数据源，可为远程URL，或本地数据。
     :param Object config: 配置项, 详细见下方 **Config Attributes Detail** 。
+    
+    提示层的默认HTML结构如下：
+    
+    .. code-block:: html
+    
+        <div class='ks-suggest-container {containerCls}'>
+            <ol class="ks-suggest-content">
+                <li>
+                    <span class='ks-suggest-key'>...</span>
+                    <span class='ks-suggest-result'>...</span>
+                </li>
+            </ol>
+            <div class='ks-suggest-footer'>
+                <a class='ks-suggest-close-btn'>...</a>
+            </div>
+        </div>
 
     
 Config Attributes Detail
 -----------------------------------------------
 
 
-.. attribute:: containerCls
+.. data:: containerCls
 
     {String} - 用户附加给悬浮提示层的 class。
     
-.. attribute:: containerWidth
+.. data:: containerWidth
 
     {String} - 默认为和input等宽。提示层的宽度，必须带单位，如'200px', '10%' 等。
 
-.. attribute:: resultFormat
+.. data:: resultFormat
 
     {String} - 默认为 '%result%' ， result 的格式。
     
-.. attribute:: closeBtn
+.. data:: closeBtn
 
     {Boolean} - 默认为 false，是否显示关闭按钮。 
     
-.. attribute:: closeBtnText
+.. data:: closeBtnText
 
     {String} - 默认为 '关闭'，关闭按钮上的文字。
     
-.. attribute:: shim
+.. data:: shim
 
     {Boolean} - 是否需要 iframe shim 默认只在 ie6 下显示。
     
-.. attribute:: autoFocus
+.. data:: autoFocus
 
     {Boolean} - 默认为 false ，初始化后，自动激活。
     
-.. attribute:: submitOnSelect
+.. data:: submitOnSelect
 
     {Boolean} - 默认为 true ，选择某项时，是否自动提交表单。
     
-.. attribute:: offset
+.. data:: offset
 
     {Number} - 默认为 -1 ，提示悬浮层和输入框的垂直偏离。默认向上偏差 1px, 使得悬浮层刚好覆盖输入框的下边框。
     
-.. attribute:: charset
+.. data:: charset
 
     {String} - 默认为 'utf-8' ，数据接口返回数据的编码。
     
-.. attribute:: callbackName
+.. data:: callbackName
 
     {String} - 默认为 'callback' ，回调函数的参数名。
     
-.. attribute:: callbackFn
+.. data:: callbackFn
 
     {String} - 默认为 'KISSY.Suggest.callback' ，回调函数的函数名
     
-.. attribute:: queryName
+.. data:: queryName
 
     {String} - 默认为 'q' ，查询的参数名
     
-.. attribute:: dataType
+.. data:: dataType
 
     {Number} - 默认为 0 ，数据源标志, 默认为 0 , 可取 0, 1, 2
          * - 0: 数据来自远程, 且请求回来后存入 _dataCache
          * - 1: 数据来自远程, 且不存入 _dataCache, 每次请求的数据是否需要缓存, 防止在公用同一个 suggest , 但数据源不一样时, 出现相同内容
          * - 2: 数据来自静态, 不存在时, 不显示提示浮层
     
-.. attribute:: contentRender
+.. data:: contentRender
 
     {Function} - 默认为 null ，提示层内容渲染器。该渲染器以返回的data为唯一参数，且返回渲染的内容,可选项要求由"li"标签包裹，并将用于表单提交的值存储在"li"元素的key属性上。
     
