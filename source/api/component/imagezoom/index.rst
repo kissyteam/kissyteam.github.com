@@ -166,7 +166,7 @@ Methods Detail
     | 设置bigImage、hasZoom属性
 
     :param String name: 属性名，igImage或hasZoom
-    :param {String | Boolean} val: 属性值，bigImage属性为String类型，hasZoom为Boolean类型
+    :param String|Boolean val: 属性值，bigImage属性为String类型，hasZoom为Boolean类型
     
     .. bigImageSrc - String: 大图路径, 为 '' 时, 取触点上的 data-ks-imagezoom 属性值. 默认为 ''. 
     .. 如果有多张图片切换时, 需要修改 大图src, 如:

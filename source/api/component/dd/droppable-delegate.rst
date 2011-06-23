@@ -1,72 +1,102 @@
-﻿.. currentmodule:: DD
+.. module:: DroppableDelegate
 
 DroppableDelegate
------------------------------------------------
+===============================================
 
-引入
-=====================================
-
-页面引入 kissy.js :
-
-.. code-block:: html
-
-    <script src='kissy.js'></script>
-
+|  为 Draggable 对象提供所需要的代理节点
+|  作者: 承玉<chengyu@taobao.com>
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/droppable-delegate.js>`_ 
 
 .. versionadded:: 1.2
-    通过 use 加载 dd 模块：
+
+Class
+-----------------------------------------------
+
+  * :class:`DD.DroppableDelegate`
+
+Config Attributes
+-----------------------------------------------
+
+  * :attr:`container`
+  * :attr:`selector`
+  
+Properties
+-----------------------------------------------
+
+  * :data:`node`
+  
+Methods
+-----------------------------------------------
+
+  * :meth:`destroy`
+
+Events
+-----------------------------------------------
+
+  * :func:`dropenter`
+  * :func:`dropover`
+  * :func:`dropexit`
+  * :func:`drophit`
+
+
+Class Detail
+-----------------------------------------------
+
+.. class:: DD.DroppableDelegate
     
-    .. code-block:: javascript
+    | **DD.DroppableDelegate** (config)
+
+    :param Object config: 配置项, 详细见下方 **Config Attributes Detail**
     
-        KISSY.use("dd",function(S,DD){
-            var DroppableDelegate = DD.DroppableDelegate;
-        });
 
-.. seealso::
-
-    KISSY 1.2 :mod:`Loader` 新增功能
-
-构造器
-=====================================
-
-.. class:: DroppableDelegate(config)
-
-    :param object config: 可放对象的一些初始化配置，包括
+Config Attributes Detail
+-----------------------------------------------
     
-        .. attribute:: config.container
-        
-            类型选择器字符串或者 HTMLElement ，用于委托的容器节点，所有 Droppable 节点都在其内。
-            
-        .. attribute:: config.selector
-        
-            类型选择器字符串，格式为 tag 或 tag.cls 或 .cls。用来获取容器内的 Droppable 节点。            
-        
-    
-实例属性
-=============================================
+.. attribute:: container
 
-.. attribute:: DroppableDelegate.node
+    {String | HTMLElement} - 用于委托的容器节点，所有 Droppable 节点都在其内。
 
-    类型 ``KISSY.Node`` ，表示当前容器内正在和 Draggble 对象交互的节点，
-    通过 :attr:`~DroppableDelegate.config.selector` 获取。
+.. attribute:: selector
+
+    {String} - 类型选择字符串，用来获取容器内的 Droppable 节点，格式为 tag 或 tag.cls 或 .cls。
 
     
-            
-实例方法
-==================================== 
-
-.. method:: DroppableDelegate.destroy()
-
-    销毁可放对象实例，清除绑定事件
+Properties Detail
+-----------------------------------------------
     
-    
-触发事件
-====================================
+.. attribute:: node
 
-继承自 :class:`Droppable` .包括 :data:`~Droppable.dropenter` , :data:`~Droppable.dropover` , :data:`~Droppable.dropexit` , :data:`~Droppable.drophit` .
-    
-.. note::
+    {KISSY.Node} - 表示当前容器内正在和 Draggble 对象交互的节点， 通过 selector 获取。
 
-    可以通过 :attr:`~DroppableDelegate.node` 来获得当前正在和 :class:`Draggable` 对象交互的被委托的容器内的子节点。
 
-                              
+Methods Detail
+-----------------------------------------------
+
+.. method:: destroy
+
+    | **destroy** ()
+    | 销毁可放对象实例，清除绑定事件
+
+Events Detail
+-----------------------------------------------
+
+.. function:: dropenter
+
+    | **dropenter** (ev)
+    | 同 Droppable.dropenter
+
+.. function:: dropover
+
+    | **dropover** (ev)
+    | 同 Droppable.dropover
+
+.. function:: dropexit
+
+    | **dropexit** (ev)
+    | 同 Droppable.dropexit
+
+.. function:: drophit
+
+    | **drophit** (ev)
+    | 同 Droppable.drophit 
+
