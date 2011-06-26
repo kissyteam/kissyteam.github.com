@@ -1,11 +1,21 @@
 .. currentmodule:: Seed
 
-KISSY.mix
+mix
 ===============================
 
-.. function:: KISSY.mix(receiver,supplier[,overwrite = true,whitelist])
+Module
+-----------------------------------------------
 
-    将 supplier 对象的成员复制到 receiver 对象上。
+  :mod:`Seed`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.mix
+
+    | Object **KISSY.mix** (receiver,supplier[,overwrite = true,whitelist])
+    | 将 supplier 对象的成员复制到 receiver 对象上。
     
     :param object receiver: 属性接受者对象。
     :param object supplier: 属性来源对象。

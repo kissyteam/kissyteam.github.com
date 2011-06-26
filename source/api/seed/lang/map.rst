@@ -1,13 +1,23 @@
 .. currentmodule:: Lang
 
-KISSY.map
+map
 ===============================
 
 .. versionadded:: 1.2
 
-.. function:: KISSY.map(arr,fn[,context])
+Module
+-----------------------------------------------
 
-    创建一个新数组，数组结果是在对每个原数组元素调用指定函数的返回值。
+  :mod:`Lang`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.map
+
+    | Array **KISSY.map** (arr,fn[,context])
+    | 创建一个新数组，数组结果是在对每个原数组元素调用指定函数的返回值。
     
     :param Array arr: 需要遍历的数组。 
     :param function fn: 能够根据原数组当前元素返回新数组元素的函数。

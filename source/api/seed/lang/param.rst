@@ -1,14 +1,21 @@
 .. currentmodule:: Lang
 
-KISSY.param
+param
 ===============================
 
+Module
+-----------------------------------------------
 
-    
+  :mod:`Lang`
 
-.. function:: KISSY.param(o[ ,sep='&',eq='=',arr=true ])
 
-    将对象 o 转换为参数字符串，用于发送 http 请求。
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.param
+
+    | String **KISSY.param** (o[ ,sep='&',eq='=',arr=true ])
+    | 将对象 o 转换为参数字符串，用于发送 http 请求。
     
     :param object o: 参数键值对对象
     :param string seq: 参数间分隔符，默认 ``&``

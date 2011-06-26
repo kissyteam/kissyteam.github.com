@@ -1,7 +1,16 @@
 .. currentmodule:: Seed
 
-KISSY.Config
+Config
 ===============================
+
+Module
+-----------------------------------------------
+
+  :mod:`Seed`
+
+
+Methods
+-----------------------------------------------
 
 .. attribute:: KISSY.Config
 

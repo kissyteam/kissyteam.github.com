@@ -1,11 +1,21 @@
 .. currentmodule:: Lang
 
-KISSY.indexOf
+indexOf
 ===============================
 
-.. function:: KISSY.indexOf(elem,arr)
+Module
+-----------------------------------------------
 
-    返回元素 elem 在数组 arr 中的序号。
+  :mod:`Lang`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.indexOf
+
+    | Number **KISSY.indexof** (elem,arr)
+    | 返回元素 elem 在数组 arr 中的序号。
     
     :param elem: 任意对象
     :param arr: 数组

@@ -1,11 +1,22 @@
 .. currentmodule:: Seed
 
-KISSY.extend
+extend
 ===============================
 
-.. function:: KISSY.extend(r,s[,px,sx])
 
-    让函数对象 r 继承函数对象 s
+Module
+-----------------------------------------------
+
+  :mod:`Seed`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.extend
+
+    | Function **KISSY.extend** (r,s[,px,sx])
+    | 让函数对象 r 继承函数对象 s
     
     :param function r: receiver,将要继承的子类函数
     :param function|object s: supplier,继承自的父类函数

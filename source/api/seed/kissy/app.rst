@@ -1,15 +1,24 @@
 .. currentmodule:: Seed
 
-.. _KISSY-app:
-
 .. deprecated:: 1.2
 
-KISSY.app
+app
 ===============================
 
-.. function:: KISSY.app(name[,sx])
 
-    创建应用对象，为全局 window 中名字为 `name` 的变量。
+Module
+-----------------------------------------------
+
+  :mod:`Seed`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.app
+
+    | Object **KISSY.app** (name[,sx])
+    | 创建应用对象，为全局 window 中名字为 `name` 的变量。
     
     :param string name: 应用对象名称
     :param object sx: mix 到应用对象的属性以及值。 

@@ -1,10 +1,20 @@
 .. currentmodule:: Lang
 
-KISSY.isNull
+isNull
 ===============================
 
-.. function:: KISSY.isNull(o)
+Module
+-----------------------------------------------
 
-    判断是否 null
+  :mod:`Lang`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.isNull
+
+    | Boolean **KISSY.isNull** (o)
+    | 判断是否 null
     
     :param o: 判断参数

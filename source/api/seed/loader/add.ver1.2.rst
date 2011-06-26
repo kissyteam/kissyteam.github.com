@@ -1,25 +1,31 @@
 .. currentmodule:: Loader
 
-KISSY.add (v1.2)
+add (v1.2)
 ======================================
 
+.. versionadded:: 1.2
 
-添加模块
---------------------------------------
 
-.. function:: KISSY.add(name,fn[,config])
+Module
+-----------------------------------------------
+
+  :mod:`Seed`
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.add
+
+    | void **KISSY.add** (name,fn[,config])
+    | 添加模块
 
     :param string name: 模块名
     :param function fn: 模块定义函数
     :param object config: 模块的一些格外属性，包括
         
-        .. attribute:: config.attach
-        
-            类型 bool,默认 true,表示模块定义时是否执行定义函数 fn，只有在 use 时才执行，懒加载原则            
+    :param Boolean config.attach: 默认 true,表示模块定义时是否执行定义函数 fn，只有在 use 时才执行，懒加载原则
             
-        .. attribute:: config.requires
-        
-            类型 Array<string>,模块的一些依赖项，如果需要载入 css 则，数组项为 .css 结尾名字
+    :param Array<String> config.requires: 模块的一些依赖项，如果需要载入 css 则，数组项为 .css 结尾名字
             
 .. note::
     
@@ -27,7 +33,6 @@ KISSY.add (v1.2)
 
             
 范例: 添加模块
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^            
 
 .. code-block:: javascript
 
@@ -76,19 +81,14 @@ KISSY.add (v1.2)
 
 
 
-包配置
---------------------------------------
+.. function:: KISSY.config
 
-为了摆脱模块必须使用前注册的繁琐
-
-
-.. function:: KISSY.config(config)
+    | void **KISSY.config** (config)
+    | 包配置, 为了摆脱模块必须使用前注册的繁琐
 
     :param object config: 包含 key 为 ``packages`` 的配置项，包括
 
-        .. attribute:: config.packages
-        
-            类型数组，每个数组项为一个包的配置，一个包配置包括 4 项：
+    :param Array config.packages: 每个数组项为一个包的配置，一个包配置包括 4 项：
             
                 .. attribute:: packages.name
                 
@@ -111,7 +111,6 @@ KISSY.add (v1.2)
                     类型字符串，表示宝贝所有模块定义文件的编码格式，默认 utf-8             
 
 范例: 包配置
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: javascript
 

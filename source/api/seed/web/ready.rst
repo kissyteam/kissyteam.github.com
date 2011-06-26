@@ -1,9 +1,21 @@
 .. currentmodule:: Web
 
-KISSY.ready
+ready
 ===============================
 
-.. function:: KISSY.ready(fn)
+
+Module
+-----------------------------------------------
+
+  :mod:`Web`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.ready
+
+    | void **KISSY.ready** (fn)
 
     :param function fn: 回调函数，在 DOM 加载完毕时执行。
     

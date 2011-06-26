@@ -1,11 +1,21 @@
 .. currentmodule:: Lang
 
-KISSY.clone 
+clone
 ===============================
 
-.. function:: KISSY.clone(o[,filter])
+Module
+-----------------------------------------------
 
-    创建一个 :func:`普通对象 <KISSY.isPlainObject>` 或数组的深拷贝, 并且返回。
+  :mod:`Lang`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.clone
+
+    | Object **KISSY.clone** (o[,filter])
+    | 创建一个 :func:`普通对象 <KISSY.isPlainObject>` 或数组的深拷贝, 并且返回。
     
     :param object|Array o: 待深拷贝的对象或数组。 
     :param filter: 过滤函数，返回 false 不拷贝该元素。传入参数为

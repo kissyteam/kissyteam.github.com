@@ -1,10 +1,20 @@
 .. currentmodule:: Lang
 
-KISSY.isFunction
+isFunction
 ===============================
 
-.. function:: KISSY.isFunction(o)
+Module
+-----------------------------------------------
 
-    判断是否函数
+  :mod:`Lang`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.isFunction
+
+    | Boolean **KISSY.isFunction** (o)
+    | 判断是否函数
     
     :param o: 判断参数

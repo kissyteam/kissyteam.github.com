@@ -1,11 +1,21 @@
 .. currentmodule:: Lang
 
-KISSY.each
+each
 ===============================
 
-.. function:: KISSY.each( o, fn[, context] )
+Module
+-----------------------------------------------
 
-    遍历数组中的每一项，执行指定方法。
+  :mod:`Lang`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.each
+
+    | Object **KISSY.each** ( o, fn[, context] )
+    | 遍历数组中的每一项，执行指定方法。
     
     :param Array|object o: 需要遍历的数组或对象
     :param function fn: 执行时，接收 3 个参数：

@@ -13,9 +13,10 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: create( html [ , props = {} , ownerDoc = document ] )
+.. function:: create
 
-    创建 dom 节点
+    | HTMLFragment|HTMLElement **create** ( html [ , props = {} , ownerDoc = document ] )
+    | 创建 dom 节点
     
     :param string html: dom 节点的 html
     :param object props: 属性键值对象

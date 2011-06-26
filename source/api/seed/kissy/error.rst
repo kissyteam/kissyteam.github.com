@@ -1,11 +1,22 @@
 .. currentmodule:: Seed
 
-KISSY.error
+error
 ===============================
 
-.. function:: KISSY.error(msg)
+.. versionadded:: 1.2
 
-    抛出错误异常
+Module
+-----------------------------------------------
+
+  :mod:`Seed`
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.error
+
+    | void **KISSY.error** (msg)
+    | 抛出错误异常
     
     :param string msg: 异常信息
     

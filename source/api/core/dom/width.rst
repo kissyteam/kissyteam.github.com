@@ -12,9 +12,10 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: width( selector )
+.. function:: width
 
-    获取符合选择器的第一个元素的宽度值。
+    | Number **width** ( selector )
+    | 获取符合选择器的第一个元素的宽度值。
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
     :returns: 符合选择器的第一个元素的宽度值.
@@ -39,10 +40,9 @@ Methods
                 DOM.height(elem); // 返回 20
             </script>
 
-    
-.. function:: width( selector, value )
 
-    给符合选择器的所有元素设置宽度值. 相当于 :func:`DOM.css(selector,"width",value) <DOM.css>`
+    | void **width** ( selector, value )
+    | 给符合选择器的所有元素设置宽度值. 相当于 :func:`DOM.css(selector,"width",value) <DOM.css>`
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
     :param string value: 宽度值        

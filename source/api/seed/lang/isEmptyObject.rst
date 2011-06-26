@@ -1,11 +1,20 @@
 .. currentmodule:: Lang
 
-KISSY.isEmptyObject 
+isEmptyObject
 ===============================
+Module
+-----------------------------------------------
 
-.. function:: KISSY.isEmptyObject(o)
+  :mod:`Lang`
 
-    判断是否空对象（没有任何可遍历的属性）。
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.isEmptyObject
+
+    | Boolean **KISSY.isEmptyObject** (o)
+    | 判断是否空对象（没有任何可遍历的属性）。
     
     :param o: 判断参数
     

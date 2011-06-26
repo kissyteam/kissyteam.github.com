@@ -1,11 +1,22 @@
 .. currentmodule:: Web
 
-KISSY.isWindow
+isWindow
 ===============================
 
-.. function:: KISSY.isWindow(o)
-    
-    判断参数是否为浏览器 window
+
+Module
+-----------------------------------------------
+
+  :mod:`Web`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.isWindow
+
+    | void **KISSY.isWindow** (o)
+    | 判断参数是否为浏览器 window
 
     :param o: 需要判断的对象
     

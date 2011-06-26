@@ -12,9 +12,10 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: docWidth()
+.. function:: docWidth
 
-   获取页面文档 document 的总宽度.
+    | Number **docWidth** ()
+    | 获取页面文档 document 的总宽度.
     
-   :returns:  页面文档 document 的总宽度.
-   :rtype: Number
+    :returns:  页面文档 document 的总宽度.
+    :rtype: Number

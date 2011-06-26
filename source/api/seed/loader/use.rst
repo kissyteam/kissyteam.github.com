@@ -1,18 +1,26 @@
 .. currentmodule:: Loader
 
-KISSY.use
+use
 ======================================
 
+Module
+-----------------------------------------------
 
-使用模块,和KISSY.add一起使用，形成KISSY的模块加载体系
+  :mod:`Seed`
 
-.. function:: KISSY.use(modNames[,callback])
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.use
+
+    | void **KISSY.use** (modNames[,callback])
+    | 使用模块,和KISSY.add一起使用，形成KISSY的模块加载体系
 
     :param string modNames: 以 ``,`` 分割的模块名称集合字符串,例如 ``KISSY.use("custommod,custommod2");``
     :param function callback: 当 ``modNames`` 中所有模块加载完毕后执行
 
 范例: 使用模块
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    
+
 .. code-block:: javascript
 
     //在 1.2 中 , function 中的后两个参数 DepMod1 和 DepMod2 即为两个依赖模块的返回值

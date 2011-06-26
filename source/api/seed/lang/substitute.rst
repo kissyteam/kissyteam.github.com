@@ -1,16 +1,26 @@
 .. currentmodule:: Lang
 
-KISSY.substitute
+substitute
 ===============================
 
-.. function:: KISSY.substitute(str,o)
+Module
+-----------------------------------------------
 
-    将字符串中的占位符替换为对应的键值。
+  :mod:`Lang`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.substitute
+
+    | String **KISSY.substitute** (str,o)
+    | 将字符串中的占位符替换为对应的键值。
     
-    :param string str: 包含数据占位符的模板字符串，占位符用 ``{}`` 包起来。
-    :param object o: 数据
+    :param String str: 包含数据占位符的模板字符串，占位符用 ``{}`` 包起来。
+    :param Object o: 数据
     :returns: 将模板和数据结合起来的最终字符串
-    :rtype: string
+    :rtype: String
     
 例如
 

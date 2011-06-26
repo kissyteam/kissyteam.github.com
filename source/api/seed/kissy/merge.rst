@@ -1,11 +1,21 @@
 .. currentmodule:: Seed
 
-KISSY.merge
+merge
 ===============================
 
-.. function:: KISSY.merge(s1,s2[,...])
+Module
+-----------------------------------------------
 
-    将多个对象的成员合并到一个新对象上。参数中，后面的对象成员会覆盖前面的。
+  :mod:`Seed`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.merge
+
+    | Object **KISSY.merge** (s1,s2[,...])
+    | 将多个对象的成员合并到一个新对象上。参数中，后面的对象成员会覆盖前面的。
     
     :param object s1: 属性源
     :param object s2: 属性源

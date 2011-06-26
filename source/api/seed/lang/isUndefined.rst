@@ -1,10 +1,20 @@
 .. currentmodule:: Lang
 
-KISSY.isUndefined
+isUndefined
 ===============================
 
-.. function:: KISSY.isUndefined(o)
+Module
+-----------------------------------------------
 
-    判断是否 undefined
+  :mod:`Lang`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.isUndefined
+
+    | Boolean **KISSY.isUndefined** (o)
+    | 判断是否 undefined
     
     :param o: 判断参数

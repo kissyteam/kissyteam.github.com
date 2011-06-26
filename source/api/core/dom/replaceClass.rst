@@ -13,9 +13,10 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: replaceClass( selector, oldClassName, newClassName )
+.. function:: replaceClass
 
-    将符合选择器的所有元素的老 class 替换为新 class.
+    | void **replaceClass** ( selector, oldClassName, newClassName )
+    | 将符合选择器的所有元素的老 class 替换为新 class.
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
     :param string oldClassName: 样式类 class, 多个用空格分隔 , 需要删除的样式类

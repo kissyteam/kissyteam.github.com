@@ -12,9 +12,10 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: test(selector , filter [,context=document] )
+.. function:: test
 
-    判断根据选择器获取的所有元素是否都符合过滤条件.
+    | Boolean **test** (selector , filter [,context=document] )
+    | 判断根据选择器获取的所有元素是否都符合过滤条件.
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
     :param string|function filter: 过滤选择器或函数, 具体详见 :func:`DOM.filter`

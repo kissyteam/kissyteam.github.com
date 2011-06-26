@@ -1,27 +1,30 @@
 .. currentmodule:: Loader
 
-KISSY.add
+add
 ======================================
 
+| 添加/注册模块,和KISSY.use一起使用，形成KISSY的模块加载体系
 
-添加/注册模块,和KISSY.use一起使用，形成KISSY的模块加载体系
 
-定义单个模块
---------------------------------------
+Module
+-----------------------------------------------
 
-当你需要编写一个新的模块来满足你的需求时,请使用此方式
+  :mod:`Seed`
 
-.. function:: KISSY.add(name,fn)   
-    :noindex: 
-    
-    添加模块定义    
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.add
+    :noindex:
+
+    | void **KISSY.add** (name,fn)
+    | 定义单个模块, 当你需要编写一个新的模块来满足你的需求时,请使用此方式.
 
     :param string name: 模块名称
     :param function fn: 模块定义函数，若该模块的所有依赖项都已经载入完毕，则 ``fn`` 立即执行
     
     
 范例: 一段典型的模块声明代码
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: javascript
 
@@ -68,19 +71,17 @@ KISSY.add
 注册单个模块
 --------------------------------------
 
-当你需要注册某个已有模块时,请使用此方式
+.. function:: KISSY.add
+    :noindex:
 
-.. function:: KISSY.add(name,config)
-    :noindex: 
-    
-    注册单个模块 
+    | void **KISSY.add** (name,config)
+    | 注册单个模块, 当你需要注册某个已有模块时,请使用此方式
     
     :param string name: 模块名称
     :param object config: 模块描述信息
 
     
 范例: 注册单个模块
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^   
 
 .. code-block:: javascript
 
@@ -89,22 +90,17 @@ KISSY.add
         cssfullpath:"http://xx.com/custommod.css",
         requires:["depmod1","depmod2"]
     })
-    
 
-注册多个模块
---------------------------------------
 
-当你需要注册多个已有模块时,请使用此方式
+.. function:: KISSY.add
+    :noindex:
 
-.. function:: KISSY.add(config)
-    :noindex: 
-
-    注册多个模块
+    | void **KISSY.add** (config)
+    | 注册多个模块, 当你需要注册多个已有模块时,请使用此方式
     
     :param object config: 模块描述信息
     
 范例: 注册多个模块
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: javascript
   
