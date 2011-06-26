@@ -1,103 +1,117 @@
-﻿.. currentmodule:: DD
+.. module:: DDM
 
 DDM
------------------------------------------------
+===============================================
 
-引入
-=====================================
-
-页面引入 kissy.js :
-
-.. code-block:: html
-
-    <script src='kissy.js'></script>
-
+|  拖放的中央控制对象，所有的拖放实例的事件都会向其冒泡。
+|  作者: 承玉<chengyu@taobao.com>
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/ddm.js>`_ 
 
 .. versionadded:: 1.2
-    通过 use 加载 dd 模块：
+
+Class
+-----------------------------------------------
+
+  * :class:`DD.DDM`
+  
+Properties
+-----------------------------------------------
+
+  * :data:`bufferTimer`
+  
+Events
+-----------------------------------------------
+
+  * :func:`dragstart`
+  * :func:`drag`
+  * :func:`dragend`
+  * :func:`dragenter`
+  * :func:`dragover`
+  * :func:`dragexit`
+  * :func:`dragdrophit`
+  * :func:`dragdropmiss`
+  * :func:`dropenter`
+  * :func:`dropover`
+  * :func:`dropexit`
+  * :func:`drophit`
+
+
+Class Detail
+-----------------------------------------------
+
+.. class:: DD.DDM
     
-    .. code-block:: javascript
-    
-        KISSY.use("dd",function(S,DD){
-            var DDM = DD.DDM;
-        });
-
-.. seealso::
-
-    KISSY 1.2 :mod:`Loader` 新增功能
+    | **DD.DDM** ()
     
 
-简介
-=========================================
-
-.. data:: DDM
-
-    为拖放的中央控制对象，所有的拖放实例的事件都会向其冒泡。
-    因此可以对整个拖放模块进行一些配置，以及对 DDM 进行全局事件监听和处理。
-
-.. note::
-
-    DDM 上的事件监听处理会影响到所有的拖放实例。
-
-
-属性
-===========================================
-
-.. attribute:: DDM.bufferTimer
-
-    类型 number，默认 200，表示鼠标按下多长时间后触发 :data:`~Draggable.dragstart` 事件。
-    可通过 ``DDM.set("bufferTimer",xx)`` 设置。
+Properties Detail
+-----------------------------------------------
     
-    
-事件
-================================================
+.. attribute:: bufferTimer
 
-.. data:: DDM.dragstart
+    {Number} - 默认 200，表示鼠标按下多长时间后触发 dragstart 事件。 可通过 DDM.set("bufferTimer",xx) 设置。
 
-    同 :data:`Draggable.dragstart` ，只不过在 DDM 上触发。
-    
-.. data:: DDM.drag
 
-    同 :data:`Draggable.drag` ，只不过在 DDM 上触发。
-    
-.. data:: DDM.dragend
+Events Detail
+-----------------------------------------------
 
-    同 :data:`Draggable.dragend` ，只不过在 DDM 上触发。
+.. function:: dragstart
     
-.. data:: DDM.dragenter
+    | **dragstart** (ev)
+    | 同 Draggable.dragstart ，只不过在 DDM 上触发。
 
-    同 :data:`Draggable.dragenter` ，只不过在 DDM 上触发。
-    
-.. data:: DDM.dragover
+.. function:: drag
 
-    同 :data:`Draggable.dragover` ，只不过在 DDM 上触发。
-    
-.. data:: DDM.dragexit
+    | **drag** (ev)
+    | 同 Draggable.drag ，只不过在 DDM 上触发。
 
-    同 :data:`Draggable.dragexit` ，只不过在 DDM 上触发。
-    
-.. data:: DDM.dragdrophit
+.. function:: dragend
 
-    同 :data:`Draggable.dragdrophit` ，只不过在 DDM 上触发。
-    
-.. data:: DDM.dragdropmiss
+    | **dragend** (ev)
+    | 同 Draggable.dragend ，只不过在 DDM 上触发。
 
-    同 :data:`Draggable.dragdropmiss` ，只不过在 DDM 上触发。
-    
-.. data:: DDM.dropenter
+.. function:: dragenter
 
-    同 :data:`Droppable.dropenter` ，只不过在 DDM 上触发。    
-    
-.. data:: DDM.dropover
+    | **dragenter** (ev)
+    | 同 Draggable.dragenter ，只不过在 DDM 上触发。
 
-    同 :data:`Droppable.dropover` ，只不过在 DDM 上触发。
-    
-.. data:: DDM.dropexit
+.. function:: dragover
 
-    同 :data:`Droppable.dropexit` ，只不过在 DDM 上触发。
-    
-.. data:: DDM.drophit
+    | **dragover** (ev)
+    | 同 Draggable.dragover ，只不过在 DDM 上触发。
 
-    同 :data:`Droppable.drophit` ，只不过在 DDM 上触发。
-    
-   
+.. function:: dragexit
+
+    | **dragexit** (ev)
+    | 同 Draggable.dragexit ，只不过在 DDM 上触发。
+
+.. function:: dragdrophit
+
+    | **dragdrophit** (ev)
+    | 同 Draggable.dragdrophit ，只不过在 DDM 上触发。
+
+.. function:: dragdropmiss
+
+    | **dragdropmiss** (ev)
+    | 同 Draggable.dragdropmiss ，只不过在 DDM 上触发。
+
+.. function:: dropenter
+
+    | **dropenter** (ev)
+    | 同 Droppable.dropenter ，只不过在 DDM 上触发。
+
+.. function:: dropover
+
+    | **dropover** (ev)
+    | 同 Droppable.dropover ，只不过在 DDM 上触发。
+
+.. function:: dropexit
+
+    | **dropexit** (ev)
+    | 同 Droppable.dropexit ，只不过在 DDM 上触发。
+
+.. function:: drophit
+
+    | **drophit** (ev)
+    | 同 Droppable.drophit ，只不过在 DDM 上触发。
+

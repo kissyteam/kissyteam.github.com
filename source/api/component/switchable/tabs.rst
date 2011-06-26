@@ -1,8 +1,12 @@
-﻿.. py:currentmodule:: Switchable
+﻿.. module:: Tabs
 
-子类 Tabs
+Tabs
 ===================================================================
 
+|  卡盘
+|  作者: `玉伯 <lifesinger@gmail.com>`_
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/switchable>`_ | `Demo <http://docs.kissyui.com/kissy/src/switchable/demo.html>`_
 
-S.Tabs 接口及配置项, 与 :attr:`~Switchable.Switchable` 完全相同!
+
+Tabs 接口及配置项, 与 :mod:`Switchable` 完全相同.
 
