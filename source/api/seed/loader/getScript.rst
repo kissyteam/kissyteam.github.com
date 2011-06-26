@@ -1,14 +1,22 @@
 .. currentmodule:: Loader
 
-KISSY.getScript
+getScript
 ===================================
+
+Module
+-----------------------------------------------
+
+  :mod:`Seed`
+
+Methods
+-----------------------------------------------
 
 .. function:: KISSY.getScript(url , config)
 
     动态加载目标地址的资源文件
     
     :param string url: js/css 的资源地址
-    :param object config: 动态加载配置对象，包括
+    :param object config: 动态加载配置对象, 包括
     
         .. attribute:: config.charset
         

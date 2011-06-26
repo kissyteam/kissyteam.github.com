@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>子类 Popup &mdash; KISSY Docs valpha documentation</title>
+<title>Popup &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -42,6 +42,10 @@
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -57,7 +61,7 @@
       <a href="../switchable/index.html" title="Switchable"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="dialog.html" title="子类 Dialog"
+      <a href="dialog.html" title="Dialog"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -65,121 +69,111 @@
       <li><a href="index.html" accesskey="U">Overlay</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
-  <div class="section" id="popup">
-<h1>子类 Popup<a class="headerlink" href="#popup" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id1">
-<h2>获取对话框构造器<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>页面引入 kissy.js :</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
+  <span class="target" id="module-Popup"></span><div class="section" id="popup">
+<h1>Popup<a class="headerlink" href="#popup" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">弹出层</div>
+<div class="line">作者: <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></div>
+<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/overlay">源码</a></div>
 </div>
-<p>Popup 属于 overlay 模块, 通过 use 加载 overlay 模块：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="kd">var</span> <span class="nx">Popup</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Popup</span><span class="p">;</span>
-    <span class="c1">// 使用 Popup 构造器</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>KISSY 1.2 可直接通过依赖注入, 从函数参数中取得<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
-    <span class="c1">//使用 Popup 构造器</span>
-    <span class="kd">var</span> <span class="nx">Popup</span> <span class="o">=</span> <span class="nx">Overlay</span><span class="p">.</span><span class="nx">Popup</span><span class="p">;</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-</p>
-</div>
-<div class="section" id="id2">
-<h2>构造器接口<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="Overlay.Popup">
-<em class="property">class </em><tt class="descclassname">Overlay.</tt><tt class="descname">Popup</tt><big>(</big><em>container</em>, <em>config</em><big>)</big><a class="headerlink" href="#Overlay.Popup" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>container</strong> (<em>object</em>) &#8211; <p>容器对象, 可取:</p>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li>选择器字符串, 此时会取第一个节点作为弹出层的根节点;</li>
-<li>HTMLElement 或直接传入 KISSY Node 对象;</li>
-<li>也可不设置, 此时, 表示新建 HTMLElement;</li>
+<li><a class="reference internal" href="#module-Popup" title="Popup"><tt class="xref py py-class docutils literal"><span class="pre">Popup</span></tt></a></li>
 </ul>
 </div></blockquote>
+</div>
+<div class="section" id="config-attributes">
+<h2>Config Attributes<a class="headerlink" href="#config-attributes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>与 <a class="reference internal" href="overlay.html#module-Overlay" title="Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> 的配置项完全相同，其他新增配置项如下：</p>
+<ul class="simple">
+<li><a class="reference internal" href="#Popup.trigger" title="Popup.trigger"><tt class="xref py py-data docutils literal"><span class="pre">trigger</span></tt></a></li>
+<li><a class="reference internal" href="#Popup.triggerType" title="Popup.triggerType"><tt class="xref py py-data docutils literal"><span class="pre">triggerType</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>同 <a class="reference internal" href="overlay.html#module-Overlay" title="Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> 。</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>同 <a class="reference internal" href="overlay.html#module-Overlay" title="Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> 。</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>同 <a class="reference internal" href="overlay.html#module-Overlay" title="Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> ，包括 <tt class="xref py py-func docutils literal"><span class="pre">show()</span></tt> , <tt class="xref py py-func docutils literal"><span class="pre">hide()</span></tt> , <tt class="xref py py-func docutils literal"><span class="pre">beforeVisibleChange()</span></tt> .</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Popup.Popup">
+<em class="property">class </em><tt class="descclassname">Popup.</tt><tt class="descname">Popup</tt><a class="headerlink" href="#Popup.Popup" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>Popup</strong> ([container,] config)</div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">param object config:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body">类型对象, 实例对象所需的配置</td>
-</tr>
-</tbody>
-</table>
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>container</strong> (<em>String|HTMLElement|KISSY.Node</em>) &#8211; 可为&#8217;#id&#8217;、&#8217;.class&#8217;、DOM对象、KISSY.Node对象，为空时表示新建</li>
+<li><strong>config</strong> (<em>Object</em>) &#8211; 配置项, 详细见下方 <strong>Config Attributes Detail</strong> .</li>
+</ul>
 </td>
 </tr>
 </tbody>
 </table>
-<p>例如一个简单的配置项：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nx">width</span><span class="o">:</span><span class="s2">&quot;200px&quot;</span><span class="p">,</span>
-    <span class="nx">render</span><span class="o">:</span><span class="s2">&quot;#container&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<div class="section" id="config">
-<h3>config 配置项详解<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h3>
-<p>与 <a class="reference internal" href="overlay.html#Overlay.Overlay" title="Overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> 的配置项完全相同, 除此之外, 还有：</p>
-<dl class="attribute">
-<dt id="Overlay.trigger">
-<tt class="descclassname">Overlay.</tt><tt class="descname">trigger</tt><a class="headerlink" href="#Overlay.trigger" title="Permalink to this definition">¶</a></dt>
-<dd><p>指定触发器, 类型为 选择器字符串 或 <tt class="docutils literal"><span class="pre">HTMLElement</span></tt> 或 <tt class="docutils literal"><span class="pre">KISSY</span> <span class="pre">Node</span></tt> 对象</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd,overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
-    <span class="k">new</span> <span class="nx">Overlay</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
-        <span class="nx">draggable</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nx">contrain</span><span class="o">:</span><span class="kc">true</span> <span class="c1">// 限制拖动区域为当前视窗范围</span>
-    <span class="p">});</span>
-<span class="p">});</span>
-
-<span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd,overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
-    <span class="k">new</span> <span class="nx">Overlay</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
-        <span class="nx">draggable</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nx">contrain</span><span class="o">:</span><span class="s2">&quot;#container&quot;</span> <span class="c1">// 限制拖动区域为 container 节点所占据区域</span>
-    <span class="p">});</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="Overlay.triggerType">
-<tt class="descclassname">Overlay.</tt><tt class="descname">triggerType</tt><a class="headerlink" href="#Overlay.triggerType" title="Permalink to this definition">¶</a></dt>
-<dd><p>触发类型, 可取 &#8216;click&#8217;, &#8216;mouse&#8217;, 默认为 &#8216;click&#8217;.</p>
-<ul class="simple">
-<li>取 &#8216;click&#8217; 时, 表示当点击触发器元素时, 显示弹出层;</li>
-<li>取 &#8216;mouse&#8217; 时, 表示当鼠标移入触发器元素时, 显示弹出层, 当鼠标离开触发器元素时, 隐藏弹出层;</li>
-</ul>
 </dd></dl>
 
 </div>
+<div class="section" id="config-attributes-detail">
+<h2>Config Attributes Detail<a class="headerlink" href="#config-attributes-detail" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>与 <a class="reference internal" href="overlay.html#module-Overlay" title="Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> 的配置项完全相同，其他新增配置项如下：</div></blockquote>
+<dl class="data">
+<dt id="Popup.trigger">
+<tt class="descclassname">Popup.</tt><tt class="descname">trigger</tt><a class="headerlink" href="#Popup.trigger" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String | HTMLElement | KISSY.Node} - 触点</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="Popup.triggerType">
+<tt class="descclassname">Popup.</tt><tt class="descname">triggerType</tt><a class="headerlink" href="#Popup.triggerType" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 可选，默认为&#8217;click&#8217;，触发类型，可选&#8217;click&#8217;、&#8217;mouse&#8217;.</p>
+</dd></dl>
+
 </div>
-<div class="section" id="id3">
-<h2>实例方法<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>同 <a class="reference internal" href="overlay.html#Overlay.Overlay" title="Overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a>.</p>
+<div class="section" id="properties-detail">
+<h2>Properties Detail<a class="headerlink" href="#properties-detail" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>同 <a class="reference internal" href="overlay.html#module-Overlay" title="Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> 。</div></blockquote>
 </div>
-<div class="section" id="id4">
-<h2>实例属性<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>同 <a class="reference internal" href="overlay.html#Overlay.Overlay" title="Overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a>.</p>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>同 <a class="reference internal" href="overlay.html#module-Overlay" title="Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> 。</div></blockquote>
 </div>
-<div class="section" id="id5">
-<h2>触发事件<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<p>同 <a class="reference internal" href="overlay.html#Overlay.Overlay" title="Overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a>, 包括 <a class="reference internal" href="overlay.html#Overlay.show" title="Overlay.show"><tt class="xref py py-attr docutils literal"><span class="pre">show</span></tt></a> , <a class="reference internal" href="overlay.html#Overlay.hide" title="Overlay.hide"><tt class="xref py py-attr docutils literal"><span class="pre">hide</span></tt></a> , <a class="reference internal" href="overlay.html#Overlay.beforeVisibleChange" title="Overlay.beforeVisibleChange"><tt class="xref py py-attr docutils literal"><span class="pre">beforeVisibleChange</span></tt></a> .</p>
+<div class="section" id="events-detail">
+<h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>同 <a class="reference internal" href="overlay.html#module-Overlay" title="Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> ，包括 <tt class="xref py py-attr docutils literal"><span class="pre">show</span></tt> , <tt class="xref py py-attr docutils literal"><span class="pre">hide</span></tt> , <tt class="xref py py-attr docutils literal"><span class="pre">beforeVisibleChange</span></tt> .</div></blockquote>
 </div>
 </div>
 

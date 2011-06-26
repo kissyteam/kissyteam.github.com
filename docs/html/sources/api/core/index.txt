@@ -8,15 +8,15 @@ Core
 |  源码: `查看 <../../../../../../kissy/src/seed/kissy.js>`_
 
 
-Methods
------------------------------------------------
-
 .. toctree::
    :titlesonly:
 
    dom/index
-   node/index
-   anim/index
    event/index
+   node/index
+   ajax/index
+   anim/index
+   
+   
 
 
