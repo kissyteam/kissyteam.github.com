@@ -20,7 +20,7 @@ Methods
     :param function fn: 回调函数，在 id 元素可用时立刻执行。
     
 
-.. note::
+    .. note::
 
-    当需要比 :func:`KISSY.ready` 反应更快的探测到某个元素可用时使用。
+        当需要比 :func:`KISSY.ready` 反应更快的探测到某个元素可用时使用。
     

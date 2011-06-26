@@ -25,26 +25,26 @@ Methods
     :returns: r
     :rtype: function
     
-例如：
+    例如：
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    var S = KISSY;
+        var S = KISSY;
 
-    function Bird(name) { this.name = name; }
-    Bird.prototype.fly = function() { alert(this.name + ' is flying now!'); };
-    
-    function Chicken(name) {
-        Chicken.superclass.constructor.call(this, name);
-    }
-    S.extend(Chicken, Bird,{
-        fly:function(){
-            Chicken.superclass.fly();
-            alert("it's my turn");
+        function Bird(name) { this.name = name; }
+        Bird.prototype.fly = function() { alert(this.name + ' is flying now!'); };
+
+        function Chicken(name) {
+            Chicken.superclass.constructor.call(this, name);
         }
-    });
-    
-    new Chicken('Frank').fly();
+        S.extend(Chicken, Bird,{
+            fly:function(){
+                Chicken.superclass.fly();
+                alert("it's my turn");
+            }
+        });
+
+        new Chicken('Frank').fly();
     
 extend 方法是 KISSY 里类继承的实现方式。书写 JavaScript 代码时，请忘记传统 OO 里的继承体系。
 还 JavaScript 本色，给代码一身轻松。

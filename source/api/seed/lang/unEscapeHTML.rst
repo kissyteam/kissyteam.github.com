@@ -22,9 +22,9 @@ Methods
     :param string str: 包含 html 实体字符的字符串
     :returns: 替换实体字符后的字符串
     :rtype: string
-    
-例如
 
-.. code-block:: javascript
+    例如
 
-    KISSY.unEscapeHTML("&lt;a&gt;x&lt;/a&gt;"); // =>  "<a>x</a>"
+    .. code-block:: javascript
+
+        KISSY.unEscapeHTML("&lt;a&gt;x&lt;/a&gt;"); // =>  "<a>x</a>"

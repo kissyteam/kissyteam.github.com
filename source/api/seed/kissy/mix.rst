@@ -24,22 +24,22 @@ Methods
     :returns: receiver 属性接受者对象。
     :rtype: object
     
-例如：
+    例如：
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    var S = KISSY,
-    r = { a: 'a', b: 'b' };
+        var S = KISSY,
+        r = { a: 'a', b: 'b' };
 
-    S.mix(r, { c: 'c' });
-    S.log(r.c); // => 'c'
-    
-    S.mix(r, { a: 'a2' }, false);
-    S.log(r.a); // => 'a'
-    
-    S.mix(r, { e: 'e', f: 'f' }, true, ['f']);
-    S.log(r.e); // => undefined
-    S.log(r.f); // => 'f'   
-    
+        S.mix(r, { c: 'c' });
+        S.log(r.c); // => 'c'
+
+        S.mix(r, { a: 'a2' }, false);
+        S.log(r.a); // => 'a'
+
+        S.mix(r, { e: 'e', f: 'f' }, true, ['f']);
+        S.log(r.e); // => undefined
+        S.log(r.f); // => 'f'
+
 该方法在 KISSY 里具有非常重要的地位。
 JavaScript 是一门动态语言，利用 mixin 特性，可以很方便的实现特性的静态复制和动态修改。     

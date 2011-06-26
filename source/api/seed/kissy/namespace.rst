@@ -22,14 +22,14 @@ Methods
     :returns: 最后创建的命名空间对象
     :rtype: object
     
-例如：
+    例如：
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    var S = KISSY;
+        var S = KISSY;
 
-    S.namespace('app', 'test'); // 创建 KISSY.app 和 KISSY.test 对象
-    S.namespace('app.Shop'); // 创建 KISSY.app.Shop 对象
-    S.namespace("TC.mods",true); //创建 window.TC.mods 对象
-    
+        S.namespace('app', 'test'); // 创建 KISSY.app 和 KISSY.test 对象
+        S.namespace('app.Shop'); // 创建 KISSY.app.Shop 对象
+        S.namespace("TC.mods",true); //创建 window.TC.mods 对象
+
 namespace 方法提供了最基本的命名空间管理。但对于模块的命名空间推荐采用 :mod:`kissy 1.2 loader <Loader>` 机制.

@@ -26,18 +26,18 @@ Methods
 
 
     
-例如
+    例如
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    var S = KISSY;
+        var S = KISSY;
 
-    S.param({ foo: 1, bar: 2 }); // => foo=1&bar=2
-    S.param({ foo: 1, bar: [2, 3] }); // => foo=1&bar%5B%5D=2&bar%5B%5D=3
-    S.param({ foo: 1, bar: [2, 3] },'&','=',false); // => foo=1&bar=2&bar=3
-    S.param({ foo: '', bar: 2 }); // => foo=&bar=2
-    S.param({ foo: undefined, bar: 2 }); // => foo=undefined&bar=2 
-    
+        S.param({ foo: 1, bar: 2 }); // => foo=1&bar=2
+        S.param({ foo: 1, bar: [2, 3] }); // => foo=1&bar%5B%5D=2&bar%5B%5D=3
+        S.param({ foo: 1, bar: [2, 3] },'&','=',false); // => foo=1&bar=2&bar=3
+        S.param({ foo: '', bar: 2 }); // => foo=&bar=2
+        S.param({ foo: undefined, bar: 2 }); // => foo=undefined&bar=2
+
 .. seealso::
 
     `Jquery.param <http://api.jquery.com/jQuery.param>`_

@@ -32,13 +32,13 @@ Methods
                     取消定时器
                               
     :rtype: object
-    
-例如
 
-.. code-block:: javascript
+    例如
 
-    var S = KISSY;
+    .. code-block:: javascript
 
-    S.later(function(data) {
-        S.log(data);
-    }, 0, false, null, 'I am later data.');
+        var S = KISSY;
+
+        S.later(function(data) {
+            S.log(data);
+        }, 0, false, null, 'I am later data.');

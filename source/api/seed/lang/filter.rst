@@ -23,14 +23,14 @@ Methods
     :returns: 返回符合过滤函数的新数组
     :rtype: Array
     
-例如
+    例如
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    var S = KISSY,
-    arr = [1, 2, 3, 4, 5];
+        var S = KISSY,
+        arr = [1, 2, 3, 4, 5];
 
-    var ret = S.filter(arr, function(item) {
-        return item % 2 === 0;
-    });
-    S.log(ret); // => [2, 4]        
+        var ret = S.filter(arr, function(item) {
+            return item % 2 === 0;
+        });
+        S.log(ret); // => [2, 4]

@@ -23,8 +23,8 @@ Methods
     :returns: 经过 html 转义后的字符串
     :rtype: string
     
-例如
+    例如
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    KISSY.escapeHTML("<a>x</a>"); // =>  "&lt;a&gt;x&lt;/a&gt;"   
+        KISSY.escapeHTML("<a>x</a>"); // =>  "&lt;a&gt;x&lt;/a&gt;"

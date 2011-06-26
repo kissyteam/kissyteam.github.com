@@ -31,13 +31,13 @@ Methods
     参数值如果是 gbk 编码的，则不会解码出对应的真实值。（用的原生 decodeURIComponent，请修改参数值为 utf-8 编码）。
 
     
-例如
+    例如
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    var S = KISSY;
+        var S = KISSY;
 
-    S.unparam('foo=1&bar=2'); // => { foo: 1, bar: 2 }
-    S.unparam('foo=%81%47'); // gbk 编码 => { foo: "%81%47" } 而不是 {foo: "丢"}
-    S.unparam('foo=1&bar=2&bar=3'); // => { foo: 1, bar: [2, 3] }  
-    S.unparam('foo=1&bar%5B%5D=2&bar%5B%5D=3'); // => { foo: 1, bar: [2, 3] }  
+        S.unparam('foo=1&bar=2'); // => { foo: 1, bar: 2 }
+        S.unparam('foo=%81%47'); // gbk 编码 => { foo: "%81%47" } 而不是 {foo: "丢"}
+        S.unparam('foo=1&bar=2&bar=3'); // => { foo: 1, bar: [2, 3] }
+        S.unparam('foo=1&bar%5B%5D=2&bar%5B%5D=3'); // => { foo: 1, bar: [2, 3] }

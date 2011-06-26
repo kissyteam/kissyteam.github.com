@@ -18,12 +18,12 @@ Methods
     
     :param o: 判断参数
     
-例如
+    例如
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    var S = KISSY;
+        var S = KISSY;
 
-    S.isEmptyObject({}); // => true
-    S.isEmptyObject([]); // => true
-    S.isEmptyObject({ a: 'a' }); // => false   
+        S.isEmptyObject({}); // => true
+        S.isEmptyObject([]); // => true
+        S.isEmptyObject({ a: 'a' }); // => false

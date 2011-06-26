@@ -23,8 +23,8 @@ Methods
     :returns: unicode 转义后的字符串
     :rtype: string
     
-例如
+    例如
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    KISSY.fromUnicode("\\u627F\\u7389") // => "承玉"    
+        KISSY.fromUnicode("\\u627F\\u7389") // => "承玉"

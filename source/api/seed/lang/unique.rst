@@ -22,10 +22,10 @@ Methods
     :returns: 包含 arr 去重后的数组
     :rtype: Array
     
-例如
+    例如
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    KISSY.unique([a, b, a],true) => [b, a]
-        
-    KISSY.unique([a, b, a]) => [a, b]    
+        KISSY.unique([a, b, a],true) => [b, a]
+
+        KISSY.unique([a, b, a]) => [a, b]
