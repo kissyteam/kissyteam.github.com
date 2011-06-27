@@ -1,7 +1,5 @@
 ﻿.. module:: Event
 
-.. _event:
-
 Event
 ====================================
 
@@ -12,7 +10,8 @@ Event
 Module
 -----------------------------------------------
 
-.. data:: KISSY.Event
+  :mod:`Event`
+
 
 Methods
 -----------------------------------------------
@@ -28,20 +27,8 @@ Methods
    fire.rst
    event-target.rst
    event-object.rst
-   currentTarget.rst
-   pageX.rst
-   relatedTarget.rst
-   target.rst
-   type.rst
-   which.rst
-   preventDefault.rst
-   stopImmediatePropagation.rst
-   stopPropagation.rst
-   isDefaultPrevented.rst
-   isImmediatePropagationStopped.rst
-   isPropagationStopped.rst
-   
 
-.. hint::
+
+.. note::
 
     部分文档与例子来自 `jquery <http://api.jquery.com>`_   
