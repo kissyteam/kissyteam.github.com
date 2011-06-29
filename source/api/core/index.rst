@@ -18,5 +18,6 @@ Methods
    node/index
    anim/index
    event/index
+   ajax/index
 
 
