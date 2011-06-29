@@ -54,7 +54,7 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="io.html" title="io"
+      <a href="io.html" title="io()"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="../event/isPropagationStopped.html" title="event.isPropagationStopped"
@@ -84,15 +84,78 @@
 <blockquote>
 <div><div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="io.html">io</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="io.html">io()</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="setupConfig.html">io.setupConfig</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="setupConfig.html">io.setupConfig()</a><ul class="simple">
 </ul>
 </li>
 </ul>
 </div>
 </div></blockquote>
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<p>所有 io 请求都会在 io 模块上触发事件，可通过 <tt class="docutils literal"><span class="pre">io.on</span></tt> 来捕获所有的 io 请求，例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">indicator</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#indicator&quot;</span><span class="p">),</span><span class="nx">num</span><span class="p">;</span>
+
+<span class="c1">//发送前显示 loading 状态</span>
+<span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;send&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">num</span><span class="o">++</span><span class="p">;</span>
+    <span class="nx">indicator</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="c1">//发送后隐藏 loading 状态</span>
+<span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;complete&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">num</span><span class="o">--</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">num</span><span class="p">)</span>
+        <span class="nx">indicator</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<dl class="data">
+<dt id="io.start">
+<tt class="descclassname">io.</tt><tt class="descname">start</tt><a class="headerlink" href="#io.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>当配置初始化后，获取传输对象前触发。事件对象包括一下属性</p>
+<dl class="attribute">
+<dt id="io.start.event.ajaxConfig">
+<tt class="descclassname">start.event.</tt><tt class="descname">ajaxConfig</tt><a class="headerlink" href="#io.start.event.ajaxConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>当前的配置项</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="io.start.event.xhr">
+<tt class="descclassname">start.event.</tt><tt class="descname">xhr</tt><a class="headerlink" href="#io.start.event.xhr" title="Permalink to this definition">¶</a></dt>
+<dd><p class="versionadded">
+<span class="versionmodified">New in version 1.2: </span>当前的请求关联的 <a class="reference internal" href="io.html#io.XhrObj" title="io.XhrObj"><tt class="xref py py-class docutils literal"><span class="pre">XhrObj</span></tt></a> 对象</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="io.send">
+<tt class="descclassname">io.</tt><tt class="descname">send</tt><a class="headerlink" href="#io.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>请求发送前触发。可用于 loading indicator 显示时机。事件对象同 <tt class="docutils literal"><span class="pre">start</span></tt> 事件.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="io.success">
+<tt class="descclassname">io.</tt><tt class="descname">success</tt><a class="headerlink" href="#io.success" title="Permalink to this definition">¶</a></dt>
+<dd><p>服务器返回成功后触发.事件对象同 <tt class="docutils literal"><span class="pre">start</span></tt> 事件.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="io.error">
+<tt class="descclassname">io.</tt><tt class="descname">error</tt><a class="headerlink" href="#io.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>服务器返回失败后触发.事件对象同 <tt class="docutils literal"><span class="pre">start</span></tt> 事件.</p>
+</dd></dl>
+
+<dl class="data">
+<dt>
+<tt class="descclassname">io.</tt><tt class="descname">error</tt></dt>
+<dd><p>服务器返回失败或成功后触发.事件对象同 <tt class="docutils literal"><span class="pre">start</span></tt> 事件.</p>
+</dd></dl>
+
 </div>
 </div>
 

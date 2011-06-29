@@ -494,6 +494,22 @@ div.demo {
     border-bottom: 1px dotted #ccc;
     margin-bottom: 16px;
 }
+tt.descname {
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+tt.descclassname {
+    background-color: transparent;
+    display: none;
+}
+
+tt.xref, a tt {
+    background-color: transparent;
+    font-weight: bold;
+    color:#FF6600;
+}
 
 tt {
     font-family: arial;
@@ -504,6 +520,22 @@ tt.descclassname, tt.descname {
 
 tt.descclassname, tt.descname, tt.xref {
     font-weight: bold;
+}
+
+cite, code, tt {
+    font-family: 'Arial';
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+}
+
+tt {
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 2px 5px;
+}
+
+tt.descname, tt.descclassname, tt.xref {
+    border: 0;
 }
 /*****************************************************************************
  * 布局
@@ -570,7 +602,7 @@ tt.descclassname, tt.descname, tt.xref {
 
 
 /* 隐藏某些元素 */
-.class .property, tt.descclassname {
+tt.descclassname {
     display: none;
 }
 
@@ -641,3 +673,7 @@ div.related ul li a:hover {
 .col-sub li{
     white-space:nowrap;
 }
+
+.section ul ul {margin-left:2em;}
+.section ul li {list-style:inside url(bullet.gif);}
+.section ul li li {list-style:inside url(sub-bullet.gif);}

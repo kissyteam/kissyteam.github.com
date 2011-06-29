@@ -1,6 +1,6 @@
 .. currentmodule:: io
 
-io.setupConfig
+io.setupConfig()
 =================================
 
 .. versionadded:: 1.2
@@ -36,8 +36,7 @@ io.setupConfig
         // url 没设置，就为 ping.php
         data : {name:'dan'}
     });
-    
-    
+        
 例子
 ---------------------------------
 

@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>io &mdash; KISSY Docs valpha documentation</title>
+<title>io() &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -53,16 +53,7 @@
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li class="right" >
-      <a href="setupConfig.html" title="io.setupConfig"
-         accesskey="N">next</a> | </li>
-    <li class="right" >
-      <a href="index.html" title="ajax"
-         accesskey="P">previous</a> | </li>
-    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../../index.html" >API文档</a> &#187; </li>
-      <li><a href="../index.html" >Core</a> &#187; </li>
-      <li><a href="index.html" accesskey="U">ajax</a> &#187; </li> 
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li> 
     </ul>
 </div>
 	<div  class="layout grid-s6m0">
@@ -70,7 +61,7 @@
 				<div class="main-wrap">
 					
   <div class="section" id="io">
-<h1>io<a class="headerlink" href="#io" title="Permalink to this headline">¶</a></h1>
+<h1>io()<a class="headerlink" href="#io" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="io.io">
 <tt class="descclassname">io.</tt><tt class="descname">io</tt><big>(</big><em>cfg</em><big>)</big><a class="headerlink" href="#io.io" title="Permalink to this definition">¶</a></dt>
@@ -81,7 +72,7 @@
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><strong>cfg</strong> (<em>Object</em>) &#8211; <blockquote>
-<div>用来配置请求的键值对对象.所有的配置项多是可选的。可以通过 <a class="reference internal" href="setupConfig.html#io.setupConfig" title="io.setupConfig"><tt class="xref py py-func docutils literal"><span class="pre">io.setupConfig()</span></tt></a> 来设置默认配置. 包含以下配置项<dl class="attribute">
+<div>用来配置请求的键值对对象.所有的配置项都是可选的,可以通过 <a class="reference internal" href="setupConfig.html#io.setupConfig" title="io.setupConfig"><tt class="xref py py-func docutils literal"><span class="pre">io.setupConfig()</span></tt></a> 来设置默认配置. 包含以下配置项<dl class="attribute">
 <dt id="io.cfg.url">
 <tt class="descclassname">cfg.</tt><tt class="descname">url</tt><a class="headerlink" href="#io.cfg.url" title="Permalink to this definition">¶</a></dt>
 <dd><p>类型 String. 本次请求发送的地址.</p>
@@ -107,17 +98,13 @@
 <tt class="descclassname">cfg.</tt><tt class="descname">dataType</tt><a class="headerlink" href="#io.cfg.dataType" title="Permalink to this definition">¶</a></dt>
 <dd><p>类型 String. 期望能够从服务器返回的数据类型.</p>
 <p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>如果没有指定，kissy 将尽量从返回的 mimeType | <tt class="docutils literal"><span class="pre">Content-type</span></tt> 相应头中推导出来 (&#8216;text/xml&#8217; 将推导出 xml , &#8216;text/json&#8217; 将推导出 json).</p>
+<span class="versionmodified">New in version 1.2: </span>如果没有指定，kissy 将尽量从返回的 <tt class="docutils literal"><span class="pre">mimeType</span></tt> | <tt class="docutils literal"><span class="pre">Content-type</span></tt> 相应头中推导出来 (&#8216;text/xml&#8217; 将推导出 xml , &#8216;text/json&#8217; 将推导出 json).</p>
 <p>默认支持的类型（该类型的响应信息会作为第一个参数传到 <tt class="docutils literal"><span class="pre">success</span></tt> <tt class="docutils literal"><span class="pre">complete</span></tt> 回调中）有:</p>
-<ul>
+<ul class="simple">
 <li>&#8220;xml&#8221; : 返回响应信息代表的 xml 文档.</li>
 <li>&#8220;text&#8221; : 返回响应信息串</li>
 <li>&#8220;html&#8221; : 同 &#8220;text&#8221;</li>
-<li><dl class="first docutils">
-<dt>..versionadded:: 1.2</dt>
-<dd>&#8220;script&#8221; : 将响应信息作为脚本执行。</dd>
-</dl>
-</li>
+<li>&#8220;script&#8221; : 将响应信息作为脚本执行。</li>
 <li>&#8220;json&#8221; : 返回响应信息代表的 json 对象.</li>
 <li>&#8220;jsonp&#8221; : 返回 <a class="reference external" href="http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/">jsonp</a> 的响应信息代表的 json 对象.</li>
 </ul>
@@ -127,7 +114,7 @@
 <dt id="io.cfg.processData">
 <tt class="descclassname">cfg.</tt><tt class="descname">processData</tt><a class="headerlink" href="#io.cfg.processData" title="Permalink to this definition">¶</a></dt>
 <dd><p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>类型 boolean. 默认 true . 当 <a class="reference internal" href="#io.cfg.data" title="io.cfg.data"><tt class="xref py py-attr docutils literal"><span class="pre">io.cfg.data</span></tt></a> 为对象时是否用 <a class="reference internal" href="../../seed/lang/param.html#Lang.KISSY.param" title="Lang.KISSY.param"><tt class="xref py py-func docutils literal"><span class="pre">Lang.KISSY.param()</span></tt></a> 系列化.例如当需要传送一个 xml 到服务器时就不需要 param data，并且最好同时设置 contentType 为合适的值.</p>
+<span class="versionmodified">New in version 1.2: </span>类型 boolean. 默认 true . 当 <a class="reference internal" href="#io.cfg.data" title="io.cfg.data"><tt class="xref py py-attr docutils literal"><span class="pre">data</span></tt></a> 为对象时是否用 <a class="reference internal" href="../../seed/lang/param.html#Lang.KISSY.param" title="Lang.KISSY.param"><tt class="xref py py-func docutils literal"><span class="pre">param()</span></tt></a> 序列化.例如当需要传送一个 xml 到服务器时就不需要 param data，并且最好同时设置 contentType 为合适的值.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -171,26 +158,31 @@
 <dl class="attribute">
 <dt id="io.cfg.crossDomain">
 <tt class="descclassname">cfg.</tt><tt class="descname">crossDomain</tt><a class="headerlink" href="#io.cfg.crossDomain" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 boolean.默认同域请求为 true,不同域间为 false.设置该值为 true，则强制 script以及 jsonp 请求通过 script 节点发送，可用于服务器重定向到其他域脚本的场景.</p>
+<dd><p>类型 boolean.默认同域请求为 true,不同域间为 false。设置该值为 true，则强制 script 以及 jsonp 请求通过 <tt class="docutils literal"><span class="pre">script</span></tt> 节点发送，用于服务器重定向到其他域脚本的场景.</p>
 </dd></dl>
 
 </div></blockquote>
 <dl class="attribute">
 <dt id="io.cfg.data">
 <tt class="descclassname">cfg.</tt><tt class="descname">data</tt><a class="headerlink" href="#io.cfg.data" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型object或String.如果为Object类型则会通过 <a class="reference internal" href="../../seed/lang/param.html#Lang.KISSY.param" title="Lang.KISSY.param"><tt class="xref py py-func docutils literal"><span class="pre">Lang.KISSY.param()</span></tt></a> 格式化为字符串.</p>
+<dd><p>类型 object 或 String。如果为 Object 类型则会通过 <a class="reference internal" href="../../seed/lang/param.html#Lang.KISSY.param" title="Lang.KISSY.param"><tt class="xref py py-func docutils literal"><span class="pre">param()</span></tt></a> 格式化为字符串.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="io.cfg.serializeArray">
 <tt class="descclassname">cfg.</tt><tt class="descname">serializeArray</tt><a class="headerlink" href="#io.cfg.serializeArray" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div>类型 boolean.默认 true.序列化 data 时是否给数组值对应的键名加 <tt class="docutils literal"><span class="pre">[]</span></tt> ，例如
-为 true 时  {x:[1,2]} //=&gt; x[]=1&amp;x[]=2
-为 false 时 {x:[1,2]} //=&gt; x=1&amp;x=2</div></blockquote>
-<dl class="attribute">
+<dd><p>类型 boolean。默认 true。表示序列化 <a class="reference internal" href="#io.cfg.data" title="io.cfg.data"><tt class="xref py py-attr docutils literal"><span class="pre">data</span></tt></a> 时是否给数组值对应的键名加 <tt class="docutils literal"><span class="pre">[]</span></tt> ，例如</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">true</span></tt> 时  <tt class="docutils literal"><span class="pre">{x:[1,2]}</span> <span class="pre">//=&gt;</span> <span class="pre">x[]=1&amp;x[]=2</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">false</span></tt> 时 <tt class="docutils literal"><span class="pre">{x:[1,2]}</span> <span class="pre">//=&gt;</span> <span class="pre">x=1&amp;x=2</span></tt></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
 <dt id="io.cfg.error">
-<tt class="descname">error</tt><big>(</big><em>null</em>, <em>textStatus</em>, <em>xhrObj</em><big>)</big><a class="headerlink" href="#io.cfg.error" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">cfg.</tt><tt class="descname">error</tt><big>(</big><em>null</em>, <em>textStatus</em>, <em>xhrObj</em><big>)</big><a class="headerlink" href="#io.cfg.error" title="Permalink to this definition">¶</a></dt>
 <dd><p>请求失败时的回调函数.这个函数接受 2 个参数：</p>
 <blockquote>
 <div><ul class="simple">
@@ -200,9 +192,9 @@
 </div></blockquote>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="io.cfg.success">
-<tt class="descname">success</tt><big>(</big><em>data</em>, <em>textStatus</em>, <em>xhrObj</em><big>)</big><a class="headerlink" href="#io.cfg.success" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">cfg.</tt><tt class="descname">success</tt><big>(</big><em>data</em>, <em>textStatus</em>, <em>xhrObj</em><big>)</big><a class="headerlink" href="#io.cfg.success" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>请求成功时的回调函数.该函数传入三个参数.</dt>
 <dd><ul class="first last simple">
@@ -214,9 +206,9 @@
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="io.cfg.complete">
-<tt class="descname">complete</tt><big>(</big><em>data</em>, <em>textStatus</em>, <em>xhrObj</em><big>)</big><a class="headerlink" href="#io.cfg.complete" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">cfg.</tt><tt class="descname">complete</tt><big>(</big><em>data</em>, <em>textStatus</em>, <em>xhrObj</em><big>)</big><a class="headerlink" href="#io.cfg.complete" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>请求完成时的回调函数.该函数传入三个参数.</dt>
 <dd><ul class="first last simple">
@@ -234,68 +226,68 @@
 
 <dl class="attribute">
 <dt id="io.cfg.headers">
-<tt class="descname">headers</tt><a class="headerlink" href="#io.cfg.headers" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">cfg.</tt><tt class="descname">headers</tt><a class="headerlink" href="#io.cfg.headers" title="Permalink to this definition">¶</a></dt>
 <dd><p>类型 Object.设置这次请求 xhr 的请求头.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="io.cfg.jsonp">
-<tt class="descname">jsonp</tt><a class="headerlink" href="#io.cfg.jsonp" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 String.覆盖这次 jsonp 请求的 callback 函数名. 这个值可以取代请求 url 中 &#8216;callback=?&#8217; 的 callback.例如
+<tt class="descclassname">cfg.</tt><tt class="descname">jsonp</tt><a class="headerlink" href="#io.cfg.jsonp" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型 String.覆盖这次 jsonp 请求的 callback 函数名. 这个值可以取代请求 url 中 <tt class="docutils literal"><span class="pre">callback=?</span></tt> 的 callback.例如
 {jsonp:&#8217;onJsonLoad&#8217;} 会导致 &#8216;onJsonLoad=?&#8217; 发送给服务器端.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="io.cfg.jsonpCallback">
-<tt class="descname">jsonpCallback</tt><a class="headerlink" href="#io.cfg.jsonpCallback" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 String|Function.覆盖这次 jsonp 请求 callback 函数对应的值 (&#8216;callback={jsonpCallback}&#8217;). 这个值将取代 kissy 默认生成的 UUID 值.</p>
+<tt class="descclassname">cfg.</tt><tt class="descname">jsonpCallback</tt><a class="headerlink" href="#io.cfg.jsonpCallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型 String|Function.覆盖这次 jsonp 请求 callback 函数对应的值 (<tt class="docutils literal"><span class="pre">callback={jsonpCallback}</span></tt>). 这个值将取代 kissy 默认生成的 UUID 值.</p>
 <p class="versionadded">
 <span class="versionmodified">New in version 1.2: </span>当传入函数时，该函数需要返回字符串，每次请求都会调用该函数得到用于替换的字符串.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="io.cfg.mimeType">
-<tt class="descname">mimeType</tt><a class="headerlink" href="#io.cfg.mimeType" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">cfg.</tt><tt class="descname">mimeType</tt><a class="headerlink" href="#io.cfg.mimeType" title="Permalink to this definition">¶</a></dt>
 <dd><p class="versionadded">
 <span class="versionmodified">New in version 1.2: </span>类型 String.跨平台设置 xhr 的 <a class="reference external" href="https://developer.mozilla.org/en/XmlHttpRequest#overrideMimeType%28%29">mimeType</a></p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="io.cfg.password">
-<tt class="descname">password</tt><a class="headerlink" href="#io.cfg.password" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">cfg.</tt><tt class="descname">password</tt><a class="headerlink" href="#io.cfg.password" title="Permalink to this definition">¶</a></dt>
 <dd><p class="versionadded">
 <span class="versionmodified">New in version 1.2: </span>对于需要验证的 http 请求设置密码.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="io.cfg.username">
-<tt class="descname">username</tt><a class="headerlink" href="#io.cfg.username" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">cfg.</tt><tt class="descname">username</tt><a class="headerlink" href="#io.cfg.username" title="Permalink to this definition">¶</a></dt>
 <dd><p class="versionadded">
 <span class="versionmodified">New in version 1.2: </span>对于需要验证的 http 请求设置用户名.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="io.cfg.scriptCharset">
-<tt class="descname">scriptCharset</tt><a class="headerlink" href="#io.cfg.scriptCharset" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">cfg.</tt><tt class="descname">scriptCharset</tt><a class="headerlink" href="#io.cfg.scriptCharset" title="Permalink to this definition">¶</a></dt>
 <dd><p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>用于 dataType &#8220;jsonp&#8221; 和 &#8220;script&#8221;，设定传输用的 script 节点的 charset 属性。只有当返回编码和当前页面编码不一致时使用.</p>
+<span class="versionmodified">New in version 1.2: </span>用于 dataType <tt class="docutils literal"><span class="pre">jsonp</span></tt> 和 <tt class="docutils literal"><span class="pre">script</span></tt> ，设定传输用的 script 节点的 <tt class="docutils literal"><span class="pre">charset</span></tt> 属性。只有当返回编码和当前页面编码不一致时使用.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="io.cfg.timeout">
-<tt class="descname">timeout</tt><a class="headerlink" href="#io.cfg.timeout" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 number , 对这次请求设个超时时间，单位毫秒. 当超时后会触发 error 以及 complete 回调 , 状态字符串为 &#8220;timeout&#8221;.</p>
+<tt class="descclassname">cfg.</tt><tt class="descname">timeout</tt><a class="headerlink" href="#io.cfg.timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型 number , 对这次请求设个超时时间，单位毫秒. 当超时后会触发 <tt class="docutils literal"><span class="pre">error</span></tt> 以及 <tt class="docutils literal"><span class="pre">complete</span></tt> 回调 , 状态字符串为 &#8220;timeout&#8221;.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="io.cfg.type">
-<tt class="descname">type</tt><a class="headerlink" href="#io.cfg.type" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">cfg.</tt><tt class="descname">type</tt><a class="headerlink" href="#io.cfg.type" title="Permalink to this definition">¶</a></dt>
 <dd><p>请求类型.可取值 &#8220;get&#8221; 或者 &#8220;post&#8221;.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="io.cfg.xhrFields">
-<tt class="descname">xhrFields</tt><a class="headerlink" href="#io.cfg.xhrFields" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">cfg.</tt><tt class="descname">xhrFields</tt><a class="headerlink" href="#io.cfg.xhrFields" title="Permalink to this definition">¶</a></dt>
 <dd><p>类型 Object , 设置到原生 xhr 对象的键值对.例如为了进行跨域请求你可以设置 <a class="reference external" href="https://developer.mozilla.org/en/http_access_control#Requests_with_credentials">withCredentials</a> 为 true.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">io</span><span class="p">({</span>
     <span class="nx">url</span><span class="o">:</span><span class="s2">&quot;ping.php&quot;</span><span class="p">,</span>
@@ -309,12 +301,15 @@
 
 <dl class="attribute">
 <dt id="io.cfg.form">
-<tt class="descname">form</tt><a class="headerlink" href="#io.cfg.form" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">cfg.</tt><tt class="descname">form</tt><a class="headerlink" href="#io.cfg.form" title="Permalink to this definition">¶</a></dt>
 <dd><p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>类型 <a class="reference internal" href="../dom/selector.html#dom-selector"><em>KISSY selector</em></a> , 如果 form 的 enctype 为 &#8220;multipart/form-data&#8221; 则会采用 <a class="reference external" href="http://www.webtoolkit.info/ajax-file-upload.html">iframe</a> 的方式进行无刷新文件上传，
-否则将 form 内的输入域和值序列化后通过 xhr 发送到服务器.</p>
-</dd></dl>
-
+<span class="versionmodified">New in version 1.2: </span>类型 <a class="reference internal" href="../dom/selector.html#dom-selector"><em>KISSY selector</em></a><blockquote>
+<div><ul class="simple">
+<li>如果 form 的 enctype 为 <cite>&#8220;multipart/form-data`</cite> 则会采用 <a class="reference external" href="http://www.webtoolkit.info/ajax-file-upload.html">iframe</a> 的方式进行无刷新文件上传，</li>
+<li>否则将 form 内的输入域和值序列化后通过 xhr 发送到服务器.</li>
+</ul>
+</div></blockquote>
+</p>
 </dd></dl>
 
 </td>
@@ -323,15 +318,82 @@
 </table>
 </dd></dl>
 
-<p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>返回 xhrObj 对象.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last versionadded">
+<span class="versionmodified">New in version 1.2: </span><tt class="docutils literal"><span class="pre">io()</span></tt> 返回 <tt class="docutils literal"><span class="pre">XhrObj</span></tt> 对象.</p>
+</div>
 <div class="section" id="xhrobj">
-<h2>xhrObj<a class="headerlink" href="#xhrobj" title="Permalink to this headline">¶</a></h2>
+<h2>XhrObj<a class="headerlink" href="#xhrobj" title="Permalink to this headline">¶</a></h2>
 <p class="versionadded">
 <span class="versionmodified">New in version 1.2.</span></p>
+<dl class="class">
+<dt id="io.XhrObj">
+<em class="property">class </em><tt class="descclassname">io.</tt><tt class="descname">XhrObj</tt><a class="headerlink" href="#io.XhrObj" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div>原生 XMLHttpRequest 以及 jsonp 等非 xhr 请求对象的一个封装类.</div></blockquote>
+<dl class="attribute">
+<dt id="io.XhrObj.config">
+<tt class="descname">config</tt><a class="headerlink" href="#io.XhrObj.config" title="Permalink to this definition">¶</a></dt>
+<dd><p>当前请求发送时的配置信息.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="io.XhrObj.readyState">
+<tt class="descname">readyState</tt><a class="headerlink" href="#io.XhrObj.readyState" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型整数. 表示请求完成状态。可用于判断当前请求是否完成. 4 表示完成，否则表示正在进行中.(xhr 会有更多取值，jsonp script 只有 0(初始化) 1(发送中) 4(完成))</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="io.XhrObj.status">
+<tt class="descname">status</tt><a class="headerlink" href="#io.XhrObj.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型整数. 响应状态码. xhr 会有更多取值。``jsonp script`` 只有 200(成功) , 500(出错)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="io.XhrObj.statusText">
+<tt class="descname">statusText</tt><a class="headerlink" href="#io.XhrObj.statusText" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型字符串. 响应状态字符串. 最终同回调 <a class="reference internal" href="#io.cfg.complete" title="io.cfg.complete"><tt class="xref py py-attr docutils literal"><span class="pre">complete</span></tt></a> 中的 <tt class="docutils literal"><span class="pre">textStatus</span></tt> 一致.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="io.XhrObj.responseText">
+<tt class="descname">responseText</tt><big>(</big><em>responseXML</em><big>)</big><a class="headerlink" href="#io.XhrObj.responseText" title="Permalink to this definition">¶</a></dt>
+<dd><p>返回响应对应的 text 和 xml（如果需要）.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="io.XhrObj.getResponseHeader">
+<tt class="descname">getResponseHeader</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#io.XhrObj.getResponseHeader" title="Permalink to this definition">¶</a></dt>
+<dd><p>获得对应的响应头值.仅对于 xhr 请求有效.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>key</strong> (<em>String</em>) &#8211; 响应头名</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="io.XhrObj.abort">
+<tt class="descname">abort</tt><big>(</big><big>)</big><a class="headerlink" href="#io.XhrObj.abort" title="Permalink to this definition">¶</a></dt>
+<dd><p>如果当前请求还没完成则中断当前的请求.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">不仅可以中断 xhr 请求，还可以中断 jsonp 以及 script 请求，中断后会触发 <a class="reference internal" href="#io.cfg.error" title="io.cfg.error"><tt class="xref py py-attr docutils literal"><span class="pre">error</span></tt></a> ( textStatus == &#8220;abort&#8221; ) 以及 <a class="reference internal" href="#io.cfg.complete" title="io.cfg.complete"><tt class="xref py py-attr docutils literal"><span class="pre">complete</span></tt></a> 回调.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="id1">
 <h2>例子<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2: </span>载入并执行一段脚本</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">io</span><span class="p">({</span>
    <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
    <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;test.js&quot;</span><span class="p">,</span>
@@ -363,8 +425,9 @@
 </pre></div>
 </div>
 <p>发送 xml 文档给服务器</p>
-<p>var xmlDocument=S.parseXML(&#8220;&lt;a&gt;h&lt;/a&gt;&#8221;);</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">io</span><span class="p">({</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">xmlDocument</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">parseXML</span><span class="p">(</span><span class="s2">&quot;&lt;a&gt;h&lt;/a&gt;&quot;</span><span class="p">);</span>
+
+<span class="nx">io</span><span class="p">({</span>
    <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;page.php&quot;</span><span class="p">,</span>
    <span class="nx">processData</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
    <span class="nx">contentType</span><span class="o">:</span><span class="s1">&#39;text/xml&#39;</span><span class="p">,</span>
