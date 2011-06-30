@@ -10,21 +10,17 @@ Node
     Node 包括 :mod:`DOM` , :mod:`Event` , :mod:`Anim` 模块的所有功能，推荐采用 ``Node`` 模块，
     你只需要把 ``KISSY.all`` 看做 ``jquery`` 中的 ``$`` 就可以了，
     链式操作你会喜欢的！
-    
-获取模块
 
-.. code-block:: javascript
-    
-    // 也可载入 kissy.js 后直接 KISSY.Node/KISSY.NodeList，实际上 KISSY.Node=KISSY.NodeList
-    KISSY.use("node",function(S,Node){
-        var NodeList=Node;        
-    });
-    
-    
-特色方法：  
-    
+Module
+-----------------------------------------------
+
+  :mod:`Node`
+
+Methods
+-----------------------------------------------
+
 .. toctree::
-   :maxdepth: 1
+   :titlesonly:
 
    nodelist.rst
    equals.rst
@@ -46,8 +42,7 @@ Node
    before.rst
    after.rst
    insertAfter.rst
-   
-   
+
    animate.rst
    stop.rst
    show.rst
@@ -58,7 +53,15 @@ Node
    slideDown.rst
    slideUp.rst
    
-   
+
+
+.. code-block:: javascript
+
+    // 也可载入 kissy.js 后直接 KISSY.Node/KISSY.NodeList，实际上 KISSY.Node=KISSY.NodeList
+    KISSY.use("node",function(S,Node){
+        var NodeList=Node;
+    });
+
 转发方法:
 
 该类方法调用会被转发给 :mod:`DOM` , :mod:`Event` ，原 ``DOM`` , ``Event`` 对应方法的第一个参数传入一个原生 DOM 节点数组，而这个原生 DOM 节点数组则是由当前的 ``KISSY NodeList`` 对象得到的。 

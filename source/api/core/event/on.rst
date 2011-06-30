@@ -23,7 +23,7 @@ Methods
 
 .. function:: add
 
-    | Boolean **add** ( selector , eventType , fn , scope )
+    | void **add** ( selector , eventType , fn , scope )
     | 为 :func:`~Event.on` 的别名
     
     .. note::
