@@ -131,6 +131,19 @@
 <p>其中 <a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/tip.js">tip 代码</a> 自行下载，随意修改。</p>
 </div></blockquote>
 </div>
+<div class="section" id="paste">
+<h2>截获 paste 事件<a class="headerlink" href="#paste" title="Permalink to this headline">¶</a></h2>
+<p>可以通过监听编辑器实例对象的 &#8220;paste&#8221; 事件来截获用户粘贴的内容</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">editor</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Editor</span><span class="p">(..);</span>
+<span class="nx">editor</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;paste&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">html</span><span class="o">=</span><span class="nx">ev</span><span class="p">.</span><span class="nx">html</span><span class="p">;</span><span class="c1">// 用户的原始粘贴内容</span>
+    <span class="c1">// do sth to html</span>
+    <span class="nx">html</span><span class="o">=</span><span class="s2">&quot;changed&quot;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">html</span><span class="p">;</span>  <span class="c1">// 返回修改后的粘贴内容</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
