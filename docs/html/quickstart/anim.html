@@ -110,7 +110,7 @@
              margin: 8px;
          }
          .loading {
-             background: transparent url(../_static/loading.gif) no-repeat;
+             background: transparent url(../static/loading.gif) no-repeat;
              width: 100px;
              height: 100px !important;
              margin: 20px;
@@ -121,6 +121,7 @@
 
      <script>
          KISSY.ready(function(S){
+             var $=S.all;
              var API = 'http://api.flickr.com/services/rest/?'
                  params = {
                      'method': 'flickr.favorites.getPublicList',
@@ -130,10 +131,10 @@
                      'format': 'json',
                      'jsoncallback': 'getFavorites'
                  },
-                 photoList = S.one('#photo-list');
+                 photoList = $('#photo-list');
 
-             S.one('#fetch-btn-anim').on('click', function() {
-                 this.attr('disabled', true);
+             $('#fetch-btn-anim').on('click', function() {
+                 $(this).attr('disabled', true);
                  photoList.addClass('loading');
                  S.getScript(API + S.param(params));
              });

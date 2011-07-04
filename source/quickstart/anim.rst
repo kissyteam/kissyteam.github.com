@@ -65,6 +65,7 @@ KISSY 提供的动画特效支持主要由三个子模块组成 [1]_ :
 
         <script>
             KISSY.ready(function(S){
+                var $=S.all;
                 var API = 'http://api.flickr.com/services/rest/?'
                     params = {
                         'method': 'flickr.favorites.getPublicList',
@@ -74,10 +75,10 @@ KISSY 提供的动画特效支持主要由三个子模块组成 [1]_ :
                         'format': 'json',
                         'jsoncallback': 'getFavorites'
                     },
-                    photoList = S.one('#photo-list');
+                    photoList = $('#photo-list');
 
-                S.one('#fetch-btn-anim').on('click', function() {
-                    this.attr('disabled', true);
+                $('#fetch-btn-anim').on('click', function() {
+                    $(this).attr('disabled', true);
                     photoList.addClass('loading');
                     S.getScript(API + S.param(params));
                 });
