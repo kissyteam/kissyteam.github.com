@@ -3,6 +3,7 @@
 io.upload()
 =================================
 
+.. versionadded:: 1.2
 
 .. function:: upload ( url , form , [ data , callback , dataType ] )
 
