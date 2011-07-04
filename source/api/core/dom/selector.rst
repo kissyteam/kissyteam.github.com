@@ -31,7 +31,7 @@ KISSY 选择器内置仅支持 #id tag.class 常用形式，考虑 2/8 原则，
     });    
     
     
-当加载了 ``sizzle`` 模块时, KISSY 支持 jQuery 支持的所有 CSS 选择器，具体请参考： `Sizzle Documents <http://wiki.github.com/jeresig/sizzle/>`_
+当加载了 ``sizzle`` 模块时, KISSY 支持 jQuery 支持的所有 CSS 选择器，具体请参考： `Sizzle Documents <https://github.com/jquery/sizzle/wiki/Sizzle-Home>`_
 
 例如
 

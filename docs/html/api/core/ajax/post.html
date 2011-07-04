@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>io.setupConfig() &mdash; KISSY Docs valpha documentation</title>
+<title>io.post() &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -54,10 +54,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="get.html" title="io.get()"
+      <a href="getJSON.html" title="io.getJSON()"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="io.html" title="io()"
+      <a href="get.html" title="io.get()"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -69,50 +69,89 @@
 			<div class="col-main">
 				<div class="main-wrap">
 					
-  <div class="section" id="io-setupconfig">
-<h1>io.setupConfig()<a class="headerlink" href="#io-setupconfig" title="Permalink to this headline">¶</a></h1>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.2.</span></p>
+  <div class="section" id="io-post">
+<h1>io.post()<a class="headerlink" href="#io-post" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="io.setupConfig">
-<tt class="descclassname">io.</tt><tt class="descname">setupConfig</tt><big>(</big><em>cfg</em><big>)</big><a class="headerlink" href="#io.setupConfig" title="Permalink to this definition">¶</a></dt>
-<dd><p>为所有的 ajax 请求(包括未来)设定默认配置</p>
+<dt id="io.post">
+<tt class="descclassname">io.</tt><tt class="descname">post</tt><big>(</big><em>url</em><span class="optional">[</span>, <em>data</em>, <em>callback</em>, <em>dataType</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#io.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>发送 http post 请求</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>cfg</strong> (<em>Object</em>) &#8211; 用来配置默认请求配置的键值对对象。其中的每个配置都是可选的.</td>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>url</strong> (<em>string</em>) &#8211; 请求地址</li>
+<li><strong>data</strong> (<em>Object|string</em>) &#8211; 请求附带的参数，参见 <a class="reference internal" href="io.html#io.cfg.data" title="io.cfg.data"><tt class="xref py py-attr docutils literal"><span class="pre">data</span></tt></a> .</li>
+<li><strong>callback</strong> (<em>function</em>) &#8211; 请求成功后的回调，参见 <a class="reference internal" href="io.html#io.cfg.success" title="io.cfg.success"><tt class="xref py py-attr docutils literal"><span class="pre">success</span></tt></a> .</li>
+<li><strong>dataType</strong> (<em>string</em>) &#8211; 传到回调函数作为参数的数据类型，参见 <a class="reference internal" href="io.html#io.cfg.dataType" title="io.cfg.dataType"><tt class="xref py py-attr docutils literal"><span class="pre">dataType</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first">代表本次请求的 xhrObj</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">Return type:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last"><a class="reference internal" href="io.html#io.XhrObj" title="io.XhrObj"><tt class="xref py py-class docutils literal"><span class="pre">XhrObj</span></tt></a></p>
+</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<p>所有可配置的项参见 <a class="reference internal" href="io.html#io.io" title="io.io"><tt class="xref py py-func docutils literal"><span class="pre">KISSY.io()</span></tt></a> .通过 <tt class="docutils literal"><span class="pre">setupConfig</span></tt> 设置后，除非单个请求设置了对应的配置值，否则后续所有的 ajax 请求都使用该设置.</p>
-<p>例如，下面代码在连续访问 <tt class="docutils literal"><span class="pre">ping.php</span></tt> 前，设置了 <tt class="docutils literal"><span class="pre">url</span></tt> 的默认值.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">io</span><span class="p">.</span><span class="nx">setupConfig</span><span class="p">({</span>
-    <span class="nx">url</span><span class="o">:</span><span class="s1">&#39;ping.php&#39;</span>
-<span class="p">});</span>
+<dl class="function">
+<dt>
+<tt class="descclassname">io.</tt><tt class="descname">post</tt><big>(</big><em>url</em><span class="optional">[</span>, <em>callback</em>, <em>dataType</em><span class="optional">]</span><big>)</big></dt>
+<dd><p>data 可忽略，同上个函数描述.</p>
+</dd></dl>
+
+<p>实际上该函数是 <a class="reference internal" href="io.html#io.io" title="io.io"><tt class="xref py py-func docutils literal"><span class="pre">io()</span></tt></a> 的 shortcut</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">io</span><span class="p">.</span><span class="nx">post</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">dataType</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// data 参数可省略</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">isFunction</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">dataType</span> <span class="o">=</span> <span class="nx">callback</span><span class="p">;</span>
+        <span class="nx">callback</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
+        <span class="nx">data</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">io</span><span class="p">({</span>
+        <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;post&quot;</span><span class="p">,</span>
+        <span class="nx">url</span><span class="o">:</span> <span class="nx">url</span><span class="p">,</span>
+        <span class="nx">data</span><span class="o">:</span> <span class="nx">data</span><span class="p">,</span>
+        <span class="nx">success</span><span class="o">:</span> <span class="nx">callback</span><span class="p">,</span>
+        <span class="nx">dataType</span><span class="o">:</span> <span class="nx">dataType</span>
+    <span class="p">});</span>
+<span class="p">};</span>
 </pre></div>
 </div>
-<p>那么接下来的请求如果没有指定 <tt class="docutils literal"><span class="pre">url</span></tt> 配置，就会使用 <tt class="docutils literal"><span class="pre">ping.php</span></tt></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">io</span><span class="p">({</span>
-    <span class="c1">// url 没设置，就为 ping.php</span>
-    <span class="nx">data</span> <span class="o">:</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="s1">&#39;dan&#39;</span><span class="p">}</span>
-<span class="p">});</span>
-</pre></div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">post 请求从来不会被缓存，因此 <a class="reference internal" href="io.html#io.cfg.cache" title="io.cfg.cache"><tt class="xref py py-attr docutils literal"><span class="pre">io.cfg.cache</span></tt></a> 配置可以不用配置.</p>
 </div>
 <div class="section" id="id1">
 <h2>例子<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>设置默认的请求地址为 <tt class="docutils literal"><span class="pre">/xmlhttp/</span></tt> ，并使用 <tt class="docutils literal"><span class="pre">POST</span></tt> 方式。那么接下来的请求都会往 <tt class="docutils literal"><span class="pre">/xmlhttp/</span></tt> 发送请求.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">io</span><span class="p">.</span><span class="nx">setupConfig</span><span class="p">({</span>
-    <span class="nx">url</span><span class="o">:</span><span class="s1">&#39;/xmlhttp/&#39;</span><span class="p">,</span>
-    <span class="nx">type</span><span class="o">:</span><span class="s1">&#39;post&#39;</span>
+<p>请求页面 test.php , 但是忽略返回结果</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>请求页面 test.php , 并附带一些参数传递给后端</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">,{</span>
+    <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;john&quot;</span><span class="p">.</span>
+    <span class="nx">time</span><span class="o">:</span><span class="s2">&quot;2pm&quot;</span>
 <span class="p">});</span>
-
-<span class="nx">io</span><span class="p">({</span>
-    <span class="nx">data</span><span class="o">:</span><span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="s1">&#39;mydata&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>alert 请求成功后返回的结果，数据类型由响应的 content-type 决定</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span>
 <span class="p">});</span>
+</pre></div>
+</div>
+<p>alert 请求成功后返回的 json 数据，和响应的 content-type 无关</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span>
+<span class="p">},</span><span class="s2">&quot;json&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
