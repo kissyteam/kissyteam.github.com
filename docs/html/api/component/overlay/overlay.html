@@ -212,7 +212,7 @@ kissy 1.2 版本以前设置无效，都为 &#8220;ks-&#8221;.</p>
 <div><div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>第一个字符取值 t,b,c ，第二个字符取值 l,r,c。如下图所示</p>
-<img alt="../../../images/align1.png" class="last" src="../../../images/align1.png" style="width: 380px;" />
+<img alt="../../../images/align.png" class="last" src="../../../images/align.png" style="width: 380px;" />
 </div>
 </div></blockquote>
 </dd></dl>
@@ -462,9 +462,29 @@ kissy 1.2 版本以前设置无效，都为 &#8220;ks-&#8221;.</p>
 
 					
 
-					<div id="disqus_thread"></div>
+					﻿<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            KISSY.one("#openComment").attr("disabled",true);
+        }else{
+            KISSY.one("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            KISSY.one("#openComment").on("change",function(){
+                window.localStorage.setItem("kissy-commment",KISSY.one("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
 <script>
-    if(window.location.hostname.indexOf("kissyui.com")!=-1){
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
 
