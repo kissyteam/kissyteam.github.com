@@ -5,7 +5,7 @@ ImageZoom
 
 |  图片放大镜效果
 |  作者: `乔花 <qiaohua@taobao.com>`_
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/imagezoom>`_ 
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/imagezoom>`_  | `Demo <http://docs.kissyui.com/kissy/src/imagezoom/demo.html>`_
 
 Class
 -----------------------------------------------

@@ -3,9 +3,8 @@ Seed
 
 
 .. toctree::
-   :maxdepth: 2
+   :titlesonly:
 
- 
    loader/index.rst
 
 

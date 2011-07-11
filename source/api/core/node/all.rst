@@ -61,7 +61,7 @@ Methods
 
     **使用原生 DOM 节点**
 
-    第二第三种方法使用现有的原生 dom 节点来创建 NodeList 对象。常用的应用场景是从事件处理器的 this 关键字中创建 NodeList 对象
+    第二, 第三种方法使用现有的原生 dom 节点来创建 NodeList 对象。常用的应用场景是从事件处理器的 this 关键字中创建 NodeList 对象
 
     .. code-block:: javascript
 
@@ -88,7 +88,7 @@ Methods
     如果一个字符串传递给 Node.all 作为参数，Node.all 会检查该字符粗韩是否像一个html串（例如形式为 <tag ... >）。如果不是，那么字符串参数就会作为一个选择器字符串，进行选择元素操作。如果字符串是一个html片段，那么就会创建相应的 dom 节点，并且返回一个新的 NodeList 对象指向产生的 dom 节点。
 
     .. note::
-        为了确保各个浏览器的兼容性，html 片段必须是结构完整的，例如请包含结束标签：
+        为了确保各个浏览器的兼容性，html 片段必须是结构完整的，例如, 包含结束标签：
 
         .. code-block:: javascript
 
@@ -100,8 +100,11 @@ Methods
 
             NodeList.all("<a>")
 
+Demo
+--------------------------------------------------
 
-    得到一个包装新 dom element 的 KISSY NodeList
+
+**得到一个包装新 dom element 的 KISSY NodeList**
 
     .. code-block:: javascript
 
@@ -109,7 +112,7 @@ Methods
         var domNodes=nl.getDOMNodes();
         domNodes[0].nodeType == 1 // => true : Html Element
 
-    得到一个包装现有 dom element 的 KISSY NodeList
+**得到一个包装现有 dom element 的 KISSY NodeList**
 
     .. code-block:: javascript
 
@@ -119,7 +122,7 @@ Methods
         domNodes[0].nodeType == 1 // => true : Html Element
         domNodes[0].nodeType == 1 // => true : Html Element
 
-    当然 NodeList.all 可以直接获取选择器字符串匹配的节点列表
+**当然 NodeList.all 可以直接获取选择器字符串匹配的节点列表**
 
     .. code-block:: javascript
 
@@ -129,19 +132,19 @@ Methods
         domNodes[0].nodeType == 1 // => true : Html Element
 
 
-    找到页面第一个表单的所有输入框
+**找到页面第一个表单的所有输入框**
 
     .. code-block:: javascript
 
         NodeList.all("input",document.forms[0]);
 
-    设置页面的背景色为黑色
+**设置页面的背景色为黑色**
 
     .. code-block:: javascript
 
         NodeList.all(document.body).css("background","black");
 
-    隐藏一个表单内的所有输入框
+**隐藏一个表单内的所有输入框**
 
     .. code-block:: javascript
 

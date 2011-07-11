@@ -5,7 +5,7 @@ Droppable
 
 |  放置功能
 |  作者: `承玉 <yiminghe@gmail.com>`_
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/droppable.js>`_ 
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/droppable.js>`_  | `Demo <../../../demo/component/dd/droppable.html>`_
 
 .. versionadded:: 1.2
 

@@ -5,7 +5,7 @@ Accordion
 
 |  手风琴
 |  作者: `fool2fish <fool2fish@gmail.com>`_
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/switchable>`_ | `Demo <http://docs.kissyui.com/kissy/src/switchable/demo.html>`_
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/switchable/accordion/>`_ | `Demo <../../../demo/switchable/index.html>`_
 
 
 Config Attributes Detail

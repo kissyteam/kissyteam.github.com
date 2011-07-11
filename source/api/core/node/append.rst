@@ -26,7 +26,7 @@ Methods
     该方法和 :meth:`~NodeList.appendTo` 功能一样。最大的区别在于语法不同以及参数意义不同。当使用 ``append`` 方法时，当前节点列表为参数内容的插入容器。
     而对于 ``appendTo``  当前节点列表则为要插入的元素，而参数则为目标容器.
 
-    例如如下 HTML:
+    例如:
 
     .. code-block:: html
 
@@ -82,8 +82,10 @@ Methods
     但是如果当前节点列表包括多余一个节点，则除了第一个节点外，其他节点都添加的是参数节点的克隆节点。
 
 
+Demo
+--------------------------------------------------
 
-    在所有段落中添加一些 html 字符串
+**在所有段落中添加一些 html 字符串**
 
     .. literalinclude:: /_static/api/core/node/append-1.html
        :language: html
@@ -93,7 +95,7 @@ Methods
         <iframe width="100%" height="135" src="../../../static/api/core/node/append-1.html"></iframe>
 
 
-    给所有段落添加一个文本节点
+**给所有段落添加一个文本节点**
 
     .. literalinclude:: /_static/api/core/node/append-2.html
        :language: html
@@ -103,7 +105,7 @@ Methods
         <iframe width="100%" height="135" src="../../../static/api/core/node/append-2.html"></iframe>
 
 
-    给所有段落添加一个 ``NodeList``  对象
+**给所有段落添加一个 ``NodeList``  对象**
 
     .. literalinclude:: /_static/api/core/node/append-3.html
        :language: html

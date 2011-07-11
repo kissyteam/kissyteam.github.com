@@ -5,7 +5,7 @@ Carousel
 
 |  Carousel
 |  作者: `玉伯 <lifesinger@gmail.com>`_
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/switchable>`_ | `Demo <http://docs.kissyui.com/kissy/src/switchable/demo.html>`_
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/switchable/carousel/>`_ | `Demo <../../../demo/switchable/index.html>`_
 
 Config Attributes Detail
 ---------------------------------------------------------------------

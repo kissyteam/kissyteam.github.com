@@ -71,15 +71,14 @@ Methods
 
     如果有多个目标节点，那么除了第一个目标节点外，其他目标节点前会被插入当前节点的克隆
 
-
+Demo
+--------------------------------------------------
 
     把段落插入到 div 节点之前
 
     .. literalinclude:: /_static/api/core/node/after.html
        :language: html
 
-
-    Demo
 
     .. raw:: html
 

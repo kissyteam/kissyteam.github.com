@@ -76,12 +76,13 @@ Methods
     不过如果有多个目标容器，那么除了第一个目标容器，当前节点列表的复制节点会被插入到其他目标容器
 
 
+Demo
+--------------------------------------------------
 
-    把多个 span 插入到已有元素
+**把多个 span 插入到已有元素**
 
     .. literalinclude:: /_static/api/core/node/appendTo.html
        :language: html
-
 
 
     .. raw:: html

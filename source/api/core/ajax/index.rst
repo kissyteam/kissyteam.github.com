@@ -5,7 +5,7 @@ ajax
 
 |  ajax
 |  作者: `拔赤 <lijing00333@163.com>`_
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/ajax>`_ 
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/ajax>`_  | `Demo <http://yiminghe.github.com/kissy/src/ajax/demo.html>`_
 
 Class
 -----------------------------------------------

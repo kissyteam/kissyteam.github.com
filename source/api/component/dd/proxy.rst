@@ -5,7 +5,7 @@ Proxy
 
 |  代理可拖放对象
 |  作者: 承玉<chengyu@taobao.com>
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/proxy.js>`_ 
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/proxy.js>`_  | `Demo <../../../demo/component/dd/draggable.html>`_
 
 Class
 -----------------------------------------------

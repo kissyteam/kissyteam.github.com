@@ -1,12 +1,12 @@
 .. _demo:
 
 
-范例
+All Demos
 =============================
 
 .. toctree::
-    :maxdepth: 2
-   
-    seed/index.rst
-    core/index.rst
-    component/index.rst
+   :titlesonly:
+
+    seed/index
+    core/index
+    component/index

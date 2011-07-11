@@ -6,14 +6,14 @@ DD
 by `承玉 <yiminghe@gmail.com>`_
 
 .. toctree::
-   :maxdepth: 2
+   :titlesonly:
 
 
-   draggable-usage.rst
-   droppable-usage.rst
-   draggable-delegate-usage.rst
-   droppable-delegate-usage.rst
-   
+   draggable
+   droppable
+   draggable-delegate
+   droppable-delegate
+
 
 更多   
 =========================

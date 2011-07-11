@@ -6,7 +6,7 @@ Dialog
 |  对话框。
 |  扩展于 :class:`Overlay`
 |  作者: `承玉 <yiminghe@gmail.com>`_
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay>`_ 
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_  | `Demo <../../../demo/component/overlay/>`_
 
 .. versionadded:: 1.2
 

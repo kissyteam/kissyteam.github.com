@@ -29,14 +29,18 @@ Class Detail
         推荐除了需要生成文本节点的情况下，统统使用 :meth:`~NodeList.all` 代替。
         
 
-    得到一个包装新文本节点的 KISSY NodeList
+
+Demo
+-----------------------------------------------
+
+**得到一个包装新文本节点的 KISSY NodeList**
 
     .. code-block:: javascript
 
         var nl=new NodeList("aaa");
         nl.getDOMNode().nodeType ==3 // => true : Html Text Node
 
-    得到一个包装新 dom element 的 KISSY NodeList
+**得到一个包装新 dom element 的 KISSY NodeList**
 
     .. code-block:: javascript
 
@@ -44,7 +48,7 @@ Class Detail
         var domNodes=nl.getDOMNodes();
         domNodes[0].nodeType == 1 // => true : Html Element
 
-    得到一个包装现有 dom element 的 KISSY NodeList
+**得到一个包装现有 dom element 的 KISSY NodeList**
 
     .. code-block:: javascript
 
@@ -54,7 +58,7 @@ Class Detail
         domNodes[0].nodeType == 1 // => true : Html Element
         domNodes[0].nodeType == 1 // => true : Html Element
 
-    当然 NodeList.all 可以直接获取选择器字符串匹配的节点列表
+**当然 NodeList.all 可以直接获取选择器字符串匹配的节点列表**
 
     .. code-block:: javascript
 
@@ -62,4 +66,3 @@ Class Detail
         domNodes=nl.getDOMNodes();
         domNodes[0].nodeType == 1 // => true : Html Element
         domNodes[0].nodeType == 1 // => true : Html Element
-                           

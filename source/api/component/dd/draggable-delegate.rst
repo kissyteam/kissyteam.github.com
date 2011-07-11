@@ -5,7 +5,7 @@ DraggableDelegate
 
 |  委托容器内的所有 Draggable 节点的拖放行为。
 |  作者: 承玉<chengyu@taobao.com>
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/draggable-delegate.js>`_ 
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/draggable-delegate.js>`_  | `Demo <../../../demo/component/dd/draggable-delegate.html>`_
 
 .. versionadded:: 1.2
 
