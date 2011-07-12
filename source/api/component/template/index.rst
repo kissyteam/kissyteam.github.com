@@ -3,7 +3,7 @@
 Template
 ===============================================
 
-|  模板，具备如下特性：
+|  模板, 具备如下特性：
 |      - 模板语法,从 ``{{#tagName}}`` 开始,由 ``{{/tagName}}`` 结束(如果有结束标签的话).
 |      - 模板变量, ``{{variable}}`` .
 |      - 原生支持 if/elseif/else/each/! 四个标签.
@@ -20,7 +20,7 @@ Usage
     
     **正常调用：**
     
-    其中 KISSY.Template('template here.')返回编译后的模板方法，可调用render渲染不同的数据
+    其中 KISSY.Template('template here.')返回编译后的模板方法, 可调用render渲染不同的数据
     
         .. code-block:: javascript
         

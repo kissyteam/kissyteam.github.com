@@ -79,7 +79,7 @@ Config Attributes Detail
 
 .. data:: mode
 
-    {String} - 枚举值, 默认值 "point", 和 ``Droppable`` 关联, 决定何时和可放对象开始交互（触发相应事件）, 可取值 "point","intersect","strict"
+    {String} - 枚举值, 默认值 "point", 和 ``Droppable`` 关联, 决定何时和可放对象开始交互(触发相应事件), 可取值 "point","intersect","strict"
 
         * 在 "point" 模式下, 只要鼠标略过可放对象, 即开始和可放对象交互.
         * 在 "intersect" 模式下, 只要拖动对象和可放对象有交集, 即开始和可放对象交互.
@@ -153,7 +153,7 @@ Events Detail
 .. function:: dragenter
 
     | **dragenter** ( ev )
-    | 当前 Draggable 对象达到一个 Droppable 对象时触发，可简单理解成 mouseenter。
+    | 当前 Draggable 对象达到一个 Droppable 对象时触发, 可简单理解成 mouseenter.
 
     :param Object ev.drag: 自身, 当前拖放对象.
     :param Object ev.drop: 当前交互的Droppable对象.
@@ -161,7 +161,7 @@ Events Detail
 .. function:: dragover
 
     | **dragover** ( ev )
-    | 当前 Draggable 对象在一个 Droppable 实例上移动时触发，可简单理解成 mouseover。
+    | 当前 Draggable 对象在一个 Droppable 实例上移动时触发, 可简单理解成 mouseover.
 
     :param Object ev.drag: 自身, 当前拖放对象.
     :param Object ev.drop: 当前交互的Droppable对象.
@@ -169,7 +169,7 @@ Events Detail
 .. function:: dragexit
 
     | **dragexit** ( ev )
-    | 当前 Draggable 对象离开一个 Droppable 实例上移动时触发，可简单理解成 mouseleave。
+    | 当前 Draggable 对象离开一个 Droppable 实例上移动时触发, 可简单理解成 mouseleave.
 
     :param Object ev.drag: 自身, 当前拖放对象.
     :param Object ev.drop: 当前交互的Droppable对象.
@@ -177,7 +177,7 @@ Events Detail
 .. function:: dragdrophit
 
     | **dragdrophit** ( ev )
-    | 当前 Draggable 对象被放置在一个 Droppable 实例时触发。
+    | 当前 Draggable 对象被放置在一个 Droppable 实例时触发.
 
     :param Object ev.drag: 自身, 当前拖放对象.
     :param Object ev.drop: 当前交互的Droppable对象.

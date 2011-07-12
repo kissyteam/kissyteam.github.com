@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>KISSY.map &mdash; KISSY Docs valpha documentation</title>
+<title>map &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -54,10 +58,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="inArray.html" title="KISSY.inArray"
+      <a href="inArray.html" title="inArray"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="filter.html" title="KISSY.filter"
+      <a href="filter.html" title="filter"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -65,27 +69,34 @@
       <li><a href="index.html" accesskey="U">lang</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
-  <div class="section" id="kissy-map">
-<h1>KISSY.map<a class="headerlink" href="#kissy-map" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="map">
+<h1>map<a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h1>
 <p class="versionadded">
 <span class="versionmodified">New in version 1.2.</span></p>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference internal" href="index.html#module-Lang" title="Lang"><tt class="xref py py-mod docutils literal"><span class="pre">Lang</span></tt></a></div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="Lang.KISSY.map">
-<tt class="descclassname">KISSY.</tt><tt class="descname">map</tt><big>(</big><em>arr</em>, <em>fn</em><span class="optional">[</span>, <em>context</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Lang.KISSY.map" title="Permalink to this definition">¶</a></dt>
-<dd><p>创建一个新数组，数组结果是在对每个原数组元素调用指定函数的返回值。</p>
+<tt class="descclassname">KISSY.</tt><tt class="descname">map</tt><big>(</big><big>)</big><a class="headerlink" href="#Lang.KISSY.map" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Array <strong>KISSY.map</strong> (arr,fn[,context])</div>
+<div class="line">创建一个新数组, 数组结果是在对每个原数组元素调用指定函数的返回值.</div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
-<li><strong>arr</strong> (<em>Array</em>) &#8211; 需要遍历的数组。</li>
-<li><strong>fn</strong> (<em>function</em>) &#8211; 能够根据原数组当前元素返回新数组元素的函数。</li>
-<li><strong>context</strong> (<em>object</em>) &#8211; 执行 <tt class="docutils literal"><span class="pre">fn</span></tt> 时的 <tt class="docutils literal"><span class="pre">this</span></tt> 值。</li>
+<li><strong>arr</strong> (<em>Array</em>) &#8211; 需要遍历的数组.</li>
+<li><strong>fn</strong> (<em>function</em>) &#8211; 能够根据原数组当前元素返回新数组元素的函数.</li>
+<li><strong>context</strong> (<em>object</em>) &#8211; 执行 <tt class="docutils literal"><span class="pre">fn</span></tt> 时的 <tt class="docutils literal"><span class="pre">this</span></tt> 值.</li>
 </ul>
 </td>
 </tr>
@@ -99,14 +110,11 @@
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">原数组保持不变</p>
-</div>
+<p>原数组保持不变</p>
 <p>例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">makePseudoPlural</span><span class="p">(</span><span class="nx">single</span><span class="p">)</span> <span class="p">{</span>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">makePseudoPlural</span><span class="p">(</span><span class="nx">single</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">single</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/o/g</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -117,6 +125,10 @@
     <span class="k">return</span> <span class="nx">x</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <span class="p">});</span> <span class="c1">// =&gt; [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]</span>
 </pre></div>
+</div>
+</div>
+</dd></dl>
+
 </div>
 </div>
 

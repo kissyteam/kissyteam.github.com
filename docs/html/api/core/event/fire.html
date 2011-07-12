@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Event.fire &mdash; KISSY Docs valpha documentation</title>
+<title>fire &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -54,10 +58,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="event-target.html" title="Event.Target"
+      <a href="event-target.html" title="Target"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="undelegate.html" title="Event.undelegate"
+      <a href="undelegate.html" title="undelegate"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -65,17 +69,25 @@
       <li><a href="index.html" accesskey="U">Event</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
-  <div class="section" id="event-fire">
-<h1>Event.fire<a class="headerlink" href="#event-fire" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="fire">
+<h1>fire<a class="headerlink" href="#fire" title="Permalink to this headline">¶</a></h1>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference internal" href="index.html#module-Event" title="Event"><tt class="xref py py-mod docutils literal"><span class="pre">Event</span></tt></a></div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="Event.fire">
-<tt class="descclassname">Event.</tt><tt class="descname">fire</tt><big>(</big><em>selector</em>, <em>eventType</em><span class="optional">[</span>, <em>domEvent</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Event.fire" title="Permalink to this definition">¶</a></dt>
-<dd><p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>执行符合匹配的 dom 节点的相应事件的事件处理器和默认行为.</p>
+<tt class="descclassname">Event.</tt><tt class="descname">fire</tt><big>(</big><big>)</big><a class="headerlink" href="#Event.fire" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Boolean <strong>fire</strong> ( selector , eventType [ , domEvent ] )</div>
+<div class="line">执行符合匹配的 dom 节点的相应事件的事件处理器和默认行为.</div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -83,22 +95,18 @@
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
 <li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="../dom/selector.html#dom-selector"><em>KISSY selector</em></a></li>
-<li><strong>eventType</strong> (<em>string</em>) &#8211; 包含一个或多个事件名称的字符串，多个事件名以空格分开</li>
+<li><strong>eventType</strong> (<em>string</em>) &#8211; 包含一个或多个事件名称的字符串, 多个事件名以空格分开</li>
 <li><strong>domEvent</strong> (<em>object</em>) &#8211; 模拟原生事件的一些属性值信息</li>
 </ul>
 </td>
 </tr>
 <tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><p class="first last">如果其中一个事件处理器返回 false ，则返回 false，否则返回最后一个事件处理器的返回值</p>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last">如果其中一个事件处理器返回 false , 则返回 false, 否则返回最后一个事件处理器的返回值</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<div class="section" id="id1">
-<h2>简述<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>用 <a class="reference internal" href="on.html#Event.on" title="Event.on"><tt class="xref py py-func docutils literal"><span class="pre">Event.on()</span></tt></a> 绑定的事件处理器可以被用户触发的原生事件调用。但是这些事件处理器也可以使用 <tt class="docutils literal"><span class="pre">fire</span></tt> 手动调用.
+<p>用 <a class="reference internal" href="on.html#Event.on" title="Event.on"><tt class="xref py py-func docutils literal"><span class="pre">Event.on()</span></tt></a> 绑定的事件处理器可以被用户触发的原生事件调用. 但是这些事件处理器也可以使用 <tt class="docutils literal"><span class="pre">fire</span></tt> 手动调用.
 调用 fire() 和用户触发导致的处理器调用调用是一样的顺序.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;#foo&#39;</span><span class="p">,</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
     <span class="nx">alert</span><span class="p">(</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
@@ -107,10 +115,13 @@
 <span class="nx">Event</span><span class="p">.</span><span class="nx">fire</span><span class="p">(</span><span class="s1">&#39;#foo&#39;</span><span class="p">,</span><span class="s1">&#39;click&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
+</dd></dl>
+
 </div>
-<div class="section" id="id2">
-<h2>示例<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>点击第二个按钮手动触发第一个按钮的点击，简便起见使用 <a class="reference internal" href="../node/index.html#module-Node" title="Node"><tt class="xref py py-mod docutils literal"><span class="pre">Node</span></tt></a> 接口.</p>
+<div class="section" id="demo">
+<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>点击第二个按钮手动触发第一个按钮的点击, 简便起见使用 <a class="reference internal" href="../node/index.html#module-Node" title="Node"><tt class="xref py py-mod docutils literal"><span class="pre">Node</span></tt></a> 接口.</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
@@ -157,8 +168,8 @@
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </div>
-<p>Demo</p>
-<iframe width="100%" height="135" src="../../../static/api/core/event/fire.html"></iframe></div>
+<iframe width="100%" height="135" src="../../../static/api/core/event/fire.html"></iframe></div></blockquote>
+</div>
 </div>
 
 

@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>scrollTop() &mdash; KISSY Docs valpha documentation</title>
+<title>scrollTop &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -54,10 +58,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="scrollLeft.html" title="scrollLeft()"
+      <a href="scrollLeft.html" title="scrollLeft"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="slice.html" title="slice()"
+      <a href="slice.html" title="slice"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -65,17 +69,25 @@
       <li><a href="index.html" accesskey="U">Node</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
   <div class="section" id="scrolltop">
-<h1>scrollTop()<a class="headerlink" href="#scrolltop" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
-<dt id="Node.NodeList.scrollTop">
-<tt class="descclassname">NodeList.</tt><tt class="descname">scrollTop</tt><big>(</big><big>)</big><a class="headerlink" href="#Node.NodeList.scrollTop" title="Permalink to this definition">¶</a></dt>
-<dd><p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>得到当前节点列表第一个节点的滚动条的垂直位置。</p>
+<h1>scrollTop<a class="headerlink" href="#scrolltop" title="Permalink to this headline">¶</a></h1>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference internal" href="index.html#module-Node" title="Node"><tt class="xref py py-mod docutils literal"><span class="pre">Node</span></tt></a></div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="Node.scrollTop">
+<tt class="descclassname">Node.</tt><tt class="descname">scrollTop</tt><big>(</big><big>)</big><a class="headerlink" href="#Node.scrollTop" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">NodeList <strong>scrollTop</strong> ()</div>
+<div class="line">得到当前节点列表第一个节点的滚动条的垂直位置.</div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -85,11 +97,33 @@
 </tr>
 </tbody>
 </table>
+<div class="line-block">
+<div class="line">NodeList <strong>scrollTop</strong> ( value )</div>
+<div class="line">设置当前节点列表每个节点的滚动条的垂直位置.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>value</strong> (<em>number</em>) &#8211; 新的滚动条所在位置</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">Return type:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">NodeList</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">自身 this</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<p>例子：</p>
-<p>得到一行的 scrollTop</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</div>
+<div class="section" id="demo">
+<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
+<p><strong>得到一行的 scrollTop</strong></p>
+<blockquote>
+<div><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
   <span class="nt">&lt;style&gt;</span>
@@ -115,32 +149,10 @@
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </div>
-<p>Demo</p>
-<iframe width="100%" height="135" src="../../../static/api/core/node/scrollTop-get.html"></iframe><dl class="method">
-<dt>
-<tt class="descclassname">NodeList.</tt><tt class="descname">scrollTop</tt><big>(</big><em>value</em><big>)</big></dt>
-<dd><p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>设置当前节点列表每个节点的滚动条的垂直位置。</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>value</strong> (<em>number</em>) &#8211; 新的滚动条所在位置</td>
-</tr>
-<tr class="field"><th class="field-name" colspan="2">Return type:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body">NodeList</td>
-</tr>
-<tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body">自身 this</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>例子：</p>
-<p>设置 div 的 scrollTop</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<iframe width="100%" height="135" src="../../../static/api/core/node/scrollTop-get.html"></iframe></div></blockquote>
+<p><strong>设置 div 的 scrollTop</strong></p>
+<blockquote>
+<div><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
   <span class="nt">&lt;style&gt;</span>
@@ -176,8 +188,9 @@
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </div>
-<p>Demo</p>
-<iframe width="100%" height="135" src="../../../static/api/core/node/scrollTop-set.html"></iframe></div>
+<iframe width="100%" height="135" src="../../../static/api/core/node/scrollTop-set.html"></iframe></div></blockquote>
+</div>
+</div>
 
 
 					

@@ -33,10 +33,10 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
@@ -74,8 +74,8 @@
 <h1>Proxy<a class="headerlink" href="#proxy" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line">代理可拖放对象</div>
-<div class="line">作者: 承玉&lt;<a class="reference external" href="mailto:chengyu&#37;&#52;&#48;taobao&#46;com">chengyu<span>&#64;</span>taobao<span>&#46;</span>com</a>&gt;</div>
-<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/dd/proxy.js">源码</a></div>
+<div class="line">作者: <a class="reference external" href="mailto:chengyu&#37;&#52;&#48;taobao&#46;com">承玉</a></div>
+<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/dd/proxy.js">源码</a>  | <a class="reference external" href="../../../demo/component/dd/draggable.html">Demo</a></div>
 </div>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
@@ -129,19 +129,19 @@
 <dl class="attribute">
 <dt id="Proxy.node">
 <tt class="descclassname">Proxy.</tt><tt class="descname">node</tt><a class="headerlink" href="#Proxy.node" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Function} - 当 Draggable 对象需要代理节点时通过调用该函数产生代理节点，函数的参数为当前 Draggable 对象， 返回值类型为 KISSY.Node 。该属性有默认值</p>
+<dd><p>{Function} - 当 Draggable 对象需要代理节点时通过调用该函数产生代理节点, 函数的参数为当前 Draggable 对象,  返回值类型为 KISSY.Node . 该属性有默认值</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span><span class="p">(</span><span class="nx">drag</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nx">Node</span><span class="p">(</span><span class="nx">drag</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>即代理节点和当前节点保持一致。</p>
+<p>即代理节点和当前节点保持一致.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="Proxy.destroyOnEnd">
 <tt class="descclassname">Proxy.</tt><tt class="descname">destroyOnEnd</tt><a class="headerlink" href="#Proxy.destroyOnEnd" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Boolean} - 默认 false。指明是否代理节点需要每次拖放前 dragstart 生成， 拖放后 dragend 销毁。用于多 Draggable 对象共享一个 Proxy 对象实例，且要求代理节点和单个 Draggable 对象关联，或者一个 DraggableDelegate 对象共享一个 Proxy 对象实例。</p>
+<dd><p>{Boolean} - 默认 false. 指明是否代理节点需要每次拖放前 dragstart 生成,  拖放后 dragend 销毁. 用于多 Draggable 对象共享一个 Proxy 对象实例, 且要求代理节点和单个 Draggable 对象关联, 或者一个 DraggableDelegate 对象共享一个 Proxy 对象实例.</p>
 </dd></dl>
 
 </div>
@@ -152,7 +152,7 @@
 <tt class="descclassname">Proxy.</tt><tt class="descname">attach</tt><big>(</big><big>)</big><a class="headerlink" href="#Proxy.attach" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>attach</strong> (drag)</div>
-<div class="line">使当前拖放对象具备代理功能。</div>
+<div class="line">使当前拖放对象具备代理功能.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -170,7 +170,7 @@
 <tt class="descclassname">Proxy.</tt><tt class="descname">unAttach</tt><big>(</big><big>)</big><a class="headerlink" href="#Proxy.unAttach" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>unAttach</strong> (drag)</div>
-<div class="line">解除当前拖放对象的代理功能。</div>
+<div class="line">解除当前拖放对象的代理功能.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />

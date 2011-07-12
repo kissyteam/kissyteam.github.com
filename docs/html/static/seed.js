@@ -959,8 +959,8 @@ build time: Dec 15 17:50
                 name = config.host || mod.host || name;
                 mod = mods[name] || {};
 
-                // 注意：通过 S.add(name[, fn[, config]]) 注册的代码，无论是页面中的代码，还
-                //      是 js 文件里的代码，add 执行时，都意味着该模块已经 LOADED
+                // 注意：通过 S.add(name[, fn[, config]]) 注册的代码, 无论是页面中的代码, 还
+                //      是 js 文件里的代码, add 执行时, 都意味着该模块已经 LOADED
                 mix(mod, { name: name, status: LOADED });
 
                 if (!mod.fns) mod.fns = [];
@@ -972,12 +972,12 @@ build time: Dec 15 17:50
                 mix((mods[name] = mod), config);
                 mods[name]['requires'] = oldr; // 不覆盖
 
-                // 对于 requires 都已 attached 的模块，比如 core 中的模块，直接 attach
+                // 对于 requires 都已 attached 的模块, 比如 core 中的模块, 直接 attach
                 if ((mod['attach'] !== false) && self.__isAttached(mod.requires)) {
                     self.__attachMod(mod);
                 }
 
-                //!TODO add 中指定了依赖项，这里没有继续载依赖项
+                //!TODO add 中指定了依赖项, 这里没有继续载依赖项
                 //self.__isAttached(mod.requires) 返回 false
             }
 
@@ -992,7 +992,7 @@ build time: Dec 15 17:50
          * </code>
          * config = {
          *   order: true, // 默认为 false. 是否严格按照 modNames 的排列顺序来回调入口函数
-         *   global: KISSY // 默认为 KISSY. 当在 this.Env.mods 上找不到某个 mod 的属性时，会到 global.Env.mods 上去找
+         *   global: KISSY // 默认为 KISSY. 当在 this.Env.mods 上找不到某个 mod 的属性时, 会到 global.Env.mods 上去找
          * }
          */
         use: function(modNames, callback, config) {
@@ -1016,10 +1016,10 @@ build time: Dec 15 17:50
             for (i = 0; i < len && (mod = mods[modNames[i]]); i++) {
                 if (mod.status === ATTACHED) continue;
 
-                // 通过添加依赖，来保证调用顺序
+                // 通过添加依赖, 来保证调用顺序
                 if (config.order && i > 0) {
                     if (!mod.requires) mod.requires = [];
-                    mod._requires = mod.requires.concat(); // 保留，以便还原
+                    mod._requires = mod.requires.concat(); // 保留, 以便还原
                     name = modNames[i - 1];
 
                     if (!S.inArray(name, mod.requires)
@@ -1060,7 +1060,7 @@ build time: Dec 15 17:50
             self.__load(mod, fn, global);
 
             function fn() {
-                // add 可能改了 config，这里重新取下
+                // add 可能改了 config, 这里重新取下
                 var requires = mod['requires'] || [];
 
                 if (self.__isAttached(requires)) {
@@ -1086,7 +1086,7 @@ build time: Dec 15 17:50
 
             S.mix(mod, S.clone(gMods[name]));
 
-            // status 属于实例，当有值时，不能被覆盖。只有没有初始值时，才从 global 上继承
+            // status 属于实例, 当有值时, 不能被覆盖. 只有没有初始值时, 才从 global 上继承
             if (status) mod.status = status;
 
             // 来自 global 的 mod, path 应该基于 global
@@ -1125,7 +1125,7 @@ build time: Dec 15 17:50
          */
         __load: function(mod, callback, global) {
             var self = this, url = mod['fullpath'],
-                loadQueque = S.Env._loadQueue, // 这个是全局的，防止多实例对同一模块的重复下载
+                loadQueque = S.Env._loadQueue, // 这个是全局的, 防止多实例对同一模块的重复下载
                 node = loadQueque[url], ret;
 
             mod.status = mod.status || 0;
@@ -1135,7 +1135,7 @@ build time: Dec 15 17:50
                 mod.status = node.nodeName ? LOADING : LOADED;
             }
 
-            // 加载 css, 仅发出请求，不做任何其它处理
+            // 加载 css, 仅发出请求, 不做任何其它处理
             if (S.isString(mod[CSSFULLPATH])) {
                 self.getScript(mod[CSSFULLPATH]);
                 mod[CSSFULLPATH] = LOADED;
@@ -1146,7 +1146,7 @@ build time: Dec 15 17:50
 
                 ret = self.getScript(url, {
                     success: function() {
-                        KISSY.log(mod.name + ' is loaded.', 'info'); // 压缩时不过滤该句，以方便线上调试
+                        KISSY.log(mod.name + ' is loaded.', 'info'); // 压缩时不过滤该句, 以方便线上调试
                         _success();
                     },
                     error: function() {
@@ -1156,18 +1156,18 @@ build time: Dec 15 17:50
                     charset: mod.charset
                 });
 
-                // css 是同步的，在 success 回调里，已经将 loadQueque[url] 置成 LOADED
-                // 不需要再置成节点，否则有问题
+                // css 是同步的, 在 success 回调里, 已经将 loadQueque[url] 置成 LOADED
+                // 不需要再置成节点, 否则有问题
                 if (!RE_CSS.test(url)) {
                     loadQueque[url] = ret;
                 }
             }
-            // 已经在加载中，需要添加回调到 script onload 中
+            // 已经在加载中, 需要添加回调到 script onload 中
             // 注意：没有考虑 error 情形
             else if (mod.status === LOADING) {
                 scriptOnload(node, _success);
             }
-            // 是内嵌代码，或者已经 loaded
+            // 是内嵌代码, 或者已经 loaded
             else {
                 callback();
             }
@@ -1176,12 +1176,12 @@ build time: Dec 15 17:50
                 _final();
                 if (mod.status !== ERROR) {
 
-                    // 对于动态下载下来的模块，loaded 后，global 上有可能更新 mods 信息，需要同步到 instance 上去
-                    // 注意：要求 mod 对应的文件里，仅修改该 mod 信息
+                    // 对于动态下载下来的模块, loaded 后, global 上有可能更新 mods 信息, 需要同步到 instance 上去
+                    // 注意：要求 mod 对应的文件里, 仅修改该 mod 信息
                     if (global) self.__mixMod(self.Env.mods, global.Env.mods, mod.name, global);
 
-                    // 注意：当多个模块依赖同一个下载中的模块A下，模块A仅需 attach 一次
-                    // 因此要加上下面的 !== 判断，否则会出现重复 attach, 比如编辑器里动态加载时，被依赖的模块会重复
+                    // 注意：当多个模块依赖同一个下载中的模块A下, 模块A仅需 attach 一次
+                    // 因此要加上下面的 !== 判断, 否则会出现重复 attach, 比如编辑器里动态加载时, 被依赖的模块会重复
                     if (mod.status !== ATTACHED) mod.status = LOADED;
 
                     callback();
@@ -1203,7 +1203,7 @@ build time: Dec 15 17:50
                 if (!mod[fullpath] && mod[path]) {
                     mod[fullpath] = (base || Config.base) + mod[path];
                 }
-                // debug 模式下，加载非 min 版
+                // debug 模式下, 加载非 min 版
                 if (mod[fullpath] && Config.debug) {
                     mod[fullpath] = mod[fullpath].replace(/-min/g, '');
                 }

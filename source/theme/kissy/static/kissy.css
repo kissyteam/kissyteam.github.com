@@ -319,7 +319,7 @@ table.highlighttable {
 }
 
 div.admonition, div.warning {
-    font-size: 0.9em;
+    font-size: 12px;
     margin: 1em 0 1em 0;
     border: 1px solid #d1d1d1;
     background-color: #f8f8f6;
@@ -426,7 +426,6 @@ div.versioninfo {
     background-color: #DDEAF0;
     padding: 8px;
     line-height: 1.3em;
-    font-size: 0.9em;
 }
 
 .viewcode-back {
@@ -495,7 +494,6 @@ div.demo {
     border-bottom: 1px dotted #ccc;
     margin-bottom: 16px;
 }
-.section h1+div.line-block{font-size:12px;}
 
 tt {
     font-family: arial;
@@ -509,42 +507,43 @@ tt.descclassname, tt.descname, tt.xref {
 }
 
 .versionchanged tt{font-weight:normal;}
-.versionchanged, .versionadded{margin-top:10px;font-size:12px;color:#80c269;}
-
-.note, div.admonition, div.warning{font-size:12px;}
-
+.versionchanged{margin-top:10px;}
+.versionmodified, .versionadded {
+    color:red;
+    background: #ffff66;
+}
 dl.function{padding-bottom:15px;margin-bottom:15px;border-bottom:1px dotted #ccc;}
-dl.function dt{margin-bottom:10px;font-size:14px;}
+dl.function dt{}
 dl.function dt big{display:none;}
-dl.function dd{margin:0 0 0 30px;font-size:12px;}
-dl.function dd>.line-block{margin:0 0 10px 0;}
+dl.function dd{margin:0 0 0 30px;}
+dl.function dd>.line-block{margin:10px 0 0;}
 dl.function .versionchanged,
 dl.function .versionadded{margin-left:0!important;}
 
 dl.class{padding-bottom:15px;margin-bottom:15px;border-bottom:1px dotted #ccc;}
-dl.class dt{margin-bottom:10px;font-size:14px;}
+dl.class dt{margin-bottom:10px;}
 dl.class dt big{display:none;}
-dl.class dd{margin:0 0 0 30px;font-size:12px;}
+dl.class dd{margin:0 0 0 30px;}
 dl.class dd>.line-block{margin:0 0 10px 0;}
 dl.class .versionchanged,
 dl.class .versionadded{margin-left:0!important;}
 
 dl.attribute{padding-bottom:15px;margin-bottom:15px;border-bottom:1px dotted #ccc;}
-dl.attribute dt{margin-bottom:10px;font-size:14px;}
-dl.attribute dd{margin:0 0 0 30px;font-size:12px;}
+dl.attribute dt{margin-bottom:10px;}
+dl.attribute dd{margin:0 0 0 30px;}
 dl.attribute .versionchanged,
 dl.attribute .versionadded{margin-left:0!important;}
 
 dl.data{padding-bottom:15px;margin-bottom:15px;border-bottom:1px dotted #ccc;}
-dl.data dt{margin-bottom:10px;font-size:14px;}
-dl.data dd{margin:0 0 0 30px;font-size:12px;}
+dl.data dt{margin-bottom:10px;}
+dl.data dd{margin:0 0 0 30px;}
 dl.data .versionchanged,
 dl.data .versionadded{margin-left:0!important;}
 
 dl.method{padding-bottom:15px;margin-bottom:15px;border-bottom:1px dotted #ccc;}
-dl.method dt{margin-bottom:10px;font-size:14px;}
+dl.method dt{margin-bottom:10px;}
 dl.method dt big{display:none;}
-dl.method dd{margin:0 0 0 30px;font-size:12px;}
+dl.method dd{margin:0 0 0 30px;}
 dl.method dd>.line-block{margin:0 0 10px 0;}
 dl.method .versionchanged,
 dl.method .versionadded{margin-left:0!important;}
@@ -556,12 +555,12 @@ dl.method .versionadded{margin-left:0!important;}
 .col-main {
     float: left;
     width: 100%;
-    /* bug fix: 主栏没有内容时，在 Firefox 和 Chrome 等浏览器下，布局不对 */
+    /* bug fix: 主栏没有内容时, 在 Firefox 和 Chrome 等浏览器下, 布局不对 */
     min-height: 1px;
 }
 .col-sub, .col-extra {
     float: left;
-    /*position: relative;  按需设置，仅在需要时添加 */
+    /*position: relative;  按需设置, 仅在需要时添加 */
 }
 
 /** 清除浮动 **/
@@ -590,9 +589,9 @@ dl.method .versionadded{margin-left:0!important;}
 #header {overflow:hidden;border-bottom: 1px solid #a4d3f2;color:#888;}
 #header .logo{float:left;margin:20px 0 0 0;padding:0;border:none;}
 #header .sub-title{float:left;margin:45px 5px 0 5px;font:25px "Microsoft YaHei";color:#aaa;}
-#header .desc{float:left;margin-top:50px;margin-left:5px;font-size:14px;}
-#header  .navigation {float:right;margin:50px 0 0 0;overflow:hidden;list-style:none;}
-#header  .navigation li {float:left;margin-left:-1px;padding: 0 10px;line-height:1em;font-weight:bold;border-left:1px solid #ddd;}
+#header .desc{float:left;margin-top:50px;margin-left:5px;}
+#header  .navigation {float:right;margin:53px 0 0 0;overflow:hidden;list-style:none;}
+#header  .navigation li {float:left;margin-left:-1px;padding: 0 10px;line-height:1.1em;font-weight:bold;border-left:1px solid #ddd;}
 
 .col-sub{border: 1px solid #a4d3f2;border-top:none;background:#f2f8fa;}
 
@@ -621,7 +620,6 @@ dl.method .versionadded{margin-left:0!important;}
 
 div.related {
     width: 100%;
-    font-size: 90%;
 }
 
 div.related h3 {

@@ -14,16 +14,16 @@ Config Attributes Detail
     
     .. data:: circular
     
-        {Boolean} - 默认为true，是否循环切换。
+        {Boolean} - 默认为true, 是否循环切换.
         
     .. data:: prevBtnCls
     
-        {String} - 默认为 'ks-switchable-prev-btn'，前一个触发器的 cls。
+        {String} - 默认为 'ks-switchable-prev-btn', 前一个触发器的 cls.
         
     .. data:: nextBtnCls
     
-        {String} - 默认为 'ks-switchable-next-btn'，后一个触发器的 cls。
+        {String} - 默认为 'ks-switchable-next-btn', 后一个触发器的 cls.
         
     .. data:: disableBtnCls
     
-        {String} - 默认为 'ks-switchable-disable-btn'，触发器不可用时的 cls。
+        {String} - 默认为 'ks-switchable-disable-btn', 触发器不可用时的 cls.

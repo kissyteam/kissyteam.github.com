@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Event.on &mdash; KISSY Docs valpha documentation</title>
+<title>on &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -54,7 +58,7 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="delegate.html" title="Event.delegate"
+      <a href="delegate.html" title="delegate"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="index.html" title="Event"
@@ -65,16 +69,23 @@
       <li><a href="index.html" accesskey="U">Event</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
-  <div class="section" id="event-on">
-<h1>Event.on<a class="headerlink" href="#event-on" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="on">
+<h1>on<a class="headerlink" href="#on" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference internal" href="index.html#module-Event" title="Event"><tt class="xref py py-mod docutils literal"><span class="pre">Event</span></tt></a></div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="Event.on">
-<tt class="descclassname">Event.</tt><tt class="descname">on</tt><big>(</big><em>selector</em>, <em>eventType</em>, <em>fn</em><span class="optional">[</span>, <em>scope</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Event.on" title="Permalink to this definition">¶</a></dt>
-<dd><p>为符合匹配的 dom 节点的相应事件添加事件处理器</p>
+<tt class="descclassname">Event.</tt><tt class="descname">on</tt><big>(</big><big>)</big><a class="headerlink" href="#Event.on" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">void <strong>on</strong> ( selector , eventType , fn [ , scope ] )</div>
+<div class="line">为符合匹配的 dom 节点的相应事件添加事件处理器</div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -82,70 +93,66 @@
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
 <li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="../dom/selector.html#dom-selector"><em>KISSY selector</em></a></li>
-<li><strong>eventType</strong> (<em>string</em>) &#8211; 包含一个或多个事件名称的字符串，多个事件名以空格分开</li>
+<li><strong>eventType</strong> (<em>string</em>) &#8211; 包含一个或多个事件名称的字符串, 多个事件名以空格分开</li>
 <li><strong>fn</strong> (<em>function(eventObject)</em>) &#8211; 当事件触发时的回调函数</li>
-<li><strong>scope</strong> (<em>object</em>) &#8211; 回调函数的 this 值。如果不指定默认为绑定事件的当前元素</li>
+<li><strong>scope</strong> (<em>object</em>) &#8211; 回调函数的 this 值. 如果不指定默认为绑定事件的当前元素</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+<p><tt class="docutils literal"><span class="pre">on</span></tt> 方法是给文档添加行为的主要方式. 所有的事件类型, 例如 <tt class="docutils literal"><span class="pre">focus</span></tt> , <tt class="docutils literal"><span class="pre">mouseover</span></tt> , <tt class="docutils literal"><span class="pre">resize</span></tt> 都是有效的事件类型.
+( <tt class="docutils literal"><span class="pre">window</span></tt> 的 <tt class="docutils literal"><span class="pre">beforeunload</span></tt> 和 <tt class="docutils literal"><span class="pre">error</span></tt> 事件使用了不标准的方式, 该方法不支持, 请直接在 <tt class="docutils literal"><span class="pre">window</span></tt> 对象上注册事件处理器).</p>
+<p>当一个节点的某个事件出发时, 绑定该事件的所有处理器都会被调用.如果有多个事件处理器, 则他们的执行顺序和绑定的顺序保持一致, 当所有的事件处理器执行完毕后,
+事件才继续向上传播.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Event.add">
-<tt class="descclassname">Event.</tt><tt class="descname">add</tt><big>(</big><em>selector</em>, <em>eventType</em>, <em>fn</em>, <em>scope</em><big>)</big><a class="headerlink" href="#Event.add" title="Permalink to this definition">¶</a></dt>
-<dd><p>为 <a class="reference internal" href="#Event.on" title="Event.on"><tt class="xref py py-func docutils literal"><span class="pre">on()</span></tt></a> 的别名</p>
-</dd></dl>
-
+<tt class="descclassname">Event.</tt><tt class="descname">add</tt><big>(</big><big>)</big><a class="headerlink" href="#Event.add" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">void <strong>add</strong> ( selector , eventType , fn , scope )</div>
+<div class="line">为 <a class="reference internal" href="#Event.on" title="Event.on"><tt class="xref py py-func docutils literal"><span class="pre">on()</span></tt></a> 的别名</div>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">不能在 <tt class="docutils literal"><span class="pre">object</span></tt> , <tt class="docutils literal"><span class="pre">embed</span></tt> , <tt class="docutils literal"><span class="pre">applet</span></tt> 元素上注册事件.</p>
 </div>
-<div class="section" id="id1">
-<h2>简述<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p><tt class="docutils literal"><span class="pre">on</span></tt> 方法是给文档添加行为的主要方式。所有的事件类型，例如 <tt class="docutils literal"><span class="pre">focus</span></tt> , <tt class="docutils literal"><span class="pre">mouseover</span></tt> , <tt class="docutils literal"><span class="pre">resize</span></tt> 都是有效的事件类型.
-( <tt class="docutils literal"><span class="pre">window</span></tt> 的 <tt class="docutils literal"><span class="pre">beforeunload</span></tt> 和 <tt class="docutils literal"><span class="pre">error</span></tt> 事件使用了不标准的方式，该方法不支持，请直接在 <tt class="docutils literal"><span class="pre">window</span></tt> 对象上注册事件处理器).</p>
-<p>当一个节点的某个事件出发时，绑定该事件的所有处理器都会被调用.如果有多个事件处理器，则他们的执行顺序和绑定的顺序保持一致，当所有的事件处理器执行完毕后，
-事件才继续向上传播.</p>
-<p>最简单的用法是:</p>
+</dd></dl>
+
+</div>
+<div class="section" id="demo">
+<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>基本用法</strong></p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;#foo&#39;</span><span class="p">,</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
     <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;clicked : &#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>上面的代码作用是：为 id 为 foo 的元素绑定 click 事件.当用户在该元素内部点击时，则 alert 会弹出来.</p>
-</div>
-<div class="section" id="id2">
-<h2>多事件绑定<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>多个事件用空格分开，可以同时绑定多个事件.</p>
+<p>上面的代码作用是：为 id 为 foo 的元素绑定 click 事件.当用户在该元素内部点击时, 则 alert 会弹出来.</p>
+<p><strong>多个事件用空格分开, 可以同时绑定多个事件</strong></p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;#foo&#39;</span><span class="p">,</span><span class="s1">&#39;mouseenter mouseleave&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">DOM</span><span class="p">.</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s2">&quot;enter&quot;</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>上述代码的作用是：一开始 foo 节点没有 enter 样式类，当鼠标进入时给该节点添加 enter 样式类，当鼠标移出时把 enter 样式类去掉。这样就达到了 hover 的效果.</p>
-</div>
-<div class="section" id="id3">
-<h2>事件对象<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>当事件发生时，事件处理器回调函数会被传递给一个事件对象参数.具体可见 <a class="reference internal" href="event-object.html#Event.Object" title="Event.Object"><tt class="xref py py-class docutils literal"><span class="pre">Object</span></tt></a> .</p>
+<p>上述代码的作用是：一开始 foo 节点没有 enter 样式类, 当鼠标进入时给该节点添加 enter 样式类, 当鼠标移出时把 enter 样式类去掉. 这样就达到了 hover 的效果.</p>
+<p>当事件发生时, 事件处理器回调函数会被传递给一个事件对象参数.具体可见 <a class="reference internal" href="event-object.html#Event.Object" title="Event.Object"><tt class="xref py py-class docutils literal"><span class="pre">Object</span></tt></a> .</p>
 <p>返回 <tt class="docutils literal"><span class="pre">false</span></tt> 相当于调用了事件对象的 <tt class="xref py py-meth docutils literal"><span class="pre">preventDefault()</span></tt> 以及 <tt class="xref py py-meth docutils literal"><span class="pre">stopPropagation()</span></tt></p>
-<p>在事件处理器中使用事件对象举例：</p>
+<p><strong>在事件处理器中使用事件对象</strong></p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;#foo&#39;</span><span class="p">,</span><span class="s1">&#39;mouseup mousedown&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">type</span> <span class="o">+</span><span class="s2">&quot; occured&quot;</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>这样就可以在绑定多事件时，明确知道当前哪个事件触发了.  .</p>
+<p>这样就可以在绑定多事件时, 明确知道当前哪个事件触发了.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">KISSY 也对 <tt class="docutils literal"><span class="pre">mouseenter/mouseleave</span> <span class="pre">focusin/focusout</span></tt> 进行了兼容处理，所有浏览器都可以使用这两个事件了.</p>
+<p class="last">KISSY 也对 <tt class="docutils literal"><span class="pre">mouseenter/mouseleave</span> <span class="pre">focusin/focusout</span></tt> 进行了兼容处理, 所有浏览器都可以使用这两个事件了.</p>
 </div>
-</div>
-<div class="section" id="id4">
-<h2>例子<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>处理段落的单击与双击，注意坐标是相对于例子的 iframe 窗口的.
-这里方面起见采用 <a class="reference internal" href="../node/index.html#module-Node" title="Node"><tt class="xref py py-mod docutils literal"><span class="pre">Node</span></tt></a> 来操作 Event。</p>
+<p><strong>处理段落的单击与双击</strong>
+注意坐标是相对于例子的 iframe 窗口的, 这里方便起见采用 <a class="reference internal" href="../node/index.html#module-Node" title="Node"><tt class="xref py py-mod docutils literal"><span class="pre">Node</span></tt></a> 来操作 Event.</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
@@ -186,14 +193,14 @@
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </div>
-<p>Demo</p>
-<iframe width="100%" height="135" src="../../../static/api/core/event/on_1.html"></iframe><p>阻止链接的默认事件以及冒泡</p>
+<iframe width="100%" height="135" src="../../../static/api/core/event/on_1.html"></iframe><p><strong>阻止链接的默认事件以及冒泡</strong></p>
 <div class="highlight-html"><div class="highlight"><pre>Event.on(&#39;a&#39;,&#39;click&#39;,function(){
     // 等价于 e.preventDefault(); e.stopPropagation();
     e.halt();
 });
 </pre></div>
 </div>
+</div></blockquote>
 </div>
 </div>
 

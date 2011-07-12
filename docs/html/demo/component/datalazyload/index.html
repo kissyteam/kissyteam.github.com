@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -60,20 +64,29 @@
       <a href="../index.html" title="Component"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../../index.html" >范例</a> &#187; </li>
+      <li><a href="../../index.html" >All Demos</a> &#187; </li>
       <li><a href="../index.html" accesskey="U">Component</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
   <span class="target" id="module-DataLazyload"></span><div class="section" id="datalazyload">
 <h1>DataLazyload<a class="headerlink" href="#datalazyload" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id1">
-<h2>基本使用<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>最简单的调用方式</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;datalazyload&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">DataLazyload</span><span class="p">)</span> <span class="p">{</span>
+<div class="line-block">
+<div class="line">作者: <a class="reference external" href="mailto:lifesinger&#37;&#52;&#48;gmail&#46;com">玉伯</a></div>
+<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/datalazyload/impl.js">源码</a>  | <a class="reference external" href="../../../demo/component/datalazyload/index.html">Demo</a></div>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#module-DataLazyload" title="DataLazyload"><tt class="xref py py-class docutils literal"><span class="pre">DataLazyload</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>Demo - 基本使用<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;datalazyload&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">DataLazyload</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">S</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">S</span><span class="p">.</span><span class="nx">DataLazyload</span><span class="p">(</span> <span class="p">{</span> <span class="nx">mod</span><span class="o">:</span> <span class="s1">&#39;auto&#39;</span> <span class="p">}</span> <span class="p">);</span>
     <span class="p">});</span>
@@ -81,10 +94,12 @@
 </pre></div>
 </div>
 <p>这样, 页面加载时就会自动延迟所有图片的下载, 以及延迟特定 textarea 里的 html 渲染.</p>
+</div></blockquote>
 </div>
-<div class="section" id="id2">
-<h2>自动模式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>使用自动模式时, 设置配置项中的 <tt class="docutils literal"><span class="pre">mod</span></tt> 为 &#8216;auto&#8217; , 如下:</p>
+<div class="section" id="id4">
+<h2>Demo - 自动模式<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>使用自动模式时, 设置配置项中的 <tt class="docutils literal"><span class="pre">mod</span></tt> 为 &#8216;auto&#8217; , 如下:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">dataLazyload</span> <span class="o">=</span><span class="nx">DataLazyload</span><span class="p">({</span>
     <span class="nx">placeholder</span> <span class="o">:</span> <span class="s2">&quot;占位.png&quot;</span>
     <span class="nx">mod</span><span class="o">:</span><span class="s1">&#39;auto&#39;</span>
@@ -96,18 +111,22 @@
 </pre></div>
 </div>
 <p>会把当前视窗外的 img 的 src 保存在自定义属性中, 并将 src 替换为 placeholder (不指定为空), 当滚动导致该图片出现在当前视窗时将 src 设置已经保存的真实值.</p>
+</div></blockquote>
 </div>
-<div class="section" id="id3">
-<h2>手动模式<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>采用手动模式时, 需要自行在输出页面时, 可以不设置 img 的 src 属性, 但是必须设置 img 的 <tt class="docutils literal"><span class="pre">data-ks-lazyload</span></tt> 自定义属性为真实图片地址,  如:</p>
+<div class="section" id="id5">
+<h2>Demo - 手动模式<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>采用手动模式时, 需要自行在输出页面时, 可以不设置 img 的 src 属性, 但是必须设置 img 的 <tt class="docutils literal"><span class="pre">data-ks-lazyload</span></tt> 自定义属性为真实图片地址,  如:</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;img</span> <span class="na">data-ks-lazyload=</span><span class="s">&quot;xx.jpg&quot;</span> <span class="nt">/&gt;</span>
 </pre></div>
 </div>
 <p>当滚动导致该图片出现在当前视窗时会将 src 设置为真实地址.</p>
+</div></blockquote>
 </div>
-<div class="section" id="textarea">
-<h2>textarea 延迟加载<a class="headerlink" href="#textarea" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
+<div class="section" id="demo-textarea">
+<h2>Demo - textarea 延迟加载<a class="headerlink" href="#demo-textarea" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>这种情况下和模式的手动自动没关系!</strong></p>
 </div>
@@ -116,18 +135,23 @@
 </div>
 <p>里. 可以添加 hidden 等 class, 但建议用 invisible (visiblity:hidden), 并设定 height = &#8216;实际高度&#8217;, 这样可以保证滚动时无缝连接.
 当滚动导致该 textarea 出现在当前视窗时会将该 textarea 内的 html 添加到新生成的 div 中, 并用新生成的 div 替换该 textarea .</p>
-<p><strong>另外注意:</strong></p>
-<ol class="arabic simple">
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ol class="last arabic simple">
 <li>延迟 callback 约定：dataLazyload.addCallback(el, fn) 表示当 el 即将出现时, 触发 fn.</li>
 <li>所有操作都是最多触发一次, 比如来回拖动滚动条时, 只有 el 第一次出现时会触发 fn 回调.</li>
 </ol>
 </div>
-<div class="section" id="id4">
-<h2>全部示例<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
+</div></blockquote>
+</div>
+<div class="section" id="id6">
+<h2>全部示例<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
 <li><a class="reference external" href="http://docs.kissyui.com/kissy/src/datalazyload/test.html">manual 模式</a></li>
 <li><a class="reference external" href="http://docs.kissyui.com/kissy/src/datalazyload/test-auto.html">auto 模式</a></li>
 </ul>
+</div></blockquote>
 </div>
 </div>
 
@@ -182,21 +206,22 @@
         <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../quickstart/index.html">快速上手</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">API文档</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">范例</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">All Demos</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../seed/index.html">Seed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../core/index.html">Core</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Component</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="">DataLazyload</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id1">基本使用</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2">自动模式</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id3">手动模式</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#textarea">textarea 延迟加载</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id4">全部示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#class">Class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Demo - 基本使用</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Demo - 自动模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Demo - 手动模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#demo-textarea">Demo - textarea 延迟加载</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">全部示例</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../overlay/index.html">Overlay</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../switchable/index.html">Switchable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../dd/index.html">DD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dd/index.html">All Demos</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../suggest/index.html">Suggest</a></li>
 </ul>
 </li>

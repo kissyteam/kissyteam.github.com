@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>KISSY.substitute &mdash; KISSY Docs valpha documentation</title>
+<title>substitute &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -54,10 +58,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="trim.html" title="KISSY.trim"
+      <a href="trim.html" title="trim"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="makeArray.html" title="KISSY.makeArray"
+      <a href="makeArray.html" title="makeArray"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -65,24 +69,31 @@
       <li><a href="index.html" accesskey="U">lang</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
-  <div class="section" id="kissy-substitute">
-<h1>KISSY.substitute<a class="headerlink" href="#kissy-substitute" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="substitute">
+<h1>substitute<a class="headerlink" href="#substitute" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference internal" href="index.html#module-Lang" title="Lang"><tt class="xref py py-mod docutils literal"><span class="pre">Lang</span></tt></a></div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="Lang.KISSY.substitute">
-<tt class="descclassname">KISSY.</tt><tt class="descname">substitute</tt><big>(</big><em>str</em>, <em>o</em><big>)</big><a class="headerlink" href="#Lang.KISSY.substitute" title="Permalink to this definition">¶</a></dt>
-<dd><p>将字符串中的占位符替换为对应的键值。</p>
+<tt class="descclassname">KISSY.</tt><tt class="descname">substitute</tt><big>(</big><big>)</big><a class="headerlink" href="#Lang.KISSY.substitute" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">String <strong>KISSY.substitute</strong> (str,o)</div>
+<div class="line">将字符串中的占位符替换为对应的键值.</div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
-<li><strong>str</strong> (<em>string</em>) &#8211; 包含数据占位符的模板字符串，占位符用 <tt class="docutils literal"><span class="pre">{}</span></tt> 包起来。</li>
-<li><strong>o</strong> (<em>object</em>) &#8211; 数据</li>
+<li><strong>str</strong> (<em>String</em>) &#8211; 包含数据占位符的模板字符串, 占位符用 <tt class="docutils literal"><span class="pre">{}</span></tt> 包起来.</li>
+<li><strong>o</strong> (<em>Object</em>) &#8211; 数据</li>
 </ul>
 </td>
 </tr>
@@ -91,13 +102,11 @@
 </td>
 </tr>
 <tr class="field"><th class="field-name" colspan="2">Return type:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><p class="first last">string</p>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last">String</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
 <p>例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span>
 <span class="nx">str</span> <span class="o">=</span> <span class="s1">&#39;{name} is {prop_1} and {prop_2}.&#39;</span><span class="p">,</span>
@@ -105,6 +114,9 @@
 
 <span class="nx">S</span><span class="p">.</span><span class="nx">substitute</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="nx">obj</span><span class="p">);</span> <span class="c1">// =&gt; &#39;Jack Bauer is our lord and savior.&#39;</span>
 </pre></div>
+</div>
+</dd></dl>
+
 </div>
 </div>
 

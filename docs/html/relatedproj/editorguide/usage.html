@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../html/api/index.html">API</a></li>
+        <li><a href="../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -64,9 +68,6 @@
       <li><a href="index.html" accesskey="U">Editor</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
   <div class="section" id="id1">
 <h1>初始化编辑器<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
@@ -81,18 +82,18 @@
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>textareaId</strong> (<em>string</em>) &#8211; 编辑器装饰的文本输入框 id，注意 id前加 <tt class="docutils literal"><span class="pre">#</span></tt></li>
-<li><strong>config</strong> (<em>Object</em>) &#8211; <p>编辑器以及其插件的配置项。包括：</p>
+<li><strong>textareaId</strong> (<em>string</em>) &#8211; 编辑器装饰的文本输入框 id, 注意 id前加 <tt class="docutils literal"><span class="pre">#</span></tt></li>
+<li><strong>config</strong> (<em>Object</em>) &#8211; <p>编辑器以及其插件的配置项. 包括：</p>
 <dl class="attribute">
 <dt id="Editor.KISSY.Editor.config.attachForm">
 <tt class="descclassname">config.</tt><tt class="descname">attachForm</tt><a class="headerlink" href="#Editor.KISSY.Editor.config.attachForm" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 boolean， 是否监控编辑器所属的表单提交</p>
+<dd><p>类型 boolean,  是否监控编辑器所属的表单提交</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="Editor.KISSY.Editor.config.baseZIndex">
 <tt class="descclassname">config.</tt><tt class="descname">baseZIndex</tt><a class="headerlink" href="#Editor.KISSY.Editor.config.baseZIndex" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 number，编辑器内弹窗z-index下限。</p>
+<dd><p>类型 number, 编辑器内弹窗z-index下限.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">为防止和其他页面元素互相覆盖, 请保证这个数字整个页面最高</p>
@@ -102,19 +103,19 @@
 <dl class="attribute">
 <dt id="Editor.KISSY.Editor.config.customStyle">
 <tt class="descclassname">config.</tt><tt class="descname">customStyle</tt><a class="headerlink" href="#Editor.KISSY.Editor.config.customStyle" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 string，编辑区域的自定义样式</p>
+<dd><p>类型 string, 编辑区域的自定义样式</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="Editor.KISSY.Editor.config.focus">
 <tt class="descclassname">config.</tt><tt class="descname">focus</tt><a class="headerlink" href="#Editor.KISSY.Editor.config.focus" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 boolean，是否编辑器初始自动聚焦（光标位于编辑器内）</p>
+<dd><p>类型 boolean, 是否编辑器初始自动聚焦(光标位于编辑器内)</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="Editor.KISSY.Editor.config.pluginConfig">
 <tt class="descclassname">config.</tt><tt class="descname">pluginConfig</tt><a class="headerlink" href="#Editor.KISSY.Editor.config.pluginConfig" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 object，编辑器插件的相应配置</p>
+<dd><p>类型 object, 编辑器插件的相应配置</p>
 </dd></dl>
 
 </li>
@@ -134,10 +135,10 @@
         // 编辑器内弹窗z-index下限, 防止互相覆盖, 请保证这个数字整个页面最高
         "baseZIndex":10000,
 
-        // 自定义样式，将自己的样式加入编辑器
+        // 自定义样式, 将自己的样式加入编辑器
         customStyle:"p{color:red;}",
 
-        // 是否编辑器初始自动聚焦（光标位于编辑器内）
+        // 是否编辑器初始自动聚焦(光标位于编辑器内)
         focus:true
     }).use(plugins);
 });</pre>
@@ -207,7 +208,7 @@
         <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">快速上手</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API文档</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../demo/index.html">范例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo/index.html">All Demos</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">子项目集</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Editor</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="index.html#doc">doc</a><ul class="current">

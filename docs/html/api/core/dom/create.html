@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -65,9 +69,6 @@
       <li><a href="index.html" accesskey="U">DOM</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
   <div class="section" id="create">
 <h1>create<a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h1>
@@ -80,8 +81,11 @@
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="DOM.create">
-<tt class="descclassname">DOM.</tt><tt class="descname">create</tt><big>(</big><em>html</em><span class="optional">[</span>, <em>props = {}</em>, <em>ownerDoc = document</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#DOM.create" title="Permalink to this definition">¶</a></dt>
-<dd><p>创建 dom 节点</p>
+<tt class="descclassname">DOM.</tt><tt class="descname">create</tt><big>(</big><big>)</big><a class="headerlink" href="#DOM.create" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">HTMLFragment|HTMLElement <strong>create</strong> ( html [ , props = {} , ownerDoc = document ] )</div>
+<div class="line">创建 dom 节点</div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -115,10 +119,10 @@
 <span class="c1">// 等价 document.createTextNode(&#39;text&#39;)</span>
 <span class="nx">DOM</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">);</span>
 
-<span class="c1">// 创建时，同时添加属性值</span>
+<span class="c1">// 创建时, 同时添加属性值</span>
 <span class="nx">DOM</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;&lt;a&gt;&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">href</span><span class="o">:</span> <span class="s1">&#39;hot.html&#39;</span><span class="p">,</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Hot Page&#39;</span> <span class="p">});</span>
 
-<span class="c1">// KISSY v1.1.5+， 创建时，支持添加更多的属性；</span>
+<span class="c1">// KISSY v1.1.5+,  创建时, 支持添加更多的属性；</span>
 <span class="c1">// 新增属性有： val, css, html, text, data, width, height, offset</span>
 <span class="nx">DOM</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;&lt;a&gt;&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">href</span><span class="o">:</span> <span class="s1">&#39;hot.html&#39;</span><span class="p">,</span>
                     <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Hot Page&#39;</span><span class="p">,</span>

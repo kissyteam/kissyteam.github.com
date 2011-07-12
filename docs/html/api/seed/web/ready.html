@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>KISSY.ready &mdash; KISSY Docs valpha documentation</title>
+<title>ready &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -54,7 +58,7 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="available.html" title="KISSY.available"
+      <a href="available.html" title="available"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="index.html" title="web"
@@ -65,37 +69,45 @@
       <li><a href="index.html" accesskey="U">web</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
-  <div class="section" id="kissy-ready">
-<h1>KISSY.ready<a class="headerlink" href="#kissy-ready" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ready">
+<h1>ready<a class="headerlink" href="#ready" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference internal" href="index.html#module-Web" title="Web"><tt class="xref py py-mod docutils literal"><span class="pre">Web</span></tt></a></div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="Web.KISSY.ready">
-<tt class="descclassname">KISSY.</tt><tt class="descname">ready</tt><big>(</big><em>fn</em><big>)</big><a class="headerlink" href="#Web.KISSY.ready" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<tt class="descclassname">KISSY.</tt><tt class="descname">ready</tt><big>(</big><big>)</big><a class="headerlink" href="#Web.KISSY.ready" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">void <strong>KISSY.ready</strong> (fn)</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>fn</strong> (<em>function</em>) &#8211; 回调函数，在 DOM 加载完毕时执行。</td>
+<tr><td>&nbsp;</td><td class="field-body"><strong>fn</strong> (<em>function</em>) &#8211; 回调函数, 在 DOM 加载完毕时执行.</td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
 <p>例如：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// code</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>这是 KISSY 外部代码的基本调用方式。
-为了保证代码执行时，依赖的 DOM 结构已准备好，推荐尽可能的将代码写在通过 ready 注册的函数里。</p>
+<p>这是 KISSY 外部代码的基本调用方式.
+为了保证代码执行时, 依赖的 DOM 结构已准备好, 推荐尽可能的将代码写在通过 ready 注册的函数里.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">在 DOM 加载完毕后，依旧可以通过 ready 添加函数，此时会立刻执行。</p>
+<p class="last">在 DOM 加载完毕后, 依旧可以通过 ready 添加函数, 此时会立刻执行.</p>
+</div>
+</dd></dl>
+
 </div>
 </div>
 

@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../html/api/index.html">API</a></li>
+        <li><a href="../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -64,19 +68,16 @@
       <li><a href="index.html" accesskey="U">KISSY Module Compiler</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
   <div class="section" id="id1">
 <h1>使用说明<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>该工具为一个 jar 包，推荐嵌入到 ant 中，作为项目构建的一个阶段.</p>
+<p>该工具为一个 jar 包, 推荐嵌入到 ant 中, 作为项目构建的一个阶段.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">ant 以及相关压缩工具可直接使用 <a class="reference external" href="https://github.com/kissyteam/kissy-tools">kissy-tools</a> 中的文件，
-建议直接下载整个 kissy-tools 作为项目工具一部分。</p>
+<p class="last">ant 以及相关压缩工具可直接使用 <a class="reference external" href="https://github.com/kissyteam/kissy-tools">kissy-tools</a> 中的文件,
+建议直接下载整个 kissy-tools 作为项目工具一部分.</p>
 </div>
-<p>使用前请先下载 kissy 源码到本地硬盘 <tt class="docutils literal"><span class="pre">x:/kissy/</span></tt> ，kissy-tools 源码到硬盘 <tt class="docutils literal"><span class="pre">x:/kissy-tools/</span></tt> ，假设项目源码在 <tt class="docutils literal"><span class="pre">x:/code/</span></tt> ，如上一节包括两个模块文件: <tt class="docutils literal"><span class="pre">x:/code/package/x.js</span></tt> 以及 <tt class="docutils literal"><span class="pre">x:/code/package/y.js</span></tt> ，则 ant 的调用为：</p>
+<p>使用前请先下载 kissy 源码到本地硬盘 <tt class="docutils literal"><span class="pre">x:/kissy/</span></tt> , kissy-tools 源码到硬盘 <tt class="docutils literal"><span class="pre">x:/kissy-tools/</span></tt> , 假设项目源码在 <tt class="docutils literal"><span class="pre">x:/code/</span></tt> , 如上一节包括两个模块文件: <tt class="docutils literal"><span class="pre">x:/code/package/x.js</span></tt> 以及 <tt class="docutils literal"><span class="pre">x:/code/package/y.js</span></tt> , 则 ant 的调用为：</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;java</span> <span class="na">classname=</span><span class="s">&quot;com.taobao.f2e.Main&quot;</span><span class="nt">&gt;</span>
 
     <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-requires&quot;</span><span class="nt">/&gt;</span>
@@ -100,34 +101,34 @@
 <span class="nt">&lt;/java&gt;</span>
 </pre></div>
 </div>
-<p>如上所示该工具需要一些参数，包括 <tt class="docutils literal"><span class="pre">requires</span></tt>  , <tt class="docutils literal"><span class="pre">baseUrls</span></tt> , <tt class="docutils literal"><span class="pre">encodings</span></tt> , <tt class="docutils literal"><span class="pre">outputEncoding</span></tt> , <tt class="docutils literal"><span class="pre">excludes</span></tt> , <tt class="docutils literal"><span class="pre">output</span></tt> ，具体格式如下：</p>
+<p>如上所示该工具需要一些参数, 包括 <tt class="docutils literal"><span class="pre">requires</span></tt>  , <tt class="docutils literal"><span class="pre">baseUrls</span></tt> , <tt class="docutils literal"><span class="pre">encodings</span></tt> , <tt class="docutils literal"><span class="pre">outputEncoding</span></tt> , <tt class="docutils literal"><span class="pre">excludes</span></tt> , <tt class="docutils literal"><span class="pre">output</span></tt> , 具体格式如下：</p>
 <div class="section" id="requires">
 <h2>requires<a class="headerlink" href="#requires" title="Permalink to this headline">¶</a></h2>
-<p>需要打包的模块名集合，该模块以及其递归依赖都会被一并打包。多个模块名用 <tt class="docutils literal"><span class="pre">,</span></tt> 分隔。如以上示例： <tt class="docutils literal"><span class="pre">package/y</span></tt> 。</p>
+<p>需要打包的模块名集合, 该模块以及其递归依赖都会被一并打包. 多个模块名用 <tt class="docutils literal"><span class="pre">,</span></tt> 分隔. 如以上示例： <tt class="docutils literal"><span class="pre">package/y</span></tt> .</p>
 </div>
 <div class="section" id="baseurls">
 <h2>baseUrls<a class="headerlink" href="#baseurls" title="Permalink to this headline">¶</a></h2>
-<p>模块文件查找目录集合，一般存在两个： <tt class="docutils literal"><span class="pre">kissy</span></tt> 内置模块目录以及业务模块源码目录，目录间以 <tt class="docutils literal"><span class="pre">,</span></tt> 分隔。
-如以上示例 <tt class="docutils literal"><span class="pre">x:/kissy/,x:/code/</span></tt> 。</p>
+<p>模块文件查找目录集合, 一般存在两个： <tt class="docutils literal"><span class="pre">kissy</span></tt> 内置模块目录以及业务模块源码目录, 目录间以 <tt class="docutils literal"><span class="pre">,</span></tt> 分隔.
+如以上示例 <tt class="docutils literal"><span class="pre">x:/kissy/,x:/code/</span></tt> .</p>
 </div>
 <div class="section" id="encodings">
 <h2>encodings<a class="headerlink" href="#encodings" title="Permalink to this headline">¶</a></h2>
-<p>指明模块目录中文件的编码，顺序对应于 <tt class="docutils literal"><span class="pre">baseUrls</span></tt> ，多个编码以 <tt class="docutils literal"><span class="pre">,</span></tt> 分隔。如以上示例： <tt class="docutils literal"><span class="pre">utf-8,gbk</span></tt> ，
-表示 <tt class="docutils literal"><span class="pre">kissy</span></tt> 内置模块为 <tt class="docutils literal"><span class="pre">utf-8</span></tt> 编码，业务模块为 <tt class="docutils literal"><span class="pre">gbk</span></tt> 编码。</p>
+<p>指明模块目录中文件的编码, 顺序对应于 <tt class="docutils literal"><span class="pre">baseUrls</span></tt> , 多个编码以 <tt class="docutils literal"><span class="pre">,</span></tt> 分隔. 如以上示例： <tt class="docutils literal"><span class="pre">utf-8,gbk</span></tt> ,
+表示 <tt class="docutils literal"><span class="pre">kissy</span></tt> 内置模块为 <tt class="docutils literal"><span class="pre">utf-8</span></tt> 编码, 业务模块为 <tt class="docutils literal"><span class="pre">gbk</span></tt> 编码.</p>
 </div>
 <div class="section" id="outputencoding">
 <h2>outputEncoding<a class="headerlink" href="#outputencoding" title="Permalink to this headline">¶</a></h2>
-<p>指明最后合并打包文件的编码格式。如以上示例 <tt class="docutils literal"><span class="pre">utf-8</span></tt> 。</p>
+<p>指明最后合并打包文件的编码格式. 如以上示例 <tt class="docutils literal"><span class="pre">utf-8</span></tt> .</p>
 </div>
 <div class="section" id="excludes">
 <h2>excludes<a class="headerlink" href="#excludes" title="Permalink to this headline">¶</a></h2>
-<p>指明 <tt class="docutils literal"><span class="pre">requires</span></tt> 递归依赖模块中不需要打包的模块名称集合，该集合内的模块是单独动态加载或静态引入的，多个模块以 <tt class="docutils literal"><span class="pre">,</span></tt> 分隔。
-如以上示例 <tt class="docutils literal"><span class="pre">core</span></tt> 表示 <tt class="docutils literal"><span class="pre">kissy</span></tt> 的 <tt class="docutils literal"><span class="pre">core</span></tt> 模块不需要合并打包，是通过 <tt class="docutils literal"><span class="pre">kissy.js</span></tt> 静态引入到页面中的。</p>
+<p>指明 <tt class="docutils literal"><span class="pre">requires</span></tt> 递归依赖模块中不需要打包的模块名称集合, 该集合内的模块是单独动态加载或静态引入的, 多个模块以 <tt class="docutils literal"><span class="pre">,</span></tt> 分隔.
+如以上示例 <tt class="docutils literal"><span class="pre">core</span></tt> 表示 <tt class="docutils literal"><span class="pre">kissy</span></tt> 的 <tt class="docutils literal"><span class="pre">core</span></tt> 模块不需要合并打包, 是通过 <tt class="docutils literal"><span class="pre">kissy.js</span></tt> 静态引入到页面中的.</p>
 </div>
 <div class="section" id="output">
 <h2>output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
-<p>指明最终合并打包后的文件路径以及名称。如以上示例： <tt class="docutils literal"><span class="pre">x:/code/package/y.combine.js</span></tt> ，
-表示该工具产生的合并后文件为 <tt class="docutils literal"><span class="pre">x:/code/package/y.combine.js</span></tt> 。</p>
+<p>指明最终合并打包后的文件路径以及名称. 如以上示例： <tt class="docutils literal"><span class="pre">x:/code/package/y.combine.js</span></tt> ,
+表示该工具产生的合并后文件为 <tt class="docutils literal"><span class="pre">x:/code/package/y.combine.js</span></tt> .</p>
 </div>
 </div>
 
@@ -182,7 +183,7 @@
         <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">快速上手</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API文档</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../demo/index.html">范例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo/index.html">All Demos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../relatedproj/index.html">子项目集</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../styleguide/index.html">最佳编码实践</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">前端常用工具</a><ul class="current">

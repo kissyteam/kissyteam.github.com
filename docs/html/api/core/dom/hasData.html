@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -65,9 +69,6 @@
       <li><a href="index.html" accesskey="U">DOM</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
   <div class="section" id="hasdata">
 <h1>hasData<a class="headerlink" href="#hasdata" title="Permalink to this headline">¶</a></h1>
@@ -80,8 +81,11 @@
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="DOM.hasData">
-<tt class="descclassname">DOM.</tt><tt class="descname">hasData</tt><big>(</big><em>selector</em><span class="optional">[</span>, <em>name</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#DOM.hasData" title="Permalink to this definition">¶</a></dt>
-<dd><p class="versionadded">
+<tt class="descclassname">DOM.</tt><tt class="descname">hasData</tt><big>(</big><big>)</big><a class="headerlink" href="#DOM.hasData" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Boolean <strong>hasData</strong> ( selector [ , name ] )</div>
+</div>
+<p class="versionadded">
 <span class="versionmodified">New in version 1.2: </span>判断是否符合选择器的所有元素中的一个存在对应的扩展属性( expando )值.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -105,10 +109,9 @@
 </tbody>
 </table>
 <p>举例：</p>
-<blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">;</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">;</span>
 
-<span class="c1">// 给所有的段落节点设置扩展属性 ``x`` ，值为 ``y``</span>
+<span class="c1">// 给所有的段落节点设置扩展属性 ``x`` , 值为 ``y``</span>
 <span class="nx">DOM</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">,</span><span class="s2">&quot;x&quot;</span><span class="p">,</span><span class="s2">&quot;y&quot;</span><span class="p">);</span>
 
 <span class="nx">DOM</span><span class="p">.</span><span class="nx">hasData</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span> <span class="c1">// =&gt; true , 设置过扩展属性</span>
@@ -124,7 +127,6 @@
 <span class="nx">DOM</span><span class="p">.</span><span class="nx">hasData</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span> <span class="c1">//=&gt; false</span>
 </pre></div>
 </div>
-</div></blockquote>
 </dd></dl>
 
 </div>

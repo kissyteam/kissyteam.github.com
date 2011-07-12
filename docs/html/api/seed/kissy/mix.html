@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>KISSY.mix &mdash; KISSY Docs valpha documentation</title>
+<title>mix &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -54,10 +58,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="merge.html" title="KISSY.merge"
+      <a href="merge.html" title="merge"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="Config.html" title="KISSY.Config"
+      <a href="Config.html" title="Config"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -65,31 +69,38 @@
       <li><a href="index.html" accesskey="U">KISSY</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
-  <div class="section" id="kissy-mix">
-<h1>KISSY.mix<a class="headerlink" href="#kissy-mix" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="mix">
+<h1>mix<a class="headerlink" href="#mix" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference internal" href="index.html#module-Seed" title="Seed"><tt class="xref py py-mod docutils literal"><span class="pre">Seed</span></tt></a></div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="Seed.KISSY.mix">
-<tt class="descclassname">KISSY.</tt><tt class="descname">mix</tt><big>(</big><em>receiver</em>, <em>supplier</em><span class="optional">[</span>, <em>overwrite = true</em>, <em>whitelist</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Seed.KISSY.mix" title="Permalink to this definition">¶</a></dt>
-<dd><p>将 supplier 对象的成员复制到 receiver 对象上。</p>
+<tt class="descclassname">KISSY.</tt><tt class="descname">mix</tt><big>(</big><big>)</big><a class="headerlink" href="#Seed.KISSY.mix" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Object <strong>KISSY.mix</strong> (receiver,supplier[,overwrite = true,whitelist])</div>
+<div class="line">将 supplier 对象的成员复制到 receiver 对象上.</div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
-<li><strong>receiver</strong> (<em>object</em>) &#8211; 属性接受者对象。</li>
-<li><strong>supplier</strong> (<em>object</em>) &#8211; 属性来源对象。</li>
-<li><strong>overwrite</strong> (<em>boolean</em>) &#8211; 是否覆盖接受者同名属性。</li>
-<li><strong>whitelist</strong> (<em>Array&lt;string&gt;</em>) &#8211; 属性来源对象的属性白名单，仅在名单中的属性进行复制。</li>
+<li><strong>receiver</strong> (<em>object</em>) &#8211; 属性接受者对象.</li>
+<li><strong>supplier</strong> (<em>object</em>) &#8211; 属性来源对象.</li>
+<li><strong>overwrite</strong> (<em>boolean</em>) &#8211; 是否覆盖接受者同名属性.</li>
+<li><strong>whitelist</strong> (<em>Array&lt;string&gt;</em>) &#8211; 属性来源对象的属性白名单, 仅在名单中的属性进行复制.</li>
 </ul>
 </td>
 </tr>
 <tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><p class="first">receiver 属性接受者对象。</p>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first">receiver 属性接受者对象.</p>
 </td>
 </tr>
 <tr class="field"><th class="field-name" colspan="2">Return type:</th></tr>
@@ -98,8 +109,6 @@
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
 <p>例如：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span>
 <span class="nx">r</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">a</span><span class="o">:</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span> <span class="s1">&#39;b&#39;</span> <span class="p">};</span>
@@ -115,8 +124,11 @@
 <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">f</span><span class="p">);</span> <span class="c1">// =&gt; &#39;f&#39;</span>
 </pre></div>
 </div>
-<p>该方法在 KISSY 里具有非常重要的地位。
-JavaScript 是一门动态语言，利用 mixin 特性，可以很方便的实现特性的静态复制和动态修改。</p>
+<p>该方法在 KISSY 里具有非常重要的地位.
+JavaScript 是一门动态语言, 利用 mixin 特性, 可以很方便的实现特性的静态复制和动态修改.</p>
+</dd></dl>
+
+</div>
 </div>
 
 

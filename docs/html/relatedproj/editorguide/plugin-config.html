@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../html/api/index.html">API</a></li>
+        <li><a href="../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -65,9 +69,6 @@
       <li><a href="usage.html" accesskey="U">初始化编辑器</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
   <div class="section" id="editorusage-common-cfg">
 <span id="id1"></span><h1>插件配置<a class="headerlink" href="#editorusage-common-cfg" title="Permalink to this headline">¶</a></h1>
@@ -83,12 +84,12 @@
 <dl class="attribute">
 <dt id="Editor.pluginConfig.link">
 <tt class="descclassname">pluginConfig.</tt><tt class="descname">link</tt><a class="headerlink" href="#Editor.pluginConfig.link" title="Permalink to this definition">¶</a></dt>
-<dd><p>超链接配置，目前包括</p>
+<dd><p>超链接配置, 目前包括</p>
 <blockquote>
 <div><dl class="attribute">
 <dt id="Editor.pluginConfig.link.target">
 <tt class="descclassname">link.</tt><tt class="descname">target</tt><a class="headerlink" href="#Editor.pluginConfig.link.target" title="Permalink to this definition">¶</a></dt>
-<dd><p>默认为 &#8220;&#8221;，表示在当前窗口打开新链接，也可以指定 &#8220;_blank&#8221; ，则可以在新窗口打开链接。例如</p>
+<dd><p>默认为 &#8220;&#8221;, 表示在当前窗口打开新链接, 也可以指定 &#8220;_blank&#8221; , 则可以在新窗口打开链接. 例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">pluginConfig</span> <span class="o">:</span> <span class="p">{</span>
     <span class="nx">link</span><span class="o">:</span><span class="p">{</span>
         <span class="nx">target</span><span class="o">:</span><span class="s2">&quot;_blank&quot;</span>
@@ -104,12 +105,12 @@
 <dl class="attribute">
 <dt id="Editor.pluginConfig.image.upload">
 <tt class="descclassname">pluginConfig.image.</tt><tt class="descname">upload</tt><a class="headerlink" href="#Editor.pluginConfig.image.upload" title="Permalink to this definition">¶</a></dt>
-<dd><p>上传图片配置，不需要上传功能可不配置，包括以下子配置</p>
+<dd><p>上传图片配置, 不需要上传功能可不配置, 包括以下子配置</p>
 <blockquote>
 <div><dl class="attribute">
 <dt id="Editor.pluginConfig.image.upload.serverUrl">
 <tt class="descclassname">upload.</tt><tt class="descname">serverUrl</tt><a class="headerlink" href="#Editor.pluginConfig.image.upload.serverUrl" title="Permalink to this definition">¶</a></dt>
-<dd><p>接受文件数据的服务器端程序地址，格式为 multipart/form-data ，返回格式为：</p>
+<dd><p>接受文件数据的服务器端程序地址, 格式为 multipart/form-data , 返回格式为：</p>
 <ul class="simple">
 <li>正确：{&#8220;imgUrl&#8221;:&#8221;<a class="reference external" href="http://xx.com/yy.jpg">http://xx.com/yy.jpg</a>&#8220;}</li>
 <li>错误：{&#8220;error&#8221;:&#8221;i am error!&#8221;}</li>
@@ -119,25 +120,25 @@
 <dl class="attribute">
 <dt id="Editor.pluginConfig.image.upload.serverParams">
 <tt class="descclassname">upload.</tt><tt class="descname">serverParams</tt><a class="headerlink" href="#Editor.pluginConfig.image.upload.serverParams" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型object，键值对。传给服务器的格外参数，如果 value 是函数则传递函数执行结果</p>
+<dd><p>类型object, 键值对. 传给服务器的格外参数, 如果 value 是函数则传递函数执行结果</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="Editor.pluginConfig.image.upload.suffix">
 <tt class="descclassname">upload.</tt><tt class="descname">suffix</tt><a class="headerlink" href="#Editor.pluginConfig.image.upload.suffix" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型字符串，允许图片的后缀名</p>
+<dd><p>类型字符串, 允许图片的后缀名</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="Editor.pluginConfig.image.upload.fileInput">
 <tt class="descclassname">upload.</tt><tt class="descname">fileInput</tt><a class="headerlink" href="#Editor.pluginConfig.image.upload.fileInput" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型字符串，传给服务器的文件域名</p>
+<dd><p>类型字符串, 传给服务器的文件域名</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="Editor.pluginConfig.image.upload.sizeLimit">
 <tt class="descclassname">upload.</tt><tt class="descname">sizeLimit</tt><a class="headerlink" href="#Editor.pluginConfig.image.upload.sizeLimit" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型整数，限制上传的文件大小，单位 KB，ie 下只能作为提示。</p>
+<dd><p>类型整数, 限制上传的文件大小, 单位 KB, ie 下只能作为提示.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -151,15 +152,15 @@
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">pluginConfig</span><span class="o">:</span> <span class="p">{</span>
     <span class="c1">// 图片插件配置</span>
     <span class="s2">&quot;image&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="c1">//上传图片配置，不需要上传功能可不配置</span>
+        <span class="c1">//上传图片配置, 不需要上传功能可不配置</span>
         <span class="nx">upload</span><span class="o">:</span> <span class="p">{</span>
             <span class="c1">//返回格式</span>
             <span class="c1">//正确：{&quot;imgUrl&quot;:&quot;http://xx.com/yy.jpg&quot;}</span>
             <span class="c1">//错误：{&quot;error&quot;:&quot;i am error!&quot;}</span>
             <span class="c1">//接受图片的服务器</span>
-            <span class="c1">//发送一个文件过去，格式为 multipart/form-data</span>
+            <span class="c1">//发送一个文件过去, 格式为 multipart/form-data</span>
             <span class="nx">serverUrl</span><span class="o">:</span> <span class="s2">&quot;/code/upload/upload.jsp&quot;</span><span class="p">,</span>
-            <span class="c1">//传给服务器的格外参数，是函数则传递函数执行结果</span>
+            <span class="c1">//传给服务器的格外参数, 是函数则传递函数执行结果</span>
             <span class="nx">serverParams</span><span class="o">:</span> <span class="p">{</span>
                 <span class="nx">yy</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
                     <span class="k">return</span> <span class="s2">&quot;xx&quot;</span><span class="p">;</span>
@@ -169,12 +170,12 @@
             <span class="nx">suffix</span><span class="o">:</span> <span class="s2">&quot;png,jpg,jpeg,gif&quot;</span><span class="p">,</span>
             <span class="c1">//传递给server的文件域名字</span>
             <span class="nx">fileInput</span><span class="o">:</span> <span class="s2">&quot;Filedata&quot;</span><span class="p">,</span>
-            <span class="c1">//限制上传的文件大小，单位KB，</span>
-            <span class="c1">//无法客户端限制，只能作为提示信息</span>
+            <span class="c1">//限制上传的文件大小, 单位KB,</span>
+            <span class="c1">//无法客户端限制, 只能作为提示信息</span>
             <span class="nx">sizeLimit</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
             <span class="c1">//k</span>
             <span class="c1">//自己想要添加的其他输入域</span>
-            <span class="nx">extraHtml</span><span class="o">:</span> <span class="s2">&quot;&lt;p style=&#39;margin-top:5px;&#39;&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;input type=&#39;checkbox&#39; name=&#39;ke_img_up_watermark_1&#39;&gt; 图片加水印，防止别人盗用&lt;/p&gt;&quot;</span>
+            <span class="nx">extraHtml</span><span class="o">:</span> <span class="s2">&quot;&lt;p style=&#39;margin-top:5px;&#39;&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;input type=&#39;checkbox&#39; name=&#39;ke_img_up_watermark_1&#39;&gt; 图片加水印, 防止别人盗用&lt;/p&gt;&quot;</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -182,7 +183,7 @@
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>如果页面中设置了 document.domain=&#8217;xx.com&#8217;，那么这时上传图片服务器要返回一段设置 domain 的 html，例如</p>
+<p>如果页面中设置了 document.domain=&#8217;xx.com&#8217;, 那么这时上传图片服务器要返回一段设置 domain 的 html, 例如</p>
 <div class="last highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
     <span class="nt">&lt;head&gt;</span>
         <span class="nt">&lt;script&gt;</span>
@@ -201,18 +202,18 @@
 <dl class="attribute">
 <dt id="Editor.pluginConfig.templates">
 <tt class="descclassname">pluginConfig.</tt><tt class="descname">templates</tt><a class="headerlink" href="#Editor.pluginConfig.templates" title="Permalink to this definition">¶</a></dt>
-<dd><p>模板 (templates) 配置，类型数组，数组每个元素为单个模板的配置，单个配置包括</p>
+<dd><p>模板 (templates) 配置, 类型数组, 数组每个元素为单个模板的配置, 单个配置包括</p>
 <blockquote>
 <div><dl class="attribute">
 <dt id="Editor.pluginConfig.templates.demo">
 <tt class="descclassname">templates.</tt><tt class="descname">demo</tt><a class="headerlink" href="#Editor.pluginConfig.templates.demo" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型字符串，模板的简单介绍</p>
+<dd><p>类型字符串, 模板的简单介绍</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="Editor.pluginConfig.templates.html">
 <tt class="descclassname">templates.</tt><tt class="descname">html</tt><a class="headerlink" href="#Editor.pluginConfig.templates.html" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型字符串，将要插入到编辑器区域的具体内容</p>
+<dd><p>类型字符串, 将要插入到编辑器区域的具体内容</p>
 </dd></dl>
 
 </div></blockquote>
@@ -236,29 +237,29 @@
 <dl class="attribute">
 <dt>
 <tt class="descname">pluginConfig.font-size</tt></dt>
-<dd><p>字体大小配置，类型 object 或 boolean。当为 false 时，则该按钮不出现在编辑器中。当为 object 时，包含子配置</p>
+<dd><p>字体大小配置, 类型 object 或 boolean. 当为 false 时, 则该按钮不出现在编辑器中. 当为 object 时, 包含子配置</p>
 <blockquote>
 <div><dl class="attribute">
 <dt>
 <tt class="descname">font-size.items</tt></dt>
-<dd><p>类型对象数组，数组每一项的配置为：</p>
+<dd><p>类型对象数组, 数组每一项的配置为：</p>
 <blockquote>
 <div><dl class="attribute">
 <dt id="Editor.items.value">
 <tt class="descclassname">items.</tt><tt class="descname">value</tt><a class="headerlink" href="#Editor.items.value" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 string，真实的字体大小</p>
+<dd><p>类型 string, 真实的字体大小</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="Editor.items.attrs">
 <tt class="descclassname">items.</tt><tt class="descname">attrs</tt><a class="headerlink" href="#Editor.items.attrs" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 object，键值对添加到每个字体的对应节点上</p>
+<dd><p>类型 object, 键值对添加到每个字体的对应节点上</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="Editor.items.name">
 <tt class="descclassname">items.</tt><tt class="descname">name</tt><a class="headerlink" href="#Editor.items.name" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 string，字体大小的显示值</p>
+<dd><p>类型 string, 字体大小的显示值</p>
 </dd></dl>
 
 </div></blockquote>
@@ -272,7 +273,7 @@
         <span class="nx">items</span><span class="o">:</span> <span class="p">[{</span>
             <span class="c1">//真实的字体大小值</span>
             <span class="nx">value</span><span class="o">:</span> <span class="s2">&quot;14px&quot;</span><span class="p">,</span>
-            <span class="c1">//字体大小选项框样式，可不配置</span>
+            <span class="c1">//字体大小选项框样式, 可不配置</span>
             <span class="nx">attrs</span><span class="o">:</span> <span class="p">{</span>
                 <span class="nx">style</span><span class="o">:</span> <span class="s1">&#39;position: relative; border: 1px solid #DDDDDD; margin: 2px; padding: 2px;&#39;</span>
             <span class="p">},</span>
@@ -289,12 +290,12 @@
 <dl class="attribute">
 <dt>
 <tt class="descname">pluginConfig.font-family</tt></dt>
-<dd><p>字体种类配置，类型 object，包含子配置项</p>
+<dd><p>字体种类配置, 类型 object, 包含子配置项</p>
 <blockquote>
 <div><dl class="attribute">
 <dt>
 <tt class="descname">font-family.items</tt></dt>
-<dd><p>类型对象数组，字体种类配置，单个配置包含</p>
+<dd><p>类型对象数组, 字体种类配置, 单个配置包含</p>
 <blockquote>
 <div><dl class="attribute">
 <dt>
@@ -334,25 +335,25 @@
 <dl class="attribute">
 <dt>
 <tt class="descname">pluginConfig.font-bold</tt></dt>
-<dd><p>是否显示粗体按钮，默认 true</p>
+<dd><p>是否显示粗体按钮, 默认 true</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
 <tt class="descname">pluginConfig.font-italic</tt></dt>
-<dd><p>是否显示斜体按钮，默认 true</p>
+<dd><p>是否显示斜体按钮, 默认 true</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
 <tt class="descname">pluginConfig.font-underline</tt></dt>
-<dd><p>是否显示下划线按钮，默认 true</p>
+<dd><p>是否显示下划线按钮, 默认 true</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
 <tt class="descname">pluginConfig.font-strikeThrough</tt></dt>
-<dd><p>是否显示删除线按钮，默认 true</p>
+<dd><p>是否显示删除线按钮, 默认 true</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -366,8 +367,8 @@
         <span class="nx">interval</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="c1">//最多保存几条历史记录?</span>
         <span class="nx">limit</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-        <span class="c1">//草稿箱帮助文案，可不设置</span>
-        <span class="nx">helpHtml</span><span class="o">:</span> <span class="s2">&quot;&lt;div &quot;</span> <span class="o">+</span> <span class="s2">&quot;style=&#39;width:200px;&#39;&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;div style=&#39;padding:5px;&#39;&gt;草稿箱能够自动保存您最新编辑的内容，&quot;</span> <span class="o">+</span> <span class="s2">&quot;如果发现内容丢失，&quot;</span> <span class="o">+</span> <span class="s2">&quot;请选择恢复编辑历史&lt;/div&gt;&lt;/div&gt;&quot;</span>
+        <span class="c1">//草稿箱帮助文案, 可不设置</span>
+        <span class="nx">helpHtml</span><span class="o">:</span> <span class="s2">&quot;&lt;div &quot;</span> <span class="o">+</span> <span class="s2">&quot;style=&#39;width:200px;&#39;&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;div style=&#39;padding:5px;&#39;&gt;草稿箱能够自动保存您最新编辑的内容, &quot;</span> <span class="o">+</span> <span class="s2">&quot;如果发现内容丢失, &quot;</span> <span class="o">+</span> <span class="s2">&quot;请选择恢复编辑历史&lt;/div&gt;&lt;/div&gt;&quot;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -381,7 +382,7 @@
 <p>例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;resize&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="c1">//只能在y轴拖放，[“x”,”y”]表示任意拖放</span>
+        <span class="c1">//只能在y轴拖放, [“x”,”y”]表示任意拖放</span>
         <span class="nx">direction</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -392,7 +393,7 @@
 <dl class="attribute">
 <dt id="Editor.pluginConfig.music">
 <tt class="descclassname">pluginConfig.</tt><tt class="descname">music</tt><a class="headerlink" href="#Editor.pluginConfig.music" title="Permalink to this definition">¶</a></dt>
-<dd><p>音乐插件配置，支持音乐文件地址输入，直接播放mp3</p>
+<dd><p>音乐插件配置, 支持音乐文件地址输入, 直接播放mp3</p>
 <p>例如：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">music</span><span class="o">:</span> <span class="p">{</span>
     <span class="c1">//必须和网址url同域而不是类库同域</span>
@@ -414,8 +415,8 @@
         <span class="c1">//正确：{&quot;imgUrl&quot;:&quot;&quot;}</span>
         <span class="c1">//错误：{&quot;error&quot;:&quot;&quot;}</span>
         <span class="c1">//注意：中文 \uxxxx 转义</span>
-        <span class="c1">//发送一个文件过去，格式为 multipart/form-data</span>
-        <span class="c1">//接受图片的服务器，注意必须绝对地址</span>
+        <span class="c1">//发送一个文件过去, 格式为 multipart/form-data</span>
+        <span class="c1">//接受图片的服务器, 注意必须绝对地址</span>
         <span class="nx">serverUrl</span><span class="o">:</span> <span class="s2">&quot;http://xx.com/code/upload/upload.jsp&quot;</span><span class="p">,</span>
         <span class="c1">//同图片配置</span>
         <span class="nx">serverParams</span><span class="o">:</span> <span class="p">{</span>
@@ -424,15 +425,15 @@
             <span class="p">}</span>
         <span class="p">},</span>
         <span class="c1">//同图片配置</span>
-        <span class="nx">extraHtml</span><span class="o">:</span> <span class="s2">&quot;&lt;p style=&#39;margin-top:10px;&#39;&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;input type=&#39;checkbox&#39; &quot;</span> <span class="o">+</span> <span class="s2">&quot;style=&#39;vertical-align:middle;margin:0 5px;&#39; &quot;</span> <span class="o">+</span> <span class="s2">&quot;id=&#39;ke_img_up_watermark_2&#39;&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;span style=&#39;vertical-align:middle;&#39;&gt;图片加水印，防止别人盗用&lt;/span&gt;&lt;/p&gt;&quot;</span><span class="p">,</span>
+        <span class="nx">extraHtml</span><span class="o">:</span> <span class="s2">&quot;&lt;p style=&#39;margin-top:10px;&#39;&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;input type=&#39;checkbox&#39; &quot;</span> <span class="o">+</span> <span class="s2">&quot;style=&#39;vertical-align:middle;margin:0 5px;&#39; &quot;</span> <span class="o">+</span> <span class="s2">&quot;id=&#39;ke_img_up_watermark_2&#39;&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;span style=&#39;vertical-align:middle;&#39;&gt;图片加水印, 防止别人盗用&lt;/span&gt;&lt;/p&gt;&quot;</span><span class="p">,</span>
         <span class="c1">//缩略图的后缀名</span>
         <span class="c1">//原图:http://xx.com/yy.jpg</span>
         <span class="c1">//则加入后缀名时变为：</span>
         <span class="c1">//http://xx.com/yy_80x80.jpg</span>
         <span class="nx">previewSuffix</span><span class="o">:</span> <span class="s2">&quot;_80x80&quot;</span><span class="p">,</span>
 
-        <span class="c1">//缩略图窗口宽度，高度根据图片自适应</span>
-        <span class="c1">//若不需要缩略图功能，不配置即可</span>
+        <span class="c1">//缩略图窗口宽度, 高度根据图片自适应</span>
+        <span class="c1">//若不需要缩略图功能, 不配置即可</span>
         <span class="nx">previewWidth</span><span class="o">:</span> <span class="s2">&quot;80px&quot;</span><span class="p">,</span>
 
         <span class="c1">//客户端 flash 验证</span>
@@ -445,7 +446,7 @@
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>#.该插件使用 flash 技术，必须在根域名下提供 crossdomain.xml ，例如 <a class="reference external" href="http://www.taobao.com/crossdomain.xml">http://www.taobao.com/crossdomain.xml</a> ，内容如下</p>
+<p>#.该插件使用 flash 技术, 必须在根域名下提供 crossdomain.xml , 例如 <a class="reference external" href="http://www.taobao.com/crossdomain.xml">http://www.taobao.com/crossdomain.xml</a> , 内容如下</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;cross-domain-policy&gt;</span>
     <span class="nt">&lt;allow-access-from</span> <span class="na">domain=</span><span class="s">&quot;*.taobao.com&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;allow-access-from</span> <span class="na">domain=</span><span class="s">&quot;*.taobao.net&quot;</span><span class="nt">/&gt;</span>
@@ -455,14 +456,14 @@
 <span class="nt">&lt;/cross-domain-policy&gt;</span>
 </pre></div>
 </div>
-<p class="last">#.serverUrl 必须使用绝对地址，否则如果编辑器组件和应用页面不在同一个hostname时，firefox下请求会发到编辑器组件所在的hostname。</p>
+<p class="last">#.serverUrl 必须使用绝对地址, 否则如果编辑器组件和应用页面不在同一个hostname时, firefox下请求会发到编辑器组件所在的hostname.</p>
 </div>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="Editor.pluginConfig.video">
 <tt class="descclassname">pluginConfig.</tt><tt class="descname">video</tt><a class="headerlink" href="#Editor.pluginConfig.video" title="Permalink to this definition">¶</a></dt>
-<dd><p>国内视频插入，可直接输入tudou,youku,ku6的url进行视频粘贴.</p>
+<dd><p>国内视频插入, 可直接输入tudou,youku,ku6的url进行视频粘贴.</p>
 <p>例如：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;video&quot;</span><span class="o">:</span> <span class="p">{</span>
@@ -473,7 +474,7 @@
         <span class="p">}],</span>
         <span class="c1">//输入框提示信息</span>
         <span class="nx">urlTip</span><span class="o">:</span> <span class="s2">&quot;请输入优酷网、土豆网、酷7网的视频播放页链接...&quot;</span><span class="p">,</span>
-        <span class="c1">//静态转换规则，从用户输入转换为flash地址，例如优酷：</span>
+        <span class="c1">//静态转换规则, 从用户输入转换为flash地址, 例如优酷：</span>
         <span class="nx">providers</span><span class="o">:</span> <span class="p">[{</span>
             <span class="nx">reg</span><span class="o">:</span> <span class="sr">/youku\.com/i</span><span class="p">,</span>
             <span class="nx">width</span><span class="o">:</span> <span class="mi">480</span><span class="p">,</span>
@@ -500,14 +501,14 @@
 <dl class="attribute">
 <dt>
 <tt class="descname">pluginConfig.xiami-music</tt></dt>
-<dd><p>虾米音乐插入，无需配置, 只要 use 即可.</p>
+<dd><p>虾米音乐插入, 无需配置, 只要 use 即可.</p>
 </dd></dl>
 
 </dd></dl>
 
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>xiami-music , video , multi-upload 为扩展插件，若需要使用请引入外部js</p>
+<p>xiami-music , video , multi-upload 为扩展插件, 若需要使用请引入外部js</p>
 <div class="last highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.1.x/editor/biz/ext/editor-plugin-pkg-min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 </div>
@@ -565,7 +566,7 @@
         <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">快速上手</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API文档</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../demo/index.html">范例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo/index.html">All Demos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">子项目集</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../styleguide/index.html">最佳编码实践</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">前端常用工具</a></li>

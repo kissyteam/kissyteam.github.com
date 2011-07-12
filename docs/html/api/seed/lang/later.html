@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>KISSY.later &mdash; KISSY Docs valpha documentation</title>
+<title>later &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -54,10 +58,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="filter.html" title="KISSY.filter"
+      <a href="filter.html" title="filter"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="each.html" title="KISSY.each"
+      <a href="each.html" title="each"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -65,32 +69,39 @@
       <li><a href="index.html" accesskey="U">lang</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
-  <div class="section" id="kissy-later">
-<h1>KISSY.later<a class="headerlink" href="#kissy-later" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="later">
+<h1>later<a class="headerlink" href="#later" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference internal" href="index.html#module-Lang" title="Lang"><tt class="xref py py-mod docutils literal"><span class="pre">Lang</span></tt></a></div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="Lang.KISSY.later">
-<tt class="descclassname">KISSY.</tt><tt class="descname">later</tt><big>(</big><em>fn</em><span class="optional">[</span>, <em>when</em>, <em>periodic</em>, <em>o</em>, <em>data</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Lang.KISSY.later" title="Permalink to this definition">¶</a></dt>
-<dd><p>延迟执行指定函数 fn</p>
+<tt class="descclassname">KISSY.</tt><tt class="descname">later</tt><big>(</big><big>)</big><a class="headerlink" href="#Lang.KISSY.later" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Object <strong>KISSY.later</strong> ( fn[, when, periodic, o, data] )</div>
+<div class="line">延迟执行指定函数 fn</div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
-<li><strong>fn</strong> (<em>function</em>) &#8211; 延迟执行的函数。</li>
-<li><strong>when</strong> (<em>number</em>) &#8211; 延迟时间，单位是毫秒。</li>
-<li><strong>periodic</strong> (<em>boolean</em>) &#8211; 是不是周期性执行。默认为 false.</li>
+<li><strong>fn</strong> (<em>function</em>) &#8211; 延迟执行的函数.</li>
+<li><strong>when</strong> (<em>number</em>) &#8211; 延迟时间, 单位是毫秒.</li>
+<li><strong>periodic</strong> (<em>boolean</em>) &#8211; 是不是周期性执行. 默认为 false.</li>
 <li><strong>o</strong> (<em>object</em>) &#8211; fn 上下文对象</li>
-<li><strong>data</strong> (<em>Array</em>) &#8211; 传递的参数。可以为单个对象，最后会转换成数组，依次传递给执行函数。</li>
+<li><strong>data</strong> (<em>Array</em>) &#8211; 传递的参数. 可以为单个对象, 最后会转换成数组, 依次传递给执行函数.</li>
 </ul>
 </td>
 </tr>
 <tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><p class="first"><p>timer 对象。包含属性
+<tr><td>&nbsp;</td><td class="field-body"><p class="first"><p>timer 对象. 包含属性
 .. attribute:: timer.interval</p>
 <blockquote>
 <div><p>是否周期执行</p>
@@ -110,8 +121,6 @@
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
 <p>例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">;</span>
 
@@ -119,6 +128,9 @@
     <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">},</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s1">&#39;I am later data.&#39;</span><span class="p">);</span>
 </pre></div>
+</div>
+</dd></dl>
+
 </div>
 </div>
 

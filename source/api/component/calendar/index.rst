@@ -4,7 +4,7 @@ Calendar
 ===============================================
 
 |  这是一个交互清爽、功能实用的日历控件.
-|  支持基本的日期选择、时间选择、嵌入/弹出、范围选择、日期格式化输出等常用功能，能够满足多数的应用场景，非常方便用户调用。
+|  支持基本的日期选择、时间选择、嵌入/弹出、范围选择、日期格式化输出等常用功能, 能够满足多数的应用场景, 非常方便用户调用.
 |  作者: `拔赤 <bachi@taobao.com>`_
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/calendar>`_  | `Demo <http://kissyteam.github.com/kissy/src/calendar/demo.html>`_ 
 
@@ -66,59 +66,55 @@ Config Attributes Detail
     
 .. data:: date
 
-    {Date} - 可选，该日期所在月份，默认为当天
+    {Date} - 可选, 该日期所在月份, 默认为当天
 
 .. data:: selected
 
-    {Date} - 可选，当前选中的日期
+    {Date} - 可选, 当前选中的日期
 
 .. data:: startDay
 
-    {Number} - 可选，日历显示星期x为起始日期，取值范围为0到6，默认为0,从星期日开始,若取值为1，则从星期一开始，若取值为7，则从周日开始
+    {Number} - 可选, 日历显示星期x为起始日期, 取值范围为0到6, 默认为0,从星期日开始,若取值为1, 则从星期一开始, 若取值为7, 则从周日开始
 
 .. data:: pages
 
-    {Number} - 可选，日历的页数，默认为1，包含一页日历
+    {Number} - 可选, 日历的页数, 默认为1, 包含一页日历
 
 .. data:: closable
 
-    {Boolean} - 可选，在弹出情况下，点选日期后是否关闭日历，默认为false
+    {Boolean} - 可选, 在弹出情况下, 点选日期后是否关闭日历, 默认为false
 
 .. data:: rangeSelect
 
-    {Object} - 可选，默认显示的选择范围，格式为：{start:s,end:n}
+    {Object} - 可选, 默认显示的选择范围, 格式为：{start:s,end:n}
 
 .. data:: minDate
 
-    {Date} - 可选，日历可选择的最小日期，默认不开启
+    {Date} - 可选, 日历可选择的最小日期, 默认不开启
 
 .. data:: maxDate
 
-    {Date} - 可选，日历可选择的最大，默认不开启
+    {Date} - 可选, 日历可选择的最大, 默认不开启
 
 .. data:: multiSelect
 
-    {Boolean} - 可选，是否支持多选，默认不开启 (尚未实现)
+    {Boolean} - 可选, 是否支持多选, 默认不开启 (尚未实现)
 
 .. data:: navigator
 
-    {Boolean} - 可选，是否可以通过点击导航输入日期，默认开启
+    {Boolean} - 可选, 是否可以通过点击导航输入日期, 默认开启
 
 .. data:: popup
 
-    {Boolean} - 可选，日历是否为弹出,默认为false，不开启
+    {Boolean} - 可选, 日历是否为弹出,默认为false, 不开启
 
 .. data:: showTime
 
-    {Boolean} - 可选，是否显示时间的选择,默认为false，不开启
+    {Boolean} - 可选, 是否显示时间的选择,默认为false, 不开启
 
 .. data:: triggerType
 
-    {Array | String} - 可选，弹出状态下，触发弹出日历的事件，例如：['click','focus'],也可以直接传入'focus'，默认为['click']
-
-    
-Properties Detail
------------------------------------------------
+    {Array | String} - 可选, 弹出状态下, 触发弹出日历的事件, 例如：['click','focus'],也可以直接传入'focus', 默认为['click']
 
 
 Methods Detail
@@ -127,7 +123,7 @@ Methods Detail
 .. method:: toggle
 
     | **toggle** ()
-    | 切换日历的状态，从显示到隐藏和从隐藏到显示
+    | 切换日历的状态, 从显示到隐藏和从隐藏到显示
 
 .. method:: render
 
@@ -146,7 +142,7 @@ Methods Detail
 .. method:: hide
 
     | **hide** ()
-    | 如果日历是弹出形式，隐藏日历
+    | 如果日历是弹出形式, 隐藏日历
 
 .. method:: show
 
@@ -165,7 +161,7 @@ Events Detail
 .. function:: monthChange
 
     | **monthChange** ()
-    | 切换月份事件,通过e.date来获取切换到的日期，通过e.date.getMonth() + 1 来获得切换至的月份
+    | 切换月份事件,通过e.date来获取切换到的日期, 通过e.date.getMonth() + 1 来获得切换至的月份
 
     .. code-block:: javascript
 

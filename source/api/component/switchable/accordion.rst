@@ -15,13 +15,13 @@ Config Attributes Detail
     
     .. data:: markupType
     
-        {Number} - 默认为 1 ，选择自定义 trigger 和 panel 的 class。
+        {Number} - 默认为 1 , 选择自定义 trigger 和 panel 的 class.
         
     .. data:: triggerType
     
-        {Boolean} - 'click' ，点击触发。
+        {Boolean} - 'click' , 点击触发.
         
     .. data:: multiple
     
-        {Boolean} - 默认为 false，是否开启同时展开多个面板功能。
+        {Boolean} - 默认为 false, 是否开启同时展开多个面板功能.
         

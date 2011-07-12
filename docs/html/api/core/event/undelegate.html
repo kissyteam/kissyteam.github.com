@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Event.undelegate &mdash; KISSY Docs valpha documentation</title>
+<title>undelegate &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -33,10 +33,10 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
@@ -58,10 +58,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="fire.html" title="Event.fire"
+      <a href="fire.html" title="fire"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="detach.html" title="Event.detach"
+      <a href="detach.html" title="detach"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -70,13 +70,24 @@
     </ul>
 </div>
 					
-  <div class="section" id="event-undelegate">
-<h1>Event.undelegate<a class="headerlink" href="#event-undelegate" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="undelegate">
+<h1>undelegate<a class="headerlink" href="#undelegate" title="Permalink to this headline">¶</a></h1>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference internal" href="index.html#module-Event" title="Event"><tt class="xref py py-mod docutils literal"><span class="pre">Event</span></tt></a></div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="Event.undelegate">
-<tt class="descclassname">Event.</tt><tt class="descname">undelegate</tt><big>(</big><em>selector</em>, <em>eventType</em><span class="optional">[</span>, <em>filter</em>, <em>fn</em>, <em>scope</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Event.undelegate" title="Permalink to this definition">¶</a></dt>
-<dd><p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>为符合匹配的 dom 节点的相应事件添加事件处理器，并在该节点的子孙节点中匹配 filter 的节点上触发事件时调用。</p>
+<tt class="descclassname">Event.</tt><tt class="descname">undelegate</tt><big>(</big><big>)</big><a class="headerlink" href="#Event.undelegate" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">void <strong>on</strong> ( selector ,  eventType [ , filter , fn  , scope ] )</div>
+<div class="line">为符合匹配的 dom 节点的相应事件添加事件处理器, 并在该节点的子孙节点中匹配 filter 的节点上触发事件时调用.</div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -84,20 +95,21 @@
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
 <li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="../dom/selector.html#dom-selector"><em>KISSY selector</em></a></li>
-<li><strong>eventType</strong> (<em>string</em>) &#8211; 包含一个或多个事件名称的字符串，多个事件名以空格分开</li>
+<li><strong>eventType</strong> (<em>string</em>) &#8211; 包含一个或多个事件名称的字符串, 多个事件名以空格分开</li>
 <li><strong>filter</strong> (<em>string</em>) &#8211; 可参见 <a class="reference internal" href="../dom/filter.html#DOM.filter" title="DOM.filter"><tt class="xref py py-func docutils literal"><span class="pre">DOM.filter()</span></tt></a> 的 filter 参数</li>
 <li><strong>fn</strong> (<em>function(eventObject)</em>) &#8211; 当事件触发时的回调函数</li>
-<li><strong>scope</strong> (<em>object</em>) &#8211; 回调函数的 this 值。如果不指定默认为绑定事件的当前元素</li>
+<li><strong>scope</strong> (<em>object</em>) &#8211; 回调函数的 this 值. 如果不指定默认为绑定事件的当前元素</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">和 <a class="reference internal" href="detach.html#Event.detach" title="Event.detach"><tt class="xref py py-func docutils literal"><span class="pre">Event.detach()</span></tt></a> 一样，如果移除特定的委托事件处理器必须保证参数和调用 delegate 时保持一致.</p>
+<p class="last">和 <a class="reference internal" href="detach.html#Event.detach" title="Event.detach"><tt class="xref py py-func docutils literal"><span class="pre">Event.detach()</span></tt></a> 一样, 如果移除特定的委托事件处理器必须保证参数和调用 delegate 时保持一致.</p>
+</div>
+</dd></dl>
+
 </div>
 </div>
 

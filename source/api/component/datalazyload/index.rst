@@ -52,7 +52,7 @@ Class Detail
     
     | **DataLazyload** (containers[, config])
     
-    :param String|HTMLElement|Array<HTMLElement> containers: 默认为 document.body ，图片所在容器(可以多个)
+    :param String|HTMLElement|Array<HTMLElement> containers: 默认为 document.body , 图片所在容器(可以多个)
     :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
     
     
@@ -62,26 +62,26 @@ Config Attributes Detail
 
 .. data:: mod
 
-    {String} - 默认是 'manul',懒处理模式。
+    {String} - 默认是 'manul',懒处理模式.
     
         * 'auto' : 自动化. html 输出时, 不对 img.src 做任何处理
         * 'manul' : 输出 html 时, 已经将需要延迟加载的图片的 src 属性替换为 IMG_SRC_DATA
         
-        .. note::
+    .. note::
 
-            对于 textarea 数据, 只有手动模式
+        对于 textarea 数据, 只有手动模式
 
 .. data:: diff
 
-    {Number} - 当前视窗往下, diff px 外的 img/textarea 延迟加载, 适当设置此值, 可以让用户在拖动时感觉数据已经加载好, 默认为当前视窗高度(两屏以外的才延迟加载)。
+    {Number} - 当前视窗往下, diff px 外的 img/textarea 延迟加载, 适当设置此值, 可以让用户在拖动时感觉数据已经加载好, 默认为当前视窗高度(两屏以外的才延迟加载).
 
 .. data:: placeholder
 
-    {String} - 默认为 null ，图像的占位图。
+    {String} - 默认为 null , 图像的占位图.
 
 .. data:: execScript
 
-    {Boolean} - 默认为 true ，是否执行 textarea 里面的脚本。
+    {Boolean} - 默认为 true , 是否执行 textarea 里面的脚本.
 
 
 Properties Detail
@@ -89,7 +89,7 @@ Properties Detail
 
 .. attribute:: containers
 
-    {Array} - 可读写，图片所在容器(可以多个), 默认为 document.body
+    {Array} - 可读写, 图片所在容器(可以多个), 默认为 document.body
     
 .. attribute:: config
 

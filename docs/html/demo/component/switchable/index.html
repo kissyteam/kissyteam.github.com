@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -54,76 +58,35 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../dd/index.html" title="DD"
+      <a href="../dd/index.html" title="All Demos"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="../overlay/index.html" title="Overlay"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../../index.html" >范例</a> &#187; </li>
+      <li><a href="../../index.html" >All Demos</a> &#187; </li>
       <li><a href="../index.html" accesskey="U">Component</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
   <div class="section" id="switchable">
 <h1>Switchable<a class="headerlink" href="#switchable" title="Permalink to this headline">¶</a></h1>
-<p>by <a class="reference external" href="mailto:qiaohua&#37;&#52;&#48;gmail&#46;com">乔花</a></p>
-<div class="section" id="id2">
-<h2>常见使用方式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="html">
-<h3>组织 HTML 结构<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h3>
-<p>通常情况下, Switchable 组件的 HTML 结构为外层一个容器元素,内部又分成 trigger 列表 和 panel 列表 两部分,trigger 列表可无, 如下的 HTML 结构最为常见:</p>
+<div class="line-block">
+<div class="line">作者: <a class="reference external" href="mailto:lifesinger&#37;&#52;&#48;gmail&#46;com">玉伯</a></div>
+<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/switchable/">源码</a></div>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;J_Slide&quot;</span><span class="nt">&gt;</span>  <span class="c">&lt;!-- 容器元素 --&gt;</span>
-    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;ks-switchable-nav&quot;</span><span class="nt">&gt;</span>  <span class="c">&lt;!-- 触发器列表 --&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;ks-active&quot;</span><span class="nt">&gt;</span>标题 A<span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>标题 B<span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>标题 C<span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>标题 D<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ks-switchable-content&quot;</span><span class="nt">&gt;</span>  <span class="c">&lt;!-- 面板列表 --&gt;</span>
-        <span class="nt">&lt;div&gt;</span>内容 A<span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;display: none&quot;</span><span class="nt">&gt;</span>内容 B<span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;display: none&quot;</span><span class="nt">&gt;</span>内容 C<span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;display: none&quot;</span><span class="nt">&gt;</span>内容 D<span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div>
-</div>
+<div><ul class="simple">
+<li><a class="reference internal" href="../../../api/component/switchable/switchable.html#module-Switchable" title="Switchable"><tt class="xref py py-class docutils literal"><span class="pre">Switchable</span></tt></a></li>
+</ul>
 </div></blockquote>
-<p>但注意: 这种结构并不固定, 且有时需要根据不同组件, 不同需求修改结构并定义它们的样式;</p>
 </div>
-<div class="section" id="js">
-<h3>JS 初始化<a class="headerlink" href="#js" title="Permalink to this headline">¶</a></h3>
-<p>通过容器元素的 id 和相关配置, 构建 <a class="reference internal" href="../../../api/component/switchable/switchable.html#Switchable.Switchable" title="Switchable.Switchable"><tt class="xref py py-class docutils literal"><span class="pre">Switchable</span></tt></a> 对象 :</p>
-<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;switchable&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Switchable</span><span class="p">){</span>
-    <span class="c1">// 对于 kissy &lt; 1.2 ,可使用 Switchable = S.Switchable; 获取构造器</span>
-
-    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Switchable</span><span class="p">.</span><span class="nx">Slide</span><span class="p">(</span><span class="s1">&#39;#J_Slide&#39;</span><span class="p">,</span> <span class="p">{</span>
-        <span class="nx">effect</span><span class="o">:</span> <span class="s1">&#39;scrolly&#39;</span><span class="p">,</span>
-        <span class="nx">easing</span><span class="o">:</span> <span class="s1">&#39;easeOutStrong&#39;</span><span class="p">,</span>
-        <span class="nx">countdown</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nx">countdownFromStyle</span><span class="o">:</span> <span class="s1">&#39;width:18px&#39;</span>
-    <span class="p">});</span>
-<span class="p">});</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-<div class="section" id="demo">
-<h3>最终 demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h3>
-<div class="demo">
+<div class="section" id="demo-switchable">
+<h2>Demo - 使用基本的 Switchable<a class="headerlink" href="#demo-switchable" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="demo">
     <style>
     #J_Slide {
         position: relative;
@@ -232,7 +195,49 @@
             });
         });
     </script>
-</div></div>
+</div><p><strong>组织 HTML 结构</strong></p>
+<p>通常情况下, Switchable 组件的 HTML 结构为外层一个容器元素,内部又分成 trigger 列表 和 panel 列表 两部分,trigger 列表可无, 如下的 HTML 结构最为常见:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;J_Slide&quot;</span><span class="nt">&gt;</span>  <span class="c">&lt;!-- 容器元素 --&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;ks-switchable-nav&quot;</span><span class="nt">&gt;</span>  <span class="c">&lt;!-- 触发器列表 --&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;ks-active&quot;</span><span class="nt">&gt;</span>标题 A<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>标题 B<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>标题 C<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>标题 D<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ks-switchable-content&quot;</span><span class="nt">&gt;</span>  <span class="c">&lt;!-- 面板列表 --&gt;</span>
+        <span class="nt">&lt;div&gt;</span>内容 A<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;display: none&quot;</span><span class="nt">&gt;</span>内容 B<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;display: none&quot;</span><span class="nt">&gt;</span>内容 C<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;display: none&quot;</span><span class="nt">&gt;</span>内容 D<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</div>
+<p>但注意: 这种结构并不固定, 且有时需要根据不同组件, 不同需求修改结构并定义它们的样式;</p>
+<p><strong>JS 初始化</strong></p>
+<p>通过容器元素的 id 和相关配置, 构建 <a class="reference internal" href="../../../api/component/switchable/switchable.html#Switchable.Switchable" title="Switchable.Switchable"><tt class="xref py py-class docutils literal"><span class="pre">Switchable</span></tt></a> 对象 :</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;switchable&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Switchable</span><span class="p">){</span>
+    <span class="c1">// 对于 kissy &lt; 1.2 ,可使用 Switchable = S.Switchable; 获取构造器</span>
+
+    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Switchable</span><span class="p">.</span><span class="nx">Slide</span><span class="p">(</span><span class="s1">&#39;#J_Slide&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">effect</span><span class="o">:</span> <span class="s1">&#39;scrolly&#39;</span><span class="p">,</span>
+        <span class="nx">easing</span><span class="o">:</span> <span class="s1">&#39;easeOutStrong&#39;</span><span class="p">,</span>
+        <span class="nx">countdown</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">countdownFromStyle</span><span class="o">:</span> <span class="s1">&#39;width:18px&#39;</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
 </div>
 <div class="section" id="id3">
 <h2>全部示例<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
@@ -318,18 +323,19 @@
         <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../quickstart/index.html">快速上手</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">API文档</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">范例</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">All Demos</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../seed/index.html">Seed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../core/index.html">Core</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Component</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../datalazyload/index.html">DataLazyload</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overlay/index.html">Overlay</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">Switchable</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id2">常见使用方式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#class">Class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#demo-switchable">Demo - 使用基本的 Switchable</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id3">全部示例</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../dd/index.html">DD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dd/index.html">All Demos</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../suggest/index.html">Suggest</a></li>
 </ul>
 </li>

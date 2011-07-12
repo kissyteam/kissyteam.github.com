@@ -14,8 +14,8 @@ Config Attributes Detail
     
     .. data:: autoplay
     
-        {Boolean} - 默认为true，是否自动切换。
+        {Boolean} - 默认为true, 是否自动切换.
         
     .. data:: circular
     
-        {Boolean} - 默认为true，是否循环切换。
+        {Boolean} - 默认为true, 是否循环切换.

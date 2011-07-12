@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>KISSY.extend &mdash; KISSY Docs valpha documentation</title>
+<title>extend &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -54,10 +58,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="namespace.html" title="KISSY.namespace"
+      <a href="namespace.html" title="namespace"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="augment.html" title="KISSY.augment"
+      <a href="augment.html" title="augment"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -65,16 +69,23 @@
       <li><a href="index.html" accesskey="U">KISSY</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
-  <div class="section" id="kissy-extend">
-<h1>KISSY.extend<a class="headerlink" href="#kissy-extend" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="extend">
+<h1>extend<a class="headerlink" href="#extend" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference internal" href="index.html#module-Seed" title="Seed"><tt class="xref py py-mod docutils literal"><span class="pre">Seed</span></tt></a></div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="Seed.KISSY.extend">
-<tt class="descclassname">KISSY.</tt><tt class="descname">extend</tt><big>(</big><em>r</em>, <em>s</em><span class="optional">[</span>, <em>px</em>, <em>sx</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Seed.KISSY.extend" title="Permalink to this definition">¶</a></dt>
-<dd><p>让函数对象 r 继承函数对象 s</p>
+<tt class="descclassname">KISSY.</tt><tt class="descname">extend</tt><big>(</big><big>)</big><a class="headerlink" href="#Seed.KISSY.extend" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Function <strong>KISSY.extend</strong> (r,s[,px,sx])</div>
+<div class="line">让函数对象 r 继承函数对象 s</div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -84,7 +95,7 @@
 <li><strong>r</strong> (<em>function</em>) &#8211; receiver,将要继承的子类函数</li>
 <li><strong>s</strong> (<em>function|object</em>) &#8211; supplier,继承自的父类函数</li>
 <li><strong>px</strong> (<em>object</em>) &#8211; prototype members, 需要添加/覆盖的原型成员</li>
-<li><strong>sx</strong> (<em>object</em>) &#8211; static members, 需要添加/覆盖的静态成员。</li>
+<li><strong>sx</strong> (<em>object</em>) &#8211; static members, 需要添加/覆盖的静态成员.</li>
 </ul>
 </td>
 </tr>
@@ -98,8 +109,6 @@
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
 <p>例如：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">;</span>
 
@@ -119,11 +128,14 @@
 <span class="k">new</span> <span class="nx">Chicken</span><span class="p">(</span><span class="s1">&#39;Frank&#39;</span><span class="p">).</span><span class="nx">fly</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>extend 方法是 KISSY 里类继承的实现方式。书写 JavaScript 代码时，请忘记传统 OO 里的继承体系。
-还 JavaScript 本色，给代码一身轻松。</p>
+<p>extend 方法是 KISSY 里类继承的实现方式. 书写 JavaScript 代码时, 请忘记传统 OO 里的继承体系.
+还 JavaScript 本色, 给代码一身轻松.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">子类方法中可通过 superclass 来访问父类函数的原型，进而调用父类方法.</p>
+<p class="last">子类方法中可通过 superclass 来访问父类函数的原型, 进而调用父类方法.</p>
+</div>
+</dd></dl>
+
 </div>
 </div>
 

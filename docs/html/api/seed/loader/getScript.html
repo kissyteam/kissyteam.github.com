@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>KISSY.getScript &mdash; KISSY Docs valpha documentation</title>
+<title>getScript &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -54,7 +58,7 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="add.html" title="KISSY.add"
+      <a href="add.html" title="add"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="index.html" title="Loader"
@@ -65,16 +69,23 @@
       <li><a href="index.html" accesskey="U">Loader</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
-  <div class="section" id="kissy-getscript">
-<h1>KISSY.getScript<a class="headerlink" href="#kissy-getscript" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="getscript">
+<h1>getScript<a class="headerlink" href="#getscript" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference internal" href="index.html#module-Loader" title="Loader"><tt class="xref py py-mod docutils literal"><span class="pre">Loader</span></tt></a></div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="Loader.KISSY.getScript">
-<tt class="descclassname">KISSY.</tt><tt class="descname">getScript</tt><big>(</big><em>url</em>, <em>config</em><big>)</big><a class="headerlink" href="#Loader.KISSY.getScript" title="Permalink to this definition">¶</a></dt>
-<dd><p>动态加载目标地址的资源文件</p>
+<tt class="descclassname">KISSY.</tt><tt class="descname">getScript</tt><big>(</big><big>)</big><a class="headerlink" href="#Loader.KISSY.getScript" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">HTMLELement <strong>KISSY.getScript</strong> (url , config)</div>
+<div class="line">动态加载目标地址的资源文件</div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -82,39 +93,13 @@
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
 <li><strong>url</strong> (<em>string</em>) &#8211; js/css 的资源地址</li>
-<li><strong>config</strong> (<em>object</em>) &#8211; <p>动态加载配置对象，包括</p>
-<dl class="attribute">
-<dt id="Loader.config.charset">
-<tt class="descclassname">config.</tt><tt class="descname">charset</tt><a class="headerlink" href="#Loader.config.charset" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 string，资源文件的字符编码</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="Loader.config.success">
-<tt class="descclassname">config.</tt><tt class="descname">success</tt><a class="headerlink" href="#Loader.config.success" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>类型 function，资源加载成功后回调函数</dt>
-<dd><ul class="first last">
-<li>&lt; 1.2 中对于 css 文件是理解回调，而不会等 css 加载完毕</li>
-<li>1.2+ 会等 css 加载完毕</li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="Loader.config.error">
-<tt class="descclassname">config.</tt><tt class="descname">error</tt><a class="headerlink" href="#Loader.config.error" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 function，超时或发生错误时回调函数。当资源文件为 css 文件时不支持</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="Loader.config.timeout">
-<tt class="descclassname">config.</tt><tt class="descname">timeout</tt><a class="headerlink" href="#Loader.config.timeout" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 number，单位为秒，默认 5 秒。超时后触发 error 回调。当资源文件为 css 文件是不支持</p>
-</dd></dl>
-
-</li>
+<li><strong>config</strong> (<em>object</em>) &#8211; 动态加载配置对象, 包括以下</li>
+<li><strong>config.charset</strong> (<em>String</em>) &#8211; 资源文件的字符编码</li>
+<li><strong>config.success</strong> (<em>Function</em>) &#8211; 资源加载成功后回调函数
+* &lt; 1.2 中对于 css 文件是理解回调, 而不会等 css 加载完毕
+* 1.2+ 会等 css 加载完毕</li>
+<li><strong>config.error</strong> (<em>Function</em>) &#8211; 超时或发生错误时回调函数. 当资源文件为 css 文件时不支持</li>
+<li><strong>config.timeout</strong> (<em>Numver</em>) &#8211; 单位为秒, 默认 5 秒. 超时后触发 error 回调. 当资源文件为 css 文件是不支持</li>
 </ul>
 </td>
 </tr>
@@ -132,10 +117,14 @@
 
 <dl class="function">
 <dt>
-<tt class="descclassname">KISSY.</tt><tt class="descname">getScript</tt><big>(</big><em>url</em>, <em>success</em>, <em>charset</em><big>)</big></dt>
-<dd><p>相当于调用 <tt class="docutils literal"><span class="pre">KISSY.getScript(url</span> <span class="pre">,</span> <span class="pre">{</span> <span class="pre">success</span> <span class="pre">:</span> <span class="pre">success</span> <span class="pre">,</span> <span class="pre">charset</span> <span class="pre">:</span> <span class="pre">charset</span> <span class="pre">});</span></tt></p>
+<tt class="descclassname">KISSY.</tt><tt class="descname">getScript</tt><big>(</big><big>)</big></dt>
+<dd><div class="line-block">
+<div class="line">HTMLELement <strong>KISSY.getScript</strong> (url,success,charset)</div>
+</div>
+<p>相当于调用 <tt class="docutils literal"><span class="pre">KISSY.getScript(url</span> <span class="pre">,</span> <span class="pre">{</span> <span class="pre">success</span> <span class="pre">:</span> <span class="pre">success</span> <span class="pre">,</span> <span class="pre">charset</span> <span class="pre">:</span> <span class="pre">charset</span> <span class="pre">});</span></tt></p>
 </dd></dl>
 
+</div>
 </div>
 
 

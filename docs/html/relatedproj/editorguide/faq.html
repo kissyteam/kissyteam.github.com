@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../html/api/index.html">API</a></li>
+        <li><a href="../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -64,9 +68,6 @@
       <li><a href="index.html" accesskey="U">Editor</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
   <div class="section" id="faq">
 <h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
@@ -75,7 +76,7 @@
 <div class="section" id="form">
 <h3>form 同步<a class="headerlink" href="#form" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><p>如果后端通过 form 提交（submit）来获得用户输入数据，则只需配置参数 <a class="reference internal" href="usage.html#Editor.KISSY.Editor" title="Editor.KISSY.Editor"><tt class="xref py py-class docutils literal"><span class="pre">attachForm</span></tt></a>  .</p>
+<div><p>如果后端通过 form 提交(submit)来获得用户输入数据, 则只需配置参数 <a class="reference internal" href="usage.html#Editor.KISSY.Editor" title="Editor.KISSY.Editor"><tt class="xref py py-class docutils literal"><span class="pre">attachForm</span></tt></a>  .</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//是否监控编辑器所属的表单提交</span>
 <span class="s2">&quot;attachForm&quot;</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
 </pre></div>
@@ -90,26 +91,26 @@
 <p>editor 为调用 KISSY.Editor 返回的编辑器实例</p>
 <p><tt class="docutils literal"><span class="pre">editor.sync()</span></tt> : 手动同步编辑器内容到对应 textarea</p>
 <p><tt class="docutils literal"><span class="pre">editor.getData()</span></tt> : 获得当前编辑器的内容</p>
-<p><tt class="docutils literal"><span class="pre">editor.setData(html:string)</span></tt> :设置当前编辑器的内容，参数为html，类型为 string 字符串</p>
+<p><tt class="docutils literal"><span class="pre">editor.setData(html:string)</span></tt> :设置当前编辑器的内容, 参数为html, 类型为 string 字符串</p>
 </div></blockquote>
 </div>
 </div>
 <div class="section" id="id3">
 <h2>自动保存<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div>自动保存为 localStorage/flash 机制，保存在本地，可 <a class="reference internal" href="plugin-config.html#Editor.pluginConfig.draft" title="Editor.pluginConfig.draft"><tt class="xref py py-attr docutils literal"><span class="pre">配置参数</span></tt></a> .</div></blockquote>
+<div>自动保存为 localStorage/flash 机制, 保存在本地, 可 <a class="reference internal" href="plugin-config.html#Editor.pluginConfig.draft" title="Editor.pluginConfig.draft"><tt class="xref py py-attr docutils literal"><span class="pre">配置参数</span></tt></a> .</div></blockquote>
 </div>
 <div class="section" id="id4">
 <h2>字数统计<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>可参考以下 demo  :</p>
 <p><a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/wordCount.html">http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/wordCount.html</a></p>
-<p>其中 <a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/word-count.js">wordcount 代码</a> 自行下载，随意修改。</p>
+<p>其中 <a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/word-count.js">wordcount 代码</a> 自行下载, 随意修改.</p>
 </div></blockquote>
 </div>
 <div class="section" id="ctrol-enter">
 <h2>绑定 ctrol-enter<a class="headerlink" href="#ctrol-enter" title="Permalink to this headline">¶</a></h2>
-<p>不少的应用场景要求在编辑器编辑区域内按下 ctrol+enter 按键时，编辑器所在表单会自动提交，解决方案是监控编辑器的文档按键事件：</p>
+<p>不少的应用场景要求在编辑器编辑区域内按下 ctrol+enter 按键时, 编辑器所在表单会自动提交, 解决方案是监控编辑器的文档按键事件：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">editor</span><span class="p">.</span><span class="nb">document</span><span class="p">,</span> <span class="s2">&quot;keydown&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">ev</span><span class="p">.</span><span class="nx">keyCode</span> <span class="o">==</span> <span class="mi">13</span> <span class="o">&amp;&amp;</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">ctrlKey</span><span class="p">)</span> <span class="p">{</span>
@@ -121,14 +122,14 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>其中 editor 为编辑器实例的对象，通过 <tt class="docutils literal"><span class="pre">var</span> <span class="pre">editor=KISSY.Editor(&quot;#id&quot;,cfg)</span></tt> 获取而来。</p>
+<p>其中 editor 为编辑器实例的对象, 通过 <tt class="docutils literal"><span class="pre">var</span> <span class="pre">editor=KISSY.Editor(&quot;#id&quot;,cfg)</span></tt> 获取而来.</p>
 </div>
 <div class="section" id="placeholder-tip">
 <h2>placeholder(tip) 功能<a class="headerlink" href="#placeholder-tip" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>可参考以下 demo  :</p>
 <p><a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/tip.html">http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/tip.html</a></p>
-<p>其中 <a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/tip.js">tip 代码</a> 自行下载，随意修改。</p>
+<p>其中 <a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/tip.js">tip 代码</a> 自行下载, 随意修改.</p>
 </div></blockquote>
 </div>
 </div>
@@ -184,7 +185,7 @@
         <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">快速上手</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API文档</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../demo/index.html">范例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo/index.html">All Demos</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">子项目集</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Editor</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="index.html#doc">doc</a><ul class="current">

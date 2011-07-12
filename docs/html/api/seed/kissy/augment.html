@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>KISSY.augment &mdash; KISSY Docs valpha documentation</title>
+<title>augment &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -54,10 +58,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="extend.html" title="KISSY.extend"
+      <a href="extend.html" title="extend"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="merge.html" title="KISSY.merge"
+      <a href="merge.html" title="merge"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -65,16 +69,23 @@
       <li><a href="index.html" accesskey="U">KISSY</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
-  <div class="section" id="kissy-augment">
-<h1>KISSY.augment<a class="headerlink" href="#kissy-augment" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="augment">
+<h1>augment<a class="headerlink" href="#augment" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference internal" href="index.html#module-Seed" title="Seed"><tt class="xref py py-mod docutils literal"><span class="pre">Seed</span></tt></a></div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="Seed.KISSY.augment">
-<tt class="descclassname">KISSY.</tt><tt class="descname">augment</tt><big>(</big><em>r</em>, <em>s</em><span class="optional">[</span>, <em>ov=true</em>, <em>wl</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#Seed.KISSY.augment" title="Permalink to this definition">¶</a></dt>
-<dd><p>将 s.prototype 的成员复制到 r.prototype 上。</p>
+<tt class="descclassname">KISSY.</tt><tt class="descname">augment</tt><big>(</big><big>)</big><a class="headerlink" href="#Seed.KISSY.augment" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Function <strong>KISSY.augment</strong> (r,s[,ov=true,wl])</div>
+<div class="line">将 s.prototype 的成员复制到 r.prototype 上.</div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -82,9 +93,9 @@
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
 <li><strong>r</strong> (<em>function</em>) &#8211; 将要扩充的函数</li>
-<li><strong>s</strong> (<em>function|object</em>) &#8211; 扩充来源函数或对象。非函数对象时复制的就是 s 的成员。</li>
-<li><strong>ov</strong> (<em>boolean</em>) &#8211; 是否覆盖 r 已经有的原型属性。</li>
-<li><strong>wl</strong> (<em>Array&lt;string&gt;</em>) &#8211; 来源属性的白名单列表，只有列表中的被扩充。</li>
+<li><strong>s</strong> (<em>function|object</em>) &#8211; 扩充来源函数或对象. 非函数对象时复制的就是 s 的成员.</li>
+<li><strong>ov</strong> (<em>boolean</em>) &#8211; 是否覆盖 r 已经有的原型属性.</li>
+<li><strong>wl</strong> (<em>Array&lt;string&gt;</em>) &#8211; 来源属性的白名单列表, 只有列表中的被扩充.</li>
 </ul>
 </td>
 </tr>
@@ -98,8 +109,6 @@
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
 <p>例如：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span>
 <span class="nx">Shoutable</span> <span class="o">=</span> <span class="p">{</span>
@@ -116,10 +125,13 @@
 <span class="k">new</span> <span class="nx">Pig</span><span class="p">(</span><span class="s1">&#39;Mary&#39;</span><span class="p">).</span><span class="nx">shout</span><span class="p">();</span> <span class="c1">// =&gt; I am Pig Mary.</span>
 </pre></div>
 </div>
-<p>augment 方法在 KISSY 里非常基础非常重要。
-传统 OO 语言里，可以通过继承或接口来实现共性方法。
-在 JavaScript 里，通过 mixin 特性，一切变得更简单。
-augment 是动态语言 mixin 特性的体现，灵活运用，能让代码非常优雅简洁。</p>
+<p>augment 方法在 KISSY 里非常基础非常重要.
+传统 OO 语言里, 可以通过继承或接口来实现共性方法.
+在 JavaScript 里, 通过 mixin 特性, 一切变得更简单.
+augment 是动态语言 mixin 特性的体现, 灵活运用, 能让代码非常优雅简洁.</p>
+</dd></dl>
+
+</div>
 </div>
 
 

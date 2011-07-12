@@ -33,10 +33,10 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
@@ -61,7 +61,7 @@
       <a href="../anim/index.html" title="Anim"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../node/slideUp.html" title="slideUp()"
+      <a href="../node/slideUp.html" title="slideUp"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -74,7 +74,7 @@
 <div class="line-block">
 <div class="line">ajax</div>
 <div class="line">作者: <a class="reference external" href="mailto:lijing00333&#37;&#52;&#48;163&#46;com">拔赤</a></div>
-<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/ajax">源码</a></div>
+<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/ajax">源码</a>  | <a class="reference external" href="http://yiminghe.github.com/kissy/src/ajax/demo.html">Demo</a></div>
 </div>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
@@ -104,7 +104,7 @@
 <tt class="descclassname">ajax.</tt><tt class="descname">getScript</tt><big>(</big><big>)</big><a class="headerlink" href="#ajax.getScript" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line">HTMLElement <strong>getScript</strong> (url, success[, charset])</div>
-<div class="line">动态加载 js 脚本。</div>
+<div class="line">动态加载 js 脚本.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -114,12 +114,12 @@
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
 <li><strong>url</strong> (<em>string</em>) &#8211; 请求地址</li>
 <li><strong>success</strong> (<em>function</em>) &#8211; 请求成功的回调,回调参数为 data(内容),textStatus(请求状态),xhr(ajax对象)</li>
-<li><strong>charset</strong> (<em>string</em>) &#8211; 可选，js 脚本编码格式</li>
+<li><strong>charset</strong> (<em>string</em>) &#8211; 可选, js 脚本编码格式</li>
 </ul>
 </td>
 </tr>
 <tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><p class="first last">动态加载 js 脚本。</p>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last">动态加载 js 脚本.</p>
 </td>
 </tr>
 </tbody>
@@ -145,21 +145,21 @@
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
 <li><strong>config</strong> (<em>json</em>) &#8211; 其中的成员包括type,url,data,success,complete,error,async,jsonp,jsonpCallback,dataType</li>
-<li><strong>config.type</strong> (<em>string</em>) &#8211; 请求类型，可以取值为 GET,POST 等,默认为 GET</li>
+<li><strong>config.type</strong> (<em>string</em>) &#8211; 请求类型, 可以取值为 GET,POST 等,默认为 GET</li>
 <li><strong>config.url</strong> (<em>string</em>) &#8211; 请求地址</li>
 <li><strong>config.data</strong> (<em>string|json</em>) &#8211; 发起请求需要附加的数据,默认为 null</li>
 <li><strong>config.success</strong> (<em>function</em>) &#8211; 请求成功的回调,回调参数为 data(内容),textStatus(请求状态),xhr(ajax对象)</li>
-<li><strong>config.complete</strong> (<em>function</em>) &#8211; 请求完成的回调，在 success 调用之后触发,参数同 success</li>
+<li><strong>config.complete</strong> (<em>function</em>) &#8211; 请求完成的回调, 在 success 调用之后触发,参数同 success</li>
 <li><strong>config.error</strong> (<em>function</em>) &#8211; 请求错误时的回调</li>
-<li><strong>config.async</strong> (<em>boolean</em>) &#8211; 是否为异步，默认为 true</li>
+<li><strong>config.async</strong> (<em>boolean</em>) &#8211; 是否为异步, 默认为 true</li>
 <li><strong>config.jsonp</strong> (<em>string</em>) &#8211; 指定 callback 的别名,请求url会生成 &#8220;url?{$jsonp}=jsonp123456&#8221;</li>
 <li><strong>config.jsonpCallback</strong> (<em>string</em>) &#8211; 指定 callback 的参数,请求 url 会生成 &#8220;url?callback={$jsonpCallback}&#8221;</li>
-<li><strong>config.dataType</strong> (<em>string</em>) &#8211; 请求数据类型,将决定返回值 data 的类型,若不指定，返回值data的类型由响应头决定，可取值为 json | jsonp | script | xml | html | text</li>
+<li><strong>config.dataType</strong> (<em>string</em>) &#8211; 请求数据类型,将决定返回值 data 的类型,若不指定, 返回值data的类型由响应头决定, 可取值为 json | jsonp | script | xml | html | text</li>
 </ul>
 </td>
 </tr>
 <tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><p class="first last">根据请求类型不同，返回值不同</p>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last">根据请求类型不同, 返回值不同</p>
 </td>
 </tr>
 </tbody>
@@ -194,14 +194,14 @@
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
 <li><strong>url</strong> (<em>string</em>) &#8211; 接口地址</li>
-<li><strong>data</strong> (<em>string|json</em>) &#8211; 可选，附加数据，数据将转换成键值对附着在请求的 url 参数串中</li>
-<li><strong>callback</strong> (<em>function</em>) &#8211; 回调函数，参数为 data,返回数据,textStatus,文本状态,xhr,ajax 对象</li>
-<li><strong>dataType</strong> (<em>string</em>) &#8211; 可选，可取值为 json,jsonp,script,xml,html,text，其中如果值为json,回调参数data为对象，如果值为xml，回调参数为xml对象,其他情况的回调参数皆为字符串</li>
+<li><strong>data</strong> (<em>string|json</em>) &#8211; 可选, 附加数据, 数据将转换成键值对附着在请求的 url 参数串中</li>
+<li><strong>callback</strong> (<em>function</em>) &#8211; 回调函数, 参数为 data,返回数据,textStatus,文本状态,xhr,ajax 对象</li>
+<li><strong>dataType</strong> (<em>string</em>) &#8211; 可选, 可取值为 json,jsonp,script,xml,html,text, 其中如果值为json,回调参数data为对象, 如果值为xml, 回调参数为xml对象,其他情况的回调参数皆为字符串</li>
 </ul>
 </td>
 </tr>
 <tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><p class="first last">根据请求类型不同，返回值不同</p>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last">根据请求类型不同, 返回值不同</p>
 </td>
 </tr>
 </tbody>
@@ -209,7 +209,7 @@
 <p>直接使用</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">;</span>
 <span class="c1">//在不指定 dataType 的情况下,data 的类型和 ajax 响应头类型保持一致</span>
-<span class="c1">//若为 text/json，data 为 json，若为 text/xml，data 为 xml object，其他情况为 text</span>
+<span class="c1">//若为 text/json, data 为 json, 若为 text/xml, data 为 xml object, 其他情况为 text</span>
 <span class="nx">S</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;interface.php&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="nx">textStatus</span><span class="p">,</span><span class="nx">xhr</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">});</span>
@@ -217,7 +217,7 @@
 </div>
 <p>指定dataType</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span> <span class="nx">IO</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">IO</span><span class="p">;</span>
-<span class="c1">//如果 ajax 响应头类型和用户设置不一定的时候，以用户设置为准</span>
+<span class="c1">//如果 ajax 响应头类型和用户设置不一定的时候, 以用户设置为准</span>
 <span class="nx">IO</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;interface.php&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="nx">textStatus</span><span class="p">,</span><span class="nx">xhr</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">data</span><span class="p">);</span><span class="c1">//&#39;object&#39;</span>
 <span class="p">},</span><span class="s1">&#39;json&#39;</span><span class="p">);</span>
@@ -257,9 +257,9 @@
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
 <li><strong>url</strong> (<em>string</em>) &#8211; 接口地址</li>
-<li><strong>data</strong> (<em>string|json</em>) &#8211; 附加数据，数据将转换成键值对附着在请求的 url 参数串中</li>
-<li><strong>callback</strong> (<em>function</em>) &#8211; 回调函数，参数为 data,返回数据,textStatus,文本状态,xhr,ajax 对象</li>
-<li><strong>dataType</strong> (<em>string</em>) &#8211; 可取值为 json,jsonp,script,xml,html,text，其中如果值为json,回调参数data为对象，如果值为xml，回调参数为xml对象,其他情况的回调参数皆为字符串</li>
+<li><strong>data</strong> (<em>string|json</em>) &#8211; 附加数据, 数据将转换成键值对附着在请求的 url 参数串中</li>
+<li><strong>callback</strong> (<em>function</em>) &#8211; 回调函数, 参数为 data,返回数据,textStatus,文本状态,xhr,ajax 对象</li>
+<li><strong>dataType</strong> (<em>string</em>) &#8211; 可取值为 json,jsonp,script,xml,html,text, 其中如果值为json,回调参数data为对象, 如果值为xml, 回调参数为xml对象,其他情况的回调参数皆为字符串</li>
 </ul>
 </td>
 </tr>
@@ -298,7 +298,7 @@
 <tt class="descclassname">ajax.</tt><tt class="descname">jsonp</tt><big>(</big><big>)</big><a class="headerlink" href="#ajax.jsonp" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line">HTMLElement <strong>jsonp</strong> (url[, data], callback[, callbackName])</div>
-<div class="line">将悬浮层放在当前视窗中央。</div>
+<div class="line">将悬浮层放在当前视窗中央.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -307,7 +307,7 @@
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
 <li><strong>url</strong> (<em>string</em>) &#8211; 接口地址</li>
-<li><strong>data</strong> (<em>string|json</em>) &#8211; 可选，附加数据，数据将转换成键值对附着在请求的 url 参数串中</li>
+<li><strong>data</strong> (<em>string|json</em>) &#8211; 可选, 附加数据, 数据将转换成键值对附着在请求的 url 参数串中</li>
 <li><strong>callback</strong> (<em>function</em>) &#8211; 回调函数</li>
 </ul>
 </td>
@@ -350,7 +350,7 @@
 </div>
 <p>带参数提交 jsonp</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">;</span>
-<span class="c1">//参数可以为 json，也可以为字符串</span>
+<span class="c1">//参数可以为 json, 也可以为字符串</span>
 <span class="nx">S</span><span class="p">.</span><span class="nx">jsonp</span><span class="p">(</span><span class="s1">&#39;interface.php?sleep=0&#39;</span><span class="p">,{</span>
     <span class="nx">myparam</span><span class="o">:</span><span class="s1">&#39;taobao&#39;</span>
 <span class="p">},</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
@@ -373,7 +373,7 @@
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>string</em>) &#8211; 类型，可取值为 start,complete,stop,send</li>
+<li><strong>type</strong> (<em>string</em>) &#8211; 类型, 可取值为 start,complete,stop,send</li>
 <li><strong>callback</strong> (<em>function</em>) &#8211; 回调函数</li>
 </ul>
 </td>

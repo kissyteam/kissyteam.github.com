@@ -33,15 +33,19 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="http://kissyui.com/blog/">API</a></li>
-        <li><a href="http://kissyui.com/blog/">DEMO</a></li>
-        <li><a href="http://kissyui.com/blog/">博客</a></li>
-        <li><a href="#">论坛</a></li>
+        <li><a href="../../../html/api/index.html">API</a></li>
+        <li><a href="../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <li><a href="mailto:all@kissyui.com">论坛</a></li>
         <li><a href="http://www.github.com/kissyteam">源码</a></li>
     </ul>
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -64,16 +68,13 @@
       <li><a href="index.html" accesskey="U">KISSY Module Compiler</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
   <div class="section" id="id1">
 <h1>简介<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>是一个模块代码依赖自动合并工具。</li>
-<li>是一个模块代码规范辅助工具，可以辅助规范模块编写，不仅仅只适用动态加载场景，也可以用来提高开发阶段效率。</li>
-<li>是一个模块代码部署工具。结合 <a class="reference internal" href="../../api/seed/loader/index.html#module-Loader" title="Loader"><tt class="xref py py-mod docutils literal"><span class="pre">KISSY</span> <span class="pre">1.2</span> <span class="pre">Loader</span></tt></a> ，用于模块代码部署阶段，多个模块根据其依赖合并为一个文件，减少 HTTP 链接数。</li>
+<li>是一个模块代码依赖自动合并工具.</li>
+<li>是一个模块代码规范辅助工具, 可以辅助规范模块编写, 不仅仅只适用动态加载场景, 也可以用来提高开发阶段效率.</li>
+<li>是一个模块代码部署工具. 结合 <a class="reference internal" href="../../api/seed/loader/index.html#module-Loader" title="Loader"><tt class="xref py py-mod docutils literal"><span class="pre">KISSY</span> <span class="pre">1.2</span> <span class="pre">Loader</span></tt></a> , 用于模块代码部署阶段, 多个模块根据其依赖合并为一个文件, 减少 HTTP 链接数.</li>
 </ul>
 </div>
 <div class="section" id="id2">
@@ -101,9 +102,9 @@
 <p id="module-compiler-dev">使用模块</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
     <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;package&quot;</span><span class="p">,</span> <span class="c1">// 包名</span>
-    <span class="nx">tag</span><span class="o">:</span><span class="s2">&quot;20110323&quot;</span><span class="p">,</span> <span class="c1">// 动态加载包内的模块js文件时，</span>
-                    <span class="c1">// 自动加上 ?t=20110323，用于文件更新</span>
-    <span class="nx">path</span><span class="o">:</span><span class="s2">&quot;http://x.cn/code/&quot;</span><span class="p">,</span> <span class="c1">// 包对应路径，相对路径指相对于当前页面路径</span>
+    <span class="nx">tag</span><span class="o">:</span><span class="s2">&quot;20110323&quot;</span><span class="p">,</span> <span class="c1">// 动态加载包内的模块js文件时,</span>
+                    <span class="c1">// 自动加上 ?t=20110323, 用于文件更新</span>
+    <span class="nx">path</span><span class="o">:</span><span class="s2">&quot;http://x.cn/code/&quot;</span><span class="p">,</span> <span class="c1">// 包对应路径, 相对路径指相对于当前页面路径</span>
     <span class="nx">charset</span><span class="o">:</span><span class="s2">&quot;gbk&quot;</span> <span class="c1">// 包里模块文件编码格式</span>
 <span class="p">});</span>
 
@@ -114,21 +115,21 @@
 </div>
 <p>那么 KISSY Loader 就会</p>
 <ol class="arabic simple">
-<li>加载 <tt class="docutils literal"><span class="pre">y.js</span></tt> 。</li>
-<li>加载 <tt class="docutils literal"><span class="pre">x.js</span></tt> 。</li>
-<li>初始化 <tt class="docutils literal"><span class="pre">package/x</span></tt> 模块。</li>
-<li>初始化 <tt class="docutils literal"><span class="pre">package/y</span></tt> 模块。</li>
-<li>回调中可以得到 <tt class="docutils literal"><span class="pre">package/x</span></tt> 的模块值了。</li>
+<li>加载 <tt class="docutils literal"><span class="pre">y.js</span></tt> .</li>
+<li>加载 <tt class="docutils literal"><span class="pre">x.js</span></tt> .</li>
+<li>初始化 <tt class="docutils literal"><span class="pre">package/x</span></tt> 模块.</li>
+<li>初始化 <tt class="docutils literal"><span class="pre">package/y</span></tt> 模块.</li>
+<li>回调中可以得到 <tt class="docutils literal"><span class="pre">package/x</span></tt> 的模块值了.</li>
 </ol>
-<p>这个过程如果模块多的话对于线上环境来说 HTTP 链接数不可承受，使用 KISSY module compiler 则可以达到所有模块压缩为一个文件，达到 http 链接数为 1 的目标。</p>
+<p>这个过程如果模块多的话对于线上环境来说 HTTP 链接数不可承受, 使用 KISSY module compiler 则可以达到所有模块压缩为一个文件, 达到 http 链接数为 1 的目标.</p>
 </div>
 <div class="section" id="module-compiler">
 <h2>使用 Module Compiler<a class="headerlink" href="#module-compiler" title="Permalink to this headline">¶</a></h2>
 <p>简要如下:</p>
 <ol class="arabic simple">
-<li>配置 module compiler 指定需要的模块，这里即 <tt class="docutils literal"><span class="pre">package/y</span></tt></li>
-<li>配置 module compiler 指定模块查找目录，这里即 <tt class="docutils literal"><span class="pre">code/</span></tt></li>
-<li>配置 module compiler 指定合并后文件名称，假设为 <tt class="docutils literal"><span class="pre">package/y.combine.js</span></tt></li>
+<li>配置 module compiler 指定需要的模块, 这里即 <tt class="docutils literal"><span class="pre">package/y</span></tt></li>
+<li>配置 module compiler 指定模块查找目录, 这里即 <tt class="docutils literal"><span class="pre">code/</span></tt></li>
+<li>配置 module compiler 指定合并后文件名称, 假设为 <tt class="docutils literal"><span class="pre">package/y.combine.js</span></tt></li>
 <li>运行 module compiler 合并 <tt class="docutils literal"><span class="pre">package/y</span></tt> 及其递归依赖的其他模块到 <tt class="docutils literal"><span class="pre">package/y.combine.js</span></tt></li>
 <li>运行 closure compiler 压缩 <tt class="docutils literal"><span class="pre">package/y.combine.js</span></tt> 为 <tt class="docutils literal"><span class="pre">package/y-min.js</span></tt></li>
 </ol>
@@ -139,16 +140,16 @@
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy-min.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 </div>
-<p>使用模块部分同 <a class="reference internal" href="#module-compiler-dev"><em>开发阶段</em></a> 。</p>
+<p>使用模块部分同 <a class="reference internal" href="#module-compiler-dev"><em>开发阶段</em></a> .</p>
 <p>线上过程：</p>
 <ol class="arabic simple">
 <li>加载 <tt class="docutils literal"><span class="pre">package/y-min.js</span></tt></li>
-<li>检查 <tt class="docutils literal"><span class="pre">package/x</span></tt> 模块，发现已经载入</li>
+<li>检查 <tt class="docutils literal"><span class="pre">package/x</span></tt> 模块, 发现已经载入</li>
 <li>初始化 <tt class="docutils literal"><span class="pre">package/x</span></tt> 模块</li>
 <li>初始化 <tt class="docutils literal"><span class="pre">package/y</span></tt> 模块</li>
 <li>执行回调</li>
 </ol>
-<p>于是线上应用 HTTP 链接数为 1 。若需要使用源码调试则可以在页面 url 后加上 <tt class="docutils literal"><span class="pre">?ks-debug</span></tt> 即可开启开发阶段的加载过程.以上即为近期交易平台化项目所采用的模块化框架。</p>
+<p>于是线上应用 HTTP 链接数为 1 . 若需要使用源码调试则可以在页面 url 后加上 <tt class="docutils literal"><span class="pre">?ks-debug</span></tt> 即可开启开发阶段的加载过程.以上即为近期交易平台化项目所采用的模块化框架.</p>
 </div>
 </div>
 
@@ -203,7 +204,7 @@
         <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">快速上手</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API文档</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../demo/index.html">范例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo/index.html">All Demos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../relatedproj/index.html">子项目集</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../styleguide/index.html">最佳编码实践</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">前端常用工具</a><ul class="current">
