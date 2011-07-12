@@ -1,8 +1,18 @@
 .. currentmodule:: Lang
 
-KISSY.now
+now
 ===============================
 
-.. function:: KISSY.now()
+Module
+-----------------------------------------------
 
-    返回 new Date().getTime()
+  :mod:`Lang`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.now
+
+    | Date **KISSY.now** ()
+    | 返回 new Date().getTime()

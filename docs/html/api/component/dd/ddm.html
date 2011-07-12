@@ -42,6 +42,10 @@
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -65,126 +69,179 @@
       <li><a href="index.html" accesskey="U">DD</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
-  <div class="section" id="ddm">
+  <span class="target" id="module-DDM"></span><div class="section" id="ddm">
 <h1>DDM<a class="headerlink" href="#ddm" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id1">
-<h2>引入<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>页面引入 kissy.js :</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
+<div class="line-block">
+<div class="line">拖放的中央控制对象，所有的拖放实例的事件都会向其冒泡。</div>
+<div class="line">作者: 承玉&lt;<a class="reference external" href="mailto:chengyu&#37;&#52;&#48;taobao&#46;com">chengyu<span>&#64;</span>taobao<span>&#46;</span>com</a>&gt;</div>
+<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/dd/ddm.js">源码</a></div>
 </div>
 <p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>通过 use 加载 dd 模块：<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">){</span>
-    <span class="kd">var</span> <span class="nx">DDM</span> <span class="o">=</span> <span class="nx">DD</span><span class="p">.</span><span class="nx">DDM</span><span class="p">;</span>
-<span class="p">});</span>
-</pre></div>
+<span class="versionmodified">New in version 1.2.</span></p>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#DDM.DD.DDM" title="DDM.DD.DDM"><tt class="xref py py-class docutils literal"><span class="pre">DD.DDM</span></tt></a></li>
+</ul>
+</div></blockquote>
 </div>
-</p>
-<div class="admonition-see-also admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last">KISSY 1.2 <a class="reference internal" href="../../seed/loader/index.html#module-Loader" title="Loader"><tt class="xref py py-mod docutils literal"><span class="pre">Loader</span></tt></a> 新增功能</p>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#DDM.bufferTimer" title="DDM.bufferTimer"><tt class="xref py py-data docutils literal"><span class="pre">bufferTimer</span></tt></a></li>
+</ul>
+</div></blockquote>
 </div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#DDM.dragstart" title="DDM.dragstart"><tt class="xref py py-func docutils literal"><span class="pre">dragstart()</span></tt></a></li>
+<li><a class="reference internal" href="#DDM.drag" title="DDM.drag"><tt class="xref py py-func docutils literal"><span class="pre">drag()</span></tt></a></li>
+<li><a class="reference internal" href="#DDM.dragend" title="DDM.dragend"><tt class="xref py py-func docutils literal"><span class="pre">dragend()</span></tt></a></li>
+<li><a class="reference internal" href="#DDM.dragenter" title="DDM.dragenter"><tt class="xref py py-func docutils literal"><span class="pre">dragenter()</span></tt></a></li>
+<li><a class="reference internal" href="#DDM.dragover" title="DDM.dragover"><tt class="xref py py-func docutils literal"><span class="pre">dragover()</span></tt></a></li>
+<li><a class="reference internal" href="#DDM.dragexit" title="DDM.dragexit"><tt class="xref py py-func docutils literal"><span class="pre">dragexit()</span></tt></a></li>
+<li><a class="reference internal" href="#DDM.dragdrophit" title="DDM.dragdrophit"><tt class="xref py py-func docutils literal"><span class="pre">dragdrophit()</span></tt></a></li>
+<li><a class="reference internal" href="#DDM.dragdropmiss" title="DDM.dragdropmiss"><tt class="xref py py-func docutils literal"><span class="pre">dragdropmiss()</span></tt></a></li>
+<li><a class="reference internal" href="#DDM.dropenter" title="DDM.dropenter"><tt class="xref py py-func docutils literal"><span class="pre">dropenter()</span></tt></a></li>
+<li><a class="reference internal" href="#DDM.dropover" title="DDM.dropover"><tt class="xref py py-func docutils literal"><span class="pre">dropover()</span></tt></a></li>
+<li><a class="reference internal" href="#DDM.dropexit" title="DDM.dropexit"><tt class="xref py py-func docutils literal"><span class="pre">dropexit()</span></tt></a></li>
+<li><a class="reference internal" href="#DDM.drophit" title="DDM.drophit"><tt class="xref py py-func docutils literal"><span class="pre">drophit()</span></tt></a></li>
+</ul>
+</div></blockquote>
 </div>
-<div class="section" id="id2">
-<h2>简介<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt id="DD.DDM">
-<tt class="descclassname">DD.</tt><tt class="descname">DDM</tt><a class="headerlink" href="#DD.DDM" title="Permalink to this definition">¶</a></dt>
-<dd><p>为拖放的中央控制对象，所有的拖放实例的事件都会向其冒泡。
-因此可以对整个拖放模块进行一些配置，以及对 DDM 进行全局事件监听和处理。</p>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="DDM.DD.DDM">
+<em class="property">class </em><tt class="descclassname">DD.</tt><tt class="descname">DDM</tt><a class="headerlink" href="#DDM.DD.DDM" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>DD.DDM</strong> ()</div>
+</div>
 </dd></dl>
 
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">DDM 上的事件监听处理会影响到所有的拖放实例。</p>
 </div>
-</div>
-<div class="section" id="id3">
-<h2>属性<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="properties-detail">
+<h2>Properties Detail<a class="headerlink" href="#properties-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="attribute">
-<dt id="DD.DDM.bufferTimer">
-<tt class="descclassname">DDM.</tt><tt class="descname">bufferTimer</tt><a class="headerlink" href="#DD.DDM.bufferTimer" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 number，默认 200，表示鼠标按下多长时间后触发 <tt class="xref py py-data docutils literal"><span class="pre">dragstart</span></tt> 事件。
-可通过 <tt class="docutils literal"><span class="pre">DDM.set(&quot;bufferTimer&quot;,xx)</span></tt> 设置。</p>
+<dt id="DDM.bufferTimer">
+<tt class="descclassname">DDM.</tt><tt class="descname">bufferTimer</tt><a class="headerlink" href="#DDM.bufferTimer" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 默认 200，表示鼠标按下多长时间后触发 dragstart 事件。 可通过 DDM.set(&#8220;bufferTimer&#8221;,xx) 设置。</p>
 </dd></dl>
 
 </div>
-<div class="section" id="id4">
-<h2>事件<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt id="DD.DDM.dragstart">
-<tt class="descclassname">DDM.</tt><tt class="descname">dragstart</tt><a class="headerlink" href="#DD.DDM.dragstart" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <tt class="xref py py-data docutils literal"><span class="pre">Draggable.dragstart</span></tt> ，只不过在 DDM 上触发。</p>
+<div class="section" id="events-detail">
+<h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="DDM.dragstart">
+<tt class="descclassname">DDM.</tt><tt class="descname">dragstart</tt><big>(</big><big>)</big><a class="headerlink" href="#DDM.dragstart" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dragstart</strong> (ev)</div>
+<div class="line">同 Draggable.dragstart ，只不过在 DDM 上触发。</div>
+</div>
 </dd></dl>
 
-<dl class="data">
-<dt id="DD.DDM.drag">
-<tt class="descclassname">DDM.</tt><tt class="descname">drag</tt><a class="headerlink" href="#DD.DDM.drag" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <tt class="xref py py-data docutils literal"><span class="pre">Draggable.drag</span></tt> ，只不过在 DDM 上触发。</p>
+<dl class="function">
+<dt id="DDM.drag">
+<tt class="descclassname">DDM.</tt><tt class="descname">drag</tt><big>(</big><big>)</big><a class="headerlink" href="#DDM.drag" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>drag</strong> (ev)</div>
+<div class="line">同 Draggable.drag ，只不过在 DDM 上触发。</div>
+</div>
 </dd></dl>
 
-<dl class="data">
-<dt id="DD.DDM.dragend">
-<tt class="descclassname">DDM.</tt><tt class="descname">dragend</tt><a class="headerlink" href="#DD.DDM.dragend" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <tt class="xref py py-data docutils literal"><span class="pre">Draggable.dragend</span></tt> ，只不过在 DDM 上触发。</p>
+<dl class="function">
+<dt id="DDM.dragend">
+<tt class="descclassname">DDM.</tt><tt class="descname">dragend</tt><big>(</big><big>)</big><a class="headerlink" href="#DDM.dragend" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dragend</strong> (ev)</div>
+<div class="line">同 Draggable.dragend ，只不过在 DDM 上触发。</div>
+</div>
 </dd></dl>
 
-<dl class="data">
-<dt id="DD.DDM.dragenter">
-<tt class="descclassname">DDM.</tt><tt class="descname">dragenter</tt><a class="headerlink" href="#DD.DDM.dragenter" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <tt class="xref py py-data docutils literal"><span class="pre">Draggable.dragenter</span></tt> ，只不过在 DDM 上触发。</p>
+<dl class="function">
+<dt id="DDM.dragenter">
+<tt class="descclassname">DDM.</tt><tt class="descname">dragenter</tt><big>(</big><big>)</big><a class="headerlink" href="#DDM.dragenter" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dragenter</strong> (ev)</div>
+<div class="line">同 Draggable.dragenter ，只不过在 DDM 上触发。</div>
+</div>
 </dd></dl>
 
-<dl class="data">
-<dt id="DD.DDM.dragover">
-<tt class="descclassname">DDM.</tt><tt class="descname">dragover</tt><a class="headerlink" href="#DD.DDM.dragover" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <tt class="xref py py-data docutils literal"><span class="pre">Draggable.dragover</span></tt> ，只不过在 DDM 上触发。</p>
+<dl class="function">
+<dt id="DDM.dragover">
+<tt class="descclassname">DDM.</tt><tt class="descname">dragover</tt><big>(</big><big>)</big><a class="headerlink" href="#DDM.dragover" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dragover</strong> (ev)</div>
+<div class="line">同 Draggable.dragover ，只不过在 DDM 上触发。</div>
+</div>
 </dd></dl>
 
-<dl class="data">
-<dt id="DD.DDM.dragexit">
-<tt class="descclassname">DDM.</tt><tt class="descname">dragexit</tt><a class="headerlink" href="#DD.DDM.dragexit" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <tt class="xref py py-data docutils literal"><span class="pre">Draggable.dragexit</span></tt> ，只不过在 DDM 上触发。</p>
+<dl class="function">
+<dt id="DDM.dragexit">
+<tt class="descclassname">DDM.</tt><tt class="descname">dragexit</tt><big>(</big><big>)</big><a class="headerlink" href="#DDM.dragexit" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dragexit</strong> (ev)</div>
+<div class="line">同 Draggable.dragexit ，只不过在 DDM 上触发。</div>
+</div>
 </dd></dl>
 
-<dl class="data">
-<dt id="DD.DDM.dragdrophit">
-<tt class="descclassname">DDM.</tt><tt class="descname">dragdrophit</tt><a class="headerlink" href="#DD.DDM.dragdrophit" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <tt class="xref py py-data docutils literal"><span class="pre">Draggable.dragdrophit</span></tt> ，只不过在 DDM 上触发。</p>
+<dl class="function">
+<dt id="DDM.dragdrophit">
+<tt class="descclassname">DDM.</tt><tt class="descname">dragdrophit</tt><big>(</big><big>)</big><a class="headerlink" href="#DDM.dragdrophit" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dragdrophit</strong> (ev)</div>
+<div class="line">同 Draggable.dragdrophit ，只不过在 DDM 上触发。</div>
+</div>
 </dd></dl>
 
-<dl class="data">
-<dt id="DD.DDM.dragdropmiss">
-<tt class="descclassname">DDM.</tt><tt class="descname">dragdropmiss</tt><a class="headerlink" href="#DD.DDM.dragdropmiss" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <tt class="xref py py-data docutils literal"><span class="pre">Draggable.dragdropmiss</span></tt> ，只不过在 DDM 上触发。</p>
+<dl class="function">
+<dt id="DDM.dragdropmiss">
+<tt class="descclassname">DDM.</tt><tt class="descname">dragdropmiss</tt><big>(</big><big>)</big><a class="headerlink" href="#DDM.dragdropmiss" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dragdropmiss</strong> (ev)</div>
+<div class="line">同 Draggable.dragdropmiss ，只不过在 DDM 上触发。</div>
+</div>
 </dd></dl>
 
-<dl class="data">
-<dt id="DD.DDM.dropenter">
-<tt class="descclassname">DDM.</tt><tt class="descname">dropenter</tt><a class="headerlink" href="#DD.DDM.dropenter" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <a class="reference internal" href="droppable.html#DD.Droppable.dropenter" title="DD.Droppable.dropenter"><tt class="xref py py-data docutils literal"><span class="pre">Droppable.dropenter</span></tt></a> ，只不过在 DDM 上触发。</p>
+<dl class="function">
+<dt id="DDM.dropenter">
+<tt class="descclassname">DDM.</tt><tt class="descname">dropenter</tt><big>(</big><big>)</big><a class="headerlink" href="#DDM.dropenter" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dropenter</strong> (ev)</div>
+<div class="line">同 Droppable.dropenter ，只不过在 DDM 上触发。</div>
+</div>
 </dd></dl>
 
-<dl class="data">
-<dt id="DD.DDM.dropover">
-<tt class="descclassname">DDM.</tt><tt class="descname">dropover</tt><a class="headerlink" href="#DD.DDM.dropover" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <a class="reference internal" href="droppable.html#DD.Droppable.dropover" title="DD.Droppable.dropover"><tt class="xref py py-data docutils literal"><span class="pre">Droppable.dropover</span></tt></a> ，只不过在 DDM 上触发。</p>
+<dl class="function">
+<dt id="DDM.dropover">
+<tt class="descclassname">DDM.</tt><tt class="descname">dropover</tt><big>(</big><big>)</big><a class="headerlink" href="#DDM.dropover" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dropover</strong> (ev)</div>
+<div class="line">同 Droppable.dropover ，只不过在 DDM 上触发。</div>
+</div>
 </dd></dl>
 
-<dl class="data">
-<dt id="DD.DDM.dropexit">
-<tt class="descclassname">DDM.</tt><tt class="descname">dropexit</tt><a class="headerlink" href="#DD.DDM.dropexit" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <a class="reference internal" href="droppable.html#DD.Droppable.dropexit" title="DD.Droppable.dropexit"><tt class="xref py py-data docutils literal"><span class="pre">Droppable.dropexit</span></tt></a> ，只不过在 DDM 上触发。</p>
+<dl class="function">
+<dt id="DDM.dropexit">
+<tt class="descclassname">DDM.</tt><tt class="descname">dropexit</tt><big>(</big><big>)</big><a class="headerlink" href="#DDM.dropexit" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dropexit</strong> (ev)</div>
+<div class="line">同 Droppable.dropexit ，只不过在 DDM 上触发。</div>
+</div>
 </dd></dl>
 
-<dl class="data">
-<dt id="DD.DDM.drophit">
-<tt class="descclassname">DDM.</tt><tt class="descname">drophit</tt><a class="headerlink" href="#DD.DDM.drophit" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <a class="reference internal" href="droppable.html#DD.Droppable.drophit" title="DD.Droppable.drophit"><tt class="xref py py-data docutils literal"><span class="pre">Droppable.drophit</span></tt></a> ，只不过在 DDM 上触发。</p>
+<dl class="function">
+<dt id="DDM.drophit">
+<tt class="descclassname">DDM.</tt><tt class="descname">drophit</tt><big>(</big><big>)</big><a class="headerlink" href="#DDM.drophit" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>drophit</strong> (ev)</div>
+<div class="line">同 Droppable.drophit ，只不过在 DDM 上触发。</div>
+</div>
 </dd></dl>
 
 </div>

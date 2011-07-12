@@ -1,44 +1,45 @@
 ﻿.. currentmodule:: Node
 
 
-width()
+width
 ========================================
 
-读
---------------------------------------------
+Module
+-----------------------------------------------
 
-.. method:: NodeList.width()
-    
-    得到当前节点列表第一个节点的计算宽度
+  :mod:`Node`
+
+Methods
+-----------------------------------------------
+
+.. function:: width
+
+    | NodeList **width** ()
+    | 得到当前节点列表第一个节点的计算宽度
         
     :rtype: number
     
-和 ``css('width')`` 的区别在于该函数返回不带单位的纯数值，而前者则返回带单位的原始值（例如 ``400px`` ）.
-当需要数值计算时，推荐该方法。
+    和 ``css('width')`` 的区别在于该函数返回不带单位的纯数值，而前者则返回带单位的原始值（例如 ``400px`` ）.
+    当需要数值计算时，推荐该方法。
     
-.. versionadded:: 1.2
-    该方法也可以用来得到 windw 和 document 的宽度
+    .. versionadded:: 1.2
+        该方法也可以用来得到 windw 和 document 的宽度
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    KISSY.use("node",function(S,Node){
-        Node.all(window).width(); // 得到浏览器可以区域的高度，相当于 DOM.viewportWidth()
-        Node.all(document).width(); //得到 html 文档的高度，相当于 DOM.docWidth()
-    });    
+        KISSY.use("node",function(S,Node){
+            Node.all(window).width(); // 得到浏览器可以区域的高度，相当于 DOM.viewportWidth()
+            Node.all(document).width(); //得到 html 文档的高度，相当于 DOM.docWidth()
+        });
        
-  
-写
---------------------------
-       
-.. method:: NodeList.width( value )
-
-    设置当前列表每个元素的 css width 值。
+    | NodeList **width** ( value )
+    | 设置当前列表每个元素的 css width 值。
     
     :param number|string value: 代表像素的整数值，或数字加上其他单位的字符串值.
     
-.. note::
+    .. note::
 
-    在现代浏览器中，css width 属性不包括 padding , border 或者 margin.   
-    
+        在现代浏览器中，css width 属性不包括 padding , border 或者 margin.
 
-例子可参考 :meth:`NodeList.height`              
+
+    例子可参考 :meth:`NodeList.height`

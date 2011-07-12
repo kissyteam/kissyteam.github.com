@@ -1,16 +1,25 @@
 ﻿.. currentmodule:: Node
 
-hide()
+hide
 ==================================================
 
-.. method:: NodeList.hide( [ speed, callback ] )
+Module
+-----------------------------------------------
 
-    当前节点列表元素以动画效果隐藏
+  :mod:`Node`
+
+Methods
+-----------------------------------------------
+
+.. function:: hide
+
+    | NodeList **hide** ( [ speed, callback ] )
+    | 当前节点列表元素以动画效果隐藏
         
     :param number speed : 单位秒，动画持续时间，不设置无动画
     :param function callback: 每个动画结束后回调函数
     :rtype: NodeList    
     
-.. note::
+    .. note::
 
-    注意回调 callback 在每个元素动画结束后都会回调， this 值指向当前单个元素所属的动画对象.       
+        注意回调 callback 在每个元素动画结束后都会回调， this 值指向当前单个元素所属的动画对象.

@@ -1,11 +1,21 @@
 .. currentmodule:: Seed
 
-KISSY.log
+log
 ===============================
 
-.. function:: KISSY.log(msg[,cat='log',src])
+Module
+-----------------------------------------------
 
-    输出调试信息
+  :mod:`Seed`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.log
+
+    | void **KISSY.inArray** (msg[,cat='log',src])
+    | 输出调试信息
     
     :param string msg: 调试信息
     :param string cat: 调试信息类别。可以取 info, warn, error, dir, time 等 console 对象的方法名，默认为 log. 

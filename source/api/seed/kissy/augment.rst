@@ -1,11 +1,21 @@
 .. currentmodule:: Seed
 
-KISSY.augment
+augment
 ===============================
 
-.. function:: KISSY.augment(r,s[,ov=true,wl])
+Module
+-----------------------------------------------
 
-    将 s.prototype 的成员复制到 r.prototype 上。
+  :mod:`Seed`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.augment
+
+    | Function **KISSY.augment** (r,s[,ov=true,wl])
+    | 将 s.prototype 的成员复制到 r.prototype 上。
     
     :param function r: 将要扩充的函数
     :param function|object s: 扩充来源函数或对象。非函数对象时复制的就是 s 的成员。
@@ -14,23 +24,23 @@ KISSY.augment
     :return: r
     :rtype: function
     
-例如：
+    例如：
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    var S = KISSY,
-    Shoutable = {
-        shout: function() { alert('I am ' + this.name + '.'); }
-    };
+        var S = KISSY,
+        Shoutable = {
+            shout: function() { alert('I am ' + this.name + '.'); }
+        };
 
-    function Dog(name) { this.name = 'Dog ' + name; }
-    function Pig(name) { this.name = 'Pig ' + name; }
-    
-    S.augment(Dog, Shoutable);
-    S.augment(Pig, Shoutable);
-    
-    new Dog('Jack').shout(); // => I am Dog Jack.
-    new Pig('Mary').shout(); // => I am Pig Mary.
+        function Dog(name) { this.name = 'Dog ' + name; }
+        function Pig(name) { this.name = 'Pig ' + name; }
+
+        S.augment(Dog, Shoutable);
+        S.augment(Pig, Shoutable);
+
+        new Dog('Jack').shout(); // => I am Dog Jack.
+        new Pig('Mary').shout(); // => I am Pig Mary.
     
 augment 方法在 KISSY 里非常基础非常重要。
 传统 OO 语言里，可以通过继承或接口来实现共性方法。

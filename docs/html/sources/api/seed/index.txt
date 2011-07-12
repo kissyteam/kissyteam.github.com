@@ -7,14 +7,6 @@ Seed
 |  源码: `查看 <https://github.com/kissyteam/kissy/tree/master/src/seed>`_
 
 
-Class
------------------------------------------------
-
-.. data:: KISSY
-
-Methods
------------------------------------------------
-
 .. toctree::
    :titlesonly:
 

@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>子类 Dialog &mdash; KISSY Docs valpha documentation</title>
+<title>Dialog &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -42,6 +42,10 @@
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -54,10 +58,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="popup.html" title="子类 Popup"
+      <a href="popup.html" title="Popup"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="overlay.html" title="父类 Overlay"
+      <a href="overlay.html" title="Overlay"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -65,59 +69,88 @@
       <li><a href="index.html" accesskey="U">Overlay</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
-  <div class="section" id="dialog">
-<h1>子类 Dialog<a class="headerlink" href="#dialog" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id1">
-<h2>获取对话框构造器<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>页面引入 kissy.js :</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
-</div>
-<p>Dialog 属于 overlay 模块，通过 use 加载 overlay 模块：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="kd">var</span> <span class="nx">Dialog</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">;</span>
-    <span class="c1">//使用 Dialog 构造器</span>
-<span class="p">});</span>
-</pre></div>
+  <span class="target" id="module-Dialog"></span><div class="section" id="dialog">
+<h1>Dialog<a class="headerlink" href="#dialog" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">对话框。</div>
+<div class="line">扩展于 <a class="reference internal" href="overlay.html#module-Overlay" title="Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a></div>
+<div class="line">作者: <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></div>
+<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/overlay">源码</a></div>
 </div>
 <p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>KISSY 1.2 可直接通过依赖注入，从函数参数中取得<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
-    <span class="c1">//使用 Overlay 构造器</span>
-    <span class="kd">var</span> <span class="nx">Dialog</span><span class="o">=</span><span class="nx">Overlay</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">;</span>
-<span class="p">});</span>
-</pre></div>
+<span class="versionmodified">New in version 1.2.</span></p>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#module-Dialog" title="Dialog"><tt class="xref py py-class docutils literal"><span class="pre">Dialog</span></tt></a></li>
+</ul>
+</div></blockquote>
 </div>
-</p>
+<div class="section" id="config-attributes">
+<h2>Config Attributes<a class="headerlink" href="#config-attributes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>除了 <a class="reference internal" href="overlay.html#Overlay.content" title="Overlay.content"><tt class="xref py py-attr docutils literal"><span class="pre">Overlay.content</span></tt></a> 配置项外与 <a class="reference internal" href="overlay.html#module-Overlay" title="Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> 的配置项完全相同，其他新增配置项如下：</p>
+<ul class="simple">
+<li><a class="reference internal" href="#Dialog.headerContent" title="Dialog.headerContent"><tt class="xref py py-data docutils literal"><span class="pre">headerContent</span></tt></a></li>
+<li><a class="reference internal" href="#Dialog.bodyContent" title="Dialog.bodyContent"><tt class="xref py py-data docutils literal"><span class="pre">bodyContent</span></tt></a></li>
+<li><a class="reference internal" href="#Dialog.footerContent" title="Dialog.footerContent"><tt class="xref py py-data docutils literal"><span class="pre">footerContent</span></tt></a></li>
+<li><a class="reference internal" href="#Dialog.closable" title="Dialog.closable"><tt class="xref py py-data docutils literal"><span class="pre">closable</span></tt></a></li>
+<li><a class="reference internal" href="#Dialog.draggable" title="Dialog.draggable"><tt class="xref py py-data docutils literal"><span class="pre">draggable</span></tt></a></li>
+<li><a class="reference internal" href="#Dialog.aria" title="Dialog.aria"><tt class="xref py py-data docutils literal"><span class="pre">aria</span></tt></a></li>
+<li><a class="reference internal" href="#Dialog.constrain" title="Dialog.constrain"><tt class="xref py py-data docutils literal"><span class="pre">constrain</span></tt></a></li>
+</ul>
+</div></blockquote>
 </div>
-<div class="section" id="id2">
-<h2>构造器接口<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>除了 <a class="reference internal" href="overlay.html#module-Overlay" title="Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> 的所有属性之外还有：</p>
+<ul class="simple">
+<li><a class="reference internal" href="#Dialog.header" title="Dialog.header"><tt class="xref py py-attr docutils literal"><span class="pre">header</span></tt></a></li>
+<li><a class="reference internal" href="#Dialog.body" title="Dialog.body"><tt class="xref py py-attr docutils literal"><span class="pre">body</span></tt></a></li>
+<li><a class="reference internal" href="#Dialog.footer" title="Dialog.footer"><tt class="xref py py-attr docutils literal"><span class="pre">footer</span></tt></a></li>
+<li><a class="reference internal" href="#Dialog.closable" title="Dialog.closable"><tt class="xref py py-attr docutils literal"><span class="pre">closable</span></tt></a></li>
+<li><a class="reference internal" href="#Dialog.draggable" title="Dialog.draggable"><tt class="xref py py-attr docutils literal"><span class="pre">draggable</span></tt></a></li>
+<li><a class="reference internal" href="#Dialog.constrain" title="Dialog.constrain"><tt class="xref py py-attr docutils literal"><span class="pre">constrain</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>同 <a class="reference internal" href="overlay.html#module-Overlay" title="Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> 。</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>同 <a class="reference internal" href="overlay.html#module-Overlay" title="Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> ，包括 <tt class="xref py py-attr docutils literal"><span class="pre">show</span></tt> , <tt class="xref py py-attr docutils literal"><span class="pre">hide</span></tt> , <tt class="xref py py-attr docutils literal"><span class="pre">beforeVisibleChange</span></tt> .</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="Overlay.Dialog">
-<em class="property">class </em><tt class="descclassname">Overlay.</tt><tt class="descname">Dialog</tt><big>(</big><em>config</em><big>)</big><a class="headerlink" href="#Overlay.Dialog" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dt id="Dialog.Dialog">
+<em class="property">class </em><tt class="descclassname">Dialog.</tt><tt class="descname">Dialog</tt><a class="headerlink" href="#Dialog.Dialog" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>Dialog</strong> (config)</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>object</em>) &#8211; 类型对象，实例对象所需的配置</td>
+<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 配置项, 详细见下方 <strong>Config Attributes Detail</strong> .</td>
 </tr>
 </tbody>
 </table>
-<p>例如一个简单的配置项：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nx">width</span><span class="o">:</span><span class="s2">&quot;200px&quot;</span><span class="p">,</span>
-    <span class="nx">render</span><span class="o">:</span><span class="s2">&quot;#container&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<div class="section" id="dom">
-<h3>对话框的 DOM 结构<a class="headerlink" href="#dom" title="Permalink to this headline">¶</a></h3>
+<p>对话框的 DOM 结构为：</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div&gt;</span> <span class="c">&lt;!-- 对话框根节点 --&gt;</span>
     <span class="nt">&lt;div&gt;</span> <span class="c">&lt;!-- 对话框内容节点 --&gt;</span>
         <span class="nt">&lt;div&gt;</span> <span class="c">&lt;!-- 对话框标题节点 --&gt;</span>
@@ -132,38 +165,41 @@
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
 </div>
+</dd></dl>
+
 </div>
-<div class="section" id="config">
-<h3>config 配置项详解<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h3>
-<p>除了 <a class="reference internal" href="overlay.html#Overlay.content" title="Overlay.content"><tt class="xref py py-attr docutils literal"><span class="pre">content</span></tt></a> 配置项外与 <a class="reference internal" href="overlay.html#Overlay.Overlay" title="Overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> 的配置项完全相同，但是 <a class="reference internal" href="#Overlay.Dialog" title="Overlay.Dialog"><tt class="xref py py-class docutils literal"><span class="pre">Dialog</span></tt></a> 新增了一些配置项，如下所示：</p>
-<dl class="attribute">
-<dt id="Overlay.headerContent">
-<tt class="descclassname">Overlay.</tt><tt class="descname">headerContent</tt><a class="headerlink" href="#Overlay.headerContent" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型字符串，对话框的标题 html.</p>
+<div class="section" id="config-attributes-detail">
+<h2>Config Attributes Detail<a class="headerlink" href="#config-attributes-detail" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>除了 <a class="reference internal" href="overlay.html#Overlay.content" title="Overlay.content"><tt class="xref py py-attr docutils literal"><span class="pre">Overlay.content</span></tt></a> 配置项外与 <a class="reference internal" href="overlay.html#module-Overlay" title="Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> 的配置项完全相同，但是新增了一些配置项如下所示：</div></blockquote>
+<dl class="data">
+<dt id="Dialog.headerContent">
+<tt class="descclassname">Dialog.</tt><tt class="descname">headerContent</tt><a class="headerlink" href="#Dialog.headerContent" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 对话框的标题 html.</p>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="Overlay.bodyContent">
-<tt class="descclassname">Overlay.</tt><tt class="descname">bodyContent</tt><a class="headerlink" href="#Overlay.bodyContent" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型字符串，对话框的体 html。</p>
+<dl class="data">
+<dt id="Dialog.bodyContent">
+<tt class="descclassname">Dialog.</tt><tt class="descname">bodyContent</tt><a class="headerlink" href="#Dialog.bodyContent" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 对话框的体 html。</p>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="Overlay.footerContent">
-<tt class="descclassname">Overlay.</tt><tt class="descname">footerContent</tt><a class="headerlink" href="#Overlay.footerContent" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型字符串，对话框的底部 html。</p>
+<dl class="data">
+<dt id="Dialog.footerContent">
+<tt class="descclassname">Dialog.</tt><tt class="descname">footerContent</tt><a class="headerlink" href="#Dialog.footerContent" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 对话框的底部 html。</p>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="Overlay.closable">
-<tt class="descclassname">Overlay.</tt><tt class="descname">closable</tt><a class="headerlink" href="#Overlay.closable" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 boolean，对话框右上角是否包括关闭按钮</p>
+<dl class="data">
+<dt id="Dialog.closable">
+<tt class="descclassname">Dialog.</tt><tt class="descname">closable</tt><a class="headerlink" href="#Dialog.closable" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 对话框右上角是否包括关闭按钮</p>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="Overlay.draggable">
-<tt class="descclassname">Overlay.</tt><tt class="descname">draggable</tt><a class="headerlink" href="#Overlay.draggable" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 boolean，是否允许拖动头部移动，注意启用时需同时 <tt class="docutils literal"><span class="pre">use(&quot;dd&quot;)</span></tt> ，例如</p>
+<dl class="data">
+<dt id="Dialog.draggable">
+<tt class="descclassname">Dialog.</tt><tt class="descname">draggable</tt><a class="headerlink" href="#Dialog.draggable" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 是否允许拖动头部移动，注意启用时需同时 <tt class="docutils literal"><span class="pre">use(&quot;dd&quot;)</span></tt> ，例如：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd,overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
     <span class="k">new</span> <span class="nx">Overlay</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
         <span class="nx">draggable</span> <span class="o">:</span> <span class="kc">true</span>
@@ -173,22 +209,26 @@
 </div>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="Overlay.aria">
-<tt class="descclassname">Overlay.</tt><tt class="descname">aria</tt><a class="headerlink" href="#Overlay.aria" title="Permalink to this definition">¶</a></dt>
-<dd><p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>类型 boolean，是否开启 aria 支持。默认 false 。开启后，窗口显示出来时自动获得焦点并且 tab 键只能在窗口内部转移焦点。</p>
+<dl class="data">
+<dt id="Dialog.aria">
+<tt class="descclassname">Dialog.</tt><tt class="descname">aria</tt><a class="headerlink" href="#Dialog.aria" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认为 false，是否开启 aria 支持。开启后，窗口显示出来时自动获得焦点并且 tab 键只能在窗口内部转移焦点。</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="Overlay.constrain">
-<tt class="descclassname">Overlay.</tt><tt class="descname">constrain</tt><a class="headerlink" href="#Overlay.constrain" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 boolean 或者选择器字符串 ，和 draggable 配合，限制拖动的范围，</p>
-<ul class="simple">
-<li>取值 true 时，只能在当前视窗范围内拖动。</li>
+<dl class="data">
+<dt id="Dialog.constrain">
+<tt class="descclassname">Dialog.</tt><tt class="descname">constrain</tt><a class="headerlink" href="#Dialog.constrain" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>{Boolean | String} - 和 <cite>~Draggable</cite> 配合，限制拖动的范围。</dt>
+<dd><ul class="first last simple">
 <li>取值选择器字符串时，则在限制拖动范围为根据该选择器字符串取到的第一个节点所在区域。</li>
+<li>取值 true 时，只能在当前视窗范围内拖动。</li>
 <li>取值 false 时，可任意移动，例如：</li>
 </ul>
+</dd>
+</dl>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd,overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
     <span class="k">new</span> <span class="nx">Overlay</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
         <span class="nx">draggable</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -207,30 +247,26 @@
 </dd></dl>
 
 </div>
-</div>
-<div class="section" id="id3">
-<h2>实例方法<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>同 <a class="reference internal" href="overlay.html#Overlay.Overlay" title="Overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> 。</p>
-</div>
-<div class="section" id="id4">
-<h2>实例属性<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>对话框 Dialog 实例可以获得弹出层 Overlay 实例的所有属性，除此之外还有：</p>
+<div class="section" id="properties-detail">
+<h2>Properties Detail<a class="headerlink" href="#properties-detail" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>除了 <a class="reference internal" href="overlay.html#module-Overlay" title="Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> 的所有属性之外还有：</div></blockquote>
 <dl class="attribute">
-<dt id="Overlay.header">
-<tt class="descclassname">Overlay.</tt><tt class="descname">header</tt><a class="headerlink" href="#Overlay.header" title="Permalink to this definition">¶</a></dt>
-<dd><p>（只读）类型 <tt class="docutils literal"><span class="pre">KISSY.Node</span></tt> ，获得对话框的头部节点。</p>
+<dt id="Dialog.header">
+<tt class="descclassname">Dialog.</tt><tt class="descname">header</tt><a class="headerlink" href="#Dialog.header" title="Permalink to this definition">¶</a></dt>
+<dd><p>{KISSY.Node} - 只读，对话框的头部节点。</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="Overlay.body">
-<tt class="descclassname">Overlay.</tt><tt class="descname">body</tt><a class="headerlink" href="#Overlay.body" title="Permalink to this definition">¶</a></dt>
-<dd><p>（只读）类型 <tt class="docutils literal"><span class="pre">KISSY.Node</span></tt> ，获得对话框的体部节点。</p>
+<dt id="Dialog.body">
+<tt class="descclassname">Dialog.</tt><tt class="descname">body</tt><a class="headerlink" href="#Dialog.body" title="Permalink to this definition">¶</a></dt>
+<dd><p>{KISSY.Node} - 只读，对话框的体部节点。</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="Overlay.footer">
-<tt class="descclassname">Overlay.</tt><tt class="descname">footer</tt><a class="headerlink" href="#Overlay.footer" title="Permalink to this definition">¶</a></dt>
-<dd><p>（只读）: 类型 <tt class="docutils literal"><span class="pre">KISSY.Node</span></tt> ，获得对话框的底部节点。</p>
+<dt id="Dialog.footer">
+<tt class="descclassname">Dialog.</tt><tt class="descname">footer</tt><a class="headerlink" href="#Dialog.footer" title="Permalink to this definition">¶</a></dt>
+<dd><p>{KISSY.Node} - 只读，对话框的底部节点。</p>
 </dd></dl>
 
 <div class="admonition note">
@@ -239,26 +275,32 @@
 </div>
 <dl class="attribute">
 <dt>
-<tt class="descclassname">Overlay.</tt><tt class="descname">closable</tt></dt>
-<dd><p>（读写）同相应配置项，设置右上角拖放区域有无。</p>
+<tt class="descclassname">Dialog.</tt><tt class="descname">closable</tt></dt>
+<dd><p>{Boolean} - 右上角拖放区域有无。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
-<tt class="descclassname">Overlay.</tt><tt class="descname">draggable</tt></dt>
-<dd><p>（读写）同相应配置项，设置头部是否可以拖放。</p>
+<tt class="descclassname">Dialog.</tt><tt class="descname">draggable</tt></dt>
+<dd><p>{Boolean} - 头部是否可以拖放。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
-<tt class="descclassname">Overlay.</tt><tt class="descname">constrain</tt></dt>
-<dd><p>（读写）同相应配置项，设置拖放区域范围。</p>
+<tt class="descclassname">Dialog.</tt><tt class="descname">constrain</tt></dt>
+<dd><p>{Boolean | String} - 拖放区域范围。</p>
 </dd></dl>
 
 </div>
-<div class="section" id="id5">
-<h2>触发事件<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<p>同弹出层 <a class="reference internal" href="overlay.html#Overlay.Overlay" title="Overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> ，包括 <a class="reference internal" href="overlay.html#Overlay.show" title="Overlay.show"><tt class="xref py py-attr docutils literal"><span class="pre">show</span></tt></a> , <a class="reference internal" href="overlay.html#Overlay.hide" title="Overlay.hide"><tt class="xref py py-attr docutils literal"><span class="pre">hide</span></tt></a> , <a class="reference internal" href="overlay.html#Overlay.beforeVisibleChange" title="Overlay.beforeVisibleChange"><tt class="xref py py-attr docutils literal"><span class="pre">beforeVisibleChange</span></tt></a> .</p>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>同 <a class="reference internal" href="overlay.html#module-Overlay" title="Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> 。</div></blockquote>
+</div>
+<div class="section" id="events-detail">
+<h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>同 <a class="reference internal" href="overlay.html#module-Overlay" title="Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> ，包括 <a class="reference internal" href="overlay.html#Overlay.show" title="Overlay.show"><tt class="xref py py-attr docutils literal"><span class="pre">Overlay.show</span></tt></a> , <a class="reference internal" href="overlay.html#Overlay.hide" title="Overlay.hide"><tt class="xref py py-attr docutils literal"><span class="pre">Overlay.hide</span></tt></a> , <a class="reference internal" href="overlay.html#Overlay.beforeVisibleChange" title="Overlay.beforeVisibleChange"><tt class="xref py py-attr docutils literal"><span class="pre">Overlay.beforeVisibleChange</span></tt></a> .</div></blockquote>
 </div>
 </div>
 

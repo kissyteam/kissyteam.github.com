@@ -42,6 +42,10 @@
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -65,106 +69,127 @@
       <li><a href="index.html" accesskey="U">DD</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
-  <div class="section" id="proxy">
+  <span class="target" id="module-Proxy"></span><div class="section" id="proxy">
 <h1>Proxy<a class="headerlink" href="#proxy" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id1">
-<h2>引入<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>页面引入 kissy.js :</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
+<div class="line-block">
+<div class="line">代理可拖放对象</div>
+<div class="line">作者: 承玉&lt;<a class="reference external" href="mailto:chengyu&#37;&#52;&#48;taobao&#46;com">chengyu<span>&#64;</span>taobao<span>&#46;</span>com</a>&gt;</div>
+<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/dd/proxy.js">源码</a></div>
 </div>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>通过 use 加载 dd 模块：<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">){</span>
-    <span class="kd">var</span> <span class="nx">Proxy</span> <span class="o">=</span> <span class="nx">DD</span><span class="p">.</span><span class="nx">Proxy</span><span class="p">;</span>
-<span class="p">});</span>
-</pre></div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#Proxy.DD.Proxy" title="Proxy.DD.Proxy"><tt class="xref py py-class docutils literal"><span class="pre">DD.Proxy</span></tt></a></li>
+</ul>
+</div></blockquote>
 </div>
-</p>
-<div class="admonition-see-also admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last">KISSY 1.2 <a class="reference internal" href="../../seed/loader/index.html#module-Loader" title="Loader"><tt class="xref py py-mod docutils literal"><span class="pre">Loader</span></tt></a> 新增功能</p>
+<div class="section" id="config-attributes">
+<h2>Config Attributes<a class="headerlink" href="#config-attributes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#Proxy.node" title="Proxy.node"><tt class="xref py py-attr docutils literal"><span class="pre">node</span></tt></a></li>
+<li><a class="reference internal" href="#Proxy.destroyOnEnd" title="Proxy.destroyOnEnd"><tt class="xref py py-attr docutils literal"><span class="pre">destroyOnEnd</span></tt></a></li>
+</ul>
+</div></blockquote>
 </div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#Proxy.attach" title="Proxy.attach"><tt class="xref py py-meth docutils literal"><span class="pre">attach()</span></tt></a></li>
+<li><a class="reference internal" href="#Proxy.unAttach" title="Proxy.unAttach"><tt class="xref py py-meth docutils literal"><span class="pre">unAttach()</span></tt></a></li>
+<li><a class="reference internal" href="#Proxy.destroy" title="Proxy.destroy"><tt class="xref py py-meth docutils literal"><span class="pre">destroy()</span></tt></a></li>
+</ul>
+</div></blockquote>
 </div>
-<div class="section" id="id2">
-<h2>构造器<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="DD.Proxy">
-<em class="property">class </em><tt class="descclassname">DD.</tt><tt class="descname">Proxy</tt><big>(</big><em>config</em><big>)</big><a class="headerlink" href="#DD.Proxy" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dt id="Proxy.DD.Proxy">
+<em class="property">class </em><tt class="descclassname">DD.</tt><tt class="descname">Proxy</tt><a class="headerlink" href="#Proxy.DD.Proxy" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>DD.Proxy</strong> (config)</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>object</em>) &#8211; <p>实例化可拖放对象的配置项，包括</p>
+<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 配置项, 详细见下方 <strong>Config Attributes Detail</strong></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="config-attributes-detail">
+<h2>Config Attributes Detail<a class="headerlink" href="#config-attributes-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="attribute">
-<dt id="DD.Proxy.config.node">
-<tt class="descclassname">config.</tt><tt class="descname">node</tt><a class="headerlink" href="#DD.Proxy.config.node" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型函数，当 Draggable 对象需要代理节点时通过调用该函数产生代理节点，函数的参数为当前 Draggable 对象，
-返回值类型为 <tt class="docutils literal"><span class="pre">KISSY.Node</span></tt> 。该属性有默认值</p>
-<blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span><span class="p">(</span><span class="nx">drag</span><span class="p">)</span> <span class="p">{</span>
+<dt id="Proxy.node">
+<tt class="descclassname">Proxy.</tt><tt class="descname">node</tt><a class="headerlink" href="#Proxy.node" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Function} - 当 Draggable 对象需要代理节点时通过调用该函数产生代理节点，函数的参数为当前 Draggable 对象， 返回值类型为 KISSY.Node 。该属性有默认值</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span><span class="p">(</span><span class="nx">drag</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nx">Node</span><span class="p">(</span><span class="nx">drag</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>即代理节点和当前节点保持一致。</p>
-</div></blockquote>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="DD.Proxy.config.destroyOnEnd">
-<tt class="descclassname">config.</tt><tt class="descname">destroyOnEnd</tt><a class="headerlink" href="#DD.Proxy.config.destroyOnEnd" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 boolean，默认 false。指明是否代理节点需要每次拖放前 <tt class="xref py py-data docutils literal"><span class="pre">dragstart</span></tt> 生成，
-拖放后 <tt class="xref py py-data docutils literal"><span class="pre">dragend</span></tt> 销毁。用于多 <tt class="xref py py-class docutils literal"><span class="pre">Draggable</span></tt> 对象共享一个 Proxy 对象实例，且要求代理节点和单个 Draggable 对象关联，或者一个 <a class="reference internal" href="draggable-delegate.html#DD.DraggableDelegate" title="DD.DraggableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt></a> 对象共享一个 Proxy 对象实例。</p>
-</dd></dl>
-
-</td>
-</tr>
-</tbody>
-</table>
+<dt id="Proxy.destroyOnEnd">
+<tt class="descclassname">Proxy.</tt><tt class="descname">destroyOnEnd</tt><a class="headerlink" href="#Proxy.destroyOnEnd" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认 false。指明是否代理节点需要每次拖放前 dragstart 生成， 拖放后 dragend 销毁。用于多 Draggable 对象共享一个 Proxy 对象实例，且要求代理节点和单个 Draggable 对象关联，或者一个 DraggableDelegate 对象共享一个 Proxy 对象实例。</p>
 </dd></dl>
 
 </div>
-<div class="section" id="id3">
-<h2>实例方法<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
-<dt id="DD.Proxy.attach">
-<tt class="descclassname">Proxy.</tt><tt class="descname">attach</tt><big>(</big><em>drag</em><big>)</big><a class="headerlink" href="#DD.Proxy.attach" title="Permalink to this definition">¶</a></dt>
-<dd><p>使当前拖放对象具备代理功能。</p>
+<dt id="Proxy.attach">
+<tt class="descclassname">Proxy.</tt><tt class="descname">attach</tt><big>(</big><big>)</big><a class="headerlink" href="#Proxy.attach" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>attach</strong> (drag)</div>
+<div class="line">使当前拖放对象具备代理功能。</div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>drag</strong> (<em>Draggable</em>) &#8211; 需要具备代理功能的 Draggable 对象</td>
+<tr><td>&nbsp;</td><td class="field-body"><strong>drag</strong> (<em>draggable</em>) &#8211; 需要具备代理功能的 draggable 对象</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
 <dl class="method">
-<dt id="DD.Proxy.unAttach">
-<tt class="descclassname">Proxy.</tt><tt class="descname">unAttach</tt><big>(</big><em>drag</em><big>)</big><a class="headerlink" href="#DD.Proxy.unAttach" title="Permalink to this definition">¶</a></dt>
-<dd><p>解除当前拖放对象的代理功能。</p>
+<dt id="Proxy.unAttach">
+<tt class="descclassname">Proxy.</tt><tt class="descname">unAttach</tt><big>(</big><big>)</big><a class="headerlink" href="#Proxy.unAttach" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>unAttach</strong> (drag)</div>
+<div class="line">解除当前拖放对象的代理功能。</div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>drag</strong> (<em>Draggable</em>) &#8211; 具备代理功能的 Draggable 对象</td>
+<tr><td>&nbsp;</td><td class="field-body"><strong>drag</strong> (<em>draggable</em>) &#8211; 具备代理功能的 Draggable 对象</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
 <dl class="method">
-<dt id="DD.Proxy.destroy">
-<tt class="descclassname">Proxy.</tt><tt class="descname">destroy</tt><big>(</big><big>)</big><a class="headerlink" href="#DD.Proxy.destroy" title="Permalink to this definition">¶</a></dt>
-<dd><p>解除所有通过当前 Proxy 对象添加的代理功能</p>
+<dt id="Proxy.destroy">
+<tt class="descclassname">Proxy.</tt><tt class="descname">destroy</tt><big>(</big><big>)</big><a class="headerlink" href="#Proxy.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>destroy</strong> ()</div>
+<div class="line">解除所有通过当前 Proxy 对象添加的代理功能</div>
+</div>
 </dd></dl>
 
 </div>

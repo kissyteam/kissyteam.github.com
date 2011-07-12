@@ -1,10 +1,20 @@
 .. currentmodule:: Lang
 
-KISSY.isBoolean
+isBoolean
 ===============================
 
-.. function:: KISSY.isBoolean(o)
+Module
+-----------------------------------------------
 
-    判断是否布尔值。
+  :mod:`Lang`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.isBoolean
+
+    | Boolean **KISSY.isBoolean** (o)
+    | 判断是否布尔值。
     
     :param o: 判断参数

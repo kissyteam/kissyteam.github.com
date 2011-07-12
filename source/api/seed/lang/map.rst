@@ -1,13 +1,23 @@
 .. currentmodule:: Lang
 
-KISSY.map
+map
 ===============================
 
 .. versionadded:: 1.2
 
-.. function:: KISSY.map(arr,fn[,context])
+Module
+-----------------------------------------------
 
-    创建一个新数组，数组结果是在对每个原数组元素调用指定函数的返回值。
+  :mod:`Lang`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.map
+
+    | Array **KISSY.map** (arr,fn[,context])
+    | 创建一个新数组，数组结果是在对每个原数组元素调用指定函数的返回值。
     
     :param Array arr: 需要遍历的数组。 
     :param function fn: 能够根据原数组当前元素返回新数组元素的函数。
@@ -19,17 +29,17 @@ KISSY.map
 
     原数组保持不变    
     
-例如
+    例如
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    function makePseudoPlural(single) {
-        return single.replace(/o/g, "e");
-    }
+        function makePseudoPlural(single) {
+            return single.replace(/o/g, "e");
+        }
 
-    var singles = ["foot", "goose", "moose"];
-    var plurals = S.map(singles, makePseudoPlural);  // => ["feet", "geese", "meese"]
-    
-    var a = S.map("Hello World",function(x) {
-        return x.charCodeAt(0);
-    }); // => [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]
+        var singles = ["foot", "goose", "moose"];
+        var plurals = S.map(singles, makePseudoPlural);  // => ["feet", "geese", "meese"]
+
+        var a = S.map("Hello World",function(x) {
+            return x.charCodeAt(0);
+        }); // => [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]

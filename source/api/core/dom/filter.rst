@@ -12,9 +12,10 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: filter( selector , filter [,context=document] )
+.. function:: filter
 
-    获取符合选择器以及过滤参数的所有元素.
+    | Array<HTMLElement> **filter** ( selector , filter [,context=document] )
+    | 获取符合选择器以及过滤参数的所有元素.
     
     :param string selector: 选择器字符串, 格式参见 :ref:`KISSY selector <dom-selector>`
     :param string|function filter: 过滤选择器或函数

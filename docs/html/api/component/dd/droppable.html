@@ -42,6 +42,10 @@
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -65,155 +69,181 @@
       <li><a href="index.html" accesskey="U">DD</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
-  <div class="section" id="droppable">
+  <span class="target" id="module-Droppable"></span><div class="section" id="droppable">
 <h1>Droppable<a class="headerlink" href="#droppable" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id1">
-<h2>引入<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>页面引入 kissy.js :</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
+<div class="line-block">
+<div class="line">放置功能</div>
+<div class="line">作者: <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></div>
+<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/dd/droppable.js">源码</a></div>
 </div>
 <p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>通过 use 加载 dd 模块：<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">){</span>
-    <span class="kd">var</span> <span class="nx">Droppable</span> <span class="o">=</span> <span class="nx">DD</span><span class="p">.</span><span class="nx">Droppable</span><span class="p">;</span>
-<span class="p">});</span>
-</pre></div>
+<span class="versionmodified">New in version 1.2.</span></p>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#module-Droppable" title="Droppable"><tt class="xref py py-class docutils literal"><span class="pre">Droppable</span></tt></a></li>
+</ul>
+</div></blockquote>
 </div>
-</p>
-<div class="admonition-see-also admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last">KISSY 1.2 <a class="reference internal" href="../../seed/loader/index.html#module-Loader" title="Loader"><tt class="xref py py-mod docutils literal"><span class="pre">Loader</span></tt></a> 新增功能</p>
+<div class="section" id="config-attributes">
+<h2>Config Attributes<a class="headerlink" href="#config-attributes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#Droppable.node" title="Droppable.node"><tt class="xref py py-data docutils literal"><span class="pre">node</span></tt></a></li>
+</ul>
+</div></blockquote>
 </div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#Droppable.destroy" title="Droppable.destroy"><tt class="xref py py-meth docutils literal"><span class="pre">destroy()</span></tt></a></li>
+</ul>
+</div></blockquote>
 </div>
-<div class="section" id="id2">
-<h2>构造器<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#Droppable.dropenter" title="Droppable.dropenter"><tt class="xref py py-func docutils literal"><span class="pre">dropenter()</span></tt></a></li>
+<li><a class="reference internal" href="#Droppable.dropover" title="Droppable.dropover"><tt class="xref py py-func docutils literal"><span class="pre">dropover()</span></tt></a></li>
+<li><a class="reference internal" href="#Droppable.dropexit" title="Droppable.dropexit"><tt class="xref py py-func docutils literal"><span class="pre">dropexit()</span></tt></a></li>
+<li><a class="reference internal" href="#Droppable.drophit" title="Droppable.drophit"><tt class="xref py py-func docutils literal"><span class="pre">drophit()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="DD.Droppable">
-<em class="property">class </em><tt class="descclassname">DD.</tt><tt class="descname">Droppable</tt><big>(</big><em>config</em><big>)</big><a class="headerlink" href="#DD.Droppable" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dt id="Droppable.Droppable">
+<em class="property">class </em><tt class="descclassname">Droppable.</tt><tt class="descname">Droppable</tt><a class="headerlink" href="#Droppable.Droppable" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>Droppable</strong> ( config )</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>object</em>) &#8211; <p>可放对象的一些初始化配置，包括</p>
-<dl class="attribute">
-<dt id="DD.Droppable.config.node">
-<tt class="descclassname">config.</tt><tt class="descname">node</tt><a class="headerlink" href="#DD.Droppable.config.node" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型选择器字符串或者 HTMLElement。可与拖动对象交互的节点。</p>
-</dd></dl>
-
-</td>
+<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 配置项, 详细见下方 <strong>Config Attributes Detail</strong> .</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
 </div>
-<div class="section" id="id3">
-<h2>实例属性<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<dl class="attribute">
-<dt id="DD.Droppable.node">
-<tt class="descclassname">Droppable.</tt><tt class="descname">node</tt><a class="headerlink" href="#DD.Droppable.node" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 <tt class="docutils literal"><span class="pre">KISSY.Node</span></tt> ，获取配置项的 <a class="reference internal" href="#DD.Droppable.config.node" title="DD.Droppable.config.node"><tt class="xref py py-attr docutils literal"><span class="pre">node</span></tt></a> 值。</p>
+<div class="section" id="config-attributes-detail">
+<h2>Config Attributes Detail<a class="headerlink" href="#config-attributes-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="Droppable.node">
+<tt class="descclassname">Droppable.</tt><tt class="descname">node</tt><a class="headerlink" href="#Droppable.node" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String | HTMLElement} - 可与拖动对象交互的节点。。</p>
 </dd></dl>
 
 </div>
-<div class="section" id="id4">
-<h2>实例方法<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
-<dt id="DD.Droppable.destroy">
-<tt class="descclassname">Droppable.</tt><tt class="descname">destroy</tt><big>(</big><big>)</big><a class="headerlink" href="#DD.Droppable.destroy" title="Permalink to this definition">¶</a></dt>
-<dd><p>销毁可放对象实例，清除绑定事件</p>
+<dt id="Droppable.destroy">
+<tt class="descclassname">Droppable.</tt><tt class="descname">destroy</tt><big>(</big><big>)</big><a class="headerlink" href="#Droppable.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>destroy</strong> ()</div>
+<div class="line">销毁可放对象实例，清除绑定事件。</div>
+</div>
 </dd></dl>
 
 </div>
-<div class="section" id="droppable-events">
-<span id="id5"></span><h2>触发事件<a class="headerlink" href="#droppable-events" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt id="DD.Droppable.dropenter">
-<tt class="descclassname">Droppable.</tt><tt class="descname">dropenter</tt><a class="headerlink" href="#DD.Droppable.dropenter" title="Permalink to this definition">¶</a></dt>
-<dd><p>当一个 <tt class="xref py py-class docutils literal"><span class="pre">Draggable</span></tt> 对象根据其 <tt class="xref py py-attr docutils literal"><span class="pre">mode</span></tt> 配置达到和当前 Droppable 实例交互条件时触发。
-一般即鼠标进入当前 Droppable 对象代表节点的区域，可简单理解成 mouseenter。传给事件处理函数一个事件对象 event，包含</p>
-<blockquote>
-<div><dl class="attribute">
-<dt id="DD.Droppable.dropenter.event.drag">
-<tt class="descclassname">Droppable.dropenter.event.</tt><tt class="descname">drag</tt><a class="headerlink" href="#DD.Droppable.dropenter.event.drag" title="Permalink to this definition">¶</a></dt>
-<dd><p>当前交互的 <tt class="docutils literal"><span class="pre">Draggable</span></tt> 对象</p>
+<div class="section" id="events-detail">
+<h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="Droppable.dropenter">
+<tt class="descclassname">Droppable.</tt><tt class="descname">dropenter</tt><big>(</big><big>)</big><a class="headerlink" href="#Droppable.dropenter" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dropenter</strong> ( ev )</div>
+<div class="line">当一个 <a class="reference internal" href="draggable.html#module-Draggable" title="Draggable"><tt class="xref py py-mod docutils literal"><span class="pre">Draggable</span></tt></a> 对象根据其 <a class="reference internal" href="draggable.html#Draggable.mode" title="Draggable.mode"><tt class="xref py py-data docutils literal"><span class="pre">Draggable.mode</span></tt></a> 配置达到和当前 Droppable 实例交互条件时触发。</div>
+<div class="line">一般即鼠标进入当前 Droppable 对象代表节点的区域，可简单理解成 mouseenter。</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>ev.drag</strong> (<em>Object</em>) &#8211; 当前交互的 Draggable 对象。</li>
+<li><strong>ev.drop</strong> (<em>Object</em>) &#8211; 自身, 当前Droppable对象。</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="DD.Droppable.dropenter.event.drop">
-<tt class="descclassname">Droppable.dropenter.event.</tt><tt class="descname">drop</tt><a class="headerlink" href="#DD.Droppable.dropenter.event.drop" title="Permalink to this definition">¶</a></dt>
-<dd><p>自身，当前 Droppable 兑现。</p>
+<dl class="function">
+<dt id="Droppable.dropover">
+<tt class="descclassname">Droppable.</tt><tt class="descname">dropover</tt><big>(</big><big>)</big><a class="headerlink" href="#Droppable.dropover" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dropover</strong> ( ev )</div>
+<div class="line">当一个 <a class="reference internal" href="draggable.html#module-Draggable" title="Draggable"><tt class="xref py py-mod docutils literal"><span class="pre">Draggable</span></tt></a> 在当前 Droppable 实例上移动时触发，可简单理解成 mouseover。</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>ev.drag</strong> (<em>Object</em>) &#8211; 当前交互的 Draggable 对象。</li>
+<li><strong>ev.drop</strong> (<em>Object</em>) &#8211; 自身, 当前Droppable对象。</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-</div></blockquote>
+<dl class="function">
+<dt id="Droppable.dropexit">
+<tt class="descclassname">Droppable.</tt><tt class="descname">dropexit</tt><big>(</big><big>)</big><a class="headerlink" href="#Droppable.dropexit" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dropexit</strong> ( ev )</div>
+<div class="line">当一个 <a class="reference internal" href="draggable.html#module-Draggable" title="Draggable"><tt class="xref py py-mod docutils literal"><span class="pre">Draggable</span></tt></a> 离开当前 Droppable 实例时触发，可简单理解成 mouseleave。</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>ev.drag</strong> (<em>Object</em>) &#8211; 当前交互的 Draggable 对象。</li>
+<li><strong>ev.drop</strong> (<em>Object</em>) &#8211; 自身, 当前Droppable对象。</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="data">
-<dt id="DD.Droppable.dropover">
-<tt class="descclassname">Droppable.</tt><tt class="descname">dropover</tt><a class="headerlink" href="#DD.Droppable.dropover" title="Permalink to this definition">¶</a></dt>
-<dd><p>当一个 <tt class="xref py py-class docutils literal"><span class="pre">Draggable</span></tt> 在当前 Droppable 实例上移动时触发，可简单理解成 mouseover。
-传给事件处理函数一个事件对象 event，包含</p>
-<blockquote>
-<div><dl class="attribute">
-<dt id="DD.Droppable.dropover.event.drag">
-<tt class="descclassname">Droppable.dropover.event.</tt><tt class="descname">drag</tt><a class="headerlink" href="#DD.Droppable.dropover.event.drag" title="Permalink to this definition">¶</a></dt>
-<dd><p>当前交互的 <tt class="docutils literal"><span class="pre">Draggable</span></tt> 对象</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="DD.Droppable.dropover.event.drop">
-<tt class="descclassname">Droppable.dropover.event.</tt><tt class="descname">drop</tt><a class="headerlink" href="#DD.Droppable.dropover.event.drop" title="Permalink to this definition">¶</a></dt>
-<dd><p>自身，当前 Droppable 兑现。</p>
-</dd></dl>
-
-</div></blockquote>
-</dd></dl>
-
-<dl class="data">
-<dt id="DD.Droppable.dropexit">
-<tt class="descclassname">Droppable.</tt><tt class="descname">dropexit</tt><a class="headerlink" href="#DD.Droppable.dropexit" title="Permalink to this definition">¶</a></dt>
-<dd><p>当一个 <tt class="xref py py-class docutils literal"><span class="pre">Draggable</span></tt> 离开当前 Droppable 实例时触发，可简单理解成 mouseleave。
-传给事件处理函数一个事件对象 event，包含</p>
-<blockquote>
-<div><dl class="attribute">
-<dt id="DD.Droppable.dropexit.event.drag">
-<tt class="descclassname">Droppable.dropexit.event.</tt><tt class="descname">drag</tt><a class="headerlink" href="#DD.Droppable.dropexit.event.drag" title="Permalink to this definition">¶</a></dt>
-<dd><p>当前交互的 <tt class="docutils literal"><span class="pre">Draggable</span></tt> 对象</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="DD.Droppable.dropexit.event.drop">
-<tt class="descclassname">Droppable.dropexit.event.</tt><tt class="descname">drop</tt><a class="headerlink" href="#DD.Droppable.dropexit.event.drop" title="Permalink to this definition">¶</a></dt>
-<dd><p>自身，当前 Droppable 兑现。</p>
-</dd></dl>
-
-</div></blockquote>
-</dd></dl>
-
-<dl class="data">
-<dt id="DD.Droppable.drophit">
-<tt class="descclassname">Droppable.</tt><tt class="descname">drophit</tt><a class="headerlink" href="#DD.Droppable.drophit" title="Permalink to this definition">¶</a></dt>
-<dd><p>当一个 <tt class="xref py py-class docutils literal"><span class="pre">Draggable</span></tt> 被放置在当前 Droppable 实例时触发，传给事件处理函数一个事件对象 event，包含</p>
-<blockquote>
-<div><dl class="attribute">
-<dt id="DD.Droppable.drophit.event.drag">
-<tt class="descclassname">Droppable.drophit.event.</tt><tt class="descname">drag</tt><a class="headerlink" href="#DD.Droppable.drophit.event.drag" title="Permalink to this definition">¶</a></dt>
-<dd><p>当前交互的 <tt class="docutils literal"><span class="pre">Draggable</span></tt> 对象</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="DD.Droppable.drophit.event.drop">
-<tt class="descclassname">Droppable.drophit.event.</tt><tt class="descname">drop</tt><a class="headerlink" href="#DD.Droppable.drophit.event.drop" title="Permalink to this definition">¶</a></dt>
-<dd><p>自身，当前 Droppable 对象。</p>
-</dd></dl>
-
-</div></blockquote>
+<dl class="function">
+<dt id="Droppable.drophit">
+<tt class="descclassname">Droppable.</tt><tt class="descname">drophit</tt><big>(</big><big>)</big><a class="headerlink" href="#Droppable.drophit" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>drophit</strong> ( ev )</div>
+<div class="line">当一个 <a class="reference internal" href="draggable.html#module-Draggable" title="Draggable"><tt class="xref py py-mod docutils literal"><span class="pre">Draggable</span></tt></a> 被放置在当前 Droppable 实例时触发。</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>ev.drag</strong> (<em>Object</em>) &#8211; 当前交互的 Draggable 对象。</li>
+<li><strong>ev.drop</strong> (<em>Object</em>) &#8211; 自身, 当前Droppable对象。</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>

@@ -1,14 +1,21 @@
-﻿.. py:currentmodule:: Switchable
+﻿.. module:: Slide
 
-子类 Slide
+Slide
 ===================================================================
 
+|  Slide
+|  作者: `玉伯 <lifesinger@gmail.com>`_
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/switchable/accordion/slide/>`_ | `Demo <../../../demo/switchable/index.html>`_
 
-默认配置
--------------------------------------------------------------
+Config Attributes Detail
+---------------------------------------------------------------------
 
-S.Slide 接口及配置项, 与 :attr:`~Switchable.Switchable` 相同, 其中以下配置项的默认值有所区别:
-
-**Switchable.autoplay**    是否自动切换, 默认为 true
-
-**Switchable.circular**    是否循环切换, 默认为 true
+    Slide 接口及配置项, 与 :mod:`Switchable` 相同, 其中以下配置项的默认值有所区别:
+    
+    .. data:: autoplay
+    
+        {Boolean} - 默认为true，是否自动切换。
+        
+    .. data:: circular
+    
+        {Boolean} - 默认为true，是否循环切换。

@@ -5,14 +5,14 @@ Popup
 
 
 |  弹出层
-|  作者: `承玉 <yiminghe@gmail.com>`_
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay>`_ 
+|  作者: `乔花 <qiaohua@taobao.com>`_
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_  | `Demo <../../../demo/component/overlay/>`_
 
 
 Class
 -----------------------------------------------
 
-  * :class:`KISSY.Popup`
+  * :class:`Popup`
 
   
 Config Attributes
@@ -20,8 +20,8 @@ Config Attributes
 
   与 :class:`Overlay` 的配置项完全相同，其他新增配置项如下：
   
-  * :attr:`trigger`
-  * :attr:`triggerType`
+  * :data:`trigger`
+  * :data:`triggerType`
  
  
 Properties
@@ -39,15 +39,15 @@ Methods
 Events
 -----------------------------------------------
 
-  * 同 :class:`Overlay` ，包括 :attr:`show` , :attr:`hide` , :attr:`beforeVisibleChange` .
+  * 同 :class:`Overlay` ，包括 :func:`show` , :func:`hide` , :func:`beforeVisibleChange` .
 
 
 Class Detail
 -----------------------------------------------
 
-.. class:: KISSY.Popup
+.. class:: Popup
     
-    | **KISSY.Popup** ([container,] config)
+    | **Popup** ([container,] config)
     
     :param String|HTMLElement|KISSY.Node container: 可为'#id'、'.class'、DOM对象、KISSY.Node对象，为空时表示新建
     :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
@@ -58,11 +58,11 @@ Config Attributes Detail
 
     与 :class:`Overlay` 的配置项完全相同，其他新增配置项如下：
     
-.. attribute:: trigger
+.. data:: trigger
 
     {String | HTMLElement | KISSY.Node} - 触点
 
-.. attribute:: triggerType
+.. data:: triggerType
 
     {String} - 可选，默认为'click'，触发类型，可选'click'、'mouse'.
 

@@ -13,17 +13,16 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: text( selector )
+.. function:: text
 
-    获取符合选择器的第一个元素所包含的文本值.
+    | String **text** ( selector )
+    | 获取符合选择器的第一个元素所包含的文本值.
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
     :returns: 获取符合选择器的第一个元素所包含的文本值. 无值时, 返回空字符串.
     
-    
-.. function:: text( selector, value )
-
-    给符合选择器的所有元素设置文本值.
+    | void **text** ( selector, value )
+    | 给符合选择器的所有元素设置文本值.
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
     :param string value: 将要设置的文本值

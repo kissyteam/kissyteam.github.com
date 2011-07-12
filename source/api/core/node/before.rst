@@ -1,80 +1,87 @@
 ﻿.. currentmodule:: Node
 
 
-before()
+before
 ========================================
 
-.. method:: NodeList.before( content )
+.. versionchanged:: 1.2
 
-   .. versionchanged:: 1.2
-        将参数内容插入到当前列表中每个元素之前.
+Module
+-----------------------------------------------
+
+  :mod:`Node`
+
+Methods
+-----------------------------------------------
+
+.. function:: before
+
+    | NodeList **before** ( content )
+    | 将参数内容插入到当前列表中每个元素之前.
    
-   :param HTMLElement|string|NodeList content: 将要插入的元素
+    :param HTMLElement|string|NodeList content: 将要插入的元素
                                         
-                                        * string : html 字符串
-                                        * HTMLElement|NodeList : 已有或新建的元素
+        * string : html 字符串
+        * HTMLElement|NodeList : 已有或新建的元素
                                         
-:meth:`insertBefore` 和该方法的功能一样，只不过参数意义不同，``insertBefore`` 表示当前节点列表被插入到参数目标节点之前，
-而该方法则表示参数节点被插入到当前节点之前.
-
-例如:
-
-.. code-block:: html
-
-    <div class="container">
-      <h2>Greetings</h2>
-      <div class="inner">Hello</div>
-      <div class="inner">Goodbye</div>
-    </div>        
-    
-我们可以创建节点并立即把它插入到一些元素之前
-
-.. code-block:: javascript
-
-    NodeList.all('.inner').insertBefore('<p>Test</p>');
-    
-结果为
-
-.. code-block:: html
-
-    <div class="container">
-      <h2>Greetings</h2>
-      <p>Test</p>
-      <div class="inner">Hello</div>
-      <p>Test</p>
-      <div class="inner">Goodbye</div>
-    </div>
-    
-我们也可以操纵现有元素
-
-.. code-block:: javascript   
-
-    NodeList.all('.container').before(NodeList.all('h2'));    
-    
-如果目标节点只有一个，那么当前节点就会移动到目标节点之前
-
-.. code-block:: html
-
-    <h2>Greetings</h2>
-    <div class="container">
-      <div class="inner">Hello</div>
-      <div class="inner">Goodbye</div>
-    </div>
-    
-如果有多个目标节点，那么除了第一个目标节点外，其他目标节点前会被插入当前节点的克隆  
+    :meth:`insertBefore` 和该方法的功能一样，只不过参数意义不同，``insertBefore`` 表示当前节点列表被插入到参数目标节点之前，
+    而该方法则表示参数节点被插入到当前节点之前.
 
 
-例子
----------------------------------------
+    .. code-block:: html
 
-把段落插入到 div 节点之前
+        <div class="container">
+          <h2>Greetings</h2>
+          <div class="inner">Hello</div>
+          <div class="inner">Goodbye</div>
+        </div>
 
-.. literalinclude:: /_static/api/core/node/before.html
-   :language: html   
-   
-   
+    我们可以创建节点并立即把它插入到一些元素之前
+
+    .. code-block:: javascript
+
+        NodeList.all('.inner').insertBefore('<p>Test</p>');
+
+    结果为
+
+    .. code-block:: html
+
+        <div class="container">
+          <h2>Greetings</h2>
+          <p>Test</p>
+          <div class="inner">Hello</div>
+          <p>Test</p>
+          <div class="inner">Goodbye</div>
+        </div>
+
+    我们也可以操纵现有元素
+
+    .. code-block:: javascript
+
+        NodeList.all('.container').before(NodeList.all('h2'));
+
+    如果目标节点只有一个，那么当前节点就会移动到目标节点之前
+
+    .. code-block:: html
+
+        <h2>Greetings</h2>
+        <div class="container">
+          <div class="inner">Hello</div>
+          <div class="inner">Goodbye</div>
+        </div>
+
+    如果有多个目标节点，那么除了第一个目标节点外，其他目标节点前会被插入当前节点的克隆
+
+
 Demo
+--------------------------------------------------
 
-.. raw:: html
+**把段落插入到 div 节点之前**
 
-    <iframe width="100%" height="135" src="../../../static/api/core/node/before.html"></iframe>                               
+    .. literalinclude:: /_static/api/core/node/before.html
+       :language: html
+
+
+    .. raw:: html
+
+        <iframe width="100%" height="135" src="../../../static/api/core/node/before.html"></iframe>

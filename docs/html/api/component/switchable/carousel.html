@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>子类 Carousel &mdash; KISSY Docs valpha documentation</title>
+<title>Carousel &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -42,6 +42,10 @@
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -54,10 +58,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="accordion.html" title="子类 Accordion"
+      <a href="accordion.html" title="Accordion"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="slide.html" title="子类 Slide"
+      <a href="slide.html" title="Slide"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -65,37 +69,43 @@
       <li><a href="index.html" accesskey="U">Switchable</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
-  <div class="section" id="carousel">
-<h1>子类 Carousel<a class="headerlink" href="#carousel" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id1">
-<h2>默认配置<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>S.Carousel 接口及配置项, 与 <a class="reference internal" href="switchable.html#Switchable.Switchable" title="Switchable.Switchable"><tt class="xref py py-attr docutils literal"><span class="pre">Switchable</span></tt></a> 相同, 其中以下配置项的默认值有所区别:</p>
-<p><strong>Switchable.circular</strong>    默认为 true, 即开启循环切换</p>
+  <span class="target" id="module-Carousel"></span><div class="section" id="carousel">
+<h1>Carousel<a class="headerlink" href="#carousel" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">Carousel</div>
+<div class="line">作者: <a class="reference external" href="mailto:lifesinger&#37;&#52;&#48;gmail&#46;com">玉伯</a></div>
+<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/switchable">源码</a> | <a class="reference external" href="http://docs.kissyui.com/kissy/src/switchable/demo.html">Demo</a></div>
 </div>
-<div class="section" id="id2">
-<h2>新增配置<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<dl class="attribute">
-<dt id="Switchable.Carousel.prevBtnCls">
-<tt class="descclassname">Carousel.</tt><tt class="descname">prevBtnCls</tt><a class="headerlink" href="#Switchable.Carousel.prevBtnCls" title="Permalink to this definition">¶</a></dt>
-<dd><p>(optional):  {String} 前一个触发器的 cls, 默认为 &#8216;ks-switchable-prev-btn&#8217;</p>
+<div class="section" id="config-attributes-detail">
+<h2>Config Attributes Detail<a class="headerlink" href="#config-attributes-detail" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Carousel 接口及配置项, 与 <a class="reference internal" href="switchable.html#module-Switchable" title="Switchable"><tt class="xref py py-mod docutils literal"><span class="pre">Switchable</span></tt></a> 相同, 其中以下配置项的默认值有所区别:</p>
+<dl class="data">
+<dt id="Carousel.circular">
+<tt class="descclassname">Carousel.</tt><tt class="descname">circular</tt><a class="headerlink" href="#Carousel.circular" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认为true，是否循环切换。</p>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="Switchable.Carousel.nextBtnCls">
-<tt class="descclassname">Carousel.</tt><tt class="descname">nextBtnCls</tt><a class="headerlink" href="#Switchable.Carousel.nextBtnCls" title="Permalink to this definition">¶</a></dt>
-<dd><p>(optional): {String} 后一个触发器的 cls, 默认为 &#8216;ks-switchable-next-btn&#8217;</p>
+<dl class="data">
+<dt id="Carousel.prevBtnCls">
+<tt class="descclassname">Carousel.</tt><tt class="descname">prevBtnCls</tt><a class="headerlink" href="#Carousel.prevBtnCls" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 默认为 &#8216;ks-switchable-prev-btn&#8217;，前一个触发器的 cls。</p>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="Switchable.Carousel.disableBtnCls">
-<tt class="descclassname">Carousel.</tt><tt class="descname">disableBtnCls</tt><a class="headerlink" href="#Switchable.Carousel.disableBtnCls" title="Permalink to this definition">¶</a></dt>
-<dd><p>(optional): {String} 触发器不可用时的 cls, 默认为 &#8216;ks-switchable-disable-btn&#8217;</p>
+<dl class="data">
+<dt id="Carousel.nextBtnCls">
+<tt class="descclassname">Carousel.</tt><tt class="descname">nextBtnCls</tt><a class="headerlink" href="#Carousel.nextBtnCls" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 默认为 &#8216;ks-switchable-next-btn&#8217;，后一个触发器的 cls。</p>
 </dd></dl>
 
+<dl class="data">
+<dt id="Carousel.disableBtnCls">
+<tt class="descclassname">Carousel.</tt><tt class="descname">disableBtnCls</tt><a class="headerlink" href="#Carousel.disableBtnCls" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 默认为 &#8216;ks-switchable-disable-btn&#8217;，触发器不可用时的 cls。</p>
+</dd></dl>
+
+</div></blockquote>
 </div>
 </div>
 

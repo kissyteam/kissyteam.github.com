@@ -1,11 +1,21 @@
 .. currentmodule:: Lang
 
-KISSY.later
+later
 ===============================
 
-.. function:: KISSY.later( fn[, when, periodic, o, data] )
+Module
+-----------------------------------------------
 
-    延迟执行指定函数 fn
+  :mod:`Lang`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.later
+
+    | Object **KISSY.later** ( fn[, when, periodic, o, data] )
+    | 延迟执行指定函数 fn
     
     :param function fn: 延迟执行的函数。 
     :param number when: 延迟时间，单位是毫秒。 
@@ -22,13 +32,13 @@ KISSY.later
                     取消定时器
                               
     :rtype: object
-    
-例如
 
-.. code-block:: javascript
+    例如
 
-    var S = KISSY;
+    .. code-block:: javascript
 
-    S.later(function(data) {
-        S.log(data);
-    }, 0, false, null, 'I am later data.');
+        var S = KISSY;
+
+        S.later(function(data) {
+            S.log(data);
+        }, 0, false, null, 'I am later data.');

@@ -1,10 +1,20 @@
 .. currentmodule:: Lang
 
-KISSY.isRegExp
+isRegExp
 ===============================
 
-.. function:: KISSY.isRegExp(o)
+Module
+-----------------------------------------------
 
-    判断是否正则表达式
+  :mod:`Lang`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.isRegExp
+
+    | Boolean **KISSY.isRegExp** (o)
+    | 判断是否正则表达式
     
     :param o: 判断参数

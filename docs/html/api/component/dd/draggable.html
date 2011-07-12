@@ -42,6 +42,10 @@
 </div>
 
 <div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -65,23 +69,21 @@
       <li><a href="index.html" accesskey="U">DD</a> &#187; </li> 
     </ul>
 </div>
-	<div  class="layout grid-s6m0">
-			<div class="col-main">
-				<div class="main-wrap">
 					
-  <div class="section" id="draggable">
+  <span class="target" id="module-Draggable"></span><div class="section" id="draggable">
 <h1>Draggable<a class="headerlink" href="#draggable" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line">拖拽功能</div>
-<div class="line">依赖于: core</div>
 <div class="line">作者: <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></div>
-<div class="line">源码: <a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/dd/draggable.js">查看</a></div>
+<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/dd/draggable.js">源码</a> | <a class="reference external" href="../../../demo/component/dd/draggable.html">Demo</a></div>
 </div>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#DD.KISSY.DD.Draggable" title="DD.KISSY.DD.Draggable"><tt class="xref py py-class docutils literal"><span class="pre">KISSY.DD.Draggable</span></tt></a></li>
+<li><a class="reference internal" href="#Draggable.KISSY.DD.Draggable" title="Draggable.KISSY.DD.Draggable"><tt class="xref py py-class docutils literal"><span class="pre">KISSY.DD.Draggable</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -89,10 +91,10 @@
 <h2>Config Attributes<a class="headerlink" href="#config-attributes" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#DD.node" title="DD.node"><tt class="xref py py-attr docutils literal"><span class="pre">node</span></tt></a></li>
-<li><a class="reference internal" href="#DD.handlers" title="DD.handlers"><tt class="xref py py-attr docutils literal"><span class="pre">handlers</span></tt></a></li>
-<li><a class="reference internal" href="#DD.cursor" title="DD.cursor"><tt class="xref py py-attr docutils literal"><span class="pre">cursor</span></tt></a></li>
-<li><a class="reference internal" href="#DD.mode" title="DD.mode"><tt class="xref py py-attr docutils literal"><span class="pre">mode</span></tt></a></li>
+<li><a class="reference internal" href="#Draggable.node" title="Draggable.node"><tt class="xref py py-data docutils literal"><span class="pre">node</span></tt></a></li>
+<li><a class="reference internal" href="#Draggable.handlers" title="Draggable.handlers"><tt class="xref py py-data docutils literal"><span class="pre">handlers</span></tt></a></li>
+<li><a class="reference internal" href="#Draggable.cursor" title="Draggable.cursor"><tt class="xref py py-data docutils literal"><span class="pre">cursor</span></tt></a></li>
+<li><a class="reference internal" href="#Draggable.mode" title="Draggable.mode"><tt class="xref py py-data docutils literal"><span class="pre">mode</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -100,11 +102,11 @@
 <h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#DD.POINT" title="DD.POINT"><tt class="xref py py-data docutils literal"><span class="pre">POINT</span></tt></a></li>
-<li><a class="reference internal" href="#DD.INTERSECT" title="DD.INTERSECT"><tt class="xref py py-data docutils literal"><span class="pre">INTERSECT</span></tt></a></li>
-<li><a class="reference internal" href="#DD.STRICT" title="DD.STRICT"><tt class="xref py py-data docutils literal"><span class="pre">STRICT</span></tt></a></li>
-<li><a class="reference internal" href="#DD.node" title="DD.node"><tt class="xref py py-attr docutils literal"><span class="pre">node</span></tt></a></li>
-<li><a class="reference internal" href="#DD.dragNode" title="DD.dragNode"><tt class="xref py py-attr docutils literal"><span class="pre">dragNode</span></tt></a></li>
+<li><a class="reference internal" href="#Draggable.POINT" title="Draggable.POINT"><tt class="xref py py-attr docutils literal"><span class="pre">POINT</span></tt></a></li>
+<li><a class="reference internal" href="#Draggable.INTERSECT" title="Draggable.INTERSECT"><tt class="xref py py-attr docutils literal"><span class="pre">INTERSECT</span></tt></a></li>
+<li><a class="reference internal" href="#Draggable.STRICT" title="Draggable.STRICT"><tt class="xref py py-attr docutils literal"><span class="pre">STRICT</span></tt></a></li>
+<li><a class="reference internal" href="#Draggable.node" title="Draggable.node"><tt class="xref py py-attr docutils literal"><span class="pre">node</span></tt></a></li>
+<li><a class="reference internal" href="#Draggable.dragNode" title="Draggable.dragNode"><tt class="xref py py-attr docutils literal"><span class="pre">dragNode</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -112,7 +114,7 @@
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#DD.destroy" title="DD.destroy"><tt class="xref py py-meth docutils literal"><span class="pre">destroy()</span></tt></a></li>
+<li><a class="reference internal" href="#Draggable.destroy" title="Draggable.destroy"><tt class="xref py py-meth docutils literal"><span class="pre">destroy()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -120,23 +122,26 @@
 <h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#DD.dragstart" title="DD.dragstart"><tt class="xref py py-data docutils literal"><span class="pre">dragstart</span></tt></a></li>
-<li><a class="reference internal" href="#DD.drag" title="DD.drag"><tt class="xref py py-data docutils literal"><span class="pre">drag</span></tt></a></li>
-<li><a class="reference internal" href="#DD.dragend" title="DD.dragend"><tt class="xref py py-data docutils literal"><span class="pre">dragend</span></tt></a></li>
-<li><a class="reference internal" href="#DD.dragenter" title="DD.dragenter"><tt class="xref py py-data docutils literal"><span class="pre">dragenter</span></tt></a></li>
-<li><a class="reference internal" href="#DD.dragover" title="DD.dragover"><tt class="xref py py-data docutils literal"><span class="pre">dragover</span></tt></a></li>
-<li><a class="reference internal" href="#DD.dragexit" title="DD.dragexit"><tt class="xref py py-data docutils literal"><span class="pre">dragexit</span></tt></a></li>
-<li><a class="reference internal" href="#DD.dragdrophit" title="DD.dragdrophit"><tt class="xref py py-data docutils literal"><span class="pre">dragdrophit</span></tt></a></li>
-<li><a class="reference internal" href="#DD.dragdropmiss" title="DD.dragdropmiss"><tt class="xref py py-data docutils literal"><span class="pre">dragdropmiss</span></tt></a></li>
+<li><a class="reference internal" href="#Draggable.dragstart" title="Draggable.dragstart"><tt class="xref py py-func docutils literal"><span class="pre">dragstart()</span></tt></a></li>
+<li><a class="reference internal" href="#Draggable.drag" title="Draggable.drag"><tt class="xref py py-func docutils literal"><span class="pre">drag()</span></tt></a></li>
+<li><a class="reference internal" href="#Draggable.dragend" title="Draggable.dragend"><tt class="xref py py-func docutils literal"><span class="pre">dragend()</span></tt></a></li>
+<li><a class="reference internal" href="#Draggable.dragenter" title="Draggable.dragenter"><tt class="xref py py-func docutils literal"><span class="pre">dragenter()</span></tt></a></li>
+<li><a class="reference internal" href="#Draggable.dragover" title="Draggable.dragover"><tt class="xref py py-func docutils literal"><span class="pre">dragover()</span></tt></a></li>
+<li><a class="reference internal" href="#Draggable.dragexit" title="Draggable.dragexit"><tt class="xref py py-func docutils literal"><span class="pre">dragexit()</span></tt></a></li>
+<li><a class="reference internal" href="#Draggable.dragdrophit" title="Draggable.dragdrophit"><tt class="xref py py-func docutils literal"><span class="pre">dragdrophit()</span></tt></a></li>
+<li><a class="reference internal" href="#Draggable.dragdropmiss" title="Draggable.dragdropmiss"><tt class="xref py py-func docutils literal"><span class="pre">dragdropmiss()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="class-detail">
 <h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="DD.KISSY.DD.Draggable">
-<em class="property">class </em><tt class="descclassname">KISSY.DD.</tt><tt class="descname">Draggable</tt><big>(</big><em>config</em><big>)</big><a class="headerlink" href="#DD.KISSY.DD.Draggable" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dt id="Draggable.KISSY.DD.Draggable">
+<em class="property">class </em><tt class="descclassname">KISSY.DD.</tt><tt class="descname">Draggable</tt><a class="headerlink" href="#Draggable.KISSY.DD.Draggable" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>KISSY.DD.Draggable</strong> (config)</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -150,15 +155,15 @@
 </div>
 <div class="section" id="config-attributes-detail">
 <h2>Config Attributes Detail<a class="headerlink" href="#config-attributes-detail" title="Permalink to this headline">¶</a></h2>
-<dl class="attribute">
-<dt id="DD.node">
-<tt class="descclassname">DD.</tt><tt class="descname">node</tt><a class="headerlink" href="#DD.node" title="Permalink to this definition">¶</a></dt>
+<dl class="data">
+<dt id="Draggable.node">
+<tt class="descclassname">Draggable.</tt><tt class="descname">node</tt><a class="headerlink" href="#Draggable.node" title="Permalink to this definition">¶</a></dt>
 <dd><p>{String|HTMLElement} - 将要进行拖放的节点.</p>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="DD.handlers">
-<tt class="descclassname">DD.</tt><tt class="descname">handlers</tt><a class="headerlink" href="#DD.handlers" title="Permalink to this definition">¶</a></dt>
+<dl class="data">
+<dt id="Draggable.handlers">
+<tt class="descclassname">Draggable.</tt><tt class="descname">handlers</tt><a class="headerlink" href="#Draggable.handlers" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Array&lt;String|HTMLElement&gt;} - 作为鼠标在其上按下时触发节点拖放的钩子. 如果不设置, 则整个 <tt class="docutils literal"><span class="pre">node</span></tt> 作为触发钩子.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -166,15 +171,15 @@
 </div>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="DD.cursor">
-<tt class="descclassname">DD.</tt><tt class="descname">cursor</tt><a class="headerlink" href="#DD.cursor" title="Permalink to this definition">¶</a></dt>
+<dl class="data">
+<dt id="Draggable.cursor">
+<tt class="descclassname">Draggable.</tt><tt class="descname">cursor</tt><a class="headerlink" href="#Draggable.cursor" title="Permalink to this definition">¶</a></dt>
 <dd><p>{String} - 默认值 &#8220;move&#8221;, handlers 元素中的每个元素要设置的鼠标样式.</p>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="DD.mode">
-<tt class="descclassname">DD.</tt><tt class="descname">mode</tt><a class="headerlink" href="#DD.mode" title="Permalink to this definition">¶</a></dt>
+<dl class="data">
+<dt id="Draggable.mode">
+<tt class="descclassname">Draggable.</tt><tt class="descname">mode</tt><a class="headerlink" href="#Draggable.mode" title="Permalink to this definition">¶</a></dt>
 <dd><p>{String} - 枚举值, 默认值 &#8220;point&#8221;, 和 <tt class="docutils literal"><span class="pre">Droppable</span></tt> 关联, 决定何时和可放对象开始交互（触发相应事件）, 可取值 &#8220;point&#8221;,&#8221;intersect&#8221;,&#8221;strict&#8221;</p>
 <blockquote>
 <div><ul class="simple">
@@ -188,34 +193,34 @@
 </div>
 <div class="section" id="properties-detail">
 <h2>Properties Detail<a class="headerlink" href="#properties-detail" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt id="DD.POINT">
-<tt class="descclassname">DD.</tt><tt class="descname">POINT</tt><a class="headerlink" href="#DD.POINT" title="Permalink to this definition">¶</a></dt>
+<dl class="attribute">
+<dt id="Draggable.POINT">
+<tt class="descclassname">Draggable.</tt><tt class="descname">POINT</tt><a class="headerlink" href="#Draggable.POINT" title="Permalink to this definition">¶</a></dt>
 <dd><p><tt class="docutils literal"><span class="pre">static</span></tt>, {String} - 等于 &#8220;point&#8221;</p>
 </dd></dl>
 
-<dl class="data">
-<dt id="DD.INTERSECT">
-<tt class="descclassname">DD.</tt><tt class="descname">INTERSECT</tt><a class="headerlink" href="#DD.INTERSECT" title="Permalink to this definition">¶</a></dt>
+<dl class="attribute">
+<dt id="Draggable.INTERSECT">
+<tt class="descclassname">Draggable.</tt><tt class="descname">INTERSECT</tt><a class="headerlink" href="#Draggable.INTERSECT" title="Permalink to this definition">¶</a></dt>
 <dd><p><tt class="docutils literal"><span class="pre">static</span></tt>, {String} - 等于 &#8220;intersect&#8221;</p>
 </dd></dl>
 
-<dl class="data">
-<dt id="DD.STRICT">
-<tt class="descclassname">DD.</tt><tt class="descname">STRICT</tt><a class="headerlink" href="#DD.STRICT" title="Permalink to this definition">¶</a></dt>
+<dl class="attribute">
+<dt id="Draggable.STRICT">
+<tt class="descclassname">Draggable.</tt><tt class="descname">STRICT</tt><a class="headerlink" href="#Draggable.STRICT" title="Permalink to this definition">¶</a></dt>
 <dd><p><tt class="docutils literal"><span class="pre">static</span></tt>, {String} - 等于 &#8220;strict&#8221;</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
-<tt class="descclassname">DD.</tt><tt class="descname">node</tt></dt>
+<tt class="descclassname">Draggable.</tt><tt class="descname">node</tt></dt>
 <dd><p>{KISSY.Node} - 表示当前拖动的节点, 在应用 <tt class="docutils literal"><span class="pre">DD.Proxy</span></tt> 时表示代理节点.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="DD.dragNode">
-<tt class="descclassname">DD.</tt><tt class="descname">dragNode</tt><a class="headerlink" href="#DD.dragNode" title="Permalink to this definition">¶</a></dt>
-<dd><p>{KISSY.Node} - 表示配置项中  <a class="reference internal" href="#DD.node" title="DD.node"><tt class="xref py py-attr docutils literal"><span class="pre">node</span></tt></a> 的值.</p>
+<dt id="Draggable.dragNode">
+<tt class="descclassname">Draggable.</tt><tt class="descname">dragNode</tt><a class="headerlink" href="#Draggable.dragNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>{KISSY.Node} - 表示配置项中  <a class="reference internal" href="#Draggable.node" title="Draggable.node"><tt class="xref py py-attr docutils literal"><span class="pre">node</span></tt></a> 的值.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">实例属性通过 <tt class="docutils literal"><span class="pre">get</span></tt> 方法获取, 例如 <tt class="docutils literal"><span class="pre">drag.get(&quot;node&quot;)</span></tt></p>
@@ -226,115 +231,188 @@
 <div class="section" id="methods-detail">
 <h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
-<dt id="DD.destroy">
-<tt class="descclassname">DD.</tt><tt class="descname">destroy</tt><big>(</big><big>)</big><a class="headerlink" href="#DD.destroy" title="Permalink to this definition">¶</a></dt>
-<dd><p>销毁当前可拖放对象实例, 清除绑定事件.</p>
+<dt id="Draggable.destroy">
+<tt class="descclassname">Draggable.</tt><tt class="descname">destroy</tt><big>(</big><big>)</big><a class="headerlink" href="#Draggable.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>destroy</strong> ()</div>
+<div class="line">销毁当前可拖放对象实例, 清除绑定事件.</div>
+</div>
 </dd></dl>
 
 </div>
 <div class="section" id="events-detail">
 <h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt id="DD.dragstart">
-<tt class="descclassname">DD.</tt><tt class="descname">dragstart</tt><a class="headerlink" href="#DD.dragstart" title="Permalink to this definition">¶</a></dt>
-<dd><p>当可拖放对象开始被用户拖放时触发, 传给事件处理函数参数为事件对象 event .</p>
-<dl class="attribute">
-<dt id="DD.Draggable.dragstart.event.drag">
-<tt class="descclassname">Draggable.dragstart.event.</tt><tt class="descname">drag</tt><a class="headerlink" href="#DD.Draggable.dragstart.event.drag" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Object} - 自身, 当前拖放对象</p>
+<dl class="function">
+<dt id="Draggable.dragstart">
+<tt class="descclassname">Draggable.</tt><tt class="descname">dragstart</tt><big>(</big><big>)</big><a class="headerlink" href="#Draggable.dragstart" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dragstart</strong> ( ev )</div>
+<div class="line">当可拖放对象开始被用户拖放时触发.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>ev.drag</strong> (<em>Object</em>) &#8211; 自身, 当前拖放对象.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
+<dl class="function">
+<dt id="Draggable.drag">
+<tt class="descclassname">Draggable.</tt><tt class="descname">drag</tt><big>(</big><big>)</big><a class="headerlink" href="#Draggable.drag" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>drag</strong> ( ev )</div>
+<div class="line">当可拖放对象拖放过程中触发.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>ev.left</strong> (<em>Number</em>) &#8211; 拖放节点应该设置的相对文档根节点的横坐标位置.</li>
+<li><strong>ev.top</strong> (<em>Number</em>) &#8211; 拖放节点应该设置的相对文档根节点的纵坐标位置.</li>
+<li><strong>ev.pageX</strong> (<em>Number</em>) &#8211; 当前鼠标的绝对横坐标.</li>
+<li><strong>ev.pageY</strong> (<em>Number</em>) &#8211; 当前鼠标的绝对纵坐标.</li>
+<li><strong>ev.drag</strong> (<em>Object</em>) &#8211; 自身, 当前拖放对象.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="data">
-<dt id="DD.drag">
-<tt class="descclassname">DD.</tt><tt class="descname">drag</tt><a class="headerlink" href="#DD.drag" title="Permalink to this definition">¶</a></dt>
-<dd><p>当可拖放对象拖放过程中触发, 传给事件处理函数为事件对象 event .</p>
-<dl class="attribute">
-<dt id="DD.Draggable.drag.event.left">
-<tt class="descclassname">Draggable.drag.event.</tt><tt class="descname">left</tt><a class="headerlink" href="#DD.Draggable.drag.event.left" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Number} - 拖放节点应该设置的相对文档根节点的横坐标位置.</p>
+<dl class="function">
+<dt id="Draggable.dragend">
+<tt class="descclassname">Draggable.</tt><tt class="descname">dragend</tt><big>(</big><big>)</big><a class="headerlink" href="#Draggable.dragend" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dragend</strong> ( ev )</div>
+<div class="line">当用户鼠标弹起放弃拖放时触发.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>ev.drag</strong> (<em>Object</em>) &#8211; 自身, 当前拖放对象.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="DD.Draggable.drag.event.top">
-<tt class="descclassname">Draggable.drag.event.</tt><tt class="descname">top</tt><a class="headerlink" href="#DD.Draggable.drag.event.top" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Number} - 拖放节点应该设置的相对文档根节点的纵坐标位置.</p>
+<dl class="function">
+<dt id="Draggable.dragenter">
+<tt class="descclassname">Draggable.</tt><tt class="descname">dragenter</tt><big>(</big><big>)</big><a class="headerlink" href="#Draggable.dragenter" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dragenter</strong> ( ev )</div>
+<div class="line">当前 Draggable 对象达到一个 Droppable 对象时触发，可简单理解成 mouseenter。</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>ev.drag</strong> (<em>Object</em>) &#8211; 自身, 当前拖放对象.</li>
+<li><strong>ev.drop</strong> (<em>Object</em>) &#8211; 当前交互的Droppable对象.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="DD.Draggable.drag.event.pageX">
-<tt class="descclassname">Draggable.drag.event.</tt><tt class="descname">pageX</tt><a class="headerlink" href="#DD.Draggable.drag.event.pageX" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Number} - 当前鼠标的绝对横坐标</p>
+<dl class="function">
+<dt id="Draggable.dragover">
+<tt class="descclassname">Draggable.</tt><tt class="descname">dragover</tt><big>(</big><big>)</big><a class="headerlink" href="#Draggable.dragover" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dragover</strong> ( ev )</div>
+<div class="line">当前 Draggable 对象在一个 Droppable 实例上移动时触发，可简单理解成 mouseover。</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>ev.drag</strong> (<em>Object</em>) &#8211; 自身, 当前拖放对象.</li>
+<li><strong>ev.drop</strong> (<em>Object</em>) &#8211; 当前交互的Droppable对象.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="DD.Draggable.drag.event.pageY">
-<tt class="descclassname">Draggable.drag.event.</tt><tt class="descname">pageY</tt><a class="headerlink" href="#DD.Draggable.drag.event.pageY" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Number} - 当前鼠标的绝对纵坐标</p>
+<dl class="function">
+<dt id="Draggable.dragexit">
+<tt class="descclassname">Draggable.</tt><tt class="descname">dragexit</tt><big>(</big><big>)</big><a class="headerlink" href="#Draggable.dragexit" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dragexit</strong> ( ev )</div>
+<div class="line">当前 Draggable 对象离开一个 Droppable 实例上移动时触发，可简单理解成 mouseleave。</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>ev.drag</strong> (<em>Object</em>) &#8211; 自身, 当前拖放对象.</li>
+<li><strong>ev.drop</strong> (<em>Object</em>) &#8211; 当前交互的Droppable对象.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="DD.Draggable.drag.event.drag">
-<tt class="descclassname">Draggable.drag.event.</tt><tt class="descname">drag</tt><a class="headerlink" href="#DD.Draggable.drag.event.drag" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Object} - 自身, 当前拖放对象</p>
+<dl class="function">
+<dt id="Draggable.dragdrophit">
+<tt class="descclassname">Draggable.</tt><tt class="descname">dragdrophit</tt><big>(</big><big>)</big><a class="headerlink" href="#Draggable.dragdrophit" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dragdrophit</strong> ( ev )</div>
+<div class="line">当前 Draggable 对象被放置在一个 Droppable 实例时触发。</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>ev.drag</strong> (<em>Object</em>) &#8211; 自身, 当前拖放对象.</li>
+<li><strong>ev.drop</strong> (<em>Object</em>) &#8211; 当前交互的Droppable对象.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-</dd></dl>
-
-<dl class="data">
-<dt id="DD.dragend">
-<tt class="descclassname">DD.</tt><tt class="descname">dragend</tt><a class="headerlink" href="#DD.dragend" title="Permalink to this definition">¶</a></dt>
-<dd><p>当用户鼠标弹起放弃拖放时触发 , 传给事件处理函数参数为事件对象 event.</p>
-<dl class="attribute">
-<dt id="DD.Draggable.dragend.event.drag">
-<tt class="descclassname">Draggable.dragend.event.</tt><tt class="descname">drag</tt><a class="headerlink" href="#DD.Draggable.dragend.event.drag" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Object} - 自身, 当前拖放对象</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="data">
-<dt id="DD.dragenter">
-<tt class="descclassname">DD.</tt><tt class="descname">dragenter</tt><a class="headerlink" href="#DD.dragenter" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <a class="reference internal" href="droppable.html#DD.Droppable.dropenter" title="DD.Droppable.dropenter"><tt class="xref py py-data docutils literal"><span class="pre">dropenter</span></tt></a> , 只不过该事件在当前 Draggable 对象上触发.</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="DD.dragover">
-<tt class="descclassname">DD.</tt><tt class="descname">dragover</tt><a class="headerlink" href="#DD.dragover" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <a class="reference internal" href="droppable.html#DD.Droppable.dropover" title="DD.Droppable.dropover"><tt class="xref py py-data docutils literal"><span class="pre">dropover</span></tt></a> , 只不过该事件在当前 Draggable 对象上触发.</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="DD.dragexit">
-<tt class="descclassname">DD.</tt><tt class="descname">dragexit</tt><a class="headerlink" href="#DD.dragexit" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <a class="reference internal" href="droppable.html#DD.Droppable.dropexit" title="DD.Droppable.dropexit"><tt class="xref py py-data docutils literal"><span class="pre">dropexit</span></tt></a> , 只不过该事件在当前 Draggable 对象上触发.</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="DD.dragdrophit">
-<tt class="descclassname">DD.</tt><tt class="descname">dragdrophit</tt><a class="headerlink" href="#DD.dragdrophit" title="Permalink to this definition">¶</a></dt>
-<dd><p>同 <a class="reference internal" href="droppable.html#DD.Droppable.drophit" title="DD.Droppable.drophit"><tt class="xref py py-data docutils literal"><span class="pre">drophit</span></tt></a> , 只不过该事件在当前 Draggable 对象上触发.</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="DD.dragdropmiss">
-<tt class="descclassname">DD.</tt><tt class="descname">dragdropmiss</tt><a class="headerlink" href="#DD.dragdropmiss" title="Permalink to this definition">¶</a></dt>
-<dd><p>当用户鼠标弹起但是没有放置当前 <tt class="docutils literal"><span class="pre">Draggable</span></tt> 对象到一个 Droppable 对象时触发.
-传给事件处理函数参数为一个事件对象 event</p>
-<dl class="attribute">
-<dt id="DD.Draggable.dragdropmiss.event.drag">
-<tt class="descclassname">Draggable.dragdropmiss.event.</tt><tt class="descname">drag</tt><a class="headerlink" href="#DD.Draggable.dragdropmiss.event.drag" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Object} -  自身, 当前拖放对象</p>
-</dd></dl>
-
+<dl class="function">
+<dt id="Draggable.dragdropmiss">
+<tt class="descclassname">Draggable.</tt><tt class="descname">dragdropmiss</tt><big>(</big><big>)</big><a class="headerlink" href="#Draggable.dragdropmiss" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dragdropmiss</strong> ( ev )</div>
+<div class="line">当用户鼠标弹起但是没有放置当前 <tt class="docutils literal"><span class="pre">Draggable</span></tt> 对象到一个 Droppable 对象时触发.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>ev.drag</strong> (<em>Object</em>) &#8211; 自身, 当前拖放对象.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><tt class="docutils literal"><span class="pre">Draggable</span></tt> 实例化后仅表示会根据鼠标拖放触发相应的事件, 但具体怎么处理仍需要调用者自己控制,
-例如可监听 <a class="reference internal" href="#DD.drag" title="DD.drag"><tt class="xref py py-data docutils literal"><span class="pre">drag</span></tt></a> 事件, 根据事件对象参数的坐标设置拖放节点的具体位置.</p>
+例如可监听 <a class="reference internal" href="#Draggable.drag" title="Draggable.drag"><tt class="xref py py-func docutils literal"><span class="pre">drag()</span></tt></a> 事件, 根据事件对象参数的坐标设置拖放节点的具体位置.</p>
 <div class="last highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">Draggable</span><span class="p">({</span><span class="nx">node</span> <span class="o">:</span><span class="s2">&quot;#d&quot;</span><span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;drag&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">).</span><span class="nx">offset</span><span class="p">({</span><span class="nx">left</span><span class="o">:</span><span class="nx">ev</span><span class="p">.</span><span class="nx">left</span><span class="p">,</span><span class="nx">top</span><span class="o">:</span><span class="nx">ev</span><span class="p">.</span><span class="nx">top</span><span class="p">});</span>
 <span class="p">});</span>

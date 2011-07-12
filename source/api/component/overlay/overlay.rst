@@ -5,7 +5,7 @@ Overlay
 
 |  悬浮的对话框
 |  作者: `承玉 <yiminghe@gmail.com>`_
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay>`_ 
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_  | `Demo <../../../demo/component/overlay/>`_
 
 Class
 -----------------------------------------------
@@ -15,30 +15,30 @@ Class
 Config Attributes
 -----------------------------------------------
 
-  * :attr:`prefixCls`
-  * :attr:`srcNode`
-  * :attr:`width`
-  * :attr:`height`
-  * :attr:`elCls`
-  * :attr:`content`
-  * :attr:`zIndex`
-  * :attr:`x`
-  * :attr:`y`
-  * :attr:`xy`
-  * :attr:`align`
-  * :attr:`effect`
-  * :attr:`resize`
-  
-Properties
------------------------------------------------
-
+  * :data:`prefixCls`
+  * :data:`srcNode`
+  * :data:`width`
+  * :data:`height`
+  * :data:`elCls`
+  * :data:`content`
+  * :data:`zIndex`
   * :data:`x`
   * :data:`y`
   * :data:`xy`
   * :data:`align`
-  * :data:`visible`
-  * :data:`el`
-  * :data:`contentEl`
+  * :data:`effect`
+  * :data:`resize`
+  
+Properties
+-----------------------------------------------
+
+  * :attr:`x`
+  * :attr:`y`
+  * :attr:`xy`
+  * :attr:`align`
+  * :attr:`visible`
+  * :attr:`el`
+  * :attr:`contentEl`
   
 Methods
 -----------------------------------------------
@@ -53,9 +53,9 @@ Methods
 Events
 -----------------------------------------------
 
-  * :meth:`hide`
-  * :meth:`show`
-  * :meth:`beforeVisibleChange`
+  * :func:`hide`
+  * :func:`show`
+  * :func:`beforeVisibleChange`
 
 
 Class Detail
@@ -71,49 +71,49 @@ Class Detail
 Config Attributes Detail
 -----------------------------------------------
     
-.. attribute:: prefixCls
+.. data:: prefixCls
 
     {String} - 可选，默认为"ks-"，样式类名前缀，如悬浮层根元素会加上样式类："ks-overlay"。kissy 1.2 版本以前设置无效，都为 "ks-"。
     
     .. versionadded:: 1.2
 
-.. attribute:: srcNode
+.. data:: srcNode
 
     {String} - 可选，用于取悬浮层根节点，可为"#id"或".class"。当不设置时表示新建一个 HTMLElement 插入到页面中。
 
-.. attribute:: width
+.. data:: width
 
     {Number | String} - 可选，悬浮层宽度。整数表示单元为 px。
 
-.. attribute:: height
+.. data:: height
 
     {Number | String} - 可选，悬浮层高度。整数表示单元为 px。
 
-.. attribute:: elCls
+.. data:: elCls
 
     {String} - 可选，添加到悬浮层根元素的样式。
 
-.. attribute:: content
+.. data:: content
 
     {String} - 可选，设置悬浮层的内容 html。
 
-.. attribute:: zIndex
+.. data:: zIndex
 
     {Number} - 可选，默认为 9999，设置悬浮层的 z-index 值。
 
-.. attribute:: x
+.. data:: x
 
     {Number} - 可选，悬浮层相对于文档根节点的 x 坐标。
 
-.. attribute:: y
+.. data:: y
 
     {Number} - 可选，浮层相对于文档根节点的 y 坐标。
 
-.. attribute:: xy
+.. data:: xy
 
     {Array<Number>} - 可选，相当于将数组第一个元素设置为 :attr:`x` 的值，将数组的第二个元素设置为 :attr:`y` 的值。
 
-.. attribute:: align
+.. data:: align
 
     {Object} - 可选，悬浮层对齐的相关配置，例如：
     
@@ -136,7 +136,7 @@ Config Attributes Detail
             .. image:: /_images/overlay/align.png
                 :width: 380 px
                 
-.. attribute:: effect
+.. data:: effect
 
     {Object} - 可选，显示或隐藏时的特效支持，例如：
     
@@ -150,7 +150,7 @@ Config Attributes Detail
             
     .. versionadded:: 1.2    
     
-.. attribute:: resize
+.. data:: resize
         
         {Object} - 可选，拖动调整大小的配置，例如：
     
@@ -207,7 +207,7 @@ Properties Detail
     
     .. note::
     
-        必须在调用 :meth:`~render` 方法之后才可以获取。
+        必须在调用 :meth:`render` 方法之后才可以获取。
 
 .. attribute:: contentEl
 
@@ -215,7 +215,7 @@ Properties Detail
     
     .. note::
     
-        必须在调用  :meth:`~render` 方法之后才可以获取。
+        必须在调用  :meth:`render` 方法之后才可以获取。
         
     悬浮层的 html 结构如下
 
@@ -259,7 +259,7 @@ Methods Detail
         
     .. note::
     
-        调用该方法前请先调用 :meth:`~render`.    
+        调用该方法前请先调用 :meth:`render`.    
     
 .. method:: center
 
@@ -268,7 +268,7 @@ Methods Detail
     
     .. note::
     
-        调用该方法前请先调用 :meth:`~render`.      
+        调用该方法前请先调用 :meth:`render`.      
 
 .. method:: move
 
@@ -278,20 +278,21 @@ Methods Detail
     :param number x: 横坐标偏移量
     :param number y: 纵坐标偏移量
 
+    
 Events Detail
 -----------------------------------------------
 
-.. method:: hide
+.. function:: hide
     
     | **hide** ()
     | 当悬浮层隐藏时触发
 
-.. method:: show
+.. function:: show
 
     | **show** ()
     | 当悬浮层显示时触发
 
-.. method:: beforeVisibleChange
+.. function:: beforeVisibleChange
 
     | **beforeVisibleChange** (ev)
     | 当悬浮层隐藏或显示前触发

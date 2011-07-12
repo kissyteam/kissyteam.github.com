@@ -17,17 +17,17 @@ Class
 Config Attributes
 -----------------------------------------------
 
-  * :attr:`node`
-  * :attr:`handlers`
-  * :attr:`cursor`
-  * :attr:`mode`
+  * :data:`node`
+  * :data:`handlers`
+  * :data:`cursor`
+  * :data:`mode`
   
 Properties
 -----------------------------------------------
 
-  * :data:`POINT`
-  * :data:`INTERSECT`
-  * :data:`STRICT`
+  * :attr:`POINT`
+  * :attr:`INTERSECT`
+  * :attr:`STRICT`
   * :attr:`node`
   * :attr:`dragNode`
   
@@ -39,14 +39,14 @@ Methods
 Events
 -----------------------------------------------
 
-  * :meth:`dragstart`
-  * :meth:`drag`
-  * :meth:`dragend`
-  * :meth:`dragenter`
-  * :meth:`dragover`
-  * :meth:`dragexit`
-  * :meth:`dragdrophit`
-  * :meth:`dragdropmiss`
+  * :func:`dragstart`
+  * :func:`drag`
+  * :func:`dragend`
+  * :func:`dragenter`
+  * :func:`dragover`
+  * :func:`dragexit`
+  * :func:`dragdrophit`
+  * :func:`dragdropmiss`
 
 
 Class Detail
@@ -61,11 +61,11 @@ Class Detail
 Config Attributes Detail
 -----------------------------------------------
 
-.. attribute:: node
+.. data:: node
 
     {String|HTMLElement} - 将要进行拖放的节点.
 
-.. attribute:: handlers
+.. data:: handlers
 
     {Array<String|HTMLElement>} - 作为鼠标在其上按下时触发节点拖放的钩子. 如果不设置, 则整个 ``node`` 作为触发钩子.
 
@@ -73,11 +73,11 @@ Config Attributes Detail
 
         handlers 的每个元素 DOM 节点必须位于配置项 ``node`` DOM 子树中.
 
-.. attribute:: cursor
+.. data:: cursor
 
     {String} - 默认值 "move", handlers 元素中的每个元素要设置的鼠标样式.
 
-.. attribute:: mode
+.. data:: mode
 
     {String} - 枚举值, 默认值 "point", 和 ``Droppable`` 关联, 决定何时和可放对象开始交互（触发相应事件）, 可取值 "point","intersect","strict"
 
@@ -89,15 +89,15 @@ Config Attributes Detail
 Properties Detail
 -----------------------------------------------
 
-.. data:: POINT
+.. attribute:: POINT
 
     ``static``, {String} - 等于 "point"
     
-.. data:: INTERSECT
+.. attribute:: INTERSECT
 
     ``static``, {String} - 等于 "intersect"
     
-.. data:: STRICT
+.. attribute:: STRICT
 
     ``static``, {String} - 等于 "strict"
 
@@ -125,14 +125,14 @@ Methods Detail
 Events Detail
 -----------------------------------------------
 
-.. method:: dragstart
+.. function:: dragstart
 
     | **dragstart** ( ev )
     | 当可拖放对象开始被用户拖放时触发.
     
     :param Object ev.drag: 自身, 当前拖放对象.
 
-.. method:: drag
+.. function:: drag
 
     | **drag** ( ev )
     | 当可拖放对象拖放过程中触发.
@@ -143,14 +143,14 @@ Events Detail
     :param Number ev.pageY: 当前鼠标的绝对纵坐标.
     :param Object ev.drag: 自身, 当前拖放对象.
 
-.. method:: dragend
+.. function:: dragend
 
     | **dragend** ( ev )
     | 当用户鼠标弹起放弃拖放时触发.
 
     :param Object ev.drag: 自身, 当前拖放对象.
 
-.. method:: dragenter
+.. function:: dragenter
 
     | **dragenter** ( ev )
     | 当前 Draggable 对象达到一个 Droppable 对象时触发，可简单理解成 mouseenter。
@@ -158,7 +158,7 @@ Events Detail
     :param Object ev.drag: 自身, 当前拖放对象.
     :param Object ev.drop: 当前交互的Droppable对象.
     
-.. method:: dragover
+.. function:: dragover
 
     | **dragover** ( ev )
     | 当前 Draggable 对象在一个 Droppable 实例上移动时触发，可简单理解成 mouseover。
@@ -166,7 +166,7 @@ Events Detail
     :param Object ev.drag: 自身, 当前拖放对象.
     :param Object ev.drop: 当前交互的Droppable对象.
 
-.. method:: dragexit
+.. function:: dragexit
 
     | **dragexit** ( ev )
     | 当前 Draggable 对象离开一个 Droppable 实例上移动时触发，可简单理解成 mouseleave。
@@ -174,7 +174,7 @@ Events Detail
     :param Object ev.drag: 自身, 当前拖放对象.
     :param Object ev.drop: 当前交互的Droppable对象.
     
-.. method:: dragdrophit
+.. function:: dragdrophit
 
     | **dragdrophit** ( ev )
     | 当前 Draggable 对象被放置在一个 Droppable 实例时触发。
@@ -182,7 +182,7 @@ Events Detail
     :param Object ev.drag: 自身, 当前拖放对象.
     :param Object ev.drop: 当前交互的Droppable对象.
     
-.. method:: dragdropmiss
+.. function:: dragdropmiss
 
     | **dragdropmiss** ( ev )
     | 当用户鼠标弹起但是没有放置当前 ``Draggable`` 对象到一个 Droppable 对象时触发.
@@ -192,7 +192,7 @@ Events Detail
 .. note ::
 
     ``Draggable`` 实例化后仅表示会根据鼠标拖放触发相应的事件, 但具体怎么处理仍需要调用者自己控制, 
-    例如可监听 :data:`drag` 事件, 根据事件对象参数的坐标设置拖放节点的具体位置.
+    例如可监听 :func:`drag` 事件, 根据事件对象参数的坐标设置拖放节点的具体位置.
     
     .. code-block:: javascript
 

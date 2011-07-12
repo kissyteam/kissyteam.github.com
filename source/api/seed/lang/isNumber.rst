@@ -1,11 +1,21 @@
 .. currentmodule:: Lang
 
-KISSY.isNumber 
+isNumber
 ===============================
 
-.. function:: KISSY.isNumber(o)
+Module
+-----------------------------------------------
 
-    判断是否有效数值。
+  :mod:`Lang`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: KISSY.isNumber
+
+    | Boolean **KISSY.isNumber** (o)
+    | 判断是否有效数值。
     
     :param o: 判断参数
     

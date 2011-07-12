@@ -6,39 +6,39 @@ Dialog
 |  对话框。
 |  扩展于 :class:`Overlay`
 |  作者: `承玉 <yiminghe@gmail.com>`_
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay>`_ 
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_  | `Demo <../../../demo/component/overlay/>`_
 
 .. versionadded:: 1.2
 
 Class
 -----------------------------------------------
 
-  * :class:`KISSY.Dialog`
+  * :class:`Dialog`
 
 Config Attributes
 -----------------------------------------------
 
   除了 :attr:`Overlay.content` 配置项外与 :class:`Overlay` 的配置项完全相同，其他新增配置项如下：
   
-  * :attr:`headerContent`
-  * :attr:`bodyContent`
-  * :attr:`footerContent`
-  * :attr:`closable`
-  * :attr:`draggable`
-  * :attr:`aria`
-  * :attr:`constrain`
+  * :data:`headerContent`
+  * :data:`bodyContent`
+  * :data:`footerContent`
+  * :data:`closable`
+  * :data:`draggable`
+  * :data:`aria`
+  * :data:`constrain`
   
 Properties
 -----------------------------------------------
 
   除了 :class:`Overlay` 的所有属性之外还有：
   
-  * :data:`header`
-  * :data:`body`
-  * :data:`footer`
-  * :data:`closable`
-  * :data:`draggable`
-  * :data:`constrain`
+  * :attr:`header`
+  * :attr:`body`
+  * :attr:`footer`
+  * :attr:`closable`
+  * :attr:`draggable`
+  * :attr:`constrain`
   
 Methods
 -----------------------------------------------
@@ -54,9 +54,9 @@ Events
 Class Detail
 -----------------------------------------------
 
-.. class:: KISSY.Dialog
+.. class:: Dialog
     
-    | **KISSY.Dialog** (config)
+    | **Dialog** (config)
     
     :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
     
@@ -82,23 +82,23 @@ Config Attributes Detail
 
     除了 :attr:`Overlay.content` 配置项外与 :class:`Overlay` 的配置项完全相同，但是新增了一些配置项如下所示：
 
-.. attribute:: headerContent
+.. data:: headerContent
 
     {String} - 对话框的标题 html.
 
-.. attribute:: bodyContent
+.. data:: bodyContent
 
     {String} - 对话框的体 html。
 
-.. attribute:: footerContent
+.. data:: footerContent
 
     {String} - 对话框的底部 html。
 
-.. attribute:: closable
+.. data:: closable
 
     {Boolean} - 对话框右上角是否包括关闭按钮
 
-.. attribute:: draggable
+.. data:: draggable
 
     {Boolean} - 是否允许拖动头部移动，注意启用时需同时 ``use("dd")`` ，例如：
 
@@ -110,13 +110,13 @@ Config Attributes Detail
             });
         });
         
-.. attribute:: aria
+.. data:: aria
 
     {Boolean} - 默认为 false，是否开启 aria 支持。开启后，窗口显示出来时自动获得焦点并且 tab 键只能在窗口内部转移焦点。
     
     .. versionadded:: 1.2      
         
-.. attribute:: constrain
+.. data:: constrain
 
     {Boolean | String} - 和 `~Draggable` 配合，限制拖动的范围。    
         * 取值选择器字符串时，则在限制拖动范围为根据该选择器字符串取到的第一个节点所在区域。

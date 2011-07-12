@@ -12,9 +12,10 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: docHeight()
+.. function:: docHeight
 
-   获取页面文档 document 的总高度.
+    | Number **docHeight** ()
+    | 获取页面文档 document 的总高度.
     
-   :returns:  页面文档 document 的总高度.
-   :rtype: Number
+    :returns:  页面文档 document 的总高度.
+    :rtype: Number

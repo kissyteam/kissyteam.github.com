@@ -8,7 +8,11 @@ DOM
 
 .. versionchanged:: 1.2
     :mod:`KISSY Node <Node>` 以及  :class:`~Node.NodeList` 对象上的相关处理推荐直接调用其自身方法.
+    
+Module
+-----------------------------------------------
 
+    KISSY.DOM
 
 Methods
 -----------------------------------------------
