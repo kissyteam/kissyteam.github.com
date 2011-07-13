@@ -46,13 +46,19 @@ kissy/layout.html
         FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
         HAS_SOURCE: {{ has_source | lower }}
     };
+
     if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
         document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
     } else{
         document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
     }
 </script>
-
+    {%- for scriptfile in script_files %}
+    <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
+    {%- endfor %}
+    {%- if hasdoc('search') %}
+    <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
+    {%- endif %}
 {%- block extrahead %} {% endblock %}
 </head>
 <body>
@@ -69,9 +75,6 @@ kissy/layout.html
 				<div class="main-wrap">
                 {%- include "related.html" %}
 					{% block body %} {% endblock %}
-					
-
-					{% include "search.html" %}
 				</div>
 			</div>
 		{%- endblock %}
