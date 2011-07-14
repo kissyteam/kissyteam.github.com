@@ -586,11 +586,11 @@ dl.method .versionadded{margin-left:0!important;}
 /*****************************************************************************
  * 页头尾
  *****************************************************************************/
-#header {overflow:hidden;border-bottom: 1px solid #a4d3f2;color:#888;}
+#header {position: relative;overflow:hidden;border-bottom: 1px solid #a4d3f2;color:#888;}
 #header .logo{float:left;margin:20px 0 0 0;padding:0;border:none;}
 #header .sub-title{float:left;margin:45px 5px 0 5px;font:25px "Microsoft YaHei";color:#aaa;}
 #header .desc{float:left;margin-top:50px;margin-left:5px;}
-#header  .navigation {float:right;margin:53px 0 0 0;overflow:hidden;list-style:none;}
+#header  .navigation {position: absolute; right: 0; top: 56px; overflow:hidden;list-style:none;}
 #header  .navigation li {float:left;margin-left:-1px;padding: 0 10px;line-height:1.1em;font-weight:bold;border-left:1px solid #ddd;}
 
 .col-sub{border: 1px solid #a4d3f2;border-top:none;background:#f2f8fa;}
@@ -681,4 +681,30 @@ div.related ul li a:hover {
 /*left menu donot wrap*/
 .col-sub li{
     white-space:nowrap;
+}
+
+
+/** 搜索box **/
+#searchbox {
+    position: absolute;
+    right: 12px;
+    top: 15px;
+}
+.searchbox input {
+    border: 1px solid #00A0E9;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+}
+.searchbox .btn {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#search-results, #searchbox2 {
+    margin-top: 20px;
+}
+#search-results .search li span, #search-results .search li .context {
+    display: none;
 }

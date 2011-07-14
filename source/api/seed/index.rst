@@ -10,9 +10,10 @@ Seed
 .. toctree::
    :titlesonly:
 
-   loader/index.rst
-   kissy/index.rst
-   web/index.rst
-   lang/index.rst
+   loader/index
+   kissy/index
+   lang/index
+   web/index
+
 
 

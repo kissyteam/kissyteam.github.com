@@ -7,11 +7,12 @@ Component
 .. toctree::
    :titlesonly:
 
-   datalazyload/index
-   overlay/index
-   switchable/index
-   dd/index
-   suggest/index
    template/index
+   datalazyload/index
+   flash/index
+   dd/index
+   switchable/index
+   suggest/index
    calendar/index
    imagezoom/index
+   overlay/index
