@@ -8,15 +8,11 @@ Module
 
   * :mod:`io`
 
-Class Detail
+Class
 -----------------------------------------------
 
-.. class:: XhrObj
+  * :class:`XhrObj`
 
-    | **XhrObj** (config)
-    | 原生 XMLHttpRequest 以及 jsonp 等非 xhr 请求对象的一个封装类.
-
-    :param Object config:  当前请求发送时的配置信息, 参见 :ref:`IO Config <io-config>`.
 
 Properties
 -----------------------------------------------
@@ -32,6 +28,15 @@ Methods
   * :meth:`getResponseHeader`
   * :meth:`abort`
 
+Class Detail
+-----------------------------------------------
+
+.. class:: XhrObj
+
+    | **XhrObj** (config)
+    | 原生 XMLHttpRequest 以及 jsonp 等非 xhr 请求对象的一个封装类.
+
+    :param Object config:  当前请求发送时的配置信息, 参见 :ref:`IO Config <io-config>`.
 
 Properties Detail
 -----------------------------------------------

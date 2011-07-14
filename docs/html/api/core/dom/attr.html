@@ -1,0 +1,228 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>attr &mdash; KISSY Docs valpha documentation</title>
+
+<link rel="stylesheet" href="../../../static/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="../../../static/favicon.ico"/>
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'alpha',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script>
+    <script type="text/javascript" src="../../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../../static/doctools.js"></script> 
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../../../static/logo.png"/></a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+
+    <ul class="navigation">
+        <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <!--<li><a href="mailto:all@kissyui.com">论坛</a></li>-->
+        <li><a href="http://www.github.com/kissyteam">源码</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="hasAttr.html" title="hasAttr"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="removeAttr.html" title="removeAttr"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">DOM</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="attr">
+<h1>attr<a class="headerlink" href="#attr" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference internal" href="index.html#module-DOM" title="DOM"><tt class="xref py py-mod docutils literal"><span class="pre">DOM</span></tt></a></div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="DOM.attr">
+<tt class="descclassname">DOM.</tt><tt class="descname">attr</tt><big>(</big><big>)</big><a class="headerlink" href="#DOM.attr" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">String <strong>attr</strong> ( selector, name )</div>
+<div class="line">获取符合选择器的第一个元素的属性值.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
+<li><strong>name</strong> (<em>string</em>) &#8211; 属性名称</li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last">对应属性名的属性值</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">c</span><span class="o">=</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s2">&quot;&lt;input type=&#39;checkbox&#39; checked=&#39;checked&#39;/&gt;&quot;</span><span class="p">);</span>
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span><span class="s2">&quot;checked&quot;</span><span class="p">)</span> <span class="c1">// =&gt; &quot;checked&quot;</span>
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span><span class="s2">&quot;checked&quot;</span><span class="p">)</span> <span class="c1">// =&gt; true</span>
+</pre></div>
+</div>
+<p class="versionchanged">
+<span class="versionmodified">Changed in version 1.2: </span>对没有设置的属性返回 <tt class="docutils literal"><span class="pre">null</span></tt> . 判断属性设置与否可以使用 <a class="reference internal" href="hasAttr.html#DOM.hasAttr" title="DOM.hasAttr"><tt class="xref py py-func docutils literal"><span class="pre">DOM.hasAttr()</span></tt></a> . 如果需要获取 DOM properties, 请使用 <a class="reference internal" href="prop.html#DOM.prop" title="DOM.prop"><tt class="xref py py-func docutils literal"><span class="pre">DOM.prop()</span></tt></a> 方法</p>
+<div class="line-block">
+<div class="line">void <strong>addClass</strong> ( selector, name, value )</div>
+<div class="line">给符合选择器的所有元素设置属性值.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
+<li><strong>name</strong> (<em>string</em>) &#8211; 属性名称</li>
+<li><strong>value</strong> &#8211; 属性值</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">void <strong>attr</strong> ( selector, kv )</div>
+<div class="line">给符合选择器的所有元素设置属性值.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
+<li><strong>kv</strong> (<em>object</em>) &#8211; 属性名与属性值的键值对</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">;</span>
+
+<span class="c1">// 同时设置多个属性</span>
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;kissy.png&#39;</span><span class="p">,</span> <span class="nx">width</span><span class="o">:</span> <span class="mi">400</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span> <span class="mi">400</span> <span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/loader/index.html">Loader</a></li>
+        <li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/lang/index.html">lang</a></li>
+        <li><a href="../../seed/web/index.html">web</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="../ua/index.html">ua</a></li>
+        <li><a href="index.html">DOM</a></li>
+        <li><a href="../event/index.html">event</a></li>
+        <li><a href="../node/index.html">node</a></li>
+        <li><a href="../json/index.html">json</a></li>
+        <li><a href="../ajax/index.html">ajax</a></li>
+        <li><a href="../cookie/index.html">cookie</a></li>
+        <li><a href="../base/index.html">base</a></li>
+        <li><a href="../anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../../component/template/index.html">template</a></li>
+        <li><a href="../../component/datalazyload/index.html">datalazyload</a></li>
+        <li><a href="../../component/flash/index.html">flash</a></li>
+        <li><a href="../../component/dd/index.html">dd</a></li>
+        <li><a href="../../component/switchable/index.html">switchable</a></li>
+        <li><a href="../../component/suggest/index.html">suggest</a></li>
+        <li><a href="../../component/calendar/index.html">calendar</a></li>
+        <li><a href="../../component/imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../../component/overlay/index.html">overlay</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

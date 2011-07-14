@@ -1,0 +1,208 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>create &mdash; KISSY Docs valpha documentation</title>
+
+<link rel="stylesheet" href="../../../static/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="../../../static/favicon.ico"/>
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'alpha',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script>
+    <script type="text/javascript" src="../../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../../static/doctools.js"></script> 
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../../../static/logo.png"/></a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+
+    <ul class="navigation">
+        <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <!--<li><a href="mailto:all@kissyui.com">论坛</a></li>-->
+        <li><a href="http://www.github.com/kissyteam">源码</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="html.html" title="html"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="contains.html" title="contains"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">DOM</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="create">
+<h1>create<a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference internal" href="index.html#module-DOM" title="DOM"><tt class="xref py py-mod docutils literal"><span class="pre">DOM</span></tt></a></div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="DOM.create">
+<tt class="descclassname">DOM.</tt><tt class="descname">create</tt><big>(</big><big>)</big><a class="headerlink" href="#DOM.create" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">HTMLFragment|HTMLElement <strong>create</strong> ( html [ , props = {} , ownerDoc = document ] )</div>
+<div class="line">创建 dom 节点</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>html</strong> (<em>string</em>) &#8211; dom 节点的 html</li>
+<li><strong>props</strong> (<em>object</em>) &#8211; 属性键值对象</li>
+<li><strong>ownerDoc</strong> (<em>HTMLDocument</em>) &#8211; 节点所属文档</li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first">创建出的 dom 节点或碎片列表</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">Return type:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last">HTMLFragment|HTMLElement</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>举例：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">;</span>
+
+<span class="c1">// 等价 document.createElement(&#39;div&#39;)</span>
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;&lt;div&gt;&#39;</span><span class="p">);</span>
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;&lt;div /&gt;&#39;</span><span class="p">);</span>
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;&lt;div&gt;&lt;/div&gt;&#39;</span><span class="p">);</span>
+
+<span class="c1">// 等价 document.createTextNode(&#39;text&#39;)</span>
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">);</span>
+
+<span class="c1">// 创建时, 同时添加属性值</span>
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;&lt;a&gt;&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">href</span><span class="o">:</span> <span class="s1">&#39;hot.html&#39;</span><span class="p">,</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Hot Page&#39;</span> <span class="p">});</span>
+
+<span class="c1">// KISSY v1.1.5+,  创建时, 支持添加更多的属性；</span>
+<span class="c1">// 新增属性有： val, css, html, text, data, width, height, offset</span>
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;&lt;a&gt;&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">href</span><span class="o">:</span> <span class="s1">&#39;hot.html&#39;</span><span class="p">,</span>
+                    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Hot Page&#39;</span><span class="p">,</span>
+                    <span class="nx">css</span><span class="o">:</span> <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">},</span>
+                    <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;Test Link&#39;</span>
+          <span class="p">});</span>
+
+<span class="c1">// 直接内联属性</span>
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;&lt;img src=&quot;logo.png&quot; alt=&quot;logo&quot; /&gt;&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/loader/index.html">Loader</a></li>
+        <li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/lang/index.html">lang</a></li>
+        <li><a href="../../seed/web/index.html">web</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="../ua/index.html">ua</a></li>
+        <li><a href="index.html">DOM</a></li>
+        <li><a href="../event/index.html">event</a></li>
+        <li><a href="../node/index.html">node</a></li>
+        <li><a href="../json/index.html">json</a></li>
+        <li><a href="../ajax/index.html">ajax</a></li>
+        <li><a href="../cookie/index.html">cookie</a></li>
+        <li><a href="../base/index.html">base</a></li>
+        <li><a href="../anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../../component/template/index.html">template</a></li>
+        <li><a href="../../component/datalazyload/index.html">datalazyload</a></li>
+        <li><a href="../../component/flash/index.html">flash</a></li>
+        <li><a href="../../component/dd/index.html">dd</a></li>
+        <li><a href="../../component/switchable/index.html">switchable</a></li>
+        <li><a href="../../component/suggest/index.html">suggest</a></li>
+        <li><a href="../../component/calendar/index.html">calendar</a></li>
+        <li><a href="../../component/imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../../component/overlay/index.html">overlay</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

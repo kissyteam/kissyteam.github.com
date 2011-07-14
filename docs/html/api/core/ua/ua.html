@@ -1,0 +1,245 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>UA &mdash; KISSY Docs valpha documentation</title>
+
+<link rel="stylesheet" href="../../../static/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="../../../static/favicon.ico"/>
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'alpha',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script>
+    <script type="text/javascript" src="../../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../../static/doctools.js"></script> 
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../../../static/logo.png"/></a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+
+    <ul class="navigation">
+        <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <!--<li><a href="mailto:all@kissyui.com">论坛</a></li>-->
+        <li><a href="http://www.github.com/kissyteam">源码</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="ua-extra.html" title="UA-Extra"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="UA"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">UA</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <span class="target" id="module-UA"></span><div class="section" id="ua">
+<h1>UA<a class="headerlink" href="#ua" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">通过 KISSY.UA, 你可以获取浏览器等用户代理信息. 属性值遵循以下规则：</div>
+<div class="line-block">
+<div class="line">表示当前引擎或浏览器的版本. 版本号 1.2.3.4 会转换为数值 1.234</div>
+<div class="line">如果不是当前引擎或浏览器, 返回 0</div>
+<div class="line">如果当前引擎或浏览器的版本号无法准确判定, 返回 0.1</div>
+</div>
+<div class="line">注意：</div>
+<div class="line-block">
+<div class="line">UA.core 返回字符串，目前支持 trident, webkit, gecko, presto 四大浏览器内核.</div>
+<div class="line">UA.shell 返回字符串，比如 firefox, opera, chrome, ie, safari</div>
+<div class="line">UA.mobile 返回字符串，目前支持 apple, nokia, android, opera mini/mobile 等设备/浏览器的探测.</div>
+</div>
+<div class="line">作者: <a class="reference external" href="mailto:lifesinger&#37;&#52;&#48;gmail&#46;com">玉伯</a></div>
+<div class="line">源码: <a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/ua">查看</a></div>
+</div>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference internal" href="ua-extra.html#module-UA" title="UA"><tt class="xref py py-mod docutils literal"><span class="pre">UA</span></tt></a></div></blockquote>
+</div>
+<div class="section" id="properties-detail">
+<h2>Properties Detail<a class="headerlink" href="#properties-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="attribute">
+<dt id="UA.trident">
+<tt class="descclassname">UA.</tt><tt class="descname">trident</tt><a class="headerlink" href="#UA.trident" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - trident 的版本号。IE 浏览器 8 系列以下都无法准确探测 Trident 内核的版本号。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="UA.webkit">
+<tt class="descclassname">UA.</tt><tt class="descname">webkit</tt><a class="headerlink" href="#UA.webkit" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - webkit 的版本号。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="UA.gecko">
+<tt class="descclassname">UA.</tt><tt class="descname">gecko</tt><a class="headerlink" href="#UA.gecko" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - gecko 的版本号。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="UA.presto">
+<tt class="descclassname">UA.</tt><tt class="descname">presto</tt><a class="headerlink" href="#UA.presto" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - presto 的版本号。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="UA.chrome">
+<tt class="descclassname">UA.</tt><tt class="descname">chrome</tt><a class="headerlink" href="#UA.chrome" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - chrome 的版本号。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="UA.safari">
+<tt class="descclassname">UA.</tt><tt class="descname">safari</tt><a class="headerlink" href="#UA.safari" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - safari 的版本号。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="UA.firefox">
+<tt class="descclassname">UA.</tt><tt class="descname">firefox</tt><a class="headerlink" href="#UA.firefox" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - firefox 的版本号。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="UA.ie">
+<tt class="descclassname">UA.</tt><tt class="descname">ie</tt><a class="headerlink" href="#UA.ie" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - ie 的版本号。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="UA.opera">
+<tt class="descclassname">UA.</tt><tt class="descname">opera</tt><a class="headerlink" href="#UA.opera" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - opera 的版本号。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="UA.mobile">
+<tt class="descclassname">UA.</tt><tt class="descname">mobile</tt><a class="headerlink" href="#UA.mobile" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - mobile 的标志符。 若无法探测或非移动设备浏览器，将返回空字符串。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="UA.core">
+<tt class="descclassname">UA.</tt><tt class="descname">core</tt><a class="headerlink" href="#UA.core" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - core 的标志符。此标识符表示浏览器的内核标识。若浏览器内核不是 trident, webkit, gecko, presto 将返回空字符串。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="UA.shell">
+<tt class="descclassname">UA.</tt><tt class="descname">shell</tt><a class="headerlink" href="#UA.shell" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - shell 的标志符。此标识符表示用户所用浏览器的外壳标识。</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">此处的外壳表示广义的外壳，即 IE, Firefox, Chrome, Opera, Safari 等浏览器都属于外壳。可以利用此标识符直接识别浏览器类型。
+可以首先使用 UA.shell 返回的标识符判断当前浏览器类型，若需浏览器具体版本信息，可以再通过 UA[UA.shell] 取出版本号。
+对于众多国产浏览器外壳的，请跳转到 <a class="reference internal" href="ua-extra.html#ua-extra"><em>UA Extra</em></a> 查看具体探测方法。</p>
+</div>
+</div>
+</div>
+
+
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/loader/index.html">Loader</a></li>
+        <li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/lang/index.html">lang</a></li>
+        <li><a href="../../seed/web/index.html">web</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="index.html">ua</a></li>
+        <li><a href="../dom/index.html">DOM</a></li>
+        <li><a href="../event/index.html">event</a></li>
+        <li><a href="../node/index.html">node</a></li>
+        <li><a href="../json/index.html">json</a></li>
+        <li><a href="../ajax/index.html">ajax</a></li>
+        <li><a href="../cookie/index.html">cookie</a></li>
+        <li><a href="../base/index.html">base</a></li>
+        <li><a href="../anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../../component/template/index.html">template</a></li>
+        <li><a href="../../component/datalazyload/index.html">datalazyload</a></li>
+        <li><a href="../../component/flash/index.html">flash</a></li>
+        <li><a href="../../component/dd/index.html">dd</a></li>
+        <li><a href="../../component/switchable/index.html">switchable</a></li>
+        <li><a href="../../component/suggest/index.html">suggest</a></li>
+        <li><a href="../../component/calendar/index.html">calendar</a></li>
+        <li><a href="../../component/imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../../component/overlay/index.html">overlay</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

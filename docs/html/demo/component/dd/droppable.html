@@ -1,0 +1,403 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>Droppable &mdash; KISSY Docs valpha documentation</title>
+
+<link rel="stylesheet" href="../../../static/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="../../../static/favicon.ico"/>
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'alpha',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script>
+    <script type="text/javascript" src="../../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../../static/doctools.js"></script> 
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../../../static/logo.png"/></a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+
+    <ul class="navigation">
+        <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <!--<li><a href="mailto:all@kissyui.com">论坛</a></li>-->
+        <li><a href="http://www.github.com/kissyteam">源码</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="draggable-delegate.html" title="DraggableDelegate"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="draggable.html" title="Draggable &amp; Proxy"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >All Demos</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">All Demos</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="droppable">
+<h1>Droppable<a class="headerlink" href="#droppable" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">作者: 承玉&lt;<a class="reference external" href="mailto:chengyu&#37;&#52;&#48;taobao&#46;com">chengyu<span>&#64;</span>taobao<span>&#46;</span>com</a>&gt;</div>
+<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/dd/droppable.js">源码</a></div>
+</div>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="../../../api/component/dd/droppable.html#module-Droppable" title="Droppable"><tt class="xref py py-class docutils literal"><span class="pre">Droppable</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="demo">
+<h2>Demo - 基本使用<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><style>
+
+    .container {
+        border: 1px solid red;
+        height: 450px;
+        padding: 10px;
+        position: relative;
+    }
+
+    .component {
+        margin: 50px 10px;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        border: 1px solid black;
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        overflow: hidden;
+    }
+
+    .cheader {
+        cursor: move;
+        border: 1px solid black;
+        height: 20px;
+        line-height: 20px;
+    }
+
+    #drop, #drop3 {
+        border: 1px solid green;
+        height: 130px;
+        line-height: 100px;
+    }
+
+    .ks-dd-drag-over {
+        background: #a52a2a;
+    }
+
+    .ks-dd-drop-over {
+        background: #fa8072;
+    }
+
+    #container3 .component .cheader {
+        cursor: move;
+    }
+</style>
+
+<div id="container" class="container">
+    <div id="c1" class="component">
+        intersect drag
+    </div>
+
+    <div id="c2" class="component">
+        point drag
+    </div>
+
+    <div id="c3" class="component">
+        strict drag
+    </div>
+
+    <div id="drop">
+        drop zone
+    </div>
+</div>
+
+<script>
+KISSY.use("node,dd", function (S, Node, DD) {
+    var DDM = DD.DDM,
+
+    Draggable = DD.Draggable,
+        Droppable = DD.Droppable;
+
+
+    var p;
+    /**
+     * 集中监听所有
+     */
+    DDM.on("dragstart", function(ev) {
+
+        var c = ev.drag;
+        p = c.get("dragNode").css("position");
+    });
+    DDM.on("drag", function(ev) {
+
+        var c = ev.drag;
+        /**
+         * node 和 dragNode 区别：
+         * node : 可能是 proxy node, 指实际拖放节点
+         */
+        c.get("node").offset(ev);
+    });
+    DDM.on("dragend", function(ev) {
+        var c = ev.drag;
+        c.get("dragNode").css("position", p);
+    });
+
+    /**
+     * 简单拖放
+     */
+
+
+    var c1 = new Draggable({
+        node:"#c1",
+        //模式,
+        // intersect :区域相交就算enter
+        // strict : drag 区域完全在 drop 区域内才算
+        // point : 鼠标在 drop 区域内
+        //默认 point
+        mode:Draggable.INTERSECT
+    });
+
+
+    var c3 = new Draggable({
+        node:"#c3",
+        mode:Draggable.STRICT
+    });
+
+
+    var c2 = new Draggable({
+        node:"#c2"
+    });
+
+
+    var drop = new Droppable({
+        node:"#drop"
+    });
+
+
+    function onhit(ev) {
+        ev.drag.get("node").css("margin", "5px 10px");
+        ev.drag.get("node").appendTo(ev.drop.get("node"));
+        ev.drag.destroy();
+    }
+
+    drop.on("drophit",onhit);
+
+});
+</script><p><strong>引入 kissy.js</strong></p>
+<blockquote>
+<div><div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>组织HTML</strong></p>
+<blockquote>
+<div><div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;container&quot;</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;c1&quot;</span> <span class="na">class=</span><span class="s">&quot;component&quot;</span><span class="nt">&gt;</span>
+        intersect drag
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;c2&quot;</span> <span class="na">class=</span><span class="s">&quot;component&quot;</span><span class="nt">&gt;</span>
+        point drag
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;c3&quot;</span> <span class="na">class=</span><span class="s">&quot;component&quot;</span><span class="nt">&gt;</span>
+        strict drag
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;drop&quot;</span><span class="nt">&gt;</span>
+        drop zone
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>加载 dd</strong></p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node,dd&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">DD</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">DDM</span> <span class="o">=</span> <span class="nx">DD</span><span class="p">.</span><span class="nx">DDM</span><span class="p">,</span>
+        <span class="nx">Draggable</span> <span class="o">=</span> <span class="nx">DD</span><span class="p">.</span><span class="nx">Draggable</span><span class="p">,</span>
+        <span class="nx">Droppable</span> <span class="o">=</span> <span class="nx">DD</span><span class="p">.</span><span class="nx">Droppable</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>全局监控</strong></p>
+<blockquote>
+<div><p>开始拖放前保存节点的定位信息：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">DDM</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;dragstart&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">drag</span><span class="p">;</span>
+    <span class="nx">p</span> <span class="o">=</span> <span class="nx">c</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;dragNode&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;position&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>拖放中, 根据位置信息设置节点坐标</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">DDM</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;drag&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">drag</span><span class="p">;</span>
+    <span class="cm">/**</span>
+<span class="cm">     * node 和 dragNode 区别：</span>
+<span class="cm">     * node : 可能是 proxy node, 指实际拖放节点</span>
+<span class="cm">     */</span>
+    <span class="nx">c</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">).</span><span class="nx">offset</span><span class="p">(</span><span class="nx">ev</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>拖放结束后, 恢复节点的定位信息</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">DDM</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;dragend&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">drag</span><span class="p">;</span>
+    <span class="nx">c</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;dragNode&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;position&quot;</span><span class="p">,</span> <span class="nx">p</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>初始拖放对象</strong></p>
+<blockquote>
+<div><p>实例化 3 个普通的拖实例以及一个放实例</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">c1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Draggable</span><span class="p">({</span>
+    <span class="nx">node</span><span class="o">:</span><span class="s2">&quot;#c1&quot;</span><span class="p">,</span>
+    <span class="c1">//模式,</span>
+    <span class="c1">// intersect :区域相交就算enter</span>
+    <span class="c1">// strict : drag 区域完全在 drop 区域内才算</span>
+    <span class="c1">// point : 鼠标在 drop 区域内</span>
+    <span class="c1">//默认 point</span>
+    <span class="nx">mode</span><span class="o">:</span><span class="nx">Draggable</span><span class="p">.</span><span class="nx">INTERSECT</span>
+<span class="p">});</span>
+
+
+<span class="kd">var</span> <span class="nx">c3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Draggable</span><span class="p">({</span>
+    <span class="nx">node</span><span class="o">:</span><span class="s2">&quot;#c3&quot;</span><span class="p">,</span>
+    <span class="nx">mode</span><span class="o">:</span><span class="nx">Draggable</span><span class="p">.</span><span class="nx">STRICT</span>
+<span class="p">});</span>
+
+
+<span class="kd">var</span> <span class="nx">c2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Draggable</span><span class="p">({</span>
+    <span class="nx">node</span><span class="o">:</span><span class="s2">&quot;#c2&quot;</span>
+<span class="p">});</span>
+
+
+<span class="kd">var</span> <span class="nx">drop</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Droppable</span><span class="p">({</span>
+    <span class="nx">node</span><span class="o">:</span><span class="s2">&quot;#drop&quot;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>监听放实例的 drophit 事件</strong></p>
+<blockquote>
+<div><p>当在 drop 区域放入 draggable 对象时, 该 draggable 代表的节点被放入 drop 区域中</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">onhit</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ev</span><span class="p">.</span><span class="nx">drag</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;margin&quot;</span><span class="p">,</span> <span class="s2">&quot;5px 10px&quot;</span><span class="p">);</span>
+    <span class="nx">ev</span><span class="p">.</span><span class="nx">drag</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">ev</span><span class="p">.</span><span class="nx">drop</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">));</span>
+    <span class="nx">ev</span><span class="p">.</span><span class="nx">drag</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nx">drop</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;drophit&quot;</span><span class="p">,</span><span class="nx">onhit</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+				</div>
+			</div>
+    <div class="col-sub">
+
+<div class="s-box">
+    <div class="s-box-bd">
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart/index.html">快速上手</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">API文档</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">All Demos</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../seed/index.html">Seed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../core/index.html">Core</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Component</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../datalazyload/index.html">DataLazyload</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overlay/index.html">Overlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../switchable/index.html">Switchable</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">All Demos</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="draggable.html">Draggable &amp; Proxy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="draggable.html#demo">Demo</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Droppable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="draggable-delegate.html">DraggableDelegate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="droppable-delegate.html">DroppableDelegate &amp; Scroll</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../suggest/index.html">Suggest</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../relatedproj/index.html">子项目集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../styleguide/index.html">最佳编码实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">前端常用工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../workflow/index.html">组件开发指南</a></li>
+</ul>
+
+    </div>
+</div>
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

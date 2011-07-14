@@ -1,0 +1,264 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>Proxy &mdash; KISSY Docs valpha documentation</title>
+
+<link rel="stylesheet" href="../../../static/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="../../../static/favicon.ico"/>
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'alpha',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script>
+    <script type="text/javascript" src="../../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../../static/doctools.js"></script> 
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../../../static/logo.png"/></a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+
+    <ul class="navigation">
+        <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <!--<li><a href="mailto:all@kissyui.com">论坛</a></li>-->
+        <li><a href="http://www.github.com/kissyteam">源码</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="scroll.html" title="Scroll"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="droppable-delegate.html" title="DroppableDelegate"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">DD</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <span class="target" id="module-Proxy"></span><div class="section" id="proxy">
+<h1>Proxy<a class="headerlink" href="#proxy" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">代理可拖放对象</div>
+<div class="line">作者: <a class="reference external" href="mailto:chengyu&#37;&#52;&#48;taobao&#46;com">承玉</a></div>
+<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/dd/proxy.js">源码</a>  | <a class="reference external" href="../../../demo/component/dd/draggable.html">Demo</a></div>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#Proxy.DD.Proxy" title="Proxy.DD.Proxy"><tt class="xref py py-class docutils literal"><span class="pre">DD.Proxy</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="config-attributes">
+<h2>Config Attributes<a class="headerlink" href="#config-attributes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#Proxy.node" title="Proxy.node"><tt class="xref py py-attr docutils literal"><span class="pre">node</span></tt></a></li>
+<li><a class="reference internal" href="#Proxy.destroyOnEnd" title="Proxy.destroyOnEnd"><tt class="xref py py-attr docutils literal"><span class="pre">destroyOnEnd</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#Proxy.attach" title="Proxy.attach"><tt class="xref py py-meth docutils literal"><span class="pre">attach()</span></tt></a></li>
+<li><a class="reference internal" href="#Proxy.unAttach" title="Proxy.unAttach"><tt class="xref py py-meth docutils literal"><span class="pre">unAttach()</span></tt></a></li>
+<li><a class="reference internal" href="#Proxy.destroy" title="Proxy.destroy"><tt class="xref py py-meth docutils literal"><span class="pre">destroy()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Proxy.DD.Proxy">
+<em class="property">class </em><tt class="descclassname">DD.</tt><tt class="descname">Proxy</tt><a class="headerlink" href="#Proxy.DD.Proxy" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>DD.Proxy</strong> (config)</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 配置项, 详细见下方 <strong>Config Attributes Detail</strong></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="config-attributes-detail">
+<h2>Config Attributes Detail<a class="headerlink" href="#config-attributes-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="attribute">
+<dt id="Proxy.node">
+<tt class="descclassname">Proxy.</tt><tt class="descname">node</tt><a class="headerlink" href="#Proxy.node" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Function} - 当 Draggable 对象需要代理节点时通过调用该函数产生代理节点, 函数的参数为当前 Draggable 对象,  返回值类型为 KISSY.Node . 该属性有默认值</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span><span class="p">(</span><span class="nx">drag</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Node</span><span class="p">(</span><span class="nx">drag</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>即代理节点和当前节点保持一致.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Proxy.destroyOnEnd">
+<tt class="descclassname">Proxy.</tt><tt class="descname">destroyOnEnd</tt><a class="headerlink" href="#Proxy.destroyOnEnd" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认 false. 指明是否代理节点需要每次拖放前 dragstart 生成,  拖放后 dragend 销毁. 用于多 Draggable 对象共享一个 Proxy 对象实例, 且要求代理节点和单个 Draggable 对象关联, 或者一个 DraggableDelegate 对象共享一个 Proxy 对象实例.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="Proxy.attach">
+<tt class="descclassname">Proxy.</tt><tt class="descname">attach</tt><big>(</big><big>)</big><a class="headerlink" href="#Proxy.attach" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>attach</strong> (drag)</div>
+<div class="line">使当前拖放对象具备代理功能.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>drag</strong> (<em>draggable</em>) &#8211; 需要具备代理功能的 draggable 对象</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Proxy.unAttach">
+<tt class="descclassname">Proxy.</tt><tt class="descname">unAttach</tt><big>(</big><big>)</big><a class="headerlink" href="#Proxy.unAttach" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>unAttach</strong> (drag)</div>
+<div class="line">解除当前拖放对象的代理功能.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>drag</strong> (<em>draggable</em>) &#8211; 具备代理功能的 Draggable 对象</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Proxy.destroy">
+<tt class="descclassname">Proxy.</tt><tt class="descname">destroy</tt><big>(</big><big>)</big><a class="headerlink" href="#Proxy.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>destroy</strong> ()</div>
+<div class="line">解除所有通过当前 Proxy 对象添加的代理功能</div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/loader/index.html">Loader</a></li>
+        <li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/lang/index.html">lang</a></li>
+        <li><a href="../../seed/web/index.html">web</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../core/ua/index.html">ua</a></li>
+        <li><a href="../../core/dom/index.html">DOM</a></li>
+        <li><a href="../../core/event/index.html">event</a></li>
+        <li><a href="../../core/node/index.html">node</a></li>
+        <li><a href="../../core/json/index.html">json</a></li>
+        <li><a href="../../core/ajax/index.html">ajax</a></li>
+        <li><a href="../../core/cookie/index.html">cookie</a></li>
+        <li><a href="../../core/base/index.html">base</a></li>
+        <li><a href="../../core/anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../template/index.html">template</a></li>
+        <li><a href="../datalazyload/index.html">datalazyload</a></li>
+        <li><a href="../flash/index.html">flash</a></li>
+        <li><a href="index.html">dd</a></li>
+        <li><a href="../switchable/index.html">switchable</a></li>
+        <li><a href="../suggest/index.html">suggest</a></li>
+        <li><a href="../calendar/index.html">calendar</a></li>
+        <li><a href="../imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../overlay/index.html">overlay</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

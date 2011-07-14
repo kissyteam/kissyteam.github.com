@@ -1,0 +1,663 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>Object &mdash; KISSY Docs valpha documentation</title>
+
+<link rel="stylesheet" href="../../../static/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="../../../static/favicon.ico"/>
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'alpha',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script>
+    <script type="text/javascript" src="../../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../../static/doctools.js"></script> 
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../../../static/logo.png"/></a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+
+    <ul class="navigation">
+        <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <!--<li><a href="mailto:all@kissyui.com">论坛</a></li>-->
+        <li><a href="http://www.github.com/kissyteam">源码</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../node/index.html" title="Node"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="event-target.html" title="Target"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Event</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="object">
+<h1>Object<a class="headerlink" href="#object" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference internal" href="index.html#module-Event" title="Event"><tt class="xref py py-mod docutils literal"><span class="pre">Event</span></tt></a></div></blockquote>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#Event.Object" title="Event.Object"><tt class="xref py py-class docutils literal"><span class="pre">Object</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#Event.currentTarget" title="Event.currentTarget"><tt class="xref py py-attr docutils literal"><span class="pre">currentTarget</span></tt></a></li>
+<li><a class="reference internal" href="#Event.pageX" title="Event.pageX"><tt class="xref py py-attr docutils literal"><span class="pre">pageX</span></tt></a></li>
+<li><a class="reference internal" href="#Event.pageY" title="Event.pageY"><tt class="xref py py-attr docutils literal"><span class="pre">pageY</span></tt></a></li>
+<li><a class="reference internal" href="#Event.relatedTarget" title="Event.relatedTarget"><tt class="xref py py-attr docutils literal"><span class="pre">relatedTarget</span></tt></a></li>
+<li><a class="reference internal" href="#Event.target" title="Event.target"><tt class="xref py py-attr docutils literal"><span class="pre">target</span></tt></a></li>
+<li><a class="reference internal" href="#Event.type" title="Event.type"><tt class="xref py py-attr docutils literal"><span class="pre">type</span></tt></a></li>
+<li><a class="reference internal" href="#Event.which" title="Event.which"><tt class="xref py py-attr docutils literal"><span class="pre">which</span></tt></a></li>
+<li><a class="reference internal" href="#Event.isImmediatePropagationStopped" title="Event.isImmediatePropagationStopped"><tt class="xref py py-attr docutils literal"><span class="pre">isImmediatePropagationStopped</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#Event.preventDefault" title="Event.preventDefault"><tt class="xref py py-meth docutils literal"><span class="pre">preventDefault()</span></tt></a></li>
+<li><a class="reference internal" href="#Event.stopImmediatePropagation" title="Event.stopImmediatePropagation"><tt class="xref py py-meth docutils literal"><span class="pre">stopImmediatePropagation()</span></tt></a></li>
+<li><a class="reference internal" href="#Event.stopPropagation" title="Event.stopPropagation"><tt class="xref py py-meth docutils literal"><span class="pre">stopPropagation()</span></tt></a></li>
+<li><a class="reference internal" href="#Event.isDefaultPrevented" title="Event.isDefaultPrevented"><tt class="xref py py-meth docutils literal"><span class="pre">isDefaultPrevented()</span></tt></a></li>
+<li><a class="reference internal" href="#Event.isPropagationStopped" title="Event.isPropagationStopped"><tt class="xref py py-meth docutils literal"><span class="pre">isPropagationStopped()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Event.Object">
+<em class="property">class </em><tt class="descclassname">Event.</tt><tt class="descname">Object</tt><a class="headerlink" href="#Event.Object" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>Object</strong> ( event )</div>
+<div class="line">对 dom 原生事件进行兼容性处理,</div>
+<div class="line">API 基本遵循 <a class="reference external" href="http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html">DOM-Level-3-Events</a> 规范.</div>
+<div class="line">该类用于 event 模块内部调用, 实例传入绑定的事件处理器作为第一个参数.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>event</strong> (<em>HTMLEvent</em>) &#8211; dom 原生事件.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="properties-detail">
+<h2>Properties Detail<a class="headerlink" href="#properties-detail" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>下面的列表都是该类实例的属性, 虽然有些随着不同的事件类别值会是 undefined :</p>
+<div class="admonition- admonition ">
+<p class="first admonition-title">事件属性</p>
+<p class="last">altKey, attrChange, attrName, bubbles, button, cancelable,
+charCode, clientX, clientY, ctrlKey, currentTarget, data, detail, eventPhase,
+fromElement, handler, keyCode, layerX, layerY, metaKey, newValue, offsetX, offsetY,
+originalTarget, pageX, pageY, prevValue, relatedNode, relatedTarget,
+screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, which</p>
+</div>
+<p>KISSY 对下列属性做了兼容性处理</p>
+<ul class="simple">
+<li>target</li>
+<li>relatedTarget</li>
+<li>pageX</li>
+<li>pageY</li>
+<li>which</li>
+<li>metaKey</li>
+</ul>
+</div></blockquote>
+<dl class="attribute">
+<dt id="Event.currentTarget">
+<tt class="descclassname">Event.</tt><tt class="descname">currentTarget</tt><a class="headerlink" href="#Event.currentTarget" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object} - 返回 <a class="reference internal" href="#Event.Object" title="Event.Object"><tt class="xref py py-class docutils literal"><span class="pre">Event.Object</span></tt></a>,  当前事件处理器的 dom 节点或对象, 通常和 this 相同.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">如果你在 <a class="reference internal" href="on.html#Event.on" title="Event.on"><tt class="xref py py-meth docutils literal"><span class="pre">on()</span></tt></a> 中指定了 this , 则 currentTarget 和 this 不相同.</p>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span> <span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span> <span class="o">===</span> <span class="k">this</span> <span class="p">);</span> <span class="c1">// true</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Event.pageX">
+<tt class="descclassname">Event.</tt><tt class="descname">pageX</tt><a class="headerlink" href="#Event.pageX" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 鼠标当前位置相对文档左边界的距离</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Event.pageY">
+<tt class="descclassname">Event.</tt><tt class="descname">pageY</tt><a class="headerlink" href="#Event.pageY" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 鼠标当前位置相对文档上边界的距离</p>
+<p>显示当前鼠标位置相对于 iframe 文档的距离:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;style&gt;body</span> <span class="p">{</span><span class="k">background-color</span><span class="o">:</span> <span class="m">#eef</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">div</span> <span class="p">{</span> <span class="k">padding</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span> <span class="p">}</span><span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">==</span><span class="s2">&quot;localhost&quot;</span><span class="p">){</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://localhost/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://yiminghe.github.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+   <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;mousemove&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span> 
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#log&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;e.pageX: &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pageX</span> <span class="o">+</span> <span class="s2">&quot;, e.pageY: &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pageY</span><span class="p">);</span> 
+<span class="p">});</span> 
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<iframe width="100%" height="135" src="../../../static/api/core/event/pageX.html"></iframe></dd></dl>
+
+<dl class="attribute">
+<dt id="Event.relatedTarget">
+<tt class="descclassname">Event.</tt><tt class="descname">relatedTarget</tt><a class="headerlink" href="#Event.relatedTarget" title="Permalink to this definition">¶</a></dt>
+<dd><p>{HTMLElement} - 和当前事件对象关联的 dom 节点.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">对于 <cite>mouseout/leave</cite> 事件为将要进入的节点. 对于 <cite>mouseover/enter</cite> 为将要离开的节点.</p>
+</div>
+<p>当鼠标移出链接时, alert 将要进入的元素节点名称</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">).</span><span class="nx">mouseout</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">relatedTarget</span><span class="p">.</span><span class="nx">nodeName</span><span class="p">);</span> <span class="c1">// &quot;DIV&quot;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Event.target">
+<tt class="descclassname">Event.</tt><tt class="descname">target</tt><a class="headerlink" href="#Event.target" title="Permalink to this definition">¶</a></dt>
+<dd><p>{HTMLElement} - target 属性可以是绑定事件的元素的子孙节点. 常被用来和 this 比较来确定是否这个事件是冒泡过来的. 这个属性在委托情况下非常有用, 可以得到事件的真正触发源.</p>
+<p>显示点击事件触发源的节点名称</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;style&gt;</span>
+<span class="nt">span</span><span class="o">,</span> <span class="nt">strong</span><span class="o">,</span> <span class="nt">p</span> <span class="p">{</span> 
+  <span class="k">padding</span><span class="o">:</span> <span class="m">8px</span><span class="p">;</span> <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span> <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#999</span><span class="p">;</span>  <span class="p">}</span>
+    <span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">==</span><span class="s2">&quot;localhost&quot;</span><span class="p">){</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://localhost/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://yiminghe.github.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+   <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;p&gt;</span>
+    <span class="nt">&lt;strong&gt;&lt;span&gt;</span>click<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+  <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#log&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;clicked: &quot;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">nodeName</span><span class="p">);</span>
+    <span class="p">});</span>  
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<iframe width="100%" height="135" src="../../../static/api/core/event/target.html"></iframe><p>简单的委托实现, 点击处理器被绑定到 ul 上面,  点击 li 会使得该 li 下的子 ul 菜单显示与隐藏.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">==</span><span class="s2">&quot;localhost&quot;</span><span class="p">){</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://localhost/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://yiminghe.github.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+   <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>item 1
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;</span>sub item 1-a<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>sub item 1-b<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>item 2
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;</span>sub item 2-a<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>sub item 2-b<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>  
+<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+    <span class="kd">function</span> <span class="nx">handler</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">$target</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+      <span class="k">if</span><span class="p">(</span> <span class="nx">$target</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$target</span><span class="p">.</span><span class="nx">children</span><span class="p">().</span><span class="nx">toggle</span><span class="p">();</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="nx">handler</span><span class="p">).</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<iframe width="100%" height="135" src="../../../static/api/core/event/target_2.html"></iframe></dd></dl>
+
+<dl class="attribute">
+<dt id="Event.type">
+<tt class="descclassname">Event.</tt><tt class="descname">type</tt><a class="headerlink" href="#Event.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 描述当前事件的类型</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">type</span><span class="p">);</span> <span class="c1">// &quot;click&quot;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Event.which">
+<tt class="descclassname">Event.</tt><tt class="descname">which</tt><a class="headerlink" href="#Event.which" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 对于键盘和鼠标按键, 这个属性代表键盘或鼠标按键的代码. which 对 charCode 和 keyCode 以及 button 进行了兼容. 推荐使用 which 来代替这些属性.</p>
+<p>显示当前按键信息</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">==</span><span class="s2">&quot;localhost&quot;</span><span class="p">){</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://localhost/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://yiminghe.github.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+   <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  
+<span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;whichkey&quot;</span> <span class="na">value=</span><span class="s">&quot;type something with keyboar or mouseup&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#whichkey&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;keydown mouseup&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span> 
+      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#log&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">type</span> <span class="o">+</span> <span class="s1">&#39;: &#39;</span> <span class="o">+</span>  <span class="nx">e</span><span class="p">.</span><span class="nx">which</span> <span class="p">);</span>
+    <span class="p">});</span>  
+
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<iframe width="100%" height="135" src="../../../static/api/core/event/which.html"></iframe></dd></dl>
+
+<dl class="attribute">
+<dt id="Event.isImmediatePropagationStopped">
+<tt class="descclassname">Event.</tt><tt class="descname">isImmediatePropagationStopped</tt><a class="headerlink" href="#Event.isImmediatePropagationStopped" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认false . 是否停止了该事件的后续所有事件处理器执行, 通过调用 <tt class="xref py py-meth docutils literal"><span class="pre">stopImmediatePropagation()</span></tt> 设置状态.</p>
+<p>检查是否 <tt class="docutils literal"><span class="pre">stopImmediatePropagation()</span></tt> 被调用了</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">==</span><span class="s2">&quot;localhost&quot;</span><span class="p">){</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://localhost/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://yiminghe.github.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+   <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  
+  <span class="nt">&lt;button&gt;</span>click me<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;stop-log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+  
+<span class="nt">&lt;script&gt;</span>
+<span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">immediatePropStopped</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="nx">e</span><span class="p">.</span><span class="nx">isImmediatePropagationStopped</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">msg</span> <span class="o">=</span>  <span class="s2">&quot;called&quot;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;not called&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#stop-log&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span> <span class="s2">&quot;&lt;div&gt;&quot;</span> <span class="o">+</span> <span class="nx">msg</span> <span class="o">+</span> <span class="s2">&quot;&lt;/div&gt;&quot;</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">immediatePropStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">stopImmediatePropagation</span><span class="p">();</span>
+  <span class="nx">immediatePropStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+<span class="p">});</span>  
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<iframe width="100%" height="135" src="../../../static/api/core/event/isImmediatePropagationStopped.html"></iframe></dd></dl>
+
+</div>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="Event.preventDefault">
+<tt class="descclassname">Event.</tt><tt class="descname">preventDefault</tt><big>(</big><big>)</big><a class="headerlink" href="#Event.preventDefault" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>preventDefault</strong> ()</div>
+<div class="line">阻止默认行为的发生.例如点击链接不会使浏览器跳转到新的地址. 我们可以使用 <tt class="xref py py-attr docutils literal"><span class="pre">isDefaultPrevented</span></tt> 来判断是否某个事件处理器里调用了这个方法.</div>
+</div>
+<p>阻止链接的跳转</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">==</span><span class="s2">&quot;localhost&quot;</span><span class="p">){</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://localhost/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://yiminghe.github.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+   <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.taobao.com&quot;</span><span class="nt">&gt;</span>default click action is prevented<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;div/&gt;&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;default &#39;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">type</span> <span class="o">+</span> <span class="s1">&#39; prevented&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">appendTo</span><span class="p">(</span><span class="s1">&#39;#log&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<iframe width="100%" height="135" src="../../../static/api/core/event/preventDefault.html"></iframe></dd></dl>
+
+<dl class="method">
+<dt id="Event.stopImmediatePropagation">
+<tt class="descclassname">Event.</tt><tt class="descname">stopImmediatePropagation</tt><big>(</big><big>)</big><a class="headerlink" href="#Event.stopImmediatePropagation" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>stopImmediatePropagation</strong> ()</div>
+<div class="line">停止当前事件冒泡. 不光停止冒泡到下一个事件目标, 当前目标上的任何后续监听函数, 也马上取消执行.</div>
+<div class="line">用 <tt class="xref py py-attr docutils literal"><span class="pre">isImmediatePropagationStopped</span></tt> 来判断是否调用了该方法.</div>
+</div>
+<p>阻止其他的事件处理器执行</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;style&gt;</span>
+<span class="nt">p</span> <span class="p">{</span> <span class="k">height</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">150px</span><span class="p">;</span> <span class="k">background-color</span><span class="o">:</span> <span class="m">#ccf</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">div</span> <span class="p">{</span><span class="k">height</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">150px</span><span class="p">;</span> <span class="k">background-color</span><span class="o">:</span> <span class="m">#cfc</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">==</span><span class="s2">&quot;localhost&quot;</span><span class="p">){</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://localhost/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://yiminghe.github.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+   <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;p&gt;</span>paragraph<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;div&gt;</span>division<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+      <span class="nx">event</span><span class="p">.</span><span class="nx">stopImmediatePropagation</span><span class="p">();</span>
+    <span class="p">});</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+      <span class="c1">// This function won&#39;t be executed</span>
+      <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">,</span> <span class="s2">&quot;#f00&quot;</span><span class="p">);</span>
+    <span class="p">});</span>  
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// This function will be executed</span>
+        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">,</span> <span class="s2">&quot;#f00&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<iframe width="100%" height="135" src="../../../static/api/core/event/stopImmediatePropagation.html"></iframe></dd></dl>
+
+<dl class="method">
+<dt id="Event.stopPropagation">
+<tt class="descclassname">Event.</tt><tt class="descname">stopPropagation</tt><big>(</big><big>)</big><a class="headerlink" href="#Event.stopPropagation" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>stopPropagation</strong> ()</div>
+<div class="line">停止事件沿 dom 树向上冒泡, 组织祖先节点的所有事件处理器执行.我们可以使用 <tt class="xref py py-attr docutils literal"><span class="pre">isPropagationStopped</span></tt> 来判断当前方法是否执行过.</div>
+<div class="line">该方法在 <a class="reference internal" href="fire.html#Event.fire" title="Event.fire"><tt class="xref py py-func docutils literal"><span class="pre">fire()</span></tt></a> 中也起作用.</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">调用该方法不会组织该节点其他事件处理器的运行, 如果要需要调用 <tt class="xref py py-meth docutils literal"><span class="pre">stopImmediatePropagation()</span></tt></p>
+</div>
+<p>阻止 click 事件的冒泡</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+  <span class="c1">// do something</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Event.isDefaultPrevented">
+<tt class="descclassname">Event.</tt><tt class="descname">isDefaultPrevented</tt><big>(</big><big>)</big><a class="headerlink" href="#Event.isDefaultPrevented" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>isDefaultPrevented</strong> ()</div>
+<div class="line">判断 <tt class="xref py py-meth docutils literal"><span class="pre">preventDefault()</span></tt> 是否被调用了.</div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+  <span class="nx">alert</span><span class="p">(</span> <span class="nx">event</span><span class="p">.</span><span class="nx">isDefaultPrevented</span><span class="p">()</span> <span class="p">);</span> <span class="c1">// false</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+  <span class="nx">alert</span><span class="p">(</span> <span class="nx">event</span><span class="p">.</span><span class="nx">isDefaultPrevented</span><span class="p">()</span> <span class="p">);</span> <span class="c1">// true</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Event.isPropagationStopped">
+<tt class="descclassname">Event.</tt><tt class="descname">isPropagationStopped</tt><big>(</big><big>)</big><a class="headerlink" href="#Event.isPropagationStopped" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>isPropagationStopped</strong> ()</div>
+<div class="line">判断 <tt class="xref py py-meth docutils literal"><span class="pre">stopPropagation()</span></tt> 是否被调用了.</div>
+</div>
+<p>判断 stopPropagation 是否被调用</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">==</span><span class="s2">&quot;localhost&quot;</span><span class="p">){</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://localhost/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://yiminghe.github.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+   <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  
+  <span class="nt">&lt;button&gt;</span>click me<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;stop-log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+  
+<span class="nt">&lt;script&gt;</span>
+<span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">propStopped</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="nx">e</span><span class="p">.</span><span class="nx">isPropagationStopped</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">msg</span> <span class="o">=</span>  <span class="s2">&quot;called&quot;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;not called&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#stop-log&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span> <span class="s2">&quot;&lt;div&gt;&quot;</span> <span class="o">+</span> <span class="nx">msg</span> <span class="o">+</span> <span class="s2">&quot;&lt;/div&gt;&quot;</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">propStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+  <span class="nx">propStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+<span class="p">});</span>  
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<iframe width="100%" height="135" src="../../../static/api/core/event/isPropagationStopped.html"></iframe></dd></dl>
+
+</div>
+</div>
+
+
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/loader/index.html">Loader</a></li>
+        <li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/lang/index.html">lang</a></li>
+        <li><a href="../../seed/web/index.html">web</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="../ua/index.html">ua</a></li>
+        <li><a href="../dom/index.html">DOM</a></li>
+        <li><a href="index.html">event</a></li>
+        <li><a href="../node/index.html">node</a></li>
+        <li><a href="../json/index.html">json</a></li>
+        <li><a href="../ajax/index.html">ajax</a></li>
+        <li><a href="../cookie/index.html">cookie</a></li>
+        <li><a href="../base/index.html">base</a></li>
+        <li><a href="../anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../../component/template/index.html">template</a></li>
+        <li><a href="../../component/datalazyload/index.html">datalazyload</a></li>
+        <li><a href="../../component/flash/index.html">flash</a></li>
+        <li><a href="../../component/dd/index.html">dd</a></li>
+        <li><a href="../../component/switchable/index.html">switchable</a></li>
+        <li><a href="../../component/suggest/index.html">suggest</a></li>
+        <li><a href="../../component/calendar/index.html">calendar</a></li>
+        <li><a href="../../component/imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../../component/overlay/index.html">overlay</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

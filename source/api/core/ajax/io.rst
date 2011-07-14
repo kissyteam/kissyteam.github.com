@@ -300,9 +300,10 @@ Events Detail
 
 Demo
 -------------------------------------------      
-    
-.. versionadded:: 1.2
-    载入并执行一段脚本
+
+    **载入并执行一段脚本**
+
+    .. versionadded:: 1.2
 
     .. code-block:: javascript
 
