@@ -15,8 +15,8 @@ Methods
 .. function:: KISSY.namespace
 
     | Object **KISSY.namespace** (n1[,....,global=false])
-    | 将 s.prototype 的成员复制到 r.prototype 上.
-    
+    | 根据参数创建命名空间对象
+
     :param string n1: 命名空间字符串, 如 ``"fp.search"`` 或 ``"KISSY.fp.ad"``
     :param boolean global: 是否第一个点之前的字符串作为全局变量, 默认 false 添加到 KISSY
     :returns: 最后创建的命名空间对象

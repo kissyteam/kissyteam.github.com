@@ -494,6 +494,22 @@ div.demo {
     border-bottom: 1px dotted #ccc;
     margin-bottom: 16px;
 }
+tt.descname {
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+tt.descclassname {
+    background-color: transparent;
+    display: none;
+}
+
+tt.xref, a tt {
+    background-color: transparent;
+    font-weight: bold;
+    color:#FF6600;
+}
 
 tt {
     font-family: arial;
@@ -547,6 +563,22 @@ dl.method dd{margin:0 0 0 30px;}
 dl.method dd>.line-block{margin:0 0 10px 0;}
 dl.method .versionchanged,
 dl.method .versionadded{margin-left:0!important;}
+
+cite, code, tt {
+    font-family: 'Arial';
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+}
+
+tt {
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 2px 5px;
+}
+
+tt.descname, tt.descclassname, tt.xref {
+    border: 0;
+}
 /*****************************************************************************
  * 布局
  *****************************************************************************/
@@ -611,7 +643,7 @@ dl.method .versionadded{margin-left:0!important;}
 
 
 /* 隐藏某些元素 */
-.class .property, tt.descclassname {
+tt.descclassname {
     display: none;
 }
 
@@ -683,7 +715,6 @@ div.related ul li a:hover {
     white-space:nowrap;
 }
 
-
 /** 搜索box **/
 #searchbox {
     position: absolute;
@@ -691,15 +722,10 @@ div.related ul li a:hover {
     top: 15px;
 }
 .searchbox input {
-    border: 1px solid #00A0E9;
+    border: 1px solid #999;
     height: 20px;
     line-height: 20px;
     vertical-align: middle;
-}
-.searchbox .btn {
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
 }
 
 #search-results, #searchbox2 {
@@ -708,3 +734,4 @@ div.related ul li a:hover {
 #search-results .search li span, #search-results .search li .context {
     display: none;
 }
+

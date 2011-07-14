@@ -74,4 +74,20 @@ placeholder(tip) 功能
 
     http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/tip.html
 
-    其中 `tip 代码 <http://docs.kissyui.com/kissy-editor/demo/tip.js>`_ 自行下载, 随意修改.
+    其中 `tip 代码 <http://docs.kissyui.com/kissy-editor/demo/tip.js>`_ 自行下载，随意修改。
+    
+    
+截获 paste 事件
+---------------------------------------
+
+可以通过监听编辑器实例对象的 "paste" 事件来截获用户粘贴的内容
+
+.. code-block:: javascript
+
+    var editor=KISSY.Editor(..);
+    editor.on("paste",function(ev){
+        var html=ev.html;// 用户的原始粘贴内容
+        // do sth to html
+        html="changed";
+        return html;  // 返回修改后的粘贴内容        
+    });     

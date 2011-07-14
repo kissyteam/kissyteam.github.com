@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 #
 # KISSY DOCS documentation build configuration file, created by
 # sphinx-quickstart on Fri Nov 05 10:54:36 2010.

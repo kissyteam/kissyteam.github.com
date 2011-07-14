@@ -80,6 +80,8 @@ by `承玉 <yiminghe@gmail.com>`_
 滚动属性动画实例
 ----------------------------------------------------------------
       
+.. versionadded:: 1.2      
+      
 .. raw:: html
 
     <button id="test-scroll">run scroll animation</button>
@@ -245,7 +247,8 @@ by `承玉 <yiminghe@gmail.com>`_
 节点上的 stop 示例
 ----------------------------------
 
-涉及 :meth:`~Node.stop` 方法
+.. versionadded:: 1.2
+    涉及 :meth:`~Node.NodeList.stop` 方法
 
 .. raw:: html   
 

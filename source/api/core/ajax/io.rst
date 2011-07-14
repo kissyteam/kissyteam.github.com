@@ -37,6 +37,15 @@ Config Attributes
   * :data:`cfg.xhrFields`
   * :data:`cfg.form`
 
+Events
+-----------------------------------------------
+
+  * :func:`start`
+  * :func:`send`
+  * :func:`success`
+  * :func:`error`
+
+
 Methods Detail
 -----------------------------------------------
 
@@ -238,6 +247,55 @@ Config Detail
 
     * 如果 form 的 enctype 为 `"multipart/form-data`` 则会采用 `iframe <http://www.webtoolkit.info/ajax-file-upload.html>`_ 的方式进行无刷新文件上传，
     * 否则将 form 内的输入域和值序列化后通过 xhr 发送到服务器.
+
+Events Detail
+-----------------------------------------------
+
+    所有 io 请求都会在 io 模块上触发事件，可通过 ``io.on`` 来捕获所有的 io 请求，例如
+
+    .. code-block:: javascript
+
+        var indicator=KISSY.one("#indicator"),num;
+
+        //发送前显示 loading 状态
+        io.on("send",function(){
+            num++;
+            indicator.show();
+        });
+
+        //发送后隐藏 loading 状态
+        io.on("complete",function(){
+            num--;
+            if(!num)
+                indicator.hide();
+        });
+
+.. function:: start
+
+    | **start** ()
+    | 当配置初始化后，获取传输对象前触发。事件对象包括一下属性
+
+    :param Object start.event.ajaxConfig:  当前的配置项
+
+    :param Object start.event.xhr:
+
+        .. versionadded:: 1.2
+            当前的请求关联的 :class:`~io.XhrObj` 对象
+
+.. function:: send
+
+    | **send** ()
+    | 请求发送前触发。可用于 loading indicator 显示时机。事件对象同 ``start`` 事件.
+
+.. function:: success
+
+    | **success** ()
+    | 服务器返回成功后触发.事件对象同 ``start`` 事件.
+
+.. function:: error
+
+    | **error** ()
+    | 服务器返回失败后触发.事件对象同 ``start`` 事件.
 
 
 Demo
