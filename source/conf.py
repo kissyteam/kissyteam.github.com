@@ -134,6 +134,7 @@ html_static_path = ['_static']
 html_sidebars = {
     #'**': ['globaltoc.html'],
     'api/**': ['apisidebar.html'],
+    'demo/**': ['demosidebar.html'],
 }
 
 # Additional templates that should be rendered to pages, maps page names to
