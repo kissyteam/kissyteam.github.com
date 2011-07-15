@@ -14,7 +14,7 @@ Method
 
 .. method:: post
 
-    | XHR **upload** ( url , [ data , callback , dataType ] )
+    | XHR **post** ( url , [ data , callback , dataType ] )
     | 发送 http post 请求
     
     :param string url: 请求地址
