@@ -1,4 +1,4 @@
-﻿.. py:currentmodule:: DD
+﻿.. py:currentmodule:: DraggableDelegate
 
 DraggableDelegate Demo
 =============================================
@@ -11,7 +11,7 @@ DraggableDelegate Demo
 Class
 -----------------------------------------------
 
-  * :class:`DD.DraggableDelegate`
+  * :class:`~DraggableDelegate.DraggableDelegate`
 
 .. _Component-dd-demo3:
 

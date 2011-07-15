@@ -1,4 +1,4 @@
-﻿.. py:currentmodule:: DD
+﻿.. py:currentmodule:: DroppableDelegate
 
 DroppableDelegate & Scroll Demo
 ==============================================================
@@ -11,7 +11,7 @@ DroppableDelegate & Scroll Demo
 Class
 -----------------------------------------------
 
-  * :class:`DD.DroppableDelegate`
+  * :class:`~DroppableDelegate.DroppableDelegate`
 
 .. _Component-dd-demo4:
 

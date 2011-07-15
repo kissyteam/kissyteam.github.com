@@ -1,4 +1,4 @@
-﻿.. py:currentmodule:: DD
+﻿.. py:currentmodule:: Droppable
 
 Droppable Demo
 ===============================================
@@ -11,7 +11,7 @@ Droppable Demo
 Class
 -----------------------------------------------
 
-  * :class:`Droppable`
+  * :class:`~Droppable.Droppable`
 
 
 .. _Component-dd-demo2:

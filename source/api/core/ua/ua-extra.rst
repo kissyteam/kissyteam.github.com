@@ -1,4 +1,4 @@
-.. module:: UA
+.. py:currentmodule:: UA
 
 .. _ua-extra:
 

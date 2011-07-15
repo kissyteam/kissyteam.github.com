@@ -1,4 +1,4 @@
-﻿.. py:currentmodule:: DD
+﻿.. py:currentmodule:: Draggable
 
 Draggable & Proxy Demos
 =====================================================
@@ -11,7 +11,7 @@ Draggable & Proxy Demos
 Class
 -----------------------------------------------
 
-  * :class:`DD.Draggable`
+  * :class:`~Draggable.Draggable`
 
 
 .. _Component-dd-demo1:
