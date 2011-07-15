@@ -1,16 +1,18 @@
 .. py:module:: DataLazyload
 
-DataLazyload
+DataLazyload Demos
 ===============================
 
 |  作者: `玉伯 <lifesinger@gmail.com>`_
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/datalazyload/impl.js>`_  | `Demo <../../../demo/component/datalazyload/index.html>`_
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/datalazyload/impl.js>`_
 
 
 Class
 -----------------------------------------------
 
   * :class:`DataLazyload`
+
+.. _Component-datalazyload-demo1:
 
 Demo - 基本使用
 -------------------------------
@@ -25,6 +27,7 @@ Demo - 基本使用
 
     这样, 页面加载时就会自动延迟所有图片的下载, 以及延迟特定 textarea 里的 html 渲染.
 
+.. _Component-datalazyload-demo2:
 
 Demo - 自动模式
 -------------------------------
@@ -56,6 +59,7 @@ Demo - 自动模式
         *  2010-07-12: 发现在 Firefox 下, 也有导致部分 Aborted 链接.
 
 
+.. _Component-datalazyload-demo3:
 
 Demo - 手动模式
 -------------------------------
@@ -74,6 +78,7 @@ Demo - 手动模式
         * 在任何浏览器下都可以完美实现, 不增加额外http连接数.
         * 缺点是不渐进增强, 无 JS 时, 图片不能展示.
 
+.. _Component-datalazyload-demo4:
 
 Demo - textarea 延迟加载
 ----------------------------------------------

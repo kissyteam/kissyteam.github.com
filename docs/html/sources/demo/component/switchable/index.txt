@@ -1,7 +1,7 @@
 .. currentmodule:: Switchable
 
 
-Switchable
+Switchable Demos
 ========================================================
 
 |  作者: `玉伯 <lifesinger@gmail.com>`_
@@ -11,6 +11,8 @@ Class
 -----------------------------------------------
 
   * :class:`Switchable`
+
+.. _Component-switchable-demo1:
 
 Demo - 使用基本的 Switchable
 --------------------------------------------------

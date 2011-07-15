@@ -1,9 +1,8 @@
 ﻿.. currentmodule:: Overlay
 
 
-Overlay
+Overlay Demos
 ========================================================
-
 
 |  作者: `承玉 <yiminghe@gmail.com>`_
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_
@@ -12,6 +11,8 @@ Class
 -----------------------------------------------
 
   * :class:`Overlay`
+
+.. _Component-overlay-demo1:
 
 Demo - 从 markup 中构建 overlay
 ----------------------------------------------------------
@@ -137,8 +138,8 @@ Demo - 从 markup 中构建 overlay
         });
 
 
+.. _Component-overlay-demo2:
 
-    
 Demo - 全新创建一个 Dialog
 ----------------------------------------------------------------------
 

@@ -1,6 +1,6 @@
 ﻿.. currentmodule:: DD
 
-DroppableDelegate & Scroll
+DroppableDelegate & Scroll Demo
 ==============================================================
 
 |  作者: 承玉<chengyu@taobao.com>
@@ -13,6 +13,7 @@ Class
 
   * :class:`DD.DroppableDelegate`
 
+.. _Component-dd-demo4:
 
 Demo - 基于拖放委托 + 容器自动滚动的拖放排序
 ---------------------------------------------------------------

@@ -1,6 +1,6 @@
 ﻿.. currentmodule:: DD
 
-Droppable
+Droppable Demo
 ===============================================
 
 |  作者: 承玉<chengyu@taobao.com>
@@ -13,7 +13,10 @@ Class
 
   * :class:`Droppable`
 
-Demo - 基本使用
+
+.. _Component-dd-demo2:
+
+Demo - Droppable 基本使用
 -------------------------------
 
     .. raw:: html

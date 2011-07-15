@@ -1,8 +1,7 @@
 ﻿.. currentmodule:: DD
 
-Draggable & Proxy
+Draggable & Proxy Demos
 =====================================================
-
 
 |  作者: 承玉<chengyu@taobao.com>
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/draggable.js>`_
@@ -14,8 +13,11 @@ Class
 
   * :class:`DD.Draggable`
 
-Demo
-=====================================
+
+.. _Component-dd-demo1:
+
+Demo - Draggable & Proxy 使用示例
+----------------------------------------------
 
     .. raw:: html
 

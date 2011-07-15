@@ -1,6 +1,6 @@
 ﻿.. currentmodule:: DD
 
-DraggableDelegate
+DraggableDelegate Demo
 =============================================
 
 |  作者: 承玉<chengyu@taobao.com>
@@ -13,7 +13,9 @@ Class
 
   * :class:`DD.DraggableDelegate`
 
-Demo
+.. _Component-dd-demo3:
+
+Demo - DraggableDelegate 使用示例
 -----------------------------------------------
 
     .. raw:: html

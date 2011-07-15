@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>DataLazyload &mdash; KISSY Docs valpha documentation</title>
+<title>DataLazyload Demos &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -73,7 +73,7 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../dd/index.html" title="DD"
+      <a href="../dd/draggable.html" title="Draggable &amp; Proxy Demos"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="../index.html" title="Component"
@@ -84,11 +84,11 @@
     </ul>
 </div>
 					
-  <span class="target" id="module-DataLazyload"></span><div class="section" id="datalazyload">
-<h1>DataLazyload<a class="headerlink" href="#datalazyload" title="Permalink to this headline">¶</a></h1>
+  <span class="target" id="module-DataLazyload"></span><div class="section" id="datalazyload-demos">
+<h1>DataLazyload Demos<a class="headerlink" href="#datalazyload-demos" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line">作者: <a class="reference external" href="mailto:lifesinger&#37;&#52;&#48;gmail&#46;com">玉伯</a></div>
-<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/datalazyload/impl.js">源码</a>  | <a class="reference external" href="../../../demo/component/datalazyload/index.html">Demo</a></div>
+<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/datalazyload/impl.js">源码</a></div>
 </div>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
@@ -98,8 +98,8 @@
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id3">
-<h2>Demo - 基本使用<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="demo">
+<span id="component-datalazyload-demo1"></span><h2>Demo - 基本使用<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;datalazyload&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">DataLazyload</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">S</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
@@ -111,8 +111,8 @@
 <p>这样, 页面加载时就会自动延迟所有图片的下载, 以及延迟特定 textarea 里的 html 渲染.</p>
 </div></blockquote>
 </div>
-<div class="section" id="id4">
-<h2>Demo - 自动模式<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="component-datalazyload-demo2">
+<span id="id3"></span><h2>Demo - 自动模式<a class="headerlink" href="#component-datalazyload-demo2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>使用自动模式时, 设置配置项中的 <tt class="docutils literal"><span class="pre">mod</span></tt> 为 &#8216;auto&#8217; , 如下:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">dataLazyload</span> <span class="o">=</span><span class="nx">DataLazyload</span><span class="p">({</span>
@@ -128,8 +128,8 @@
 <p>会把当前视窗外的 img 的 src 保存在自定义属性中, 并将 src 替换为 placeholder (不指定为空), 当滚动导致该图片出现在当前视窗时将 src 设置已经保存的真实值.</p>
 </div></blockquote>
 </div>
-<div class="section" id="id5">
-<h2>Demo - 手动模式<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="component-datalazyload-demo3">
+<span id="id4"></span><h2>Demo - 手动模式<a class="headerlink" href="#component-datalazyload-demo3" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>采用手动模式时, 需要自行在输出页面时, 可以不设置 img 的 src 属性, 但是必须设置 img 的 <tt class="docutils literal"><span class="pre">data-ks-lazyload</span></tt> 自定义属性为真实图片地址,  如:</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;img</span> <span class="na">data-ks-lazyload=</span><span class="s">&quot;xx.jpg&quot;</span> <span class="nt">/&gt;</span>
@@ -139,7 +139,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="demo-textarea">
-<h2>Demo - textarea 延迟加载<a class="headerlink" href="#demo-textarea" title="Permalink to this headline">¶</a></h2>
+<span id="component-datalazyload-demo4"></span><h2>Demo - textarea 延迟加载<a class="headerlink" href="#demo-textarea" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -159,8 +159,8 @@
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="id6">
-<h2>全部示例<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>全部示例<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference external" href="http://docs.kissyui.com/kissy/src/datalazyload/test.html">manual 模式</a></li>
