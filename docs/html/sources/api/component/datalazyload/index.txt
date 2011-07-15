@@ -14,7 +14,7 @@ DataLazyload
 Class
 -----------------------------------------------
 
-  * :class:`DataLazyload`
+  * :class:`~DataLazyload.DataLazyload`
 
   
 Config Attributes

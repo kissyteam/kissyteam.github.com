@@ -12,7 +12,7 @@ Draggable
 Class
 -----------------------------------------------
 
-  * :class:`KISSY.DD.Draggable`
+  * :class:`~Draggable.Draggable`
 
 Config Attributes
 -----------------------------------------------
@@ -52,9 +52,9 @@ Events
 Class Detail
 -----------------------------------------------
 
-.. class:: KISSY.DD.Draggable
+.. class:: Draggable
     
-    | **KISSY.DD.Draggable** (config)
+    | **Draggable** (config)
     
     :param Object config: 实例化可拖放对象的配置项, 详细见下节.
 

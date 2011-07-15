@@ -1,4 +1,4 @@
-.. module:: Popup
+.. module:: Overlay
 
 Popup
 ===============================================
@@ -11,13 +11,13 @@ Popup
 Class
 -----------------------------------------------
 
-  * :class:`Popup`
+  * :class:`~Overlay.Popup`
 
   
 Config Attributes
 -----------------------------------------------
 
-  与 :class:`Overlay` 的配置项完全相同, 其他新增配置项如下：
+  与 :class:`~Overlay.Overlay` 的配置项完全相同, 其他新增配置项如下：
   
   * :data:`trigger`
   * :data:`triggerType`
@@ -26,19 +26,19 @@ Config Attributes
 Properties
 -----------------------------------------------
 
-  * 同 :class:`Overlay` .
+  * 同 :class:`~Overlay.Overlay` .
 
   
 Methods
 -----------------------------------------------
 
-  * 同 :class:`Overlay` .
+  * 同 :class:`~Overlay.Overlay` .
 
   
 Events
 -----------------------------------------------
 
-  * 同 :class:`Overlay` , 包括 :func:`show` , :func:`hide` , :func:`beforeVisibleChange` .
+  * 同 :class:`~Overlay.Overlay` , 包括 :func:`show` , :func:`hide` , :func:`beforeVisibleChange` .
 
 
 Class Detail
@@ -55,7 +55,7 @@ Class Detail
 Config Attributes Detail
 -----------------------------------------------
 
-    与 :class:`Overlay` 的配置项完全相同, 其他新增配置项如下：
+    与 :class:`~Overlay.Overlay` 的配置项完全相同, 其他新增配置项如下：
     
 .. data:: trigger
 
@@ -69,19 +69,19 @@ Config Attributes Detail
 Properties Detail
 -----------------------------------------------
 
-    同 :class:`Overlay` .
+    同 :class:`~Overlay.Overlay` .
     
     
 Methods Detail
 -----------------------------------------------
 
-    同 :class:`Overlay` .
+    同 :class:`~Overlay.Overlay` .
     
     
 Events Detail
 -----------------------------------------------
 
-    同 :class:`Overlay` , 包括 :attr:`show` , :attr:`hide` , :attr:`beforeVisibleChange` .
+    同 :class:`~Overlay.Overlay` , 包括 :attr:`show` , :attr:`hide` , :attr:`beforeVisibleChange` .
 
                               
 

@@ -10,7 +10,7 @@ Scroll
 Class
 -----------------------------------------------
 
-  * :class:`DD.Scroll`
+  * :class:`~Scroll.Scroll`
 
 Config Attributes
 -----------------------------------------------
@@ -30,9 +30,9 @@ Methods
 Class Detail
 -----------------------------------------------
 
-.. class:: DD.Scroll
+.. class:: Scroll
     
-    | **DD.Scroll** (config)
+    | **Scroll** (config)
 
     :param Object config: 配置项, 详细见下方 **Config Attributes Detail**
     

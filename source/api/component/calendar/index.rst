@@ -11,7 +11,7 @@ Calendar
 Class
 -----------------------------------------------
 
-  * :class:`Calendar`
+  * :class:`~Calendar.Calendar`
 
 Config Attributes
 -----------------------------------------------

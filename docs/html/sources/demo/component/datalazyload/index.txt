@@ -1,4 +1,4 @@
-.. py:module:: DataLazyload
+.. py:currentmodule:: DataLazyload
 
 DataLazyload Demos
 ===============================

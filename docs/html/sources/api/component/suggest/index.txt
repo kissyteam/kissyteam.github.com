@@ -22,7 +22,7 @@ Suggest
 Class
 -----------------------------------------------
 
-  * :class:`Suggest`
+  * :class:`~Suggest.Suggest`
 
   
 Config Attributes

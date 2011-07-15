@@ -12,7 +12,7 @@ DDM
 Class
 -----------------------------------------------
 
-  * :class:`DD.DDM`
+  * :class:`~DDM.DDM`
   
 Properties
 -----------------------------------------------
@@ -39,7 +39,7 @@ Events
 Class Detail
 -----------------------------------------------
 
-.. class:: DD.DDM
+.. class:: DDM
     
     | **DD.DDM** ()
     
@@ -58,60 +58,60 @@ Events Detail
 .. function:: dragstart
     
     | **dragstart** (ev)
-    | 同 Draggable.dragstart , 只不过在 DDM 上触发.
+    | 同 :func:`Draggable.dragstart` , 只不过在 DDM 上触发.
 
 .. function:: drag
 
     | **drag** (ev)
-    | 同 Draggable.drag , 只不过在 DDM 上触发.
+    | 同 :func:`Draggable.drag` , 只不过在 DDM 上触发.
 
 .. function:: dragend
 
     | **dragend** (ev)
-    | 同 Draggable.dragend , 只不过在 DDM 上触发.
+    | 同 :func:`Draggable.dragend` , 只不过在 DDM 上触发.
 
 .. function:: dragenter
 
     | **dragenter** (ev)
-    | 同 Draggable.dragenter , 只不过在 DDM 上触发.
+    | 同 :func:`Draggable.dragenter` , 只不过在 DDM 上触发.
 
 .. function:: dragover
 
     | **dragover** (ev)
-    | 同 Draggable.dragover , 只不过在 DDM 上触发.
+    | 同 :func:`Draggable.dragover` , 只不过在 DDM 上触发.
 
 .. function:: dragexit
 
     | **dragexit** (ev)
-    | 同 Draggable.dragexit , 只不过在 DDM 上触发.
+    | 同 :func:`Draggable.dragexit` , 只不过在 DDM 上触发.
 
 .. function:: dragdrophit
 
     | **dragdrophit** (ev)
-    | 同 Draggable.dragdrophit , 只不过在 DDM 上触发.
+    | 同 :func:`Draggable.dragdrophit` , 只不过在 DDM 上触发.
 
 .. function:: dragdropmiss
 
     | **dragdropmiss** (ev)
-    | 同 Draggable.dragdropmiss , 只不过在 DDM 上触发.
+    | 同 :func:`Draggable.dragdropmiss` , 只不过在 DDM 上触发.
 
 .. function:: dropenter
 
     | **dropenter** (ev)
-    | 同 Droppable.dropenter , 只不过在 DDM 上触发.
+    | 同 :func:`Droppable.dropenter` , 只不过在 DDM 上触发.
 
 .. function:: dropover
 
     | **dropover** (ev)
-    | 同 Droppable.dropover , 只不过在 DDM 上触发.
+    | 同 :func:`Droppable.dropover` , 只不过在 DDM 上触发.
 
 .. function:: dropexit
 
     | **dropexit** (ev)
-    | 同 Droppable.dropexit , 只不过在 DDM 上触发.
+    | 同 :func:`Droppable.dropexit` , 只不过在 DDM 上触发.
 
 .. function:: drophit
 
     | **drophit** (ev)
-    | 同 Droppable.drophit , 只不过在 DDM 上触发.
+    | 同 :func:`Droppable.drophit` , 只不过在 DDM 上触发.
 

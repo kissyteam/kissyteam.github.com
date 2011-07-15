@@ -11,7 +11,7 @@ Switchable
 Class
 -----------------------------------------------
 
-  * :class:`Switchable`
+  * :class:`~Switchable.Switchable`
 
   
 Config Attributes
@@ -232,7 +232,7 @@ Config Attributes Detail
 
     .. note::
 
-        支持懒加载, 需要载入 S.Datalazyload, 详见 :class:`Datalazyload`
+        支持懒加载, 需要载入 S.Datalazyload, 详见 :class:`~Datalazyload.Datalazyload`
 
 .. data:: aria
 

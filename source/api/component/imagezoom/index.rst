@@ -10,7 +10,7 @@ ImageZoom
 Class
 -----------------------------------------------
 
-  * :class:`ImageZoom`
+  * :class:`~ImageZoom.ImageZoom`
 
 Config Attributes
 -----------------------------------------------

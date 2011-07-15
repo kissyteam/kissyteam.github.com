@@ -1,4 +1,4 @@
-﻿.. currentmodule:: DD
+﻿.. py:currentmodule:: DD
 
 Draggable & Proxy Demos
 =====================================================

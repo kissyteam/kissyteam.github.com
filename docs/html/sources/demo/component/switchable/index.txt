@@ -1,4 +1,4 @@
-.. currentmodule:: Switchable
+.. py:currentmodule:: Switchable
 
 
 Switchable Demos

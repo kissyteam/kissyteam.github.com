@@ -12,7 +12,7 @@ DraggableDelegate
 Class
 -----------------------------------------------
 
-  * :class:`DD.DraggableDelegate`
+  * :class:`~DraggableDelegate.DraggableDelegate`
 
 Config Attributes
 -----------------------------------------------
@@ -48,9 +48,9 @@ Events
 Class Detail
 -----------------------------------------------
 
-.. class:: DD.DraggableDelegate
+.. class:: DraggableDelegate
     
-    | **DD.DraggableDelegate** (config)
+    | **DraggableDelegate** (config)
 
     :param Object config: 配置项, 详细见下方 **Config Attributes Detail**
     
@@ -100,40 +100,40 @@ Events Detail
 .. function:: dragstart
     
     | **dragstart** (ev)
-    | 同 Draggable.dragstart
+    | 同 :func:`Draggable.dragstart`
 
 .. function:: drag
 
     | **drag** (ev)
-    | 同 Draggable.drag
+    | 同 :func:`Draggable.drag`
 
 .. function:: dragend
 
     | **dragend** (ev)
-    | 同 Draggable.dragend
+    | 同 :func:`Draggable.dragend`
 
 .. function:: dragenter
 
     | **dragenter** (ev)
-    | 同 Draggable.dragenter
+    | 同 :func:`Draggable.dragenter`
 
 .. function:: dragover
 
     | **dragover** (ev)
-    | 同 Draggable.dragover
+    | 同 :func:`Draggable.dragover`
 
 .. function:: dragexit
 
     | **dragexit** (ev)
-    | 同 Draggable.dragexit
+    | 同 :func:`Draggable.dragexit`
 
 .. function:: dragdrophit
 
     | **dragdrophit** (ev)
-    | 同 Draggable.dragdrophit
+    | 同 :func:`Draggable.dragdrophit`
 
 .. function:: dragdropmiss
 
     | **dragdropmiss** (ev)
-    | 同 Draggable.dragdropmiss
+    | 同 :func:`Draggable.dragdropmiss`
 

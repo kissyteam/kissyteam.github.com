@@ -12,7 +12,7 @@ DroppableDelegate
 Class
 -----------------------------------------------
 
-  * :class:`DD.DroppableDelegate`
+  * :class:~DroppableDelegate.DroppableDelegate`
 
 Config Attributes
 -----------------------------------------------
@@ -42,9 +42,9 @@ Events
 Class Detail
 -----------------------------------------------
 
-.. class:: DD.DroppableDelegate
+.. class:: DroppableDelegate
     
-    | **DD.DroppableDelegate** (config)
+    | **DroppableDelegate** (config)
 
     :param Object config: 配置项, 详细见下方 **Config Attributes Detail**
     
@@ -83,20 +83,20 @@ Events Detail
 .. function:: dropenter
 
     | **dropenter** (ev)
-    | 同 Droppable.dropenter
+    | 同 :func:`Droppable.dropenter`
 
 .. function:: dropover
 
     | **dropover** (ev)
-    | 同 Droppable.dropover
+    | 同 :func:`Droppable.dropover`
 
 .. function:: dropexit
 
     | **dropexit** (ev)
-    | 同 Droppable.dropexit
+    | 同 :func:`Droppable.dropexit`
 
 .. function:: drophit
 
     | **drophit** (ev)
-    | 同 Droppable.drophit 
+    | 同 :func:`Droppable.drophit`
 

@@ -10,7 +10,7 @@ Proxy
 Class
 -----------------------------------------------
 
-  * :class:`DD.Proxy`
+  * :class:`~Proxy.Proxy`
 
 Config Attributes
 -----------------------------------------------
@@ -28,9 +28,9 @@ Methods
 Class Detail
 -----------------------------------------------
 
-.. class:: DD.Proxy
+.. class:: Proxy
     
-    | **DD.Proxy** (config)
+    | **Proxy** (config)
 
     :param Object config: 配置项, 详细见下方 **Config Attributes Detail**
     

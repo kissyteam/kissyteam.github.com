@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Suggest
+﻿.. py:currentmodule:: Suggest
 
 Suggest Demos
 ======================================

@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Overlay
+﻿.. py:currentmodule:: Overlay
 
 
 Overlay Demos

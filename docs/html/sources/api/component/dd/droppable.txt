@@ -13,7 +13,7 @@ Droppable
 Class
 -----------------------------------------------
 
-  * :class:`Droppable`
+  * :class:`~Droppable.Droppable`
 
   
 Config Attributes

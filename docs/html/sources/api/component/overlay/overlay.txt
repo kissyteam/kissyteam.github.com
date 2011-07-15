@@ -10,7 +10,7 @@ Overlay
 Class
 -----------------------------------------------
 
-  * :class:`KISSY.Overlay`
+  * :class:`~Overlay.Overlay`
 
 Config Attributes
 -----------------------------------------------
@@ -61,9 +61,9 @@ Events
 Class Detail
 -----------------------------------------------
 
-.. class:: KISSY.Overlay
+.. class:: Overlay
     
-    | **KISSY.Overlay** (config)
+    | **Overlay** (config)
     
     :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
 
