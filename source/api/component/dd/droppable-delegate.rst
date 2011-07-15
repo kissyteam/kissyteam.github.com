@@ -3,11 +3,12 @@
 DroppableDelegate
 ===============================================
 
+.. versionadded:: 1.2
+
 |  为 Draggable 对象提供所需要的代理节点
 |  作者: `承玉 <chengyu@taobao.com>`_
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/droppable-delegate.js>`_  | `Demo <../../../demo/component/dd/droppable-delegate.html>`_
 
-.. versionadded:: 1.2
 
 Class
 -----------------------------------------------

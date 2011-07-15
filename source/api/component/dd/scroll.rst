@@ -3,6 +3,8 @@
 Scroll
 ===============================================
 
+.. versionadded:: 1.2
+
 |  监控容器关联的所有可拖放对象, 必要时随着可拖放对象进行自动滚动.
 |  作者: `承玉 <chengyu@taobao.com>`_
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/scroll.js>`_  | `Demo <../../../demo/component/dd/droppabledelegate.html>`_

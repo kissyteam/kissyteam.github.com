@@ -3,11 +3,12 @@
 DDM
 ===============================================
 
+.. versionadded:: 1.2
+
 |  拖放的中央控制对象, 所有的拖放实例的事件都会向其冒泡.
 |  作者: `承玉 <chengyu@taobao.com>`_
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/ddm.js>`_  | `Demo <../../../demo/component/dd/ddm.html>`_
 
-.. versionadded:: 1.2
 
 Class
 -----------------------------------------------
@@ -41,7 +42,7 @@ Class Detail
 
 .. class:: DDM
     
-    | **DD.DDM** ()
+    | **DDM** ()
     
 
 Properties Detail
