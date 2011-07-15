@@ -6,6 +6,9 @@ Overlay
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_  | `Demo <../../../demo/component/overlay/>`_
 
 
+Classes in Overlay
+-----------------------------------------------
+
 .. toctree::
    :titlesonly:
 

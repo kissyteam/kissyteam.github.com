@@ -13,7 +13,7 @@ DroppableDelegate
 Class
 -----------------------------------------------
 
-  * :class:~DroppableDelegate.DroppableDelegate`
+  * :class:`~DroppableDelegate.DroppableDelegate`
 
 Config Attributes
 -----------------------------------------------

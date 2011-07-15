@@ -3,10 +3,11 @@
 DraggableDelegate Demo
 =============================================
 
+.. versionadded:: 1.2
+
 |  作者: 承玉<chengyu@taobao.com>
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/draggable-delegate.js>`_
 
-.. versionadded:: 1.2
 
 Class
 -----------------------------------------------
@@ -154,57 +155,57 @@ Demo - DraggableDelegate 使用示例
 
     **引入 kissy.js**
 
-        .. code-block:: html
+    .. code-block:: html
 
-            <script src='kissy.js'></script>
+        <script src='kissy.js'></script>
 
     **组织HTML**
 
-        .. code-block:: html
+    .. code-block:: html
 
-            <div id="container3" class="container">
+        <div id="container3" class="container">
 
-                <div class="component">
-                    <div class="cheader">
-                        拖动头
-                    </div>
-                    delegate drag
+            <div class="component">
+                <div class="cheader">
+                    拖动头
                 </div>
-
-                <button id="add_delegate">add delegate drag</button>
-
-
-                <div id="drop3">
-                    drop zone
-                </div>
+                delegate drag
             </div>
+
+            <button id="add_delegate">add delegate drag</button>
+
+
+            <div id="drop3">
+                drop zone
+            </div>
+        </div>
 
 
 
     **调用DraggableDelegate**
 
+    .. code-block:: javascript
+
+        KISSY.use("node,dd", function (S, Node, DD) {
+            var DDM = DD.DDM,
+                DraggableDelegate = DD.DraggableDelegate,
+                Droppable = DD.Droppable;
+        });
+
+    .. versionadded:: 1.2
+        通过 use 加载 dd 模块：
+
         .. code-block:: javascript
 
-            KISSY.use("node,dd", function (S, Node, DD) {
-                var DDM = DD.DDM,
-                    DraggableDelegate = DD.DraggableDelegate,
-                    Droppable = DD.Droppable;
+            KISSY.use("dd",function(S,DD){
+                var DraggableDelegate = DD.DraggableDelegate;
             });
 
-        .. versionadded:: 1.2
-            通过 use 加载 dd 模块：
+        得到 :class:`DraggableDelegate` 构造器.
 
-            .. code-block:: javascript
+    .. seealso::
 
-                KISSY.use("dd",function(S,DD){
-                    var DraggableDelegate = DD.DraggableDelegate;
-                });
-
-            得到 :class:`DraggableDelegate` 构造器.
-
-        .. seealso::
-
-            KISSY 1.2 :mod:`Loader` 新增功能
+        KISSY 1.2 :mod:`Loader` 新增功能
 
 
     **初始化拖放委托对象**

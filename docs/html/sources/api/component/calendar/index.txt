@@ -194,6 +194,6 @@ Events Detail
 
 .. function:: timeSelect
 
-    | **timeSelect** ()
+    | **timeSelect** (e)
     | 确定选中时间事件,通过e.date来获得日期时间
 

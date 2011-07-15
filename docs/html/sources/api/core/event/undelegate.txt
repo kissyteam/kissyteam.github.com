@@ -15,7 +15,7 @@ Methods
 
 .. function::  undelegate
 
-    | void **on** ( selector ,  eventType [ , filter , fn  , scope ] )
+    | void **undelegate** ( selector ,  eventType [ , filter , fn  , scope ] )
     | 为符合匹配的 dom 节点的相应事件添加事件处理器, 并在该节点的子孙节点中匹配 filter 的节点上触发事件时调用.
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`

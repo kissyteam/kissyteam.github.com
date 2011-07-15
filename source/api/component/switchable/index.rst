@@ -7,6 +7,9 @@
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/switchable/>`_ | `Demo <../../../demo/switchable/index.html>`_
 
 
+Classes in Switchable
+-----------------------------------------------
+
 .. toctree::
    :titlesonly:
 

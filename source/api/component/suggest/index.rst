@@ -176,9 +176,10 @@ Config Attributes Detail
     
 .. data:: contentRender
 
+    .. versionadded:: 1.2
+
     {Function} - 默认为 null , 提示层内容渲染器. 该渲染器以返回的data为唯一参数, 且返回渲染的内容,可选项要求由"li"标签包裹, 并将用于表单提交的值存储在"li"元素的key属性上.
     
-    .. versionadded:: 1.2
 
     
 Properties Detail

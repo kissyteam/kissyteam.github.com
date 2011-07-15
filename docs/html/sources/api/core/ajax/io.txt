@@ -279,8 +279,8 @@ Events Detail
 
     :param Object start.event.xhr:
 
-        .. versionadded:: 1.2
-            当前的请求关联的 :class:`~io.XhrObj` 对象
+    .. versionadded:: 1.2
+        当前的请求关联的 :class:`~io.XhrObj` 对象
 
 .. function:: send
 

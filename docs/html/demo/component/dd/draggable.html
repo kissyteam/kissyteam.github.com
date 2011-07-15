@@ -86,12 +86,12 @@
 					
   <div class="section" id="draggable-proxy-demos">
 <h1>Draggable &amp; Proxy Demos<a class="headerlink" href="#draggable-proxy-demos" title="Permalink to this headline">¶</a></h1>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
 <div class="line-block">
 <div class="line">作者: 承玉&lt;<a class="reference external" href="mailto:chengyu&#37;&#52;&#48;taobao&#46;com">chengyu<span>&#64;</span>taobao<span>&#46;</span>com</a>&gt;</div>
 <div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/dd/draggable.js">源码</a></div>
 </div>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.2.</span></p>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -130,33 +130,26 @@
         });
     });
 </script><p><strong>引入 kissy.js</strong></p>
-<blockquote>
-<div><div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 </div>
-</div></blockquote>
 <p><strong>组织HTML</strong></p>
-<blockquote>
-<div><div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;test-drag&#39;</span> <span class="na">style=</span><span class="s">&#39;border:1px solid red;</span>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;test-drag&#39;</span> <span class="na">style=</span><span class="s">&#39;border:1px solid red;</span>
 <span class="s">                    background:blue;width:100px;</span>
 <span class="s">                    height:100px;color:white;&#39;</span><span class="nt">&gt;</span>
   drag me
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
 </div>
-</div></blockquote>
 <p><strong>设置代理节点样式</strong></p>
-<blockquote>
-<div><div class="highlight-html"><div class="highlight"><pre>.ks-dd-proxy {
+<div class="highlight-html"><div class="highlight"><pre>.ks-dd-proxy {
     opacity:0.2;
     *filter:alpha(opacity=20);
 }
 </pre></div>
 </div>
-</div></blockquote>
 <p><strong>初始化 draggable 对象</strong></p>
-<blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">){</span>
     <span class="kd">var</span> <span class="nx">drag</span><span class="o">=</span><span class="k">new</span> <span class="nx">DD</span><span class="p">.</span><span class="nx">Draggable</span><span class="p">({</span>
         <span class="nx">node</span><span class="o">:</span><span class="s1">&#39;#test-drag&#39;</span><span class="p">,</span>
         <span class="nx">cursor</span><span class="o">:</span><span class="s1">&#39;move&#39;</span>
@@ -164,16 +157,12 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-</div></blockquote>
 <p><strong>初始化 proxy 对象</strong></p>
-<blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">Proxy</span><span class="p">().</span><span class="nx">attach</span><span class="p">(</span><span class="nx">drag</span><span class="p">);</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">Proxy</span><span class="p">().</span><span class="nx">attach</span><span class="p">(</span><span class="nx">drag</span><span class="p">);</span>
 </pre></div>
 </div>
-</div></blockquote>
 <p><strong>监控事件, 处理移动</strong></p>
-<blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">drag</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;drag&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">drag</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;drag&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
     <span class="nx">drag</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">).</span><span class="nx">offset</span><span class="p">({</span>
         <span class="nx">left</span><span class="o">:</span><span class="nx">ev</span><span class="p">.</span><span class="nx">left</span><span class="p">,</span>
         <span class="nx">top</span><span class="o">:</span><span class="nx">ev</span><span class="p">.</span><span class="nx">top</span>
@@ -181,7 +170,6 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-</div></blockquote>
 </div></blockquote>
 </div>
 </div>

@@ -4,7 +4,7 @@ Dialog
 ===============================================
 
 |  对话框.
-|  扩展于 :class:`~Ovleray.Overlay`
+|  扩展于 :class:`Overlay`
 |  作者: `承玉 <yiminghe@gmail.com>`_
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_  | `Demo <../../../demo/component/overlay/>`_
 
@@ -16,7 +16,7 @@ Class
 Config Attributes
 -----------------------------------------------
 
-  除了 :attr:`content` 配置项外与 :class:`~Ovleray.Overlay` 的配置项完全相同, 其他新增配置项如下：
+  除了 :attr:`content` 配置项外与 :class:`Overlay` 的配置项完全相同, 其他新增配置项如下：
   
   * :data:`headerContent`
   * :data:`bodyContent`
@@ -29,7 +29,7 @@ Config Attributes
 Properties
 -----------------------------------------------
 
-  除了 :class:`~Ovleray.Overlay` 的所有属性之外还有：
+  除了 :class:`Overlay` 的所有属性之外还有：
   
   * :attr:`header`
   * :attr:`body`
@@ -41,12 +41,12 @@ Properties
 Methods
 -----------------------------------------------
 
-  * 同 :class:`~Ovleray.Overlay` .
+  * 同 :class:`Overlay` .
 
 Events
 -----------------------------------------------
 
-  * 同 :class:`~Ovleray.Overlay` , 包括 :attr:`Ovleray.show` , :attr:`Ovleray.hide` , :attr:`Ovleray.beforeVisibleChange` .
+  * 同 :class:`Overlay` , 包括 :func:`show` , :func:`hide` , :func:`beforeVisibleChange` .
 
 
 Class Detail
@@ -78,7 +78,7 @@ Class Detail
 Config Attributes Detail
 -----------------------------------------------
 
-    除了 :attr:`content` 配置项外与 :class:`~Ovleray.Overlay` 的配置项完全相同, 但是新增了一些配置项如下所示：
+    除了 :attr:`content` 配置项外与 :class:`Overlay` 的配置项完全相同, 但是新增了一些配置项如下所示：
 
 .. data:: headerContent
 
@@ -116,7 +116,7 @@ Config Attributes Detail
         
 .. data:: constrain
 
-    {Boolean | String} - 和 :class:`~DD.Draggable` 配合, 限制拖动的范围.
+    {Boolean | String} - 和 :class:`~Draggable.Draggable` 配合, 限制拖动的范围.
         * 取值选择器字符串时, 则在限制拖动范围为根据该选择器字符串取到的第一个节点所在区域.
         * 取值 true 时, 只能在当前视窗范围内拖动.
         * 取值 false 时, 可任意移动, 例如：
@@ -140,7 +140,7 @@ Config Attributes Detail
 Properties Detail
 -----------------------------------------------
     
-    除了 :class:`~Ovleray.Overlay` 的所有属性之外还有：
+    除了 :class:`Overlay` 的所有属性之外还有：
 
 .. attribute:: header
 
@@ -174,10 +174,10 @@ Properties Detail
 Methods Detail
 -----------------------------------------------
 
-    同 :class:`~Ovleray.Overlay` .
+    同 :class:`Overlay` .
     
 
 Events Detail
 -----------------------------------------------
 
-    同 :class:`Overlay` , 包括 :attr:`show` , :attr:`hide` , :attr:`beforeVisibleChange` .
+    同 :class:`Overlay` , 包括 :func:`show` , :func:`hide` , :func:`beforeVisibleChange` .

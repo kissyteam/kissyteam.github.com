@@ -130,14 +130,16 @@ Config Attributes Detail
     ``points`` 字符串数组元素的取值范围为  t,b,c 与 l,r,c 的两两组合, 分别表示 top,bottom,center 与 left,right,center 的两两组合,
     可以表示 9 种取值范围.
     
-        .. note::
-        
-            第一个字符取值 t,b,c , 第二个字符取值 l,r,c. 如下图所示
-        
-            .. image:: /_images/overlay/align.png
-                :width: 380 px
+    .. note::
+
+        第一个字符取值 t,b,c , 第二个字符取值 l,r,c. 如下图所示
+
+        .. image:: /_images/overlay/align.png
+            :width: 380 px
                 
 .. data:: effect
+
+    .. versionadded:: 1.2
 
     {Object} - 可选, 显示或隐藏时的特效支持, 例如：
     
@@ -149,11 +151,12 @@ Config Attributes Detail
             duratiion:3       // {Number} - 可选, 动画持续时间, 以秒为单位.
         }
             
-    .. versionadded:: 1.2    
-    
+
 .. data:: resize
-        
-        {Object} - 可选, 拖动调整大小的配置, 例如：
+
+    .. versionadded:: 1.2
+
+    {Object} - 可选, 拖动调整大小的配置, 例如：
     
     .. code-block:: javascript
     
@@ -168,13 +171,12 @@ Config Attributes Detail
     ``handlers`` 配置表示的数组元素可取上述八种值之一, t,b,l,r 分别表示 top,bottom,left,right, 加上组合共八种取值,
     可在上, 下, 左, 右以及左上, 左下, 右上, 右下进行拖动.
     
-    .. versionadded:: 1.2
-    
+
 Properties Detail
 -----------------------------------------------
 
 
-当根据配置实例化 overlay 得到当前实例后, 可调用实例上的 get 方法得到实例的特定属性以及 set 方法设置属性的值, 例如
+    当根据配置实例化 overlay 得到当前实例后, 可调用实例上的 get 方法得到实例的特定属性以及 set 方法设置属性的值, 例如
 
     .. code-block:: javascript
     

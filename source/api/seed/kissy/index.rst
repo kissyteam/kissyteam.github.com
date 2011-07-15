@@ -10,6 +10,11 @@ KISSY
 |  源码: `查看 <https://github.com/kissyteam/kissy/tree/master/src/seed/kissy.js>`_
 
 
+Module
+-----------------------------------------------
+
+  :mod:`Seed`
+
 Methods
 -----------------------------------------------
 
