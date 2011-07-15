@@ -1,6 +1,6 @@
 .. currentmodule:: io
 
-io.post()
+io.post
 =================================
 
 Module
