@@ -39,6 +39,7 @@ Config Attributes
   * :data:`effect`
   * :data:`duration`
   * :data:`easing`
+  * :data:`nativeAnim`
   * :data:`lazyDataType`
   * :data:`aria`  
  
@@ -225,6 +226,10 @@ Config Attributes Detail
 .. data:: easing
 
     {String|Function} - 动画效果, 详见 :class:`Anim`, 默认为 ``easeNone`` .
+
+.. data:: nativeAnim
+
+    {Boolean} - 是否优先使用原生 css3 transition, 默认为 ``true``, 同 :class:`Anim` 中的  `nativeSupport` 参数  .
 
 
 .. data:: lazyDataType
