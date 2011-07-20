@@ -29,6 +29,23 @@ Methods
    event-object.rst
 
 
+特殊事件支持
+----------------------------------------------------
+
+对于 DOM 节点， ``kissy`` 支持以下特殊事件
+
+
+.. toctree::
+   :titlesonly:
+
+
+   focusin.rst
+   focusout.rst
+   hashchange.rst
+   valuechange.rst
+   mousenter.rst
+   mouseleave.rst
+
 .. note::
 
     部分文档与例子来自 `jquery <http://api.jquery.com>`_   
