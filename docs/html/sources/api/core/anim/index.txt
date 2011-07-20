@@ -39,8 +39,10 @@ Class Detail
                 height:"100px"
             }
         
-        表示节点将从当前宽高经过动画平滑变化到宽 100px 与高 100px
-        也可以设置 scrollLeft 或者 scrollTop, 这时会直接对元素的滚动属性产生动画.
+        表示节点将从当前宽高经过动画平滑变化到宽 100px 与高 100px.
+        
+        .. versionadded:: 1.2
+            也可以设置 scrollLeft 或者 scrollTop, 这时会直接对元素的滚动属性产生动画.
         
     :param Number duration: 默认为 1 , 动画持续时间, 以秒为单元.
     :param String easing: 默认为 'easeNone' , 动画平滑函数, 可取值 “easeNone”,”easeIn”,”easeOut”,”easeBoth”,”easeInStrong”, “easeOutStrong”,”easeBothStrong”,”elasticIn”,”elasticOut”, “elasticBoth”,”backIn”,”backOut”,”backBoth”, “bounceIn”,”bounceOut”,”bounceBoth”. 效果预览, 可以参考 Robert Penner 博士的： `easing_demo.html <http://www.robertpenner.com/easing/easing_demo.html>`_ .
