@@ -65,11 +65,12 @@ Config Attributes Detail
     {String} - 默认是 'manul',懒处理模式.
     
         * 'auto' : 自动化. html 输出时, 不对 img.src 做任何处理
-        * 'manul' : 输出 html 时, 已经将需要延迟加载的图片的 src 属性替换为 IMG_SRC_DATA
+        * 'manual' : 输出 html 时, 已经将需要延迟加载的图片的 src 属性替换为 'data-ks-lazyload'
         
     .. note::
 
-        对于 textarea 数据, 只有手动模式
+        - 对于 textarea 数据, 只有手动模式;
+        - 当使用 'manual' 模式时, 对 img 元素使用 ``data-ks-lazyload`` 后, 如果这个 img 元素或其父级元素为隐藏状态, 此时, datalazyload 无法起作用, 因为隐藏状态下的 img 的 ``offset.top`` 计算永远为 0, 永远处于 datalazyload 阈值之内, 这种情况下, 直接使用 textarea 更靠谱.
 
 .. data:: diff
 

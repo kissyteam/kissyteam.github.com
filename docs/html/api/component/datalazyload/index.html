@@ -168,12 +168,15 @@
 <blockquote>
 <div><ul class="simple">
 <li>&#8216;auto&#8217; : 自动化. html 输出时, 不对 img.src 做任何处理</li>
-<li>&#8216;manul&#8217; : 输出 html 时, 已经将需要延迟加载的图片的 src 属性替换为 IMG_SRC_DATA</li>
+<li>&#8216;manual&#8217; : 输出 html 时, 已经将需要延迟加载的图片的 src 属性替换为 &#8216;data-ks-lazyload&#8217;</li>
 </ul>
 </div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">对于 textarea 数据, 只有手动模式</p>
+<ul class="last simple">
+<li>对于 textarea 数据, 只有手动模式;</li>
+<li>当使用 &#8216;manual&#8217; 模式时, 对 img 元素使用 <tt class="docutils literal"><span class="pre">data-ks-lazyload</span></tt> 后, 如果这个 img 元素或其父级元素为隐藏状态, 此时, datalazyload 无法起作用, 因为隐藏状态下的 img 的 <tt class="docutils literal"><span class="pre">offset.top</span></tt> 计算永远为 0, 永远处于 datalazyload 阈值之内, 这种情况下, 直接使用 textarea 更靠谱.</li>
+</ul>
 </div>
 </dd></dl>
 
