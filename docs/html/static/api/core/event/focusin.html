@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>  
+    <style>
+        .info {
+            display:none;
+            color:red;
+        }
+    </style>
+    <script>
+        if(location.host=="localhost"){
+            document.writeln('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+        }else{
+            document.writeln('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+        }
+   </script>
+</head>
+<body>
+  <form id='f'>
+    
+    <div>
+        <label>姓名：<input/><span class='info'> i get focus</span></label>
+    </div>
+    
+    <div>
+        <label>密码：<input/><span class='info'>i get focus</span></label>
+    </div>
+    
+  </form>
+<script>
+    var $=KISSY.all;
+    
+    $("#f").on("focusin",function(e){
+        var t=$(e.target);
+        t.next(".info").stop().show().fadeOut();
+    });
+</script>
+
+</body>
+</html>

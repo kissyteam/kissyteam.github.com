@@ -123,6 +123,13 @@
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">hasData( selector ) 可以判断一个元素是否经过 <a class="reference internal" href="data.html#DOM.data" title="DOM.data"><tt class="xref py py-func docutils literal"><span class="pre">DOM.data()</span></tt></a> 设置过扩展属性，而如果直接调用 <tt class="docutils literal"><span class="pre">DOM.data(</span> <span class="pre">selector</span> <span class="pre">)</span></tt>
+那么当元素没有设置过扩展属性时，会在元素上关联一个空存储对象，并返回它.</p>
+</div>
 <p>举例：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">;</span>
 
@@ -142,8 +149,6 @@
 <span class="nx">DOM</span><span class="p">.</span><span class="nx">hasData</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span> <span class="c1">//=&gt; false</span>
 </pre></div>
 </div>
-</dd></dl>
-
 </div>
 </div>
 

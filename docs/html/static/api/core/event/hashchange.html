@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        if(location.host=="localhost"||location.host=="chengyu.taobao.ali.com"){
+            document.writeln('<script src="http://'+location.host+'/kissy_git/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+        }else{
+            document.writeln('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+        }
+   </script>
+</head>
+<body>
+    
+    <div id='cool' style='display:none;width:200px;height:100px;line-height:100px;border:1px solid red;'>
+        
+        ooh,some cool features shows
+        
+    </div>
+    
+    <label>输入 hash :<input id='in' /> </label>
+    
+    <button id='ok'>确定</button>
+    
+    
+    <div>try input cool</div>
+
+<script>       
+    KISSY.use("node",function(S,Node){   
+        location.hash='#';
+        var $=Node.all;
+        
+        $('#ok').on("click",function(){
+            location.hash=$("#in").val();
+        });
+        
+        $('#in').on("keydown",function(e){
+            if(e.keyCode==13)
+            location.hash=$("#in").val();
+        });
+        
+        $(window).on("hashchange",function(){
+            if(location.hash == "#cool"){
+                $("#cool").show(1);
+            }else{
+                $("#cool").stop(true).hide();
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

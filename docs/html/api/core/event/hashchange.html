@@ -85,8 +85,81 @@
     </ul>
 </div>
 					
-  <div class="section" id="hashchange">
+  <p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<div class="section" id="hashchange">
 <h1>hashchange<a class="headerlink" href="#hashchange" title="Permalink to this headline">¶</a></h1>
+<p>目前除了 ie67 外都支持 <a class="reference external" href="https://developer.mozilla.org/en/DOM/window.onhashchange">hashchange</a> 事件，当浏览器的 hash 值发生变化时触发此事件，
+常常被用来实现单页面应用（ <a class="reference external" href="http://danwebb.net/2011/5/28/it-is-about-the-hashbangs">存在广泛争议</a> ）.</p>
+<p>注意当用户点击后退与前进进行浏览器导航时会引起 hash 变化.</p>
+<div class="section" id="id3">
+<h2>语法<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>注意此事件只能在当前 window 上注册，注册到其他类型元素上无效！</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;hashchange&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">// location.hash -&gt; 当前 hash 值</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>示例<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>hash 驱动的单页面应用设计</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">==</span><span class="s2">&quot;localhost&quot;</span><span class="o">||</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">==</span><span class="s2">&quot;chengyu.taobao.ali.com&quot;</span><span class="p">){</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://&#39;</span><span class="o">+</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">+</span><span class="s1">&#39;/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://yiminghe.github.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+   <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;cool&#39;</span> <span class="na">style=</span><span class="s">&#39;display:none;width:200px;height:100px;line-height:100px;border:1px solid red;&#39;</span><span class="nt">&gt;</span>
+        
+        ooh,some cool features shows
+        
+    <span class="nt">&lt;/div&gt;</span>
+    
+    <span class="nt">&lt;label&gt;</span>输入 hash :<span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&#39;in&#39;</span> <span class="nt">/&gt;</span> <span class="nt">&lt;/label&gt;</span>
+    
+    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&#39;ok&#39;</span><span class="nt">&gt;</span>确定<span class="nt">&lt;/button&gt;</span>
+    
+    
+    <span class="nt">&lt;div&gt;</span>try input cool<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>       
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Node</span><span class="p">){</span>   
+        <span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="o">=</span><span class="s1">&#39;#&#39;</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+        
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#ok&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#in&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+        <span class="p">});</span>
+        
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#in&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;keydown&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">keyCode</span><span class="o">==</span><span class="mi">13</span><span class="p">)</span>
+            <span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#in&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+        <span class="p">});</span>
+        
+        <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;hashchange&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span> <span class="o">==</span> <span class="s2">&quot;#cool&quot;</span><span class="p">){</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#cool&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#cool&quot;</span><span class="p">).</span><span class="nx">stop</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<iframe width="100%" height="135" src="../../../static/api/core/event/hashchange.html"></iframe></div>
 </div>
 
 
