@@ -89,12 +89,18 @@
 <span class="versionmodified">New in version 1.2.</span></p>
 <div class="section" id="hashchange">
 <h1>hashchange<a class="headerlink" href="#hashchange" title="Permalink to this headline">¶</a></h1>
-<p>目前除了 ie67 外都支持 <a class="reference external" href="https://developer.mozilla.org/en/DOM/window.onhashchange">hashchange</a> 事件，当浏览器的 hash 值发生变化时触发此事件，
-常常被用来实现单页面应用（ <a class="reference external" href="http://danwebb.net/2011/5/28/it-is-about-the-hashbangs">存在广泛争议</a> ）.</p>
-<p>注意当用户点击后退与前进进行浏览器导航时会引起 hash 变化.</p>
+<p>目前除了 ie67 外都原生支持 <a class="reference external" href="https://developer.mozilla.org/en/DOM/window.onhashchange">hashchange</a> 事件，kissy 对 ie67 也模拟兼容了该事件.</p>
+<p>当浏览器的 hash 值发生变化时会触发此事件，常常被用来实现单页面应用（ <a class="reference external" href="http://danwebb.net/2011/5/28/it-is-about-the-hashbangs">存在广泛争议</a> ）.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">当用户点击后退与前进进行浏览器导航时会引起 hash 变化.</p>
+</div>
 <div class="section" id="id3">
 <h2>语法<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>注意此事件只能在当前 window 上注册，注册到其他类型元素上无效！</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">此事件只能在当前 window 上注册，注册到其他类型元素上无效！</p>
+</div>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;hashchange&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
     <span class="c1">// location.hash -&gt; 当前 hash 值</span>
