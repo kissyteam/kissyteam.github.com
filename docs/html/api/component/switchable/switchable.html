@@ -511,9 +511,22 @@
 <dt id="Switchable.beforeSwitch">
 <tt class="descclassname">Switchable.</tt><tt class="descname">beforeSwitch</tt><big>(</big><big>)</big><a class="headerlink" href="#Switchable.beforeSwitch" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line"><strong>beforeSwitch</strong> ()</div>
+<div class="line"><strong>beforeSwitch</strong> (ev)</div>
 <div class="line">切换前触发. 当该事件的函数处理器返回 false, 则会阻止切换动作.</div>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>ev</strong> (<em>Object</em>) &#8211; 事件对象</li>
+<li><strong>ev.toIndex</strong> (<em>Number</em>) &#8211; 即将切换到的tab的索引号</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="function">
@@ -521,14 +534,18 @@
 <tt class="descclassname">Switchable.</tt><tt class="descname">switch</tt><big>(</big><big>)</big><a class="headerlink" href="#Switchable.switch" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>switch</strong> (ev)</div>
-<div class="line">切换时触发.</div>
+<div class="line">切换后触发.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>toIndex</strong> (<em>Number</em>) &#8211; 即将切换到的tab的索引号</td>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>ev</strong> (<em>Object</em>) &#8211; 事件对象</li>
+<li><strong>ev.currentIndex</strong> (<em>Number</em>) &#8211; 当前切换到的tab的索引号</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
