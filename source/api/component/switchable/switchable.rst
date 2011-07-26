@@ -146,11 +146,11 @@ Config Attributes Detail
 
 .. data:: triggers
 
-    {Array} - 默认为 [], 触发器数组.
+    {Array<HTMLElement>} - 默认为 [], 触发器数组.
 
 .. data:: panels
 
-    {Array} - 默认为 [], 面板数组.
+    {Array<HTMLElement>} - 默认为 [], 面板数组.
 
 .. data:: hasTriggers
 

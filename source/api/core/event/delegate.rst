@@ -54,7 +54,7 @@ Methods
 
     .. code-block:: javascript
 
-        Event.on(document,'click','.clickme',function(){
+        Event.delegate(document,'click','.clickme',function(){
            // Bound handler called.
         });
 
@@ -73,9 +73,9 @@ Methods
         function d(){
         }
 
-        Event.on(document,'click','.clickme',d);
+        Event.delegate(document,'click','.clickme',d);
 
-        Event.detach(document,'click','.clickme',d);
+        Event.undelegate(document,'click','.clickme',d);
 
     .. note::
 
