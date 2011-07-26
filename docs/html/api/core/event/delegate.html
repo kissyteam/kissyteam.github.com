@@ -139,7 +139,7 @@
 </div>
 <p>新元素匹配选择器 <tt class="docutils literal"><span class="pre">clickme</span></tt> ,但是他如果不再次 on , 则在他上面的点击不会有任何效果.</p>
 <p>delegate 方法提供了解决方法, 如果这样调用：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="s1">&#39;.clickme&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Event</span><span class="p">.</span><span class="nx">delegate</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="s1">&#39;.clickme&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
    <span class="c1">// Bound handler called.</span>
 <span class="p">});</span>
 </pre></div>
@@ -153,9 +153,9 @@
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">d</span><span class="p">(){</span>
 <span class="p">}</span>
 
-<span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="s1">&#39;.clickme&#39;</span><span class="p">,</span><span class="nx">d</span><span class="p">);</span>
+<span class="nx">Event</span><span class="p">.</span><span class="nx">delegate</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="s1">&#39;.clickme&#39;</span><span class="p">,</span><span class="nx">d</span><span class="p">);</span>
 
-<span class="nx">Event</span><span class="p">.</span><span class="nx">detach</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="s1">&#39;.clickme&#39;</span><span class="p">,</span><span class="nx">d</span><span class="p">);</span>
+<span class="nx">Event</span><span class="p">.</span><span class="nx">undelegate</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="s1">&#39;.clickme&#39;</span><span class="p">,</span><span class="nx">d</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
