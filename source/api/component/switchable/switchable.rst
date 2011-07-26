@@ -318,14 +318,15 @@ Events Detail
     
     | **beforeSwitch** (ev)
     | 切换前触发. 当该事件的函数处理器返回 false, 则会阻止切换动作.
+    
     :param Object ev: 事件对象
     :param Number ev.toIndex: 即将切换到的tab的索引号
-
 
 .. function:: switch
 
     | **switch** (ev)
     | 切换后触发.
+    
     :param Object ev: 事件对象
     :param Number ev.currentIndex: 当前切换到的tab的索引号
 

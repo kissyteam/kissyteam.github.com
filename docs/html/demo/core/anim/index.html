@@ -197,28 +197,27 @@
          anim_slide=S.one("#anim_slide"),
          anim_fade=S.one("#anim_fade");
 
-         //firefox anim bug
-         var native=S.UA.firefox==4?false:undefined;
+
 
          demo_show.on("click",function(){
              if(anim_show.css("display")==="none")
-                 anim_show.show(1,undefined,undefined,native);
+                 anim_show.show(1);
              else
-                 anim_show.hide(1,undefined,undefined,native);
+                 anim_show.hide(1);
          });
 
          demo_slide.on("click",function(){
              if(anim_slide.css("display")==="none")
-                 anim_slide.slideDown(undefined,undefined,undefined,native);
+                 anim_slide.slideDown();
              else
-                 anim_slide.slideUp(undefined,undefined,undefined,native);
+                 anim_slide.slideUp();
          });
 
          demo_fade.on("click",function(){
              if(anim_fade.css("display")==="none")
-                 anim_fade.fadeIn(undefined,undefined,undefined,native);
+                 anim_fade.fadeIn();
              else
-                 anim_fade.fadeOut(undefined,undefined,undefined,native);
+                 anim_fade.fadeOut();
          });
      });
 </script><p>源码：</p>
@@ -232,28 +231,27 @@
     <span class="nx">anim_slide</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#anim_slide&quot;</span><span class="p">),</span>
     <span class="nx">anim_fade</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#anim_fade&quot;</span><span class="p">);</span>
 
-    <span class="c1">//firefox anim bug</span>
-    <span class="kd">var</span> <span class="kr">native</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">UA</span><span class="p">.</span><span class="nx">firefox</span><span class="o">==</span><span class="mi">4</span><span class="o">?</span><span class="kc">false</span><span class="o">:</span><span class="kc">undefined</span><span class="p">;</span>
+
 
     <span class="nx">demo_show</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
         <span class="k">if</span><span class="p">(</span><span class="nx">anim_show</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;display&quot;</span><span class="p">)</span><span class="o">===</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
-            <span class="nx">anim_show</span><span class="p">.</span><span class="nx">show</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kr">native</span><span class="p">);</span>
+            <span class="nx">anim_show</span><span class="p">.</span><span class="nx">show</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
         <span class="k">else</span>
-            <span class="nx">anim_show</span><span class="p">.</span><span class="nx">hide</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kr">native</span><span class="p">);</span>
+            <span class="nx">anim_show</span><span class="p">.</span><span class="nx">hide</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
     <span class="p">});</span>
 
     <span class="nx">demo_slide</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
         <span class="k">if</span><span class="p">(</span><span class="nx">anim_slide</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;display&quot;</span><span class="p">)</span><span class="o">===</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
-            <span class="nx">anim_slide</span><span class="p">.</span><span class="nx">slideDown</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kr">native</span><span class="p">);</span>
+            <span class="nx">anim_slide</span><span class="p">.</span><span class="nx">slideDown</span><span class="p">();</span>
         <span class="k">else</span>
-            <span class="nx">anim_slide</span><span class="p">.</span><span class="nx">slideUp</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kr">native</span><span class="p">);</span>
+            <span class="nx">anim_slide</span><span class="p">.</span><span class="nx">slideUp</span><span class="p">();</span>
     <span class="p">});</span>
 
     <span class="nx">demo_fade</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
         <span class="k">if</span><span class="p">(</span><span class="nx">anim_fade</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;display&quot;</span><span class="p">)</span><span class="o">===</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
-            <span class="nx">anim_fade</span><span class="p">.</span><span class="nx">fadeIn</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kr">native</span><span class="p">);</span>
+            <span class="nx">anim_fade</span><span class="p">.</span><span class="nx">fadeIn</span><span class="p">();</span>
         <span class="k">else</span>
-            <span class="nx">anim_fade</span><span class="p">.</span><span class="nx">fadeOut</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kr">native</span><span class="p">);</span>
+            <span class="nx">anim_fade</span><span class="p">.</span><span class="nx">fadeOut</span><span class="p">();</span>
     <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
@@ -284,7 +282,8 @@ div.block {
     <div class="block"></div>
 </div>
 <script>
-    $=KISSY.NodeList.all;
+(function(){
+    var $=KISSY.all;
     /* Start animation */
     $("#go").on('click',function(e){
         $("#go").prop("disabled",true);
@@ -313,6 +312,7 @@ div.block {
         });
         e.halt();
     });
+})();
 </script><p>源码：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
 <span class="cm">/* Start animation */</span>

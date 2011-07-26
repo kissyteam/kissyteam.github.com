@@ -27,25 +27,40 @@
     
 .. note::
 
-    1.1.x 表示 1.1.6 或者 1.1.7.    
+    1.1.x 表示 1.1.6 或者 1.1.7 或 1.2.0   
 
 
 引入 javascript
 --------------------------
 
-只要引入外部脚本
+kissy 1.1.6
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: html
+    
+    <script src='http://a.tbcdn.cn/s/kissy/1.1.6/editor/editor-pkg-min.js'></script>
+
+kissy 1.1.7
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: html
 
-    <script src="http://a.tbcdn.cn/s/kissy/1.1.7/??kissy-min.js,uibase/uibase-pkg-min.js,dd/dd-pkg-min.js,overlay/overlay-pkg-min.js,editor/editor-all-pkg-min.js"></script>
-    
-.. note::    
+    <script src="http://a.tbcdn.cn/s/kissy/1.1.7/??kissy-min.js,
+    uibase/uibase-pkg-min.js,
+    dd/dd-pkg-min.js,overlay/overlay-pkg-min.js,
+    editor/editor-all-pkg-min.js"></script>
 
-    如果页面已经引入了 ``kissy 1.1.6`` , 则上述脚本不引入, 转而引入
-    
-    .. code-block:: html
-    
-        <script src='http://a.tbcdn.cn/s/kissy/1.1.6/editor/editor-pkg-min.js'></script>
+kissy 1.2.0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: html
+
+    <script src="http://a.tbcdn.cn/s/kissy/1.2.0/??kissy-min.js,
+    uibase-min.js,
+    component-min.js
+    dd-min.js,
+    overlay-min.js,
+    editor/editor-all-pkg-min.js"></script>
 
 加入 textarea
 --------------------------
