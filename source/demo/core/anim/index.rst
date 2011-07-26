@@ -280,7 +280,8 @@ Demo - 节点上的 stop 示例
             <div class="block"></div>
         </div>
         <script>
-            $=KISSY.NodeList.all;
+        (function(){
+            var $=KISSY.all;
             /* Start animation */
             $("#go").on('click',function(e){
                 $("#go").prop("disabled",true);
@@ -309,6 +310,7 @@ Demo - 节点上的 stop 示例
                 });
                 e.halt();
             });
+        })();
         </script>
 
 

@@ -282,7 +282,8 @@ div.block {
     <div class="block"></div>
 </div>
 <script>
-    $=KISSY.NodeList.all;
+(function(){
+    var $=KISSY.all;
     /* Start animation */
     $("#go").on('click',function(e){
         $("#go").prop("disabled",true);
@@ -311,6 +312,7 @@ div.block {
         });
         e.halt();
     });
+})();
 </script><p>源码：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
 <span class="cm">/* Start animation */</span>
