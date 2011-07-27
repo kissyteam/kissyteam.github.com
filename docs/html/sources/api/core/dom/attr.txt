@@ -32,7 +32,7 @@ Methods
     .. versionchanged:: 1.2
         对没有设置的属性返回 ``null`` . 判断属性设置与否可以使用 :func:`DOM.hasAttr` . 如果需要获取 DOM properties, 请使用 :func:`DOM.prop` 方法
 
-    | void **addClass** ( selector, name, value )
+    | void **attr** ( selector, name, value )
     | 给符合选择器的所有元素设置属性值.
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
