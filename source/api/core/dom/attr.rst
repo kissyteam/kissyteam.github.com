@@ -29,8 +29,8 @@ Methods
        DOM.attr(c,"checked") // => "checked"
        DOM.prop(c,"checked") // => true
         
-    .. versionchanged:: 1.2
-        对没有设置的属性返回 ``null`` . 判断属性设置与否可以使用 :func:`DOM.hasAttr` . 如果需要获取 DOM properties, 请使用 :func:`DOM.prop` 方法
+    .. note
+        判断属性设置与否请使用 :func:`DOM.hasAttr` . 如果需要获取 DOM properties, 请使用 :func:`DOM.prop` 方法
 
     | void **attr** ( selector, name, value )
     | 给符合选择器的所有元素设置属性值.
