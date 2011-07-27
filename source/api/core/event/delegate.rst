@@ -83,6 +83,16 @@ Methods
         事件处理器回调函数中 this 指向 scope (没指定指向绑定事件的元素), 传入的参数为 event ,
         event.target 指向事件触发源, event.currentTarget 指向当前事件处理器调用所在的匹配 filter 的元素.
         可以使用 :meth:`~Event.Object.stopPropagation` 来停止事件的向上冒泡, 这样就不会在同样符合 filter 条件的祖先节点上调用事件处理器.
+        
+    .. note::
+    
+        因为 ``delegate`` 是在事件冒泡到代理元素后才开始处理的，那么通过 ``on`` 注册到代理元素的子节点的事件处理器已经被触发，
+        而无法被 ``delegate`` 绑定的事件处理器阻止 ( ``stopPropagation`` )，但 ``delegate`` 事件处理器可以阻止绑定到同一元素但是匹配元素在当前事件处理器之上的 ``delegate`` 事件处理器.   
+        
+        
+    .. note::
+    
+        同样可以对 ``mouseenter`` , ``mouseleave`` 进行委托.        
     
 
 Demo
@@ -108,3 +118,14 @@ Demo
     .. raw:: html
 
         <iframe width="100%" height="135" src="../../../static/api/core/event/delegate_2.html"></iframe>
+
+
+    **委托 mouseenter/mouseleave**
+    
+    .. literalinclude:: /_static/api/core/event/delegate_mouse.html
+       :language: html
+
+
+    .. raw:: html
+
+        <iframe width="100%" height="370" src="../../../static/api/core/event/delegate_mouse.html"></iframe>
