@@ -23,6 +23,8 @@ Methods
    later.rst
    filter.rst
    map.rst
+   reduce.rst
+   bind.rst
    inArray.rst
    indexOf.rst
    lastIndexOf.rst

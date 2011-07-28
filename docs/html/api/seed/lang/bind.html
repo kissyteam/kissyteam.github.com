@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>lang &mdash; KISSY Docs valpha documentation</title>
+<title>bind &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -73,135 +73,101 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="clone.html" title="clone"
+      <a href="inArray.html" title="inArray"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../kissy/guid.html" title="guid"
+      <a href="map.html" title="map"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">Seed</a> &#187; </li> 
+      <li><a href="../index.html" >Seed</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">lang</a> &#187; </li> 
     </ul>
 </div>
 					
-  <span class="target" id="module-Lang"></span><div class="section" id="lang">
-<h1>lang<a class="headerlink" href="#lang" title="Permalink to this headline">¶</a></h1>
-<div class="line-block">
-<div class="line">作者: <a class="reference external" href="mailto:lifesinger&#37;&#52;&#48;gmail&#46;com">玉伯</a> , <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></div>
-<div class="line">源码: <a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/seed/lang.js">查看</a></div>
-</div>
+  <div class="section" id="bind">
+<h1>bind<a class="headerlink" href="#bind" title="Permalink to this headline">¶</a></h1>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
 <div class="section" id="module">
 <h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><a class="reference internal" href="#module-Lang" title="Lang"><tt class="xref py py-mod docutils literal"><span class="pre">Lang</span></tt></a></div></blockquote>
+<div><a class="reference internal" href="index.html#module-Lang" title="Lang"><tt class="xref py py-mod docutils literal"><span class="pre">Lang</span></tt></a></div></blockquote>
 </div>
 <div class="section" id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="clone.html">clone</a><ul class="simple">
+<dl class="function">
+<dt id="Lang.KISSY.bind">
+<tt class="descclassname">KISSY.</tt><tt class="descname">bind</tt><big>(</big><big>)</big><a class="headerlink" href="#Lang.KISSY.bind" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Array <strong>KISSY.bind</strong> (fn , context[, arg1[, arg2[, ...]]])</div>
+<div class="line">创建一个新函数，该函数可以在固定的上下文以及传递部分固定参数放在用户参数前面给原函数并执行</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>fn</strong> (<em>function</em>) &#8211; 需要固定上下文以及固定部分参数的函数</li>
+<li><strong>context</strong> (<em>object</em>) &#8211; 执行 <tt class="docutils literal"><span class="pre">fn</span></tt> 时的 <tt class="docutils literal"><span class="pre">this</span></tt> 值. 如果新函数用于构造器则该参数无用.</li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="each.html">each</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="later.html">later</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="filter.html">filter</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="map.html">map</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="reduce.html">reduce</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="bind.html">bind</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="inArray.html">inArray</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="indexOf.html">indexOf</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lastIndexOf.html">lastIndexOf</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="unique.html">unique</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="isArray.html">isArray</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="isBoolean.html">isBoolean</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="isDate.html">isDate</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="isEmptyObject.html">isEmptyObject</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="isFunction.html">isFunction</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="isNull.html">isNull</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="isNumber.html">isNumber</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="isObject.html">isObject</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="isPlainObject.html">isPlainObject</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="isRegExp.html">isRegExp</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="isString.html">isString</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="isUndefined.html">isUndefined</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="makeArray.html">makeArray</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="substitute.html">substitute</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="trim.html">trim</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="fromUnicode.html">fromUnicode</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="escapeHTML.html">escapeHTML</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="unEscapeHTML.html">unEscapeHTML</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="now.html">now</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="param.html">param</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="unparam.html">unparam</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="startsWith.html">startsWith</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="endsWith.html">endsWith</a><ul class="simple">
-</ul>
-</li>
-</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first">符合需求的新函数</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">Return type:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last">function</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id1">
+<h2>示例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>改变运行上下文<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>bind 最简单的用法是生成一个新的函数，无论它如何调用，都运行在一个固定的 this 值中.入门者常犯的错误时从一个对象获得一个方法引用，
+然后在后面的调用中期望这个方法的this就是原来的对象(eg.g 把这个方法用在某个回调中). 如果没有特例，那么这个原始对象就丢失了.
+但是如果从原方法中得到一个绑定原始对象的函数，这个问题就解决了！</p>
+<div class="highlight-html"><div class="highlight"><pre>var x = 9;
+var module = {
+  x: 81,
+  getX: function() { return this.x; }
+};
+
+module.getX(); // 81
+
+var getX = module.getX;
+getX(); // 9, because in this case, &quot;this&quot; refers to the global object
+
+// create a new function with &#39;this&#39; bound to module
+var boundGetX = KISSY.bind(getX,module);
+boundGetX(); // 81
+</pre></div>
+</div>
+</div>
+<div class="section" id="currying">
+<h3>Currying<a class="headerlink" href="#currying" title="Permalink to this headline">¶</a></h3>
+<p><tt class="docutils literal"><span class="pre">bind</span></tt> 的下一个简单用法是产生一个具备默认参数的函数. 这些参数跟在 context 后面，无论何时调用绑定函数，
+当绑定函数调用目标函数时会把它们放在参数列表开头，然后才是传递给绑定函数的用户参数.</p>
+<div class="highlight-html"><div class="highlight"><pre>function list() {
+  return Array.prototype.slice.call(arguments);
+}
+
+var list1 = list(1, 2, 3); // [1, 2, 3]
+
+//  Create a function with a preset leading argument
+var leadingZeroList = KISSY.bind(list,undefined, 37);
+
+var list2 = leadingZeroList(); // [37]
+var list3 = leadingZeroList(1, 2, 3); // [37, 1, 2, 3]
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -214,7 +180,7 @@
     <ul class="s-box-bd">
         <li><a href="../loader/index.html">Loader</a></li>
         <li><a href="../kissy/index.html">kissy</a></li>
-        <li><a href="#">lang</a></li>
+        <li><a href="index.html">lang</a></li>
         <li><a href="../web/index.html">web</a></li>
     </ul>
 </ul>
