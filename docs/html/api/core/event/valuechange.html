@@ -85,8 +85,78 @@
     </ul>
 </div>
 					
-  <div class="section" id="valuechange">
+  <p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<div class="section" id="valuechange">
 <h1>valuechange<a class="headerlink" href="#valuechange" title="Permalink to this headline">¶</a></h1>
+<p>监控 input/textarea 的值变化，当值发生变化时在绑定元素上触发该事件.</p>
+<p><strong>为什么不使用原生的 change keydown keyup</strong></p>
+<ol class="arabic simple">
+<li>change 只有在输入框失去焦点时触发.</li>
+<li>keyup/down 对于国际语言的输入法不能全面支持（鼠标从输入法中选词）</li>
+<li>keydown/up 需要过滤不可见字符</li>
+<li>原生事件对于程序外部设值的情况不能处理.</li>
+</ol>
+<div class="section" id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>触发事件包括两个特殊属性</p>
+<dl class="attribute">
+<dt id="Event.valuechange.prevVal">
+<tt class="descclassname">valuechange.</tt><tt class="descname">prevVal</tt><a class="headerlink" href="#Event.valuechange.prevVal" title="Permalink to this definition">¶</a></dt>
+<dd><p>变化前的值</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Event.valuechange.newVal">
+<tt class="descclassname">valuechange.</tt><tt class="descname">newVal</tt><a class="headerlink" href="#Event.valuechange.newVal" title="Permalink to this definition">¶</a></dt>
+<dd><p>当前（变化后）的值</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">此事件只能在 input 以及 textarea 上注册，注册到其他类型元素上无效！</p>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span><span class="s2">&quot;valuechange&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">prevVal</span><span class="p">);</span> <span class="c1">// =&gt; 旧值</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">newVal</span><span class="p">);</span> <span class="c1">// =&gt; 新值</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>示例<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>打开拼音输入法，输入时直接鼠标选词</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">==</span><span class="s2">&quot;localhost&quot;</span><span class="o">||</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">==</span><span class="s2">&quot;chengyu.taobao.ali.com&quot;</span><span class="p">){</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://&#39;</span><span class="o">+</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">+</span><span class="s1">&#39;/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://yiminghe.github.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+   <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+        
+    <span class="nt">&lt;label&gt;</span>输入 something:<span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&#39;in&#39;</span> <span class="nt">/&gt;&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;log&#39;</span> <span class="na">style=</span><span class="s">&#39;border:1px solid red;&#39;</span><span class="nt">&gt;&lt;/div&gt;</span>    
+   
+
+<span class="nt">&lt;script&gt;</span>       
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Node</span><span class="p">){</span> 
+        <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#in&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;valuechange&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#log&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;old value : &quot;</span><span class="o">+</span><span class="nx">e</span><span class="p">.</span><span class="nx">prevVal</span><span class="o">+</span><span class="s2">&quot;&lt;br/&gt;new value : &quot;</span><span class="o">+</span><span class="nx">e</span><span class="p">.</span><span class="nx">newVal</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<iframe width="100%" height="135" src="../../../static/api/core/event/valuechange.html"></iframe></div>
 </div>
 
 
