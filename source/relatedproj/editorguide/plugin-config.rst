@@ -5,6 +5,14 @@
 插件配置
 -----------------------------------------------
 
+.. raw:: html
+
+    <style>
+    tt.descclassname, em.property {
+        display:inline;
+    }
+    </style>
+
 .. attribute:: config.pluginConfig:
 
     类型为各个插件的具体配置, 配置形式为:
