@@ -99,7 +99,8 @@
 <h2>语法<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">此事件只能在当前 window 上注册，注册到其他类型元素上无效！</p>
+<p class="last">此事件只能在当前 window 上注册，注册到其他类型元素上无效！
+hash 值推荐为 <tt class="docutils literal"><span class="pre">!/xx/</span></tt> 形式, 前面用 <tt class="docutils literal"><span class="pre">!/</span></tt> 后面用 <tt class="docutils literal"><span class="pre">/</span></tt> 包起来，否则 <tt class="docutils literal"><span class="pre">ie67</span></tt> 可能有诡异现象.</p>
 </div>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;hashchange&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
@@ -129,13 +130,15 @@
         ooh,some cool features shows
         
     <span class="nt">&lt;/div&gt;</span>
-    
+        
     <span class="nt">&lt;label&gt;</span>输入 hash :<span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&#39;in&#39;</span> <span class="nt">/&gt;</span> <span class="nt">&lt;/label&gt;</span>
     
     <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&#39;ok&#39;</span><span class="nt">&gt;</span>确定<span class="nt">&lt;/button&gt;</span>
     
     
-    <span class="nt">&lt;div&gt;</span>try input cool<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>try input cool ,enter then after 1 second navigate back<span class="nt">&lt;/div&gt;</span>
+    
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;?x&quot;</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span><span class="nt">&gt;</span>新窗口打开<span class="nt">&lt;/a&gt;</span>
 
 <span class="nt">&lt;script&gt;</span>       
     <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Node</span><span class="p">){</span>   
@@ -143,16 +146,16 @@
         <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
         
         <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#ok&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-            <span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#in&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+            <span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="o">=</span><span class="s2">&quot;!/&quot;</span><span class="o">+</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#in&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="p">;</span>
         <span class="p">});</span>
         
         <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#in&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;keydown&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
             <span class="k">if</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">keyCode</span><span class="o">==</span><span class="mi">13</span><span class="p">)</span>
-            <span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#in&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+            <span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="o">=</span><span class="s2">&quot;!/&quot;</span><span class="o">+</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#in&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="p">;</span>
         <span class="p">});</span>
         
         <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;hashchange&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-            <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span> <span class="o">==</span> <span class="s2">&quot;#cool&quot;</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span> <span class="o">==</span> <span class="s2">&quot;#!/cool/&quot;</span><span class="p">){</span>
                 <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#cool&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
             <span class="p">}</span><span class="k">else</span><span class="p">{</span>
                 <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#cool&quot;</span><span class="p">).</span><span class="nx">stop</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
@@ -169,6 +172,65 @@
 </div>
 
 
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            KISSY.one("#openComment").attr("disabled",true);
+        }else{
+            KISSY.one("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            KISSY.one("#openComment").on("change",function(){
+                window.localStorage.setItem("kissy-commment",KISSY.one("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
 				</div>
 			</div>
     <div class="col-sub"><ul class="s-box api-toctree">
