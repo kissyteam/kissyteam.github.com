@@ -14,7 +14,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: scrollLeft
+.. function:: NodeList.scrollLeft
 
     | NodeList **scrollLeft** ()
     | 得到当前节点列表第一个节点的滚动条的横向位置.

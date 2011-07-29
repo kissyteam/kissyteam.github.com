@@ -12,7 +12,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: appendTo
+.. function:: NodeList.appendTo
 
     | NodeList **appendTo** ( containers )
     | 将当前节点列表中的每个元素插入到容器列表的每个元素的最后一个子节点后面.

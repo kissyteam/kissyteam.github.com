@@ -13,7 +13,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: toggle
+.. function:: NodeList.toggle
 
     | NodeList **toggle** ( [ speed, callback ] )
     | 当前节点列表元素为显示时动画效果隐藏, 否则动画效果显示

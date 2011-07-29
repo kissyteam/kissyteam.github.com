@@ -12,7 +12,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: height
+.. function:: NodeList.height
 
     | NodeList **height** ()
     | 得到当前节点列表第一个节点的计算高度

@@ -14,7 +14,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: after
+.. function:: NodeList.after
 
     | NodeList **after** ( content )
     | 将参数内容插入到当前列表中每个元素之后.

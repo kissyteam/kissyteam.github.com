@@ -13,7 +13,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: slice
+.. function:: NodeList.slice
 
     | NodeList **slice** ( start [ , end ] )
     | 获取包含当前节点列表选定范围内原生节点的新 NodeList 对象

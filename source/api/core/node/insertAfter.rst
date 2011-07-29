@@ -12,7 +12,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: insertAfter
+.. function:: NodeList.insertAfter
 
     | NodeList **insertAfter** ( target )
     | 将当前列表中的每个元素插入到目标元素之后.

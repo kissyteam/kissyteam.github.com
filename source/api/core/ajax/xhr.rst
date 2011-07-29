@@ -73,9 +73,9 @@ Methods Detail
 .. method:: abort
 
     | **abort** ()
-    | 如果当前请求还没完成则中断当前的请求.
+    | 如果当前请求还没完成（进行中状态）则中断当前的请求，否则什么也不做.
 
     .. note::
 
-        不仅可以中断 xhr 请求，还可以中断 jsonp 以及 script 请求，中断后会触发 :data:`~io.cfg.error` ( textStatus == "abort" ) 以及 :data:`~io.cfg.complete` 回调.
+        不仅可以中断 xhr 请求，还可以中断 jsonp 以及 script 请求，如果中断前该请求正在进行中则中断后会触发 :data:`~io.cfg.error` ( textStatus == "abort" ) 以及 :data:`~io.cfg.complete` 回调.
 

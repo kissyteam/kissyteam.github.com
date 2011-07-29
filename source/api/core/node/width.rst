@@ -12,7 +12,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: width
+.. function:: NodeList.width
 
     | NodeList **width** ()
     | 得到当前节点列表第一个节点的计算宽度

@@ -12,7 +12,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: insertBefore
+.. function:: NodeList.insertBefore
 
     | NodeList **insertBefore** ( target )
     | 将当前列表中的每个元素插入到目标元素之前.

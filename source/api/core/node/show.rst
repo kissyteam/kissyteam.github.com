@@ -11,7 +11,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: show
+.. function:: NodeList.show
 
     | NodeList **show** ( [ speed, callback ] )
     | 当前节点列表元素以动画效果显示

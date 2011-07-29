@@ -13,7 +13,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: equals
+.. function:: NodeList.equals
 
     | NodeList **equals** ( others )
     | 比较当前节点列表和 others 代表的节点列表是否完全相同

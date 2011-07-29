@@ -14,7 +14,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: scrollTop
+.. function:: NodeList.scrollTop
 
     | NodeList **scrollTop** ()
     | 得到当前节点列表第一个节点的滚动条的垂直位置.

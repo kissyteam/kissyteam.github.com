@@ -47,6 +47,7 @@ Methods
    fromUnicode.rst
    escapeHTML.rst
    unEscapeHTML.rst
+   parseXML.rst
    now.rst
    param.rst
    unparam.rst

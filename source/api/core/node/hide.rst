@@ -11,7 +11,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: hide
+.. function:: NodeList.hide
 
     | NodeList **hide** ( [ speed, callback ] )
     | 当前节点列表元素以动画效果隐藏

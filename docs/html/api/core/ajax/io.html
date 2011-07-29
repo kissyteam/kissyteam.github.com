@@ -532,13 +532,20 @@
 </pre></div>
 </div>
 <p><strong>通过 xhr 发送 form 内容</strong></p>
+<p>自动序列化 <tt class="docutils literal"><span class="pre">form</span></tt> 为查询串通过 <tt class="docutils literal"><span class="pre">xhr</span></tt> 发送给服务器端</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;form&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&#39;test&#39;</span> <span class="na">value=</span><span class="s">&#39;v&#39;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/form&gt;</span>
 
 <span class="nt">&lt;script&gt;</span>
     <span class="nx">io</span><span class="p">({</span>
-
+        <span class="nx">url</span><span class="o">:</span><span class="s1">&#39;send.php&#39;</span><span class="p">,</span>
+        <span class="nx">form</span><span class="o">:</span><span class="s1">&#39;#test&#39;</span><span class="p">,</span>
+        <span class="nx">type</span><span class="o">:</span><span class="s1">&#39;post&#39;</span><span class="p">,</span>
+        <span class="nx">dataType</span><span class="o">:</span><span class="s1">&#39;json&#39;</span><span class="p">,</span>
+        <span class="nx">success</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span><span class="nx">s</span><span class="p">,</span><span class="nx">xhr</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>

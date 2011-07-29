@@ -13,7 +13,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: stop
+.. function:: NodeList.stop
 
     | NodeList **stop** ( [ finish ] )
     | 停止当前节点列表的所有动画

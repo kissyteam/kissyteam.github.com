@@ -11,7 +11,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: fadeOut
+.. function:: NodeList.fadeOut
 
     | NodeList **fadeOut** ( [ speed = 1, callback ] )
     | 当前节点列表元素以渐隐效果隐藏

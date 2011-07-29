@@ -14,7 +14,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: before
+.. function:: NodeList.before
 
     | NodeList **before** ( content )
     | 将参数内容插入到当前列表中每个元素之前.
