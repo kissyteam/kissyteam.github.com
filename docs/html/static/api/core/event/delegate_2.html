@@ -30,7 +30,7 @@ span { color:red; }
     
     $('#i4').delegate('click','.inner',function(e){
         var target=e.target,currentTarget=e.currentTarget;
-        $('#log').append("<div style='margin:5px;'>invoked : <br/> this.id="+this.id+"<br/>event.target.id="+
+        $('#log').prepend("<div style='margin:5px;'>invoked : <br/> this.id="+this.id+"<br/>event.target.id="+
         target.id+"<br>event.currentTarget.id="+currentTarget.id+"</div>");
         e.stopPropagation();
     });
