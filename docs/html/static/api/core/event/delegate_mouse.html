@@ -30,8 +30,8 @@ span { color:red; }
    <div id='log'></div>
 <script>
     var $=KISSY.Node.all;    
-    $('#i4').delegate('mouseenter mouseleave','.inner',function(e){        
-        $('#log').html(e.type+" : "+e.target.id);
+    $('#i4').delegate('mouseenter mouseleave click','.inner',function(e){        
+        $('#log').prepend(e.type+" : "+e.currentTarget.id+"<br/>");
     });
 </script>
 
