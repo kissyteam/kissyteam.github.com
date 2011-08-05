@@ -53,4 +53,8 @@ Methods
     KISSY.JSON.parse('{"x":1}'); // => ok
     KISSY.JSON.parse("{'x':1}"); // => exception : SyntaxError
     KISSY.JSON.parse("{x:1}"); // => exception : SyntaxError
-    	
+    
+    
+    KISSY.JSON.stringify({"x":1}); // => '{"x":1}'
+    KISSY.JSON.stringify({x:1}); // => '{"x":1}'
+    KISSY.JSON.stringify({'x':1}); // => '{"x":1}'
