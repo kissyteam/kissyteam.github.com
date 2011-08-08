@@ -213,7 +213,7 @@ Config Attributes Detail
 
 .. data:: circular
 
-    {Boolean} - 是否循环切换, 默认为 false, 是否循环播放, 当切换到最初/最后一个时, 是否切换到最后/最初一个.
+    {Boolean} - 是否循环切换, 默认为 true, 是否循环播放, 当切换到最初/最后一个时, 是否切换到最后/最初一个.
 
 .. data:: effect
 
