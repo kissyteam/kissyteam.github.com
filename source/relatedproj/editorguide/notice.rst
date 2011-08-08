@@ -12,7 +12,7 @@
 .. code-block:: html
 
     <!--[if lt IE 8]>
-    <link href="http://a.tbcdn.cn/s/kissy/1.1.7/editor/theme/cool/editor-pkg-min-mhtml.css" rel="stylesheet"/>
+    <link href="http://a.tbcdn.cn/s/kissy/1.1.7/editor/theme/cool/editor-pkg-sprite-min.css" rel="stylesheet"/>
     <![endif]-->
     <!--[if gte IE 8]><!-->
     <link href="http://a.tbcdn.cn/s/kissy/1.1.7/editor/theme/cool/editor-pkg-min-datauri.css" rel="stylesheet"/>

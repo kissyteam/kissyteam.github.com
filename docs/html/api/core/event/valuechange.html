@@ -95,8 +95,12 @@
 <li>change 只有在输入框失去焦点时触发.</li>
 <li>keyup/down 对于国际语言的输入法不能全面支持（鼠标从输入法中选词）</li>
 <li>keydown/up 需要过滤不可见字符</li>
-<li>原生事件对于程序外部设值的情况不能处理.</li>
+<li>程序设值不可以触发原生事件</li>
 </ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">当输入框获得焦点，程序动态设值可触发 <tt class="docutils literal"><span class="pre">valuechange</span></tt> 事件，否则不触发该事件.</p>
+</div>
 <div class="section" id="id1">
 <h2>语法<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>触发事件包括两个特殊属性</p>

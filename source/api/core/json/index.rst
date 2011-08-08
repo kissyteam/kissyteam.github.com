@@ -41,3 +41,20 @@ Methods
     :param string|number space: 缩进说明符，可选`
 	
 	:returns: {String} - 返回JSON字符串
+	
+	
+示例
+--------------------------------------------------
+
+注意 ``json`` 字符串的格式，属性必须要双引号括起来
+
+.. code-block:: html
+
+    KISSY.JSON.parse('{"x":1}'); // => ok
+    KISSY.JSON.parse("{'x':1}"); // => exception : SyntaxError
+    KISSY.JSON.parse("{x:1}"); // => exception : SyntaxError
+    
+    
+    KISSY.JSON.stringify({"x":1}); // => '{"x":1}'
+    KISSY.JSON.stringify({x:1}); // => '{"x":1}'
+    KISSY.JSON.stringify({'x':1}); // => '{"x":1}'

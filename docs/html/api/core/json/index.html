@@ -171,6 +171,20 @@
 </dd></dl>
 
 </div>
+<div class="section" id="id2">
+<h2>示例<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>注意 <tt class="docutils literal"><span class="pre">json</span></tt> 字符串的格式，属性必须要双引号括起来</p>
+<div class="highlight-html"><div class="highlight"><pre>KISSY.JSON.parse(&#39;{&quot;x&quot;:1}&#39;); // =&gt; ok
+KISSY.JSON.parse(&quot;{&#39;x&#39;:1}&quot;); // =&gt; exception : SyntaxError
+KISSY.JSON.parse(&quot;{x:1}&quot;); // =&gt; exception : SyntaxError
+
+
+KISSY.JSON.stringify({&quot;x&quot;:1}); // =&gt; &#39;{&quot;x&quot;:1}&#39;
+KISSY.JSON.stringify({x:1}); // =&gt; &#39;{&quot;x&quot;:1}&#39;
+KISSY.JSON.stringify({&#39;x&#39;:1}); // =&gt; &#39;{&quot;x&quot;:1}&#39;
+</pre></div>
+</div>
+</div>
 </div>
 
 
