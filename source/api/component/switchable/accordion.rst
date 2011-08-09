@@ -4,7 +4,6 @@ Accordion
 ===================================================================
 
 |  手风琴
-|  作者: `fool2fish <fool2fish@gmail.com>`_
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/switchable/accordion/>`_ | `Demo <../../../demo/component/switchable/index.html>`_
 
 

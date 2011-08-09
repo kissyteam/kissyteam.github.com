@@ -1,4 +1,4 @@
-﻿.. module:: Droppable
+﻿.. currentmodule:: DD
 
 Droppable
 ===============================================
@@ -6,35 +6,34 @@ Droppable
 .. versionadded:: 1.2
 
 |  放置功能
-|  作者: `承玉 <yiminghe@gmail.com>`_
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/droppable.js>`_  | `Demo <../../../demo/component/dd/droppable.html>`_
 
 
 Class
 -----------------------------------------------
 
-  * :class:`~Droppable.Droppable`
+  * :class:`~Droppable`
 
   
 Config Attributes
 -----------------------------------------------
   
-  * :data:`node`
+  * :data:`~Droppable.config.node`
   
  
 Methods
 -----------------------------------------------
 
-  * :meth:`destroy`
+  * :meth:`~Droppable.destroy`
 
   
 Events
 -----------------------------------------------
 
-  * :func:`dropenter`
-  * :func:`dropover`
-  * :func:`dropexit`
-  * :func:`drophit`
+  * :func:`~Droppable.dropenter`
+  * :func:`~Droppable.dropover`
+  * :func:`~Droppable.dropexit`
+  * :func:`~Droppable.drophit`
 
 
 Class Detail
@@ -50,7 +49,7 @@ Class Detail
 Config Attributes Detail
 -----------------------------------------------
 
-.. data:: node
+.. data:: Droppable.config.node
 
     {String | HTMLElement} - 可与拖动对象交互的节点. .
 
@@ -58,7 +57,7 @@ Config Attributes Detail
 Methods Detail
 -----------------------------------------------
 
-.. method:: destroy
+.. method:: Droppable.destroy
     
     | **destroy** ()
     | 销毁可放对象实例, 清除绑定事件.
@@ -67,7 +66,7 @@ Methods Detail
 Events Detail
 -----------------------------------------------
 
-.. function:: dropenter
+.. function:: Droppable.dropenter
 
     | **dropenter** ( ev )
     | 当一个 :mod:`Draggable` 对象根据其 :data:`Draggable.mode` 配置达到和当前 Droppable 实例交互条件时触发.
@@ -76,7 +75,7 @@ Events Detail
     :param Object ev.drag: 当前交互的 Draggable 对象.
     :param Object ev.drop: 自身, 当前Droppable对象.
 
-.. function:: dropover 
+.. function:: Droppable.dropover 
 
     | **dropover** ( ev )
     | 当一个 :mod:`Draggable` 在当前 Droppable 实例上移动时触发, 可简单理解成 mouseover.
@@ -84,7 +83,7 @@ Events Detail
     :param Object ev.drag: 当前交互的 Draggable 对象.
     :param Object ev.drop: 自身, 当前Droppable对象.
 
-.. function:: dropexit
+.. function:: Droppable.dropexit
 
     | **dropexit** ( ev )
     | 当一个 :mod:`Draggable` 离开当前 Droppable 实例时触发, 可简单理解成 mouseleave.
@@ -92,7 +91,7 @@ Events Detail
     :param Object ev.drag: 当前交互的 Draggable 对象.
     :param Object ev.drop: 自身, 当前Droppable对象.
 
-.. function:: drophit
+.. function:: Droppable.drophit
 
     | **drophit** ( ev )
     | 当一个 :mod:`Draggable` 被放置在当前 Droppable 实例时触发.

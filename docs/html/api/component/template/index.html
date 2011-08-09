@@ -97,7 +97,6 @@
 <div class="line">- 性能还不赖.</div>
 <div class="line">- 容易扩展.</div>
 </div>
-<div class="line">作者: <a class="reference external" href="mailto:wenhe&#37;&#52;&#48;taobao&#46;com&#46;com">文河</a></div>
 <div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/template/">源码</a> | <a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/template/index.html">Demo</a></div>
 </div>
 <div class="section" id="usage">
@@ -135,8 +134,8 @@
 </div>
 <div class="section" id="syntax">
 <h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>变量<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>变量<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>变量支持JavaScript语法里的任何有返回值的语句,比如  <tt class="docutils literal"><span class="pre">name</span></tt> ,  <tt class="docutils literal"><span class="pre">user.name</span></tt> ,  <tt class="docutils literal"><span class="pre">user[0].name</span></tt> , 甚至可以使用方法,  <tt class="docutils literal"><span class="pre">KISSY.one('#template').html()</span></tt></p>
 <p>语法：</p>
@@ -235,8 +234,8 @@ Hello, &lt;b color="red"&gt;FrankWang&lt;/b&gt;&lt;b color="green"&gt;FrankXu&lt
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="id4">
-<h3>单行注释<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>单行注释<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>语法：</p>
 <div class="highlight-javascript"><pre>{{#! comments}}</pre>
@@ -249,8 +248,8 @@ Hello, &lt;b color="red"&gt;FrankWang&lt;/b&gt;&lt;b color="green"&gt;FrankXu&lt
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="id5">
-<h3>标签嵌套<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>标签嵌套<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>理论上支持任意标签嵌套,如果标签有关闭字符,记得关闭=,=,嵌套标签形成多代码块嵌套,作用域与JavaScript的作用域一致.</p>
 <p>语法：</p>
@@ -270,10 +269,10 @@ Hello, &lt;b color="red"&gt;FrankWang&lt;/b&gt;&lt;b color="green"&gt;FrankXu&lt
 </div></blockquote>
 </div>
 </div>
+<div class="section" id="id5">
+<h2>容错和调试.<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id6">
-<h2>容错和调试.<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id7">
-<h3>容错<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<h3>容错<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>目前支持两种错误信息:</p>
 <ol class="arabic simple">
@@ -282,16 +281,16 @@ Hello, &lt;b color="red"&gt;FrankWang&lt;/b&gt;&lt;b color="green"&gt;FrankXu&lt
 </ol>
 </div></blockquote>
 </div>
-<div class="section" id="id8">
-<h3>调试<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>调试<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>默认情况下,模板将编译时和运行时的错误,直接返回到结果里.</p>
 <p>调试过程可调用 <tt class="docutils literal"><span class="pre">KISSY.Template.log()</span></tt> 方法输出渲染方法,定位脚本模板错误,并可通过引用 <tt class="docutils literal"><span class="pre">jsbeauty</span></tt> 来格式化生成的模板方法.</p>
 </div></blockquote>
 </div>
 </div>
-<div class="section" id="id9">
-<h2>模板性能对比<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h2>模板性能对比<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://spreadsheets.google.com/ccc?key=0ApZFGfLktT7FdDgtcGdzWV9wSzRpX2FRTElzZmVoV2c&amp;hl=en#gid=3">https://spreadsheets.google.com/ccc?key=0ApZFGfLktT7FdDgtcGdzWV9wSzRpX2FRTElzZmVoV2c&amp;hl=en#gid=3</a></p>
 </div>
 </div>
@@ -397,7 +396,7 @@ Hello, &lt;b color="red"&gt;FrankWang&lt;/b&gt;&lt;b color="green"&gt;FrankXu&lt
         <li><a href="../imagezoom/index.html">imagezoom</a></li>
         <li><a href="../overlay/index.html">overlay</a></li>
         <li><a href="../uibase/index.html">uibase</a></li>
-        <li><a href="../component/index.html">button</a></li>
+        <li><a href="../component/index.html">component</a></li>
         <li><a href="../button/index.html">button</a></li>
         <li><a href="../menu/index.html">menu</a></li>
         <li><a href="../menubutton/index.html">menubutton</a></li>

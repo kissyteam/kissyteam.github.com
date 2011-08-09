@@ -15,7 +15,6 @@ Suggest
 |    - 关键词的模糊匹配提示功能
 |    - 自定义提示Dom渲染
 |    - 支持本地数据
-|  作者： `玉伯 <lifesinger@gmail.com>`_
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/suggest>`_ | `Demo <../../../demo/component/suggest/index.html>`_
 
 

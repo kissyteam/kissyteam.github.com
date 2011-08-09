@@ -4,7 +4,6 @@ UIBase.ContentBox
 ===============================
 
 |  内盒。组件扩充类，仅用于 KISSY 内部组件继承，不建议外部使用
-|  作者: yiminghe@gmail.com
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/uibase/>`_
 
 
@@ -13,6 +12,12 @@ Class
 ---------------------------------
 
     * :class:`ContentBox`
+    
+
+Config Attributes
+-----------------------------------------------
+
+    * :data:`~ContentBox.config.content`     
   
 
 Properties
@@ -29,6 +34,16 @@ Class Detail
     | **ContentBox** (config)
     
     :param Object config: 配置项.
+    
+    
+    
+Config Attributes Detail
+-----------------------------------------------
+    
+.. data:: ContentBox.config.content
+
+    {String} - 可选, 设置内盒的内容 html.
+
     
 
 Properties Detail

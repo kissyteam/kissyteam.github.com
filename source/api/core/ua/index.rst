@@ -11,7 +11,6 @@ UA
 |     UA.core 返回字符串，目前支持 trident, webkit, gecko, presto 四大浏览器内核.
 |     UA.shell 返回字符串，比如 firefox, opera, chrome, ie, safari
 |     UA.mobile 返回字符串，目前支持 apple, nokia, android, opera mini/mobile 等设备/浏览器的探测.
-|  作者: `玉伯 <lifesinger@gmail.com>`_
 |  源码: `查看 <https://github.com/kissyteam/kissy/tree/master/src/ua>`_
 
 

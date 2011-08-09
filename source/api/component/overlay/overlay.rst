@@ -4,7 +4,6 @@ Overlay
 ===============================================
 
 |  悬浮的对话框
-|  作者: `承玉 <yiminghe@gmail.com>`_
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_  | `Demo <../../../demo/component/overlay/>`_
 
 Class
@@ -155,7 +154,11 @@ Config Attributes Detail
         
 .. data:: closable
 
-    {Boolean} - 对话框右上角是否包括关闭按钮            
+    {Boolean} - 对话框右上角是否包括关闭按钮
+    
+.. data:: mask
+
+    {Boolean} - 浮层显示时是否使用遮罩层盖住页面其他元素    
 
 .. data:: resize
 

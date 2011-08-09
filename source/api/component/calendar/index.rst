@@ -5,7 +5,6 @@ Calendar
 
 |  这是一个交互清爽、功能实用的日历控件.
 |  支持基本的日期选择、时间选择、嵌入/弹出、范围选择、日期格式化输出等常用功能, 能够满足多数的应用场景, 非常方便用户调用.
-|  作者: `拔赤 <bachi@taobao.com>`_
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/calendar>`_  | `Demo <http://kissyteam.github.com/kissy/src/calendar/demo.html>`_ 
 
 Class

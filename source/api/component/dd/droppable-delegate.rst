@@ -1,4 +1,4 @@
-.. module:: DroppableDelegate
+.. currentmodule:: DD
 
 DroppableDelegate
 ===============================================
@@ -6,38 +6,37 @@ DroppableDelegate
 .. versionadded:: 1.2
 
 |  为 Draggable 对象提供所需要的代理节点
-|  作者: `承玉 <chengyu@taobao.com>`_
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/droppable-delegate.js>`_  | `Demo <../../../demo/component/dd/droppable-delegate.html>`_
 
 
 Class
 -----------------------------------------------
 
-  * :class:`~DroppableDelegate.DroppableDelegate`
+  * :class:`~DroppableDelegate`
 
 Config Attributes
 -----------------------------------------------
 
-  * :attr:`container`
-  * :attr:`selector`
+  * :attr:`~DroppableDelegate.config.container`
+  * :attr:`~DroppableDelegate.config.selector`
   
 Properties
 -----------------------------------------------
 
-  * :data:`node`
+  * :data:`~DroppableDelegate.prototype.node`
   
 Methods
 -----------------------------------------------
 
-  * :meth:`destroy`
+  * :meth:`~DroppableDelegate.destroy`
 
 Events
 -----------------------------------------------
 
-  * :func:`dropenter`
-  * :func:`dropover`
-  * :func:`dropexit`
-  * :func:`drophit`
+  * :func:`~DroppableDelegate.dropenter`
+  * :func:`~DroppableDelegate.dropover`
+  * :func:`~DroppableDelegate.dropexit`
+  * :func:`~DroppableDelegate.drophit`
 
 
 Class Detail
@@ -53,11 +52,11 @@ Class Detail
 Config Attributes Detail
 -----------------------------------------------
     
-.. attribute:: container
+.. attribute:: DroppableDelegate.config.container
 
     {String | HTMLElement} - 用于委托的容器节点, 所有 Droppable 节点都在其内.
 
-.. attribute:: selector
+.. attribute:: DroppableDelegate.config.selector
 
     {String} - 类型选择字符串, 用来获取容器内的 Droppable 节点, 格式为 tag 或 tag.cls 或 .cls.
 
@@ -65,7 +64,7 @@ Config Attributes Detail
 Properties Detail
 -----------------------------------------------
     
-.. attribute:: node
+.. attribute:: DroppableDelegate.prototype.node
 
     {KISSY.Node} - 表示当前容器内正在和 Draggble 对象交互的节点,  通过 selector 获取.
 
@@ -73,7 +72,7 @@ Properties Detail
 Methods Detail
 -----------------------------------------------
 
-.. method:: destroy
+.. method:: DroppableDelegate.destroy
 
     | **destroy** ()
     | 销毁可放对象实例, 清除绑定事件
@@ -81,22 +80,22 @@ Methods Detail
 Events Detail
 -----------------------------------------------
 
-.. function:: dropenter
+.. function:: DroppableDelegate.dropenter
 
     | **dropenter** (ev)
     | 同 :func:`Droppable.dropenter`
 
-.. function:: dropover
+.. function:: DroppableDelegate.dropover
 
     | **dropover** (ev)
     | 同 :func:`Droppable.dropover`
 
-.. function:: dropexit
+.. function:: DroppableDelegate.dropexit
 
     | **dropexit** (ev)
     | 同 :func:`Droppable.dropexit`
 
-.. function:: drophit
+.. function:: DroppableDelegate.drophit
 
     | **drophit** (ev)
     | 同 :func:`Droppable.drophit`

@@ -4,7 +4,6 @@ UIBase
 ===============================
 
 |  组件基类，仅用于 KISSY 内部组件继承，不建议外部使用
-|  作者: yiminghe@gmail.com
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/uibase/>`_
 
 
