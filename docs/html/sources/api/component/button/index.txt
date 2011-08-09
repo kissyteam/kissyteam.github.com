@@ -6,7 +6,7 @@ Button
 |  模拟按钮
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/button/>`_
 
-
+.. versionadded:: 1.2
 
 Class
 ---------------------------------
@@ -94,8 +94,9 @@ Events Detail
 
 .. function:: click
     
+<<<<<<< HEAD
     | **click** (e)
     | 当按钮被点击或被获得焦点后按键 enter|space 触发
     
-    :param {EventObject} e: 触发事件对象
-    :param {Button} e.target: 触发事件的按钮实例
+    :param EventObject e: 触发事件对象，类型 :class:`Event.Object`
+    :param Button e.target: 触发事件的按钮实例

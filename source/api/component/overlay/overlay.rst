@@ -28,6 +28,7 @@ Config Attributes
   * :data:`~Overlay.config.effect`
   * :data:`~Overlay.config.resize`
   * :data:`~Overlay.config.closable`
+  * :data:`~Overlay.config.closeAction`
   
 Properties
 -----------------------------------------------
@@ -154,7 +155,15 @@ Config Attributes Detail
         
 .. data:: Overlay.config.closable
 
+    .. versionadded:: 1.2
+
     {Boolean} - 对话框右上角是否包括关闭按钮
+    
+.. data:: Overlay.config.closeAction
+
+    .. versionadded:: 1.2
+
+    {String} - 点击关闭按钮的动作。默认 "hide" 隐藏，也可设置 "destroy" 销毁该组件.    
     
 .. data:: mask
 
@@ -213,6 +222,8 @@ Properties Detail
     {Boolean} - 悬浮层的是否显示.
     
 .. attribute:: Overlay.prototype.closable
+
+    .. versionadded:: 1.2
 
     {Boolean} - 右上角关闭区域有无.    
 
