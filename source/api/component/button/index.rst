@@ -95,7 +95,6 @@ Events Detail
 .. function:: click
     
     | **click** (e)
-    
     | 当按钮被点击或被获得焦点后按键 enter|space 触发
     
     :param {EventObject} e: 触发事件对象

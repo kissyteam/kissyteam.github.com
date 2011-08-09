@@ -86,70 +86,72 @@ Config Attributes Detail
 
 .. data:: Switchable.config.markupType
 
-    {Number} - 默认为0. 指明 DOM 结构标记的类型, 可取 0, 1, 2. 当取 0 时, 表示 DOM 是默认结构: 通过 nav 和 content 来获取 triggers 和 panels, 即通过配置以下两个参数获取.
+    {Number} - 默认为0. 指明 DOM 结构标记的类型, 可取 0, 1, 2.
+    
+    **当取 0 时**, 表示 DOM 是默认结构: 通过 nav 和 content 来获取 triggers 和 panels, 即通过配置以下两个参数获取.
 
-.. data:: Switchable.config.navCls
+    .. data:: Switchable.config.navCls
 
-    {String} - triggers 所在容器的 class, 默认为 'ks-switchable-nav'.
+        {String} - triggers 所在容器的 class, 默认为 'ks-switchable-nav'.
 
-.. data:: Switchable.config.contentCls
+    .. data:: Switchable.config.contentCls
 
-    {String} - panels 所在容器的 class, 默认为 'ks-switchable-content'.
+        {String} - panels 所在容器的 class, 默认为 'ks-switchable-content'.
 
-    这种方式的 DOM 结构类似于:
+        这种方式的 DOM 结构类似于:
 
-    .. code-block:: html
+        .. code-block:: html
 
-        <div id="J_Slide">  <!-- 容器元素 -->
-            <ul class="ks-switchable-nav">  <!-- 触发器列表 -->
-                <li class="ks-active">标题 A</li>
-                <li>标题 B</li>
-                <li>标题 C</li>
-                <li>标题 D</li>
-            </ul>
-            <div class="ks-switchable-content">  <!-- 面板列表 -->
-                <div>内容 A</div>
-                <div style="display: none">内容 B</div>
-                <div style="display: none">内容 C</div>
-                <div style="display: none">内容 D</div>
+            <div id="J_Slide">  <!-- 容器元素 -->
+                <ul class="ks-switchable-nav">  <!-- 触发器列表 -->
+                    <li class="ks-active">标题 A</li>
+                    <li>标题 B</li>
+                    <li>标题 C</li>
+                    <li>标题 D</li>
+                </ul>
+                <div class="ks-switchable-content">  <!-- 面板列表 -->
+                    <div>内容 A</div>
+                    <div style="display: none">内容 B</div>
+                    <div style="display: none">内容 C</div>
+                    <div style="display: none">内容 D</div>
+                </div>
             </div>
-        </div>
 
-    当取 1 时,  表示 DOM 结构 可适度灵活：通过 cls 来获取 triggers 和 panels, 即通过配置以下两个参数获取.
+    **当取 1 时**,  表示 DOM 结构 可适度灵活：通过 cls 来获取 triggers 和 panels, 即通过配置以下两个参数获取.
 
-.. data:: Switchable.config.triggerCls
+    .. data:: Switchable.config.triggerCls
 
-    {String} - 默认为 'ks-switchable-trigger', 会在 container 下寻找指定 class 的元素作为触发器.
+        {String} - 默认为 'ks-switchable-trigger', 会在 container 下寻找指定 class 的元素作为触发器.
 
 
-.. data:: Switchable.config.panelCls
+    .. data:: Switchable.config.panelCls
 
-    {String} - 默认为 'ks-switchable-panel', 会在 container 下寻找指定 class 的元素作为面板.
+        {String} - 默认为 'ks-switchable-panel', 会在 container 下寻找指定 class 的元素作为面板.
 
-    这种方式的 DOM 结构类似于:
+        这种方式的 DOM 结构类似于:
 
-    .. code-block:: html
+        .. code-block:: html
 
-        <div id="J_Accordion">
-            <div class="ks-switchable-trigger ks-active"><i class="ks-icon"></i><h3>标题A</h3></div>
-            <div class="ks-switchable-panel">内容A<br/>内容A<br/>内容A</div>
-            <div class="ks-switchable-trigger"><i class="ks-icon"></i><h3>标题B</h3></div>
-            <div class="ks-switchable-panel" style="display:none;">内容B<br/>内容B<br/>内容B</div>
-            <div class="ks-switchable-trigger"><i class="ks-icon"></i><h3>标题C</h3></div>
-            <div class="ks-switchable-panel" style="display:none;">内容C<br/>内容C<br/>内容C<br/>内容C<br/>内容C</div>
-            <div class="ks-switchable-trigger last-trigger"><i class="ks-icon"></i><h3>标题D</h3></div>
-            <div class="ks-switchable-panel last-panel" style="display:none;">内容D<br/>内容D<br/>内容D</div>
-        </div>
+            <div id="J_Accordion">
+                <div class="ks-switchable-trigger ks-active"><i class="ks-icon"></i><h3>标题A</h3></div>
+                <div class="ks-switchable-panel">内容A<br/>内容A<br/>内容A</div>
+                <div class="ks-switchable-trigger"><i class="ks-icon"></i><h3>标题B</h3></div>
+                <div class="ks-switchable-panel" style="display:none;">内容B<br/>内容B<br/>内容B</div>
+                <div class="ks-switchable-trigger"><i class="ks-icon"></i><h3>标题C</h3></div>
+                <div class="ks-switchable-panel" style="display:none;">内容C<br/>内容C<br/>内容C<br/>内容C<br/>内容C</div>
+                <div class="ks-switchable-trigger last-trigger"><i class="ks-icon"></i><h3>标题D</h3></div>
+                <div class="ks-switchable-panel last-panel" style="display:none;">内容D<br/>内容D<br/>内容D</div>
+            </div>
 
-    当取 2 时,  表示 DOM 结构 完全自由: 直接传入 triggers 和 panels, 即通过配置以下两个参数获取. 这种方式下, DOM 结构就非常自由了, 传入什么内容有你自己定, 只需要 triggers 和 panels 的数量保持一致就好.
+    **当取 2 时**,  表示 DOM 结构 完全自由: 直接传入 triggers 和 panels, 即通过配置以下两个参数获取. 这种方式下, DOM 结构就非常自由了, 传入什么内容有你自己定, 只需要 triggers 和 panels 的数量保持一致就好.
 
-.. data:: Switchable.config.triggers
+    .. data:: Switchable.config.triggers
 
-    {Array<HTMLElement>} - 默认为 [], 触发器数组.
+        {Array<HTMLElement>} - 默认为 [], 触发器数组.
 
-.. data:: Switchable.config.panels
+    .. data:: Switchable.config.panels
 
-    {Array<HTMLElement>} - 默认为 [], 面板数组.
+        {Array<HTMLElement>} - 默认为 [], 面板数组.
 
 .. data:: Switchable.config.hasTriggers
 

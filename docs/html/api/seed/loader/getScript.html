@@ -110,9 +110,12 @@
 <li><strong>url</strong> (<em>string</em>) &#8211; js/css 的资源地址</li>
 <li><strong>config</strong> (<em>object</em>) &#8211; 动态加载配置对象, 包括以下</li>
 <li><strong>config.charset</strong> (<em>String</em>) &#8211; 资源文件的字符编码</li>
-<li><strong>config.success</strong> (<em>Function</em>) &#8211; 资源加载成功后回调函数
-* &lt; 1.2 中对于 css 文件是理解回调, 而不会等 css 加载完毕
-* 1.2+ 会等 css 加载完毕</li>
+<li><strong>config.success</strong> (<em>Function</em>) &#8211; <p>资源加载成功后回调函数</p>
+<ul>
+<li>&lt; 1.2 中对于 css 文件是理解回调, 而不会等 css 加载完毕</li>
+<li>1.2+ 会等 css 加载完毕</li>
+</ul>
+</li>
 <li><strong>config.error</strong> (<em>Function</em>) &#8211; 超时或发生错误时回调函数. 当资源文件为 css 文件时不支持</li>
 <li><strong>config.timeout</strong> (<em>Numver</em>) &#8211; 单位为秒, 默认 5 秒. 超时后触发 error 回调. 当资源文件为 css 文件是不支持</li>
 </ul>
@@ -128,15 +131,10 @@
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="function">
-<dt>
-<tt class="descclassname">KISSY.</tt><tt class="descname">getScript</tt><big>(</big><big>)</big></dt>
-<dd><div class="line-block">
+<div class="line-block">
 <div class="line">HTMLELement <strong>KISSY.getScript</strong> (url,success,charset)</div>
+<div class="line">相当于调用 <tt class="docutils literal"><span class="pre">KISSY.getScript(url</span> <span class="pre">,</span> <span class="pre">{</span> <span class="pre">success</span> <span class="pre">:</span> <span class="pre">success</span> <span class="pre">,</span> <span class="pre">charset</span> <span class="pre">:</span> <span class="pre">charset</span> <span class="pre">});</span></tt></div>
 </div>
-<p>相当于调用 <tt class="docutils literal"><span class="pre">KISSY.getScript(url</span> <span class="pre">,</span> <span class="pre">{</span> <span class="pre">success</span> <span class="pre">:</span> <span class="pre">success</span> <span class="pre">,</span> <span class="pre">charset</span> <span class="pre">:</span> <span class="pre">charset</span> <span class="pre">});</span></tt></p>
 </dd></dl>
 
 </div>

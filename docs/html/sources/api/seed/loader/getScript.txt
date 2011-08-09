@@ -22,6 +22,7 @@ Methods
     :param String config.charset: 资源文件的字符编码
             
     :param Function config.success: 资源加载成功后回调函数
+
          * < 1.2 中对于 css 文件是理解回调, 而不会等 css 加载完毕
          * 1.2+ 会等 css 加载完毕
                 
@@ -31,10 +32,8 @@ Methods
             
     :rtype: HTMLELement
     :returns: 创建的 link 节点或 script 节点        
+
     
-.. function:: KISSY.getScript
-
     | HTMLELement **KISSY.getScript** (url,success,charset)
-
-    相当于调用 ``KISSY.getScript(url , { success : success , charset : charset });``                     
+    | 相当于调用 ``KISSY.getScript(url , { success : success , charset : charset });``
         
