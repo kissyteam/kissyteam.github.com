@@ -95,7 +95,7 @@
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="../../../api/component/dd/droppable-delegate.html#DroppableDelegate.DroppableDelegate" title="DroppableDelegate.DroppableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DroppableDelegate</span></tt></a></li>
+<li><tt class="xref py py-class docutils literal"><span class="pre">DroppableDelegate</span></tt></li>
 </ul>
 </div></blockquote>
 </div>
@@ -336,7 +336,7 @@
 </div>
 <p><strong>初始化模块类实例</strong></p>
 <ol class="arabic">
-<li><p class="first">生成 <a class="reference internal" href="../../../api/component/dd/draggable-delegate.html#module-DraggableDelegate" title="DraggableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt></a> 对象</p>
+<li><p class="first">生成 <tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt> 对象</p>
 <blockquote>
 <div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">dragDelegate</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DraggableDelegate</span><span class="p">({</span>
     <span class="nx">container</span><span class="o">:</span><span class="s2">&quot;#container2&quot;</span><span class="p">,</span>
@@ -347,7 +347,7 @@
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">生成 <a class="reference internal" href="../../../api/component/dd/droppable-delegate.html#module-DroppableDelegate" title="DroppableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DroppableDelegate</span></tt></a> 对象</p>
+<li><p class="first">生成 <tt class="xref py py-class docutils literal"><span class="pre">DroppableDelegate</span></tt> 对象</p>
 <blockquote>
 <div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">dropDelegate</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DroppableDelegate</span><span class="p">({</span>
     <span class="nx">container</span><span class="o">:</span><span class="s2">&quot;#container2&quot;</span><span class="p">,</span>
@@ -357,7 +357,7 @@
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">生成 <a class="reference internal" href="../../../api/component/dd/proxy.html#module-Proxy" title="Proxy"><tt class="xref py py-class docutils literal"><span class="pre">Proxy</span></tt></a> 对象, 并关联到 <a class="reference internal" href="../../../api/component/dd/draggable-delegate.html#module-DraggableDelegate" title="DraggableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt></a> 对象</p>
+<li><p class="first">生成 <tt class="xref py py-class docutils literal"><span class="pre">Proxy</span></tt> 对象, 并关联到 <tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt> 对象</p>
 <blockquote>
 <div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">proxy</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Proxy</span><span class="p">({</span>
     <span class="cm">/**</span>
@@ -378,7 +378,7 @@
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">生成指定容器的 <a class="reference internal" href="../../../api/component/dd/scroll.html#module-Scroll" title="Scroll"><tt class="xref py py-class docutils literal"><span class="pre">Scroll</span></tt></a> 对象, 并关联到 <a class="reference internal" href="../../../api/component/dd/draggable-delegate.html#module-DraggableDelegate" title="DraggableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt></a> 对象</p>
+<li><p class="first">生成指定容器的 <tt class="xref py py-class docutils literal"><span class="pre">Scroll</span></tt> 对象, 并关联到 <tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt> 对象</p>
 <blockquote>
 <div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">s</span><span class="o">=</span><span class="k">new</span> <span class="nx">Scroll</span><span class="p">({</span>
     <span class="nx">node</span><span class="o">:</span><span class="s2">&quot;#container2&quot;</span>
@@ -391,7 +391,7 @@
 </li>
 </ol>
 <p><strong>监控移动</strong></p>
-<p>在 <a class="reference internal" href="../../../api/component/dd/draggable-delegate.html#module-DraggableDelegate" title="DraggableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt></a> 上监听移动事件, 并移动相应的被委托节点</p>
+<p>在 <tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt> 上监听移动事件, 并移动相应的被委托节点</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">dragDelegate</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;drag&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
@@ -404,7 +404,7 @@
 </pre></div>
 </div>
 <p><strong>交换节点位置</strong></p>
-<p>当触发 <a class="reference internal" href="../../../api/component/dd/draggable.html#Draggable.dragover" title="Draggable.dragover"><tt class="xref py py-data docutils literal"><span class="pre">dragover</span></tt></a> 事件时, 交换当前 DraggableDelegate 的被委托节点与对应 DroppableDelegate 的被委托节点</p>
+<p>当触发 <tt class="xref py py-data docutils literal"><span class="pre">dragover</span></tt> 事件时, 交换当前 DraggableDelegate 的被委托节点与对应 DroppableDelegate 的被委托节点</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">dragDelegate</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;dragover&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">drag</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">drag</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">drop</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">drop</span><span class="p">;</span>

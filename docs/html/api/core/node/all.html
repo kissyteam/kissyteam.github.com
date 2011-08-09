@@ -87,6 +87,9 @@
 					
   <div class="section" id="all">
 <h1>all<a class="headerlink" href="#all" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">该方法的快捷方式为 <tt class="docutils literal"><span class="pre">KISSY.all</span></tt></div>
+</div>
 <div class="section" id="module">
 <h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -94,10 +97,6 @@
 </div>
 <div class="section" id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">该方法的快捷方式为 <tt class="docutils literal"><span class="pre">KISSY.all</span></tt></p>
-</div>
 <dl class="staticmethod">
 <dt id="Node.NodeList.all">
 <em class="property">static </em><tt class="descclassname">NodeList.</tt><tt class="descname">all</tt><big>(</big><big>)</big><a class="headerlink" href="#Node.NodeList.all" title="Permalink to this definition">¶</a></dt>
@@ -232,48 +231,38 @@
 </div>
 <div class="section" id="demo">
 <h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
-<p><strong>得到一个包装新 dom element 的 KISSY NodeList</strong></p>
 <blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">nl</span><span class="o">=</span><span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;&lt;div&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&quot;</span><span class="p">);</span>
+<div><p><strong>得到一个包装新 dom element 的 KISSY NodeList</strong></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">nl</span><span class="o">=</span><span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;&lt;div&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&quot;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">domNodes</span><span class="o">=</span><span class="nx">nl</span><span class="p">.</span><span class="nx">getDOMNodes</span><span class="p">();</span>
 <span class="nx">domNodes</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">nodeType</span> <span class="o">==</span> <span class="mi">1</span> <span class="c1">// =&gt; true : Html Element</span>
 </pre></div>
 </div>
-</div></blockquote>
 <p><strong>得到一个包装现有 dom element 的 KISSY NodeList</strong></p>
-<blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">domNodes</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">);</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">domNodes</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">nl</span><span class="o">=</span><span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">domNodes</span><span class="p">);</span>
 <span class="nx">domNodes</span><span class="o">=</span><span class="nx">nl</span><span class="p">.</span><span class="nx">getDOMNodes</span><span class="p">();</span>
 <span class="nx">domNodes</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">nodeType</span> <span class="o">==</span> <span class="mi">1</span> <span class="c1">// =&gt; true : Html Element</span>
 <span class="nx">domNodes</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">nodeType</span> <span class="o">==</span> <span class="mi">1</span> <span class="c1">// =&gt; true : Html Element</span>
 </pre></div>
 </div>
-</div></blockquote>
 <p><strong>当然 NodeList.all 可以直接获取选择器字符串匹配的节点列表</strong></p>
-<blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">nl</span><span class="o">=</span><span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">);</span> <span class="c1">// 选择器功能而不是创建 text node</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">nl</span><span class="o">=</span><span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">);</span> <span class="c1">// 选择器功能而不是创建 text node</span>
 <span class="nx">domNodes</span><span class="o">=</span><span class="nx">nl</span><span class="p">.</span><span class="nx">getDOMNodes</span><span class="p">();</span>
 <span class="nx">domNodes</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">nodeType</span> <span class="o">==</span> <span class="mi">1</span> <span class="c1">// =&gt; true : Html Element</span>
 <span class="nx">domNodes</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">nodeType</span> <span class="o">==</span> <span class="mi">1</span> <span class="c1">// =&gt; true : Html Element</span>
 </pre></div>
 </div>
-</div></blockquote>
 <p><strong>找到页面第一个表单的所有输入框</strong></p>
-<blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span><span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span><span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
 </pre></div>
 </div>
-</div></blockquote>
 <p><strong>设置页面的背景色为黑色</strong></p>
-<blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">);</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div></blockquote>
 <p><strong>隐藏一个表单内的所有输入框</strong></p>
-<blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">myForm</span><span class="p">.</span><span class="nx">elements</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">NodeList</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">myForm</span><span class="p">.</span><span class="nx">elements</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
 </pre></div>
 </div>
 </div></blockquote>
