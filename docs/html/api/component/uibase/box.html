@@ -88,7 +88,7 @@
   <div class="section" id="uibase-box">
 <h1>UIBase.Box<a class="headerlink" href="#uibase-box" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
-<div class="line">盒子。组件扩充类，仅用于 KISSY 内部组件继承，不建议外部使用</div>
+<div class="line">盒子。组件扩充类，仅用于 KISSY 内部组件继承，目前不建议外部使用，欢迎 review</div>
 <div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/uibase/">源码</a></div>
 </div>
 <div class="section" id="class">
@@ -130,6 +130,16 @@
 <div><ul class="simple">
 <li><a class="reference internal" href="#uibase.Box.prototype.show" title="uibase.Box.prototype.show"><tt class="xref py py-meth docutils literal"><span class="pre">show()</span></tt></a></li>
 <li><a class="reference internal" href="#uibase.Box.prototype.hide" title="uibase.Box.prototype.hide"><tt class="xref py py-meth docutils literal"><span class="pre">hide()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#uibase.hide" title="uibase.hide"><tt class="xref py py-func docutils literal"><span class="pre">hide()</span></tt></a></li>
+<li><a class="reference internal" href="#uibase.show" title="uibase.show"><tt class="xref py py-func docutils literal"><span class="pre">show()</span></tt></a></li>
+<li><a class="reference internal" href="#uibase.beforeVisibleChange" title="uibase.beforeVisibleChange"><tt class="xref py py-func docutils literal"><span class="pre">beforeVisibleChange()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -250,6 +260,53 @@
 <div class="line"><strong>hide()</strong></div>
 </div>
 <p>隐藏该组件并显示出来.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="events-detail">
+<h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="uibase.hide">
+<tt class="descclassname">uibase.</tt><tt class="descname">hide</tt><big>(</big><big>)</big><a class="headerlink" href="#uibase.hide" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>hide</strong> ()</div>
+<div class="line">当组件隐藏时触发</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="uibase.show">
+<tt class="descclassname">uibase.</tt><tt class="descname">show</tt><big>(</big><big>)</big><a class="headerlink" href="#uibase.show" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>show</strong> ()</div>
+<div class="line">当组件显示时触发</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="uibase.beforeVisibleChange">
+<tt class="descclassname">uibase.</tt><tt class="descname">beforeVisibleChange</tt><big>(</big><big>)</big><a class="headerlink" href="#uibase.beforeVisibleChange" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>beforeVisibleChange</strong> (ev)</div>
+<div class="line">当组件隐藏或显示前触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>ev.newVal</strong> (<em>Boolean</em>) &#8211; 将要隐藏时为 false, 将要显示时为 true</li>
+<li><strong>ev.prevVal</strong> (<em>Boolean</em>) &#8211; 当前悬浮层显示与否</li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last">{Boolean} - 返回 false 时, 则会阻止将要进行的显示或隐藏动作.</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>

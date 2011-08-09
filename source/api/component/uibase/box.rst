@@ -3,7 +3,7 @@
 UIBase.Box
 ===============================
 
-|  盒子。组件扩充类，仅用于 KISSY 内部组件继承，不建议外部使用
+|  盒子。组件扩充类，仅用于 KISSY 内部组件继承，目前不建议外部使用，欢迎 review
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/uibase/>`_
 
 
@@ -39,7 +39,13 @@ Methods
     * :meth:`~Box.prototype.show`    
     * :meth:`~Box.prototype.hide`    
     
-    
+
+Events
+-----------------------------------------------
+
+  * :func:`hide`
+  * :func:`show`
+  * :func:`beforeVisibleChange`    
 
     
 
@@ -134,3 +140,24 @@ Methods Detail
     隐藏该组件并显示出来.
 
     
+Events Detail
+-----------------------------------------------
+
+.. function:: hide
+    
+    | **hide** ()
+    | 当组件隐藏时触发
+
+.. function:: show
+
+    | **show** ()
+    | 当组件显示时触发
+
+.. function:: beforeVisibleChange
+
+    | **beforeVisibleChange** (ev)
+    | 当组件隐藏或显示前触发
+
+    :param Boolean ev.newVal: 将要隐藏时为 false, 将要显示时为 true
+    :param Boolean ev.prevVal: 当前悬浮层显示与否
+    :returns: {Boolean} - 返回 false 时, 则会阻止将要进行的显示或隐藏动作.
