@@ -13,7 +13,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: append
+.. method:: NodeList.append
 
     | NodeList **animate** ( content )
     | 将参数内容插入到当前节点列表中的每个元素的末尾.

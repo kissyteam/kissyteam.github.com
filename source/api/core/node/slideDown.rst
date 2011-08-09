@@ -12,7 +12,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: slideDown
+.. method:: NodeList.slideDown
 
     | NodeList **slideDown** ( [ speed = 1, callback ] )
     | 当前节点列表元素从上到下滑动显示

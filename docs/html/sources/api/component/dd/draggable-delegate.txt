@@ -1,4 +1,4 @@
-.. module:: DraggableDelegate
+.. currentmodule:: DD
 
 DraggableDelegate
 ===============================================
@@ -6,44 +6,43 @@ DraggableDelegate
 .. versionadded:: 1.2
 
 |  委托容器内的所有 Draggable 节点的拖放行为.
-|  作者: `承玉 <chengyu@taobao.com>`_
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/draggable-delegate.js>`_  | `Demo <../../../demo/component/dd/draggable-delegate.html>`_
 
 
 Class
 -----------------------------------------------
 
-  * :class:`~DraggableDelegate.DraggableDelegate`
+  * :class:`DraggableDelegate`
 
 Config Attributes
 -----------------------------------------------
 
-  * :attr:`container`
-  * :attr:`selector`
-  * :attr:`handlers`
+  * :attr:`~DraggableDelegate.config.container`
+  * :attr:`~DraggableDelegate.config.selector`
+  * :attr:`~DraggableDelegate.config.handlers`
   
 Properties
 -----------------------------------------------
 
-  * :data:`node`
-  * :data:`dragNode`
+  * :data:`~DraggableDelegate.prototype.node`
+  * :data:`~DraggableDelegate.prototype.dragNode`
   
 Methods
 -----------------------------------------------
 
-  * :meth:`destroy`
+  * :meth:`~DraggableDelegate.destroy`
 
 Events
 -----------------------------------------------
 
-  * :func:`dragstart`
-  * :func:`drag`
-  * :func:`dragend`
-  * :func:`dragenter`
-  * :func:`dragover`
-  * :func:`dragexit`
-  * :func:`dragdrophit`
-  * :func:`dragdropmiss`
+  * :func:`~DraggableDelegate.dragstart`
+  * :func:`~DraggableDelegate.drag`
+  * :func:`~DraggableDelegate.dragend`
+  * :func:`~DraggableDelegate.dragenter`
+  * :func:`~DraggableDelegate.dragover`
+  * :func:`~DraggableDelegate.dragexit`
+  * :func:`~DraggableDelegate.dragdrophit`
+  * :func:`~DraggableDelegate.dragdropmiss`
 
 
 Class Detail
@@ -59,15 +58,15 @@ Class Detail
 Config Attributes Detail
 -----------------------------------------------
     
-.. attribute:: container
+.. attribute:: DraggableDelegate.config.container
 
     {String | HTMLElement} - 用于委托的容器节点, 所有 Draggable 节点都在其内.
 
-.. attribute:: selector
+.. attribute:: DraggableDelegate.config.selector
 
     {String} - 用来获取容器内的 Draggable 节点, 格式为 tag 或 tag.cls 或 .cls.
 
-.. attribute:: handlers
+.. attribute:: DraggableDelegate.config.handlers
 
     {Array} - 数组每个元素是选择器字符串, 格式为 tag 或 tag.cls 或 .cls, 作为鼠标在其上按下时触发节点拖放的钩子.  如果不设置, 则整个可拖放节点都作为触发钩子.  其中可拖放节点通过 selector 从容器 container 中取得.
 
@@ -78,11 +77,11 @@ Config Attributes Detail
 Properties Detail
 -----------------------------------------------
     
-.. attribute:: node
+.. attribute:: DraggableDelegate.prototype.node
 
     {KISSY.Node} - 当前正在拖动的被委托的容器内子节点, 在应用 DD.Proxy 时表示委托节点.
 
-.. attribute:: dragNode
+.. attribute:: DraggableDelegate.prototype.dragNode
 
     {KISSY.Node} - 当前正在拖动的被委托的容器内子节点.
 
@@ -90,7 +89,7 @@ Properties Detail
 Methods Detail
 -----------------------------------------------
 
-.. method:: destroy
+.. method:: DraggableDelegate.destroy
 
     | **destroy** ()
     | 销毁当前可拖放对象实例, 清除绑定事件.
@@ -98,42 +97,42 @@ Methods Detail
 Events Detail
 -----------------------------------------------
 
-.. function:: dragstart
+.. function:: DraggableDelegate.dragstart
     
     | **dragstart** (ev)
     | 同 :func:`Draggable.dragstart`
 
-.. function:: drag
+.. function:: DraggableDelegate.drag
 
     | **drag** (ev)
     | 同 :func:`Draggable.drag`
 
-.. function:: dragend
+.. function:: DraggableDelegate.dragend
 
     | **dragend** (ev)
     | 同 :func:`Draggable.dragend`
 
-.. function:: dragenter
+.. function:: DraggableDelegate.dragenter
 
     | **dragenter** (ev)
     | 同 :func:`Draggable.dragenter`
 
-.. function:: dragover
+.. function:: DraggableDelegate.dragover
 
     | **dragover** (ev)
     | 同 :func:`Draggable.dragover`
 
-.. function:: dragexit
+.. function:: DraggableDelegate.dragexit
 
     | **dragexit** (ev)
     | 同 :func:`Draggable.dragexit`
 
-.. function:: dragdrophit
+.. function:: DraggableDelegate.dragdrophit
 
     | **dragdrophit** (ev)
     | 同 :func:`Draggable.dragdrophit`
 
-.. function:: dragdropmiss
+.. function:: DraggableDelegate.dragdropmiss
 
     | **dragdropmiss** (ev)
     | 同 :func:`Draggable.dragdropmiss`

@@ -13,7 +13,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: add
+.. method:: NodeList.add
 
     | NodeList **add** ( selector [ , context ] )
     | 返回包含合并选择器字符串匹配的元素和当前节点列表元素的新 NodeList 对象

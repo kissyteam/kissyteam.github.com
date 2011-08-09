@@ -29,17 +29,19 @@ Methods
 
         原数组保持不变
 
-        例如
 
-        .. code-block:: javascript
+示例
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-            function makePseudoPlural(single) {
-                return single.replace(/o/g, "e");
-            }
+.. code-block:: javascript
 
-            var singles = ["foot", "goose", "moose"];
-            var plurals = S.map(singles, makePseudoPlural);  // => ["feet", "geese", "meese"]
+    function makePseudoPlural(single) {
+        return single.replace(/o/g, "e");
+    }
 
-            var a = S.map("Hello World",function(x) {
-                return x.charCodeAt(0);
-            }); // => [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]
+    var singles = ["foot", "goose", "moose"];
+    var plurals = S.map(singles, makePseudoPlural);  // => ["feet", "geese", "meese"]
+
+    var a = S.map("Hello World",function(x) {
+        return x.charCodeAt(0);
+    }); // => [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]

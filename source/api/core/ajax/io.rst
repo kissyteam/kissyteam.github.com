@@ -357,6 +357,8 @@ Demo
 
     **通过 xhr 发送 form 内容**
 
+    自动序列化 ``form`` 为查询串通过 ``xhr`` 发送给服务器端
+
     .. code-block:: html
 
         <form>
@@ -365,6 +367,12 @@ Demo
 
         <script>
             io({
-
+                url:'send.php',
+                form:'#test',
+                type:'post',
+                dataType:'json',
+                success:function(d,s,xhr){
+                    alert('success');
+                }
             });
         </script>

@@ -5,6 +5,14 @@
 插件配置
 -----------------------------------------------
 
+.. raw:: html
+
+    <style>
+    tt.descclassname, em.property {
+        display:inline;
+    }
+    </style>
+
 .. attribute:: config.pluginConfig:
 
     类型为各个插件的具体配置, 配置形式为:
@@ -32,6 +40,10 @@
                             target:"_blank"
                         }
                     }
+    
+    .. attribute:: pluginConfig.image.remote
+    
+        图片配置，如果设为 false ，则图片弹层中网络图片 tab 消失                    
 
     .. attribute:: pluginConfig.image.upload
     

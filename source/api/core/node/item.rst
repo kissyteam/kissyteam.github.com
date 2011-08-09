@@ -13,7 +13,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: item
+.. method:: NodeList.item
 
     | NodeList **item** ( index )
     | 获取包含当前节点列表 index 位置处的单个原生节点的新 NodeList 对象

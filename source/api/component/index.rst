@@ -16,3 +16,4 @@ Component
    calendar/index
    imagezoom/index
    overlay/index
+   uibase/index

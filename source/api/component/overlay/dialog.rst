@@ -5,7 +5,6 @@ Dialog
 
 |  对话框.
 |  扩展于 :class:`Overlay`
-|  作者: `承玉 <yiminghe@gmail.com>`_
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_  | `Demo <../../../demo/component/overlay/>`_
 
 Class
@@ -21,7 +20,6 @@ Config Attributes
   * :data:`headerContent`
   * :data:`bodyContent`
   * :data:`footerContent`
-  * :data:`closable`
   * :data:`draggable`
   * :data:`aria`
   * :data:`constrain`
@@ -34,7 +32,6 @@ Properties
   * :attr:`header`
   * :attr:`body`
   * :attr:`footer`
-  * :attr:`closable`
   * :attr:`draggable`
   * :attr:`constrain`
   
@@ -91,10 +88,6 @@ Config Attributes Detail
 .. data:: footerContent
 
     {String} - 对话框的底部 html.
-
-.. data:: closable
-
-    {Boolean} - 对话框右上角是否包括关闭按钮
 
 .. data:: draggable
 
@@ -157,10 +150,6 @@ Properties Detail
     .. note::
 
         以上三个属性在获取前必须调用过 ``render()`` 方法.
-
-.. attribute:: closable
-
-    {Boolean} - 右上角拖放区域有无.
 
 .. attribute:: draggable
 

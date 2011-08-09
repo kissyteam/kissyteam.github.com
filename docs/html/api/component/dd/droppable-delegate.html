@@ -85,20 +85,19 @@
     </ul>
 </div>
 					
-  <span class="target" id="module-DroppableDelegate"></span><div class="section" id="droppabledelegate">
+  <div class="section" id="droppabledelegate">
 <h1>DroppableDelegate<a class="headerlink" href="#droppabledelegate" title="Permalink to this headline">¶</a></h1>
 <p class="versionadded">
 <span class="versionmodified">New in version 1.2.</span></p>
 <div class="line-block">
 <div class="line">为 Draggable 对象提供所需要的代理节点</div>
-<div class="line">作者: <a class="reference external" href="mailto:chengyu&#37;&#52;&#48;taobao&#46;com">承玉</a></div>
 <div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/dd/droppable-delegate.js">源码</a>  | <a class="reference external" href="../../../demo/component/dd/droppable-delegate.html">Demo</a></div>
 </div>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#DroppableDelegate.DroppableDelegate" title="DroppableDelegate.DroppableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DroppableDelegate</span></tt></a></li>
+<li><a class="reference internal" href="#DD.DroppableDelegate" title="DD.DroppableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DroppableDelegate</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -106,8 +105,8 @@
 <h2>Config Attributes<a class="headerlink" href="#config-attributes" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#DroppableDelegate.container" title="DroppableDelegate.container"><tt class="xref py py-attr docutils literal"><span class="pre">container</span></tt></a></li>
-<li><a class="reference internal" href="#DroppableDelegate.selector" title="DroppableDelegate.selector"><tt class="xref py py-attr docutils literal"><span class="pre">selector</span></tt></a></li>
+<li><a class="reference internal" href="#DD.DroppableDelegate.config.container" title="DD.DroppableDelegate.config.container"><tt class="xref py py-attr docutils literal"><span class="pre">container</span></tt></a></li>
+<li><a class="reference internal" href="#DD.DroppableDelegate.config.selector" title="DD.DroppableDelegate.config.selector"><tt class="xref py py-attr docutils literal"><span class="pre">selector</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -115,7 +114,7 @@
 <h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#DroppableDelegate.node" title="DroppableDelegate.node"><tt class="xref py py-data docutils literal"><span class="pre">node</span></tt></a></li>
+<li><a class="reference internal" href="#DD.DroppableDelegate.prototype.node" title="DD.DroppableDelegate.prototype.node"><tt class="xref py py-data docutils literal"><span class="pre">node</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -123,7 +122,7 @@
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#DroppableDelegate.destroy" title="DroppableDelegate.destroy"><tt class="xref py py-meth docutils literal"><span class="pre">destroy()</span></tt></a></li>
+<li><a class="reference internal" href="#DD.DroppableDelegate.destroy" title="DD.DroppableDelegate.destroy"><tt class="xref py py-meth docutils literal"><span class="pre">destroy()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -131,18 +130,18 @@
 <h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#DroppableDelegate.dropenter" title="DroppableDelegate.dropenter"><tt class="xref py py-func docutils literal"><span class="pre">dropenter()</span></tt></a></li>
-<li><a class="reference internal" href="#DroppableDelegate.dropover" title="DroppableDelegate.dropover"><tt class="xref py py-func docutils literal"><span class="pre">dropover()</span></tt></a></li>
-<li><a class="reference internal" href="#DroppableDelegate.dropexit" title="DroppableDelegate.dropexit"><tt class="xref py py-func docutils literal"><span class="pre">dropexit()</span></tt></a></li>
-<li><a class="reference internal" href="#DroppableDelegate.drophit" title="DroppableDelegate.drophit"><tt class="xref py py-func docutils literal"><span class="pre">drophit()</span></tt></a></li>
+<li><a class="reference internal" href="#DD.DroppableDelegate.dropenter" title="DD.DroppableDelegate.dropenter"><tt class="xref py py-func docutils literal"><span class="pre">dropenter()</span></tt></a></li>
+<li><a class="reference internal" href="#DD.DroppableDelegate.dropover" title="DD.DroppableDelegate.dropover"><tt class="xref py py-func docutils literal"><span class="pre">dropover()</span></tt></a></li>
+<li><a class="reference internal" href="#DD.DroppableDelegate.dropexit" title="DD.DroppableDelegate.dropexit"><tt class="xref py py-func docutils literal"><span class="pre">dropexit()</span></tt></a></li>
+<li><a class="reference internal" href="#DD.DroppableDelegate.drophit" title="DD.DroppableDelegate.drophit"><tt class="xref py py-func docutils literal"><span class="pre">drophit()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="class-detail">
 <h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="DroppableDelegate.DroppableDelegate">
-<em class="property">class </em><tt class="descclassname">DroppableDelegate.</tt><tt class="descname">DroppableDelegate</tt><a class="headerlink" href="#DroppableDelegate.DroppableDelegate" title="Permalink to this definition">¶</a></dt>
+<dt id="DD.DroppableDelegate">
+<em class="property">class </em><tt class="descclassname">DD.</tt><tt class="descname">DroppableDelegate</tt><a class="headerlink" href="#DD.DroppableDelegate" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>DroppableDelegate</strong> (config)</div>
 </div>
@@ -161,14 +160,14 @@
 <div class="section" id="config-attributes-detail">
 <h2>Config Attributes Detail<a class="headerlink" href="#config-attributes-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="attribute">
-<dt id="DroppableDelegate.container">
-<tt class="descclassname">DroppableDelegate.</tt><tt class="descname">container</tt><a class="headerlink" href="#DroppableDelegate.container" title="Permalink to this definition">¶</a></dt>
+<dt id="DD.DroppableDelegate.config.container">
+<tt class="descclassname">DroppableDelegate.config.</tt><tt class="descname">container</tt><a class="headerlink" href="#DD.DroppableDelegate.config.container" title="Permalink to this definition">¶</a></dt>
 <dd><p>{String | HTMLElement} - 用于委托的容器节点, 所有 Droppable 节点都在其内.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="DroppableDelegate.selector">
-<tt class="descclassname">DroppableDelegate.</tt><tt class="descname">selector</tt><a class="headerlink" href="#DroppableDelegate.selector" title="Permalink to this definition">¶</a></dt>
+<dt id="DD.DroppableDelegate.config.selector">
+<tt class="descclassname">DroppableDelegate.config.</tt><tt class="descname">selector</tt><a class="headerlink" href="#DD.DroppableDelegate.config.selector" title="Permalink to this definition">¶</a></dt>
 <dd><p>{String} - 类型选择字符串, 用来获取容器内的 Droppable 节点, 格式为 tag 或 tag.cls 或 .cls.</p>
 </dd></dl>
 
@@ -176,8 +175,8 @@
 <div class="section" id="properties-detail">
 <h2>Properties Detail<a class="headerlink" href="#properties-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="attribute">
-<dt id="DroppableDelegate.node">
-<tt class="descclassname">DroppableDelegate.</tt><tt class="descname">node</tt><a class="headerlink" href="#DroppableDelegate.node" title="Permalink to this definition">¶</a></dt>
+<dt id="DD.DroppableDelegate.prototype.node">
+<tt class="descclassname">DroppableDelegate.prototype.</tt><tt class="descname">node</tt><a class="headerlink" href="#DD.DroppableDelegate.prototype.node" title="Permalink to this definition">¶</a></dt>
 <dd><p>{KISSY.Node} - 表示当前容器内正在和 Draggble 对象交互的节点,  通过 selector 获取.</p>
 </dd></dl>
 
@@ -185,8 +184,8 @@
 <div class="section" id="methods-detail">
 <h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
-<dt id="DroppableDelegate.destroy">
-<tt class="descclassname">DroppableDelegate.</tt><tt class="descname">destroy</tt><big>(</big><big>)</big><a class="headerlink" href="#DroppableDelegate.destroy" title="Permalink to this definition">¶</a></dt>
+<dt id="DD.DroppableDelegate.destroy">
+<tt class="descclassname">DroppableDelegate.</tt><tt class="descname">destroy</tt><big>(</big><big>)</big><a class="headerlink" href="#DD.DroppableDelegate.destroy" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>destroy</strong> ()</div>
 <div class="line">销毁可放对象实例, 清除绑定事件</div>
@@ -197,38 +196,38 @@
 <div class="section" id="events-detail">
 <h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="DroppableDelegate.dropenter">
-<tt class="descclassname">DroppableDelegate.</tt><tt class="descname">dropenter</tt><big>(</big><big>)</big><a class="headerlink" href="#DroppableDelegate.dropenter" title="Permalink to this definition">¶</a></dt>
+<dt id="DD.DroppableDelegate.dropenter">
+<tt class="descclassname">DroppableDelegate.</tt><tt class="descname">dropenter</tt><big>(</big><big>)</big><a class="headerlink" href="#DD.DroppableDelegate.dropenter" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>dropenter</strong> (ev)</div>
-<div class="line">同 <a class="reference internal" href="droppable.html#Droppable.dropenter" title="Droppable.dropenter"><tt class="xref py py-func docutils literal"><span class="pre">Droppable.dropenter()</span></tt></a></div>
+<div class="line">同 <a class="reference internal" href="droppable.html#DD.Droppable.dropenter" title="DD.Droppable.dropenter"><tt class="xref py py-func docutils literal"><span class="pre">Droppable.dropenter()</span></tt></a></div>
 </div>
 </dd></dl>
 
 <dl class="function">
-<dt id="DroppableDelegate.dropover">
-<tt class="descclassname">DroppableDelegate.</tt><tt class="descname">dropover</tt><big>(</big><big>)</big><a class="headerlink" href="#DroppableDelegate.dropover" title="Permalink to this definition">¶</a></dt>
+<dt id="DD.DroppableDelegate.dropover">
+<tt class="descclassname">DroppableDelegate.</tt><tt class="descname">dropover</tt><big>(</big><big>)</big><a class="headerlink" href="#DD.DroppableDelegate.dropover" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>dropover</strong> (ev)</div>
-<div class="line">同 <a class="reference internal" href="droppable.html#Droppable.dropover" title="Droppable.dropover"><tt class="xref py py-func docutils literal"><span class="pre">Droppable.dropover()</span></tt></a></div>
+<div class="line">同 <a class="reference internal" href="droppable.html#DD.Droppable.dropover" title="DD.Droppable.dropover"><tt class="xref py py-func docutils literal"><span class="pre">Droppable.dropover()</span></tt></a></div>
 </div>
 </dd></dl>
 
 <dl class="function">
-<dt id="DroppableDelegate.dropexit">
-<tt class="descclassname">DroppableDelegate.</tt><tt class="descname">dropexit</tt><big>(</big><big>)</big><a class="headerlink" href="#DroppableDelegate.dropexit" title="Permalink to this definition">¶</a></dt>
+<dt id="DD.DroppableDelegate.dropexit">
+<tt class="descclassname">DroppableDelegate.</tt><tt class="descname">dropexit</tt><big>(</big><big>)</big><a class="headerlink" href="#DD.DroppableDelegate.dropexit" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>dropexit</strong> (ev)</div>
-<div class="line">同 <a class="reference internal" href="droppable.html#Droppable.dropexit" title="Droppable.dropexit"><tt class="xref py py-func docutils literal"><span class="pre">Droppable.dropexit()</span></tt></a></div>
+<div class="line">同 <a class="reference internal" href="droppable.html#DD.Droppable.dropexit" title="DD.Droppable.dropexit"><tt class="xref py py-func docutils literal"><span class="pre">Droppable.dropexit()</span></tt></a></div>
 </div>
 </dd></dl>
 
 <dl class="function">
-<dt id="DroppableDelegate.drophit">
-<tt class="descclassname">DroppableDelegate.</tt><tt class="descname">drophit</tt><big>(</big><big>)</big><a class="headerlink" href="#DroppableDelegate.drophit" title="Permalink to this definition">¶</a></dt>
+<dt id="DD.DroppableDelegate.drophit">
+<tt class="descclassname">DroppableDelegate.</tt><tt class="descname">drophit</tt><big>(</big><big>)</big><a class="headerlink" href="#DD.DroppableDelegate.drophit" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>drophit</strong> (ev)</div>
-<div class="line">同 <a class="reference internal" href="droppable.html#Droppable.drophit" title="Droppable.drophit"><tt class="xref py py-func docutils literal"><span class="pre">Droppable.drophit()</span></tt></a></div>
+<div class="line">同 <a class="reference internal" href="droppable.html#DD.Droppable.drophit" title="DD.Droppable.drophit"><tt class="xref py py-func docutils literal"><span class="pre">Droppable.drophit()</span></tt></a></div>
 </div>
 </dd></dl>
 
@@ -236,6 +235,65 @@
 </div>
 
 
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            KISSY.one("#openComment").attr("disabled",true);
+        }else{
+            KISSY.one("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            KISSY.one("#openComment").on("change",function(){
+                window.localStorage.setItem("kissy-commment",KISSY.one("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
 				</div>
 			</div>
     <div class="col-sub"><ul class="s-box api-toctree">
@@ -276,6 +334,12 @@
         <li><a href="../calendar/index.html">calendar</a></li>
         <li><a href="../imagezoom/index.html">imagezoom</a></li>
         <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../uibase/index.html">uibase</a></li>
+        <li><a href="../component/index.html">component</a></li>
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
     </ul>
 </ul>
         

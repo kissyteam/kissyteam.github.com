@@ -5,7 +5,6 @@ Popup
 
 
 |  弹出层
-|  作者: `乔花 <qiaohua@taobao.com>`_
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_  | `Demo <../../../demo/component/overlay/>`_
 
 Class

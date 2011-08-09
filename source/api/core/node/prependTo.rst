@@ -12,7 +12,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: prependTo
+.. method:: NodeList.prependTo
 
     | NodeList **prependTo** ( containers )
     | 将当前节点列表中的每个元素插入到容器列表的每个元素的开头.

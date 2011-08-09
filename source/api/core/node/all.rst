@@ -11,13 +11,21 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: all
+.. note::
+
+    该方法的快捷方式为 ``KISSY.all``
+
+.. staticmethod:: NodeList.all
 
     | NodeList **all** ( selector , [ context ] )
     | 根据选择器字符串得到节点列表
     
     :param string selector: 选择器字符串
-    :param HTMLELement|Document|NodeList:   选择器上下文, .. versionadded 1.2 NodeList 时取第一个元素
+    :param HTMLELement|Document|NodeList context:   选择器上下文, 
+    
+        .. versionadded:: 1.2 
+            支持 NodeList 参数类型，取第一个元素
+            
     :rtype: NodeList
     
 

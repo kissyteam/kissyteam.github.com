@@ -17,6 +17,7 @@ hashchange
 
 .. note::
     此事件只能在当前 window 上注册，注册到其他类型元素上无效！
+    hash 值推荐为 ``!/xx/`` 形式, 前面用 ``!/`` 后面用 ``/`` 包起来，否则 ``ie67`` 可能有诡异现象.
 
 .. code-block:: javascript
 

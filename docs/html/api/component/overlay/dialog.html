@@ -90,7 +90,6 @@
 <div class="line-block">
 <div class="line">对话框.</div>
 <div class="line">扩展于 <a class="reference internal" href="popup.html#module-Overlay" title="Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a></div>
-<div class="line">作者: <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></div>
 <div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/overlay/">源码</a>  | <a class="reference external" href="../../../demo/component/overlay/">Demo</a></div>
 </div>
 <div class="section" id="class">
@@ -109,7 +108,6 @@
 <li><a class="reference internal" href="#Overlay.headerContent" title="Overlay.headerContent"><tt class="xref py py-data docutils literal"><span class="pre">headerContent</span></tt></a></li>
 <li><a class="reference internal" href="#Overlay.bodyContent" title="Overlay.bodyContent"><tt class="xref py py-data docutils literal"><span class="pre">bodyContent</span></tt></a></li>
 <li><a class="reference internal" href="#Overlay.footerContent" title="Overlay.footerContent"><tt class="xref py py-data docutils literal"><span class="pre">footerContent</span></tt></a></li>
-<li><a class="reference internal" href="#Overlay.closable" title="Overlay.closable"><tt class="xref py py-data docutils literal"><span class="pre">closable</span></tt></a></li>
 <li><a class="reference internal" href="#Overlay.draggable" title="Overlay.draggable"><tt class="xref py py-data docutils literal"><span class="pre">draggable</span></tt></a></li>
 <li><a class="reference internal" href="#Overlay.aria" title="Overlay.aria"><tt class="xref py py-data docutils literal"><span class="pre">aria</span></tt></a></li>
 <li><a class="reference internal" href="#Overlay.constrain" title="Overlay.constrain"><tt class="xref py py-data docutils literal"><span class="pre">constrain</span></tt></a></li>
@@ -124,7 +122,6 @@
 <li><a class="reference internal" href="#Overlay.header" title="Overlay.header"><tt class="xref py py-attr docutils literal"><span class="pre">header</span></tt></a></li>
 <li><a class="reference internal" href="#Overlay.body" title="Overlay.body"><tt class="xref py py-attr docutils literal"><span class="pre">body</span></tt></a></li>
 <li><a class="reference internal" href="#Overlay.footer" title="Overlay.footer"><tt class="xref py py-attr docutils literal"><span class="pre">footer</span></tt></a></li>
-<li><a class="reference internal" href="#Overlay.closable" title="Overlay.closable"><tt class="xref py py-attr docutils literal"><span class="pre">closable</span></tt></a></li>
 <li><a class="reference internal" href="#Overlay.draggable" title="Overlay.draggable"><tt class="xref py py-attr docutils literal"><span class="pre">draggable</span></tt></a></li>
 <li><a class="reference internal" href="#Overlay.constrain" title="Overlay.constrain"><tt class="xref py py-attr docutils literal"><span class="pre">constrain</span></tt></a></li>
 </ul>
@@ -201,12 +198,6 @@
 <dt id="Overlay.footerContent">
 <tt class="descclassname">Overlay.</tt><tt class="descname">footerContent</tt><a class="headerlink" href="#Overlay.footerContent" title="Permalink to this definition">¶</a></dt>
 <dd><p>{String} - 对话框的底部 html.</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="Overlay.closable">
-<tt class="descclassname">Overlay.</tt><tt class="descname">closable</tt><a class="headerlink" href="#Overlay.closable" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Boolean} - 对话框右上角是否包括关闭按钮</p>
 </dd></dl>
 
 <dl class="data">
@@ -288,12 +279,6 @@
 
 <dl class="attribute">
 <dt>
-<tt class="descclassname">Overlay.</tt><tt class="descname">closable</tt></dt>
-<dd><p>{Boolean} - 右上角拖放区域有无.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt>
 <tt class="descclassname">Overlay.</tt><tt class="descname">draggable</tt></dt>
 <dd><p>{Boolean} - 头部是否可以拖放.</p>
 </dd></dl>
@@ -318,6 +303,65 @@
 </div>
 
 
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            KISSY.one("#openComment").attr("disabled",true);
+        }else{
+            KISSY.one("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            KISSY.one("#openComment").on("change",function(){
+                window.localStorage.setItem("kissy-commment",KISSY.one("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
 				</div>
 			</div>
     <div class="col-sub"><ul class="s-box api-toctree">
@@ -358,6 +402,12 @@
         <li><a href="../calendar/index.html">calendar</a></li>
         <li><a href="../imagezoom/index.html">imagezoom</a></li>
         <li><a href="index.html">overlay</a></li>
+        <li><a href="../uibase/index.html">uibase</a></li>
+        <li><a href="../component/index.html">component</a></li>
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
     </ul>
 </ul>
         

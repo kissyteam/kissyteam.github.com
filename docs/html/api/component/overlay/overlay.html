@@ -89,7 +89,6 @@
 <h1>Overlay<a class="headerlink" href="#overlay" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line">悬浮的对话框</div>
-<div class="line">作者: <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></div>
 <div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/overlay/">源码</a>  | <a class="reference external" href="../../../demo/component/overlay/">Demo</a></div>
 </div>
 <div class="section" id="class">
@@ -117,6 +116,7 @@
 <li><a class="reference internal" href="#Overlay.align" title="Overlay.align"><tt class="xref py py-data docutils literal"><span class="pre">align</span></tt></a></li>
 <li><a class="reference internal" href="#Overlay.effect" title="Overlay.effect"><tt class="xref py py-data docutils literal"><span class="pre">effect</span></tt></a></li>
 <li><a class="reference internal" href="#Overlay.resize" title="Overlay.resize"><tt class="xref py py-data docutils literal"><span class="pre">resize</span></tt></a></li>
+<li><a class="reference internal" href="#Overlay.closable" title="Overlay.closable"><tt class="xref py py-data docutils literal"><span class="pre">closable</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -128,6 +128,7 @@
 <li><a class="reference internal" href="#Overlay.y" title="Overlay.y"><tt class="xref py py-attr docutils literal"><span class="pre">y</span></tt></a></li>
 <li><a class="reference internal" href="#Overlay.xy" title="Overlay.xy"><tt class="xref py py-attr docutils literal"><span class="pre">xy</span></tt></a></li>
 <li><a class="reference internal" href="#Overlay.align" title="Overlay.align"><tt class="xref py py-attr docutils literal"><span class="pre">align</span></tt></a></li>
+<li><a class="reference internal" href="#Overlay.closable" title="Overlay.closable"><tt class="xref py py-attr docutils literal"><span class="pre">closable</span></tt></a></li>
 <li><a class="reference internal" href="#Overlay.visible" title="Overlay.visible"><tt class="xref py py-attr docutils literal"><span class="pre">visible</span></tt></a></li>
 <li><a class="reference internal" href="#Overlay.el" title="Overlay.el"><tt class="xref py py-attr docutils literal"><span class="pre">el</span></tt></a></li>
 <li><a class="reference internal" href="#Overlay.contentEl" title="Overlay.contentEl"><tt class="xref py py-attr docutils literal"><span class="pre">contentEl</span></tt></a></li>
@@ -278,6 +279,18 @@
 </dd></dl>
 
 <dl class="data">
+<dt id="Overlay.closable">
+<tt class="descclassname">Overlay.</tt><tt class="descname">closable</tt><a class="headerlink" href="#Overlay.closable" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 对话框右上角是否包括关闭按钮</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="Overlay.mask">
+<tt class="descclassname">Overlay.</tt><tt class="descname">mask</tt><a class="headerlink" href="#Overlay.mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 浮层显示时是否使用遮罩层盖住页面其他元素</p>
+</dd></dl>
+
+<dl class="data">
 <dt id="Overlay.resize">
 <tt class="descclassname">Overlay.</tt><tt class="descname">resize</tt><a class="headerlink" href="#Overlay.resize" title="Permalink to this definition">¶</a></dt>
 <dd><p class="versionadded">
@@ -335,6 +348,12 @@
 <dt id="Overlay.visible">
 <tt class="descclassname">Overlay.</tt><tt class="descname">visible</tt><a class="headerlink" href="#Overlay.visible" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Boolean} - 悬浮层的是否显示.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descclassname">Overlay.</tt><tt class="descname">closable</tt></dt>
+<dd><p>{Boolean} - 右上角关闭区域有无.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -509,6 +528,65 @@
 </div>
 
 
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            KISSY.one("#openComment").attr("disabled",true);
+        }else{
+            KISSY.one("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            KISSY.one("#openComment").on("change",function(){
+                window.localStorage.setItem("kissy-commment",KISSY.one("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
 				</div>
 			</div>
     <div class="col-sub"><ul class="s-box api-toctree">
@@ -549,6 +627,12 @@
         <li><a href="../calendar/index.html">calendar</a></li>
         <li><a href="../imagezoom/index.html">imagezoom</a></li>
         <li><a href="index.html">overlay</a></li>
+        <li><a href="../uibase/index.html">uibase</a></li>
+        <li><a href="../component/index.html">component</a></li>
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
     </ul>
 </ul>
         

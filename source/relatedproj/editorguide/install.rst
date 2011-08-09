@@ -57,7 +57,7 @@ kissy 1.2.0
 
     <script src="http://a.tbcdn.cn/s/kissy/1.2.0/??kissy-min.js,
     uibase-min.js,
-    component-min.js
+    component-min.js,
     dd-min.js,
     overlay-min.js,
     editor/editor-all-pkg-min.js"></script>

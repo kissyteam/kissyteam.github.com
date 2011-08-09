@@ -24,9 +24,9 @@ Class Detail
                                          
     :param object props: 属性键值对, 对生成的 NodeList 对象代表的原生 DOM 节点设置属性. 仅当 html 参数为 html 字符串时使用.
     :param HTMLDocument ownerDocument: 该 NodeList 产生的原生 DOM 节点所属的文档对象. 仅当 html 参数为 html 字符串时使用.
-
-    .. versionadded:: 1.2
-        推荐除了需要生成文本节点的情况下, 统统使用 :meth:`~NodeList.all` 代替.    
+        
+.. versionadded:: 1.2
+        推荐除了需要生成文本节点的情况下, 统统使用 :meth:`~NodeList.all` 代替.           
         
 Demo
 -----------------------------------------------

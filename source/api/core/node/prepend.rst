@@ -12,7 +12,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: prepend
+.. method:: NodeList.prepend
 
     | NodeList **prepend** ( content )
     | 将参数内容插入到当前节点列表中的每个元素的开头.

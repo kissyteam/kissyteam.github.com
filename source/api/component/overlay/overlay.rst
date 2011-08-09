@@ -4,7 +4,6 @@ Overlay
 ===============================================
 
 |  悬浮的对话框
-|  作者: `承玉 <yiminghe@gmail.com>`_
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_  | `Demo <../../../demo/component/overlay/>`_
 
 Class
@@ -27,7 +26,8 @@ Config Attributes
   * :data:`xy`
   * :data:`align`
   * :data:`effect`
-  * :data:`resize`
+  * :data:`resize`  
+  * :data:`closable`
   
 Properties
 -----------------------------------------------
@@ -35,7 +35,8 @@ Properties
   * :attr:`x`
   * :attr:`y`
   * :attr:`xy`
-  * :attr:`align`
+  * :attr:`align`  
+  * :attr:`closable`
   * :attr:`visible`
   * :attr:`el`
   * :attr:`contentEl`
@@ -150,7 +151,14 @@ Config Attributes Detail
             easing:'',        // {String} - 可选, 同 KISSY.Anim 的 easing 参数配置.
             duratiion:3       // {Number} - 可选, 动画持续时间, 以秒为单位.
         }
-            
+        
+.. data:: closable
+
+    {Boolean} - 对话框右上角是否包括关闭按钮
+    
+.. data:: mask
+
+    {Boolean} - 浮层显示时是否使用遮罩层盖住页面其他元素    
 
 .. data:: resize
 
@@ -203,6 +211,10 @@ Properties Detail
 .. attribute:: visible
 
     {Boolean} - 悬浮层的是否显示.
+    
+.. attribute:: closable
+
+    {Boolean} - 右上角关闭区域有无.    
 
 .. attribute:: el
 

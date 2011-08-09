@@ -4,7 +4,6 @@ Switchable
 ===================================================================
 
 |  Switchable 的核心类, S.Tabs/S.Slide/S.Accordion/S.Carousel 都是扩展自它.
-|  作者: `玉伯 <lifesinger@gmail.com>`_
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/switchable/>`_ | `Demo <../../../demo/component/switchable/index.html>`_
 
 

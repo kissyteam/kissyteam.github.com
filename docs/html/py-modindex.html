@@ -99,7 +99,6 @@
    <a href="#cap-m"><strong>m</strong></a> | 
    <a href="#cap-n"><strong>n</strong></a> | 
    <a href="#cap-o"><strong>o</strong></a> | 
-   <a href="#cap-p"><strong>p</strong></a> | 
    <a href="#cap-s"><strong>s</strong></a> | 
    <a href="#cap-t"><strong>t</strong></a> | 
    <a href="#cap-u"><strong>u</strong></a> | 
@@ -154,32 +153,12 @@
      <tr>
        <td></td>
        <td>
-       <a href="api/component/dd/ddm.html#module-DDM"><tt class="xref">DDM</tt></a></td><td>
+       <a href="api/component/dd/index.html#module-DD"><tt class="xref">DD</tt></a></td><td>
        <em></em></td></tr>
      <tr>
        <td></td>
        <td>
        <a href="api/core/dom/index.html#module-DOM"><tt class="xref">DOM</tt></a></td><td>
-       <em></em></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="api/component/dd/draggable.html#module-Draggable"><tt class="xref">Draggable</tt></a></td><td>
-       <em></em></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="api/component/dd/draggable-delegate.html#module-DraggableDelegate"><tt class="xref">DraggableDelegate</tt></a></td><td>
-       <em></em></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="api/component/dd/droppable.html#module-Droppable"><tt class="xref">Droppable</tt></a></td><td>
-       <em></em></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="api/component/dd/droppable-delegate.html#module-DroppableDelegate"><tt class="xref">DroppableDelegate</tt></a></td><td>
        <em></em></td></tr>
      <tr class="pcap"><td></td><td>&nbsp;</td><td></td></tr>
      <tr class="cap" id="cap-e"><td></td><td>
@@ -261,21 +240,8 @@
        <a href="api/component/overlay/popup.html#module-Overlay"><tt class="xref">Overlay</tt></a></td><td>
        <em></em></td></tr>
      <tr class="pcap"><td></td><td>&nbsp;</td><td></td></tr>
-     <tr class="cap" id="cap-p"><td></td><td>
-       <strong>p</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="api/component/dd/proxy.html#module-Proxy"><tt class="xref">Proxy</tt></a></td><td>
-       <em></em></td></tr>
-     <tr class="pcap"><td></td><td>&nbsp;</td><td></td></tr>
      <tr class="cap" id="cap-s"><td></td><td>
        <strong>s</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="api/component/dd/scroll.html#module-Scroll"><tt class="xref">Scroll</tt></a></td><td>
-       <em></em></td></tr>
      <tr>
        <td></td>
        <td>
@@ -317,6 +283,11 @@
        <td>
        <a href="api/core/ua/index.html#module-UA"><tt class="xref">UA</tt></a></td><td>
        <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/component/uibase/index.html#module-uibase"><tt class="xref">uibase</tt></a></td><td>
+       <em></em></td></tr>
      <tr class="pcap"><td></td><td>&nbsp;</td><td></td></tr>
      <tr class="cap" id="cap-w"><td></td><td>
        <strong>w</strong></td><td></td></tr>
@@ -328,6 +299,65 @@
    </table>
 
 
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            KISSY.one("#openComment").attr("disabled",true);
+        }else{
+            KISSY.one("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            KISSY.one("#openComment").on("change",function(){
+                window.localStorage.setItem("kissy-commment",KISSY.one("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
 				</div>
 			</div>
     <div class="col-sub">

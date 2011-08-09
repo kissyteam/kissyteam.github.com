@@ -165,6 +165,15 @@
 event.target 指向事件触发源, event.currentTarget 指向当前事件处理器调用所在的匹配 filter 的元素.
 可以使用 <tt class="xref py py-meth docutils literal"><span class="pre">stopPropagation()</span></tt> 来停止事件的向上冒泡, 这样就不会在同样符合 filter 条件的祖先节点上调用事件处理器.</p>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">因为 <tt class="docutils literal"><span class="pre">delegate</span></tt> 是在事件冒泡到代理元素后才开始处理的，那么通过 <tt class="docutils literal"><span class="pre">on</span></tt> 注册到代理元素的子节点的事件处理器已经被触发，
+而无法被 <tt class="docutils literal"><span class="pre">delegate</span></tt> 绑定的事件处理器阻止 ( <tt class="docutils literal"><span class="pre">stopPropagation</span></tt> )，但 <tt class="docutils literal"><span class="pre">delegate</span></tt> 事件处理器可以阻止绑定到同一元素但是匹配元素在当前事件处理器之上的 <tt class="docutils literal"><span class="pre">delegate</span></tt> 事件处理器.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">同样可以对 <tt class="docutils literal"><span class="pre">mouseenter</span></tt> , <tt class="docutils literal"><span class="pre">mouseleave</span></tt> 进行委托.</p>
+</div>
 </dd></dl>
 
 </div>
@@ -204,7 +213,7 @@ event.target 指向事件触发源, event.currentTarget 指向当前事件处理
     
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#i4&#39;</span><span class="p">).</span><span class="nx">delegate</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="s1">&#39;.inner&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
         <span class="kd">var</span> <span class="nx">target</span><span class="o">=</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">,</span><span class="nx">currentTarget</span><span class="o">=</span><span class="nx">e</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">;</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#log&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;&lt;div style=&#39;margin:5px;&#39;&gt;invoked : &lt;br/&gt; this.id=&quot;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="o">+</span><span class="s2">&quot;&lt;br/&gt;event.target.id=&quot;</span><span class="o">+</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#log&#39;</span><span class="p">).</span><span class="nx">prepend</span><span class="p">(</span><span class="s2">&quot;&lt;div style=&#39;margin:5px;&#39;&gt;invoked : &lt;br/&gt; this.id=&quot;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="o">+</span><span class="s2">&quot;&lt;br/&gt;event.target.id=&quot;</span><span class="o">+</span>
         <span class="nx">target</span><span class="p">.</span><span class="nx">id</span><span class="o">+</span><span class="s2">&quot;&lt;br&gt;event.currentTarget.id=&quot;</span><span class="o">+</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">id</span><span class="o">+</span><span class="s2">&quot;&lt;/div&gt;&quot;</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
@@ -246,7 +255,7 @@ event.target 指向事件触发源, event.currentTarget 指向当前事件处理
     
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#i4&#39;</span><span class="p">).</span><span class="nx">delegate</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="s1">&#39;.inner&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
         <span class="kd">var</span> <span class="nx">target</span><span class="o">=</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">,</span><span class="nx">currentTarget</span><span class="o">=</span><span class="nx">e</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">;</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#log&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;&lt;div style=&#39;margin:5px;&#39;&gt;invoked : &lt;br/&gt; this.id=&quot;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="o">+</span><span class="s2">&quot;&lt;br/&gt;event.target.id=&quot;</span><span class="o">+</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#log&#39;</span><span class="p">).</span><span class="nx">prepend</span><span class="p">(</span><span class="s2">&quot;&lt;div style=&#39;margin:5px;&#39;&gt;invoked : &lt;br/&gt; this.id=&quot;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="o">+</span><span class="s2">&quot;&lt;br/&gt;event.target.id=&quot;</span><span class="o">+</span>
         <span class="nx">target</span><span class="p">.</span><span class="nx">id</span><span class="o">+</span><span class="s2">&quot;&lt;br&gt;event.currentTarget.id=&quot;</span><span class="o">+</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">id</span><span class="o">+</span><span class="s2">&quot;&lt;/div&gt;&quot;</span><span class="p">);</span>
         <span class="nx">e</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
     <span class="p">});</span>
@@ -256,11 +265,112 @@ event.target 指向事件触发源, event.currentTarget 指向当前事件处理
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </div>
-<iframe width="100%" height="135" src="../../../static/api/core/event/delegate_2.html"></iframe></div></blockquote>
+<iframe width="100%" height="135" src="../../../static/api/core/event/delegate_2.html"></iframe><p><strong>委托 mouseenter/mouseleave</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;style&gt;</span>
+
+<span class="nt">button</span> <span class="p">{</span> <span class="k">margin</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">div</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span><span class="nb">blue</span><span class="p">;</span> <span class="k">font-weight</span><span class="o">:</span><span class="k">bold</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">span</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span><span class="nb">red</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+    <span class="nt">&lt;script&gt;</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">==</span><span class="s2">&quot;localhost&quot;</span><span class="p">){</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://localhost/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://yiminghe.github.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+   <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;out&#39;</span> <span class="na">id=</span><span class="s">&#39;i4&#39;</span> <span class="na">style=</span><span class="s">&#39;width:300px;height:300px;border:1px solid green;&#39;</span><span class="nt">&gt;</span>
+    i4
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;inner&#39;</span> <span class="na">id=</span><span class="s">&#39;i3&#39;</span> <span class="na">style=</span><span class="s">&#39;width:200px;height:200px;border:1px solid red;margin:50px;&#39;</span><span class="nt">&gt;</span>
+            #i3.inner
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;inner&#39;</span> <span class="na">id=</span><span class="s">&#39;i1&#39;</span> <span class="na">style=</span><span class="s">&#39;width:100px;height:100px;border:1px solid black;margin:50px;&#39;</span><span class="nt">&gt;</span>
+                     #i1.inner : try mouse
+                <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>    
+   <span class="nt">&lt;hr/&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;log&#39;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>    
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#i4&#39;</span><span class="p">).</span><span class="nx">delegate</span><span class="p">(</span><span class="s1">&#39;mouseenter mouseleave click&#39;</span><span class="p">,</span><span class="s1">&#39;.inner&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>        
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#log&#39;</span><span class="p">).</span><span class="nx">prepend</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">type</span><span class="o">+</span><span class="s2">&quot; : &quot;</span><span class="o">+</span><span class="nx">e</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">id</span><span class="o">+</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<iframe width="100%" height="370" src="../../../static/api/core/event/delegate_mouse.html"></iframe></div></blockquote>
 </div>
 </div>
 
 
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            KISSY.one("#openComment").attr("disabled",true);
+        }else{
+            KISSY.one("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            KISSY.one("#openComment").on("change",function(){
+                window.localStorage.setItem("kissy-commment",KISSY.one("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
 				</div>
 			</div>
     <div class="col-sub"><ul class="s-box api-toctree">
@@ -301,6 +411,12 @@ event.target 指向事件触发源, event.currentTarget 指向当前事件处理
         <li><a href="../../component/calendar/index.html">calendar</a></li>
         <li><a href="../../component/imagezoom/index.html">imagezoom</a></li>
         <li><a href="../../component/overlay/index.html">overlay</a></li>
+        <li><a href="../../component/uibase/index.html">uibase</a></li>
+        <li><a href="../../component/component/index.html">component</a></li>
+        <li><a href="../../component/button/index.html">button</a></li>
+        <li><a href="../../component/menu/index.html">menu</a></li>
+        <li><a href="../../component/menubutton/index.html">menubutton</a></li>
+        <li><a href="../../component/tree/index.html">tree</a></li>
     </ul>
 </ul>
         

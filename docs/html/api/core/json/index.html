@@ -88,7 +88,6 @@
 <h1>json<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line">KISSY 直接采用了 Douglas Crockford 的 json2.js</div>
-<div class="line">作者: <a class="reference external" href="http://www.crockford.com/">Douglas Crockford</a></div>
 <div class="line">源码: <a class="reference external" href="http://github.com/kissyteam/kissy/blob/master/src/json/json2.js">查看</a></div>
 </div>
 <blockquote>
@@ -171,9 +170,82 @@
 </dd></dl>
 
 </div>
+<div class="section" id="id2">
+<h2>示例<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>注意 <tt class="docutils literal"><span class="pre">json</span></tt> 字符串的格式，属性必须要双引号括起来</p>
+<div class="highlight-html"><div class="highlight"><pre>KISSY.JSON.parse(&#39;{&quot;x&quot;:1}&#39;); // =&gt; ok
+KISSY.JSON.parse(&quot;{&#39;x&#39;:1}&quot;); // =&gt; exception : SyntaxError
+KISSY.JSON.parse(&quot;{x:1}&quot;); // =&gt; exception : SyntaxError
+
+
+KISSY.JSON.stringify({&quot;x&quot;:1}); // =&gt; &#39;{&quot;x&quot;:1}&#39;
+KISSY.JSON.stringify({x:1}); // =&gt; &#39;{&quot;x&quot;:1}&#39;
+KISSY.JSON.stringify({&#39;x&#39;:1}); // =&gt; &#39;{&quot;x&quot;:1}&#39;
+</pre></div>
+</div>
+</div>
 </div>
 
 
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            KISSY.one("#openComment").attr("disabled",true);
+        }else{
+            KISSY.one("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            KISSY.one("#openComment").on("change",function(){
+                window.localStorage.setItem("kissy-commment",KISSY.one("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
 				</div>
 			</div>
     <div class="col-sub"><ul class="s-box api-toctree">
@@ -214,6 +286,12 @@
         <li><a href="../../component/calendar/index.html">calendar</a></li>
         <li><a href="../../component/imagezoom/index.html">imagezoom</a></li>
         <li><a href="../../component/overlay/index.html">overlay</a></li>
+        <li><a href="../../component/uibase/index.html">uibase</a></li>
+        <li><a href="../../component/component/index.html">component</a></li>
+        <li><a href="../../component/button/index.html">button</a></li>
+        <li><a href="../../component/menu/index.html">menu</a></li>
+        <li><a href="../../component/menubutton/index.html">menubutton</a></li>
+        <li><a href="../../component/tree/index.html">tree</a></li>
     </ul>
 </ul>
         

@@ -4,7 +4,6 @@ flash
 ====================================
 
 |  flash
-|  作者: `kingfo <oicuicu@gmail.com>`_ , `射雕 <lifesinger@gmail.com>`_
 |  源码: `查看 <https://github.com/kissyteam/kissy/tree/master/src/flash>`_
 
 Module

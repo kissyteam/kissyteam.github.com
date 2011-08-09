@@ -4,7 +4,6 @@
 Switchable Demos
 ========================================================
 
-|  作者: `玉伯 <lifesinger@gmail.com>`_
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/switchable/>`_
 
 Class

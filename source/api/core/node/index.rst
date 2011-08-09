@@ -3,7 +3,6 @@
 Node
 ====================================
 
-|  作者: `承玉 <yiminghe@gmail.com>`_
 |  源码: `查看 <https://github.com/kissyteam/kissy/tree/master/src/node>`_
 
 .. versionchanged:: 1.2
@@ -17,16 +16,32 @@ Module
   :mod:`Node`
 
 
-Methods
+Class
+-------------------------------------
+.. toctree::
+   :titlesonly:
+   
+   nodelist.rst
+   
+Static Methods
+--------------------------
+
+.. toctree::
+   :titlesonly:
+   
+   all.rst
+   one.rst   
+   
+
+Member Methods
 -----------------------------------------------
 
 .. toctree::
    :titlesonly:
-
-   nodelist.rst
+  
+   instance_all.rst
+   instance_one.rst  
    equals.rst
-   all.rst
-   one.rst
    add.rst
    item.rst
    slice.rst

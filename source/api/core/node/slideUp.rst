@@ -11,7 +11,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: slideUp
+.. method:: NodeList.slideUp
 
     | NodeList **slideUp** ( [ speed = 1, callback ] )
     | 当前节点列表元素从下到上隐藏

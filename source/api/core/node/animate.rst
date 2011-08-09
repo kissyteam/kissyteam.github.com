@@ -11,7 +11,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: animate
+.. method:: NodeList.animate
 
     | NodeList **animate** ( props[, duration=1, easing='easeNone', callback, nativeSupport=true] )
     | 在当前节点列表上开始动画.
