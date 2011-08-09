@@ -94,7 +94,6 @@ Events Detail
 
 .. function:: click
     
-<<<<<<< HEAD
     | **click** (e)
     | 当按钮被点击或被获得焦点后按键 enter|space 触发
     
