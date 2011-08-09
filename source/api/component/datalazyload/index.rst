@@ -1,4 +1,4 @@
-.. module:: DataLazyload
+.. module:: datalazyload
 
 
 DataLazyload
@@ -13,7 +13,7 @@ DataLazyload
 Class
 -----------------------------------------------
 
-  * :class:`~DataLazyload.DataLazyload`
+  * :class:`DataLazyload`
 
   
 Config Attributes
@@ -111,7 +111,7 @@ Properties Detail
 
 .. attribute:: threshold
 
-    {Number} - 可读写 ,需要开始延迟的 Y 坐标值
+    {Number} - 可读写 , 需要开始延迟的 Y 坐标值
 
     
 Methods Detail
@@ -127,6 +127,12 @@ Methods Detail
 
     | static **loadCustomLazyData** (containers, type)
     | 加载自定义延迟数据
+
+    :param HTMLElement|Array<HTMLElement> containers: 包含自定义延迟加载项的容器元素
+    :param String type: 延迟加载方式, 可取:
+
+    1. ``textarea`` 或 ``area-data`` , 即表示延迟加载使用的是 ``textarea`` 方式;
+    2. ``img`` 或 ``img-src``, 即表示延迟加载使用的是 ``img`` 方式.
 
 
 

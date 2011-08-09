@@ -496,39 +496,39 @@ tt.descclassname, tt.descname, tt.xref {
 .versionchanged{margin-top:10px;}
 .versionmodified, .versionadded {
     color:red;
+    margin: 10px 0;
+}
+.versionmodified, .section > h1 + .versionadded {
     background: #ffff66;
 }
-dl.function{padding-bottom:15px;margin-bottom:15px;border-bottom:1px dotted #ccc;}
-dl.function dt{margin-bottom:10px;}
-dl.function dt big{display:none;}
-dl.function dd{margin:0 0 0 30px;}
-dl.function dd>.line-block{margin:0 0 10px 0;}
 
-dl.class{padding-bottom:15px;margin-bottom:15px;border-bottom:1px dotted #ccc;}
-dl.class dt{margin-bottom:10px;}
-dl.class dt big{display:none;}
-dl.class dd{margin:0 0 0 30px;}
-dl.class dd>.line-block{margin:0 0 10px 0;}
+dl.function, dl.class, dl.attribute, dl.data, dl.method, dl.staticmethod {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px dotted #ccc;
+}
 
-dl.attribute{padding-bottom:15px;margin-bottom:15px;border-bottom:1px dotted #ccc;}
-dl.attribute dt{margin-bottom:10px;}
-dl.attribute dd{margin:0 0 0 30px;}
 
-dl.data{padding-bottom:15px;margin-bottom:15px;border-bottom:1px dotted #ccc;}
-dl.data dt{margin-bottom:10px;}
-dl.data dd{margin:0 0 0 30px;}
+dl.function dt big, dl.class dt big, dl.method dt big, dl.staticmethod dt big {
+    display: none;
+}
 
-dl.method{padding-bottom:15px;margin-bottom:15px;border-bottom:1px dotted #ccc;}
-dl.method dt{margin-bottom:10px;}
-dl.method dt big{display:none;}
-dl.method dd{margin:0 0 0 30px;}
-dl.method dd>.line-block{margin:0 0 10px 0;}
+dl.function dd, dl.class dd, dl.attribute dd, dl.data dd, dl.method dd, dl.staticmethod dd {
+    margin: 0 0 0 30px;
+}
 
+dl.function dd>.line-block, dl.class dd>.line-block, dl.method dd>.line-block, dl.staticmethod dd>.line-block {
+    margin: 10px 0 10px 0;
+}
+dl.function dd>.line-block .line:first-child, dl.class dd>.line-block .line:first-child, dl.method dd>.line-block .line:first-child, dl.staticmethod dd>.line-block .line:first-child {
+    border-left: 3px solid #A4D3F2;
+    padding-left: 6px;
+}
 li > tt.literal .pre,
 p > tt.literal .pre {
     font-family: 'Verdana';
-    border-bottom: 1px dotted #00A0E9;
-    color: #666;
+    background-color:  #f0f0f0;
+    color: #444;
 }
 
 /*****************************************************************************

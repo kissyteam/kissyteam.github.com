@@ -3,6 +3,8 @@
 all
 ==================================================
 
+|  该方法的快捷方式为 ``KISSY.all``
+
 Module
 -----------------------------------------------
 
@@ -10,10 +12,6 @@ Module
 
 Methods
 -----------------------------------------------
-
-.. note::
-
-    该方法的快捷方式为 ``KISSY.all``
 
 .. staticmethod:: NodeList.all
 
@@ -112,7 +110,7 @@ Demo
 --------------------------------------------------
 
 
-**得到一个包装新 dom element 的 KISSY NodeList**
+    **得到一个包装新 dom element 的 KISSY NodeList**
 
     .. code-block:: javascript
 
@@ -120,7 +118,7 @@ Demo
         var domNodes=nl.getDOMNodes();
         domNodes[0].nodeType == 1 // => true : Html Element
 
-**得到一个包装现有 dom element 的 KISSY NodeList**
+    **得到一个包装现有 dom element 的 KISSY NodeList**
 
     .. code-block:: javascript
 
@@ -130,7 +128,7 @@ Demo
         domNodes[0].nodeType == 1 // => true : Html Element
         domNodes[0].nodeType == 1 // => true : Html Element
 
-**当然 NodeList.all 可以直接获取选择器字符串匹配的节点列表**
+    **当然 NodeList.all 可以直接获取选择器字符串匹配的节点列表**
 
     .. code-block:: javascript
 
@@ -140,19 +138,19 @@ Demo
         domNodes[0].nodeType == 1 // => true : Html Element
 
 
-**找到页面第一个表单的所有输入框**
+    **找到页面第一个表单的所有输入框**
 
     .. code-block:: javascript
 
         NodeList.all("input",document.forms[0]);
 
-**设置页面的背景色为黑色**
+    **设置页面的背景色为黑色**
 
     .. code-block:: javascript
 
         NodeList.all(document.body).css("background","black");
 
-**隐藏一个表单内的所有输入框**
+    **隐藏一个表单内的所有输入框**
 
     .. code-block:: javascript
 

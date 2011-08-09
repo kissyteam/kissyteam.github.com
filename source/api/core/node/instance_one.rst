@@ -20,10 +20,8 @@ Methods
     :returns: null 或者 NodeList 对象
     :rtype: NodeList
 
+    例如:
+    
+    .. code-block:: javascript
 
-示例
----------------------------------------------------------
-
-.. code-block:: javascript
-
-    KISSY.one("#noexist").one(".cls") // => KISSY.one("#noexist .cls")
+        KISSY.one("#noexist").one(".cls") // => KISSY.one("#noexist .cls")

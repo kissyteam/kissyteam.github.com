@@ -9,54 +9,54 @@ Overlay
 Class
 -----------------------------------------------
 
-  * :class:`~Overlay.Overlay`
+  * :class:`Overlay`
 
 Config Attributes
 -----------------------------------------------
 
-  * :data:`prefixCls`
-  * :data:`srcNode`
-  * :data:`width`
-  * :data:`height`
-  * :data:`elCls`
-  * :data:`content`
-  * :data:`zIndex`
-  * :data:`x`
-  * :data:`y`
-  * :data:`xy`
-  * :data:`align`
-  * :data:`effect`
-  * :data:`resize`  
-  * :data:`closable`
+  * :data:`~Overlay.config.prefixCls`
+  * :data:`~Overlay.config.srcNode`
+  * :data:`~Overlay.config.width`
+  * :data:`~Overlay.config.height`
+  * :data:`~Overlay.config.elCls`
+  * :data:`~Overlay.config.content`
+  * :data:`~Overlay.config.zIndex`
+  * :data:`~Overlay.config.x`
+  * :data:`~Overlay.config.y`
+  * :data:`~Overlay.config.xy`
+  * :data:`~Overlay.config.align`
+  * :data:`~Overlay.config.effect`
+  * :data:`~Overlay.config.resize`
+  * :data:`~Overlay.config.closable`
   
 Properties
 -----------------------------------------------
 
-  * :attr:`x`
-  * :attr:`y`
-  * :attr:`xy`
-  * :attr:`align`  
-  * :attr:`closable`
-  * :attr:`visible`
-  * :attr:`el`
-  * :attr:`contentEl`
+  * :attr:`~Overlay.prototype.x`
+  * :attr:`~Overlay.prototype.y`
+  * :attr:`~Overlay.prototype.xy`
+  * :attr:`~Overlay.prototype.align`
+  * :attr:`~Overlay.prototype.closable`
+  * :attr:`~Overlay.prototype.visible`
+  * :attr:`~Overlay.prototype.el`
+  * :attr:`~Overlay.prototype.contentEl`
   
 Methods
 -----------------------------------------------
 
-  * :meth:`render`
-  * :meth:`show`
-  * :meth:`hide`
-  * :meth:`align`
-  * :meth:`center`
-  * :meth:`move`
+  * :meth:`~Overlay.prototype.render`
+  * :meth:`~Overlay.prototype.show`
+  * :meth:`~Overlay.prototype.hide`
+  * :meth:`~Overlay.prototype.align`
+  * :meth:`~Overlay.prototype.center`
+  * :meth:`~Overlay.prototype.move`
 
 Events
 -----------------------------------------------
 
-  * :func:`hide`
-  * :func:`show`
-  * :func:`beforeVisibleChange`
+  * :func:`~Overlay.hide`
+  * :func:`~Overlay.show`
+  * :func:`~Overlay.beforeVisibleChange`
 
 
 Class Detail
@@ -72,50 +72,50 @@ Class Detail
 Config Attributes Detail
 -----------------------------------------------
     
-.. data:: prefixCls
+.. data:: Overlay.config.prefixCls
 
     .. versionadded:: 1.2
 
     {String} - 可选, 默认为"ks-", 样式类名前缀, 如悬浮层根元素会加上样式类："ks-overlay". kissy 1.2 版本以前设置无效, 都为 "ks-".
     
 
-.. data:: srcNode
+.. data:: Overlay.config.srcNode
 
     {String} - 可选, 用于取悬浮层根节点, 可为"#id"或".class". 当不设置时表示新建一个 HTMLElement 插入到页面中.
 
-.. data:: width
+.. data:: Overlay.config.width
 
     {Number | String} - 可选, 悬浮层宽度. 整数表示单元为 px.
 
-.. data:: height
+.. data:: Overlay.config.height
 
     {Number | String} - 可选, 悬浮层高度. 整数表示单元为 px.
 
-.. data:: elCls
+.. data:: Overlay.config.elCls
 
     {String} - 可选, 添加到悬浮层根元素的样式.
 
-.. data:: content
+.. data:: Overlay.config.content
 
     {String} - 可选, 设置悬浮层的内容 html.
 
-.. data:: zIndex
+.. data:: Overlay.config.zIndex
 
     {Number} - 可选, 默认为 9999, 设置悬浮层的 z-index 值.
 
-.. data:: x
+.. data:: Overlay.config.x
 
     {Number} - 可选, 悬浮层相对于文档根节点的 x 坐标.
 
-.. data:: y
+.. data:: Overlay.config.y
 
     {Number} - 可选, 浮层相对于文档根节点的 y 坐标.
 
-.. data:: xy
+.. data:: Overlay.config.xy
 
-    {Array<Number>} - 可选, 相当于将数组第一个元素设置为 :attr:`x` 的值, 将数组的第二个元素设置为 :attr:`y` 的值.
+    {Array<Number>} - 可选, 相当于将数组第一个元素设置为 :attr:`~Overlay.config.x` 的值, 将数组的第二个元素设置为 :attr:`~Overlay.config.y` 的值.
 
-.. data:: align
+.. data:: Overlay.config.align
 
     {Object} - 可选, 悬浮层对齐的相关配置, 例如：
     
@@ -138,7 +138,7 @@ Config Attributes Detail
         .. image:: /_images/overlay/align.png
             :width: 380 px
                 
-.. data:: effect
+.. data:: Overlay.config.effect
 
     .. versionadded:: 1.2
 
@@ -152,7 +152,7 @@ Config Attributes Detail
             duratiion:3       // {Number} - 可选, 动画持续时间, 以秒为单位.
         }
         
-.. data:: closable
+.. data:: Overlay.config.closable
 
     {Boolean} - 对话框右上角是否包括关闭按钮
     
@@ -160,7 +160,7 @@ Config Attributes Detail
 
     {Boolean} - 浮层显示时是否使用遮罩层盖住页面其他元素    
 
-.. data:: resize
+.. data:: Overlay.config.resize
 
     .. versionadded:: 1.2
 
@@ -192,45 +192,45 @@ Properties Detail
         o.set("xy",[100,200]);    //设置当前实例的绝对坐标
         o.get("xy");    //获取当前实例的绝对坐标
     
-.. attribute:: x
+.. attribute:: Overlay.prototype.x
 
     {Number} - 悬浮层相对于文档根节点的 x 坐标.
 
-.. attribute:: y
+.. attribute:: Overlay.prototype.y
 
     {Number} - 浮层相对于文档根节点的 y 坐标.
 
-.. attribute:: xy
+.. attribute:: Overlay.prototype.xy
 
-    {Array<Number>} - 相当于将数组第一个元素设置为 :attr:`x` 的值, 将数组的第二个元素设置为 :attr:`y` 的值.
+    {Array<Number>} - 相当于将数组第一个元素设置为 :attr:`~Overlay.config.x` 的值, 将数组的第二个元素设置为 :attr:`~Overlay.config.y` 的值.
 
-.. attribute:: align
+.. attribute:: Overlay.prototype.align
 
     {Object} - 悬浮层对齐的相关配置.
 
-.. attribute:: visible
+.. attribute:: Overlay.prototype.visible
 
     {Boolean} - 悬浮层的是否显示.
     
-.. attribute:: closable
+.. attribute:: Overlay.prototype.closable
 
     {Boolean} - 右上角关闭区域有无.    
 
-.. attribute:: el
+.. attribute:: Overlay.prototype.el
 
     {KISSY.Node} - 获取悬浮层的根节点 .
     
     .. note::
     
-        必须在调用 :meth:`render` 方法之后才可以获取.
+        必须在调用 :meth:`~Overlay.prototype.render` 方法之后才可以获取.
 
-.. attribute:: contentEl
+.. attribute:: Overlay.prototype.contentEl
 
     {KISSY.Node} - 获取悬浮层真正内容所在的节点.
     
     .. note::
     
-        必须在调用  :meth:`render` 方法之后才可以获取.
+        必须在调用  :meth:`~Overlay.prototype.render` 方法之后才可以获取.
         
     悬浮层的 html 结构如下
 
@@ -242,28 +242,28 @@ Properties Detail
             </div>
         </div>
         
-    一般调用悬浮层的 :meth:`~render` 方法后, 可通过获取 :attr:`contentEl` 属性获取内容所在节点, 来动态修改悬浮层的内容.
+    一般调用悬浮层的 :meth:`~Overlay.prototype.render` 方法后, 可通过获取 :attr:`~Overlay.config.contentEl` 属性获取内容所在节点, 来动态修改悬浮层的内容.
 
 
 Methods Detail
 -----------------------------------------------
 
-.. method:: render
+.. method:: Overlay.prototype.render
 
     | **render** ()
     | 渲染当前实例, 生成对应的 dom 节点并添加到页面文档树中.
 
-.. method:: show
+.. method:: Overlay.prototype.show
 
     | **show** ()
-    | 显示悬浮层, 位置根据 :attr:`align` 或者 :attr:`xy` 确定.
+    | 显示悬浮层, 位置根据 :attr:`~Overlay.config.align` 或者 :attr:`~Overlay.config.xy` 确定.
 
-.. method:: hide
+.. method:: Overlay.prototype.hide
 
     | **hide** ()
     | 隐藏悬浮层.
 
-.. method:: align
+.. method:: Overlay.prototype.align
 
     | **align** (node,points,offset)
     | 设置对齐
@@ -276,7 +276,7 @@ Methods Detail
     
         调用该方法前请先调用 :meth:`render`.    
     
-.. method:: center
+.. method:: Overlay.prototype.center
 
     | **center** ()
     | 将悬浮层放在当前视窗中央.
@@ -285,7 +285,7 @@ Methods Detail
     
         调用该方法前请先调用 :meth:`render`.      
 
-.. method:: move
+.. method:: Overlay.prototype.move
 
     | **move** (x,y)
     | 设置悬浮层相对于文档左上角的坐标偏移
@@ -297,17 +297,17 @@ Methods Detail
 Events Detail
 -----------------------------------------------
 
-.. function:: hide
+.. function:: Overlay.hide
     
     | **hide** ()
     | 当悬浮层隐藏时触发
 
-.. function:: show
+.. function:: Overlay.show
 
     | **show** ()
     | 当悬浮层显示时触发
 
-.. function:: beforeVisibleChange
+.. function:: Overlay.beforeVisibleChange
 
     | **beforeVisibleChange** (ev)
     | 当悬浮层隐藏或显示前触发

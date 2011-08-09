@@ -1,4 +1,4 @@
-.. module:: Overlay
+.. currentmodule:: Overlay
 
 Popup
 ===============================================
@@ -18,8 +18,8 @@ Config Attributes
 
   与 :class:`Overlay` 的配置项完全相同, 其他新增配置项如下：
   
-  * :data:`trigger`
-  * :data:`triggerType`
+  * :data:`~Overlay.prototype.trigger`
+  * :data:`~Overlay.prototype.triggerType`
  
  
 Properties
@@ -37,7 +37,7 @@ Methods
 Events
 -----------------------------------------------
 
-  * 同 :class:`Overlay` , 包括 :func:`show` , :func:`hide` , :func:`beforeVisibleChange` .
+  * 同 :class:`Overlay` , 包括 :func:`~Overlay.prototype.show` , :func:`~Overlay.prototype.hide` , :func:`~Overlay.prototype.beforeVisibleChange` .
 
 
 Class Detail
@@ -47,7 +47,7 @@ Class Detail
     
     | **Popup** ([container,] config)
     
-    :param String|HTMLElement|KISSY.Node container: 可为'#id'、'.class'、DOM对象、KISSY.Node对象, 为空时表示新建
+    :param String|HTMLElement|KISSY.Node container: 可为'#id', '.class', DOM对象, KISSY.Node对象, 为空时表示新建
     :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
 
     
@@ -56,13 +56,13 @@ Config Attributes Detail
 
     与 :class:`Overlay` 的配置项完全相同, 其他新增配置项如下：
     
-.. data:: trigger
+.. data:: Overlay.prototype.trigger
 
-    {String | HTMLElement | KISSY.Node} - 触点
+    {String|HTMLElement|KISSY.Node} - 触点
 
-.. data:: triggerType
+.. data:: Overlay.prototype.triggerType
 
-    {String} - 可选, 默认为'click', 触发类型, 可选'click'、'mouse'.
+    {String} - 可选, 默认为'click', 触发类型, 可选'click', 'mouse'.
 
 
 Properties Detail
@@ -80,7 +80,7 @@ Methods Detail
 Events Detail
 -----------------------------------------------
 
-    同 :class:`Overlay` , 包括 :func:`show` , :func:`hide` , :func:`beforeVisibleChange` .
+    同 :class:`Overlay` , 包括 :func:`~Overlay.prototype.show` , :func:`~Overlay.prototype.hide` , :func:`~Overlay.prototype.beforeVisibleChange` .
 
                               
 

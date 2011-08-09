@@ -20,23 +20,21 @@ Methods
     :param string selector: 选择器字符串            
     :rtype: NodeList
     
-实际上是
-
-.. code-block:: javascript    
+    实际上是
     
-    NodeList.prototype.all=function(selector) {
-        if (this.length > 0) {
-            // 只查找第一个元素的子孙节点
-            return NodeList.all(selector, this[0]);
-        }
-        // 否则空节点列表
-        return new NodeList();
-    };
+    .. code-block:: javascript
 
-    
-示例
--------------------------------    
-    
-.. code-block:: javascript
+        NodeList.prototype.all=function(selector) {
+            if (this.length > 0) {
+                // 只查找第一个元素的子孙节点
+                return NodeList.all(selector, this[0]);
+            }
+            // 否则空节点列表
+            return new NodeList();
+        };
 
-        KISSY.all("#noexist").all(".cls") // => KISSY.all("#noexist .cls")
+    例如:
+    
+    .. code-block:: javascript
+
+            KISSY.all("#noexist").all(".cls") // => KISSY.all("#noexist .cls")
