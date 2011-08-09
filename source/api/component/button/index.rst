@@ -6,7 +6,7 @@ Button
 |  模拟按钮
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/button/>`_
 
-
+.. versionadded:: 1.2
 
 Class
 ---------------------------------
