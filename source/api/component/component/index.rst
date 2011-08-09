@@ -20,7 +20,3 @@ Classes in Component
    :titlesonly:
 
    ModelControl
-   Container
-   DecorateChild
-   DecorateChildren
-   DelegateChildren
