@@ -17,3 +17,5 @@ Component
    imagezoom/index
    overlay/index
    uibase/index
+   component/index
+   button/index

@@ -17,9 +17,9 @@ Class
 Methods
 -----------------------------------------------
 
-  * :meth:`fire`
-  * :meth:`on`
-  * :meth:`detach`
+  * :meth:`~Target.fire`
+  * :meth:`~Target.on`
+  * :meth:`~Target.detach`
 
 Class Detail
 -----------------------------------------------
@@ -32,8 +32,7 @@ Class Detail
 Methods Detail
 -----------------------------------------------
 
-.. method:: fire
-    :noindex:
+.. method:: Target.fire
 
     | **fire** ( type , eventData)
     | 触发绑定 type 类型的事件处理器, 并给触发的事件处理器的事件对象参数中混入数据 eventData
@@ -42,14 +41,12 @@ Methods Detail
     :param object eventData: 要混入触发事件对象的数据对象
     :returns: 如果其中一个事件处理器返回 false , 则返回 false, 否则返回最后一个事件处理器的返回值
 
-.. method:: on
-    :noindex:
+.. method:: Target.on
     
     | **on** ( type , fn [ , scope ] )
     | 绑定事件处理器, 可参考 :func:`Event.on`
 
-.. method:: detach
-    :noindex:
+.. method:: Target.detach
 
     | **detach** ( type  [ , fn , scope ] )
     | 解除绑定的事件处理器, 可参考 :func:`Event.detach`
