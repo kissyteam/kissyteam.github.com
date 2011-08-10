@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>定制button的样式</title>
+<link href="assets/common.css" rel="stylesheet"/>
+<link href="assets/custombutton.css" rel="stylesheet"/>
+<script src="http://yiminghe.github.com/kissy/build/kissy.js"></script>
+</head>
+<body>
+
+<style>
+.ks-inline-block, .liz-inline-block {
+  position: relative;
+  display: -moz-inline-box; /* Ignored by FF3 and later. */
+  display: inline-block;
+}
+
+/*
+ * Pre-IE7 IE hack.  On IE, "display: inline-block" only gives the element
+ * layout, but doesn't give it inline behavior.  Subsequently setting display
+ * to inline does the trick.
+ */
+* html .ks-inline-block, * html .liz-inline-block {
+  display: inline;
+  zoom: 1;
+}
+
+/*
+ * IE7-only hack.  On IE, "display: inline-block" only gives the element
+ * layout, but doesn't give it inline behavior.  Subsequently setting display
+ * to inline does the trick.
+ */
+*:first-child+html .ks-inline-block, *:first-child+html .liz-inline-block {
+    display: inline;
+    zoom: 1;
+}
+
+
+.liz-custom-button {
+    text-align: center;
+    border: 1px solid #CCC;
+    padding: 4px 10px;
+    color: #666;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    margin: 10px 30px;
+
+    border: 1px solid #999;
+    background-image: -moz-linear-gradient(-90deg, #f7f7f7, #e2e2e2);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f7f7f7), color-stop(1, #e2e2e2));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#f7f7f7', EndColorStr = '#e2e2e2');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f7f7f7', EndColorStr='#e2e2e2')";
+}
+.liz-custom-button-hover {
+    border-color: #86A33B;
+    -moz-box-shadow: 0 2px 10px #AAA;
+    -webkit-box-shadow: 0 2px 10px #AAA;
+    box-shadow: 0 2px 10px #AAA;
+}
+.liz-custom-button-active {
+    background-image: -moz-linear-gradient(-90deg, #e2e2e2, #f7f7f7);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e2e2e2), color-stop(1, #f7f7f7));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#e2e2e2', EndColorStr = '#f7f7f7');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#e2e2e2', EndColorStr='#f7f7f7')";
+}
+.liz-custom-button-focused {
+    -moz-box-shadow: 0 2px 10px #AACF4C;
+    -webkit-box-shadow: 0 2px 10px #AACF4C;
+    box-shadow: 0 2px 10px #AACF4C;
+}
+.my-button-cls {
+    text-align: center;
+    background: #AACF4C;
+    border: 1px solid #86A33B;
+    padding: 4px 10px;
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    color: white;
+    margin: 10px 30px;
+}
+.ks-custom-button-hover {
+    border-color: #ff6600;
+    -moz-box-shadow: 0 2px 10px #AAA;
+    -webkit-box-shadow: 0 2px 10px #AAA;
+    box-shadow: 0 2px 10px #AAA;
+}
+</style>
+<script>
+
+    KISSY.use("button", function(S, Button) {
+        // 定制样式方式1, 通过 prefixCls 设置样式前缀
+        var b = new Button({
+            content: "自定义样式按钮1",
+            width: 200,
+            prefixCls: "liz-",
+            tooltip: "我有新皮肤"
+        });
+        b.render();
+
+        // 定制样式方式2, 通过 elCls 或 elStyle 设置样式类或行内样式
+        // 样式代码参考页面源代码
+        var b1 = new Button({
+            content: "自定义样式按钮2",
+            width: 200,
+            elCls: 'my-button-cls',
+            tooltip: "我有新皮肤"
+        });
+        b1.render();
+    });
+</script>
+</body>
+</html>

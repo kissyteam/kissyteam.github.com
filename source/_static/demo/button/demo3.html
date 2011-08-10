@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>禁用Button</title>
+<link href="assets/common.css" rel="stylesheet"/>
+<link href="assets/custombutton.css" rel="stylesheet"/>
+<script src="http://yiminghe.github.com/kissy/build/kissy.js"></script>
+</head>
+<body>
+
+<div id="button_container"></div>
+<label>禁用：<input type="checkbox" id='disabled'/></label>
+
+<script>
+
+    KISSY.use("node,button", function(S, Node, Button) {
+        var b = new Button({
+            content:"我是类Google按钮",
+            render: "#button_container",
+            prefixCls: "goog-",
+            tooltip: "点击我有惊喜~"
+        });
+        b.render();
+        b.on("click", function() {
+            alert("你好你好!");
+        });
+
+        var dis = Node.one("#disabled");
+
+        dis.on("click", function() {
+            if (dis[0].checked) {
+                b.set("disabled", true);
+            } else {
+                b.set("disabled", false);
+            }
+        });
+
+        if (dis[0].checked) {
+            b.set("disabled", true);
+        } else {
+            b.set("disabled", false);
+        }
+    });
+</script>
+</body>
+</html>
