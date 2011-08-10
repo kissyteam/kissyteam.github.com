@@ -19,3 +19,4 @@ Component
    uibase/index
    component/index
    button/index
+   menu/index
