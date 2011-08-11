@@ -46,7 +46,7 @@ Demo - 删除某个 menu
                     delTooltip: '点击删除'
                 }));
             });
-            menu.show();
+            menu.render();
 
             // 绑定删除事件
             menu.on('delete', function(e) {

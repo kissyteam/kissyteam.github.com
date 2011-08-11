@@ -76,7 +76,7 @@ Demo - 自定义样式及分割线的使用
                 prefixCls: 'my-',
                 content: '购物车'
             }));
-            menu.show();
+            menu.render();
         });
 
     .. note::

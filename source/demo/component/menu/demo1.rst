@@ -67,7 +67,7 @@ Demo - menu 的基本使用
                 prefixCls: 'goog-',
                 content: '购物车'
             }));
-            menu.show();
+            menu.render();
 
             // 绑定点击事件
             menu.on("click", function(ev) {
