@@ -2,46 +2,64 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>menu 的基本使用</title>
+<title>Demo - menu 的基本使用</title>
 <link href="../button/assets/common.css" rel="stylesheet"/>
-<link href="assets/c2c-ui.css" rel="stylesheet"/>
+<link href="assets/menu.css" rel="stylesheet"/>
+<link href="assets/menuitem.css" rel="stylesheet"/>
+<link href="assets/submenu.css" rel="stylesheet"/>
 <script src="http://yiminghe.github.com/kissy/build/kissy.js"></script>
 </head>
 <body>
 
-<div id="menu_container" style="width:200px;position:relative;height:150px;">
+<div id="menu_container" style="width: 240px;"></div>
 
 <script>
     KISSY.use("node,menu", function(S, Node, Menu) {
         // 初始化一个菜单, 仅包含一个菜单项
         var menu = new Menu({
-            prefixCls: 'c2c-',
+            prefixCls: 'goog-',
             render: '#menu_container',
             children:[new Menu.Item({
-                    prefixCls: 'c2c-',
+                    prefixCls: 'goog-',
                     content: '首页'
-                })]
+                })],
+            width: 200
             }),
-            //
+            // 构建一个子菜单
             sb = new Menu.SubMenu({
-                prefixCls: 'c2c-',
+                prefixCls: 'goog-',
                 content: '我的淘宝',
                 menu: new Menu.PopupMenu({
-                    prefixCls: 'c2c-',
+                    prefixCls: 'goog-',
                     children: [
                         new Menu.Item({
-                            prefixCls: 'c2c-',
+                            prefixCls: 'goog-',
                             content: '已买到的宝贝'
                         }),
                         new Menu.Item({
-                            prefixCls: 'c2c-',
+                            prefixCls: 'goog-',
                             content: '已卖出的宝贝'
                         })
-                    ]
+                    ],
+                    elStyle: {
+                        'width': 'red'
+                    }
                 })
             });
 
-        menu.addChild(new Menu.Item())
+        // 将子菜单添加到主菜单中
+        menu.addChild(sb);
+        // 再添加一个菜单项
+        menu.addChild(new Menu.Item({
+            prefixCls: 'goog-',
+            content: '购物车'
+        }));
+        menu.show();
+
+        // 绑定点击事件
+        menu.on("click", function(ev) {
+            alert("你选中了" + ev.target.get("content"));
+        });
     });
 </script>
 </body>

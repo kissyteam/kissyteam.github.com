@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Demo - 自定义样式及分割线的使用</title>
+<link href="../button/assets/common.css" rel="stylesheet"/>
+<script src="http://yiminghe.github.com/kissy/build/kissy.js"></script>
+<style>
+    .my-menu {
+        background: #fff;
+        border: 2px solid #DDE4E8;
+        cursor: pointer;
+        margin: 0;
+        outline: none;
+        padding: 4px 0;
+        position: absolute;
+        font-size: 12px;
+    }
+
+    .my-menuitem {
+        list-style: none;
+        margin: 0;
+        padding: 4px;
+        white-space: nowrap;
+        border: 2px solid white;
+        border-right: none;
+    }
+    .my-submenu.my-menuitem-highlight {
+        position: relative;
+        z-index: 10000;
+        border-color: #ff4444;
+        background-color: white;
+    }
+    .my-menuseparator {
+        border-top: 1px solid #E6E6E6;
+    }
+
+    .my-submenu-arrow {
+        visibility: hidden;
+    }
+
+    .my-submenu .my-menuitem-content {
+        padding-right: 12px;
+        background: url("http://img01.taobaocdn.com/tps/i1/T1vrCkXeFFXXXXXXXX-100-800.png") no-repeat scroll -34px -50px transparent;
+    }
+    .my-popmenu {
+        border-color: #ff4444;
+    }
+    .my-popmenu .my-menuitem {
+        border: none;
+    }
+
+</style>
+</head>
+<body>
+
+<div id="menu_container" style="position: relative;width: 200px;"></div>
+
+<script>
+    KISSY.use("node,menu", function(S, Node, Menu) {
+        // 初始化一个菜单, 仅包含一个菜单项
+        var menu = new Menu({
+            prefixCls: 'my-',
+            render: '#menu_container',
+            children:[new Menu.Item({
+                    prefixCls: 'my-',
+                    content: '首页'
+                }),
+                new Menu.Separator({
+                    prefixCls:"my-"
+                })]
+            });
+
+        // 依次添加两个子菜单
+        S.each([{'我的淘宝': ['已买到的宝贝', '已卖出的宝贝']}, {'收藏夹': ['收藏的宝贝', '收藏的店铺']}], function(obj, idx) {
+            S.each(obj, function(v, k) {
+                var p = new Menu.PopupMenu({
+                    prefixCls: 'my-'
+                });
+                S.each(v, function(o) {
+                    p.addChild(new Menu.Item({
+                        prefixCls: 'my-',
+                        content: o
+                    }));
+                });
+
+                menu.addChild(new Menu.SubMenu({
+                    prefixCls: 'my-',
+                    content: k,
+                    menu: p,
+                    // 设置子菜单与主菜单的对齐方式, 与 align 保持一致
+                    menuAlign: {
+                        offset: [-2, 0]
+                    },
+                    // 设置菜单显示延迟时间
+                    menuDelay: 50
+                }));
+
+                menu.addChild(new Menu.Separator({
+                    prefixCls:"my-"
+                }));
+            });
+        });
+
+        menu.addChild(new Menu.Item({
+            prefixCls: 'my-',
+            content: '购物车'
+        }));
+        menu.show();
+    });
+</script>
+</body>
+</html>
