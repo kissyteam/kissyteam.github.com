@@ -3,10 +3,11 @@
 Menu
 ===============================
 
+.. versionadded:: 1.2
+
 |  菜单.
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/component/>`_
 
-.. versionadded:: 1.2
 
 Class
 ---------------------------------
@@ -37,10 +38,10 @@ Class Detail
     
     :param Object config: 配置项.
     
-.. note::
+    .. note::
 
-    从已有元素实例 Menu 对象时 , 元素节点标明类名 ``{prefixCls}menu`` . 
-    ``prefixCls`` 为配置的类名前缀，默认为 ``ks-`` .    
+        从已有元素实例 Menu 对象时 , 元素节点标明类名 ``{prefixCls}menu`` .
+        ``prefixCls`` 为配置的类名前缀，默认为 ``ks-`` .
     
   
 Properties Detail

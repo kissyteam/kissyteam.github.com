@@ -12,10 +12,10 @@ Classes in DD
 .. toctree::
    :titlesonly:
 
-   draggable.rst
-   droppable.rst
-   ddm.rst
-   draggable-delegate.rst
-   droppable-delegate.rst
-   proxy.rst
-   scroll.rst
+   draggable
+   droppable
+   ddm
+   draggable-delegate
+   droppable-delegate
+   proxy
+   scroll

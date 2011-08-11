@@ -3,10 +3,10 @@
 Menu.SubMenu
 ===============================
 
+.. versionadded:: 1.2
+
 |  包含子菜单的菜单项.
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/menu/>`_
-
-.. versionadded:: 1.2
 
 Class
 ---------------------------------
@@ -40,10 +40,10 @@ Class Detail
     
     :param Object config: 配置项，详细见下方 **Config Attributes Detail** .
     
-.. note::
+    .. note::
 
-    从已有元素实例 Menu 对象时 , 元素节点标明类名 ``{prefixCls}submenu`` . 
-    ``prefixCls`` 为配置的类名前缀，默认为 ``ks-`` .    
+        从已有元素实例 Menu 对象时 , 元素节点标明类名 ``{prefixCls}submenu`` .
+        ``prefixCls`` 为配置的类名前缀，默认为 ``ks-`` .
     
 Config Attributes Detail
 -----------------------------------------------

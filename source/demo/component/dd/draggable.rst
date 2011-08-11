@@ -1,6 +1,6 @@
-﻿.. py:currentmodule:: Draggable
+﻿.. currentmodule:: DD
 
-Draggable & Proxy Demos
+Demo - Draggable & Proxy 使用示例
 =====================================================
 
 .. versionadded:: 1.2
@@ -11,50 +11,21 @@ Draggable & Proxy Demos
 Class
 -----------------------------------------------
 
-  * :class:`~Draggable.Draggable`
-
-
-.. _Component-dd-demo1:
+  * :class:`Draggable`
 
 Demo - Draggable & Proxy 使用示例
 ----------------------------------------------
 
     .. raw:: html
 
-        <style>
-            .ks-dd-proxy {
-                opacity:0.2;
-                *filter:alpha(opacity=20);
-            }
-        </style>
-
-        <div id='test-drag' style='border:1px solid red;background:blue;width:100px;height:100px;color:white;'>
-          drag me
-        </div>
-        <script>
-            KISSY.use("dd",function(S,DD){
-                var drag=new DD.Draggable({
-                    node:'#test-drag',
-                    cursor:'move'
-                });
-
-                new DD.Proxy().attach(drag);
-
-                drag.on("drag",function(ev){
-                   drag.get("node").offset({
-                    left:ev.left,
-                    top:ev.top
-                   });
-                });
-            });
-        </script>
+        <iframe width="100%" height="200" class="iframe-demo" src="../../../static/demo/dd/demo1.html"></iframe>
 
 
     **引入 kissy.js**
 
     .. code-block:: html
 
-        <script src='kissy.js'></script>
+        <script src='http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js'></script>
 
 
     **组织HTML**

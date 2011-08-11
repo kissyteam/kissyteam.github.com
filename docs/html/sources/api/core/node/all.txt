@@ -84,7 +84,7 @@ Methods
     当一个 NodeList 对象作为参数传递给 NodeList.all 时, 会返回该对象的克隆对象. 返回的克隆对象和源对象指向同一个原生 dom 节点集合.
 
 
-    | NodeList **all** all( html , [ ownerDocument ] )
+    | NodeList **all** ( html , [ ownerDocument ] )
 
     :param string html: 用来得到 dom 节点的 html 字符串
     :param HTMLDocument ownerDocument: 创建的新节点所在的文档

@@ -73,10 +73,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../tree/index.html" title="Tree Demos"
+      <a href="demo1.html" title="Button - button 的基本使用"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../overlay/index.html" title="Overlay Demos"
+      <a href="../overlay/demo2.html" title="Demo - 全新创建一个 Dialog"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >All Demos</a> &#187; </li>
@@ -86,6 +86,8 @@
 					
   <div class="section" id="button-demos">
 <h1>Button Demos<a class="headerlink" href="#button-demos" title="Permalink to this headline">¶</a></h1>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
 <div class="line-block">
 <div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/button/">源码</a></div>
 </div>
@@ -97,180 +99,24 @@
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="demo-button">
-<span id="component-button-demo1"></span><h2>Demo - button 的基本使用<a class="headerlink" href="#demo-button" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="demos">
+<h2>Demos<a class="headerlink" href="#demos" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><iframe width="100%" height="80" style="border: none;" src="../../../static/demo/button/demo1.html"></iframe><p><strong>载入1.2的 kissy</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
-</div>
-<p><strong>初始化按钮</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Button</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 生成一个按钮</span>
-    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Button</span><span class="p">({</span>
-        <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;我是类Google按钮1&quot;</span><span class="p">,</span>
-        <span class="nx">render</span><span class="o">:</span> <span class="s2">&quot;#button_container&quot;</span><span class="p">,</span>
-        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
-        <span class="nx">tooltip</span><span class="o">:</span> <span class="s2">&quot;点击我有惊喜~&quot;</span>
-    <span class="p">});</span>
-
-    <span class="c1">// 插入到DOM中并显示</span>
-    <span class="nx">b</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
-
-    <span class="c1">// 绑定事件</span>
-    <span class="nx">b</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">));</span>
-    <span class="p">});</span>
-
-    <span class="c1">// 新建一个button插入到某个指定元素之前</span>
-    <span class="kd">var</span> <span class="nx">b1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Button</span><span class="p">({</span>
-        <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;我是类Google按钮2&quot;</span><span class="p">,</span>
-        <span class="nx">elBefore</span><span class="o">:</span> <span class="s2">&quot;#exist&quot;</span><span class="p">,</span>
-        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
-        <span class="nx">tooltip</span><span class="o">:</span> <span class="s2">&quot;点击我有惊喜~&quot;</span>
-    <span class="p">});</span>
-
-    <span class="c1">// 插入到DOM中并显示</span>
-    <span class="nx">b1</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
-    <span class="nx">b1</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">));</span>
-    <span class="p">});</span>
-
-    <span class="c1">// 从已有DOM中生成一个按钮</span>
-    <span class="kd">var</span> <span class="nx">exist</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Button</span><span class="p">({</span>
-        <span class="nx">srcNode</span><span class="o">:</span><span class="s2">&quot;#exist&quot;</span><span class="p">,</span>
-        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
-        <span class="nx">tooltip</span><span class="o">:</span> <span class="s2">&quot;点击我有惊喜~&quot;</span>
-    <span class="p">});</span>
-    <span class="nx">exist</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
-    <span class="nx">exist</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">));</span>
-    <span class="p">});</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-</div></blockquote>
-</div>
-<div class="section" id="component-button-demo2">
-<span id="id2"></span><h2>Demo - 定制button的样式<a class="headerlink" href="#component-button-demo2" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><iframe width="100%" height="80" style="border: none;" src="../../../static/demo/button/demo2.html"></iframe><p><strong>载入1.2的 kissy</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
-</div>
-<p><strong>初始化按钮</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Button</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 定制样式方式1, 通过 prefixCls 设置样式前缀</span>
-    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Button</span><span class="p">({</span>
-        <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;自定义样式按钮1&quot;</span><span class="p">,</span>
-        <span class="nx">width</span><span class="o">:</span> <span class="mi">200</span><span class="p">,</span>
-        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s2">&quot;liz-&quot;</span><span class="p">,</span>
-        <span class="nx">tooltip</span><span class="o">:</span> <span class="s2">&quot;我有新皮肤&quot;</span>
-    <span class="p">});</span>
-    <span class="nx">b</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
-
-    <span class="c1">// 定制样式方式2, 通过 elCls 或 elStyle 设置样式类或行内样式</span>
-    <span class="c1">// 样式代码参考页面源代码</span>
-    <span class="kd">var</span> <span class="nx">b1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Button</span><span class="p">({</span>
-        <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;自定义样式按钮2&quot;</span><span class="p">,</span>
-        <span class="nx">width</span><span class="o">:</span> <span class="mi">200</span><span class="p">,</span>
-        <span class="nx">elCls</span><span class="o">:</span> <span class="s1">&#39;my-button-cls&#39;</span><span class="p">,</span>
-        <span class="nx">tooltip</span><span class="o">:</span> <span class="s2">&quot;我有新皮肤&quot;</span>
-    <span class="p">});</span>
-    <span class="nx">b1</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">按钮完整的皮肤样式定义, 可以参考 <a class="reference external" href="../../../static/demo/button/assets/custombutton.css">google 的样式</a></p>
-</div>
-</div></blockquote>
-</div>
-<div class="section" id="component-button-demo3">
-<span id="id3"></span><h2>Demo - 禁用Button<a class="headerlink" href="#component-button-demo3" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><iframe width="100%" height="80" style="border: none;" src="../../../static/demo/button/demo3.html"></iframe><p><strong>载入1.2的 kissy</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
-</div>
-<p><strong>组织HTML代码</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;exist&quot;</span><span class="nt">&gt;</span>我是类Google按钮<span class="nt">&lt;/div&gt;</span>
-</pre></div>
-</div>
-<p><strong>初始化按钮</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node,button&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">Button</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Button</span><span class="p">({</span>
-        <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;我是类Google按钮&quot;</span><span class="p">,</span>
-        <span class="nx">render</span><span class="o">:</span> <span class="s2">&quot;#button_container&quot;</span><span class="p">,</span>
-        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
-        <span class="nx">tooltip</span><span class="o">:</span> <span class="s2">&quot;点击我有惊喜~&quot;</span>
-    <span class="p">});</span>
-    <span class="nx">b</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
-    <span class="nx">b</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;你好你好!&quot;</span><span class="p">);</span>
-    <span class="p">});</span>
-
-    <span class="kd">var</span> <span class="nx">dis</span> <span class="o">=</span> <span class="nx">Node</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#disabled&quot;</span><span class="p">);</span>
-
-    <span class="nx">dis</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">dis</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">b</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="nx">b</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">});</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="nx">dis</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">b</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">b</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-</div></blockquote>
-</div>
-<div class="section" id="demo-alert">
-<span id="component-button-demo4"></span><h2>Demo - 模拟alert对话框<a class="headerlink" href="#demo-alert" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><iframe width="100%" height="160" style="border: none;" src="../../../static/demo/button/demo4.html"></iframe><p><strong>载入1.2的 kissy</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
-</div>
-<p><strong>组织HTML代码</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;exist&quot;</span><span class="nt">&gt;</span>我是类Google按钮<span class="nt">&lt;/div&gt;</span>
-</pre></div>
-</div>
-<p><strong>初始化按钮</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;overlay,button&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Overlay</span><span class="p">,</span> <span class="nx">Button</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Overlay</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
-        <span class="nx">elCls</span><span class="o">:</span> <span class="s1">&#39;alert-box&#39;</span><span class="p">,</span>
-        <span class="nx">bodyContent</span><span class="o">:</span> <span class="s1">&#39;我是对话框&#39;</span><span class="p">,</span>
-        <span class="nx">width</span><span class="o">:</span> <span class="mi">300</span><span class="p">,</span>  <span class="c1">// 对话框宽度</span>
-        <span class="nx">closable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">mask</span><span class="o">:</span> <span class="kc">true</span>  <span class="c1">//  有遮罩层</span>
-    <span class="p">});</span>
-    <span class="nx">p</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
-    <span class="nx">p</span><span class="p">.</span><span class="nx">center</span><span class="p">();</span>
-
-    <span class="c1">// 生成一个按钮</span>
-    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Button</span><span class="p">({</span>
-        <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot; OK &quot;</span><span class="p">,</span>
-        <span class="nx">render</span><span class="o">:</span> <span class="nx">p</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;footer&#39;</span><span class="p">),</span>
-        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
-        <span class="nx">tooltip</span><span class="o">:</span> <span class="s2">&quot;点击关闭~&quot;</span>
-    <span class="p">});</span>
-
-    <span class="c1">// 插入到DOM中并显示</span>
-    <span class="nx">b</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
-
-    <span class="c1">// 绑定事件</span>
-    <span class="nx">b</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">p</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
-    <span class="p">});</span>
-<span class="p">});</span>
-</pre></div>
+<div><div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="demo1.html">Button - button 的基本使用</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demo2.html">Button - 定制button的样式</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demo3.html">Button - 禁用Button</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demo4.html">Button - 模拟alert对话框</a><ul class="simple">
+</ul>
+</li>
+</ul>
 </div>
 </div></blockquote>
 </div>

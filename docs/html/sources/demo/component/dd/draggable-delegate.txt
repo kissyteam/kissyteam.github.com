@@ -1,6 +1,6 @@
-﻿.. py:currentmodule:: DraggableDelegate
+﻿.. currentmodule:: DD
 
-DraggableDelegate Demo
+Demo - DraggableDelegate 使用示例
 =============================================
 
 .. versionadded:: 1.2
@@ -11,152 +11,20 @@ DraggableDelegate Demo
 Class
 -----------------------------------------------
 
-  * :class:`~DraggableDelegate.DraggableDelegate`
-
-.. _Component-dd-demo3:
+  * :class:`DraggableDelegate`
 
 Demo - DraggableDelegate 使用示例
 -----------------------------------------------
 
     .. raw:: html
 
-        <style>
-            .container {
-                border: 1px solid red;
-                padding: 10px;
-                position: relative;
-            }
-
-            .component {
-                margin: 50px 10px;
-                width: 100px;
-                height: 100px;
-                line-height: 100px;
-                border: 1px solid black;
-                display: inline-block;
-                *display: inline;
-                *zoom: 1;
-                overflow: hidden;
-            }
-
-            .cheader,.cheader2 {
-                cursor: move;
-                border: 1px solid black;
-                height: 20px;
-                line-height: 20px;
-            }
-
-            .cheader2 {
-                cursor:default;
-            }
-
-            #drop, #drop3 {
-                border: 1px solid green;
-                line-height: 100px;
-            }
-
-            .ks-dd-drag-over {
-                background: #a52a2a;
-            }
-
-            .ks-dd-drop-over {
-                background: #fa8072;
-            }
-
-            #container3 .component .cheader {
-                cursor: move;
-            }
-        </style>
-
-        <div id="container3" class="container">
-
-            <div class="component">
-                <div class="cheader">
-                    拖动头
-                </div>
-                delegate drag
-            </div>
-
-            <button id="add_delegate">add delegate drag</button>
-
-
-            <div id="drop3">
-                drop zone
-            </div>
-        </div>
-
-        <script>
-        KISSY.use("node,dd", function (S, Node, DD) {
-            var DDM = DD.DDM,
-                DraggableDelegate = DD.DraggableDelegate,
-                Droppable = DD.Droppable;
-
-
-            var p;
-            /**
-             * 集中监听所有
-             */
-            DDM.on("dragstart", function(ev) {
-
-                var c = ev.drag;
-                p = c.get("dragNode").css("position");
-            });
-
-            DDM.on("drag", function(ev) {
-
-                var c = ev.drag;
-                /**
-                 * node 和 dragNode 区别：
-                 * node : 可能是 proxy node, 指实际拖放节点
-                 */
-                c.get("node").offset(ev);
-            });
-
-            DDM.on("dragend", function(ev) {
-                var c = ev.drag;
-                c.get("dragNode").css("position", p);
-            });
-
-
-            S.one("#container3").unselectable();
-
-            var delegate = new DraggableDelegate({
-                container:"#container3",
-                handlers:['.cheader'],
-                selector:'.component'
-            });
-
-            var drop = new Droppable({
-                node:"#drop3"
-            });
-
-            var c = 0;
-
-            S.one("#add_delegate").on("click", function() {
-                new Node('<div class="component"><div class="cheader">拖动头</div>delegate'
-                        + (++c) + '</div>')
-                        .prependTo("#container3").unselectable();
-            });
-
-
-
-            function onhit(ev) {
-                ev.drag.get("dragNode").css("margin", "5px 10px");
-                ev.drag.get("dragNode").appendTo(ev.drop.get("node"));
-                ev.drag.get("dragNode").one(".cheader")[0].className="cheader2";
-            }
-
-            drop.on("drophit",onhit);
-
-        });
-        </script>
-
+        <iframe width="100%" height="320" class="iframe-demo" src="../../../static/demo/dd/demo3.html"></iframe>
 
     **引入 kissy.js**
 
     .. code-block:: html
 
-        <script src='kissy.js'></script>
+        <script src='http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js'></script>
 
     **组织HTML**
 

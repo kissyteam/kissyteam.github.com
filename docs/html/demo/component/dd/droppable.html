@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Droppable Demo &mdash; KISSY Docs valpha documentation</title>
+<title>Demo - Droppable 基本使用 &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -73,19 +73,20 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="draggable-delegate.html" title="DraggableDelegate Demo"
+      <a href="draggable-delegate.html" title="Demo - DraggableDelegate 使用示例"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="draggable.html" title="Draggable &amp; Proxy Demos"
+      <a href="draggable.html" title="Demo - Draggable &amp; Proxy 使用示例"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >All Demos</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">Component</a> &#187; </li> 
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">DD Demos</a> &#187; </li> 
     </ul>
 </div>
 					
-  <div class="section" id="droppable-demo">
-<h1>Droppable Demo<a class="headerlink" href="#droppable-demo" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="demo-droppable">
+<h1>Demo - Droppable 基本使用<a class="headerlink" href="#demo-droppable" title="Permalink to this headline">¶</a></h1>
 <p class="versionadded">
 <span class="versionmodified">New in version 1.2.</span></p>
 <div class="line-block">
@@ -95,152 +96,15 @@
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><tt class="xref py py-class docutils literal"><span class="pre">Droppable</span></tt></li>
+<li><a class="reference internal" href="../../../api/component/dd/droppable.html#DD.Droppable" title="DD.Droppable"><tt class="xref py py-class docutils literal"><span class="pre">Droppable</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="demo-droppable">
-<span id="component-dd-demo2"></span><h2>Demo - Droppable 基本使用<a class="headerlink" href="#demo-droppable" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>Demo - Droppable 基本使用<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><style>
-
-    .container {
-        border: 1px solid red;
-        height: 450px;
-        padding: 10px;
-        position: relative;
-    }
-
-    .component {
-        margin: 50px 10px;
-        width: 100px;
-        height: 100px;
-        line-height: 100px;
-        border: 1px solid black;
-        display: inline-block;
-        *display: inline;
-        *zoom: 1;
-        overflow: hidden;
-    }
-
-    .cheader {
-        cursor: move;
-        border: 1px solid black;
-        height: 20px;
-        line-height: 20px;
-    }
-
-    #drop, #drop3 {
-        border: 1px solid green;
-        height: 130px;
-        line-height: 100px;
-    }
-
-    .ks-dd-drag-over {
-        background: #a52a2a;
-    }
-
-    .ks-dd-drop-over {
-        background: #fa8072;
-    }
-
-    #container3 .component .cheader {
-        cursor: move;
-    }
-</style>
-
-<div id="container" class="container">
-    <div id="c1" class="component">
-        intersect drag
-    </div>
-
-    <div id="c2" class="component">
-        point drag
-    </div>
-
-    <div id="c3" class="component">
-        strict drag
-    </div>
-
-    <div id="drop">
-        drop zone
-    </div>
-</div>
-
-<script>
-KISSY.use("node,dd", function (S, Node, DD) {
-    var DDM = DD.DDM,
-
-    Draggable = DD.Draggable,
-        Droppable = DD.Droppable;
-
-
-    var p;
-    /**
-     * 集中监听所有
-     */
-    DDM.on("dragstart", function(ev) {
-
-        var c = ev.drag;
-        p = c.get("dragNode").css("position");
-    });
-    DDM.on("drag", function(ev) {
-
-        var c = ev.drag;
-        /**
-         * node 和 dragNode 区别：
-         * node : 可能是 proxy node, 指实际拖放节点
-         */
-        c.get("node").offset(ev);
-    });
-    DDM.on("dragend", function(ev) {
-        var c = ev.drag;
-        c.get("dragNode").css("position", p);
-    });
-
-    /**
-     * 简单拖放
-     */
-
-
-    var c1 = new Draggable({
-        node:"#c1",
-        //模式,
-        // intersect :区域相交就算enter
-        // strict : drag 区域完全在 drop 区域内才算
-        // point : 鼠标在 drop 区域内
-        //默认 point
-        mode:Draggable.INTERSECT
-    });
-
-
-    var c3 = new Draggable({
-        node:"#c3",
-        mode:Draggable.STRICT
-    });
-
-
-    var c2 = new Draggable({
-        node:"#c2"
-    });
-
-
-    var drop = new Droppable({
-        node:"#drop"
-    });
-
-
-    function onhit(ev) {
-        ev.drag.get("node").css("margin", "5px 10px");
-        ev.drag.get("node").appendTo(ev.drop.get("node"));
-        ev.drag.destroy();
-    }
-
-    drop.on("drophit",onhit);
-
-});
-</script><p><strong>引入 kissy.js</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div><iframe width="100%" height="500" class="iframe-demo" src="../../../static/demo/dd/demo2.html"></iframe><p><strong>引入 kissy.js</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 </div>
 <p><strong>组织HTML</strong></p>
