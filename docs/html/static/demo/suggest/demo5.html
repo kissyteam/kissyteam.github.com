@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Demo - 搜索提示的更多定制</title>
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/p/global/1.0/global-min.css"/>
+<link rel="stylesheet" href="http://a.tbcdn.cn/p/fp/2011a/header/header.css"/>
+<style>
+    .section {
+        margin: 20px 0;
+    }
+</style>
+<script src="http://yiminghe.github.com/kissy/build/kissy.js"></script>
+<script src="http://a.tbcdn.cn/p/search/searchsuggest.js"></script>
+</head>
+<body>
+<div class="section top-header">
+    <div class="demo">
+        <div class="tsearch" role="search">
+            <ul class="tsearch-tab clearfix" id="J_TSearchTabs">
+                <li class="current"><a href="http://list.taobao.com/browse/cat-0.htm">宝贝</a><b class="rc-lt"></b><b
+                        class="rc-rt"></b></li>
+                <li><a href="http://www.tmall.com/go/act/tmall/iwanttobuy.php">淘宝商城</a><b class="rc-lt"></b><b
+                        class="rc-rt"></b></li>
+                <li><a href="http://shopsearch.taobao.com/browse/shop_search.htm">店铺</a><b class="rc-lt"></b><b
+                        class="rc-rt"></b></li>
+                <li><a href="http://s.taobao.com/list.html?search_type=auction">拍卖</a><b class="rc-lt"></b><b
+                        class="rc-rt"></b></li>
+
+                <li><a href="http://8.taobao.com/index.htm">淘吧</a><b class="rc-lt"></b><b class="rc-rt"></b></li>
+                <li><a href="http://jianghu.taobao.com/square.htm">宝贝分享</a><b class="rc-lt"></b><b class="rc-rt"></b>
+                </li>
+            </ul>
+            <div class="tsearch-panel clearfix">
+                <form target="_top" name="search" action="http://s.taobao.com/search" id="J_TSearchForm">
+                    <div class="tsearch-fields focus">
+                        <label for="q" class=""></label>
+
+                        <input type="text" accesskey="s" id="q" name="q" autofocus="true" autocomplete="off">
+                        <b class="rc-lb"></b>
+                        <b class="rc-lt"></b>
+                    </div>
+                    <button type="submit" class="tsearch-submit">搜索<b class="rc-rt"></b><b class="rc-rb"></b></button>
+
+                    <input type="hidden" name="search_type" value="item"/>
+                </form>
+            </div>
+        </div>
+        <script>
+            KISSY.ready(function(S) {
+                S.use('switchable,suggest,searchsuggest', function(S) {
+                    var DOM = S.DOM, Event = S.Event,
+                        form = DOM.get("#J_TSearchForm"),
+                        q = form["q"],
+                        searchType = form["search_type"],
+                        __fp_sug,
+                        tab_as,
+                        tabpanels,
+                        tabs = DOM.query("#J_TSearchTabs li"),
+                        SEARCH_TYPE_LIST = ["item", "mall", "shop", "auction", "taoba", "share"],
+                        switchToTab = function(n) {
+                            if (!__fp_sug) return;
+
+                            if (n == 1) {
+                                __fp_sug.sug.dataSource = 'http://suggest.taobao.com/sug?area=b2c&code=utf-8&extras=1&callback=KISSY.Suggest.callback';
+                            } else {
+                                __fp_sug.sug.dataSource = 'http://suggest.taobao.com/sug?code=utf-8&extras=1&callback=KISSY.Suggest.callback';
+                            }
+                            __fp_sug.sug._dataCache = {};
+
+                            var curRel = searchType.value;
+                            __fp_sug.ON = curRel === 'item' || curRel === 'mall';
+                        };
+                    DOM.addClass(form.parentNode, "ks-switchable-content");
+                    DOM.addClass("#J_TSearchTabs", "ks-switchable-nav");
+
+                    var tabPanelDiv = DOM.create("<div class='tab-panel'></div>");
+
+                    for (var i = 0; i < tabs.length; i++) {
+                        form.parentNode.appendChild(tabPanelDiv.cloneNode(true));
+                    }
+                    DOM.get(".tab-panel", form.parentNode).appendChild(form);
+
+                    tab_as = DOM.query("#J_TSearchTabs a");
+                    tabpanels = DOM.query(".tab-panel", DOM.get("#J_TSearchTabs").parentNode);
+                    searchType = form["search_type"];
+
+                    var searchTab = new S.Tabs(DOM.get("#J_TSearchTabs").parentNode, {
+                        aria:true,
+                        activeTriggerCls:'current',
+                        triggerType:'click'
+                    });
+                    Event.on(tab_as, "click", function(e) {
+                        e.preventDefault();
+                    });
+                    searchTab.on("switch", function(ev) {
+                        var n = ev.currentIndex,
+                            ori = ev.originalEvent.type;
+                        tabpanels[n].appendChild(form);
+                        searchType.value = SEARCH_TYPE_LIST[n];
+                        switchToTab(n);
+                    });
+
+
+                    __fp_sug = new S.SearchSuggest({
+                        'q': q,
+                        'form': form,
+                        'placeholder': 'data-default'
+                    });
+                });
+            });
+        </script>
+    </div>
+</div>
+</body>
+</html>
+
+

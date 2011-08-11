@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Demo - 模拟alert对话框</title>
+<link href="assets/common.css" rel="stylesheet"/>
+<link href="assets/custombutton.css" rel="stylesheet"/>
+<link href="assets/cool.css" rel="stylesheet"/>
+<style>
+    .alert-box {
+        border: 1px solid gray;
+        background: white;
+        text-align: center;
+    }
+    .alert-box .ks-stdmod-header {
+        display: none;
+    }
+    .alert-box .ks-stdmod-body{
+        padding: 20px 0;
+    }
+    .alert-box .ks-stdmod-footer {
+        padding: 6px 0;
+        background: #ddd;
+    }
+</style>
+<script src="http://yiminghe.github.com/kissy/build/kissy.js"></script>
+</head>
+<body>
+<script>
+
+    KISSY.use("overlay,button", function(S, Overlay, Button) {
+        var p = new Overlay.Dialog({
+            elCls: 'alert-box',
+            bodyContent: '我是对话框',
+            width: 300,  // 对话框宽度
+            closable: false,
+            mask: true  //  有遮罩层
+        });
+        p.show();
+        p.center();
+
+        // 生成一个按钮
+        var b = new Button({
+            content: " OK ",
+            render: p.get('footer'),
+            prefixCls: "goog-",
+            tooltip: "点击关闭~"
+        });
+
+        // 插入到DOM中并显示
+        b.render();
+
+        // 绑定事件
+        b.on("click", function() {
+            p.hide();
+        });
+    });
+</script>
+</body>
+</html>

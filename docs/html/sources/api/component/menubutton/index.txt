@@ -12,10 +12,6 @@ Classes in MenuButton
 -----------------------------------------------
 
 
-
-
-
-
 .. toctree::
    :titlesonly:
 

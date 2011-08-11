@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>menu 的基本使用</title>
+<link href="../button/assets/common.css" rel="stylesheet"/>
+<link href="assets/c2c-ui.css" rel="stylesheet"/>
+<script src="http://yiminghe.github.com/kissy/build/kissy.js"></script>
+</head>
+<body>
+
+<div id="menu_container" style="width:200px;position:relative;height:150px;">
+
+<script>
+    KISSY.use("node,menu", function(S, Node, Menu) {
+        // 初始化一个菜单, 仅包含一个菜单项
+        var menu = new Menu({
+            prefixCls: 'c2c-',
+            render: '#menu_container',
+            children:[new Menu.Item({
+                    prefixCls: 'c2c-',
+                    content: '首页'
+                })]
+            }),
+            //
+            sb = new Menu.SubMenu({
+                prefixCls: 'c2c-',
+                content: '我的淘宝',
+                menu: new Menu.PopupMenu({
+                    prefixCls: 'c2c-',
+                    children: [
+                        new Menu.Item({
+                            prefixCls: 'c2c-',
+                            content: '已买到的宝贝'
+                        }),
+                        new Menu.Item({
+                            prefixCls: 'c2c-',
+                            content: '已卖出的宝贝'
+                        })
+                    ]
+                })
+            });
+
+        menu.addChild(new Menu.Item())
+    });
+</script>
+</body>
+</html>

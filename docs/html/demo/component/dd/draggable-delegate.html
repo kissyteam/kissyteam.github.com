@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>DraggableDelegate Demo &mdash; KISSY Docs valpha documentation</title>
+<title>Demo - DraggableDelegate 使用示例 &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -73,19 +73,20 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="droppable-delegate.html" title="DroppableDelegate &amp; Scroll Demo"
+      <a href="droppable-delegate.html" title="Demo - 基于拖放委托 + 容器自动滚动的拖放排序"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="droppable.html" title="Droppable Demo"
+      <a href="droppable.html" title="Demo - Droppable 基本使用"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >All Demos</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">Component</a> &#187; </li> 
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">DD Demos</a> &#187; </li> 
     </ul>
 </div>
 					
-  <div class="section" id="draggabledelegate-demo">
-<h1>DraggableDelegate Demo<a class="headerlink" href="#draggabledelegate-demo" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="demo-draggabledelegate">
+<h1>Demo - DraggableDelegate 使用示例<a class="headerlink" href="#demo-draggabledelegate" title="Permalink to this headline">¶</a></h1>
 <p class="versionadded">
 <span class="versionmodified">New in version 1.2.</span></p>
 <div class="line-block">
@@ -95,144 +96,15 @@
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt></li>
+<li><a class="reference internal" href="../../../api/component/dd/draggable-delegate.html#DD.DraggableDelegate" title="DD.DraggableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="demo-draggabledelegate">
-<span id="component-dd-demo3"></span><h2>Demo - DraggableDelegate 使用示例<a class="headerlink" href="#demo-draggabledelegate" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>Demo - DraggableDelegate 使用示例<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><style>
-    .container {
-        border: 1px solid red;
-        padding: 10px;
-        position: relative;
-    }
-
-    .component {
-        margin: 50px 10px;
-        width: 100px;
-        height: 100px;
-        line-height: 100px;
-        border: 1px solid black;
-        display: inline-block;
-        *display: inline;
-        *zoom: 1;
-        overflow: hidden;
-    }
-
-    .cheader,.cheader2 {
-        cursor: move;
-        border: 1px solid black;
-        height: 20px;
-        line-height: 20px;
-    }
-
-    .cheader2 {
-        cursor:default;
-    }
-
-    #drop, #drop3 {
-        border: 1px solid green;
-        line-height: 100px;
-    }
-
-    .ks-dd-drag-over {
-        background: #a52a2a;
-    }
-
-    .ks-dd-drop-over {
-        background: #fa8072;
-    }
-
-    #container3 .component .cheader {
-        cursor: move;
-    }
-</style>
-
-<div id="container3" class="container">
-
-    <div class="component">
-        <div class="cheader">
-            拖动头
-        </div>
-        delegate drag
-    </div>
-
-    <button id="add_delegate">add delegate drag</button>
-
-
-    <div id="drop3">
-        drop zone
-    </div>
-</div>
-
-<script>
-KISSY.use("node,dd", function (S, Node, DD) {
-    var DDM = DD.DDM,
-        DraggableDelegate = DD.DraggableDelegate,
-        Droppable = DD.Droppable;
-
-
-    var p;
-    /**
-     * 集中监听所有
-     */
-    DDM.on("dragstart", function(ev) {
-
-        var c = ev.drag;
-        p = c.get("dragNode").css("position");
-    });
-
-    DDM.on("drag", function(ev) {
-
-        var c = ev.drag;
-        /**
-         * node 和 dragNode 区别：
-         * node : 可能是 proxy node, 指实际拖放节点
-         */
-        c.get("node").offset(ev);
-    });
-
-    DDM.on("dragend", function(ev) {
-        var c = ev.drag;
-        c.get("dragNode").css("position", p);
-    });
-
-
-    S.one("#container3").unselectable();
-
-    var delegate = new DraggableDelegate({
-        container:"#container3",
-        handlers:['.cheader'],
-        selector:'.component'
-    });
-
-    var drop = new Droppable({
-        node:"#drop3"
-    });
-
-    var c = 0;
-
-    S.one("#add_delegate").on("click", function() {
-        new Node('<div class="component"><div class="cheader">拖动头</div>delegate'
-                + (++c) + '</div>')
-                .prependTo("#container3").unselectable();
-    });
-
-
-
-    function onhit(ev) {
-        ev.drag.get("dragNode").css("margin", "5px 10px");
-        ev.drag.get("dragNode").appendTo(ev.drop.get("node"));
-        ev.drag.get("dragNode").one(".cheader")[0].className="cheader2";
-    }
-
-    drop.on("drophit",onhit);
-
-});
-</script><p><strong>引入 kissy.js</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div><iframe width="100%" height="360" class="iframe-demo" src="../../../static/demo/dd/demo3.html"></iframe><p><strong>引入 kissy.js</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 </div>
 <p><strong>组织HTML</strong></p>
@@ -268,7 +140,7 @@ KISSY.use("node,dd", function (S, Node, DD) {
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>得到 <tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt> 构造器.</p>
+<p>得到 <a class="reference internal" href="../../../api/component/dd/draggable-delegate.html#DD.DraggableDelegate" title="DD.DraggableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt></a> 构造器.</p>
 </p>
 <div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
@@ -287,7 +159,7 @@ KISSY.use("node,dd", function (S, Node, DD) {
 </pre></div>
 </div>
 <ul class="simple">
-<li>生成 <tt class="xref py py-class docutils literal"><span class="pre">Droppable</span></tt> 对象</li>
+<li>生成 <a class="reference internal" href="../../../api/component/dd/droppable.html#DD.Droppable" title="DD.Droppable"><tt class="xref py py-class docutils literal"><span class="pre">Droppable</span></tt></a> 对象</li>
 </ul>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">drop</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Droppable</span><span class="p">({</span>
         <span class="nx">node</span><span class="o">:</span><span class="s2">&quot;#drop3&quot;</span>
@@ -295,7 +167,7 @@ KISSY.use("node,dd", function (S, Node, DD) {
 </pre></div>
 </div>
 <ul class="simple">
-<li>监控 <tt class="xref py py-class docutils literal"><span class="pre">Draggable</span></tt>, 集中在 <tt class="xref py py-data docutils literal"><span class="pre">DDM</span></tt> 上处理移动</li>
+<li>监控 <a class="reference internal" href="../../../api/component/dd/draggable.html#DD.Draggable" title="DD.Draggable"><tt class="xref py py-class docutils literal"><span class="pre">Draggable</span></tt></a>, 集中在 <a class="reference internal" href="../../../api/component/dd/ddm.html#DD.DDM" title="DD.DDM"><tt class="xref py py-data docutils literal"><span class="pre">DDM</span></tt></a> 上处理移动</li>
 </ul>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">p</span><span class="p">;</span>
 <span class="cm">/**</span>
@@ -324,7 +196,7 @@ KISSY.use("node,dd", function (S, Node, DD) {
 </pre></div>
 </div>
 <ul class="simple">
-<li>监控 <tt class="xref py py-data docutils literal"><span class="pre">drophit</span></tt> 事件, 将被委托的节点放入 <tt class="xref py py-class docutils literal"><span class="pre">Droppable</span></tt> 区域</li>
+<li>监控 <a class="reference internal" href="../../../api/component/dd/droppable.html#DD.Droppable.drophit" title="DD.Droppable.drophit"><tt class="xref py py-data docutils literal"><span class="pre">drophit</span></tt></a> 事件, 将被委托的节点放入 <a class="reference internal" href="../../../api/component/dd/droppable.html#DD.Droppable" title="DD.Droppable"><tt class="xref py py-class docutils literal"><span class="pre">Droppable</span></tt></a> 区域</li>
 </ul>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">onhit</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ev</span><span class="p">.</span><span class="nx">drag</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;dragNode&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;margin&quot;</span><span class="p">,</span> <span class="s2">&quot;5px 10px&quot;</span><span class="p">);</span>

@@ -1,0 +1,291 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>Demo - 从 markup 中构建 overlay &mdash; KISSY Docs valpha documentation</title>
+
+<link rel="stylesheet" href="../../../static/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="../../../static/favicon.ico"/>
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'alpha',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script>
+    <script type="text/javascript" src="../../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../../static/doctools.js"></script> 
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../../../static/logo.png"/></a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+
+    <ul class="navigation">
+        <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <!--<li><a href="mailto:all@kissyui.com">论坛</a></li>-->
+        <li><a href="http://www.github.com/kissyteam">源码</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="demo2.html" title="Demo - 全新创建一个 Dialog"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="Overlay Demos"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >All Demos</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Overlay Demos</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="demo-markup-overlay">
+<h1>Demo - 从 markup 中构建 overlay<a class="headerlink" href="#demo-markup-overlay" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/overlay/">源码</a></div>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="../../../api/component/overlay/overlay.html#module-Overlay" title="Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>Demo - 从 markup 中构建 overlay<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><iframe width="100%" height="300" class="iframe-demo" src="../../../static/demo/overlay/demo1.html"></iframe><p><strong>定义CSS</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+    <span class="nf">#popup1</span> <span class="p">{</span>
+        <span class="k">position</span><span class="o">:</span><span class="k">absolute</span><span class="p">;</span>
+        <span class="k">left</span><span class="o">:-</span><span class="m">9999px</span><span class="p">;</span>
+        <span class="k">top</span><span class="o">:-</span><span class="m">9999px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</pre></div>
+</div>
+<p>初始载入时, 弹出层所在 div 是浮出在屏幕之外而隐藏的, 当点击 Show 按钮时, 该弹层对齐在 Hide 按钮旁边, 当点击 Hide 按钮时, 已经显示的弹层就隐藏了.</p>
+<p><strong>组织 HTML 结构</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;popup1&#39;</span><span class="nt">&gt;</span>
+    我是一些提示信息
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;btn1&quot;</span><span class="nt">&gt;</span>Show<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;btn2&quot;</span><span class="nt">&gt;</span>Hide<span class="nt">&lt;/button&gt;</span>
+</pre></div>
+</div>
+<p><strong>JS初始化</strong></p>
+<p>通过 srcNode 配置项配置从已存的 dom 节点来生成 <a class="reference internal" href="../../../api/component/overlay/overlay.html#Overlay.Overlay" title="Overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> 对象 :</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
+    <span class="c1">// 对于 kissy &lt; 1.2 ,可使用 Overlay = S.Overlay; 获取构造器</span>
+
+    <span class="kd">var</span> <span class="nx">popup</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Overlay</span><span class="p">({</span>
+        <span class="nx">srcNode</span><span class="o">:</span><span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#popup1&quot;</span><span class="p">),</span> <span class="c1">// 配置已存在 dom 节点</span>
+        <span class="nx">width</span><span class="o">:</span> <span class="mi">300</span><span class="p">,</span> <span class="c1">// 配置宽度</span>
+        <span class="nx">height</span><span class="o">:</span> <span class="mi">200</span><span class="p">,</span>    <span class="c1">// 配置高度</span>
+        <span class="nx">align</span><span class="o">:</span> <span class="p">{</span>    <span class="c1">// 配置对齐属性</span>
+            <span class="nx">node</span><span class="o">:</span> <span class="s1">&#39;#btn2&#39;</span><span class="p">,</span>
+            <span class="nx">points</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;tr&#39;</span><span class="p">,</span> <span class="s1">&#39;tl&#39;</span><span class="p">],</span>
+            <span class="nx">offset</span><span class="o">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>当点击 Show 按钮时会触发弹出层的显示, 以及点击 Hide 按钮时会触发弹出层的隐藏.</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#btn1&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 根据对齐属性, 显示在 Hide 按钮旁</span>
+    <span class="nx">popup</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#btn2&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 隐藏弹出层</span>
+    <span class="nx">popup</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</div>
+</div>
+
+
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            KISSY.one("#openComment").attr("disabled",true);
+        }else{
+            KISSY.one("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            KISSY.one("#openComment").on("change",function(){
+                window.localStorage.setItem("kissy-commment",KISSY.one("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box demo-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/loader/index.html">Loader</a></li>
+        <!--<li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/lang/index.html">lang</a></li>
+        <li><a href="../../seed/web/index.html">web</a></li>-->
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <!--<li><a href="../../core/ua/index.html">ua</a></li>
+        <li><a href="../../core/dom/index.html">DOM</a></li>
+        <li><a href="../../core/event/index.html">event</a></li>
+        <li><a href="../../core/node/index.html">node</a></li>
+        <li><a href="../../core/json/index.html">json</a></li>
+        <li><a href="../../core/ajax/index.html">ajax</a></li>
+        <li><a href="../../core/cookie/index.html">cookie</a></li>
+        <li><a href="../../core/base/index.html">base</a></li>-->
+        <li><a href="../../core/anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <!--<li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../template/index.html">template</a></li>-->
+        <li><a href="../datalazyload/index.html">datalazyload</a></li>
+        <!--<li><a href="../flash/index.html">flash</a></li>-->
+        <li><a href="../dd/index.html">dd</a></li>
+        <li><a href="../switchable/index.html">switchable</a></li>
+        <li><a href="../suggest/index.html">suggest</a></li>
+        <!--<li><a href="../calendar/index.html">calendar</a></li>
+        <li><a href="../imagezoom/index.html">imagezoom</a></li>-->
+        <li><a href="index.html">overlay</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>
