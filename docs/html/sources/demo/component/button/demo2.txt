@@ -5,7 +5,7 @@ Button - 定制button的样式
 
 .. versionadded:: 1.2
 
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/button/>`_
+|   `API <../../../api/component/button/index.html>`_ | `源码 <https://github.com/kissyteam/kissy/tree/master/src/button/>`_
 
 
 Class
