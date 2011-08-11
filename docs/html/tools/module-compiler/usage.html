@@ -116,34 +116,49 @@
 <span class="nt">&lt;/java&gt;</span>
 </pre></div>
 </div>
+<div class="section" id="id2">
+<h2>参数说明<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>如上所示该工具需要一些参数, 包括 <tt class="docutils literal"><span class="pre">requires</span></tt>  , <tt class="docutils literal"><span class="pre">baseUrls</span></tt> , <tt class="docutils literal"><span class="pre">encodings</span></tt> , <tt class="docutils literal"><span class="pre">outputEncoding</span></tt> , <tt class="docutils literal"><span class="pre">excludes</span></tt> , <tt class="docutils literal"><span class="pre">output</span></tt> , 具体格式如下：</p>
 <div class="section" id="requires">
-<h2>requires<a class="headerlink" href="#requires" title="Permalink to this headline">¶</a></h2>
+<h3>requires<a class="headerlink" href="#requires" title="Permalink to this headline">¶</a></h3>
 <p>需要打包的模块名集合, 该模块以及其递归依赖都会被一并打包. 多个模块名用 <tt class="docutils literal"><span class="pre">,</span></tt> 分隔. 如以上示例： <tt class="docutils literal"><span class="pre">package/y</span></tt> .</p>
 </div>
 <div class="section" id="baseurls">
-<h2>baseUrls<a class="headerlink" href="#baseurls" title="Permalink to this headline">¶</a></h2>
+<h3>baseUrls<a class="headerlink" href="#baseurls" title="Permalink to this headline">¶</a></h3>
 <p>模块文件查找目录集合, 一般存在两个： <tt class="docutils literal"><span class="pre">kissy</span></tt> 内置模块目录以及业务模块源码目录, 目录间以 <tt class="docutils literal"><span class="pre">,</span></tt> 分隔.
 如以上示例 <tt class="docutils literal"><span class="pre">x:/kissy/,x:/code/</span></tt> .</p>
 </div>
 <div class="section" id="encodings">
-<h2>encodings<a class="headerlink" href="#encodings" title="Permalink to this headline">¶</a></h2>
+<h3>encodings<a class="headerlink" href="#encodings" title="Permalink to this headline">¶</a></h3>
 <p>指明模块目录中文件的编码, 顺序对应于 <tt class="docutils literal"><span class="pre">baseUrls</span></tt> , 多个编码以 <tt class="docutils literal"><span class="pre">,</span></tt> 分隔. 如以上示例： <tt class="docutils literal"><span class="pre">utf-8,gbk</span></tt> ,
 表示 <tt class="docutils literal"><span class="pre">kissy</span></tt> 内置模块为 <tt class="docutils literal"><span class="pre">utf-8</span></tt> 编码, 业务模块为 <tt class="docutils literal"><span class="pre">gbk</span></tt> 编码.</p>
 </div>
 <div class="section" id="outputencoding">
-<h2>outputEncoding<a class="headerlink" href="#outputencoding" title="Permalink to this headline">¶</a></h2>
+<h3>outputEncoding<a class="headerlink" href="#outputencoding" title="Permalink to this headline">¶</a></h3>
 <p>指明最后合并打包文件的编码格式. 如以上示例 <tt class="docutils literal"><span class="pre">utf-8</span></tt> .</p>
 </div>
 <div class="section" id="excludes">
-<h2>excludes<a class="headerlink" href="#excludes" title="Permalink to this headline">¶</a></h2>
+<h3>excludes<a class="headerlink" href="#excludes" title="Permalink to this headline">¶</a></h3>
 <p>指明 <tt class="docutils literal"><span class="pre">requires</span></tt> 递归依赖模块中不需要打包的模块名称集合, 该集合内的模块是单独动态加载或静态引入的, 多个模块以 <tt class="docutils literal"><span class="pre">,</span></tt> 分隔.
 如以上示例 <tt class="docutils literal"><span class="pre">core</span></tt> 表示 <tt class="docutils literal"><span class="pre">kissy</span></tt> 的 <tt class="docutils literal"><span class="pre">core</span></tt> 模块不需要合并打包, 是通过 <tt class="docutils literal"><span class="pre">kissy.js</span></tt> 静态引入到页面中的.</p>
 </div>
 <div class="section" id="output">
-<h2>output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<h3>output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h3>
 <p>指明最终合并打包后的文件路径以及名称. 如以上示例： <tt class="docutils literal"><span class="pre">x:/code/package/y.combine.js</span></tt> ,
 表示该工具产生的合并后文件为 <tt class="docutils literal"><span class="pre">x:/code/package/y.combine.js</span></tt> .</p>
+<div class="line-block">
+<div class="line">一般建议文件名要和入口模块文件名 -min 一致.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>举例<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>模块 <tt class="docutils literal"><span class="pre">biz/x</span></tt> 依赖于模块 <tt class="docutils literal"><span class="pre">biz/y</span></tt> ， 模块 <tt class="docutils literal"><span class="pre">biz/y</span></tt> 依赖于模块 <tt class="docutils literal"><span class="pre">biz/z</span></tt> 。</p>
+<ol class="arabic simple">
+<li>开发阶段可以载入 <tt class="docutils literal"><span class="pre">kissy.js</span></tt> ， 那么 <tt class="docutils literal"><span class="pre">KISSY.use(&quot;biz/x&quot;)</span></tt> 会递归动态下载 <tt class="docutils literal"><span class="pre">biz/x.js</span></tt> ， <tt class="docutils literal"><span class="pre">biz/y.js</span></tt> ， <tt class="docutils literal"><span class="pre">biz/z.js</span></tt> 。</li>
+<li>部署阶段使用 module compiler 指定  <tt class="docutils literal"><span class="pre">-requires</span> <span class="pre">biz/x</span> <span class="pre">,</span> <span class="pre">-output</span> <span class="pre">biz/x-combine.js</span></tt> 并将 <tt class="docutils literal"><span class="pre">biz/x-combine.js</span></tt> 压缩为 <tt class="docutils literal"><span class="pre">biz/x-min.js</span></tt> .</li>
+<li>生产环境载入 <tt class="docutils literal"><span class="pre">kissy-min.js</span></tt> ，那么同样的 <tt class="docutils literal"><span class="pre">KISSY.use(&quot;biz/x&quot;)</span></tt> 就只会动态下载 <tt class="docutils literal"><span class="pre">biz/x-min.js</span></tt> 了。</li>
+</ol>
 </div>
 </div>
 
@@ -224,12 +239,8 @@
 <li class="toctree-l3"><a class="reference internal" href="intro.html">简介</a></li>
 <li class="toctree-l3"><a class="reference internal" href="intro.html#id2">举例</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">使用说明</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#requires">requires</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#baseurls">baseUrls</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#encodings">encodings</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#outputencoding">outputEncoding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#excludes">excludes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#output">output</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">参数说明</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">举例</a></li>
 </ul>
 </li>
 </ul>
