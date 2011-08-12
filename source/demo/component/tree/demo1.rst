@@ -1,6 +1,6 @@
 .. currentmodule:: tree
 
-Demo - KISSY新建简单树
+Demo - 新建简单树
 ======================================
 
 .. versionadded:: 1.2
@@ -13,7 +13,7 @@ Class
   * :class:`Tree`
   * :class:`TreeMgr`
 
-Demo - KISSY新建简单树
+Demo - 新建简单树
 --------------------------------------------------
 
     .. raw:: html
@@ -26,14 +26,10 @@ Demo - KISSY新建简单树
 
         <script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"></script>
 
-    **html关键代码**
+    **HTML关键代码**
 	
     .. code-block:: html
 	
-    	<!-- 简单树 -->
-    	<div style="margin-bottom:10px">
-    		<a href="javascript:void(0)" id="expandAll">展开全部</a>&nbsp; <a href="javascript:void(0)" id="collapseAll">关闭全部</a>
-    	</div>
     	<div id="treeContainer" style="width: 200px;">
     		<!-- 简单树只提供一个树的容器，通过KISSY代码向容器中增加DOM元素 -->
     		<!-- 在树生成之后，此处会有DOM元素添加进来 -->

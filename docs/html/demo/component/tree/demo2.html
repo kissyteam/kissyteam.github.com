@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Demo - KISSY新建多选树 &mdash; KISSY Docs valpha documentation</title>
+<title>Demo - 新建多选树 &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -73,10 +73,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="demo3.html" title="Demo - 利用已有的html结构生成树"
+      <a href="../../../relatedproj/index.html" title="子项目集"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="demo1.html" title="Demo - KISSY新建简单树"
+      <a href="demo3.html" title="Demo - 从已有的html结构生成树"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >All Demos</a> &#187; </li>
@@ -85,8 +85,8 @@
     </ul>
 </div>
 					
-  <div class="section" id="demo-kissy">
-<h1>Demo - KISSY新建多选树<a class="headerlink" href="#demo-kissy" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="demo">
+<h1>Demo - 新建多选树<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h1>
 <p class="versionadded">
 <span class="versionmodified">New in version 1.2.</span></p>
 <div class="line-block">
@@ -102,18 +102,15 @@
 </div></blockquote>
 </div>
 <div class="section" id="id2">
-<h2>Demo -  KISSY新建多选树<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Demo -  新建多选树<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><iframe width="100%" height="200" class="iframe-demo" src="../../../static/demo/tree/demo2.html"></iframe><p><strong>载入1.2的 kissy</strong></p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 </div>
-<p><strong>html关键代码</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;margin-bottom:10px&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:void(0)&quot;</span> <span class="na">id=</span><span class="s">&quot;expandAll&quot;</span><span class="nt">&gt;</span>展开全部<span class="nt">&lt;/a&gt;</span><span class="ni">&amp;nbsp;</span> <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:void(0)&quot;</span> <span class="na">id=</span><span class="s">&quot;collapseAll&quot;</span><span class="nt">&gt;</span>关闭全部<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;treeContainer&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 200px;&quot;</span><span class="nt">&gt;</span>
-        <span class="c">&lt;!-- 此次只提供一个树的容器，通过KISSY代码向容器中增加构成树的DOM元素 --&gt;</span>
+<p><strong>HTML关键代码</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;treeContainer&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 200px;&quot;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- 此次只提供一个树的容器，通过KISSY代码向容器中增加构成树的DOM元素  --&gt;</span>
         <span class="c">&lt;!-- 在树生成之后，此处会有DOM元素添加进来 --&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
@@ -183,16 +180,18 @@
 
 	<span class="c1">//添加事件</span>
 	<span class="nx">tree</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-		<span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;action : &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">));</span>
+		<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;action : &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">));</span>
 	<span class="p">});</span>
-		
-	<span class="c1">//外部外部调用树的接口操作树</span>
-	<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#expandAll&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-		<span class="nx">tree</span><span class="p">.</span><span class="nx">expandAll</span><span class="p">();</span>
-	<span class="p">});</span>
-	<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#collapseAll&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-		<span class="nx">tree</span><span class="p">.</span><span class="nx">collapseAll</span><span class="p">();</span>
-	<span class="p">});</span>
+
+    <span class="c1">//增加两个Button来调用树的接口	</span>
+	<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;input type=&quot;button&quot; value=&quot;全部收缩&quot; style=&quot;margin:5px;&quot;/&gt;&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="c1">//通过外部调用树的接口操作树</span>
+            <span class="nx">tree</span><span class="p">.</span><span class="nx">collapseAll</span><span class="p">();</span>
+        <span class="p">}).</span><span class="nx">prependTo</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#treeContainer&#39;</span><span class="p">));</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;input type=&quot;button&quot; value=&quot;全部展开&quot; style=&quot;margin:5px;&quot;/&gt;&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span><span class="nx">tree</span><span class="p">.</span><span class="nx">expandAll</span><span class="p">();})</span>
+        <span class="p">.</span><span class="nx">prependTo</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#treeContainer&#39;</span><span class="p">));</span>
 <span class="p">});</span>
 </pre></div>
 </div>

@@ -64,24 +64,25 @@ KISSY.use("tree", function(S, Tree) {
 	
 	//添加事件
 	tree.on("expand", function(e) {
-		S.log("expand : " + e.target.get("content"));
-		S.log("expandIconEl");
-		S.log(e.target.get("expandIconEl"));
-		S.log("iconEl");
-		S.log(e.target.get("iconEl"));
+		alert("expand : " + e.target.get("content"));
 	});
 	tree.on("collapse", function(e) {
-		S.log("collapse : " + e.target.get("content"));
+		alert("collapse : " + e.target.get("content"));
 	});
 	tree.on("click", function(e) {
-		S.log("action : " + e.target.get("content"));
+		alert("action : " + e.target.get("content"));
 	});
 	
-	//通过外部调用树的接口操作树
-	$("#expandAll").on("click", function() {
-		tree.expandAll();
-	});
-	$("#collapseAll").on("click", function() {
-		tree.collapseAll();
-	});
+    //增加两个Button来调用树的接口    
+    $('<input type="button" value="全部收缩" style="margin:5px;" />')
+        .on('click',function(){
+            //通过外部调用树的接口操作树
+            tree.collapseAll();
+        })
+        .prependTo($('#treeContainer'));
+    $('<input type="button" value="全部展开" style="margin:5px;" />')
+        .on('click',function(){tree.expandAll();})
+        .prependTo($('#treeContainer'));
+
+	
 });

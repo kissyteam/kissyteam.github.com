@@ -1,6 +1,6 @@
 .. currentmodule:: tree
 
-Demo - 利用已有的html结构生成树
+Demo - 从已有的html结构生成树
 ======================================
 
 .. versionadded:: 1.2
@@ -13,12 +13,12 @@ Class
   * :class:`Tree`
   * :class:`TreeMgr`
 
-Demo - 利用已有的html结构生成树
+Demo - 从已有的html结构生成树
 --------------------------------------------------
 
     .. raw:: html
 
-        <iframe width="100%" height="200" class="iframe-demo" src="../../../static/demo/tree/demo2.html"></iframe>
+        <iframe width="100%" height="200" class="iframe-demo" src="../../../static/demo/tree/demo3.html"></iframe>
 
     **载入1.2的 kissy**
 
@@ -26,15 +26,12 @@ Demo - 利用已有的html结构生成树
 
         <script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"></script>
     
-    **html关键代码**
+    **HTML关键代码**
     
     .. code-block:: html
 	
-		<div style="margin-bottom:10px">
-			<a href="javascript:void(0)" id="expandAll">展开全部</a>&nbsp; <a href="javascript:void(0)" id="collapseAll">关闭全部</a>
-		</div>
 		<div id="treeContainer" style="width: 200px;">
-			<!-- 直接通过DOM中已有的结构生成一棵树 -->
+			<!-- 直接通过DOM中已有的结构生成一棵树  -->
 			<div id='root' class="goog-tree-root">
 				<span class="goog-tree-item-label">淘宝网</span>
 				<div class="goog-tree-children">
@@ -58,7 +55,7 @@ Demo - 利用已有的html结构生成树
 
     **初始化树**
 
-    .. literalinclude:: /_static/demo/tree/assets/demo2.js
+    .. literalinclude:: /_static/demo/tree/assets/demo3.js
            :language: javascript
     
     .. note::

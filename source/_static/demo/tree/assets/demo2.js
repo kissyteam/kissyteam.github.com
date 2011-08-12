@@ -62,14 +62,16 @@ KISSY.use("tree", function(S, Tree) {
 
 	//添加事件
 	tree.on("click", function(e) {
-		S.log("action : " + e.target.get("content"));
+		alert("action : " + e.target.get("content"));
 	});
-		
-	//外部外部调用树的接口操作树
-	$("#expandAll").on("click", function() {
-		tree.expandAll();
-	});
-	$("#collapseAll").on("click", function() {
-		tree.collapseAll();
-	});
+
+    //增加两个Button来调用树的接口	
+	$('<input type="button" value="全部收缩" style="margin:5px;"/>')
+        .on('click',function(){
+            //通过外部调用树的接口操作树
+            tree.collapseAll();
+        }).prependTo($('#treeContainer'));
+    $('<input type="button" value="全部展开" style="margin:5px;"/>')
+        .on('click',function(){tree.expandAll();})
+        .prependTo($('#treeContainer'));
 });
