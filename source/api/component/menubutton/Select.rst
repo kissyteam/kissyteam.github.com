@@ -4,7 +4,7 @@ Select
 ===============================
 
 |  菜单.
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/menubutton/>`_
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/menubutton/>`_ | `Demo <../../../demo/component/menubutton/demo2.html>`_
 
 .. versionadded:: 1.2
 

@@ -6,7 +6,7 @@ Menu
 .. versionadded:: 1.2
 
 |  菜单.
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/component/>`_
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/component/>`_ | `Demo <../../../demo/component/menu/demo1.html>`_
 
 
 Class

@@ -6,7 +6,7 @@ Menu.FilterMenu
 .. versionadded:: 1.2
 
 |  可过滤菜单.
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/menu/>`_
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/menu/>`_ | `Demo <../../../demo/component/menu/demo4.html>`_
 
 Class
 ---------------------------------

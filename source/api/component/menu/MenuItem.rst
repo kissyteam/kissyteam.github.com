@@ -6,7 +6,7 @@ Menu.Item
 .. versionadded:: 1.2
 
 |  菜单项.
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/menu/>`_
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/menu/>`_ | `Demo <../../../demo/component/menu/demo1.html>`_
 
 Class
 ---------------------------------
