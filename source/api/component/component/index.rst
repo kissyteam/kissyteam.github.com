@@ -1,4 +1,4 @@
-.. module:: uibase
+.. module:: component
 
 
 Component

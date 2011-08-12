@@ -1,4 +1,4 @@
-.. currentmodule:: Lang
+.. currentmodule:: seed
 
 fromUnicode
 ===============================
@@ -8,7 +8,7 @@ fromUnicode
 Module
 -----------------------------------------------
 
-  :mod:`Lang`
+  :mod:`seed`
 
 
 Methods

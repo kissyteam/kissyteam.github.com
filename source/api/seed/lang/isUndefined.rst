@@ -1,4 +1,4 @@
-.. currentmodule:: Lang
+.. currentmodule:: seed
 
 isUndefined
 ===============================
@@ -6,7 +6,7 @@ isUndefined
 Module
 -----------------------------------------------
 
-  :mod:`Lang`
+  :mod:`seed`
 
 
 Methods

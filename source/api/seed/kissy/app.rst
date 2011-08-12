@@ -1,4 +1,4 @@
-.. currentmodule:: Seed
+.. currentmodule:: seed
 
 
 app
@@ -9,7 +9,7 @@ app
 Module
 -----------------------------------------------
 
-  :mod:`Seed`
+  :mod:`seed`
 
 
 Methods

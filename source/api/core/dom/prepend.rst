@@ -1,4 +1,4 @@
-﻿.. currentmodule:: DOM
+﻿.. currentmodule:: dom
 
 prepend
 =================================
@@ -6,7 +6,7 @@ prepend
 Module
 -----------------------------------------------
 
-  :mod:`DOM`
+  :mod:`dom`
 
 
 Methods

@@ -1,4 +1,4 @@
-.. currentmodule:: Lang
+.. currentmodule:: seed
 
 escapeHTML
 ===============================
@@ -8,7 +8,7 @@ escapeHTML
 Module
 -----------------------------------------------
 
-  :mod:`Lang`
+  :mod:`seed`
 
 
 Methods

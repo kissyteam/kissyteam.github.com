@@ -21,3 +21,4 @@ Component
    button/index
    menu/index
    menubutton/index
+   tree/index

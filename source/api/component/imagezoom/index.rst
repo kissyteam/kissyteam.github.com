@@ -1,4 +1,4 @@
-.. module:: ImageZoom
+.. module:: imagezoom
 
 ImageZoom
 ===============================================
@@ -9,7 +9,7 @@ ImageZoom
 Class
 -----------------------------------------------
 
-  * :class:`~ImageZoom.ImageZoom`
+  * :class:`~imagezoom.ImageZoom`
 
 Config Attributes
 -----------------------------------------------

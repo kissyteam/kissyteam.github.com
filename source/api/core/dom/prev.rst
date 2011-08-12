@@ -1,4 +1,4 @@
-﻿.. currentmodule:: DOM
+﻿.. currentmodule:: dom
 
 prev
 =================================
@@ -6,7 +6,7 @@ prev
 Module
 -----------------------------------------------
 
-  :mod:`DOM`
+  :mod:`dom`
 
 
 Methods

@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Event
+﻿.. currentmodule:: event
 
 delegate
 =================================
@@ -8,7 +8,7 @@ delegate
 Module
 -----------------------------------------------
 
-  :mod:`Event`
+  :mod:`event`
 
 Methods
 -----------------------------------------------
@@ -82,7 +82,7 @@ Methods
         不能在 ``object`` , ``embed`` , ``applet`` 元素上注册事件.
         事件处理器回调函数中 this 指向 scope (没指定指向绑定事件的元素), 传入的参数为 event ,
         event.target 指向事件触发源, event.currentTarget 指向当前事件处理器调用所在的匹配 filter 的元素.
-        可以使用 :meth:`~Event.Object.stopPropagation` 来停止事件的向上冒泡, 这样就不会在同样符合 filter 条件的祖先节点上调用事件处理器.
+        可以使用 :meth:`~event.Object.stopPropagation` 来停止事件的向上冒泡, 这样就不会在同样符合 filter 条件的祖先节点上调用事件处理器.
         
     .. note::
     

@@ -1,4 +1,4 @@
-.. currentmodule:: Lang
+.. currentmodule:: seed
 
 lastIndexOf
 ===============================
@@ -6,7 +6,7 @@ lastIndexOf
 Module
 -----------------------------------------------
 
-  :mod:`Lang`
+  :mod:`seed`
 
 
 Methods

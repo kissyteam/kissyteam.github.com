@@ -7,7 +7,7 @@ Loader Demos
 Module
 -----------------------------------------------
 
-  :mod:`Loader`
+  :mod:`seed`
 
 
 .. _Seed-loader-demo1:

@@ -1,4 +1,4 @@
-.. currentmodule:: Lang
+.. currentmodule:: seed
 
 reduce
 ===============================
@@ -8,7 +8,7 @@ reduce
 Module
 -----------------------------------------------
 
-  :mod:`Lang`
+  :mod:`seed`
 
 
 Methods

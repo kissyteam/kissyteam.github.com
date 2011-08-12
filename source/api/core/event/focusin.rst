@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Event
+﻿.. currentmodule:: event
 
 .. _event-focusin:
 

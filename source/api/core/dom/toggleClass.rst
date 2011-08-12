@@ -1,4 +1,4 @@
-﻿.. currentmodule:: DOM
+﻿.. currentmodule:: dom
 
 toggleClass
 =================================
@@ -6,7 +6,7 @@ toggleClass
 Module
 -----------------------------------------------
 
-  :mod:`DOM`
+  :mod:`dom`
 
 
 Methods

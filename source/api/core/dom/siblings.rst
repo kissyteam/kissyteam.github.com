@@ -1,4 +1,4 @@
-﻿.. currentmodule:: DOM
+﻿.. currentmodule:: dom
 
 siblings
 =================================
@@ -6,7 +6,7 @@ siblings
 Module
 -----------------------------------------------
 
-  :mod:`DOM`
+  :mod:`dom`
 
 
 Methods

@@ -1,4 +1,4 @@
-﻿.. currentmodule:: DOM
+﻿.. currentmodule:: dom
 
 docWidth
 =================================
@@ -6,7 +6,7 @@ docWidth
 Module
 -----------------------------------------------
 
-  :mod:`DOM`
+  :mod:`dom`
 
 
 Methods

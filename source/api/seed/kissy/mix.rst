@@ -1,4 +1,4 @@
-.. currentmodule:: Seed
+.. currentmodule:: seed
 
 mix
 ===============================
@@ -6,7 +6,7 @@ mix
 Module
 -----------------------------------------------
 
-  :mod:`Seed`
+  :mod:`seed`
 
 
 Methods

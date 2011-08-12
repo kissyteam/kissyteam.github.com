@@ -1,4 +1,4 @@
-﻿.. currentmodule:: DOM
+﻿.. currentmodule:: dom
 
 viewportWidth
 =================================
@@ -7,7 +7,7 @@ viewportWidth
 Module
 -----------------------------------------------
 
-  :mod:`DOM`
+  :mod:`dom`
 
 Methods
 -----------------------------------------------

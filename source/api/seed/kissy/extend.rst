@@ -1,4 +1,4 @@
-.. currentmodule:: Seed
+.. currentmodule:: seed
 
 extend
 ===============================
@@ -7,7 +7,7 @@ extend
 Module
 -----------------------------------------------
 
-  :mod:`Seed`
+  :mod:`seed`
 
 
 Methods
@@ -39,12 +39,12 @@ Methods
         }
         S.extend(Chicken, Bird,{
             fly:function(){
-                Chicken.superclass.fly();
+                Chicken.superclass.fly.call(this)
                 alert("it's my turn");
             }
         });
 
-        new Chicken('Frank').fly();
+        new Chicken('kissy').fly();
     
     extend 方法是 KISSY 里类继承的实现方式. 书写 JavaScript 代码时, 请忘记传统 OO 里的继承体系.
     还 JavaScript 本色, 给代码一身轻松.

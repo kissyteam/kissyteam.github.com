@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Node
+﻿.. currentmodule:: node
 
 
 addStyleSheet
@@ -9,7 +9,7 @@ addStyleSheet
 Module
 -----------------------------------------------
 
-  :mod:`Node`
+  :mod:`node`
 
 
 

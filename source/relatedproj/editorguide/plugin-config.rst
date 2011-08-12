@@ -1,4 +1,4 @@
-.. currentmodule:: Editor
+.. currentmodule:: editor
 
 .. _editorusage-common-cfg:
 

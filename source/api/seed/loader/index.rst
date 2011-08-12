@@ -1,8 +1,8 @@
-.. module:: Loader
+.. currentmodule:: seed
 
 .. _Loader:
 
-Loader
+loader
 ===============================
 
 |  弥补 javascript 语言机制的不足, 提供类似其他语言原生的模块化机制.
@@ -13,7 +13,7 @@ Loader
 Module
 -----------------------------------------------
 
-  :mod:`Loader`
+  :mod:`seed`
 
 Methods
 -----------------------------------------------

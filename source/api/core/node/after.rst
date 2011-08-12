@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Node
+﻿.. currentmodule:: node
 
 
 after
@@ -9,7 +9,7 @@ after
 Module
 -----------------------------------------------
 
-  :mod:`Node`
+  :mod:`node`
 
 Methods
 -----------------------------------------------
@@ -24,7 +24,7 @@ Methods
         * string : html 字符串
         * HTMLElement|NodeList : 已有或新建的元素
 
-    :meth:`~Node.insertAfter` 和该方法的功能一样, 只不过参数意义不同,  ``insertAfter`` 表示当前节点列表被插入到参数目标节点之后,
+    :meth:`~node.insertAfter` 和该方法的功能一样, 只不过参数意义不同,  ``insertAfter`` 表示当前节点列表被插入到参数目标节点之后,
     而该方法则表示参数节点被插入到当前节点之后.
 
 

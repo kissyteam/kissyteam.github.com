@@ -1,4 +1,4 @@
-.. currentmodule:: Seed
+.. currentmodule:: seed
 
 log
 ===============================
@@ -6,7 +6,7 @@ log
 Module
 -----------------------------------------------
 
-  :mod:`Seed`
+  :mod:`seed`
 
 
 Methods

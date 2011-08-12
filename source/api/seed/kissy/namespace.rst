@@ -1,4 +1,4 @@
-.. currentmodule:: Seed
+.. currentmodule:: seed
 
 namespace
 ===============================
@@ -6,7 +6,7 @@ namespace
 Module
 -----------------------------------------------
 
-  :mod:`Seed`
+  :mod:`seed`
 
 
 Methods

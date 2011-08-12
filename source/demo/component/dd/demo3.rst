@@ -1,4 +1,4 @@
-﻿.. currentmodule:: DD
+﻿.. currentmodule:: dd
 
 Demo - DraggableDelegate 使用示例
 =============================================
@@ -72,7 +72,7 @@ Demo - DraggableDelegate 使用示例
 
     .. seealso::
 
-        KISSY 1.2 :mod:`Loader` 新增功能
+        KISSY 1.2 :mod:`seed` 新增功能
 
 
     **初始化拖放委托对象**

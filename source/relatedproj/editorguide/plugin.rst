@@ -1,4 +1,4 @@
-.. currentmodule:: Editor
+.. currentmodule:: editor
 
 
 插件名称列表

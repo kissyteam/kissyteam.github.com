@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Node
+﻿.. currentmodule:: node
 
 animate
 ==================================================
@@ -6,7 +6,7 @@ animate
 Module
 -----------------------------------------------
 
-  :mod:`Node`
+  :mod:`node`
 
 Methods
 -----------------------------------------------
@@ -31,7 +31,7 @@ Methods
             new KISSY.Anim(n,...).run();
         });
 
-    所以详细参数请参考 : :class:`~Anim.Anim`  构造器接口.
+    所以详细参数请参考 : :class:`~anim.Anim`  构造器接口.
 
     .. note::
 

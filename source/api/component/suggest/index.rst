@@ -1,4 +1,4 @@
-﻿.. module:: Suggest
+﻿.. module:: suggest
 
 Suggest
 ===============================================
@@ -21,7 +21,7 @@ Suggest
 Class
 -----------------------------------------------
 
-  * :class:`~Suggest.Suggest`
+  * :class:`~suggest.Suggest`
 
   
 Config Attributes

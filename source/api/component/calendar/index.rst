@@ -1,4 +1,4 @@
-.. module:: Calendar
+.. module:: calendar
 
 Calendar
 ===============================================
@@ -10,7 +10,7 @@ Calendar
 Class
 -----------------------------------------------
 
-  * :class:`~Calendar.Calendar`
+  * :class:`~calendar.Calendar`
 
 Config Attributes
 -----------------------------------------------

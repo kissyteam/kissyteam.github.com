@@ -90,13 +90,13 @@
 <div class="section" id="module">
 <h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><a class="reference internal" href="index.html#module-Seed" title="Seed"><tt class="xref py py-mod docutils literal"><span class="pre">Seed</span></tt></a></div></blockquote>
+<div><a class="reference internal" href="../index.html#module-seed" title="seed"><tt class="xref py py-mod docutils literal"><span class="pre">seed</span></tt></a></div></blockquote>
 </div>
 <div class="section" id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="Seed.KISSY.extend">
-<tt class="descclassname">KISSY.</tt><tt class="descname">extend</tt><big>(</big><big>)</big><a class="headerlink" href="#Seed.KISSY.extend" title="Permalink to this definition">¶</a></dt>
+<dt id="seed.KISSY.extend">
+<tt class="descclassname">KISSY.</tt><tt class="descname">extend</tt><big>(</big><big>)</big><a class="headerlink" href="#seed.KISSY.extend" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line">Function <strong>KISSY.extend</strong> (r,s[,px,sx])</div>
 <div class="line">让函数对象 r 继承函数对象 s</div>
@@ -135,12 +135,12 @@
 <span class="p">}</span>
 <span class="nx">S</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Chicken</span><span class="p">,</span> <span class="nx">Bird</span><span class="p">,{</span>
     <span class="nx">fly</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span>
-        <span class="nx">Chicken</span><span class="p">.</span><span class="nx">superclass</span><span class="p">.</span><span class="nx">fly</span><span class="p">();</span>
+        <span class="nx">Chicken</span><span class="p">.</span><span class="nx">superclass</span><span class="p">.</span><span class="nx">fly</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
         <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;it&#39;s my turn&quot;</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="k">new</span> <span class="nx">Chicken</span><span class="p">(</span><span class="s1">&#39;Frank&#39;</span><span class="p">).</span><span class="nx">fly</span><span class="p">();</span>
+<span class="k">new</span> <span class="nx">Chicken</span><span class="p">(</span><span class="s1">&#39;kissy&#39;</span><span class="p">).</span><span class="nx">fly</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>extend 方法是 KISSY 里类继承的实现方式. 书写 JavaScript 代码时, 请忘记传统 OO 里的继承体系.
@@ -219,7 +219,7 @@
     <div class="col-sub"><ul class="s-box api-toctree">
     <h2 class="s-box-hd">Seed</h2>
     <ul class="s-box-bd">
-        <li><a href="../loader/index.html">Loader</a></li>
+        <li><a href="../loader/index.html">loader</a></li>
         <li><a href="index.html">kissy</a></li>
         <li><a href="../lang/index.html">lang</a></li>
         <li><a href="../web/index.html">web</a></li>
@@ -230,7 +230,7 @@
     <h2 class="s-box-hd">Core</h2>
     <ul class="s-box-bd">
         <li><a href="../../core/ua/index.html">ua</a></li>
-        <li><a href="../../core/dom/index.html">DOM</a></li>
+        <li><a href="../../core/dom/index.html">dom</a></li>
         <li><a href="../../core/event/index.html">event</a></li>
         <li><a href="../../core/node/index.html">node</a></li>
         <li><a href="../../core/json/index.html">json</a></li>

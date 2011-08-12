@@ -1,4 +1,4 @@
-.. module:: Template
+.. module:: template
 
 Template
 ===============================================

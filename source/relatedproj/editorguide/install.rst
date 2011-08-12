@@ -1,4 +1,4 @@
-.. currentmodule:: Editor
+.. currentmodule:: editor
 
 引入
 ===========

@@ -1,4 +1,4 @@
-.. module:: Seed
+.. currentmodule:: seed
 
 .. _KISSY:
 
@@ -12,7 +12,7 @@ KISSY
 Module
 -----------------------------------------------
 
-  :mod:`Seed`
+  :mod:`seed`
 
 Methods
 -----------------------------------------------

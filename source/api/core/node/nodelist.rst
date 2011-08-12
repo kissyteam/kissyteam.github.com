@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Node
+﻿.. currentmodule:: node
 
 NodeList
 ==================================================

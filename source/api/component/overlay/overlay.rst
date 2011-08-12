@@ -1,4 +1,4 @@
-.. module:: Overlay
+.. currentmodule:: overlay
 
 Overlay
 ===============================================

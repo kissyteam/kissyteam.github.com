@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Event
+﻿.. currentmodule:: event
 
 .. versionadded:: 1.2
 

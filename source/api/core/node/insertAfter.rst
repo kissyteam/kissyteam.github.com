@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Node
+﻿.. currentmodule:: node
 
 
 insertAfter
@@ -7,7 +7,7 @@ insertAfter
 Module
 -----------------------------------------------
 
-  :mod:`Node`
+  :mod:`node`
 
 Methods
 -----------------------------------------------

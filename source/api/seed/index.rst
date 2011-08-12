@@ -1,3 +1,5 @@
+.. module:: seed
+
 .. _Seed:
 
 Seed

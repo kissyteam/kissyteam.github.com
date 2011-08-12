@@ -1,4 +1,4 @@
-﻿.. module:: DOM
+﻿.. module:: dom
 
 DOM
 ====================================
@@ -6,12 +6,12 @@ DOM
 |  源码: `查看 <https://github.com/kissyteam/kissy/tree/master/src/dom>`_
 
 .. versionchanged:: 1.2
-    :mod:`KISSY Node <Node>` 以及  :class:`~Node.NodeList` 对象上的相关处理推荐直接调用其自身方法.
+    :mod:`KISSY Node <node>` 以及  :class:`~node.NodeList` 对象上的相关处理推荐直接调用其自身方法.
     
 Module
 -----------------------------------------------
 
-  :mod:`DOM`
+  :mod:`dom`
 
 Methods
 -----------------------------------------------

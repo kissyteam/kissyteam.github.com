@@ -1,4 +1,4 @@
-﻿.. currentmodule:: DD
+﻿.. currentmodule:: dd
 
 Demo - Draggable & Proxy 使用示例
 =====================================================

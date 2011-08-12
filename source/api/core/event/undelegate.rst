@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Event
+﻿.. currentmodule:: event
 
 undelegate
 =================================
@@ -8,7 +8,7 @@ undelegate
 Module
 -----------------------------------------------
 
-  :mod:`Event`
+  :mod:`event`
 
 Methods
 -----------------------------------------------

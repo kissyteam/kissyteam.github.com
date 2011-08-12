@@ -1,4 +1,4 @@
-.. currentmodule:: Web
+.. currentmodule:: seed
 
 globalEval
 ===============================
@@ -6,7 +6,7 @@ globalEval
 Module
 -----------------------------------------------
 
-  :mod:`Web`
+  :mod:`seed`
 
 
 Methods

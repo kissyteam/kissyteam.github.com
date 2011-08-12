@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Event
+﻿.. currentmodule:: event
 
 on
 =================================
@@ -6,7 +6,7 @@ on
 Module
 -----------------------------------------------
 
-  :mod:`Event`
+  :mod:`event`
 
 Methods
 -----------------------------------------------
@@ -32,7 +32,7 @@ Methods
 .. function:: add
 
     | void **add** ( selector , eventType , fn , scope )
-    | 为 :func:`~Event.on` 的别名
+    | 为 :func:`~event.on` 的别名
     
     .. note::
 
@@ -67,9 +67,9 @@ Demo
 
 
 
-    当事件发生时, 事件处理器回调函数会被传递给一个事件对象参数.具体可见 :class:`~Event.Object` .
+    当事件发生时, 事件处理器回调函数会被传递给一个事件对象参数.具体可见 :class:`~event.Object` .
 
-    返回 ``false`` 相当于调用了事件对象的 :meth:`~Event.EventObject.preventDefault` 以及 :meth:`~Event.EventObject.stopPropagation`
+    返回 ``false`` 相当于调用了事件对象的 :meth:`~event.EventObject.preventDefault` 以及 :meth:`~event.EventObject.stopPropagation`
 
     **在事件处理器中使用事件对象**
 
@@ -88,7 +88,7 @@ Demo
 
 
     **处理段落的单击与双击**
-    注意坐标是相对于例子的 iframe 窗口的, 这里方便起见采用 :mod:`Node` 来操作 Event.
+    注意坐标是相对于例子的 iframe 窗口的, 这里方便起见采用 :mod:`node` 来操作 Event.
 
     .. literalinclude:: /_static/api/core/event/on_1.html
        :language: html

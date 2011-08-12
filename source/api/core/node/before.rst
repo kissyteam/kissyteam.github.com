@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Node
+﻿.. currentmodule:: node
 
 
 before
@@ -9,7 +9,7 @@ before
 Module
 -----------------------------------------------
 
-  :mod:`Node`
+  :mod:`node`
 
 Methods
 -----------------------------------------------

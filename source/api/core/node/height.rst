@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Node
+﻿.. currentmodule:: node
 
 
 height
@@ -7,7 +7,7 @@ height
 Module
 -----------------------------------------------
 
-  :mod:`Node`
+  :mod:`node`
 
 Methods
 -----------------------------------------------

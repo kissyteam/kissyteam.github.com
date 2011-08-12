@@ -1,4 +1,4 @@
-﻿.. module:: Node
+﻿.. module:: node
 
 Node
 ====================================
@@ -6,14 +6,14 @@ Node
 |  源码: `查看 <https://github.com/kissyteam/kissy/tree/master/src/node>`_
 
 .. versionchanged:: 1.2
-    Node 包括 :mod:`DOM` , :mod:`Event` , :mod:`Anim` 模块的所有功能, 推荐采用 ``Node`` 模块,
+    Node 包括 :mod:`dom` , :mod:`event` , :mod:`anim` 模块的所有功能, 推荐采用 ``Node`` 模块,
     你只需要把 ``KISSY.all`` 看做 ``jquery`` 中的 ``$`` 就可以了,
     链式操作你会喜欢的！
 
 Module
 -----------------------------------------------
 
-  :mod:`Node`
+  :mod:`node`
 
 
 Class
@@ -72,15 +72,15 @@ Member Methods
 .. note::
 
         以下的这些方法,
-        :func:`~DOM.filter`, :func:`~DOM.test`, :func:`~DOM.hasClass`, :func:`~DOM.addClass`, :func:`~DOM.removeClass`,
-        :func:`~DOM.replaceClass`, :func:`~DOM.toggleClass`, :func:`~DOM.removeAttr`, :func:`~DOM.attr`, :func:`~DOM.hasAttr`,
-        :func:`~DOM.prop`, :func:`~DOM.hasProp`, :func:`~DOM.val`, :func:`~DOM.text`, :func:`~DOM.css`, :func:`~DOM.toggle`,
-        :func:`~DOM.offset`, :func:`~DOM.scrollIntoView`, :func:`~DOM.parent`, :func:`~DOM.next`, :func:`~DOM.prev`,
-        :func:`~DOM.siblings`, :func:`~DOM.children`,
-        :func:`~DOM.contains`, :func:`~DOM.html`, :func:`~DOM.remove`, :func:`~DOM.data`, :func:`~DOM.removeData`,
-        :func:`~DOM.hasData`, :func:`~DOM.unselectable`, :func:`~DOM.contains`,
-        :func:`~Event.on`, :func:`~Event.detach`, :func:`~Event.fire`,
-        的调用都会被转发给 :mod:`DOM` , :mod:`Event` , 原 ``DOM`` , ``Event`` 对应方法的第一个参数传入一个原生 DOM 节点数组, 而这个原生 DOM 节点数组则是由当前的 ``KISSY NodeList`` 对象得到的.
+        :func:`~dom.filter`, :func:`~dom.test`, :func:`~dom.hasClass`, :func:`~dom.addClass`, :func:`~dom.removeClass`,
+        :func:`~dom.replaceClass`, :func:`~dom.toggleClass`, :func:`~dom.removeAttr`, :func:`~dom.attr`, :func:`~dom.hasAttr`,
+        :func:`~dom.prop`, :func:`~dom.hasProp`, :func:`~dom.val`, :func:`~dom.text`, :func:`~dom.css`, :func:`~dom.toggle`,
+        :func:`~dom.offset`, :func:`~dom.scrollIntoView`, :func:`~dom.parent`, :func:`~dom.next`, :func:`~dom.prev`,
+        :func:`~dom.siblings`, :func:`~dom.children`,
+        :func:`~dom.contains`, :func:`~dom.html`, :func:`~dom.remove`, :func:`~dom.data`, :func:`~dom.removeData`,
+        :func:`~dom.hasData`, :func:`~dom.unselectable`, :func:`~dom.contains`,
+        :func:`~event.on`, :func:`~event.detach`, :func:`~event.fire`,
+        的调用都会被转发给 :mod:`dom` , :mod:`event` , 原 ``DOM`` , ``Event`` 对应方法的第一个参数传入一个原生 DOM 节点数组, 而这个原生 DOM 节点数组则是由当前的 ``KISSY NodeList`` 对象得到的.
 
         ``Node`` 模块会对返回值进行处理:
 

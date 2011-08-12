@@ -1,4 +1,4 @@
-.. currentmodule:: Web
+.. currentmodule:: seed
 
 ready
 ===============================
@@ -7,7 +7,7 @@ ready
 Module
 -----------------------------------------------
 
-  :mod:`Web`
+  :mod:`seed`
 
 
 Methods

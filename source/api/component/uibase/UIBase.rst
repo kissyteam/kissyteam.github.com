@@ -28,7 +28,7 @@ Class Detail
     | **UIBase** (config)
     
     扩充自 :class:`Event.Target` ，
-    具备 :meth:`~Event.Target.fire` , :meth:`~Event.Target.on` , :meth:`~Event.Target.detach` 等方法.    
+    具备 :meth:`~event.Target.fire` , :meth:`~event.Target.on` , :meth:`~event.Target.detach` 等方法.
     
     :param Object config: 配置项
     

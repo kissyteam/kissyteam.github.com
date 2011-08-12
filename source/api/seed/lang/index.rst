@@ -1,4 +1,4 @@
-.. module:: Lang
+.. currentmodule:: seed
 
 
 lang
@@ -9,7 +9,7 @@ lang
 Module
 -----------------------------------------------
 
-  :mod:`Lang`
+  :mod:`seed`
 
 Methods
 -----------------------------------------------

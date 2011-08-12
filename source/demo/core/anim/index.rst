@@ -257,7 +257,7 @@ Demo - 节点上的 stop 示例
 ----------------------------------
 
     .. versionadded:: 1.2
-        涉及 :meth:`~Node.NodeList.stop` 方法
+        涉及 :meth:`~node.NodeList.stop` 方法
 
     .. raw:: html
 

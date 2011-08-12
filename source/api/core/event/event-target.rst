@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Event
+﻿.. currentmodule:: event
 
 Target
 =================================
@@ -6,7 +6,7 @@ Target
 Module
 -----------------------------------------------
 
-  :mod:`Event`
+  :mod:`event`
 
 Class
 -----------------------------------------------

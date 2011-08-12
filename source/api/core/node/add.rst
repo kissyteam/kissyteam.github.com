@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Node
+﻿.. currentmodule:: node
 
 add
 ==================================================
@@ -8,7 +8,7 @@ add
 Module
 -----------------------------------------------
 
-  :mod:`Node`
+  :mod:`node`
 
 Methods
 -----------------------------------------------
@@ -24,7 +24,7 @@ Methods
     
     | NodeList **add** ( nodeList )
     
-    各参数同 :meth:`~Node.all` 保持一致.
+    各参数同 :meth:`~node.all` 保持一致.
 
     .. note::
         调用该方法并不会改变当前 NodeList 对象.

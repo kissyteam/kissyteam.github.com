@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Event
+﻿.. currentmodule:: event
 
 fire
 =================================
@@ -8,7 +8,7 @@ fire
 Module
 -----------------------------------------------
 
-  :mod:`Event`
+  :mod:`event`
 
 Methods
 -----------------------------------------------
@@ -37,14 +37,14 @@ Methods
 
     .. note:
 
-        fire() 触发的事件也会沿 DOM 树冒泡. 事件处理区可以通过 :meth:`~Event.Object.stopPropagation` 来阻止冒泡.
+        fire() 触发的事件也会沿 DOM 树冒泡. 事件处理区可以通过 :meth:`~event.Object.stopPropagation` 来阻止冒泡.
         fire() 触发的事件对象如果不提供参数 domEvent 则只会包含 type target currentTarget 属性.
 
 
 Demo
 -------------------------------------------------
 
-    点击第二个按钮手动触发第一个按钮的点击, 简便起见使用 :mod:`Node` 接口.
+    点击第二个按钮手动触发第一个按钮的点击, 简便起见使用 :mod:`node` 接口.
 
     .. literalinclude:: /_static/api/core/event/fire.html
        :language: html

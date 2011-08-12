@@ -1,4 +1,4 @@
-.. currentmodule:: Loader
+.. currentmodule:: seed
 
 getScript
 ===================================
@@ -6,7 +6,7 @@ getScript
 Module
 -----------------------------------------------
 
-  :mod:`Loader`
+  :mod:`seed`
 
 Methods
 -----------------------------------------------

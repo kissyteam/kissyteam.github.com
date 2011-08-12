@@ -1,4 +1,4 @@
-﻿.. currentmodule:: DD
+﻿.. currentmodule:: dd
 
 Demo - Droppable 基本使用
 ===============================================

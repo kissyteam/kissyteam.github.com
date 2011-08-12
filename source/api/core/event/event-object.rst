@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Event
+﻿.. currentmodule:: event
 
 Object
 =================================
@@ -6,7 +6,7 @@ Object
 Module
 -----------------------------------------------
 
-  :mod:`Event`
+  :mod:`event`
 
 Class
 -----------------------------------------------
@@ -77,7 +77,7 @@ Properties Detail
 
     .. note::
 
-        如果你在 :meth:`~Event.on` 中指定了 this , 则 currentTarget 和 this 不相同.
+        如果你在 :meth:`~event.on` 中指定了 this , 则 currentTarget 和 this 不相同.
 
 
     .. code-block:: javascript
@@ -177,7 +177,7 @@ Properties Detail
 
 .. attribute:: isImmediatePropagationStopped
 
-    {Boolean} - 默认false . 是否停止了该事件的后续所有事件处理器执行, 通过调用 :meth:`~Event.Object.stopImmediatePropagation` 设置状态.
+    {Boolean} - 默认false . 是否停止了该事件的后续所有事件处理器执行, 通过调用 :meth:`~event.Object.stopImmediatePropagation` 设置状态.
 
     检查是否 ``stopImmediatePropagation()`` 被调用了
 
@@ -197,7 +197,7 @@ Methods Detail
 .. method:: preventDefault
 
     | **preventDefault** ()
-    | 阻止默认行为的发生.例如点击链接不会使浏览器跳转到新的地址. 我们可以使用 :attr:`~Event.Object.isDefaultPrevented` 来判断是否某个事件处理器里调用了这个方法.
+    | 阻止默认行为的发生.例如点击链接不会使浏览器跳转到新的地址. 我们可以使用 :attr:`~event.Object.isDefaultPrevented` 来判断是否某个事件处理器里调用了这个方法.
 
 
     阻止链接的跳转
@@ -215,7 +215,7 @@ Methods Detail
 
     | **stopImmediatePropagation** ()
     | 停止当前事件冒泡. 不光停止冒泡到下一个事件目标, 当前目标上的任何后续监听函数, 也马上取消执行.
-    | 用 :attr:`~Event.Object.isImmediatePropagationStopped` 来判断是否调用了该方法.
+    | 用 :attr:`~event.Object.isImmediatePropagationStopped` 来判断是否调用了该方法.
 
 
     阻止其他的事件处理器执行
@@ -233,12 +233,12 @@ Methods Detail
 .. method:: stopPropagation
 
     | **stopPropagation** ()
-    | 停止事件沿 dom 树向上冒泡, 组织祖先节点的所有事件处理器执行.我们可以使用 :attr:`~Event.Object.isPropagationStopped` 来判断当前方法是否执行过.
-    | 该方法在 :func:`~Event.fire` 中也起作用.
+    | 停止事件沿 dom 树向上冒泡, 组织祖先节点的所有事件处理器执行.我们可以使用 :attr:`~event.Object.isPropagationStopped` 来判断当前方法是否执行过.
+    | 该方法在 :func:`~event.fire` 中也起作用.
 
     .. note::
 
-        调用该方法不会组织该节点其他事件处理器的运行, 如果要需要调用 :meth:`~Event.Object.stopImmediatePropagation`
+        调用该方法不会组织该节点其他事件处理器的运行, 如果要需要调用 :meth:`~event.Object.stopImmediatePropagation`
 
 
     阻止 click 事件的冒泡
@@ -255,7 +255,7 @@ Methods Detail
 .. method:: isDefaultPrevented
 
     | **isDefaultPrevented** ()
-    | 判断 :meth:`~Event.Object.preventDefault` 是否被调用了.
+    | 判断 :meth:`~event.Object.preventDefault` 是否被调用了.
 
 
     .. code-block:: javascript
@@ -270,7 +270,7 @@ Methods Detail
 .. method:: isPropagationStopped
 
     | **isPropagationStopped** ()
-    | 判断 :meth:`~Event.Object.stopPropagation` 是否被调用了.
+    | 判断 :meth:`~event.Object.stopPropagation` 是否被调用了.
 
 
     判断 stopPropagation 是否被调用

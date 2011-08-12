@@ -1,4 +1,4 @@
-.. currentmodule:: Web
+.. currentmodule:: seed
 
 available
 ===============================
@@ -6,7 +6,7 @@ available
 Module
 -----------------------------------------------
 
-  :mod:`Web`
+  :mod:`seed`
 
 
 Methods

@@ -1,4 +1,4 @@
-.. currentmodule:: Web
+.. currentmodule:: seed
 
 isWindow
 ===============================
@@ -7,7 +7,7 @@ isWindow
 Module
 -----------------------------------------------
 
-  :mod:`Web`
+  :mod:`seed`
 
 
 Methods

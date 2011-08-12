@@ -1,4 +1,4 @@
-﻿.. module:: Event
+﻿.. module:: event
 
 Event
 ====================================
@@ -9,7 +9,7 @@ Event
 Module
 -----------------------------------------------
 
-  :mod:`Event`
+  :mod:`event`
 
 
 Methods

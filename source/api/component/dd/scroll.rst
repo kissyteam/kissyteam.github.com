@@ -1,4 +1,4 @@
-.. currentmodule:: DD
+.. currentmodule:: dd
 
 Scroll
 ===============================================

@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Event
+﻿.. currentmodule:: event
 
 detach
 =================================
@@ -8,7 +8,7 @@ detach
 Module
 -----------------------------------------------
 
-  :mod:`Event`
+  :mod:`event`
 
 Methods
 -----------------------------------------------
@@ -68,7 +68,7 @@ Methods
 .. function:: remove
 
     | void **remove** ( selector , eventType , fn , scope )
-    | 为 :func:`~Event.detach` 的别名
+    | 为 :func:`~event.detach` 的别名
 
 
     .. note::
