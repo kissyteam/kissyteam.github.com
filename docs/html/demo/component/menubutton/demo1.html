@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Demo - menubutton 的基本使用 &mdash; KISSY Docs valpha documentation</title>
+<title>Demo - 简单菜单按钮 &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -73,7 +73,7 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../tree/index.html" title="Tree Demos"
+      <a href="demo2.html" title="Demo - 模拟 selectbox"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="index.html" title="MenuButton Demos"
@@ -85,8 +85,8 @@
     </ul>
 </div>
 					
-  <div class="section" id="demo-menubutton">
-<h1>Demo - menubutton 的基本使用<a class="headerlink" href="#demo-menubutton" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="demo">
+<h1>Demo - 简单菜单按钮<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h1>
 <p class="versionadded">
 <span class="versionmodified">New in version 1.2.</span></p>
 <div class="line-block">
@@ -103,14 +103,53 @@
 </div></blockquote>
 </div>
 <div class="section" id="id2">
-<h2>Demo - menubutton 的基本使用<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Demo - 简单菜单按钮<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><iframe width="100%" height="80" style="border: none;" src="../../../static/demo/menu/demo1.html"></iframe><p><strong>载入1.2的 kissy</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div><iframe width="100%" height="120" class="iframe-demo" src="../../../static/demo/menubutton/demo1.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;menubutton,menu&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">MenuButton</span><span class="p">,</span> <span class="nx">Menu</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 首先按照创建菜单的方式创建一个弹出菜单</span>
+    <span class="kd">var</span> <span class="nx">menu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">PopupMenu</span><span class="p">({</span>
+        <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+        <span class="nx">children</span><span class="o">:</span><span class="p">[</span>
+            <span class="c1">// 设置菜单项并且设置可支持多选</span>
+            <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span><span class="nx">content</span><span class="o">:</span><span class="s2">&quot;已买到的宝贝&quot;</span><span class="p">,</span><span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;goog-&quot;</span><span class="p">,</span> <span class="nx">checkable</span><span class="o">:</span> <span class="kc">true</span><span class="p">}),</span>
+            <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Separator</span><span class="p">({</span><span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;goog-&quot;</span><span class="p">}),</span>
+            <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span><span class="nx">content</span><span class="o">:</span><span class="s2">&quot;已卖出的宝贝&quot;</span><span class="p">,</span><span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;goog-&quot;</span><span class="p">,</span> <span class="nx">checkable</span><span class="o">:</span> <span class="kc">true</span><span class="p">})]</span>
+    <span class="p">});</span>
+
+    <span class="c1">// 创建一个菜单按钮, 并关联 menu 为刚才创建的弹出菜单</span>
+    <span class="kd">var</span> <span class="nx">button</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MenuButton</span><span class="p">({</span>
+        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+        <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;我的淘宝&quot;</span><span class="p">,</span>
+        <span class="nx">menu</span><span class="o">:</span> <span class="nx">menu</span>
+    <span class="p">});</span>
+
+    <span class="nx">button</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+    <span class="nx">menu</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">m</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;选中:&#39;</span><span class="o">+</span><span class="nx">m</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">));</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;未选中:&#39;</span><span class="o">+</span><span class="nx">m</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="c1">// 从已有HTML中生成菜单按钮</span>
+    <span class="k">new</span> <span class="nx">MenuButton</span><span class="p">({</span>
+        <span class="nx">srcNode</span><span class="o">:</span><span class="s2">&quot;#exist&quot;</span><span class="p">,</span>
+        <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;goog-&quot;</span>
+    <span class="p">}).</span><span class="nx">render</span><span class="p">();</span>
+<span class="p">});</span>
 </pre></div>
 </div>
-<p><strong>初始化按钮</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">alert</span><span class="p">();</span>
+<p>对于在原有 HTML 基础上生成菜单按钮时, HTML需要指定特定的结构和 class, 例如:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;goog-inline-block goog-custom-button&quot;</span> <span class="na">id=</span><span class="s">&quot;exist&quot;</span><span class="nt">&gt;</span>
+    我的淘宝
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;goog-menu goog-popupmenu&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;goog-menuitem&quot;</span><span class="nt">&gt;</span>已买到的宝贝<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;goog-menuseparator&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;goog-menuitem&quot;</span><span class="nt">&gt;</span>已卖出的宝贝<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </pre></div>
 </div>
 </div></blockquote>

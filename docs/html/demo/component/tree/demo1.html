@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Demo - tree 的基本使用 &mdash; KISSY Docs valpha documentation</title>
+<title>Demo - 新建简单树 &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -73,7 +73,7 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../../../relatedproj/index.html" title="子项目集"
+      <a href="demo3.html" title="Demo - 从已有的html结构生成树"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="index.html" title="Tree Demos"
@@ -85,8 +85,8 @@
     </ul>
 </div>
 					
-  <div class="section" id="demo-tree">
-<h1>Demo - tree 的基本使用<a class="headerlink" href="#demo-tree" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="demo">
+<h1>Demo - 新建简单树<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h1>
 <p class="versionadded">
 <span class="versionmodified">New in version 1.2.</span></p>
 <div class="line-block">
@@ -96,21 +96,119 @@
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><tt class="xref py py-class docutils literal"><span class="pre">Tree</span></tt></li>
+<li><a class="reference internal" href="../../../api/component/tree/Tree.html#tree.Tree" title="tree.Tree"><tt class="xref py py-class docutils literal"><span class="pre">Tree</span></tt></a></li>
 <li><tt class="xref py py-class docutils literal"><span class="pre">TreeMgr</span></tt></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="id2">
-<h2>Demo - tree 的基本使用<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Demo - 新建简单树<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><iframe width="100%" height="80" class="iframe-demo" src="../../../static/demo/tree/demo1.html"></iframe><p><strong>载入1.2的 kissy</strong></p>
+<div><iframe width="100%" height="200" class="iframe-demo" src="../../../static/demo/tree/demo1.html"></iframe><p><strong>载入1.2的 kissy</strong></p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 </div>
-<p><strong>初始化按钮</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">alert</span><span class="p">();</span>
+<p><strong>HTML关键代码</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;treeContainer&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 200px;&quot;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- 简单树只提供一个树的容器，通过KISSY代码向容器中增加DOM元素 --&gt;</span>
+        <span class="c">&lt;!-- 在树生成之后，此处会有DOM元素添加进来 --&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </pre></div>
+</div>
+<p><strong>初始化树</strong></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;tree&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Tree</span><span class="p">)</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+	
+	<span class="c1">//通过DOM元素生成一棵简单树</span>
+	<span class="kd">var</span> <span class="nx">tree</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tree</span><span class="p">({</span>
+		<span class="nx">content</span> <span class="o">:</span> <span class="s2">&quot;淘宝网&quot;</span><span class="p">,</span>
+		<span class="nx">prefixCls</span> <span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+		<span class="nx">expanded</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+		<span class="nx">render</span> <span class="o">:</span> <span class="s2">&quot;#treeContainer&quot;</span>
+	<span class="p">});</span>
+	
+	<span class="c1">//新建一个树结点favorates</span>
+	<span class="kd">var</span> <span class="nx">favorates</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tree</span><span class="p">.</span><span class="nx">Node</span><span class="p">({</span>
+		<span class="nx">prefixCls</span> <span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+		<span class="nx">content</span> <span class="o">:</span> <span class="s2">&quot;收藏夹&quot;</span><span class="p">,</span>
+		<span class="nx">tree</span> <span class="o">:</span> <span class="nx">tree</span>
+	<span class="p">});</span>
+	
+	<span class="c1">//在favorates结点下添加新的子结点</span>
+	<span class="nx">favorates</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Tree</span><span class="p">.</span><span class="nx">Node</span><span class="p">({</span>
+		<span class="nx">prefixCls</span> <span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+		<span class="nx">content</span> <span class="o">:</span> <span class="s2">&quot;收藏的宝贝&quot;</span>
+	<span class="p">}));</span>
+	
+	<span class="c1">//在favorates结点下再添加新的子结点</span>
+	<span class="nx">favorates</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Tree</span><span class="p">.</span><span class="nx">Node</span><span class="p">({</span>
+		<span class="nx">prefixCls</span> <span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+		<span class="c1">// 即使没有儿子也强制指定为 folder 样式</span>
+		<span class="nx">isLeaf</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+		<span class="nx">content</span> <span class="o">:</span> <span class="s2">&quot;收藏的店铺&quot;</span>
+	<span class="p">}));</span>
+	
+	<span class="c1">//将结点favorates加入到树中</span>
+	<span class="nx">tree</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">favorates</span><span class="p">);</span>
+	
+	<span class="cm">/*</span>
+<span class="cm">	 * 以下同理都是增加树了了结点以及子子结点</span>
+<span class="cm">	 */</span>
+	<span class="nx">tree</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Tree</span><span class="p">.</span><span class="nx">Node</span><span class="p">({</span>
+		<span class="nx">prefixCls</span> <span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+		<span class="nx">content</span> <span class="o">:</span> <span class="s2">&quot;我要买&quot;</span>
+	<span class="p">}));</span>
+
+	<span class="kd">var</span> <span class="nx">one</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tree</span><span class="p">.</span><span class="nx">Node</span><span class="p">({</span>
+		<span class="nx">prefixCls</span> <span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+		<span class="nx">content</span> <span class="o">:</span> <span class="s2">&quot;我的淘宝&quot;</span><span class="p">,</span>
+		<span class="nx">tree</span> <span class="o">:</span> <span class="nx">tree</span>
+	<span class="p">});</span>
+
+	<span class="nx">one</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Tree</span><span class="p">.</span><span class="nx">Node</span><span class="p">({</span>
+		<span class="nx">prefixCls</span> <span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+		<span class="nx">content</span> <span class="o">:</span> <span class="s2">&quot;已买到的宝贝&quot;</span>
+	<span class="p">}));</span>
+
+	<span class="nx">one</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Tree</span><span class="p">.</span><span class="nx">Node</span><span class="p">({</span>
+		<span class="nx">prefixCls</span> <span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+		<span class="nx">content</span> <span class="o">:</span> <span class="s2">&quot;已卖出的宝贝&quot;</span>
+	<span class="p">}));</span>
+
+	<span class="nx">tree</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">one</span><span class="p">);</span>
+	
+	<span class="c1">//在所有结点关系确定后，将树的特性绑定到DOM元素</span>
+	<span class="nx">tree</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+	
+	<span class="c1">//添加事件</span>
+	<span class="nx">tree</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;expand&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;expand : &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">));</span>
+	<span class="p">});</span>
+	<span class="nx">tree</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;collapse&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;collapse : &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">));</span>
+	<span class="p">});</span>
+	<span class="nx">tree</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;action : &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">));</span>
+	<span class="p">});</span>
+	
+    <span class="c1">//增加两个Button来调用树的接口    </span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;input type=&quot;button&quot; value=&quot;全部收缩&quot; style=&quot;margin:5px;&quot; /&gt;&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="c1">//通过外部调用树的接口操作树</span>
+            <span class="nx">tree</span><span class="p">.</span><span class="nx">collapseAll</span><span class="p">();</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">prependTo</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#treeContainer&#39;</span><span class="p">));</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;input type=&quot;button&quot; value=&quot;全部展开&quot; style=&quot;margin:5px;&quot; /&gt;&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span><span class="nx">tree</span><span class="p">.</span><span class="nx">expandAll</span><span class="p">();})</span>
+        <span class="p">.</span><span class="nx">prependTo</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#treeContainer&#39;</span><span class="p">));</span>
+
+	
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">使用树还需要自己定义皮肤样式, 以上参考的是 <a class="reference external" href="../../../static/demo/tree/assets/tree.css">google 的样式</a></p>
 </div>
 </div></blockquote>
 </div>
