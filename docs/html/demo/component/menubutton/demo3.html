@@ -1,0 +1,307 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>Demo - 级联菜单 &mdash; KISSY Docs valpha documentation</title>
+
+<link rel="stylesheet" href="../../../static/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="../../../static/favicon.ico"/>
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'alpha',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script>
+    <script type="text/javascript" src="../../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../../static/doctools.js"></script> 
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../../../static/logo.png"/></a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+
+    <ul class="navigation">
+        <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <!--<li><a href="mailto:all@kissyui.com">论坛</a></li>-->
+        <li><a href="http://www.github.com/kissyteam">源码</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../tree/index.html" title="Tree Demos"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="demo2.html" title="Demo - 模拟 selectbox"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >All Demos</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">MenuButton Demos</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="demo">
+<h1>Demo - 级联菜单<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h1>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="../../../api/component/menubutton/index.html">API</a> | <a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/menubutton/">源码</a></div>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="../../../api/component/menubutton/MenuButton.html#menubutton.MenuButton" title="menubutton.MenuButton"><tt class="xref py py-class docutils literal"><span class="pre">MenuButton</span></tt></a></li>
+<li><a class="reference internal" href="../../../api/component/menubutton/Select.html#menubutton.Select" title="menubutton.Select"><tt class="xref py py-class docutils literal"><span class="pre">Select</span></tt></a></li>
+<li><a class="reference internal" href="../../../api/component/menubutton/Option.html#menubutton.Option" title="menubutton.Option"><tt class="xref py py-class docutils literal"><span class="pre">Option</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>Demo - 级联菜单<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><iframe width="100%" height="200" class="iframe-demo" src="../../../static/demo/menubutton/demo3.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;menubutton&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">MenuButton</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;上海&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;上海市&quot;</span><span class="p">,</span><span class="s2">&quot;崇明&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;河南&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;焦作&quot;</span><span class="p">,</span><span class="s2">&quot;洛阳&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;浙江&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;杭州&quot;</span><span class="p">,</span><span class="s2">&quot;温州&quot;</span><span class="p">]</span>
+    <span class="p">};</span>
+    <span class="c1">// 初始化第一个菜单</span>
+    <span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MenuButton</span><span class="p">.</span><span class="nx">Select</span><span class="p">({</span>
+        <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;c2c-&quot;</span><span class="p">,</span>
+        <span class="nx">menuAlign</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">points</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;bl&quot;</span><span class="p">,</span><span class="s2">&quot;tl&quot;</span><span class="p">],</span>
+            <span class="nx">offset</span><span class="o">:</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+            <span class="nx">overflow</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">failX</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="nx">failY</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="nx">adjustX</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="nx">adjustY</span><span class="o">:</span><span class="mi">1</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nx">menuCfg</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">width</span><span class="o">:</span><span class="mi">70</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="c1">// 给第一个菜单添加各个项</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">d</span> <span class="k">in</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">s1</span><span class="p">.</span><span class="nx">addItem</span><span class="p">(</span><span class="k">new</span> <span class="nx">MenuButton</span><span class="p">.</span><span class="nx">Option</span><span class="p">({</span>
+            <span class="nx">value</span><span class="o">:</span><span class="nx">d</span><span class="p">,</span>
+            <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;c2c-&quot;</span><span class="p">,</span>
+            <span class="nx">content</span><span class="o">:</span><span class="nx">d</span>
+        <span class="p">}));</span>
+    <span class="p">}</span>
+    <span class="c1">// 设置第一个为选择状态</span>
+    <span class="nx">s1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;selectedIndex&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nx">s1</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+
+    <span class="c1">// 初始化第二个菜单</span>
+    <span class="kd">var</span> <span class="nx">s2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MenuButton</span><span class="p">.</span><span class="nx">Select</span><span class="p">({</span>
+        <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;c2c-&quot;</span><span class="p">,</span>
+        <span class="nx">menuAlign</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">points</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;bl&quot;</span><span class="p">,</span><span class="s2">&quot;tl&quot;</span><span class="p">],</span>
+            <span class="nx">offset</span><span class="o">:</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+            <span class="nx">overflow</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">failX</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="nx">failY</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="nx">adjustX</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="nx">adjustY</span><span class="o">:</span><span class="mi">1</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nx">menuCfg</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">width</span><span class="o">:</span><span class="mi">70</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="nx">update</span><span class="p">(</span><span class="s2">&quot;上海&quot;</span><span class="p">);</span>
+    <span class="nx">s2</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+
+    <span class="c1">// 根据第一个菜单值改变时, 调整第二个菜单中的内容</span>
+    <span class="kd">function</span> <span class="nx">update</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">vs</span> <span class="o">=</span> <span class="nx">data</span><span class="p">[</span><span class="nx">v</span><span class="p">];</span>
+        <span class="c1">// 先把第二个菜单项整个删除;</span>
+        <span class="nx">s2</span><span class="p">.</span><span class="nx">removeItems</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+        <span class="c1">// 再添加新项</span>
+        <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">vs</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v_</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">s2</span><span class="p">.</span><span class="nx">addItem</span><span class="p">(</span><span class="k">new</span> <span class="nx">MenuButton</span><span class="p">.</span><span class="nx">Option</span><span class="p">({</span>
+                <span class="nx">value</span><span class="o">:</span><span class="nx">v_</span><span class="p">,</span>
+                <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;c2c-&quot;</span><span class="p">,</span>
+                <span class="nx">content</span><span class="o">:</span><span class="nx">v_</span><span class="p">}));</span>
+        <span class="p">});</span>
+        <span class="c1">// 设置第一个为选中状态</span>
+        <span class="nx">s2</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;selectedIndex&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">s1</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">v</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">);</span>
+        <span class="nx">update</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span>
+    <span class="p">});</span>
+
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            KISSY.one("#openComment").attr("disabled",true);
+        }else{
+            KISSY.one("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            KISSY.one("#openComment").on("change",function(){
+                window.localStorage.setItem("kissy-commment",KISSY.one("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box demo-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/loader/index.html">Loader</a></li>
+        <!--<li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/lang/index.html">lang</a></li>
+        <li><a href="../../seed/web/index.html">web</a></li>-->
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <!--<li><a href="../../core/ua/index.html">ua</a></li>
+        <li><a href="../../core/dom/index.html">DOM</a></li>
+        <li><a href="../../core/event/index.html">event</a></li>
+        <li><a href="../../core/node/index.html">node</a></li>
+        <li><a href="../../core/json/index.html">json</a></li>
+        <li><a href="../../core/ajax/index.html">ajax</a></li>
+        <li><a href="../../core/cookie/index.html">cookie</a></li>
+        <li><a href="../../core/base/index.html">base</a></li>-->
+        <li><a href="../../core/anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <!--<li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../template/index.html">template</a></li>-->
+        <li><a href="../datalazyload/index.html">datalazyload</a></li>
+        <!--<li><a href="../flash/index.html">flash</a></li>-->
+        <li><a href="../dd/index.html">dd</a></li>
+        <li><a href="../switchable/index.html">switchable</a></li>
+        <li><a href="../suggest/index.html">suggest</a></li>
+        <!--<li><a href="../calendar/index.html">calendar</a></li>
+        <li><a href="../imagezoom/index.html">imagezoom</a></li>-->
+        <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="index.html">menubutton</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

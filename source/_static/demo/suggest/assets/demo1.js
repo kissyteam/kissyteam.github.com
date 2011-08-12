@@ -36,3 +36,4 @@ KISSY.use("node,suggest", function(S, Node, Suggest) {
         });
     });
 });
+
