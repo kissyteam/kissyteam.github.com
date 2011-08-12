@@ -113,6 +113,7 @@
 </div>
 <p><strong>初始化按钮</strong></p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;overlay,button&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Overlay</span><span class="p">,</span> <span class="nx">Button</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 把 button 嵌入到一个对话框中</span>
     <span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Overlay</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
         <span class="nx">elCls</span><span class="o">:</span> <span class="s1">&#39;alert-box&#39;</span><span class="p">,</span>
         <span class="nx">bodyContent</span><span class="o">:</span> <span class="s1">&#39;我是对话框&#39;</span><span class="p">,</span>
@@ -134,7 +135,7 @@
     <span class="c1">// 插入到DOM中并显示</span>
     <span class="nx">b</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
 
-    <span class="c1">// 绑定事件</span>
+    <span class="c1">// 绑定点击事件</span>
     <span class="nx">b</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">p</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
     <span class="p">});</span>

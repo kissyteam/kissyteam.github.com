@@ -33,43 +33,9 @@
                 </form>
             </div>
         </div>
-        <script>
-            KISSY.use("node,suggest", function(S, Node, Suggest) {
-                // 1.1.6
-                Node = S.Node;
-                Suggest = S.Suggest;
 
-                var _suggest = new Suggest('#qstab', 'http://suggest.taobao.com/sug?code=utf-8&extras=1', {
-                            resultFormat: '约%result%个宝贝',
-                            dataType: 1
-                        }),
-                        tab = S.one('.tb-srch-may-tab'),
-                        tabList = tab.all('li'),
-                        switchToTab = function(n) {
-                            _suggest.config.resultFormat = '约%result%个宝贝';
-                            if (n == 1) {
-                                _suggest.dataSource = 'http://suggest.taobao.com/sug?area=b2c&code=utf-8&extras=1&callback=KISSY.Suggest.callback';
-                                _suggest.config.resultFormat = '约%result%个商品';
-                            } else {
-                                _suggest.dataSource = 'http://suggest.taobao.com/sug?code=utf-8&extras=1&callback=KISSY.Suggest.callback';
-                            }
-                            S.each(tabList, function(tab, i) {
-                                tab = new Node(tab);
-
-                                tab[(i == n) ? "addClass" : "removeClass"]('current');
-                            });
-                        };
-
-                // on tabs switch
-                S.each(tabList, function(tab, i) {
-                    tab = new Node(tab);
-                    tab.on("click", function(ev) {
-                        ev.halt();
-                        switchToTab(i);
-                    });
-                });
-            });
-        </script>
     </div>
+<script src="assets/demo1.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        button { margin:10px; }
+    </style>
+    <script>
+        if(location.host=="localhost"){
+            document.writeln('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+        }else{
+            document.writeln('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+        }
+   </script>
+</head>
+<body>
+    
+    <div class='outer' id='s'>
+        <div class='item'>
+            item1
+        </div>
+    </div>
+    
+    <div class='outer'>
+        <div class='item'>
+            item2
+        </div>
+    </div>
+    
+    <div class='item'>
+        item3
+    </div>
+    
+    <button>{"selector":".item"}</button>
+    <button>{"selector":".item","context":".outer"}</button>
+    <button>{"selector":".item","context":"#s"}</button>
+    
+<script>
+    KISSY.ready(function(S){
+        var $=S.all;
+        $(".item",$(".outer")).css("color","red");
+        $("button").on("click",function(){
+            $("div").css("color","");
+            var el=$(this);
+            var content=S.JSON.parse(el.html());
+            $(content.selector,content.context).css("color","red");
+        });
+        
+    });
+</script>
+</body>
+</html>
