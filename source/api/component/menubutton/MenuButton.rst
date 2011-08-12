@@ -53,7 +53,7 @@ Class Detail
     
 .. note::
 
-    从已有元素实例 MenuButton 对象时 , 元素节点标明类名 ``{prefixCls}menubutton`` . 
+    从已有元素实例 MenuButton 对象时 , 元素节点标明类名 ``{prefixCls}menu-button`` . 
     ``prefixCls`` 为配置的类名前缀，默认为 ``ks-`` .    
     
 Config Attributes Detail
