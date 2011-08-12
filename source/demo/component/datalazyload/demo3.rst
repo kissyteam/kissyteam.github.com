@@ -1,6 +1,6 @@
 .. currentmodule:: datalazyload
 
-DataLazyload - 手动模式
+Demo - DataLazyload 手动模式
 =====================================================
 
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/datalazyload/>`_
@@ -12,7 +12,7 @@ Class
   * :class:`DataLazyload`
 
 
-DataLazyload - 手动模式
+Demo - DataLazyload 手动模式
 -------------------------------
 
     采用手动模式时, 需要自行在输出页面时, 可以不设置 img 的 src 属性, 但是必须设置 img 的 ``data-ks-lazyload`` 自定义属性为真实图片地址,  如:

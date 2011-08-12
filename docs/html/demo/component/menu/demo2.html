@@ -115,16 +115,19 @@
         <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;my-&#39;</span><span class="p">,</span>
         <span class="nx">render</span><span class="o">:</span> <span class="s1">&#39;#menu_container&#39;</span><span class="p">,</span>
         <span class="nx">children</span><span class="o">:</span><span class="p">[</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
-                <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;my-&#39;</span><span class="p">,</span>
-                <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;首页&#39;</span>
-            <span class="p">}),</span>
+            <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;my-&#39;</span><span class="p">,</span>
+            <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;首页&#39;</span>
+        <span class="p">}),</span>
             <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Separator</span><span class="p">({</span>
                 <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;my-&quot;</span>
             <span class="p">})]</span>
-        <span class="p">});</span>
+    <span class="p">});</span>
 
     <span class="c1">// 依次添加两个子菜单</span>
-    <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">([{</span><span class="s1">&#39;我的淘宝&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;已买到的宝贝&#39;</span><span class="p">,</span> <span class="s1">&#39;已卖出的宝贝&#39;</span><span class="p">]},</span> <span class="p">{</span><span class="s1">&#39;收藏夹&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;收藏的宝贝&#39;</span><span class="p">,</span> <span class="s1">&#39;收藏的店铺&#39;</span><span class="p">]}],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">idx</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">([</span>
+        <span class="p">{</span><span class="s1">&#39;我的淘宝&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;已买到的宝贝&#39;</span><span class="p">,</span> <span class="s1">&#39;已卖出的宝贝&#39;</span><span class="p">]},</span>
+        <span class="p">{</span><span class="s1">&#39;收藏夹&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;收藏的宝贝&#39;</span><span class="p">,</span> <span class="s1">&#39;收藏的店铺&#39;</span><span class="p">]}</span>
+    <span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">idx</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="nx">k</span><span class="p">)</span> <span class="p">{</span>
             <span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">PopupMenu</span><span class="p">({</span>
                 <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;my-&#39;</span>

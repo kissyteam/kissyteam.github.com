@@ -25,9 +25,9 @@ Demos
     .. toctree::
        :titlesonly:
 
-       draggable
-       droppable
-       draggable-delegate
-       droppable-delegate
+       demo1
+       demo2
+       demo3
+       demo4
 
 

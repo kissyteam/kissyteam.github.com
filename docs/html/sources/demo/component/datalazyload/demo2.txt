@@ -1,6 +1,6 @@
 .. currentmodule:: datalazyload
 
-DataLazyload - 自动模式
+Demo - DataLazyload 自动模式
 =====================================================
 
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/datalazyload/>`_
@@ -11,7 +11,7 @@ Class
 
   * :class:`DataLazyload`
 
-DataLazyload - 自动模式
+Demo - DataLazyload 自动模式
 -------------------------------
 
     使用自动模式时, 设置配置项中的 ``mod`` 为 'auto' , 如下:

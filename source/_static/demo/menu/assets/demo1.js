@@ -1,0 +1,47 @@
+KISSY.use("node,menu", function(S, Node, Menu) {
+    // 初始化一个菜单, 仅包含一个菜单项
+    var menu = new Menu({
+        prefixCls: 'goog-',
+        render: '#menu_container',
+        children:[new Menu.Item({
+            prefixCls: 'goog-',
+            content: '首页'
+        })],
+        width: 200
+    }),
+        // 构建一个子菜单
+        sb = new Menu.SubMenu({
+            prefixCls: 'goog-',
+            content: '我的淘宝',
+            menu: new Menu.PopupMenu({
+                prefixCls: 'goog-',
+                elStyle: {
+                    'color': 'red'
+                },
+                children: [
+                    new Menu.Item({
+                        prefixCls: 'goog-',
+                        content: '已买到的宝贝'
+                    }),
+                    new Menu.Item({
+                        prefixCls: 'goog-',
+                        content: '已卖出的宝贝'
+                    })
+                ]
+            })
+        });
+
+    // 将子菜单添加到主菜单中
+    menu.addChild(sb);
+    // 再添加一个菜单项
+    menu.addChild(new Menu.Item({
+        prefixCls: 'goog-',
+        content: '购物车'
+    }));
+    menu.render();
+
+    // 绑定点击事件
+    menu.on("click", function(ev) {
+        alert("你选中了" + ev.target.get("content"));
+    });
+});
