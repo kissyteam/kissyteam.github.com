@@ -22,7 +22,7 @@ Methods
     :param HTMLELement|Document|NodeList context:   选择器上下文, 
     
         .. versionadded:: 1.2 
-            支持 NodeList 参数类型，取第一个元素
+            格式参照 :func:`DOM.query` ，增加了 :class:`NodeList` 支持.
             
     :rtype: NodeList
     
