@@ -1,6 +1,6 @@
 .. currentmodule:: tree
 
-Demo - tree 的基本使用
+Demo - KISSY新建简单树
 ======================================
 
 .. versionadded:: 1.2
@@ -13,12 +13,12 @@ Class
   * :class:`Tree`
   * :class:`TreeMgr`
 
-Demo - tree 的基本使用
+Demo - KISSY新建简单树
 --------------------------------------------------
 
     .. raw:: html
 
-        <iframe width="100%" height="80" class="iframe-demo" src="../../../static/demo/tree/demo1.html"></iframe>
+        <iframe width="100%" height="200" class="iframe-demo" src="../../../static/demo/tree/demo1.html"></iframe>
 
     **载入1.2的 kissy**
 
@@ -26,9 +26,25 @@ Demo - tree 的基本使用
 
         <script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"></script>
 
-    **初始化按钮**
+    **html关键代码**
+	
+    .. code-block:: html
+	
+    	<!-- 简单树 -->
+    	<div style="margin-bottom:10px">
+    		<a href="javascript:void(0)" id="expandAll">展开全部</a>&nbsp; <a href="javascript:void(0)" id="collapseAll">关闭全部</a>
+    	</div>
+    	<div id="treeContainer" style="width: 200px;">
+    		<!-- 简单树只提供一个树的容器，通过KISSY代码向容器中增加DOM元素 -->
+    		<!-- 在树生成之后，此处会有DOM元素添加进来 -->
+    	</div>
+		
+    **初始化树**
 
-    .. code-block:: javascript
+    .. literalinclude:: /_static/demo/tree/assets/demo1.js
+           :language: javascript
 
-        alert();
+    .. note::
+
+        使用树还需要自己定义皮肤样式, 以上参考的是 `google 的样式 <../../../static/demo/button/assets/custombutton.css>`_
 
