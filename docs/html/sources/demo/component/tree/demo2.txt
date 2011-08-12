@@ -45,4 +45,4 @@ Demo -  KISSY新建多选树
 	
     .. note::
 
-        使用树还需要自己定义皮肤样式, 以上参考的是 `google 的样式 <../../../static/demo/button/assets/custombutton.css>`_
+        使用树还需要自己定义皮肤样式, 以上参考的是 `google 的样式 <../../../static/demo/tree/assets/tree.css>`_
