@@ -8,7 +8,7 @@ Demo - 全新创建一个 Dialog
 Class
 -----------------------------------------------
 
-  * :class:`Overlay`
+  * :class:`~overlay.Dialog`
 
 Demo - 全新创建一个 Dialog
 ----------------------------------------------------------------------
@@ -18,6 +18,21 @@ Demo - 全新创建一个 Dialog
     .. raw:: html
 
         <iframe width="100%" height="400" class="iframe-demo" src="../../../static/demo/overlay/demo2.html"></iframe>
+        
+        
+    **设置初始样式**
+
+    .. code-block:: html
+    
+        <!--最好定义下，和 ie 下初始定位有关系-->
+        <style>
+            .ks-dialog {
+                position:absolute;
+                left:-9999px;
+                top:-9999px;
+            }
+        </style>
+
 
     **调用JS**
 

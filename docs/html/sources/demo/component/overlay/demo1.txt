@@ -8,7 +8,7 @@ Demo - 从 markup 中构建 overlay
 Class
 -----------------------------------------------
 
-  * :class:`Overlay`
+  * :class:`~overlay.Overlay`
 
 Demo - 从 markup 中构建 overlay
 ----------------------------------------------------------
@@ -21,7 +21,8 @@ Demo - 从 markup 中构建 overlay
     **定义CSS**
 
     .. code-block:: html
-
+    
+        <!--最好定义下，和 ie 下初始定位有关系-->
         <style>
             #popup1 {
                 position:absolute;
