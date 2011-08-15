@@ -119,6 +119,32 @@
 </div>
 </div></blockquote>
 </div>
+<div class="section" id="tips">
+<h2>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="q">
+<h3>Q. 如何提高性能<a class="headerlink" href="#q" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">combo menu component uibase menubutton</p>
+<blockquote>
+<div><p>页面底部静态引入组件以及组件依赖模块:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;http://a.tbcdn.cn/s/kissy/1.2.0/??uibase-min.js,component-min.js,menu-min.js,menubutton-min.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">先 addItem 再 render，</p>
+<blockquote>
+<div><p>由于 render 会导致生成节点插入到数据库，那么请尽量构建好数据再 render</p>
+</div></blockquote>
+</li>
+<li><p class="first">setTimeout 来渲染多个组件，</p>
+<blockquote>
+<div><p>每个组件渲染都需要 cpu ，为了减少界面僵死时间，可用 setTimeout 来分隔每个组件的渲染过程.</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
 </div>
 
 
