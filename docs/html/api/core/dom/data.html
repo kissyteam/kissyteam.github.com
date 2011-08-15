@@ -90,13 +90,13 @@
 <div class="section" id="module">
 <h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><a class="reference internal" href="index.html#module-DOM" title="DOM"><tt class="xref py py-mod docutils literal"><span class="pre">DOM</span></tt></a></div></blockquote>
+<div><a class="reference internal" href="index.html#module-dom" title="dom"><tt class="xref py py-mod docutils literal"><span class="pre">dom</span></tt></a></div></blockquote>
 </div>
 <div class="section" id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="DOM.data">
-<tt class="descclassname">DOM.</tt><tt class="descname">data</tt><big>(</big><big>)</big><a class="headerlink" href="#DOM.data" title="Permalink to this definition">¶</a></dt>
+<dt id="dom.data">
+<tt class="descclassname">dom.</tt><tt class="descname">data</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.data" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line">String|undefined <strong>data</strong> ( selector [ , name ] )</div>
 <div class="line">获取符合选择器的第一个元素的扩展属性(expando).</div>
@@ -105,15 +105,13 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
 <li><strong>name</strong> (<em>string</em>) &#8211; 扩展属性名称</li>
 </ul>
 </td>
 </tr>
-<tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><p class="first last"><ul class="simple">
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
 <li>对应扩展属性名的属性值, 如果不存在返回 <tt class="docutils literal"><span class="pre">undefined</span></tt></li>
 <li>如不指定扩展属性名, 则取得所有扩展属性键值对象 , 如果当前还没设置过扩展属性, 则返回空对象, 可以直接在该空对象上设置</li>
 </ul>
@@ -130,8 +128,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
 <li><strong>name</strong> (<em>string</em>) &#8211; 扩展属性名称</li>
 <li><strong>value</strong> &#8211; 扩展属性值</li>
@@ -148,8 +145,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
 <li><strong>kv</strong> (<em>object</em>) &#8211; 扩展属性名与扩展属性值的键值对</li>
 </ul>
@@ -160,7 +156,7 @@
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">embed, object, applet 这三个标签不能设置 expando .
-如果判断是否设置了扩展属性, 请使用 <a class="reference internal" href="hasData.html#DOM.hasData" title="DOM.hasData"><tt class="xref py py-func docutils literal"><span class="pre">DOM.hasData()</span></tt></a></p>
+如果判断是否设置了扩展属性, 请使用 <tt class="xref py py-func docutils literal"><span class="pre">DOM.hasData()</span></tt></p>
 </div>
 <p>举例</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">;</span>
@@ -260,7 +256,7 @@
     <div class="col-sub"><ul class="s-box api-toctree">
     <h2 class="s-box-hd">Seed</h2>
     <ul class="s-box-bd">
-        <li><a href="../../seed/loader/index.html">Loader</a></li>
+        <li><a href="../../seed/loader/index.html">loader</a></li>
         <li><a href="../../seed/kissy/index.html">kissy</a></li>
         <li><a href="../../seed/lang/index.html">lang</a></li>
         <li><a href="../../seed/web/index.html">web</a></li>
@@ -271,7 +267,7 @@
     <h2 class="s-box-hd">Core</h2>
     <ul class="s-box-bd">
         <li><a href="../ua/index.html">ua</a></li>
-        <li><a href="index.html">DOM</a></li>
+        <li><a href="index.html">dom</a></li>
         <li><a href="../event/index.html">event</a></li>
         <li><a href="../node/index.html">node</a></li>
         <li><a href="../json/index.html">json</a></li>

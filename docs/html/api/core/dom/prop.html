@@ -92,13 +92,13 @@
 <div class="section" id="module">
 <h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><a class="reference internal" href="index.html#module-DOM" title="DOM"><tt class="xref py py-mod docutils literal"><span class="pre">DOM</span></tt></a></div></blockquote>
+<div><a class="reference internal" href="index.html#module-dom" title="dom"><tt class="xref py py-mod docutils literal"><span class="pre">dom</span></tt></a></div></blockquote>
 </div>
 <div class="section" id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="DOM.prop">
-<tt class="descclassname">DOM.</tt><tt class="descname">prop</tt><big>(</big><big>)</big><a class="headerlink" href="#DOM.prop" title="Permalink to this definition">¶</a></dt>
+<dt id="dom.prop">
+<tt class="descclassname">dom.</tt><tt class="descname">prop</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.prop" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line">Object <strong>prop</strong> ( selector, name )</div>
 <div class="line">获取符合选择器的第一个元素的对应 property 值.</div>
@@ -107,23 +107,21 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
 <li><strong>name</strong> (<em>string</em>) &#8211; property 名称</li>
 </ul>
 </td>
 </tr>
-<tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><p class="first last">对应 property 的值</p>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">对应 property 的值</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">对于不存在的 property , 该方法返回 <tt class="docutils literal"><span class="pre">null</span></tt> , 如果要判断是否设置过, 可以使用 <a class="reference internal" href="hasProp.html#DOM.hasProp" title="DOM.hasProp"><tt class="xref py py-func docutils literal"><span class="pre">DOM.hasProp()</span></tt></a>,
-注意区别该方法与 <a class="reference internal" href="attr.html#DOM.attr" title="DOM.attr"><tt class="xref py py-func docutils literal"><span class="pre">DOM.attr()</span></tt></a>, 也即区别 <a class="reference external" href="http://javascript.info/tutorial/attributes-and-custom-properties">DOM property 与 attribute</a> .</p>
+<p class="last">对于不存在的 property , 该方法返回 <tt class="docutils literal"><span class="pre">null</span></tt> , 如果要判断是否设置过, 可以使用 <tt class="xref py py-func docutils literal"><span class="pre">DOM.hasProp()</span></tt>,
+注意区别该方法与 <tt class="xref py py-func docutils literal"><span class="pre">DOM.attr()</span></tt>, 也即区别 <a class="reference external" href="http://javascript.info/tutorial/attributes-and-custom-properties">DOM property 与 attribute</a> .</p>
 </div>
 <p>例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">;</span>
@@ -142,8 +140,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
 <li><strong>name</strong> (<em>string</em>) &#8211; property 名称</li>
 <li><strong>value</strong> &#8211; property 值</li>
@@ -160,8 +157,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
 <li><strong>kv</strong> (<em>object</em>) &#8211; property 名与 property 值的键值对</li>
 </ul>
@@ -172,8 +168,8 @@
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <ul class="last simple">
-<li>请使用 <a class="reference internal" href="data.html#DOM.data" title="DOM.data"><tt class="xref py py-func docutils literal"><span class="pre">DOM.data()</span></tt></a> 方法来处理自定义属性, 而不要使用 <a class="reference internal" href="#DOM.prop" title="DOM.prop"><tt class="xref py py-func docutils literal"><span class="pre">DOM.prop()</span></tt></a> 方法, 否则在 ie&lt;9 下会有内存泄露.</li>
-<li><tt class="docutils literal"><span class="pre">prop</span></tt> 方法可以改变 <tt class="docutils literal"><span class="pre">DOM</span></tt> 元素的状态而不改变其对应的序列化 <tt class="docutils literal"><span class="pre">html</span></tt> 属性 ( IE &lt;9 除外). 例如设置 <tt class="docutils literal"><span class="pre">input</span></tt> 或 <tt class="docutils literal"><span class="pre">button</span></tt> 的 <tt class="docutils literal"><span class="pre">disabled</span></tt> property 或者 <tt class="docutils literal"><span class="pre">checkbox</span></tt> 的 <tt class="docutils literal"><span class="pre">checked</span></tt> property . 最常见的情况即是用 <tt class="docutils literal"><span class="pre">prop</span></tt> 来设置 <tt class="docutils literal"><span class="pre">disabled</span></tt> 以及 <tt class="docutils literal"><span class="pre">checked</span></tt> 而不是 func:<cite>DOM.attr</cite> . 而 <a class="reference internal" href="val.html#DOM.val" title="DOM.val"><tt class="xref py py-func docutils literal"><span class="pre">DOM.val()</span></tt></a> 方法用来设置和读取 <cite>value</cite> property.</li>
+<li>请使用 <tt class="xref py py-func docutils literal"><span class="pre">DOM.data()</span></tt> 方法来处理自定义属性, 而不要使用 <tt class="xref py py-func docutils literal"><span class="pre">DOM.prop()</span></tt> 方法, 否则在 ie&lt;9 下会有内存泄露.</li>
+<li><tt class="docutils literal"><span class="pre">prop</span></tt> 方法可以改变 <tt class="docutils literal"><span class="pre">DOM</span></tt> 元素的状态而不改变其对应的序列化 <tt class="docutils literal"><span class="pre">html</span></tt> 属性 ( IE &lt;9 除外). 例如设置 <tt class="docutils literal"><span class="pre">input</span></tt> 或 <tt class="docutils literal"><span class="pre">button</span></tt> 的 <tt class="docutils literal"><span class="pre">disabled</span></tt> property 或者 <tt class="docutils literal"><span class="pre">checkbox</span></tt> 的 <tt class="docutils literal"><span class="pre">checked</span></tt> property . 最常见的情况即是用 <tt class="docutils literal"><span class="pre">prop</span></tt> 来设置 <tt class="docutils literal"><span class="pre">disabled</span></tt> 以及 <tt class="docutils literal"><span class="pre">checked</span></tt> 而不是 func:<cite>DOM.attr</cite> . 而 <tt class="xref py py-func docutils literal"><span class="pre">DOM.val()</span></tt> 方法用来设置和读取 <cite>value</cite> property.</li>
 </ul>
 </div>
 <p>例如</p>
@@ -254,7 +250,7 @@
     <div class="col-sub"><ul class="s-box api-toctree">
     <h2 class="s-box-hd">Seed</h2>
     <ul class="s-box-bd">
-        <li><a href="../../seed/loader/index.html">Loader</a></li>
+        <li><a href="../../seed/loader/index.html">loader</a></li>
         <li><a href="../../seed/kissy/index.html">kissy</a></li>
         <li><a href="../../seed/lang/index.html">lang</a></li>
         <li><a href="../../seed/web/index.html">web</a></li>
@@ -265,7 +261,7 @@
     <h2 class="s-box-hd">Core</h2>
     <ul class="s-box-bd">
         <li><a href="../ua/index.html">ua</a></li>
-        <li><a href="index.html">DOM</a></li>
+        <li><a href="index.html">dom</a></li>
         <li><a href="../event/index.html">event</a></li>
         <li><a href="../node/index.html">node</a></li>
         <li><a href="../json/index.html">json</a></li>

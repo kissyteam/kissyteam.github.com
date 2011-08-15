@@ -92,13 +92,13 @@
 <div class="section" id="module">
 <h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><a class="reference internal" href="index.html#module-Event" title="Event"><tt class="xref py py-mod docutils literal"><span class="pre">Event</span></tt></a></div></blockquote>
+<div><a class="reference internal" href="index.html#module-event" title="event"><tt class="xref py py-mod docutils literal"><span class="pre">event</span></tt></a></div></blockquote>
 </div>
 <div class="section" id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="Event.fire">
-<tt class="descclassname">Event.</tt><tt class="descname">fire</tt><big>(</big><big>)</big><a class="headerlink" href="#Event.fire" title="Permalink to this definition">¶</a></dt>
+<dt id="event.fire">
+<tt class="descclassname">event.</tt><tt class="descname">fire</tt><big>(</big><big>)</big><a class="headerlink" href="#event.fire" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line">Boolean <strong>fire</strong> ( selector , eventType [ , domEvent ] )</div>
 <div class="line">执行符合匹配的 dom 节点的相应事件的事件处理器和默认行为.</div>
@@ -107,21 +107,19 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="../dom/selector.html#dom-selector"><em>KISSY selector</em></a></li>
 <li><strong>eventType</strong> (<em>string</em>) &#8211; 包含一个或多个事件名称的字符串, 多个事件名以空格分开</li>
 <li><strong>domEvent</strong> (<em>object</em>) &#8211; 模拟原生事件的一些属性值信息</li>
 </ul>
 </td>
 </tr>
-<tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><p class="first last">如果其中一个事件处理器返回 false , 则返回 false, 否则返回最后一个事件处理器的返回值</p>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">如果其中一个事件处理器返回 false , 则返回 false, 否则返回最后一个事件处理器的返回值</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>用 <a class="reference internal" href="on.html#Event.on" title="Event.on"><tt class="xref py py-func docutils literal"><span class="pre">Event.on()</span></tt></a> 绑定的事件处理器可以被用户触发的原生事件调用. 但是这些事件处理器也可以使用 <tt class="docutils literal"><span class="pre">fire</span></tt> 手动调用.
+<p>用 <tt class="xref py py-func docutils literal"><span class="pre">Event.on()</span></tt> 绑定的事件处理器可以被用户触发的原生事件调用. 但是这些事件处理器也可以使用 <tt class="docutils literal"><span class="pre">fire</span></tt> 手动调用.
 调用 fire() 和用户触发导致的处理器调用调用是一样的顺序.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;#foo&#39;</span><span class="p">,</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
     <span class="nx">alert</span><span class="p">(</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
@@ -136,7 +134,7 @@
 <div class="section" id="demo">
 <h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>点击第二个按钮手动触发第一个按钮的点击, 简便起见使用 <a class="reference internal" href="../node/index.html#module-Node" title="Node"><tt class="xref py py-mod docutils literal"><span class="pre">Node</span></tt></a> 接口.</p>
+<div><p>点击第二个按钮手动触发第一个按钮的点击, 简便起见使用 <a class="reference internal" href="../node/index.html#module-node" title="node"><tt class="xref py py-mod docutils literal"><span class="pre">node</span></tt></a> 接口.</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
@@ -252,7 +250,7 @@
     <div class="col-sub"><ul class="s-box api-toctree">
     <h2 class="s-box-hd">Seed</h2>
     <ul class="s-box-bd">
-        <li><a href="../../seed/loader/index.html">Loader</a></li>
+        <li><a href="../../seed/loader/index.html">loader</a></li>
         <li><a href="../../seed/kissy/index.html">kissy</a></li>
         <li><a href="../../seed/lang/index.html">lang</a></li>
         <li><a href="../../seed/web/index.html">web</a></li>
@@ -263,7 +261,7 @@
     <h2 class="s-box-hd">Core</h2>
     <ul class="s-box-bd">
         <li><a href="../ua/index.html">ua</a></li>
-        <li><a href="../dom/index.html">DOM</a></li>
+        <li><a href="../dom/index.html">dom</a></li>
         <li><a href="index.html">event</a></li>
         <li><a href="../node/index.html">node</a></li>
         <li><a href="../json/index.html">json</a></li>

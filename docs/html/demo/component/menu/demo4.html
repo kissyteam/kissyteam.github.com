@@ -107,22 +107,42 @@
 </div></blockquote>
 </div>
 <div class="section" id="id2">
-<h2>Demo - 过滤菜单的使用<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Demo - 支持拼音的过滤菜单的使用<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><iframe width="100%" height="180" class="iframe-demo" src="../../../static/demo/menu/demo4.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;menu&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Menu</span><span class="p">)</span> <span class="p">{</span>
+<div><iframe width="100%" height="180" class="iframe-demo" src="../../../static/demo/menu/demo4.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;menu&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Menu</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// 构建各个菜单项</span>
-    <span class="kd">var</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span> <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;goog-&quot;</span><span class="p">,</span>  <span class="nx">selectable</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span> <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;女鞋&quot;</span><span class="p">}),</span>
-        <span class="nx">m2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span> <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;goog-&quot;</span><span class="p">,</span>  <span class="nx">selectable</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span> <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;家居服务&quot;</span><span class="p">}),</span>
-        <span class="nx">m3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span> <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;goog-&quot;</span><span class="p">,</span>  <span class="nx">selectable</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span> <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;手机&quot;</span><span class="p">}),</span>
-        <span class="nx">m4</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span> <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;goog-&quot;</span><span class="p">,</span>  <span class="nx">selectable</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span> <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;女装女服&quot;</span><span class="p">});</span>
+    <span class="kd">var</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
+        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+        <span class="nx">selectable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">pinyin</span><span class="o">:</span> <span class="s2">&quot;nx&quot;</span><span class="p">,</span>
+        <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;女鞋&quot;</span>
+    <span class="p">}),</span>
+        <span class="nx">m2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
+        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+        <span class="nx">selectable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">pinyin</span><span class="o">:</span> <span class="s2">&quot;jjfw&quot;</span><span class="p">,</span>
+        <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;家居服务&quot;</span>
+    <span class="p">}),</span>
+        <span class="nx">m3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
+        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+        <span class="nx">selectable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">pinyin</span><span class="o">:</span> <span class="s2">&quot;sj&quot;</span><span class="p">,</span>
+        <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;手机&quot;</span>
+    <span class="p">}),</span>
+        <span class="nx">m4</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
+        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+        <span class="nx">selectable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">pinyin</span><span class="o">:</span> <span class="s2">&quot;nznf&quot;</span><span class="p">,</span>
+        <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;女装女服&quot;</span>
+    <span class="p">});</span>
     <span class="c1">// 过滤菜单</span>
     <span class="kd">var</span> <span class="nx">filterMenu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">FilterMenu</span><span class="p">({</span>
-        <span class="nx">render</span><span class="o">:</span><span class="s2">&quot;#menu_container&quot;</span><span class="p">,</span>
-        <span class="nx">width</span><span class="o">:</span><span class="mi">200</span><span class="p">,</span>
+        <span class="nx">render</span><span class="o">:</span> <span class="s2">&quot;#menu_container&quot;</span><span class="p">,</span>
+        <span class="nx">width</span><span class="o">:</span> <span class="mi">200</span><span class="p">,</span>
         <span class="c1">// 支持多选</span>
-        <span class="nx">allowMultiple</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-        <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
-        <span class="nx">label</span><span class="o">:</span><span class="s2">&quot;请输入&quot;</span>
+        <span class="nx">allowMultiple</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;请输入&quot;</span>
     <span class="p">});</span>
     <span class="c1">// 依次添加各个菜单项</span>
     <span class="nx">filterMenu</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">m1</span><span class="p">);</span>
@@ -130,12 +150,58 @@
     <span class="nx">filterMenu</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">m3</span><span class="p">);</span>
     <span class="nx">filterMenu</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">m4</span><span class="p">);</span>
 
+    <span class="kd">var</span> <span class="nx">origFilterItems</span> <span class="o">=</span> <span class="nx">filterMenu</span><span class="p">.</span><span class="nx">filterItems</span><span class="p">;</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 自定义过滤策略，不自定义则是简单的内容 indexOf 查找</span>
+<span class="cm">     * @param str</span>
+<span class="cm">     */</span>
+    <span class="nx">filterMenu</span><span class="p">.</span><span class="nx">filterItems</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">,</span>
+            <span class="nx">view</span> <span class="o">=</span> <span class="nx">self</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;view&quot;</span><span class="p">),</span>
+            <span class="nx">_labelEl</span> <span class="o">=</span> <span class="nx">view</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;labelEl&quot;</span><span class="p">),</span>
+            <span class="nx">filterInput</span> <span class="o">=</span> <span class="nx">view</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;filterInput&quot;</span><span class="p">);</span>
+
+        <span class="c1">// 有过滤条件提示隐藏，否则提示显示</span>
+        <span class="nx">_labelEl</span><span class="p">[</span><span class="nx">str</span> <span class="o">?</span> <span class="s2">&quot;hide&quot;</span> <span class="o">:</span> <span class="s2">&quot;show&quot;</span><span class="p">]();</span>
+
+        <span class="kd">var</span> <span class="nx">children</span> <span class="o">=</span> <span class="nx">self</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;children&quot;</span><span class="p">);</span>
+
+        <span class="c1">// 拼音</span>
+        <span class="k">if</span> <span class="p">(</span><span class="sr">/^[a-z\s]+$/i</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">))</span> <span class="p">{</span>
+
+            <span class="c1">// 过滤所有子组件</span>
+            <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">children</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">pinyin</span> <span class="o">=</span> <span class="nx">c</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;pinyin&quot;</span><span class="p">),</span>
+                    <span class="nx">content</span> <span class="o">=</span> <span class="nx">c</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">);</span>
+
+                <span class="kd">var</span> <span class="nx">index</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">((</span><span class="nx">index</span> <span class="o">=</span> <span class="nx">pinyin</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">str</span><span class="p">))</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">// 如果符合过滤项</span>
+                    <span class="c1">// 显示</span>
+                    <span class="nx">c</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+                    <span class="nx">content</span> <span class="o">=</span> <span class="nx">content</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">+</span>
+
+                    <span class="s2">&quot;&lt;span class=&#39;&quot;</span> <span class="o">+</span> <span class="s2">&quot;goog-menuitem-hit&quot;</span> <span class="o">+</span> <span class="s2">&quot;&#39;&gt;&quot;</span> <span class="o">+</span> <span class="nx">content</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">index</span> <span class="o">+</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;&lt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;/span&gt;&quot;</span> <span class="o">+</span> <span class="nx">content</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">index</span> <span class="o">+</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="nx">content</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+
+                    <span class="c1">// 匹配子串着重 wrap</span>
+                    <span class="nx">c</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;contentEl&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">content</span><span class="p">);</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="nx">c</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">origFilterItems</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">str</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+
     <span class="c1">// 渲染到页面中</span>
     <span class="nx">filterMenu</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
 
     <span class="c1">// 绑定点击事件, 记录选择项是哪个</span>
     <span class="kd">var</span> <span class="nx">selected</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-    <span class="nx">filterMenu</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">filterMenu</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">selected</span> <span class="o">!=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
             <span class="nx">selected</span> <span class="o">&amp;&amp;</span> <span class="nx">selected</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;selected&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
             <span class="nx">selected</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
@@ -214,7 +280,7 @@
     <div class="col-sub"><ul class="s-box demo-toctree">
     <h2 class="s-box-hd">Seed</h2>
     <ul class="s-box-bd">
-        <li><a href="../../seed/loader/index.html">Loader</a></li>
+        <li><a href="../../seed/loader/index.html">loader</a></li>
         <!--<li><a href="../../seed/kissy/index.html">kissy</a></li>
         <li><a href="../../seed/lang/index.html">lang</a></li>
         <li><a href="../../seed/web/index.html">web</a></li>-->

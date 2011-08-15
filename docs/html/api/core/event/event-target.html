@@ -90,13 +90,13 @@
 <div class="section" id="module">
 <h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><a class="reference internal" href="index.html#module-Event" title="Event"><tt class="xref py py-mod docutils literal"><span class="pre">Event</span></tt></a></div></blockquote>
+<div><a class="reference internal" href="index.html#module-event" title="event"><tt class="xref py py-mod docutils literal"><span class="pre">event</span></tt></a></div></blockquote>
 </div>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#Event.Target" title="Event.Target"><tt class="xref py py-class docutils literal"><span class="pre">Target</span></tt></a></li>
+<li><a class="reference internal" href="#event.Target" title="event.Target"><tt class="xref py py-class docutils literal"><span class="pre">Target</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -104,17 +104,17 @@
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#Event.Target.fire" title="Event.Target.fire"><tt class="xref py py-meth docutils literal"><span class="pre">fire()</span></tt></a></li>
-<li><a class="reference internal" href="#Event.Target.on" title="Event.Target.on"><tt class="xref py py-meth docutils literal"><span class="pre">on()</span></tt></a></li>
-<li><a class="reference internal" href="#Event.Target.detach" title="Event.Target.detach"><tt class="xref py py-meth docutils literal"><span class="pre">detach()</span></tt></a></li>
+<li><a class="reference internal" href="#event.Target.fire" title="event.Target.fire"><tt class="xref py py-meth docutils literal"><span class="pre">fire()</span></tt></a></li>
+<li><a class="reference internal" href="#event.Target.on" title="event.Target.on"><tt class="xref py py-meth docutils literal"><span class="pre">on()</span></tt></a></li>
+<li><a class="reference internal" href="#event.Target.detach" title="event.Target.detach"><tt class="xref py py-meth docutils literal"><span class="pre">detach()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="class-detail">
 <h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="Event.Target">
-<em class="property">class </em><tt class="descclassname">Event.</tt><tt class="descname">Target</tt><a class="headerlink" href="#Event.Target" title="Permalink to this definition">¶</a></dt>
+<dt id="event.Target">
+<em class="property">class </em><tt class="descclassname">event.</tt><tt class="descname">Target</tt><a class="headerlink" href="#event.Target" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>Target</strong> ( event )</div>
 <div class="line">通过将该对象混入普通对象就可以使得普通对象和 dom 节点一样也能触发, 添加和删除事件.</div>
@@ -125,8 +125,8 @@
 <div class="section" id="methods-detail">
 <h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
-<dt id="Event.Target.fire">
-<tt class="descclassname">Target.</tt><tt class="descname">fire</tt><big>(</big><big>)</big><a class="headerlink" href="#Event.Target.fire" title="Permalink to this definition">¶</a></dt>
+<dt id="event.Target.fire">
+<tt class="descclassname">Target.</tt><tt class="descname">fire</tt><big>(</big><big>)</big><a class="headerlink" href="#event.Target.fire" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>fire</strong> ( type , eventData)</div>
 <div class="line">触发绑定 type 类型的事件处理器, 并给触发的事件处理器的事件对象参数中混入数据 eventData</div>
@@ -135,15 +135,13 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>type</strong> (<em>string</em>) &#8211; 要触发的自定义事件名称</li>
 <li><strong>eventData</strong> (<em>object</em>) &#8211; 要混入触发事件对象的数据对象</li>
 </ul>
 </td>
 </tr>
-<tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><p class="first last">如果其中一个事件处理器返回 false , 则返回 false, 否则返回最后一个事件处理器的返回值</p>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">如果其中一个事件处理器返回 false , 则返回 false, 否则返回最后一个事件处理器的返回值</p>
 </td>
 </tr>
 </tbody>
@@ -151,20 +149,20 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="Event.Target.on">
-<tt class="descclassname">Target.</tt><tt class="descname">on</tt><big>(</big><big>)</big><a class="headerlink" href="#Event.Target.on" title="Permalink to this definition">¶</a></dt>
+<dt id="event.Target.on">
+<tt class="descclassname">Target.</tt><tt class="descname">on</tt><big>(</big><big>)</big><a class="headerlink" href="#event.Target.on" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>on</strong> ( type , fn [ , scope ] )</div>
-<div class="line">绑定事件处理器, 可参考 <a class="reference internal" href="on.html#Event.on" title="Event.on"><tt class="xref py py-func docutils literal"><span class="pre">Event.on()</span></tt></a></div>
+<div class="line">绑定事件处理器, 可参考 <tt class="xref py py-func docutils literal"><span class="pre">Event.on()</span></tt></div>
 </div>
 </dd></dl>
 
 <dl class="method">
-<dt id="Event.Target.detach">
-<tt class="descclassname">Target.</tt><tt class="descname">detach</tt><big>(</big><big>)</big><a class="headerlink" href="#Event.Target.detach" title="Permalink to this definition">¶</a></dt>
+<dt id="event.Target.detach">
+<tt class="descclassname">Target.</tt><tt class="descname">detach</tt><big>(</big><big>)</big><a class="headerlink" href="#event.Target.detach" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>detach</strong> ( type  [ , fn , scope ] )</div>
-<div class="line">解除绑定的事件处理器, 可参考 <a class="reference internal" href="detach.html#Event.detach" title="Event.detach"><tt class="xref py py-func docutils literal"><span class="pre">Event.detach()</span></tt></a></div>
+<div class="line">解除绑定的事件处理器, 可参考 <tt class="xref py py-func docutils literal"><span class="pre">Event.detach()</span></tt></div>
 </div>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">;</span>
 
@@ -266,7 +264,7 @@
     <div class="col-sub"><ul class="s-box api-toctree">
     <h2 class="s-box-hd">Seed</h2>
     <ul class="s-box-bd">
-        <li><a href="../../seed/loader/index.html">Loader</a></li>
+        <li><a href="../../seed/loader/index.html">loader</a></li>
         <li><a href="../../seed/kissy/index.html">kissy</a></li>
         <li><a href="../../seed/lang/index.html">lang</a></li>
         <li><a href="../../seed/web/index.html">web</a></li>
@@ -277,7 +275,7 @@
     <h2 class="s-box-hd">Core</h2>
     <ul class="s-box-bd">
         <li><a href="../ua/index.html">ua</a></li>
-        <li><a href="../dom/index.html">DOM</a></li>
+        <li><a href="../dom/index.html">dom</a></li>
         <li><a href="index.html">event</a></li>
         <li><a href="../node/index.html">node</a></li>
         <li><a href="../json/index.html">json</a></li>
