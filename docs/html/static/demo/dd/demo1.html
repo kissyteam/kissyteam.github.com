@@ -4,18 +4,21 @@
 <meta charset="utf-8"/>
 <title>Demo - Draggable & Proxy 使用示例</title>
 <script src="http://yiminghe.github.com/kissy/build/kissy.js"></script>
+<link rel="stylesheet" href="assets/demo1.css" />
 </head>
 <body>
-<style>
-    .ks-dd-proxy {
-        opacity:0.2;
-        *filter:alpha(opacity=20);
-    }
-</style>
 
-<div id='test-drag' style='border:1px solid red;background:blue;width:100px;height:100px;color:white;'>
-  drag me
+<div class="box" id="test-drag">
+	<s class="box-tp"><b></b></s>
+	<div class="box-hd">
+	</div>
+	<div class="box-bd">
+		Drag Me
+	</div>
+	<s class="box-bt"><b></b></s>
 </div>
+
+
 <script>
     KISSY.use("dd",function(S,DD){
         var drag=new DD.Draggable({

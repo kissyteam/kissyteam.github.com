@@ -6,7 +6,7 @@ KISSY.use("button", function(S, Button) {
         prefixCls: "goog-",
         tooltip: "点击我有惊喜~"
     });
-
+    
     // 插入到DOM中并显示
     b.render();
 
