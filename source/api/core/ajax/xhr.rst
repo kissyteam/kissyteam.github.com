@@ -1,5 +1,7 @@
 .. currentmodule:: io
 
+.. versionadded:: 1.2
+
 XhrObj
 =================================
 
