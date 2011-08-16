@@ -4,78 +4,47 @@
 <meta charset="utf-8"/>
 <title>Demo - 基于拖放委托 + 容器自动滚动的拖放排序</title>
 <script src="http://yiminghe.github.com/kissy/build/kissy.js"></script>
+<link rel="stylesheet" href="assets/reset.css" />
+<link rel="stylesheet" href="assets/box.css" />
+<link rel="stylesheet" href="assets/demo4.css" />
 </head>
 <body>
-<style>
-    .container {
-        border: 1px solid red;
-        height: 200px;
-        padding: 10px;
-        position: relative;
-        overflow: auto;
-    }
 
-    .component {
-        margin: 50px 10px;
-        width: 100px;
-        height: 100px;
-        line-height: 100px;
-        border: 1px solid black;
-        display: inline-block;
-        *display: inline;
-        *zoom: 1;
-        overflow: hidden;
-    }
-
-    .cheader {
-        cursor: move;
-        border: 1px solid black;
-        height: 20px;
-        line-height: 20px;
-    }
-
-    .component .cheader {
-        cursor: move;
-    }
-
-    .ks-dd-dragging * {
-        visibility: hidden;
-    }
-
-    .ks-dd-dragging {
-        border: 2px blue dashed;
-    }
-</style>
 
 <button id="add"> add module</button>
 <br/><br/>
 <div id="container2" class="container">
 
-    <div class="component">
-        <div class="cheader">
-            拖动头
-        </div>
-        <span>
-        drag proxy1
-            </span>
-    </div>
 
-    <div class="component">
-        <div class="cheader">
-            拖动头
+    <div class="box component">
+        <s class="box-tp"><b></b></s>
+        <div class="box-hd cheader">
+            <h3>拖动头</h3>
         </div>
-         <span>
-        drag proxy2
-        </span>
+        <div class="box-bd">
+            drag proxy 1
+        </div>
+        <s class="box-bt"><b></b></s>
     </div>
-
-    <div class="component">
-        <div class="cheader">
-            拖动头
+    <div class="box component">
+        <s class="box-tp"><b></b></s>
+        <div class="box-hd cheader">
+            <h3>拖动头</h3>
         </div>
-         <span>
-        drag proxy3
-        </span>
+        <div class="box-bd">
+            drag proxy 2
+        </div>
+        <s class="box-bt"><b></b></s>
+    </div>
+    <div class="box component">
+        <s class="box-tp"><b></b></s>
+        <div class="box-hd cheader">
+            <h3>拖动头</h3>
+        </div>
+        <div class="box-bd">
+            drag proxy 3
+        </div>
+        <s class="box-bt"><b></b></s>
     </div>
 </div>
 
@@ -104,7 +73,7 @@
                 node:function(drag) {
                     var n = S.one(drag.get("dragNode")[0].cloneNode(true));
                     n.attr("id", S.guid("ks-dd-proxy"));
-                    n.css("opacity", 0.2);
+                    n.css("opacity", 0.8);
                     return n;
                 },
                 destroyOnEnd:true
@@ -183,9 +152,9 @@
             var id = 4;
             container.unselectable();
             S.one("#add").on("click", function() {
-                new Node('<div class="component">' +
-                        '<div class="cheader">拖动头</div>' +
-                        '<span>drag proxy' + (id++) + '</span></div>').appendTo(container).unselectable();
+                new Node('<div class="box component"><s class="box-tp"><b></b></s><div class="box-hd cheader">'
+                       + '<h3>拖动头</h3></div><div class="box-bd">drag proxy '+(id++)
+                       + '</div><s class="box-bt"><b></b></s></div>').appendTo(container).unselectable();
             });
         });
     });

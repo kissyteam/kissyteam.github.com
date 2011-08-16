@@ -32,19 +32,24 @@ Demo - Draggable & Proxy 使用示例
 
     .. code-block:: html
 
-        <div id='test-drag' style='border:1px solid red;
-                            background:blue;width:100px;
-                            height:100px;color:white;'>
-          drag me
+        <div class="box" id="test-drag">
+            <s class="box-tp"><b></b></s>
+            <div class="box-hd">
+                <h3>Drag Me</h3>
+            </div>
+            <div class="box-bd">
+                鼠标拖动
+            </div>
+            <s class="box-bt"><b></b></s>
         </div>
     
     **设置代理节点样式**
 
-    .. code-block:: html
+    .. code-block:: css
 
         .ks-dd-proxy {
-            opacity:0.2;
-            *filter:alpha(opacity=20);
+            opacity:0.6;
+            *filter:alpha(opacity=60);
         }
 
     
@@ -76,3 +81,7 @@ Demo - Draggable & Proxy 使用示例
                 top:ev.top
             });
         });
+
+    .. note::
+
+        此Demo使用了KISSY设计模式的Box样式, 详情可以参考 `KISSY设计模式 <http://docs.kissyui.com/kissy-dpl/base/>`_

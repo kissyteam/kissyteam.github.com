@@ -18,7 +18,7 @@ Demo - Droppable 基本使用
 
     .. raw:: html
 
-        <iframe width="100%" height="500" class="iframe-demo" src="../../../static/demo/dd/demo2.html"></iframe>
+        <iframe width="100%" height="300" class="iframe-demo" src="../../../static/demo/dd/demo2.html"></iframe>
 
 
     **引入 kissy.js**
@@ -33,22 +33,45 @@ Demo - Droppable 基本使用
     .. code-block:: html
 
         <div id="container" class="container">
-            <div id="c1" class="component">
-                intersect drag
+            <div class="box component" id="c1">
+                <s class="box-tp"><b></b></s>
+                <div class="box-hd">
+                    <h3>Drag</h3>
+                </div>
+                <div class="box-bd">
+                    intersect drag
+                </div>
+                <s class="box-bt"><b></b></s>
             </div>
-
-            <div id="c2" class="component">
-                point drag
+            <div class="box component" id="c2">
+                <s class="box-tp"><b></b></s>
+                <div class="box-hd">
+                    <h3>Drag</h3>
+                </div>
+                <div class="box-bd">
+                    strict drag
+                </div>
+                <s class="box-bt"><b></b></s>
             </div>
-
-            <div id="c3" class="component">
-                strict drag
+            <div class="box component" id="c3">
+                <s class="box-tp"><b></b></s>
+                <div class="box-hd">
+                    <h3>Drag</h3>
+                </div>
+                <div class="box-bd">
+                    point drag
+                </div>
+                <s class="box-bt"><b></b></s>
             </div>
-
-            <div id="drop">
-                drop zone
+            <div class="box" >
+                <s class="box-tp"><b></b></s>
+                <div id="drop" class="box-bd ks-dd">
+                    drop zone
+                </div>
+                <s class="box-bt"><b></b></s>
             </div>
         </div>
+
     
     **加载 dd**
 
@@ -140,3 +163,7 @@ Demo - Droppable 基本使用
         }
 
         drop.on("drophit",onhit);
+        
+    .. note::
+
+        此Demo使用了KISSY设计模式的Box样式, 详情可以参考 `KISSY设计模式 <http://docs.kissyui.com/kissy-dpl/base/>`_

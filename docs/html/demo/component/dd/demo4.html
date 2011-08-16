@@ -109,31 +109,35 @@
 </div>
 <p><strong>组织HTML</strong></p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;container2&quot;</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;component&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;cheader&quot;</span><span class="nt">&gt;</span>
-            拖动头
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;box component&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;s</span> <span class="na">class=</span><span class="s">&quot;box-tp&quot;</span><span class="nt">&gt;&lt;b&gt;&lt;/b&gt;&lt;/s&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;box-hd cheader&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h3&gt;</span>拖动头<span class="nt">&lt;/h3&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;span&gt;</span>
-        drag proxy1
-            <span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;box-bd&quot;</span><span class="nt">&gt;</span>
+            drag proxy 1
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;s</span> <span class="na">class=</span><span class="s">&quot;box-bt&quot;</span><span class="nt">&gt;&lt;b&gt;&lt;/b&gt;&lt;/s&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;component&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;cheader&quot;</span><span class="nt">&gt;</span>
-            拖动头
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;box component&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;s</span> <span class="na">class=</span><span class="s">&quot;box-tp&quot;</span><span class="nt">&gt;&lt;b&gt;&lt;/b&gt;&lt;/s&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;box-hd cheader&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h3&gt;</span>拖动头<span class="nt">&lt;/h3&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
-         <span class="nt">&lt;span&gt;</span>
-        drag proxy2
-        <span class="nt">&lt;/span&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;component&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;cheader&quot;</span><span class="nt">&gt;</span>
-            拖动头
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;box-bd&quot;</span><span class="nt">&gt;</span>
+            drag proxy 2
         <span class="nt">&lt;/div&gt;</span>
-         <span class="nt">&lt;span&gt;</span>
-        drag proxy3
-        <span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;s</span> <span class="na">class=</span><span class="s">&quot;box-bt&quot;</span><span class="nt">&gt;&lt;b&gt;&lt;/b&gt;&lt;/s&gt;</span>
+    <span class="nt">&lt;/di&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;box component&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;s</span> <span class="na">class=</span><span class="s">&quot;box-tp&quot;</span><span class="nt">&gt;&lt;b&gt;&lt;/b&gt;&lt;/s&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;box-hd cheader&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h3&gt;</span>拖动头<span class="nt">&lt;/h3&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;box-bd&quot;</span><span class="nt">&gt;</span>
+            drag proxy 3
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;s</span> <span class="na">class=</span><span class="s">&quot;box-bt&quot;</span><span class="nt">&gt;&lt;b&gt;&lt;/b&gt;&lt;/s&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
@@ -185,7 +189,7 @@
     <span class="nx">node</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">drag</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="nx">drag</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;dragNode&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span>
         <span class="nx">n</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="nx">S</span><span class="p">.</span><span class="nx">guid</span><span class="p">(</span><span class="s2">&quot;ks-dd-proxy&quot;</span><span class="p">));</span>
-        <span class="nx">n</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;opacity&quot;</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">);</span>
+        <span class="nx">n</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;opacity&quot;</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">);</span>
         <span class="k">return</span> <span class="nx">n</span><span class="p">;</span>
     <span class="p">},</span>
     <span class="nx">destroyOnEnd</span><span class="o">:</span><span class="kc">true</span>
@@ -246,6 +250,10 @@
     <span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">此Demo使用了KISSY设计模式的Box样式, 详情可以参考 <a class="reference external" href="http://docs.kissyui.com/kissy-dpl/base/">KISSY设计模式</a></p>
 </div>
 </div></blockquote>
 </div>

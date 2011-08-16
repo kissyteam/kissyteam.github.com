@@ -33,34 +33,39 @@ Demo - 基于拖放委托 + 容器自动滚动的拖放排序
 
     .. code-block:: html
 
-            <div id="container2" class="container">
-                <div class="component">
-                    <div class="cheader">
-                        拖动头
-                    </div>
-                    <span>
-                    drag proxy1
-                        </span>
+        <div id="container2" class="container">
+            <div class="box component">
+                <s class="box-tp"><b></b></s>
+                <div class="box-hd cheader">
+                    <h3>拖动头</h3>
                 </div>
-
-                <div class="component">
-                    <div class="cheader">
-                        拖动头
-                    </div>
-                     <span>
-                    drag proxy2
-                    </span>
+                <div class="box-bd">
+                    drag proxy 1
                 </div>
-
-                <div class="component">
-                    <div class="cheader">
-                        拖动头
-                    </div>
-                     <span>
-                    drag proxy3
-                    </span>
+                <s class="box-bt"><b></b></s>
+            </div>       
+            <div class="box component">
+                <s class="box-tp"><b></b></s>
+                <div class="box-hd cheader">
+                    <h3>拖动头</h3>
                 </div>
+                <div class="box-bd">
+                    drag proxy 2
+                </div>
+                <s class="box-bt"><b></b></s>
+            </di>   
+            <div class="box component">
+                <s class="box-tp"><b></b></s>
+                <div class="box-hd cheader">
+                    <h3>拖动头</h3>
+                </div>
+                <div class="box-bd">
+                    drag proxy 3
+                </div>
+                <s class="box-bt"><b></b></s>
             </div>
+        </div>
+
 
         
     **加载 dd**
@@ -113,7 +118,7 @@ Demo - 基于拖放委托 + 容器自动滚动的拖放排序
                 node:function(drag) {
                     var n = S.one(drag.get("dragNode")[0].cloneNode(true));
                     n.attr("id", S.guid("ks-dd-proxy"));
-                    n.css("opacity", 0.2);
+                    n.css("opacity", 0.8);
                     return n;
                 },
                 destroyOnEnd:true
@@ -177,3 +182,7 @@ Demo - 基于拖放委托 + 容器自动滚动的拖放排序
                 }
             }
         });
+        
+    .. note::
+
+        此Demo使用了KISSY设计模式的Box样式, 详情可以参考 `KISSY设计模式 <http://docs.kissyui.com/kissy-dpl/base/>`_

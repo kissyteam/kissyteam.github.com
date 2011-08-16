@@ -4,71 +4,55 @@
 <meta charset="utf-8"/>
 <title>Demo - Droppable 使用示例</title>
 <script src="http://yiminghe.github.com/kissy/build/kissy.js"></script>
+<link rel="stylesheet" href="assets/reset.css" />
+<link rel="stylesheet" href="assets/box.css" />
+<link rel="stylesheet" href="assets/demo2.css" />
 </head>
 <body>
-<style>
-
-    .container {
-        border: 1px solid red;
-        height: 450px;
-        padding: 10px;
-        position: relative;
-    }
-
-    .component {
-        margin: 50px 10px;
-        width: 100px;
-        height: 100px;
-        line-height: 100px;
-        border: 1px solid black;
-        display: inline-block;
-        *display: inline;
-        *zoom: 1;
-        overflow: hidden;
-    }
-
-    .cheader {
-        cursor: move;
-        border: 1px solid black;
-        height: 20px;
-        line-height: 20px;
-    }
-
-    #drop, #drop3 {
-        border: 1px solid green;
-        height: 130px;
-        line-height: 100px;
-    }
-
-    .ks-dd-drag-over {
-        background: #a52a2a;
-    }
-
-    .ks-dd-drop-over {
-        background: #fa8072;
-    }
-
-    #container3 .component .cheader {
-        cursor: move;
-    }
-</style>
 
 <div id="container" class="container">
-    <div id="c1" class="component">
-        intersect drag
+    <div class="box component" id="c1">
+        <s class="box-tp"><b></b></s>
+        <div class="box-hd">
+            <h3>Drag</h3>
+        </div>
+        <div class="box-bd">
+            intersect drag
+        </div>
+        <s class="box-bt"><b></b></s>
     </div>
-
-    <div id="c2" class="component">
-        point drag
+    
+    <div class="box component" id="c2">
+        <s class="box-tp"><b></b></s>
+        <div class="box-hd">
+            <h3>Drag</h3>
+        </div>
+        <div class="box-bd">
+            strict drag
+        </div>
+        <s class="box-bt"><b></b></s>
     </div>
-
-    <div id="c3" class="component">
-        strict drag
+    
+    <div class="box component" id="c3">
+        <s class="box-tp"><b></b></s>
+        <div class="box-hd">
+            <h3>Drag</h3>
+        </div>
+        <div class="box-bd">
+            point drag
+        </div>
+        <s class="box-bt"><b></b></s>
     </div>
-
-    <div id="drop">
-        drop zone
+   
+    
+    <div class="box" >
+        <s class="box-tp"><b></b></s>
+        <div id="drop" class="box-bd ks-dd">
+            drop zone
+        </div>
+        <s class="box-bt"><b></b></s>
     </div>
+    
 </div>
 
 <script>

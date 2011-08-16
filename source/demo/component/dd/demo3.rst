@@ -31,21 +31,26 @@ Demo - DraggableDelegate 使用示例
     .. code-block:: html
 
         <div id="container3" class="container">
-
-            <div class="component">
-                <div class="cheader">
-                    拖动头
+            <div class="box component">
+                <s class="box-tp"><b></b></s>
+                <div class="box-hd cheader">
+                    <h3>拖动头</h3>
                 </div>
-                delegate drag
+                <div class="box-bd">
+                    delegate drag 1
+                </div>
+                <s class="box-bt"><b></b></s>
             </div>
-
             <button id="add_delegate">add delegate drag</button>
-
-
-            <div id="drop3">
-                drop zone
+            <div class="box" >
+                <s class="box-tp"><b></b></s>
+                <div id="drop" class="box-bd ks-dd">
+                    drop zone
+                </div>
+                <s class="box-bt"><b></b></s>
             </div>
         </div>
+
 
 
 
@@ -93,7 +98,7 @@ Demo - DraggableDelegate 使用示例
         .. code-block:: javascript
 
             var drop = new Droppable({
-                    node:"#drop3"
+                    node:"#drop"
                 });
 
 
@@ -135,7 +140,10 @@ Demo - DraggableDelegate 使用示例
                 function onhit(ev) {
                     ev.drag.get("dragNode").css("margin", "5px 10px");
                     ev.drag.get("dragNode").appendTo(ev.drop.get("node"));
-                    ev.drag.get("dragNode").one(".cheader")[0].className="cheader2";
                 }
 
                 drop.on("drophit",onhit);
+                
+    .. note::
+
+        此Demo使用了KISSY设计模式的Box样式, 详情可以参考 `KISSY设计模式 <http://docs.kissyui.com/kissy-dpl/base/>`_
