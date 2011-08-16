@@ -4,70 +4,29 @@
 <meta charset="utf-8"/>
 <title>Demo - DraggableDelegate 使用示例</title>
 <script src="http://yiminghe.github.com/kissy/build/kissy.js"></script>
+<link rel="stylesheet" href="assets/reset.css" />
+<link rel="stylesheet" href="assets/box.css" />
+<link rel="stylesheet" href="assets/demo3.css" />
 </head>
 <body>
-<style>
-    .container {
-        border: 1px solid red;
-        padding: 10px;
-        position: relative;
-    }
-
-    .component {
-        margin: 50px 10px;
-        width: 100px;
-        height: 100px;
-        line-height: 100px;
-        border: 1px solid black;
-        display: inline-block;
-        *display: inline;
-        *zoom: 1;
-        overflow: hidden;
-    }
-
-    .cheader,.cheader2 {
-        cursor: move;
-        border: 1px solid black;
-        height: 20px;
-        line-height: 20px;
-    }
-
-    .cheader2 {
-        cursor:default;
-    }
-
-    #drop, #drop3 {
-        border: 1px solid green;
-        line-height: 100px;
-    }
-
-    .ks-dd-drag-over {
-        background: #a52a2a;
-    }
-
-    .ks-dd-drop-over {
-        background: #fa8072;
-    }
-
-    #container3 .component .cheader {
-        cursor: move;
-    }
-</style>
-
+<button id="add_delegate">add delegate drag</button>
 <div id="container3" class="container">
-
-    <div class="component">
-        <div class="cheader">
-            拖动头
+    <div class="box component">
+        <s class="box-tp"><b></b></s>
+        <div class="box-hd cheader">
+            <h3>拖动头</h3>
         </div>
-        delegate drag
+        <div class="box-bd">
+            delegate drag 1
+        </div>
+        <s class="box-bt"><b></b></s>
     </div>
-
-    <button id="add_delegate">add delegate drag</button>
-
-
-    <div id="drop3">
-        drop zone
+    <div class="box" >
+        <s class="box-tp"><b></b></s>
+        <div id="drop" class="box-bd ks-dd">
+            drop zone
+        </div>
+        <s class="box-bt"><b></b></s>
     </div>
 </div>
 
@@ -113,14 +72,15 @@ KISSY.use("node,dd", function (S, Node, DD) {
     });
 
     var drop = new Droppable({
-        node:"#drop3"
+        node:"#drop"
     });
 
-    var c = 0;
+    var c = 1;
 
     S.one("#add_delegate").on("click", function() {
-        new Node('<div class="component"><div class="cheader">拖动头</div>delegate'
-                + (++c) + '</div>')
+        new Node('<div class="box component"><s class="box-tp"><b></b></s><div class="box-hd cheader">'
+                + '<h3>拖动头</h3></div><div class="box-bd">delegate drag '+(++c)
+                + '</div><s class="box-bt"><b></b></s></div>')
                 .prependTo("#container3").unselectable();
     });
 
@@ -129,7 +89,6 @@ KISSY.use("node,dd", function (S, Node, DD) {
     function onhit(ev) {
         ev.drag.get("dragNode").css("margin", "5px 10px");
         ev.drag.get("dragNode").appendTo(ev.drop.get("node"));
-        ev.drag.get("dragNode").one(".cheader")[0].className="cheader2";
     }
 
     drop.on("drophit",onhit);
