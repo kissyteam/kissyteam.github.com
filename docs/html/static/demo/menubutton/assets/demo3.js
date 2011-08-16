@@ -8,14 +8,7 @@ KISSY.use("menubutton", function(S, MenuButton) {
     var s1 = new MenuButton.Select({
         prefixCls:"c2c-",
         menuAlign:{
-            points:["bl","tl"],
-            offset:[0,-1],
-            overflow:{
-                failX:1,
-                failY:1,
-                adjustX:1,
-                adjustY:1
-            }
+            offset:[0,-1]
         },
         menuCfg:{
             width:70
@@ -38,14 +31,7 @@ KISSY.use("menubutton", function(S, MenuButton) {
     var s2 = new MenuButton.Select({
         prefixCls:"c2c-",
         menuAlign:{
-            points:["bl","tl"],
-            offset:[0,-1],
-            overflow:{
-                failX:1,
-                failY:1,
-                adjustX:1,
-                adjustY:1
-            }
+            offset:[0,-1]
         },
         menuCfg:{
             width:70

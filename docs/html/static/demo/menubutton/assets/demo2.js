@@ -4,14 +4,7 @@ KISSY.use("menubutton", function(S, MenuButton) {
         prefixCls:"c2c-",
         // 设置对齐方式, 与普通的 Align 大体一致
         menuAlign:{
-            points:["bl","tl"],
-            offset:[0,-1],
-            overflow:{
-                failX:1,
-                failY:1,
-                adjustX:1,
-                adjustY:1
-            }
+            offset:[0,-1]
         },
         // 该配置同菜单配置项
         menuCfg:{

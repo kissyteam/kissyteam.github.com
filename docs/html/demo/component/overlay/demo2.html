@@ -94,7 +94,7 @@
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></li>
+<li><a class="reference internal" href="../../../api/component/overlay/dialog.html#overlay.Dialog" title="overlay.Dialog"><tt class="xref py py-class docutils literal"><span class="pre">Dialog</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -102,7 +102,18 @@
 <h2>Demo - 全新创建一个 Dialog<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>有时可能弹窗本身并没有在 html 中存在, 而是由脚本完全生成的, 这时就不需要 <tt class="xref py py-attr docutils literal"><span class="pre">srcNode</span></tt> 配置了, 直接配置相关属性后即可完全由脚本生成所需的 dom 节点.</p>
-<iframe width="100%" height="400" class="iframe-demo" src="../../../static/demo/overlay/demo2.html"></iframe><p><strong>调用JS</strong></p>
+<iframe width="100%" height="400" class="iframe-demo" src="../../../static/demo/overlay/demo2.html"></iframe><p><strong>设置初始样式</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="c">&lt;!--最好定义下，和 ie 下初始定位有关系--&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+    <span class="nc">.ks-dialog</span> <span class="p">{</span>
+        <span class="k">position</span><span class="o">:</span><span class="k">absolute</span><span class="p">;</span>
+        <span class="k">left</span><span class="o">:-</span><span class="m">9999px</span><span class="p">;</span>
+        <span class="k">top</span><span class="o">:-</span><span class="m">9999px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</pre></div>
+</div>
+<p><strong>调用JS</strong></p>
 <p>第一步, 生成 dialog 对象, 注意：要使得弹出对话框头部可拖动, 需要 <tt class="docutils literal"><span class="pre">use(&quot;dd&quot;)</span></tt> 使用拖放模块:</p>
 <div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
