@@ -18,29 +18,29 @@ Class
 Config Attributes
 -----------------------------------------------
 
-    * :data:`~node.config.content`
-    * :data:`~node.config.isLeaf`
-    * :data:`~node.config.expanded`
-    * :data:`~node.config.tooltip`
+    * :data:`~Node.config.content`
+    * :data:`~Node.config.isLeaf`
+    * :data:`~Node.config.expanded`
+    * :data:`~Node.config.tooltip`
         
 
 Properties
 ----------------------------------------------------
     
-    * :attr:`~node.prototype.content`
-    * :attr:`~node.prototype.expandIconEl`
-    * :attr:`~node.prototype.iconEl`
-    * :attr:`~node.prototype.selected`
-    * :attr:`~node.prototype.expanded`
-    * :attr:`~node.prototype.tooltip`
-    * :attr:`~node.prototype.tree`
-    * :attr:`~node.prototype.depth`
+    * :attr:`~Node.prototype.content`
+    * :attr:`~Node.prototype.expandIconEl`
+    * :attr:`~Node.prototype.iconEl`
+    * :attr:`~Node.prototype.selected`
+    * :attr:`~Node.prototype.expanded`
+    * :attr:`~Node.prototype.tooltip`
+    * :attr:`~Node.prototype.tree`
+    * :attr:`~Node.prototype.depth`
     
 Methods
 -----------------------------------------------
 
-    * :meth:`~node.prototype.expandAll`
-    * :meth:`~node.prototype.collapseAll`
+    * :meth:`~Node.prototype.expandAll`
+    * :meth:`~Node.prototype.collapseAll`
     
     
 Class Detail

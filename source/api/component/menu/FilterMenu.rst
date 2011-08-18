@@ -24,6 +24,7 @@ Methods
 -----------------------------------------------
 
     * :meth:`~FilterMenu.prototype.filterItems`
+    * :meth:`~FilterMenu.prototype.reset`
     
 
 Class Detail
@@ -65,4 +66,17 @@ Methods Detail
     | 根据 ``str`` 来过滤菜单项集合，用户输入变化时也会调用该函数.
     | 需要自定义过滤条件时，可重写实例上的该函数
     
-    :param String str: 过滤字符串           
+    :param String str: 过滤字符串  
+    
+    
+.. method:: FilterMenu.prototype.reset
+
+    | **reset ( )**
+    | 还原实例到初始状态            
+    
+    
+.. tip::
+
+    创建一个 FilterMenu 开销还是不小的，当需要创建新的对象时，你可以尽量重用实例对象，通过 :meth:`~component.ModelControl.prototype.addChild` , :meth:`~component.ModelControl.prototype.removeChild` ,
+     :meth:`~component.ModelControl.prototype.removeChildren` 适时修改其 children 即可.
+     需要注意的是重用原有 FilterMenu 实例的状态需要用 :meth:`~FilterMenu.prototype.reset` 还原      
