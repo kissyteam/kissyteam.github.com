@@ -98,7 +98,7 @@
 <dt id="dom.hasClass">
 <tt class="descclassname">dom.</tt><tt class="descname">hasClass</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.hasClass" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line">Boolean <strong>addClass</strong> ( selector , value )</div>
+<div class="line">Boolean <strong>hasClass</strong> ( selector , value )</div>
 <div class="line">判断符合选择器的所有元素中是否有某个元素含有特定 class.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -122,6 +122,15 @@
 </tr>
 </tbody>
 </table>
+<p>例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dom&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DOM</span><span class="p">){</span>
+        <span class="c1">// 如果id是 J_on 的元素包含 clickable 的样式则向下进行</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">hasClass</span><span class="p">(</span><span class="s2">&quot;#J_on&quot;</span><span class="p">,</span><span class="s2">&quot;clickable&quot;</span><span class="p">)){</span>
+                <span class="c1">//add your option</span>
+        <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
