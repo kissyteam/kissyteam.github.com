@@ -2,7 +2,7 @@
 
 Core
 =============================
-|  KISSY æ ¸å¿ƒ
+|  KISSY ºËĞÄ
 
 .. toctree::
    :titlesonly:
@@ -14,9 +14,9 @@ Core
 Demos
 -----------------------------------
 
-  * :ref:`Anim - åŸºæœ¬åŠ¨ç”»ç¤ºä¾‹ <Core-anim-demo1>`
-  * :ref:`Anim - æ»šåŠ¨å±æ€§åŠ¨ç”»å®ä¾‹ <Core-anim-demo2>`
-  * :ref:`Anim - èŠ‚ç‚¹å®ä¾‹åŠ¨ç”»æ“ä½œ <Core-anim-demo3>`
-  * :ref:`Anim - èŠ‚ç‚¹ä¸Šçš„ stop ç¤ºä¾‹ <Core-anim-demo4>`
+  * :ref:`Anim - »ù±¾¶¯»­Ê¾Àı <Core-anim-demo1>`
+  * :ref:`Anim - ¹ö¶¯ÊôĞÔ¶¯»­ÊµÀı <Core-anim-demo2>`
+  * :ref:`Anim - ½ÚµãÊµÀı¶¯»­²Ù×÷ <Core-anim-demo3>`
+  * :ref:`Anim - ½ÚµãÉÏµÄ stop Ê¾Àı <Core-anim-demo4>`
 
 

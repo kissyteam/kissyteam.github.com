@@ -1,4 +1,4 @@
-ï»¿.. currentmodule:: dom
+.. currentmodule:: dom
 
 html
 =================================
@@ -15,28 +15,28 @@ Methods
 .. function:: html
 
     | String **html** ( selector )
-    | è·å–ç¬¦åˆé€‰æ‹©å™¨çš„ç¬¬ä¸€ä¸ªå…ƒç´ çš„ innerHTML.
+    | »ñÈ¡·ûºÏÑ¡ÔñÆ÷µÄµÚÒ»¸öÔªËØµÄ innerHTML.
     
-    :param string|HTMLCollection|Array<HTMLElement> selector: å­—ç¬¦ä¸²æ ¼å¼å‚è§ :ref:`KISSY selector <dom-selector>`
-    :returns: ç¬¦åˆé€‰æ‹©å™¨çš„ç¬¬ä¸€ä¸ªå…ƒç´ çš„ innerHTML.
+    :param string|HTMLCollection|Array<HTMLElement> selector: ×Ö·û´®¸ñÊ½²Î¼û :ref:`KISSY selector <dom-selector>`
+    :returns: ·ûºÏÑ¡ÔñÆ÷µÄµÚÒ»¸öÔªËØµÄ innerHTML.
     :rtype: String
 
 
     | void **html** ( selector , html[ , loadScripts , callback ] )
-    | ç»™ç¬¦åˆé€‰æ‹©å™¨çš„æ‰€æœ‰å…ƒç´ è®¾ç½® innerHTML å€¼.
+    | ¸ø·ûºÏÑ¡ÔñÆ÷µÄËùÓĞÔªËØÉèÖÃ innerHTML Öµ.
     
-    :param string|HTMLCollection|Array<HTMLElement> selector: å­—ç¬¦ä¸²æ ¼å¼å‚è§ :ref:`KISSY selector <dom-selector>`
-    :param string html: å°†è¦è®¾ç½®çš„ html å€¼
-    :param boolean loadScripts: æ˜¯å¦æ‰§è¡Œ html ä¸­çš„å†…åµŒè„šæœ¬
-    :param function callback: æ“ä½œæˆåŠŸåçš„å›è°ƒå‡½æ•°
+    :param string|HTMLCollection|Array<HTMLElement> selector: ×Ö·û´®¸ñÊ½²Î¼û :ref:`KISSY selector <dom-selector>`
+    :param string html: ½«ÒªÉèÖÃµÄ html Öµ
+    :param boolean loadScripts: ÊÇ·ñÖ´ĞĞ html ÖĞµÄÄÚÇ¶½Å±¾
+    :param function callback: ²Ù×÷³É¹¦ºóµÄ»Øµ÷º¯Êı
 	
-    ä¸¾ä¾‹
+    ¾ÙÀı
 	
 	.. code-block:: javascript
 	
 	    var S = KISSY, DOM = S.DOM;
 
-	    // ç­‰ä»· document.createElement('div')
+	    // µÈ¼Û document.createElement('div')
 	    DOM.create('<div id="J_check"></div>');
 	    DOM.html("#J_check","<h3>This is the added part</h3>");
 	    DOM.html("#J_check"); // => <h3>This is the added part</h3>

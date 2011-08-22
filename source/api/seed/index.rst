@@ -1,4 +1,4 @@
-.. module:: seed
+﻿.. module:: seed
 
 .. _Seed:
 

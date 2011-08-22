@@ -1,4 +1,4 @@
-.. module:: datalazyload
+﻿.. module:: datalazyload
 
 
 DataLazyload

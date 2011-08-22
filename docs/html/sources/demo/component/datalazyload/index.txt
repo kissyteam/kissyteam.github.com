@@ -1,4 +1,4 @@
-.. currentmodule:: datalazyload
+﻿.. currentmodule:: datalazyload
 
 DataLazyload Demos
 ===============================

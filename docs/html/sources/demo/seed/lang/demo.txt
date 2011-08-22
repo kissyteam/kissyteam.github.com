@@ -1,4 +1,4 @@
-.. py:currentmodule:: Anim
+﻿.. py:currentmodule:: Anim
 
 .. _seed-lang:
 
