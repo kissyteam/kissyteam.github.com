@@ -10,6 +10,7 @@ Seed
    :hidden:
 
    loader/index
+   lang/demo
 
 
 Demos
@@ -17,3 +18,4 @@ Demos
 
   * :ref:`Loader - 1.1.x 的 Loader 使用示例 <Seed-loader-demo1>`
   * :ref:`Loader - 1.2 的 Loader 使用示例 <Seed-loader-demo2>`
+  * :ref:`lang - 1.2 的 lang 使用示例 <Seed-lang>`

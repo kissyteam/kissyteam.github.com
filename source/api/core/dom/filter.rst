@@ -26,3 +26,12 @@ Methods
     :param string|HTMLElement context: 选择器参考上下文,  ``#id`` 或者 dom 节点.
     :returns: 符合选择器字符串以及过滤参数的 dom 节点数组
     :rtype: Array<HTMLElement>
+	
+    例如
+
+    .. code-block:: javascript
+	
+		KISSY.use("dom",function(S,DOM){
+			// 过滤出 class 为 J_on 的 a 元素
+			var els=DOM.filter("a",".J_on");
+		});

@@ -1,5 +1,8 @@
 ﻿.. currentmodule:: event
 
+.. _event-delegate:
+
+
 delegate
 =================================
 

@@ -25,6 +25,8 @@ Methods
     :param object scope: 回调函数的 this 值. 如果不指定默认为绑定事件的当前元素
 
 
+    详细使用方法请参看 :ref:`delegate <event-delegate>`
+
     .. note::
 
         和 :func:`Event.detach` 一样, 如果移除特定的委托事件处理器必须保证参数和调用 delegate 时保持一致.

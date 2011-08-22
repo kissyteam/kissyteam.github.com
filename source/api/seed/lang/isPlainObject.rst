@@ -27,3 +27,5 @@ Methods
         S.isPlainObject({}); // => true
         S.isPlainObject(new Date()); // => false
         S.isPlainObject(document.body); // => false   
+		
+    DEMO请参见 :ref:`KISSY seed-lang <seed-lang>`

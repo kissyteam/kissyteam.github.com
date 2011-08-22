@@ -23,4 +23,15 @@ Methods
     :param string attrname: 属性名称
     :returns: 符合选择器的所有元素中是否有某个元素含有特定属性.
     :rtype: Boolean
-        
+    
+
+    例如
+
+    .. code-block:: javascript
+	
+		KISSY.use("dom",function(S,DOM){
+			// 如果有 lazyloadimg 样式的元素包含 alt 属性则向下进行
+			if(DOM.hasAttr(".lazyloadimg","alt")){
+				//add your option
+			}
+		});    

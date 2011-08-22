@@ -14,7 +14,7 @@ Methods
 
 .. function:: KISSY.globalEval
 
-    | void **KISSY.global** (code)
+    | void **KISSY.globalEval** (code)
     | 在全局作用域下执行代码字符串, 避免 ``eval`` 的作用域链
 
     :param string code: 代码字符串

@@ -27,3 +27,5 @@ Methods
         S.isEmptyObject({}); // => true
         S.isEmptyObject([]); // => true
         S.isEmptyObject({ a: 'a' }); // => false
+	
+    DEMO请参见 :ref:`KISSY seed-lang <seed-lang>`

@@ -22,3 +22,5 @@ Methods
     .. note::
 
         ``NaN`` 和 ``Infinity`` 也返回 true    
+		
+    DEMO请参见 :ref:`KISSY seed-lang <seed-lang>`

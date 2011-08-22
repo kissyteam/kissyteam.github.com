@@ -35,7 +35,7 @@ bind 最简单的用法是生成一个新的函数，无论它如何调用，都
 然后在后面的调用中期望这个方法的this就是原来的对象(eg.g 把这个方法用在某个回调中). 如果没有特例，那么这个原始对象就丢失了. 
 但是如果从原方法中得到一个绑定原始对象的函数，这个问题就解决了！
 
-.. code-block:: html
+.. code-block:: javascript
 
     var x = 9; 
     var module = {
@@ -60,7 +60,7 @@ Currying
 当绑定函数调用目标函数时会把它们放在参数列表开头，然后才是传递给绑定函数的用户参数.
 
 
-.. code-block:: html
+.. code-block:: javascript
 
     function list() {
       return Array.prototype.slice.call(arguments);

@@ -29,3 +29,14 @@ Methods
     :param string html: 将要设置的 html 值
     :param boolean loadScripts: 是否执行 html 中的内嵌脚本
     :param function callback: 操作成功后的回调函数
+	
+    举例
+	
+	.. code-block:: javascript
+	
+	    var S = KISSY, DOM = S.DOM;
+
+	    // 等价 document.createElement('div')
+	    DOM.create('<div id="J_check"></div>');
+	    DOM.html("#J_check","<h3>This is the added part</h3>");
+	    DOM.html("#J_check"); // => <h3>This is the added part</h3>
