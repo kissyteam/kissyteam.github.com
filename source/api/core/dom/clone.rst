@@ -26,6 +26,10 @@ Methods
     :returns: 符合选择器的第一个元素的克隆元素.
     :rtype: HTMLElement
 
+.. note::
+
+    普通对象和普通数组请用 :func:`KISSY.clone <seed.KISSY.clone>`
+
 ``clone`` 方法可以进行深度复制，当配合插入方法时，可以方便得复制页面中的元素.
 
 .. code-block:: html
