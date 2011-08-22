@@ -1,4 +1,4 @@
-.. module:: attribute
+.. module:: base
 
 Base
 ===============================

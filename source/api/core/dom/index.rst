@@ -24,6 +24,7 @@ Methods
    get
    filter
    test
+   clone
    hasClass
    addClass
    removeClass

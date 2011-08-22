@@ -1,4 +1,4 @@
-.. module:: attribute
+.. module:: base
 
 Attribute
 ===============================
@@ -9,7 +9,7 @@ Attribute
 Module
 -----------------------------------------------
 
-  :mod:`attribute`
+  :mod:`base`
 
 Methods
 -----------------------------------------------
