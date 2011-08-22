@@ -134,20 +134,20 @@
 <p>bind 最简单的用法是生成一个新的函数，无论它如何调用，都运行在一个固定的 this 值中.入门者常犯的错误时从一个对象获得一个方法引用，
 然后在后面的调用中期望这个方法的this就是原来的对象(eg.g 把这个方法用在某个回调中). 如果没有特例，那么这个原始对象就丢失了.
 但是如果从原方法中得到一个绑定原始对象的函数，这个问题就解决了！</p>
-<div class="highlight-html"><div class="highlight"><pre>var x = 9;
-var module = {
-  x: 81,
-  getX: function() { return this.x; }
-};
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">module</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">x</span><span class="o">:</span> <span class="mi">81</span><span class="p">,</span>
+  <span class="nx">getX</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
 
-module.getX(); // 81
+<span class="nx">module</span><span class="p">.</span><span class="nx">getX</span><span class="p">();</span> <span class="c1">// 81</span>
 
-var getX = module.getX;
-getX(); // 9, because in this case, &quot;this&quot; refers to the global object
+<span class="kd">var</span> <span class="nx">getX</span> <span class="o">=</span> <span class="nx">module</span><span class="p">.</span><span class="nx">getX</span><span class="p">;</span>
+<span class="nx">getX</span><span class="p">();</span> <span class="c1">// 9, because in this case, &quot;this&quot; refers to the global object</span>
 
-// create a new function with &#39;this&#39; bound to module
-var boundGetX = KISSY.bind(getX,module);
-boundGetX(); // 81
+<span class="c1">// create a new function with &#39;this&#39; bound to module</span>
+<span class="kd">var</span> <span class="nx">boundGetX</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">getX</span><span class="p">,</span><span class="nx">module</span><span class="p">);</span>
+<span class="nx">boundGetX</span><span class="p">();</span> <span class="c1">// 81</span>
 </pre></div>
 </div>
 </div>
@@ -155,17 +155,17 @@ boundGetX(); // 81
 <h3>Currying<a class="headerlink" href="#currying" title="Permalink to this headline">¶</a></h3>
 <p><tt class="docutils literal"><span class="pre">bind</span></tt> 的下一个简单用法是产生一个具备默认参数的函数. 这些参数跟在 context 后面，无论何时调用绑定函数，
 当绑定函数调用目标函数时会把它们放在参数列表开头，然后才是传递给绑定函数的用户参数.</p>
-<div class="highlight-html"><div class="highlight"><pre>function list() {
-  return Array.prototype.slice.call(arguments);
-}
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">list</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+<span class="p">}</span>
 
-var list1 = list(1, 2, 3); // [1, 2, 3]
+<span class="kd">var</span> <span class="nx">list1</span> <span class="o">=</span> <span class="nx">list</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// [1, 2, 3]</span>
 
-//  Create a function with a preset leading argument
-var leadingZeroList = KISSY.bind(list,undefined, 37);
+<span class="c1">//  Create a function with a preset leading argument</span>
+<span class="kd">var</span> <span class="nx">leadingZeroList</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">list</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span> <span class="mi">37</span><span class="p">);</span>
 
-var list2 = leadingZeroList(); // [37]
-var list3 = leadingZeroList(1, 2, 3); // [37, 1, 2, 3]
+<span class="kd">var</span> <span class="nx">list2</span> <span class="o">=</span> <span class="nx">leadingZeroList</span><span class="p">();</span> <span class="c1">// [37]</span>
+<span class="kd">var</span> <span class="nx">list3</span> <span class="o">=</span> <span class="nx">leadingZeroList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// [37, 1, 2, 3]</span>
 </pre></div>
 </div>
 </div>
