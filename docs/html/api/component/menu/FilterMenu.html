@@ -115,6 +115,7 @@
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference internal" href="#menu.FilterMenu.prototype.filterItems" title="menu.FilterMenu.prototype.filterItems"><tt class="xref py py-meth docutils literal"><span class="pre">filterItems()</span></tt></a></li>
+<li><a class="reference internal" href="#menu.FilterMenu.prototype.reset" title="menu.FilterMenu.prototype.reset"><tt class="xref py py-meth docutils literal"><span class="pre">reset()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -180,6 +181,23 @@
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="menu.FilterMenu.prototype.reset">
+<tt class="descclassname">FilterMenu.prototype.</tt><tt class="descname">reset</tt><big>(</big><big>)</big><a class="headerlink" href="#menu.FilterMenu.prototype.reset" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>reset ( )</strong></div>
+<div class="line">还原实例到初始状态</div>
+</div>
+</dd></dl>
+
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>创建一个 FilterMenu 开销还是不小的，当需要创建新的对象时，你可以尽量重用实例对象，通过 <a class="reference internal" href="../component/ModelControl.html#component.ModelControl.prototype.addChild" title="component.ModelControl.prototype.addChild"><tt class="xref py py-meth docutils literal"><span class="pre">addChild()</span></tt></a> , <a class="reference internal" href="../component/ModelControl.html#component.ModelControl.prototype.removeChild" title="component.ModelControl.prototype.removeChild"><tt class="xref py py-meth docutils literal"><span class="pre">removeChild()</span></tt></a> ,</dt>
+<dd><a class="reference internal" href="../component/ModelControl.html#component.ModelControl.prototype.removeChildren" title="component.ModelControl.prototype.removeChildren"><tt class="xref py py-meth docutils literal"><span class="pre">removeChildren()</span></tt></a> 适时修改其 children 即可.
+需要注意的是重用原有 FilterMenu 实例的状态需要用 <a class="reference internal" href="#menu.FilterMenu.prototype.reset" title="menu.FilterMenu.prototype.reset"><tt class="xref py py-meth docutils literal"><span class="pre">reset()</span></tt></a> 还原</dd>
+</dl>
+</div>
 </div>
 </div>
 
@@ -289,6 +307,7 @@
         <li><a href="index.html">menu</a></li>
         <li><a href="../menubutton/index.html">menubutton</a></li>
         <li><a href="../tree/index.html">tree</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
     </ul>
 </ul>
         

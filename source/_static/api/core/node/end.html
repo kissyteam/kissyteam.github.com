@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            border:1px solid black;
+            width:100px;
+            margin:10px;
+        }
+    </style>
+    <script>
+        if(location.host=="localhost"){
+            document.writeln('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+        }else{
+            document.writeln('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+        }
+    </script>
+</head>
+<body>
+
+<div class='d1'>
+    d1
+</div>
+
+<div class='d2'>
+    d2
+</div>
+
+<script>
+    KISSY.ready(function(S){
+        var $=S.all;
+        $("body").all(".d1").css("color","red").end().all(".d2").css("color","green");;
+    });
+</script>
+
+</body>
+</html>  

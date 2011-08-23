@@ -1,0 +1,373 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>io.serialize &mdash; KISSY Docs valpha documentation</title>
+
+<link rel="stylesheet" href="../../../static/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="../../../static/favicon.ico"/>
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'alpha',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script>
+    <script type="text/javascript" src="../../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../../static/doctools.js"></script> 
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../../../static/logo.png"/></a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+
+    <ul class="navigation">
+        <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <!--<li><a href="mailto:all@kissyui.com">论坛</a></li>-->
+        <li><a href="http://www.github.com/kissyteam">源码</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../cookie/index.html" title="cookie"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="upload.html" title="io.upload"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">ajax</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<div class="section" id="io-serialize">
+<h1>io.serialize<a class="headerlink" href="#io-serialize" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="index.html#module-io" title="io"><tt class="xref py py-mod docutils literal"><span class="pre">io</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="method">
+<h2>Method<a class="headerlink" href="#method" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="io.serialize">
+<tt class="descclassname">io.</tt><tt class="descname">serialize</tt><big>(</big><big>)</big><a class="headerlink" href="#io.serialize" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">string <strong>serialize</strong> ( elements )</div>
+<div class="line">序列化一系列表单元素为可提交的字符串</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>elements</strong> (<em>string|Array&lt;HTMLElement&gt;|HTMLElement|KISSY.NodeList</em>) &#8211; 代表表单元素（input form select ...）的集合，参数格式同 <a class="reference internal" href="../dom/query.html#dom.query" title="dom.query"><tt class="xref py py-func docutils literal"><span class="pre">query()</span></tt></a></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">序列化后的字符串</td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">是否真的要使用该方法？ <tt class="docutils literal"><span class="pre">ajax</span></tt> 提交的话可以直接设置 <a class="reference internal" href="io.html#io.cfg.form" title="io.cfg.form"><tt class="xref py py-data docutils literal"><span class="pre">form</span></tt></a> 参数</p>
+</div>
+<p>该方法返回一个将表单元素 url 编码过的字符串，表单元素通常包括 &lt;input&gt; &lt;textarea&gt; &lt;select&gt; ，或者直接对整个 &lt;form&gt; 元素的所有表单子孙元素进行序列化</p>
+<div class="line-block">
+<div class="line">例如以下 html :</div>
+</div>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&#39;f&#39;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;a&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">id=</span><span class="s">&quot;a&quot;</span> <span class="nt">/&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;b&quot;</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span> <span class="na">id=</span><span class="s">&quot;b&quot;</span> <span class="nt">/&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;c&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span> <span class="na">id=</span><span class="s">&quot;c&quot;</span> <span class="nt">/&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">&quot;d&quot;</span> <span class="na">rows=</span><span class="s">&quot;8&quot;</span> <span class="na">cols=</span><span class="s">&quot;40&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/textarea&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;&lt;select</span> <span class="na">name=</span><span class="s">&quot;e&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;5&quot;</span> <span class="na">selected=</span><span class="s">&quot;selected&quot;</span><span class="nt">&gt;</span>5<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;6&quot;</span><span class="nt">&gt;</span>6<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>7<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;/select&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;f&quot;</span> <span class="na">value=</span><span class="s">&quot;8&quot;</span> <span class="na">id=</span><span class="s">&quot;f&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">name=</span><span class="s">&quot;g&quot;</span> <span class="na">value=</span><span class="s">&quot;Submit&quot;</span> <span class="na">id=</span><span class="s">&quot;g&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+</div>
+<p>运行</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(</span><span class="s2">&quot;#f&quot;</span><span class="p">));</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>可得到如下字符串:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">a</span><span class="o">=</span><span class="mi">1</span><span class="o">&amp;</span><span class="nx">b</span><span class="o">=</span><span class="mi">2</span><span class="o">&amp;</span><span class="nx">c</span><span class="o">=</span><span class="mi">3</span><span class="o">&amp;</span><span class="nx">d</span><span class="o">=</span><span class="mi">4</span><span class="o">&amp;</span><span class="nx">e</span><span class="o">=</span><span class="mi">5</span>
+</pre></div>
+</div>
+<p>也可以只序列化一部分</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;#f&quot;</span><span class="p">).</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)));</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>可得到如下字符串:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">a</span><span class="o">=</span><span class="mi">1</span><span class="o">&amp;</span><span class="nx">b</span><span class="o">=</span><span class="mi">2</span><span class="o">&amp;</span><span class="nx">c</span><span class="o">=</span><span class="mi">3</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ol class="last arabic simple">
+<li>该方法不会自动去重，重复的元素会产生具有重复部分的产生串</li>
+<li>只有 <a class="reference external" href="http://www.w3.org/TR/html401/interact/forms.html#h-17.13.2">successful controls</a> 会被序列化为字符串. 因为表单不是用提交按钮提交的，那么提交按钮不会被序列化。只有具备 <tt class="docutils literal"><span class="pre">name</span></tt> 属性的元素才可能被序列化。文件上传元素不会被序列化</li>
+</ol>
+</div>
+</div>
+<div class="section" id="demo">
+<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>实时动态序列化整个 form</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;style&gt;</span>
+        <span class="nt">button</span> <span class="p">{</span> <span class="k">margin</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span> <span class="p">}</span>
+        <span class="nt">div</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span><span class="nb">blue</span><span class="p">;</span> <span class="k">font-weight</span><span class="o">:</span><span class="k">bold</span><span class="p">;</span> <span class="p">}</span>
+        <span class="nt">span</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span><span class="nb">red</span><span class="p">;</span> <span class="p">}</span>
+    <span class="nt">&lt;/style&gt;</span>
+
+    <span class="nt">&lt;script&gt;</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">==</span><span class="s2">&quot;localhost&quot;</span><span class="p">){</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://localhost/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://yiminghe.github.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+   <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+ <span class="nt">&lt;form&gt;</span>
+    <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">&quot;single&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;option&gt;</span>Single<span class="nt">&lt;/option&gt;</span>
+      <span class="nt">&lt;option&gt;</span>Single2<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;/select&gt;</span>
+
+<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">&quot;multiple&quot;</span> <span class="na">multiple=</span><span class="s">&quot;multiple&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;option</span> <span class="na">selected=</span><span class="s">&quot;selected&quot;</span><span class="nt">&gt;</span>Multiple<span class="nt">&lt;/option&gt;</span>
+      <span class="nt">&lt;option&gt;</span>Multiple2<span class="nt">&lt;/option&gt;</span>
+
+      <span class="nt">&lt;option</span> <span class="na">selected=</span><span class="s">&quot;selected&quot;</span><span class="nt">&gt;</span>Multiple3<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;/select&gt;</span>
+<span class="nt">&lt;br/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;check&quot;</span> <span class="na">value=</span><span class="s">&quot;check1&quot;</span> <span class="na">id=</span><span class="s">&quot;ch1&quot;</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;ch1&quot;</span><span class="nt">&gt;</span>check1<span class="nt">&lt;/label&gt;</span>
+
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;check&quot;</span> <span class="na">value=</span><span class="s">&quot;check2&quot;</span> <span class="na">checked=</span><span class="s">&quot;checked&quot;</span> <span class="na">id=</span><span class="s">&quot;ch2&quot;</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;ch2&quot;</span><span class="nt">&gt;</span>check2<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;radio&quot;</span> <span class="na">value=</span><span class="s">&quot;radio1&quot;</span> <span class="na">checked=</span><span class="s">&quot;checked&quot;</span> <span class="na">id=</span><span class="s">&quot;r1&quot;</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;r1&quot;</span><span class="nt">&gt;</span>radio1<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;radio&quot;</span> <span class="na">value=</span><span class="s">&quot;radio2&quot;</span> <span class="na">id=</span><span class="s">&quot;r2&quot;</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;r2&quot;</span><span class="nt">&gt;</span>radio2<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/form&gt;</span>
+  <span class="nt">&lt;p&gt;&lt;tt</span> <span class="na">id=</span><span class="s">&quot;results&quot;</span><span class="nt">&gt;&lt;/tt&gt;&lt;/p&gt;</span>
+
+
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">,</span><span class="nx">form</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;form&quot;</span><span class="p">);</span>        
+        <span class="kd">function</span> <span class="nx">showValues</span><span class="p">()</span> <span class="p">{</span>
+          <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(</span><span class="nx">form</span><span class="p">);</span>
+          <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#results&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="nx">showValues</span><span class="p">);</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;select,input&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;change&quot;</span><span class="p">,</span><span class="nx">showValues</span><span class="p">);</span>
+        <span class="nx">showValues</span><span class="p">();</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<iframe width="100%" height="200" src="../../../static/api/core/ajax/serialize.html"></iframe></div></blockquote>
+</div>
+</div>
+
+
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            KISSY.one("#openComment").attr("disabled",true);
+        }else{
+            KISSY.one("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            KISSY.one("#openComment").on("change",function(){
+                window.localStorage.setItem("kissy-commment",KISSY.one("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/loader/index.html">loader</a></li>
+        <li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/lang/index.html">lang</a></li>
+        <li><a href="../../seed/web/index.html">web</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="../ua/index.html">ua</a></li>
+        <li><a href="../dom/index.html">dom</a></li>
+        <li><a href="../event/index.html">event</a></li>
+        <li><a href="../node/index.html">node</a></li>
+        <li><a href="../json/index.html">json</a></li>
+        <li><a href="index.html">ajax</a></li>
+        <li><a href="../cookie/index.html">cookie</a></li>
+        <li><a href="../base/index.html">base</a></li>
+        <li><a href="../anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../../component/template/index.html">template</a></li>
+        <li><a href="../../component/datalazyload/index.html">datalazyload</a></li>
+        <li><a href="../../component/flash/index.html">flash</a></li>
+        <li><a href="../../component/dd/index.html">dd</a></li>
+        <li><a href="../../component/switchable/index.html">switchable</a></li>
+        <li><a href="../../component/suggest/index.html">suggest</a></li>
+        <li><a href="../../component/calendar/index.html">calendar</a></li>
+        <li><a href="../../component/imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../../component/overlay/index.html">overlay</a></li>
+        <li><a href="../../component/uibase/index.html">uibase</a></li>
+        <li><a href="../../component/component/index.html">component</a></li>
+        <li><a href="../../component/button/index.html">button</a></li>
+        <li><a href="../../component/menu/index.html">menu</a></li>
+        <li><a href="../../component/menubutton/index.html">menubutton</a></li>
+        <li><a href="../../component/tree/index.html">tree</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

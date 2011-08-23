@@ -191,6 +191,19 @@
 </table>
 </dd></dl>
 
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>默认情况下，双击树节点的文字部分或单击扩展图标才会展开收缩其子节点，
+如果你需要改变为：单击树节点的文字部分也展开收缩其子节点，可以监控 <a class="reference internal" href="#tree.Tree.click" title="tree.Tree.click"><tt class="xref py py-func docutils literal"><span class="pre">click()</span></tt></a> 事件</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">tree</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;children&quot;</span><span class="p">).</span><span class="nx">length</span><span class="p">){</span>
+        <span class="nx">node</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;expanded&quot;</span><span class="p">,</span><span class="o">!</span><span class="nx">node</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;expanded&quot;</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -300,6 +313,7 @@
         <li><a href="../menu/index.html">menu</a></li>
         <li><a href="../menubutton/index.html">menubutton</a></li>
         <li><a href="index.html">tree</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
     </ul>
 </ul>
         

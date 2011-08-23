@@ -101,11 +101,32 @@
 <div class="section" id="id2">
 <h2>Demo - DataLazyload 手动模式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>采用手动模式时, 需要自行在输出页面时, 可以不设置 img 的 src 属性, 但是必须设置 img 的 <tt class="docutils literal"><span class="pre">data-ks-lazyload</span></tt> 自定义属性为真实图片地址,  如:</p>
+<div><iframe width="100%" height="250" class="iframe-demo" src="../../../static/demo/datalazyload/manual_demo.html"></iframe><p>页面加载的时候采用了懒加载，向下滚动的时候才会加载后面的图片，网速快的时候不很明显，网速慢的时候就会显示出懒加载的优点。你可以使用firefox或者ie开发工具中的网络工具查看懒加载过程。</p>
+<p><strong>载入1.2的 kissy</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/kissy-min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p><strong>使用DataLazyload</strong></p>
+<div class="highlight-js"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;datalazyload&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">DataLazyload</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">S</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">dataLazyload</span><span class="o">=</span> <span class="nx">DataLazyload</span><span class="p">();</span>
+        <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><strong>注意事项</strong></p>
+<blockquote>
+<div>采用手动模式时, 需要自行在输出页面时, 可以不设置 img 的 src 属性, 但是必须设置 img 的 <tt class="docutils literal"><span class="pre">data-ks-lazyload</span></tt> 自定义属性为真实图片地址,当滚动导致该图片出现在当前视窗时会将 src 设置为真实地址,  如:</div></blockquote>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;img</span> <span class="na">data-ks-lazyload=</span><span class="s">&quot;xx.jpg&quot;</span> <span class="nt">/&gt;</span>
 </pre></div>
 </div>
-<p>当滚动导致该图片出现在当前视窗时会将 src 设置为真实地址.</p>
+<p><strong>使用回调函数</strong></p>
+<p>使用回调函数 addCallback() 方法可以让我们定义的部分将要显示的时候出发函数，执行我们的代码,如：</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="nx">dataLazyload</span><span class="p">.</span><span class="nx">addCallback</span><span class="p">(</span><span class="s1">&#39;#test-callback&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;#test-callback will come!&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
 </div></blockquote>
 </div>
 </div>
@@ -207,13 +228,14 @@
         <li><a href="../dd/index.html">dd</a></li>
         <li><a href="../switchable/index.html">switchable</a></li>
         <li><a href="../suggest/index.html">suggest</a></li>
-        <!--<li><a href="../calendar/index.html">calendar</a></li>
-        <li><a href="../imagezoom/index.html">imagezoom</a></li>-->
+        <!--<li><a href="../calendar/index.html">calendar</a></li>-->
+        <li><a href="../imagezoom/index.html">imagezoom</a></li>
         <li><a href="../overlay/index.html">overlay</a></li>
         <li><a href="../button/index.html">button</a></li>
         <li><a href="../menu/index.html">menu</a></li>
         <li><a href="../menubutton/index.html">menubutton</a></li>
         <li><a href="../tree/index.html">tree</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
     </ul>
 </ul>
         

@@ -98,7 +98,7 @@
 <dt id="seed.KISSY.mix">
 <tt class="descclassname">KISSY.</tt><tt class="descname">mix</tt><big>(</big><big>)</big><a class="headerlink" href="#seed.KISSY.mix" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line">Object <strong>KISSY.mix</strong> (receiver,supplier[,overwrite = true,whitelist])</div>
+<div class="line">Object <strong>KISSY.mix</strong> (receiver , supplier [ , overwrite = true , whitelist , deep ])</div>
 <div class="line">将 supplier 对象的成员复制到 receiver 对象上.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -110,6 +110,9 @@
 <li><strong>supplier</strong> (<em>object</em>) &#8211; 属性来源对象.</li>
 <li><strong>overwrite</strong> (<em>boolean</em>) &#8211; 是否覆盖接受者同名属性.</li>
 <li><strong>whitelist</strong> (<em>Array&lt;string&gt;</em>) &#8211; 属性来源对象的属性白名单, 仅在名单中的属性进行复制.</li>
+<li><strong>deep</strong> (<em>boolean</em>) &#8211; <p class="versionadded">
+<span class="versionmodified">New in version 1.2: </span>是否进行深度 mix (deep copy)</p>
+</li>
 </ul>
 </td>
 </tr>
@@ -121,8 +124,24 @@
 </tr>
 </tbody>
 </table>
-<p>例如：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><tt class="docutils literal"><span class="pre">reveiver</span></tt> 会被改变，如果想要保留原始的 <tt class="docutils literal"><span class="pre">reveiver</span></tt> ，可以使用 <a class="reference internal" href="merge.html#seed.KISSY.merge" title="seed.KISSY.merge"><tt class="xref py py-func docutils literal"><span class="pre">KISSY.merge()</span></tt></a></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">object</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">merge</span><span class="p">(</span><span class="nx">object1</span><span class="p">,</span><span class="nx">object2</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<p><tt class="docutils literal"><span class="pre">S.mix</span></tt> 默认不是递归进行的. 如果其中一个属性为对象或者数组，那么他将会被接下来对象的同名属性对应的值所代替，即值不会被合并。
+如果设置了参数 <tt class="docutils literal"><span class="pre">deep</span> <span class="pre">=</span> <span class="pre">true</span></tt> ，那么会对数组和简单对象( <a class="reference internal" href="../lang/isPlainObject.html#seed.KISSY.isPlainObject" title="seed.KISSY.isPlainObject"><tt class="xref py py-func docutils literal"><span class="pre">KISSY.isPlainObject()</span></tt></a> )递归合并.</p>
+<p><tt class="docutils literal"><span class="pre">supplier</span> <span class="pre">undefined</span></tt> 的属性值不会被复制，不过对象从原型继承下来下的值则会被复制.</p>
+</div>
+<div class="section" id="id1">
+<h2>示例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p><strong>简单 mix</strong></p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span>
 <span class="nx">r</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">a</span><span class="o">:</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span> <span class="s1">&#39;b&#39;</span> <span class="p">};</span>
 
 <span class="nx">S</span><span class="p">.</span><span class="nx">mix</span><span class="p">(</span><span class="nx">r</span><span class="p">,</span> <span class="p">{</span> <span class="nx">c</span><span class="o">:</span> <span class="s1">&#39;c&#39;</span> <span class="p">});</span>
@@ -136,10 +155,41 @@
 <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">f</span><span class="p">);</span> <span class="c1">// =&gt; &#39;f&#39;</span>
 </pre></div>
 </div>
+</div></blockquote>
+<p><strong>深度 mix</strong></p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">object1</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">apple</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="nx">banana</span><span class="o">:</span> <span class="p">{</span><span class="nx">weight</span><span class="o">:</span> <span class="mi">52</span><span class="p">,</span> <span class="nx">price</span><span class="o">:</span> <span class="mi">100</span><span class="p">},</span>
+  <span class="nx">cherry</span><span class="o">:</span> <span class="mi">97</span>
+<span class="p">};</span>
+<span class="kd">var</span> <span class="nx">object2</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">banana</span><span class="o">:</span> <span class="p">{</span><span class="nx">price</span><span class="o">:</span> <span class="mi">200</span><span class="p">},</span>
+  <span class="nx">durian</span><span class="o">:</span> <span class="mi">100</span>
+<span class="p">};</span>
+
+<span class="cm">/* merge object2 into object1, recursively */</span>
+<span class="nx">S</span><span class="p">.</span><span class="nx">mix</span><span class="p">(</span><span class="nx">object1</span><span class="p">,</span><span class="nx">object2</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">undefined</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+
+<span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object1</span><span class="p">);</span> <span class="c1">// =&gt; { apple: 0, banana: { weight: 52, price: 200 }, cherry: 97, durian: 100 }</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>默认选项机制</strong></p>
+<p>常用于组件配置，不过推荐用 <a class="reference internal" href="../../core/base/index.html#module-base" title="base"><tt class="xref py py-mod docutils literal"><span class="pre">base</span></tt></a> 替代</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">defaults</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">validate</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">limit</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;foo&quot;</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">validate</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;bar&quot;</span> <span class="p">};</span>
+
+<span class="cm">/* merge defaults and options, without modifying defaults */</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">merge</span><span class="p">(</span><span class="nx">defaults</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+
+<span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">settings</span><span class="p">);</span> <span class="c1">// =&gt; { validate: true, limit: 5, name: bar }</span>
+</pre></div>
+</div>
+</div></blockquote>
 <p>该方法在 KISSY 里具有非常重要的地位.
 JavaScript 是一门动态语言, 利用 mixin 特性, 可以很方便的实现特性的静态复制和动态修改.</p>
-</dd></dl>
-
 </div>
 </div>
 
@@ -249,6 +299,7 @@ JavaScript 是一门动态语言, 利用 mixin 特性, 可以很方便的实现�
         <li><a href="../../component/menu/index.html">menu</a></li>
         <li><a href="../../component/menubutton/index.html">menubutton</a></li>
         <li><a href="../../component/tree/index.html">tree</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
     </ul>
 </ul>
         
