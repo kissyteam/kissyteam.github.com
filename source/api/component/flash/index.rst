@@ -17,7 +17,7 @@ Module
   :mod:`flash`
 
 
-Methods
+Content
 -----------------------------------------------
 
 .. toctree::
@@ -27,6 +27,6 @@ Methods
    flash-ua.rst
    flash-embed.rst
    practice/index.rst
-   
+
 
 

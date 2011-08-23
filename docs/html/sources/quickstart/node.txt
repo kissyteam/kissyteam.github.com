@@ -13,8 +13,9 @@ KISSY 也提供了这种链式风格的支持.
 -------------------
 
 KISSY 提供两种使用方式:
- #. :func:`S.one <node.NodeList.one>`  -  根据 css selector, 返回  :class:`~node.NodeList` 对象;
- #. :func:`S.all <node.NodeList.all>`  -  根据 css selector, 返回 :class:`~node.NodeList` 对象;
+
+#. :func:`S.one <node.NodeList.one>`  -  根据 css selector, 返回  :class:`~node.NodeList` 对象;
+#. :func:`S.all <node.NodeList.all>`  -  根据 css selector, 返回 :class:`~node.NodeList` 对象;
 
 上面两个方法, 和 :func:`DOM.get <dom.get>` / :func:`DOM.query <dom.query>` 是遥相呼应的.
 唯一的不同是, ``get/query`` 返回的是原生 DOM ``Node/NodeList``.
@@ -159,5 +160,5 @@ KISSY 提供两种使用方式:
 
 .. rubric:: 参考链接
 
-.. [1]  :mod:`Node API`<node>`
+.. [1]  :mod:`Node API <node>`
 .. [2] `Join Taobao 例子 <http://lifesinger.org/blog/2010/07/kissy-all-good-student/>`_
