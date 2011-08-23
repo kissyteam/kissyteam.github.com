@@ -5,7 +5,7 @@
 
 * 是一个模块代码依赖自动合并工具.
 * 是一个模块代码规范辅助工具, 可以辅助规范模块编写, 不仅仅只适用动态加载场景, 也可以用来提高开发阶段效率.
-* 是一个模块代码部署工具. 结合 :mod:`KISSY 1.2 Loader <Loader>` , 用于模块代码部署阶段, 多个模块根据其依赖合并为一个文件, 减少 HTTP 链接数.
+* 是一个模块代码部署工具. 结合 :ref:`KISSY 1.2 Loader <Loader>` , 用于模块代码部署阶段, 多个模块根据其依赖合并为一个文件, 减少 HTTP 链接数.
 
 
 举例
@@ -34,7 +34,7 @@
     },{requires:["./x"]});
     
     
-``x.js`` 路径为 ``http://x.cn/code/package/x.js`` 开发阶段在页面中通过包配置 :func:`KISSY.config <Loader.KISSY.config>` 可以这样使用：
+``x.js`` 路径为 ``http://x.cn/code/package/x.js`` 开发阶段在页面中通过包配置 :func:`KISSY.config <seed.KISSY.config>` 可以这样使用：
 
 引入 KISSY
 

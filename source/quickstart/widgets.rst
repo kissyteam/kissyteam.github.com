@@ -12,7 +12,6 @@ Switchable
 
 ``Switchable`` 是最基本的切换组件, 已有四种扩展组件  :class:`~switchable.Tabs` , :class:`~switchable.Slide` , :class:`~switchable.Carousel`, :class:`~switchable.Accordion`, 能满足大多数应用需求.
 
-
 Slide 实例
 -------------------
 
