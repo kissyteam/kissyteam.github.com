@@ -1,0 +1,333 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>多个触发元素公用一个 Popup &mdash; KISSY Docs valpha documentation</title>
+
+<link rel="stylesheet" href="../../../static/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="../../../static/favicon.ico"/>
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'alpha',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+
+    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
+        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'><'+'/script>');
+    } else{
+        document.write('<script src="http://yiminghe.github.com/kissy/build/kissy.js"'+'>'+'<'+'/script>');
+    }
+</script>
+    <script type="text/javascript" src="../../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../../static/doctools.js"></script> 
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../../../static/logo.png"/></a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+
+    <ul class="navigation">
+        <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
+        <li><a href="../../../../html/api/index.html">API</a></li>
+        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
+        <li><a href="http://blog.kissyui.com/">博客</a></li>
+        <!--<li><a href="mailto:all@kissyui.com">论坛</a></li>-->
+        <li><a href="http://www.github.com/kissyteam">源码</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../button/index.html" title="Button Demos"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="demo2.html" title="新建 Markup"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >All Demos</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Overlay Demos</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="popup">
+<h1>多个触发元素公用一个 Popup<a class="headerlink" href="#popup" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/overlay/">源码</a></div>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="../../../api/component/overlay/overlay.html#overlay.Overlay" title="overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>多个触发元素公用一个 Popup<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><iframe width="100%" height="350" class="iframe-demo" src="../../../static/demo/overlay/demo3.html"></iframe><p><strong>组织 HTML 结构</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;shop-rank&quot;</span> <span class="na">id=</span><span class="s">&quot;multi&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pic&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=3231736190&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://img03.taobaocdn.com/bao/uploaded/i7/T1ftRxXnRvXXalxZ.T_010955.jpg_40x40.jpg&quot;</span> <span class="na">bigpicurl=</span><span class="s">&quot;http://img03.taobaocdn.com/bao/uploaded/i7/T1ftRxXnRvXXalxZ.T_010955.jpg_120x120.jpg&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;desc&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">title=</span><span class="s">&quot;他她Tata 正品人气奢华皮草风牛皮女及踝靴FTJ23D火爆款&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=3231736190&quot;</span><span class="nt">&gt;</span>他她Tata 正品人气奢华皮草风牛皮女及踝靴FTJ23D火爆款<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;price&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>298.00元 i7/T1ftRxXnRvXXalxZ.T_010955.jpg
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sale&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>已售出 <span class="nt">&lt;strong&gt;</span>3799<span class="nt">&lt;/strong&gt;</span> 笔
+                <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pic&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=9543317408&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://img01.taobaocdn.com/bao/uploaded/i1/T1n_p9Xm4jXXcYEmEY_030526.jpg_40x40.jpg&quot;</span> <span class="na">bigpicurl=</span><span class="s">&quot;http://img01.taobaocdn.com/bao/uploaded/i1/T1n_p9Xm4jXXcYEmEY_030526.jpg_120x120.jpg&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;desc&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">title=</span><span class="s">&quot;百丽belle 正品2011春季 高跟 粉色黑色漆牛皮女单鞋 3PQ04D&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=9543317408&quot;</span><span class="nt">&gt;</span>百丽belle 正品2011春季 高跟 粉色黑色漆牛皮女单鞋 3PQ04D<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;price&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>458.00元 i1/T1n_p9Xm4jXXcYEmEY_030526.jpg
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sale&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>已售出 <span class="nt">&lt;strong&gt;</span>1815<span class="nt">&lt;/strong&gt;</span> 笔
+                <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pic&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=9138154640&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://img03.taobaocdn.com/bao/uploaded/i7/T1aJXZXfFsXXbGzYHb_092930.jpg_40x40.jpg&quot;</span> <span class="na">bigpicurl=</span><span class="s">&quot;http://img03.taobaocdn.com/bao/uploaded/i7/T1aJXZXfFsXXbGzYHb_092930.jpg_120x120.jpg&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;desc&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">title=</span><span class="s">&quot;商城母亲节包邮 百丽正品女鞋 belle 2011牛皮中跟 女单鞋 113-15&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=9138154640&quot;</span><span class="nt">&gt;</span>商城母亲节包邮 百丽正品女鞋 belle 2011牛皮中跟 女单鞋 113-15<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;price&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>358.00元 i7/T1aJXZXfFsXXbGzYHb_092930.jpg
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sale&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>已售出 <span class="nt">&lt;strong&gt;</span>1587<span class="nt">&lt;/strong&gt;</span> 笔
+                <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pic&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=9172959292&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://img04.taobaocdn.com/bao/uploaded/i4/T1Iy0ZXnBhXXbWYAQ2_044742.jpg_40x40.jpg&quot;</span> <span class="na">bigpicurl=</span><span class="s">&quot;http://img04.taobaocdn.com/bao/uploaded/i4/T1Iy0ZXnBhXXbWYAQ2_044742.jpg_120x120.jpg&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;desc&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">title=</span><span class="s">&quot;他她tata 2011春季超高跟防水台女单鞋 J53-8D&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=9172959292&quot;</span><span class="nt">&gt;</span>他她tata 2011春季超高跟防水台女单鞋 J53-8D<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;price&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>398.00元 i4/T1Iy0ZXnBhXXbWYAQ2_044742.jpg
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sale&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>已售出 <span class="nt">&lt;strong&gt;</span>1583<span class="nt">&lt;/strong&gt;</span> 笔
+                <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pic&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=5057404618&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://img04.taobaocdn.com/bao/uploaded/i8/T1wSFAXoxdXXbtWvsU_014508.jpg_40x40.jpg&quot;</span> <span class="na">bigpicurl=</span><span class="s">&quot;http://img04.taobaocdn.com/bao/uploaded/i8/T1wSFAXoxdXXbtWvsU_014508.jpg_120x120.jpg&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;desc&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">title=</span><span class="s">&quot;百丽belle正品 夏季新款 坡跟绵羊皮镶钻女凉鞋 3LC04D&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=5057404618&quot;</span><span class="nt">&gt;</span>百丽belle正品 夏季新款 坡跟绵羊皮镶钻女凉鞋 3LC04D<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;price&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>298.00元 i8/T1wSFAXoxdXXbtWvsU_014508.jpg
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sale&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>已售出 <span class="nt">&lt;strong&gt;</span>1547<span class="nt">&lt;/strong&gt;</span> 笔
+                <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</div>
+<p><strong>JS初始化</strong></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node, overlay&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">)</span> <span class="p">{</span>
+	<span class="c1">//新建共享popup层</span>
+	<span class="kd">var</span> <span class="nx">popup</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">O</span><span class="p">.</span><span class="nx">Popup</span><span class="p">({</span>
+		<span class="nx">elStyle</span> <span class="o">:</span> <span class="p">{</span>
+			<span class="nx">border</span> <span class="o">:</span> <span class="s2">&quot;2px solid gray&quot;</span><span class="p">,</span>
+			<span class="nx">lineHeight</span> <span class="o">:</span> <span class="mi">0</span>
+		<span class="p">},</span>
+		<span class="nx">width</span> <span class="o">:</span> <span class="mi">120</span><span class="p">,</span>  <span class="c1">//配置高和宽</span>
+		<span class="nx">height</span> <span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+		<span class="nx">effect</span> <span class="o">:</span> <span class="p">{</span>
+			<span class="nx">effect</span> <span class="o">:</span> <span class="s2">&quot;slide&quot;</span><span class="p">,</span> <span class="c1">//popup层显示动画效果，slide是展开，也可以&quot;fade&quot;渐变</span>
+			<span class="nx">duration</span> <span class="o">:</span> <span class="mf">0.5</span>
+		<span class="p">}</span>
+	<span class="p">});</span>
+	<span class="c1">// 注意：使用定制的显示/隐藏方式</span>
+	<span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;#multi img&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+		<span class="c1">//为每个元素增加显示公共popup的事件</span>
+		<span class="nx">t</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseenter&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+			<span class="c1">//每个元素在公共popup中显示自己的内容</span>
+			<span class="nx">popup</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s1">&#39;&lt;img src=&quot;&#39;</span> <span class="o">+</span> <span class="nx">t</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;bigpicurl&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;&quot;/&gt;&#39;</span><span class="p">);</span>
+			<span class="nx">popup</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;align&#39;</span><span class="p">,</span> <span class="p">{</span>
+				<span class="nx">node</span> <span class="o">:</span> <span class="nx">t</span><span class="p">,</span>
+				<span class="nx">points</span> <span class="o">:</span> <span class="p">[</span><span class="s2">&quot;tr&quot;</span><span class="p">,</span> <span class="s2">&quot;tl&quot;</span><span class="p">]</span>
+			<span class="p">});</span>
+			<span class="nx">popup</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+		<span class="p">});</span>
+		<span class="nx">t</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseleave&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+			<span class="nx">popup</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
+		<span class="p">});</span>
+	<span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            KISSY.one("#openComment").attr("disabled",true);
+        }else{
+            KISSY.one("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            KISSY.one("#openComment").on("change",function(){
+                window.localStorage.setItem("kissy-commment",KISSY.one("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box demo-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/loader/index.html">loader</a></li>
+        <!--<li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/lang/index.html">lang</a></li>
+        <li><a href="../../seed/web/index.html">web</a></li>-->
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <!--<li><a href="../../core/ua/index.html">ua</a></li>
+        <li><a href="../../core/dom/index.html">DOM</a></li>
+        <li><a href="../../core/event/index.html">event</a></li>
+        <li><a href="../../core/node/index.html">node</a></li>
+        <li><a href="../../core/json/index.html">json</a></li>
+        <li><a href="../../core/ajax/index.html">ajax</a></li>
+        <li><a href="../../core/cookie/index.html">cookie</a></li>
+        <li><a href="../../core/base/index.html">base</a></li>-->
+        <li><a href="../../core/anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <!--<li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../template/index.html">template</a></li>-->
+        <li><a href="../datalazyload/index.html">datalazyload</a></li>
+        <!--<li><a href="../flash/index.html">flash</a></li>-->
+        <li><a href="../dd/index.html">dd</a></li>
+        <li><a href="../switchable/index.html">switchable</a></li>
+        <li><a href="../suggest/index.html">suggest</a></li>
+        <!--<li><a href="../calendar/index.html">calendar</a></li>
+        <li><a href="../imagezoom/index.html">imagezoom</a></li>-->
+        <li><a href="index.html">overlay</a></li>
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

@@ -1,49 +1,14 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8"/>
-<title>Demo - 全新创建一个 Dialog</title>
-
-<link rel="stylesheet" href="http://yiminghe.github.com/kissy/src/overlay/assets/cool.css"/>
-<script src="http://yiminghe.github.com/kissy/build/kissy.js"></script>
-
-</head>
-<body>
-
-<div style='margin:10px 0;'>
-    <button id='btn4'>全新创建对话框</button>
-</div>
-
-<script>
-    KISSY.use("overlay,dd",function(S,Overlay){
-
-        // if kissy >= 1.2
-        //var Dialog=Overlay.Dialog;
-
-        // 所有 kissy 版本可用
-        var Dialog=S.Dialog;
-
-        // 脚本完全生成 dialog 对象
-        var dialog = new Dialog({
-            width: 400,  // 对话框宽度
-            bodyStyle:{
-                height: 300 // 对话框体的高度
-            },
-            headerContent: 'this is title', // 对话框头信息 html
-            footerContent: 'footer',    // 对话框底部信息 html
-            bodyContent: 'content', // 对话框体信息 html
-            mask: true,  //  有遮罩层
-            draggable: true // 允许头部可拖放
-        });
-
-        S.one("#btn4").on("click", function() {
-            dialog.render();
-            dialog.center();
-            dialog.show();
-        });
-
-    });
-</script>
-
-</body>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Popup - 新建 Markup</title>
+		<script src="http://yiminghe.github.com/kissy/build/kissy.js"></script>
+		<link rel="stylesheet" href="assets/demo2.css"/>
+	</head>
+	</head>
+	<body>
+		<a id="link2" href="#"><img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1HTSaXiFsXXaMnuYb_093636.jpg_160x160.jpg"/></a>
+		<script src="assets/demo2.js"></script>
+	</body>
 </html>

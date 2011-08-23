@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Demo - 从 markup 中构建 overlay &mdash; KISSY Docs valpha documentation</title>
+<title>从 Markup 中构建 Overlay &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -73,7 +73,7 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="demo2.html" title="Demo - 全新创建一个 Dialog"
+      <a href="demo2.html" title="新建 Markup"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="index.html" title="Overlay Demos"
@@ -85,8 +85,8 @@
     </ul>
 </div>
 					
-  <div class="section" id="demo-markup-overlay">
-<h1>Demo - 从 markup 中构建 overlay<a class="headerlink" href="#demo-markup-overlay" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="markup-overlay">
+<h1>从 Markup 中构建 Overlay<a class="headerlink" href="#markup-overlay" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/overlay/">源码</a></div>
 </div>
@@ -99,82 +99,78 @@
 </div></blockquote>
 </div>
 <div class="section" id="id2">
-<h2>Demo - 从 markup 中构建 overlay<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>从 Markup 中构建 Overlay<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><iframe width="100%" height="300" class="iframe-demo" src="../../../static/demo/overlay/demo1.html"></iframe><p><strong>定义CSS</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span class="c">&lt;!--最好定义下，和 ie 下初始定位有关系--&gt;</span>
-<span class="nt">&lt;style&gt;</span>
-    <span class="nf">#popup1</span> <span class="p">{</span>
-        <span class="k">position</span><span class="o">:</span><span class="k">absolute</span><span class="p">;</span>
-        <span class="k">left</span><span class="o">:-</span><span class="m">9999px</span><span class="p">;</span>
-        <span class="k">top</span><span class="o">:-</span><span class="m">9999px</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="nt">&lt;/style&gt;</span>
-</pre></div>
-</div>
-<p>初始载入时, 弹出层所在 div 是浮出在屏幕之外而隐藏的, 当点击 Show 按钮时, 该弹层对齐在 Hide 按钮旁边, 当点击 Hide 按钮时, 已经显示的弹层就隐藏了.</p>
-<p><strong>组织 HTML 结构</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;popup1&#39;</span><span class="nt">&gt;</span>
-    我是一些提示信息
-<span class="nt">&lt;/div&gt;</span>
-
-<span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;btn1&quot;</span><span class="nt">&gt;</span>Show<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;btn2&quot;</span><span class="nt">&gt;</span>Hide<span class="nt">&lt;/button&gt;</span>
+<div><iframe width="100%" height="300" class="iframe-demo" src="../../../static/demo/overlay/demo1.html"></iframe><p><strong>组织 HTML 结构</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">style=</span><span class="s">&quot;cursor:pointer&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">id=</span><span class="s">&quot;img-download&quot;</span> <span class="na">src=</span><span class="s">&quot;assets/nav-download.png&quot;</span><span class="nt">/&gt;&lt;/a&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;popup&quot;</span> <span class="na">id=</span><span class="s">&quot;dpop&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;table&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;corner&quot;</span> <span class="na">id=</span><span class="s">&quot;topleft&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+            <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;top&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+            <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;corner&quot;</span> <span class="na">id=</span><span class="s">&quot;topright&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+                <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;left&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+                <span class="nt">&lt;td&gt;</span>
+                <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;popup-contents&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                        <span class="nt">&lt;th&gt;</span>File:<span class="nt">&lt;/th&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>coda 1.7.zip<span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                        <span class="nt">&lt;th&gt;</span>Date:<span class="nt">&lt;/th&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>11/5/10<span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                        <span class="nt">&lt;th&gt;</span>Size:<span class="nt">&lt;/th&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>20 MB<span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                        <span class="nt">&lt;th&gt;</span>Req:<span class="nt">&lt;/th&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>Mac OS X 10.4+<span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+                <span class="nt">&lt;tr</span> <span class="na">id=</span><span class="s">&quot;release-notes&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;th&gt;</span>Read the release notes:<span class="nt">&lt;/th&gt;</span>
+                        <span class="nt">&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">title=</span><span class="s">&quot;Read the release notes&quot;</span><span class="nt">&gt;</span>release notes<span class="nt">&lt;/a&gt;&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+                <span class="nt">&lt;/table&gt;&lt;/td&gt;</span>
+                <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;right&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+                <span class="nt">&lt;td</span> <span class="na">id=</span><span class="s">&quot;bottomleft&quot;</span> <span class="na">class=</span><span class="s">&quot;corner&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+                <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;bottom&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;assets/bubble-tail2.png&quot;</span> <span class="na">width=</span><span class="s">&quot;30&quot;</span> <span class="na">height=</span><span class="s">&quot;29&quot;</span> <span class="na">alt=</span><span class="s">&quot;popup tail&quot;</span><span class="nt">/&gt;&lt;/td&gt;</span>
+                <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;corner&quot;</span> <span class="na">id=</span><span class="s">&quot;bottomright&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/table&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;d1&quot;</span> <span class="na">class=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>
+        destroy
+    <span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
 </pre></div>
 </div>
 <p><strong>JS初始化</strong></p>
-<p>通过 srcNode 配置项配置从已存的 dom 节点来生成 <tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt> 对象 :</p>
-<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</pre></div></td><td class="code"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
-    <span class="c1">// 对于 kissy &lt; 1.2 ,可使用 Overlay = S.Overlay; 获取构造器</span>
-
-    <span class="kd">var</span> <span class="nx">popup</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Overlay</span><span class="p">({</span>
-        <span class="nx">srcNode</span><span class="o">:</span><span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#popup1&quot;</span><span class="p">),</span> <span class="c1">// 配置已存在 dom 节点</span>
-        <span class="nx">width</span><span class="o">:</span> <span class="mi">300</span><span class="p">,</span> <span class="c1">// 配置宽度</span>
-        <span class="nx">height</span><span class="o">:</span> <span class="mi">200</span><span class="p">,</span>    <span class="c1">// 配置高度</span>
-        <span class="nx">align</span><span class="o">:</span> <span class="p">{</span>    <span class="c1">// 配置对齐属性</span>
-            <span class="nx">node</span><span class="o">:</span> <span class="s1">&#39;#btn2&#39;</span><span class="p">,</span>
-            <span class="nx">points</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;tr&#39;</span><span class="p">,</span> <span class="s1">&#39;tl&#39;</span><span class="p">],</span>
-            <span class="nx">offset</span><span class="o">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">});</span>
-
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;node,overlay&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">)</span> <span class="p">{</span>
+	<span class="c1">//通过dom元素新建立popup</span>
+	<span class="nb">window</span><span class="p">.</span><span class="nx">popup</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">O</span><span class="p">.</span><span class="nx">Popup</span><span class="p">(</span><span class="nx">Node</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#dpop&quot;</span><span class="p">),</span> <span class="p">{</span>
+		<span class="nx">trigger</span> <span class="o">:</span> <span class="s1">&#39;#img-download&#39;</span><span class="p">,</span><span class="c1">//配置Popup的触发器</span>
+		<span class="nx">triggerType</span> <span class="o">:</span> <span class="s1">&#39;mouse&#39;</span><span class="p">,</span>	<span class="c1">//触发类型</span>
+		<span class="nx">align</span> <span class="o">:</span> <span class="p">{</span>
+			<span class="nx">node</span> <span class="o">:</span> <span class="s1">&#39;#img-download&#39;</span><span class="p">,</span>
+			<span class="nx">points</span> <span class="o">:</span> <span class="p">[</span><span class="s1">&#39;tc&#39;</span><span class="p">,</span> <span class="s1">&#39;bc&#39;</span><span class="p">],</span>
+			<span class="nx">offset</span> <span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+		<span class="p">}</span>
+	<span class="p">});</span>
+	
+	<span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#d1&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+		<span class="c1">//调用外部接口销毁popup</span>
+		<span class="nb">window</span><span class="p">.</span><span class="nx">popup</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+	<span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
-</td></tr></table></div>
-<p>当点击 Show 按钮时会触发弹出层的显示, 以及点击 Hide 按钮时会触发弹出层的隐藏.</p>
-<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#btn1&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// 根据对齐属性, 显示在 Hide 按钮旁</span>
-    <span class="nx">popup</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
-<span class="p">});</span>
-
-<span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#btn2&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// 隐藏弹出层</span>
-    <span class="nx">popup</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
-<span class="p">});</span>
-</pre></div>
-</td></tr></table></div>
+</div>
 </div></blockquote>
 </div>
 </div>
