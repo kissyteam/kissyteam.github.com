@@ -86,9 +86,13 @@
 					
   <span class="target" id="module-imagezoom"></span><div class="section" id="imagezoom">
 <h1>ImageZoom<a class="headerlink" href="#imagezoom" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p class="versionchanged">
+<span class="versionmodified">Changed in version 1.2: </span>ImageZoom 基于 UIBase 重构, 接口有所修改, 升级时请注意修改.</p>
+</div></blockquote>
 <div class="line-block">
 <div class="line">图片放大镜效果</div>
-<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/imagezoom">源码</a>  | <a class="reference external" href="http://docs.kissyui.com/kissy/src/imagezoom/demo.html">Demo</a></div>
+<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/imagezoom">源码</a>  | <a class="reference external" href="../../../demo/component/imagezoom/index.html">Demo</a></div>
 </div>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
@@ -102,19 +106,29 @@
 <h2>Config Attributes<a class="headerlink" href="#config-attributes" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#imagezoom.type" title="imagezoom.type"><tt class="xref py py-data docutils literal"><span class="pre">type</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.bigImageSrc" title="imagezoom.bigImageSrc"><tt class="xref py py-data docutils literal"><span class="pre">bigImageSrc</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.bigImageSize" title="imagezoom.bigImageSize"><tt class="xref py py-data docutils literal"><span class="pre">bigImageSize</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.position" title="imagezoom.position"><tt class="xref py py-data docutils literal"><span class="pre">position</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.alignTo" title="imagezoom.alignTo"><tt class="xref py py-data docutils literal"><span class="pre">alignTo</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.offset" title="imagezoom.offset"><tt class="xref py py-data docutils literal"><span class="pre">offset</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.preload" title="imagezoom.preload"><tt class="xref py py-data docutils literal"><span class="pre">preload</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.timeout" title="imagezoom.timeout"><tt class="xref py py-data docutils literal"><span class="pre">timeout</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.timeoutMsg" title="imagezoom.timeoutMsg"><tt class="xref py py-data docutils literal"><span class="pre">timeoutMsg</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.hasZoom" title="imagezoom.hasZoom"><tt class="xref py py-data docutils literal"><span class="pre">hasZoom</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.zoomSize" title="imagezoom.zoomSize"><tt class="xref py py-data docutils literal"><span class="pre">zoomSize</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.lensIcon" title="imagezoom.lensIcon"><tt class="xref py py-data docutils literal"><span class="pre">lensIcon</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.zoomCls" title="imagezoom.zoomCls"><tt class="xref py py-data docutils literal"><span class="pre">zoomCls</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.imageNode" title="imagezoom.ImageZoom.config.imageNode"><tt class="xref py py-data docutils literal"><span class="pre">imageNode</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.type" title="imagezoom.ImageZoom.config.type"><tt class="xref py py-data docutils literal"><span class="pre">type</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.bigImageSrc" title="imagezoom.ImageZoom.config.bigImageSrc"><tt class="xref py py-data docutils literal"><span class="pre">bigImageSrc</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.bigImageSize" title="imagezoom.ImageZoom.config.bigImageSize"><tt class="xref py py-data docutils literal"><span class="pre">bigImageSize</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.bigImageWidth" title="imagezoom.ImageZoom.config.bigImageWidth"><tt class="xref py py-data docutils literal"><span class="pre">bigImageWidth</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.bigImageHeight" title="imagezoom.ImageZoom.config.bigImageHeight"><tt class="xref py py-data docutils literal"><span class="pre">bigImageHeight</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.position" title="imagezoom.ImageZoom.config.position"><tt class="xref py py-data docutils literal"><span class="pre">position</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.align" title="imagezoom.ImageZoom.config.align"><tt class="xref py py-data docutils literal"><span class="pre">align</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.alignTo" title="imagezoom.ImageZoom.config.alignTo"><tt class="xref py py-data docutils literal"><span class="pre">alignTo</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.offset" title="imagezoom.ImageZoom.config.offset"><tt class="xref py py-data docutils literal"><span class="pre">offset</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.preload" title="imagezoom.ImageZoom.config.preload"><tt class="xref py py-data docutils literal"><span class="pre">preload</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.timeout" title="imagezoom.ImageZoom.config.timeout"><tt class="xref py py-data docutils literal"><span class="pre">timeout</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.timeoutMsg" title="imagezoom.ImageZoom.config.timeoutMsg"><tt class="xref py py-data docutils literal"><span class="pre">timeoutMsg</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.hasZoom" title="imagezoom.ImageZoom.config.hasZoom"><tt class="xref py py-data docutils literal"><span class="pre">hasZoom</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.zoomSize" title="imagezoom.ImageZoom.config.zoomSize"><tt class="xref py py-data docutils literal"><span class="pre">zoomSize</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.width" title="imagezoom.ImageZoom.config.width"><tt class="xref py py-data docutils literal"><span class="pre">width</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.height" title="imagezoom.ImageZoom.config.height"><tt class="xref py py-data docutils literal"><span class="pre">height</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.showIcon" title="imagezoom.ImageZoom.config.showIcon"><tt class="xref py py-data docutils literal"><span class="pre">showIcon</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.iconClass" title="imagezoom.ImageZoom.config.iconClass"><tt class="xref py py-data docutils literal"><span class="pre">iconClass</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.lensIcon" title="imagezoom.ImageZoom.config.lensIcon"><tt class="xref py py-data docutils literal"><span class="pre">lensIcon</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.zoomCls" title="imagezoom.ImageZoom.config.zoomCls"><tt class="xref py py-data docutils literal"><span class="pre">zoomCls</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.lensClass" title="imagezoom.ImageZoom.config.lensClass"><tt class="xref py py-data docutils literal"><span class="pre">lensClass</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.config.wrapClass" title="imagezoom.ImageZoom.config.wrapClass"><tt class="xref py py-data docutils literal"><span class="pre">wrapClass</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -122,12 +136,12 @@
 <h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#imagezoom.image" title="imagezoom.image"><tt class="xref py py-attr docutils literal"><span class="pre">image</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.config" title="imagezoom.config"><tt class="xref py py-attr docutils literal"><span class="pre">config</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.lens" title="imagezoom.lens"><tt class="xref py py-attr docutils literal"><span class="pre">lens</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.lens" title="imagezoom.lens"><tt class="xref py py-attr docutils literal"><span class="pre">lens</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.lensIcon" title="imagezoom.lensIcon"><tt class="xref py py-attr docutils literal"><span class="pre">lensIcon</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.bigImage" title="imagezoom.bigImage"><tt class="xref py py-attr docutils literal"><span class="pre">bigImage</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.prototype.image" title="imagezoom.ImageZoom.prototype.image"><tt class="xref py py-attr docutils literal"><span class="pre">image</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.prototype.config" title="imagezoom.ImageZoom.prototype.config"><tt class="xref py py-attr docutils literal"><span class="pre">config</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.prototype.viewer" title="imagezoom.ImageZoom.prototype.viewer"><tt class="xref py py-attr docutils literal"><span class="pre">viewer</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.prototype.lens" title="imagezoom.ImageZoom.prototype.lens"><tt class="xref py py-attr docutils literal"><span class="pre">lens</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.prototype.lensIcon" title="imagezoom.ImageZoom.prototype.lensIcon"><tt class="xref py py-attr docutils literal"><span class="pre">lensIcon</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.prototype.bigImage" title="imagezoom.ImageZoom.prototype.bigImage"><tt class="xref py py-attr docutils literal"><span class="pre">bigImage</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -135,11 +149,11 @@
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#imagezoom.show" title="imagezoom.show"><tt class="xref py py-meth docutils literal"><span class="pre">show()</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.hide" title="imagezoom.hide"><tt class="xref py py-meth docutils literal"><span class="pre">hide()</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.set" title="imagezoom.set"><tt class="xref py py-meth docutils literal"><span class="pre">set()</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.changeImageSrc" title="imagezoom.changeImageSrc"><tt class="xref py py-meth docutils literal"><span class="pre">changeImageSrc()</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.refreshRegion" title="imagezoom.refreshRegion"><tt class="xref py py-meth docutils literal"><span class="pre">refreshRegion()</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.prototype.show" title="imagezoom.ImageZoom.prototype.show"><tt class="xref py py-meth docutils literal"><span class="pre">show()</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.prototype.hide" title="imagezoom.ImageZoom.prototype.hide"><tt class="xref py py-meth docutils literal"><span class="pre">hide()</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.prototype.set" title="imagezoom.ImageZoom.prototype.set"><tt class="xref py py-meth docutils literal"><span class="pre">set()</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.prototype.changeImageSrc" title="imagezoom.ImageZoom.prototype.changeImageSrc"><tt class="xref py py-meth docutils literal"><span class="pre">changeImageSrc()</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.prototype.refreshRegion" title="imagezoom.ImageZoom.prototype.refreshRegion"><tt class="xref py py-meth docutils literal"><span class="pre">refreshRegion()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -147,8 +161,8 @@
 <h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#imagezoom.show" title="imagezoom.show"><tt class="xref py py-func docutils literal"><span class="pre">show()</span></tt></a></li>
-<li><a class="reference internal" href="#imagezoom.hide" title="imagezoom.hide"><tt class="xref py py-func docutils literal"><span class="pre">hide()</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.show" title="imagezoom.ImageZoom.show"><tt class="xref py py-func docutils literal"><span class="pre">show()</span></tt></a></li>
+<li><a class="reference internal" href="#imagezoom.ImageZoom.hide" title="imagezoom.ImageZoom.hide"><tt class="xref py py-func docutils literal"><span class="pre">hide()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -166,10 +180,24 @@
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>trigger</strong> (<em>String|KISSY.Node|HTMLDOMNode</em>) &#8211; 配置项, 小图元素或小图id .</li>
+<li><strong>String|KISSY.Node|HTMLElement</strong> &#8211; 小图元素或选择器 .</li>
 <li><strong>config</strong> (<em>Object</em>) &#8211; 配置项, 详细见下方 <strong>Config Attributes Detail</strong> .</li>
 </ul>
 </td>
+</tr>
+</tbody>
+</table>
+<p class="versionchanged">
+<span class="versionmodified">Changed in version 1.2.</span></p>
+<div class="line-block">
+<div class="line"><strong>ImageZoom</strong> (config)</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 配置项, 详细见下方 <strong>Config Attributes Detail</strong> . 原本的 trigger 在 1.2 中由配置项中的 <a class="reference internal" href="#imagezoom.ImageZoom.config.imageNode" title="imagezoom.ImageZoom.config.imageNode"><tt class="xref py py-data docutils literal"><span class="pre">imageNode</span></tt></a> 代替</td>
 </tr>
 </tbody>
 </table>
@@ -179,115 +207,226 @@
 <div class="section" id="config-attributes-detail">
 <h2>Config Attributes Detail<a class="headerlink" href="#config-attributes-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="data">
-<dt id="imagezoom.type">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">type</tt><a class="headerlink" href="#imagezoom.type" title="Permalink to this definition">¶</a></dt>
-<dd><p>{String} - 可选, 缩放显示类型, 默认是标准模式 &#8216;standard&#8217;, 目前仅支持此模式.</p>
+<dt id="imagezoom.ImageZoom.config.imageNode">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">imageNode</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.imageNode" title="Permalink to this definition">¶</a></dt>
+<dd><p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<p>{String|HTMLElement} - 小图元素选择器或小图元素.</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="imagezoom.bigImageSrc">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">bigImageSrc</tt><a class="headerlink" href="#imagezoom.bigImageSrc" title="Permalink to this definition">¶</a></dt>
+<dt id="imagezoom.ImageZoom.config.type">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">type</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 可选, 缩放显示类型, 默认是标准模式 &#8216;standard&#8217;, 或者内嵌模式 &#8216;inner&#8217;.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="imagezoom.ImageZoom.config.bigImageSrc">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">bigImageSrc</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.bigImageSrc" title="Permalink to this definition">¶</a></dt>
 <dd><p>{String} - 可选, 大图路径, 为 &#8216;&#8217; 时, 取触点上的 data-ks-imagezoom 属性值. 默认为 &#8216;&#8217;.</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="imagezoom.bigImageSize">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">bigImageSize</tt><a class="headerlink" href="#imagezoom.bigImageSize" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Array} - 可选, 大图高宽, 如 [800, 800]; 是指在没有加载完大图前, 使用这个值来替代计算, 等加载完后会重新更新镜片大小, 具体场景下, 请设置个更合适的值.</p>
+<dt id="imagezoom.ImageZoom.config.bigImageSize">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">bigImageSize</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.bigImageSize" title="Permalink to this definition">¶</a></dt>
+<dd><p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.2.</span></p>
+<p>{Array} - 可选, 大图高宽, 如 [800, 800]; 是指在没有加载完大图前, 使用这个值来替代计算, 等加载完后会重新更新镜片大小, 具体场景下, 请设置个更合适的值.
+<strong>1.2 中使用下面两个大图高宽配置.</strong></p>
 </dd></dl>
 
 <dl class="data">
-<dt id="imagezoom.position">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">position</tt><a class="headerlink" href="#imagezoom.position" title="Permalink to this definition">¶</a></dt>
-<dd><p>{String} - 可选, 大图显示在小图的哪个位置. 可取 &#8216;top&#8217;, &#8216;right&#8217;, &#8216;bottom&#8217;, &#8216;left&#8217;, &#8216;inner&#8217;, 当为 &#8216;inner&#8217; 时, 会覆盖显示在小图上. 默认为 &#8216;right&#8217;.</p>
+<dt id="imagezoom.ImageZoom.config.bigImageWidth">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">bigImageWidth</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.bigImageWidth" title="Permalink to this definition">¶</a></dt>
+<dd><p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<p>{Number} - 可选, 大图宽度, 默认为 800;</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="imagezoom.alignTo">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">alignTo</tt><a class="headerlink" href="#imagezoom.alignTo" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Boolean} - 可选, 大图显示位置相对于哪个元素. 默认不设置, 相对于小图位置, 如果取 PARENT, 为小图的 offsetParent 元素.</p>
+<dt id="imagezoom.ImageZoom.config.bigImageHeight">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">bigImageHeight</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.bigImageHeight" title="Permalink to this definition">¶</a></dt>
+<dd><p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<p>{Number} - 可选, 大图高度, 默认为 800;</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="imagezoom.offset">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">offset</tt><a class="headerlink" href="#imagezoom.offset" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Number | Array} - 可选, 大图相对于小图位置的偏移量. 单一值或 [x, y]. 默认为 10. x 值对应于水平方向上的偏移, y值对应于垂直方向上的偏移. 当 offset 为一个 Number 或 [Number] 时, 仅指水平方向上的偏移, 垂直方向上偏移为 0; 如果 position 设置 &#8216;top&#8217;/&#8217;bottom&#8217;, 则需要通过 offset 为 [0, 10]来设置.</p>
+<dt id="imagezoom.ImageZoom.config.position">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">position</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.position" title="Permalink to this definition">¶</a></dt>
+<dd><p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.2.</span></p>
+<p>{String} - 可选, 大图显示在小图的哪个位置. 可取 &#8216;top&#8217;, &#8216;right&#8217;, &#8216;bottom&#8217;, &#8216;left&#8217;, &#8216;inner&#8217;, 当为 &#8216;inner&#8217; 时, 会覆盖显示在小图上. 默认为 &#8216;right&#8217;.
+<strong>1.2中, 设置 type 不同模式, 设置 align 不同的对齐方式.</strong></p>
 </dd></dl>
 
 <dl class="data">
-<dt id="imagezoom.preload">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">preload</tt><a class="headerlink" href="#imagezoom.preload" title="Permalink to this definition">¶</a></dt>
+<dt id="imagezoom.ImageZoom.config.alignTo">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">alignTo</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.alignTo" title="Permalink to this definition">¶</a></dt>
+<dd><p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.2.</span></p>
+<p>{Boolean} - 可选, 大图显示位置相对于哪个元素. 默认不设置, 相对于小图位置, 如果取 PARENT, 为小图的 offsetParent 元素.
+<strong>1.2中, 使用 align.</strong></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="imagezoom.ImageZoom.config.align">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">align</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.align" title="Permalink to this definition">¶</a></dt>
+<dd><p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<p>{Object} - 同 <a class="reference internal" href="../uibase/align.html#uibase.Align.config.align" title="uibase.Align.config.align"><tt class="xref py py-data docutils literal"><span class="pre">align</span></tt></a> .</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="imagezoom.ImageZoom.config.offset">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">offset</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.offset" title="Permalink to this definition">¶</a></dt>
+<dd><p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.2.</span></p>
+<p>{Number | Array} - 可选, 大图相对于小图位置的偏移量. 单一值或 [x, y]. 默认为 10. x 值对应于水平方向上的偏移, y值对应于垂直方向上的偏移. 当 offset 为一个 Number 或 [Number] 时, 仅指水平方向上的偏移, 垂直方向上偏移为 0; 如果 position 设置 &#8216;top&#8217;/&#8217;bottom&#8217;, 则需要通过 offset 为 [0, 10]来设置.
+<strong>1.2 中 使用 align 中的 offset 作为偏移量.</strong></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="imagezoom.ImageZoom.config.preload">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">preload</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.preload" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Boolean} - 可选, 是否预加载大图. 默认为 true.</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="imagezoom.timeout">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">timeout</tt><a class="headerlink" href="#imagezoom.timeout" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Number} - 可选, 等待大图加载的最大时间, 单位: s. 默认 2 min.
-.. 新版已经删除该选项.</p>
+<dt id="imagezoom.ImageZoom.config.timeout">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">timeout</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.2.</span></p>
+<p>{Number} - 可选, 等待大图加载的最大时间, 单位: s. 默认 2 min.
+<strong>1.2中, 删除该选项.</strong></p>
 </dd></dl>
 
 <dl class="data">
-<dt id="imagezoom.timeoutMsg">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">timeoutMsg</tt><a class="headerlink" href="#imagezoom.timeoutMsg" title="Permalink to this definition">¶</a></dt>
-<dd><p>{String} - 可选, 大图无法加载超时时, 显示的提示文字. 默认为 &#8220;图片暂不可用&#8221;.
-.. 新版已经删除该选项.</p>
+<dt id="imagezoom.ImageZoom.config.timeoutMsg">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">timeoutMsg</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.timeoutMsg" title="Permalink to this definition">¶</a></dt>
+<dd><p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.2.</span></p>
+<p>{String} - 可选, 大图无法加载超时时, 显示的提示文字. 默认为 &#8220;图片暂不可用&#8221;.
+<strong>1.2中, 删除该选项.</strong></p>
 </dd></dl>
 
 <dl class="data">
-<dt id="imagezoom.hasZoom">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">hasZoom</tt><a class="headerlink" href="#imagezoom.hasZoom" title="Permalink to this definition">¶</a></dt>
+<dt id="imagezoom.ImageZoom.config.hasZoom">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">hasZoom</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.hasZoom" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Boolean} - 可选, 初始时是否显示放大效果. 默认为 true, 显示放大. 在多图切换时, 可重设该值来开启或关闭显示放大功能. 如果多个图都不需要放大显示, ImageZoom 不会生成任何东西.</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="imagezoom.zoomSize">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">zoomSize</tt><a class="headerlink" href="#imagezoom.zoomSize" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Array} - 可选, 放大区域宽高. 默认为 [&#8216;auto&#8217;, &#8216;auto&#8217;], 当取 &#8216;auto&#8217; 时, 宽/高 取小图的高/宽.</p>
+<dt id="imagezoom.ImageZoom.config.zoomSize">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">zoomSize</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.zoomSize" title="Permalink to this definition">¶</a></dt>
+<dd><p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.2.</span></p>
+<p>{Array&lt;Number|String&gt;} - 可选, 放大区域宽高. 默认为 [&#8216;auto&#8217;, &#8216;auto&#8217;], 当取 &#8216;auto&#8217; 时, 宽/高 取小图的高/宽.
+<strong>1.2中, 使用下面的 width/height 设置放大区域宽/高.</strong></p>
 </dd></dl>
 
 <dl class="data">
-<dt id="imagezoom.lensIcon">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">lensIcon</tt><a class="headerlink" href="#imagezoom.lensIcon" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Boolean} - 可选, 是否显示放大镜提示图标, 默认为 true.</p>
+<dt id="imagezoom.ImageZoom.config.width">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">width</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.width" title="Permalink to this definition">¶</a></dt>
+<dd><p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<p>{Number|String} - 可选, 放大区域宽度. 默认为 &#8216;auto&#8217;, 当取 &#8216;auto&#8217; 时, 宽度取小图的宽度.</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="imagezoom.zoomCls">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">zoomCls</tt><a class="headerlink" href="#imagezoom.zoomCls" title="Permalink to this definition">¶</a></dt>
-<dd><p>{String} - 可选, 放大区域额外样式, 默认为 &#8216;&#8217;. 原有放大区域样式为 &#8216;ks-imagezoom-viewer&#8217;, 设置该值会追加元素 class.</p>
+<dt id="imagezoom.ImageZoom.config.height">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">height</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.height" title="Permalink to this definition">¶</a></dt>
+<dd><p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<p>{Number|String} - 可选, 放大区域高度. 默认为 &#8216;auto&#8217;, 当取 &#8216;auto&#8217; 时, 高度取小图的高度.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="imagezoom.ImageZoom.config.iconClass">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">iconClass</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.iconClass" title="Permalink to this definition">¶</a></dt>
+<dd><p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<p>{String} - 可选, 放大镜图标的类, 默认为 &#8216;ks-imagezoom-icon&#8217;</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="imagezoom.ImageZoom.config.lensIcon">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">lensIcon</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.lensIcon" title="Permalink to this definition">¶</a></dt>
+<dd><p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.2.</span></p>
+<p>{Boolean} - 可选, 是否显示放大镜提示图标, 默认为 true.
+<strong>1.2 中使用下面的 showIcon.</strong></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="imagezoom.ImageZoom.config.showIcon">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">showIcon</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.showIcon" title="Permalink to this definition">¶</a></dt>
+<dd><p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<p>{Boolean} - 可选, 是否显示放大镜小 icon, 默认为 true.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="imagezoom.ImageZoom.config.lensClass">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">lensClass</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.lensClass" title="Permalink to this definition">¶</a></dt>
+<dd><p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<p>{String} - 可选, 镜片类, 默认为 &#8216;ks-imagezoom-lens</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="imagezoom.ImageZoom.config.zoomCls">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">zoomCls</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.zoomCls" title="Permalink to this definition">¶</a></dt>
+<dd><p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.2.</span></p>
+<p>{String} - 可选, 放大区域额外样式, 默认为 &#8216;&#8217;. 原有放大区域样式为 &#8216;ks-imagezoom-viewer&#8217;, 设置该值会追加元素 class.
+<strong>1.2 中使用下面的 wrapClass.</strong></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="imagezoom.ImageZoom.config.wrapClass">
+<tt class="descclassname">ImageZoom.config.</tt><tt class="descname">wrapClass</tt><a class="headerlink" href="#imagezoom.ImageZoom.config.wrapClass" title="Permalink to this definition">¶</a></dt>
+<dd><p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<p>{String|HTMLElement} - 显示区域容器的类.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="properties-detail">
 <h2>Properties Detail<a class="headerlink" href="#properties-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="attribute">
-<dt id="imagezoom.image">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">image</tt><a class="headerlink" href="#imagezoom.image" title="Permalink to this definition">¶</a></dt>
+<dt id="imagezoom.ImageZoom.prototype.image">
+<tt class="descclassname">ImageZoom.prototype.</tt><tt class="descname">image</tt><a class="headerlink" href="#imagezoom.ImageZoom.prototype.image" title="Permalink to this definition">¶</a></dt>
 <dd><p>{HTMLElement} - 需要缩放的小图元素.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="imagezoom.config">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">config</tt><a class="headerlink" href="#imagezoom.config" title="Permalink to this definition">¶</a></dt>
+<dt id="imagezoom.ImageZoom.prototype.config">
+<tt class="descclassname">ImageZoom.prototype.</tt><tt class="descname">config</tt><a class="headerlink" href="#imagezoom.ImageZoom.prototype.config" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Object} - 配置选项, 具体参见上述 Config.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="imagezoom.lens">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">lens</tt><a class="headerlink" href="#imagezoom.lens" title="Permalink to this definition">¶</a></dt>
+<dt id="imagezoom.ImageZoom.prototype.viewer">
+<tt class="descclassname">ImageZoom.prototype.</tt><tt class="descname">viewer</tt><a class="headerlink" href="#imagezoom.ImageZoom.prototype.viewer" title="Permalink to this definition">¶</a></dt>
+<dd><p>{HTMLElement} - 显示区域的容器元素.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="imagezoom.ImageZoom.prototype.lens">
+<tt class="descclassname">ImageZoom.prototype.</tt><tt class="descname">lens</tt><a class="headerlink" href="#imagezoom.ImageZoom.prototype.lens" title="Permalink to this definition">¶</a></dt>
 <dd><p>{HTMLElement} - 镜片元素.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt>
-<tt class="descclassname">imagezoom.</tt><tt class="descname">lensIcon</tt></dt>
+<dt id="imagezoom.ImageZoom.prototype.lensIcon">
+<tt class="descclassname">ImageZoom.prototype.</tt><tt class="descname">lensIcon</tt><a class="headerlink" href="#imagezoom.ImageZoom.prototype.lensIcon" title="Permalink to this definition">¶</a></dt>
 <dd><p>{HTMLElement} - 放大镜图标元素.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="imagezoom.bigImage">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">bigImage</tt><a class="headerlink" href="#imagezoom.bigImage" title="Permalink to this definition">¶</a></dt>
+<dt id="imagezoom.ImageZoom.prototype.bigImage">
+<tt class="descclassname">ImageZoom.prototype.</tt><tt class="descname">bigImage</tt><a class="headerlink" href="#imagezoom.ImageZoom.prototype.bigImage" title="Permalink to this definition">¶</a></dt>
 <dd><p>{HTMLElement} - 大图元素.</p>
 </dd></dl>
 
@@ -295,8 +434,8 @@
 <div class="section" id="methods-detail">
 <h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
-<dt id="imagezoom.show">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">show</tt><big>(</big><big>)</big><a class="headerlink" href="#imagezoom.show" title="Permalink to this definition">¶</a></dt>
+<dt id="imagezoom.ImageZoom.prototype.show">
+<tt class="descclassname">ImageZoom.prototype.</tt><tt class="descname">show</tt><big>(</big><big>)</big><a class="headerlink" href="#imagezoom.ImageZoom.prototype.show" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>show</strong> ()</div>
 <div class="line">显示放大区域.</div>
@@ -304,8 +443,8 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="imagezoom.hide">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">hide</tt><big>(</big><big>)</big><a class="headerlink" href="#imagezoom.hide" title="Permalink to this definition">¶</a></dt>
+<dt id="imagezoom.ImageZoom.prototype.hide">
+<tt class="descclassname">ImageZoom.prototype.</tt><tt class="descname">hide</tt><big>(</big><big>)</big><a class="headerlink" href="#imagezoom.ImageZoom.prototype.hide" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>hide</strong> ()</div>
 <div class="line">隐藏放大区域.</div>
@@ -313,8 +452,8 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="imagezoom.set">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">set</tt><big>(</big><big>)</big><a class="headerlink" href="#imagezoom.set" title="Permalink to this definition">¶</a></dt>
+<dt id="imagezoom.ImageZoom.prototype.set">
+<tt class="descclassname">ImageZoom.prototype.</tt><tt class="descname">set</tt><big>(</big><big>)</big><a class="headerlink" href="#imagezoom.ImageZoom.prototype.set" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>set</strong> (name,val)</div>
 <div class="line">设置bigImage、hasZoom属性</div>
@@ -345,8 +484,8 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="imagezoom.changeImageSrc">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">changeImageSrc</tt><big>(</big><big>)</big><a class="headerlink" href="#imagezoom.changeImageSrc" title="Permalink to this definition">¶</a></dt>
+<dt id="imagezoom.ImageZoom.prototype.changeImageSrc">
+<tt class="descclassname">ImageZoom.prototype.</tt><tt class="descname">changeImageSrc</tt><big>(</big><big>)</big><a class="headerlink" href="#imagezoom.ImageZoom.prototype.changeImageSrc" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>changeImageSrc</strong> (src)</div>
 <div class="line">设置小图 src.</div>
@@ -354,8 +493,8 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="imagezoom.refreshRegion">
-<tt class="descclassname">imagezoom.</tt><tt class="descname">refreshRegion</tt><big>(</big><big>)</big><a class="headerlink" href="#imagezoom.refreshRegion" title="Permalink to this definition">¶</a></dt>
+<dt id="imagezoom.ImageZoom.prototype.refreshRegion">
+<tt class="descclassname">ImageZoom.prototype.</tt><tt class="descname">refreshRegion</tt><big>(</big><big>)</big><a class="headerlink" href="#imagezoom.ImageZoom.prototype.refreshRegion" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>refreshRegion</strong> ()</div>
 <div class="line">调整放大区域位置.</div>
@@ -366,8 +505,8 @@
 <div class="section" id="events-detail">
 <h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt>
-<tt class="descclassname">imagezoom.</tt><tt class="descname">show</tt><big>(</big><big>)</big></dt>
+<dt id="imagezoom.ImageZoom.show">
+<tt class="descclassname">ImageZoom.</tt><tt class="descname">show</tt><big>(</big><big>)</big><a class="headerlink" href="#imagezoom.ImageZoom.show" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>show</strong> ()</div>
 <div class="line">放大区域显示之后.</div>
@@ -375,8 +514,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descclassname">imagezoom.</tt><tt class="descname">hide</tt><big>(</big><big>)</big></dt>
+<dt id="imagezoom.ImageZoom.hide">
+<tt class="descclassname">ImageZoom.</tt><tt class="descname">hide</tt><big>(</big><big>)</big><a class="headerlink" href="#imagezoom.ImageZoom.hide" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>hide</strong> ()</div>
 <div class="line">放大区域隐藏之后.</div>
