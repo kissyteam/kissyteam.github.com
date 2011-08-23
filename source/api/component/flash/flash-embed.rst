@@ -14,7 +14,7 @@ Methods
 .. function:: add
 
     | void **add** ( target[, config, callback] )
-    | 返回当前客户端 Flash Player 的版本号数组,格式为 [ Major, Minor, Revision ]
+    | 通过指定SWF 容器 的 HTML 元素或 HTML 元素 ID. 对于是否添加成功, 需要依靠 callback 注册回调方法进行获取.
     
     :param String|HTMLElement target: 指定的HTML元素或HTML元素ID.
 
@@ -28,7 +28,7 @@ Methods
 
     .. note::
 
-        由于依赖于DOM,请确保 在中使用KISSY.ready(). 
+        由于依赖于DOM,请确保 在中使用 KISSY.ready().
         
     config 配置示例：
     
@@ -46,7 +46,7 @@ Methods
             version: 10.1       // 要求的 Flash Player 最低版本
         };
         
-    `了解更多Flash播放器参数 <http://docs.kissyui.com/kissy/docs/flash/practice/references/flashplayer-parameters.html>`_
+    `了解更多Flash播放器参数 <practice/flashplayer-parameters.html>`_
         
     带 callback 的 返回示例：
         
@@ -57,21 +57,20 @@ Methods
             alert("My status:" + data.status);
             alert("My html element:" + data.swf);
             alert("is dynamic publish:" + data.dynamic);
-            
         });
         
     关于flashvars的处理：
     flashvars 可以理解成为 向swf传参,是flash 页面播放器的一个参数,可以这样被组织：
 
-    .. code-block:: javascript
+    .. code-block:: html
 
-        < object  type="application/x-shockwave-flash"  data="PATH2SWF.swf" width="800" height="600" >
-            < param name="movie" value=" PATH2SWF.swf " / >    
-            < param name="flashvars" value="a=1&b=2"  />
-            < a href="go/getflashplayer" >
-                < img src="get_flash_player.gif" alt="Get Adobe Flash player" />
-            < /a>    
-        < /object>
+        <object  type="application/x-shockwave-flash"  data="PATH2SWF.swf" width="800" height="600" >
+            <param name="movie" value=" PATH2SWF.swf " />
+            <param name="flashvars" value="a=1&b=2"  />
+            <a href="go/getflashplayer" >
+                <img src="get_flash_player.gif" alt="Get Adobe Flash player" />
+            </a>
+        </object>
         
     事实上就是类似这样的解释：
     
@@ -145,4 +144,10 @@ Methods
     
     :param String target: 在 KISSY.Flash 中注册的ID.  必选`
 
-    :returns: {Boolean} - 只有有成功执行过 S.Flash.add() 的 SWF 返回 true,其他返回 false
+    :returns: {Boolean} - 只有有成功执行过 S.Flash.add() 的 SWF 返回 true,其他返回 false.
+
+
+
+.. note::
+
+    这文档要写细还真难。不过呢，我相信你很容易就知道怎么使用了，来看看这个 `测试页面 <http://docs.kissyui.com/kissy/src/flash/tests/test.html>`_

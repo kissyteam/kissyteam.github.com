@@ -25,9 +25,6 @@ Methods
     * :meth:`~Box.prototype.align`    
     * :meth:`~Box.prototype.center`    
     
-    
-
-    
 
 Class Detail
 --------------------------

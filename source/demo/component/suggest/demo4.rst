@@ -1,4 +1,4 @@
-.. currentmodule:: Suggest
+.. currentmodule:: suggest
 
 Demo - Google 的搜索提示
 ======================================
@@ -8,7 +8,7 @@ Demo - Google 的搜索提示
 Class
 -----------------------------------------------
 
-  * :class:`Suggest`
+  * :class:`~suggest.Suggest`
 
 Demo - Google 的搜索提示
 --------------------------------------------------

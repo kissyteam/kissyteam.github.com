@@ -9,15 +9,16 @@
 ------------------------
 
 将 JS 代码组件化的好处:
- #. 提高代码复用
- #. 模块间保持独立, 不会导致多个开发人员合作时产生的冲突
- #. 封装性好, 只提供 API 接口给外部调用
+#. 提高代码复用
+#. 模块间保持独立, 不会导致多个开发人员合作时产生的冲突
+#. 封装性好, 只提供 API 接口给外部调用
 
 
-KISSY 中, 通过 :func:`add( name, fn ) <Loader.KISSY.add>` 方法来添加新的模块. 在 KISSY 内部, 代码也是这么组织的.
+KISSY 中, 通过 :func:`add( name, fn ) <seed.KISSY.add>` 方法来添加新的模块. 在 KISSY 内部, 代码也是这么组织的.
+
+|
 
 下面通过个小例子来说明如何开发自定义组件.
-
 
 
 组件开发示例
@@ -247,10 +248,10 @@ KISSY 中, 通过 :func:`add( name, fn ) <Loader.KISSY.add>` 方法来添加新�
 
 一些说明:
  #. 首先, 想好组件的名字, 见名知意, 模块名字统一小写, 而暴露给外部的组件名称使用单词首字母大写, 如 ``StarRating``;
- #. 通过 :func:`KISSY.add('starrating', function(S){ }); <Loader.KISSY.add>` 加入新模块到 KISSY 中, 这里也可以使用 ``KISSY.app('XXX');`` 创建特定的应用, 然后用 ``XXX.add('starrating', function(S){});`` 给特定应用 XXX 添加一个模块;
+ #. 通过 :func:`KISSY.add('starrating', function(S){ }); <seed.KISSY.add>` 加入新模块到 KISSY 中, 这里也可以使用 ``KISSY.app('XXX');`` 创建特定的应用, 然后用 ``XXX.add('starrating', function(S){});`` 给特定应用 XXX 添加一个模块;
  #. 接下来是声明一些模块内的公共变量, 像 ``S.DOM, S.Event`` 都会用到, 另外一些如组件自己的 class 钩子;
  #. 默认的配置信息, ``defaultConfig``, 提供了使用者如果没有设置时的默认值;
- #. 通过 :func:`S.augment(StarRating, { }); <Seed.KISSY.augment>` 添加属性及方法, 每个方法在注释中写明含义, 入口参数及其类型. 另外, 开发者需要想好哪些属性/方法需要对外提供及命名方式如何等. 在这个例子中, 只添加了 ``_init`` 私有方法, 用来构建所需 DOM, 绑定事件;
+ #. 通过 :func:`S.augment(StarRating, { }); <seed.KISSY.augment>` 添加属性及方法, 每个方法在注释中写明含义, 入口参数及其类型. 另外, 开发者需要想好哪些属性/方法需要对外提供及命名方式如何等. 在这个例子中, 只添加了 ``_init`` 私有方法, 用来构建所需 DOM, 绑定事件;
  #. 最后, 在使用时只需要创建一个对象即可, 如, ``new S.StarRating('#J_Rating', config)``;
 
 

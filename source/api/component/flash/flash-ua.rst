@@ -30,8 +30,8 @@ Methods
     | 判断当前 Flash Player 版本号是否大于或等于指定版本. 
     | 一般用于判断是否可以播放当前flash内容. 
     
-    :param String|Array|Number ver: 指定验证的版本号.  在这里我们推荐使用 小数点分隔"M.S.R"的写法. 如果你熟悉大名鼎鼎的SWFObject, 自然会喜欢这样的写法.  当然, 我们也允许其他的写法, 见示例. `
-    :param Boolean force: 表示是否强制重新获取版本信息, 并用于版本判断.  和 fpv();的方法参数效果一致. `
+    :param String|Array|Number ver: 指定验证的版本号.  在这里我们推荐使用 小数点分隔"M.S.R"的写法. 如果你熟悉大名鼎鼎的SWFObject, 自然会喜欢这样的写法.  当然, 我们也允许其他的写法, 见示例.
+    :param Boolean force: 表示是否强制重新获取版本信息, 并用于版本判断.  和 fpv();的方法参数效果一致. 
 
     :returns: {Boolean} - 如果大于或等于当前版本, 则返回true. 否则false
     

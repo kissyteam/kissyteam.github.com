@@ -6,7 +6,7 @@ get
 Module
 -----------------------------------------------
 
-  :mod:`dom`
+  :mod:`DOM <dom>`
 
 
 Methods
@@ -21,4 +21,4 @@ Methods
 
     | HTMLElement **KISSY.get** (selector [,context=document] )
 
-    :func:`DOM.get` 的快捷方式
+    :func:`dom.get` 的快捷方式

@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Suggest
+﻿.. currentmodule:: suggest
 
 Suggest Demos
 ======================================
@@ -8,7 +8,7 @@ Suggest Demos
 Class
 -----------------------------------------------
 
-  * :class:`Suggest`
+  * :class:`~suggest.Suggest`
 
 
 Demos

@@ -10,6 +10,7 @@ Component
    dd/index
    switchable/index
    suggest/index
+   imagezoom/index
    overlay/index
    button/index
    menu/index

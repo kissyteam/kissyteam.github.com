@@ -1,4 +1,4 @@
-.. currentmodule:: Overlay
+.. currentmodule:: overlay
 
 Demo - 从 markup 中构建 overlay
 ========================================================
@@ -8,7 +8,7 @@ Demo - 从 markup 中构建 overlay
 Class
 -----------------------------------------------
 
-  * :class:`~overlay.Overlay`
+  * :class:`Overlay`
 
 Demo - 从 markup 中构建 overlay
 ----------------------------------------------------------

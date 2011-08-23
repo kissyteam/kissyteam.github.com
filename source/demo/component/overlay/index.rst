@@ -1,4 +1,4 @@
-﻿.. currentmodule:: Overlay
+﻿.. currentmodule:: overlay
 
 
 Overlay Demos

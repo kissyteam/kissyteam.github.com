@@ -4,13 +4,13 @@
 Widgets
 ===============================================
 
-KISSY 提供种类丰富的 UI 组件, 下面介绍下强大的 :mod:`Switchable`.
+KISSY 提供种类丰富的 UI 组件, 下面介绍下强大的 :mod:`Switchable <switchable>`.
 
 
 Switchable
 -------------------
 
-``Switchable`` 是最基本的切换组件, 已有四种扩展组件  :class:`~Switchable.Tabs` , :class:`~Switchable.Slide` , :class:`~Switchable.Carousel`, :class:`~Switchable.Accordin`, 能满足大多数应用需求.
+``Switchable`` 是最基本的切换组件, 已有四种扩展组件  :class:`~switchable.Tabs` , :class:`~switchable.Slide` , :class:`~switchable.Carousel`, :class:`~switchable.Accordion`, 能满足大多数应用需求.
 
 
 Slide 实例
@@ -106,5 +106,5 @@ Switchable 组件先介绍到这里. 更多关于 Switchable 相关的例子见 
 
 .. rubric:: 参考链接
 
-.. [1] :mod:`Switchable API 文档 <Switchable>`
+.. [1] :mod:`Switchable API 文档 <switchable>`
 .. [2] `Switchable Demo 页面 <../demo/component/switchable/index.html>`_

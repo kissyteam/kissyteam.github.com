@@ -6,7 +6,7 @@ hasData
 Module
 -----------------------------------------------
 
-  :mod:`dom`
+  :mod:`DOM <dom>`
 
 
 Methods
