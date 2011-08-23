@@ -21,10 +21,10 @@ Methods
     
     :param String config.charset: 资源文件的字符编码
             
-    :param Function config.success: 资源加载成功后回调函数
-
-         * < 1.2 中对于 css 文件是理解回调, 而不会等 css 加载完毕
-         * 1.2+ 会等 css 加载完毕
+    :param Function config.success: 资源加载成功后回调函数. 
+    
+         * KISSY < 1.2 中对于 css 文件是立即回调, 而不会等 css 加载完毕
+         * KISSY 1.2 会等 css 加载完毕
                 
     :param Function config.error: 超时或发生错误时回调函数. 当资源文件为 css 文件时不支持
                       
