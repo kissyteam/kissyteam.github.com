@@ -120,16 +120,30 @@
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<ol class="last arabic simple">
+</dd></dl>
+
+<dl class="docutils">
+<dt>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</dt>
+<dd><ol class="first last arabic simple">
 <li>对于不存在的 property , 该方法返回 <tt class="docutils literal"><span class="pre">undefined</span></tt></li>
 <li>注意区别该方法与 <a class="reference internal" href="attr.html#dom.attr" title="dom.attr"><tt class="xref py py-func docutils literal"><span class="pre">dom.attr()</span></tt></a>, 也即区别 <a class="reference external" href="http://javascript.info/tutorial/attributes-and-custom-properties">dom property 与 attribute</a> .</li>
 <li>请使用 <a class="reference internal" href="data.html#dom.data" title="dom.data"><tt class="xref py py-func docutils literal"><span class="pre">dom.data()</span></tt></a> 方法来处理自定义属性, 而不要使用 <a class="reference internal" href="#dom.prop" title="dom.prop"><tt class="xref py py-func docutils literal"><span class="pre">dom.prop()</span></tt></a> 方法, 否则在 ie&lt;9 下会有内存泄露.</li>
 <li><tt class="docutils literal"><span class="pre">prop</span></tt> 方法可以改变 <tt class="docutils literal"><span class="pre">dom</span></tt> 元素的状态而不改变其对应的序列化 <tt class="docutils literal"><span class="pre">html</span></tt> 属性 ( IE &lt;9 除外).例如设置 <tt class="docutils literal"><span class="pre">input</span></tt> 或 <tt class="docutils literal"><span class="pre">button</span></tt> 的 <tt class="docutils literal"><span class="pre">disabled</span></tt> property 或者 <tt class="docutils literal"><span class="pre">checkbox</span></tt> 的 <tt class="docutils literal"><span class="pre">checked</span></tt> property.最常见的情况即是用 <tt class="docutils literal"><span class="pre">prop</span></tt> 来设置 <tt class="docutils literal"><span class="pre">disabled</span></tt> 以及 <tt class="docutils literal"><span class="pre">checked</span></tt> 而不是 <a class="reference internal" href="attr.html#dom.attr" title="dom.attr"><tt class="xref py py-func docutils literal"><span class="pre">dom.attr()</span></tt></a> . 而 <a class="reference internal" href="val.html#dom.val" title="dom.val"><tt class="xref py py-func docutils literal"><span class="pre">dom.val()</span></tt></a> 方法用来设置和读取 <cite>value</cite> property.</li>
 </ol>
-</div>
-<p>例如</p>
+</dd>
+</dl>
+<blockquote>
+<div><ul class="simple">
+<li>请使用 <a class="reference internal" href="data.html#dom.data" title="dom.data"><tt class="xref py py-func docutils literal"><span class="pre">DOM.data</span></tt></a> 方法来处理自定义属性, 而不要使用 <a class="reference internal" href="#dom.prop" title="dom.prop"><tt class="xref py py-func docutils literal"><span class="pre">DOM.prop</span></tt></a> 方法, 否则在 ie&lt;9 下会有内存泄露.</li>
+<li><tt class="docutils literal"><span class="pre">prop</span></tt> 方法可以改变 <tt class="docutils literal"><span class="pre">DOM</span></tt> 元素的状态而不改变其对应的序列化 <tt class="docutils literal"><span class="pre">html</span></tt> 属性 ( IE &lt;9 除外).</li>
+</ul>
+<p>例如设置 <tt class="docutils literal"><span class="pre">input</span></tt> 或 <tt class="docutils literal"><span class="pre">button</span></tt> 的 <tt class="docutils literal"><span class="pre">disabled</span></tt> property 或者 <tt class="docutils literal"><span class="pre">checkbox</span></tt> 的 <tt class="docutils literal"><span class="pre">checked</span></tt> property .
+最常见的情况即是用 <tt class="docutils literal"><span class="pre">prop</span></tt> 来设置 <tt class="docutils literal"><span class="pre">disabled</span></tt> 以及 <tt class="docutils literal"><span class="pre">checked</span></tt> 而不是 func:<cite>DOM.attr &lt;dom.attr&gt;</cite> .
+而 <a class="reference internal" href="val.html#dom.val" title="dom.val"><tt class="xref py py-func docutils literal"><span class="pre">DOM.val</span></tt></a> 方法用来设置和读取 <cite>value</cite> property.</p>
+</div></blockquote>
+<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; b56f7f235afa21d11284184466ccb35c7879282f</p>
+<blockquote>
+<div><p>例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">c</span><span class="o">=</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s2">&quot;&lt;input type=&#39;checkbox&#39; checked=&#39;checked&#39;/&gt;&quot;</span><span class="p">);</span>
 <span class="nx">DOM</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span><span class="s2">&quot;checked&quot;</span><span class="p">)</span> <span class="c1">// =&gt; &quot;checked&quot;</span>
@@ -146,13 +160,14 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
-<li><strong>name</strong> (<em>string</em>) &#8211; property 名称</li>
-<li><strong>value</strong> &#8211; property 值</li>
-</ul>
-</td>
+<tr class="field"><th class="field-name" colspan="2">param string|HTMLCollection|Array&lt;HTMLElement&gt; selector:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">param string name:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">property 名称</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">param value:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">property 值</td>
 </tr>
 </tbody>
 </table>
@@ -164,12 +179,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
-<li><strong>kv</strong> (<em>object</em>) &#8211; property 名与 property 值的键值对</li>
-</ul>
-</td>
+<tr class="field"><th class="field-name" colspan="2">param string|HTMLCollection|Array&lt;HTMLElement&gt; selector:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">param object kv:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">property 名与 property 值的键值对</td>
 </tr>
 </tbody>
 </table>
@@ -181,8 +195,7 @@
 <span class="nx">DOM</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span><span class="s2">&quot;someValue&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-</dd></dl>
-
+</div></blockquote>
 </div>
 </div>
 

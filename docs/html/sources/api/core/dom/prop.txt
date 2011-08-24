@@ -27,10 +27,21 @@ Methods
 
     .. note::
     
+<<<<<<< HEAD
         #. 对于不存在的 property , 该方法返回 ``undefined``
         #. 注意区别该方法与 :func:`dom.attr`, 也即区别 `dom property 与 attribute <http://javascript.info/tutorial/attributes-and-custom-properties>`_ .
         #. 请使用 :func:`dom.data` 方法来处理自定义属性, 而不要使用 :func:`dom.prop` 方法, 否则在 ie<9 下会有内存泄露.
         #. ``prop`` 方法可以改变 ``dom`` 元素的状态而不改变其对应的序列化 ``html`` 属性 ( IE <9 除外).例如设置 ``input`` 或 ``button`` 的 ``disabled`` property 或者 ``checkbox`` 的 ``checked`` property.最常见的情况即是用 ``prop`` 来设置 ``disabled`` 以及 ``checked`` 而不是 :func:`dom.attr` . 而 :func:`dom.val` 方法用来设置和读取 `value` property.
+=======
+        - 对于不存在的 property , 该方法返回 ``undefined``
+        - 注意区别该方法与 :func:`DOM.attr <dom.attr>`, 也即区别 `DOM property 与 attribute <http://javascript.info/tutorial/attributes-and-custom-properties>`_ .
+        - 请使用 :func:`DOM.data <dom.data>` 方法来处理自定义属性, 而不要使用 :func:`DOM.prop <dom.prop>` 方法, 否则在 ie<9 下会有内存泄露.
+        - ``prop`` 方法可以改变 ``DOM`` 元素的状态而不改变其对应的序列化 ``html`` 属性 ( IE <9 除外).
+
+        例如设置 ``input`` 或 ``button`` 的 ``disabled`` property 或者 ``checkbox`` 的 ``checked`` property . 
+        最常见的情况即是用 ``prop`` 来设置 ``disabled`` 以及 ``checked`` 而不是 func:`DOM.attr <dom.attr>` .
+        而 :func:`DOM.val <dom.val>` 方法用来设置和读取 `value` property.
+>>>>>>> b56f7f235afa21d11284184466ccb35c7879282f
 
 
     例如

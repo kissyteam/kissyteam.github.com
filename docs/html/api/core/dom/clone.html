@@ -111,8 +111,8 @@
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
 <li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
 <li><strong>deep</strong> (<em>boolean</em>) &#8211; 是否深度克隆（克隆节点的子孙节点）</li>
-<li><strong>withDataAndEvent</strong> (<em>boolean</em>) &#8211; 节点是否具备源节点的 <a class="reference internal" href="data.html#dom.data" title="dom.data"><tt class="xref py py-func docutils literal"><span class="pre">dom.data()</span></tt></a> 属性以及 <a class="reference internal" href="../event/index.html#module-event" title="event"><tt class="xref py py-mod docutils literal"><span class="pre">事件</span></tt></a></li>
-<li><strong>deepWithDataAndEvent</strong> (<em>boolean</em>) &#8211; 子孙节点是否具备源节点对应子孙节点的 <a class="reference internal" href="data.html#dom.data" title="dom.data"><tt class="xref py py-func docutils literal"><span class="pre">dom.data()</span></tt></a> 属性以及 <a class="reference internal" href="../event/index.html#module-event" title="event"><tt class="xref py py-mod docutils literal"><span class="pre">事件</span></tt></a></li>
+<li><strong>withDataAndEvent</strong> (<em>boolean</em>) &#8211; 节点是否具备源节点的 <a class="reference internal" href="data.html#dom.data" title="dom.data"><tt class="xref py py-func docutils literal"><span class="pre">DOM.data</span></tt></a> 属性以及 <a class="reference internal" href="../event/index.html#module-event" title="event"><tt class="xref py py-mod docutils literal"><span class="pre">事件</span></tt></a></li>
+<li><strong>deepWithDataAndEvent</strong> (<em>boolean</em>) &#8211; 子孙节点是否具备源节点对应子孙节点的 <a class="reference internal" href="data.html#dom.data" title="dom.data"><tt class="xref py py-func docutils literal"><span class="pre">DOM.data</span></tt></a> 属性以及 <a class="reference internal" href="../event/index.html#module-event" title="event"><tt class="xref py py-mod docutils literal"><span class="pre">事件</span></tt></a></li>
 </ul>
 </td>
 </tr>
@@ -126,8 +126,6 @@
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">普通对象和普通数组请用 <a class="reference internal" href="../../seed/lang/clone.html#seed.KISSY.clone" title="seed.KISSY.clone"><tt class="xref py py-func docutils literal"><span class="pre">KISSY.clone</span></tt></a></p>
@@ -139,7 +137,7 @@
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
 </div>
-<p>如果页面中的已存在元素被插入到 dom 树的其他位置，那么它会从原来的位置移除，如以下代码所示</p>
+<p>如果页面中的已存在元素被插入到 DOM 树的其他位置，那么它会从原来的位置移除，如以下代码所示</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;.hello&#39;</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="s1">&#39;.goodbye&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -168,7 +166,7 @@
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><tt class="docutils literal"><span class="pre">clone</span></tt> 后你可以对其进行修改后再插入，可有效提高性能.</p>
+<p class="last"><tt class="docutils literal"><span class="pre">clone</span></tt> 后, 你可以对其进行修改后再插入，可有效提高性能.</p>
 </div>
 <p>默认情况下 clone 后的元素不会具备源元素的 data 属性以及事件绑定，但是如果你设置了 withDataAndEvent=true ,
 那么 clone 后的元素也会具备源元素的 data 属性以及事件绑定。</p>
@@ -181,11 +179,9 @@ elem.clone().attr(&quot;custom&quot;,{x:2});
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="id1">
-<h2>示例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>示例:</p>
 <p><strong>高级点的，克隆后保留原有事件逻辑</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<iframe width="100%" height="135"  class="iframe-demo" src="../../../static/api/core/dom/clone.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;style&gt;</span>
@@ -231,7 +227,9 @@ elem.clone().attr(&quot;custom&quot;,{x:2});
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </div>
-<iframe width="100%" height="135" src="../../../static/api/core/dom/clone.html"></iframe></div>
+</dd></dl>
+
+</div>
 </div>
 
 
