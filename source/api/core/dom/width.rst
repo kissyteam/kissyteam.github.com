@@ -42,7 +42,7 @@ Methods
 
 
     | void **width** ( selector, value )
-    | 给符合选择器的所有元素设置宽度值. 相当于 :func:`DOM.css(selector,"width",value) <DOM.css>`
+    | 给符合选择器的所有元素设置宽度值. 相当于 :func:`DOM.css(selector,"width",value) <dom.css>`
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
     :param string value: 宽度值        

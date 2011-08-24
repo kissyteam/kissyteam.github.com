@@ -35,4 +35,4 @@ Method
 
 .. raw:: html
 
-    <iframe width="100%" height="135" src="../../../static/api/core/dom/query.html"></iframe>
+    <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/dom/query.html"></iframe>

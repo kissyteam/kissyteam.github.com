@@ -26,7 +26,7 @@ Methods
     
 .. note::
 
-    hasData( selector ) 可以判断一个元素是否经过 :func:`DOM.data` 设置过扩展属性，而如果直接调用 ``DOM.data( selector )`` 
+    hasData( selector ) 可以判断一个元素是否经过 :func:`DOM.data <dom.data>` 设置过扩展属性，而如果直接调用 ``DOM.data( selector )``
     那么当元素没有设置过扩展属性时，会在元素上关联一个空存储对象，并返回它.
 
 

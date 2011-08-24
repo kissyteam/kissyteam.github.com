@@ -21,4 +21,4 @@ Methods
 
     | HTMLElement **KISSY.get** (selector [,context=document] )
 
-    :func:`dom.get` 的快捷方式
+    :func:`DOM.get <dom.get>` 的快捷方式

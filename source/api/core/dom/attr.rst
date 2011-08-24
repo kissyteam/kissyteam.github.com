@@ -30,7 +30,7 @@ Methods
        DOM.prop(c,"checked") // => true
         
     .. note
-        判断属性设置与否请使用 :func:`DOM.hasAttr` . 如果需要获取 DOM properties, 请使用 :func:`DOM.prop` 方法
+        判断属性设置与否请使用 :func:`DOM.hasAttr <dom.hasAttr>` . 如果需要获取 DOM properties, 请使用 :func:`DOM.prop <dom.prop>` 方法
 
     | void **attr** ( selector, name, value )
     | 给符合选择器的所有元素设置属性值.
