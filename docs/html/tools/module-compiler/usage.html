@@ -162,34 +162,70 @@
 <div class="section" id="id4">
 <h2>实际项目构建文件例子<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p><strong>请用 kissy-tools 项目下的 ant 运行此构建文件</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;project</span> <span class="na">name=</span><span class="s">&quot;compressor.build&quot;</span> <span class="na">default=</span><span class="s">&quot;build&quot;</span> <span class="na">basedir=</span><span class="s">&quot;.&quot;</span> <span class="na">xmlns:ac=</span><span class="s">&quot;antlib:net.sf.antcontrib&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span class="c">&lt;!--</span>
+<span class="c">build example for kissy loader</span>
+<span class="c">@author yiminghe@gmail.com</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">name=</span><span class="s">&quot;compressor.build&quot;</span> <span class="na">default=</span><span class="s">&quot;build&quot;</span> <span class="na">basedir=</span><span class="s">&quot;.&quot;</span> <span class="na">xmlns:ac=</span><span class="s">&quot;antlib:net.sf.antcontrib&quot;</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!--入口文件模块所在目录--&gt;</span>
+    <span class="nt">&lt;dirname</span> <span class="na">property=</span><span class="s">&quot;current.dir&quot;</span> <span class="na">file=</span><span class="s">&quot;${ant.file.compressor.build}&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;page.dir&quot;</span> <span class="na">location=</span><span class="s">&quot;${current.dir}&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;page.dir.tmp&quot;</span> <span class="na">location=</span><span class="s">&quot;${current.dir}/tmp/&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;assets.dir&quot;</span> <span class="na">location=</span><span class="s">&quot;${current.dir}/../../../&quot;</span><span class="nt">/&gt;</span>
+    <span class="c">&lt;!--项目文件编码--&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;charset&quot;</span> <span class="na">value=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">/&gt;</span>
+    <span class="c">&lt;!--bom utf-8--&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;bom&quot;</span> <span class="na">value=</span><span class="s">&quot;&amp;#xFEFF;&quot;</span><span class="nt">/&gt;</span>
+
     <span class="c">&lt;!-- kissy tools 项目源码目录 --&gt;</span>
     <span class="c">&lt;!-- 注意：请用 kissy tools 中的 ant 运行此 xml --&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;ks.tools&quot;</span> <span class="na">value=</span><span class="s">&quot;d:\code\kissy_git\kissy-tools\&quot;</span><span class="nt">/&gt;</span>
-
+    <span class="c">&lt;!--第三方工具--&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;yui.compiler&quot;</span> <span class="na">value=</span><span class="s">&quot;${ks.tools}\yuicompressor\yuicompressor.jar&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;module.compiler&quot;</span> <span class="na">value=</span><span class="s">&quot;${ks.tools}\module-compiler\module-compiler.jar&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;closure.compiler&quot;</span> <span class="na">value=</span><span class="s">&quot;${ks.tools}\closure-compiler\compiler.jar&quot;</span><span class="nt">/&gt;</span>
 
-    <span class="nt">&lt;dirname</span> <span class="na">property=</span><span class="s">&quot;current.dir&quot;</span> <span class="na">file=</span><span class="s">&quot;${ant.file.compressor.build}&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;page.dir&quot;</span> <span class="na">location=</span><span class="s">&quot;${current.dir}&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;assets.dir&quot;</span> <span class="na">location=</span><span class="s">&quot;${current.dir}/../../../&quot;</span><span class="nt">/&gt;</span>
-
     <span class="c">&lt;!-- js 构建--&gt;</span>
-    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#39;jsrun&#39;</span> <span class="na">depends=</span><span class="s">&quot;minify&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#39;jsrun&#39;</span> <span class="na">depends=</span><span class="s">&quot;native2ascii&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;/target&gt;</span>
 
-    <span class="c">&lt;!-- css 构建--&gt;</span>
-    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;concat-mods-css&quot;</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- css 合并--&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;concat-css&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;concat</span> <span class="na">destfile=</span><span class="s">&quot;category.css&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;path</span> <span class="na">path=</span><span class="s">&quot;../mods/common/cate_base.css&quot;</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;path</span> <span class="na">path=</span><span class="s">&quot;../mods/common/cate_search.css&quot;</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;path</span> <span class="na">path=</span><span class="s">&quot;../mods/common/cate_lastused.css&quot;</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;path</span> <span class="na">path=</span><span class="s">&quot;../mods/common/cate_select.css&quot;</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;path</span> <span class="na">path=</span><span class="s">&quot;../mods/common/cate_select.css&quot;</span><span class="nt">/&gt;</span>
+            <span class="c">&lt;!--去除 bom--&gt;</span>
+            <span class="nt">&lt;filterchain&gt;</span>
+                <span class="nt">&lt;deletecharacters</span> <span class="na">chars=</span><span class="s">&quot;${bom}&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/filterchain&gt;</span>
         <span class="nt">&lt;/concat&gt;</span>
         <span class="nt">&lt;concat</span> <span class="na">destfile=</span><span class="s">&quot;publish.css&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;path</span> <span class="na">path=</span><span class="s">&quot;../mods/common/publish_base.css&quot;</span><span class="nt">/&gt;</span>
+            <span class="c">&lt;!--去除 bom--&gt;</span>
+            <span class="nt">&lt;filterchain&gt;</span>
+                <span class="nt">&lt;deletecharacters</span> <span class="na">chars=</span><span class="s">&quot;${bom}&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/filterchain&gt;</span>
         <span class="nt">&lt;/concat&gt;</span>
+    <span class="nt">&lt;/target&gt;</span>
+
+    <span class="c">&lt;!-- css 压缩--&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;compressor-css&quot;</span> <span class="na">depends=</span><span class="s">&quot;concat-css&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;apply</span> <span class="na">executable=</span><span class="s">&quot;java&quot;</span> <span class="na">verbose=</span><span class="s">&quot;true&quot;</span>
+               <span class="na">dest=</span><span class="s">&quot;${page.dir}&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;fileset</span> <span class="na">dir=</span><span class="s">&quot;${page.dir}&quot;</span>
+                     <span class="na">includes=</span><span class="s">&quot;**/*.css&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">line=</span><span class="s">&quot;-jar&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">path=</span><span class="s">&quot;${yui.compiler}&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">line=</span><span class="s">&quot;--charset ${charset}&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;srcfile/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">line=</span><span class="s">&quot;-o&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;targetfile/&gt;</span>
+            <span class="nt">&lt;mapper</span> <span class="na">type=</span><span class="s">&quot;regexp&quot;</span> <span class="na">from=</span><span class="s">&quot;^(.*)\.(css|js)$&quot;</span> <span class="na">to=</span><span class="s">&quot;\1-min.\2&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/apply&gt;</span>
     <span class="nt">&lt;/target&gt;</span>
 
     <span class="c">&lt;!--js  依赖打包--&gt;</span>
@@ -213,9 +249,9 @@
                     <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-baseUrls&quot;</span><span class="nt">/&gt;</span>
                     <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;${assets.dir}&quot;</span><span class="nt">/&gt;</span>
                     <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-encodings&quot;</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;gbk&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;${charset}&quot;</span><span class="nt">/&gt;</span>
                     <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-outputEncoding&quot;</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;gbk&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;${charset}&quot;</span><span class="nt">/&gt;</span>
                     <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-output&quot;</span><span class="nt">/&gt;</span>
                     <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;${var.modname}.combo.js&quot;</span><span class="nt">/&gt;</span>
                     <span class="nt">&lt;classpath&gt;</span>
@@ -229,13 +265,26 @@
 
     <span class="nt">&lt;/target&gt;</span>
 
+    <span class="c">&lt;!--换行符统一处理--&gt;</span>
     <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;crlf&quot;</span> <span class="na">depends=</span><span class="s">&quot;combo&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;fixcrlf</span> <span class="na">includes=</span><span class="s">&quot;*.combo.js&quot;</span>
                  <span class="na">srcdir=</span><span class="s">&quot;${page.dir}&quot;</span>
-                 <span class="na">encoding=</span><span class="s">&quot;gbk&quot;</span>
+                 <span class="na">encoding=</span><span class="s">&quot;${charset}&quot;</span>
                  <span class="na">eol=</span><span class="s">&quot;crlf&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;/fixcrlf&gt;</span>
+    <span class="nt">&lt;/target&gt;</span>
 
+    <span class="c">&lt;!-- js ASCII 化 --&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;native2ascii&quot;</span> <span class="na">depends=</span><span class="s">&quot;minify&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;mkdir</span> <span class="na">dir=</span><span class="s">&quot;${page.dir.tmp}&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;move</span> <span class="na">todir=</span><span class="s">&quot;${page.dir.tmp}&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;fileset</span> <span class="na">dir=</span><span class="s">&quot;${page.dir}&quot;</span> <span class="na">includes=</span><span class="s">&quot;*-min.js&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/move&gt;</span>
+        <span class="nt">&lt;native2ascii</span> <span class="na">encoding=</span><span class="s">&quot;${charset}&quot;</span>
+                      <span class="na">src=</span><span class="s">&quot;${page.dir.tmp}&quot;</span>
+                      <span class="na">dest=</span><span class="s">&quot;${page.dir}&quot;</span>
+                      <span class="na">includes=</span><span class="s">&quot;*.js&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;delete</span> <span class="na">dir=</span><span class="s">&quot;${page.dir.tmp}&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/target&gt;</span>
 
     <span class="c">&lt;!--js 压缩--&gt;</span>
@@ -251,7 +300,7 @@
                     <span class="nt">/&gt;</span>
             <span class="nt">&lt;arg</span> <span class="na">line=</span><span class="s">&quot;-jar&quot;</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;arg</span> <span class="na">path=</span><span class="s">&quot;${closure.compiler}&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;arg</span> <span class="na">line=</span><span class="s">&quot;--charset gbk&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">line=</span><span class="s">&quot;--charset ${charset}&quot;</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;--warning_level&quot;</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;QUIET&quot;</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;--js&quot;</span><span class="nt">/&gt;</span>
@@ -263,7 +312,7 @@
     <span class="nt">&lt;/target&gt;</span>
 
     <span class="c">&lt;!--项目(js,css)构建--&gt;</span>
-    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;build&quot;</span> <span class="na">depends=</span><span class="s">&quot;jsrun,concat-mods-css&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;build&quot;</span> <span class="na">depends=</span><span class="s">&quot;jsrun,compressor-css&quot;</span><span class="nt">/&gt;</span>
 
 <span class="nt">&lt;/project&gt;</span>
 </pre></div>
