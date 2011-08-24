@@ -122,8 +122,15 @@
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">对于不存在的 property , 该方法返回 <tt class="docutils literal"><span class="pre">null</span></tt> , 如果要判断是否设置过, 可以使用 <tt class="xref py py-func docutils literal"><span class="pre">DOM.hasProp()</span></tt>,
-注意区别该方法与 <tt class="xref py py-func docutils literal"><span class="pre">DOM.attr()</span></tt>, 也即区别 <a class="reference external" href="http://javascript.info/tutorial/attributes-and-custom-properties">DOM property 与 attribute</a> .</p>
+<ul class="simple">
+<li>对于不存在的 property , 该方法返回 <tt class="docutils literal"><span class="pre">undefined</span></tt></li>
+<li>注意区别该方法与 <tt class="xref py py-func docutils literal"><span class="pre">DOM.attr()</span></tt>, 也即区别 <a class="reference external" href="http://javascript.info/tutorial/attributes-and-custom-properties">DOM property 与 attribute</a> .</li>
+<li>请使用 <tt class="xref py py-func docutils literal"><span class="pre">DOM.data()</span></tt> 方法来处理自定义属性, 而不要使用 <tt class="xref py py-func docutils literal"><span class="pre">DOM.prop()</span></tt> 方法, 否则在 ie&lt;9 下会有内存泄露.</li>
+<li><tt class="docutils literal"><span class="pre">prop</span></tt> 方法可以改变 <tt class="docutils literal"><span class="pre">DOM</span></tt> 元素的状态而不改变其对应的序列化 <tt class="docutils literal"><span class="pre">html</span></tt> 属性 ( IE &lt;9 除外).</li>
+</ul>
+<p class="last">例如设置 <tt class="docutils literal"><span class="pre">input</span></tt> 或 <tt class="docutils literal"><span class="pre">button</span></tt> 的 <tt class="docutils literal"><span class="pre">disabled</span></tt> property 或者 <tt class="docutils literal"><span class="pre">checkbox</span></tt> 的 <tt class="docutils literal"><span class="pre">checked</span></tt> property .
+最常见的情况即是用 <tt class="docutils literal"><span class="pre">prop</span></tt> 来设置 <tt class="docutils literal"><span class="pre">disabled</span></tt> 以及 <tt class="docutils literal"><span class="pre">checked</span></tt> 而不是 func:<cite>DOM.attr</cite> .
+而 <tt class="xref py py-func docutils literal"><span class="pre">DOM.val()</span></tt> 方法用来设置和读取 <cite>value</cite> property.</p>
 </div>
 <p>例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">;</span>
@@ -153,7 +160,7 @@
 </tbody>
 </table>
 <div class="line-block">
-<div class="line">void <strong>addClass</strong> ( selector, kv )</div>
+<div class="line">void <strong>prop</strong> ( selector, kv )</div>
 <div class="line">给符合选择器的所有元素设置 property 值.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -169,13 +176,6 @@
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<ul class="last simple">
-<li>请使用 <tt class="xref py py-func docutils literal"><span class="pre">DOM.data()</span></tt> 方法来处理自定义属性, 而不要使用 <tt class="xref py py-func docutils literal"><span class="pre">DOM.prop()</span></tt> 方法, 否则在 ie&lt;9 下会有内存泄露.</li>
-<li><tt class="docutils literal"><span class="pre">prop</span></tt> 方法可以改变 <tt class="docutils literal"><span class="pre">DOM</span></tt> 元素的状态而不改变其对应的序列化 <tt class="docutils literal"><span class="pre">html</span></tt> 属性 ( IE &lt;9 除外). 例如设置 <tt class="docutils literal"><span class="pre">input</span></tt> 或 <tt class="docutils literal"><span class="pre">button</span></tt> 的 <tt class="docutils literal"><span class="pre">disabled</span></tt> property 或者 <tt class="docutils literal"><span class="pre">checkbox</span></tt> 的 <tt class="docutils literal"><span class="pre">checked</span></tt> property . 最常见的情况即是用 <tt class="docutils literal"><span class="pre">prop</span></tt> 来设置 <tt class="docutils literal"><span class="pre">disabled</span></tt> 以及 <tt class="docutils literal"><span class="pre">checked</span></tt> 而不是 func:<cite>DOM.attr</cite> . 而 <tt class="xref py py-func docutils literal"><span class="pre">DOM.val()</span></tt> 方法用来设置和读取 <cite>value</cite> property.</li>
-</ul>
-</div>
 <p>例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">;</span>
 

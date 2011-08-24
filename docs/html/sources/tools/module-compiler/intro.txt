@@ -50,11 +50,13 @@
 .. code-block:: javascript
 
     KISSY.config({
-        name:"package", // 包名
-        tag:"20110323", // 动态加载包内的模块js文件时,
-                        // 自动加上 ?t=20110323, 用于文件更新
-        path:"http://x.cn/code/", // 包对应路径, 相对路径指相对于当前页面路径
-        charset:"gbk" // 包里模块文件编码格式
+        packages: [{
+            name:"package", // 包名
+            tag:"20110323", // 动态加载包内的模块js文件时,
+                            // 自动加上 ?t=20110323, 用于文件更新
+            path:"http://x.cn/code/", // 包对应路径, 相对路径指相对于当前页面路径
+            charset:"gbk" // 包里模块文件编码格式
+        }]
     });
     
     KISSY.use("package/y",function(S,Y){

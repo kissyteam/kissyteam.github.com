@@ -116,11 +116,13 @@
 </div>
 <p id="module-compiler-dev">使用模块</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-    <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;package&quot;</span><span class="p">,</span> <span class="c1">// 包名</span>
-    <span class="nx">tag</span><span class="o">:</span><span class="s2">&quot;20110323&quot;</span><span class="p">,</span> <span class="c1">// 动态加载包内的模块js文件时,</span>
-                    <span class="c1">// 自动加上 ?t=20110323, 用于文件更新</span>
-    <span class="nx">path</span><span class="o">:</span><span class="s2">&quot;http://x.cn/code/&quot;</span><span class="p">,</span> <span class="c1">// 包对应路径, 相对路径指相对于当前页面路径</span>
-    <span class="nx">charset</span><span class="o">:</span><span class="s2">&quot;gbk&quot;</span> <span class="c1">// 包里模块文件编码格式</span>
+    <span class="nx">packages</span><span class="o">:</span> <span class="p">[{</span>
+        <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;package&quot;</span><span class="p">,</span> <span class="c1">// 包名</span>
+        <span class="nx">tag</span><span class="o">:</span><span class="s2">&quot;20110323&quot;</span><span class="p">,</span> <span class="c1">// 动态加载包内的模块js文件时,</span>
+                        <span class="c1">// 自动加上 ?t=20110323, 用于文件更新</span>
+        <span class="nx">path</span><span class="o">:</span><span class="s2">&quot;http://x.cn/code/&quot;</span><span class="p">,</span> <span class="c1">// 包对应路径, 相对路径指相对于当前页面路径</span>
+        <span class="nx">charset</span><span class="o">:</span><span class="s2">&quot;gbk&quot;</span> <span class="c1">// 包里模块文件编码格式</span>
+    <span class="p">}]</span>
 <span class="p">});</span>
 
 <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;package/y&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Y</span><span class="p">){</span>
