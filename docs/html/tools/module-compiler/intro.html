@@ -134,7 +134,7 @@
 <li>加载 <tt class="docutils literal"><span class="pre">x.js</span></tt> .</li>
 <li>初始化 <tt class="docutils literal"><span class="pre">package/x</span></tt> 模块.</li>
 <li>初始化 <tt class="docutils literal"><span class="pre">package/y</span></tt> 模块.</li>
-<li>回调中可以得到 <tt class="docutils literal"><span class="pre">package/x</span></tt> 的模块值了.</li>
+<li>回调中可以得到 <tt class="docutils literal"><span class="pre">package/y</span></tt> 的模块值了.</li>
 </ol>
 <p>这个过程如果模块多的话对于线上环境来说 HTTP 链接数不可承受, 使用 KISSY module compiler 则可以达到所有模块压缩为一个文件, 达到 http 链接数为 1 的目标.</p>
 </div>
@@ -162,7 +162,7 @@
 <li>检查 <tt class="docutils literal"><span class="pre">package/x</span></tt> 模块, 发现已经载入</li>
 <li>初始化 <tt class="docutils literal"><span class="pre">package/x</span></tt> 模块</li>
 <li>初始化 <tt class="docutils literal"><span class="pre">package/y</span></tt> 模块</li>
-<li>执行回调</li>
+<li>执行回调的得到模块 <tt class="docutils literal"><span class="pre">package/y</span></tt> 的值</li>
 </ol>
 <p>于是线上应用 HTTP 链接数为 1 . 若需要使用源码调试则可以在页面 url 后加上 <tt class="docutils literal"><span class="pre">?ks-debug</span></tt> 即可开启开发阶段的加载过程.以上即为近期交易平台化项目所采用的模块化框架.</p>
 </div>
