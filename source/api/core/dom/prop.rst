@@ -26,7 +26,7 @@ Methods
     :returns: 对应 property 的值
 
     .. note::
-    
+
         - 对于不存在的 property , 该方法返回 ``undefined``
         - 注意区别该方法与 :func:`DOM.attr <dom.attr>`, 也即区别 `DOM property 与 attribute <http://javascript.info/tutorial/attributes-and-custom-properties>`_ .
         - 请使用 :func:`DOM.data <dom.data>` 方法来处理自定义属性, 而不要使用 :func:`DOM.prop <dom.prop>` 方法, 否则在 ie<9 下会有内存泄露.
