@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>多个触发元素公用一个 Popup &mdash; KISSY Docs valpha documentation</title>
+<title>Popup - 多个触发元素公用一个 Popup &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -73,10 +73,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../button/index.html" title="Button Demos"
+      <a href="demo4.html" title="Popup - 多个触发元素公用一个 Popup, 另一种方式"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="demo2.html" title="新建 Markup"
+      <a href="demo2.html" title="Popup - 新建 Markup"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >All Demos</a> &#187; </li>
@@ -85,8 +85,8 @@
     </ul>
 </div>
 					
-  <div class="section" id="popup">
-<h1>多个触发元素公用一个 Popup<a class="headerlink" href="#popup" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="popup-popup">
+<h1>Popup - 多个触发元素公用一个 Popup<a class="headerlink" href="#popup-popup" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/overlay/">源码</a></div>
 </div>
@@ -99,116 +99,38 @@
 </div></blockquote>
 </div>
 <div class="section" id="id2">
-<h2>多个触发元素公用一个 Popup<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Popup - 多个触发元素公用一个 Popup<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><iframe width="100%" height="350" class="iframe-demo" src="../../../static/demo/overlay/demo3.html"></iframe><p><strong>组织 HTML 结构</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;shop-rank&quot;</span> <span class="na">id=</span><span class="s">&quot;multi&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;ul&gt;</span>
-        <span class="nt">&lt;li&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pic&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=3231736190&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://img03.taobaocdn.com/bao/uploaded/i7/T1ftRxXnRvXXalxZ.T_010955.jpg_40x40.jpg&quot;</span> <span class="na">bigpicurl=</span><span class="s">&quot;http://img03.taobaocdn.com/bao/uploaded/i7/T1ftRxXnRvXXalxZ.T_010955.jpg_120x120.jpg&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;desc&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">title=</span><span class="s">&quot;他她Tata 正品人气奢华皮草风牛皮女及踝靴FTJ23D火爆款&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=3231736190&quot;</span><span class="nt">&gt;</span>他她Tata 正品人气奢华皮草风牛皮女及踝靴FTJ23D火爆款<span class="nt">&lt;/a&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;price&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>298.00元 i7/T1ftRxXnRvXXalxZ.T_010955.jpg
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sale&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>已售出 <span class="nt">&lt;strong&gt;</span>3799<span class="nt">&lt;/strong&gt;</span> 笔
-                <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pic&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=9543317408&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://img01.taobaocdn.com/bao/uploaded/i1/T1n_p9Xm4jXXcYEmEY_030526.jpg_40x40.jpg&quot;</span> <span class="na">bigpicurl=</span><span class="s">&quot;http://img01.taobaocdn.com/bao/uploaded/i1/T1n_p9Xm4jXXcYEmEY_030526.jpg_120x120.jpg&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;desc&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">title=</span><span class="s">&quot;百丽belle 正品2011春季 高跟 粉色黑色漆牛皮女单鞋 3PQ04D&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=9543317408&quot;</span><span class="nt">&gt;</span>百丽belle 正品2011春季 高跟 粉色黑色漆牛皮女单鞋 3PQ04D<span class="nt">&lt;/a&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;price&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>458.00元 i1/T1n_p9Xm4jXXcYEmEY_030526.jpg
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sale&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>已售出 <span class="nt">&lt;strong&gt;</span>1815<span class="nt">&lt;/strong&gt;</span> 笔
-                <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pic&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=9138154640&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://img03.taobaocdn.com/bao/uploaded/i7/T1aJXZXfFsXXbGzYHb_092930.jpg_40x40.jpg&quot;</span> <span class="na">bigpicurl=</span><span class="s">&quot;http://img03.taobaocdn.com/bao/uploaded/i7/T1aJXZXfFsXXbGzYHb_092930.jpg_120x120.jpg&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;desc&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">title=</span><span class="s">&quot;商城母亲节包邮 百丽正品女鞋 belle 2011牛皮中跟 女单鞋 113-15&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=9138154640&quot;</span><span class="nt">&gt;</span>商城母亲节包邮 百丽正品女鞋 belle 2011牛皮中跟 女单鞋 113-15<span class="nt">&lt;/a&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;price&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>358.00元 i7/T1aJXZXfFsXXbGzYHb_092930.jpg
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sale&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>已售出 <span class="nt">&lt;strong&gt;</span>1587<span class="nt">&lt;/strong&gt;</span> 笔
-                <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pic&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=9172959292&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://img04.taobaocdn.com/bao/uploaded/i4/T1Iy0ZXnBhXXbWYAQ2_044742.jpg_40x40.jpg&quot;</span> <span class="na">bigpicurl=</span><span class="s">&quot;http://img04.taobaocdn.com/bao/uploaded/i4/T1Iy0ZXnBhXXbWYAQ2_044742.jpg_120x120.jpg&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;desc&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">title=</span><span class="s">&quot;他她tata 2011春季超高跟防水台女单鞋 J53-8D&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=9172959292&quot;</span><span class="nt">&gt;</span>他她tata 2011春季超高跟防水台女单鞋 J53-8D<span class="nt">&lt;/a&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;price&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>398.00元 i4/T1Iy0ZXnBhXXbWYAQ2_044742.jpg
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sale&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>已售出 <span class="nt">&lt;strong&gt;</span>1583<span class="nt">&lt;/strong&gt;</span> 笔
-                <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pic&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=5057404618&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://img04.taobaocdn.com/bao/uploaded/i8/T1wSFAXoxdXXbtWvsU_014508.jpg_40x40.jpg&quot;</span> <span class="na">bigpicurl=</span><span class="s">&quot;http://img04.taobaocdn.com/bao/uploaded/i8/T1wSFAXoxdXXbtWvsU_014508.jpg_120x120.jpg&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;desc&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">title=</span><span class="s">&quot;百丽belle正品 夏季新款 坡跟绵羊皮镶钻女凉鞋 3LC04D&quot;</span> <span class="na">href=</span><span class="s">&quot;http://item.taobao.com/item.htm?id=5057404618&quot;</span><span class="nt">&gt;</span>百丽belle正品 夏季新款 坡跟绵羊皮镶钻女凉鞋 3LC04D<span class="nt">&lt;/a&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;price&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>298.00元 i8/T1wSFAXoxdXXbtWvsU_014508.jpg
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sale&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;i&gt;&lt;/i&gt;</span>已售出 <span class="nt">&lt;strong&gt;</span>1547<span class="nt">&lt;/strong&gt;</span> 笔
-                <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div>
-</div>
-<p><strong>JS初始化</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node, overlay&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">)</span> <span class="p">{</span>
-	<span class="c1">//新建共享popup层</span>
-	<span class="kd">var</span> <span class="nx">popup</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">O</span><span class="p">.</span><span class="nx">Popup</span><span class="p">({</span>
-		<span class="nx">elStyle</span> <span class="o">:</span> <span class="p">{</span>
-			<span class="nx">border</span> <span class="o">:</span> <span class="s2">&quot;2px solid gray&quot;</span><span class="p">,</span>
-			<span class="nx">lineHeight</span> <span class="o">:</span> <span class="mi">0</span>
-		<span class="p">},</span>
-		<span class="nx">width</span> <span class="o">:</span> <span class="mi">120</span><span class="p">,</span>  <span class="c1">//配置高和宽</span>
-		<span class="nx">height</span> <span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
-		<span class="nx">effect</span> <span class="o">:</span> <span class="p">{</span>
-			<span class="nx">effect</span> <span class="o">:</span> <span class="s2">&quot;slide&quot;</span><span class="p">,</span> <span class="c1">//popup层显示动画效果，slide是展开，也可以&quot;fade&quot;渐变</span>
-			<span class="nx">duration</span> <span class="o">:</span> <span class="mf">0.5</span>
-		<span class="p">}</span>
-	<span class="p">});</span>
-	<span class="c1">// 注意：使用定制的显示/隐藏方式</span>
-	<span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;#multi img&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
-		<span class="c1">//为每个元素增加显示公共popup的事件</span>
-		<span class="nx">t</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseenter&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-			<span class="c1">//每个元素在公共popup中显示自己的内容</span>
-			<span class="nx">popup</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s1">&#39;&lt;img src=&quot;&#39;</span> <span class="o">+</span> <span class="nx">t</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;bigpicurl&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;&quot;/&gt;&#39;</span><span class="p">);</span>
-			<span class="nx">popup</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;align&#39;</span><span class="p">,</span> <span class="p">{</span>
-				<span class="nx">node</span> <span class="o">:</span> <span class="nx">t</span><span class="p">,</span>
-				<span class="nx">points</span> <span class="o">:</span> <span class="p">[</span><span class="s2">&quot;tr&quot;</span><span class="p">,</span> <span class="s2">&quot;tl&quot;</span><span class="p">]</span>
-			<span class="p">});</span>
-			<span class="nx">popup</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
-		<span class="p">});</span>
-		<span class="nx">t</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseleave&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-			<span class="nx">popup</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
-		<span class="p">});</span>
-	<span class="p">});</span>
+<div><iframe width="100%" height="380" class="iframe-demo" src="../../../static/demo/overlay/demo3.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node, overlay&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//新建共享popup层</span>
+    <span class="kd">var</span> <span class="nx">popup</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">O</span><span class="p">.</span><span class="nx">Popup</span><span class="p">({</span>
+        <span class="nx">elStyle</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="nx">border</span> <span class="o">:</span> <span class="s2">&quot;2px solid gray&quot;</span><span class="p">,</span>
+            <span class="nx">lineHeight</span> <span class="o">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="nx">width</span> <span class="o">:</span> <span class="mi">120</span><span class="p">,</span>  <span class="c1">//配置高和宽</span>
+        <span class="nx">height</span> <span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+        <span class="nx">effect</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="nx">effect</span> <span class="o">:</span> <span class="s2">&quot;slide&quot;</span><span class="p">,</span> <span class="c1">//popup层显示动画效果，slide是展开，也可以&quot;fade&quot;渐变</span>
+            <span class="nx">duration</span> <span class="o">:</span> <span class="mf">0.5</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+    <span class="c1">// 注意：使用定制的显示/隐藏方式</span>
+    <span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;#multi img&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//为每个元素增加显示公共popup的事件</span>
+        <span class="nx">t</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseenter&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="c1">//每个元素在公共popup中显示自己的内容</span>
+            <span class="nx">popup</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s1">&#39;&lt;img src=&quot;&#39;</span> <span class="o">+</span> <span class="nx">t</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;bigpicurl&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;&quot;/&gt;&#39;</span><span class="p">);</span>
+            <span class="nx">popup</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;align&#39;</span><span class="p">,</span> <span class="p">{</span>
+                <span class="nx">node</span> <span class="o">:</span> <span class="nx">t</span><span class="p">,</span>
+                <span class="nx">points</span> <span class="o">:</span> <span class="p">[</span><span class="s2">&quot;tr&quot;</span><span class="p">,</span> <span class="s2">&quot;tl&quot;</span><span class="p">]</span>
+            <span class="p">});</span>
+            <span class="nx">popup</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+        <span class="p">});</span>
+        <span class="nx">t</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseleave&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">popup</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
 </div>

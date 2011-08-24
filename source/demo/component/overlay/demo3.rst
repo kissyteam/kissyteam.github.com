@@ -1,6 +1,6 @@
-.. currentmodule:: Overlay
+.. currentmodule:: overlay
 
-多个触发元素公用一个 Popup
+Popup - 多个触发元素公用一个 Popup
 ========================================================
 
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_
@@ -8,97 +8,15 @@
 Class
 -----------------------------------------------
 
-  * :class:`~overlay.Overlay`
+  * :class:`Overlay`
 
-多个触发元素公用一个 Popup
+Popup - 多个触发元素公用一个 Popup
 ----------------------------------------------------------
 
     .. raw:: html
 
-        <iframe width="100%" height="350" class="iframe-demo" src="../../../static/demo/overlay/demo3.html"></iframe>
+        <iframe width="100%" height="380" class="iframe-demo" src="../../../static/demo/overlay/demo3.html"></iframe>
 
-    
-    **组织 HTML 结构**
-
-    .. code-block:: html
-
-        <div class="shop-rank" id="multi">
-        	<ul>
-                <li>
-                	<div class="pic">
-                        <a target="_blank" href="http://item.taobao.com/item.htm?id=3231736190"><img src="http://img03.taobaocdn.com/bao/uploaded/i7/T1ftRxXnRvXXalxZ.T_010955.jpg_40x40.jpg" bigpicurl="http://img03.taobaocdn.com/bao/uploaded/i7/T1ftRxXnRvXXalxZ.T_010955.jpg_120x120.jpg"></a>
-                	</div>
-                	<div class="desc">
-                        <a target="_blank" title="他她Tata 正品人气奢华皮草风牛皮女及踝靴FTJ23D火爆款" href="http://item.taobao.com/item.htm?id=3231736190">他她Tata 正品人气奢华皮草风牛皮女及踝靴FTJ23D火爆款</a>
-                	</div>
-                	<div class="price">
-                        <i></i>298.00元 i7/T1ftRxXnRvXXalxZ.T_010955.jpg
-                	</div>
-                	<div class="sale">
-                        <i></i>已售出 <strong>3799</strong> 笔
-                	</div>
-                </li>
-                <li>
-                	<div class="pic">
-                        <a target="_blank" href="http://item.taobao.com/item.htm?id=9543317408"><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1n_p9Xm4jXXcYEmEY_030526.jpg_40x40.jpg" bigpicurl="http://img01.taobaocdn.com/bao/uploaded/i1/T1n_p9Xm4jXXcYEmEY_030526.jpg_120x120.jpg"></a>
-                	</div>
-                	<div class="desc">
-                        <a target="_blank" title="百丽belle 正品2011春季 高跟 粉色黑色漆牛皮女单鞋 3PQ04D" href="http://item.taobao.com/item.htm?id=9543317408">百丽belle 正品2011春季 高跟 粉色黑色漆牛皮女单鞋 3PQ04D</a>
-                	</div>
-                	<div class="price">
-                        <i></i>458.00元 i1/T1n_p9Xm4jXXcYEmEY_030526.jpg
-                	</div>
-                	<div class="sale">
-                        <i></i>已售出 <strong>1815</strong> 笔
-                	</div>
-                </li>
-                <li>
-                	<div class="pic">
-                        <a target="_blank" href="http://item.taobao.com/item.htm?id=9138154640"><img src="http://img03.taobaocdn.com/bao/uploaded/i7/T1aJXZXfFsXXbGzYHb_092930.jpg_40x40.jpg" bigpicurl="http://img03.taobaocdn.com/bao/uploaded/i7/T1aJXZXfFsXXbGzYHb_092930.jpg_120x120.jpg"></a>
-                	</div>
-                	<div class="desc">
-                        <a target="_blank" title="商城母亲节包邮 百丽正品女鞋 belle 2011牛皮中跟 女单鞋 113-15" href="http://item.taobao.com/item.htm?id=9138154640">商城母亲节包邮 百丽正品女鞋 belle 2011牛皮中跟 女单鞋 113-15</a>
-                	</div>
-                	<div class="price">
-                        <i></i>358.00元 i7/T1aJXZXfFsXXbGzYHb_092930.jpg
-                	</div>
-                	<div class="sale">
-                        <i></i>已售出 <strong>1587</strong> 笔
-                	</div>
-                </li>
-                <li>
-                	<div class="pic">
-                        <a target="_blank" href="http://item.taobao.com/item.htm?id=9172959292"><img src="http://img04.taobaocdn.com/bao/uploaded/i4/T1Iy0ZXnBhXXbWYAQ2_044742.jpg_40x40.jpg" bigpicurl="http://img04.taobaocdn.com/bao/uploaded/i4/T1Iy0ZXnBhXXbWYAQ2_044742.jpg_120x120.jpg"></a>
-                	</div>
-                	<div class="desc">
-                        <a target="_blank" title="他她tata 2011春季超高跟防水台女单鞋 J53-8D" href="http://item.taobao.com/item.htm?id=9172959292">他她tata 2011春季超高跟防水台女单鞋 J53-8D</a>
-                	</div>
-                	<div class="price">
-                        <i></i>398.00元 i4/T1Iy0ZXnBhXXbWYAQ2_044742.jpg
-                	</div>
-                	<div class="sale">
-                        <i></i>已售出 <strong>1583</strong> 笔
-                	</div>
-                </li>
-                <li>
-                	<div class="pic">
-                        <a target="_blank" href="http://item.taobao.com/item.htm?id=5057404618"><img src="http://img04.taobaocdn.com/bao/uploaded/i8/T1wSFAXoxdXXbtWvsU_014508.jpg_40x40.jpg" bigpicurl="http://img04.taobaocdn.com/bao/uploaded/i8/T1wSFAXoxdXXbtWvsU_014508.jpg_120x120.jpg"></a>
-                	</div>
-                	<div class="desc">
-                        <a target="_blank" title="百丽belle正品 夏季新款 坡跟绵羊皮镶钻女凉鞋 3LC04D" href="http://item.taobao.com/item.htm?id=5057404618">百丽belle正品 夏季新款 坡跟绵羊皮镶钻女凉鞋 3LC04D</a>
-                	</div>
-                	<div class="price">
-                        <i></i>298.00元 i8/T1wSFAXoxdXXbtWvsU_014508.jpg
-                	</div>
-                	<div class="sale">
-                        <i></i>已售出 <strong>1547</strong> 笔
-                	</div>
-                </li>
-        	</ul>
-        </div>
-
-
-    **JS初始化**
 
     .. literalinclude:: /_static/demo/overlay/assets/demo3.js
            :language: javascript

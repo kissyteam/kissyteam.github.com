@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>从 Markup 中构建 Overlay &mdash; KISSY Docs valpha documentation</title>
+<title>Popup - 从 Markup 中构建 &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -73,7 +73,7 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="demo2.html" title="新建 Markup"
+      <a href="demo2.html" title="Popup - 新建 Markup"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="index.html" title="Overlay Demos"
@@ -85,8 +85,8 @@
     </ul>
 </div>
 					
-  <div class="section" id="markup-overlay">
-<h1>从 Markup 中构建 Overlay<a class="headerlink" href="#markup-overlay" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="popup-markup">
+<h1>Popup - 从 Markup 中构建<a class="headerlink" href="#popup-markup" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/overlay/">源码</a></div>
 </div>
@@ -99,75 +99,30 @@
 </div></blockquote>
 </div>
 <div class="section" id="id2">
-<h2>从 Markup 中构建 Overlay<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Popup - 从 Markup 中构建<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><iframe width="100%" height="300" class="iframe-demo" src="../../../static/demo/overlay/demo1.html"></iframe><p><strong>组织 HTML 结构</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">style=</span><span class="s">&quot;cursor:pointer&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">id=</span><span class="s">&quot;img-download&quot;</span> <span class="na">src=</span><span class="s">&quot;assets/nav-download.png&quot;</span><span class="nt">/&gt;&lt;/a&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;popup&quot;</span> <span class="na">id=</span><span class="s">&quot;dpop&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;table&gt;</span>
-        <span class="nt">&lt;tr&gt;</span>
-            <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;corner&quot;</span> <span class="na">id=</span><span class="s">&quot;topleft&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
-            <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;top&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
-            <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;corner&quot;</span> <span class="na">id=</span><span class="s">&quot;topright&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
-        <span class="nt">&lt;/tr&gt;</span>
-        <span class="nt">&lt;tr&gt;</span>
-                <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;left&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
-                <span class="nt">&lt;td&gt;</span>
-                <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;popup-contents&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;tr&gt;</span>
-                        <span class="nt">&lt;th&gt;</span>File:<span class="nt">&lt;/th&gt;</span>
-                        <span class="nt">&lt;td&gt;</span>coda 1.7.zip<span class="nt">&lt;/td&gt;</span>
-                <span class="nt">&lt;/tr&gt;</span>
-                <span class="nt">&lt;tr&gt;</span>
-                        <span class="nt">&lt;th&gt;</span>Date:<span class="nt">&lt;/th&gt;</span>
-                        <span class="nt">&lt;td&gt;</span>11/5/10<span class="nt">&lt;/td&gt;</span>
-                <span class="nt">&lt;/tr&gt;</span>
-                <span class="nt">&lt;tr&gt;</span>
-                        <span class="nt">&lt;th&gt;</span>Size:<span class="nt">&lt;/th&gt;</span>
-                        <span class="nt">&lt;td&gt;</span>20 MB<span class="nt">&lt;/td&gt;</span>
-                <span class="nt">&lt;/tr&gt;</span>
-                <span class="nt">&lt;tr&gt;</span>
-                        <span class="nt">&lt;th&gt;</span>Req:<span class="nt">&lt;/th&gt;</span>
-                        <span class="nt">&lt;td&gt;</span>Mac OS X 10.4+<span class="nt">&lt;/td&gt;</span>
-                <span class="nt">&lt;/tr&gt;</span>
-                <span class="nt">&lt;tr</span> <span class="na">id=</span><span class="s">&quot;release-notes&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;th&gt;</span>Read the release notes:<span class="nt">&lt;/th&gt;</span>
-                        <span class="nt">&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">title=</span><span class="s">&quot;Read the release notes&quot;</span><span class="nt">&gt;</span>release notes<span class="nt">&lt;/a&gt;&lt;/td&gt;</span>
-                <span class="nt">&lt;/tr&gt;</span>
-                <span class="nt">&lt;/table&gt;&lt;/td&gt;</span>
-                <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;right&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
-        <span class="nt">&lt;/tr&gt;</span>
-        <span class="nt">&lt;tr&gt;</span>
-                <span class="nt">&lt;td</span> <span class="na">id=</span><span class="s">&quot;bottomleft&quot;</span> <span class="na">class=</span><span class="s">&quot;corner&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
-                <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;bottom&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;assets/bubble-tail2.png&quot;</span> <span class="na">width=</span><span class="s">&quot;30&quot;</span> <span class="na">height=</span><span class="s">&quot;29&quot;</span> <span class="na">alt=</span><span class="s">&quot;popup tail&quot;</span><span class="nt">/&gt;&lt;/td&gt;</span>
-                <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;corner&quot;</span> <span class="na">id=</span><span class="s">&quot;bottomright&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
-        <span class="nt">&lt;/tr&gt;</span>
-    <span class="nt">&lt;/table&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;d1&quot;</span> <span class="na">class=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>
-        destroy
-    <span class="nt">&lt;/button&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-</pre></div>
-</div>
-<p><strong>JS初始化</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;node,overlay&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">)</span> <span class="p">{</span>
-	<span class="c1">//通过dom元素新建立popup</span>
-	<span class="nb">window</span><span class="p">.</span><span class="nx">popup</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">O</span><span class="p">.</span><span class="nx">Popup</span><span class="p">(</span><span class="nx">Node</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#dpop&quot;</span><span class="p">),</span> <span class="p">{</span>
-		<span class="nx">trigger</span> <span class="o">:</span> <span class="s1">&#39;#img-download&#39;</span><span class="p">,</span><span class="c1">//配置Popup的触发器</span>
-		<span class="nx">triggerType</span> <span class="o">:</span> <span class="s1">&#39;mouse&#39;</span><span class="p">,</span>	<span class="c1">//触发类型</span>
-		<span class="nx">align</span> <span class="o">:</span> <span class="p">{</span>
-			<span class="nx">node</span> <span class="o">:</span> <span class="s1">&#39;#img-download&#39;</span><span class="p">,</span>
-			<span class="nx">points</span> <span class="o">:</span> <span class="p">[</span><span class="s1">&#39;tc&#39;</span><span class="p">,</span> <span class="s1">&#39;bc&#39;</span><span class="p">],</span>
-			<span class="nx">offset</span> <span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
-		<span class="p">}</span>
-	<span class="p">});</span>
-	
-	<span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#d1&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-		<span class="c1">//调用外部接口销毁popup</span>
-		<span class="nb">window</span><span class="p">.</span><span class="nx">popup</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
-	<span class="p">});</span>
+<div><iframe width="100%" height="240" class="iframe-demo" src="../../../static/demo/overlay/demo1.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;node,overlay,button&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">,</span> <span class="nx">Button</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//通过dom元素新建立popup</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">popup</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">O</span><span class="p">.</span><span class="nx">Popup</span><span class="p">(</span><span class="nx">Node</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#dpop&quot;</span><span class="p">),</span> <span class="p">{</span>
+        <span class="nx">trigger</span> <span class="o">:</span> <span class="s1">&#39;#img-download&#39;</span><span class="p">,</span><span class="c1">//配置Popup的触发器</span>
+        <span class="nx">triggerType</span> <span class="o">:</span> <span class="s1">&#39;mouse&#39;</span><span class="p">,</span>    <span class="c1">//触发类型</span>
+        <span class="nx">align</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="nx">node</span> <span class="o">:</span> <span class="s1">&#39;#img-download&#39;</span><span class="p">,</span>
+            <span class="nx">points</span> <span class="o">:</span> <span class="p">[</span><span class="s1">&#39;tc&#39;</span><span class="p">,</span> <span class="s1">&#39;bc&#39;</span><span class="p">],</span>
+            <span class="nx">offset</span> <span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Button</span><span class="p">({</span>
+        <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;销毁&quot;</span><span class="p">,</span>
+        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+        <span class="nx">render</span><span class="o">:</span> <span class="s2">&quot;#button-wrap&quot;</span>
+    <span class="p">});</span>
+    <span class="nx">b</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+    <span class="nx">b</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">//调用外部接口销毁popup</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">popup</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+    <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
 </div>
