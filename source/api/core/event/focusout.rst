@@ -22,9 +22,9 @@ focusout
 
 听 form 中输入域的聚焦情况
 
-.. literalinclude:: /_static/api/core/event/focusout.html
-       :language: html
-
 .. raw:: html
 
-    <iframe width="100%" height="135" src="../../../static/api/core/event/focusout.html"></iframe>
+    <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/focusout.html"></iframe>
+
+.. literalinclude:: /_static/api/core/event/focusout.html
+       :language: html

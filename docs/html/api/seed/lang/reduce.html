@@ -121,8 +121,6 @@
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
 <p><tt class="docutils literal"><span class="pre">reduce</span></tt> 对数组中的每个元素执行 <tt class="docutils literal"><span class="pre">fn</span></tt> 函数，该 <tt class="docutils literal"><span class="pre">fn</span></tt> 接受四个参数：initialValue (或者上次调用 <tt class="docutils literal"><span class="pre">fn</span></tt> 的返回值)，
 数组的当前元素，数组的当前位置以及用于遍历的数组.</p>
 <p>调用 <tt class="docutils literal"><span class="pre">reduce</span></tt> 类似于：</p>
@@ -181,21 +179,20 @@
 <span class="c1">// Return Value: 20</span>
 </pre></div>
 </div>
-<div class="section" id="id1">
-<h3>示例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>得到数组的值总和</p>
+<p><strong>得到数组的值总和</strong></p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">total</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">reduce</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">){</span> <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span> <span class="p">});</span>
 <span class="c1">// total == 6</span>
 </pre></div>
 </div>
-<p>嵌套数组平坦化</p>
+<p><strong>嵌套数组平坦化</strong></p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">flattened</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">reduce</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]],</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
 <span class="p">});</span>
 <span class="c1">// flattened is [0, 1, 2, 3, 4, 5]</span>
 </pre></div>
 </div>
-</div>
+</dd></dl>
+
 </div>
 </div>
 

@@ -13,7 +13,6 @@ Module
 Methods
 -----------------------------------------------
 
-
 .. method:: NodeList.prototype.end
 
     | NodeList **end** ()
@@ -22,21 +21,18 @@ Methods
     :returns: 上一步的节点列表对象
     
     
-.. hint::
+    .. hint::
 
-    引入该方法是为了更好的支持链式操作( ``chaining`` )，可以在一个语句内对不同层次得节点集合进行不同的操作.    
+        引入该方法是为了更好的支持链式操作( ``chaining`` )，可以在一个语句内对不同层次得节点集合进行不同的操作.
     
    
-举例
---------------------------------------------------
+    **一句话设置两个元素为不同颜色**
 
-**一句话设置两个元素为不同颜色**
+    .. raw:: html
+
+        <iframe width="100%" height="135" class="iframe-demo"  src="../../../static/api/core/node/end.html"></iframe>
+
+    .. literalinclude:: /_static/api/core/node/end.html
+           :language: html
 
 
-.. literalinclude:: /_static/api/core/node/end.html
-       :language: html
-
-
-.. raw:: html
-
-    <iframe width="100%" height="135" src="../../../static/api/core/node/end.html"></iframe>

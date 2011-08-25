@@ -22,8 +22,6 @@ Methods
     :returns: 符合选择器的第一个元素的祖先元素.
     :rtype: HTMLElement
 
-    举例：
-
     .. code-block:: javascript
 
         var S = KISSY, DOM = S.DOM,

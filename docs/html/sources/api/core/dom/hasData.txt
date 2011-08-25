@@ -24,29 +24,27 @@ Methods
     :returns: 是否具有扩展属性.
     :rtype: Boolean
     
-.. note::
+    .. note::
 
-    hasData( selector ) 可以判断一个元素是否经过 :func:`DOM.data <dom.data>` 设置过扩展属性，而如果直接调用 ``DOM.data( selector )``
-    那么当元素没有设置过扩展属性时，会在元素上关联一个空存储对象，并返回它.
+        hasData( selector ) 可以判断一个元素是否经过 :func:`DOM.data <dom.data>` 设置过扩展属性，而如果直接调用 ``DOM.data( selector )``
+        那么当元素没有设置过扩展属性时，会在元素上关联一个空存储对象，并返回它.
 
 
-举例：
+    .. code-block:: javascript
 
-.. code-block:: javascript
+        var S = KISSY, DOM = S.DOM;
 
-    var S = KISSY, DOM = S.DOM;
+        // 给所有的段落节点设置扩展属性 ``x`` , 值为 ``y``
+        DOM.data("p","x","y");
 
-    // 给所有的段落节点设置扩展属性 ``x`` , 值为 ``y``
-    DOM.data("p","x","y");
+        DOM.hasData("p"); // => true , 设置过扩展属性
 
-    DOM.hasData("p"); // => true , 设置过扩展属性
+        DOM.hasData("p","x") // => true , 设置过扩展属性 ``x`` 的值
 
-    DOM.hasData("p","x") // => true , 设置过扩展属性 ``x`` 的值
+        DOM.hasData("p","z") // => false , 没有设置过扩展属性 ``z`` 的值
 
-    DOM.hasData("p","z") // => false , 没有设置过扩展属性 ``z`` 的值
+        DOM.removeData("p","x"); // => 删除扩展属性 ``x`` 的值
 
-    DOM.removeData("p","x"); // => 删除扩展属性 ``x`` 的值
+        DOM.hasData("p","x"); //=> false
 
-    DOM.hasData("p","x"); //=> false
-
-    DOM.hasData("p"); //=> false
+        DOM.hasData("p"); //=> false

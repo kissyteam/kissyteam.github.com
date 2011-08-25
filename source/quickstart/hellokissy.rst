@@ -36,6 +36,7 @@ Hello KISSY
     #. :mod:`anim`, 提供动画效果, 通过给元素设定参数, 就可以让这个元素动态地从当前参数变化到设定的目标参数.
     #. :func:`DOM.get(selector) <dom.get>`/:func:`DOM.query(selector) <dom.query>` 也可以直接用 ``S.get/S.query`` 来调用, 是一样的.
 
+|
 
 ``DOM/Event`` 是最基本的功能, 掌握了这两个, 就能基本使用 KISSY 了.
 接下来将介绍 :ref:`Node <quickstart-usenode>` 对象的使用.

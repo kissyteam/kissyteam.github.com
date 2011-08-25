@@ -3,7 +3,7 @@
 KISSY Module Compiler
 =========================================================
 
-by `承玉 <yiminghe@gmail.com>`_
+|  作者: `承玉 <yiminghe@gmail.com>`_
 
 
 .. toctree::

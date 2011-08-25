@@ -6,7 +6,7 @@ Setup
 如何使用 KISSY ? 
 
 * 先将 `https://github.com/kissyteam/kissy/raw/master/build/kissy.js <https://github.com/kissyteam/kissy/raw/master/build/kissy.js>`_ 引入到你的页面;
-* 接着, **稍加** 编写一些代码, 就可以实现下面的效果了:
+* 接着, 稍加编写一些代码, 就可以实现下面的效果了:
 
 .. raw:: html
    
@@ -35,7 +35,7 @@ Setup
         
         <button type="button" id="demo-btn" autocomplete="off">Click Me!</button>
         <div class="demo-wrap">
-            <img id="demo-img" src="http://kissyteam.github.com/kissy/docs/assets/logo.png" />
+            <img id="demo-img" src="http://docs.kissyui.com/logo/logo.png" />
             <h2 id="demo-txt">Hello KISSY, NOT KITTY!</h2>
         </div>        
         <script>
@@ -59,6 +59,8 @@ Setup
 
 
 使用 KISSY 实现上面的效果, 只需大约 10 行代码.
+
+|
 
 下一节将会详细介绍上面的示例, 请看 :ref:`Hello KISSY  <quickstart-hellokissy>` ~
 

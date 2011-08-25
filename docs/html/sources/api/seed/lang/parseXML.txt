@@ -22,17 +22,17 @@ Methods
     :param string str: 有效的 xml 文档字符串
     :returns: xml 文档
         
-.. note::
+    .. note::
 
-    KISSY.parseXML 使用原生的浏览器机制进行 xml 解析。结果 xml 文档可以像 html dom 一样进行选择器查找。
-    默认 kissy 对于 xml 文档仅支持 ``tag`` 选择器.
-    载入 ``sizzle`` 后可对返回的 xml 文档进行全面遍历.        
+        KISSY.parseXML 使用原生的浏览器机制进行 xml 解析。结果 xml 文档可以像 html dom 一样进行选择器查找。
+        默认 kissy 对于 xml 文档仅支持 ``tag`` 选择器.
+        载入 ``sizzle`` 后可对返回的 xml 文档进行全面遍历.
     
-例如
+    例如
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    var xml = "<rss version='2.0'><channel><title>RSS Title</title></channel></rss>";
-    var xmlDoc=KISSY.all(KISSY.parseXML(xml));
-    alert(xmlDoc.one("title").text()); // => RSS Title
+        var xml = "<rss version='2.0'><channel><title>RSS Title</title></channel></rss>";
+        var xmlDoc=KISSY.all(KISSY.parseXML(xml));
+        alert(xmlDoc.one("title").text()); // => RSS Title
         

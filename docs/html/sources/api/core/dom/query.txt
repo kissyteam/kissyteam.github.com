@@ -24,15 +24,14 @@ Method
         
     :returns: 符合选择器字符串的 dom 节点数组
     
-举例
------------------------------------------------    
 
-注意 ``context`` 的取值
+    注意 ``context`` 的取值
 
-.. literalinclude:: /_static/api/core/dom/query.html
-       :language: html
+    .. raw:: html
+
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/dom/query.html"></iframe>
+
+    .. literalinclude:: /_static/api/core/dom/query.html
+           :language: html
 
 
-.. raw:: html
-
-    <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/dom/query.html"></iframe>

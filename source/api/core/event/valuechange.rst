@@ -32,8 +32,6 @@ valuechange
 
     当前（变化后）的值
 
-    
-
 .. note::
     此事件只能在 input 以及 textarea 上注册，注册到其他类型元素上无效！
     
@@ -50,9 +48,10 @@ valuechange
 
 打开拼音输入法，输入时直接鼠标选词
 
+.. raw:: html
+
+    <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/valuechange.html"></iframe>
+
 .. literalinclude:: /_static/api/core/event/valuechange.html
        :language: html
 
-.. raw:: html
-
-    <iframe width="100%" height="135" src="../../../static/api/core/event/valuechange.html"></iframe>

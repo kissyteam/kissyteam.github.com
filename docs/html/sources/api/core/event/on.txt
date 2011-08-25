@@ -90,13 +90,13 @@ Demo
     **处理段落的单击与双击**
     注意坐标是相对于例子的 iframe 窗口的, 这里方便起见采用 :mod:`node` 来操作 Event.
 
-    .. literalinclude:: /_static/api/core/event/on_1.html
-       :language: html
-
     .. raw:: html
 
-        <iframe width="100%" height="135" src="../../../static/api/core/event/on_1.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/on_1.html"></iframe>
 
+
+    .. literalinclude:: /_static/api/core/event/on_1.html
+       :language: html
 
     **阻止链接的默认事件以及冒泡**
 

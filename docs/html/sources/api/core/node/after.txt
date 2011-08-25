@@ -77,10 +77,11 @@ Demo
 
     把段落插入到 div 节点之前
 
+    .. raw:: html
+
+        <iframe width="100%" height="135"  class="iframe-demo" src="../../../static/api/core/node/after.html"></iframe>
+
     .. literalinclude:: /_static/api/core/node/after.html
        :language: html
 
 
-    .. raw:: html
-
-        <iframe width="100%" height="135" src="../../../static/api/core/node/after.html"></iframe>

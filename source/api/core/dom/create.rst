@@ -23,8 +23,6 @@ Methods
     :param HTMLDocument ownerDoc: 节点所属文档
     :returns: 创建出的 dom 节点或碎片列表
     :rtype: HTMLFragment|HTMLElement
-    
-    举例：
 
     .. code-block:: javascript
 

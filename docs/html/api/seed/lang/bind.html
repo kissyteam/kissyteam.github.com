@@ -124,13 +124,7 @@
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-</div>
-<div class="section" id="id1">
-<h2>示例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3>改变运行上下文<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>示例: <strong>改变运行上下文</strong></p>
 <p>bind 最简单的用法是生成一个新的函数，无论它如何调用，都运行在一个固定的 this 值中.入门者常犯的错误时从一个对象获得一个方法引用，
 然后在后面的调用中期望这个方法的this就是原来的对象(eg.g 把这个方法用在某个回调中). 如果没有特例，那么这个原始对象就丢失了.
 但是如果从原方法中得到一个绑定原始对象的函数，这个问题就解决了！</p>
@@ -150,9 +144,7 @@
 <span class="nx">boundGetX</span><span class="p">();</span> <span class="c1">// 81</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="currying">
-<h3>Currying<a class="headerlink" href="#currying" title="Permalink to this headline">¶</a></h3>
+<p>示例: <strong>Currying</strong></p>
 <p><tt class="docutils literal"><span class="pre">bind</span></tt> 的下一个简单用法是产生一个具备默认参数的函数. 这些参数跟在 context 后面，无论何时调用绑定函数，
 当绑定函数调用目标函数时会把它们放在参数列表开头，然后才是传递给绑定函数的用户参数.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">list</span><span class="p">()</span> <span class="p">{</span>
@@ -168,7 +160,8 @@
 <span class="kd">var</span> <span class="nx">list3</span> <span class="o">=</span> <span class="nx">leadingZeroList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// [37, 1, 2, 3]</span>
 </pre></div>
 </div>
-</div>
+</dd></dl>
+
 </div>
 </div>
 

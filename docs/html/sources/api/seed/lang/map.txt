@@ -30,18 +30,17 @@ Methods
         原数组保持不变
 
 
-示例
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    例如:
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    function makePseudoPlural(single) {
-        return single.replace(/o/g, "e");
-    }
+        function makePseudoPlural(single) {
+            return single.replace(/o/g, "e");
+        }
 
-    var singles = ["foot", "goose", "moose"];
-    var plurals = S.map(singles, makePseudoPlural);  // => ["feet", "geese", "meese"]
+        var singles = ["foot", "goose", "moose"];
+        var plurals = S.map(singles, makePseudoPlural);  // => ["feet", "geese", "meese"]
 
-    var a = S.map("Hello World",function(x) {
-        return x.charCodeAt(0);
-    }); // => [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]
+        var a = S.map("Hello World",function(x) {
+            return x.charCodeAt(0);
+        }); // => [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]

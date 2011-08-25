@@ -175,7 +175,7 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <dl class="attribute">
 <dt id="event.currentTarget">
 <tt class="descclassname">event.</tt><tt class="descname">currentTarget</tt><a class="headerlink" href="#event.currentTarget" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Object} - 返回 <tt class="xref py py-class docutils literal"><span class="pre">Event.Object</span></tt>,  当前事件处理器的 dom 节点或对象, 通常和 this 相同.</p>
+<dd><p>{Object} - 返回 <a class="reference internal" href="#event.Object" title="event.Object"><tt class="xref py py-class docutils literal"><span class="pre">Event.Object</span></tt></a>,  当前事件处理器的 dom 节点或对象, 通常和 this 相同.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">如果你在 <a class="reference internal" href="on.html#event.on" title="event.on"><tt class="xref py py-meth docutils literal"><span class="pre">on()</span></tt></a> 中指定了 this , 则 currentTarget 和 this 不相同.</p>
@@ -199,7 +199,7 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <tt class="descclassname">event.</tt><tt class="descname">pageY</tt><a class="headerlink" href="#event.pageY" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Number} - 鼠标当前位置相对文档上边界的距离</p>
 <p>显示当前鼠标位置相对于 iframe 文档的距离:</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/pageX.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
   <span class="nt">&lt;style&gt;body</span> <span class="p">{</span><span class="k">background-color</span><span class="o">:</span> <span class="m">#eef</span><span class="p">;</span> <span class="p">}</span>
@@ -226,7 +226,7 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </div>
-<iframe width="100%" height="135" src="../../../static/api/core/event/pageX.html"></iframe></dd></dl>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="event.relatedTarget">
@@ -250,7 +250,7 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <tt class="descclassname">event.</tt><tt class="descname">target</tt><a class="headerlink" href="#event.target" title="Permalink to this definition">¶</a></dt>
 <dd><p>{HTMLElement} - target 属性可以是绑定事件的元素的子孙节点. 常被用来和 this 比较来确定是否这个事件是冒泡过来的. 这个属性在委托情况下非常有用, 可以得到事件的真正触发源.</p>
 <p>显示点击事件触发源的节点名称</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/target.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
   <span class="nt">&lt;style&gt;</span>
@@ -285,8 +285,8 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </div>
-<iframe width="100%" height="135" src="../../../static/api/core/event/target.html"></iframe><p>简单的委托实现, 点击处理器被绑定到 ul 上面,  点击 li 会使得该 li 下的子 ul 菜单显示与隐藏.</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<p>简单的委托实现, 点击处理器被绑定到 ul 上面,  点击 li 会使得该 li 下的子 ul 菜单显示与隐藏.</p>
+<iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/target_2.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 
@@ -329,7 +329,7 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </div>
-<iframe width="100%" height="135" src="../../../static/api/core/event/target_2.html"></iframe></dd></dl>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="event.type">
@@ -348,7 +348,7 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <tt class="descclassname">event.</tt><tt class="descname">which</tt><a class="headerlink" href="#event.which" title="Permalink to this definition">¶</a></dt>
 <dd><p>{String} - 对于键盘和鼠标按键, 这个属性代表键盘或鼠标按键的代码. which 对 charCode 和 keyCode 以及 button 进行了兼容. 推荐使用 which 来代替这些属性.</p>
 <p>显示当前按键信息</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/which.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 
@@ -376,14 +376,14 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </div>
-<iframe width="100%" height="135" src="../../../static/api/core/event/which.html"></iframe></dd></dl>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="event.isImmediatePropagationStopped">
 <tt class="descclassname">event.</tt><tt class="descname">isImmediatePropagationStopped</tt><a class="headerlink" href="#event.isImmediatePropagationStopped" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Boolean} - 默认false . 是否停止了该事件的后续所有事件处理器执行, 通过调用 <tt class="xref py py-meth docutils literal"><span class="pre">stopImmediatePropagation()</span></tt> 设置状态.</p>
+<dd><p>{Boolean} - 默认false . 是否停止了该事件的后续所有事件处理器执行, 通过调用 <a class="reference internal" href="#event.stopImmediatePropagation" title="event.stopImmediatePropagation"><tt class="xref py py-meth docutils literal"><span class="pre">stopImmediatePropagation()</span></tt></a> 设置状态.</p>
 <p>检查是否 <tt class="docutils literal"><span class="pre">stopImmediatePropagation()</span></tt> 被调用了</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/isImmediatePropagationStopped.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 
@@ -423,7 +423,7 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </div>
-<iframe width="100%" height="135" src="../../../static/api/core/event/isImmediatePropagationStopped.html"></iframe></dd></dl>
+</dd></dl>
 
 </div>
 <div class="section" id="methods-detail">
@@ -433,10 +433,10 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <tt class="descclassname">event.</tt><tt class="descname">preventDefault</tt><big>(</big><big>)</big><a class="headerlink" href="#event.preventDefault" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>preventDefault</strong> ()</div>
-<div class="line">阻止默认行为的发生.例如点击链接不会使浏览器跳转到新的地址. 我们可以使用 <tt class="xref py py-attr docutils literal"><span class="pre">isDefaultPrevented</span></tt> 来判断是否某个事件处理器里调用了这个方法.</div>
+<div class="line">阻止默认行为的发生.例如点击链接不会使浏览器跳转到新的地址. 我们可以使用 <a class="reference internal" href="#event.isDefaultPrevented" title="event.isDefaultPrevented"><tt class="xref py py-attr docutils literal"><span class="pre">isDefaultPrevented</span></tt></a> 来判断是否某个事件处理器里调用了这个方法.</div>
 </div>
 <p>阻止链接的跳转</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/preventDefault.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 
@@ -467,7 +467,7 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </div>
-<iframe width="100%" height="135" src="../../../static/api/core/event/preventDefault.html"></iframe></dd></dl>
+</dd></dl>
 
 <dl class="method">
 <dt id="event.stopImmediatePropagation">
@@ -475,10 +475,10 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <dd><div class="line-block">
 <div class="line"><strong>stopImmediatePropagation</strong> ()</div>
 <div class="line">停止当前事件冒泡. 不光停止冒泡到下一个事件目标, 当前目标上的任何后续监听函数, 也马上取消执行.</div>
-<div class="line">用 <tt class="xref py py-attr docutils literal"><span class="pre">isImmediatePropagationStopped</span></tt> 来判断是否调用了该方法.</div>
+<div class="line">用 <a class="reference internal" href="#event.isImmediatePropagationStopped" title="event.isImmediatePropagationStopped"><tt class="xref py py-attr docutils literal"><span class="pre">isImmediatePropagationStopped</span></tt></a> 来判断是否调用了该方法.</div>
 </div>
 <p>阻止其他的事件处理器执行</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/stopImmediatePropagation.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
   <span class="nt">&lt;style&gt;</span>
@@ -516,19 +516,19 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </div>
-<iframe width="100%" height="135" src="../../../static/api/core/event/stopImmediatePropagation.html"></iframe></dd></dl>
+</dd></dl>
 
 <dl class="method">
 <dt id="event.stopPropagation">
 <tt class="descclassname">event.</tt><tt class="descname">stopPropagation</tt><big>(</big><big>)</big><a class="headerlink" href="#event.stopPropagation" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>stopPropagation</strong> ()</div>
-<div class="line">停止事件沿 dom 树向上冒泡, 组织祖先节点的所有事件处理器执行.我们可以使用 <tt class="xref py py-attr docutils literal"><span class="pre">isPropagationStopped</span></tt> 来判断当前方法是否执行过.</div>
+<div class="line">停止事件沿 dom 树向上冒泡, 组织祖先节点的所有事件处理器执行.我们可以使用 <a class="reference internal" href="#event.isPropagationStopped" title="event.isPropagationStopped"><tt class="xref py py-attr docutils literal"><span class="pre">isPropagationStopped</span></tt></a> 来判断当前方法是否执行过.</div>
 <div class="line">该方法在 <a class="reference internal" href="fire.html#event.fire" title="event.fire"><tt class="xref py py-func docutils literal"><span class="pre">fire()</span></tt></a> 中也起作用.</div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">调用该方法不会组织该节点其他事件处理器的运行, 如果要需要调用 <tt class="xref py py-meth docutils literal"><span class="pre">stopImmediatePropagation()</span></tt></p>
+<p class="last">调用该方法不会组织该节点其他事件处理器的运行, 如果要需要调用 <a class="reference internal" href="#event.stopImmediatePropagation" title="event.stopImmediatePropagation"><tt class="xref py py-meth docutils literal"><span class="pre">stopImmediatePropagation()</span></tt></a></p>
 </div>
 <p>阻止 click 事件的冒泡</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
@@ -545,7 +545,7 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <tt class="descclassname">event.</tt><tt class="descname">isDefaultPrevented</tt><big>(</big><big>)</big><a class="headerlink" href="#event.isDefaultPrevented" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>isDefaultPrevented</strong> ()</div>
-<div class="line">判断 <tt class="xref py py-meth docutils literal"><span class="pre">preventDefault()</span></tt> 是否被调用了.</div>
+<div class="line">判断 <a class="reference internal" href="#event.preventDefault" title="event.preventDefault"><tt class="xref py py-meth docutils literal"><span class="pre">preventDefault()</span></tt></a> 是否被调用了.</div>
 </div>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
   <span class="nx">alert</span><span class="p">(</span> <span class="nx">event</span><span class="p">.</span><span class="nx">isDefaultPrevented</span><span class="p">()</span> <span class="p">);</span> <span class="c1">// false</span>
@@ -561,10 +561,10 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <tt class="descclassname">event.</tt><tt class="descname">isPropagationStopped</tt><big>(</big><big>)</big><a class="headerlink" href="#event.isPropagationStopped" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>isPropagationStopped</strong> ()</div>
-<div class="line">判断 <tt class="xref py py-meth docutils literal"><span class="pre">stopPropagation()</span></tt> 是否被调用了.</div>
+<div class="line">判断 <a class="reference internal" href="#event.stopPropagation" title="event.stopPropagation"><tt class="xref py py-meth docutils literal"><span class="pre">stopPropagation()</span></tt></a> 是否被调用了.</div>
 </div>
 <p>判断 stopPropagation 是否被调用</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/isPropagationStopped.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 
@@ -604,7 +604,7 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </div>
-<iframe width="100%" height="135" src="../../../static/api/core/event/isPropagationStopped.html"></iframe></dd></dl>
+</dd></dl>
 
 </div>
 </div>

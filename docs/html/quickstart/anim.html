@@ -90,28 +90,28 @@
 </pre></div>
 </div>
 <p>相当简单的一行代码就可以出现元素的渐隐效果, 从那时她就深深吸引了当初只知道 flash 能做动画的我.</p>
-<p>现在 KISSY.Anim 保持了同样精简高效的风格, 很让我心动.</p>
+<p>现在 <tt class="docutils literal"><span class="pre">KISSY.Anim</span></tt> 保持了同样精简高效的风格, 很让我心动.</p>
 <div class="section" id="s-anim">
 <h2>S.Anim<a class="headerlink" href="#s-anim" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt>KISSY 提供的动画特效支持主要由三个子模块组成 <a class="footnote-reference" href="#id5" id="id1">[1]</a> :</dt>
-<dd><ol class="first last arabic simple">
+<p>KISSY 提供的动画特效支持主要由三个子模块组成 <a class="footnote-reference" href="#id5" id="id1">[1]</a> :</p>
+<blockquote>
+<div><ol class="arabic simple">
 <li><tt class="docutils literal"><span class="pre">anim</span></tt>, 动画的基础模块</li>
 <li><tt class="docutils literal"><span class="pre">anim-easing</span></tt>, 提供 easeIn/Out, elasticIn/Out, backIn/Out, bounceIn/Out 等平滑函数</li>
 <li><tt class="docutils literal"><span class="pre">anim-node-plugin</span></tt>, 让 <tt class="docutils literal"><span class="pre">Node/NodeList</span></tt> 直接支持动画调用</li>
 </ol>
-</dd>
-<dt>核心动画函数是 <a class="reference internal" href="../api/core/anim/index.html#anim.Anim" title="anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt></a> , 5 个参数分别为:</dt>
-<dd><ol class="first last arabic simple">
+</div></blockquote>
+<p>核心动画函数是 <a class="reference internal" href="../api/core/anim/index.html#anim.Anim" title="anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt></a> , 5 个参数分别为:</p>
+<blockquote>
+<div><ol class="arabic simple">
 <li><tt class="docutils literal"><span class="pre">elem</span></tt>: 指定动画的目标元素</li>
 <li><tt class="docutils literal"><span class="pre">props</span></tt>: 动画属性, 可以是字符串或者普通对象</li>
 <li><tt class="docutils literal"><span class="pre">duration</span></tt>: 动画时长, 以秒为单位</li>
 <li><tt class="docutils literal"><span class="pre">easing</span></tt>: 动画平滑函数, 可以取 <a class="footnote-reference" href="#id6" id="id2">[2]</a>, 不同的函数呈现不同的变化效果</li>
 <li><tt class="docutils literal"><span class="pre">callback</span></tt>: 动画完毕后的回调函数</li>
 </ol>
-</dd>
-</dl>
-<p>其实, 这个函数很简单, 在该文档的第一节就已经使用到了最基本的功能. 更多类似的小例子可见 <a class="footnote-reference" href="#id8" id="id3">[3]</a>.</p>
+</div></blockquote>
+<p>其实, 这个函数很简单, 在该文档的第一节就已经使用到了最基本的功能. 更多类似的小例子可见 <a class="footnote-reference" href="#id7" id="id3">[3]</a>.</p>
 <p>动画的原理都是一样的, 但要实现一些很酷的动画效果, 首先得分析出动画每个部分的状态, 再把它们有顺序的组合起来.</p>
 </div>
 <div class="section" id="id4">
@@ -200,7 +200,10 @@
 </pre></div>
 </td></tr></table></div>
 <p>关于动画, 先介绍到这里. 其他更炫的效果, 等待你的想象与实现!</p>
-<p>下一节, 将会介绍 KISSY 的第一个功能强大, 且在淘宝上经常能够看到的组件 &#8211; <a class="reference internal" href="../api/component/switchable/switchable.html#module-switchable" title="switchable"><tt class="xref py py-mod docutils literal"><span class="pre">Switchable</span></tt></a>, 并会介绍 <a class="reference internal" href="widgets.html#quickstart-widgets"><em>KISSY 组件</em></a>  的组织方式...</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>下一节, 将会介绍 KISSY 的第一个功能强大, 且在淘宝上经常能够看到的组件 &#8211; <a class="reference internal" href="../api/component/switchable/index.html#module-switchable" title="switchable"><tt class="xref py py-mod docutils literal"><span class="pre">Switchable</span></tt></a>, 并会介绍 <a class="reference internal" href="widgets.html#quickstart-widgets"><em>KISSY 组件</em></a>  的组织方式...</p>
 <p class="rubric">参考链接</p>
 <table class="docutils footnote" frame="void" id="id5" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -211,10 +214,10 @@
 <table class="docutils footnote" frame="void" id="id6" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="http://kissyteam.github.com/kissy/docs/anim/anim-easing.html">平滑函数</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference internal" href="../api/core/anim/index.html#anim.Anim" title="anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">平滑函数</span></tt></a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id8" rules="none">
+<table class="docutils footnote" frame="void" id="id7" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="demo-anim">动画示例</a></td></tr>
@@ -292,7 +295,8 @@
         <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">快速上手</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="index.html#kissy">KISSY 愿景</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#id3">内容大纲</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">KISSY 概览</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#id5">内容大纲</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="setup.html">Setup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hellokissy.html">Hello KISSY</a></li>
 <li class="toctree-l3"><a class="reference internal" href="node.html">Node 初步</a></li>

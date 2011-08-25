@@ -38,8 +38,8 @@ Methods
         S.param({ foo: '', bar: 2 }); // => foo=&bar=2
         S.param({ foo: undefined, bar: 2 }); // => foo=undefined&bar=2
 
-.. seealso::
+    .. seealso::
 
-    `Jquery.param <http://api.jquery.com/jQuery.param>`_
+        `Jquery.param <http://api.jquery.com/jQuery.param>`_
 
            

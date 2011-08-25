@@ -114,7 +114,7 @@ KISSY 中提供了 Ajax 异步请求功能, 下面仅介绍最常用的 :func:`~
     #. 在回调函数中, 获取传入的 json 数据, 稍加拼装就可以使用啦~
     #. 最后的 ``window.getFavorites`` 是将方法 ``getFavorites`` 暴露给全局, 因为当请求后调用的就是全局范围内的 ``getFavorites`` 函数, 如果是对象中的方法, 同样可以将该对象暴露给全局后再调用其方法.
 
-
+|
 
 在简单介绍完 ``S.getScript`` 之后, 下面将讲述 KISSY 提供的动画支持 :ref:`Anim <quickstart-anim>` ...
 

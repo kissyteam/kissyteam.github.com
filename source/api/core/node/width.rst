@@ -42,4 +42,4 @@ Methods
         在现代浏览器中, css width 属性不包括 padding , border 或者 margin.
 
 
-    例子可参考 :meth:`~node.height`
+    例子可参考 :meth:`~node.NodeList.height`

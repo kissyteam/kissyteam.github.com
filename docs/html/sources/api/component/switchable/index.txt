@@ -1,4 +1,6 @@
-﻿Switchable
+﻿.. module:: switchable
+
+Switchable
 ===============================
 
 |  该模块由 Switchable 基础类、插件和 Widget 类组成.

@@ -87,29 +87,30 @@ Demo
 
 **在所有段落中添加一些 html 字符串**
 
+    .. raw:: html
+
+        <iframe width="100%" height="135"  class="iframe-demo" src="../../../static/api/core/node/append-1.html"></iframe>
+
     .. literalinclude:: /_static/api/core/node/append-1.html
        :language: html
 
-    .. raw:: html
-
-        <iframe width="100%" height="135" src="../../../static/api/core/node/append-1.html"></iframe>
 
 
 **给所有段落添加一个文本节点**
+    .. raw:: html
+
+        <iframe width="100%" height="135"  class="iframe-demo" src="../../../static/api/core/node/append-2.html"></iframe>
 
     .. literalinclude:: /_static/api/core/node/append-2.html
        :language: html
 
-    .. raw:: html
-
-        <iframe width="100%" height="135" src="../../../static/api/core/node/append-2.html"></iframe>
 
 
 **给所有段落添加一个 ``NodeList``  对象**
 
-    .. literalinclude:: /_static/api/core/node/append-3.html
-       :language: html
-
     .. raw:: html
 
-        <iframe width="100%" height="135" src="../../../static/api/core/node/append-3.html"></iframe>
+        <iframe width="100%" height="135"  class="iframe-demo" src="../../../static/api/core/node/append-3.html"></iframe>
+
+    .. literalinclude:: /_static/api/core/node/append-3.html
+       :language: html

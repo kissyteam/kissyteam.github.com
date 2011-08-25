@@ -1,4 +1,4 @@
-﻿.. module:: switchable
+﻿.. currentmodule:: switchable
 
 Switchable
 ===================================================================

@@ -49,7 +49,7 @@ Methods Detail
 .. method:: Target.detach
 
     | **detach** ( type  [ , fn , scope ] )
-    | 解除绑定的事件处理器, 可参考 :func:`Event.detach`
+    | 解除绑定的事件处理器, 可参考 :func:`event.detach`
         
 
     .. code-block:: javascript

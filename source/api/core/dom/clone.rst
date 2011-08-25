@@ -94,13 +94,12 @@ Methods
             elem.clone().attr("custom",{x:2});
         
         
-    示例:
-
-    **高级点的，克隆后保留原有事件逻辑**
+    示例: **高级点的，克隆后保留原有事件逻辑**
 
     .. raw:: html
 
         <iframe width="100%" height="135"  class="iframe-demo" src="../../../static/api/core/dom/clone.html"></iframe>
+
     .. literalinclude:: /_static/api/core/dom/clone.html
            :language: html
 

@@ -19,9 +19,7 @@ Methods
     
     :param string|HTMLElement node: 插入的节点. 字符串格式参见 :ref:`KISSY selector <dom-selector>` , 获取匹配的第一个元素.
     :param string|HTMLElement parent: 参照父节点. 字符串格式参见 :ref:`KISSY selector <dom-selector>`, 获取匹配的第一个元素.
-	
-    举例
-	
+
 	.. code-block:: javascript
 	
 	    <ul id="J_ul">

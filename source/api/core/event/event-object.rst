@@ -73,7 +73,7 @@ Properties Detail
 
 .. attribute:: currentTarget
 
-    {Object} - 返回 :class:`Event.Object`,  当前事件处理器的 dom 节点或对象, 通常和 this 相同.
+    {Object} - 返回 :class:`Event.Object<event.Object>`,  当前事件处理器的 dom 节点或对象, 通常和 this 相同.
 
     .. note::
 
@@ -98,12 +98,12 @@ Properties Detail
 
     显示当前鼠标位置相对于 iframe 文档的距离:
 
-    .. literalinclude:: /_static/api/core/event/pageX.html
-       :language: html
-
     .. raw:: html
 
-        <iframe width="100%" height="135" src="../../../static/api/core/event/pageX.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/pageX.html"></iframe>
+
+    .. literalinclude:: /_static/api/core/event/pageX.html
+       :language: html
 
 
 .. attribute:: relatedTarget
@@ -131,21 +131,21 @@ Properties Detail
 
     显示点击事件触发源的节点名称
 
+    .. raw:: html
+
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/target.html"></iframe>
+
     .. literalinclude:: /_static/api/core/event/target.html
        :language: html
 
+    简单的委托实现, 点击处理器被绑定到 ul 上面,  点击 li 会使得该 li 下的子 ul 菜单显示与隐藏.
+
     .. raw:: html
 
-        <iframe width="100%" height="135" src="../../../static/api/core/event/target.html"></iframe>
-
-    简单的委托实现, 点击处理器被绑定到 ul 上面,  点击 li 会使得该 li 下的子 ul 菜单显示与隐藏.
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/target_2.html"></iframe>
 
     .. literalinclude:: /_static/api/core/event/target_2.html
        :language: html
-
-    .. raw:: html
-
-        <iframe width="100%" height="135" src="../../../static/api/core/event/target_2.html"></iframe>
 
 .. attribute:: type
 
@@ -168,26 +168,26 @@ Properties Detail
 
     显示当前按键信息
 
+    .. raw:: html
+
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/which.html"></iframe>
+
     .. literalinclude:: /_static/api/core/event/which.html
        :language: html
 
-    .. raw:: html
-
-        <iframe width="100%" height="135" src="../../../static/api/core/event/which.html"></iframe>
-
 .. attribute:: isImmediatePropagationStopped
 
-    {Boolean} - 默认false . 是否停止了该事件的后续所有事件处理器执行, 通过调用 :meth:`~event.Object.stopImmediatePropagation` 设置状态.
+    {Boolean} - 默认false . 是否停止了该事件的后续所有事件处理器执行, 通过调用 :meth:`~event.stopImmediatePropagation` 设置状态.
 
     检查是否 ``stopImmediatePropagation()`` 被调用了
 
 
-    .. literalinclude:: /_static/api/core/event/isImmediatePropagationStopped.html
-       :language: html
-
     .. raw:: html
 
-        <iframe width="100%" height="135" src="../../../static/api/core/event/isImmediatePropagationStopped.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/isImmediatePropagationStopped.html"></iframe>
+
+    .. literalinclude:: /_static/api/core/event/isImmediatePropagationStopped.html
+       :language: html
 
 
 
@@ -197,48 +197,48 @@ Methods Detail
 .. method:: preventDefault
 
     | **preventDefault** ()
-    | 阻止默认行为的发生.例如点击链接不会使浏览器跳转到新的地址. 我们可以使用 :attr:`~event.Object.isDefaultPrevented` 来判断是否某个事件处理器里调用了这个方法.
+    | 阻止默认行为的发生.例如点击链接不会使浏览器跳转到新的地址. 我们可以使用 :attr:`~event.isDefaultPrevented` 来判断是否某个事件处理器里调用了这个方法.
 
 
     阻止链接的跳转
 
+    .. raw:: html
+
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/preventDefault.html"></iframe>
+
     .. literalinclude:: /_static/api/core/event/preventDefault.html
        :language: html
 
-
-    .. raw:: html
-
-        <iframe width="100%" height="135" src="../../../static/api/core/event/preventDefault.html"></iframe>
 
 
 .. method:: stopImmediatePropagation
 
     | **stopImmediatePropagation** ()
     | 停止当前事件冒泡. 不光停止冒泡到下一个事件目标, 当前目标上的任何后续监听函数, 也马上取消执行.
-    | 用 :attr:`~event.Object.isImmediatePropagationStopped` 来判断是否调用了该方法.
+    | 用 :attr:`~event.isImmediatePropagationStopped` 来判断是否调用了该方法.
 
 
     阻止其他的事件处理器执行
+
+    .. raw:: html
+
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/stopImmediatePropagation.html"></iframe>
 
 
     .. literalinclude:: /_static/api/core/event/stopImmediatePropagation.html
        :language: html
 
 
-    .. raw:: html
-
-        <iframe width="100%" height="135" src="../../../static/api/core/event/stopImmediatePropagation.html"></iframe>
-
 
 .. method:: stopPropagation
 
     | **stopPropagation** ()
-    | 停止事件沿 dom 树向上冒泡, 组织祖先节点的所有事件处理器执行.我们可以使用 :attr:`~event.Object.isPropagationStopped` 来判断当前方法是否执行过.
+    | 停止事件沿 dom 树向上冒泡, 组织祖先节点的所有事件处理器执行.我们可以使用 :attr:`~event.isPropagationStopped` 来判断当前方法是否执行过.
     | 该方法在 :func:`~event.fire` 中也起作用.
 
     .. note::
 
-        调用该方法不会组织该节点其他事件处理器的运行, 如果要需要调用 :meth:`~event.Object.stopImmediatePropagation`
+        调用该方法不会组织该节点其他事件处理器的运行, 如果要需要调用 :meth:`~event.stopImmediatePropagation`
 
 
     阻止 click 事件的冒泡
@@ -255,7 +255,7 @@ Methods Detail
 .. method:: isDefaultPrevented
 
     | **isDefaultPrevented** ()
-    | 判断 :meth:`~event.Object.preventDefault` 是否被调用了.
+    | 判断 :meth:`~event.preventDefault` 是否被调用了.
 
 
     .. code-block:: javascript
@@ -270,15 +270,15 @@ Methods Detail
 .. method:: isPropagationStopped
 
     | **isPropagationStopped** ()
-    | 判断 :meth:`~event.Object.stopPropagation` 是否被调用了.
+    | 判断 :meth:`~event.stopPropagation` 是否被调用了.
 
 
     判断 stopPropagation 是否被调用
 
-    .. literalinclude:: /_static/api/core/event/isPropagationStopped.html
-       :language: html
-
     .. raw:: html
 
-        <iframe width="100%" height="135" src="../../../static/api/core/event/isPropagationStopped.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/isPropagationStopped.html"></iframe>
 
+
+    .. literalinclude:: /_static/api/core/event/isPropagationStopped.html
+       :language: html

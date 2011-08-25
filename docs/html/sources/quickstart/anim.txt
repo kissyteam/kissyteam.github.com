@@ -12,18 +12,20 @@ Anim
 
 相当简单的一行代码就可以出现元素的渐隐效果, 从那时她就深深吸引了当初只知道 flash 能做动画的我.
 
-现在 KISSY.Anim 保持了同样精简高效的风格, 很让我心动.
+现在 ``KISSY.Anim`` 保持了同样精简高效的风格, 很让我心动.
 
 
 S.Anim
 ----------------------------
 
 KISSY 提供的动画特效支持主要由三个子模块组成 [1]_ :
+
  #. ``anim``, 动画的基础模块
  #. ``anim-easing``, 提供 easeIn/Out, elasticIn/Out, backIn/Out, bounceIn/Out 等平滑函数
  #. ``anim-node-plugin``, 让 ``Node/NodeList`` 直接支持动画调用
 
 核心动画函数是 :class:`~anim.Anim` , 5 个参数分别为:
+
  #. ``elem``: 指定动画的目标元素
  #. ``props``: 动画属性, 可以是字符串或者普通对象
  #. ``duration``: 动画时长, 以秒为单位
@@ -127,10 +129,12 @@ KISSY 提供的动画特效支持主要由三个子模块组成 [1]_ :
 
 关于动画, 先介绍到这里. 其他更炫的效果, 等待你的想象与实现!
 
+|
+
 下一节, 将会介绍 KISSY 的第一个功能强大, 且在淘宝上经常能够看到的组件 -- :mod:`Switchable <switchable>`, 并会介绍 :ref:`KISSY 组件 <quickstart-widgets>`  的组织方式...
 
 .. rubric:: 参考链接
 
 .. [1] `Anim API 文档 <anim>`_
-.. [2] `平滑函数 <http://kissyteam.github.com/kissy/docs/anim/anim-easing.html>`_
+.. [2] :class:`平滑函数  <anim.Anim>`
 .. [3] `动画示例 <demo-anim>`_

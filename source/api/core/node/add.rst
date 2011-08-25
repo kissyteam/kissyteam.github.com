@@ -24,7 +24,7 @@ Methods
     
     | NodeList **add** ( nodeList )
     
-    各参数同 :meth:`~node.all` 保持一致.
+    各参数同 :meth:`~node.NodeList.all` 保持一致.
 
     .. note::
         调用该方法并不会改变当前 NodeList 对象.

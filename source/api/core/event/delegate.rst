@@ -103,32 +103,32 @@ Demo
 
     **委托实现点击通知**
 
+
+    .. raw:: html
+
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/delegate.html"></iframe>
+
     .. literalinclude:: /_static/api/core/event/delegate.html
        :language: html
 
 
+    **也可以阻止事件向上冒泡**
+
+
     .. raw:: html
 
-        <iframe width="100%" height="135" src="../../../static/api/core/event/delegate.html"></iframe>
-
-
-    **也可以阻止事件向上冒泡**
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/delegate_2.html"></iframe>
 
     .. literalinclude:: /_static/api/core/event/delegate_2.html
        :language: html
 
 
+    **委托 mouseenter/mouseleave**
+
     .. raw:: html
 
-        <iframe width="100%" height="135" src="../../../static/api/core/event/delegate_2.html"></iframe>
+        <iframe width="100%" height="370" class="iframe-demo" src="../../../static/api/core/event/delegate_mouse.html"></iframe>
 
-
-    **委托 mouseenter/mouseleave**
-    
     .. literalinclude:: /_static/api/core/event/delegate_mouse.html
        :language: html
 
-
-    .. raw:: html
-
-        <iframe width="100%" height="370" src="../../../static/api/core/event/delegate_mouse.html"></iframe>

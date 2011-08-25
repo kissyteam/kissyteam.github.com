@@ -44,13 +44,13 @@ Class Detail
             也可以设置 scrollLeft 或者 scrollTop, 这时会直接对元素的滚动属性产生动画.
         
     :param Number duration: 默认为 1 , 动画持续时间, 以秒为单元.
-    :param String easing: 默认为 'easeNone' , 动画平滑函数, 可取值 “easeNone”,”easeIn”,”easeOut”,”easeBoth”,”easeInStrong”, “easeOutStrong”,”easeBothStrong”,”elasticIn”,”elasticOut”, “elasticBoth”,”backIn”,”backOut”,”backBoth”, “bounceIn”,”bounceOut”,”bounceBoth”. 效果预览, 可以参考 Robert Penner 博士的： `easing_demo.html <http://www.robertpenner.com/easing/easing_demo.html>`_ .
+    :param String easing: 默认为 'easeNone' , 动画平滑函数, 可取值 "easeNone","easeIn","easeOut","easeBoth","easeInStrong", "easeOutStrong","easeBothStrong","elasticIn","elasticOut", "elasticBoth","backIn","backOut","backBoth", "bounceIn","bounceOut","bounceBoth". 效果预览, 可以参考 Robert Penner 博士的： `easing_demo.html <http://www.robertpenner.com/easing/easing_demo.html>`_ .
     :param function callback: 默认为 null , 动画结束回调.
     :param Boolean nativeSupport: 默认为 true , 是否在支持css动画的浏览器上使用原生机制.
     
-.. note::
-    默认如果浏览器支持 css3 则会采用 css3 来产生动画，但是目前 css3 动画尙不完善，可能会遇到一些奇怪问题，
-    这时可以将 ``nativeSupport`` 设置为 false ，来禁用原生动画采用 js 模拟动画.    
+    .. note::
+        默认如果浏览器支持 css3 则会采用 css3 来产生动画，但是目前 css3 动画尙不完善，可能会遇到一些奇怪问题，
+        这时可以将 ``nativeSupport`` 设置为 false ，来禁用原生动画采用 js 模拟动画.
     
 
     

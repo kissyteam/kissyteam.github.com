@@ -24,15 +24,15 @@ Methods
     :returns: 拷贝后的新对象
     :type: object
     
-.. note::
+    .. note::
 
-    DOM 节点请用 :func:`dom.clone`    
-    
-例如
+        DOM 节点请用 :func:`dom.clone`
 
-.. code-block:: javascript
+    例如
 
-    var S = KISSY;
-    var a={x:{y:{z:1}}}
-    var b=S.clone(a); // => b={x:y:{z:1}} , b!==a
-    var c=S.clone(a,function(v,k){if(k=="z") return false;}) // => c={x:{y:{}}}
+    .. code-block:: javascript
+
+        var S = KISSY;
+        var a={x:{y:{z:1}}}
+        var b=S.clone(a); // => b={x:y:{z:1}} , b!==a
+        var c=S.clone(a,function(v,k){if(k=="z") return false;}) // => c={x:{y:{}}}

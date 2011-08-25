@@ -22,8 +22,6 @@ Methods
     :param boolean top: 是否强制元素的上边界与容器的上边界对齐, 左边界和左边界对齐
     :param boolean hscroll: 是否允许容器左右滚动以保证元素显示在其可视区域.
 	
-    举例
-	
 	.. code-block:: javascript
 	
 	    KISSY.ready(function(S){

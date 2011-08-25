@@ -1,18 +1,7 @@
 .. _quickstart:
 
-
 快速上手
 ===============================================
-
-这是一份介绍如何使用 KISSY 的入门教程, 教你从最基本的地方开始熟悉这可爱的 KISSY ^o^
-
-如果你是如下情况之一的开发人员, 都可以通过这份文档慢慢使用起 KISSY:
-
-   #. 以前使用过 `jQuery <http://jquery.com/>`_ , `YUI <http://developer.yahoo.com/yui/>`_ , `Ext <http://www.sencha.com/products/js/>`_ 等前端类库, 但都不是很满意, 想尝试个新鲜点的类库;
-   #. 前端开发新手, 只有基本的 JS 基础, 正好想学一个 JS 类库来提高自身技能;
-   #. 完全是个菜鸟, 也没关系! 学习 KISSY 会让你逐渐对前端技术产生足够的兴趣;
-   #. 至于前端大牛, 直接进入KISSY的 `源码世界 <http://github.com/kissyteam/kissy/tree/master/src/>`_ 贡献你的智慧吧!
-
 
 KISSY 愿景
 ------------------------
@@ -22,7 +11,38 @@ KISSY 愿景
 |        Simple & Stupid, Short & Sweet, Slim & Sexy...
 |    Yeah!
 
-下面就开始我们的 KISSY 新奇之旅吧~~
+KISSY 概览
+------------------------
+
+**KISSY 是什么?**
+
+    - 她是淘宝的前端类库, 几乎在淘宝的每个页面上都能看到她的身影!
+
+**KISSY 提供什么?**
+
+    - 稳定的核心, 包括 :ref:`oo <KISSY>`, :mod:`DOM <dom>`, :mod:`Event <event>`, :mod:`Anim <anim>`, :mod:`Ajax <io>` 等;
+    - 强大且易用的脚本加载器, 特有的 :ref:`Loader`;
+    - 丰富的UI组件, 包括 :mod:`Switchable <switchable>`, :mod:`Overlay <overlay>`, :mod:`Draggable and Droppable <dd>` 等;
+    - 更有设计模式库 `DPL </kissy-dpl/base/index.html>`_, `KISSY 富文本编辑器 </docs/html/relatedproj/editorguide/index.html>`_, `AJBridge </kissy-ajbridge/docs/index.html>`_ 等强大组件.
+
+**除了这些, 还有?**
+
+    - 优质的代码, 阅读她的代码, 我敢保证你能学到更多;
+    - 自动化脚本测试, 保证代码的稳定性;
+    - 完善的文档, 包括 `API </docs/html/api/index.html>`_ 和 `Demo </docs/html/demo/index.html>`_;
+
+
+**使用过程中, 碰到了疑似 bug 的 bug?**
+
+    通过以下方式, 积极主动反馈给我们:
+
+    - 在出现问题的方法/模块的文档下方, 直接留言;
+    - `发邮件给我们 <mailto:kissyteam@gmail.com>`_, 说明使用场景, 最好附上 demo;
+    - 加入 KISSY 官方旺旺群: 29676575;
+
+|
+
+接下来, 是一份介绍如何使用 KISSY 的入门教程, 教你从最基本的地方开始熟悉这可爱的 KISSY ^o^
 
 
 内容大纲

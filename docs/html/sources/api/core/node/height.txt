@@ -52,20 +52,22 @@ Demo
 
 **得到各种各样的高度, 黄色高亮区域代表 iframe 体**
 
+    .. raw:: html
+
+        <iframe width="100%" height="135"  class="iframe-demo" src="../../../static/api/core/node/height-get.html"></iframe>
+
+
     .. literalinclude:: /_static/api/core/node/height-get.html
        :language: html
 
+
+**设置元素的高度**
+
     .. raw:: html
 
-        <iframe width="100%" height="135" src="../../../static/api/core/node/height-get.html"></iframe>
-
-  
-**设置元素的高度**
+        <iframe width="100%" height="135"  class="iframe-demo" src="../../../static/api/core/node/height-set.html"></iframe>
 
     .. literalinclude:: /_static/api/core/node/height-set.html
        :language: html
 
 
-    .. raw:: html
-
-        <iframe width="100%" height="135" src="../../../static/api/core/node/height-set.html"></iframe>

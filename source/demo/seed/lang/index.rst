@@ -1,21 +1,22 @@
-﻿.. py:currentmodule:: Anim
+﻿.. currentmodule:: seed
 
 .. _seed-lang:
 
-
-Anim Demos
+Lang Demos
 ==================================================
 
 Class
 -----------------------------------------------
 
-  * :class:`seed-lang`
+  * :class:`seed`
 
-
-.. _Seed-lang-demo:
 
 基本命令示例
 -----------------------------------------------
+
+    .. raw:: html
+
+        <iframe class="iframe-demo" width="100%" height="235" src="../../../static/api/seed/lang/demo.html"></iframe>
 
     .. code-block:: html
 
@@ -65,11 +66,3 @@ Class
 	    });
 	    </script>
 
-DEMO
------------------------------------------------
-
-    .. raw:: html
-
-        <iframe width="100%" height="235" src="../../../static/api/seed/lang/demo.html"></iframe>
-        
-        

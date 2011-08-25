@@ -1,5 +1,4 @@
-﻿.. py:currentmodule:: Loader
-
+﻿.. currentmodule:: loader
 
 Loader Demos
 ===============================
@@ -9,8 +8,6 @@ Module
 
   :mod:`seed`
 
-
-.. _Seed-loader-demo1:
 
 Demo - 1.1.x 的 Loader 使用示例
 ------------------------------------
@@ -79,7 +76,7 @@ Demo - 1.1.x 的 Loader 使用示例
 
 
     
-.. _Seed-loader-demo2:
+.. _seed-loader-demo2:
 
 Demo - 1.2 的 Loader 使用示例
 ------------------------------------
