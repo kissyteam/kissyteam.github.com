@@ -1,6 +1,6 @@
 .. currentmodule:: menubutton
 
-Demo - 级联菜单
+级联菜单
 ======================================
 
 .. versionadded:: 1.2
@@ -14,7 +14,7 @@ Class
   * :class:`Select`
   * :class:`Option`
 
-Demo - 级联菜单
+级联菜单
 --------------------------------------------------
 
     .. raw:: html

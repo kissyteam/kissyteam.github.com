@@ -1,6 +1,6 @@
 .. currentmodule:: menubutton
 
-Demo - 简单菜单按钮
+简单菜单按钮
 ======================================
 
 .. versionadded:: 1.2
@@ -14,7 +14,7 @@ Class
   * :class:`Select`
   * :class:`Option`
 
-Demo - 简单菜单按钮
+简单菜单按钮
 --------------------------------------------------
 
     .. raw:: html

@@ -1,6 +1,6 @@
 .. currentmodule:: overlay
 
-Dialog - 从 Markup 中构建
+对话框 从 Markup 中构建
 ========================================================
 
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_
@@ -10,7 +10,7 @@ Class
 
   * :class:`Overlay`
 
-Dialog - 从 Markup 中构建
+对话框 从 Markup 中构建
 ----------------------------------------------------------
 
     .. raw:: html

@@ -1,6 +1,6 @@
 .. currentmodule:: menubutton
 
-Demo - 模拟 selectbox
+模拟 selectbox
 ======================================
 
 .. versionadded:: 1.2
@@ -14,7 +14,7 @@ Class
   * :class:`Select`
   * :class:`Option`
 
-Demo - 模拟 selectbox
+模拟 selectbox
 --------------------------------------------------
 
     .. raw:: html

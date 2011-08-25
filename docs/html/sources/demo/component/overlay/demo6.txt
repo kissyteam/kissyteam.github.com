@@ -1,6 +1,6 @@
 .. currentmodule:: overlay
 
-Dialog - 新建 + Mask + aria
+对话框 新建 + Mask + aria
 ========================================================
 
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_
@@ -10,7 +10,7 @@ Class
 
   * :class:`Overlay`
 
-Dialog - 新建 + Mask + aria
+对话框 新建 + Mask + aria
 ----------------------------------------------------------
 
     .. raw:: html

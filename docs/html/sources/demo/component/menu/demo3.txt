@@ -1,6 +1,6 @@
 .. currentmodule:: menu
 
-Demo - 删除某个 menu
+删除某个 menu
 ======================================
 
 .. versionadded:: 1.2
@@ -18,7 +18,7 @@ Class
   * :class:`PopupMenu`
   * :class:`FilterMenu`
 
-Demo - 删除某个 menu
+删除某个 menu
 --------------------------------------------------
 
     .. raw:: html

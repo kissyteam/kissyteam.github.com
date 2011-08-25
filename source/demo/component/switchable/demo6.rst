@@ -1,7 +1,7 @@
 .. currentmodule:: switchable
 
 
-Demo - 普通旋转木马
+普通旋转木马
 ========================================================
 
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/switchable/>`_
@@ -12,7 +12,7 @@ Class
   * :class:`Switchable`
 
 
-Demo - 普通旋转木马
+普通旋转木马
 --------------------------------------------------
 
     .. raw:: html

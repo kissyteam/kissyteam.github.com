@@ -82,8 +82,10 @@
 					
   <div class="section" id="kissy">
 <span id="workflow-dev-spec"></span><h1>KISSY 组件开发规范<a class="headerlink" href="#kissy" title="Permalink to this headline">¶</a></h1>
-<p>by <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></p>
-<p>开始之前请先阅读 <a class="reference internal" href="workflow-simple.html#workflow-simple"><em>KISSY 组件开发流程</em></a>.</p>
+<div class="line-block">
+<div class="line">开始之前请先阅读 <a class="reference internal" href="workflow-simple.html#workflow-simple"><em>KISSY 组件开发流程</em></a>.</div>
+<div class="line">作者: <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></div>
+</div>
 <div class="section" id="api">
 <h2>确定 API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <p>首先确定该组件需要公开的 api 接口包括属性名称, 函数名, 参数以及返回值, 可参考 YUI3 ,Jquery 等类库的同类组件, 尽量保持一致.
@@ -152,17 +154,18 @@
 </div>
 <div class="section" id="readme-txt">
 <h2>readme.txt 编写<a class="headerlink" href="#readme-txt" title="Permalink to this headline">¶</a></h2>
+<p>可选. 写明组件作者, 功能, 重要修改历史或说明即可.</p>
 </div>
 <div class="section" id="id3">
 <h2>文档编写<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>可选. 在 <tt class="docutils literal"><span class="pre">docs</span></tt> 目录下编写组件文档, 后缀名为 <tt class="docutils literal"><span class="pre">rst</span></tt> , 可参照 <tt class="docutils literal"><span class="pre">KISSY</span> <span class="pre">Overlay</span></tt> 的文档 <a class="reference external" href="http://docs.kissyui.com/source/component/overlay/index.rst">api</a>  以及
-<a class="reference external" href="http://docs.kissyui.com/source/component/overlay/usage.rst">使用文档</a> , 详细格式可参见 <a class="reference external" href="http://sphinx.pocoo.org/">sphinx</a> . 文档不做强求, 也可直接写纯文本格式, 在 demo.html 详细讲解即可.</p>
+<p>可选. 在 <tt class="docutils literal"><span class="pre">docs</span></tt> 目录下编写组件文档, 后缀名为 <tt class="docutils literal"><span class="pre">rst</span></tt> , 可参照 <tt class="docutils literal"><span class="pre">KISSY</span> <span class="pre">Overlay</span></tt> 的文档 <a class="reference external" href="../../demo/component/overlay/">api &lt;../../api/component/overlay/&gt;`_以及
+`使用文档</a> , 详细格式可参见 <a class="reference external" href="../../tools/use-sphinx.html">sphinx</a> . 文档不做强求, 也可直接写纯文本格式, 在 demo.html 详细讲解即可.</p>
 </div>
-<div class="section" id="id6">
-<h2>单元测试编写<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>单元测试编写<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>可选. 在 <tt class="docutils literal"><span class="pre">tests</span></tt> 目录下编写单元测试代码, 单元测试包括两个部分, 测试准备页面以及单元测试用例脚本.</p>
-<div class="section" id="id7">
-<h3>测试准备页面<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>测试准备页面<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>编写 test.html , 引入单元测试框架 jasmine (在 kissy/tools/ 下) , 例如：</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
@@ -193,8 +196,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id8">
-<h3>测试用例脚本编写<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>测试用例脚本编写<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>测试用例编写在脚本 <tt class="docutils literal"><span class="pre">overlay-spec.js</span></tt> 中, 详细可参考 <a class="reference external" href="https://github.com/pivotal/jasmine/wiki">jasmine wiki</a> , 这里简单举个例子：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// 测试用例脚本可以包含很多 suit</span>
 <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;开始一个 suit&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
@@ -300,9 +303,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#demo">demo 编写</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#readme-txt">readme.txt 编写</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">文档编写</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">单元测试编写</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id7">测试准备页面</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id8">测试用例脚本编写</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">单元测试编写</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">测试准备页面</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">测试用例脚本编写</a></li>
 </ul>
 </li>
 </ul>

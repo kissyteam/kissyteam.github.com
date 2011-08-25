@@ -1,6 +1,6 @@
 .. currentmodule:: tree
 
-Demo - 新建多选树
+新建多选树
 ======================================
 
 .. versionadded:: 1.2
@@ -15,7 +15,7 @@ Class
   * :class:`Tree <tree.Tree>`
   * :class:`Tree.CheckTree <tree.CheckTree>`
 
-Demo -  新建多选树
+新建多选树
 --------------------------------------------------
 
     .. raw:: html

@@ -1,6 +1,6 @@
 .. currentmodule:: menu
 
-Demo - menu 的基本使用
+menu 的基本使用
 ======================================
 
 .. versionadded:: 1.2
@@ -18,7 +18,7 @@ Class
   * :class:`PopupMenu`
   * :class:`FilterMenu`
 
-Demo - menu 的基本使用
+menu 的基本使用
 --------------------------------------------------
 
     .. raw:: html

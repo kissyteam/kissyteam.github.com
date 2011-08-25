@@ -1,6 +1,6 @@
 ﻿.. currentmodule:: dd
 
-Demo - Droppable 基本使用
+Droppable 基本使用
 ===============================================
 
 .. versionadded:: 1.2
@@ -13,7 +13,7 @@ Class
   * :class:`Droppable`
 
 
-Demo - Droppable 基本使用
+Droppable 基本使用
 -------------------------------
 
     .. raw:: html

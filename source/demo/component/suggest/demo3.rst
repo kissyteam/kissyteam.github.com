@@ -1,6 +1,6 @@
 .. currentmodule:: suggest
 
-Demo - 百度的搜索提示
+百度的搜索提示
 ======================================
 
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/suggest/>`_
@@ -8,9 +8,9 @@ Demo - 百度的搜索提示
 Class
 -----------------------------------------------
 
-  * :class:`~suggest.Suggest`
+  * :class:`Suggest`
 
-Demo - 百度的搜索提示
+百度的搜索提示
 --------------------------------------------------
 
     .. raw:: html

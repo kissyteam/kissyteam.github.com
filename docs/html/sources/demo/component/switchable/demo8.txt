@@ -1,7 +1,6 @@
 .. currentmodule:: switchable
 
-
-Demo - 手风琴效果
+手风琴效果
 ========================================================
 
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/switchable/>`_
@@ -12,7 +11,7 @@ Class
   * :class:`Switchable`
 
 
-Demo - 手风琴效果
+手风琴效果
 --------------------------------------------------
 
     .. raw:: html

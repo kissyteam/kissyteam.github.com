@@ -1,6 +1,6 @@
 .. currentmodule:: suggest
 
-Demo - 搜索提示的更多定制
+搜索提示的更多定制
 ======================================
 
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/suggest/>`_
@@ -8,9 +8,9 @@ Demo - 搜索提示的更多定制
 Class
 -----------------------------------------------
 
-  * :class:`~suggest.Suggest`
+  * :class:`Suggest`
 
-Demo - 搜索提示的更多定制
+搜索提示的更多定制
 --------------------------------------------------
 
     .. raw:: html

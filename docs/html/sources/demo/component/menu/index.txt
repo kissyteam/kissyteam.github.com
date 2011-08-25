@@ -1,6 +1,6 @@
 .. currentmodule:: menu
 
-Menu Demos
+Menu 使用示例
 ======================================
 
 .. versionadded:: 1.2

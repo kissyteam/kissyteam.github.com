@@ -1,6 +1,6 @@
 .. currentmodule:: overlay
 
-Dialog - fixed 居中
+对话框 fixed 居中
 ========================================================
 
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_
@@ -10,7 +10,7 @@ Class
 
   * :class:`Overlay`
 
-Dialog - fixed 居中
+对话框 fixed 居中
 ----------------------------------------------------------
 
     .. raw:: html

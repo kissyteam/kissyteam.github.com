@@ -1,6 +1,6 @@
 .. currentmodule:: menubutton
 
-MenuButton Demos
+MenuButton 使用示例
 ======================================
 
 .. versionadded:: 1.2

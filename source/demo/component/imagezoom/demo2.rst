@@ -1,6 +1,6 @@
 .. currentmodule:: imagezoom
 
-Demo - 内嵌模式
+内嵌模式
 ========================================================
 
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_
@@ -10,7 +10,7 @@ Class
 
   * :class:`ImageZoom`
 
-Demo - 内嵌模式
+内嵌模式
 ----------------------------------------------------------
 
     .. raw:: html

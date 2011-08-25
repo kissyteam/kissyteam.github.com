@@ -1,6 +1,6 @@
 .. currentmodule:: button
 
-Demo - 定制button的样式
+定制 button 的样式
 =====================================================
 
 .. versionadded:: 1.2
@@ -13,7 +13,7 @@ Class
 
   * :class:`Button`
 
-Demo - 定制button的样式
+定制 button 的样式
 --------------------------------------------------
 
     .. raw:: html

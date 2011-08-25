@@ -1,6 +1,6 @@
 .. currentmodule:: tree
 
-Demo - 新建简单树
+新建简单树
 ======================================
 
 .. versionadded:: 1.2
@@ -15,7 +15,7 @@ Class
   * :class:`Tree <tree.Tree>`
   * :class:`Tree.CheckTree <tree.CheckTree>`
 
-Demo - 新建简单树
+新建简单树
 --------------------------------------------------
 
     .. raw:: html

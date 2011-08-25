@@ -1,6 +1,6 @@
 ﻿.. currentmodule:: loader
 
-Loader Demos
+Loader 使用示例
 ===============================
 
 Module
@@ -9,7 +9,7 @@ Module
   :mod:`seed`
 
 
-Demo - 1.1.x 的 Loader 使用示例
+1.1.x 的 Loader 使用示例
 ------------------------------------
 
     .. raw:: html
@@ -78,7 +78,7 @@ Demo - 1.1.x 的 Loader 使用示例
     
 .. _seed-loader-demo2:
 
-Demo - 1.2 的 Loader 使用示例
+1.2 的 Loader 使用示例
 ------------------------------------
 
     .. raw:: html

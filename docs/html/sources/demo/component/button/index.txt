@@ -1,6 +1,6 @@
 .. currentmodule:: button
 
-Button Demos
+Button 使用示例
 ======================================
 
 .. versionadded:: 1.2

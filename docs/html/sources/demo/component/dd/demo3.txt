@@ -1,6 +1,6 @@
 ﻿.. currentmodule:: dd
 
-Demo - DraggableDelegate 使用示例
+DraggableDelegate 使用示例
 =============================================
 
 .. versionadded:: 1.2
@@ -13,7 +13,7 @@ Class
 
   * :class:`DraggableDelegate`
 
-Demo - DraggableDelegate 使用示例
+DraggableDelegate 使用示例
 -----------------------------------------------
 
     .. raw:: html

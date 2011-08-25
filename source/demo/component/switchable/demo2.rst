@@ -1,7 +1,7 @@
 .. currentmodule:: switchable
 
 
-Demo - 使用普通标签页
+使用普通标签页
 ========================================================
 
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/switchable/>`_
@@ -12,7 +12,7 @@ Class
   * :class:`Switchable`
 
 
-Demo - 使用普通标签页
+使用普通标签页
 --------------------------------------------------
 
     .. raw:: html

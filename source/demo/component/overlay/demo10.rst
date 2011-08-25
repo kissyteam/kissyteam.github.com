@@ -1,6 +1,6 @@
 .. currentmodule:: overlay
 
-Dialog - 运动到某个位置
+对话框运动到某个位置
 ========================================================
 
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_
@@ -10,7 +10,7 @@ Class
 
   * :class:`Overlay`
 
-Dialog - 运动到某个位置
+对话框运动到某个位置
 ----------------------------------------------------------
 
     .. raw:: html

@@ -1,7 +1,7 @@
 .. currentmodule:: switchable
 
 
-Demo - 有啊首页卡盘
+有啊首页卡盘
 ========================================================
 
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/switchable/>`_
@@ -11,8 +11,7 @@ Class
 
   * :class:`Switchable`
 
-
-Demo - 有啊首页卡盘
+有啊首页卡盘
 --------------------------------------------------
 
     .. raw:: html

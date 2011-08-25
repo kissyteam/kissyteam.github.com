@@ -3,10 +3,8 @@
 KISSY 组件开发规范
 ========================================
 
-by `承玉 <yiminghe@gmail.com>`_
-
-
-开始之前请先阅读 :ref:`workflow-simple`.
+|  开始之前请先阅读 :ref:`workflow-simple`.
+|  作者: `承玉 <yiminghe@gmail.com>`_
 
 
 确定 API
@@ -95,12 +93,13 @@ demo 编写
 readme.txt 编写
 --------------------------------------------------------------------------------
 
+可选. 写明组件作者, 功能, 重要修改历史或说明即可.
 
 文档编写
 -------------------------------------------------------------------------------
 
-可选. 在 ``docs`` 目录下编写组件文档, 后缀名为 ``rst`` , 可参照 ``KISSY Overlay`` 的文档 `api <http://docs.kissyui.com/source/component/overlay/index.rst>`_  以及
-`使用文档 <http://docs.kissyui.com/source/component/overlay/usage.rst>`_ , 详细格式可参见 `sphinx <http://sphinx.pocoo.org/>`_ . 文档不做强求, 也可直接写纯文本格式, 在 demo.html 详细讲解即可.
+可选. 在 ``docs`` 目录下编写组件文档, 后缀名为 ``rst`` , 可参照 ``KISSY Overlay`` 的文档 `api <../../api/component/overlay/>`_以及
+`使用文档 <../../demo/component/overlay/>`_ , 详细格式可参见 `sphinx <../../tools/use-sphinx.html>`_ . 文档不做强求, 也可直接写纯文本格式, 在 demo.html 详细讲解即可.
  
  
 单元测试编写

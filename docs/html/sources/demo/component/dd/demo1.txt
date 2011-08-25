@@ -1,6 +1,6 @@
 ﻿.. currentmodule:: dd
 
-Demo - Draggable & Proxy 使用示例
+Draggable & Proxy 使用示例
 =====================================================
 
 .. versionadded:: 1.2
@@ -13,7 +13,7 @@ Class
 
   * :class:`Draggable`
 
-Demo - Draggable & Proxy 使用示例
+Draggable & Proxy 使用示例
 ----------------------------------------------
 
     .. raw:: html

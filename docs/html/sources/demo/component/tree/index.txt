@@ -1,6 +1,6 @@
 .. currentmodule:: tree
 
-Tree Demos
+Tree 使用示例
 ======================================
 
 .. versionadded:: 1.2

@@ -1,6 +1,6 @@
 .. currentmodule:: tree
 
-Demo - 从已有的html结构生成树
+从已有的html结构生成树
 ======================================
 
 .. versionadded:: 1.2
@@ -15,7 +15,7 @@ Class
   * :class:`Tree <tree.Tree>`
   * :class:`Tree.CheckTree <tree.CheckTree>`
 
-Demo - 从已有的html结构生成树
+从已有的html结构生成树
 --------------------------------------------------
 
     .. raw:: html

@@ -1,6 +1,6 @@
 .. currentmodule:: button
 
-Demo - 禁用Button
+禁用 Button
 =====================================================
 
 .. versionadded:: 1.2
@@ -13,7 +13,7 @@ Class
 
   * :class:`Button`
 
-Demo - 禁用Button
+禁用 Button
 --------------------------------------------------
 
     .. raw:: html

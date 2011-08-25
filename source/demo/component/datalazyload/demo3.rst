@@ -1,6 +1,6 @@
 ﻿.. currentmodule:: datalazyload
 
-Demo - DataLazyload 手动模式
+DataLazyload 手动模式
 =====================================================
 
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/datalazyload/>`_
@@ -11,8 +11,7 @@ Class
 
   * :class:`DataLazyload`
 
-
-Demo - DataLazyload 手动模式
+DataLazyload 手动模式
 -------------------------------
   .. raw:: html
 	

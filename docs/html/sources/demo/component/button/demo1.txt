@@ -1,6 +1,6 @@
 .. currentmodule:: button
 
-Demo - button 的基本使用
+button 的基本使用
 =====================================================
 
 .. versionadded:: 1.2
@@ -13,7 +13,7 @@ Class
 
   * :class:`Button`
 
-Demo - button 的基本使用
+button 的基本使用
 --------------------------------------------------
 
     .. raw:: html

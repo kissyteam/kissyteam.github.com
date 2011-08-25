@@ -1,6 +1,6 @@
 .. currentmodule:: overlay
 
-Popup - 异步加载
+异步加载弹出层内容
 ========================================================
 
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_
@@ -10,7 +10,7 @@ Class
 
   * :class:`Overlay`
 
-Popup - 异步加载
+异步加载弹出层内容
 ----------------------------------------------------------
 
     .. raw:: html

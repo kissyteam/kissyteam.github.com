@@ -1,6 +1,6 @@
 .. currentmodule:: button
 
-Demo - 模拟alert对话框
+模拟 alert 对话框
 =====================================================
 
 .. versionadded:: 1.2
@@ -13,7 +13,7 @@ Class
 
   * :class:`Button`
 
-Demo - 模拟alert对话框
+模拟 alert 对话框
 --------------------------------------------------
 
     .. raw:: html

@@ -1,7 +1,7 @@
 .. currentmodule:: switchable
 
 
-Demo - 土豆今日焦点
+土豆今日焦点
 ========================================================
 
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/switchable/>`_
@@ -12,7 +12,7 @@ Class
   * :class:`Switchable`
 
 
-Demo - 土豆今日焦点
+土豆今日焦点
 --------------------------------------------------
 
     .. raw:: html

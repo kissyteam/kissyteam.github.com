@@ -1,6 +1,6 @@
 .. currentmodule:: overlay
 
-Popup - 从 Markup 中构建
+从 Markup 中构建
 ========================================================
 
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_
@@ -10,7 +10,7 @@ Class
 
   * :class:`Overlay`
 
-Popup - 从 Markup 中构建
+从 Markup 中构建
 ----------------------------------------------------------
 
     .. raw:: html
