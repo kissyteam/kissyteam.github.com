@@ -6,7 +6,7 @@ Droppable
 .. versionadded:: 1.2
 
 |  放置功能
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/droppable.js>`_  | `Demo <../../../demo/component/dd/droppable.html>`_
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/droppable.js>`_  | `Demo <../../../demo/component/dd/demo2.html>`_
 
 
 Class

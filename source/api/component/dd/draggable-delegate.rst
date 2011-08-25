@@ -6,7 +6,7 @@ DraggableDelegate
 .. versionadded:: 1.2
 
 |  委托容器内的所有 Draggable 节点的拖放行为.
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/draggable-delegate.js>`_  | `Demo <../../../demo/component/dd/draggable-delegate.html>`_
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/draggable-delegate.js>`_  | `Demo <../../../demo/component/dd/demo1.html>`_
 
 
 Class

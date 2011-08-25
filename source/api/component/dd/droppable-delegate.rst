@@ -6,7 +6,7 @@ DroppableDelegate
 .. versionadded:: 1.2
 
 |  为 Draggable 对象提供所需要的代理节点
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/droppable-delegate.js>`_  | `Demo <../../../demo/component/dd/droppable-delegate.html>`_
+|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/droppable-delegate.js>`_  | `Demo <../../../demo/component/dd/demo2.html>`_
 
 
 Class
