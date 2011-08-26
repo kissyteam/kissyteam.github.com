@@ -3,14 +3,6 @@
 快速上手
 ===============================================
 
-KISSY 愿景
-------------------------
-
-|    小巧灵活, 简洁实用, 使用起来让人感觉愉悦.
-|    Keep It
-|        Simple & Stupid, Short & Sweet, Slim & Sexy...
-|    Yeah!
-
 KISSY 概览
 ------------------------
 
@@ -57,6 +49,4 @@ KISSY 概览
    ajax
    anim
    widgets
-   yourwidgets
-   extendwidgets
    nextstep

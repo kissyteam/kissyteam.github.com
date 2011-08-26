@@ -38,6 +38,7 @@ Properties
   * :attr:`~Overlay.prototype.xy`
   * :attr:`~Overlay.prototype.align`
   * :attr:`~Overlay.prototype.closable`
+  * :attr:`~Overlay.prototype.closeBtn`
   * :attr:`~Overlay.prototype.visible`
   * :attr:`~Overlay.prototype.el`
   * :attr:`~Overlay.prototype.contentEl`
@@ -225,7 +226,13 @@ Properties Detail
 
     .. versionadded:: 1.2
 
-    {Boolean} - 右上角关闭区域有无.    
+    {Boolean} - 右上角关闭区域有无.
+
+.. attribute:: Overlay.prototype.closeBtn
+
+    .. versionadded:: 1.2
+
+    {KISSY.Node} - 关闭按钮元素.
 
 .. attribute:: Overlay.prototype.el
 
@@ -253,7 +260,7 @@ Properties Detail
             </div>
         </div>
         
-    一般调用悬浮层的 :meth:`~Overlay.prototype.render` 方法后, 可通过获取 :attr:`~Overlay.config.contentEl` 属性获取内容所在节点, 来动态修改悬浮层的内容.
+    一般调用悬浮层的 :meth:`~Overlay.prototype.render` 方法后, 可通过获取 :attr:`~Overlay.prototype.contentEl` 属性获取内容所在节点, 来动态修改悬浮层的内容.
 
 
 Methods Detail

@@ -100,8 +100,9 @@ Switchable 组件先介绍到这里. 更多关于 Switchable 相关的例子见 
 
 |
 
-下一节将介绍, 如果你需要自己写个组件, 该注意什么? -- :ref:`自定义组件 <quickstart-yourwidgets>`  ...
+.. 下一节将介绍, 如果你需要自己写个组件, 该注意什么? -- :ref:`自定义组件 <quickstart-yourwidgets>`  ...
 
+所以还是得多多练习, 才能逐渐深入! :ref:`下一步 <quickstart-nextstep>` ...
 
 .. rubric:: 参考链接
 

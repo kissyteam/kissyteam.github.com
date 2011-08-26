@@ -73,6 +73,9 @@
       <a href="../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
+      <a href="dev-demo.html" title="KISSY 组件开发示例"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
       <a href="workflow-full.html" title="KISSY 组件开发流程(完整版)"
          accesskey="P">previous</a> | </li>
     <li><a href="../index.html">KISSY Docs</a> &#187; </li>
@@ -87,12 +90,12 @@
 <div class="line">作者: <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></div>
 </div>
 <div class="section" id="api">
-<h2>确定 API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
-<p>首先确定该组件需要公开的 api 接口包括属性名称, 函数名, 参数以及返回值, 可参考 YUI3 ,Jquery 等类库的同类组件, 尽量保持一致.
+<h2>1, 确定 API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<p>必须. 首先确定该组件需要公开的 api 接口包括属性名称, 函数名, 参数以及返回值, 可参考 YUI3 ,Jquery 等类库的同类组件, 尽量保持一致.
 比如 Overlay, 那么其公开接口肯定包含方法 <tt class="docutils literal"><span class="pre">show</span></tt> , <tt class="docutils literal"><span class="pre">hide</span></tt> 以及弹层内容 <tt class="docutils literal"><span class="pre">content</span></tt> 属性配置.</p>
 </div>
 <div class="section" id="id2">
-<h2>模块编写<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>2, 模块编写<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>必须. 推荐的目录结构如下, 例如组件为 Overlay 弹层, 那么该组件的目录结构应为：</p>
 <img alt="../images/component-guide.png" src="../images/component-guide.png" />
 <p>src 目录中必须包含和组件名相同的一个模块文件, 模块名为 <tt class="docutils literal"><span class="pre">gallery/overlay</span></tt> ,用来指明该组件依赖的子模块, 子模块的名约定为 <tt class="docutils literal"><span class="pre">gallery/overlay/xx</span></tt> ,如果组件比较简单也可只有这一个源码文件. 例如 overlay.js</p>
@@ -129,7 +132,7 @@
 </div>
 </div>
 <div class="section" id="demo">
-<h2>demo 编写<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
+<h2>3, demo 编写<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
 <p>必须. 写一个 <tt class="docutils literal"><span class="pre">demo.html</span></tt> 简单展示下这个组件怎么用, 静态载入组件的所有依赖js即可, 注意被依赖模块js要放在依赖js前面, 例如：</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
 <span class="nt">&lt;html&gt;</span>
@@ -153,19 +156,20 @@
 </div>
 </div>
 <div class="section" id="readme-txt">
-<h2>readme.txt 编写<a class="headerlink" href="#readme-txt" title="Permalink to this headline">¶</a></h2>
+<h2>4, readme.txt 编写<a class="headerlink" href="#readme-txt" title="Permalink to this headline">¶</a></h2>
 <p>可选. 写明组件作者, 功能, 重要修改历史或说明即可.</p>
 </div>
 <div class="section" id="id3">
-<h2>文档编写<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>可选. 在 <tt class="docutils literal"><span class="pre">docs</span></tt> 目录下编写组件文档, 后缀名为 <tt class="docutils literal"><span class="pre">rst</span></tt> , 可参照 <tt class="docutils literal"><span class="pre">KISSY</span> <span class="pre">Overlay</span></tt> 的文档 <a class="reference external" href="../../demo/component/overlay/">api &lt;../../api/component/overlay/&gt;`_以及
-`使用文档</a> , 详细格式可参见 <a class="reference external" href="../../tools/use-sphinx.html">sphinx</a> . 文档不做强求, 也可直接写纯文本格式, 在 demo.html 详细讲解即可.</p>
+<h2>5, 文档编写<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>可选. 在 <tt class="docutils literal"><span class="pre">docs</span></tt> 目录下编写组件文档, 后缀名为 <tt class="docutils literal"><span class="pre">rst</span></tt> , 可参照 <tt class="docutils literal"><span class="pre">KISSY</span> <span class="pre">Overlay</span></tt> 的文档 <a class="reference external" href="../api/component/overlay/">api</a> 以及
+<a class="reference external" href="../demo/component/overlay/">使用文档</a> , 详细格式可参见 <a class="reference external" href="../tools/use-sphinx.html">sphinx</a> .
+文档不做强求, 也可直接写纯文本格式, 在 demo.html 详细讲解即可.</p>
 </div>
-<div class="section" id="id4">
-<h2>单元测试编写<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>6, 单元测试编写<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>可选. 在 <tt class="docutils literal"><span class="pre">tests</span></tt> 目录下编写单元测试代码, 单元测试包括两个部分, 测试准备页面以及单元测试用例脚本.</p>
-<div class="section" id="id5">
-<h3>测试准备页面<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>6.1 测试准备页面<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>编写 test.html , 引入单元测试框架 jasmine (在 kissy/tools/ 下) , 例如：</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
@@ -196,8 +200,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id6">
-<h3>测试用例脚本编写<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>6.2 测试用例脚本编写<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>测试用例编写在脚本 <tt class="docutils literal"><span class="pre">overlay-spec.js</span></tt> 中, 详细可参考 <a class="reference external" href="https://github.com/pivotal/jasmine/wiki">jasmine wiki</a> , 这里简单举个例子：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// 测试用例脚本可以包含很多 suit</span>
 <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;开始一个 suit&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
@@ -298,18 +302,20 @@
 <li class="toctree-l2"><a class="reference internal" href="workflow-simple.html">KISSY 组件开发流程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="workflow-full.html">KISSY 组件开发流程(完整版)</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">KISSY 组件开发规范</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#api">确定 API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">模块编写</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#demo">demo 编写</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#readme-txt">readme.txt 编写</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">文档编写</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">单元测试编写</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id5">测试准备页面</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id6">测试用例脚本编写</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api">1, 确定 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2, 模块编写</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demo">3, demo 编写</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#readme-txt">4, readme.txt 编写</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">5, 文档编写</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">6, 单元测试编写</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">6.1 测试准备页面</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">6.2 测试用例脚本编写</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="dev-demo.html">KISSY 组件开发示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-demo-extend.html">KISSY 扩展组件示例</a></li>
 </ul>
 </li>
 </ul>
