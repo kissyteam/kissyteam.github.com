@@ -49,6 +49,20 @@ Class Detail
     
     :param String|HTMLElement|KISSY.Node container: 可为'#id', '.class', DOM对象, KISSY.Node对象, 为空时表示新建
     :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
+    
+.. note::
+
+    使用前请加上初始样式
+    
+    .. code-block:: html
+    
+        <style>
+            .ks-overlay {
+                position:absolute;
+                left:-9999px;
+                top:-9999px;
+            }
+        </style>    
 
     
 Config Attributes Detail

@@ -59,18 +59,33 @@ Class Detail
     
     .. code-block:: html
 
-        <div> <!-- 对话框根节点 -->
-            <div> <!-- 对话框内容节点 -->
-                <div> <!-- 对话框标题节点 -->
+        <div class='dialog'> <!-- 对话框根节点 -->
+            <div class='content'> <!-- 对话框内容节点 -->
+                <div class='header'> <!-- 对话框标题节点 -->
                 </div>
                 
-                <div> <!-- 对话框体节点 -->  
+                <div class='body'> <!-- 对话框体节点 -->  
                 </div>
                 
-                <div> <!-- 对话框底部节点 -->
+                <div class='footer'> <!-- 对话框底部节点 -->
                 </div>
             </div>
         </div>
+        
+        
+.. note::
+
+    使用前请加上初始样式
+    
+    .. code-block:: html
+    
+        <style>
+            .ks-overlay {
+                position:absolute;
+                left:-9999px;
+                top:-9999px;
+            }
+        </style>        
 
 Config Attributes Detail
 -----------------------------------------------

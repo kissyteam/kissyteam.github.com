@@ -70,6 +70,21 @@ Class Detail
     
     :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
 
+
+.. note::
+
+    使用前请加上初始样式
+    
+    .. code-block:: html
+    
+        <style>
+            .ks-overlay {
+                position:absolute;
+                left:-9999px;
+                top:-9999px;
+            }
+        </style>
+        
     
 Config Attributes Detail
 -----------------------------------------------

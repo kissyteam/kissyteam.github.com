@@ -105,7 +105,20 @@
 <div class="section" id="id2">
 <h2>多个触发元素公用一个 Popup, 另一种方式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><iframe width="100%" height="380" class="iframe-demo" src="../../../static/demo/overlay/demo4.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node, overlay&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">)</span> <span class="p">{</span>
+<div><iframe width="100%" height="380" class="iframe-demo" src="../../../static/demo/overlay/demo4.html"></iframe></div></blockquote>
+<div class="section" id="id3">
+<h3>加入初始样式<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+    <span class="nc">.ks-overlay</span> <span class="p">{</span>
+        <span class="k">position</span><span class="o">:</span><span class="k">absolute</span><span class="p">;</span>
+        <span class="k">left</span><span class="o">:-</span><span class="m">9999px</span><span class="p">;</span>
+        <span class="k">top</span><span class="o">:-</span><span class="m">9999px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node, overlay&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// 为每个小图创建一个 popup</span>
     <span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;#multi2 img&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">new</span> <span class="nx">O</span><span class="p">.</span><span class="nx">Popup</span><span class="p">({</span>
@@ -128,6 +141,7 @@
 </pre></div>
 </div>
 </div></blockquote>
+</div>
 </div>
 </div>
 
