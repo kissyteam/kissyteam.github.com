@@ -180,7 +180,7 @@ Config Attributes Detail
 
 .. data:: Switchable.config.switchTo
 
-    {Number} - 初始话时, 自动切换到指定面板, 默认为 0 , 即第一个.
+    {Number} - 初始化时, 自动切换到指定面板, 默认为 0 , 即第一个.
 
     .. note::
 
@@ -226,11 +226,11 @@ Config Attributes Detail
 
 .. data:: Switchable.config.easing
 
-    {String|Function} - 动画效果, 详见 :class:`Anim`, 默认为 ``easeNone`` .
+    {String|Function} - 动画效果, 详见 :class:`~anim.Anim`, 默认为 ``easeNone`` .
 
 .. data:: Switchable.config.nativeAnim
 
-    {Boolean} - 是否优先使用原生 css3 transition, 默认为 ``true``, 同 :class:`Anim` 中的  `nativeSupport` 参数  .
+    {Boolean} - 是否优先使用原生 css3 transition, 默认为 ``true``, 同 :class:`~anim.Anim` 中的  `nativeSupport` 参数  .
 
 
 .. data:: Switchable.config.lazyDataType

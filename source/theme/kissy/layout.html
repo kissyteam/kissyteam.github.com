@@ -77,8 +77,9 @@ kissy/layout.html
 		{%- block document %}
 			<div class="col-main">
 				<div class="main-wrap">
-                    {%- include "related.html" %}
+                    {% include "related.html" %}
 					{% block body %} {% endblock %}
+                    {% include "related.html" %}
 					{% include "comment.html" %}
 				</div>
 			</div>

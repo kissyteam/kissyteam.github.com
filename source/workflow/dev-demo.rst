@@ -1,6 +1,6 @@
 .. _workflow-dev-demo:
 
-KISSY 组件开发示例
+如何开发 KISSY 组件
 ========================================
 
 |  开始之前请先阅读 :ref:`workflow-dev-spec`.

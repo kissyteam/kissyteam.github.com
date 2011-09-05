@@ -6,8 +6,8 @@
 .. toctree::
    :maxdepth: 2
 
-   workflow-simple
-   workflow-full
-   dev-spec
-   dev-demo
    dev-demo-extend
+   dev-demo
+   workflow-simple
+   dev-spec
+

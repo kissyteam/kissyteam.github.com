@@ -6,11 +6,22 @@ KISSY 组件开发规范
 |  开始之前请先阅读 :ref:`workflow-simple`.
 |  作者: `承玉 <yiminghe@gmail.com>`_
 
+0, 概述
+-----------------------------------------
+
+在组建开发的各个流程中, 需要注意的地方, 完整列举出来, 有以下:
+
+.. image:: ../_static/workflow/workflow.png
+   :width: 900
+   :alt: 右击查看大图
+
+上图中讲述了在开发一个组建中, 最详细的步骤, 但千万别吓着了, 因为, 在实际过程中, 有些东西并不需要这么多(具体要看你写的组件的复杂程度), 可以精简为以下几点.
+
 
 1, 确定 API
 -----------------------------------------
 
-必须. 首先确定该组件需要公开的 api 接口包括属性名称, 函数名, 参数以及返回值, 可参考 YUI3 ,Jquery 等类库的同类组件, 尽量保持一致.
+必须. 首先确定该组件需要公开的 API 接口包括属性名称, 函数名, 参数以及返回值, 可参考 YUI3 ,Jquery 等类库的同类组件, 尽量保持一致.
 比如 Overlay, 那么其公开接口肯定包含方法 ``show`` , ``hide`` 以及弹层内容 ``content`` 属性配置.
 
 
@@ -29,7 +40,7 @@ src 目录中必须包含和组件名相同的一个模块文件, 模块名为 `
     KISSY.add("gallery/overlay",function(S,Base){
         return Base;
     },{
-        './overlay/base','./overlay/position'
+        requires:['./overlay/base']
     });
 
 子模块放在 ``src`` 模块名为目录名的文件夹内, 对于 KISSY 1.2 以前, 需要手动将组件挂载到 KISSY 上去并且需要在模块定义处挂载, 例如子模块 base.js 的编写：
@@ -93,7 +104,10 @@ src 目录中必须包含和组件名相同的一个模块文件, 模块名为 `
 4, readme.txt 编写
 --------------------------------------------------------------------------------
 
-可选. 写明组件作者, 功能, 重要修改历史或说明即可.
+可选. 随意写, 但推荐你参考 KISSY 的 `readme <https://github.com/kissyteam/kissy/blob/master/README.md>`_
+
+
+
 
 5, 文档编写
 -------------------------------------------------------------------------------
@@ -164,7 +178,6 @@ src 目录中必须包含和组件名相同的一个模块文件, 模块名为 `
             expect("yy").toBe("yy");
 
         });
-
     });
 
 复杂点的例子可以看 `KISSY.Overlay Unit Test <https://github.com/kissyteam/kissy/blob/master/src/overlay/tests/overlay-spec.js>`_

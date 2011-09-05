@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>KISSY 扩展组件示例 &mdash; KISSY Docs valpha documentation</title>
+<title>如何扩展 KISSY 组件 &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../static/reset.css"/>
 <link rel="stylesheet" href="../static/kissy.css"/>
@@ -65,6 +65,7 @@
 	<div  class="layout grid-s6m0">
 			<div class="col-main">
 				<div class="main-wrap">
+                    
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -77,7 +78,10 @@
       <a href="../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="dev-demo.html" title="KISSY 组件开发示例"
+      <a href="dev-demo.html" title="如何开发 KISSY 组件"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="组件开发指南"
          accesskey="P">previous</a> | </li>
     <li><a href="../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="index.html" accesskey="U">组件开发指南</a> &#187; </li> 
@@ -85,15 +89,14 @@
 </div>
 					
   <div class="section" id="kissy">
-<span id="workflow-dev-demo-extend"></span><h1>KISSY 扩展组件示例<a class="headerlink" href="#kissy" title="Permalink to this headline">¶</a></h1>
+<span id="workflow-dev-demo-extend"></span><h1>如何扩展 KISSY 组件<a class="headerlink" href="#kissy" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line">KISSY 提供的现有组件, 能满足大部分需求. 但不可避免地, 在某些特殊场景下, 并没有考虑及实现特定的功能. 所以需要我们在已有组件基础上进行扩展.</div>
-<div class="line">注意, 开发流程是和前述一致, 这边不再重复讲述, 主要讲述如何对现有组件进行扩展.</div>
-<div class="line">作者: <a class="reference external" href="mailto:shengyan1985&#37;&#52;&#48;gmail&#46;com">qiaohua</a></div>
+<div class="line">作者: <a class="reference external" href="mailto:qiaohua&#37;&#52;&#48;taobao&#46;com">qiaohua</a></div>
 </div>
 <div class="section" id="id1">
-<h2>预览效果<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>先看效果:</p>
+<h2>1, 确定扩展目标<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>根据自己的需求, 找出最接近的 KISSY 已有组件是哪个. 比如针对下面的一种效果:</p>
 <div class="demo">
     <script src="../static/quickstart/kwicks.js"></script>
 
@@ -123,95 +126,118 @@
             new S.Kwicks('#J_Kwicks');
         });
     </script>
-
 </div><p>一组图片, 鼠标 hover 或者 click 某张图片时, 这张图片完整显示, 余下图片稍加压缩显示.</p>
+<p>仔细分析下, 这种不外乎是切换显示不同的内容, 这个和 <a class="reference internal" href="../api/component/switchable/index.html#module-switchable" title="switchable"><tt class="xref py py-mod docutils literal"><span class="pre">switchable</span></tt></a> 本质是类似的, 所以我们可以基于它来实现.</p>
 </div>
 <div class="section" id="id2">
-<h2>代码实现<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>这与 <a class="reference internal" href="../api/component/switchable/index.html#module-switchable" title="switchable"><tt class="xref py py-mod docutils literal"><span class="pre">switchable</span></tt></a> 的切换效果很类似. 所以我们可以基于 Switchable 来实现这个 kwicks 效果. 完整代码:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/**</span>
-<span class="cm"> * Kwicks Widget</span>
-<span class="cm"> * @creator  乔花&lt;qiaohua@taobao.com&gt;</span>
-<span class="cm"> */</span>
-<span class="c1">// 添加一个新模块到KISSY中</span>
-<span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;kwicks&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+<h2>2, 扩展实现<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>2.1 首先想个名字, 暂且叫它 kwicks 好了.</p>
+<p>2.2 去 KISSY gallery 下载 <a class="reference external" href="https://github.com/kissyteam/kissy-gallery/blob/master/your-gallery.zip">压缩包</a> 解压后, 重命名成 <cite>kwicks</cite>;</p>
+<p>2.3 用你喜欢的编辑器打开 kwicks.js,填写最基本的信息后, 添加新模块:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;gallery/kwicks&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Switchable</span><span class="p">)</span> <span class="p">{</span>
 
-    <span class="c1">// 定义一些模块中的全局变量</span>
-    <span class="kd">var</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">,</span>
+    <span class="kd">var</span> <span class="nx">D</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">,</span> <span class="nx">E</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Event</span><span class="p">,</span> <span class="nx">doc</span> <span class="o">=</span> <span class="nb">document</span><span class="p">;</span>
 
-        <span class="cm">/**</span>
-<span class="cm">         * 默认配置, 可覆盖 Switchable 的默认配置</span>
-<span class="cm">         */</span>
-        <span class="nx">defaultConfig</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="nx">markupType</span><span class="o">:</span> <span class="mi">1</span>
-        <span class="p">};</span>
 
-    <span class="cm">/**</span>
-<span class="cm">     * Kwicks Class</span>
-<span class="cm">     * @constructor</span>
-<span class="cm">     */</span>
-    <span class="kd">function</span> <span class="nx">Kwicks</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+        <span class="c1">//兼容 1.1.6</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">namespace</span><span class="p">(</span><span class="s1">&#39;Gallery&#39;</span><span class="p">);</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">Gallery</span><span class="p">.</span><span class="nx">Kwicks</span> <span class="o">=</span> <span class="nx">Kwicks</span><span class="p">;</span>
 
-        <span class="c1">// factory or constructor</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">self</span> <span class="k">instanceof</span> <span class="nx">Kwicks</span><span class="p">))</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="k">new</span> <span class="nx">Kwicks</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="nx">config</span><span class="p">);</span>
-        <span class="p">}</span>
-
-        <span class="c1">// 插入 kwicks 的初始化逻辑</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-            <span class="nx">init_kwicks</span><span class="p">(</span><span class="nx">self</span><span class="p">);</span>
-        <span class="p">});</span>
-
-        <span class="c1">// 调用 super class 的构造器</span>
-        <span class="nx">Kwicks</span><span class="p">.</span><span class="nx">superclass</span><span class="p">.</span><span class="nx">constructor</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">container</span><span class="p">,</span> <span class="nx">S</span><span class="p">.</span><span class="nx">merge</span><span class="p">(</span><span class="nx">defaultConfig</span><span class="p">,</span> <span class="nx">config</span><span class="p">));</span>
-    <span class="p">}</span>
-
-    <span class="c1">// 扩展 Switchable</span>
-    <span class="nx">S</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Kwicks</span><span class="p">,</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Switchable</span><span class="p">);</span>
-    <span class="nx">S</span><span class="p">.</span><span class="nx">Kwicks</span> <span class="o">=</span> <span class="nx">Kwicks</span><span class="p">;</span>
-
-    <span class="cm">/**</span>
-<span class="cm">     * Kwicks 的初始化逻辑</span>
-<span class="cm">     * 计算每个部分的平均显示区域位置</span>
-<span class="cm">     */</span>
-    <span class="kd">function</span> <span class="nx">init_kwicks</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">width</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">container</span><span class="p">)</span> <span class="o">/</span> <span class="nx">self</span><span class="p">.</span><span class="nx">panels</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
-            <span class="nx">oft</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">offset</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">container</span><span class="p">);</span>
-        <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">panels</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">DOM</span><span class="p">.</span><span class="nx">offset</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="p">{</span><span class="nx">left</span><span class="o">:</span> <span class="nx">width</span> <span class="o">*</span> <span class="nx">i</span> <span class="o">+</span> <span class="nx">oft</span><span class="p">.</span><span class="nx">left</span><span class="p">,</span> <span class="nx">top</span><span class="o">:</span><span class="nx">oft</span><span class="p">.</span><span class="nx">top</span><span class="p">});</span>
-        <span class="p">});</span>
-    <span class="p">}</span>
-
-    <span class="nx">S</span><span class="p">.</span><span class="nx">augment</span><span class="p">(</span><span class="nx">Kwicks</span><span class="p">,</span> <span class="p">{</span>
-
-        <span class="cm">/**</span>
-<span class="cm">         * 切换视图时的行为, 覆盖 super class的 _switchView</span>
-<span class="cm">         */</span>
-        <span class="nx">_switchView</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">fromPanels</span><span class="p">,</span> <span class="nx">toPanels</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">,</span>
-                <span class="nx">panelWidth</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="nx">toPanels</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
-                <span class="nx">width</span> <span class="o">=</span> <span class="p">(</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">container</span><span class="p">)</span> <span class="o">-</span> <span class="nx">panelWidth</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">panels</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
-                <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-            <span class="c1">// 更新每个子区域的位置</span>
-            <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">panels</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
-                <span class="c1">//也可直接使用offset设置元素位置, 但就没有动画效果了</span>
-                <span class="nx">S</span><span class="p">.</span><span class="nx">Anim</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="p">{</span><span class="nx">left</span><span class="o">:</span> <span class="nx">start</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">},</span> <span class="mf">0.4</span><span class="p">,</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Easing</span><span class="p">.</span><span class="nx">easeOut</span><span class="p">).</span><span class="nx">run</span><span class="p">();</span>
-                <span class="k">if</span> <span class="p">(</span><span class="nx">t</span> <span class="o">===</span> <span class="nx">toPanels</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span>
-                    <span class="nx">start</span> <span class="o">+=</span> <span class="nx">panelWidth</span><span class="p">;</span>
-                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                    <span class="nx">start</span> <span class="o">+=</span> <span class="nx">width</span><span class="p">;</span>
-                <span class="p">}</span>
-            <span class="p">});</span>
-        <span class="p">}</span>
-    <span class="p">});</span>
-<span class="p">},</span> <span class="p">{</span> <span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;switchable&#39;</span><span class="p">]</span> <span class="p">});</span>
+    <span class="k">return</span> <span class="nx">Kwicks</span><span class="p">;</span>
+<span class="p">},</span> <span class="p">{</span>
+    <span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;switchable&quot;</span><span class="p">]</span>  <span class="c1">// 指定依赖关系, 因为是扩展自 switchable 的, 所以仅依赖它既可</span>
+<span class="p">});</span>
 </pre></div>
 </div>
+<p>2.4 添加构造器和配置项, 扩展 switchable, 这两个是提供外部调用接口中最重要的.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// ...</span>
+<span class="cm">/**</span>
+<span class="cm"> * 默认配置, 可覆盖 Switchable 的默认配置</span>
+<span class="cm"> */</span>
+<span class="nx">defaultConfig</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">markupType</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">};</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Kwicks Class</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">Kwicks</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="c1">// factory or constructor</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">self</span> <span class="k">instanceof</span> <span class="nx">Kwicks</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">Kwicks</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="nx">config</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 插入 kwicks 的初始化逻辑</span>
+    <span class="nx">self</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">init_kwicks</span><span class="p">(</span><span class="nx">self</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="c1">// 调用 superclass 的构造器</span>
+    <span class="nx">Kwicks</span><span class="p">.</span><span class="nx">superclass</span><span class="p">.</span><span class="nx">constructor</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">container</span><span class="p">,</span> <span class="nx">S</span><span class="p">.</span><span class="nx">merge</span><span class="p">(</span><span class="nx">defaultConfig</span><span class="p">,</span> <span class="nx">config</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="c1">// 扩展 Switchable</span>
+<span class="nx">S</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Kwicks</span><span class="p">,</span> <span class="nx">Switchable</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>2.5 处理 init, 当 switchable 初始化后, 作为 kwicks , 也有自己的初始化操作.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/**</span>
+<span class="cm"> * Kwicks 的初始化逻辑</span>
+<span class="cm"> * 计算每个部分的平均显示区域位置</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">init_kwicks</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">width</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">container</span><span class="p">)</span> <span class="o">/</span> <span class="nx">self</span><span class="p">.</span><span class="nx">panels</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+        <span class="nx">oft</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">offset</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">container</span><span class="p">);</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">panels</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">DOM</span><span class="p">.</span><span class="nx">offset</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="p">{</span><span class="nx">left</span><span class="o">:</span> <span class="nx">width</span> <span class="o">*</span> <span class="nx">i</span> <span class="o">+</span> <span class="nx">oft</span><span class="p">.</span><span class="nx">left</span><span class="p">,</span> <span class="nx">top</span><span class="o">:</span><span class="nx">oft</span><span class="p">.</span><span class="nx">top</span><span class="p">});</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>2.6 其他逻辑</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">S</span><span class="p">.</span><span class="nx">augment</span><span class="p">(</span><span class="nx">Kwicks</span><span class="p">,</span> <span class="p">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 切换视图时的行为, 覆盖 superclass的 _switchView</span>
+<span class="cm">     */</span>
+    <span class="nx">_switchView</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">fromPanels</span><span class="p">,</span> <span class="nx">toPanels</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">,</span>
+            <span class="nx">panelWidth</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="nx">toPanels</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+            <span class="nx">width</span> <span class="o">=</span> <span class="p">(</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">container</span><span class="p">)</span> <span class="o">-</span> <span class="nx">panelWidth</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">panels</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="c1">// 更新每个子区域的位置</span>
+        <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">panels</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//也可直接使用offset设置元素位置, 但就没有动画效果了</span>
+            <span class="nx">S</span><span class="p">.</span><span class="nx">Anim</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="p">{</span><span class="nx">left</span><span class="o">:</span> <span class="nx">start</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">},</span> <span class="mf">0.4</span><span class="p">,</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Easing</span><span class="p">.</span><span class="nx">easeOut</span><span class="p">).</span><span class="nx">run</span><span class="p">();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">t</span> <span class="o">===</span> <span class="nx">toPanels</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span>
+                <span class="nx">start</span> <span class="o">+=</span> <span class="nx">panelWidth</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">start</span> <span class="o">+=</span> <span class="nx">width</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="/static/quickstart/kwicks.js">完整代码参见这里</a></p>
+</div>
+<div class="section" id="id5">
+<h2>3, 示例<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>代码初步完成后, 写个 demo 调试下吧~</p>
+<p>(可以直接按照同目录下的 demo.html书写)</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;gallery/kwicks&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Kwicks</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">new</span> <span class="nx">Kwicks</span><span class="p">(</span><span class="s1">&#39;#J_Kwicks&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="/kissy-gallery/kwicks/demo.html">在线查看</a></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>在 KISSY 中, 写扩展和写组件, 其实代码结构很类似. 只是扩展组件是在已有组件的基础上进行的, 有很多代码都是可以重用的, 这边, 需要注意的是:</p>
+<p>在 KISSY 中, 写扩展和写组件, 其实代码结构很类似. 只是扩展组件是在已有组件的基础上进行的, 有很多代码都是可以重用的, 这边, 就这个例子中,  需要注意的是:</p>
 <blockquote class="last">
 <div><ol class="arabic simple">
 <li>可以使用  <a class="reference internal" href="../api/seed/kissy/extend.html#seed.KISSY.extend" title="seed.KISSY.extend"><tt class="xref py py-func docutils literal"><span class="pre">extend()</span></tt></a>  进行扩展, 或者以插件形式, 如 <tt class="docutils literal"><span class="pre">Switchable.Plugins.push()</span></tt> 来组织代码, 具体参考 <tt class="docutils literal"><span class="pre">S.Swichable.Plugins</span></tt>;</li>
@@ -223,6 +249,28 @@
 </div>
 
 
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="dev-demo.html" title="如何开发 KISSY 组件"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="组件开发指南"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">组件开发指南</a> &#187; </li> 
+    </ul>
+</div>
 					<div>
     <label>
         评论：
@@ -296,15 +344,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../styleguide/index.html">最佳编码实践</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html">前端常用工具</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">组件开发指南</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="workflow-simple.html">KISSY 组件开发流程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="workflow-full.html">KISSY 组件开发流程(完整版)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-spec.html">KISSY 组件开发规范</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-demo.html">KISSY 组件开发示例</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">KISSY 扩展组件示例</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">预览效果</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">代码实现</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">如何扩展 KISSY 组件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">1, 确定扩展目标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2, 扩展实现</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">3, 示例</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="dev-demo.html">如何开发 KISSY 组件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow-simple.html">KISSY 组件开发流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-spec.html">KISSY 组件开发规范</a></li>
 </ul>
 </li>
 </ul>

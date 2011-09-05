@@ -65,6 +65,7 @@
 	<div  class="layout grid-s6m0">
 			<div class="col-main">
 				<div class="main-wrap">
+                    
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -77,7 +78,7 @@
       <a href="../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="workflow-simple.html" title="KISSY 组件开发流程"
+      <a href="dev-demo-extend.html" title="如何扩展 KISSY 组件"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="../tools/use-sphinx.html" title="Sphinx 使用介绍"
@@ -90,24 +91,13 @@
 <span id="id1"></span><h1>组件开发指南<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="workflow-simple.html">KISSY 组件开发流程</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="workflow-simple.html#id1">1、检出源码</a></li>
-<li class="toctree-l2"><a class="reference internal" href="workflow-simple.html#id2">2、初始化工作文件夹</a></li>
-<li class="toctree-l2"><a class="reference internal" href="workflow-simple.html#id3">3、编码</a></li>
-<li class="toctree-l2"><a class="reference internal" href="workflow-simple.html#id4">4、提交</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-demo-extend.html">如何扩展 KISSY 组件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-demo-extend.html#id1">1, 确定扩展目标</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-demo-extend.html#id2">2, 扩展实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-demo-extend.html#id5">3, 示例</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="workflow-full.html">KISSY 组件开发流程(完整版)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dev-spec.html">KISSY 组件开发规范</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev-spec.html#api">1, 确定 API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-spec.html#id2">2, 模块编写</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-spec.html#demo">3, demo 编写</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-spec.html#readme-txt">4, readme.txt 编写</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-spec.html#id3">5, 文档编写</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-spec.html#id6">6, 单元测试编写</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="dev-demo.html">KISSY 组件开发示例</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="dev-demo.html">如何开发 KISSY 组件</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="dev-demo.html#api">1, 确定 API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-demo.html#id2">2, 模块编写</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-demo.html#demo">3, demo 编写</a></li>
@@ -116,9 +106,21 @@
 <li class="toctree-l2"><a class="reference internal" href="dev-demo.html#id7">6, 单元测试编写</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="dev-demo-extend.html">KISSY 扩展组件示例</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev-demo-extend.html#id1">预览效果</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-demo-extend.html#id2">代码实现</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow-simple.html">KISSY 组件开发流程</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="workflow-simple.html#id1">1、检出源码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow-simple.html#id2">2、初始化工作文件夹</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow-simple.html#id3">3、编码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow-simple.html#id4">4、提交</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-spec.html">KISSY 组件开发规范</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-spec.html#id2">0, 概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-spec.html#api">1, 确定 API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-spec.html#id3">2, 模块编写</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-spec.html#demo">3, demo 编写</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-spec.html#readme-txt">4, readme.txt 编写</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-spec.html#id4">5, 文档编写</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-spec.html#id7">6, 单元测试编写</a></li>
 </ul>
 </li>
 </ul>
@@ -126,6 +128,27 @@
 </div>
 
 
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="dev-demo-extend.html" title="如何扩展 KISSY 组件"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="../tools/use-sphinx.html" title="Sphinx 使用介绍"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../index.html">KISSY Docs</a> &#187; </li> 
+    </ul>
+</div>
 					<div>
     <label>
         评论：
@@ -199,11 +222,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../styleguide/index.html">最佳编码实践</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html">前端常用工具</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">组件开发指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-demo-extend.html">如何扩展 KISSY 组件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-demo.html">如何开发 KISSY 组件</a></li>
 <li class="toctree-l2"><a class="reference internal" href="workflow-simple.html">KISSY 组件开发流程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="workflow-full.html">KISSY 组件开发流程(完整版)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-spec.html">KISSY 组件开发规范</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-demo.html">KISSY 组件开发示例</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-demo-extend.html">KISSY 扩展组件示例</a></li>
 </ul>
 </li>
 </ul>
