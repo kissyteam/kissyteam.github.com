@@ -118,7 +118,9 @@
 <p>举例</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">;</span>
 <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">guid</span><span class="p">(</span><span class="s1">&#39;pre&#39;</span><span class="p">));</span> <span class="c1">// =&gt; 输出 pre1,pre2,pre3,pre4,pre5</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">guid</span><span class="p">(</span><span class="s1">&#39;pre&#39;</span><span class="p">));</span> <span class="c1">// =&gt; 输出 prex,pre(x+1),pre(x+2),pre(x+3),pre(x+4)</span>
+                              <span class="c1">// x 表示一个不确定的数字 ,(x+1) 表示对该数字运算得到的表达式</span>
+                              <span class="c1">// 例如可能的结果：pre10,pre11,pre12,pre13,pre14</span>
 <span class="p">}</span>
 </pre></div>
 </div>

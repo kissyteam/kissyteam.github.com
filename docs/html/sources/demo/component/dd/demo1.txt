@@ -25,7 +25,7 @@ Draggable & Proxy 使用示例
 
     .. code-block:: html
 
-        <script src='http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js'></script>
+        <script src='http://a.tbcdn.cn/s/kissy/1.2.0/kissy-min.js'></script>
 
 
     **组织HTML**
