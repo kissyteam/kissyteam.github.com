@@ -257,6 +257,44 @@
 </div>
 </div></blockquote>
 </div>
+<div class="section" id="id4">
+<h2>窗口滚动示例<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><button id='scrollUp'>滚动到下面的按钮</button>
+<div style='height:300px;'></div>
+<button id='scrollDown'>滚动到上面的按钮</button>
+<script>
+    KISSY.use("node",function(S,Node){
+        var $=Node.all;
+        $("#scrollUp").on("click",function(){
+            $(window).animate({
+                scrollTop:$("#scrollDown").offset().top
+            },1,"easeOut");
+        });
+        $("#scrollDown").on("click",function(){
+            $(window).animate({
+                scrollTop:$("#scrollUp").offset().top
+            },1,"easeOut");
+        });
+    });
+</script><p>源码：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Node</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#scrollUp&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
+            <span class="nx">scrollTop</span><span class="o">:</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#scrollDown&quot;</span><span class="p">).</span><span class="nx">offset</span><span class="p">().</span><span class="nx">top</span>
+        <span class="p">},</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;easeOut&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#scrollDown&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
+            <span class="nx">scrollTop</span><span class="o">:</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#scrollUp&quot;</span><span class="p">).</span><span class="nx">offset</span><span class="p">().</span><span class="nx">top</span>
+        <span class="p">},</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;easeOut&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
 <div class="section" id="stop">
 <span id="core-anim-demo4"></span><h2>节点上的 stop 示例<a class="headerlink" href="#stop" title="Permalink to this headline">¶</a></h2>
 <blockquote>

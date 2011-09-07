@@ -276,13 +276,11 @@ Class
         KISSY.use("node",function(S,Node){
             var $=Node.all;
             $("#scrollUp").on("click",function(){
-                $(window).stop();
                 $(window).animate({
                     scrollTop:$("#scrollDown").offset().top
                 },1,"easeOut");
             });
             $("#scrollDown").on("click",function(){
-                $(window).stop();
                 $(window).animate({
                     scrollTop:$("#scrollUp").offset().top
                 },1,"easeOut");
