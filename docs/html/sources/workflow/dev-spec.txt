@@ -37,10 +37,16 @@ src 目录中必须包含和组件名相同的一个模块文件, 模块名为 `
 .. code-block:: javascript
 
 
-    KISSY.add("gallery/overlay",function(S,Base){
-        return Base;
+    KISSY.add("gallery/overlay",function(S,O){
+    
+        //如果需要兼容 KISSY < 1.2, 需要手动挂载到 KISSY
+        S.namespace("Gallery");
+        S.Gallery.Overlay=O;
+        
+        return O;
     },{
-        requires:['./overlay/base']
+        // 其他模块如果被这里指定的模块所依赖则可以不指定，例如  position 依赖 base，则 base 这里可以不指定
+        requires:['./overlay/position'] 
     });
 
 子模块放在 ``src`` 模块名为目录名的文件夹内, 对于 KISSY 1.2 以前, 需要手动将组件挂载到 KISSY 上去并且需要在模块定义处挂载, 例如子模块 base.js 的编写：
@@ -50,10 +56,8 @@ src 目录中必须包含和组件名相同的一个模块文件, 模块名为 `
 
     KISSY.add("gallery/overlay/base",function(S){
         function Overlay(){}
-
-        //如果需要兼容 KISSY < 1.2, 需要手动挂载到 KISSY
-        S.namespace("Gallery");
-        S.Gallery.Overlay=Overlay;
+        
+        // functions
 
         return Overlay;
     });
@@ -64,10 +68,12 @@ src 目录中必须包含和组件名相同的一个模块文件, 模块名为 `
 .. code-block:: javascript
 
     KISSY.add("gallery/overlay/position",function(S,Overlay){
-        //兼容 kissy < 1.2
-        Overlay = S.Gallery.Overlay;
+        // 兼容 kissy < 1.2 以下代码
+        // Overlay = S.Gallery.Overlay;
 
         Overlay.prototype.xx=function(){};
+        
+        return Overlay;
 
     },{
         requires:['./base']
@@ -91,7 +97,7 @@ src 目录中必须包含和组件名相同的一个模块文件, 模块名为 `
             <script src='../../../kissy/build/kissy.js'></script>
             <script src='base.js'></script>
             <script src='position.js'></script>
-            <script src='overlay.js'></script>
+            <script src='../overlay.js'></script>
             <script>
                 KISSY.use("gallery/overlay",function(S,Overlay){
                     // kissy < 1.2 获取
@@ -126,7 +132,7 @@ src 目录中必须包含和组件名相同的一个模块文件, 模块名为 `
 6.1 测试准备页面
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-编写 test.html , 引入单元测试框架 jasmine (在 kissy/tools/ 下) , 例如：
+编写 test.html , 引入组件源码以及单元测试框架 jasmine (在 kissy/tools/ 下) , 例如：
 
 .. code-block:: html
 

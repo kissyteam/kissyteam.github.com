@@ -94,7 +94,7 @@
 <div class="section" id="id2">
 <h2>0, 概述<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>在组建开发的各个流程中, 需要注意的地方, 完整列举出来, 有以下:</p>
-<img alt="右击查看大图" src="../images/workflow.png" style="width: 900px;" />
+<img alt="右击查看大图" src="../images/workflow1.png" style="width: 900px;" />
 <p>上图中讲述了在开发一个组建中, 最详细的步骤, 但千万别吓着了, 因为, 在实际过程中, 有些东西并不需要这么多(具体要看你写的组件的复杂程度), 可以精简为以下几点.</p>
 </div>
 <div class="section" id="api">
@@ -105,12 +105,18 @@
 <div class="section" id="id3">
 <h2>2, 模块编写<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>必须. 推荐的目录结构如下, 例如组件为 Overlay 弹层, 那么该组件的目录结构应为：</p>
-<img alt="../images/component-guide.png" src="../images/component-guide.png" />
+<img alt="../images/component-guide1.png" src="../images/component-guide1.png" />
 <p>src 目录中必须包含和组件名相同的一个模块文件, 模块名为 <tt class="docutils literal"><span class="pre">gallery/overlay</span></tt> ,用来指明该组件依赖的子模块, 子模块的名约定为 <tt class="docutils literal"><span class="pre">gallery/overlay/xx</span></tt> ,如果组件比较简单也可只有这一个源码文件. 例如 overlay.js</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;gallery/overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Base</span><span class="p">){</span>
-    <span class="k">return</span> <span class="nx">Base</span><span class="p">;</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;gallery/overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">O</span><span class="p">){</span>
+
+    <span class="c1">//如果需要兼容 KISSY &lt; 1.2, 需要手动挂载到 KISSY</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">namespace</span><span class="p">(</span><span class="s2">&quot;Gallery&quot;</span><span class="p">);</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">Gallery</span><span class="p">.</span><span class="nx">Overlay</span><span class="o">=</span><span class="nx">O</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nx">O</span><span class="p">;</span>
 <span class="p">},{</span>
-    <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;./overlay/base&#39;</span><span class="p">]</span>
+    <span class="c1">// 其他模块如果被这里指定的模块所依赖则可以不指定，例如  position 依赖 base，则 base 这里可以不指定</span>
+    <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;./overlay/position&#39;</span><span class="p">]</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -118,9 +124,7 @@
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;gallery/overlay/base&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
     <span class="kd">function</span> <span class="nx">Overlay</span><span class="p">(){}</span>
 
-    <span class="c1">//如果需要兼容 KISSY &lt; 1.2, 需要手动挂载到 KISSY</span>
-    <span class="nx">S</span><span class="p">.</span><span class="nx">namespace</span><span class="p">(</span><span class="s2">&quot;Gallery&quot;</span><span class="p">);</span>
-    <span class="nx">S</span><span class="p">.</span><span class="nx">Gallery</span><span class="p">.</span><span class="nx">Overlay</span><span class="o">=</span><span class="nx">Overlay</span><span class="p">;</span>
+    <span class="c1">// functions</span>
 
     <span class="k">return</span> <span class="nx">Overlay</span><span class="p">;</span>
 <span class="p">});</span>
@@ -128,10 +132,12 @@
 </div>
 <p>子模块间也可有依赖关系, 例如子模块 position.js 需要对基本模块 base.js 进行增强 :</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;gallery/overlay/position&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
-    <span class="c1">//兼容 kissy &lt; 1.2</span>
-    <span class="nx">Overlay</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Gallery</span><span class="p">.</span><span class="nx">Overlay</span><span class="p">;</span>
+    <span class="c1">// 兼容 kissy &lt; 1.2 以下代码</span>
+    <span class="c1">// Overlay = S.Gallery.Overlay;</span>
 
     <span class="nx">Overlay</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">xx</span><span class="o">=</span><span class="kd">function</span><span class="p">(){};</span>
+
+    <span class="k">return</span> <span class="nx">Overlay</span><span class="p">;</span>
 
 <span class="p">},{</span>
     <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;./base&#39;</span><span class="p">]</span>
@@ -151,7 +157,7 @@
         <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;../../../kissy/build/kissy.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
         <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;base.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
         <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;position.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
-        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;overlay.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;../overlay.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
         <span class="nt">&lt;script&gt;</span>
             <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;gallery/overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
                 <span class="c1">// kissy &lt; 1.2 获取</span>
@@ -178,7 +184,7 @@
 <p>可选. 在 <tt class="docutils literal"><span class="pre">tests</span></tt> 目录下编写单元测试代码, 单元测试包括两个部分, 测试准备页面以及单元测试用例脚本.</p>
 <div class="section" id="id8">
 <h3>6.1 测试准备页面<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<p>编写 test.html , 引入单元测试框架 jasmine (在 kissy/tools/ 下) , 例如：</p>
+<p>编写 test.html , 引入组件源码以及单元测试框架 jasmine (在 kissy/tools/ 下) , 例如：</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
     <span class="nt">&lt;head&gt;</span>
