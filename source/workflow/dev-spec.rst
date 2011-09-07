@@ -38,12 +38,9 @@ src 目录中必须包含和组件名相同的一个模块文件, 模块名为 `
 
 
     KISSY.add("gallery/overlay",function(S,O){
-    
-        //如果需要兼容 KISSY < 1.2, 需要手动挂载到 KISSY
-        S.namespace("Gallery");
-        S.Gallery.Overlay=O;
         
         return O;
+        
     },{
         // 其他模块如果被这里指定的模块所依赖则可以不指定，例如  position 依赖 base，则 base 这里可以不指定
         requires:['./overlay/position'] 
@@ -58,6 +55,11 @@ src 目录中必须包含和组件名相同的一个模块文件, 模块名为 `
         function Overlay(){}
         
         // functions
+        
+        
+        //如果需要兼容 KISSY < 1.2, 需要手动挂载到 KISSY
+        S.namespace("Gallery");
+        S.Gallery.Overlay=Overlay;
 
         return Overlay;
     });
