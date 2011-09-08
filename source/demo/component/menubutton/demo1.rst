@@ -28,7 +28,7 @@ Class
 
     .. code-block:: html
 
-        <div class="goog-inline-block goog-custom-button" id="exist">
+        <div class="goog-inline-block goog-button" id="exist">
             我的淘宝
             <div class="goog-menu goog-popupmenu">
                 <div class="goog-menuitem">已买到的宝贝</div>
