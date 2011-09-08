@@ -22,3 +22,4 @@ Component
    menu/index
    menubutton/index
    tree/index
+   waterfall/index

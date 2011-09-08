@@ -22,7 +22,7 @@ Methods
                    * 待克隆值为数组, 参数同 :func:`KISSY.filter` , 上下文对象为全局 window
                    * 待克隆值为普通对象, 参数为对象的每个键, 每个键对应的值, 当前对象, 上下文对象为当前对象.
     :returns: 拷贝后的新对象
-    :type: object
+    :rtype: object
     
     .. note::
 
