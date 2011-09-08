@@ -3,7 +3,7 @@
 Waterfall.Async
 ======================================
 
-|  `源码 <https://github.com/kissyteam/kissy/blob/master/src/waterfall/aync.js>`_  | `Demo <../../../demo/component/waterfall/demo2.html>`_
+|  `源码 <https://github.com/kissyteam/kissy/blob/master/src/waterfall/async.js>`_  | `Demo <../../../demo/component/waterfall/demo2.html>`_
 
 Class
 -----------------------------------------------
