@@ -4,9 +4,10 @@
 -----------------
 构造器:
 
-.. class:: KISSY.Editor(textareaId,config)
+.. class:: KISSY.Editor
 
-    获得编辑器实例
+    | **KISSY.Editor** (textareaId,config)
+    | 产生编辑器实例对象
     
     :param string textareaId: 编辑器装饰的文本输入框 id, 注意 id前加 ``#``
     :param Object config: 编辑器以及其插件的配置项. 包括：
@@ -34,6 +35,8 @@
         .. attribute:: config.pluginConfig
         
             类型 object, 编辑器插件的相应配置
+    :returns: 编辑器实例对象 
+    :rtype: KISSY.Editor      
     
         
     
@@ -44,6 +47,7 @@
    
     KISSY.ready(function(S){
         S.Editor(“#textareaId”,{
+        
             // 是否监控编辑器所属的表单提交
             "attachForm":true,
     

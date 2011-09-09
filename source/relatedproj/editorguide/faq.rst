@@ -9,7 +9,7 @@ FAQ
 form 同步
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-	如果后端通过 form 提交(submit)来获得用户输入数据, 则只需配置参数 :class:`attachForm <Editor.KISSY.Editor>`  .
+	如果后端通过 form 提交(submit)来获得用户输入数据, 则只需配置参数 :class:`attachForm <editor.KISSY.Editor>`  .
 	
 	.. code-block:: javascript
 
@@ -91,3 +91,40 @@ placeholder(tip) 功能
         html="changed";
         return html;  // 返回修改后的粘贴内容        
     });     
+
+
+编辑器焦点事件
+---------------------------------------------
+
+可以通过监听编辑器实例对象的 "focus" "blur" 事件来获得编辑器焦点转移情况
+
+.. code-block:: javascript
+
+    var editor=KISSY.Editor(..);
+    
+    editor.on("focus",function(){
+        // 编辑器获得焦点
+        // TODO       
+    });     
+    
+    editor.on("blur",function(){
+        // 编辑器失去焦点
+        // TODO       
+    });
+    
+    
+多编辑器草稿混淆问题
+---------------------------------------------
+
+因为目前编辑器草稿箱使用客户端存储：
+
+1.标准浏览器使用本地存储，那么同一个 host 下的编辑器公用存储空间
+2.ie < 8使用 flash，所有编辑器实例共享一份 flash 存储空间
+
+如果需要某个编辑器具备单独的存储空间，可设置草稿箱插件的 :attr:`saveKey <pluginConfig.draft>` 配置唯一标识的存储空间.
+
+.. note::
+
+    客户端存储容量有限，如果文章平均长度很长，推荐结合后端自行实现，
+    历史保存在数据库中，通过 :mod:`ajax <io>` 拉取. 
+    这时就不需要 ``use("draft")`` 了.    

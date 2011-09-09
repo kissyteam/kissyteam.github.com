@@ -96,7 +96,7 @@
 <div class="section" id="form">
 <h3>form 同步<a class="headerlink" href="#form" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><p>如果后端通过 form 提交(submit)来获得用户输入数据, 则只需配置参数 <tt class="xref py py-class docutils literal"><span class="pre">attachForm</span></tt>  .</p>
+<div><p>如果后端通过 form 提交(submit)来获得用户输入数据, 则只需配置参数 <a class="reference internal" href="usage.html#editor.KISSY.Editor" title="editor.KISSY.Editor"><tt class="xref py py-class docutils literal"><span class="pre">attachForm</span></tt></a>  .</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//是否监控编辑器所属的表单提交</span>
 <span class="s2">&quot;attachForm&quot;</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
 </pre></div>
@@ -163,6 +163,36 @@
     <span class="k">return</span> <span class="nx">html</span><span class="p">;</span>  <span class="c1">// 返回修改后的粘贴内容</span>
 <span class="p">});</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>编辑器焦点事件<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>可以通过监听编辑器实例对象的 &#8220;focus&#8221; &#8220;blur&#8221; 事件来获得编辑器焦点转移情况</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">editor</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Editor</span><span class="p">(..);</span>
+
+<span class="nx">editor</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;focus&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">// 编辑器获得焦点</span>
+    <span class="c1">// TODO</span>
+<span class="p">});</span>
+
+<span class="nx">editor</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;blur&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">// 编辑器失去焦点</span>
+    <span class="c1">// TODO</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>多编辑器草稿混淆问题<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>因为目前编辑器草稿箱使用客户端存储：</p>
+<p>1.标准浏览器使用本地存储，那么同一个 host 下的编辑器公用存储空间
+2.ie &lt; 8使用 flash，所有编辑器实例共享一份 flash 存储空间</p>
+<p>如果需要某个编辑器具备单独的存储空间，可设置草稿箱插件的 <a class="reference internal" href="plugin-config.html#editor.pluginConfig.draft" title="editor.pluginConfig.draft"><tt class="xref py py-attr docutils literal"><span class="pre">saveKey</span></tt></a> 配置唯一标识的存储空间.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">客户端存储容量有限，如果文章平均长度很长，推荐结合后端自行实现，
+历史保存在数据库中，通过 <a class="reference internal" href="../../api/core/ajax/index.html#module-io" title="io"><tt class="xref py py-mod docutils literal"><span class="pre">ajax</span></tt></a> 拉取.
+这时就不需要 <tt class="docutils literal"><span class="pre">use(&quot;draft&quot;)</span></tt> 了.</p>
 </div>
 </div>
 </div>
