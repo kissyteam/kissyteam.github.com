@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>瀑布示例 &mdash; KISSY Docs valpha documentation</title>
+<title>瀑布布局基本使用示例 &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -78,7 +78,7 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../../../relatedproj/index.html" title="子项目集"
+      <a href="demo2.html" title="加载动态数据的瀑布布局示例"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="index.html" title="Waterfall 使用示例"
@@ -91,29 +91,24 @@
 </div>
 					
   <div class="section" id="id1">
-<h1>瀑布示例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.2.</span></p>
+<h1>瀑布布局基本使用示例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
-<div class="line"><a class="reference external" href="../../../api/component/waterfall/index.html">API</a> | <a class="reference external" href="https://github.com/kissyteam/kissy/waterfall/master/src/waterfall/">源码</a></div>
+<div class="line">KISSY 1.1x 中也有 waterfall 组件, 和1.2 中配置接口完全一致, 只是加载方式有些区别, 具体请参考 <a class="reference external" href="http://lizzie.github.com/kissy/src/waterfall/demo/demo.html">这里</a></div>
+<div class="line"><a class="reference external" href="../../../api/component/waterfall/index.html">API</a> | <a class="reference external" href="https://github.com/kissyteam/kissy/blob/master/src/waterfall/intervein.js">源码</a></div>
 </div>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><tt class="xref py py-class docutils literal"><span class="pre">Waterfall.Async</span></tt></li>
+<li><a class="reference internal" href="../../../api/component/waterfall/intervein.html#waterfall.Waterfall" title="waterfall.Waterfall"><tt class="xref py py-class docutils literal"><span class="pre">Waterfall</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id3">
-<h2>瀑布示例<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>瀑布布局基本使用示例<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><iframe width="100%" height="700" class="iframe-demo" src="../../../static/demo/waterfall/demo1.html"></iframe><p><strong>载入1.2的 kissy</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/kissy-min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
-</div>
-<p><strong>添加css控制</strong></p>
-<p>这里的css用来控制瀑布容器中每个瀑布元素的属性</p>
+<div><iframe width="100%" height="700" class="iframe-demo" src="../../../static/demo/waterfall/demo1.html"></iframe><p><strong>添加css控制</strong></p>
+<p>这里的css用来控制瀑布容器中每个元素的属性</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
     <span class="nc">.ks-waterfall</span> <span class="p">{</span>
         <span class="k">position</span><span class="o">:</span><span class="k">absolute</span><span class="p">;</span>
@@ -125,47 +120,20 @@
 </pre></div>
 </div>
 <p><strong>HTML关键代码</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div&gt;</span>
-    <span class="c">&lt;!--放置一个button用于演示销毁瀑布的外部调用--&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;uninstall&quot;</span><span class="nt">&gt;</span>卸载组件<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;container&#39;</span> <span class="na">style=</span><span class="s">&quot;position: relative;&quot;</span><span class="nt">&gt;</span>
-    <span class="c">&lt;!--这里只需要一个容器就行了，瀑布中每个元素的内容由js配置的模板内容渲染--&gt;</span>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;container&#39;</span> <span class="na">style=</span><span class="s">&quot;position: relative;&quot;</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- 重复的数据块 --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ks-waterfall&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://pic.yupoo.com/ucdcn_v/BkKTL421/metal.jpg&quot;</span> <span class="na">width=</span><span class="s">&quot;192&quot;</span> <span class="na">height=</span><span class="s">&quot;113&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>untitled<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
 </div>
-<p><strong>模板代码</strong></p>
-<div class="highlight-html"><pre>&lt;script type="tpl" id="tpl"&gt;
-    &lt;div class="ks-waterfall" &gt;
-        &lt;img src="{{image_url}}"
-             width="{{image_width}}"
-             height="{{image_height}}"
-        /&gt;
-        &lt;div class="title"&gt;{{title}}&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/script&gt;</pre>
-</div>
 <p><strong>使用脚本生成瀑布</strong></p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;waterfall&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Waterfall</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">waterFall</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Waterfall</span><span class="p">.</span><span class="nx">Async</span><span class="p">({</span>
+    <span class="k">new</span> <span class="nx">Waterfall</span><span class="p">({</span>
         <span class="nx">container</span><span class="o">:</span> <span class="s2">&quot;#container&quot;</span><span class="p">,</span>    <span class="c1">//节点容器</span>
-        <span class="nx">remote</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>       <span class="c1">//函数或者对象，和 ajax 部分一致，只包括 data （服务器端参数）,url（地址），dataType （ajax 类型）</span>
-            <span class="k">return</span> <span class="p">{</span>
-                <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="nx">from</span><span class="o">:</span> <span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;#container .ks-waterfall&quot;</span><span class="p">).</span><span class="nx">length</span>
-                <span class="p">},</span>
-                <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;data.json&quot;</span><span class="p">,</span>
-                <span class="nx">dataType</span><span class="o">:</span> <span class="s2">&quot;json&quot;</span>
-            <span class="p">};</span>
-        <span class="p">},</span>
         <span class="nx">minColCount</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>            <span class="c1">//最小列数 </span>
-        <span class="nx">colWidth</span><span class="o">:</span> <span class="mi">180</span><span class="p">,</span>             <span class="c1">//每列的宽度</span>
-        <span class="nx">itemTpl</span><span class="o">:</span> <span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;#tpl&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">()</span>  <span class="c1">//模板代码，此处从放置代码的dom元素中找到</span>
-    <span class="p">});</span>
-    
-    <span class="c1">//外部调用destroy接口卸载瀑布，卸载后将不再有瀑布效果</span>
-    <span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;#uninstall&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="nx">waterFall</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+        <span class="nx">colWidth</span><span class="o">:</span> <span class="mi">180</span>             <span class="c1">//每列的宽度</span>
     <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
@@ -188,7 +156,7 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../../../relatedproj/index.html" title="子项目集"
+      <a href="demo2.html" title="加载动态数据的瀑布布局示例"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="index.html" title="Waterfall 使用示例"
