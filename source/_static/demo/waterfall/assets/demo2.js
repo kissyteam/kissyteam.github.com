@@ -1,26 +1,74 @@
-﻿KISSY.use("waterfall", function(S, Waterfall) {
-    var waterFall = new Waterfall.Async({
+﻿KISSY.use("waterfall,ajax,template,node,button", function(S, Waterfall, io, Template, Node, Button) {
+    var $ = Node.all;
+
+    var tpl = S.Template($('#tpl').html()),
+        nextpage = 1,
+        waterfall = new Waterfall.Loader({
         container:"#ColumnContainer",
-        remote:function() {  // 设置外部数据接口
-            return {
+        load:function(success, end) {
+            $('#loadingPins').show();
+            S.ajax({
                 data:{
-                    from:S.all("#ColumnContainer .ks-waterfall").length
+                    'method': 'flickr.photos.search',
+                    'api_key': '6bd446e36ad8bb58d0bccf2f0d2cfed2',
+                    'tags': 'rose',
+                    'page': nextpage,
+                    'per_page': 20,
+                    'format': 'json'
                 },
-                url:"data.json",
-                dataType:"json"
-            };
+                url: 'http://api.flickr.com/services/rest/',
+                dataType: "jsonp",
+                jsonp: "jsoncallback",
+                success: function(d) {
+                    // 如果数据错误, 则立即结束
+                    if (d.stat !== 'ok') {
+                        alert('load data error!');
+                        end();
+                        return;
+                    }
+                    // 如果到最后一页了, 也结束加载
+                    nextpage = d.photos.page + 1;
+                    if (nextpage > d.photos.pages) {
+                        end();
+                        return;
+                    }
+                    // 拼装每页数据
+                    var items = [];
+                    S.each(d.photos.photo, function(item) {
+                        item.height = Math.round(Math.random()*(300 - 180) + 180); // fake height
+                        items.push(new S.Node(tpl.render(item)));
+                    });
+                    success(items);
+                },
+                complete: function() {
+                    $('#loadingPins').hide();
+                }
+            });
         },
         minColCount:2,
-        colWidth:235,
-        itemTpl:S.all("#tpl").html() // 设置每个数据块的默认代码
+        colWidth:228,
+        itemTpl:$("#tpl").html()
     });
 
-    // 分别在加载开始和加载结束后, 显示 loading 标志
-    waterFall.on('loadStart', function() {
-        S.one('#loadingPins').show();
-    });
-    waterFall.on('loadEnd', function() {
-        S.one('#loadingPins').hide();
+    // scrollTo
+    $('#BackToTop').on('click', function(e) {
+        e.halt();
+        e.preventDefault();
+        $(window).stop();
+        $(window).animate({
+            scrollTop:0
+        },1,"easeOut");
     });
 
+    var b1 = new Button({
+        content: "停止加载",
+        render: "#button_container",
+        prefixCls: "goog-"
+    });
+
+    // 点击按钮后, 停止瀑布图效果
+    b1.render();
+    b1.on("click", function() {
+        waterfall.destroy();
+    });
 });
