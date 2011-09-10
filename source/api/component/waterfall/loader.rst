@@ -90,7 +90,7 @@ Config Attributes Detail
                         var html = template.render(d);
                         items.push($(html));
                     });
-                    // 通过 success 回调, 添加到当前容器中
+                    // 通过 success 回调, 添加 items 到当前容器中
                     success(items);
                 }
             });
