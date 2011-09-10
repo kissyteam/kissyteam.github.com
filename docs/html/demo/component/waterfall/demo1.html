@@ -131,12 +131,19 @@
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>由于数据块高度是需要包含图片高度的, 当图片未加载完时, 当前取不到其高度, 所以需要人为设定图片的高度;</li>
+<li>图片高度值一般直接有数据接口给出.</li>
+</ul>
+</div>
 <p><strong>使用脚本生成瀑布</strong></p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;waterfall&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Waterfall</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">new</span> <span class="nx">Waterfall</span><span class="p">({</span>
         <span class="nx">container</span><span class="o">:</span> <span class="s2">&quot;#container&quot;</span><span class="p">,</span>    <span class="c1">//节点容器</span>
-        <span class="nx">minColCount</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>            <span class="c1">//最小列数 </span>
-        <span class="nx">colWidth</span><span class="o">:</span> <span class="mi">235</span>             <span class="c1">//每列的宽度</span>
+        <span class="nx">minColCount</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>             <span class="c1">//最小列数</span>
+        <span class="nx">colWidth</span><span class="o">:</span> <span class="mi">235</span>               <span class="c1">//每列的宽度</span>
     <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
