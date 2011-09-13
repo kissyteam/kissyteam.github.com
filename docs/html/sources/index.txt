@@ -13,6 +13,8 @@
     demo/index.rst
     relatedproj/index.rst
     styleguide/index.rst
-    tools/index.rst
+    projguide/index.rst
     workflow/index.rst
+    tools/index.rst
+
     
