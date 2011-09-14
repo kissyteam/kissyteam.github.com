@@ -46,8 +46,7 @@
             });
         },
         minColCount:2,
-        colWidth:228,
-        itemTpl:$("#tpl").html()
+        colWidth:228
     });
 
     // scrollTo
