@@ -14,7 +14,7 @@
 .. raw:: html
 
     <div class="demo">
-        <script src="../_static/quickstart/kwicks.js"></script>
+        <script src="../../static/quickstart/kwicks.js"></script>
 
         <style>
             .kwicks {
