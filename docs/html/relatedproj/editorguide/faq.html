@@ -222,71 +222,42 @@
 <li>添加一个自定义按钮</li>
 </ol>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KE</span><span class="p">({}).</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;xx&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="kd">var</span> <span class="nx">my</span><span class="o">=</span><span class="k">new</span> <span class="nx">KE</span><span class="p">.</span><span class="nx">TripleButton</span><span class="p">({</span>
-        <span class="nx">render</span><span class="o">:</span><span class="nx">k</span><span class="p">.</span><span class="nx">toolBarDiv</span><span class="p">,</span>
-        <span class="c1">// 按钮的提示信息</span>
-        <span class="nx">title</span><span class="o">:</span><span class="s2">&quot;get data&quot;</span><span class="p">,</span>
-        <span class="c1">// 按钮文字，如果设置了图标该项可不设置</span>
-        <span class="nx">text</span><span class="o">:</span><span class="s2">&quot;get data&quot;</span><span class="p">,</span>
-        <span class="c1">// 设置图标，css 参考自带按钮样子自己写</span>
-        <span class="nx">contentCls</span><span class="o">:</span><span class="s2">&quot;ke-toolbar-table&quot;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">addButton</span><span class="p">({</span>
+        <span class="c1">// optional, 按钮的提示信息</span>
+        <span class="nx">title</span><span class="o">:</span><span class="s2">&quot;statics&quot;</span><span class="p">,</span>
+        <span class="c1">// optional, 按钮文字，如果设置了图标该项可不设置</span>
+        <span class="nx">text</span><span class="o">:</span><span class="s2">&quot;statics&quot;</span><span class="p">,</span>
+        <span class="c1">// optional, 设置图标，css 参考自带按钮样子自己写</span>
+        <span class="nx">contentCls</span><span class="o">:</span><span class="s2">&quot;ke-toolbar-statics&quot;</span><span class="p">,</span>
+        <span class="c1">// optional, 源码模式时会被禁用，不设置则源码模式不被禁用</span>
+        <span class="nx">mode</span><span class="o">:</span><span class="nx">KE</span><span class="p">.</span><span class="nx">WYSIWYG_MODE</span>
     <span class="p">});</span>
-
-    <span class="c1">// 渲染按钮</span>
-    <span class="nx">my</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li>响应点击事件</li>
 </ol>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">editor</span><span class="o">=</span><span class="nx">KE</span><span class="p">({}).</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;xx&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="kd">var</span> <span class="nx">my</span><span class="o">=</span><span class="k">new</span> <span class="nx">KE</span><span class="p">.</span><span class="nx">TripleButton</span><span class="p">({</span>
-        <span class="nx">render</span><span class="o">:</span><span class="nx">k</span><span class="p">.</span><span class="nx">toolBarDiv</span><span class="p">,</span>
-        <span class="c1">// 按钮的提示信息</span>
-        <span class="nx">title</span><span class="o">:</span><span class="s2">&quot;get data&quot;</span><span class="p">,</span>
-        <span class="c1">// 按钮文字，如果设置了图标该项可不设置</span>
-        <span class="nx">text</span><span class="o">:</span><span class="s2">&quot;get data&quot;</span><span class="p">,</span>
-        <span class="c1">// 设置图标，css 参考自带按钮样子自己写</span>
-        <span class="nx">contentCls</span><span class="o">:</span><span class="s2">&quot;ke-toolbar-table&quot;</span>
-    <span class="p">});</span>
-
-    <span class="c1">// 点击时响应</span>
-    <span class="nx">my</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;offClick&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-        <span class="c1">// 统计编辑器内容文档中 a 的个数</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="nx">editor</span><span class="p">.</span><span class="nb">document</span><span class="p">).</span><span class="nx">length</span><span class="p">);</span>
-    <span class="p">});</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="4">
-<li>切换到源码状态时禁用按钮</li>
-</ol>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">editor</span> <span class="o">=</span> <span class="nx">KE</span><span class="p">({}).</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;xx&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="kd">var</span> <span class="nx">my</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">KE</span><span class="p">.</span><span class="nx">TripleButton</span><span class="p">({</span>
-        <span class="nx">render</span><span class="o">:</span><span class="nx">k</span><span class="p">.</span><span class="nx">toolBarDiv</span><span class="p">,</span>
-        <span class="c1">// 按钮的提示信息</span>
-        <span class="nx">title</span><span class="o">:</span><span class="s2">&quot;get data&quot;</span><span class="p">,</span>
-        <span class="c1">// 按钮文字，如果设置了图标该项可不设置</span>
-        <span class="nx">text</span><span class="o">:</span><span class="s2">&quot;get data&quot;</span><span class="p">,</span>
-        <span class="c1">// 设置图标，css 参考自带按钮样子自己写</span>
-        <span class="nx">contentCls</span><span class="o">:</span><span class="s2">&quot;ke-toolbar-table&quot;</span>
-    <span class="p">});</span>
-
-    <span class="c1">// 点击时响应</span>
-    <span class="nx">my</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;offClick&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-        <span class="c1">// 统计编辑器内容文档中 a 的个数</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="nx">editor</span><span class="p">.</span><span class="nb">document</span><span class="p">).</span><span class="nx">length</span><span class="p">);</span>
-    <span class="p">});</span>
-
-    <span class="c1">// 源码状态时禁用按钮</span>
-    <span class="nx">editor</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;sourcemode&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">my</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="nx">TripleButton</span><span class="p">.</span><span class="nx">DISABLED</span><span class="p">);</span>
-    <span class="p">});</span>
-
-    <span class="c1">// 可视化编辑状态时启用按钮</span>
-    <span class="nx">editor</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;wysiwygmode&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">my</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="nx">TripleButton</span><span class="p">.</span><span class="nx">OFF</span><span class="p">);</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KE</span><span class="p">({}).</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;xx&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">addButton</span><span class="p">({</span>
+        <span class="c1">// optional, 按钮的提示信息</span>
+        <span class="nx">title</span><span class="o">:</span><span class="s2">&quot;statics&quot;</span><span class="p">,</span>
+        <span class="c1">// optional, 按钮文字，如果设置了图标该项可不设置</span>
+        <span class="nx">text</span><span class="o">:</span><span class="s2">&quot;statics&quot;</span><span class="p">,</span>
+        <span class="c1">// optional, 设置图标，css 参考自带按钮样子自己写</span>
+        <span class="nx">contentCls</span><span class="o">:</span><span class="s2">&quot;ke-toolbar-statics&quot;</span><span class="p">,</span>
+        <span class="c1">// optional, 源码模式时会被禁用，不设置则源码模式不被禁用</span>
+        <span class="nx">mode</span><span class="o">:</span><span class="nx">KE</span><span class="p">.</span><span class="nx">WYSIWYG_MODE</span><span class="p">,</span>
+        <span class="c1">// optional 非选中非禁用状态时被点击</span>
+        <span class="nx">offClick</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="c1">// 统计编辑器内容文档中 a 的个数</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="nx">editor</span><span class="p">.</span><span class="nb">document</span><span class="p">).</span><span class="nx">length</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="cm">/**</span>
+<span class="cm">          还可以设置</span>
+<span class="cm">                    disabledClick 禁用时点击被触发</span>
+<span class="cm">                    onClick 选中状态时点击被触发</span>
+<span class="cm">        **/</span>
     <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>

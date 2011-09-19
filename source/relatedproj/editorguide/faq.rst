@@ -160,70 +160,41 @@ placeholder(tip) 功能
 .. code-block:: javascript
 
     KE({}).use("xx",function(){
-        var my=new KE.TripleButton({
-            render:k.toolBarDiv,
-            // 按钮的提示信息            
-            title:"get data", 
-            // 按钮文字，如果设置了图标该项可不设置
-            text:"get data",
-            // 设置图标，css 参考自带按钮样子自己写
-            contentCls:"ke-toolbar-table"
-        });
-        
-        // 渲染按钮
-        my.render();
+        this.addButton({
+            // optional, 按钮的提示信息            
+            title:"statics", 
+            // optional, 按钮文字，如果设置了图标该项可不设置
+            text:"statics",
+            // optional, 设置图标，css 参考自带按钮样子自己写
+            contentCls:"ke-toolbar-statics",
+            // optional, 源码模式时会被禁用，不设置则源码模式不被禁用
+            mode:KE.WYSIWYG_MODE
+        });   
     });    
     
 3. 响应点击事件
 
 .. code-block:: javascript
 
-    var editor=KE({}).use("xx",function(){
-        var my=new KE.TripleButton({
-            render:k.toolBarDiv,
-            // 按钮的提示信息            
-            title:"get data", 
-            // 按钮文字，如果设置了图标该项可不设置
-            text:"get data",
-            // 设置图标，css 参考自带按钮样子自己写
-            contentCls:"ke-toolbar-table"
-        });
-        
-        // 点击时响应
-        my.on("offClick",function(){
-            // 统计编辑器内容文档中 a 的个数
-            alert(KISSY.DOM.query("a",editor.document).length);
-        });
-    });         
-    
-4. 切换到源码状态时禁用按钮
-
-.. code-block:: javascript
-
-    var editor = KE({}).use("xx",function(){
-        var my = new KE.TripleButton({
-            render:k.toolBarDiv,
-            // 按钮的提示信息            
-            title:"get data", 
-            // 按钮文字，如果设置了图标该项可不设置
-            text:"get data",
-            // 设置图标，css 参考自带按钮样子自己写
-            contentCls:"ke-toolbar-table"
-        });
-        
-        // 点击时响应
-        my.on("offClick",function(){
-            // 统计编辑器内容文档中 a 的个数
-            alert(KISSY.DOM.query("a",editor.document).length);
-        });
-        
-        // 源码状态时禁用按钮
-        editor.on("sourcemode", function() {
-            my.set("state", TripleButton.DISABLED);
-        });
-
-        // 可视化编辑状态时启用按钮
-        editor.on("wysiwygmode", function() {
-            my.set("state", TripleButton.OFF);
-        });
-    });               
+    KE({}).use("xx",function(){
+        this.addButton({
+            // optional, 按钮的提示信息            
+            title:"statics", 
+            // optional, 按钮文字，如果设置了图标该项可不设置
+            text:"statics",
+            // optional, 设置图标，css 参考自带按钮样子自己写
+            contentCls:"ke-toolbar-statics",
+            // optional, 源码模式时会被禁用，不设置则源码模式不被禁用
+            mode:KE.WYSIWYG_MODE,
+            // optional 非选中非禁用状态时被点击
+            offClick:function(){
+                // 统计编辑器内容文档中 a 的个数
+                alert(KISSY.DOM.query("a",editor.document).length);
+            }
+            /**
+              还可以设置 
+                        disabledClick 禁用时点击被触发
+                        onClick 选中状态时点击被触发                  
+            **/
+        });   
+    });
