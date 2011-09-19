@@ -3,6 +3,17 @@
 FAQ
 ===========
 
+插入外部 html
+------------------------------
+
+    可通过 editor.insertHTML 在当前光标位置插入指定的 html
+    
+    .. code-block:: javascript
+        
+        var editor = KE({...}).use("...");
+        editor.insertHTML("<p>i'm new</p>");
+        
+
 数据同步
 -----------------
 
@@ -13,7 +24,7 @@ form 同步
 	
 	.. code-block:: javascript
 
-  		//是否监控编辑器所属的表单提交
+  		// 是否监控编辑器所属的表单提交
   		"attachForm":true,
 
 	编辑器自动会监控 form 的 sbumit 事件进行同步
