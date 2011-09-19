@@ -53,6 +53,8 @@ kissy 1.1.7
 kissy 1.2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+**静态引入**
+
 .. code-block:: html
 
     <script src="http://a.tbcdn.cn/s/kissy/1.2.0/??kissy-min.js,
@@ -61,6 +63,21 @@ kissy 1.2.0
     dd-min.js,
     overlay-min.js,
     editor/editor-all-pkg-min.js"></script>
+    
+**动态引入**   
+ 
+.. code-block:: html
+
+    <script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy-min.js"></script>
+    <script>
+        KISSY.use("editor",function(S,Editor){
+            // new Editor().use("xx")
+        });
+    </script>
+
+.. note::
+
+    动态引入时，编辑器不可 use "video" ,"music" ,"multi-upload" ,"checkbox-source" 插件
 
 加入 textarea
 --------------------------

@@ -129,3 +129,90 @@ placeholder(tip) 功能
     客户端存储容量有限，如果文章平均长度很长，推荐结合后端自行实现，
     历史保存在数据库中，通过 :mod:`ajax <io>` 拉取. 
     这时就不需要 ``use("draft")`` 了.    
+    
+    
+如何自己添加编辑器功能按钮 (初级模式)   
+------------------------------------------
+
+举例：要做一个简单的插件，统计用户的编辑内容中元素 a 的个数，那么可以这么做:
+
+1. 等待编辑器完成
+
+.. code-block:: javascript
+
+    KE({}).use("xx",function(){
+        // TODO
+    });
+
+2. 添加一个自定义按钮
+
+.. code-block:: javascript
+
+    KE({}).use("xx",function(){
+        var my=new KE.TripleButton({
+            render:k.toolBarDiv,
+            // 按钮的提示信息            
+            title:"get data", 
+            // 按钮文字，如果设置了图标该项可不设置
+            text:"get data",
+            // 设置图标，css 参考自带按钮样子自己写
+            contentCls:"ke-toolbar-table"
+        });
+        
+        // 渲染按钮
+        my.render();
+    });    
+    
+3. 响应点击事件
+
+.. code-block:: javascript
+
+    var editor=KE({}).use("xx",function(){
+        var my=new KE.TripleButton({
+            render:k.toolBarDiv,
+            // 按钮的提示信息            
+            title:"get data", 
+            // 按钮文字，如果设置了图标该项可不设置
+            text:"get data",
+            // 设置图标，css 参考自带按钮样子自己写
+            contentCls:"ke-toolbar-table"
+        });
+        
+        // 点击时响应
+        my.on("offClick",function(){
+            // 统计编辑器内容文档中 a 的个数
+            alert(KISSY.DOM.query("a",editor.document).length);
+        });
+    });         
+    
+4. 切换到源码状态时禁用按钮
+
+.. code-block:: javascript
+
+    var editor = KE({}).use("xx",function(){
+        var my = new KE.TripleButton({
+            render:k.toolBarDiv,
+            // 按钮的提示信息            
+            title:"get data", 
+            // 按钮文字，如果设置了图标该项可不设置
+            text:"get data",
+            // 设置图标，css 参考自带按钮样子自己写
+            contentCls:"ke-toolbar-table"
+        });
+        
+        // 点击时响应
+        my.on("offClick",function(){
+            // 统计编辑器内容文档中 a 的个数
+            alert(KISSY.DOM.query("a",editor.document).length);
+        });
+        
+        // 源码状态时禁用按钮
+        editor.on("sourcemode", function() {
+            my.set("state", TripleButton.DISABLED);
+        });
+
+        // 可视化编辑状态时启用按钮
+        editor.on("wysiwygmode", function() {
+            my.set("state", TripleButton.OFF);
+        });
+    });               

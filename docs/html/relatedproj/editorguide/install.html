@@ -134,6 +134,7 @@
 </div>
 <div class="section" id="kissy-1-2-0">
 <h3>kissy 1.2.0<a class="headerlink" href="#kissy-1-2-0" title="Permalink to this headline">¶</a></h3>
+<p><strong>静态引入</strong></p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/??kissy-min.js,</span>
 <span class="s">uibase-min.js,</span>
 <span class="s">component-min.js,</span>
@@ -141,6 +142,19 @@
 <span class="s">overlay-min.js,</span>
 <span class="s">editor/editor-all-pkg-min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
+</div>
+<p><strong>动态引入</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/kissy-min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;editor&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Editor</span><span class="p">){</span>
+        <span class="c1">// new Editor().use(&quot;xx&quot;)</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">动态引入时，编辑器不可 use &#8220;video&#8221; ,&#8221;music&#8221; ,&#8221;multi-upload&#8221; ,&#8221;checkbox-source&#8221; 插件</p>
 </div>
 </div>
 </div>
