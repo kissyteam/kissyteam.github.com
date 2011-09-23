@@ -33,7 +33,7 @@ Methods
         - ``prop`` 方法可以改变 ``DOM`` 元素的状态而不改变其对应的序列化 ``html`` 属性 ( IE <9 除外).
 
         例如设置 ``input`` 或 ``button`` 的 ``disabled`` property 或者 ``checkbox`` 的 ``checked`` property . 
-        最常见的情况即是用 ``prop`` 来设置 ``disabled`` 以及 ``checked`` 而不是 func:`DOM.attr <dom.attr>` .
+        最常见的情况即是用 ``prop`` 来设置 ``disabled`` 以及 ``checked`` 而不是 :func:`DOM.attr <dom.attr>` .
         而 :func:`DOM.val <dom.val>` 方法用来设置和读取 `value` property.
 
 
