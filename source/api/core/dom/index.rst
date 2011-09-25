@@ -40,6 +40,10 @@ Methods
    css
    width
    height
+   innerWidth
+   innerHeight
+   outerWidth
+   outerHeight
    addStyleSheet
    show
    hide

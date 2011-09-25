@@ -22,23 +22,24 @@ Methods
     
     .. note::
 
-        该方法始终返回像素值, 例如
+        - 该方法获取的是元素的真实宽度, 不包含 padding, border, margin. 且始终返回像素值
+        - 注意: 该方法与 :func:`innerWidth` 和 :func:`outerWidth` 的区别.
 
-        .. code-block:: html
+    .. code-block:: html
 
-            <div style="width: 100px;">
-                <div id="test" style="width: 80%; height: 20px"></div>
-            </div>
-            <script>
-                var S = KISSY, DOM = S.DOM,
-                elem = S.get('#test');
+        <div style="width: 100px;">
+            <div id="test" style="width: 80%; height: 20px"></div>
+        </div>
+        <script>
+            var S = KISSY, DOM = S.DOM,
+            elem = S.get('#test');
 
-                DOM.css(elem, 'width'); // 返回 80%
-                DOM.css(elem, 'height'); // 返回 20px
+            DOM.css(elem, 'width'); // 返回 80%
+            DOM.css(elem, 'height'); // 返回 20px
 
-                DOM.width(elem); // 返回 80
-                DOM.height(elem); // 返回 20
-            </script>
+            DOM.width(elem); // 返回 80
+            DOM.height(elem); // 返回 20
+        </script>
 
 
     | void **width** ( selector, value )

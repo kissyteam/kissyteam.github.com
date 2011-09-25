@@ -79,6 +79,7 @@ Member Methods
         :func:`~dom.siblings`, :func:`~dom.children`,
         :func:`~dom.contains`, :func:`~dom.html`, :func:`~dom.remove`, :func:`~dom.data`, :func:`~dom.removeData`,
         :func:`~dom.hasData`, :func:`~dom.unselectable`, :func:`~dom.contains`,
+        :func:`~dom.innerWidth`, :func:`~dom.innerHeight`, :func:`~dom.outerWidth`, :func:`~dom.outerHeight`,
         :func:`~event.on`, :func:`~event.detach`, :func:`~event.fire`,
         的调用都会被转发给 :mod:`DOM <dom>` , :mod:`event` , 原 ``DOM`` , ``Event`` 对应方法的第一个参数传入一个原生 DOM 节点数组, 而这个原生 DOM 节点数组则是由当前的 ``KISSY NodeList`` 对象得到的.
 

@@ -23,7 +23,8 @@ Methods
     
     .. note::
 
-        该方法始终返回像素值
+        - 该方法获取的是元素的真实高度, 不包含 padding, border, margin. 且始终返回像素值
+        - 注意: 该方法与 :func:`innerHeight` 和 :func:`outerHeight` 的区别.
 
     | void **height** ( selector, value )
     | 给符合选择器的所有元素设置高度值. 相当于 :func:`DOM.css(selector,"height",value) <dom.css>`

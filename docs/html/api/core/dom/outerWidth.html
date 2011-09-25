@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>width &mdash; KISSY Docs valpha documentation</title>
+<title>outerWidth &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -78,10 +78,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="height.html" title="height"
+      <a href="outerHeight.html" title="outerHeight"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="css.html" title="css"
+      <a href="innerHeight.html" title="innerHeight"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -90,8 +90,10 @@
     </ul>
 </div>
 					
-  <div class="section" id="width">
-<h1>width<a class="headerlink" href="#width" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="outerwidth">
+<h1>outerWidth<a class="headerlink" href="#outerwidth" title="Permalink to this headline">¶</a></h1>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
 <div class="section" id="module">
 <h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -100,63 +102,47 @@
 <div class="section" id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="dom.width">
-<tt class="descclassname">dom.</tt><tt class="descname">width</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.width" title="Permalink to this definition">¶</a></dt>
+<dt id="dom.outerWidth">
+<tt class="descclassname">dom.</tt><tt class="descname">outerWidth</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.outerWidth" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line">Number <strong>width</strong> ( selector )</div>
-<div class="line">获取符合选择器的第一个元素的宽度值.</div>
+<div class="line">Number <strong>outerWidth</strong> ( selector , includeMargin)</div>
+<div class="line">获取符合选择器的第一个元素的宽度值, 注意: <strong>该值除了包含元素本身宽度和 padding 外, 还包含 border或margin</strong> .</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></td>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
+<li><strong>includeMargin</strong> (<em>Boolean</em>) &#8211; 是否包含 margin, 默认仅包含 border</li>
+</ul>
+</td>
 </tr>
 <tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body">符合选择器的第一个元素的宽度值.</td>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first">符合选择器的第一个元素的宽度值.</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">Return type:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last">Number</p>
+</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<ul class="last simple">
-<li>该方法获取的是元素的真实宽度, 不包含 padding, border, margin. 且始终返回像素值</li>
-<li>注意: 该方法与 <a class="reference internal" href="innerWidth.html#dom.innerWidth" title="dom.innerWidth"><tt class="xref py py-func docutils literal"><span class="pre">innerWidth()</span></tt></a> 和 <a class="reference internal" href="outerWidth.html#dom.outerWidth" title="dom.outerWidth"><tt class="xref py py-func docutils literal"><span class="pre">outerWidth()</span></tt></a> 的区别.</li>
-</ul>
-</div>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;width: 100px;&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;test&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 80%; height: 20px&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;test&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 80%; height: 20px; padding: 10px;border: 2px solid gray;margin: 6px;&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;script&gt;</span>
     <span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">,</span>
     <span class="nx">elem</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;#test&#39;</span><span class="p">);</span>
 
-    <span class="nx">DOM</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">);</span> <span class="c1">// 返回 80%</span>
-    <span class="nx">DOM</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">);</span> <span class="c1">// 返回 20px</span>
-
-    <span class="nx">DOM</span><span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="nx">elem</span><span class="p">);</span> <span class="c1">// 返回 80</span>
-    <span class="nx">DOM</span><span class="p">.</span><span class="nx">height</span><span class="p">(</span><span class="nx">elem</span><span class="p">);</span> <span class="c1">// 返回 20</span>
+    <span class="nx">DOM</span><span class="p">.</span><span class="nx">outerWidth</span><span class="p">(</span><span class="nx">elem</span><span class="p">);</span> <span class="c1">// 返回 104</span>
+    <span class="nx">DOM</span><span class="p">.</span><span class="nx">outerHeight</span><span class="p">(</span><span class="nx">elem</span><span class="p">);</span> <span class="c1">// 返回 44</span>
+    <span class="nx">DOM</span><span class="p">.</span><span class="nx">outerWidth</span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span> <span class="c1">// 返回 116</span>
+    <span class="nx">DOM</span><span class="p">.</span><span class="nx">outerHeight</span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span> <span class="c1">// 返回 56</span>
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
 </div>
-<div class="line-block">
-<div class="line">void <strong>width</strong> ( selector, value )</div>
-<div class="line">给符合选择器的所有元素设置宽度值. 相当于 <a class="reference internal" href="css.html#dom.css" title="dom.css"><tt class="xref py py-func docutils literal"><span class="pre">DOM.css(selector,&quot;width&quot;,value)</span></tt></a></div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
-<li><strong>value</strong> (<em>string</em>) &#8211; 宽度值</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 </div>
@@ -176,10 +162,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="height.html" title="height"
+      <a href="outerHeight.html" title="outerHeight"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="css.html" title="css"
+      <a href="innerHeight.html" title="innerHeight"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
