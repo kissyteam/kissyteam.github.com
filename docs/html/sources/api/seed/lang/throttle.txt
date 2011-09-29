@@ -1,6 +1,6 @@
 .. currentmodule:: seed
 
-buffer
+throttle
 ===============================
 
 .. versionadded:: 1.2
@@ -14,10 +14,10 @@ Module
 Methods
 -----------------------------------------------
 
-.. function:: KISSY.buffer
+.. function:: KISSY.throttle
 
-    | Boolean **KISSY.buffer** (fn, ms, context)
-    | 将 fn 缓存一段时间后, 再被调用执行
+    | Boolean **KISSY.throttle** (fn, ms, context)
+    | ms 时间内只执行 fn 一次, 即使这段时间内 fn 被调用多次.
     
     :param Function fn: 要缓存的函数;
     :param Number ms: 要缓存多长时间后执行, 默认是 150 ms;
@@ -27,12 +27,18 @@ Methods
 
     .. note::
 
-        - 此方法为了避免在 ms 段时间内, 执行 fn 多次. 常用于 ``resize`` , ``scoll`` , ``mousemove`` 等连续性事件中;
         - 当 ms 设置为 -1, 表示立即执行 fn, 即和直接调用 fn 一样;
 
     例如
 
     .. code-block:: javascript
 
-        self.__onResize = S.buffer(doResize, 100, this);
-        $(window).on("resize", self.__onResize);
+         function sayHi() {
+            alert('hi');
+         }
+
+        say = S.throttle(sayHi, 300, this);
+        say();              // 忽略
+        S.later(say, 200);  // 忽略
+        S.later(say, 350);  // 超过300ms后, 终于执行
+

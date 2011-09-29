@@ -53,5 +53,6 @@ Methods
    startsWith.rst
    endsWith.rst
    buffer.rst
+   throttle.rst
 
  

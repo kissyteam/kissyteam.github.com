@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>web &mdash; KISSY Docs valpha documentation</title>
+<title>throttle &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -78,22 +78,22 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="ready.html" title="ready"
+      <a href="../web/index.html" title="web"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../lang/throttle.html" title="throttle"
+      <a href="buffer.html" title="buffer"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">Seed</a> &#187; </li> 
+      <li><a href="../index.html" >Seed</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">lang</a> &#187; </li> 
     </ul>
 </div>
 					
-  <div class="section" id="web">
-<h1>web<a class="headerlink" href="#web" title="Permalink to this headline">¶</a></h1>
-<div class="line-block">
-<div class="line">源码: <a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/seed/web.js">查看</a></div>
-</div>
+  <div class="section" id="throttle">
+<h1>throttle<a class="headerlink" href="#throttle" title="Permalink to this headline">¶</a></h1>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
 <div class="section" id="module">
 <h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -101,22 +101,54 @@
 </div>
 <div class="section" id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ready.html">ready</a><ul class="simple">
+<dl class="function">
+<dt id="seed.KISSY.throttle">
+<tt class="descclassname">KISSY.</tt><tt class="descname">throttle</tt><big>(</big><big>)</big><a class="headerlink" href="#seed.KISSY.throttle" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Boolean <strong>KISSY.throttle</strong> (fn, ms, context)</div>
+<div class="line">ms 时间内只执行 fn 一次, 即使这段时间内 fn 被调用多次.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>fn</strong> (<em>Function</em>) &#8211; 要缓存的函数;</li>
+<li><strong>ms</strong> (<em>Number</em>) &#8211; 要缓存多长时间后执行, 默认是 150 ms;</li>
+<li><strong>context</strong> (<em>Object</em>) &#8211; 函数 fn 要执行时的上下文环境, 默认是 <tt class="docutils literal"><span class="pre">this</span></tt>;</li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="available.html">available</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="isWindow.html">isWindow</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="globalEval.html">globalEval</a><ul class="simple">
-</ul>
-</li>
+</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first">返回缓存后的函数对象;</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">Return type:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last">Function</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>当 ms 设置为 -1, 表示立即执行 fn, 即和直接调用 fn 一样;</li>
 </ul>
 </div>
+<p>例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre> <span class="kd">function</span> <span class="nx">sayHi</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">);</span>
+ <span class="p">}</span>
+
+<span class="nx">say</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">throttle</span><span class="p">(</span><span class="nx">sayHi</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+<span class="nx">say</span><span class="p">();</span>              <span class="c1">// 忽略</span>
+<span class="nx">S</span><span class="p">.</span><span class="nx">later</span><span class="p">(</span><span class="nx">say</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>  <span class="c1">// 忽略</span>
+<span class="nx">S</span><span class="p">.</span><span class="nx">later</span><span class="p">(</span><span class="nx">say</span><span class="p">,</span> <span class="mi">350</span><span class="p">);</span>  <span class="c1">// 超过300ms后, 终于执行</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </div>
 </div>
 
@@ -134,14 +166,15 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="ready.html" title="ready"
+      <a href="../web/index.html" title="web"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../lang/throttle.html" title="throttle"
+      <a href="buffer.html" title="buffer"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">Seed</a> &#187; </li> 
+      <li><a href="../index.html" >Seed</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">lang</a> &#187; </li> 
     </ul>
 </div>
 					<div>
@@ -210,8 +243,8 @@
     <ul class="s-box-bd">
         <li><a href="../loader/index.html">loader</a></li>
         <li><a href="../kissy/index.html">kissy</a></li>
-        <li><a href="../lang/index.html">lang</a></li>
-        <li><a href="#">web</a></li>
+        <li><a href="index.html">lang</a></li>
+        <li><a href="../web/index.html">web</a></li>
     </ul>
 </ul>
 
