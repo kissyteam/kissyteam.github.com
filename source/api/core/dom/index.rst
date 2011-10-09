@@ -38,6 +38,7 @@ Methods
    val
    text
    css
+   style
    width
    height
    innerWidth
