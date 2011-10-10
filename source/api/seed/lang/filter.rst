@@ -17,7 +17,7 @@ Methods
 .. function:: KISSY.filter
 
     | Boolean **KISSY.filter** (arr,fn[,context])
-    | 遍历数组, 过滤出符和条件的数组项.
+    | 遍历数组, 过滤出符合条件的数组项.
     
     :param Array arr: 需要遍历的数组.
     :param function fn: 过滤函数. 执行时, 接收 3 个参数：当前项、当前 index, 数组.

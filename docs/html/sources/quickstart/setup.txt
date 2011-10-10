@@ -24,7 +24,7 @@ Setup
                 color:#333333;
                 font: normal 26px/2 Futura,"Century Gothic",AppleGothic,sans-serif;
                 opacity: 0;
-                filter: alpha(opacity:0);
+                filter: alpha(opacity=0);
             }
             #demo-img {
                 position: absolute;
