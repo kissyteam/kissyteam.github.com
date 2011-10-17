@@ -104,7 +104,7 @@
 <tt class="descclassname">dom.</tt><tt class="descname">style</tt><big>(</big><big>)</big><a class="headerlink" href="#dom.style" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line">String <strong>style</strong> ( selector, name )</div>
-<div class="line">获取符合选择器的第一个元素的样式值.</div>
+<div class="line">获取符合选择器的第一个元素 style 属性中 name 的值.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -113,12 +113,12 @@
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
 <li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
-<li><strong>name</strong> (<em>string</em>) &#8211; css 样式属性名</li>
+<li><strong>name</strong> (<em>string</em>) &#8211; style 属性名</li>
 </ul>
 </td>
 </tr>
 <tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><p class="first">获取符合选择器的第一个元素的样式值.</p>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first">获取指定元素 style 属性中, name 的值.</p>
 </td>
 </tr>
 <tr class="field"><th class="field-name" colspan="2">Return type:</th></tr>
@@ -127,13 +127,32 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>请注意 <a class="reference internal" href="#dom.style" title="dom.style"><tt class="xref py py-func docutils literal"><span class="pre">style()</span></tt></a> 和 <a class="reference internal" href="css.html#dom.css" title="dom.css"><tt class="xref py py-func docutils literal"><span class="pre">css()</span></tt></a> 在 <strong>获取元素样式值上的区别</strong> :</p>
+<ul class="last simple">
+<li>前者获取的是元素style属性中相应的样式值, 是个字面量;</li>
+<li>后者是获取元素真实渲染到页面上的样式值, 是个计算值.</li>
+</ul>
+</div>
 <p>例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">DOM</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;#J_wrap&quot;</span><span class="p">,</span> <span class="s2">&quot;width&quot;</span><span class="p">);</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">tag</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">guid</span><span class="p">(</span><span class="s2">&quot;float&quot;</span><span class="p">);</span>
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">addStyleSheet</span><span class="p">(</span><span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="nx">tag</span> <span class="o">+</span> <span class="s2">&quot; {float:left}&quot;</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s2">&quot;&lt;div class=&#39;&quot;</span> <span class="o">+</span> <span class="nx">tag</span> <span class="o">+</span> <span class="s2">&quot;&#39; style=&#39;float:right&#39;&gt;&lt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;/div&gt;&quot;</span><span class="p">)</span>
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+<span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">));</span>     <span class="c1">// &quot;right&quot;</span>
+<span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">));</span>   <span class="c1">// &quot;right&quot;</span>
+
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+
+<span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">));</span>     <span class="c1">// &quot;left&quot;</span>
+<span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">));</span>   <span class="c1">// &quot;&quot;</span>
 </pre></div>
 </div>
 <div class="line-block">
 <div class="line">void <strong>style</strong> ( selector, name, value )</div>
-<div class="line">给符合选择器的所有元素设置样式值.</div>
+<div class="line">给符合选择器的所有元素, 给其 style 属性中名为 name 的样式设置值为 value.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -149,13 +168,18 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference internal" href="css.html#dom.css" title="dom.css"><tt class="xref py py-func docutils literal"><span class="pre">css()</span></tt></a> 和 <a class="reference internal" href="#dom.style" title="dom.style"><tt class="xref py py-func docutils literal"><span class="pre">style()</span></tt></a> 在设置元素的样式值上等价, 都是在元素的 style 属性设置样式值;</p>
+</div>
 <p>例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">DOM</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;#J_wrap&#39;</span><span class="p">,</span> <span class="s2">&quot;width&quot;</span><span class="p">,</span><span class="s2">&quot;200px&quot;</span><span class="p">);</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">DOM</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="line-block">
 <div class="line">void <strong>style</strong> ( selector, kv )</div>
-<div class="line">给符合选择器的所有元素设置样式值.</div>
+<div class="line">给符合选择器的所有元素设置样式值, 同样与 <a class="reference internal" href="css.html#dom.css" title="dom.css"><tt class="xref py py-func docutils literal"><span class="pre">css()</span></tt></a> 等价.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -171,6 +195,7 @@
 </tbody>
 </table>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">DOM</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;.widget&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">position</span><span class="o">:</span> <span class="s1">&#39;absolute&#39;</span><span class="p">,</span> <span class="nx">top</span><span class="o">:</span> <span class="s1">&#39;10px&#39;</span><span class="p">,</span> <span class="nx">left</span><span class="o">:</span> <span class="s1">&#39;10px&#39;</span><span class="p">});</span>
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">&#39;.widget&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">position</span><span class="o">:</span> <span class="s1">&#39;absolute&#39;</span><span class="p">,</span> <span class="nx">top</span><span class="o">:</span> <span class="s1">&#39;10px&#39;</span><span class="p">,</span> <span class="nx">left</span><span class="o">:</span> <span class="s1">&#39;10px&#39;</span><span class="p">});</span>
 </pre></div>
 </div>
 </dd></dl>
