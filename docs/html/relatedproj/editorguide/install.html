@@ -154,7 +154,18 @@
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">动态引入时，编辑器不可 use &#8220;video&#8221; ,&#8221;music&#8221; ,&#8221;multi-upload&#8221; ,&#8221;checkbox-source&#8221; 插件</p>
+<p>默认动态引入时，编辑器不可 use &#8220;video&#8221; ,&#8221;music&#8221; ,&#8221;multi-upload&#8221; ,&#8221;checkbox-source&#8221; 插件，如果需要这样插件，需要覆盖 editor 模块配置：</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>
+    <span class="nx">editor</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">fullpath</span><span class="o">:</span><span class="s2">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/??editor-min.js,editor/biz/ext/editor-plugin-pkg-min.js&quot;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;editor&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Editor</span><span class="p">){</span>
+    <span class="nx">Editor</span><span class="p">(...).</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;video&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
