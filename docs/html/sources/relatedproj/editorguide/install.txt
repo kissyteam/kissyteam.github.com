@@ -62,7 +62,7 @@ kissy 1.2.0
     component-min.js,
     dd-min.js,
     overlay-min.js,
-    editor/editor-all-pkg-min.js"></script>
+    editor-min.js"></script>
     
 **动态引入**   
  
