@@ -230,9 +230,20 @@
 </pre></div>
 </div>
 <p>当要在包内添加模块时, 必须遵守一些约定：</p>
-<ol class="arabic simple">
-<li>一个模块的文件必须放在以包名命名的目录中</li>
-<li>模块的名字必须取名从包目录开始到当前模块文件的文件路径名称, 例如 <tt class="docutils literal"><span class="pre">mod1.js</span></tt> 位于 <tt class="docutils literal"><span class="pre">tc/mods</span></tt> 下, 则 <tt class="docutils literal"><span class="pre">mod1.js</span></tt> 的模块取名：</li>
+<ol class="arabic">
+<li><p class="first">一个模块的文件必须放在以包名命名的目录中</p>
+</li>
+<li><p class="first">一个包下的所有目录的代码都应属于这个包，即包之间不能有重合目录。例如</p>
+<blockquote>
+<div><ul class="simple">
+<li>tc 的 path 为 <a class="reference external" href="http://x.com/y/">http://x.com/y/</a></li>
+<li>tm 的 path 为 <a class="reference external" href="http://x.com/">http://x.com/</a></li>
+</ul>
+<p>这样就不行，在 ie 下会有包名不确定问题.</p>
+</div></blockquote>
+</li>
+<li><p class="first">模块的名字必须取名从包目录开始到当前模块文件的文件路径名称, 例如 <tt class="docutils literal"><span class="pre">mod1.js</span></tt> 位于 <tt class="docutils literal"><span class="pre">tc/mods</span></tt> 下, 则 <tt class="docutils literal"><span class="pre">mod1.js</span></tt> 的模块取名：</p>
+</li>
 </ol>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;tc/mods/mod1&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){});</span>
 </pre></div>

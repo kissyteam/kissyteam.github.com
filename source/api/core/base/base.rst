@@ -18,13 +18,17 @@ Class Detail
 .. class:: Base
 
     | **Base** (config)
-    | 如果你想让类默认就支持 attribute 功能, 请直接继承 ``S.Base``,
+    | :func:`~seed.KISSY.augment` 自 :class:`~base.Attribute`
+    | 如果你想让类默认就支持 attribute 功能, 请直接继承 :class:`~base.Base` ,
 
     :param Object config: 属性名/配置信息对.
 
     .. note::
 
-        使用 S.Base 时, 虽然你还是可以通过 addAttr 添加支持需要支持 setter/getter 的属性, 但最好还是把这些属性和它们的配置定义在类的 ATTRS 成员中.
+        使用 Base 时, 虽然你还是可以通过 :func:`~base.Attribute.prototype.addAttr` 添加支持需要支持 setter/getter 的属性, 但最好还是把这些属性和它们的配置定义在类的 ATTRS 成员中.
+        即通过设置自定义类的 ATTRS 静态属性来给类实例对象添加属性管理机制.  
+
+         
 
 Demo
 -------------------------------------------------
