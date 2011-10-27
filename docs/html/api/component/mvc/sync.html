@@ -102,8 +102,8 @@
 <dt id="mvc.mvc.sync">
 <tt class="descclassname">mvc.</tt><tt class="descname">sync</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.mvc.sync" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line"><strong>sync( method , opts )</strong></div>
-<div class="line">集合或模型发生改变时调用的函数，上下文 this 为当前的模型或集合</div>
+<div class="line"><strong>sync( self , method , opts )</strong></div>
+<div class="line">集合或模型发生改变时调用的函数</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -111,6 +111,7 @@
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>self</strong> (<em>Model|Collection</em>) &#8211; 当前动作的所处对象</li>
 <li><strong>method</strong> (<em>String</em>) &#8211; <p>同步的具体动作，包括</p>
 <ol class="arabic">
 <li>create ：创建动作</li>

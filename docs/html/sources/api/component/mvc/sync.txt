@@ -11,8 +11,10 @@ mvc.sync
 
 .. function:: mvc.sync
 
-    | **sync( method , opts )**
-    | 集合或模型发生改变时调用的函数，上下文 this 为当前的模型或集合
+    | **sync( self , method , opts )**
+    | 集合或模型发生改变时调用的函数
+    
+    :param Model|Collection self: 当前动作的所处对象
     
     :param String method: 同步的具体动作，包括
     
