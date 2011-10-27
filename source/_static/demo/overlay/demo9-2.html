@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Dialog - fixed 居中</title>
+<script src="http://docs.kissyui.com/kissy/build/kissy.js"></script>
+<link rel="stylesheet" href="../switchable/assets/reset.css"/>
+<link rel="stylesheet" href="assets/cool.css"/>
+</head>
+<body class="my">
+<style>
+    
+    .ks-overlay {
+        position:absolute;
+        left:-9999px;
+        top:-9999px;
+    }
+    
+    .my .ks-stdmod-header, .my .ks-stdmod-footer {
+        display: none;
+    }
+
+    .my .ks-stdmod-body {
+        line-height: 0;
+    }
+</style>
+<script>
+KISSY.use("ua,event,node,overlay", function(S, UA, Event, Node, O) {
+    var dialog = new O.Dialog({
+        width: 860,
+        elCls: 'my',
+        elStyle:{
+            position: UA.ie == 6 ? "absolute" : "fixed"
+        },
+        <!-- width height 一定要设-->
+        bodyContent: '<img '
+            + 'width="860" '
+            + 'height="282" '
+            + 'src="http://img02.taobaocdn.com/tps/i2/T10J9bXnlgXXXXXXXX-424-282.jpg?noq=y" />',
+        mask: true,
+        draggable: true,
+        align: {
+            points: ['cc', 'cc']
+        },
+        closeAction:"destroy"
+    });
+    dialog.show();
+    dialog.on("destroy", function() {
+        Event.detach(window, "scroll", center);
+    });
+
+    function center() {
+        S.log("ie center");
+        if (dialog.get("visible")) {
+            dialog.center();
+        }
+    }
+
+    if (UA.ie == 6) {
+        Event.on(window, "scroll", center);
+    }
+});
+
+</script>
+</body>
+</html>
