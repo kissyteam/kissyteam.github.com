@@ -35,5 +35,10 @@ KISSY.use("node,suggest", function(S, Node, Suggest) {
             switchToTab(i);
         });
     });
+
+    _suggest.on('beforeSubmit', function(e) {
+        alert(e);
+        return false;
+    });
 });
 
