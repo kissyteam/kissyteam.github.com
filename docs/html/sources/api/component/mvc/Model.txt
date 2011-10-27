@@ -1,6 +1,6 @@
 .. currentmodule:: mvc
 
-Model
+mvc.Model
 ===============================
 
 .. versionadded:: 1.2
@@ -50,10 +50,12 @@ Methods
 Events
 -----------------------------------------------
 
+  * :func:`~Model.events.destroy`        
+
 继承于 :class:`base.Base` 的
 
-  * :func:`~Attribute.prototype.beforeAttrNameChange`
-  * :func:`~Attribute.prototype.afterAttrNameChange`
+  * :func:`~base.Attribute.prototype.beforeAttrNameChange`
+  * :func:`~base.Attribute.prototype.afterAttrNameChange`
   * :func:`~*Change`
      
     
@@ -224,6 +226,15 @@ Methods Detail
     | 返回模型对象当前包含的数据对象
     
         :rtype: Object              
+        
+        
+Events Detail
+------------------------------------------------------------------
+
+.. function:: Model.events.destroy
+
+    | **destroy ( e )**
+    | 当模型被销毁后出发.( 即调用 :meth:`~Model.prototype.destroy` 后 )                 
             
                         
 .. note::

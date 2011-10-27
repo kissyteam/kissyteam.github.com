@@ -47,7 +47,7 @@ Methods Detail
 
     :param String name: 属性名
     :param Object attrConfig: 属性配置信息, 支持下面的配置项:
-    :param String|Number attrConfig.value: 属性默认值
+    :param String|Number attrConfig.value: 属性默认值。注意默认值请不要设置为复杂对象（通过自定义构造器 new 出来的），复杂对象可设置 valueFn 返回。
     :param Function attrConfig.valueFn: 提供属性默认值的函数
     :param Function attrConfig.setter: 写属性时的处理函数
     :param Function attrConfig.getter: 读属性时的处理函数

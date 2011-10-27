@@ -10,16 +10,17 @@ Component
    template/index
    datalazyload/index
    flash/index
-   dd/index
-   switchable/index
-   suggest/index
-   calendar/index
-   imagezoom/index
-   overlay/index
+   dd/index   
+   mvc/index
    uibase/index
    component/index
+   overlay/index
    button/index
    menu/index
    menubutton/index
    tree/index
    waterfall/index
+   switchable/index
+   suggest/index
+   calendar/index
+   imagezoom/index
