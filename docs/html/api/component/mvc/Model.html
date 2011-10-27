@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Model &mdash; KISSY Docs valpha documentation</title>
+<title>mvc.Model &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -77,12 +77,21 @@
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li> 
+    <li class="right" >
+      <a href="Collection.html" title="mvc.Collection"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="mvc beta"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">mvc beta</a> &#187; </li> 
     </ul>
 </div>
 					
-  <div class="section" id="model">
-<h1>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="mvc-model">
+<h1>mvc.Model<a class="headerlink" href="#mvc-model" title="Permalink to this headline">¶</a></h1>
 <p class="versionadded">
 <span class="versionmodified">New in version 1.2.</span></p>
 <div class="line-block">
@@ -141,11 +150,16 @@
 </div>
 <div class="section" id="events">
 <h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#mvc.Model.events.destroy" title="mvc.Model.events.destroy"><tt class="xref py py-func docutils literal"><span class="pre">destroy()</span></tt></a></li>
+</ul>
+</div></blockquote>
 <p>继承于 <a class="reference internal" href="../../core/base/base.html#base.Base" title="base.Base"><tt class="xref py py-class docutils literal"><span class="pre">base.Base</span></tt></a> 的</p>
 <blockquote>
 <div><ul class="simple">
-<li><tt class="xref py py-func docutils literal"><span class="pre">beforeAttrNameChange()</span></tt></li>
-<li><tt class="xref py py-func docutils literal"><span class="pre">afterAttrNameChange()</span></tt></li>
+<li><a class="reference internal" href="../../core/base/attribute.html#base.Attribute.prototype.beforeAttrNameChange" title="base.Attribute.prototype.beforeAttrNameChange"><tt class="xref py py-func docutils literal"><span class="pre">beforeAttrNameChange()</span></tt></a></li>
+<li><a class="reference internal" href="../../core/base/attribute.html#base.Attribute.prototype.afterAttrNameChange" title="base.Attribute.prototype.afterAttrNameChange"><tt class="xref py py-func docutils literal"><span class="pre">afterAttrNameChange()</span></tt></a></li>
 <li><tt class="xref py py-func docutils literal"><span class="pre">*Change()</span></tt></li>
 </ul>
 </div></blockquote>
@@ -216,7 +230,7 @@
 <dl class="data">
 <dt id="mvc.Model.config.sync">
 <tt class="descclassname">Model.config.</tt><tt class="descname">sync</tt><a class="headerlink" href="#mvc.Model.config.sync" title="Permalink to this definition">¶</a></dt>
-<dd><p>{function} - 可选，默认调用 <tt class="xref py py-func docutils literal"><span class="pre">mvc.sync()</span></tt> 。模型同步数据时调用的方法</p>
+<dd><p>{function} - 可选，默认调用 <a class="reference internal" href="sync.html#mvc.mvc.sync" title="mvc.mvc.sync"><tt class="xref py py-func docutils literal"><span class="pre">mvc.sync()</span></tt></a> 。模型同步数据时调用的方法</p>
 </dd></dl>
 
 <dl class="method">
@@ -428,6 +442,18 @@
 </div></blockquote>
 </dd></dl>
 
+</div>
+<div class="section" id="events-detail">
+<h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="mvc.Model.events.destroy">
+<tt class="descclassname">Model.events.</tt><tt class="descname">destroy</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Model.events.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>destroy ( e )</strong></div>
+<div class="line">当模型被销毁后出发.( 即调用 <a class="reference internal" href="#mvc.Model.prototype.destroy" title="mvc.Model.prototype.destroy"><tt class="xref py py-meth docutils literal"><span class="pre">destroy()</span></tt></a> 后 )</div>
+</div>
+</dd></dl>
+
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">数据对象的 key 值不能是：&#8221;idAttribute&#8221;,&#8221;clientId&#8221;,&#8221;urlRoot&#8221;,&#8221;url&#8221;,&#8221;parse&#8221;,&#8221;sync&#8221; 其中之一，这些属性仅供 model 内部使用.</p>
@@ -448,7 +474,16 @@
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li> 
+    <li class="right" >
+      <a href="Collection.html" title="mvc.Collection"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="mvc beta"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">mvc beta</a> &#187; </li> 
     </ul>
 </div>
 					<div>
@@ -541,6 +576,7 @@
     <h2 class="s-box-hd">Component</h2>
     <ul class="s-box-bd">
         <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="index.html">mvc</a></li>
         <li><a href="../template/index.html">template</a></li>
         <li><a href="../datalazyload/index.html">datalazyload</a></li>
         <li><a href="../flash/index.html">flash</a></li>

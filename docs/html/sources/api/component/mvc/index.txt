@@ -1,7 +1,7 @@
 .. module:: mvc
 
 
-mvc
+mvc beta
 ===============================
 
 |  mvc
@@ -26,8 +26,11 @@ Method in mvc
 .. toctree::
    :titlesonly:
 
-    sync   
+   sync   
    
 .. note::
 
-    KISSY MVC is influenced by Backbone's API Design .   
+    KISSY MVC is influenced by Backbone's API Design.   
+    
+    
+    Still Beta, api may change, use with caution.
