@@ -138,6 +138,15 @@
  
 </pre></div>
 </div>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p>很多朋友在使用 Switchable 时, 经常会碰到 panels 从最后一个切换到第一个时, 出现白屏现象, 经过我们仔细排查后, 发现总体有以下三种情况:</p>
+<ol class="last arabic simple">
+<li>ks-switchable-content 及其子元素 CSS 设置不正确, ks-switchable-content 该层不需要设置宽高, 因为会根据子元素个数和子元素宽高自动设置. 请完全参考上述事例, 特别是设置 diaplay, margin, position 这种属性时更要注意;</li>
+<li>在使用 scrollx/scrolly 动画时, panels 各元素需要 <strong>固定宽/高</strong> ;</li>
+<li>页面当引入了 <a class="reference external" href="http://a.tbcdn.cn/tbra/1.0/tbra-widgets.js">http://a.tbcdn.cn/tbra/1.0/tbra-widgets.js</a> 时, 也会诡异的出现白屏. 可能是 tbra 修改了一些原生方法影响到 switchable;</li>
+</ol>
+</div>
 </div></blockquote>
 </div>
 </div>
