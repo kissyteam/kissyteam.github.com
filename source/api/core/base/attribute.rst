@@ -27,7 +27,7 @@ Events
 
   * :func:`~Attribute.prototype.beforeAttrNameChange`
   * :func:`~Attribute.prototype.afterAttrNameChange`
-  * :func:`~*Change`
+  * :js:func:`~Attribute.prototype.*Change`
 
 Class Detail
 --------------------------
@@ -167,7 +167,7 @@ Events Detail
     :param String e.subAttrName: .. versionadded:: 1.2 当前的完整属性名，例如 "x.y"    
 
 
-.. function:: *Change
+.. js:function:: Attribute.prototype.*Change
 
     .. versionadded:: 1.2
     

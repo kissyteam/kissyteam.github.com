@@ -53,7 +53,7 @@ Events
     * :func:`~Collection.prototype.add`    
     * :func:`~Collection.prototype.remove`    
     * :func:`~Collection.prototype.afterModelsChange`    
-    * :js:func:`*Change`
+    * :js:func:`~Collection.prototype.*Change`
     
 Class Detail
 --------------------------
@@ -247,7 +247,7 @@ Events Detail
     | **add** ()
     | 当集合整体设置 models （模型对象数组）后出发
     
-.. js:function:: *Change
+.. js:function:: Collection.prototype.*Change
 
     | ***Change** (e)
     | 当集合整体设置 models （模型对象数组）后或集合内模型发生改变时触发
