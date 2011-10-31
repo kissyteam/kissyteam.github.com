@@ -36,7 +36,11 @@
 kissy 1.1.6
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-建议使用编辑器情况下至少升级到 kissy 1.1.7
+建议升级到 kissy 1.1.7 ，情况特殊的话可引：
+
+.. code-block:: html
+
+    <script src="http://a.tbcdn.cn/s/kissy/1.1.6/editor/editor-pkg-min.js"></script>
 
 kissy 1.1.7
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
