@@ -37,7 +37,7 @@ Config Attributes Detail
 
 .. data:: PopupMenu.config.autoHideOnMouseLeave
 
-    {boolean} - 默认 false。是否鼠标移出子菜单时，子菜单自动隐藏
+    {boolean} - 默认 false。鼠标移出子菜单时子菜单是否自动隐藏
     
 .. data:: PopupMenu.config.autoHideDelay
 
