@@ -13,7 +13,12 @@ KISSY.use("node,menu", function(S, Node, Menu) {
         sb = new Menu.SubMenu({
             prefixCls: 'goog-',
             content: '我的淘宝',
+            // 默认点击空白文档关闭子菜单
             menu: new Menu.PopupMenu({
+                // boolean，是否鼠标脱离菜单后自动隐藏
+                autoHideOnMouseLeave:true,
+                // ms，鼠标脱离菜单多长时间后自动隐藏
+                autoHideDelay:300,
                 prefixCls: 'goog-',
                 elStyle: {
                     'color': 'red'
