@@ -27,7 +27,7 @@ Events
 
   * :func:`~Attribute.prototype.beforeAttrNameChange`
   * :func:`~Attribute.prototype.afterAttrNameChange`
-  * :func:`~*Change`
+  * :js:func:`~Attribute.prototype.*Change`
 
 Class Detail
 --------------------------
@@ -167,7 +167,7 @@ Events Detail
     :param String e.subAttrName: .. versionadded:: 1.2 当前的完整属性名，例如 "x.y"    
 
 
-.. function:: *Change
+.. js:function:: Attribute.prototype.*Change
 
     .. versionadded:: 1.2
     
@@ -180,11 +180,11 @@ Events Detail
     :param Array e.prevVal: 本次 set 导致的属性在 set 前的值集合
     
     
-.. note::
+    .. note::
 
-    #. 自定义类不建议直接 argument Attribute ，请继承 :class:`~base.Base`
-    
-    #. \*Change 和 afterAttrNameChange 监视一个即可，不要同时监视
+        #. 自定义类不建议直接 argument Attribute ，请继承 :class:`~base.Base`
+
+        #. \*Change 和 afterAttrNameChange 监视一个即可，不要同时监视
     
 Demo
 -------------------------------------------------

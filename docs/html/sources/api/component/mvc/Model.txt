@@ -56,7 +56,7 @@ Events
 
   * :func:`~base.Attribute.prototype.beforeAttrNameChange`
   * :func:`~base.Attribute.prototype.afterAttrNameChange`
-  * :js:func:`*Change`
+  * :js:func:`~Attribute.prototype.*Change`
      
     
 Class Detail
