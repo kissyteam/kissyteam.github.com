@@ -25,8 +25,6 @@ Methods
 -----------------------------------------------
 
     * :meth:`~Router.prototype.addRoutes`
-    * :meth:`~Router.prototype.navigate`
-    * :meth:`~Router.prototype.start`
     
 Static Methods
 -------------------------------------------------
@@ -38,7 +36,7 @@ Events
 --------------------------------------------------
 
     * :func:`~Router.events.route`
-    * :func:`~Router.events.route:x`    
+    * :js:func:`~Router.events.route:x`    
     
     
 Class Detail
@@ -143,7 +141,7 @@ Events Detail
     :param Object e.query: 同 :func:`~Router.config.routes.fn` 中 query 格式    
     
             
-.. function:: Router.events.route:x
+.. js:function:: Router.events.route:x
 
     | **route( e )**
     | 当发生路由处理时触发, x 替换为当前的规则名，例如 url 改变到 "/" 时触发 "route:/"
