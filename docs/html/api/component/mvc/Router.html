@@ -119,8 +119,17 @@
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference internal" href="#mvc.Router.prototype.addRoutes" title="mvc.Router.prototype.addRoutes"><tt class="xref py py-meth docutils literal"><span class="pre">addRoutes()</span></tt></a></li>
-<li><a class="reference internal" href="#mvc.Router.prototype.navigate" title="mvc.Router.prototype.navigate"><tt class="xref py py-meth docutils literal"><span class="pre">navigate()</span></tt></a></li>
-<li><a class="reference internal" href="#mvc.Router.prototype.start" title="mvc.Router.prototype.start"><tt class="xref py py-meth docutils literal"><span class="pre">start()</span></tt></a></li>
+<li><tt class="xref py py-meth docutils literal"><span class="pre">navigate()</span></tt></li>
+<li><tt class="xref py py-meth docutils literal"><span class="pre">start()</span></tt></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="static-methods">
+<h2>Static Methods<a class="headerlink" href="#static-methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#mvc.Router.navigate" title="mvc.Router.navigate"><tt class="xref py py-func docutils literal"><span class="pre">navigate()</span></tt></a></li>
+<li><a class="reference internal" href="#mvc.Router.start" title="mvc.Router.start"><tt class="xref py py-func docutils literal"><span class="pre">start()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -219,9 +228,12 @@
 <p>:param Object routes : 格式同 <a class="reference internal" href="#mvc.Router.config.routes" title="mvc.Router.config.routes"><tt class="xref py py-data docutils literal"><span class="pre">routes</span></tt></a> 配置.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="mvc.Router.prototype.navigate">
-<tt class="descclassname">Router.prototype.</tt><tt class="descname">navigate</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Router.prototype.navigate" title="Permalink to this definition">¶</a></dt>
+</div>
+<div class="section" id="static-methods-detail">
+<h2>Static Methods Detail<a class="headerlink" href="#static-methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="mvc.Router.navigate">
+<tt class="descclassname">Router.</tt><tt class="descname">navigate</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Router.navigate" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>navigate ( path [ , opts ] )</strong></div>
 <div class="line">导航 url 到 path</div>
@@ -235,8 +247,8 @@
 <li><strong>path</strong> (<em>String</em>) &#8211; 将要设置的 url 值</li>
 <li><strong>opts</strong> (<em>Object</em>) &#8211; <p>包括以下控制选项</p>
 <dl class="attribute">
-<dt id="mvc.Router.prototype.navigate.opts.triggerRoute">
-<tt class="descclassname">navigate.opts.</tt><tt class="descname">triggerRoute</tt><a class="headerlink" href="#mvc.Router.prototype.navigate.opts.triggerRoute" title="Permalink to this definition">¶</a></dt>
+<dt id="mvc.Router.navigate.opts.triggerRoute">
+<tt class="descclassname">Router.navigate.opts.</tt><tt class="descname">triggerRoute</tt><a class="headerlink" href="#mvc.Router.navigate.opts.triggerRoute" title="Permalink to this definition">¶</a></dt>
 <dd><p>{boolean} - 默认 false。是否强制触发对应该路径的路由处理。默认如果当前路径和 path 相同则不会发生任何动作.</p>
 </dd></dl>
 
@@ -248,12 +260,12 @@
 </table>
 </dd></dl>
 
-<dl class="method">
-<dt id="mvc.Router.prototype.start">
-<tt class="descclassname">Router.prototype.</tt><tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Router.prototype.start" title="Permalink to this definition">¶</a></dt>
+<dl class="function">
+<dt id="mvc.Router.start">
+<tt class="descclassname">Router.</tt><tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Router.start" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>start( [ opts ] )</strong></div>
-<div class="line">开始路由规则处理</div>
+<div class="line">开始路由规则处理，一个页面仅限入口调用一次</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -262,8 +274,8 @@
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><strong>opts</strong> (<em>Object</em>) &#8211; <p>包括以下控制选项</p>
 <dl class="attribute">
-<dt id="mvc.Router.prototype.start.opts.triggerRoute">
-<tt class="descclassname">start.opts.</tt><tt class="descname">triggerRoute</tt><a class="headerlink" href="#mvc.Router.prototype.start.opts.triggerRoute" title="Permalink to this definition">¶</a></dt>
+<dt id="mvc.Router.start.opts.triggerRoute">
+<tt class="descclassname">Router.start.opts.</tt><tt class="descname">triggerRoute</tt><a class="headerlink" href="#mvc.Router.start.opts.triggerRoute" title="Permalink to this definition">¶</a></dt>
 <dd><p>{boolean} - 默认 false。是否触发当前路径的路由处理函数，默认只有当下次 url 发生变化时才处理.</p>
 </dd></dl>
 
