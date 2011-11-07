@@ -10,7 +10,7 @@ KISSY.use("menu", function (S, Menu) {
     S.each(['图片另存为', '复制图片链接',  '复制图片', '在新窗口中打开图片'], function(s) {
         menu.addChild(new Menu.Item({
             prefixCls: prefixCls,
-            content: '<a href="javascript:void(0)">'+s+'</a>'}));
+            content: '<a href="javascript:void(0)" tabindex="-1">'+s+'</a>'}));
     });
 
     menu.addChild(new Menu.Separator({
@@ -24,11 +24,11 @@ KISSY.use("menu", function (S, Menu) {
     S.each(['新浪微博', '豆瓣', 'Mark之'], function(s) {
         sb.addChild(new Menu.Item({
             prefixCls: prefixCls,
-            content: '<a href="javascript:void(0)">'+s+'</a>'}));
+            content: '<a href="javascript:void(0)" tabindex="-1">'+s+'</a>'}));
     });
     var b = new Menu.SubMenu({
         prefixCls:prefixCls,
-        content:'<a href="javascript:void(0)">分享到...</a>',
+        content:'<a href="javascript:void(0)" tabindex="-1">分享到...</a>',
         menu:sb
     });
     menu.addChild(b);
