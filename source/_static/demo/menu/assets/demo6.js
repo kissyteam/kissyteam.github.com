@@ -10,7 +10,7 @@ KISSY.use("menu", function (S, Menu) {
     S.each(['图片另存为', '复制图片链接',  '复制图片', '在新窗口中打开图片'], function(s) {
         menu.addChild(new Menu.Item({
             prefixCls: prefixCls,
-            content: '<a href="#">'+s+'</a>'}));
+            content: '<a href="javascript:void(0)">'+s+'</a>'}));
     });
 
     menu.addChild(new Menu.Separator({
@@ -24,11 +24,11 @@ KISSY.use("menu", function (S, Menu) {
     S.each(['新浪微博', '豆瓣', 'Mark之'], function(s) {
         sb.addChild(new Menu.Item({
             prefixCls: prefixCls,
-            content: '<a href="#">'+s+'</a>'}));
+            content: '<a href="javascript:void(0)">'+s+'</a>'}));
     });
     var b = new Menu.SubMenu({
         prefixCls:prefixCls,
-        content:'<a href="#">分享到...</a>',
+        content:'<a href="javascript:void(0)">分享到...</a>',
         menu:sb
     });
     menu.addChild(b);
@@ -36,14 +36,6 @@ KISSY.use("menu", function (S, Menu) {
     menu.on("click", function(e) {
         S.log(e.target);
         alert("点击了" + e.target.get('content'));
-    });
-
-    // 屏蔽 a 的默认事件
-    menu.get('el').all('a').on('click', function(e) {
-        e.preventDefault();
-    });
-    sb.get('el').all('a').on('click', function(e) {
-        e.preventDefault();
     });
 
     // 最终绑定大图上的右键事件

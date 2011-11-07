@@ -126,7 +126,7 @@
     <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">([</span><span class="s1">&#39;图片另存为&#39;</span><span class="p">,</span> <span class="s1">&#39;复制图片链接&#39;</span><span class="p">,</span>  <span class="s1">&#39;复制图片&#39;</span><span class="p">,</span> <span class="s1">&#39;在新窗口中打开图片&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">menu</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
             <span class="nx">prefixCls</span><span class="o">:</span> <span class="nx">prefixCls</span><span class="p">,</span>
-            <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;&lt;a href=&quot;#&quot;&gt;&#39;</span><span class="o">+</span><span class="nx">s</span><span class="o">+</span><span class="s1">&#39;&lt;/a&gt;&#39;</span><span class="p">}));</span>
+            <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;&lt;a href=&quot;javascript:void(0)&quot;&gt;&#39;</span><span class="o">+</span><span class="nx">s</span><span class="o">+</span><span class="s1">&#39;&lt;/a&gt;&#39;</span><span class="p">}));</span>
     <span class="p">});</span>
 
     <span class="nx">menu</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Separator</span><span class="p">({</span>
@@ -140,11 +140,11 @@
     <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">([</span><span class="s1">&#39;新浪微博&#39;</span><span class="p">,</span> <span class="s1">&#39;豆瓣&#39;</span><span class="p">,</span> <span class="s1">&#39;Mark之&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">sb</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
             <span class="nx">prefixCls</span><span class="o">:</span> <span class="nx">prefixCls</span><span class="p">,</span>
-            <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;&lt;a href=&quot;#&quot;&gt;&#39;</span><span class="o">+</span><span class="nx">s</span><span class="o">+</span><span class="s1">&#39;&lt;/a&gt;&#39;</span><span class="p">}));</span>
+            <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;&lt;a href=&quot;javascript:void(0)&quot;&gt;&#39;</span><span class="o">+</span><span class="nx">s</span><span class="o">+</span><span class="s1">&#39;&lt;/a&gt;&#39;</span><span class="p">}));</span>
     <span class="p">});</span>
     <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">SubMenu</span><span class="p">({</span>
         <span class="nx">prefixCls</span><span class="o">:</span><span class="nx">prefixCls</span><span class="p">,</span>
-        <span class="nx">content</span><span class="o">:</span><span class="s1">&#39;&lt;a href=&quot;#&quot;&gt;分享到...&lt;/a&gt;&#39;</span><span class="p">,</span>
+        <span class="nx">content</span><span class="o">:</span><span class="s1">&#39;&lt;a href=&quot;javascript:void(0)&quot;&gt;分享到...&lt;/a&gt;&#39;</span><span class="p">,</span>
         <span class="nx">menu</span><span class="o">:</span><span class="nx">sb</span>
     <span class="p">});</span>
     <span class="nx">menu</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
@@ -152,14 +152,6 @@
     <span class="nx">menu</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
         <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;点击了&quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">));</span>
-    <span class="p">});</span>
-
-    <span class="c1">// 屏蔽 a 的默认事件</span>
-    <span class="nx">menu</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;el&#39;</span><span class="p">).</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-    <span class="p">});</span>
-    <span class="nx">sb</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;el&#39;</span><span class="p">).</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
     <span class="p">});</span>
 
     <span class="c1">// 最终绑定大图上的右键事件</span>

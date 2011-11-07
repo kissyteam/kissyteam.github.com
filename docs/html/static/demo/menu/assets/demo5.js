@@ -10,7 +10,7 @@ KISSY.use("menu", function (S, Menu) {
     S.each(['日志', '相册', '个人资料'], function(title) {
         sb.addChild(new Menu.Item({
             prefixCls: prefixCls,
-            content: '<a href="#">'+title+'</a>'
+            content: '<a href="javascript:void(0)">'+title+'</a>'
         }));
     });
 
@@ -36,7 +36,7 @@ KISSY.use("menu", function (S, Menu) {
     S.each(['淘单', '动态'], function(title) {
         menu.addChild(new Menu.Item({
             prefixCls:prefixCls,
-            content:'<a href="#" class="title">'+title+'</a>'
+            content:'<a href="javascript:void(0)" class="title">'+title+'</a>'
         }));
     });
     menu.addChild(b);
