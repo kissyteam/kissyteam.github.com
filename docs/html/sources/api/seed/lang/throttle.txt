@@ -28,6 +28,7 @@ Methods
     .. note::
 
         - 当 ms 设置为 -1, 表示立即执行 fn, 即和直接调用 fn 一样;
+        - :func:`throttle <KISSY.throttle>` 和 :func:`buffer <KISSY.buffer>` 的区别在于, 前者表示间隔内的函数触发被忽略, 后者表示间隔内的触发被放到下个间隔触发
 
     例如
 
