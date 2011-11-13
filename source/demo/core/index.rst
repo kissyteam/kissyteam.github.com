@@ -6,17 +6,9 @@ Core
 
 .. toctree::
    :titlesonly:
-   :hidden:
 
    anim/index
 
 
-Demos
------------------------------------
-
-  * :ref:`Anim - 基本动画示例 <Core-anim-demo1>`
-  * :ref:`Anim - 滚动属性动画实例 <Core-anim-demo2>`
-  * :ref:`Anim - 节点实例动画操作 <Core-anim-demo3>`
-  * :ref:`Anim - 节点上的 stop 示例 <Core-anim-demo4>`
 
 
