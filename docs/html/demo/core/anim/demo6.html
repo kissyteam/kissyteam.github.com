@@ -77,16 +77,7 @@
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li class="right" >
-      <a href="../../component/index.html" title="Component"
-         accesskey="N">next</a> | </li>
-    <li class="right" >
-      <a href="demo5.html" title="节点上的 stop 示例"
-         accesskey="P">previous</a> | </li>
-    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../../index.html" >All Demos</a> &#187; </li>
-      <li><a href="../index.html" >Core</a> &#187; </li>
-      <li><a href="index.html" accesskey="U">Anim 使用示例</a> &#187; </li> 
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li> 
     </ul>
 </div>
 					
@@ -142,18 +133,18 @@
         <span class="nx">objHeight</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">outerHeight</span><span class="p">(),</span> <span class="nx">containerHeight</span> <span class="o">=</span> <span class="nx">container</span><span class="p">.</span><span class="nx">outerHeight</span><span class="p">(),</span>
         <span class="c1">//containerOffset = container.offset(),</span>
         <span class="nx">containerOffset</span> <span class="o">=</span> <span class="p">{</span><span class="nx">left</span><span class="o">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">container</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">)),</span> <span class="nx">top</span><span class="o">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">container</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;top&#39;</span><span class="p">))},</span>
+        <span class="nx">adjustCls</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">obj</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="nx">cls</span><span class="p">[</span><span class="nx">clsIdx</span><span class="p">]);</span>
+            <span class="nx">obj</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="nx">cls</span><span class="p">[</span><span class="o">++</span><span class="nx">clsIdx</span><span class="p">]);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">clsIdx</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">start</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+                <span class="nx">clsIdx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
         <span class="nx">commonCfg</span> <span class="o">=</span> <span class="p">{</span>
             <span class="nx">duration</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
             <span class="nx">queue</span><span class="o">:</span> <span class="s2">&quot;my&quot;</span><span class="p">,</span>
-            <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-                <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">);</span>
-                <span class="nx">obj</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="nx">cls</span><span class="p">[</span><span class="nx">clsIdx</span><span class="o">++</span><span class="p">]);</span>
-                <span class="nx">obj</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="nx">cls</span><span class="p">[</span><span class="nx">clsIdx</span><span class="p">]);</span>
-                <span class="k">if</span> <span class="p">(</span><span class="nx">clsIdx</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="nx">start</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
-                    <span class="nx">clsIdx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
+            <span class="nx">complete</span><span class="o">:</span> <span class="nx">adjustCls</span>
         <span class="p">},</span>
         <span class="nx">cls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="s1">&#39;down&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;up&#39;</span><span class="p">],</span>
         <span class="nx">clsIdx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -167,7 +158,7 @@
     <span class="c1">// 事件绑定</span>
     <span class="nx">start</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">start</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-        <span class="nx">obj</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="nx">cls</span><span class="p">[</span><span class="nx">clsIdx</span><span class="o">++</span><span class="p">]);</span>
+        <span class="nx">obj</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="nx">cls</span><span class="p">[</span><span class="nx">clsIdx</span><span class="p">]);</span>
         <span class="c1">// 向右</span>
         <span class="nx">obj</span><span class="p">.</span><span class="nx">animate</span><span class="p">({</span>
             <span class="nx">left</span><span class="o">:</span> <span class="nx">containerOffset</span><span class="p">.</span><span class="nx">left</span> <span class="o">+</span> <span class="nx">containerWidth</span> <span class="o">-</span> <span class="nx">objWidth</span><span class="o">/</span><span class="mi">2</span>
@@ -188,6 +179,8 @@
 
 
     <span class="nx">endCurrent</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">adjustCls</span><span class="p">();</span>
+
         <span class="nx">obj</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span> <span class="c1">// 0, 0</span>
     <span class="p">});</span>
     <span class="nx">endCurrentNext</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -227,16 +220,7 @@
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li class="right" >
-      <a href="../../component/index.html" title="Component"
-         accesskey="N">next</a> | </li>
-    <li class="right" >
-      <a href="demo5.html" title="节点上的 stop 示例"
-         accesskey="P">previous</a> | </li>
-    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../../index.html" >All Demos</a> &#187; </li>
-      <li><a href="../index.html" >Core</a> &#187; </li>
-      <li><a href="index.html" accesskey="U">Anim 使用示例</a> &#187; </li> 
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li> 
     </ul>
 </div>
 					<div>

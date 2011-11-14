@@ -32,18 +32,18 @@ KISSY.use("anim,node,button",function(S,Anim,Node,Button){
         objHeight = obj.outerHeight(), containerHeight = container.outerHeight(),
         //containerOffset = container.offset(),
         containerOffset = {left: parseInt(container.css('left')), top: parseInt(container.css('top'))},
+        adjustCls = function() {
+            obj.removeClass(cls[clsIdx]);
+            obj.addClass(cls[++clsIdx]);
+            if (clsIdx % 4 === 0) {
+                start.set("disabled", false);
+                clsIdx = 0;
+            }
+        },
         commonCfg = {
             duration: 3,
             queue: "my",
-            callback: function() {
-                alert('hi');
-                obj.removeClass(cls[clsIdx++]);
-                obj.addClass(cls[clsIdx]);
-                if (clsIdx % 4 === 0) {
-                    start.set("disabled", false);
-                    clsIdx = 0;
-                }
-            }
+            complete: adjustCls
         },
         cls = ['right', 'down', 'left', 'up'],
         clsIdx = 0;
@@ -57,7 +57,7 @@ KISSY.use("anim,node,button",function(S,Anim,Node,Button){
     // 事件绑定
     start.on("click", function() {
         start.set("disabled", true);
-        obj.addClass(cls[clsIdx++]);
+        obj.addClass(cls[clsIdx]);
         // 向右
         obj.animate({
             left: containerOffset.left + containerWidth - objWidth/2
@@ -78,6 +78,8 @@ KISSY.use("anim,node,button",function(S,Anim,Node,Button){
 
 
     endCurrent.on("click", function() {
+        adjustCls();
+
         obj.stop(); // 0, 0
     });
     endCurrentNext.on("click", function() {
