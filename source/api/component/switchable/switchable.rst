@@ -232,8 +232,10 @@ Config Attributes Detail
 
 .. data:: Switchable.config.nativeAnim
 
-    {Boolean} - 是否优先使用原生 css3 transition, 默认为 ``true``, 同 :class:`~anim.Anim` 中的  `nativeSupport` 参数  .
+    .. versionchanged:: 1.2
+        1.2 中 :class:`Anim` 去掉了本地动画的支持, 这里的配置项也相应去除
 
+    {Boolean} - 是否优先使用原生 css3 transition, 默认为 ``true``, 同 :class:`~anim.Anim` 中的  `nativeSupport` 参数  .
 
 .. data:: Switchable.config.lazyDataType
 

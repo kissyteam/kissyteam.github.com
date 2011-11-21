@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>slideDown &mdash; KISSY Docs valpha documentation</title>
+<title>isRunning &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -78,10 +78,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="slideUp.html" title="slideUp"
+      <a href="show.html" title="show"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="fadeToggle.html" title="fadeToggle"
+      <a href="stop.html" title="stop"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>
@@ -90,9 +90,10 @@
     </ul>
 </div>
 					
-  <div class="section" id="slidedown">
-<h1>slideDown<a class="headerlink" href="#slidedown" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="../../../demo/core/anim/index.html">Demo</a></p>
+  <div class="section" id="isrunning">
+<h1>isRunning<a class="headerlink" href="#isrunning" title="Permalink to this headline">¶</a></h1>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
 <div class="section" id="module">
 <h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -101,33 +102,21 @@
 <div class="section" id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
-<dt id="node.NodeList.slideDown">
-<tt class="descclassname">NodeList.</tt><tt class="descname">slideDown</tt><big>(</big><big>)</big><a class="headerlink" href="#node.NodeList.slideDown" title="Permalink to this definition">¶</a></dt>
+<dt id="node.NodeList.isRunning">
+<tt class="descclassname">NodeList.</tt><tt class="descname">isRunning</tt><big>(</big><big>)</big><a class="headerlink" href="#node.NodeList.isRunning" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line">NodeList <strong>slideDown</strong> ( [ speed = 1, callback ] )</div>
-<div class="line">当前节点列表元素从上到下滑动显示</div>
+<div class="line">NodeList <strong>isRunning</strong> ()</div>
+<div class="line">判断当前 NodeList 对象是否在动画中, NodeList 中只要有一个 Node 在动画, 就会返回 truthy 值.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
-<li><strong>speed</strong> (<em>number</em>) &#8211; 单位秒, 动画持续时间, 不设置无动画</li>
-<li><strong>callback</strong> (<em>function</em>) &#8211; 每个动画结束后回调函数</li>
-</ul>
-</td>
-</tr>
 <tr class="field"><th class="field-name" colspan="2">Return type:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><p class="first last">NodeList</p>
-</td>
+<tr><td>&nbsp;</td><td class="field-body">Boolean</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">注意回调 callback 在每个元素动画结束后都会回调,  this 值指向当前单个元素所属的动画对象.</p>
-</div>
 </dd></dl>
 
 </div>
@@ -147,10 +136,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="slideUp.html" title="slideUp"
+      <a href="show.html" title="show"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="fadeToggle.html" title="fadeToggle"
+      <a href="stop.html" title="stop"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >API文档</a> &#187; </li>

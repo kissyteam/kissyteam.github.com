@@ -1,6 +1,6 @@
 ﻿.. currentmodule:: node
 
-stop
+fadeToggle
 ==================================================
 
 .. versionadded:: 1.2
@@ -13,9 +13,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. method:: NodeList.stop
+.. method:: NodeList.fadeToggle
 
-    | NodeList **stop** ( [ end, clearQueue, queueName ] )
-    | 停止当前节点列表的动画, end, clearQueue, queueName, 涵义同 :meth:`anim.Anim.stop`.
-
-    :rtype: NodeList    
+    | NodeList **fadeToggle** ( [ speed, callback ] )
+    | 当前节点列表元素为显示时, 切换显示或隐藏, 且动画效果为渐隐. 参数同 :meth:`toggle`

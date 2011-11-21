@@ -24,3 +24,4 @@ Component
    suggest/index
    calendar/index
    imagezoom/index
+   resizable/index

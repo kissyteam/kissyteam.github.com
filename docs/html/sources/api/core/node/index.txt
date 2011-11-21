@@ -61,13 +61,16 @@ Member Methods
    insertAfter.rst
    animate.rst
    stop.rst
+   isRunning.rst
    show.rst
    hide.rst
    toggle.rst
    fadeIn.rst
    fadeOut.rst
+   fadeToggle.rst
    slideDown.rst
    slideUp.rst
+   slideToggle.rst
    
 .. note::
 

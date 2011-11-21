@@ -6,7 +6,6 @@ Anim
 |  动画
 |  `源码 <https://github.com/kissyteam/kissy/tree/master/src/anim>`_  | `Demo <../../../demo/core/anim/index.html>`_
 
-
 Class
 -----------------------------------------------
 
@@ -16,16 +15,23 @@ Class
 Methods
 -----------------------------------------------
 
+  * :meth:`isRunning`
   * :meth:`run`
   * :meth:`stop`
+  * :meth:`Anim.isRunning`
+  * :meth:`Anim.stop`
 
+Events
+-----------------------------------------------
+
+  * :func:`complete`
 
 Class Detail
 -----------------------------------------------
 
 .. class:: Anim
     
-    | **Anim** (elem, props[, duration, easing, callback, nativeSupport])
+    | **Anim** (elem, props[, duration, easing, callback])
     | 得到绑定于某个 dom 节点的动画实例
 
     :param String|HTMLElement|KISSY.Node|window elem: 作用动画的元素节点或窗口（窗口时仅支持 scrollTop/Left）.
@@ -46,16 +52,38 @@ Class Detail
     :param Number duration: 默认为 1 , 动画持续时间, 以秒为单元.
     :param String easing: 默认为 'easeNone' , 动画平滑函数, 可取值 "easeNone","easeIn","easeOut","easeBoth","easeInStrong", "easeOutStrong","easeBothStrong","elasticIn","elasticOut", "elasticBoth","backIn","backOut","backBoth", "bounceIn","bounceOut","bounceBoth". 效果预览, 可以参考 Robert Penner 博士的： `easing_demo.html <http://www.robertpenner.com/easing/easing_demo.html>`_ .
     :param function callback: 默认为 null , 动画结束回调.
-    :param Boolean nativeSupport: 默认为 true , 是否在支持css动画的浏览器上使用原生机制.
-    
-    .. note::
-        默认如果浏览器支持 css3 则会采用 css3 来产生动画，但是目前 css3 动画尙不完善，可能会遇到一些奇怪问题，
-        这时可以将 ``nativeSupport`` 设置为 false ，来禁用原生动画采用 js 模拟动画.
-    
 
+    .. versionchanged:: 1.2
+        去除原有的 nativeSupport 参数(表示是否在支持css动画的浏览器上使用原生机制), 目前不使用浏览器原生动画.
     
+    | **Anim** (elem, props[, config])
+    | 得到绑定于某个 dom 节点的动画实例
+
+    :param String|HTMLElement|KISSY.Node|window elem: 作用动画的元素节点.
+    :param Object props: 动画结束的 dom 样式值
+    :param Number config: 默认为 { duration: 1, easing: 'easeNone' }, 其配置项有:
+
+        .. code-block:: javascript
+
+            {
+                duration: 1,         // 动画持续时间
+                easing: 'easeNone',  // 动画平滑函数
+                queue: undefined,    // String, 所属队列, 默认不属于任何队列
+                complete: null       // 动画结束回调
+            }
+
 Methods Detail
 -----------------------------------------------
+
+.. method:: isRunning
+
+    .. versionadded:: 1.2
+
+    | **isRunning** ()
+    | 判断当前动画对象是否在执行动画过程.
+
+    :rtype: Boolean
+
 
 .. method:: run
 
@@ -64,7 +92,44 @@ Methods Detail
 
 .. method:: stop
 
+    .. versionadded:: 1.2
+
     | **stop** ([finish=false])
     | 在动画实例上调用, 结束当前动画实例的动画.
     
-    :param boolean finish: flase 时, 动画会在当前帧直接停止；为 true 时, 动画停止时会立刻跳到最后一帧
+    :param Boolean finish: false 时, 动画会在当前帧直接停止, 为 true 时, 动画停止时会立刻跳到最后一帧
+
+.. method:: Anim.isRunning
+
+    .. versionadded:: 1.2
+
+    | static **Anim.isRunning** (elem)
+    | :class:`Anim` 的静态方法, 用于判断 elem 上是否有动画对象在执行.
+
+    :param String|HTMLElement|KISSY.Node|window elem: 作用动画的元素节点.
+    :rtype: Boolean
+
+.. method:: Anim.stop
+
+    .. versionadded:: 1.2
+
+    | static **Anim.stop** (elem, end, clearQueue, queueName)
+    | :class:`Anim` 的静态方法, 停止某元素上的动画.
+
+    :param String|HTMLElement|KISSY.Node|window elem: 作用动画的元素节点.
+    :param Boolean end: 此参数同实例方法 :meth:`stop` 中的 finish 参数.
+    :param Boolean clearQueue: 默认为 false, 是否清除动画队列中余下的动画.
+    :param String queueName: 队列名字. 设置 queueName 后, 表示停止元素上指定队列中的所有动画, 不设置时, 表示停止所有队列中的所有动画;
+
+Events Detail
+-----------------------------------------------
+
+.. function:: complete
+
+    | **complete** ()
+    | 动画结束后, 触发该事件.
+
+
+.. note::
+
+    队列的使用, 可以参考 `动画实例 <../../../demo/core/anim/demo6.html>`_

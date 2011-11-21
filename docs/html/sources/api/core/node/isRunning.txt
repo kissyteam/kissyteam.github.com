@@ -1,6 +1,6 @@
 ﻿.. currentmodule:: node
 
-stop
+isRunning
 ==================================================
 
 .. versionadded:: 1.2
@@ -13,9 +13,9 @@ Module
 Methods
 -----------------------------------------------
 
-.. method:: NodeList.stop
+.. method:: NodeList.isRunning
 
-    | NodeList **stop** ( [ end, clearQueue, queueName ] )
-    | 停止当前节点列表的动画, end, clearQueue, queueName, 涵义同 :meth:`anim.Anim.stop`.
+    | NodeList **isRunning** ()
+    | 判断当前 NodeList 对象是否在动画中, NodeList 中只要有一个 Node 在动画, 就会返回 truthy 值.
 
-    :rtype: NodeList    
+    :rtype: Boolean
