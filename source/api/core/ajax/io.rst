@@ -220,7 +220,7 @@ Config Detail
 
 .. data:: cfg.timeout
 
-    {Number} -  对这次请求设个超时时间，单位毫秒. 当超时后会触发 ``error`` 以及 ``complete`` 回调 , 状态字符串为 "timeout".
+    {Number} -  对这次请求设个超时时间，单位秒. 当超时后会触发 ``error`` 以及 ``complete`` 回调 , 状态字符串为 "timeout".
 
 .. data:: cfg.type
 
