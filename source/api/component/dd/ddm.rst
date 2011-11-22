@@ -47,7 +47,7 @@ Class Detail
 Properties Detail
 -----------------------------------------------
     
-.. attribute:: DDM.protoype.bufferTimer
+.. attribute:: DDM.protoype.bufferTime
 
     {Number} - 默认 200, 表示鼠标按下多长时间后触发 dragstart 事件.  可通过 DDM.set("bufferTimer",xx) 设置.
 
