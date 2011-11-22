@@ -10,7 +10,8 @@ Component
    template/index
    datalazyload/index
    flash/index
-   dd/index   
+   dd/index
+   resizable/index
    mvc/index
    uibase/index
    component/index
@@ -24,4 +25,3 @@ Component
    suggest/index
    calendar/index
    imagezoom/index
-   resizable/index

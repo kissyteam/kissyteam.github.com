@@ -8,6 +8,7 @@ Component
 
    datalazyload/index
    dd/index
+   resizable/index
    switchable/index
    suggest/index
    calendar/index

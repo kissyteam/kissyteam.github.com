@@ -40,7 +40,8 @@ Methods
 -----------------------------------------------
 
     * :meth:`~Node.prototype.expandAll`
-    * :meth:`~Node.prototype.collapseAll`
+    * :meth:`~Node.prototype.collapseAll`    
+    * :meth:`~Node.prototype.select`
     
     
 Class Detail
@@ -128,4 +129,9 @@ Methods Detail
 
     | **collapseAll ( )**
     | 把当前节点的子孙节点全部收缩起来   
+    
+.. method:: Node.prototype.select
+
+    | **select ( )**
+    | 把当前节点设置为当前树的选中节点
     
