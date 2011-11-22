@@ -44,7 +44,8 @@ Methods
    valuechange.rst
    mousenter.rst
    mouseleave.rst
-
+   mousewheel.rst
+    
 .. note::
 
     部分文档与例子来自 `jquery <http://api.jquery.com>`_   

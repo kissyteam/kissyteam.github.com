@@ -15,9 +15,13 @@ Class
 Methods
 -----------------------------------------------
 
-  * :meth:`isRunning`
-  * :meth:`run`
-  * :meth:`stop`
+  * :meth:`~Anim.prototype.isRunning`
+  * :meth:`~Anim.prototype.run`
+  * :meth:`~Anim.prototype.stop`
+  
+Static Methods
+----------------------------------------------
+  
   * :meth:`Anim.isRunning`
   * :meth:`Anim.stop`
 
@@ -51,31 +55,36 @@ Class Detail
         
     :param Number duration: 默认为 1 , 动画持续时间, 以秒为单元.
     :param String easing: 默认为 'easeNone' , 动画平滑函数, 可取值 "easeNone","easeIn","easeOut","easeBoth","easeInStrong", "easeOutStrong","easeBothStrong","elasticIn","elasticOut", "elasticBoth","backIn","backOut","backBoth", "bounceIn","bounceOut","bounceBoth". 效果预览, 可以参考 Robert Penner 博士的： `easing_demo.html <http://www.robertpenner.com/easing/easing_demo.html>`_ .
-    :param function callback: 默认为 null , 动画结束回调.
-
-    .. versionchanged:: 1.2
-        去除原有的 nativeSupport 参数(表示是否在支持css动画的浏览器上使用原生机制), 目前不使用浏览器原生动画.
+    :param function callback: 动画结束回调函数.
+    
     
     | **Anim** (elem, props[, config])
     | 得到绑定于某个 dom 节点的动画实例
 
     :param String|HTMLElement|KISSY.Node|window elem: 作用动画的元素节点.
     :param Object props: 动画结束的 dom 样式值
-    :param Number config: 默认为 { duration: 1, easing: 'easeNone' }, 其配置项有:
-
-        .. code-block:: javascript
-
-            {
-                duration: 1,         // 动画持续时间
-                easing: 'easeNone',  // 动画平滑函数
-                queue: undefined,    // String, 所属队列, 默认不属于任何队列
-                complete: null       // 动画结束回调
-            }
+    :param Number config: 动画配置项，包含:
+    
+            .. attribute:: config.duration
+            
+                单位秒。默认 1 秒.动画持续时间
+                
+            .. attribute:: config.easing
+            
+               string|function。默认 'easeNone'. 动画平滑函数
+                
+            .. attribute:: config.queue
+            
+                String|false|undefined。所属队列名称. 默认undefined. 属于系统内置队列, 设置 false 则表示该动画不排队立即执行. 
+                
+            .. attribute:: config.complete
+            
+                function。 动画结束回调函数.
 
 Methods Detail
 -----------------------------------------------
 
-.. method:: isRunning
+.. method:: Anim.prototype.isRunning
 
     .. versionadded:: 1.2
 
@@ -85,14 +94,12 @@ Methods Detail
     :rtype: Boolean
 
 
-.. method:: run
+.. method:: Anim.prototype.run
 
     | **run** ()
     | 在动画实例上调用, 开始当前动画实例的动画.
 
-.. method:: stop
-
-    .. versionadded:: 1.2
+.. method:: Anim.prototype.stop
 
     | **stop** ([finish=false])
     | 在动画实例上调用, 结束当前动画实例的动画.
@@ -106,7 +113,7 @@ Methods Detail
     | static **Anim.isRunning** (elem)
     | :class:`Anim` 的静态方法, 用于判断 elem 上是否有动画对象在执行.
 
-    :param String|HTMLElement|KISSY.Node|window elem: 作用动画的元素节点.
+    :param HTMLElement|window elem: 作用动画的元素节点.
     :rtype: Boolean
 
 .. method:: Anim.stop
@@ -114,12 +121,20 @@ Methods Detail
     .. versionadded:: 1.2
 
     | static **Anim.stop** (elem, end, clearQueue, queueName)
-    | :class:`Anim` 的静态方法, 停止某元素上的动画.
+    | :class:`Anim` 的静态方法, 停止某元素上的动画（集合）.
 
-    :param String|HTMLElement|KISSY.Node|window elem: 作用动画的元素节点.
+    :param HTMLElement|window elem: 作用动画的元素节点.
     :param Boolean end: 此参数同实例方法 :meth:`stop` 中的 finish 参数.
     :param Boolean clearQueue: 默认为 false, 是否清除动画队列中余下的动画.
-    :param String queueName: 队列名字. 设置 queueName 后, 表示停止元素上指定队列中的所有动画, 不设置时, 表示停止所有队列中的所有动画;
+    :param String queueName: 队列名字. 
+    
+                            设置 queueName 后, 表示停止元素上指定队列中的所有动画:
+                            
+                                * null 表示默认队列的动画
+                                * false 表示不排队的动画
+                                * string 类型表示指定名称的队列的动画
+                             
+                             不设置时, 表示停止所有队列中的所有动画;
 
 Events Detail
 -----------------------------------------------

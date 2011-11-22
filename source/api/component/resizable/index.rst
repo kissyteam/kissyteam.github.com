@@ -25,11 +25,6 @@ Config Attributes
     * :data:`~Resizable.config.handlers`
 
 
-Properties
------------------------------------------------
-
-  * :attr:`dds`
-
 Methods
 -----------------------------------------------
 
@@ -75,14 +70,6 @@ Config Attributes Detail
     可取下列值: "b","t","r","l","tr","tl","br","bl"． 其中, t,b,l,r 分别表示 top,bottom,left,right, 加上组合共八种取值, 可在上, 下, 左, 右以及左上, 左下, 右上, 右下进行拖动.
 
 
-Properties Detail
------------------------------------------------
-
-.. attribute:: dds
-
-    {Object} - 元素上, 可触发缩放的拖动点, key 对应于 :data:`~Resizable.config.handlers` , value 为 :class:`~dd.Draggable` 对象.
-
-
 Methods Detail
 -----------------------------------------------
 
@@ -90,3 +77,8 @@ Methods Detail
 
     | **destroy** ()
     | 销毁该组件, 取消元素上的缩放功能.
+    
+    
+.. note::
+
+    拖放 handler 的样式需要调用者自己编写.    
