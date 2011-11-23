@@ -153,9 +153,10 @@
 <li><strong>name</strong> (<em>String</em>) &#8211; 属性名</li>
 <li><strong>attrConfig</strong> (<em>Object</em>) &#8211; 属性配置信息, 支持下面的配置项:</li>
 <li><strong>attrConfig.value</strong> (<em>String|Number</em>) &#8211; 属性默认值。注意默认值请不要设置为复杂对象（通过自定义构造器 new 出来的），复杂对象可设置 valueFn 返回。</li>
-<li><strong>attrConfig.valueFn</strong> (<em>Function</em>) &#8211; 提供属性默认值的函数</li>
-<li><strong>attrConfig.setter</strong> (<em>Function</em>) &#8211; 写属性时的处理函数</li>
+<li><strong>attrConfig.valueFn</strong> (<em>Function</em>) &#8211; 提供属性默认值的函数，传入对象内部对应的属性值和属性名，取该函数的返回值作为最终值给用户。</li>
+<li><strong>attrConfig.setter</strong> (<em>Function</em>) &#8211; 写属性时的处理函数，传入从 <a class="reference internal" href="#base.Attribute.prototype.set" title="base.Attribute.prototype.set"><tt class="xref py py-meth docutils literal"><span class="pre">set()</span></tt></a> 参数得到的属性值和属性名，如果返回非 undefined 则作为新的属性设置值。</li>
 <li><strong>attrConfig.getter</strong> (<em>Function</em>) &#8211; 读属性时的处理函数</li>
+<li><strong>attrConfig.validator</strong> (<em>Function</em>) &#8211; 写属性时的验证函数，传入从 <a class="reference internal" href="#base.Attribute.prototype.set" title="base.Attribute.prototype.set"><tt class="xref py py-meth docutils literal"><span class="pre">set()</span></tt></a> 参数得到的属性值和属性名，返回 false 则不改变该属性值.</li>
 </ul>
 </td>
 </tr>
@@ -193,7 +194,7 @@
 <dt id="base.Attribute.prototype.hasAttr">
 <tt class="descclassname">Attribute.prototype.</tt><tt class="descname">hasAttr</tt><big>(</big><big>)</big><a class="headerlink" href="#base.Attribute.prototype.hasAttr" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line">void <strong>hasAttr</strong> ( name )</div>
+<div class="line">boolean <strong>hasAttr</strong> ( name )</div>
 <div class="line">判断是否有名为 name 的属性.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -229,7 +230,7 @@
 <dt id="base.Attribute.prototype.set">
 <tt class="descclassname">Attribute.prototype.</tt><tt class="descname">set</tt><big>(</big><big>)</big><a class="headerlink" href="#base.Attribute.prototype.set" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line">void <strong>set</strong> ( name, value, opts )</div>
+<div class="line">boolean <strong>set</strong> ( name, value, opts )</div>
 <div class="line">设置属性 name 的值为 value.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -237,7 +238,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
 <li><strong>name</strong> (<em>String</em>) &#8211; <p>属性名。</p>
 <p class="versionadded">
 <span class="versionmodified">New in version 1.2: </span>也可以为 &#8220;x.y&#8221; 形式，此时要求 x 属性为包含 y 属性的普通 Object，这时会设置 x 属性值的 y 属性.但只会触发 x 的相关 change 事件.</p>
@@ -254,10 +255,14 @@
 </ul>
 </td>
 </tr>
+<tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last">该次属性设置是否生效（是否通过了 validator 验证）</p>
+</td>
+</tr>
 </tbody>
 </table>
 <div class="line-block">
-<div class="line">void <strong>set</strong> ( json, opts )</div>
+<div class="line">boolean <strong>set</strong> ( json, opts )</div>
 <div class="line">批量设置属性值.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -265,7 +270,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
 <li><strong>json</strong> (<em>String</em>) &#8211; 属性名与属性值的键值对</li>
 <li><strong>opts</strong> (<em>Object</em>) &#8211; <p>控制对象，包括以下控制选项</p>
 <dl class="attribute">
@@ -278,6 +283,10 @@
 </ul>
 </td>
 </tr>
+<tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last">该批属性设置是否全部生效（是否通过了 validator 验证）</p>
+</td>
+</tr>
 </tbody>
 </table>
 </dd></dl>
@@ -286,7 +295,7 @@
 <dt id="base.Attribute.prototype.get">
 <tt class="descclassname">Attribute.prototype.</tt><tt class="descname">get</tt><big>(</big><big>)</big><a class="headerlink" href="#base.Attribute.prototype.get" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line">void <strong>get</strong> ( name )</div>
+<div class="line">* <strong>get</strong> ( name )</div>
 <div class="line">获取属性 name 的值.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
