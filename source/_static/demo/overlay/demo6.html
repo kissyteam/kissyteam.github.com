@@ -3,7 +3,15 @@
 <head>
 <meta charset="utf-8"/>
 <title>Dialog - 新建 + Mask + aria</title>
-<script src="http://docs.kissyui.com/kissy/build/kissy.js"></script>
+<script>
+    if(location.host=="localhost"){
+        document.writeln('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+    }else if(location.host=="chengyu.taobao.ali.com"){
+        document.writeln('<script src="http://chengyu.taobao.ali.com/kissy_git/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+    }else{
+        document.writeln('<script src="http://docs.kissyui.com/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+    }
+</script>
 <link rel="stylesheet" href="../switchable/assets/reset.css"/>
 <link rel="stylesheet" href="assets/cool.css"/>
 <link rel="stylesheet" href="http://docs.kissyui.com/kissy-dpl/base/build/css/loading.css"/>
