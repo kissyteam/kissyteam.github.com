@@ -112,8 +112,11 @@
 <div><ul class="simple">
 <li><a class="reference internal" href="#dd.Draggable.config.node" title="dd.Draggable.config.node"><tt class="xref py py-data docutils literal"><span class="pre">node</span></tt></a></li>
 <li><a class="reference internal" href="#dd.Draggable.config.handlers" title="dd.Draggable.config.handlers"><tt class="xref py py-data docutils literal"><span class="pre">handlers</span></tt></a></li>
-<li><a class="reference internal" href="#dd.Draggable.config.cursor" title="dd.Draggable.config.cursor"><tt class="xref py py-data docutils literal"><span class="pre">cursor</span></tt></a></li>
+<li><a class="reference internal" href="#dd.Draggable.config.bufferTime" title="dd.Draggable.config.bufferTime"><tt class="xref py py-data docutils literal"><span class="pre">bufferTime</span></tt></a></li>
+<li><a class="reference internal" href="#dd.Draggable.config.clickPixelThresh" title="dd.Draggable.config.clickPixelThresh"><tt class="xref py py-data docutils literal"><span class="pre">clickPixelThresh</span></tt></a></li>
 <li><a class="reference internal" href="#dd.Draggable.config.mode" title="dd.Draggable.config.mode"><tt class="xref py py-data docutils literal"><span class="pre">mode</span></tt></a></li>
+<li><a class="reference internal" href="#dd.Draggable.config.disabled" title="dd.Draggable.config.disabled"><tt class="xref py py-data docutils literal"><span class="pre">disabled</span></tt></a></li>
+<li><a class="reference internal" href="#dd.Draggable.config.move" title="dd.Draggable.config.move"><tt class="xref py py-data docutils literal"><span class="pre">move</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -191,9 +194,27 @@
 </dd></dl>
 
 <dl class="data">
-<dt id="dd.Draggable.config.cursor">
-<tt class="descclassname">Draggable.config.</tt><tt class="descname">cursor</tt><a class="headerlink" href="#dd.Draggable.config.cursor" title="Permalink to this definition">¶</a></dt>
-<dd><p>{String} - 默认值 &#8220;move&#8221;, handlers 元素中的每个元素要设置的鼠标样式.</p>
+<dt id="dd.Draggable.config.clickPixelThresh">
+<tt class="descclassname">Draggable.config.</tt><tt class="descname">clickPixelThresh</tt><a class="headerlink" href="#dd.Draggable.config.clickPixelThresh" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 默认同 <a class="reference internal" href="ddm.html#dd.DDM.prototype.clickPixelThresh" title="dd.DDM.prototype.clickPixelThresh"><tt class="xref py py-attr docutils literal"><span class="pre">DDM.get(&quot;clickPixelThresh&quot;)</span></tt></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="dd.Draggable.config.bufferTime">
+<tt class="descclassname">Draggable.config.</tt><tt class="descname">bufferTime</tt><a class="headerlink" href="#dd.Draggable.config.bufferTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 默认同 <a class="reference internal" href="ddm.html#dd.DDM.prototype.bufferTime" title="dd.DDM.prototype.bufferTime"><tt class="xref py py-attr docutils literal"><span class="pre">DDM.get(&quot;bufferTime&quot;)</span></tt></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="dd.Draggable.config.disabled">
+<tt class="descclassname">Draggable.config.</tt><tt class="descname">disabled</tt><a class="headerlink" href="#dd.Draggable.config.disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认 false。是否禁用改拖对象功能.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="dd.Draggable.config.move">
+<tt class="descclassname">Draggable.config.</tt><tt class="descname">move</tt><a class="headerlink" href="#dd.Draggable.config.move" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认 false。关联元素是否随鼠标移动。（例如：resize 功能完全不需要关联元素移动）</p>
 </dd></dl>
 
 <dl class="data">
@@ -371,7 +392,7 @@
 <tt class="descclassname">Draggable.</tt><tt class="descname">dragexit</tt><big>(</big><big>)</big><a class="headerlink" href="#dd.Draggable.dragexit" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>dragexit</strong> ( ev )</div>
-<div class="line">当前 Draggable 对象离开一个 Droppable 实例上移动时触发, 可简单理解成 mouseleave.</div>
+<div class="line">当前 Draggable 对象离开一个 Droppable 实例上移动时触发, 可简单理解成 mouseleave. 相当于 html5 dd API targetNode 的 dragleave 事件的概念.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -393,7 +414,7 @@
 <tt class="descclassname">Draggable.</tt><tt class="descname">dragdrophit</tt><big>(</big><big>)</big><a class="headerlink" href="#dd.Draggable.dragdrophit" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>dragdrophit</strong> ( ev )</div>
-<div class="line">当前 Draggable 对象被放置在一个 Droppable 实例时触发.</div>
+<div class="line">当前 Draggable 对象被放置在一个 Droppable 实例时触发. 相当于 html5 dd API targetNode 的 drop 事件的概念.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />

@@ -17,7 +17,9 @@ Class
 Properties
 -----------------------------------------------
 
-  * :data:`~DDM.protoype.bufferTimer`
+  * :data:`~DDM.prototype.bufferTime`
+  * :data:`~DDM.prototype.clickPixelThresh`
+  * :data:`~DDM.prototype.dragCursor`
   
 Events
 -----------------------------------------------
@@ -47,10 +49,17 @@ Class Detail
 Properties Detail
 -----------------------------------------------
     
-.. attribute:: DDM.protoype.bufferTime
+.. attribute:: DDM.prototype.bufferTime
 
-    {Number} - 默认 200, 表示鼠标按下多长时间后触发 dragstart 事件.  可通过 DDM.set("bufferTimer",xx) 设置.
+    {Number} - 默认 1000, 表示鼠标按下多长时间后触发 dragstart 事件.  可通过 DDM.set("bufferTime",xx) 设置.
+    
+.. attribute:: DDM.prototype.clickPixelThresh
 
+    {Number} - 默认 3, 表示鼠标按下后移动多少像素后触发 dragstart 事件.
+
+.. attribute:: DDM.prototype.dragCursor
+
+    {String} - 默认 'move', 表示拖放过程中鼠标的样式.
 
 Events Detail
 -----------------------------------------------
