@@ -42,9 +42,4 @@ Refer
    
 .. note::
 
-    KISSY MVC is influenced by Backbone's API Design.   
-    
-    
-    Still Beta, api may change, use with caution.
-    
-    
+    KISSY MVC is influenced by Backbone's API Design.
