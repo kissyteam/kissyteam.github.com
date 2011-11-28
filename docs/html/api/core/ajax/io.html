@@ -127,6 +127,7 @@
 <li><a class="reference internal" href="#io.cfg.scriptCharset" title="io.cfg.scriptCharset"><tt class="xref py py-data docutils literal"><span class="pre">cfg.scriptCharset</span></tt></a></li>
 <li><a class="reference internal" href="#io.cfg.timeout" title="io.cfg.timeout"><tt class="xref py py-data docutils literal"><span class="pre">cfg.timeout</span></tt></a></li>
 <li><a class="reference internal" href="#io.cfg.type" title="io.cfg.type"><tt class="xref py py-data docutils literal"><span class="pre">cfg.type</span></tt></a></li>
+<li><a class="reference internal" href="#io.cfg.xdr" title="io.cfg.xdr"><tt class="xref py py-data docutils literal"><span class="pre">cfg.xdr</span></tt></a></li>
 <li><a class="reference internal" href="#io.cfg.xhrFields" title="io.cfg.xhrFields"><tt class="xref py py-data docutils literal"><span class="pre">cfg.xhrFields</span></tt></a></li>
 <li><a class="reference internal" href="#io.cfg.form" title="io.cfg.form"><tt class="xref py py-data docutils literal"><span class="pre">cfg.form</span></tt></a></li>
 </ul>
@@ -400,6 +401,35 @@
 <span class="p">});</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="data">
+<dt id="io.cfg.xdr">
+<tt class="descclassname">cfg.</tt><tt class="descname">xdr</tt><a class="headerlink" href="#io.cfg.xdr" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object} - 设置跨域的具体方式和细节，包括以下配置</p>
+<dl class="attribute">
+<dt id="io.cfg.xdr.src">
+<tt class="descclassname">cfg.xdr.</tt><tt class="descname">src</tt><a class="headerlink" href="#io.cfg.xdr.src" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} 完全跨域请求的 flash 发送程序地址。当完全跨域时,KISSY io 将采用 flash 发请求，默认采用 KISSY 自带 flash 发请求，也可将 kissy 自带的 flash 部署到其他地方，在 src 中指定。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="io.cfg.xdr.subDomain">
+<tt class="descclassname">cfg.xdr.</tt><tt class="descname">subDomain</tt><a class="headerlink" href="#io.cfg.xdr.subDomain" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object} 跨子域时的一些请求配置，包括</p>
+<dl class="attribute">
+<dt id="io.cfg.xdr.subDomain.proxy">
+<tt class="descclassname">subDomain.</tt><tt class="descname">proxy</tt><a class="headerlink" href="#io.cfg.xdr.subDomain.proxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} 指定代理页面的地址。默认 &#8220;/sub_domain_proxy.html&#8221; .
+例如 x.taobao.com 要发送请求给 y.taobao.com ，那么需要设置 x.taobao.com 的页面 document.domain=&#8217;taobao.com&#8217; ，然后提供 y.taobao.com/sub_domain_proxy.html ，该页面内容为</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">domain</span><span class="o">=</span><span class="s1">&#39;taobao.com&#39;</span><span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>然后 x.taobao.com 的页面就可以和 y.taobao.com 通信了。</p>
+</dd></dl>
+
+</dd></dl>
+
 </dd></dl>
 
 <dl class="data">

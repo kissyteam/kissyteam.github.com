@@ -66,6 +66,7 @@ Methods
    create
    html
    remove
+   empty
    insertBefore
    insertAfter
    append
