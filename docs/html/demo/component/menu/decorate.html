@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>menu 的基本使用 &mdash; KISSY Docs valpha documentation</title>
+<title>从已有 html 生成菜单 &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -78,10 +78,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="decorate.html" title="从已有 html 生成菜单"
+      <a href="demo2.html" title="自定义样式及分割线的使用"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="index.html" title="Menu 使用示例"
+      <a href="demo1.html" title="menu 的基本使用"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >All Demos</a> &#187; </li>
@@ -90,8 +90,8 @@
     </ul>
 </div>
 					
-  <div class="section" id="menu">
-<h1>menu 的基本使用<a class="headerlink" href="#menu" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="html">
+<h1>从已有 html 生成菜单<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h1>
 <p class="versionadded">
 <span class="versionmodified">New in version 1.2.</span></p>
 <div class="line-block">
@@ -112,58 +112,14 @@
 </div></blockquote>
 </div>
 <div class="section" id="id2">
-<h2>menu 的基本使用<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>从已有 html 生成菜单<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><iframe width="100%" height="100" class="iframe-demo" src="../../../static/demo/menu/demo1.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node,menu&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">Menu</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 初始化一个菜单, 仅包含一个菜单项</span>
-    <span class="kd">var</span> <span class="nx">menu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">({</span>
-        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;goog-&#39;</span><span class="p">,</span>
-        <span class="nx">render</span><span class="o">:</span> <span class="s1">&#39;#menu_container&#39;</span><span class="p">,</span>
-        <span class="nx">children</span><span class="o">:</span><span class="p">[</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
-            <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;goog-&#39;</span><span class="p">,</span>
-            <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;首页&#39;</span>
-        <span class="p">})],</span>
-        <span class="nx">width</span><span class="o">:</span> <span class="mi">200</span>
-    <span class="p">}),</span>
-        <span class="c1">// 构建一个子菜单</span>
-        <span class="nx">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">SubMenu</span><span class="p">({</span>
-            <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;goog-&#39;</span><span class="p">,</span>
-            <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;我的淘宝&#39;</span><span class="p">,</span>
-            <span class="c1">// 默认点击空白文档关闭子菜单</span>
-            <span class="nx">menu</span><span class="o">:</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">PopupMenu</span><span class="p">({</span>
-                <span class="c1">// boolean，是否鼠标脱离菜单后自动隐藏</span>
-                <span class="nx">autoHideOnMouseLeave</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-                <span class="c1">// ms，鼠标脱离菜单多长时间后自动隐藏</span>
-                <span class="nx">autoHideDelay</span><span class="o">:</span><span class="mi">300</span><span class="p">,</span>
-                <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;goog-&#39;</span><span class="p">,</span>
-                <span class="nx">elStyle</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="s1">&#39;color&#39;</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span>
-                <span class="p">},</span>
-                <span class="nx">children</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
-                        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;goog-&#39;</span><span class="p">,</span>
-                        <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;已买到的宝贝&#39;</span>
-                    <span class="p">}),</span>
-                    <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
-                        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;goog-&#39;</span><span class="p">,</span>
-                        <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;已卖出的宝贝&#39;</span>
-                    <span class="p">})</span>
-                <span class="p">]</span>
-            <span class="p">})</span>
-        <span class="p">});</span>
-
-    <span class="c1">// 将子菜单添加到主菜单中</span>
-    <span class="nx">menu</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">sb</span><span class="p">);</span>
-    <span class="c1">// 再添加一个菜单项</span>
-    <span class="nx">menu</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
-        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;goog-&#39;</span><span class="p">,</span>
-        <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;购物车&#39;</span>
-    <span class="p">}));</span>
-    <span class="nx">menu</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
-
-    <span class="c1">// 绑定点击事件</span>
-    <span class="nx">menu</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;你选中了&quot;</span> <span class="o">+</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">));</span>
+<div><iframe width="100%" height="520" class="iframe-demo" src="../../../static/demo/menu/decorate.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;menu&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Menu</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">new</span> <span class="nx">Menu</span><span class="p">({</span>
+            <span class="nx">srcNode</span><span class="o">:</span><span class="s2">&quot;#menuTest&quot;</span><span class="p">,</span>
+            <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;my-&quot;</span>
+        <span class="p">}).</span><span class="nx">render</span><span class="p">();</span>
     <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
@@ -186,10 +142,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="decorate.html" title="从已有 html 生成菜单"
+      <a href="demo2.html" title="自定义样式及分割线的使用"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="index.html" title="Menu 使用示例"
+      <a href="demo1.html" title="menu 的基本使用"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >All Demos</a> &#187; </li>
