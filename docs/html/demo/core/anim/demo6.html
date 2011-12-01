@@ -127,14 +127,8 @@
     <span class="p">}),</span> <span class="nx">endAll</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Button</span><span class="p">({</span>
         <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;停止当前动画到终态后停止所有动画&quot;</span><span class="p">,</span>
         <span class="nx">prefixCls</span><span class="o">:</span> <span class="s2">&quot;goog-&quot;</span>
-    <span class="p">}),</span> <span class="nx">pause</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Button</span><span class="p">({</span>
-        <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;暂停&quot;</span><span class="p">,</span>
-        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s2">&quot;goog-&quot;</span>
-    <span class="p">}),</span> <span class="nx">resume</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Button</span><span class="p">({</span>
-        <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;继续&quot;</span><span class="p">,</span>
-        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s2">&quot;goog-&quot;</span>
     <span class="p">});</span>
-    <span class="nx">start</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span><span class="nx">endCurrent</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span><span class="nx">endCurrentNext</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span><span class="nx">endCurrentNextStop</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span><span class="nx">endAll</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span><span class="cm">/*pause.render();resume.render();*/</span>
+    <span class="nx">start</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span><span class="nx">endCurrent</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span><span class="nx">endCurrentNext</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span><span class="nx">endCurrentNextStop</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span><span class="nx">endAll</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
 
     <span class="c1">// 动画对象</span>
     <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#animObj&quot;</span><span class="p">),</span><span class="nx">container</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">parent</span><span class="p">(),</span>
@@ -148,6 +142,7 @@
             <span class="k">if</span> <span class="p">(</span><span class="nx">clsIdx</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nx">start</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
                 <span class="nx">clsIdx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="nx">obj</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="nx">cls</span><span class="p">[</span><span class="nx">clsIdx</span><span class="p">]);</span>
             <span class="p">}</span>
         <span class="p">},</span>
         <span class="nx">commonCfg</span> <span class="o">=</span> <span class="p">{</span>
@@ -162,12 +157,11 @@
     <span class="nx">obj</span><span class="p">.</span><span class="nx">css</span><span class="p">({</span>
         <span class="nx">left</span><span class="o">:</span> <span class="nx">containerOffset</span><span class="p">.</span><span class="nx">left</span> <span class="o">-</span> <span class="nx">objWidth</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
         <span class="nx">top</span><span class="o">:</span> <span class="nx">containerOffset</span><span class="p">.</span><span class="nx">top</span> <span class="o">-</span> <span class="nx">objHeight</span><span class="o">/</span><span class="mi">2</span>
-    <span class="p">});</span>
+    <span class="p">}).</span><span class="nx">addClass</span><span class="p">(</span><span class="nx">cls</span><span class="p">[</span><span class="nx">clsIdx</span><span class="p">]);</span>
 
     <span class="c1">// 事件绑定</span>
     <span class="nx">start</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">start</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-        <span class="nx">obj</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="nx">cls</span><span class="p">[</span><span class="nx">clsIdx</span><span class="p">]);</span>
         <span class="c1">// 向右</span>
         <span class="nx">obj</span><span class="p">.</span><span class="nx">animate</span><span class="p">({</span>
             <span class="nx">left</span><span class="o">:</span> <span class="nx">containerOffset</span><span class="p">.</span><span class="nx">left</span> <span class="o">+</span> <span class="nx">containerWidth</span> <span class="o">-</span> <span class="nx">objWidth</span><span class="o">/</span><span class="mi">2</span>
@@ -202,13 +196,6 @@
         <span class="nx">obj</span><span class="p">.</span><span class="nx">stop</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 1, 1</span>
     <span class="p">});</span>
 
-<span class="cm">/*    pause.on(&quot;click&quot;, function() {</span>
-
-<span class="cm">    });</span>
-
-<span class="cm">    start.on(&quot;click&quot;, function() {</span>
-
-<span class="cm">    });*/</span>
 <span class="p">});</span>
 </pre></div>
 </div>

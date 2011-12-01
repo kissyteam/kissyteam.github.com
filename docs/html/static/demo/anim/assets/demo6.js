@@ -17,14 +17,8 @@ KISSY.use("anim,node,button",function(S,Anim,Node,Button){
     }), endAll = new Button({
         content: "停止当前动画到终态后停止所有动画",
         prefixCls: "goog-"
-    }), pause = new Button({
-        content: "暂停",
-        prefixCls: "goog-"
-    }), resume = new Button({
-        content: "继续",
-        prefixCls: "goog-"
     });
-    start.render();endCurrent.render();endCurrentNext.render();endCurrentNextStop.render();endAll.render();/*pause.render();resume.render();*/
+    start.render();endCurrent.render();endCurrentNext.render();endCurrentNextStop.render();endAll.render();
 
     // 动画对象
     var obj = $("#animObj"),container = obj.parent(),
@@ -38,6 +32,7 @@ KISSY.use("anim,node,button",function(S,Anim,Node,Button){
             if (clsIdx % 4 === 0) {
                 start.set("disabled", false);
                 clsIdx = 0;
+                obj.addClass(cls[clsIdx]);
             }
         },
         commonCfg = {
@@ -52,12 +47,11 @@ KISSY.use("anim,node,button",function(S,Anim,Node,Button){
     obj.css({
         left: containerOffset.left - objWidth/2,
         top: containerOffset.top - objHeight/2
-    });
+    }).addClass(cls[clsIdx]);
 
     // 事件绑定
     start.on("click", function() {
         start.set("disabled", true);
-        obj.addClass(cls[clsIdx]);
         // 向右
         obj.animate({
             left: containerOffset.left + containerWidth - objWidth/2
@@ -92,11 +86,4 @@ KISSY.use("anim,node,button",function(S,Anim,Node,Button){
         obj.stop(1, 1); // 1, 1
     });
 
-/*    pause.on("click", function() {
-
-    });
-
-    start.on("click", function() {
-
-    });*/
 });
