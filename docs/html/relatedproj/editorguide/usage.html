@@ -91,6 +91,22 @@
 					
   <div class="section" id="id1">
 <h1>初始化编辑器<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>编辑器弹窗 z-index 设置:</p>
+<dl class="attribute">
+<dt id="editor.KISSY.Editor.config.baseZIndex">
+<tt class="descclassname">KISSY.Editor.config.</tt><tt class="descname">baseZIndex</tt><a class="headerlink" href="#editor.KISSY.Editor.config.baseZIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型 number, 默认 10000. 编辑器内弹窗z-index下限.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">为防止和其他页面元素互相覆盖, 请保证这个数字整个页面最高</p>
+</div>
+</dd></dl>
+
+<p>例如:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// 编辑器内弹窗z-index下限, 防止互相覆盖, 请保证这个数字整个页面最高</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">Editor</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">baseZIndex</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">;</span>
+</pre></div>
+</div>
 <p>构造器:</p>
 <dl class="class">
 <dt id="editor.KISSY.Editor">
@@ -111,16 +127,6 @@
 <dt id="editor.KISSY.Editor.config.attachForm">
 <tt class="descclassname">config.</tt><tt class="descname">attachForm</tt><a class="headerlink" href="#editor.KISSY.Editor.config.attachForm" title="Permalink to this definition">¶</a></dt>
 <dd><p>类型 boolean,  是否监控编辑器所属的表单提交</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="editor.KISSY.Editor.config.baseZIndex">
-<tt class="descclassname">config.</tt><tt class="descname">baseZIndex</tt><a class="headerlink" href="#editor.KISSY.Editor.config.baseZIndex" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型 number, 编辑器内弹窗z-index下限.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">为防止和其他页面元素互相覆盖, 请保证这个数字整个页面最高</p>
-</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -163,9 +169,6 @@
 
         // 是否监控编辑器所属的表单提交
         "attachForm":true,
-
-        // 编辑器内弹窗z-index下限, 防止互相覆盖, 请保证这个数字整个页面最高
-        "baseZIndex":10000,
 
         // 自定义样式, 将自己的样式加入编辑器
         customStyle:"p{color:red;}",
