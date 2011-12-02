@@ -180,14 +180,22 @@
     <span class="s2">&quot;/new/*u&quot;</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">paths</span><span class="p">){</span>
        <span class="c1">// /new/kissy-mvc-is-good/right</span>
        <span class="nx">alert</span><span class="p">(</span><span class="nx">paths</span><span class="p">.</span><span class="nx">u</span><span class="p">);</span> <span class="c1">// =&gt; kissy-mvc-is-good/right</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;test_regexp&quot;</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">reg</span><span class="o">:</span><span class="sr">/\/list-(\w)/</span><span class="p">,</span>
+        <span class="nx">callback</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">matches</span><span class="p">,</span><span class="nx">query</span><span class="p">){</span>
+            <span class="c1">// /list-t</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">matches</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="c1">// =&gt; t</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>用于指定当 url 符合一定规则时执行指定的函数，当函数字符串时指定路由实例上的函数，规则有两种</p>
+<p>用于指定当 url 符合一定规则时执行指定的函数，当函数为字符串时表示路由实例上的函数，规则有 3 种</p>
 <ol class="arabic simple">
 <li>:id 用于匹配 url / 间部分</li>
 <li>*u 用户匹配从当前位置到结尾的 url 部分</li>
+<li>直接配置正则表达式</li>
 </ol>
 <p>调用函数形式为</p>
 <dl class="function">
@@ -202,7 +210,7 @@
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>paths</strong> (<em>Object</em>) &#8211; 包含规则路径参数以及和当前 url 匹配值为键值对的对象</li>
+<li><strong>paths</strong> (<em>Object</em>) &#8211; 包含规则路径参数和当前 url 匹配值为键值对的对象。当规则直接配置为正则表达式时，该参数值为匹配正则式的分组数组。</li>
 <li><strong>querys</strong> (<em>Object</em>) &#8211; 包含当前url的查询参数和值为键值对的对象</li>
 </ul>
 </td>
