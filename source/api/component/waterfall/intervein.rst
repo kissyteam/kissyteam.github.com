@@ -98,10 +98,14 @@ Events Detail
 
 .. function:: adjustComplete
 
-    | **adjustComplete** ()
+    | **adjustComplete** (ev)
     | 调整布局之后触发, 当页面初始时有数据块, 或改变窗口大小, 都会在调用 adjust 之后触发, 相当于 adjust 的 callback;
+
+    :param Array<KISSY.Node> ev.items: 被调整的数据块集合
 
 .. function:: addComplete
 
-    | **addComplete** ()
+    | **addComplete** (ev)
     | 添加完数据块到容器之后触发, 针对于动态加载;
+
+    :param Array<HTMLElement|KISSY.Node> ev.items: 被加载的新数据块
