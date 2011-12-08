@@ -14,7 +14,7 @@ Methods
 
 .. function:: KISSY.log
 
-    | void **KISSY.inArray** (msg[,cat='log',src])
+    | void **KISSY.log** (msg[,cat='log',src])
     | 输出调试信息
     
     :param string msg: 调试信息
