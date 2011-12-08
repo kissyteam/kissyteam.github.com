@@ -25,6 +25,13 @@ Methods
   * :meth:`addItems`
   * :meth:`destroy`
 
+Events
+-----------------------------------------------
+
+  * :func:`adjustComplete`
+  * :func:`addComplete`
+
+
 Class Detail
 -----------------------------------------------
 
@@ -53,8 +60,12 @@ Config Attributes Detail
 
 .. data:: effect
 
-    {String} - 各数据块展示时的动画效果, 默认为 "fadeIn", 可取: "fadeIn", "slideDown", "show"
+    {Object} - 各数据块展示时的动画效果, 默认为 { effect:"fadeIn", duration:1 }, 可取: "fadeIn", "slideDown", "show", 参数含义同 :class:`~anim.Anim` .
 
+    .. caution::
+
+        1.1.6 中的 waterfall, 动画效果只能用 ``fadeIn``.
+        
 .. data:: colWidth
 
     {Number} - 每列的总宽度. 如果要设每列的间距, 请自行设置 margin, 而该值是指包含了 padding, width, margin 后的总宽度.
@@ -81,3 +92,16 @@ Methods Detail
     | **destroy** ()
     | 销毁当前对象
 
+
+Events Detail
+-----------------------------------------------
+
+.. function:: adjustComplete
+
+    | **adjustComplete** ()
+    | 调整布局之后触发, 当页面初始时有数据块, 或改变窗口大小, 都会在调用 adjust 之后触发, 相当于 adjust 的 callback;
+
+.. function:: addComplete
+
+    | **addComplete** ()
+    | 添加完数据块到容器之后触发, 针对于动态加载;

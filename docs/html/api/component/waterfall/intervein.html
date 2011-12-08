@@ -124,6 +124,15 @@
 </ul>
 </div></blockquote>
 </div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#waterfall.adjustComplete" title="waterfall.adjustComplete"><tt class="xref py py-func docutils literal"><span class="pre">adjustComplete()</span></tt></a></li>
+<li><a class="reference internal" href="#waterfall.addComplete" title="waterfall.addComplete"><tt class="xref py py-func docutils literal"><span class="pre">addComplete()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
 <div class="section" id="class-detail">
 <h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
@@ -166,7 +175,11 @@
 <dl class="data">
 <dt id="waterfall.effect">
 <tt class="descclassname">waterfall.</tt><tt class="descname">effect</tt><a class="headerlink" href="#waterfall.effect" title="Permalink to this definition">¶</a></dt>
-<dd><p>{String} - 各数据块展示时的动画效果, 默认为 &#8220;fadeIn&#8221;, 可取: &#8220;fadeIn&#8221;, &#8220;slideDown&#8221;, &#8220;show&#8221;</p>
+<dd><p>{Object} - 各数据块展示时的动画效果, 默认为 { effect:&#8221;fadeIn&#8221;, duration:1 }, 可取: &#8220;fadeIn&#8221;, &#8220;slideDown&#8221;, &#8220;show&#8221;, 参数含义同 <a class="reference internal" href="../../core/anim/index.html#anim.Anim" title="anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt></a> .</p>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">1.1.6 中的 waterfall, 动画效果只能用 <tt class="docutils literal"><span class="pre">fadeIn</span></tt>.</p>
+</div>
 </dd></dl>
 
 <dl class="data">
@@ -215,6 +228,27 @@
 <dd><div class="line-block">
 <div class="line"><strong>destroy</strong> ()</div>
 <div class="line">销毁当前对象</div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="events-detail">
+<h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="waterfall.adjustComplete">
+<tt class="descclassname">waterfall.</tt><tt class="descname">adjustComplete</tt><big>(</big><big>)</big><a class="headerlink" href="#waterfall.adjustComplete" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>adjustComplete</strong> ()</div>
+<div class="line">调整布局之后触发, 当页面初始时有数据块, 或改变窗口大小, 都会在调用 adjust 之后触发, 相当于 adjust 的 callback;</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="waterfall.addComplete">
+<tt class="descclassname">waterfall.</tt><tt class="descname">addComplete</tt><big>(</big><big>)</big><a class="headerlink" href="#waterfall.addComplete" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>addComplete</strong> ()</div>
+<div class="line">添加完数据块到容器之后触发, 针对于动态加载;</div>
 </div>
 </dd></dl>
 
