@@ -15,5 +15,5 @@ Methods
 
 .. method:: NodeList.slideToggle
 
-    | NodeList **slideToggle** ( [ speed, callback ] )
+    | NodeList **slideToggle** ( [ speed, callback, easing ] )
     | 当前节点列表元素为显示时, 切换显示或隐藏, 且动画效果为滑动展开\折叠. 参数同 :meth:`toggle`

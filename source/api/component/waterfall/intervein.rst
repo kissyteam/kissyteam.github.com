@@ -53,7 +53,7 @@ Config Attributes Detail
 
 .. data:: effect
 
-    {String} - 各数据块展示时的动画效果, 默认为 "fadeIn", 可取: "fadeIn", "slideDown", "show"
+    {Object} - 各数据块展示时的动画效果, 默认为 { effect:"fadeIn", duration:1 }, 可取: "fadeIn", "slideDown", "show", 参数含义同 :class:`~anim.Anim` .
 
 .. data:: colWidth
 

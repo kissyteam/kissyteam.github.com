@@ -16,12 +16,13 @@ Methods
 
 .. method:: NodeList.fadeOut
 
-    | NodeList **fadeOut** ( [ speed = 1, callback ] )
+    | NodeList **fadeOut** ( [ speed = 1, callback, easing ] )
     | 当前节点列表元素以渐隐效果隐藏
         
-    :param number speed: 单位秒, 动画持续时间, 不设置无动画
-    :param function callback: 每个动画结束后回调函数
-    :rtype: NodeList    
+    :param Number speed: 单位秒, 动画持续时间, 不设置无动画
+    :param Function callback: 每个动画结束后回调函数
+    :param String easing: 动画平滑函数, 同 :class:`~anim.Anim`
+    :rtype: NodeList
     
     .. note::
 
