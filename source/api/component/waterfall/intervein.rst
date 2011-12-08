@@ -64,7 +64,7 @@ Config Attributes Detail
 
     .. caution::
 
-        1.1.6 中的 waterfall, 动画效果只能用 ``fadeIn``.
+        目前 waterfall 的动画效果只能用 ``fadeIn``, 其他赞不支持!
         
 .. data:: colWidth
 
