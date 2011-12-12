@@ -94,7 +94,43 @@ KISSY 1.2 升级指南
         
         .. code-block:: html
         
-            <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/grids-min.css" />                      
+            <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/grids-min.css" />
+            
+doc
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+
+#. [+] 使用 sphinx 重新编写          
+            
+seed 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [+] KISSY.param/unparam 增加数组值的处理选择
+
+    详见： http://docs.kissyui.com/docs/html/api/seed/lang/param.html
+           http://docs.kissyui.com/docs/html/api/seed/lang/unparam.html
+           
+#. [+] KISSY.getScript 支持 css 载入后才调用回调
+
+    详见： http://docs.kissyui.com/docs/html/api/seed/loader/getScript.html
+    
+#. [+] 增加 KISSY.throttle/buffer/stamp/every/some/filter/map/bind/escapeHTML/unEscapeHTML/startsWidth/endsWidth/parseXML 等工具方法
+
+    详见： http://docs.kissyui.com/docs/html/api/seed/lang/index.html                 
+    
+loader
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [+] 重构后的 loader ，支持 commonjs amd 形式的模块化开发以及自有的包机制
+                                        
+    详见 add : http://docs.kissyui.com/docs/html/api/seed/loader/add.ver1.2.html
+         use : http://docs.kissyui.com/docs/html/api/seed/loader/use.html
+         demo : http://docs.kissyui.com/docs/html/demo/seed/loader/index.html
+         
+#. [!] 使用 kissy 1.2 loader 载入的模块代码需要使用 KISSY.add 包裹起来 
+
+#. [+] 增加自动依赖打包工具 KISSY Module Compiler
+
+    详见： http://docs.kissyui.com/docs/html/tools/module-compiler/index.html                                            
        
 dom 模块
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~       
@@ -273,4 +309,111 @@ node 模块
 base 模块
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-                                                   
+#. [+] 增加 validator 验证配置，可在 set 时进行统一参数检查
+
+    详见： http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.addAttr
+
+#. [+] set/get 支持 "x.y.z" 子属性设置，要求 x 为原生简单对象 : {y:{z:xx}}
+
+    详见： http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.set
+           http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.get
+           
+#. [+] set 返回值为 false 代表其中一个属性的 validator 验证函数失败
+
+    详见： http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.set            
+
+dd 模块
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [+] 增加 Droppable
+
+    详见：http://docs.kissyui.com/docs/html/api/component/dd/droppable.html
+    demo: http://docs.kissyui.com/docs/html/demo/component/dd/demo2.html
+    
+#. [+]  增加 DraggableDelegate ，拖委托。
+
+    详见：http://docs.kissyui.com/docs/html/api/component/dd/draggable-delegate.html
+    demo: http://docs.kissyui.com/docs/html/demo/component/dd/demo3.html
+    
+#. [+] 增加 DroppableDelegate ，放委托。
+
+    详见： http://docs.kissyui.com/docs/html/api/component/dd/droppable-delegate.html
+    demo:  http://docs.kissyui.com/docs/html/demo/component/dd/demo4.html
+    
+#. [+] 增加代理 Proxy，自动滚动监控 Scroll
+
+    详见：  http://docs.kissyui.com/docs/html/api/component/dd/proxy.html
+            http://docs.kissyui.com/docs/html/api/component/dd/scroll.html                  
+    demo:  http://docs.kissyui.com/docs/html/demo/component/dd/demo4.html
+    
+    
+suggest 模块
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [+] 增加配置项 dataType, 标志数据来源, 支持动态且缓存, 动态但不缓存, 静态数据
+
+    详见： http://docs.kissyui.com/docs/html/api/component/suggest/index.html#suggest.dataType
+    
+    
+switchable 模块
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     
+
+#. [+] 支持 aria 以及键盘操作，需要配置 aria
+
+    详见： http://docs.kissyui.com/docs/html/api/component/switchable/switchable.html#switchable.Switchable.config.aria
+    
+    
+overlay 模块
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [+] Overlay 增加 closeAction 配置，可以配置点击关闭对应隐藏还是销毁
+
+    详见： http://docs.kissyui.com/docs/html/api/component/overlay/overlay.html#overlay.Overlay.config.closeAction
+    
+#. [+] closable 上移到 Overlay.Overlay ，允许简单弹层配置是否关闭
+
+    详见： http://docs.kissyui.com/docs/html/api/component/overlay/overlay.html#overlay.Overlay.config.closable
+    
+#. [+] Dialog 支持 aria 配置
+
+    详见： http://docs.kissyui.com/docs/html/api/component/overlay/dialog.html#overlay.Dialog.config.aria
+    
+#. [+] Overlay 增加 resize 配置
+
+    详见： http://docs.kissyui.com/docs/html/api/component/overlay/overlay.html#overlay.Overlay.config.resize 
+    
+
+calendar
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [!] use("calendar") 不会会默认加载基础css，需要的话可以静态引入或者use("calendar,calendar/assets/base.css")
+    
+    
+    
+新增模块
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [+] 增加 button 模块
+
+    详见： http://docs.kissyui.com/docs/html/api/component/button
+    demo:  http://docs.kissyui.com/docs/html/demo/component/button/index.html
+    
+#. [+] 增加 tree 模块
+
+    详见： http://docs.kissyui.com/docs/html/api/component/tree
+    demo:  http://docs.kissyui.com/docs/html/demo/component/tree/index.html
+    
+#. [+] 增加 menu 模块
+
+    详见： http://docs.kissyui.com/docs/html/api/component/menu
+    demo:  http://docs.kissyui.com/docs/html/demo/component/menu/index.html 
+    
+#. [+] 增加 waterfall 模块
+
+    详见： http://docs.kissyui.com/docs/html/api/component/waterfall
+    demo:  http://docs.kissyui.com/docs/html/demo/component/waterfall/index.html
+    
+#. [+] 增加 mvc 模块
+
+    详见： http://docs.kissyui.com/docs/html/api/component/mvc
+    demo:  http://docs.kissyui.com/kissy/src/mvc/demo.html                                                                
