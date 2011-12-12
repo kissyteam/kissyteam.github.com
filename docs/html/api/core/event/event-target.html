@@ -112,6 +112,9 @@
 <li><a class="reference internal" href="#event.Target.fire" title="event.Target.fire"><tt class="xref py py-meth docutils literal"><span class="pre">fire()</span></tt></a></li>
 <li><a class="reference internal" href="#event.Target.on" title="event.Target.on"><tt class="xref py py-meth docutils literal"><span class="pre">on()</span></tt></a></li>
 <li><a class="reference internal" href="#event.Target.detach" title="event.Target.detach"><tt class="xref py py-meth docutils literal"><span class="pre">detach()</span></tt></a></li>
+<li><a class="reference internal" href="#event.Target.publish" title="event.Target.publish"><tt class="xref py py-meth docutils literal"><span class="pre">publish()</span></tt></a></li>
+<li><a class="reference internal" href="#event.Target.addTarget" title="event.Target.addTarget"><tt class="xref py py-meth docutils literal"><span class="pre">addTarget()</span></tt></a></li>
+<li><a class="reference internal" href="#event.Target.removeTarget" title="event.Target.removeTarget"><tt class="xref py py-meth docutils literal"><span class="pre">removeTarget()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -150,6 +153,77 @@
 <tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><p class="first last">如果其中一个事件处理器返回 false , 则返回 false, 否则返回最后一个事件处理器的返回值</p>
 </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<dl class="method">
+<dt id="event.Target.publish">
+<tt class="descclassname">Target.</tt><tt class="descname">publish</tt><big>(</big><big>)</big><a class="headerlink" href="#event.Target.publish" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>publish</strong> ( type , cfg)</div>
+<div class="line">配置自定义事件的一些特有信息</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>type</strong> (<em>string</em>) &#8211; 事件类型字符串</li>
+<li><strong>cfg</strong> (<em>object</em>) &#8211; <p>事件的具体配置对象，目前包括</p>
+<dl class="attribute">
+<dt id="event.Target.publish.cfg.bubbles">
+<tt class="descclassname">publish.cfg.</tt><tt class="descname">bubbles</tt><a class="headerlink" href="#event.Target.publish.cfg.bubbles" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型 boolean. 是否支持冒泡。</p>
+</dd></dl>
+
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<dl class="method">
+<dt id="event.Target.addTarget">
+<tt class="descclassname">Target.</tt><tt class="descname">addTarget</tt><big>(</big><big>)</big><a class="headerlink" href="#event.Target.addTarget" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>addTarget</strong> ( target )</div>
+<div class="line">添加冒泡事件源对象</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>target</strong> (<em>EventTarget</em>) &#8211; 事件往上冒泡的事件源</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="versionadded">
+<span class="versionmodified">New in version 1.2.</span></p>
+<dl class="method">
+<dt id="event.Target.removeTarget">
+<tt class="descclassname">Target.</tt><tt class="descname">removeTarget</tt><big>(</big><big>)</big><a class="headerlink" href="#event.Target.removeTarget" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>addTarget</strong> ( target )</div>
+<div class="line">删除冒泡事件源对象</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>target</strong> (<em>EventTarget</em>) &#8211; 事件往上冒泡的事件源</td>
 </tr>
 </tbody>
 </table>

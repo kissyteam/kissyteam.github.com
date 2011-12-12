@@ -83,6 +83,220 @@
 					
   <div class="section" id="kissy-1-2">
 <h1>KISSY 1.2 升级指南<a class="headerlink" href="#kissy-1-2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>记号含义<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>[+] this is a new feature</li>
+<li>[*] this is an improvement</li>
+<li>[!] this is a change</li>
+<li>[x] this is a bug fix</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>1.1.6 -&gt; 1.2.0 改动点<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>代码静态引用位置<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">[!] 静态 combo 引用组件代码时注意：组件代码层次减低。例如 switchable/switchable-pkg.js -&gt; switchable.js</p>
+<blockquote>
+<div><p>1.1.6：</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;http://a.tbcdn.cn/s/kissy/1.1.6/??switchable/switchable-pkg-min.js,overlay/overlay-pkg-min.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>1.2.0：</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;http://a.tbcdn.cn/s/kissy/1.2.0/??switchable-min.js,overlay-min.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">[!] css 引入位置改变</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">reset</p>
+<blockquote>
+<div><p>1.1.6</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.1.6/cssreset/reset-min.css&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>1.2.0</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/css/reset-min.css&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">base</p>
+<blockquote>
+<div><p>1.1.6</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.1.6/cssbase/base-min.css&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>1.2.0</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/css/base-min.css&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">common</p>
+<blockquote>
+<div><p>1.1.6</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.1.6/csscommon/common-min.css&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>1.2.0</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/css/common-min.css&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">grids</p>
+<blockquote>
+<div><p>1.1.6</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.1.6/cssgrids/grids-min.css&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>1.2.0</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/css/grids-min.css&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="dom">
+<h3>dom 模块<a class="headerlink" href="#dom" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">[!] attr 方法对于 boolean 类型的属性返回值改变：例如 checked=&#8217;checked&#8217; 返回 &#8220;checked&#8221; 否则返回 undefined。</p>
+<blockquote>
+<div><div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&#39;checkbox&#39;</span> <span class="na">checked</span> <span class="na">id=</span><span class="s">&#39;t&#39;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+   <span class="nx">KISSY</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#t&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">)</span> <span class="c1">// =&gt; &quot;checked&quot;</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/dom/attr.html">http://docs.kissyui.com/docs/html/api/core/dom/attr.html</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] 增加 prop 方法，对于 boolean 类型的属性返回。例如 checked=&#8217;checked&#8217; 返回 prop(&#8216;checked&#8217;)==true</p>
+<blockquote>
+<div><div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&#39;checkbox&#39;</span> <span class="na">checked</span> <span class="na">id=</span><span class="s">&#39;t&#39;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+   <span class="nx">KISSY</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#t&#39;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">)</span> <span class="c1">// =&gt; true</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/dom/prop.html">http://docs.kissyui.com/docs/html/api/core/dom/prop.html</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[*] DOM.query(selector,context) 中 context 的限制同 selector，可以为选择器或Array&lt;HTMLElement&gt;或HTMLNodeList</p>
+<blockquote>
+<div><div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;t&#39;</span><span class="nt">&gt;&lt;span</span> <span class="na">id=</span><span class="s">&#39;s1&#39;</span><span class="nt">&gt;&lt;/span&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;t&#39;</span><span class="nt">&gt;&lt;span</span> <span class="na">id=</span><span class="s">&#39;s2&#39;</span><span class="nt">&gt;&lt;/span&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+   <span class="nx">KISSY</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span><span class="s2">&quot;.t&quot;</span><span class="p">);</span> <span class="c1">// =&gt; [s1,s2]</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/dom/query.html">http://docs.kissyui.com/docs/html/api/core/dom/query.html</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[!] DOM.css 优先取计算值而不是行内样式值</p>
+<blockquote>
+<div><div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&#39;font-size:14em&#39;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;font-size&quot;</span><span class="p">)</span>  <span class="c1">// =&gt; &quot;10px&quot;  !== &quot;14em&quot;</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/dom/css.html">http://docs.kissyui.com/docs/html/api/core/dom/css.html</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] 增加 DOM.clone : 修复 ie 自身 bug 以及允许克隆事件</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/dom/clone.html">http://docs.kissyui.com/docs/html/api/core/dom/clone.html</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[!] DOM.remove 会清除当前节点以及其子孙节点上已经注册的事件</p>
+</li>
+<li><p class="first">[+] 增加 DOM.inner/outer|Width/Height</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/dom/innerWidth.html">http://docs.kissyui.com/docs/html/api/core/dom/innerWidth.html</a></dt>
+<dd><p class="first last"><a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/dom/innerHeight.html">http://docs.kissyui.com/docs/html/api/core/dom/innerHeight.html</a>
+<a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/dom/outerWidth.html">http://docs.kissyui.com/docs/html/api/core/dom/outerWidth.html</a>
+<a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/dom/outerHeight.html">http://docs.kissyui.com/docs/html/api/core/dom/outerHeight.html</a></p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p class="first">[!] 调用 DOM.html(htmlstr,true) 时 htmlStr 中的脚本会在调用该函数后立即执行。</p>
+<blockquote>
+<div><p>请避免在脚本内部引用尚没添加到dom的根节点:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">DOM</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s2">&quot;&lt;div&gt;&quot;</span><span class="p">),</span>
+<span class="s2">&quot;&lt;div id=&#39;t&#39;&gt;&lt;script&gt;alert(document.getElementById(&#39;t&#39;));&lt;/script&gt;&lt;/div&gt;&quot;</span><span class="p">,</span> <span class="c1">// =&gt; null</span>
+<span class="kc">true</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/dom/html.html">http://docs.kissyui.com/docs/html/api/core/dom/html.html</a></p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="event">
+<h3>event 模块<a class="headerlink" href="#event" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">[+] 增加 delegate/undelegate 方法</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/event/delegate.html">http://docs.kissyui.com/docs/html/api/core/event/delegate.html</a></dt>
+<dd><p class="first last"><a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/event/undelegate.html">http://docs.kissyui.com/docs/html/api/core/event/undelegate.html</a></p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p class="first">[+] 增加针对 dom 节点的 fire 方法</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/event/fire.html">http://docs.kissyui.com/docs/html/api/core/event/fire.html</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] 增加 submit/change 事件在 ie 下的冒泡兼容处理</p>
+</li>
+<li><p class="first">[+] 增加模拟 valuechange 事件</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/event/valuechange.html">http://docs.kissyui.com/docs/html/api/core/event/valuechange.html</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] 增加 hashchange 事件在 ie 下的兼容处理</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/event/hashchange.html">http://docs.kissyui.com/docs/html/api/core/event/hashchange.html</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[!] 修正 focusin/out 在非 ie 下的触发顺序：子元素先，父元素后</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>详见：  <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/event/focusin.html">http://docs.kissyui.com/docs/html/api/core/event/focusin.html</a></dt>
+<dd><p class="first last"><a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/event/focusout.html">http://docs.kissyui.com/docs/html/api/core/event/focusout.html</a></p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p class="first">[!] 无论是通过 Event.on 还是 S.one(&#8220;#xx&#8221;).on，回调 event.target 以及 event.relatedTarget 都为原生节点。</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/event/on.html">http://docs.kissyui.com/docs/html/api/core/event/on.html</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[!] 无论是通过 Event.on 还是 S.one(&#8220;#xx&#8221;).on，如果不指定 scope 回调函数中 this 都指向原生 dom 节点。</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/event/on.html">http://docs.kissyui.com/docs/html/api/core/event/on.html</a></p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
 </div>
 
 

@@ -1,6 +1,199 @@
-﻿
-
-KISSY 1.2 升级指南
+﻿KISSY 1.2 升级指南
 =========================================
 
 
+记号含义
+------------------------------------
+
+ * [+] this is a new feature
+ * [*] this is an improvement
+ * [!] this is a change
+ * [x] this is a bug fix
+ 
+ 
+1.1.6 -> 1.2.0 改动点
+-------------------------------------
+
+代码静态引用位置
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [!] 静态 combo 引用组件代码时注意：组件代码层次减低。例如 switchable/switchable-pkg.js -> switchable.js
+
+    1.1.6：
+    
+    .. code-block:: html
+    
+        <script src='http://a.tbcdn.cn/s/kissy/1.1.6/??switchable/switchable-pkg-min.js,overlay/overlay-pkg-min.js'></script>    
+
+    1.2.0：
+    
+    .. code-block:: html
+    
+        <script src='http://a.tbcdn.cn/s/kissy/1.2.0/??switchable-min.js,overlay-min.js'></script>
+        
+#. [!] css 引入位置改变
+
+    #. reset
+
+        1.1.6
+        
+        .. code-block:: html
+        
+            <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.1.6/cssreset/reset-min.css" />
+            
+        1.2.0    
+        
+        .. code-block:: html
+        
+            <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset-min.css" />
+    
+    #. base
+        
+        1.1.6
+        
+        .. code-block:: html
+        
+            <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.1.6/cssbase/base-min.css" />
+            
+        1.2.0    
+        
+        .. code-block:: html
+        
+            <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/base-min.css" />
+    
+    #. common
+        
+        1.1.6
+        
+        .. code-block:: html
+        
+            <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.1.6/csscommon/common-min.css" />
+            
+        1.2.0    
+        
+        .. code-block:: html
+        
+            <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/common-min.css" />     
+    
+    #. grids
+        
+        1.1.6
+        
+        .. code-block:: html
+        
+            <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.1.6/cssgrids/grids-min.css" />
+            
+        1.2.0    
+        
+        .. code-block:: html
+        
+            <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/grids-min.css" />                      
+       
+dom 模块
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~       
+        
+#. [!] attr 方法对于 boolean 类型的属性返回值改变：例如 checked='checked' 返回 "checked" 否则返回 undefined。
+
+    .. code-block:: html
+    
+        <input type='checkbox' checked id='t'/>        
+        <script>
+           KISSY.one('#t').attr("checked") // => "checked"
+        </script>
+        
+    详见： http://docs.kissyui.com/docs/html/api/core/dom/attr.html
+
+#. [+] 增加 prop 方法，对于 boolean 类型的属性返回。例如 checked='checked' 返回 prop('checked')==true
+
+    .. code-block:: html
+    
+        <input type='checkbox' checked id='t'/>        
+        <script>
+           KISSY.one('#t').prop("checked") // => true
+        </script>
+        
+    详见： http://docs.kissyui.com/docs/html/api/core/dom/prop.html
+    
+#. [*] DOM.query(selector,context) 中 context 的限制同 selector，可以为选择器或Array<HTMLElement>或HTMLNodeList
+
+    .. code-block:: html
+    
+        <div class='t'><span id='s1'></span></div>  
+        <div class='t'><span id='s2'></span></div>  
+        <script>
+           KISSY.DOM.query("span",".t"); // => [s1,s2]
+        </script>
+        
+    详见： http://docs.kissyui.com/docs/html/api/core/dom/query.html
+    
+#. [!] DOM.css 优先取计算值而不是行内样式值
+
+    .. code-block:: html
+    
+        <div style='font-size:14em'></div>
+        <script>
+            KISSY.DOM.css("font-size")  // => "10px"  !== "14em"
+        </script>
+        
+    详见： http://docs.kissyui.com/docs/html/api/core/dom/css.html
+    
+#. [+] 增加 DOM.clone : 修复 ie 自身 bug 以及允许克隆事件 
+
+    详见： http://docs.kissyui.com/docs/html/api/core/dom/clone.html
+    
+#. [!] DOM.remove 会清除当前节点以及其子孙节点上已经注册的事件
+
+#. [+] 增加 DOM.inner/outer|Width/Height
+
+    详见： http://docs.kissyui.com/docs/html/api/core/dom/innerWidth.html
+           http://docs.kissyui.com/docs/html/api/core/dom/innerHeight.html
+           http://docs.kissyui.com/docs/html/api/core/dom/outerWidth.html                              
+           http://docs.kissyui.com/docs/html/api/core/dom/outerHeight.html
+           
+#. [!] 调用 DOM.html(htmlstr,true) 时 htmlStr 中的脚本会在调用该函数后立即执行。
+
+    请避免在脚本内部引用尚没添加到dom的根节点:
+    
+    .. code-block:: javascript
+    
+        DOM.html(DOM.create("<div>"),
+        "<div id='t'><script>alert(document.getElementById('t'));</script></div>", // => null
+        true);
+        
+    详见： http://docs.kissyui.com/docs/html/api/core/dom/html.html                     
+        
+
+event 模块
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [+] 增加 delegate/undelegate 方法
+
+    详见： http://docs.kissyui.com/docs/html/api/core/event/delegate.html
+           http://docs.kissyui.com/docs/html/api/core/event/undelegate.html
+           
+#. [+] 增加针对 dom 节点的 fire 方法
+
+    详见： http://docs.kissyui.com/docs/html/api/core/event/fire.html
+    
+#. [+] 增加 submit/change 事件在 ie 下的冒泡兼容处理
+
+#. [+] 增加模拟 valuechange 事件
+
+    详见： http://docs.kissyui.com/docs/html/api/core/event/valuechange.html
+    
+#. [+] 增加 hashchange 事件在 ie 下的兼容处理
+
+    详见： http://docs.kissyui.com/docs/html/api/core/event/hashchange.html
+    
+#. [!] 修正 focusin/out 在非 ie 下的触发顺序：子元素先，父元素后
+
+    详见：  http://docs.kissyui.com/docs/html/api/core/event/focusin.html
+            http://docs.kissyui.com/docs/html/api/core/event/focusout.html
+            
+#. [!] 无论是通过 Event.on 还是 S.one("#xx").on，回调 event.target 以及 event.relatedTarget 都为原生节点。
+
+    详见： http://docs.kissyui.com/docs/html/api/core/event/on.html
+    
+#. [!] 无论是通过 Event.on 还是 S.one("#xx").on，如果不指定 scope 回调函数中 this 都指向原生 dom 节点。
+
+    详见： http://docs.kissyui.com/docs/html/api/core/event/on.html                                    
