@@ -76,7 +76,7 @@ Methods
     .. code-block:: javascript
 
         // tc/mods/mod1 依赖于 tc/mods/mod2
-        KISSY.add("tc/mods/mod1",function(){},requires:['./mod2']);
+        KISSY.add("tc/mods/mod1",function(){},{requires:['./mod2']});
 
 
 
