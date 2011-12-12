@@ -81,7 +81,11 @@
     </ul>
 </div>
 					
-  <div class="section" id="kissy-1-2">
+  <style>
+    li {
+        margin-top:5px;
+    }
+</style><div class="section" id="kissy-1-2">
 <h1>KISSY 1.2 升级指南<a class="headerlink" href="#kissy-1-2" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2>记号含义<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
@@ -90,7 +94,6 @@
 <li>[+] this is a new feature</li>
 <li>[*] this is an improvement</li>
 <li>[!] this is a change</li>
-<li>[x] this is a bug fix</li>
 </ul>
 </div></blockquote>
 </div>
@@ -292,6 +295,89 @@
 <li><p class="first">[!] 无论是通过 Event.on 还是 S.one(&#8220;#xx&#8221;).on，如果不指定 scope 回调函数中 this 都指向原生 dom 节点。</p>
 <blockquote>
 <div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/event/on.html">http://docs.kissyui.com/docs/html/api/core/event/on.html</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] 自定义事件增加冒泡支持</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/event/event-target.html#event.Target.publish">http://docs.kissyui.com/docs/html/api/core/event/event-target.html#event.Target.publish</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] 兼容 mousewheel 事件</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/event/mousewheel.html">http://docs.kissyui.com/docs/html/api/core/event/mousewheel.html</a></p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="ajax-io">
+<h3>ajax(io) 模块<a class="headerlink" href="#ajax-io" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">[+] S.io 返回值对象，包含 abort 方法，用于停止请求</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/ajax/xhr.html#io.abort">http://docs.kissyui.com/docs/html/api/core/ajax/xhr.html#io.abort</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[!] 请求的响应头如果设置了 content-type 为 json 或 xml，回调(success,complete)的第一个参数自动为该格式，不需要手动 parse</p>
+</li>
+<li><p class="first">[+] 增加 S.io.upload 方法，用于无刷新文件上传</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/ajax/upload.html#io.upload">http://docs.kissyui.com/docs/html/api/core/ajax/upload.html#io.upload</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] S.io 增加 form 配置，可直接序列化 form 并发送 ajax 请求</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/ajax/io.html#io.cfg.form">http://docs.kissyui.com/docs/html/api/core/ajax/io.html#io.cfg.form</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] 增加 S.io.serialize 方法，只用于序列化表单或表单元素</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/ajax/serialize.html#io.serialize">http://docs.kissyui.com/docs/html/api/core/ajax/serialize.html#io.serialize</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] S.io 增加 xdr 配置用来做透明跨域处理，注意完全跨域时 ie6,7 将使用 flash。</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/ajax/io.html#io.cfg.xdr">http://docs.kissyui.com/docs/html/api/core/ajax/io.html#io.cfg.xdr</a></p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="anim">
+<h3>anim 模块<a class="headerlink" href="#anim" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">[+] 支持对 window 的 scrollTop/scrollLeft 进行动画</p>
+</li>
+<li><p class="first">[+] 增加队列（queue）配置</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/anim/#anim.Anim.config.queue">http://docs.kissyui.com/docs/html/api/core/anim/#anim.Anim.config.queue</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[!] 对同一个元素的连续动画调用默认做排队处理</p>
+</li>
+</ol>
+</div>
+<div class="section" id="node">
+<h3>node 模块<a class="headerlink" href="#node" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">[+] node/nodelist 具有 dom，event，anim 模块的全部对应功能。</p>
+</li>
+<li><p class="first">[+] 增加 stop 方法，可停止由 animate 方法引起的动画</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/anim/#anim.Anim.prototype.stop">http://docs.kissyui.com/docs/html/api/core/anim/#anim.Anim.prototype.stop</a></p>
+</div></blockquote>
+</li>
+<li><dl class="first docutils">
+<dt>[*] NodeList.prototype.all(selector) 增强为取得当前节点列表的所有子孙中符合 selector 的节点集合（经过去重和根据 DOM 树前序遍历顺序进行排序）</dt>
+<dd><p class="first last">详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/node/instance_all.html">http://docs.kissyui.com/docs/html/api/core/node/instance_all.html</a></p>
+</dd>
+</dl>
+</li>
+<li><p class="first">[+] 增加 slideToggle/fadeToggle</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/node/slideToggle.html">http://docs.kissyui.com/docs/html/api/core/node/slideToggle.html</a></dt>
+<dd><p class="first last"><a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/node/fadeToggle.html">http://docs.kissyui.com/docs/html/api/core/node/fadeToggle.html</a></p>
+</dd>
+</dl>
 </div></blockquote>
 </li>
 </ol>
