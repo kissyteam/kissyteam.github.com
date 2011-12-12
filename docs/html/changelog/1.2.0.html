@@ -88,7 +88,7 @@
 </style><div class="section" id="kissy-1-2">
 <h1>KISSY 1.2 升级指南<a class="headerlink" href="#kissy-1-2" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>记号含义<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>标记含义<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li>[+] this is a new feature</li>
@@ -166,6 +166,58 @@
 </div></blockquote>
 </li>
 </ol>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="doc">
+<h3>doc<a class="headerlink" href="#doc" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>[+] 使用 sphinx 重新编写</li>
+</ol>
+</div>
+<div class="section" id="seed">
+<h3>seed<a class="headerlink" href="#seed" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">[+] KISSY.param/unparam 增加数组值的处理选择</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/seed/lang/param.html">http://docs.kissyui.com/docs/html/api/seed/lang/param.html</a></dt>
+<dd><p class="first last"><a class="reference external" href="http://docs.kissyui.com/docs/html/api/seed/lang/unparam.html">http://docs.kissyui.com/docs/html/api/seed/lang/unparam.html</a></p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p class="first">[+] KISSY.getScript 支持 css 载入后才调用回调</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/seed/loader/getScript.html">http://docs.kissyui.com/docs/html/api/seed/loader/getScript.html</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] 增加 KISSY.throttle/buffer/stamp/every/some/filter/map/bind/escapeHTML/unEscapeHTML/startsWidth/endsWidth/parseXML 等工具方法</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/seed/lang/index.html">http://docs.kissyui.com/docs/html/api/seed/lang/index.html</a></p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="loader">
+<h3>loader<a class="headerlink" href="#loader" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">[+] 重构后的 loader ，支持 commonjs amd 形式的模块化开发以及自有的包机制</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>详见 add <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference external" href="http://docs.kissyui.com/docs/html/api/seed/loader/add.ver1.2.html">http://docs.kissyui.com/docs/html/api/seed/loader/add.ver1.2.html</a></span></dt>
+<dd><p class="first last">use : <a class="reference external" href="http://docs.kissyui.com/docs/html/api/seed/loader/use.html">http://docs.kissyui.com/docs/html/api/seed/loader/use.html</a>
+demo : <a class="reference external" href="http://docs.kissyui.com/docs/html/demo/seed/loader/index.html">http://docs.kissyui.com/docs/html/demo/seed/loader/index.html</a></p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p class="first">[!] 使用 kissy 1.2 loader 载入的模块代码需要使用 KISSY.add 包裹起来</p>
+</li>
+<li><p class="first">[+] 增加自动依赖打包工具 KISSY Module Compiler</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/tools/module-compiler/index.html">http://docs.kissyui.com/docs/html/tools/module-compiler/index.html</a></p>
 </div></blockquote>
 </li>
 </ol>
@@ -352,6 +404,9 @@
 </div></blockquote>
 </li>
 <li><p class="first">[!] 对同一个元素的连续动画调用默认做排队处理</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/demo/core/anim/demo6.html">http://docs.kissyui.com/docs/html/demo/core/anim/demo6.html</a></p>
+</div></blockquote>
 </li>
 </ol>
 </div>
@@ -378,6 +433,149 @@
 <dd><p class="first last"><a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/node/fadeToggle.html">http://docs.kissyui.com/docs/html/api/core/node/fadeToggle.html</a></p>
 </dd>
 </dl>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="base">
+<h3>base 模块<a class="headerlink" href="#base" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">[+] 增加 validator 验证配置，可在 set 时进行统一参数检查</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.addAttr">http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.addAttr</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] set/get 支持 &#8220;x.y.z&#8221; 子属性设置，要求 x 为原生简单对象 : {y:{z:xx}}</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.set">http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.set</a></dt>
+<dd><p class="first last"><a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.get">http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.get</a></p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p class="first">[+] set 返回值为 false 代表其中一个属性的 validator 验证函数失败</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.set">http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.set</a></p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="dd">
+<h3>dd 模块<a class="headerlink" href="#dd" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">[+] 增加 Droppable</p>
+<blockquote>
+<div><p>详见：http://docs.kissyui.com/docs/html/api/component/dd/droppable.html
+demo: <a class="reference external" href="http://docs.kissyui.com/docs/html/demo/component/dd/demo2.html">http://docs.kissyui.com/docs/html/demo/component/dd/demo2.html</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+]  增加 DraggableDelegate ，拖委托。</p>
+<blockquote>
+<div><p>详见：http://docs.kissyui.com/docs/html/api/component/dd/draggable-delegate.html
+demo: <a class="reference external" href="http://docs.kissyui.com/docs/html/demo/component/dd/demo3.html">http://docs.kissyui.com/docs/html/demo/component/dd/demo3.html</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] 增加 DroppableDelegate ，放委托。</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/dd/droppable-delegate.html">http://docs.kissyui.com/docs/html/api/component/dd/droppable-delegate.html</a>
+demo:  <a class="reference external" href="http://docs.kissyui.com/docs/html/demo/component/dd/demo4.html">http://docs.kissyui.com/docs/html/demo/component/dd/demo4.html</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] 增加代理 Proxy，自动滚动监控 Scroll</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>详见：  <a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/dd/proxy.html">http://docs.kissyui.com/docs/html/api/component/dd/proxy.html</a></dt>
+<dd><p class="first last"><a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/dd/scroll.html">http://docs.kissyui.com/docs/html/api/component/dd/scroll.html</a></p>
+</dd>
+</dl>
+<p>demo:  <a class="reference external" href="http://docs.kissyui.com/docs/html/demo/component/dd/demo4.html">http://docs.kissyui.com/docs/html/demo/component/dd/demo4.html</a></p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="suggest">
+<h3>suggest 模块<a class="headerlink" href="#suggest" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">[+] 增加配置项 dataType, 标志数据来源, 支持动态且缓存, 动态但不缓存, 静态数据</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/suggest/index.html#suggest.dataType">http://docs.kissyui.com/docs/html/api/component/suggest/index.html#suggest.dataType</a></p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="switchable">
+<h3>switchable 模块<a class="headerlink" href="#switchable" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">[+] 支持 aria 以及键盘操作，需要配置 aria</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/switchable/switchable.html#switchable.Switchable.config.aria">http://docs.kissyui.com/docs/html/api/component/switchable/switchable.html#switchable.Switchable.config.aria</a></p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="overlay">
+<h3>overlay 模块<a class="headerlink" href="#overlay" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">[+] Overlay 增加 closeAction 配置，可以配置点击关闭对应隐藏还是销毁</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/overlay/overlay.html#overlay.Overlay.config.closeAction">http://docs.kissyui.com/docs/html/api/component/overlay/overlay.html#overlay.Overlay.config.closeAction</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] closable 上移到 Overlay.Overlay ，允许简单弹层配置是否关闭</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/overlay/overlay.html#overlay.Overlay.config.closable">http://docs.kissyui.com/docs/html/api/component/overlay/overlay.html#overlay.Overlay.config.closable</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] Dialog 支持 aria 配置</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/overlay/dialog.html#overlay.Dialog.config.aria">http://docs.kissyui.com/docs/html/api/component/overlay/dialog.html#overlay.Dialog.config.aria</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] Overlay 增加 resize 配置</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/overlay/overlay.html#overlay.Overlay.config.resize">http://docs.kissyui.com/docs/html/api/component/overlay/overlay.html#overlay.Overlay.config.resize</a></p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="calendar">
+<h3>calendar<a class="headerlink" href="#calendar" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>[!] use(&#8220;calendar&#8221;) 不会会默认加载基础css，需要的话可以静态引入或者use(&#8220;calendar,calendar/assets/base.css&#8221;)</li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h3>新增模块<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">[+] 增加 button 模块</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/button">http://docs.kissyui.com/docs/html/api/component/button</a>
+demo:  <a class="reference external" href="http://docs.kissyui.com/docs/html/demo/component/button/index.html">http://docs.kissyui.com/docs/html/demo/component/button/index.html</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] 增加 tree 模块</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/tree">http://docs.kissyui.com/docs/html/api/component/tree</a>
+demo:  <a class="reference external" href="http://docs.kissyui.com/docs/html/demo/component/tree/index.html">http://docs.kissyui.com/docs/html/demo/component/tree/index.html</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] 增加 menu 模块</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/menu">http://docs.kissyui.com/docs/html/api/component/menu</a>
+demo:  <a class="reference external" href="http://docs.kissyui.com/docs/html/demo/component/menu/index.html">http://docs.kissyui.com/docs/html/demo/component/menu/index.html</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] 增加 waterfall 模块</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/waterfall">http://docs.kissyui.com/docs/html/api/component/waterfall</a>
+demo:  <a class="reference external" href="http://docs.kissyui.com/docs/html/demo/component/waterfall/index.html">http://docs.kissyui.com/docs/html/demo/component/waterfall/index.html</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">[+] 增加 mvc 模块</p>
+<blockquote>
+<div><p>详见： <a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/mvc">http://docs.kissyui.com/docs/html/api/component/mvc</a>
+demo:  <a class="reference external" href="http://docs.kissyui.com/kissy/src/mvc/demo.html">http://docs.kissyui.com/kissy/src/mvc/demo.html</a></p>
 </div></blockquote>
 </li>
 </ol>

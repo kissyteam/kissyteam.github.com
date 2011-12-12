@@ -16,5 +16,6 @@
     projguide/index.rst
     workflow/index.rst
     tools/index.rst
+    changelog/1.2.0.rst
 
     
