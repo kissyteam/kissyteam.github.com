@@ -37,7 +37,7 @@ KISSY.ready(function(){
 				content += '<a name="'+item.name+'"></a>';
 				content +=  '<dl class="list">';
 				content +=  '<dt><a href="'+item.href+'">'+item.name+'</a></dt>';
-				content +=  '<dd class="url"><label>¹ÙÍøµØÖ·£º</label>  <a href="#'+item.href+'">'+item.href+'</a></dd>';
+				content +=  '<dd class="url"><label>¹ÙÍøµØÖ·£º</label>  <a href="'+item.href+'">'+item.href+'</a></dd>';
 				content +=  '<dd class="intro"><label>×é¼ş¼ò½é£º</label>  '+item.intro+'</dd>';
 				content +=  '</dl>';
 			})
