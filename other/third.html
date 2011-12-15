@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>推荐</title> 
+	<link rel="stylesheet" href="../../kissy-dpl/base/build/css/reset-min.css"/>
+	<link rel="stylesheet" href="../../kissy-dpl/base/build/css/layout-min.css"/>
+	<link rel="stylesheet" href="src/third.css"/>
+	<link rel="shortcut icon" href="../docs/html/static/favicon.ico" type="image/x-icon" />
+	<script src="http://assets.taobaocdn.com/s/kissy/1.2.0/kissy-min.js"></script>
+	<script src="src/third.js" charset="gbk"></script>
+
+	<base target="_blank" />
+
+	
+</head>
+
+
+
+<body>
+
+<div id="page">
+
+
+	<div id="header">
+		<h1 class="logo"><a alt="KISSY" href="http://kissyui.com/"><img src="http://docs.kissyui.com/docs/html/static/logo.png"/></a></h1> 
+		<p class="sub-title">推荐的组件和工具</p> 
+		<ul class="navigation"> 
+			<li><a href="http://blog.kissyui.com/">博客</a></li> 
+			<li><a href="http://github.com/kissyteam">源码</a></li>
+		</ul> 
+	</div>
+	
+	
+	<div id="content">
+	
+		<ul class="tabs ks-switchable-nav">
+			<li><a href="#" target="_self">三方组件</a>
+			<li><a href="#" target="_self">前端工具</a>
+		</ul>
+	
+		<div class="ks-switchable-content">
+			<div style="display:none">
+				<div class="layout grid-index">
+					<div class="col-main">
+						<div class="main-wrap" id="content-widget">
+							
+							1
+						</div>
+					</div>
+					<div class="col-sub">
+						<div id="nav-widget">
+							<ul class="nav">
+							
+							</ul>			
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div style="display:none">
+				<div class="layout grid-index">
+					<div class="col-main">
+						<div class="main-wrap" id="content-tools">
+
+							
+						</div>
+					</div>
+					<div class="col-sub">
+						<div id="nav-tools">
+							<ul class="nav">
+							
+							</ul>				
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+<div>
+   <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            KISSY.one("#openComment").attr("disabled",true);
+        }else{
+            KISSY.one("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            KISSY.one("#openComment").on("change",function(){
+                window.localStorage.setItem("kissy-commment",KISSY.one("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+	</div>
+	
+	
+	
+	<div id="footer"> &copy; Copyright 2010~2011, KISSY Team. 如果你有更好的组件或者工具推荐，请邮件或者旺旺<a href="mailto:satans17@gmail.com">常胤</a>,谢谢！</div>
+</div>
+
+</body>
+</html>
+
+
+
+
