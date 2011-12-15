@@ -18,7 +18,7 @@ Class
   * :class:`PopupMenu`
   * :class:`FilterMenu`
 
-模拟右键菜单
+另一种菜单按钮
 --------------------------------------------------
 
     .. raw:: html
