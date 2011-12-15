@@ -1,6 +1,6 @@
 .. currentmodule:: menu
 
-Menu 使用示例
+另一种菜单按钮
 ======================================
 
 .. versionadded:: 1.2
@@ -18,22 +18,12 @@ Class
   * :class:`PopupMenu`
   * :class:`FilterMenu`
 
-Demos
------------------------------------------------
+模拟右键菜单
+--------------------------------------------------
 
-    .. toctree::
-       :titlesonly:
+    .. raw:: html
 
-       demo1
-       decorate
-       demo2
-       demo3
-       demo4
-       demo5
-       demo6
-       demo7
+        <iframe width="100%" height="520" class="iframe-demo" src="../../../static/demo/menu/demo7.html"></iframe>
 
-More Demos
--------------------------------------------
-
-`原始测试例子集合 <http://docs.kissyui.com/kissy/src/menu/demo.html>`_ 
+    .. literalinclude:: /_static/demo/menu/assets/demo7.js
+           :language: javascript
