@@ -166,29 +166,18 @@
 </div>
 <p><strong>JS 初始化</strong></p>
 <p>通过容器元素的 id 和相关配置, 构建 <a class="reference internal" href="../../../api/component/switchable/carousel.html#switchable.Carousel" title="switchable.Carousel"><tt class="xref py py-class docutils literal"><span class="pre">Carousel</span></tt></a> 对象 :</p>
-<div class="highlight-javascript"><div class="highlight"><pre> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;event,switchable,datalazyload&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">Carousel</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Carousel</span><span class="p">;</span>
-
-    <span class="nx">S</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">//通过DOM元素新建旋转木马</span>
-        <span class="kd">var</span> <span class="nx">carousel</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Carousel</span><span class="p">(</span><span class="s1">&#39;#demo6&#39;</span><span class="p">,</span> <span class="p">{</span>
-            <span class="nx">effect</span><span class="o">:</span> <span class="s1">&#39;scrollx&#39;</span><span class="p">,</span>
-            <span class="nx">easing</span><span class="o">:</span> <span class="s1">&#39;easeOutStrong&#39;</span><span class="p">,</span>
-            <span class="nx">steps</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
-            <span class="nx">viewSize</span><span class="o">:</span> <span class="p">[</span><span class="mi">680</span><span class="p">],</span>
-            <span class="nx">circular</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="nx">prevBtnCls</span><span class="o">:</span> <span class="s1">&#39;prev&#39;</span><span class="p">,</span>
-            <span class="nx">nextBtnCls</span><span class="o">:</span> <span class="s1">&#39;next&#39;</span><span class="p">,</span>
-            <span class="c1">//autoplay:true,//是否自动切换</span>
-            <span class="nx">disableBtnCls</span><span class="o">:</span> <span class="s1">&#39;disable&#39;</span><span class="p">,</span>
-            <span class="nx">lazyDataType</span><span class="o">:</span> <span class="s1">&#39;img-src&#39;</span>
-        <span class="p">});</span>
-
-        <span class="nx">carousel</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;itemSelected&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;I am selected. src = &#39;</span> <span class="o">+</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">item</span><span class="p">.</span><span class="nx">src</span><span class="p">);</span>
-        <span class="p">});</span>
-
-        <span class="nb">window</span><span class="p">.</span><span class="nx">carousel</span> <span class="o">=</span> <span class="nx">carousel</span><span class="p">;</span>
+<div class="highlight-javascript"><div class="highlight"><pre> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;switchable&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//通过DOM元素新建旋转木马</span>
+    <span class="kd">var</span> <span class="nx">tiny_slide</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Carousel</span><span class="p">(</span><span class="s1">&#39;#J_TinySlide&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">activeIndex</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nx">effect</span><span class="o">:</span> <span class="s1">&#39;scrollx&#39;</span><span class="p">,</span>
+        <span class="nx">easing</span><span class="o">:</span> <span class="s1">&#39;easeOutStrong&#39;</span><span class="p">,</span>
+        <span class="nx">viewSize</span><span class="o">:</span> <span class="p">[</span><span class="mi">274</span><span class="p">],</span>
+        <span class="nx">circular</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">prevBtnCls</span><span class="o">:</span> <span class="s1">&#39;tiny-prev&#39;</span><span class="p">,</span>
+        <span class="nx">nextBtnCls</span><span class="o">:</span> <span class="s1">&#39;tiny-next&#39;</span><span class="p">,</span>
+        <span class="nx">interval</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="nx">lazyDataType</span><span class="o">:</span> <span class="s1">&#39;img-src&#39;</span> <span class="c1">//延迟加载图片？</span>
     <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
