@@ -37,7 +37,7 @@ KISSY.ready(function(){
 				content += '<a name="'+item.name+'"></a>';
 				content +=  '<dl class="list">';
 				content +=  '<dt><a href="'+item.href+'">'+item.name+'</a></dt>';
-				content +=  '<dd class="url"><label>官网地址：</label>  <a href="#'+item.name+'">'+item.href+'</a></dd>';
+				content +=  '<dd class="url"><label>官网地址：</label>  <a href="'+item.href+'">'+item.href+'</a></dd>';
 				content +=  '<dd class="intro"><label>组件简介：</label>  '+item.intro+'</dd>';
 				content +=  '</dl>';
 			})
@@ -108,7 +108,7 @@ KISSY.add("data/widget", function(){
 		"pic": "http://img02.taobaocdn.com/tps/i2/T1tLaFXeNfXXXXXXXX-120-120.png",
 		"href": "http://lesscss.org/ ",
 		"version": "1.1.5",
-		"reason": "像写代码一样写CSS,还有<a href='http://www.lesscss.net/'>LESS中文版</a>",
+		"reason": "像写代码一样写CSS，<font color=red>官网需要翻墙</font>，请直接访问<a href='http://www.lesscss.net/'>LESS中文网</a>",
 		"intro": "LESS 将 CSS 赋予了动态语言的特性，如 变量， 继承， 运算， 函数. LESS 既可以在 客户端 上运行 (支持IE 6+, Webkit, Firefox)，也可一在服务端运行 (借助 Node.js). "
 	}];
 
@@ -122,13 +122,13 @@ KISSY.add("data/widget", function(){
 KISSY.add("data/tools", function(){
 
 	return [{
-			"name": "js-beautify",
-			"title": "代码美化",
+			"name": "KISSY Html Beautifier and Minifier",
+			"title": "KISSY版Html美化压缩工具",
 			"pic": "",
-			"href": "http://jsbeautifier.org/",
+			"href": "http://docs.kissyui.com/kissy/src/htmlparser/demo.html",
 			"version": "",
-			"reason": "能格式化JSON,压缩过的js代码",
-			"intro": "Beautify, unpack or deobfuscate JavaScript, make JSON/JSONP readable, etc.."
+			"reason": "承玉写的",
+			"intro": "KISSY作者承玉写的Html美化和压缩工具"
 		},{
 			"name": "KISSY Module Compiler",
 			"title": "KISSY模块依赖合并工具",
@@ -281,6 +281,14 @@ KISSY.add("data/tools", function(){
 			"version": "",
 			"reason": "",
 			"intro": "IE内存泄漏检测工具。"
+		},{
+			"name": "js-beautify",
+			"title": "代码美化",
+			"pic": "",
+			"href": "http://jsbeautifier.org/",
+			"version": "",
+			"reason": "能格式化JSON,压缩过的js代码",
+			"intro": "Beautify, unpack or deobfuscate JavaScript, make JSON/JSONP readable, etc.."
 		},{
 			"name": "jsfiddle",
 			"title": "存放脚本片段",  

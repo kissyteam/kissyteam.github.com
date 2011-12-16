@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Menu 使用示例 &mdash; KISSY Docs valpha documentation</title>
+<title>另一种菜单按钮 &mdash; KISSY Docs valpha documentation</title>
 
 <link rel="stylesheet" href="../../../static/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -78,19 +78,20 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="demo1.html" title="menu 的基本使用"
+      <a href="../menubutton/index.html" title="MenuButton 使用示例"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../button/demo4.html" title="模拟 alert 对话框"
+      <a href="demo6.html" title="模拟右键菜单"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >All Demos</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">Component</a> &#187; </li> 
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Menu 使用示例</a> &#187; </li> 
     </ul>
 </div>
 					
-  <div class="section" id="menu">
-<h1>Menu 使用示例<a class="headerlink" href="#menu" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="id1">
+<h1>另一种菜单按钮<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p class="versionadded">
 <span class="versionmodified">New in version 1.2.</span></p>
 <div class="line-block">
@@ -110,42 +111,80 @@
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="demos">
-<h2>Demos<a class="headerlink" href="#demos" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>另一种菜单按钮<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="demo1.html">menu 的基本使用</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="decorate.html">从已有 html 生成菜单</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demo2.html">自定义样式及分割线的使用</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demo3.html">删除某个 menu</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demo4.html">过滤菜单的使用</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demo5.html">导航菜单使用示例</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demo6.html">模拟右键菜单</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demo7.html">另一种菜单按钮</a><ul class="simple">
-</ul>
-</li>
-</ul>
+<div><iframe width="100%" height="520" class="iframe-demo" src="../../../static/demo/menu/demo7.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;menu&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Menu</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;#context&quot;</span><span class="p">);</span>
+
+        <span class="kd">var</span> <span class="nx">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">PopupMenu</span><span class="p">({</span>
+            <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span><span class="p">,</span>
+            <span class="nx">width</span><span class="o">:</span> <span class="mi">150</span>
+        <span class="p">});</span>
+
+        <span class="nx">sb</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
+            <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span><span class="p">,</span>
+            <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;&lt;a&gt;我要买&lt;/a&gt;&quot;</span><span class="p">}));</span>
+        <span class="nx">sb</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
+            <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span><span class="p">,</span>
+            <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;&lt;a&gt;我要卖&lt;/a&gt;&quot;</span><span class="p">}));</span>
+
+        <span class="nx">sb</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Separator</span><span class="p">({</span>
+            <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span>
+        <span class="p">}));</span>
+
+
+        <span class="kd">var</span> <span class="nx">sb2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">PopupMenu</span><span class="p">({</span>
+            <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span><span class="p">,</span>
+            <span class="nx">width</span><span class="o">:</span><span class="mi">90</span><span class="p">,</span>
+            <span class="nx">children</span><span class="o">:</span><span class="p">[</span>
+                <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
+                    <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span><span class="p">,</span>
+                    <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;&lt;a&gt;旺铺&lt;/a&gt;&quot;</span><span class="p">})</span>
+            <span class="p">],</span>
+            <span class="c1">// bug elStyle 无效</span>
+            <span class="nx">elStyle</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">color</span><span class="o">:</span><span class="s2">&quot;red&quot;</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+        <span class="nx">sb2</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
+            <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span><span class="p">,</span>
+            <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;&lt;a&gt;装修&lt;/a&gt;&quot;</span><span class="p">}));</span>
+        <span class="kd">var</span> <span class="nx">b2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">SubMenu</span><span class="p">({</span>
+            <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span><span class="p">,</span>
+            <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;&lt;a&gt;卖家中心&lt;/a&gt;&quot;</span><span class="p">,</span>
+            <span class="nx">menu</span><span class="o">:</span><span class="nx">sb2</span>
+        <span class="p">});</span>
+        <span class="nx">sb</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">b2</span><span class="p">);</span>
+
+        <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">SubMenu</span><span class="p">({</span>
+            <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span><span class="p">,</span>
+
+            <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;&lt;span class=&#39;title&#39; style=&#39;width:58px&#39;&gt;淘宝网&lt;/span&gt;&quot;</span><span class="p">,</span>
+            <span class="nx">menuAlign</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">offset</span><span class="o">:</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+                <span class="nx">points</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;bl&#39;</span><span class="p">,</span> <span class="s1">&#39;tl&#39;</span><span class="p">]</span>
+            <span class="p">},</span>
+            <span class="nx">menu</span><span class="o">:</span><span class="nx">sb</span>
+        <span class="p">});</span>
+
+        <span class="kd">var</span> <span class="nx">menu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">({</span>
+            <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span><span class="p">,</span>
+            <span class="nx">width</span><span class="o">:</span><span class="mi">90</span><span class="p">,</span>
+            <span class="nx">elCls</span><span class="o">:</span><span class="s2">&quot;horizonal&quot;</span><span class="p">,</span>
+            <span class="nx">render</span><span class="o">:</span><span class="s1">&#39;#context&#39;</span><span class="p">,</span>
+            <span class="nx">children</span><span class="o">:</span><span class="p">[</span><span class="nx">b</span><span class="p">]</span>
+        <span class="p">});</span>
+
+        <span class="nx">menu</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+        
+        <span class="nx">menu</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">));</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+</pre></div>
 </div>
 </div></blockquote>
-</div>
-<div class="section" id="more-demos">
-<h2>More Demos<a class="headerlink" href="#more-demos" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://docs.kissyui.com/kissy/src/menu/demo.html">原始测试例子集合</a></p>
 </div>
 </div>
 
@@ -163,14 +202,15 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="demo1.html" title="menu 的基本使用"
+      <a href="../menubutton/index.html" title="MenuButton 使用示例"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../button/demo4.html" title="模拟 alert 对话框"
+      <a href="demo6.html" title="模拟右键菜单"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >All Demos</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">Component</a> &#187; </li> 
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Menu 使用示例</a> &#187; </li> 
     </ul>
 </div>
 					<div>
@@ -275,7 +315,7 @@
         <li><a href="../imagezoom/index.html">imagezoom</a></li>
         <li><a href="../overlay/index.html">overlay</a></li>
         <li><a href="../button/index.html">button</a></li>
-        <li><a href="#">menu</a></li>
+        <li><a href="index.html">menu</a></li>
         <li><a href="../menubutton/index.html">menubutton</a></li>
         <li><a href="../tree/index.html">tree</a></li>
         <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
