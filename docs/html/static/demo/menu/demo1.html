@@ -7,12 +7,20 @@
 <link href="assets/menu.css" rel="stylesheet"/>
 <link href="assets/menuitem.css" rel="stylesheet"/>
 <link href="assets/submenu.css" rel="stylesheet"/>
-<script src="http://docs.kissyui.com/kissy/build/kissy.js"></script>
+<script>
+        if(location.host=="localhost"){
+            document.writeln('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+        }else{
+            document.writeln('<script src="http://docs.kissyui.com/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+        }
+   </script>
 </head>
 <body>
 
 <div id="menu_container" style="width: 240px;"></div>
 
+<div id='log' style='border:1px solid red;margin:10px 0;'>
+</div>
 <script src="assets/demo1.js"></script>
 
 </body>

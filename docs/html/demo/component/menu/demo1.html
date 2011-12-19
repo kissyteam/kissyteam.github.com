@@ -119,10 +119,6 @@
     <span class="kd">var</span> <span class="nx">menu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">({</span>
         <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;goog-&#39;</span><span class="p">,</span>
         <span class="nx">render</span><span class="o">:</span> <span class="s1">&#39;#menu_container&#39;</span><span class="p">,</span>
-        <span class="nx">children</span><span class="o">:</span><span class="p">[</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
-            <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;goog-&#39;</span><span class="p">,</span>
-            <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;首页&#39;</span>
-        <span class="p">})],</span>
         <span class="nx">width</span><span class="o">:</span> <span class="mi">200</span>
     <span class="p">}),</span>
         <span class="c1">// 构建一个子菜单</span>
@@ -154,6 +150,10 @@
 
     <span class="c1">// 将子菜单添加到主菜单中</span>
     <span class="nx">menu</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">sb</span><span class="p">);</span>
+    <span class="nx">menu</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
+        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;goog-&#39;</span><span class="p">,</span>
+        <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;首页&#39;</span>
+    <span class="p">}));</span>    
     <span class="c1">// 再添加一个菜单项</span>
     <span class="nx">menu</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
         <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;goog-&#39;</span><span class="p">,</span>
@@ -163,7 +163,10 @@
 
     <span class="c1">// 绑定点击事件</span>
     <span class="nx">menu</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;你选中了&quot;</span> <span class="o">+</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">));</span>
+        <span class="nx">Node</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#log&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;你选中了&quot;</span> <span class="o">+</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">));</span>
+        
+        <span class="c1">// 隐藏整个菜单</span>
+        <span class="nx">menu</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;highlightedItem&quot;</span><span class="p">,</span><span class="kc">null</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>

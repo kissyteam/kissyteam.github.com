@@ -1,4 +1,4 @@
-KISSY.use("menu", function (S, Menu) {
+KISSY.use("node,menu", function (S,Node, Menu) {
         var context = S.all("#context");
 
         var sb = new Menu.PopupMenu({
@@ -59,10 +59,11 @@ KISSY.use("menu", function (S, Menu) {
             render:'#context',
             children:[b]
         });
-
+        
+        
         menu.render();
         
         menu.on("click",function(e){
-            alert(e.target.get("content"));
+            Node.one("#log").html("你选中了" + e.target.get("content"));
         });
     });

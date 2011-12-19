@@ -3,10 +3,6 @@ KISSY.use("node,menu", function(S, Node, Menu) {
     var menu = new Menu({
         prefixCls: 'goog-',
         render: '#menu_container',
-        children:[new Menu.Item({
-            prefixCls: 'goog-',
-            content: '首页'
-        })],
         width: 200
     }),
         // 构建一个子菜单
@@ -38,6 +34,10 @@ KISSY.use("node,menu", function(S, Node, Menu) {
 
     // 将子菜单添加到主菜单中
     menu.addChild(sb);
+    menu.addChild(new Menu.Item({
+        prefixCls: 'goog-',
+        content: '首页'
+    }));    
     // 再添加一个菜单项
     menu.addChild(new Menu.Item({
         prefixCls: 'goog-',
@@ -47,6 +47,9 @@ KISSY.use("node,menu", function(S, Node, Menu) {
 
     // 绑定点击事件
     menu.on("click", function(ev) {
-        alert("你选中了" + ev.target.get("content"));
+        Node.one("#log").html("你选中了" + ev.target.get("content"));
+        
+        // 隐藏整个菜单
+        menu.set("highlightedItem",null);
     });
 });

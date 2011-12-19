@@ -3,15 +3,26 @@
 <head>
 <meta charset="utf-8"/>
 <title>Demo - 模拟菜单按钮</title>
+<link href="../button/assets/common.css" rel="stylesheet"/>
+<link href="assets/menu.css" rel="stylesheet"/>
+<link href="assets/menuitem.css" rel="stylesheet"/>
+<link href="assets/submenu.css" rel="stylesheet"/>
 <link href="assets/nav-mouse.css" rel="stylesheet"/>
-
-<script src="http://docs.kissyui.com/kissy/build/kissy.js"></script>
+<script>
+        if(location.host=="localhost"){
+            document.writeln('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+        }else{
+            document.writeln('<script src="http://docs.kissyui.com/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+        }
+   </script>
 </head>
 <body>
+
 <div id="context" style="width: 500px;margin:50px auto;">
 
 </div>
-
+<div id='log' style='border:1px solid red;margin:10px 0;position:absolute;top:200px;'>
+</div>
 <script src="assets/demo7.js"></script>
 </body>
 </html>
