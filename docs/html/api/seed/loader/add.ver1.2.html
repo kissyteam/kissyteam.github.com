@@ -210,13 +210,44 @@
 </dd></dl>
 
 </li>
+<li><strong>config.map</strong> (<em>Array</em>) &#8211; <p>每个数组项是一个长度为 2 的数组，每个位置的具体格式为</p>
+<dl class="attribute">
+<dt>
+<tt class="descname">位置0</tt></dt>
+<dd><p>类型 RegExp，表示一个正则表达式.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">位置1</tt></dt>
+<dd><p>类型字符串或函数，相当于调用 &#8220;str&#8221;.replace(位置0,位置1)。将请求路径中匹配位置 1 正则表达式匹配的内容替换为位置 2 的字符串值或返回结果.</p>
+</dd></dl>
+
+</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-<p>范例: 包配置</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+</dd></dl>
+
+<div class="section" id="id1">
+<h3>范例：修改请求地址<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><div class="highlight-javascript"><pre>S.config({
+       map:[
+           [/(.+myproject/.+)-min.js(\?[^?]+)?$/, "$1.js$2"]
+       ]
+});</pre>
+</div>
+<p>那么即使载入 kissy-min.js ，对于 myproject 目录下的模块 js 请求也会被替换为不带 -min 的请求，
+该配置也可应用于 <a class="reference external" href="http://lifesinger.wordpress.com/2011/07/24/online-local-debug/">本地调试</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h3>范例: 包配置<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
     <span class="nx">packages</span><span class="o">:</span><span class="p">[</span>
         <span class="p">{</span>
             <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;tc&quot;</span><span class="p">,</span> <span class="c1">// 包名</span>
@@ -252,17 +283,17 @@
 <p class="first admonition-title">Note</p>
 <p class="last">模块名也可以省略, 不过部署阶段需要使用 <a class="reference internal" href="../../../tools/module-compiler/index.html#module-module-compiler" title="module-compiler"><tt class="xref py py-mod docutils literal"><span class="pre">KISSY</span> <span class="pre">Module</span> <span class="pre">Compiler</span></tt></a> .</p>
 </div>
-</dd></dl>
-
+</div></blockquote>
 </div>
-<div class="section" id="id1">
-<h2>压缩模块<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id4">
+<h2>压缩模块<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div>若线上环境使用 <tt class="docutils literal"><span class="pre">kissy-min.js</span></tt> , 则请使用 closure compiler 对所有模块文件进行压缩,
 例如 <tt class="docutils literal"><span class="pre">mod.js</span></tt> 压缩为 <tt class="docutils literal"><span class="pre">mod-min.js</span></tt> , 放在模块文件的同级目录下.</div></blockquote>
 </div>
-<div class="section" id="id2">
-<h2>代码更新机制<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>代码更新机制<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>由于动态加载的 js 文件不是写在页面中, 所以不能从页面添加时间戳, 并且1.2 loader新增的约定加载也不能配置具体模块文件路径, 因此
 1.2 loader 提供了在包级别添加时间戳的机制</p>
@@ -295,8 +326,8 @@
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="id3">
-<h2>静态部署<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>静态部署<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>部署时也可以不采用动态加载, 仅仅将 kissy loader 作为代码组织的一种方式, 将所有的模块打包到一个文件静态引入放在页面中,
 当使用 <tt class="docutils literal"><span class="pre">KISSY.use</span></tt> 时如果模块已经过静态引入在页面中, 则不会发送请求, 这时建议所有模块的属性都设置为</p>
