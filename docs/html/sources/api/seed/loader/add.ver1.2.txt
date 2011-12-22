@@ -128,7 +128,7 @@ map 范例：修改请求地址
     
          S.config({
                 map:[
-                    [/(.+myproject/.+)-min.js(\?[^?]+)?$/, "$1.js$2"]
+                    [/(.+myproject\/.+)-min.js(\?[^?]+)?$/, "$1.js$2"]
                 ]
          });
          

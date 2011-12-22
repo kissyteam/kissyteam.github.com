@@ -234,11 +234,12 @@
 <div class="section" id="map">
 <span id="loader-config-map"></span><h3>map 范例：修改请求地址<a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><div class="highlight-javascript"><pre>S.config({
-       map:[
-           [/(.+myproject/.+)-min.js(\?[^?]+)?$/, "$1.js$2"]
-       ]
-});</pre>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">S</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+       <span class="nx">map</span><span class="o">:</span><span class="p">[</span>
+           <span class="p">[</span><span class="sr">/(.+myproject\/.+)-min.js(\?[^?]+)?$/</span><span class="p">,</span> <span class="s2">&quot;$1.js$2&quot;</span><span class="p">]</span>
+       <span class="p">]</span>
+<span class="p">});</span>
+</pre></div>
 </div>
 <p>那么即使载入 kissy-min.js ，对于 myproject 目录下的模块 js 请求也会被替换为不带 -min 的请求，
 该配置也可应用于 <a class="reference external" href="http://lifesinger.wordpress.com/2011/07/24/online-local-debug/">本地调试</a></p>
