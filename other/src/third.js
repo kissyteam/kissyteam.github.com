@@ -305,6 +305,22 @@ KISSY.add("data/tools", function(){
 			"version": "",
 			"reason": "",
 			"intro": "低网速模拟工具。"
+		},{
+			"name": "browserstack",
+			"title": "在线多浏览器工具",  
+			"pic": "",
+			"href": "http://www.browserstack.com/user/dashboard",
+			"version": "",
+			"reason": "",
+			"intro": "在线多浏览器工具"
+		},{
+			"name": "spritecow",
+			"title": "sprite助手",  
+			"pic": "",
+			"href": "http://www.spritecow.com/",
+			"version": "",
+			"reason": "",
+			"intro": "帮你快速生成坐标"
 		}];
 
 });
