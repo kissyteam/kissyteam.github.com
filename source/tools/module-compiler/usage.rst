@@ -114,7 +114,7 @@ a 依赖 b ， b 依赖 c ，指定源码目录与对应的 cdn 目录后，运�
         KISSY.config({
                 map:[
                     [/http:\/\/a.tbcdn.cn\/s\/kissy\/1.2.0\/(?:suggest|switchable)-min.js(.+)$/, 
-                    "http://a.tbcdn.cn/s/kissy/1.2.0/suggest-min.js,switchable-min.js$1"]
+                    "http://a.tbcdn.cn/s/kissy/1.2.0/??suggest-min.js,switchable-min.js$1"]
                 ]
         });
         KISSY.add({

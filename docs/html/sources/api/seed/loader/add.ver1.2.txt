@@ -143,12 +143,12 @@ map 范例：combo 使用的 kissy 组件
     
         S.config({
                 map:[
-                    [/http:\/\/a.tbcdn.cn\/s\/kissy\/1.2.0\/(?:overlay|component|uibase|switchable)-min.js(.+)$/, "http://a.tbcdn.cn/s/kissy/1.2.0/overlay-min.js,component-min.js,uibase-min.js,switchable-min.js$1"]
+                    [/http:\/\/a.tbcdn.cn\/s\/kissy\/1.2.0\/(?:overlay|component|uibase|switchable)-min.js(.+)$/, "http://a.tbcdn.cn/s/kissy/1.2.0/??overlay-min.js,component-min.js,uibase-min.js,switchable-min.js$1"]
                 ]
         });
         
     那么当 use("overlay,switchable") 时只会产生一个 
-    ``http://a.tbcdn.cn/s/kissy/1.2.0/overlay-min.js,component-min.js,uibase-min.js,switchable-min.js``  
+    ``http://a.tbcdn.cn/s/kissy/1.2.0/??overlay-min.js,component-min.js,uibase-min.js,switchable-min.js``  
     请求
                 
     
