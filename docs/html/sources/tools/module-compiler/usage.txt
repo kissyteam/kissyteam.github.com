@@ -106,12 +106,17 @@ cdn combo 构建文件例子
 
 a 依赖 b ， b 依赖 c ，指定源码目录与对应的 cdn 目录后，运行以下构建文件可以得到 a 以及其所有依赖模块的 combo 地址
 
-``http://x.cdn/??a.js,b.js,c.js`` ，之后在页面显式指定路径后使用:（对于使用 kissy 自带模块的情景，推荐将使用到的 kissy 自身模块集合静态 combo 到页面底部）
+``http://x.cdn/??a.js,b.js,c.js`` ，之后在页面显式指定路径后使用:（对于使用 kissy 自带模块比较多的情景，可以将使用到的 kissy 自身模块集合静态 combo 到页面底部或定义 :ref:`map <loader_config_map>` 规则来减少使用 kissy 自身模块所导致的链接数过多问题。）
 
 .. code-block:: html
 
-    <script src='http://a.tbcdn.cn/s/kissy/1.2.0/??kissy.js,suggest.js,switchable.js'></script>
     <script>
+        KISSY.config({
+                map:[
+                    [/http:\/\/a.tbcdn.cn\/s\/kissy\/1.2.0\/(?:suggest|switchable)-min.js(.+)$/, 
+                    "http://a.tbcdn.cn/s/kissy/1.2.0/suggest-min.js,switchable-min.js$1"]
+                ]
+        });
         KISSY.add({
             a:{
                 fullpath:"http://x.cdn/??a.js,b.js,c.js"
