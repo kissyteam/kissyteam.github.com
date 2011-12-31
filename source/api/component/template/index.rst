@@ -16,21 +16,23 @@ Template
    
 Usage
 -----------------------------------------------
+
+    **获取模块值**
+
+        .. code-block:: javascript
+
+            KISSY.use("template",function(S,Template){
+
+            });
+
     
     **正常调用：**
     
-    其中 KISSY.Template('template here.')返回编译后的模板方法, 可调用render渲染不同的数据
+    其中 Template('template here.')返回编译后的模板方法, 可调用render渲染不同的数据
     
         .. code-block:: javascript
         
-            KISSY.Template('template here.').render(data);   
-    
-     
-    **链式调用：**
-    
-        .. code-block:: javascript
-        
-            KISSY.tmpl('#template', {name: 'Frank'}).appendTo('#container');
+            Template('template here.').render(data);
         
     **语法扩展：**
     
@@ -38,7 +40,7 @@ Usage
 
         .. code-block:: javascript
 
-            KISSY.Template.addStatement({'while': {
+            Template.addStatement({'while': {
                 start: 'while(KS_TEMPL_STAT_PARAM){',
                 end: '}'
             }});
@@ -71,12 +73,12 @@ Syntax
 
     .. code-block:: javascript
 
-        KISSY.Template('Hello, {{name}}.')
+        Template('Hello, {{name}}.')
             .render({name: 'Frank'});
 
         Hello, Frank.
 
-        KISSY.Template('Hello, {{user.name}}.')
+        Template('Hello, {{user.name}}.')
             .render({user: {name: 'Frank'}});
 
         Hello, Frank.
@@ -96,7 +98,7 @@ if 语句
 
     .. code-block:: javascript
 
-        KISSY.Template('Hello, {{#if show}}{{name}}{{/if}})')
+        Template('Hello, {{#if show}}{{name}}{{/if}})')
             .render({show: true, name: 'Frank'});
 
         Hello, Frank
@@ -120,12 +122,12 @@ else和elseif
 
     .. code-block:: javascript
 
-        KISSY.Template('Hello, {{#if showName}}{{name}}.{{#else}}{{nick}}{{/if}})')
+        Template('Hello, {{#if showName}}{{name}}.{{#else}}{{nick}}{{/if}})')
             .render({showName: false, name: 'Frank', nick: 'yyfrankyy'});
 
         Hello, yyfrankyy.
 
-        KISSY.Template('Hello, {{#if name}}{{name}}.{{#elseif nick}}{{nick}}{{/if}})')
+        Template('Hello, {{#if name}}{{name}}.{{#elseif nick}}{{nick}}{{/if}})')
             .render({name: 'Frank', nick: 'yyfrankyy'});
 
         Hello, Frank.
@@ -149,7 +151,7 @@ each
 
     .. code-block:: javascript
 
-        KISSY.Template('Hello, {{#each users}}<b color="{{_ks_value.color}}">{{_ks_value.user}}</b>{{/each}})')
+        Template('Hello, {{#each users}}<b color="{{_ks_value.color}}">{{_ks_value.user}}</b>{{/each}})')
             .render({users: [{name: 'Frank', color: 'red'}, {name: 'yyfrankyy', color: 'green']});
 
         Hello, <b color="red">Frank</b><b color="green">yyfrankyy</b>
@@ -158,12 +160,12 @@ each
 
     .. code-block:: javascript
 
-        KISSY.Template('Hello, {{#each users as user}}<b color="{{user.color}}">{{user.name}}</b>{{/each}})')
+        Template('Hello, {{#each users as user}}<b color="{{user.color}}">{{user.name}}</b>{{/each}})')
             .render({users: [{name: 'Frank', color: 'red'}, {name: 'yyfrankyy', color: 'green']});
 
         Hello, <b color="red">Frank</b><b color="green">yyfrankyy</b>
 
-        KISSY.Template('Hello, {{#each users as user index}}<b color="{{user.color}}">{{index}}:{{user.name}}</b>{{/each}})')
+        Template('Hello, {{#each users as user index}}<b color="{{user.color}}">{{index}}:{{user.name}}</b>{{/each}})')
             .render({users: [{name: 'Frank', color: 'red'}, {name: 'yyfrankyy', color: 'green']});
 
         Hello, <b color="red">0:Frank</b><b color="green">1:yyfrankyy</b>
@@ -172,7 +174,7 @@ each
 
     .. code-block:: javascript
 
-        KISSY.Template('Hello, {{#each users as user}}<b color="{{user.color}}">{{#each user.names as name}}{{name}}{{/each}}</b>{{/each}})')
+        Template('Hello, {{#each users as user}}<b color="{{user.color}}">{{#each user.names as name}}{{name}}{{/each}}</b>{{/each}})')
             .render({users: [{names: ['Frank', 'Wang'], color: 'red'}, {names: ['Frank', 'Xu'], color: 'green']});
 
         Hello, <b color="red">FrankWang</b><b color="green">FrankXu</b>
@@ -190,7 +192,7 @@ each
 
     .. code-block:: javascript
 
-        KISSY.Template('Hello, {{#! here you go.}}{{name}}.').render({name: 'Frank'});
+        Template('Hello, {{#! here you go.}}{{name}}.').render({name: 'Frank'});
 
         Hello, Frank.
 
@@ -213,7 +215,7 @@ each
 
     .. code-block:: javascript
 
-        KISSY.Template('Hello, {{#each users}}{{#if _ks_value.show}}{{_ks_value.name}}{{/if}}{{/each}}.')
+        Template('Hello, {{#each users}}{{#if _ks_value.show}}{{_ks_value.name}}{{/if}}{{/each}}.')
             .render({users: [{show: false, name: 'Frank'}, {show: true, name: 'yyfrankyy'}]});
 
         Hello, yyfrankyy.
@@ -234,7 +236,7 @@ each
 
     默认情况下,模板将编译时和运行时的错误,直接返回到结果里.
 
-    调试过程可调用 ``KISSY.Template.log()`` 方法输出渲染方法,定位脚本模板错误,并可通过引用 ``jsbeauty`` 来格式化生成的模板方法.
+    调试过程可调用 ``Template.log()`` 方法输出渲染方法,定位脚本模板错误,并可通过引用 ``jsbeauty`` 来格式化生成的模板方法.
 
 模板性能对比
 -------------------------------------------------------

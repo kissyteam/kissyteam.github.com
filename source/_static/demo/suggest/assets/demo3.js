@@ -1,6 +1,6 @@
 KISSY.use("suggest", function(S,Suggest) {
     // 1.1.6
-    Suggest = S.Suggest;
+    //Suggest = S.Suggest;
 
     // Baidu
     var dataUrl = 'http://suggestion.baidu.com/su?p=3&cb=window.bdsug.sug';

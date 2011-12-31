@@ -25,9 +25,9 @@ Class
 
     .. code-block:: javascript
 
-        KISSY.use("imagezoom", function(S) {
+        KISSY.use("imagezoom", function(S,ImageZoom) {
             // 标准模式下
-            new S.ImageZoom('#standard', {
+            new ImageZoom('#standard', {
                 position: 'right',
                 offset: 10,
                 bigImageSrc: "http://img03.taobaocdn.com/bao/uploaded/i3/T1fftwXf8jXXX7ps79_073021.jpg"

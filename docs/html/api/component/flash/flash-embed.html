@@ -117,7 +117,7 @@
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">如果不存在, 则自行创建 一个 div容器.  KISSY.Flash.version 版本要 大于 1.2) 必选, 这里添加主要是将对象加入KISSY进行统一管理.</p>
+<p class="last">如果不存在, 则自行创建 一个 div容器.  Flash.version 版本要 大于 1.2) 必选, 这里添加主要是将对象加入KISSY进行统一管理.</p>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -175,7 +175,9 @@ flashvars 可以理解成为 向swf传参,是flash 页面播放器的一个参�
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">PATH2SWF</span><span class="p">.</span><span class="nx">swf</span><span class="o">?</span><span class="nx">a</span><span class="o">=</span><span class="mi">1</span><span class="o">&amp;</span><span class="nx">b</span><span class="o">=</span><span class="mi">2</span>
 </pre></div>
 </div>
-<p>这样传参的好处则可以避免了URL的长度限制,其本身可以承受最大64KB容量的数据意味着可以传递大规模的数据,为了解决 &#8220;较少的参数传递更多更复杂数据&#8221;. 因此KISSY.Flash支持复杂的flashvars传递. 同时,复杂数据意味着&#8221;杂质&#8221;,因此 KISSY.Flash 将自行将参数值进行encodeURIComponent处理 . 因此,凡flashvars深度大于1的,都将会把数据转换为JSON数据给SWF.
+<p>这样传参的好处则可以避免了URL的长度限制,其本身可以承受最大64KB容量的数据意味着可以传递大规模的数据,为了解决 &#8220;较少的参数传递更多更复杂数据&#8221;.
+Flash支持复杂的flashvars传递. 同时,复杂数据意味着&#8221;杂质&#8221;,因此 Flash 将自行将参数值进行encodeURIComponent处理.
+因此,凡flashvars深度大于1的,都将会把数据转换为JSON数据给SWF.
 示例：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">F</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;#test-flash3&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;assets/test.swf&#39;</span><span class="p">,</span>
@@ -213,20 +215,20 @@ flashvars 可以理解成为 向swf传参,是flash 页面播放器的一个参�
 <tt class="descclassname">flash.</tt><tt class="descname">remove</tt><big>(</big><big>)</big><a class="headerlink" href="#flash.remove" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line">void <strong>remove</strong> ( id )</div>
-<div class="line">通过指定的ID,移除已注册到 KISSY.Flash 的 SWF 和 DOM 中对应的 HTML 元素.</div>
+<div class="line">通过指定的ID,移除已注册到 Flash 的 SWF 和 DOM 中对应的 HTML 元素.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>id</strong> (<em>String</em>) &#8211; 在 KISSY.Flash 中注册的ID.  必选`</td>
+<tr><td>&nbsp;</td><td class="field-body"><strong>id</strong> (<em>String</em>) &#8211; 在 Flash 中注册的ID.  必选`</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">对于已存在DOM中,但未向 KISSY.Flash注册的,则不会被移除.</p>
+<p class="last">对于已存在DOM中,但未向 Flash注册的,则不会被移除.</p>
 </div>
 </dd></dl>
 
@@ -235,14 +237,14 @@ flashvars 可以理解成为 向swf传参,是flash 页面播放器的一个参�
 <tt class="descclassname">flash.</tt><tt class="descname">get</tt><big>(</big><big>)</big><a class="headerlink" href="#flash.get" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line">HTMLElement <strong>get</strong> ( id )</div>
-<div class="line">获得已注册到 KISSY.Flash 的 SWF.</div>
+<div class="line">获得已注册到 Flash 的 SWF.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>id</strong> (<em>String</em>) &#8211; 在 KISSY.Flash 中注册的ID.  必选</td>
+<tr><td>&nbsp;</td><td class="field-body"><strong>id</strong> (<em>String</em>) &#8211; 在 Flash 中注册的ID.  必选</td>
 </tr>
 <tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body">{Boolean} - 返回 SWF 的 HTML 元素,可能是(&lt;object&gt;或&lt;embed&gt;).  未注册时,返回 undefined</td>
@@ -252,8 +254,8 @@ flashvars 可以理解成为 向swf传参,是flash 页面播放器的一个参�
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">注意,请不要混淆 DOM.get() 和 Flash.get().
-对于未向 KISSY.Flash注册的SWF,请使用 DOM.get()方法.
-只有成功执行过 KISSY.Flash.add() 的 SWF 才可以被获取.</p>
+对于未向 Flash注册的SWF,请使用 DOM.get()方法.
+只有成功执行过 Flash.add() 的 SWF 才可以被获取.</p>
 </div>
 </dd></dl>
 
@@ -269,7 +271,7 @@ flashvars 可以理解成为 向swf传参,是flash 页面播放器的一个参�
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>target</strong> (<em>String</em>) &#8211; 在 KISSY.Flash 中注册的ID.  必选`</td>
+<tr><td>&nbsp;</td><td class="field-body"><strong>target</strong> (<em>String</em>) &#8211; 在 Flash 中注册的ID.  必选`</td>
 </tr>
 <tr class="field"><th class="field-name" colspan="2">Returns:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body">{Boolean} - 只有有成功执行过 S.Flash.add() 的 SWF 返回 true,其他返回 false.</td>

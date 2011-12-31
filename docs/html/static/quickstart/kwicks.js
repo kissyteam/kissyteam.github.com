@@ -3,7 +3,7 @@
  * @creator  乔花<qiaohua@taobao.com>
  */
 // 添加一个新模块到KISSY中
-KISSY.add('kwicks', function(S) {
+KISSY.add('kwicks', function(S,Switchable) {
 
     // 定义一些模块中的全局变量
     var DOM = S.DOM,
@@ -37,7 +37,7 @@ KISSY.add('kwicks', function(S) {
     }
 
     // 扩展 Switchable
-    S.extend(Kwicks, S.Switchable);
+    S.extend(Kwicks, Switchable);
     S.Kwicks = Kwicks;
 
     /**

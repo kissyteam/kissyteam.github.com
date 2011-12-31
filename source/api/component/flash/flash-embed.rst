@@ -20,7 +20,7 @@ Methods
 
     .. note::
 
-        如果不存在, 则自行创建 一个 div容器.  KISSY.Flash.version 版本要 大于 1.2) 必选, 这里添加主要是将对象加入KISSY进行统一管理.
+        如果不存在, 则自行创建 一个 div容器.  Flash.version 版本要 大于 1.2) 必选, 这里添加主要是将对象加入KISSY进行统一管理.
 
     :param Object config: 指定Flash的一些配置信息.  可选, 如标签属性、播放器参数以及其他诸如在线安装、SWF引用地址等等.  见下文的《config 允许配置关键字》
     :param Function callback: 回调函数.  可选.  返回添加的状态、id以及对应的SWF的HTML元素对象. 
@@ -78,7 +78,9 @@ Methods
     
         PATH2SWF.swf?a=1&b=2
         
-    这样传参的好处则可以避免了URL的长度限制,其本身可以承受最大64KB容量的数据意味着可以传递大规模的数据,为了解决 "较少的参数传递更多更复杂数据". 因此KISSY.Flash支持复杂的flashvars传递. 同时,复杂数据意味着"杂质",因此 KISSY.Flash 将自行将参数值进行encodeURIComponent处理 . 因此,凡flashvars深度大于1的,都将会把数据转换为JSON数据给SWF. 
+    这样传参的好处则可以避免了URL的长度限制,其本身可以承受最大64KB容量的数据意味着可以传递大规模的数据,为了解决 "较少的参数传递更多更复杂数据".
+    Flash支持复杂的flashvars传递. 同时,复杂数据意味着"杂质",因此 Flash 将自行将参数值进行encodeURIComponent处理.
+    因此,凡flashvars深度大于1的,都将会把数据转换为JSON数据给SWF.
     示例：
     
     .. code-block:: javascript
@@ -114,35 +116,35 @@ Methods
 .. function:: remove
 
     | void **remove** ( id )
-    | 通过指定的ID,移除已注册到 KISSY.Flash 的 SWF 和 DOM 中对应的 HTML 元素. 
+    | 通过指定的ID,移除已注册到 Flash 的 SWF 和 DOM 中对应的 HTML 元素.
     
-    :param String id: 在 KISSY.Flash 中注册的ID.  必选`
+    :param String id: 在 Flash 中注册的ID.  必选`
     
     .. note::
 
-        对于已存在DOM中,但未向 KISSY.Flash注册的,则不会被移除. 
+        对于已存在DOM中,但未向 Flash注册的,则不会被移除.
         
 .. function:: get
 
     | HTMLElement **get** ( id )
-    | 获得已注册到 KISSY.Flash 的 SWF. 
+    | 获得已注册到 Flash 的 SWF.
     
-    :param String id: 在 KISSY.Flash 中注册的ID.  必选
+    :param String id: 在 Flash 中注册的ID.  必选
 
     :returns: {Boolean} - 返回 SWF 的 HTML 元素,可能是(<object>或<embed>).  未注册时,返回 undefined
     
     .. note::
 
         注意,请不要混淆 DOM.get() 和 Flash.get(). 
-        对于未向 KISSY.Flash注册的SWF,请使用 DOM.get()方法. 
-        只有成功执行过 KISSY.Flash.add() 的 SWF 才可以被获取. 
+        对于未向 Flash注册的SWF,请使用 DOM.get()方法.
+        只有成功执行过 Flash.add() 的 SWF 才可以被获取.
 
 .. function:: contains
 
     | Boolean **contains** ( target )
     | 检测是否存在已注册的 swf. 
     
-    :param String target: 在 KISSY.Flash 中注册的ID.  必选`
+    :param String target: 在 Flash 中注册的ID.  必选`
 
     :returns: {Boolean} - 只有有成功执行过 S.Flash.add() 的 SWF 返回 true,其他返回 false.
 

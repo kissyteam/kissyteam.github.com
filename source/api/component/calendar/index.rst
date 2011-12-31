@@ -168,8 +168,8 @@ Methods Detail
 
     .. code-block:: javascript
 
-        KISSY.use('calendar',function(S) {
-	        c = new S.Calendar('#J_WithTime');
+        KISSY.use('calendar',function(S,Calendar) {
+	        c = new Calendar('#J_WithTime');
 	        c.render({maxDate:new Date()});
         });
 
@@ -199,9 +199,9 @@ Events Detail
 
     .. code-block:: javascript
 
-        KISSY.use('calendar',function(S) {
+        KISSY.use('calendar',function(S,Calendar) {
             //月份切换事件
-            new S.Calendar('J_AllEvents').on('switch',function(e){
+            new Calendar('J_AllEvents').on('switch',function(e){
                 alert('切换事件,月份切换到'+(e.date.getMonth()+1));
             });
         });
@@ -215,9 +215,9 @@ Events Detail
 
     .. code-block:: javascript
 
-        KISSY.use('calendar',function(S) {
+        KISSY.use('calendar',function(S,Calendar) {
             //选择范围,并绑定范围回调
-            new S.Calendar('J_Range',{
+            new Calendar('J_Range',{
                 multi_page:2,
                 range_select:true
             }).on('rangeselect',function(e){

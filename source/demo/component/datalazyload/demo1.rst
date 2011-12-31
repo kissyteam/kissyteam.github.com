@@ -18,7 +18,7 @@ DataLazyload 基本使用
 
         KISSY.use('datalazyload', function(S, DataLazyload) {
             S.ready(function(S) {
-                S.DataLazyload( { mod: 'auto' } );
+                DataLazyload( { mod: 'auto' } );
             });
         });
 

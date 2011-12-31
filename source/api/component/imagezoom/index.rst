@@ -282,8 +282,8 @@ Methods Detail
 
     .. code-block:: javascript
 
-        KISSY.ready(function(S) {
-            var m = new S.ImageZoom("#multi");
+        KISSY.use("imagezoom",function(S,ImageZoom) {
+            var m = new ImageZoom("#multi");
             S.Event.on("#imgList img", 'click', function() {
                 var data = S.DOM.attr(this, 'data-ks-imagezoom');
                 S.DOM.attr('#multi', 'src', data+'_310x310.jpg');

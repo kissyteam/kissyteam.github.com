@@ -325,8 +325,8 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">c</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Calendar</span><span class="p">(</span><span class="s1">&#39;#J_WithTime&#39;</span><span class="p">);</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Calendar</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">c</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Calendar</span><span class="p">(</span><span class="s1">&#39;#J_WithTime&#39;</span><span class="p">);</span>
         <span class="nx">c</span><span class="p">.</span><span class="nx">render</span><span class="p">({</span><span class="nx">maxDate</span><span class="o">:</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()});</span>
 <span class="p">});</span>
 </pre></div>
@@ -370,9 +370,9 @@
 <div class="line"><strong>monthChange</strong> ()</div>
 <div class="line">切换月份事件,通过e.date来获取切换到的日期, 通过e.date.getMonth() + 1 来获得切换至的月份</div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Calendar</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">//月份切换事件</span>
-    <span class="k">new</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Calendar</span><span class="p">(</span><span class="s1">&#39;J_AllEvents&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;switch&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="k">new</span> <span class="nx">Calendar</span><span class="p">(</span><span class="s1">&#39;J_AllEvents&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;switch&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
         <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;切换事件,月份切换到&#39;</span><span class="o">+</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
     <span class="p">});</span>
 <span class="p">});</span>
@@ -396,9 +396,9 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Calendar</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">//选择范围,并绑定范围回调</span>
-    <span class="k">new</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Calendar</span><span class="p">(</span><span class="s1">&#39;J_Range&#39;</span><span class="p">,{</span>
+    <span class="k">new</span> <span class="nx">Calendar</span><span class="p">(</span><span class="s1">&#39;J_Range&#39;</span><span class="p">,{</span>
         <span class="nx">multi_page</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span>
         <span class="nx">range_select</span><span class="o">:</span><span class="kc">true</span>
     <span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;rangeselect&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>

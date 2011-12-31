@@ -107,23 +107,25 @@
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><strong>正常调用：</strong></p>
-<p>其中 KISSY.Template(&#8216;template here.&#8217;)返回编译后的模板方法, 可调用render渲染不同的数据</p>
+<div><p><strong>获取模块值</strong></p>
 <blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;template here.&#39;</span><span class="p">).</span><span class="nx">render</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;template&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Template</span><span class="p">){</span>
+
+<span class="p">});</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><strong>链式调用：</strong></p>
+<p><strong>正常调用：</strong></p>
+<p>其中 Template(&#8216;template here.&#8217;)返回编译后的模板方法, 可调用render渲染不同的数据</p>
 <blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">tmpl</span><span class="p">(</span><span class="s1">&#39;#template&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Frank&#39;</span><span class="p">}).</span><span class="nx">appendTo</span><span class="p">(</span><span class="s1">&#39;#container&#39;</span><span class="p">);</span>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;template here.&#39;</span><span class="p">).</span><span class="nx">render</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p><strong>语法扩展：</strong></p>
 <p>该方法,提供扩展语法的接口,目前支持标签语法开始,关闭及一个参数传递.</p>
 <blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Template</span><span class="p">.</span><span class="nx">addStatement</span><span class="p">({</span><span class="s1">&#39;while&#39;</span><span class="o">:</span> <span class="p">{</span>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Template</span><span class="p">.</span><span class="nx">addStatement</span><span class="p">({</span><span class="s1">&#39;while&#39;</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">start</span><span class="o">:</span> <span class="s1">&#39;while(KS_TEMPL_STAT_PARAM){&#39;</span><span class="p">,</span>
     <span class="nx">end</span><span class="o">:</span> <span class="s1">&#39;}&#39;</span>
 <span class="p">}});</span>
@@ -148,12 +150,12 @@
 </pre></div>
 </div>
 <p>范例：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{name}}.&#39;</span><span class="p">)</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{name}}.&#39;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">render</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Frank&#39;</span><span class="p">});</span>
 
 <span class="nx">Hello</span><span class="p">,</span> <span class="nx">Frank</span><span class="p">.</span>
 
-<span class="nx">KISSY</span><span class="p">.</span><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{user.name}}.&#39;</span><span class="p">)</span>
+<span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{user.name}}.&#39;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">render</span><span class="p">({</span><span class="nx">user</span><span class="o">:</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Frank&#39;</span><span class="p">}});</span>
 
 <span class="nx">Hello</span><span class="p">,</span> <span class="nx">Frank</span><span class="p">.</span>
@@ -170,7 +172,7 @@
 {{/if}}</pre>
 </div>
 <p>范例：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{#if show}}{{name}}{{/if}})&#39;</span><span class="p">)</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{#if show}}{{name}}{{/if}})&#39;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">render</span><span class="p">({</span><span class="nx">show</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Frank&#39;</span><span class="p">});</span>
 
 <span class="nx">Hello</span><span class="p">,</span> <span class="nx">Frank</span>
@@ -191,12 +193,12 @@
 {{/if}}</pre>
 </div>
 <p>范例：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{#if showName}}{{name}}.{{#else}}{{nick}}{{/if}})&#39;</span><span class="p">)</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{#if showName}}{{name}}.{{#else}}{{nick}}{{/if}})&#39;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">render</span><span class="p">({</span><span class="nx">showName</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Frank&#39;</span><span class="p">,</span> <span class="nx">nick</span><span class="o">:</span> <span class="s1">&#39;yyfrankyy&#39;</span><span class="p">});</span>
 
 <span class="nx">Hello</span><span class="p">,</span> <span class="nx">yyfrankyy</span><span class="p">.</span>
 
-<span class="nx">KISSY</span><span class="p">.</span><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{#if name}}{{name}}.{{#elseif nick}}{{nick}}{{/if}})&#39;</span><span class="p">)</span>
+<span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{#if name}}{{name}}.{{#elseif nick}}{{nick}}{{/if}})&#39;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">render</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Frank&#39;</span><span class="p">,</span> <span class="nx">nick</span><span class="o">:</span> <span class="s1">&#39;yyfrankyy&#39;</span><span class="p">});</span>
 
 <span class="nx">Hello</span><span class="p">,</span> <span class="nx">Frank</span><span class="p">.</span>
@@ -215,24 +217,24 @@
 </div>
 <p>注意 <tt class="docutils literal"><span class="pre">as</span> <span class="pre">value</span> <span class="pre">index</span></tt> 可选</p>
 <p>范例1(使用默认的循环参数)：</p>
-<div class="highlight-javascript"><pre>KISSY.Template('Hello, {{#each users}}&lt;b color="{{_ks_value.color}}"&gt;{{_ks_value.user}}&lt;/b&gt;{{/each}})')
+<div class="highlight-javascript"><pre>Template('Hello, {{#each users}}&lt;b color="{{_ks_value.color}}"&gt;{{_ks_value.user}}&lt;/b&gt;{{/each}})')
     .render({users: [{name: 'Frank', color: 'red'}, {name: 'yyfrankyy', color: 'green']});
 
 Hello, &lt;b color="red"&gt;Frank&lt;/b&gt;&lt;b color="green"&gt;yyfrankyy&lt;/b&gt;</pre>
 </div>
 <p>范例2(使用自定义参数,可选)：</p>
-<div class="highlight-javascript"><pre>KISSY.Template('Hello, {{#each users as user}}&lt;b color="{{user.color}}"&gt;{{user.name}}&lt;/b&gt;{{/each}})')
+<div class="highlight-javascript"><pre>Template('Hello, {{#each users as user}}&lt;b color="{{user.color}}"&gt;{{user.name}}&lt;/b&gt;{{/each}})')
     .render({users: [{name: 'Frank', color: 'red'}, {name: 'yyfrankyy', color: 'green']});
 
 Hello, &lt;b color="red"&gt;Frank&lt;/b&gt;&lt;b color="green"&gt;yyfrankyy&lt;/b&gt;
 
-KISSY.Template('Hello, {{#each users as user index}}&lt;b color="{{user.color}}"&gt;{{index}}:{{user.name}}&lt;/b&gt;{{/each}})')
+Template('Hello, {{#each users as user index}}&lt;b color="{{user.color}}"&gt;{{index}}:{{user.name}}&lt;/b&gt;{{/each}})')
     .render({users: [{name: 'Frank', color: 'red'}, {name: 'yyfrankyy', color: 'green']});
 
 Hello, &lt;b color="red"&gt;0:Frank&lt;/b&gt;&lt;b color="green"&gt;1:yyfrankyy&lt;/b&gt;</pre>
 </div>
 <p>范例3(嵌套使用)：</p>
-<div class="highlight-javascript"><pre>KISSY.Template('Hello, {{#each users as user}}&lt;b color="{{user.color}}"&gt;{{#each user.names as name}}{{name}}{{/each}}&lt;/b&gt;{{/each}})')
+<div class="highlight-javascript"><pre>Template('Hello, {{#each users as user}}&lt;b color="{{user.color}}"&gt;{{#each user.names as name}}{{name}}{{/each}}&lt;/b&gt;{{/each}})')
     .render({users: [{names: ['Frank', 'Wang'], color: 'red'}, {names: ['Frank', 'Xu'], color: 'green']});
 
 Hello, &lt;b color="red"&gt;FrankWang&lt;/b&gt;&lt;b color="green"&gt;FrankXu&lt;/b&gt;</pre>
@@ -246,7 +248,7 @@ Hello, &lt;b color="red"&gt;FrankWang&lt;/b&gt;&lt;b color="green"&gt;FrankXu&lt
 <div class="highlight-javascript"><pre>{{#! comments}}</pre>
 </div>
 <p>范例：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{#! here you go.}}{{name}}.&#39;</span><span class="p">).</span><span class="nx">render</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Frank&#39;</span><span class="p">});</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{#! here you go.}}{{name}}.&#39;</span><span class="p">).</span><span class="nx">render</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Frank&#39;</span><span class="p">});</span>
 
 <span class="nx">Hello</span><span class="p">,</span> <span class="nx">Frank</span><span class="p">.</span>
 </pre></div>
@@ -265,7 +267,7 @@ Hello, &lt;b color="red"&gt;FrankWang&lt;/b&gt;&lt;b color="green"&gt;FrankXu&lt
 {{/each}}</pre>
 </div>
 <p>范例：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{#each users}}{{#if _ks_value.show}}{{_ks_value.name}}{{/if}}{{/each}}.&#39;</span><span class="p">)</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Template</span><span class="p">(</span><span class="s1">&#39;Hello, {{#each users}}{{#if _ks_value.show}}{{_ks_value.name}}{{/if}}{{/each}}.&#39;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">render</span><span class="p">({</span><span class="nx">users</span><span class="o">:</span> <span class="p">[{</span><span class="nx">show</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Frank&#39;</span><span class="p">},</span> <span class="p">{</span><span class="nx">show</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;yyfrankyy&#39;</span><span class="p">}]});</span>
 
 <span class="nx">Hello</span><span class="p">,</span> <span class="nx">yyfrankyy</span><span class="p">.</span>
@@ -290,7 +292,7 @@ Hello, &lt;b color="red"&gt;FrankWang&lt;/b&gt;&lt;b color="green"&gt;FrankXu&lt
 <h3>调试<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>默认情况下,模板将编译时和运行时的错误,直接返回到结果里.</p>
-<p>调试过程可调用 <tt class="docutils literal"><span class="pre">KISSY.Template.log()</span></tt> 方法输出渲染方法,定位脚本模板错误,并可通过引用 <tt class="docutils literal"><span class="pre">jsbeauty</span></tt> 来格式化生成的模板方法.</p>
+<p>调试过程可调用 <tt class="docutils literal"><span class="pre">Template.log()</span></tt> 方法输出渲染方法,定位脚本模板错误,并可通过引用 <tt class="docutils literal"><span class="pre">jsbeauty</span></tt> 来格式化生成的模板方法.</p>
 </div></blockquote>
 </div>
 </div>
