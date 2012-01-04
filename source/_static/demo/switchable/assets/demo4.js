@@ -1,5 +1,5 @@
 KISSY.use("event,switchable", function (S, Event, Switchable) {
-    var Slide = S.Slide;
+    var Slide = Switchable.Slide;
     S.ready(function (S) {
         Slide('#demo4', {
             navCls : 'yslider-stick',

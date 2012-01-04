@@ -1,5 +1,5 @@
 KISSY.use("datalazyload,switchable", function(S) {
-	var Tabs = S.Tabs;
+	var Tabs = Switchable.Tabs;
 	S.ready(function(S) {
         //通过DOM元素demo2新那一个Tab
 		var tabs = new Tabs('#demo2', {

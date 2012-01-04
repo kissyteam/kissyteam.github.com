@@ -1,5 +1,5 @@
 KISSY.use("event,switchable", function (S, Event) {
-    var Slide = S.Slide;
+    var Slide = Switchable.Slide;
     S.ready(function (S) {
         Slide('#demo5', {
             contentCls : 'news-items',

@@ -1,5 +1,5 @@
  KISSY.use("event,switchable,datalazyload", function(S, Event) {
-    var Carousel = S.Carousel;
+    var Carousel = Switchable.Carousel;
 
     S.ready(function(S) {
         //通过DOM元素新建旋转木马

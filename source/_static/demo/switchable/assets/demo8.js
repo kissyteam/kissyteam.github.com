@@ -1,5 +1,5 @@
  KISSY.use("dom,event,anim,switchable", function(S, DOM, Event, Anim, Switchable) {
-    var Accordion = S.Accordion,Easing = S.Easing;
+    var Accordion = Switchable.Accordion;
     //通过DOM元素新建手风琴
     S.ready(function(S) {
         window.accordion = Accordion('#accordion1', {

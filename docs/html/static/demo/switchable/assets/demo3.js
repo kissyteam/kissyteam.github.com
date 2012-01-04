@@ -1,5 +1,5 @@
 KISSY.use("dom,event,anim,switchable", function(S, DOM, Event, Anim, Switchable) {
-	var Slide = S.Slide, Easing = S.Easing;
+	var Slide = Switchable.Slide, Easing = Anim.Easing;
 
 	S.ready(function(S) {
         //获取DOM元素
