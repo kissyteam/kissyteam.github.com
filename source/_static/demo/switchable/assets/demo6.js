@@ -1,4 +1,4 @@
- KISSY.use("event,switchable,datalazyload", function(S, Event) {
+ KISSY.use("event,switchable,datalazyload", function(S, Event,Switchable) {
     var Carousel = Switchable.Carousel;
 
     S.ready(function(S) {

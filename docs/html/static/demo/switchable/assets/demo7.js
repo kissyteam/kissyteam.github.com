@@ -1,4 +1,4 @@
- KISSY.use("switchable", function(S) {
+ KISSY.use("switchable", function(S,Switchable) {
     //通过DOM元素新建旋转木马
     var tiny_slide = new Switchable.Carousel('#J_TinySlide', {
         activeIndex: 0,
