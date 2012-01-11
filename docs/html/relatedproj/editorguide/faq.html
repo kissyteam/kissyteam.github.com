@@ -267,6 +267,25 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="id8">
+<h2>如何使得编辑内容超长数字自动换行<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>设置 <a class="reference internal" href="usage.html#editor.KISSY.Editor.config.customStyle" title="editor.KISSY.Editor.config.customStyle"><tt class="xref py py-attr docutils literal"><span class="pre">customStyle</span></tt></a> 为</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">body</span> <span class="p">{</span><span class="nx">word</span><span class="o">-</span><span class="nx">wrap</span><span class="o">:</span><span class="k">break</span><span class="o">-</span><span class="nx">word</span><span class="p">;</span><span class="nx">word</span><span class="o">-</span><span class="k">break</span><span class="o">:</span><span class="k">break</span><span class="o">-</span><span class="nx">all</span><span class="p">;}</span>
+</pre></div>
+</div>
+<p>具体详见：</p>
+<blockquote>
+<div><a class="reference external" href="http://ued.taobao.com/blog/2010/10/14/research-of-word-wrap/">http://ued.taobao.com/blog/2010/10/14/research-of-word-wrap/</a></div></blockquote>
+</div>
+<div class="section" id="id9">
+<h2>如何程序触发全屏与恢复<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>在编辑器实例上直接调用对应的命令即可：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">editor</span><span class="o">=</span><span class="k">new</span> <span class="nx">Editor</span><span class="p">(...);</span>
+<span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s2">&quot;maximizeWindow&quot;</span><span class="p">);</span> <span class="c1">// =&gt; 手动全屏</span>
+<span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s2">&quot;restoreWindow&quot;</span><span class="p">);</span> <span class="c1">// =&gt; 手动恢复全屏</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
