@@ -162,6 +162,7 @@
 <li><a class="reference internal" href="#overlay.Overlay.hide" title="overlay.Overlay.hide"><tt class="xref py py-func docutils literal"><span class="pre">hide()</span></tt></a></li>
 <li><a class="reference internal" href="#overlay.Overlay.show" title="overlay.Overlay.show"><tt class="xref py py-func docutils literal"><span class="pre">show()</span></tt></a></li>
 <li><a class="reference internal" href="#overlay.Overlay.beforeVisibleChange" title="overlay.Overlay.beforeVisibleChange"><tt class="xref py py-func docutils literal"><span class="pre">beforeVisibleChange()</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.afterRenderUI" title="overlay.Overlay.afterRenderUI"><tt class="xref py py-func docutils literal"><span class="pre">afterRenderUI()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -535,6 +536,26 @@
 <dd><div class="line-block">
 <div class="line"><strong>show</strong> ()</div>
 <div class="line">当悬浮层显示时触发</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="overlay.Overlay.afterRenderUI">
+<tt class="descclassname">Overlay.</tt><tt class="descname">afterRenderUI</tt><big>(</big><big>)</big><a class="headerlink" href="#overlay.Overlay.afterRenderUI" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>afterRenderUI</strong> ()</div>
+<div class="line">当悬浮层 dom 节点生成后触发，可用于根节点事件的初始化，例如监控弹出层的 mouseenter（整个生命周期只注册一次）</div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Overlay</span><span class="p">();</span>
+<span class="nx">o</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;afterRenderUI&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;el&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseenter&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;mouseenter overlay&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+<span class="nx">button</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">o</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
 </div>
 </dd></dl>
 
