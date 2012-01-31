@@ -180,77 +180,12 @@
 
     <span class="p">})();</span>
 
-
-    <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-
-        <span class="kd">var</span> <span class="nx">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">PopupMenu</span><span class="p">({</span>
-            <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span><span class="p">,</span>
-            <span class="c1">// boolean，是否鼠标脱离菜单后自动隐藏</span>
-            <span class="nx">autoHideOnMouseLeave</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-            <span class="c1">// ms，鼠标脱离菜单多长时间后自动隐藏</span>
-            <span class="nx">autoHideDelay</span><span class="o">:</span><span class="mi">300</span><span class="p">,</span>
-            <span class="nx">width</span><span class="o">:</span><span class="mi">150</span>
-        <span class="p">});</span>
-
-        <span class="nx">sb</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
-            <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span><span class="p">,</span>
-            <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;&lt;a data-belong=&#39;tmall&#39;&gt;我要买&lt;/a&gt;&quot;</span><span class="p">}));</span>
-        <span class="nx">sb</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
-            <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span><span class="p">,</span>
-            <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;&lt;a data-belong=&#39;tmall&#39;&gt;我要卖&lt;/a&gt;&quot;</span><span class="p">}));</span>
-
-        <span class="nx">sb</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Separator</span><span class="p">({</span>
-            <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span>
-        <span class="p">}));</span>
-
-        <span class="kd">var</span> <span class="nx">sb2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">PopupMenu</span><span class="p">({</span>
-            <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span><span class="p">,</span>
-            <span class="nx">width</span><span class="o">:</span><span class="mi">90</span><span class="p">,</span>
-            <span class="c1">// boolean，是否鼠标脱离菜单后自动隐藏</span>
-            <span class="nx">autoHideOnMouseLeave</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-            <span class="c1">// ms，鼠标脱离菜单多长时间后自动隐藏</span>
-            <span class="nx">autoHideDelay</span><span class="o">:</span><span class="mi">300</span><span class="p">,</span>
-            <span class="nx">children</span><span class="o">:</span><span class="p">[</span>
-                <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
-                    <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span><span class="p">,</span>
-                    <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;&lt;a data-belong=&#39;tmall&#39;&gt;旺铺&lt;/a&gt;&quot;</span><span class="p">})</span>
-            <span class="p">],</span>
-            <span class="c1">// bug elStyle 无效</span>
-            <span class="nx">elStyle</span><span class="o">:</span><span class="p">{</span>
-                <span class="nx">color</span><span class="o">:</span><span class="s2">&quot;red&quot;</span>
-            <span class="p">}</span>
-        <span class="p">});</span>
-
-        <span class="nx">sb2</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
-            <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span><span class="p">,</span>
-            <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;&lt;a data-belong=&#39;tmall&#39;&gt;装修&lt;/a&gt;&quot;</span><span class="p">}));</span>
-
-        <span class="kd">var</span> <span class="nx">b2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">SubMenu</span><span class="p">({</span>
-            <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span><span class="p">,</span>
-            <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;&lt;a data-belong=&#39;tmall&#39;&gt;卖家中心&lt;/a&gt;&quot;</span><span class="p">,</span>
-            <span class="nx">menu</span><span class="o">:</span><span class="nx">sb2</span>
-        <span class="p">});</span>
-
-        <span class="nx">sb</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">b2</span><span class="p">);</span>
-
-        <span class="nx">bb</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">SubMenu</span><span class="p">({</span>
-            <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span><span class="p">,</span>
-            <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;&lt;span class=&#39;title&#39; style=&#39;width:58px&#39;&gt;天猫&lt;/span&gt;&quot;</span><span class="p">,</span>
-            <span class="nx">menuAlign</span><span class="o">:</span><span class="p">{</span>
-                <span class="nx">offset</span><span class="o">:</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
-                <span class="nx">points</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;bl&#39;</span><span class="p">,</span> <span class="s1">&#39;tl&#39;</span><span class="p">]</span>
-            <span class="p">},</span>
-            <span class="nx">menu</span><span class="o">:</span><span class="nx">sb</span>
-        <span class="p">});</span>
-
-    <span class="p">})();</span>
-
     <span class="kd">var</span> <span class="nx">menu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">({</span>
         <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;nav-&quot;</span><span class="p">,</span>
-        <span class="nx">width</span><span class="o">:</span><span class="mi">180</span><span class="p">,</span>
+        <span class="nx">width</span><span class="o">:</span><span class="mi">90</span><span class="p">,</span>
         <span class="nx">elCls</span><span class="o">:</span><span class="s2">&quot;horizonal&quot;</span><span class="p">,</span>
         <span class="nx">render</span><span class="o">:</span><span class="s1">&#39;#context&#39;</span><span class="p">,</span>
-        <span class="nx">children</span><span class="o">:</span><span class="p">[</span><span class="nx">b</span><span class="p">,</span><span class="nx">bb</span><span class="p">]</span>
+        <span class="nx">children</span><span class="o">:</span><span class="p">[</span><span class="nx">b</span><span class="p">]</span>
     <span class="p">});</span>
 
     <span class="nx">menu</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
