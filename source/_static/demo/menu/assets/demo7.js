@@ -1,9 +1,14 @@
-KISSY.use("node,menu", function (S,Node, Menu) {
-        var context = S.all("#context");
+KISSY.use("menu", function (S, Menu) {
+    var context = S.all("#context"), b, bb;
+    (function () {
 
         var sb = new Menu.PopupMenu({
             prefixCls:"nav-",
-            width: 150
+            // boolean，是否鼠标脱离菜单后自动隐藏
+            autoHideOnMouseLeave:true,
+            // ms，鼠标脱离菜单多长时间后自动隐藏
+            autoHideDelay:300,
+            width:150
         });
 
         sb.addChild(new Menu.Item({
@@ -17,10 +22,13 @@ KISSY.use("node,menu", function (S,Node, Menu) {
             prefixCls:"nav-"
         }));
 
-
         var sb2 = new Menu.PopupMenu({
             prefixCls:"nav-",
             width:90,
+            // boolean，是否鼠标脱离菜单后自动隐藏
+            autoHideOnMouseLeave:true,
+            // ms，鼠标脱离菜单多长时间后自动隐藏
+            autoHideDelay:300,
             children:[
                 new Menu.Item({
                     prefixCls:"nav-",
@@ -31,19 +39,21 @@ KISSY.use("node,menu", function (S,Node, Menu) {
                 color:"red"
             }
         });
+
         sb2.addChild(new Menu.Item({
             prefixCls:"nav-",
             content:"<a>装修</a>"}));
+
         var b2 = new Menu.SubMenu({
             prefixCls:"nav-",
             content:"<a>卖家中心</a>",
             menu:sb2
         });
+
         sb.addChild(b2);
 
-        var b = new Menu.SubMenu({
+        b = new Menu.SubMenu({
             prefixCls:"nav-",
-
             content:"<span class='title' style='width:58px'>淘宝网</span>",
             menuAlign:{
                 offset:[-1, -1],
@@ -52,18 +62,84 @@ KISSY.use("node,menu", function (S,Node, Menu) {
             menu:sb
         });
 
-        var menu = new Menu({
+    })();
+
+
+    (function () {
+
+        var sb = new Menu.PopupMenu({
+            prefixCls:"nav-",
+            // boolean，是否鼠标脱离菜单后自动隐藏
+            autoHideOnMouseLeave:true,
+            // ms，鼠标脱离菜单多长时间后自动隐藏
+            autoHideDelay:300,
+            width:150
+        });
+
+        sb.addChild(new Menu.Item({
+            prefixCls:"nav-",
+            content:"<a data-belong='tmall'>我要买</a>"}));
+        sb.addChild(new Menu.Item({
+            prefixCls:"nav-",
+            content:"<a data-belong='tmall'>我要卖</a>"}));
+
+        sb.addChild(new Menu.Separator({
+            prefixCls:"nav-"
+        }));
+
+        var sb2 = new Menu.PopupMenu({
             prefixCls:"nav-",
             width:90,
-            elCls:"horizonal",
-            render:'#context',
-            children:[b]
+            // boolean，是否鼠标脱离菜单后自动隐藏
+            autoHideOnMouseLeave:true,
+            // ms，鼠标脱离菜单多长时间后自动隐藏
+            autoHideDelay:300,
+            children:[
+                new Menu.Item({
+                    prefixCls:"nav-",
+                    content:"<a data-belong='tmall'>旺铺</a>"})
+            ],
+            // bug elStyle 无效
+            elStyle:{
+                color:"red"
+            }
         });
-        
-        
-        menu.render();
-        
-        menu.on("click",function(e){
-            Node.one("#log").html("你选中了" + e.target.get("content"));
+
+        sb2.addChild(new Menu.Item({
+            prefixCls:"nav-",
+            content:"<a data-belong='tmall'>装修</a>"}));
+
+        var b2 = new Menu.SubMenu({
+            prefixCls:"nav-",
+            content:"<a data-belong='tmall'>卖家中心</a>",
+            menu:sb2
         });
+
+        sb.addChild(b2);
+
+        bb = new Menu.SubMenu({
+            prefixCls:"nav-",
+            content:"<span class='title' style='width:58px'>天猫</span>",
+            menuAlign:{
+                offset:[-1, -1],
+                points:['bl', 'tl']
+            },
+            menu:sb
+        });
+
+    })();
+
+    var menu = new Menu({
+        prefixCls:"nav-",
+        width:180,
+        elCls:"horizonal",
+        render:'#context',
+        children:[b,bb]
     });
+
+    menu.render();
+
+    menu.on("click", function (e) {
+        alert(e.target.get("content"));
+    });
+});
