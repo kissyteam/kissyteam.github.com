@@ -240,15 +240,14 @@
     <span class="kd">var</span> <span class="nx">middleDropX</span> <span class="o">=</span> <span class="p">(</span><span class="nx">dropNode</span><span class="p">.</span><span class="nx">offset</span><span class="p">().</span><span class="nx">left</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="nx">dropNode</span><span class="p">.</span><span class="nx">width</span><span class="p">())</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">ev</span><span class="p">.</span><span class="nx">pageX</span> <span class="o">&gt;</span> <span class="nx">middleDropX</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">dropNode</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">next</span> <span class="o">&amp;&amp;</span> <span class="nx">next</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nx">dragNode</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">next</span> <span class="o">&amp;&amp;</span> <span class="nx">next</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nx">dragNode</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span>
 
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
             <span class="nx">dragNode</span><span class="p">.</span><span class="nx">insertAfter</span><span class="p">(</span><span class="nx">dropNode</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">prev</span> <span class="o">=</span> <span class="nx">dropNode</span><span class="p">.</span><span class="nx">prev</span><span class="p">();</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">prev</span> <span class="o">&amp;&amp;</span> <span class="nx">prev</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nx">dragNode</span><span class="p">)</span> <span class="p">{</span>
-
+        <span class="k">if</span> <span class="p">(</span><span class="nx">prev</span> <span class="o">&amp;&amp;</span> <span class="nx">prev</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nx">dragNode</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
             <span class="nx">dragNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">dropNode</span><span class="p">);</span>
         <span class="p">}</span>
