@@ -33,6 +33,8 @@ Class
                 border: 2px solid #ddd;
                 margin-bottom: 20px;
                 text-align: center;
+                left:-9999px;
+                top:-9999px;
             }
         </style>
 
