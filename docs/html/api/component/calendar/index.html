@@ -218,8 +218,6 @@
 <dd><p>{Boolean} - 可选, 是否支持时间段选择，只有开启时候才会触发rangeSelect事件</p>
 </dd></dl>
 
-<p class="versionadded">
-<span class="versionmodified">New in version 1.3.</span></p>
 <dl class="data">
 <dt id="calendar.range">
 <tt class="descclassname">calendar.</tt><tt class="descname">range</tt><a class="headerlink" href="#calendar.range" title="Permalink to this definition">¶</a></dt>
@@ -238,10 +236,12 @@
 <dd><p>{Date} - 可选, 日历可选择的最大, 默认不开启</p>
 </dd></dl>
 
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
 <dl class="data">
 <dt id="calendar.multiSelect">
 <tt class="descclassname">calendar.</tt><tt class="descname">multiSelect</tt><a class="headerlink" href="#calendar.multiSelect" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Boolean} - 可选, 是否支持多选, 默认不开启 (尚未实现)</p>
+<dd><p>{Boolean} - 可选, 是否支持多选, 默认不开启，只有开启时候才会触发multiSelect事件</p>
 </dd></dl>
 
 <dl class="data">
@@ -268,6 +268,8 @@
 <dd><p>{Array | String} - 可选, 弹出状态下, 触发弹出日历的事件, 例如：[&#8216;click&#8217;,&#8217;focus&#8217;],也可以直接传入&#8217;focus&#8217;, 默认为[&#8216;click&#8217;]</p>
 </dd></dl>
 
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
 <dl class="data">
 <dt id="calendar.disabled">
 <tt class="descclassname">calendar.</tt><tt class="descname">disabled</tt><a class="headerlink" href="#calendar.disabled" title="Permalink to this definition">¶</a></dt>
@@ -331,6 +333,15 @@
         <span class="nx">c</span><span class="p">.</span><span class="nx">render</span><span class="p">({</span><span class="nx">maxDate</span><span class="o">:</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()});</span>
 <span class="p">});</span>
 </pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="calendar.destroy">
+<tt class="descclassname">calendar.</tt><tt class="descname">destroy</tt><big>(</big><big>)</big><a class="headerlink" href="#calendar.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>destroy</strong> ()</div>
+<div class="line">销毁日历</div>
 </div>
 </dd></dl>
 
@@ -401,10 +412,45 @@
     <span class="c1">//选择范围,并绑定范围回调</span>
     <span class="k">new</span> <span class="nx">Calendar</span><span class="p">(</span><span class="s1">&#39;J_Range&#39;</span><span class="p">,{</span>
         <span class="nx">multi_page</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span>
-        <span class="nx">range_select</span><span class="o">:</span><span class="kc">true</span>
+        <span class="nx">rangeSelect</span><span class="o">:</span><span class="kc">true</span>
     <span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;rangeselect&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
         <span class="nx">alert</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">start</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="nx">e</span><span class="p">.</span><span class="nx">end</span><span class="p">);</span>
     <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<dl class="function">
+<dt>
+<tt class="descclassname">calendar.</tt><tt class="descname">multiSelect</tt><big>(</big><big>)</big></dt>
+<dd><div class="line-block">
+<div class="line"><strong>multiSelect</strong> (e)</div>
+<div class="line">多选触发的事件，通过e.multi来获取选中的日期数组</div>
+</div>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">param Object e:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">默认对象</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Calendar</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">new</span> <span class="nx">Calendar</span><span class="p">(</span><span class="s1">&#39;#J_Popup23&#39;</span><span class="p">,</span> <span class="p">{</span>
+                <span class="nx">popup</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+                <span class="nx">triggerType</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;click&#39;</span><span class="p">],</span>
+                <span class="nx">pages</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span>
+                <span class="nx">multiSelect</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+                <span class="nx">rangeLinkage</span><span class="o">:</span><span class="kc">false</span>
+        <span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;multiSelect&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">multi</span><span class="p">);</span>
+        <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
 </div>
