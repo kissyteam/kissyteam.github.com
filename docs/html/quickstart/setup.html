@@ -20,21 +20,27 @@
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
-    };
-
-    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
-        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+' charset="utf-8"><'+'/script>');
-    } 
-    else if(window.location.href.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")!=-1){
-        document.write('<script src="http://assets.daily.taobao.net/s/kissy/1.2.0/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
-    }
-    else{
-        document.write('<script src="http://docs.kissyui.com/kissy/build/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
-    }
-</script>
-    <script type="text/javascript" src="../static/jquery.js"></script>
-    <script type="text/javascript" src="../static/underscore.js"></script>
-    <script type="text/javascript" src="../static/doctools.js"></script> 
+    };    
+    (function(){
+        var js=[],h=window.location.href,d=document;
+            js.push("../static/jquery.js");
+            js.push("../static/underscore.js");
+            js.push("../static/doctools.js");
+        for(var i=0;i<js.length;i++){
+            var j=js[i];
+            if(h.indexOf("localhost/kissy_git/")==-1
+            &&
+            
+            h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
+            &&
+            j.indexOf("jquery.js")!=-1){
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');   
+            }else{
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');   
+            }
+        }
+    })();
+</script> 
 </head>
 <body><div id="header">
     <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../static/logo.png"/></a></h1>
@@ -96,51 +102,65 @@
 <li>先将 <a class="reference external" href="https://github.com/kissyteam/kissy/raw/master/build/kissy.js">https://github.com/kissyteam/kissy/raw/master/build/kissy.js</a> 引入到你的页面;</li>
 <li>接着, 稍加编写一些代码, 就可以实现下面的效果了:</li>
 </ul>
-<div class="demo">
-    <style>
-        .demo-wrap {
-            position: relative;
-            margin-top: 20px;
-            height: 110px;
-        }
-        #demo-txt {
-            position: absolute;
-            left: 400px;
-            top: 0;
-            color:#333333;
-            font: normal 26px/2 Futura,"Century Gothic",AppleGothic,sans-serif;
-            opacity: 0;
-            filter: alpha(opacity=0);
-        }
-        #demo-img {
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-    </style>
+<script>
+ (function(){
+     var h=window.location.href,d=document;
+     if(h.indexOf("localhost/kissy_git/")!=-1){
+             d.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+' charset="utf-8"><'+'/script>');
+         }
+     else if(h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")!=-1){
+         d.write('<script src="http://fed.ued.taobao.net/kissy-team/kissy/build/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
+     }
+     else{
+         d.write('<script src="http://docs.kissyui.com/kissy/build/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
+     }
+     })();
+ </script>
+ <div class="demo">
+     <style>
+         .demo-wrap {
+             position: relative;
+             margin-top: 20px;
+             height: 110px;
+         }
+         #demo-txt {
+             position: absolute;
+             left: 400px;
+             top: 0;
+             color:#333333;
+             font: normal 26px/2 Futura,"Century Gothic",AppleGothic,sans-serif;
+             opacity: 0;
+             filter: alpha(opacity=0);
+         }
+         #demo-img {
+             position: absolute;
+             left: 0;
+             top: 0;
+         }
+     </style>
 
-    <button type="button" id="demo-btn" autocomplete="off">Click Me!</button>
-    <div class="demo-wrap">
-        <img id="demo-img" src="http://docs.kissyui.com/logo/logo.png" />
-        <h2 id="demo-txt">Hello KISSY, NOT KITTY!</h2>
-    </div>
-    <script>
-        KISSY.ready(function(S){
-            var DOM = S.DOM, Event = S.Event,
-                btn = DOM.get('#demo-btn');
+     <button type="button" id="demo-btn" autocomplete="off">Click Me!</button>
+     <div class="demo-wrap">
+         <img id="demo-img" src="http://docs.kissyui.com/logo/logo.png" />
+         <h2 id="demo-txt">Hello KISSY, NOT KITTY!</h2>
+     </div>
+     <script>
+         KISSY.ready(function(S){
+             var DOM = S.DOM, Event = S.Event,
+                 btn = DOM.get('#demo-btn');
 
-            Event.on(btn, 'click', function() {
-                DOM.attr(btn, 'disabled', true);
+             Event.on(btn, 'click', function() {
+                 DOM.attr(btn, 'disabled', true);
 
-                S.Anim('#demo-img', 'left: 400px; opacity: 0', 2, 'easeOut', function() {
-                    S.Anim('#demo-txt',
-                           'left: 0; opacity: 1; fontSize: 28px',
-                           2, 'bounceOut').run();
-                }).run();
-            });
-        });
-    </script>
-</div><p>使用 KISSY 实现上面的效果, 只需大约 10 行代码.</p>
+                 S.Anim('#demo-img', 'left: 400px; opacity: 0', 2, 'easeOut', function() {
+                     S.Anim('#demo-txt',
+                            'left: 0; opacity: 1; fontSize: 28px',
+                            2, 'bounceOut').run();
+                 }).run();
+             });
+         });
+     </script>
+ </div><p>使用 KISSY 实现上面的效果, 只需大约 10 行代码.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -180,11 +200,11 @@
     </label>
     <script>
         if(!window.localStorage){
-            KISSY.one("#openComment").attr("disabled",true);
+            $("#openComment").attr("disabled",true);
         }else{
-            KISSY.one("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
-            KISSY.one("#openComment").on("change",function(){
-                window.localStorage.setItem("kissy-commment",KISSY.one("#openComment").val());
+            $("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            $("#openComment").bind("change",function(){
+                window.localStorage.setItem("kissy-commment",$("#openComment").val());
                 window.location.reload();
             });
         }

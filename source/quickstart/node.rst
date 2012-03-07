@@ -38,7 +38,21 @@ KISSY 提供两种使用方式:
 实现的效果就是, 点击按钮之后, 好多好学生都慢慢漂入 Taobao 中^o^
    
 .. raw:: html
-   
+
+   <script> 
+    (function(){
+        var h=window.location.href,d=document;
+        if(h.indexOf("localhost/kissy_git/")!=-1){
+                d.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+' charset="utf-8"><'+'/script>');
+            } 
+        else if(h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")!=-1){
+            d.write('<script src="http://fed.ued.taobao.net/kissy-team/kissy/build/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
+        }
+        else{
+            d.write('<script src="http://docs.kissyui.com/kissy/build/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
+        }
+        })();
+   </script>
    <div class="demo" style="height: 500px;">
         <style>
             .demo {

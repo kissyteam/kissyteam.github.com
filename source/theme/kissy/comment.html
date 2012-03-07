@@ -8,11 +8,11 @@
     </label>
     <script>
         if(!window.localStorage){
-            KISSY.one("#openComment").attr("disabled",true);
+            $("#openComment").attr("disabled",true);
         }else{
-            KISSY.one("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
-            KISSY.one("#openComment").on("change",function(){
-                window.localStorage.setItem("kissy-commment",KISSY.one("#openComment").val());
+            $("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            $("#openComment").bind("change",function(){
+                window.localStorage.setItem("kissy-commment",$("#openComment").val());
                 window.location.reload();
             });
         }

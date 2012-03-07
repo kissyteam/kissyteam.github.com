@@ -45,21 +45,27 @@ kissy/layout.html
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
         HAS_SOURCE: {{ has_source | lower }}
-    };
-
-    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
-        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+' charset="utf-8"><'+'/script>');
-    } 
-    else if(window.location.href.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")!=-1){
-        document.write('<script src="http://assets.daily.taobao.net/s/kissy/1.2.0/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
-    }
-    else{
-        document.write('<script src="http://docs.kissyui.com/kissy/build/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
-    }
+    };    
+    (function(){
+        var js=[],h=window.location.href,d=document; 
+        {%- for scriptfile in script_files %}
+            js.push("{{ pathto(scriptfile, 1) }}");
+        {%- endfor %}
+        for(var i=0;i<js.length;i++){
+            var j=js[i];
+            if(h.indexOf("localhost/kissy_git/")==-1
+            &&
+            
+            h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
+            &&
+            j.indexOf("jquery.js")!=-1){
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');   
+            }else{
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');   
+            }
+        }
+    })();
 </script>
-    {%- for scriptfile in script_files %}
-    <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
-    {%- endfor %}
     {%- if hasdoc('search') %}
     <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
     {%- endif %}

@@ -20,21 +20,27 @@
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
-    };
-
-    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
-        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+' charset="utf-8"><'+'/script>');
-    } 
-    else if(window.location.href.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")!=-1){
-        document.write('<script src="http://assets.daily.taobao.net/s/kissy/1.2.0/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
-    }
-    else{
-        document.write('<script src="http://docs.kissyui.com/kissy/build/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
-    }
-</script>
-    <script type="text/javascript" src="../../../static/jquery.js"></script>
-    <script type="text/javascript" src="../../../static/underscore.js"></script>
-    <script type="text/javascript" src="../../../static/doctools.js"></script> 
+    };    
+    (function(){
+        var js=[],h=window.location.href,d=document;
+            js.push("../../../static/jquery.js");
+            js.push("../../../static/underscore.js");
+            js.push("../../../static/doctools.js");
+        for(var i=0;i<js.length;i++){
+            var j=js[i];
+            if(h.indexOf("localhost/kissy_git/")==-1
+            &&
+            
+            h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
+            &&
+            j.indexOf("jquery.js")!=-1){
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');   
+            }else{
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');   
+            }
+        }
+    })();
+</script> 
 </head>
 <body><div id="header">
     <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../../../static/logo.png"/></a></h1>
@@ -118,7 +124,7 @@
 </table>
 <p>和 <tt class="docutils literal"><span class="pre">css('height')</span></tt> 的区别在于该函数返回不带单位的纯数值, 而前者则返回带单位的原始值(例如 <tt class="docutils literal"><span class="pre">400px</span></tt> ).
 当需要数值计算时, 推荐该方法, 如图所示：(from jquery)</p>
-<img alt="from jquery" src="../../../images/height.png" />
+<img alt="from jquery" src="../../../images/height1.png" />
 <p class="versionadded">
 <span class="versionmodified">New in version 1.2: </span>该方法也可以用来得到 windw 和 document 的高度</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Node</span><span class="p">){</span>
@@ -161,12 +167,19 @@
   <span class="nt">div</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span><span class="nb">red</span><span class="p">;</span> <span class="k">font-weight</span><span class="o">:</span><span class="k">bold</span><span class="p">;</span> <span class="p">}</span>
   <span class="nt">&lt;/style&gt;</span>
   <span class="nt">&lt;script&gt;</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">==</span><span class="s2">&quot;localhost&quot;</span><span class="p">){</span>
-        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://localhost/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
-    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://docs.kissyui.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">h</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">,</span><span class="nx">d</span><span class="o">=</span><span class="nb">document</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">h</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;localhost/kissy_git/&quot;</span><span class="p">)</span><span class="o">!=-</span><span class="mi">1</span><span class="p">){</span>
+            <span class="nx">d</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://localhost/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39; charset=&quot;utf-8&quot;&gt;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/script&gt;&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">h</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;fed.ued.taobao.net/kissy-team/kissyteam/&quot;</span><span class="p">)</span><span class="o">!=-</span><span class="mi">1</span><span class="p">){</span>
+        <span class="nx">d</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://fed.ued.taobao.net/kissy-team/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39; charset=&quot;utf-8&quot;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/script&gt;&#39;</span><span class="p">);</span>
     <span class="p">}</span>
-   <span class="nt">&lt;/script&gt;</span>
+    <span class="k">else</span><span class="p">{</span>
+        <span class="nx">d</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://docs.kissyui.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39; charset=&quot;utf-8&quot;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="p">})();</span>
+<span class="nt">&lt;/script&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
   <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;getp&quot;</span><span class="nt">&gt;</span>Get Paragraph Height<span class="nt">&lt;/button&gt;</span>
@@ -209,12 +222,19 @@
   <span class="nt">&lt;style&gt;div</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span><span class="m">50px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span><span class="m">70px</span><span class="p">;</span> <span class="k">float</span><span class="o">:</span><span class="k">left</span><span class="p">;</span> <span class="k">margin</span><span class="o">:</span><span class="m">5px</span><span class="p">;</span>
         <span class="k">background</span><span class="o">:</span><span class="k">rgb</span><span class="p">(</span><span class="m">255</span><span class="o">,</span><span class="m">140</span><span class="o">,</span><span class="m">0</span><span class="p">);</span> <span class="k">cursor</span><span class="o">:</span><span class="k">pointer</span><span class="p">;</span> <span class="p">}</span>  <span class="nt">&lt;/style&gt;</span>
   <span class="nt">&lt;script&gt;</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">==</span><span class="s2">&quot;localhost&quot;</span><span class="p">){</span>
-        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://localhost/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
-    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-        <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://docs.kissyui.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">h</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">,</span><span class="nx">d</span><span class="o">=</span><span class="nb">document</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">h</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;localhost/kissy_git/&quot;</span><span class="p">)</span><span class="o">!=-</span><span class="mi">1</span><span class="p">){</span>
+            <span class="nx">d</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://localhost/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39; charset=&quot;utf-8&quot;&gt;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/script&gt;&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">h</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;fed.ued.taobao.net/kissy-team/kissyteam/&quot;</span><span class="p">)</span><span class="o">!=-</span><span class="mi">1</span><span class="p">){</span>
+        <span class="nx">d</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://fed.ued.taobao.net/kissy-team/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39; charset=&quot;utf-8&quot;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/script&gt;&#39;</span><span class="p">);</span>
     <span class="p">}</span>
-   <span class="nt">&lt;/script&gt;</span>
+    <span class="k">else</span><span class="p">{</span>
+        <span class="nx">d</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://docs.kissyui.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39; charset=&quot;utf-8&quot;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="p">})();</span>
+<span class="nt">&lt;/script&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
   <span class="nt">&lt;div&gt;&lt;/div&gt;</span>
@@ -278,11 +298,11 @@
     </label>
     <script>
         if(!window.localStorage){
-            KISSY.one("#openComment").attr("disabled",true);
+            $("#openComment").attr("disabled",true);
         }else{
-            KISSY.one("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
-            KISSY.one("#openComment").on("change",function(){
-                window.localStorage.setItem("kissy-commment",KISSY.one("#openComment").val());
+            $("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            $("#openComment").bind("change",function(){
+                window.localStorage.setItem("kissy-commment",$("#openComment").val());
                 window.location.reload();
             });
         }

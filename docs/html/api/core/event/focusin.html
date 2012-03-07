@@ -20,21 +20,27 @@
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
-    };
-
-    if(window.location.href.indexOf("localhost/kissy_git/")!=-1){
-        document.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+' charset="utf-8"><'+'/script>');
-    } 
-    else if(window.location.href.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")!=-1){
-        document.write('<script src="http://assets.daily.taobao.net/s/kissy/1.2.0/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
-    }
-    else{
-        document.write('<script src="http://docs.kissyui.com/kissy/build/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
-    }
-</script>
-    <script type="text/javascript" src="../../../static/jquery.js"></script>
-    <script type="text/javascript" src="../../../static/underscore.js"></script>
-    <script type="text/javascript" src="../../../static/doctools.js"></script> 
+    };    
+    (function(){
+        var js=[],h=window.location.href,d=document;
+            js.push("../../../static/jquery.js");
+            js.push("../../../static/underscore.js");
+            js.push("../../../static/doctools.js");
+        for(var i=0;i<js.length;i++){
+            var j=js[i];
+            if(h.indexOf("localhost/kissy_git/")==-1
+            &&
+            
+            h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
+            &&
+            j.indexOf("jquery.js")!=-1){
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');   
+            }else{
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');   
+            }
+        }
+    })();
+</script> 
 </head>
 <body><div id="header">
     <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com"><img src="../../../static/logo.png"/></a></h1>
@@ -113,12 +119,19 @@
         <span class="p">}</span>
     <span class="nt">&lt;/style&gt;</span>
     <span class="nt">&lt;script&gt;</span>
-        <span class="k">if</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">==</span><span class="s2">&quot;localhost&quot;</span><span class="p">){</span>
-            <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://localhost/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
-        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-            <span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://docs.kissyui.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="s1">&#39;script&gt;&#39;</span><span class="p">);</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">h</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">,</span><span class="nx">d</span><span class="o">=</span><span class="nb">document</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">h</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;localhost/kissy_git/&quot;</span><span class="p">)</span><span class="o">!=-</span><span class="mi">1</span><span class="p">){</span>
+            <span class="nx">d</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://localhost/kissy_git/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39; charset=&quot;utf-8&quot;&gt;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/script&gt;&#39;</span><span class="p">);</span>
         <span class="p">}</span>
-   <span class="nt">&lt;/script&gt;</span>
+    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">h</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;fed.ued.taobao.net/kissy-team/kissyteam/&quot;</span><span class="p">)</span><span class="o">!=-</span><span class="mi">1</span><span class="p">){</span>
+        <span class="nx">d</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://fed.ued.taobao.net/kissy-team/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39; charset=&quot;utf-8&quot;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span><span class="p">{</span>
+        <span class="nx">d</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;script src=&quot;http://docs.kissyui.com/kissy/build/kissy.js&quot;&#39;</span><span class="o">+</span><span class="s1">&#39; charset=&quot;utf-8&quot;&gt;&#39;</span><span class="o">+</span><span class="s1">&#39;&lt;&#39;</span><span class="o">+</span><span class="s1">&#39;/script&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="p">})();</span>
+<span class="nt">&lt;/script&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
   <span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&#39;f&#39;</span><span class="nt">&gt;</span>
@@ -183,11 +196,11 @@
     </label>
     <script>
         if(!window.localStorage){
-            KISSY.one("#openComment").attr("disabled",true);
+            $("#openComment").attr("disabled",true);
         }else{
-            KISSY.one("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
-            KISSY.one("#openComment").on("change",function(){
-                window.localStorage.setItem("kissy-commment",KISSY.one("#openComment").val());
+            $("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            $("#openComment").bind("change",function(){
+                window.localStorage.setItem("kissy-commment",$("#openComment").val());
                 window.location.reload();
             });
         }
