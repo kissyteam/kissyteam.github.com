@@ -1,4 +1,4 @@
-KISSY.use("datalazyload,switchable", function(S,Switchable) {
+KISSY.use("datalazyload,switchable", function(S,_,Switchable) {
 	var Tabs = Switchable.Tabs;
 	S.ready(function(S) {
         //通过DOM元素demo2新那一个Tab
