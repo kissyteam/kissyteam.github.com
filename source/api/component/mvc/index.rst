@@ -1,7 +1,7 @@
 .. module:: mvc
 
 
-mvc beta
+mvc
 ===============================
 
 |  mvc
@@ -26,9 +26,7 @@ Method in mvc
 .. toctree::
    :titlesonly:
 
-   sync   
-
-
+   sync
 
 
 Refer

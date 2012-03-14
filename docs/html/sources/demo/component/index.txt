@@ -19,3 +19,4 @@ Component
    menubutton/index
    tree/index
    waterfall/index
+   mvc/index
