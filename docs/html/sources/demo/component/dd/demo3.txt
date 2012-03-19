@@ -120,6 +120,7 @@ DraggableDelegate 使用示例
 
             DDM.on("dragend", function(ev) {
                 var c = ev.drag;
+                // 恢复原有定位
                 c.get("dragNode").css("position", p);
             });
     

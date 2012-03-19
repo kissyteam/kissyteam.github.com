@@ -122,6 +122,9 @@ Class
                     n.css("opacity", 0.8);
                     return n;
                 },
+                // 主体位置不跟随 proxy
+                moveOnEnd:false,
+                // 每次 proxy 都重新生成
                 destroyOnEnd:true
             });
 
