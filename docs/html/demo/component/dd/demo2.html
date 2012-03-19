@@ -181,17 +181,6 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>拖放中, 根据位置信息设置节点坐标</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">DDM</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;drag&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">drag</span><span class="p">;</span>
-    <span class="cm">/**</span>
-<span class="cm">     * node 和 dragNode 区别：</span>
-<span class="cm">     * node : 可能是 proxy node, 指实际拖放节点</span>
-<span class="cm">     */</span>
-    <span class="nx">c</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">).</span><span class="nx">offset</span><span class="p">(</span><span class="nx">ev</span><span class="p">);</span>
-<span class="p">});</span>
-</pre></div>
-</div>
 <p>拖放结束后, 恢复节点的定位信息</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">DDM</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;dragend&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">drag</span><span class="p">;</span>
@@ -208,18 +197,21 @@
     <span class="c1">// strict : drag 区域完全在 drop 区域内才算</span>
     <span class="c1">// point : 鼠标在 drop 区域内</span>
     <span class="c1">//默认 point</span>
-    <span class="nx">mode</span><span class="o">:</span><span class="nx">Draggable</span><span class="p">.</span><span class="nx">INTERSECT</span>
+    <span class="nx">mode</span><span class="o">:</span><span class="nx">Draggable</span><span class="p">.</span><span class="nx">INTERSECT</span><span class="p">,</span>
+    <span class="nx">move</span><span class="o">:</span><span class="kc">true</span>
 <span class="p">});</span>
 
 
 <span class="kd">var</span> <span class="nx">c3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Draggable</span><span class="p">({</span>
     <span class="nx">node</span><span class="o">:</span><span class="s2">&quot;#c3&quot;</span><span class="p">,</span>
-    <span class="nx">mode</span><span class="o">:</span><span class="nx">Draggable</span><span class="p">.</span><span class="nx">STRICT</span>
+    <span class="nx">mode</span><span class="o">:</span><span class="nx">Draggable</span><span class="p">.</span><span class="nx">STRICT</span><span class="p">,</span>
+    <span class="nx">move</span><span class="o">:</span><span class="kc">true</span>
 <span class="p">});</span>
 
 
 <span class="kd">var</span> <span class="nx">c2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Draggable</span><span class="p">({</span>
-    <span class="nx">node</span><span class="o">:</span><span class="s2">&quot;#c2&quot;</span>
+    <span class="nx">node</span><span class="o">:</span><span class="s2">&quot;#c2&quot;</span><span class="p">,</span>
+    <span class="nx">move</span><span class="o">:</span><span class="kc">true</span>
 <span class="p">});</span>
 
 

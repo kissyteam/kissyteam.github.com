@@ -462,18 +462,9 @@
 
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p><tt class="docutils literal"><span class="pre">Draggable</span></tt> 默认实例化后仅表示会根据鼠标拖放触发相应的事件, 并不会导致节点移动，有两种方式处理：</p>
-<ol class="arabic simple">
-<li>可监听 <a class="reference internal" href="#dd.Draggable.drag" title="dd.Draggable.drag"><tt class="xref py py-func docutils literal"><span class="pre">drag()</span></tt></a> 事件, 根据事件对象参数的坐标设置拖放节点的具体位置.</li>
-</ol>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">Draggable</span><span class="p">({</span><span class="nx">node</span> <span class="o">:</span><span class="s2">&quot;#d&quot;</span><span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;drag&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">).</span><span class="nx">offset</span><span class="p">({</span><span class="nx">left</span><span class="o">:</span><span class="nx">ev</span><span class="p">.</span><span class="nx">left</span><span class="p">,</span><span class="nx">top</span><span class="o">:</span><span class="nx">ev</span><span class="p">.</span><span class="nx">top</span><span class="p">});</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="2">
-<li>设置 <a class="reference internal" href="#dd.Draggable.config.move" title="dd.Draggable.config.move"><tt class="xref py py-data docutils literal"><span class="pre">move</span></tt></a> 为 true.</li>
-</ol>
+<p><tt class="docutils literal"><span class="pre">Draggable</span></tt> 默认实例化后仅表示会根据鼠标拖放触发 <a class="reference internal" href="#dd.Draggable.drag" title="dd.Draggable.drag"><tt class="xref py py-func docutils literal"><span class="pre">drag()</span></tt></a> 事件, 并不会导致节点移动，
+通过以下设置来使得节点跟随鼠标移动：</p>
+<p>设置 <a class="reference internal" href="#dd.Draggable.config.move" title="dd.Draggable.config.move"><tt class="xref py py-data docutils literal"><span class="pre">move</span></tt></a> 为 true.</p>
 <div class="last highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">Draggable</span><span class="p">({</span>
     <span class="nx">node</span><span class="o">:</span><span class="s2">&quot;#d&quot;</span><span class="p">,</span>
     <span class="nx">move</span><span class="o">:</span><span class="kc">true</span>

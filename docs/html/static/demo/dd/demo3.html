@@ -59,18 +59,9 @@ KISSY.use("node,dd", function (S, Node, DD) {
         p = c.get("dragNode").css("position");
     });
 
-    DDM.on("drag", function(ev) {
-
-        var c = ev.drag;
-        /**
-         * node 和 dragNode 区别：
-         * node : 可能是 proxy node, 指实际拖放节点
-         */
-        c.get("node").offset(ev);
-    });
-
     DDM.on("dragend", function(ev) {
         var c = ev.drag;
+        // 恢复原有定位
         c.get("dragNode").css("position", p);
     });
 
@@ -80,7 +71,8 @@ KISSY.use("node,dd", function (S, Node, DD) {
     var delegate = new DraggableDelegate({
         container:"#container3",
         handlers:['.cheader'],
-        selector:'.component'
+        selector:'.component',
+        move:true
     });
 
     var drop = new Droppable({

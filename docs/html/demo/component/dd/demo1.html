@@ -147,22 +147,14 @@
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">){</span>
     <span class="kd">var</span> <span class="nx">drag</span><span class="o">=</span><span class="k">new</span> <span class="nx">DD</span><span class="p">.</span><span class="nx">Draggable</span><span class="p">({</span>
         <span class="nx">node</span><span class="o">:</span><span class="s1">&#39;#test-drag&#39;</span><span class="p">,</span>
-        <span class="nx">cursor</span><span class="o">:</span><span class="s1">&#39;move&#39;</span>
+        <span class="nx">cursor</span><span class="o">:</span><span class="s1">&#39;move&#39;</span><span class="p">,</span>
+        <span class="nx">move</span><span class="o">:</span><span class="kc">true</span>
     <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 <p><strong>初始化 proxy 对象</strong></p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">Proxy</span><span class="p">().</span><span class="nx">attach</span><span class="p">(</span><span class="nx">drag</span><span class="p">);</span>
-</pre></div>
-</div>
-<p><strong>监控事件, 处理移动</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">drag</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;drag&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
-    <span class="nx">drag</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">).</span><span class="nx">offset</span><span class="p">({</span>
-        <span class="nx">left</span><span class="o">:</span><span class="nx">ev</span><span class="p">.</span><span class="nx">left</span><span class="p">,</span>
-        <span class="nx">top</span><span class="o">:</span><span class="nx">ev</span><span class="p">.</span><span class="nx">top</span>
-    <span class="p">});</span>
-<span class="p">});</span>
 </pre></div>
 </div>
 <div class="admonition note">

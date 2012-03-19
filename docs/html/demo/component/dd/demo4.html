@@ -179,7 +179,8 @@
 <div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">dragDelegate</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DraggableDelegate</span><span class="p">({</span>
     <span class="nx">container</span><span class="o">:</span><span class="s2">&quot;#container2&quot;</span><span class="p">,</span>
     <span class="nx">handlers</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;.cheader&#39;</span><span class="p">],</span>
-    <span class="nx">selector</span><span class="o">:</span><span class="s1">&#39;.component&#39;</span>
+    <span class="nx">selector</span><span class="o">:</span><span class="s1">&#39;.component&#39;</span><span class="p">,</span>
+    <span class="nx">move</span><span class="o">:</span><span class="kc">true</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -228,19 +229,6 @@
 </div></blockquote>
 </li>
 </ol>
-<p><strong>监控移动</strong></p>
-<p>在 <a class="reference internal" href="../../../api/component/dd/draggable-delegate.html#dd.DraggableDelegate" title="dd.DraggableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt></a> 上监听移动事件, 并移动相应的被委托节点</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">dragDelegate</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;drag&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
-
-    <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
-    <span class="cm">/**</span>
-<span class="cm">     * node 和 dragNode 区别：</span>
-<span class="cm">     * node : 可能是 proxy node, 指实际拖放节点</span>
-<span class="cm">     */</span>
-    <span class="nx">c</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">).</span><span class="nx">offset</span><span class="p">(</span><span class="nx">ev</span><span class="p">);</span>
-<span class="p">});</span>
-</pre></div>
-</div>
 <p><strong>交换节点位置</strong></p>
 <p>当触发 <a class="reference internal" href="../../../api/component/dd/draggable.html#dd.Draggable.dragover" title="dd.Draggable.dragover"><tt class="xref py py-data docutils literal"><span class="pre">dragover</span></tt></a> 事件时, 交换当前 DraggableDelegate 的被委托节点与对应 DroppableDelegate 的被委托节点</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">dragDelegate</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;dragover&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>

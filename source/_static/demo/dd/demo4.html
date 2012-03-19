@@ -88,46 +88,25 @@
                     n.css("opacity", 0.8);
                     return n;
                 },
+                // 主体位置不跟随 proxy
+                moveOnEnd:false,
+                // 每次 proxy 都重新生成
                 destroyOnEnd:true
             });
 
             var dragDelegate = new DraggableDelegate({
                 container:"#container2",
                 handlers:['.cheader'],
-                selector:'.component'
+                selector:'.component',
+                move:true
             });
 
             proxy.attach(dragDelegate);
 
 
-
-
             var dropDelegate = new DroppableDelegate({
                 container:"#container2",
                 selector:'.component'
-            });
-
-
-            var p;
-            /**
-             * 集中监听所有
-             */
-            dragDelegate.on("dragstart", function(ev) {
-                var c = this;
-                p = c.get("dragNode").css("position");
-            });
-            dragDelegate.on("drag", function(ev) {
-
-                var c = this;
-                /**
-                 * node 和 dragNode 区别：
-                 * node : 可能是 proxy node, 指实际拖放节点
-                 */
-                c.get("node").offset(ev);
-            });
-            dragDelegate.on("dragend", function(ev) {
-                var c = this;
-                c.get("dragNode").css("position", p);
             });
 
             dragDelegate.on("dragover", function(ev) {

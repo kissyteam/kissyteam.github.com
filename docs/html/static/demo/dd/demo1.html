@@ -38,17 +38,11 @@
     KISSY.use("dd",function(S,DD){
         var drag=new DD.Draggable({
             node:'#test-drag',
-            cursor:'move'
+            cursor:'move',
+            move:true
         });
 
         new DD.Proxy().attach(drag);
-
-        drag.on("drag",function(ev){
-           drag.get("node").offset({
-            left:ev.left,
-            top:ev.top
-           });
-        });
     });
 </script>
 
