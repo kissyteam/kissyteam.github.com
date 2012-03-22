@@ -12,7 +12,7 @@
 
 首先为你的组件想好一个名字, 这里取名为 ``sliding-labels``, 定好构造器接口为 ``SlidingLabels``.
 
-在本地, 创建组件的目录结构, 可以参考 `这里 <https://github.com/kissyteam/kissy-gallery/tree/master/gallery/sliding-labels>`_ 或者 <https://github.com/kissyteam/kissy-gallery/tree/master/gallery/yours>`_
+在本地, 创建组件的目录结构, 可以参考 `示例 <https://github.com/kissyteam/kissy-gallery/tree/master/gallery/sliding-labels>`_ 或者 `这里 <https://github.com/kissyteam/kissy-gallery/tree/master/gallery/yours>`_.
 
 按照此目录结构, 修改文件夹文字, 及组件名等, 之后完成组件代码.
 
