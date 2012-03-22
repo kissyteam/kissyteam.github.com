@@ -32,34 +32,29 @@ KISSY 组件开发规范
 
 .. image:: /_images/styleguide/component-guide.png
 
-src 目录中必须包含和组件名相同的一个模块文件, 模块名为 ``gallery/overlay`` ,用来指明该组件依赖的子模块, 子模块的名约定为 ``gallery/overlay/xx`` ,如果组件比较简单也可只有这一个源码文件. 例如 overlay.js
+目录中必须包含版本号子目录以及 index 模块, 模块名为 ``gallery/overlay/1.0/index`` ,用来指明该组件依赖的子模块, 子模块的名约定为 ``gallery/overlay/1.0/xx`` ,如果组件比较简单也可只有这一个源码文件. 例如 index.js
 
 .. code-block:: javascript
 
 
-    KISSY.add("gallery/overlay",function(S,O){
+    KISSY.add("gallery/overlay/1.0/index",function(S,O){
         
         return O;
         
     },{
         // 其他模块如果被这里指定的模块所依赖则可以不指定，例如  position 依赖 base，则 base 这里可以不指定
-        requires:['./overlay/position'] 
+        requires:['./position'] 
     });
 
-子模块放在 ``src`` 模块名为目录名的文件夹内, 对于 KISSY 1.2 以前, 需要手动将组件挂载到 KISSY 上去并且需要在模块定义处挂载, 例如子模块 base.js 的编写：
+子模块放在 ``src`` 模块名为目录名的文件夹内, 例如子模块 base.js 的编写：
 
 
 .. code-block:: javascript
 
-    KISSY.add("gallery/overlay/base",function(S){
+    KISSY.add("gallery/overlay/1.0/base",function(S){
         function Overlay(){}
         
         // functions
-        
-        
-        //如果需要兼容 KISSY < 1.2, 需要手动挂载到 KISSY
-        S.namespace("Gallery");
-        S.Gallery.Overlay=Overlay;
 
         return Overlay;
     });
@@ -69,9 +64,7 @@ src 目录中必须包含和组件名相同的一个模块文件, 模块名为 `
 
 .. code-block:: javascript
 
-    KISSY.add("gallery/overlay/position",function(S,Overlay){
-        // 兼容 kissy < 1.2 以下代码
-        // Overlay = S.Gallery.Overlay;
+    KISSY.add("gallery/overlay/1.0/position",function(S,Overlay){       
 
         Overlay.prototype.xx=function(){};
         
@@ -99,11 +92,9 @@ src 目录中必须包含和组件名相同的一个模块文件, 模块名为 `
             <script src='../../../kissy/build/kissy.js'></script>
             <script src='base.js'></script>
             <script src='position.js'></script>
-            <script src='../overlay.js'></script>
+            <script src='index.js'></script>
             <script>
-                KISSY.use("gallery/overlay",function(S,Overlay){
-                    // kissy < 1.2 获取
-                    Overlay=S.Gallery.Overlay;
+                KISSY.use("gallery/overlay/1.0/index",function(S,Overlay){                    
                 });
             </script>
         </body>
@@ -152,7 +143,7 @@ src 目录中必须包含和组件名相同的一个模块文件, 模块名为 `
         <body>
             <script src='base.js'></script>
             <script src='position.js'></script>
-            <script src='overlay.js'></script>
+            <script src='index.js'></script>
             <script src="overlay-spec.js"></script>
             <script>
                 jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
