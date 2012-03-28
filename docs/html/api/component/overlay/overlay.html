@@ -349,6 +349,10 @@
 </div>
 <p><tt class="docutils literal"><span class="pre">handlers</span></tt> 配置表示的数组元素可取上述八种值之一, t,b,l,r 分别表示 top,bottom,left,right, 加上组合共八种取值,
 可在上, 下, 左, 右以及左上, 左下, 右上, 右下进行拖动.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">使用该功能需要和 <a class="reference internal" href="../resizable/index.html#resizable.Resizable" title="resizable.Resizable"><tt class="xref py py-class docutils literal"><span class="pre">Resizable</span></tt></a> 一起 use，例如： <tt class="docutils literal"><span class="pre">use(&quot;overlay,resizable&quot;)</span></tt></p>
+</div>
 </dd></dl>
 
 </div>
@@ -467,6 +471,8 @@
 </div>
 </dd></dl>
 
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.2.</span></p>
 <dl class="method">
 <dt>
 <tt class="descclassname">Overlay.prototype.</tt><tt class="descname">align</tt><big>(</big><big>)</big></dt>
@@ -490,7 +496,10 @@
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">调用该方法前请先调用 <a class="reference internal" href="#overlay.Overlay.prototype.render" title="overlay.Overlay.prototype.render"><tt class="xref py py-meth docutils literal"><span class="pre">render()</span></tt></a>.</p>
+<ol class="last arabic simple">
+<li>调用该方法前请先调用 <a class="reference internal" href="#overlay.Overlay.prototype.render" title="overlay.Overlay.prototype.render"><tt class="xref py py-meth docutils literal"><span class="pre">render()</span></tt></a>.  .</li>
+<li>推荐使用 <tt class="docutils literal"><span class="pre">set(&quot;align&quot;,{</span> <span class="pre">node:node,</span> <span class="pre">points:points,</span> <span class="pre">offset;offset});</span></tt> 来代替该方法.</li>
+</ol>
 </div>
 </dd></dl>
 
