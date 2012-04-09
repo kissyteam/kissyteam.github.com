@@ -174,7 +174,7 @@
 </tbody>
 </table>
 <p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span><tt class="docutils literal"><span class="pre">io()</span></tt> 返回 <tt class="docutils literal"><span class="pre">XhrObj</span></tt> 对象.</p>
+<span class="versionmodified">New in version 1.2: </span>返回 <a class="reference internal" href="xhr.html#io.XhrObj" title="io.XhrObj"><tt class="xref py py-class docutils literal"><span class="pre">XhrObj</span></tt></a> 对象.</p>
 </dd></dl>
 
 </div>
@@ -228,7 +228,9 @@
 <tt class="descclassname">cfg.</tt><tt class="descname">processData</tt><a class="headerlink" href="#io.cfg.processData" title="Permalink to this definition">¶</a></dt>
 <dd><p class="versionadded">
 <span class="versionmodified">New in version 1.2.</span></p>
-<p>{Boolean} -  默认 true . 当 <a class="reference internal" href="#io.cfg.data" title="io.cfg.data"><tt class="xref py py-data docutils literal"><span class="pre">data</span></tt></a> 为对象时是否用 <tt class="xref py py-func docutils literal"><span class="pre">param()</span></tt> 序列化.例如当需要传送一个 xml 到服务器时就不需要 param data，并且最好同时设置 contentType 为合适的值.</p>
+<p>{Boolean} -  默认 true . 当 <a class="reference internal" href="#io.cfg.data" title="io.cfg.data"><tt class="xref py py-data docutils literal"><span class="pre">data</span></tt></a> 为对象时是否用 <a class="reference internal" href="../../seed/lang/param.html#seed.KISSY.param" title="seed.KISSY.param"><tt class="xref py py-func docutils literal"><span class="pre">param()</span></tt></a> 序列化.
+例如当需要传送一个 xml 或 <a class="reference external" href="http://www.w3.org/TR/XMLHttpRequest/#interface-formdata">formdata</a> 到服务器时就不需要 param data，
+并且最好同时设置 contentType 为合适的值.</p>
 </dd></dl>
 
 <dl class="data">
@@ -248,10 +250,11 @@
 <dl class="data">
 <dt id="io.cfg.contentType">
 <tt class="descclassname">cfg.</tt><tt class="descname">contentType</tt><a class="headerlink" href="#io.cfg.contentType" title="Permalink to this definition">¶</a></dt>
-<dd><p>{String} - 设置请求头 Content-type, 默认 &#8220;application/x-www-form-urlencoded&#8221;.</p>
+<dd><p>{String} - 设置请求头 Content-type, 默认 &#8220;application/x-www-form-urlencoded&#8221;. 设置 false 则不设置 Content-type 头
+(例如传输 <a class="reference external" href="http://www.w3.org/TR/XMLHttpRequest/#interface-formdata">formdata</a> 时需要设置 false).</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">数据总是以 utf-8 的编码传往服务器端.</p>
+<p class="last">&#8220;application/x-www-form-urlencoded&#8221; 时的数据总是以 utf-8 的编码传往服务器端.</p>
 </div>
 </dd></dl>
 

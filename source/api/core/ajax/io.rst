@@ -58,7 +58,7 @@ Methods Detail
     :param Object cfg: 用来配置请求的键值对对象.所有的配置项都是可选的,可以通过 :func:`io.setupConfig` 来设置默认配置. 见下节
     
     .. versionadded:: 1.2
-        ``io()`` 返回 ``XhrObj`` 对象.
+       返回 :class:`~io.XhrObj` 对象.
 
 .. _io-config:
 
@@ -105,7 +105,9 @@ Config Detail
 
     .. versionadded:: 1.2
 
-    {Boolean} -  默认 true . 当 :data:`~io.cfg.data` 为对象时是否用 :func:`~Lang.KISSY.param` 序列化.例如当需要传送一个 xml 到服务器时就不需要 param data，并且最好同时设置 contentType 为合适的值.
+    {Boolean} -  默认 true . 当 :data:`~io.cfg.data` 为对象时是否用 :func:`~seed.KISSY.param` 序列化.
+    例如当需要传送一个 xml 或 `formdata <http://www.w3.org/TR/XMLHttpRequest/#interface-formdata>`_ 到服务器时就不需要 param data，
+    并且最好同时设置 contentType 为合适的值.
 
 .. data:: cfg.async
 
@@ -119,10 +121,11 @@ Config Detail
 
 .. data:: cfg.contentType
 
-    {String} - 设置请求头 Content-type, 默认 "application/x-www-form-urlencoded".
+    {String} - 设置请求头 Content-type, 默认 "application/x-www-form-urlencoded". 设置 false 则不设置 Content-type 头 
+    (例如传输 `formdata <http://www.w3.org/TR/XMLHttpRequest/#interface-formdata>`_ 时需要设置 false).
 
     .. note::
-        数据总是以 utf-8 的编码传往服务器端.
+        "application/x-www-form-urlencoded" 时的数据总是以 utf-8 的编码传往服务器端.
 
 .. data:: cfg.context
 
