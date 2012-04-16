@@ -242,3 +242,8 @@ each
 -------------------------------------------------------
 
 https://spreadsheets.google.com/ccc?key=0ApZFGfLktT7FdDgtcGdzWV9wSzRpX2FRTElzZmVoV2c&hl=en#gid=3
+
+
+.. note::
+
+    模板变量不能为 JS 关键字，例如 delete if 等.
