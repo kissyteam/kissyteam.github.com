@@ -22,8 +22,9 @@ Methods
     和 ``css('height')`` 的区别在于该函数返回不带单位的纯数值, 而前者则返回带单位的原始值(例如 ``400px`` ).
     当需要数值计算时, 推荐该方法, 如图所示：(from jquery)
 
-    .. image:: /_images/node/height.png
-       :alt: from jquery
+    .. raw:: html
+
+        <img  src='../../../_static/api/core/node/height.png' />
     
     .. versionadded:: 1.2
         该方法也可以用来得到 windw 和 document 的高度

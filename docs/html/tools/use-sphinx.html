@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Sphinx 使用介绍 &mdash; KISSY Docs valpha documentation</title>
+<title>Sphinx 使用介绍 &mdash; KISSY Docs alpha documentation</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../static/kissy.css"/>
@@ -236,25 +236,25 @@ It can span multiple lines.</pre>
 <col width="41%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">A</th>
+<tr class="row-odd"><th class="head">A</th>
 <th class="head">B</th>
 <th class="head">A and B</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>False</td>
+<tr class="row-even"><td>False</td>
 <td>False</td>
 <td>False</td>
 </tr>
-<tr><td>True</td>
+<tr class="row-odd"><td>True</td>
 <td>False</td>
 <td>False</td>
 </tr>
-<tr><td>False</td>
+<tr class="row-even"><td>False</td>
 <td>True</td>
 <td>False</td>
 </tr>
-<tr><td>True</td>
+<tr class="row-odd"><td>True</td>
 <td>True</td>
 <td>True</td>
 </tr>
@@ -345,12 +345,9 @@ It refers to the section itself, see :ref:`my-reference-label`.</pre>
 </div>
 <ul>
 <li><p class="first">插入图片</p>
-<div class="highlight-python"><pre>.. image:: picture.jpeg
-   :height: 100px
-   :width: 200 px
-   :scale: 50 %
-   :alt: alternate text
-   :align: right</pre>
+<div class="highlight-python"><pre>.. raw:: html
+
+    &lt;img  src='../static/workflow/workflow.png' /&gt;</pre>
 </div>
 </li>
 </ul>

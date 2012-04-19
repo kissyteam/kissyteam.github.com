@@ -247,12 +247,9 @@ reST 是一种简单的标记语言, 规则非常简单.
 
 * 插入图片 ::
 
-    .. image:: picture.jpeg
-       :height: 100px
-       :width: 200 px
-       :scale: 50 %
-       :alt: alternate text
-       :align: right
+    .. raw:: html
+
+        <img  src='../_static/workflow/workflow.png' />
 
 
 **注释**

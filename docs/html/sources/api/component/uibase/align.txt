@@ -65,8 +65,9 @@ Config Attributes Detail
 
         第一个字符取值 t,b,c , 第二个字符取值 l,r,c. 如下图所示
 
-        .. image:: /_images/overlay/align.png
-            :width: 380 px
+        .. raw:: html
+
+            <img  src='../../../_static/api/component/overlay/align.png' />
     
 Methods Detail
 -----------------------------------------------    

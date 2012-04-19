@@ -161,15 +161,16 @@ Config Attributes Detail
                                 // 数组第一个元素表示 x 轴偏移, 第二个元素表示 y 轴偏移.
         }
         
-    ``points`` 字符串数组元素的取值范围为  t,b,c 与 l,r,c 的两两组合, 分别表示 top,bottom,center 与 left,right,center 的两两组合,
+    ``points`` 字符串数组元素的取值范围为  t,b,c 与 l,r,c 的两两组合,分别表示 top,bottom,center 与 left,right,center 的两两组合,
     可以表示 9 种取值范围.
     
     .. note::
 
         第一个字符取值 t,b,c , 第二个字符取值 l,r,c. 如下图所示
 
-        .. image:: /_images/overlay/align.png
-            :width: 380 px
+        .. raw:: html
+
+            <img  src='../../../_static/api/component/overlay/align.png' />
                 
 .. data:: Overlay.config.effect
 

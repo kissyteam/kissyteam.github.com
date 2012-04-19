@@ -197,7 +197,11 @@ Config Attributes Detail
 
 .. data:: Switchable.config.viewSize
 
-    {Array} - 可见视图区域的大小. 一般不需要设定此值, 仅当获取值不正确时, 用于手工指定大小, 默认为 [].
+    {Array} - 可见视图区域的大小. 如果 css 中不设置 panel 的高宽或初始没有 panel , 则需要这里手工指定大小, 默认为 [].
+    
+    .. note::
+    
+        当 panel 的高宽 css 中不指定时，需要设置 viewSize 为单个 panel 的高宽.
 
 
 .. data:: Switchable.config.autoplay

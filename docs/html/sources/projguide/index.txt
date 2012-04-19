@@ -13,7 +13,9 @@
 
 这是一个hello-world项目，仅由一个页面组成，页面中有一个居中的按钮，每次点击，就会弹出一个alert框，如下图所示：
 
-.. image:: /_static/projguide/mockup.jpg
+.. raw:: html
+
+        <img  src='../_static/projguide/mockup.jpg' />
 
 这个演示如此简单，以至于我们可以只在一个html页面里干完所有的事情。
 
@@ -27,7 +29,10 @@
 
 首先按照下图所示，创建该项目的目录结构
 
-.. image:: /_static/projguide/folders.jpg
+
+.. raw:: html
+
+        <img  src='../_static/projguide/folders.jpg' />
 
 这些目录的用途如下：
 
@@ -190,7 +195,9 @@ hello-world-demo >  img 文件夹用于存放项目中用到的各种图片(虽�
 
 该项目的readme最终效果如下图所示：
 
-.. image:: /_static/projguide/readme.png
+.. raw:: html
+
+        <img  src='..//_static/projguide/readme.png' />
 
 8. 其他
 ------------------------------

@@ -11,9 +11,9 @@ KISSY 组件开发规范
 
 在组建开发的各个流程中, 需要注意的地方, 完整列举出来, 有以下:
 
-.. image:: ../_static/workflow/workflow.png
-   :width: 900
-   :alt: 右击查看大图
+.. raw:: html
+
+            <img  src='../_static/workflow/workflow.png' />
 
 上图中讲述了在开发一个组建中, 最详细的步骤, 但千万别吓着了, 因为, 在实际过程中, 有些东西并不需要这么多(具体要看你写的组件的复杂程度), 可以精简为以下几点.
 
@@ -30,7 +30,9 @@ KISSY 组件开发规范
 
 必须. 推荐的目录结构如下, 例如组件为 Overlay 弹层, 那么该组件的目录结构应为：
 
-.. image:: /_images/styleguide/component-guide.png
+.. raw:: html
+
+            <img  src='../_static/styleguide/component-guide.png' />
 
 目录中必须包含版本号子目录以及 index 模块, 模块名为 ``gallery/overlay/1.0/index`` ,用来指明该组件依赖的子模块, 子模块的名约定为 ``gallery/overlay/1.0/xx`` ,如果组件比较简单也可只有这一个源码文件. 例如 index.js
 
