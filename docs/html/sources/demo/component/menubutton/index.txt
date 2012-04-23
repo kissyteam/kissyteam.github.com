@@ -1,0 +1,49 @@
+.. currentmodule:: menubutton
+
+MenuButton 使用示例
+======================================
+
+.. versionadded:: 1.2
+
+|  `API <../../../api/component/menubutton/index.html>`_ | `源码 <https://github.com/kissyteam/kissy/tree/master/src/menubutton/>`_
+
+Class
+-----------------------------------------------
+
+  * :class:`MenuButton`
+  * :class:`Select`
+  * :class:`Option`
+
+Demos
+--------------------------------------------------
+
+    .. toctree::
+       :titlesonly:
+
+       demo1
+       demo2
+       demo3
+       demo4 
+
+Tips
+----------------------------------------------------
+
+Q. 如何提高性能
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. combo menu component uibase menubutton
+
+    页面底部静态引入组件以及组件依赖模块:
+    
+    .. code-block:: html
+    
+        <script src='http://a.tbcdn.cn/s/kissy/1.2.0/??uibase-min.js,component-min.js,button-min.js,menu-min.js,menubutton-min.js'></script>
+        
+    
+#. 先 addItem 再 render，
+
+    由于 render 会导致生成节点插入到文档树，那么请尽量构建好数据再 render
+
+#. setTimeout 来渲染多个组件，
+
+    每个组件渲染都需要 cpu ，为了减少界面僵死时间，可用 setTimeout 来分隔每个组件的渲染过程.
