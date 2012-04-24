@@ -67,6 +67,35 @@ Methods Detail
     
     :param EventTarget target: 事件往上冒泡的事件源
     
+    
+    例如：
+    
+    .. code-block:: javascript
+    
+        KISSY.use("event", function(S, Event) {                
+            function Custom(id){
+                this.id = id;
+                this.publish("run",{
+                    bubbles:1
+                });
+            }
+            
+            S.augment(Custom, Event.Target);
+            
+            var c1 = new Custom("c1");
+            
+            var c2 = new Custom("c1");
+            
+            c1.addTarget(c2);
+            
+            c2.on("run",function(e){
+                S.log(e.target.id +" fires event run"); // => c1 fires event run
+            }); 
+            
+            c1.fire("run");
+        });
+    
+    
 .. versionadded:: 1.2 
     
 .. method:: Target.removeTarget

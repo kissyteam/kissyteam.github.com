@@ -220,6 +220,31 @@
 </tr>
 </tbody>
 </table>
+<p>例如：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;event&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="nx">Custom</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">id</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s2">&quot;run&quot;</span><span class="p">,{</span>
+            <span class="nx">bubbles</span><span class="o">:</span><span class="mi">1</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="nx">S</span><span class="p">.</span><span class="nx">augment</span><span class="p">(</span><span class="nx">Custom</span><span class="p">,</span> <span class="nx">Event</span><span class="p">.</span><span class="nx">Target</span><span class="p">);</span>
+
+    <span class="kd">var</span> <span class="nx">c1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Custom</span><span class="p">(</span><span class="s2">&quot;c1&quot;</span><span class="p">);</span>
+
+    <span class="kd">var</span> <span class="nx">c2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Custom</span><span class="p">(</span><span class="s2">&quot;c1&quot;</span><span class="p">);</span>
+
+    <span class="nx">c1</span><span class="p">.</span><span class="nx">addTarget</span><span class="p">(</span><span class="nx">c2</span><span class="p">);</span>
+
+    <span class="nx">c2</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;run&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+        <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span><span class="s2">&quot; fires event run&quot;</span><span class="p">);</span> <span class="c1">// =&gt; c1 fires event run</span>
+    <span class="p">});</span>
+
+    <span class="nx">c1</span><span class="p">.</span><span class="nx">fire</span><span class="p">(</span><span class="s2">&quot;run&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <p class="versionadded">
