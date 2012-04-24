@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <title>Demo - 定制button的样式</title>
+<link href="http://a.tbcdn.cn/s/kissy/1.2.0/css/base.css" rel="stylesheet"/>
 <link href="assets/common.css" rel="stylesheet"/>
 <link href="assets/custombutton.css" rel="stylesheet"/><script>
 (function(){
@@ -22,32 +23,6 @@
 <body>
 
 <style>
-.ks-inline-block, .liz-inline-block {
-  position: relative;
-  display: -moz-inline-box; /* Ignored by FF3 and later. */
-  display: inline-block;
-}
-
-/*
- * Pre-IE7 IE hack.  On IE, "display: inline-block" only gives the element
- * layout, but doesn't give it inline behavior.  Subsequently setting display
- * to inline does the trick.
- */
-* html .ks-inline-block, * html .liz-inline-block {
-  display: inline;
-  zoom: 1;
-}
-
-/*
- * IE7-only hack.  On IE, "display: inline-block" only gives the element
- * layout, but doesn't give it inline behavior.  Subsequently setting display
- * to inline does the trick.
- */
-*:first-child+html .ks-inline-block, *:first-child+html .liz-inline-block {
-    display: inline;
-    zoom: 1;
-}
-
 
 .liz-button {
     text-align: center;
