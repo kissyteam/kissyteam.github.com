@@ -27,7 +27,5 @@ Demos
        demo7
        demo8
        demo9
-    
-
-
-
+       touch-slide
+       touch-carousel

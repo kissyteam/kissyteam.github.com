@@ -74,7 +74,7 @@ KISSY.use("menu", function (S, Menu) {
                     "<span class='" + "goog-menuitem-hit" + "'>" + content.substring(index, index + str.length) + "<" + "/span>" + content.substring(index + str.length, content.length);
 
                     // 匹配子串着重 wrap
-                    c.get("contentEl").html(content);
+                    c.get("el").html(content);
                 } else {
                     c.hide();
                 }

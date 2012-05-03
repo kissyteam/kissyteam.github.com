@@ -12,7 +12,6 @@ Class
 
   * :class:`Menu`
   * :class:`Item`
-  * :class:`DelMenuItem`
   * :class:`Separator`
   * :class:`SubMenu`
   * :class:`PopupMenu`
@@ -27,7 +26,6 @@ Demos
        demo1
        decorate
        demo2
-       demo3
        demo4
        demo5
        demo6

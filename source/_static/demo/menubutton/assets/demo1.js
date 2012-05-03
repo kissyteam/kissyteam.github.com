@@ -19,7 +19,7 @@ KISSY.use("menubutton,menu", function(S, MenuButton, Menu) {
     button.render();
     menu.on('click', function(e) {
         var m = e.target;
-        if (m.checked) {
+        if (m.get("checked")) {
             alert('选中:'+m.get('content'));
         } else {
             alert('未选中:'+m.get('content'));

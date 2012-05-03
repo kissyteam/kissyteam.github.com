@@ -23,9 +23,7 @@ Properties
 Events
 --------------------------------------------------------
 
-    * :func:`~Menu.click`    
-    * :func:`~Menu.beforeDelete`    
-    * :func:`~Menu.delete` 
+    * :func:`~Menu.click`
 
 Class Detail
 --------------------------
@@ -69,22 +67,4 @@ Events Detail
     | **click(e)**
     | 当子菜单项被点击后触发
     
-    :param Menu.Item e.target: 当前被点击的菜单项  
-    
-    
-.. function:: Menu.beforeDelete
-
-    | **beforeDelete(e)**
-    | 当子组件中存在 :class:`DelMenuItem` 类型的菜单项时触发.
-    | 当子菜单项被删除前触发，返回 false ，则阻止删除行为发生
-    
-    :param Menu.Item e.target: 当前将要被删除的菜单项
-    
-    
-.. function:: Menu.delete
-
-    | **delete(e)**
-    | 当子组件中存在 :class:`DelMenuItem` 类型的菜单项时触发.
-    | 当子菜单项被删除后触发
-    
-    :param Menu.Item e.target: 被删除的菜单项                 
+    :param Menu.Item e.target: 当前被点击的菜单项
