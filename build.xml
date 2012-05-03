@@ -13,12 +13,14 @@
     <property name="git.master" value="master"/>
     <property name="git.dev" value="dev"/>
 
-    <target name="sync">
-
+    <target name="make">
         <exec executable="cmd"
               failonerror="true">
             <arg line="/c make.bat html"/>
         </exec>
+    </target>
+
+    <target name="sync" depends="make">
 
         <input addproperty="git.commit.message">
             git commit message :
