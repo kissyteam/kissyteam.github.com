@@ -1,0 +1,209 @@
+.. _projguide:
+
+项目开发指南
+=============================
+
+|  kissy不仅仅是一个类库，它的一些特征(如loader机制)也让我们总结出了一套软件开发的最佳实践。
+|  本章演示了如何使用KISSY完成一个项目编码的完整步骤，并提供示例的源码下载。
+|  作者: `chenyu <chenyu@taobao.com>`_
+
+
+1. 项目简介
+------------------------------
+
+这是一个hello-world项目，仅由一个页面组成，页面中有一个居中的按钮，每次点击，就会弹出一个alert框，如下图所示：
+
+.. raw:: html
+
+        <img  src='../_static/projguide/mockup.jpg' />
+
+这个演示如此简单，以至于我们可以只在一个html页面里干完所有的事情。
+
+我们并不是想告诉大家如何用复杂的方式去做简单的事情，而是试图剥离代码的复杂性，让你把注意力集中在项目的开发过程上。
+
+请下载本示例的 `源代码 <../static/projguide/hello-world.zip>`_ ，打开 hello-world-demo > hello-world.html 查看效果。
+    
+
+2. 目录组织
+------------------------------
+
+首先按照下图所示，创建该项目的目录结构
+
+
+.. raw:: html
+
+        <img  src='../_static/projguide/folders.jpg' />
+
+这些目录的用途如下：
+
+    * lib - 用于存放外部类库。
+    * hello-world - 用于存放该项目的组件。
+    * hello-world-dpl - 用于存放该项目的设计模式库(dpl)代码。
+    * hello-world-demo - 用于存放该项目的demo文件。
+    * readme.html - 用于记录项目的基本信息，如项目介绍，关键页面链接等。也可使用txt文件。
+    
+
+3. 引入外部库依赖
+------------------------------
+
+这里向lib文件夹添加了 `kissy.js <http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js>`_ 和`reset.css <http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css>`_ 两个文件。
+
+在正式的项目中，引入完整的类库件会更好。
+
+4. 编写项目组件
+------------------------------
+
+该项目中，我们需要一个组件来弹出alert框，并记录弹出次数。
+
+我们把这个组件功能就叫做dialog。
+
+在hello-world文件夹中新建了一个dialog.js文件，代码如下：
+
+.. code-block:: javascript
+
+    KISSY.add("hello-world/dialog",function(S){
+    
+        //构造器
+        function Dialog(){
+            this.amount = 0;
+        }
+        
+        //方法
+        S.augment(Dialog,{
+            say:function(){
+                this.amount++;
+                alert('hello world said ' + this.amount + ' times !');
+            }
+        });
+        
+        return Dialog;
+        
+    });
+    
+这个组件十分简单，仅有一个say方法。
+
+显然，在正式的项目中，你的代码会更复杂，并且需要更好的文件组织，这是你可以参见kissy的 :ref:`workflow` 。
+
+
+5. 编写项目dpl
+------------------------------
+
+在正式编码之前，我们常常需要抽象出一个项目页面中共同的视觉元素，如盒子、进度条等。
+
+该项目假设设计师希望所有的button都是150px宽，40px高。故而在hello-world-dpl文件夹中新建了一个button.css文件。
+
+内容如下：
+
+.. code-block:: css
+
+    /******************************************************************
+     * @fileOverview “如何使用KISSY开发一个项目”范例代码
+     *               本文件设置了按钮的统一样式
+     * @author chenyu@taobao.com
+     ******************************************************************/
+     
+    .button{width:150px;height:40px;font:28px bold "微软雅黑";}
+    
+上述文件虽然只有一行css语句，却足以说明dpl的用途。
+
+养成良好的注释习惯会让你和他人都收益不少（为了让教程更简洁，以下范例代码都将省略注释）。
+
+同样，在正式的项目中，你的dpl代码需要编写的更规范，可参见kissy-dpl的代码。
+
+
+6. 编写项目demo
+------------------------------
+
+在有了组件和dpl之后，我们就可以进入正式的demo开发工作。
+
+6.1 编写html
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+在hello-world-demo文件夹中加入hello-world.html文件，代码如下：
+
+.. code-block:: html
+
+    <!doctype html>
+    <html>
+    <head>
+    <meta charset="utf-8" />
+    <title>hello world</title>
+    <link rel="stylesheet" href="../lib/reset.css" />
+    <link rel="stylesheet" href="../hello-world-dpl/button.css" />
+    <link rel="stylesheet" href="css/hello-world.css" />
+    <script src="../lib/kissy.js"></script>
+    <script src="js/hello-world.js"></script>
+    </head>
+    <body>
+        <button id="J_Button" class="button" type="button">Click Me</button>
+    </body>
+    </html>
+    
+6.2 插入页面级css
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+在hello-world-demo > css文件夹中加入hello-world.css文件，代码如下：
+
+.. code-block:: css
+
+    .button{position:fixed;top:50%;left:50%;margin:-20px 0 0 -75px;}
+
+6.3 插入页面级js
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+在hello-world-demo > js文件夹中加入hello-world.js文件，代码如下：
+
+.. code-block:: javascript
+
+    //包配置
+    KISSY.config({
+        packages:[
+            {
+                name:"hello-world",
+                path:"../"
+            }
+        ]
+    });
+
+    //模块调用
+    KISSY.use("hello-world/dialog",function(S, Dialog){
+        
+        var dialog = new Dialog();
+        
+        S.Event.on('#J_Button','click',function(e){
+            dialog.say();
+        });
+        
+     })
+ 
+注意：这个js文件分两大块内容，第一部分是包配置文件，第二部分是调用脚本。
+
+如果项目中多个页面都需要相同的配置，或者全局定义，可单独抽离出一个config.js文件。
+
+关于包配置更多的内容请参见kissy的 :ref:`loader <Loader>` 模块。
+
+6.3 图片
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+hello-world-demo >  img 文件夹用于存放项目中用到的各种图片(虽然这个项目没有使用任何图片)。
+
+
+7. 编写readme
+------------------------------
+
+为你的项目创建一个readme文件是个不错的习惯，它既可以让你的工作变得更有条理，也能让别人快速了解你的项目。
+
+该项目的readme最终效果如下图所示：
+
+.. raw:: html
+
+        <img  src='..//_static/projguide/readme.png' />
+
+8. 其他
+------------------------------
+
+至此，我们的代码开发工作已经告一段路。
+
+但我们还可以使用ant等工具来帮助我们进行代码合并、压缩等工作。
+
+更多开发辅助工具参见kissy的前端常用工具。
