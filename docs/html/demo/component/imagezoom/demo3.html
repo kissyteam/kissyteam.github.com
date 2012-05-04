@@ -126,15 +126,19 @@
             <span class="nx">node</span><span class="o">:</span> <span class="s2">&quot;#multi&quot;</span><span class="p">,</span>
             <span class="nx">points</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;tr&quot;</span><span class="p">,</span><span class="s2">&quot;tl&quot;</span><span class="p">],</span>
             <span class="nx">offset</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-        <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nx">bigImageWidth</span><span class="o">:</span><span class="mi">900</span><span class="p">,</span>
+        <span class="nx">bigImageHeight</span><span class="o">:</span><span class="mi">900</span>
     <span class="p">});</span>
     <span class="c1">// 切换时, 动态设置大图路径</span>
     <span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;#imgList img&quot;</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;data-ks-imagezoom&#39;</span><span class="p">);</span>
-        <span class="nx">DOM</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;#multi&#39;</span><span class="p">,</span> <span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="nx">data</span> <span class="o">+</span> <span class="s1">&#39;_310x310.jpg&#39;</span><span class="p">);</span>
         <span class="nx">m</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;hasZoom&#39;</span><span class="p">,</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;data-has-zoom&#39;</span><span class="p">));</span>
+        <span class="nx">m</span><span class="p">.</span><span class="nx">changeImageSrc</span><span class="p">(</span><span class="nx">data</span> <span class="o">+</span> <span class="s1">&#39;_310x310.jpg&#39;</span><span class="p">);</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
             <span class="nx">m</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;bigImageSrc&#39;</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+            <span class="nx">m</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;bigImageWidth&quot;</span><span class="p">,</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;data-bigimagewidth&#39;</span><span class="p">)));</span>
+            <span class="nx">m</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;bigImageHeight&quot;</span><span class="p">,</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;data-bigimageheight&#39;</span><span class="p">)));</span>
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
