@@ -4,7 +4,7 @@
 ======================================
 
 |  KISSY 1.1x 中也有 waterfall 组件, 和1.2 中配置接口完全一致, 只是加载方式有些区别, 具体请参考 `这里 <http://lizzie.github.com/kissy/src/waterfall/demo/demo.html>`_
-|  `API <../../../api/component/waterfall/index.html>`_ | `源码 <https://github.com/kissyteam/kissy/blob/master/src/waterfall/intervein.js>`_
+
 
 Class
 -----------------------------------------------

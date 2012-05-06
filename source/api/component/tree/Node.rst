@@ -3,11 +3,9 @@
 Node
 ===============================
 
-.. versionadded:: 1.2
+
 
 |  树节点.
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/tree/>`_ | `Demo <../../../demo/component/tree/index.html>`_
-
 
 Class
 ---------------------------------
@@ -51,7 +49,7 @@ Class Detail
 
     | **Node** (config)
     
-    * 继承自 :class:`~component.ModelControl` , 包含其全部配置,属性,方法,事件.
+    * 继承自 :class:`~component.Controller` , 包含其全部配置,属性,方法,事件.
     
     :param Object config: 配置项.详细见下方 **Config Attributes Detail** .
     

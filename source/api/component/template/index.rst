@@ -11,8 +11,6 @@ Template
 |      - 容错和调试.
 |      - 性能还不赖.
 |      - 容易扩展.
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/template/>`_ | `Demo <http://docs.kissyui.com/docs/html/api/component/template/index.html>`_
-
    
 Usage
 -----------------------------------------------

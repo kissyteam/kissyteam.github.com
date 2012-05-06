@@ -3,10 +3,9 @@
 DDM
 ===============================================
 
-.. versionadded:: 1.2
+
 
 |  拖放的中央控制对象, 所有的拖放实例的事件都会向其冒泡.
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/ddm.js>`_  | `Demo <../../../demo/component/dd/index.html>`_
 
 
 Class

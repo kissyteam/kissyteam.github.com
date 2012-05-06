@@ -6,8 +6,7 @@ Calendar
 
 |  这是一个交互清爽、功能实用的日历控件.
 |  支持基本的日期选择、时间选择、嵌入/弹出、范围选择、日期格式化输出等常用功能, 能够满足多数的应用场景, 非常方便用户调用.
-|  作者: `拔赤 <bachi@taobao.com>`_
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/calendar>`_  | `Demo <http://kissyteam.github.com/kissy/src/calendar/demo.html>`_ 
+| `Demo <http://kissyteam.github.com/kissy/src/calendar/demo.html>`_
 
 Class
 -----------------------------------------------
@@ -106,8 +105,6 @@ Config Attributes Detail
 
     {Date} - 可选, 日历可选择的最大, 默认不开启
 
-.. versionadded:: 1.3
-
 .. data:: multiSelect
 
     {Boolean} - 可选, 是否支持多选, 默认不开启，只有开启时候才会触发multiSelect事件
@@ -128,25 +125,17 @@ Config Attributes Detail
 
     {Array | String} - 可选, 弹出状态下, 触发弹出日历的事件, 例如：['click','focus'],也可以直接传入'focus', 默认为['click']
 
-.. versionadded:: 1.3
-	
 .. data:: disabled
 
     {Array} - 可选, 禁止点击的日期数组[new Date(),new Date(2011,11,26)]
-
-.. versionadded:: 1.3
 
 .. data:: align
 
     {Object} - 可选, 日历和trigger对齐方式，默认{points:['bl','tl'],offset:[0,0]}
 
-.. versionadded:: 1.3
-
 .. data:: notLimited
 
     {Boolean} - 可选, 是否出现不限的按钮，默认为false不开启，开启后点击触发select事件
-
-.. versionadded:: 1.3
 
 .. data:: rangLinkage
 
@@ -231,8 +220,6 @@ Events Detail
                 alert(e.start+' '+e.end);
             });
         });
-
-.. versionadded:: 1.3
 
 .. function:: multiSelect
 

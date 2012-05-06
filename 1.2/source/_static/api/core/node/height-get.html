@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  body { background:yellow; }
+  button { font-size:12px; margin:2px; }
+  p { width:150px; border:1px red solid; }
+  div { color:red; font-weight:bold; }
+  </style>
+  <script>
+(function(){
+    var h=window.location.href,d=document;
+    if(h.indexOf("localhost/kissy_git/")!=-1){
+            d.write('<script src="http://localhost/kissy_git/kissy1.2/build/kissy.js"'+' charset="utf-8"><'+'/script>');
+        }
+
+    else{
+        d.write('<script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
+    }
+    })();
+</script>
+</head>
+<body>
+  <button id="getp">Get Paragraph Height</button>
+  <button id="getd">Get Document Height</button>
+  <button id="getw">Get Window Height</button>
+
+  <div>&nbsp;</div>
+  <p>
+    Sample paragraph to test height
+  </p>
+<script>
+    KISSY.use("node",function(S,Node){
+        var $=Node.all;
+        function showHeight(ele, h) {
+          $("div").text("The height for the " + ele + 
+                        " is " + h + "px.");
+        }
+        $("#getp").on("click",function () { 
+          showHeight("paragraph", $("p").height()); 
+        });
+        $("#getd").on("click",function () {
+          showHeight("document", $(document).height()); 
+        });
+        $("#getw").on("click",function () { 
+          showHeight("window", $(window).height()); 
+        });
+    });
+</script>
+
+</body>
+</html>

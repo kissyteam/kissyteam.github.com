@@ -3,10 +3,9 @@
 Menu.Item
 ===============================
 
-.. versionadded:: 1.2
+
 
 |  菜单项.
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/menu/>`_ | `Demo <../../../demo/component/menu/demo1.html>`_
 
 Class
 ---------------------------------
@@ -38,7 +37,7 @@ Class Detail
 
     | **Item** (config)
     
-    * 继承自 :class:`~component.ModelControl` , 包含其全部配置,属性,方法,事件.
+    * 继承自 :class:`~component.Controller` , 包含其全部配置,属性,方法,事件.
     
     :param Object config: 配置项，详细见下方 **Config Attributes Detail** .
     

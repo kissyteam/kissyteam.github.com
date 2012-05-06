@@ -4,7 +4,6 @@ Accordion
 ===================================================================
 
 |  手风琴
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/switchable/accordion/>`_ | `Demo <../../../demo/component/switchable/index.html>`_
 
 Class Detail
 ---------------------------------------------------------------------

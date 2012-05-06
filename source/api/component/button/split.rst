@@ -3,11 +3,7 @@
 Split
 ===============================
 
-.. versionadded:: 1.2
-
 |  组合按钮
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/button/>`_ | `Demo <../../../demo/component/menubutton/demo4.html>`_
-
 
 Class
 ---------------------------------

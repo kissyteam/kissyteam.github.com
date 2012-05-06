@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <style>body {background-color: #eef; }
+div { padding: 20px; }</style>
+
+<script>
+(function(){
+    var h=window.location.href,d=document;
+    if(h.indexOf("localhost/kissy_git/")!=-1){
+            d.write('<script src="http://localhost/kissy_git/kissy1.2/build/kissy.js"'+' charset="utf-8"><'+'/script>');
+        }
+
+    else{
+        d.write('<script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
+    }
+    })();
+</script>
+</head>
+<body>
+  <div id="log"></div>
+<script>
+    var $=KISSY.Node.all;
+    $(document).on('mousemove',function(e){ 
+            $("#log").text("e.pageX: " + e.pageX + ", e.pageY: " + e.pageY); 
+}); 
+</script>
+
+</body>
+</html>

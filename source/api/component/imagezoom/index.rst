@@ -3,11 +3,7 @@
 ImageZoom
 ===============================================
 
-    .. versionchanged:: 1.2
-        ImageZoom 基于 UIBase 重构, 接口有所修改, 升级时请注意修改.
-
 |  图片放大镜效果
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/imagezoom>`_  | `Demo <../../../demo/component/imagezoom/index.html>`_
 
 Class
 -----------------------------------------------
@@ -76,8 +72,6 @@ Class Detail
     
     :param String|KISSY.Node|HTMLElement: 小图元素或选择器 .
     :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
-
-    .. versionchanged:: 1.2
     
     | **ImageZoom** (config)
 
@@ -90,7 +84,7 @@ Config Attributes Detail
 
 .. data:: ImageZoom.config.imageNode
 
-    .. versionadded:: 1.2
+
 
     {String|HTMLElement} - 小图元素选择器或小图元素.
 
@@ -112,13 +106,13 @@ Config Attributes Detail
 
 .. data:: ImageZoom.config.bigImageWidth
 
-    .. versionadded:: 1.2
+
 
     {Number} - 可选, 大图宽度, 默认为 800; 
 
 .. data:: ImageZoom.config.bigImageHeight
 
-    .. versionadded:: 1.2
+
 
     {Number} - 可选, 大图高度, 默认为 800; 
 
@@ -138,7 +132,7 @@ Config Attributes Detail
 
 .. data:: ImageZoom.config.align
 
-    .. versionadded:: 1.2
+
 
     {Object} - 同 :data:`~uibase.Align.config.align` .
 
@@ -180,19 +174,19 @@ Config Attributes Detail
 
 .. data:: ImageZoom.config.width
 
-    .. versionadded:: 1.2
+
 
     {Number|String} - 可选, 放大区域宽度. 默认为 'auto', 当取 'auto' 时, 宽度取小图的宽度.
 
 .. data:: ImageZoom.config.height
 
-    .. versionadded:: 1.2
+
 
     {Number|String} - 可选, 放大区域高度. 默认为 'auto', 当取 'auto' 时, 高度取小图的高度.
 
 .. data:: ImageZoom.config.iconClass
 
-    .. versionadded:: 1.2
+
 
     {String} - 可选, 放大镜图标的类, 默认为 'ks-imagezoom-icon'
 
@@ -205,13 +199,13 @@ Config Attributes Detail
 
 .. data:: ImageZoom.config.showIcon
 
-    .. versionadded:: 1.2
+
 
     {Boolean} - 可选, 是否显示放大镜小 icon, 默认为 true.
 
 .. data:: ImageZoom.config.lensClass
 
-    .. versionadded:: 1.2
+
 
     {String} - 可选, 镜片类, 默认为 'ks-imagezoom-lens
 
@@ -224,7 +218,7 @@ Config Attributes Detail
 
 .. data:: ImageZoom.config.wrapClass
 
-    .. versionadded:: 1.2
+
 
     {String|HTMLElement} - 显示区域容器的类.
     

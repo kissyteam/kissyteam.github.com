@@ -3,11 +3,6 @@
 基于拖放委托 + 容器自动滚动的拖放排序
 ==============================================================
 
-.. versionadded:: 1.2
-
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/droppable-delegate.js>`_
-
-
 Class
 -----------------------------------------------
 

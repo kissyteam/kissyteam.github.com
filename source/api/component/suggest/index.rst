@@ -15,8 +15,6 @@ Suggest
 |    - 关键词的模糊匹配提示功能
 |    - 自定义提示Dom渲染
 |    - 支持本地数据
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/suggest>`_ | `Demo <../../../demo/component/suggest/index.html>`_
-
 
 Class
 -----------------------------------------------
@@ -175,7 +173,7 @@ Config Attributes Detail
     
 .. data:: contentRender
 
-    .. versionadded:: 1.2
+
 
     {Function} - 默认为 null , 提示层内容渲染器. 该渲染器以返回的data为唯一参数, 且返回渲染的内容,可选项要求由"li"标签包裹, 并将用于表单提交的值存储在"li"元素的key属性上.
     

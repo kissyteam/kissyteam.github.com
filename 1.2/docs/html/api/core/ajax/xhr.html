@@ -1,0 +1,381 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>XhrObj &mdash; KISSY v1.2 Documentation</title>
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+    (function(){
+        var js=[],h=window.location.href,d=document;
+            js.push("../../../static/jquery.js");
+            js.push("../../../static/underscore.js");
+            js.push("../../../static/doctools.js");
+        for(var i=0;i<js.length;i++){
+            var j=js[i];
+            if(h.indexOf("localhost/kissy_git/")==-1&&j.indexOf("jquery.js")!=-1){
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
+            }else{
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
+            }
+        }
+    })();
+</script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="http://docs.kissyui.com/docs/html/quickstart/index.html" >快速上手</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >讨论组</a></li>
+        <!--<li><a href="http://blog.kissyui.com/">博客</a></li>-->
+        <!--<li><a href="mailto:all@kissyui.com">论坛</a></li>-->
+        <li><a href="http://www.github.com/kissyteam" >源码</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="setupConfig.html" title="io.setupConfig"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="io.html" title="io"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.2 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">ajax</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="xhrobj">
+<h1>XhrObj<a class="headerlink" href="#xhrobj" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="index.html#module-io" title="io"><tt class="xref py py-mod docutils literal"><span class="pre">io</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#io.XhrObj" title="io.XhrObj"><tt class="xref py py-class docutils literal"><span class="pre">XhrObj</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#io.readyState" title="io.readyState"><tt class="xref py py-attr docutils literal"><span class="pre">readyState</span></tt></a></li>
+<li><a class="reference internal" href="#io.status" title="io.status"><tt class="xref py py-attr docutils literal"><span class="pre">status</span></tt></a></li>
+<li><a class="reference internal" href="#io.statusText" title="io.statusText"><tt class="xref py py-attr docutils literal"><span class="pre">statusText</span></tt></a></li>
+<li><a class="reference internal" href="#io.responseText" title="io.responseText"><tt class="xref py py-attr docutils literal"><span class="pre">responseText</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#io.getResponseHeader" title="io.getResponseHeader"><tt class="xref py py-meth docutils literal"><span class="pre">getResponseHeader()</span></tt></a></li>
+<li><a class="reference internal" href="#io.abort" title="io.abort"><tt class="xref py py-meth docutils literal"><span class="pre">abort()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="io.XhrObj">
+<em class="property">class </em><tt class="descclassname">io.</tt><tt class="descname">XhrObj</tt><a class="headerlink" href="#io.XhrObj" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>XhrObj</strong> (config)</div>
+<div class="line">原生 XMLHttpRequest 以及 jsonp 等非 xhr 请求对象的一个封装类.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 当前请求发送时的配置信息, 参见 <a class="reference internal" href="io.html#io-config"><em>IO Config</em></a>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="properties-detail">
+<h2>Properties Detail<a class="headerlink" href="#properties-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="attribute">
+<dt id="io.readyState">
+<tt class="descclassname">io.</tt><tt class="descname">readyState</tt><a class="headerlink" href="#io.readyState" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 表示请求完成状态。可用于判断当前请求是否完成. 4 表示完成，否则表示正在进行中.(xhr 会有更多取值，jsonp script 只有 0(初始化) 1(发送中) 4(完成))</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="io.status">
+<tt class="descclassname">io.</tt><tt class="descname">status</tt><a class="headerlink" href="#io.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 响应状态码. xhr 会有更多取值。``jsonp script`` 只有 200(成功) , 500(出错)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="io.statusText">
+<tt class="descclassname">io.</tt><tt class="descname">statusText</tt><a class="headerlink" href="#io.statusText" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 响应状态字符串. 最终同回调 <a class="reference internal" href="io.html#io.cfg.complete" title="io.cfg.complete"><tt class="xref py py-data docutils literal"><span class="pre">complete</span></tt></a> 中的 <tt class="docutils literal"><span class="pre">textStatus</span></tt> 一致.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="io.responseText">
+<tt class="descclassname">io.</tt><tt class="descname">responseText</tt><big>(</big><em>responseXML</em><big>)</big><a class="headerlink" href="#io.responseText" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 返回响应对应的 text 和 xml（如果需要）.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="io.getResponseHeader">
+<tt class="descclassname">io.</tt><tt class="descname">getResponseHeader</tt><big>(</big><big>)</big><a class="headerlink" href="#io.getResponseHeader" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>getResponseHeader</strong> (key)</div>
+<div class="line">获得对应的响应头值.仅对于 xhr 请求有效.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>key</strong> (<em>String</em>) &#8211; 响应头名</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="io.abort">
+<tt class="descclassname">io.</tt><tt class="descname">abort</tt><big>(</big><big>)</big><a class="headerlink" href="#io.abort" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>abort</strong> ()</div>
+<div class="line">如果当前请求还没完成（进行中状态）则中断当前的请求，否则什么也不做.</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">不仅可以中断 xhr 请求，还可以中断 jsonp 以及 script 请求，如果中断前该请求正在进行中则中断后会触发 <a class="reference internal" href="io.html#io.cfg.error" title="io.cfg.error"><tt class="xref py py-data docutils literal"><span class="pre">error</span></tt></a> ( textStatus == &#8220;abort&#8221; ) 以及 <a class="reference internal" href="io.html#io.cfg.complete" title="io.cfg.complete"><tt class="xref py py-data docutils literal"><span class="pre">complete</span></tt></a> 回调.</p>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="setupConfig.html" title="io.setupConfig"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="io.html" title="io"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.2 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">ajax</a> &#187; </li> 
+    </ul>
+</div>
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            $("#openComment").attr("disabled",true);
+        }else{
+            $("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            $("#openComment").bind("change",function(){
+                window.localStorage.setItem("kissy-commment",$("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/loader/index.html">loader</a></li>
+        <li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/lang/index.html">lang</a></li>
+        <li><a href="../../seed/web/index.html">web</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="../ua/index.html">ua</a></li>
+        <li><a href="../dom/index.html">dom</a></li>
+        <li><a href="../event/index.html">event</a></li>
+        <li><a href="../node/index.html">node</a></li>
+        <li><a href="../json/index.html">json</a></li>
+        <li><a href="index.html">ajax</a></li>
+        <li><a href="../cookie/index.html">cookie</a></li>
+        <li><a href="../base/index.html">base</a></li>
+        <li><a href="../anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../../component/mvc/index.html">mvc</a></li>
+        <li><a href="../../component/template/index.html">template</a></li>
+        <li><a href="../../component/datalazyload/index.html">datalazyload</a></li>
+        <li><a href="../../component/flash/index.html">flash</a></li>
+        <li><a href="../../component/dd/index.html">dd</a></li>
+        <li><a href="../../component/resizable/index.html">resizable</a></li>
+        <li><a href="../../component/switchable/index.html">switchable</a></li>
+        <li><a href="../../component/suggest/index.html">suggest</a></li>
+        <li><a href="../../component/calendar/index.html">calendar</a></li>
+        <li><a href="../../component/imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../../component/overlay/index.html">overlay</a></li>
+        <li><a href="../../component/uibase/index.html">uibase</a></li>
+        <li><a href="../../component/component/index.html">component</a></li>
+        <li><a href="../../component/button/index.html">button</a></li>
+        <li><a href="../../component/menu/index.html">menu</a></li>
+        <li><a href="../../component/menubutton/index.html">menubutton</a></li>
+        <li><a href="../../component/tree/index.html">tree</a></li>
+        <li><a href="../../component/waterfall/index.html">waterfall</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
+        <li><a href="../../component/editor/index.html">editor</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

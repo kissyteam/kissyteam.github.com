@@ -3,10 +3,9 @@
 Proxy
 ===============================================
 
-.. versionadded:: 1.2
 
 |  代理可拖放对象
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/proxy.js>`_  | `Demo <../../../demo/component/dd/demo1.html>`_
+
 
 Class
 -----------------------------------------------

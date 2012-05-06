@@ -19,6 +19,6 @@ Methods
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
     
-.. versionchanged:: 1.2
+.. note::
 
     DOM.remove 会清除当前节点以及其子孙节点上已经注册的事件    

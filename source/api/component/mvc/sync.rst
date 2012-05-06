@@ -3,11 +3,9 @@
 mvc.sync
 ===============================
 
-.. versionadded:: 1.2
+
 
 |  同步函数.
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/mvc/sync.js>`_
-
 
 .. function:: mvc.sync
 

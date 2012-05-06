@@ -1,0 +1,307 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>有啊滚动新闻条 &mdash; KISSY v1.2 Documentation</title>
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+    (function(){
+        var js=[],h=window.location.href,d=document;
+            js.push("../../../static/jquery.js");
+            js.push("../../../static/underscore.js");
+            js.push("../../../static/doctools.js");
+        for(var i=0;i<js.length;i++){
+            var j=js[i];
+            if(h.indexOf("localhost/kissy_git/")==-1&&j.indexOf("jquery.js")!=-1){
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
+            }else{
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
+            }
+        }
+    })();
+</script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="http://docs.kissyui.com/docs/html/quickstart/index.html" >快速上手</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >讨论组</a></li>
+        <!--<li><a href="http://blog.kissyui.com/">博客</a></li>-->
+        <!--<li><a href="mailto:all@kissyui.com">论坛</a></li>-->
+        <li><a href="http://www.github.com/kissyteam" >源码</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="demo6.html" title="普通旋转木马"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="demo4.html" title="有啊首页卡盘"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.2 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >Demos</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Switchable 使用示例</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="id1">
+<h1>有啊滚动新闻条<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="../../../api/component/switchable/switchable.html#switchable.Switchable" title="switchable.Switchable"><tt class="xref py py-class docutils literal"><span class="pre">Switchable</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>有啊滚动新闻条<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><iframe width="100%" height="150" class="iframe-demo" src="../../../static/demo/switchable/demo5.html"></iframe><p><strong>组织 HTML 结构</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;s-demo&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;demo5&quot;</span> <span class="na">class=</span><span class="s">&quot;section scroll-news&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;news-items&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href=</span><span class="s">&quot;http://youa.baidu.com/shop/72e01b38fb26b4ebc5db0136&quot;</span><span class="nt">&gt;</span>“一分钱”轻松体验有啊网购流程<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href=</span><span class="s">&quot;http://co.youa.baidu.com/content/payhelp/b12/zhaoshang/&quot;</span><span class="nt">&gt;</span>开通网银，百付宝为您一路护航<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href=</span><span class="s">&quot;http://co.youa.baidu.com/picture/r/mall/guide/index.html&quot;</span><span class="nt">&gt;</span>新手买家？帮助教程带您走通有啊<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href=</span><span class="s">&quot;http://youa.baidu.com/static/help/quality_form_build.html&quot;</span><span class="nt">&gt;</span>尽情挥洒你的创意，共建百度有啊<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href=</span><span class="s">&quot;http://co.youa.baidu.com/content/help/A10/2008-09-06/153433185574.html&quot;</span><span class="nt">&gt;</span>认准标识，精选实力卖家任您选择<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href=</span><span class="s">&quot;http://co.youa.baidu.com/content/help/A3/2/2008-09-01/143723181295.html#10&quot;</span><span class="nt">&gt;</span>收藏<span class="nt">&lt;/a&gt;</span> + <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href=</span><span class="s">&quot;http://co.youa.baidu.com/content/help/A3/2009-01-08/112820209991.html&quot;</span><span class="nt">&gt;</span>购物车<span class="nt">&lt;/a&gt;</span>，逛街搜店更便捷<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</div>
+<p><strong>JS 初始化</strong></p>
+<p>通过容器元素的 id 和相关配置, 构建 <a class="reference internal" href="../../../api/component/switchable/slide.html#switchable.Slide" title="switchable.Slide"><tt class="xref py py-class docutils literal"><span class="pre">Slide</span></tt></a> 对象 :</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;event,switchable&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Event</span><span class="p">,</span><span class="nx">Switchable</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">Slide</span> <span class="o">=</span> <span class="nx">Switchable</span><span class="p">.</span><span class="nx">Slide</span><span class="p">;</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">Slide</span><span class="p">(</span><span class="s1">&#39;#demo5&#39;</span><span class="p">,</span> <span class="p">{</span>
+            <span class="nx">contentCls</span> <span class="o">:</span> <span class="s1">&#39;news-items&#39;</span><span class="p">,</span>
+            <span class="nx">hasTriggers</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nx">effect</span> <span class="o">:</span> <span class="s1">&#39;scrolly&#39;</span><span class="p">,</span>
+            <span class="nx">easing</span> <span class="o">:</span> <span class="s1">&#39;easeOutStrong&#39;</span><span class="p">,</span>
+            <span class="nx">interval</span> <span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nx">duration</span> <span class="o">:</span> <span class="p">.</span><span class="mi">2</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+ 
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="demo6.html" title="普通旋转木马"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="demo4.html" title="有啊首页卡盘"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.2 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >Demos</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Switchable 使用示例</a> &#187; </li> 
+    </ul>
+</div>
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            $("#openComment").attr("disabled",true);
+        }else{
+            $("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            $("#openComment").bind("change",function(){
+                window.localStorage.setItem("kissy-commment",$("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box demo-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/loader/index.html">loader</a></li>
+        <!--<li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/lang/index.html">lang</a></li>
+        <li><a href="../../seed/web/index.html">web</a></li>-->
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <!--<li><a href="../../core/ua/index.html">ua</a></li>
+        <li><a href="../../core/dom/index.html">DOM</a></li>
+        <li><a href="../../core/event/index.html">event</a></li>
+        <li><a href="../../core/node/index.html">node</a></li>
+        <li><a href="../../core/json/index.html">json</a></li>
+        <li><a href="../../core/ajax/index.html">ajax</a></li>
+        <li><a href="../../core/cookie/index.html">cookie</a></li>
+        <li><a href="../../core/base/index.html">base</a></li>-->
+        <li><a href="../../core/anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="../mvc/index.html">mvc</a></li>
+        <!--<li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../template/index.html">template</a></li>-->
+        <li><a href="../datalazyload/index.html">datalazyload</a></li>
+        <!--<li><a href="../flash/index.html">flash</a></li>-->
+        <li><a href="../dd/index.html">dd</a></li>
+        <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="index.html">switchable</a></li>
+        <li><a href="../suggest/index.html">suggest</a></li>
+        <li><a href="../calendar/index.html">calendar</a></li>
+        <li><a href="../imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
+        <li><a href="../waterfall/index.html">waterfall</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
+        <li><a href="../editor/index.html">editor</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

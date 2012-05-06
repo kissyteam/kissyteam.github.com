@@ -3,10 +3,6 @@
 SplitButton
 ======================================
 
-.. versionadded:: 1.2
-
-|  `API <../../../api/component/menubutton/index.html>`_ | `源码 <https://github.com/kissyteam/kissy/tree/master/src/menubutton/>`_
-
 Class
 -----------------------------------------------
 

@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Calendar &mdash; KISSY Docs alpha documentation</title>
+<title>Calendar &mdash; KISSY Docs</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -16,7 +16,7 @@
 <script>
     var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     'alpha',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
@@ -41,6 +41,19 @@
         }
     })();
 </script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
 </head>
 <body><div id="header">
     <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
@@ -51,15 +64,15 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
 
     <ul class="navigation">
-        <li><a href="http://docs.kissyui.com">首页</a></li>
-        <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="../../../../html/api/index.html">API</a></li>
-        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
-        <li><a href="https://groups.google.com/group/kissy-ui">讨论组</a></li>
+        <li><a href="http://docs.kissyui.com" >首页</a></li>
+        <li><a href="../../../../html/quickstart/index.html" >快速上手</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >讨论组</a></li>
         <!--<li><a href="http://blog.kissyui.com/">博客</a></li>-->
         <!--<li><a href="mailto:all@kissyui.com">论坛</a></li>-->
-        <li><a href="http://www.github.com/kissyteam">源码</a></li>
-        <li><a href="http://docs.kissyui.com/kissy/docs/">English API Docs</a></li>
+        <li><a href="http://www.github.com/kissyteam" >源码</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
     </ul>
 <div id="searchbox" style="display: none" class="searchbox">
     <form class="search" action="../../../search.html" method="get">
@@ -97,7 +110,7 @@
       <a href="../suggest/index.html" title="Suggest"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../index.html" accesskey="U">Component</a> &#187; </li> 
     </ul>
 </div>
@@ -105,10 +118,11 @@
   <span class="target" id="module-calendar"></span><div class="section" id="calendar">
 <h1>Calendar<a class="headerlink" href="#calendar" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
+<div class="line-block">
 <div class="line">这是一个交互清爽、功能实用的日历控件.</div>
 <div class="line">支持基本的日期选择、时间选择、嵌入/弹出、范围选择、日期格式化输出等常用功能, 能够满足多数的应用场景, 非常方便用户调用.</div>
-<div class="line">作者: <a class="reference external" href="mailto:bachi&#37;&#52;&#48;taobao&#46;com">拔赤</a></div>
-<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/calendar">源码</a>  | <a class="reference external" href="http://kissyteam.github.com/kissy/src/calendar/demo.html">Demo</a></div>
+</div>
+<div class="line"><a class="reference external" href="http://kissyteam.github.com/kissy/src/calendar/demo.html">Demo</a></div>
 </div>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
@@ -248,8 +262,6 @@
 <dd><p>{Date} - 可选, 日历可选择的最大, 默认不开启</p>
 </dd></dl>
 
-<p class="versionadded">
-<span class="versionmodified">New in version 1.3.</span></p>
 <dl class="data">
 <dt id="calendar.multiSelect">
 <tt class="descclassname">calendar.</tt><tt class="descname">multiSelect</tt><a class="headerlink" href="#calendar.multiSelect" title="Permalink to this definition">¶</a></dt>
@@ -280,32 +292,24 @@
 <dd><p>{Array | String} - 可选, 弹出状态下, 触发弹出日历的事件, 例如：[&#8216;click&#8217;,&#8217;focus&#8217;],也可以直接传入&#8217;focus&#8217;, 默认为[&#8216;click&#8217;]</p>
 </dd></dl>
 
-<p class="versionadded">
-<span class="versionmodified">New in version 1.3.</span></p>
 <dl class="data">
 <dt id="calendar.disabled">
 <tt class="descclassname">calendar.</tt><tt class="descname">disabled</tt><a class="headerlink" href="#calendar.disabled" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Array} - 可选, 禁止点击的日期数组[new Date(),new Date(2011,11,26)]</p>
 </dd></dl>
 
-<p class="versionadded">
-<span class="versionmodified">New in version 1.3.</span></p>
 <dl class="data">
 <dt id="calendar.align">
 <tt class="descclassname">calendar.</tt><tt class="descname">align</tt><a class="headerlink" href="#calendar.align" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Object} - 可选, 日历和trigger对齐方式，默认{points:[&#8216;bl&#8217;,&#8217;tl&#8217;],offset:[0,0]}</p>
 </dd></dl>
 
-<p class="versionadded">
-<span class="versionmodified">New in version 1.3.</span></p>
 <dl class="data">
 <dt id="calendar.notLimited">
 <tt class="descclassname">calendar.</tt><tt class="descname">notLimited</tt><a class="headerlink" href="#calendar.notLimited" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Boolean} - 可选, 是否出现不限的按钮，默认为false不开启，开启后点击触发select事件</p>
 </dd></dl>
 
-<p class="versionadded">
-<span class="versionmodified">New in version 1.3.</span></p>
 <dl class="data">
 <dt id="calendar.rangLinkage">
 <tt class="descclassname">calendar.</tt><tt class="descname">rangLinkage</tt><a class="headerlink" href="#calendar.rangLinkage" title="Permalink to this definition">¶</a></dt>
@@ -433,8 +437,6 @@
 </div>
 </dd></dl>
 
-<p class="versionadded">
-<span class="versionmodified">New in version 1.3.</span></p>
 <dl class="function">
 <dt>
 <tt class="descclassname">calendar.</tt><tt class="descname">multiSelect</tt><big>(</big><big>)</big></dt>
@@ -500,7 +502,7 @@
       <a href="../suggest/index.html" title="Suggest"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../index.html" accesskey="U">Component</a> &#187; </li> 
     </ul>
 </div>
@@ -621,10 +623,6 @@
 </div>
 <div id="footer">
     &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
-</div>
-<div style="visibility: hidden;">
-<script type="text/javascript" src="http://js.tongji.linezing.com/2648923/tongji.js"></script>
-<noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/2648923/tongji.gif"/></a></noscript>
 </div>
 </body>
 </html>

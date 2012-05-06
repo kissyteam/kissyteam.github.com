@@ -4,15 +4,12 @@
 支持鼠标拖动和 touch 的 Carousel
 ========================================================
 
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/switchable/>`_
+
 
 Class
 -----------------------------------------------
 
   * :class:`switchable.Carousel`
-
-
-.. versionadded:: 1.3
 
 支持鼠标拖动和 touch 的 Carousel
 --------------------------------------------------

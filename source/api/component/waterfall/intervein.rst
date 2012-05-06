@@ -3,8 +3,6 @@
 Waterfall
 ======================================
 
-|  `源码 <https://github.com/kissyteam/kissy/blob/master/src/waterfall/base.js>`_  | `Demo <../../../demo/component/waterfall/demo1.html>`_
-
 Class
 -----------------------------------------------
 

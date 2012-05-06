@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Demo - 窗口滚动示例</title>
+<link href="http://a.tbcdn.cn/s/kissy/1.2.0/css/base.css" rel="stylesheet"/>
+
+<link href="../button/assets/custombutton.css" rel="stylesheet"/><script>
+    (function () {
+        var h = window.location.href, d = document;
+        if (h.indexOf("localhost/kissy_git/") != -1) {
+            d.write('<script src="http://localhost/kissy_git/kissy1.2/build/kissy.js"' + ' charset="utf-8"><' + '/script>');
+        }
+        else {
+            d.write('<script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"' + ' charset="utf-8">' + '<' + '/script>');
+        }
+    })();
+</script>
+</head>
+<body>
+<div id="scrollUp"></div>
+<div style="height:300px;"></div>
+<div id="scrollDown"></div>
+<script src="assets/demo4.js"></script>
+</body>
+</html>

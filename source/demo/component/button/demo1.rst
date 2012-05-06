@@ -3,11 +3,6 @@
 简单按钮/从已有 html 生成按钮
 =====================================================
 
-.. versionadded:: 1.2
-
-|   `API <../../../api/component/button/index.html>`_ | `源码 <https://github.com/kissyteam/kissy/tree/master/src/button/>`_
-
-
 Class
 -----------------------------------------------
 

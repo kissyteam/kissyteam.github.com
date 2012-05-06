@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Attribute &mdash; KISSY Docs alpha documentation</title>
+<title>Attribute &mdash; KISSY Docs</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -16,7 +16,7 @@
 <script>
     var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     'alpha',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
@@ -41,6 +41,19 @@
         }
     })();
 </script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
 </head>
 <body><div id="header">
     <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
@@ -51,15 +64,15 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
 
     <ul class="navigation">
-        <li><a href="http://docs.kissyui.com">首页</a></li>
-        <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="../../../../html/api/index.html">API</a></li>
-        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
-        <li><a href="https://groups.google.com/group/kissy-ui">讨论组</a></li>
+        <li><a href="http://docs.kissyui.com" >首页</a></li>
+        <li><a href="../../../../html/quickstart/index.html" >快速上手</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >讨论组</a></li>
         <!--<li><a href="http://blog.kissyui.com/">博客</a></li>-->
         <!--<li><a href="mailto:all@kissyui.com">论坛</a></li>-->
-        <li><a href="http://www.github.com/kissyteam">源码</a></li>
-        <li><a href="http://docs.kissyui.com/kissy/docs/">English API Docs</a></li>
+        <li><a href="http://www.github.com/kissyteam" >源码</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
     </ul>
 <div id="searchbox" style="display: none" class="searchbox">
     <form class="search" action="../../../search.html" method="get">
@@ -97,7 +110,7 @@
       <a href="index.html" title="Attribute/Base"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../index.html" >Core</a> &#187; </li>
       <li><a href="index.html" accesskey="U">Attribute/Base</a> &#187; </li> 
     </ul>
@@ -105,9 +118,6 @@
 					
   <span class="target" id="module-base"></span><div class="section" id="attribute">
 <h1>Attribute<a class="headerlink" href="#attribute" title="Permalink to this headline">¶</a></h1>
-<div class="line-block">
-<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/base">源码</a></div>
-</div>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -253,8 +263,7 @@
 <tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
 <li><strong>name</strong> (<em>String</em>) &#8211; <p>属性名。</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>也可以为 &#8220;x.y&#8221; 形式，此时要求 x 属性为包含 y 属性的普通 Object，这时会设置 x 属性值的 y 属性.但只会触发 x 的相关 change 事件.</p>
+<p>也可以为 &#8220;x.y&#8221; 形式，此时要求 x 属性为包含 y 属性的普通 Object，这时会设置 x 属性值的 y 属性.但只会触发 x 的相关 change 事件.</p>
 </li>
 <li><strong>value</strong> (<em>String</em>) &#8211; 属性的值</li>
 <li><strong>opts</strong> (<em>Object</em>) &#8211; <p>控制对象，包括以下控制选项</p>
@@ -316,12 +325,12 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>name</strong> (<em>String</em>) &#8211; 属性名</td>
+<tr><td>&nbsp;</td><td class="field-body"><strong>name</strong> (<em>String</em>) &#8211; <p>属性名</p>
+<p>也可以为 &#8220;x.y&#8221; 形式. 此时要求 x 属性为包含 y 属性的普通 Object。</p>
+</td>
 </tr>
 </tbody>
 </table>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>也可以为 &#8220;x.y&#8221; 形式. 此时要求 x 属性为包含 y 属性的普通 Object。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">当没有设置属性值时, 会取该属性的默认值.</p>
@@ -396,9 +405,7 @@
 <li><strong>e.newVal</strong> (<em>*</em>) &#8211; 将要改变到的属性值</li>
 <li><strong>e.prevVal</strong> (<em>*</em>) &#8211; 当前的属性值</li>
 <li><strong>e.attrName</strong> (<em>String</em>) &#8211; 当前的属性名，例如 &#8220;x&#8221;</li>
-<li><strong>e.subAttrName</strong> (<em>String</em>) &#8211; <p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>当前的完整属性名，例如 &#8220;x.y&#8221;</p>
-</li>
+<li><strong>e.subAttrName</strong> (<em>String</em>) &#8211; 当前的完整属性名，例如 &#8220;x.y&#8221;</li>
 </ul>
 </td>
 </tr>
@@ -422,9 +429,7 @@
 <li><strong>e.newVal</strong> (<em>*</em>) &#8211; 当前的属性值</li>
 <li><strong>e.prevVal</strong> (<em>*</em>) &#8211; 当前改变前的属性值</li>
 <li><strong>e.attrName</strong> (<em>String</em>) &#8211; 当前的属性名，例如 &#8220;x&#8221;</li>
-<li><strong>e.subAttrName</strong> (<em>String</em>) &#8211; <p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>当前的完整属性名，例如 &#8220;x.y&#8221;</p>
-</li>
+<li><strong>e.subAttrName</strong> (<em>String</em>) &#8211; 当前的完整属性名，例如 &#8220;x.y&#8221;</li>
 </ul>
 </td>
 </tr>
@@ -435,9 +440,7 @@
 <dl class="function">
 <dt id="Attribute.prototype.*Change">
 <tt class="descclassname">Attribute.prototype.</tt><tt class="descname">*Change</tt><big>(</big><big>)</big><a class="headerlink" href="#Attribute.prototype.*Change" title="Permalink to this definition">¶</a></dt>
-<dd><p class="versionadded">
-<span class="versionmodified">New in version 1.2.</span></p>
-<div class="line-block">
+<dd><div class="line-block">
 <div class="line"><strong>*Change</strong> (e)</div>
 <div class="line">每调用 <a class="reference internal" href="#base.Attribute.prototype.set" title="base.Attribute.prototype.set"><tt class="xref py py-func docutils literal"><span class="pre">set()</span></tt></a> 一次后就触发一次该事件.</div>
 </div>
@@ -540,7 +543,7 @@
       <a href="index.html" title="Attribute/Base"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../index.html" >Core</a> &#187; </li>
       <li><a href="index.html" accesskey="U">Attribute/Base</a> &#187; </li> 
     </ul>
@@ -662,10 +665,6 @@
 </div>
 <div id="footer">
     &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
-</div>
-<div style="visibility: hidden;">
-<script type="text/javascript" src="http://js.tongji.linezing.com/2648923/tongji.js"></script>
-<noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/2648923/tongji.gif"/></a></noscript>
 </div>
 </body>
 </html>

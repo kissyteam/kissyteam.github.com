@@ -1,0 +1,19 @@
+{#
+    basic/sourcelink.html
+    ~~~~~~~~~~~~~~~~~~~~~
+
+    Sphinx sidebar template: "show source" link.
+
+    :copyright: Copyright 2007-2010 by the Sphinx team, see AUTHORS.
+    :license: BSD, see LICENSE for details.
+#}
+{%- if show_source and has_source and sourcename %}
+	<div class="s-box">
+		<div class="s-box-hd">
+			<h3>{{ _('This Page') }}</h3>
+		</div>
+		<div class="s-box-bd">
+			<a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow">{{ _('Show Source') }}</a>
+		</div>
+	</div>
+{%- endif %}

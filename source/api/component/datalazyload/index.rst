@@ -8,7 +8,6 @@ DataLazyload
 |  很多时候, 用户在第一屏就发生了跳转, 大量"未曾露面"的图片下载对用户来说是无意义的.
 |  DataLazyload 可以 "揣测" 用户的行为, 当用户想看某个区域时, 才开始下载这个区域的图片.
 |  除了延迟图片下载, DataLazyload 还可以延迟某个区域的所有 html 的渲染, 这对 Tabs 等 UI 组件很有裨益, 能提高整个页面的性能.
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/datalazyload/impl.js>`_  | `Demo <../../../demo/component/datalazyload/index.html>`_
 
 Class
 -----------------------------------------------

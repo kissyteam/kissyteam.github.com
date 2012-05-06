@@ -3,10 +3,9 @@
 Resizable
 ===============================
 
-.. versionadded:: 1.2
+
 
 |  缩放功能.
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/resizable/>`_  | `Demo <../../../demo/component/resizable/index.html>`_
 
 Class
 ---------------------------------

@@ -3,10 +3,6 @@
 从已有 html 生成菜单
 ======================================
 
-.. versionadded:: 1.2
-
-|  `API <../../../api/component/menu/index.html>`_ | `源码 <https://github.com/kissyteam/kissy/tree/master/src/menu/>`_
-
 Class
 -----------------------------------------------
 

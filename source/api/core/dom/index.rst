@@ -3,9 +3,8 @@
 DOM
 ====================================
 
-|  源码: `查看 <https://github.com/kissyteam/kissy/tree/master/src/dom>`_
+.. note::
 
-.. versionchanged:: 1.2
     :mod:`KISSY Node <node>` 以及  :class:`~node.NodeList` 对象上的相关处理推荐直接调用其自身方法.
     
 Module

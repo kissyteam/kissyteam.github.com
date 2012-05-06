@@ -1,0 +1,512 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>Component &mdash; KISSY v1.2 Documentation</title>
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
+<link rel="stylesheet" href="../../static/kissy.css"/>
+<link rel="stylesheet" href="../../static/pygments.css"/>
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+    (function(){
+        var js=[],h=window.location.href,d=document;
+            js.push("../../static/jquery.js");
+            js.push("../../static/underscore.js");
+            js.push("../../static/doctools.js");
+        for(var i=0;i<js.length;i++){
+            var j=js[i];
+            if(h.indexOf("localhost/kissy_git/")==-1&&j.indexOf("jquery.js")!=-1){
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
+            }else{
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
+            }
+        }
+    })();
+</script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="http://docs.kissyui.com/docs/html/quickstart/index.html" >快速上手</a></li>
+        <li><a href="../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >讨论组</a></li>
+        <!--<li><a href="http://blog.kissyui.com/">博客</a></li>-->
+        <!--<li><a href="mailto:all@kissyui.com">论坛</a></li>-->
+        <li><a href="http://www.github.com/kissyteam" >源码</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="template/index.html" title="Template"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="../core/anim/index.html" title="Anim"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../index.html">KISSY v1.2 Documentation</a> &#187; </li>
+      <li><a href="../index.html" accesskey="U">API Documentation</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="component">
+<span id="id1"></span><h1>Component<a class="headerlink" href="#component" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="template/index.html">Template</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datalazyload/index.html">DataLazyload</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="flash/index.html">flash</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="flash/flash-ua.html">flash-ua</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="flash/flash-embed.html">flash-embed</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="flash/practice/index.html">flash 基础</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="flash/practice/alternative-content.html">关于 alternative content</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="flash/practice/embed-swf-onto-webpage.html">嵌入SWF的几种方式</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="flash/practice/flashplayer-parameters.html">FlashPlayer 参数</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="flash/practice/publishing-dynamic.html">动态发布方式</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="flash/practice/publishing-static.html">静态发布方式</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="flash/practice/handling-flash-versions.html">处理Flash播放器版本</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dd/index.html">DD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dd/draggable.html">Draggable</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dd/droppable.html">Droppable</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dd/ddm.html">DDM</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dd/draggable-delegate.html">DraggableDelegate</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dd/droppable-delegate.html">DroppableDelegate</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dd/proxy.html">Proxy</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dd/scroll.html">Scroll</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="resizable/index.html">Resizable</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mvc/index.html">mvc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mvc/Model.html">mvc.Model</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mvc/Collection.html">mvc.Collection</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mvc/View.html">mvc.View</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mvc/Router.html">mvc.Router</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mvc/sync.html">mvc.sync</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="uibase/index.html">UIBase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="uibase/UIBase.html">UIBase</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="uibase/box.html">UIBase.Box</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="uibase/contentbox.html">UIBase.ContentBox</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="uibase/align.html">UIBase.Align</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="uibase/close.html">UIBase.Close</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="uibase/drag.html">UIBase.Drag</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="uibase/loading.html">UIBase.Loading</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="uibase/mask.html">UIBase.Mask</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="uibase/position.html">UIBase.Position</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="uibase/resize.html">UIBase.Resize</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="uibase/stdmod.html">UIBase.StdMod</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="uibase/constrain.html">UIBase.Constrain</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="component/index.html">Component</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="component/ModelControl.html">Component.ModelControl</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="overlay/index.html">Overlay</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overlay/overlay.html">Overlay</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overlay/dialog.html">Dialog</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overlay/popup.html">Popup</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="button/index.html">Button</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="button/button.html">Button</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="button/split.html">Split</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="menu/index.html">Menu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="menu/Menu.html">Menu</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="menu/MenuItem.html">Menu.Item</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="menu/Separator.html">Menu.Separator</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="menu/SubMenu.html">Menu.SubMenu</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="menu/PopupMenu.html">Menu.PopupMenu</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="menu/FilterMenu.html">Menu.FilterMenu</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="menubutton/index.html">MenuButton</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="menubutton/MenuButton.html">MenuButton</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="menubutton/Select.html">Select</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="menubutton/Option.html">Option</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tree/index.html">Tree</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tree/Node.html">Node</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tree/CheckNode.html">CheckNode</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tree/Tree.html">Tree</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tree/CheckTree.html">CheckTree</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="waterfall/index.html">Waterfall</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="waterfall/intervein.html">Waterfall</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="waterfall/loader.html">Waterfall.Loader</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="switchable/index.html">Switchable</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="switchable/switchable.html">Switchable</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="switchable/tabs.html">Tabs</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="switchable/slide.html">Slide</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="switchable/carousel.html">Carousel</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="switchable/accordion.html">Accordion</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="suggest/index.html">Suggest</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="calendar/index.html">Calendar</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="imagezoom/index.html">ImageZoom</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="editor/index.html">Editor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="editor/install.html">引入</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="editor/usage.html">初始化</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="editor/plugin-api.html">api</a></li>
+<li class="toctree-l3"><a class="reference internal" href="editor/plugin.html">插件名称列表</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="editor/plugin-config.html">插件配置</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="editor/notice.html">注意</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="editor/faq.html">FAQ</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="template/index.html" title="Template"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="../core/anim/index.html" title="Anim"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../index.html">KISSY v1.2 Documentation</a> &#187; </li>
+      <li><a href="../index.html" accesskey="U">API Documentation</a> &#187; </li> 
+    </ul>
+</div>
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            $("#openComment").attr("disabled",true);
+        }else{
+            $("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            $("#openComment").bind("change",function(){
+                window.localStorage.setItem("kissy-commment",$("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../seed/loader/index.html">loader</a></li>
+        <li><a href="../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../seed/lang/index.html">lang</a></li>
+        <li><a href="../seed/web/index.html">web</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="../core/ua/index.html">ua</a></li>
+        <li><a href="../core/dom/index.html">dom</a></li>
+        <li><a href="../core/event/index.html">event</a></li>
+        <li><a href="../core/node/index.html">node</a></li>
+        <li><a href="../core/json/index.html">json</a></li>
+        <li><a href="../core/ajax/index.html">ajax</a></li>
+        <li><a href="../core/cookie/index.html">cookie</a></li>
+        <li><a href="../core/base/index.html">base</a></li>
+        <li><a href="../core/anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="mvc/index.html">mvc</a></li>
+        <li><a href="template/index.html">template</a></li>
+        <li><a href="datalazyload/index.html">datalazyload</a></li>
+        <li><a href="flash/index.html">flash</a></li>
+        <li><a href="dd/index.html">dd</a></li>
+        <li><a href="resizable/index.html">resizable</a></li>
+        <li><a href="switchable/index.html">switchable</a></li>
+        <li><a href="suggest/index.html">suggest</a></li>
+        <li><a href="calendar/index.html">calendar</a></li>
+        <li><a href="imagezoom/index.html">imagezoom</a></li>
+        <li><a href="overlay/index.html">overlay</a></li>
+        <li><a href="uibase/index.html">uibase</a></li>
+        <li><a href="component/index.html">component</a></li>
+        <li><a href="button/index.html">button</a></li>
+        <li><a href="menu/index.html">menu</a></li>
+        <li><a href="menubutton/index.html">menubutton</a></li>
+        <li><a href="tree/index.html">tree</a></li>
+        <li><a href="waterfall/index.html">waterfall</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
+        <li><a href="editor/index.html">editor</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

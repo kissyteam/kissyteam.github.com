@@ -11,7 +11,6 @@
     quickstart/index.rst
     api/index.rst
     demo/index.rst
-    relatedproj/index.rst
     styleguide/index.rst
     projguide/index.rst
     workflow/index.rst

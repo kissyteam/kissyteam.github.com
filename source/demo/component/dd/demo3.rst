@@ -3,11 +3,6 @@
 DraggableDelegate 使用示例
 =============================================
 
-.. versionadded:: 1.2
-
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/draggable-delegate.js>`_
-
-
 Class
 -----------------------------------------------
 
@@ -64,7 +59,7 @@ DraggableDelegate 使用示例
                 Droppable = DD.Droppable;
         });
 
-    .. versionadded:: 1.2
+
         通过 use 加载 dd 模块：
 
         .. code-block:: javascript

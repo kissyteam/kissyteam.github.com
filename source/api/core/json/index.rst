@@ -4,7 +4,6 @@ json
 ====================================
 
 |  KISSY 直接采用了 Douglas Crockford 的 json2.js
-|  源码: `查看 <http://github.com/kissyteam/kissy/blob/master/src/json/json2.js>`_
 
     .. note::
 

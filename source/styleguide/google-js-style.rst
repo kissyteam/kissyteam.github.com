@@ -1,5 +1,3 @@
-.. _styleguide-jsstylerules:
-
 Google JavaScript 规范
 ====================================
 

@@ -23,7 +23,7 @@ Methods
     :returns: 参数的对象表示
     :rtype: Object
     
-    .. versionchanged:: 1.2
+    .. note::
         key 可以不加 ``[]`` 如 ``v=1&v=2 => {v:[1,2]}``
 
     .. note::

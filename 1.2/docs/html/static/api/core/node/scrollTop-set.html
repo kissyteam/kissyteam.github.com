@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+div.demo {
+background:#CCCCCC none repeat scroll 0 0;
+border:3px solid #666666;
+margin:5px;
+padding:5px;
+position:relative;
+width:200px;
+height:100px;
+overflow:auto;
+}
+  p { margin:10px;padding:5px;border:2px solid #666;width:1000px;height:1000px; }
+  </style>
+  <script>
+(function(){
+    var h=window.location.href,d=document;
+    if(h.indexOf("localhost/kissy_git/")!=-1){
+            d.write('<script src="http://localhost/kissy_git/kissy1.2/build/kissy.js"'+' charset="utf-8"><'+'/script>');
+        }
+
+    else{
+        d.write('<script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
+    }
+    })();
+</script>
+</head>
+<body>
+  <div class="demo"><h1>lalala</h1><p>Hello</p></div>
+<script>
+    KISSY.use("node",function(S,Node){
+        Node.all("div.demo").scrollTop(300);
+    });
+</script>
+
+</body>
+</html>

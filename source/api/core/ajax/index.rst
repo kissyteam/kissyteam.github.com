@@ -4,7 +4,6 @@ ajax
 ===============================================
 
 |  ajax
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/ajax>`_
 
   .. toctree::
    :titlesonly:

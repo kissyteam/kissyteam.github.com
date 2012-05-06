@@ -3,9 +3,6 @@
 DataLazyload 基本使用
 =====================================================
 
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/datalazyload/>`_
-
-
 Class
 -----------------------------------------------
 

@@ -3,10 +3,9 @@
 Menu.Separator
 ===============================
 
-.. versionadded:: 1.2
+
 
 |  菜单项分隔线.
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/menu/>`_ | `Demo <../../../demo/component/menu/demo2.html>`_
 
 Class
 ---------------------------------

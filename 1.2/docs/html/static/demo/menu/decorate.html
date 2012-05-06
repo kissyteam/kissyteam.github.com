@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Demo - 从已有 html 生成菜单</title>
+<link href="http://a.tbcdn.cn/s/kissy/1.2.0/css/base.css" rel="stylesheet"/>
+
+<link href="assets/my.css" rel="stylesheet"/>
+<script>
+    if(location.host=="localhost"){
+        document.writeln('<script src="http://localhost/kissy_git/kissy1.2/build/kissy.js"'+'>'+'<'+'/'+'script>');
+    }else if(location.host=="chengyu.taobao.ali.com"){
+        document.writeln('<script src="http://chengyu.taobao.ali.com/kissy_git/kissy/build/kissy.js"'+'>'+'<'+'/'+'script>');
+    }else{
+        document.writeln('<script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"'+'>'+'<'+'/'+'script>');
+    }
+</script>
+</head>
+<body>
+<div id="menuTest" style='width:100px;'>
+    <div class="my-menuitem">菜单1</div>
+    <div class="my-submenu">
+        <div class='my-menuitem-content'>菜单2</div>
+        <div class="my-popupmenu goog-ext-position">
+            <div class="my-menuitem">子菜单1</div>
+            <div class="my-menuitem">子菜单2</div>
+        </div>
+    </div>
+    <div class="my-menuitem">菜单3</div>
+</div>
+<script src="assets/decorate.js"></script>
+</body>
+</html>

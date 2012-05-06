@@ -1,5 +1,3 @@
-.. _styleguide-jsstylerules:
-
 JavaScript 编码风格
 ====================================
 

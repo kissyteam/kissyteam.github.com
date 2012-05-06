@@ -5,7 +5,7 @@ Setup
 
 如何使用 KISSY ? 
 
-* 先将 `https://github.com/kissyteam/kissy/raw/master/build/kissy.js <https://github.com/kissyteam/kissy/raw/master/build/kissy.js>`_ 引入到你的页面;
+* 先将 `http://docs.kissyui.com/kissy/build/kissy.js <http://docs.kissyui.com/kissy/build/kissy.js>`_ 引入到你的页面;
 * 接着, 稍加编写一些代码, 就可以实现下面的效果了:
 
 .. raw:: html

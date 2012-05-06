@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>  
+    <style>
+        .info {
+            color:red;
+        }
+    </style>
+    <script>
+(function(){
+    var h=window.location.href,d=document;
+    if(h.indexOf("localhost/kissy_git/")!=-1){
+            d.write('<script src="http://localhost/kissy_git/kissy1.2/build/kissy.js"'+' charset="utf-8"><'+'/script>');
+        }
+
+    else{
+        d.write('<script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
+    }
+    })();
+</script>
+</head>
+<body>
+  <form id='f'>
+    
+    <div>
+        <label>姓名：<input/><span class='info'> i lose focus</span></label>
+    </div>
+    
+    <div>
+        <label>密码：<input/><span class='info'>i lose focus</span></label>
+    </div>
+    
+  </form>
+<script>
+    var $=KISSY.all;
+    
+    $("#f").on("focusout",function(e){
+        var t=$(e.target);
+        t.next(".info").html("i lost focus");
+    });
+    
+    $("#f").on("focusin",function(e){
+        var t=$(e.target);
+        t.next(".info").html("i get focus");
+    });
+</script>
+
+</body>
+</html>

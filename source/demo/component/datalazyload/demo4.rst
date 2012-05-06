@@ -4,9 +4,6 @@
 textarea 延迟加载
 =====================================================
 
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/datalazyload/>`_
-
-
 Class
 -----------------------------------------------
 

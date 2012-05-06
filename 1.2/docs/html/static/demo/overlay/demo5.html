@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Popup - 异步加载</title><script>
+(function(){
+    var h=window.location.href,d=document;
+    if(h.indexOf("localhost/kissy_git/")!=-1){
+            d.write('<script src="http://localhost/kissy_git/kissy1.2/build/kissy.js"'+' charset="utf-8"><'+'/script>');
+        }
+
+    else{
+        d.write('<script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
+    }
+    })();
+</script>
+<link href="http://a.tbcdn.cn/s/kissy/1.2.0/css/base.css" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/cool.css"/>
+<link rel="stylesheet" href="http://docs.kissyui.com/kissy-dpl/base/build/css/loading.css"/>
+
+<link href="../button/assets/custombutton.css" rel="stylesheet"/>
+<style>
+    .ks-overlay {
+        position:absolute;
+        left:-9999px;
+        top:-9999px;
+    }
+</style>
+</head>
+<body>
+<div id="button-wrap"></div>
+<script src="assets/demo5.js"></script>
+</body>
+</html>

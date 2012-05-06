@@ -3,11 +3,9 @@
 mvc.View
 ===============================
 
-.. versionadded:: 1.2
+
 
 |  视图类.
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/mvc/>`_
-
 
 Class
 ---------------------------------

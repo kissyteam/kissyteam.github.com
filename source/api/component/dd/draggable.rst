@@ -3,10 +3,9 @@
 Draggable
 ===============================================
 
-.. versionadded:: 1.2
+
 
 |  拖拽功能
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/dd/draggable.js>`_ | `Demo <../../../demo/component/dd/demo1.html>`_
 
 
 Class

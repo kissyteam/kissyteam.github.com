@@ -4,8 +4,6 @@
 使用基本的 Switchable
 ========================================================
 
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/switchable/>`_
-
 Class
 -----------------------------------------------
 

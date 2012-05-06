@@ -3,9 +3,7 @@
 Node
 ====================================
 
-|  源码: `查看 <https://github.com/kissyteam/kissy/tree/master/src/node>`_
-
-.. versionchanged:: 1.2
+.. note::
     Node 包括 :mod:`DOM <dom>` , :mod:`event` , :mod:`anim` 模块的所有功能, 推荐采用 ``Node`` 模块,
     你只需要把 ``KISSY.all`` 看做 ``jquery`` 中的 ``$`` 就可以了,
     链式操作你会喜欢的！
@@ -97,7 +95,7 @@ Member Methods
             * 其他, 直接返回
 
 
-.. versionchanged:: 1.2
+.. note::
     ``Node`` 模块的 ``on`` 方法中的 ``this`` 关键字指向当前绑定事件的单个原生节点, 事件对象的 ``target`` 和 ``relatedTarget`` 也指向对应的原生节点, 
 
 .. code-block:: html

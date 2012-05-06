@@ -3,10 +3,9 @@
 Menu.SubMenu
 ===============================
 
-.. versionadded:: 1.2
+
 
 |  包含子菜单的菜单项.
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/menu/>`_ | `Demo <../../../demo/component/menu/demo1.html>`_
 
 Class
 ---------------------------------

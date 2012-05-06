@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        button { margin:5px; }
+        button#theone { color:red; background:yellow; }
+    </style>
+    <script>
+(function(){
+    var h=window.location.href,d=document;
+    if(h.indexOf("localhost/kissy_git/")!=-1){
+            d.write('<script src="http://localhost/kissy_git/kissy1.2/build/kissy.js"'+' charset="utf-8"><'+'/script>');
+        }
+
+    else{
+        d.write('<script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
+    }
+    })();
+</script>
+</head>
+<body>
+    <button id="theone">Does nothing...</button>
+    <button id="bind">Bind Click</button>
+    <button id="unbind">Unbind Click</button>
+    <div style="display:none;">Click!</div>
+<script>
+var $=KISSY.Node.all;
+function aClick() {
+    $("div").show().fadeOut();
+}
+$("#bind").on('click',function () {
+    // could use .bind('click', aClick) instead but for variety...
+    $("#theone").on('click',aClick)
+      .text("Can Click!");
+});
+$("#unbind").on('click',function () {
+    $("#theone").detach('click', aClick)
+      .text("Does nothing...");
+});
+
+</script>
+
+</body>
+</html>

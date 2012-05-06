@@ -4,7 +4,6 @@ Overlay
 ===============================================
 
 |  悬浮的对话框
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_  | `Demo <../../../demo/component/overlay/>`_
 
 Class
 -----------------------------------------------
@@ -94,7 +93,7 @@ Config Attributes Detail
     
 .. data:: Overlay.config.prefixCls
 
-    .. versionadded:: 1.2
+
 
     {String} - 可选, 默认为"ks-", 样式类名前缀, 如悬浮层根元素会加上样式类："ks-overlay". kissy 1.2 版本以前设置无效, 都为 "ks-".
     
@@ -104,7 +103,7 @@ Config Attributes Detail
     
 .. data:: Overlay.config.elBefore
 
-    .. versionadded:: 1.2
+
 
     {KISSY.Node} - 浮层根节点需要渲染的参照元素，渲染在该元素之前。和 render 同时配置的话，该配置优先。    
 
@@ -174,7 +173,7 @@ Config Attributes Detail
                 
 .. data:: Overlay.config.effect
 
-    .. versionadded:: 1.2
+
 
     {Object} - 可选, 显示或隐藏时的特效支持, 例如：
     
@@ -188,13 +187,13 @@ Config Attributes Detail
         
 .. data:: Overlay.config.closable
 
-    .. versionadded:: 1.2
+
 
     {Boolean} - 对话框右上角是否包括关闭按钮
     
 .. data:: Overlay.config.closeAction
 
-    .. versionadded:: 1.2
+
 
     {String} - 点击关闭按钮的动作。默认 "hide" 隐藏，也可设置 "destroy" 销毁该组件.    
     
@@ -204,7 +203,7 @@ Config Attributes Detail
 
 .. data:: Overlay.config.resize
 
-    .. versionadded:: 1.2
+
 
     {Object} - 可选, 拖动调整大小的配置, 例如：
     
@@ -260,13 +259,13 @@ Properties Detail
     
 .. attribute:: Overlay.prototype.closable
 
-    .. versionadded:: 1.2
+
 
     {Boolean} - 右上角关闭区域有无.
 
 .. attribute:: Overlay.prototype.closeBtn
 
-    .. versionadded:: 1.2
+
 
     {KISSY.Node} - 关闭按钮元素.
 

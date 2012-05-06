@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Anim &mdash; KISSY Docs alpha documentation</title>
+<title>Anim &mdash; KISSY Docs</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -16,7 +16,7 @@
 <script>
     var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     'alpha',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
@@ -41,6 +41,19 @@
         }
     })();
 </script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
 </head>
 <body><div id="header">
     <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
@@ -51,15 +64,15 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
 
     <ul class="navigation">
-        <li><a href="http://docs.kissyui.com">首页</a></li>
-        <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="../../../../html/api/index.html">API</a></li>
-        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
-        <li><a href="https://groups.google.com/group/kissy-ui">讨论组</a></li>
+        <li><a href="http://docs.kissyui.com" >首页</a></li>
+        <li><a href="../../../../html/quickstart/index.html" >快速上手</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >讨论组</a></li>
         <!--<li><a href="http://blog.kissyui.com/">博客</a></li>-->
         <!--<li><a href="mailto:all@kissyui.com">论坛</a></li>-->
-        <li><a href="http://www.github.com/kissyteam">源码</a></li>
-        <li><a href="http://docs.kissyui.com/kissy/docs/">English API Docs</a></li>
+        <li><a href="http://www.github.com/kissyteam" >源码</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
     </ul>
 <div id="searchbox" style="display: none" class="searchbox">
     <form class="search" action="../../../search.html" method="get">
@@ -97,7 +110,7 @@
       <a href="../base/base.html" title="Base"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../index.html" accesskey="U">Core</a> &#187; </li> 
     </ul>
 </div>
@@ -106,7 +119,6 @@
 <h1>Anim<a class="headerlink" href="#anim" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line">动画</div>
-<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/anim">源码</a>  | <a class="reference external" href="../../../demo/core/anim/index.html">Demo</a></div>
 </div>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
@@ -167,8 +179,8 @@
 </pre></div>
 </div>
 <p>表示节点将从当前宽高经过动画平滑变化到宽 100px 与高 100px.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>也可以设置 scrollLeft 或者 scrollTop, 这时会直接对元素的滚动属性产生动画.</p>
+<blockquote>
+<div>也可以设置 scrollLeft 或者 scrollTop, 这时会直接对元素的滚动属性产生动画.</div></blockquote>
 </li>
 <li><strong>duration</strong> (<em>Number</em>) &#8211; 默认为 1 , 动画持续时间, 以秒为单元.</li>
 <li><strong>easing</strong> (<em>String</em>) &#8211; 默认为 &#8216;easeNone&#8217; , 动画平滑函数, 可取值 &#8220;easeNone&#8221;,&#8221;easeIn&#8221;,&#8221;easeOut&#8221;,&#8221;easeBoth&#8221;,&#8221;easeInStrong&#8221;, &#8220;easeOutStrong&#8221;,&#8221;easeBothStrong&#8221;,&#8221;elasticIn&#8221;,&#8221;elasticOut&#8221;, &#8220;elasticBoth&#8221;,&#8221;backIn&#8221;,&#8221;backOut&#8221;,&#8221;backBoth&#8221;, &#8220;bounceIn&#8221;,&#8221;bounceOut&#8221;,&#8221;bounceBoth&#8221;. 效果预览, 可以参考 Robert Penner 博士的： <a class="reference external" href="http://www.robertpenner.com/easing/easing_demo.html">easing_demo.html</a> .</li>
@@ -229,9 +241,7 @@
 <dl class="method">
 <dt id="anim.Anim.prototype.isRunning">
 <tt class="descclassname">Anim.prototype.</tt><tt class="descname">isRunning</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.prototype.isRunning" title="Permalink to this definition">¶</a></dt>
-<dd><p class="versionadded">
-<span class="versionmodified">New in version 1.2.</span></p>
-<div class="line-block">
+<dd><div class="line-block">
 <div class="line"><strong>isRunning</strong> ()</div>
 <div class="line">判断当前动画对象是否在执行动画过程.</div>
 </div>
@@ -276,9 +286,7 @@
 <dl class="method">
 <dt id="anim.Anim.isRunning">
 <tt class="descclassname">Anim.</tt><tt class="descname">isRunning</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.isRunning" title="Permalink to this definition">¶</a></dt>
-<dd><p class="versionadded">
-<span class="versionmodified">New in version 1.2.</span></p>
-<div class="line-block">
+<dd><div class="line-block">
 <div class="line">static <strong>Anim.isRunning</strong> (elem)</div>
 <div class="line"><a class="reference internal" href="#anim.Anim" title="anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt></a> 的静态方法, 用于判断 elem 上是否有动画对象在执行.</div>
 </div>
@@ -299,9 +307,7 @@
 <dl class="method">
 <dt id="anim.Anim.stop">
 <tt class="descclassname">Anim.</tt><tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.stop" title="Permalink to this definition">¶</a></dt>
-<dd><p class="versionadded">
-<span class="versionmodified">New in version 1.2.</span></p>
-<div class="line-block">
+<dd><div class="line-block">
 <div class="line">static <strong>Anim.stop</strong> (elem, end, clearQueue, queueName)</div>
 <div class="line"><a class="reference internal" href="#anim.Anim" title="anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt></a> 的静态方法, 停止某元素上的动画（集合）.</div>
 </div>
@@ -373,7 +379,7 @@
       <a href="../base/base.html" title="Base"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../index.html" accesskey="U">Core</a> &#187; </li> 
     </ul>
 </div>
@@ -494,10 +500,6 @@
 </div>
 <div id="footer">
     &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
-</div>
-<div style="visibility: hidden;">
-<script type="text/javascript" src="http://js.tongji.linezing.com/2648923/tongji.js"></script>
-<noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/2648923/tongji.gif"/></a></noscript>
 </div>
 </body>
 </html>

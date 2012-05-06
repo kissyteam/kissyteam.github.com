@@ -5,7 +5,6 @@ Popup
 
 
 |  弹出层
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_  | `Demo <../../../demo/component/overlay/>`_
 
 Class
 -----------------------------------------------
@@ -79,13 +78,9 @@ Config Attributes Detail
 
     {String} - 可选, 默认为'click', 触发类型, 可选'click', 'mouse'.
 
-.. versionadded:: 1.3
-
 .. data:: Overlay.prototype.mouseDelay
 
     {Number} - 可选, triggerType 为 mouse 时, Popup 显示的延迟时间, 默认为 100ms.
-
-.. versionadded:: 1.3
 
 .. data:: Overlay.prototype.toggle
 

@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>DraggableDelegate 使用示例 &mdash; KISSY Docs alpha documentation</title>
+<title>DraggableDelegate 使用示例 &mdash; KISSY Docs</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -16,7 +16,7 @@
 <script>
     var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     'alpha',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
@@ -41,6 +41,19 @@
         }
     })();
 </script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
 </head>
 <body><div id="header">
     <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
@@ -51,15 +64,15 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
 
     <ul class="navigation">
-        <li><a href="http://docs.kissyui.com">首页</a></li>
-        <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="../../../../html/api/index.html">API</a></li>
-        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
-        <li><a href="https://groups.google.com/group/kissy-ui">讨论组</a></li>
+        <li><a href="http://docs.kissyui.com" >首页</a></li>
+        <li><a href="../../../../html/quickstart/index.html" >快速上手</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >讨论组</a></li>
         <!--<li><a href="http://blog.kissyui.com/">博客</a></li>-->
         <!--<li><a href="mailto:all@kissyui.com">论坛</a></li>-->
-        <li><a href="http://www.github.com/kissyteam">源码</a></li>
-        <li><a href="http://docs.kissyui.com/kissy/docs/">English API Docs</a></li>
+        <li><a href="http://www.github.com/kissyteam" >源码</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
     </ul>
 <div id="searchbox" style="display: none" class="searchbox">
     <form class="search" action="../../../search.html" method="get">
@@ -97,7 +110,7 @@
       <a href="demo2.html" title="Droppable 基本使用"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../../index.html" >All Demos</a> &#187; </li>
+      <li><a href="../../index.html" >Demos</a> &#187; </li>
       <li><a href="../index.html" >Component</a> &#187; </li>
       <li><a href="index.html" accesskey="U">DD 使用示例</a> &#187; </li> 
     </ul>
@@ -105,11 +118,6 @@
 					
   <div class="section" id="draggabledelegate">
 <h1>DraggableDelegate 使用示例<a class="headerlink" href="#draggabledelegate" title="Permalink to this headline">¶</a></h1>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.2.</span></p>
-<div class="line-block">
-<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/dd/draggable-delegate.js">源码</a></div>
-</div>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -118,8 +126,8 @@
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id2">
-<h2>DraggableDelegate 使用示例<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>DraggableDelegate 使用示例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><iframe width="100%" height="360" class="iframe-demo" src="../../../static/demo/dd/demo3.html"></iframe><p><strong>引入 kissy.js</strong></p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;http://a.tbcdn.cn/s/kissy/1.2.0/kissy-min.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
@@ -149,21 +157,23 @@
 </pre></div>
 </div>
 <p><strong>调用DraggableDelegate</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node,dd&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">DD</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">DDM</span> <span class="o">=</span> <span class="nx">DD</span><span class="p">.</span><span class="nx">DDM</span><span class="p">,</span>
-        <span class="nx">DraggableDelegate</span> <span class="o">=</span> <span class="nx">DD</span><span class="p">.</span><span class="nx">DraggableDelegate</span><span class="p">,</span>
-        <span class="nx">Droppable</span> <span class="o">=</span> <span class="nx">DD</span><span class="p">.</span><span class="nx">Droppable</span><span class="p">;</span>
-<span class="p">});</span>
-</pre></div>
+<div class="highlight-javascript"><pre>KISSY.use("node,dd", function (S, Node, DD) {
+    var DDM = DD.DDM,
+        DraggableDelegate = DD.DraggableDelegate,
+        Droppable = DD.Droppable;
+});
+
+
+通过 use 加载 dd 模块：
+
+.. code-block:: javascript
+
+    KISSY.use("dd",function(S,DD){
+        var DraggableDelegate = DD.DraggableDelegate;
+    });
+
+得到 :class:`DraggableDelegate` 构造器.</pre>
 </div>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.2: </span>通过 use 加载 dd 模块：<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">){</span>
-    <span class="kd">var</span> <span class="nx">DraggableDelegate</span> <span class="o">=</span> <span class="nx">DD</span><span class="p">.</span><span class="nx">DraggableDelegate</span><span class="p">;</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-<p>得到 <a class="reference internal" href="../../../api/component/dd/draggable-delegate.html#dd.DraggableDelegate" title="dd.DraggableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt></a> 构造器.</p>
-</p>
 <div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last">KISSY 1.2 <a class="reference internal" href="../../../api/seed/index.html#module-seed" title="seed"><tt class="xref py py-mod docutils literal"><span class="pre">seed</span></tt></a> 新增功能</p>
@@ -249,7 +259,7 @@
       <a href="demo2.html" title="Droppable 基本使用"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../../index.html" >All Demos</a> &#187; </li>
+      <li><a href="../../index.html" >Demos</a> &#187; </li>
       <li><a href="../index.html" >Component</a> &#187; </li>
       <li><a href="index.html" accesskey="U">DD 使用示例</a> &#187; </li> 
     </ul>
@@ -369,10 +379,6 @@
 </div>
 <div id="footer">
     &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
-</div>
-<div style="visibility: hidden;">
-<script type="text/javascript" src="http://js.tongji.linezing.com/2648923/tongji.js"></script>
-<noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/2648923/tongji.gif"/></a></noscript>
 </div>
 </body>
 </html>

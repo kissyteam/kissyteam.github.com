@@ -4,7 +4,6 @@ UIBase.Drag
 ===============================
 
 |  拖曳。组件扩充类，仅用于 KISSY 内部组件继承，目前不建议外部使用，欢迎 review
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/uibase/>`_
 
 
 

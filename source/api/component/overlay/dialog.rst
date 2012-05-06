@@ -5,7 +5,6 @@ Dialog
 
 |  对话框.
 |  扩展于 :class:`Overlay`
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/overlay/>`_  | `Demo <../../../demo/component/overlay/>`_
 
 Class
 -----------------------------------------------
@@ -120,7 +119,7 @@ Config Attributes Detail
 
     {Boolean} - 默认为 false, 是否开启 aria 支持. 开启后, 窗口显示出来时自动获得焦点并且 tab 键只能在窗口内部转移焦点.
     
-    .. versionadded:: 1.2      
+
         
 .. data:: Dialog.config.constrain
 

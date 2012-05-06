@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Switchable &mdash; KISSY Docs alpha documentation</title>
+<title>Switchable &mdash; KISSY Docs</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -16,7 +16,7 @@
 <script>
     var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     'alpha',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
@@ -41,6 +41,19 @@
         }
     })();
 </script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
 </head>
 <body><div id="header">
     <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
@@ -51,15 +64,15 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
 
     <ul class="navigation">
-        <li><a href="http://docs.kissyui.com">首页</a></li>
-        <li><a href="../../../../html/quickstart/index.html">快速上手</a></li>
-        <li><a href="../../../../html/api/index.html">API</a></li>
-        <li><a href="../../../../html/demo/index.html">DEMO</a></li>
-        <li><a href="https://groups.google.com/group/kissy-ui">讨论组</a></li>
+        <li><a href="http://docs.kissyui.com" >首页</a></li>
+        <li><a href="../../../../html/quickstart/index.html" >快速上手</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >讨论组</a></li>
         <!--<li><a href="http://blog.kissyui.com/">博客</a></li>-->
         <!--<li><a href="mailto:all@kissyui.com">论坛</a></li>-->
-        <li><a href="http://www.github.com/kissyteam">源码</a></li>
-        <li><a href="http://docs.kissyui.com/kissy/docs/">English API Docs</a></li>
+        <li><a href="http://www.github.com/kissyteam" >源码</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
     </ul>
 <div id="searchbox" style="display: none" class="searchbox">
     <form class="search" action="../../../search.html" method="get">
@@ -97,7 +110,7 @@
       <a href="index.html" title="Switchable"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../index.html" >Component</a> &#187; </li>
       <li><a href="index.html" accesskey="U">Switchable</a> &#187; </li> 
     </ul>
@@ -107,7 +120,6 @@
 <h1>Switchable<a class="headerlink" href="#switchable" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line">Switchable 的核心类, S.Tabs/S.Slide/S.Accordion/S.Carousel 都是扩展自它.</div>
-<div class="line"><a class="reference external" href="https://github.com/kissyteam/kissy/tree/master/src/switchable/">源码</a> | <a class="reference external" href="../../../demo/component/switchable/index.html">Demo</a></div>
 </div>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
@@ -143,7 +155,7 @@
 <li><a class="reference internal" href="#switchable.Switchable.config.effect" title="switchable.Switchable.config.effect"><tt class="xref py py-data docutils literal"><span class="pre">effect</span></tt></a></li>
 <li><a class="reference internal" href="#switchable.Switchable.config.duration" title="switchable.Switchable.config.duration"><tt class="xref py py-data docutils literal"><span class="pre">duration</span></tt></a></li>
 <li><a class="reference internal" href="#switchable.Switchable.config.easing" title="switchable.Switchable.config.easing"><tt class="xref py py-data docutils literal"><span class="pre">easing</span></tt></a></li>
-<li><a class="reference internal" href="#switchable.Switchable.config.nativeAnim" title="switchable.Switchable.config.nativeAnim"><tt class="xref py py-data docutils literal"><span class="pre">nativeAnim</span></tt></a></li>
+<li><tt class="xref py py-data docutils literal"><span class="pre">nativeAnim</span></tt></li>
 <li><a class="reference internal" href="#switchable.Switchable.config.lazyDataType" title="switchable.Switchable.config.lazyDataType"><tt class="xref py py-data docutils literal"><span class="pre">lazyDataType</span></tt></a></li>
 <li><a class="reference internal" href="#switchable.Switchable.config.aria" title="switchable.Switchable.config.aria"><tt class="xref py py-data docutils literal"><span class="pre">aria</span></tt></a></li>
 </ul>
@@ -393,14 +405,6 @@
 </dd></dl>
 
 <dl class="data">
-<dt id="switchable.Switchable.config.nativeAnim">
-<tt class="descclassname">Switchable.config.</tt><tt class="descname">nativeAnim</tt><a class="headerlink" href="#switchable.Switchable.config.nativeAnim" title="Permalink to this definition">¶</a></dt>
-<dd><p class="versionchanged">
-<span class="versionmodified">Changed in version 1.2: </span>1.2 中 <tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt> 去掉了本地动画的支持, 这里的配置项也相应去除</p>
-<p>{Boolean} - 是否优先使用原生 css3 transition, 默认为 <tt class="docutils literal"><span class="pre">true</span></tt>, 同 <a class="reference internal" href="../../core/anim/index.html#anim.Anim" title="anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt></a> 中的  <cite>nativeSupport</cite> 参数  .</p>
-</dd></dl>
-
-<dl class="data">
 <dt id="switchable.Switchable.config.lazyDataType">
 <tt class="descclassname">Switchable.config.</tt><tt class="descname">lazyDataType</tt><a class="headerlink" href="#switchable.Switchable.config.lazyDataType" title="Permalink to this definition">¶</a></dt>
 <dd><p>{String} - 默认为 &#8216;area-data&#8217;, 设置延迟加载时使用的数据类型, 可取:</p>
@@ -632,7 +636,7 @@
       <a href="index.html" title="Switchable"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
-      <li><a href="../../index.html" >API文档</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../index.html" >Component</a> &#187; </li>
       <li><a href="index.html" accesskey="U">Switchable</a> &#187; </li> 
     </ul>
@@ -754,10 +758,6 @@
 </div>
 <div id="footer">
     &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
-</div>
-<div style="visibility: hidden;">
-<script type="text/javascript" src="http://js.tongji.linezing.com/2648923/tongji.js"></script>
-<noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/2648923/tongji.gif"/></a></noscript>
 </div>
 </body>
 </html>

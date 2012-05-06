@@ -7,371 +7,384 @@
 <title>KISSY - Keep It Simple &amp; Stupid, Short &amp; Sweet, Slim &amp; Sexy...</title>
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <style>
-        /* 居中 */
-    #header, #content, #footer {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-        /** 布局基础样式 **/
-    .col-main {
-        float: left;
-        width: 100%;
-        /* bug fix: 主栏没有内容时，在 Firefox 和 Chrome 等浏览器下，布局不对 */
-        min-height: 1px;
-    }
-
-    .col-sub, .col-extra {
-        float: left;
-        /*position: relative;  按需设置，仅在需要时添加 */
-    }
-
-        /** 清除浮动 **/
-    .layout:after, .main-wrap:after, .col-sub:after, .col-extra:after {
-        content: '\20';
-        display: block;
-        height: 0;
-        clear: both;
-    }
-
-    .layout, .main-wrap, .col-sub, .col-extra {
-        *zoom: 1;
-    }
-
-        /* global */
-    html {
-        color: #666;
-        font-size: 14px;
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-    a:link, a:visited {
-        color: #00A0E9;
-    }
-
-    a:hover, a:active {
-        color: #FF6600;
-    }
-
-    .clearfix:after {
-        content: ".";
-        display: block;
-        height: 0;
-        clear: both;
-        visibility: hidden;
-    }
-
-        /* head */
-    #header,
-    #content,
-    #footer {
-        width: 950px;
-        margin: 0 auto;
-    }
-
-    #header {
-        overflow: hidden;
-        height: 90px;
-        border-bottom: 1px solid #AACCEE;
-    }
-
-    #header .logo {
-        border: medium none;
-        float: left;
-        margin: 20px 0 0 1px;
-        padding: 0;
-    }
-
-    #header .desc {
-        color: #888;
-        float: left;
-        font-size: 15px;
-        margin-left: 5px;
-        margin-top: 47px;
-    }
-
-    #header .navigation {
-        float: right;
-        list-style: none outside none;
-        margin: 0;
-        overflow: hidden;
-    }
-
-    #header .navigation li {
-        float: left;
-        font-size: 14px;
-        height: 17px;
-        border-left: 1px solid #DDDDDD;
-        line-height: 17px;
-        margin: 47px 0 0 -1px;
-        padding: 0 10px;
-        font-weight: bold;
-    }
-
-        /* layout */
-    .grid-m0s5 .main-wrap {
-        margin-right: 278px;
-    }
-
-    .grid-m0s5 .col-sub {
-        margin-left: -270px;
-        width: 270px;
-    }
-
-        /* content */
-    .title {
-        font-size: 16px;
-        padding: 3px 0 3px 12px;
-        color: #444;
-        font-weight: bold;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .title span {
-        float: right;
-        font-size: 12px;
-    }
-
-    .con {
-        padding: 7px;
-        font-size: 14px;
-    }
-
-    .con ul li {
-        padding-left: 25px;
-        height: 22px;
-        background: url(assets/list.png) no-repeat 15px 11px;
-    }
-
-    .con ul li span {
-        padding-left: 40px;
-    }
-
-    .con ul li span.s-first {
-        padding-left: 0px;
-        display: inline-block;
-        width: 80px;
-    }
-
-    .con .s-captain {
-        font-size: 14px;
-        height: 20px;
-        line-height: 20px;
-        margin: 5px 0;
-        color: #222;
-    }
-
-    .con .s-fleft {
-        float: left;
-        width: 325px;
-    }
-
-    .s-module {
-        margin-top: 20px;
-    }
-
-    .s-smaller {
-        font-size: 12px;
-    }
-
-    .s-smaller a {
-        color: #666;
-    }
-
-    .s-smaller a:hover {
-        color: #FF6600;
-    }
-
-    .s-strong {
-        color: #333;
-    }
-
-    .s-switchable {
-        height: 150px;
-    }
-
-    .s-kissy-base {
-    }
-
-    .s-kissy-base .con {
-        padding-left: 12px;
-    }
-
-    .s-kissy-base .con ul li .s-smaller a {
-        color: #333;
-    }
-
-    .s-kissy-base .con ul li .s-smaller a:hover {
-        color: #FF6600;
-    }
-
-    .s-cheat {
-        font-size: 12px;
-    }
-
-    .s-kissy-gallery {
-    }
-
-        /*.s-kissy-gallery .con{ height:140px;}*/
-    .s-kissy-gallery .con ul li {
-        background-position: 10px 13px;
-        overflow: hidden;
-        line-height: 25px;
-        height: 25px;
-    }
-
-    .s-kissy-gallery .con ul li span {
-        padding-left: 0;
-    }
-
-    .s-kissy-gallery .con ul li .s-desc {
-        color: #666;
-    }
-
-    .s-kissy-util {
-    }
-
-    .s-kissy-util .con {
-        height: 115px;
-    }
-
-    .s-kissy-util .con ul li {
-        background-position: 10px 13px;
-        overflow: hidden;
-        line-height: 25px;
-        height: 25px;
-    }
-
-    .s-kissy-util .con ul li span {
-        padding-left: 0;
-    }
-
-    .s-kissy-util .con ul li .s-desc {
-        color: #666;
-    }
-
-    .s-kissy-join {
-    }
-
-    .s-kissy-join .con {
-    }
-
-    .s-announce ul,
-    .s-kissy-standard ul,
-    .s-kissy-tool ul {
-        margin-left: 7px;
-    }
-
-    .s-announce .con {
-    }
-
-    .s-announce .con li {
-        font-size: 14px;
-        height: 25px;
-        padding-left: 15px;
-        background-position: 0px 11px;
-        overflow: hidden;
-    }
-
-    .s-announce .con li span.s-announce-con {
-        padding-left: 0px;
-        display: inline-block;
-        width: 200px;
-        overflow: hidden;
-        height: 24px;
-        color: #444;
-    }
-
-    .s-announce .con li span.s-announce-more {
-        padding-left: 0px;
-        display: inline-block;
-        overflow: hidden;
-        height: 24px;
-        float: right;
-    }
-
-    .s-announce .con li a {
-        display: inline-block;
-        height: 25px;
-    }
-
-    .s-announce .con li a:hover {
-        color: #FF6600;
-    }
-
-    .s-kissy-dpl,
-    .s-kissy-editor,
-    .s-kissy-ajbridge {
-        height: 56px;
-    }
-
-    .s-kissy-standard .con li {
-        font-size: 14px;
-        height: 25px;
-        padding-left: 10px;
-        background-position: 0px 11px;
-        overflow: hidden;
-    }
-
-    .s-kissy-standard ul li span {
-        padding-left: 5px;
-    }
-
-    .s-kissy-tool .con li {
-        font-size: 14px;
-        height: 25px;
-        padding-left: 10px;
-        background-position: 0px 11px;
-        overflow: hidden;
-    }
-
-    .s-kissy-tool .con li span {
-        padding-left: 5px;
-    }
-
-    .s-kissy-tool .con li a {
-        display: inline-block;
-        height: 25px;
-    }
-
-    .s-kissy-join .con div, .s-kissy-introduce .con div {
-        margin-left: 7px;
-    }
-
-        /* footer */
-    #footer {
-        margin-top: 10px;
-        padding: 10px 0 20px 0;
-        text-align: center;
-        color: #666;;
-        border-top: 1px solid #ddd;
-    }
-
-        /** 搜索box **/
-    #header {
-        position: relative;
-    }
-
-    #searchbox {
-        position: absolute;
-        right: 22px;
-        top: 15px;
-    }
-
-    .searchbox input {
-        border: 1px solid #999;
-        height: 20px;
-        line-height: 20px;
-        vertical-align: middle;
-    }
+    /* 居中 */
+#header, #content, #footer {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    /** 布局基础样式 **/
+.col-main {
+    float: left;
+    width: 100%;
+    /* bug fix: 主栏没有内容时，在 Firefox 和 Chrome 等浏览器下，布局不对 */
+    min-height: 1px;
+}
+
+.col-sub, .col-extra {
+    float: left;
+    /*position: relative;  按需设置，仅在需要时添加 */
+}
+
+    /** 清除浮动 **/
+.layout:after, .main-wrap:after, .col-sub:after, .col-extra:after {
+    content: '\20';
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.layout, .main-wrap, .col-sub, .col-extra {
+    *zoom: 1;
+}
+
+    /* global */
+html {
+    color: #666;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: #00A0E9;
+}
+
+a:hover, a:active {
+    color: #FF6600;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+    /* head */
+#header,
+#content,
+#footer {
+    width: 950px;
+    margin: 0 auto;
+}
+
+#header {
+    overflow: hidden;
+    height: 90px;
+    border-bottom: 1px solid #AACCEE;
+}
+
+#header .logo {
+    border: medium none;
+    float: left;
+    margin: 20px 0 0 1px;
+    padding: 0;
+}
+
+#header .desc {
+    color: #888;
+    float: left;
+    font-size: 15px;
+    margin-left: 5px;
+    margin-top: 47px;
+}
+
+#header .navigation {
+    float: right;
+    list-style: none outside none;
+    margin: 0;
+    overflow: hidden;
+}
+
+#header .navigation li {
+    float: left;
+    font-size: 14px;
+    height: 17px;
+    border-left: 1px solid #DDDDDD;
+    line-height: 17px;
+    margin: 47px 0 0 -1px;
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+    /* layout */
+.grid-m0s5 .main-wrap {
+    margin-right: 278px;
+}
+
+.grid-m0s5 .col-sub {
+    margin-left: -270px;
+    width: 270px;
+}
+
+    /* content */
+.title {
+    font-size: 16px;
+    padding: 3px 0 3px 12px;
+    color: #444;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+
+.title span {
+    float: right;
+    font-size: 12px;
+}
+
+.con {
+    padding: 7px;
+    font-size: 14px;
+}
+
+.con ul li {
+    padding-left: 25px;
+    height: 22px;
+}
+
+.con ul li span {
+    padding-left: 40px;
+}
+
+.con ul li span.s-first {
+    padding-left: 0px;
+    display: inline-block;
+    width: 80px;
+}
+
+.con .s-captain {
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    margin: 5px 0;
+    color: #222;
+}
+
+.con .s-fleft {
+    float: left;
+    width: 325px;
+}
+
+.s-module {
+    margin-top: 20px;
+}
+
+.s-smaller {
+    font-size: 12px;
+}
+
+.s-smaller a {
+    color: #666;
+}
+
+.s-smaller a:hover {
+    color: #FF6600;
+}
+
+.s-strong {
+    color: #333;
+}
+
+.s-switchable {
+    height: 150px;
+}
+
+.s-kissy-base {
+}
+
+.s-kissy-base .con {
+    padding-left: 12px;
+}
+
+.s-kissy-base .con ul li .s-smaller a {
+    color: #333;
+}
+
+.s-kissy-base .con ul li .s-smaller a:hover {
+    color: #FF6600;
+}
+
+.s-cheat {
+    font-size: 12px;
+}
+
+.s-kissy-gallery {
+}
+
+    /*.s-kissy-gallery .con{ height:140px;}*/
+.s-kissy-gallery .con ul li {
+    background-position: 10px 13px;
+    overflow: hidden;
+    line-height: 25px;
+    height: 25px;
+}
+
+.s-kissy-gallery .con ul li span {
+    padding-left: 0;
+}
+
+.s-kissy-gallery .con ul li .s-desc {
+    color: #666;
+}
+
+.s-kissy-util {
+}
+
+.s-kissy-util .con {
+    height: 115px;
+}
+
+.s-kissy-util .con ul li {
+    background-position: 10px 13px;
+    overflow: hidden;
+    line-height: 25px;
+    height: 25px;
+}
+
+.s-kissy-util .con ul li span {
+    padding-left: 0;
+}
+
+.s-kissy-util .con ul li .s-desc {
+    color: #666;
+}
+
+.s-kissy-join {
+}
+
+.s-kissy-join .con {
+}
+
+.s-announce ul,
+.s-kissy-standard ul,
+.s-kissy-tool ul {
+    margin-left: 7px;
+}
+
+.s-announce .con {
+}
+
+.s-announce .con li {
+    font-size: 14px;
+    height: 25px;
+    padding-left: 15px;
+    background-position: 0px 11px;
+    overflow: hidden;
+}
+
+.s-announce .con li span.s-announce-con {
+    padding-left: 0px;
+    display: inline-block;
+    width: 200px;
+    overflow: hidden;
+    height: 24px;
+    color: #444;
+}
+
+.s-announce .con li span.s-announce-more {
+    padding-left: 0px;
+    display: inline-block;
+    overflow: hidden;
+    height: 24px;
+    float: right;
+}
+
+.s-announce .con li a {
+    display: inline-block;
+    height: 25px;
+}
+
+.s-announce .con li a:hover {
+    color: #FF6600;
+}
+
+.s-kissy-dpl,
+.s-kissy-editor,
+.s-kissy-ajbridge {
+    height: 56px;
+}
+
+.s-kissy-standard .con li {
+    font-size: 14px;
+    height: 25px;
+    padding-left: 10px;
+    background-position: 0px 11px;
+    overflow: hidden;
+}
+
+.s-kissy-standard ul li span {
+    padding-left: 5px;
+}
+
+.s-kissy-tool .con li {
+    font-size: 14px;
+    height: 25px;
+    padding-left: 10px;
+    background-position: 0px 11px;
+    overflow: hidden;
+}
+
+.s-kissy-tool .con li span {
+    padding-left: 5px;
+}
+
+.s-kissy-tool .con li a {
+    display: inline-block;
+    height: 25px;
+}
+
+.s-kissy-join .con div, .s-kissy-introduce .con div {
+    margin-left: 7px;
+}
+
+    /* footer */
+#footer {
+    margin-top: 10px;
+    padding: 10px 0 20px 0;
+    text-align: center;
+    color: #666;;
+    border-top: 1px solid #ddd;
+}
+
+    /** 搜索box **/
+#header {
+    position: relative;
+}
+
+#searchbox {
+    position: absolute;
+    right: 22px;
+    top: 15px;
+}
+
+.searchbox input {
+    border: 1px solid #999;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+}
 </style>
 <link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon"/>
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <base target="_blank"/>
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
 </head>
 <body>
 <div id="header">
@@ -379,8 +392,8 @@
     <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
     <ul class="navigation">
         <li><a href="docs/html/quickstart/index.html">快速上手</a></li>
-        <li><a href="docs/html/api/index.html">API</a></li>
-        <li><a href="docs/html/demo/index.html">DEMO</a></li>
+        <li><a href="docs/html/api/index.html" data-ver=",1.2">API</a></li>
+        <li><a href="docs/html/demo/index.html" data-ver=",1.2">DEMO</a></li>
         <!--
                     <li><a href="http://blog.kissyui.com/">博客</a></li>
                     -->
@@ -390,227 +403,275 @@
     </ul>
 
 
-    <div id="searchbox" style="display: none" class="searchbox">
+    <div id="searchbox" class="searchbox">
         <form class="search" action="docs/html/search.html" method="get">
             <input type="text" name="q" size="28" class="ipt"/>
             <input type="submit" value="Go" class="btn"/>
             <input type="hidden" name="check_keywords" value="yes"/>
             <input type="hidden" name="area" value="default"/>
         </form>
-
     </div>
-    <script type="text/javascript">$('#searchbox').show(0);</script>
 
 </div>
 <div id="content">
-<div class="layout grid-m0s5">
-    <div class="col-main">
-        <div class="main-wrap">
-            <div class="s-kissy-introduce s-module">
-                <div class="con">
-                    <p>KISSY 是由淘宝前端攻城师们发起创建的一个开源 JS 类库。</p>
-                    <p>她遵循的原则是 小巧灵活、简洁实用、愉悦编码、快乐开发。</p>
+    <div class="layout grid-m0s5">
+        <div class="col-main">
+            <div class="main-wrap">
+                <div class="s-kissy-introduce s-module">
+                    <div class="con">
+                        <p>KISSY 是由淘宝前端攻城师们发起创建的一个开源 JS 类库。</p>
+                        <p>她遵循的原则是 小巧灵活、简洁实用、愉悦编码、快乐开发。</p>
                             <pre>
 Keep It
     Simple & Stupid, Short & Sweet, Slim & Sexy...
 Yeah!
 </pre>
-                    <p style="margin-top:5px;">你可以查看<a href="docs/html/quickstart/index.html">快速上手</a>，对KISSY做个快速了解。</p>
-                </div>
-            </div>
-            <div class="s-kissy-base s-module">
-                <div class="title">API文档</div>
-                <div class="con clearfix">
-                    <div class="s-fleft">
-                        <div>
-                            <div class="s-captain">Seed（种子）</div>
-                            <ul>
-                                <li><span class="s-first"><a href="docs/html/api/seed/loader/">loader</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/seed/kissy/index.html">kissy</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/seed/lang/index.html">lang</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/seed/web/index.html">web</a></span></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <div class="s-captain">Core（核心文件）<span class="s-cheat"><a href="kcs/core.html">作弊条</a></span></div>
-                            <ul>
-                                <li><span class="s-first"><a href="docs/html/api/core/ua">ua</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/core/dom">dom</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/core/event">event</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/core/node">node</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/core/json">json</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/core/ajax">ajax</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/core/cookie">cookie</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/core/base">base</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/core/anim">anim</a></span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="s-fleft">
-                        <div>
-                            <div class="s-captain">Components（UI组件）<span class="s-cheat"><a href="kcs/widget.html">作弊条</a></span></div>
-                            <ul>
-                                <li><span class="s-first"><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/component/mvc">mvc</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/component/template">template</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/component/datalazyload">datalazyload</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/component/flash">flash</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/component/dd">dd</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/component/resizable">resizable</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/component/switchable">switchable</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/component/suggest">suggest</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/component/calendar">calendar</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/component/imagezoom">imagezoom</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/component/overlay">overlay</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/component/button">button</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/component/menu">menu</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/component/menubutton">menubutton</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/component/tree">tree</a></span></li>
-                                <li><span class="s-first"><a href="http://docs.kissyui.com/kissy/src/validation/demo/">validation</a></span></li>
-                                <li><span class="s-first"><a href="docs/html/api/component/waterfall">waterfall</a></span></li>
-                            </ul>
-                        </div>
-
+                        <p style="margin-top:5px;">你可以查看<a href="docs/html/quickstart/index.html">快速上手</a>，对KISSY做个快速了解。</p>
                     </div>
                 </div>
-            </div>
-            <div class="s-kissy-gallery s-module">
-                <div class="title">Gallery
-                    <span style="padding-left:5px;color:#80c269;font-size:12px;font-weight:normal;">存放社区贡献的组件，会选择性地整合到KISSY中。</span>
+                <div class="s-kissy-base s-module">
+                    <div class="title">API文档</div>
+                    <div class="con clearfix">
+                        <div class="s-fleft">
+                            <div>
+                                <div class="s-captain">Seed（种子）</div>
+                                <ul class="api-seed">
+                                    <li><span class="s-first"><a href="docs/html/api/seed/loader/">loader</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/seed/kissy/index.html">kissy</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/seed/lang/index.html">lang</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/seed/web/index.html">web</a></span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <div class="s-captain">Core（核心文件）<span class="s-cheat"><a href="kcs/core.html">作弊条</a></span></div>
+                                <ul class="api-core">
+                                    <li><span class="s-first"><a href="docs/html/api/core/ua">ua</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/core/dom">dom</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/core/event">event</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/core/node">node</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/core/json">json</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/core/ajax">ajax</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/core/cookie">cookie</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/core/base">base</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/core/anim">anim</a></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="s-fleft">
+                            <div>
+                                <div class="s-captain">Components（UI组件）<span class="s-cheat"><a href="kcs/widget.html">作弊条</a></span></div>
+                                <ul class="api-component">
+                                    <li><span class="s-first"><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/component/mvc">mvc</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/component/template">template</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/component/datalazyload">datalazyload</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/component/flash">flash</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/component/dd">dd</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/component/resizable">resizable</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/component/switchable">switchable</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/component/suggest">suggest</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/component/calendar">calendar</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/component/imagezoom">imagezoom</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/component/overlay">overlay</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/component/button">button</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/component/menu">menu</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/component/menubutton">menubutton</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/component/tree">tree</a></span></li>
+                                    <li><span class="s-first"><a href="http://docs.kissyui.com/kissy/src/validation/demo/">validation</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/component/waterfall">waterfall</a></span></li>
+                                    <li><span class="s-first"><a href="docs/html/api/component/editor" data-ver="1.2">editor</a></span></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
+                <div class="s-kissy-gallery s-module">
+                    <div class="title">Gallery
+                        <span style="padding-left:5px;color:#80c269;font-size:12px;font-weight:normal;">存放社区贡献的组件，会选择性地整合到KISSY中。</span>
+                    </div>
+                    <div class="con">
+                        <ul>
+                            <li><span><a href="../kissy-gallery/gallery/grid/1.0/index.html" target="_blank">grid：</a></span><span class="s-desc">表格</span></li>
+                            <li><span><a href="../kissy-gallery/gallery/combine/1.0/demo.html" target="_blank">combine:</a></span><span class="s-desc">适用 KISSY 1.2 的自动 combo patch</span></li>
+                            <li><span><a href="../kissy-gallery/gallery/countdown/" target="_blank">countdown：</a></span><span class="s-desc">倒计时特效</span></li>
+                            <li><span><a href="../kissy-gallery/gallery/chart/1.0/demo.html" target="_blank">chart：</a></span><span class="s-desc">支持多种表现形式的图表</span></li>
+                            <li><span><a href="../kissy-gallery/gallery/kscroll/" target="_blank">kscroll：</a></span><span class="s-desc">以假乱真的滚动条</span></li>
+                            <li><span><a href="../kissy-gallery/gallery/form/" target="_blank">form/uploader：</a></span><span class="s-desc">异步文件上传</span></li>
+                            <li><span><a href="../kissy-gallery/gallery/reflection/1.0/demo.html" target="_blank">reflection：</a></span><span class="s-desc">图片倒影</span></li>
+                            <li><span><a href="../kissy-gallery/gallery/urlparser/1.0/demo.html" target="_blank">urlparser：</a></span><span class="s-desc">url 解析器</span></li>
+                            <li><span><a href="../kissy-gallery/gallery/wwgroup/1.0/demo.html" target="_blank">wwgroup：</a></span>
+                                <span class="s-desc">ww 点灯</span></li>
+                            <li><span><a href="../kissy-gallery/" target="_blank">更多 Gallery ...</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="s-kissy-util s-module">
+                    <div class="title">Util
+                        <span style="padding-left:5px;color:#80c269;font-size:12px;font-weight:normal;">不成组件但又常用的小功能集合</span>
+                    </div>
+                    <div class="con">
+                        <ul>
+                            <li><span><a href="../kissy-util/adaptive-frame/demo.html">adaptive-frame：</a></span><span class="s-desc">跨域iframe高度自适应</span></li>
+                            <li><span><a href="../kissy-util/view-code/demo.html">view-code：</a></span><span class="s-desc">提供查看源码功能，可以很方便地查看源码</span></li>
+                            <li><span><a href="../kissy-util/ellipsis/demo.html">ellipsis：</a></span><span class="s-desc">通用文本截断显示省略号功能</span></li>
+                            <li><span><a href="../kissy-util/checkcode/demo.html">checkcode：</a></span><span class="s-desc">播放语音验证码功能
+								</span></li>
+                            <li><span><a href="../kissy-util/placeholder/demo.html">placeholder</a></span><span class="s-desc">placeholder
+								</span></li>
+                            <li><span><a href="../kissy-util/" target="_blank">更多 Util ...</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="s-kissy-join s-module">
+                    <div class="title">加入我们</div>
+                    <div class="con">
+                        <div>讨论旺旺群：29676575</div>
+                        <div> google group：<a href='http://groups.google.com/group/kissy-ui/' target="_blank">kissy-ui</a></div>
+                        <div>技术支持旺旺：kissyteam</div>
+                        <div>邮箱：<a href="mailto:kissyteam@gmail.com" target="_self">kissyteam@gmail.com </a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sub">
+            <div class="s-kissy-get s-module">
+                <div class="con">
+                    <div>
+                        获取开发源码（每周三同步）：
+                        <ul>
+                            <li><a href="http://www.github.com/kissyteam">github</a></li>
+                            <li><a href="http://svn.app.taobao.net/repos/fed/trunk/fed/kissy-team">淘宝内网SVN</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        通过淘宝cdn使用KISSY：
+                        <ul>
+                            <li><a href="http://a.tbcdn.cn/s/kissy/1.2.0/kissy-min.js">KISSY（1.2.0）</a></li>
+                            <li><a href="https://github.com/kissyteam/kissy/zipball/1.2.0.cdn">下载 CDN 稳定版本</a></li>
+                            <li><a href="docs/html/changelog/1.2.0.html" target='_blank'>1.16->1.2 升级指南</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="s-kissy-dpl s-module">
+                <a href="../kissy-dpl/base/index.html"><img src="assets/dpl.png" title="kissy设计模式库"/></a>
+            </div>
+            <div class="s-kissy-ajbridge s-module">
+                <a href="../kissy-ajbridge/docs/index.html"><img src="assets/ajbridge.png" title="AJBridge 是 Actionscript 和 Javascript之间的通信桥梁。 并期望未来 flash 平台技术能成为 当前 web 应用的 增强型的中坚力量！"/></a>
+            </div>
+            <div class="s-kissy-standard s-module">
+                <div class="title">前端开发规范</div>
                 <div class="con">
                     <ul>
-                        <li><span><a href="../kissy-gallery/gallery/grid/1.0/index.html" target="_blank">grid：</a></span><span class="s-desc">表格</span></li>
-                        <li><span><a href="../kissy-gallery/gallery/combine/1.0/demo.html" target="_blank">combine:</a></span><span class="s-desc">适用 KISSY 1.2 的自动 combo patch</span></li>
-                        <li><span><a href="../kissy-gallery/gallery/countdown/" target="_blank">countdown：</a></span><span class="s-desc">倒计时特效</span></li>
-                        <li><span><a href="../kissy-gallery/gallery/chart/1.0/demo.html" target="_blank">chart：</a></span><span class="s-desc">支持多种表现形式的图表</span></li>
-                        <li><span><a href="../kissy-gallery/gallery/kscroll/" target="_blank">kscroll：</a></span><span class="s-desc">以假乱真的滚动条</span></li>
-                        <li><span><a href="../kissy-gallery/gallery/form/" target="_blank">form/uploader：</a></span><span class="s-desc">异步文件上传</span></li>
-                        <li><span><a href="../kissy-gallery/gallery/reflection/1.0/demo.html" target="_blank">reflection：</a></span><span class="s-desc">图片倒影</span></li>
-                        <li><span><a href="../kissy-gallery/gallery/urlparser/1.0/demo.html" target="_blank">urlparser：</a></span><span class="s-desc">url 解析器</span></li>
-                        <li><span><a href="../kissy-gallery/gallery/wwgroup/1.0/demo.html" target="_blank">wwgroup：</a></span>
-                            <span class="s-desc">ww 点灯</span></li>
-                        <li><span><a href="../kissy-gallery/" target="_blank">更多 Gallery ...</a></span></li>
+                        <li><span><a href="docs/html/styleguide/common-conventions.html">通用约定</a></span></li>
+                        <li><span><a href="docs/html/styleguide/html-coding-style.html">HTML编码规范 </a></span></li>
+                        <li><span><a href="docs/html/styleguide/css-coding-style.html">CSS编码规范</a></span></li>
+                        <li><span><a href="docs/html/styleguide/js-lang-rules.html">JavaScript语言规范</a></span></li>
+                        <li><span><a href="docs/html/styleguide/js-style-rules.html">JavaScript编码风格</a></span></li>
+                        <li><span><a href="docs/html/workflow/dev-spec.html">KISSY组件开发规范</a></span></li>
                     </ul>
                 </div>
             </div>
-            <div class="s-kissy-util s-module">
-                <div class="title">Util
-                    <span style="padding-left:5px;color:#80c269;font-size:12px;font-weight:normal;">不成组件但又常用的小功能集合</span>
+
+            <div class="s-kissy-tool s-module">
+                <div class="title">
+                    <span><a href="other/third.html#widget">更多&gt;&gt;</a></span>
+                    第三方组件
                 </div>
                 <div class="con">
                     <ul>
-                        <li><span><a href="../kissy-util/adaptive-frame/demo.html">adaptive-frame：</a></span><span class="s-desc">跨域iframe高度自适应</span></li>
-                        <li><span><a href="../kissy-util/view-code/demo.html">view-code：</a></span><span class="s-desc">提供查看源码功能，可以很方便地查看源码</span></li>
-                        <li><span><a href="../kissy-util/ellipsis/demo.html">ellipsis：</a></span><span class="s-desc">通用文本截断显示省略号功能</span></li>
-                        <li><span><a href="../kissy-util/checkcode/demo.html">checkcode：</a></span><span class="s-desc">播放语音验证码功能
-								</span></li>
-                        <li><span><a href="../kissy-util/placeholder/demo.html">placeholder</a></span><span class="s-desc">placeholder
-								</span></li>
-                        <li><span><a href="../kissy-util/" target="_blank">更多 Util ...</a></span></li>
+                        <li><span><a href="http://swfupload.org/">SWFUpload: </a></span><span>Flash文件上传组件</span></li>
+                        <li><span><a href="http://www.highcharts.com/">Highcharts: </a></span><span>图表控件</span></li>
+                        <li><span><a href="http://code.google.com/p/zeroclipboard/">zeroclipboard: </a></span><span>flash剪贴板</span></li>
+                        <li><span><a href="http://www.thomasfrank.se/xml_to_json.html">xml_to_json:</a></span><span>xml to json</span></li>
+                        <li><span><a href="http://dren.ch/js_blowfish/">Blowfish:</a></span><span>加密/解密</span></li>
+                        <li><span><a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter: </a></span><span>语法高亮</span></li>
+                        <li><span><a href="http://lesscss.net/">LESSCSS: </a></span><span>CSS编程</span></li>
                     </ul>
                 </div>
             </div>
-            <div class="s-kissy-join s-module">
-                <div class="title">加入我们</div>
+
+            <div class="s-kissy-tool s-module">
+                <div class="title">
+                    <span><a href="other/third.html#tools">更多&gt;&gt;</a></span>
+                    常用工具推荐
+                </div>
                 <div class="con">
-                    <div>讨论旺旺群：29676575</div>
-                    <div> google group：<a href='http://groups.google.com/group/kissy-ui/' target="_blank">kissy-ui</a></div>
-                    <div>技术支持旺旺：kissyteam</div>
-                    <div>邮箱：<a href="mailto:kissyteam@gmail.com" target="_self">kissyteam@gmail.com </a></div>
+                    <ul>
+                        <li><span><a href="docs/html/tools/module-compiler/index.html">KISSY Module Compiler: </a></span><span>模块依赖合并</span></li>
+                        <li><span><a href="http://code.google.com/intl/zh-CN/closure/compiler/">Closure Compiler: </a></span><span>JS压缩</span></li>
+                        <li><span><a href="http://developer.yahoo.com/yui/compressor/">YUI Compressor: </a></span><span>CSS压缩</span></li>
+                        <li><span><a href="http://code.google.com/p/jsdoc-toolkit/">JsDoc Toolkit:</a></span><span>文档生成</span></li>
+                        <li><span><a href="http://code.google.com/closure/utilities/">Closure Linter:</a></span><span>检查校验</span></li>
+                        <li><span><a href="http://ant.apache.org/">Ant: </a></span><span>自动配置、打包</span></li>
+                    </ul>
                 </div>
             </div>
+
+
         </div>
     </div>
-    <div class="col-sub">
-        <div class="s-kissy-get s-module">
-            <div class="con">
-                <div>
-                    获取开发源码（每周三同步）：
-                    <ul>
-                        <li><a href="http://www.github.com/kissyteam">github</a></li>
-                        <li><a href="http://svn.app.taobao.net/repos/fed/trunk/fed/kissy-team">淘宝内网SVN</a></li>
-                    </ul>
-                </div>
-                <div>
-                    通过淘宝cdn使用KISSY：
-                    <ul>
-                        <li><a href="http://a.tbcdn.cn/s/kissy/1.2.0/kissy-min.js">KISSY（1.2.0）</a></li>
-                        <li><a href="https://github.com/kissyteam/kissy/zipball/1.2.0.cdn">下载 CDN 稳定版本</a></li>
-                        <li><a href="docs/html/changelog/1.2.0.html" target='_blank'>1.16->1.2 升级指南</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="s-kissy-dpl s-module">
-            <a href="../kissy-dpl/base/index.html"><img src="assets/dpl.png" title="kissy设计模式库"/></a>
-        </div>
-        <div class="s-kissy-editor s-module">
-            <a href="docs/html/relatedproj/editorguide/index.html"><img src="assets/editor.png" title="kissy 富文本编辑器"/></a>
-        </div>
-        <div class="s-kissy-ajbridge s-module">
-            <a href="../kissy-ajbridge/docs/index.html"><img src="assets/ajbridge.png" title="AJBridge 是 Actionscript 和 Javascript之间的通信桥梁。 并期望未来 flash 平台技术能成为 当前 web 应用的 增强型的中坚力量！"/></a>
-        </div>
-        <div class="s-kissy-standard s-module">
-            <div class="title">前端开发规范</div>
-            <div class="con">
-                <ul>
-                    <li><span><a href="docs/html/styleguide/common-conventions.html">通用约定</a></span></li>
-                    <li><span><a href="docs/html/styleguide/html-coding-style.html">HTML编码规范 </a></span></li>
-                    <li><span><a href="docs/html/styleguide/css-coding-style.html">CSS编码规范</a></span></li>
-                    <li><span><a href="docs/html/styleguide/js-lang-rules.html">JavaScript语言规范</a></span></li>
-                    <li><span><a href="docs/html/styleguide/js-style-rules.html">JavaScript编码风格</a></span></li>
-                    <li><span><a href="docs/html/workflow/dev-spec.html">KISSY组件开发规范</a></span></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="s-kissy-tool s-module">
-            <div class="title">
-                <span><a href="other/third.html#widget">更多&gt;&gt;</a></span>
-                第三方组件
-            </div>
-            <div class="con">
-                <ul>
-                    <li><span><a href="http://swfupload.org/">SWFUpload: </a></span><span>Flash文件上传组件</span></li>
-                    <li><span><a href="http://www.highcharts.com/">Highcharts: </a></span><span>图表控件</span></li>
-                    <li><span><a href="http://code.google.com/p/zeroclipboard/">zeroclipboard: </a></span><span>flash剪贴板</span></li>
-                    <li><span><a href="http://www.thomasfrank.se/xml_to_json.html">xml_to_json:</a></span><span>xml to json</span></li>
-                    <li><span><a href="http://dren.ch/js_blowfish/">Blowfish:</a></span><span>加密/解密</span></li>
-                    <li><span><a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter: </a></span><span>语法高亮</span></li>
-                    <li><span><a href="http://lesscss.net/">LESSCSS: </a></span><span>CSS编程</span></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="s-kissy-tool s-module">
-            <div class="title">
-                <span><a href="other/third.html#tools">更多&gt;&gt;</a></span>
-                常用工具推荐
-            </div>
-            <div class="con">
-                <ul>
-                    <li><span><a href="docs/html/tools/module-compiler/index.html">KISSY Module Compiler: </a></span><span>模块依赖合并</span></li>
-                    <li><span><a href="http://code.google.com/intl/zh-CN/closure/compiler/">Closure Compiler: </a></span><span>JS压缩</span></li>
-                    <li><span><a href="http://developer.yahoo.com/yui/compressor/">YUI Compressor: </a></span><span>CSS压缩</span></li>
-                    <li><span><a href="http://code.google.com/p/jsdoc-toolkit/">JsDoc Toolkit:</a></span><span>文档生成</span></li>
-                    <li><span><a href="http://code.google.com/closure/utilities/">Closure Linter:</a></span><span>检查校验</span></li>
-                    <li><span><a href="http://ant.apache.org/">Ant: </a></span><span>自动配置、打包</span></li>
-                </ul>
-            </div>
-        </div>
-
-
-    </div>
-</div>
 </div>
 <div id="footer">
     <div>&copy;2009 - 2029 KISSY UI LIBRARY</div>
 </div>
-<div style="visibility: hidden;">
-    <script type="text/javascript" src="http://js.tongji.linezing.com/2648923/tongji.js"></script>
-    <noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/2648923/tongji.gif"/></a></noscript>
-</div>
+<script src="http://a.tbcdn.cn/s/kissy/1.2.0/??kissy-min.js,uibase-min.js,component-min.js,overlay-min.js"></script>
+<script>
+    KISSY.use("overlay,sizzle", function (S, Overlay) {
+        var version = new Overlay({
+            content:"",
+            elStyle:{
+                position:"absolute",
+                left:"-9999px",
+                top:"-9999px",
+                padding:"5px",
+                background:"white",
+                "border-radius":"2px",
+                "font-weight":"bold",
+                border:"1px solid #00A0E9"
+            }
+        });
+
+        S.all(document).on("click", function () {
+            version.hide();
+        });
+
+        S.all(".api-seed a,.api-core a,.api-component a").each(function (a) {
+            if (!a.attr('data-ver')) {
+                a.attr("data-ver", ",1.2");
+            }
+        });
+
+        S.all("a").each(function (a) {
+            if (a.attr("data-ver")) {
+                var versions = a.attr("data-ver").split(","),
+                        html = "<ul>",
+                        href = a.attr("href");
+                if (S.startsWith(href, "http:")) {
+                    return;
+                }
+                S.each(versions, function (v) {
+                    html += "<li" +
+                            " style='padding:2px;'" +
+                            "><a " +
+                            "href='" + (v ? ( v + "/") : "") + href + "' target='_blank'>" + (v || "master") + "</a></li>";
+                });
+                html += "</ul>";
+                a.on("click", function (e) {
+                    e.halt();
+                    version.set("content", html);
+                    version.set("align", {
+                        node:a,
+                        points:["tr", "tl"]
+                    });
+                    version.show();
+                });
+            }
+        });
+
+    });
+</script>
 </body>
 </html>

@@ -4,7 +4,6 @@ Anim
 ===============================================
 
 |  动画
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/anim>`_  | `Demo <../../../demo/core/anim/index.html>`_
 
 Class
 -----------------------------------------------
@@ -50,7 +49,7 @@ Class Detail
         
         表示节点将从当前宽高经过动画平滑变化到宽 100px 与高 100px.
         
-        .. versionadded:: 1.2
+
             也可以设置 scrollLeft 或者 scrollTop, 这时会直接对元素的滚动属性产生动画.
         
     :param Number duration: 默认为 1 , 动画持续时间, 以秒为单元.
@@ -86,7 +85,7 @@ Methods Detail
 
 .. method:: Anim.prototype.isRunning
 
-    .. versionadded:: 1.2
+
 
     | **isRunning** ()
     | 判断当前动画对象是否在执行动画过程.
@@ -108,7 +107,7 @@ Methods Detail
 
 .. method:: Anim.isRunning
 
-    .. versionadded:: 1.2
+
 
     | static **Anim.isRunning** (elem)
     | :class:`Anim` 的静态方法, 用于判断 elem 上是否有动画对象在执行.
@@ -118,7 +117,7 @@ Methods Detail
 
 .. method:: Anim.stop
 
-    .. versionadded:: 1.2
+
 
     | static **Anim.stop** (elem, end, clearQueue, queueName)
     | :class:`Anim` 的静态方法, 停止某元素上的动画（集合）.

@@ -1,0 +1,30 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <style>
+      p { background:yellow; }
+    </style>
+     <script>
+(function(){
+    var h=window.location.href,d=document;
+    if(h.indexOf("localhost/kissy_git/")!=-1){
+            d.write('<script src="http://localhost/kissy_git/kissy1.2/build/kissy.js"'+' charset="utf-8"><'+'/script>');
+        }
+
+    else{
+        d.write('<script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
+    }
+    })();
+</script>
+    </head>
+    <body>
+      <p> is I would like to say </p>
+      <p> is also I would like to say</p>
+    <script>
+        KISSY.use("node",function(S,NodeList){
+            NodeList.all("p").prepend(document.createTextNode("Hello"));
+        });        
+    </script>
+    
+    </body>
+    </html>  

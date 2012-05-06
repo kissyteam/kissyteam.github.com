@@ -3,9 +3,6 @@
 Attribute
 ===============================
 
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/base>`_
-
-
 Class
 -----------------------------------------------
 
@@ -86,7 +83,7 @@ Methods Detail
 
     :param String name: 属性名。
     
-        .. versionadded:: 1.2
+
             也可以为 "x.y" 形式，此时要求 x 属性为包含 y 属性的普通 Object，这时会设置 x 属性值的 y 属性.但只会触发 x 的相关 change 事件.    
     
     :param String value:  属性的值
@@ -119,7 +116,7 @@ Methods Detail
 
     :param String name: 属性名
     
-    .. versionadded:: 1.2
+
         也可以为 "x.y" 形式. 此时要求 x 属性为包含 y 属性的普通 Object。
 
     .. note::
@@ -158,7 +155,7 @@ Events Detail
     :param * e.newVal: 将要改变到的属性值
     :param * e.prevVal: 当前的属性值
     :param String e.attrName: 当前的属性名，例如 "x"
-    :param String e.subAttrName: .. versionadded:: 1.2 当前的完整属性名，例如 "x.y"
+    :param String e.subAttrName:  当前的完整属性名，例如 "x.y"
 
 
 .. function:: Attribute.prototype.afterAttrNameChange
@@ -169,12 +166,12 @@ Events Detail
     :param * e.newVal: 当前的属性值
     :param * e.prevVal: 当前改变前的属性值
     :param String e.attrName: 当前的属性名，例如 "x"
-    :param String e.subAttrName: .. versionadded:: 1.2 当前的完整属性名，例如 "x.y"    
+    :param String e.subAttrName:  当前的完整属性名，例如 "x.y"
 
 
 .. js:function:: Attribute.prototype.*Change
 
-    .. versionadded:: 1.2
+
     
     | ***Change** (e)
     | 每调用 :func:`~Attribute.prototype.set` 一次后就触发一次该事件.

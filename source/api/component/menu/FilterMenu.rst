@@ -3,10 +3,9 @@
 Menu.FilterMenu
 ===============================
 
-.. versionadded:: 1.2
+
 
 |  可过滤菜单.
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/menu/>`_ | `Demo <../../../demo/component/menu/demo4.html>`_
 
 Class
 ---------------------------------
@@ -77,6 +76,6 @@ Methods Detail
     
 .. tip::
 
-    创建一个 FilterMenu 开销还是不小的，当需要创建新的对象时，你可以尽量重用实例对象，通过 :meth:`~component.ModelControl.prototype.addChild` , :meth:`~component.ModelControl.prototype.removeChild` ,
-     :meth:`~component.ModelControl.prototype.removeChildren` 适时修改其 children 即可.
+    创建一个 FilterMenu 开销还是不小的，当需要创建新的对象时，你可以尽量重用实例对象，通过 :meth:`~component.Controller.prototype.addChild` , :meth:`~component.Controller.prototype.removeChild` ,
+     :meth:`~component.Controller.prototype.removeChildren` 适时修改其 children 即可.
      需要注意的是重用原有 FilterMenu 实例的状态需要用 :meth:`~FilterMenu.prototype.reset` 还原      

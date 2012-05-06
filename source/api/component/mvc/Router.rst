@@ -3,11 +3,9 @@
 mvc.Router
 ===============================
 
-.. versionadded:: 1.2
+
 
 |  路由类.
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/mvc/>`_
-
 
 Class
 ---------------------------------

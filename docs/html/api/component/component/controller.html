@@ -1,0 +1,481 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>Component.Controller &mdash; KISSY Docs</title>
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };    
+    (function(){
+        var js=[],h=window.location.href,d=document;
+            js.push("../../../static/jquery.js");
+            js.push("../../../static/underscore.js");
+            js.push("../../../static/doctools.js");
+        for(var i=0;i<js.length;i++){
+            var j=js[i];
+            if(h.indexOf("localhost/kissy_git/")==-1
+            &&
+            
+            h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
+            &&
+            j.indexOf("jquery.js")!=-1){
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');   
+            }else{
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');   
+            }
+        }
+    })();
+</script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+    <p class="desc">小巧灵活、简洁实用、愉悦编码、快乐开发</p>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com" >首页</a></li>
+        <li><a href="../../../../html/quickstart/index.html" >快速上手</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >讨论组</a></li>
+        <!--<li><a href="http://blog.kissyui.com/">博客</a></li>-->
+        <!--<li><a href="mailto:all@kissyui.com">论坛</a></li>-->
+        <li><a href="http://www.github.com/kissyteam" >源码</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../overlay/index.html" title="Overlay"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="Component"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Component</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="component-controller">
+<h1>Component.Controller<a class="headerlink" href="#component-controller" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">组件基类.仅用于 KISSY 内部组件继承，目前不建议外部使用，欢迎 review</div>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#component.Controller" title="component.Controller"><tt class="xref py py-class docutils literal"><span class="pre">Controller</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="config-attributes">
+<h2>Config Attributes<a class="headerlink" href="#config-attributes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#component.Controller.config.children" title="component.Controller.config.children"><tt class="xref py py-data docutils literal"><span class="pre">children</span></tt></a></li>
+<li><a class="reference internal" href="#component.Controller.config.prefixCls" title="component.Controller.config.prefixCls"><tt class="xref py py-data docutils literal"><span class="pre">prefixCls</span></tt></a></li>
+<li><a class="reference internal" href="#component.Controller.config.parent" title="component.Controller.config.parent"><tt class="xref py py-data docutils literal"><span class="pre">parent</span></tt></a></li>
+<li><a class="reference internal" href="#component.Controller.config.disabled" title="component.Controller.config.disabled"><tt class="xref py py-data docutils literal"><span class="pre">disabled</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#component.Controller.prototype.highlighted" title="component.Controller.prototype.highlighted"><tt class="xref py py-attr docutils literal"><span class="pre">highlighted</span></tt></a></li>
+<li><a class="reference internal" href="#component.Controller.prototype.children" title="component.Controller.prototype.children"><tt class="xref py py-attr docutils literal"><span class="pre">children</span></tt></a></li>
+<li><a class="reference internal" href="#component.Controller.prototype.parent" title="component.Controller.prototype.parent"><tt class="xref py py-attr docutils literal"><span class="pre">parent</span></tt></a></li>
+<li><a class="reference internal" href="#component.Controller.prototype.disabled" title="component.Controller.prototype.disabled"><tt class="xref py py-attr docutils literal"><span class="pre">disabled</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#component.Controller.prototype.addChild" title="component.Controller.prototype.addChild"><tt class="xref py py-meth docutils literal"><span class="pre">addChild()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Controller.prototype.removeChild" title="component.Controller.prototype.removeChild"><tt class="xref py py-meth docutils literal"><span class="pre">removeChild()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Controller.prototype.removeChildren" title="component.Controller.prototype.removeChildren"><tt class="xref py py-meth docutils literal"><span class="pre">removeChildren()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Controller.prototype.getChildAt" title="component.Controller.prototype.getChildAt"><tt class="xref py py-meth docutils literal"><span class="pre">getChildAt()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="component.Controller">
+<em class="property">class </em><tt class="descclassname">component.</tt><tt class="descname">Controller</tt><a class="headerlink" href="#component.Controller" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>Controller</strong> (config)</div>
+</div>
+<ul class="simple">
+<li>继承自 <a class="reference internal" href="../uibase/UIBase.html#uibase.UIBase" title="uibase.UIBase"><tt class="xref py py-class docutils literal"><span class="pre">UIBase</span></tt></a> , 包含其全部配置,属性,方法,事件.</li>
+<li>扩充自 <a class="reference internal" href="../uibase/box.html#uibase.Box" title="uibase.Box"><tt class="xref py py-class docutils literal"><span class="pre">Box</span></tt></a> , 包含其全部配置,属性,方法,事件.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 配置项，详细见下方 <strong>Config Attributes Detail</strong> .</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="config-attributes-detail">
+<h2>Config Attributes Detail<a class="headerlink" href="#config-attributes-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="component.Controller.config.children">
+<tt class="descclassname">Controller.config.</tt><tt class="descname">children</tt><a class="headerlink" href="#component.Controller.config.children" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Array&lt;Controller&gt;} - 可选，Controller 类型组件的数组，作为当前组件的儿子组件.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Controller.config.prefixCls">
+<tt class="descclassname">Controller.config.</tt><tt class="descname">prefixCls</tt><a class="headerlink" href="#component.Controller.config.prefixCls" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>{String} - 可选，默认 &#8220;ks-&#8221; . 组件的 css 样式类前缀 . 例如假设组件为 menu ，则该组件内的样式类名为 {prefixCls}menu，默认为 &#8220;ks-menu&#8221;.</dt>
+<dd>可用于实现自定义皮肤.</dd>
+</dl>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Controller.config.parent">
+<tt class="descclassname">Controller.config.</tt><tt class="descname">parent</tt><a class="headerlink" href="#component.Controller.config.parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Controller} - 可选，该组件的父组件.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Controller.config.disabled">
+<tt class="descclassname">Controller.config.</tt><tt class="descname">disabled</tt><a class="headerlink" href="#component.Controller.config.disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Controller} - 可选，该组件是否初始禁用.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="properties-detail">
+<h2>Properties Detail<a class="headerlink" href="#properties-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="attribute">
+<dt id="component.Controller.prototype.highlighted">
+<tt class="descclassname">Controller.prototype.</tt><tt class="descname">highlighted</tt><a class="headerlink" href="#component.Controller.prototype.highlighted" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 该组件是否处于高亮状态</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.Controller.prototype.children">
+<tt class="descclassname">Controller.prototype.</tt><tt class="descname">children</tt><a class="headerlink" href="#component.Controller.prototype.children" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Array&lt;Controller&gt;} - 只读。该组件的子组件数组。请使用对应方法写.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.Controller.prototype.parent">
+<tt class="descclassname">Controller.prototype.</tt><tt class="descname">parent</tt><a class="headerlink" href="#component.Controller.prototype.parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 该组件的父组件</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.Controller.prototype.disabled">
+<tt class="descclassname">Controller.prototype.</tt><tt class="descname">disabled</tt><a class="headerlink" href="#component.Controller.prototype.disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 该组件是否禁用状态.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="component.Controller.prototype.addChild">
+<tt class="descclassname">Controller.prototype.</tt><tt class="descname">addChild</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Controller.prototype.addChild" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>addChild( child [ , index ] )</strong></div>
+</div>
+<p>给当前组件添加子组件到对应位置.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>child</strong> (<em>{Controller}</em>) &#8211; 子组件实例</li>
+<li><strong>index</strong> (<em>{Number}</em>) &#8211; 插入到当前子组件列表 index 位置后</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="component.Controller.prototype.removeChild">
+<tt class="descclassname">Controller.prototype.</tt><tt class="descname">removeChild</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Controller.prototype.removeChild" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>removeChild( child [ , destroy ] )</strong></div>
+</div>
+<p>从当前组件中删除改子组件</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>child</strong> (<em>{Controller}</em>) &#8211; 子组件实例</li>
+<li><strong>destroy</strong> (<em>{Boolean}</em>) &#8211; 是否同时调用 child 的 <tt class="xref py py-meth docutils literal"><span class="pre">UIBase.UIBase.destroy()</span></tt> 销毁该子组件实例.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="component.Controller.prototype.removeChildren">
+<tt class="descclassname">Controller.prototype.</tt><tt class="descname">removeChildren</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Controller.prototype.removeChildren" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>removeChildren( [ destroy ] )</strong></div>
+</div>
+<p>删除该组件的所有子组件</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>destroy</strong> (<em>{Boolean}</em>) &#8211; 是否同时调用:meth:<cite>UIBase.UIBase.destroy</cite> 销毁所有的子组件实例.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="component.Controller.prototype.getChildAt">
+<tt class="descclassname">Controller.prototype.</tt><tt class="descname">getChildAt</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Controller.prototype.getChildAt" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>getChildAt( index )</strong></div>
+</div>
+<p>获得对应位置的子组件.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>index</strong> (<em>{Number}</em>) &#8211; 位置下标</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Returns:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">对应子组件</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return type:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">Controller</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../overlay/index.html" title="Overlay"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="Component"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Component</a> &#187; </li> 
+    </ul>
+</div>
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            $("#openComment").attr("disabled",true);
+        }else{
+            $("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            $("#openComment").bind("change",function(){
+                window.localStorage.setItem("kissy-commment",$("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/loader/index.html">loader</a></li>
+        <li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/lang/index.html">lang</a></li>
+        <li><a href="../../seed/web/index.html">web</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../core/ua/index.html">ua</a></li>
+        <li><a href="../../core/dom/index.html">dom</a></li>
+        <li><a href="../../core/event/index.html">event</a></li>
+        <li><a href="../../core/node/index.html">node</a></li>
+        <li><a href="../../core/json/index.html">json</a></li>
+        <li><a href="../../core/ajax/index.html">ajax</a></li>
+        <li><a href="../../core/cookie/index.html">cookie</a></li>
+        <li><a href="../../core/base/index.html">base</a></li>
+        <li><a href="../../core/anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../mvc/index.html">mvc</a></li>
+        <li><a href="../template/index.html">template</a></li>
+        <li><a href="../datalazyload/index.html">datalazyload</a></li>
+        <li><a href="../flash/index.html">flash</a></li>
+        <li><a href="../dd/index.html">dd</a></li>
+        <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="../switchable/index.html">switchable</a></li>
+        <li><a href="../suggest/index.html">suggest</a></li>
+        <li><a href="../calendar/index.html">calendar</a></li>
+        <li><a href="../imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../uibase/index.html">uibase</a></li>
+        <li><a href="index.html">component</a></li>
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
+        <li><a href="../waterfall/index.html">waterfall</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

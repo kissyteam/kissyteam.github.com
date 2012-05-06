@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        button { margin:10px; }
+        div { color:blue; font-weight:bold; }
+        span { color:red; }
+        
+         .loading {
+             background: url("http://img02.taobaocdn.com/tps/i2/T16WJqXaXeXXXXXXXX-32-32.gif") no-repeat scroll 50% 50% transparent;
+             width: 100px;
+             height: 100px !important;
+             margin: 20px;
+         }
+         
+    </style>
+
+    <script>
+        (function(){
+            var h=window.location.href,d=document;
+            if(h.indexOf("localhost/kissy_git/")!=-1){
+                d.write('<script src="http://localhost/kissy_git/kissy1.2/build/kissy.js"'+' charset="utf-8"><'+'/script>');
+            }
+
+            else{
+                d.write('<script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <button id='jsonp'>get pics from flickr</button>
+    <div id="photo-list"></div>
+<script>
+    KISSY.ready(function (S) {
+        var $ = S.all,
+            photoList = $('#photo-list');
+        $("#jsonp").attr("disabled",false);
+        $("#jsonp").on("click", function () {
+            $(this).attr("disabled",true);
+            photoList.addClass('loading');
+            
+            S.io({
+                dataType:'jsonp',
+                url:"http://api.flickr.com/services/rest/", 
+                data:{
+                    'method': 'flickr.favorites.getPublicList',
+                    'api_key': '5d93c2e473e39e9307e86d4a01381266',
+                    'user_id': '26211501@N07',
+                    'per_page': 10,
+                    'format': 'json',
+                },
+                jsonp:"jsoncallback",    
+                success:function (data) {
+                    var html = 'Fetch photo failed, pls try again!';
+                   
+                    if (data.stat === 'ok') {
+                        html='';
+                        S.each(data.photos.photo, function (item, i) {
+                            html += '<img style="display:none" src="http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_t.jpg" />';
+                        });
+                    }
+        
+                    photoList.html(html).all('img').each(function (img) {
+                        img.on('load', function () {
+                            photoList.removeClass('loading');
+                            img.detach();
+                            img.fadeIn(3);
+                        });
+                    });
+                }
+            });
+    
+        });
+    });    
+</script>
+
+</body>
+</html>

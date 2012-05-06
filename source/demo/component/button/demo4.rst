@@ -3,11 +3,6 @@
 模拟 alert 对话框
 =====================================================
 
-.. versionadded:: 1.2
-
-|   `API <../../../api/component/button/index.html>`_ | `源码 <https://github.com/kissyteam/kissy/tree/master/src/button/>`_
-
-
 Class
 -----------------------------------------------
 

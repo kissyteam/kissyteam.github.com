@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script>
+(function(){
+    var h=window.location.href,d=document;
+    if(h.indexOf("localhost/kissy_git/")!=-1){
+            d.write('<script src="http://localhost/kissy_git/kissy1.2/build/kissy.js"'+' charset="utf-8"><'+'/script>');
+        }
+
+    else{
+        d.write('<script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
+    }
+    })();
+</script>
+</head>
+<body>
+        
+    <label>输入 something:<input id='in' /></label>
+    <div id='log' style='border:1px solid red;'></div>    
+   
+
+<script>       
+    KISSY.use("node",function(S,Node){ 
+        var $=Node.all;
+        $("#in").on("valuechange",function(e){
+            $("#log").html("old value : "+e.prevVal+"<br/>new value : "+e.newVal);
+        });
+    });
+</script>
+
+</body>
+</html>

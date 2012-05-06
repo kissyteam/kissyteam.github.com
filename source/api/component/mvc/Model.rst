@@ -3,11 +3,9 @@
 mvc.Model
 ===============================
 
-.. versionadded:: 1.2
+
 
 |  模型类.
-|  `源码 <https://github.com/kissyteam/kissy/tree/master/src/mvc/>`_
-
 
 Class
 ---------------------------------
