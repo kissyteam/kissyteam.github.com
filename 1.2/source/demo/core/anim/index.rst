@@ -1,4 +1,6 @@
-﻿.. currentmodule:: anim
+﻿.. _demo-anim:
+
+.. currentmodule:: anim
 
 Anim 使用示例
 ==================================================

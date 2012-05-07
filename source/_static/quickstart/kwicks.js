@@ -57,8 +57,10 @@ KISSY.add('kwicks', function(S,Switchable) {
         /**
          * 切换视图时的行为, 覆盖 super class的 _switchView
          */
-        _switchView: function(fromPanels, toPanels) {
+        _switchView: function() {
             var self = this,
+                panelInfo = self._getFromToPanels(),
+                toPanels = panelInfo.toPanels,
                 panelWidth = DOM.width(toPanels[0]),
                 width = (DOM.width(self.container) - panelWidth) / (self.panels.length - 1),
                 start = 0;

@@ -1,4 +1,7 @@
 KISSY.use("node,suggest", function(S, Node, Suggest) {
+    // 如果是 1.1.6, Node 和 Suggest 都是直接在 KISSY 上的
+    //Node = S.Node;
+    //Suggest = S.Suggest;
 
     // 初始化一个Suggest 对象, 给定所提示input的元素节点, 数据源, 及配置项
     var _suggest = new Suggest('#qstab', 'http://suggest.taobao.com/sug?code=utf-8&extras=1', {

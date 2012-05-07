@@ -1,0 +1,386 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>项目开发指南 &mdash; KISSY v1.2 Documentation</title>
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
+<link rel="stylesheet" href="../../static/kissy.css"/>
+<link rel="stylesheet" href="../../static/pygments.css"/>
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+    (function(){
+        var js=[],h=window.location.href,d=document;
+            js.push("../../static/jquery.js");
+            js.push("../../static/underscore.js");
+            js.push("../../static/doctools.js");
+        for(var i=0;i<js.length;i++){
+            var j=js[i];
+            if(h.indexOf("localhost/kissy_git/")==-1&&j.indexOf("jquery.js")!=-1){
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
+            }else{
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
+            }
+        }
+    })();
+</script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../workflow/index.html" title="组件开发指南"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="../styleguide/js-style-rules.html" title="JavaScript 编码风格"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../index.html">KISSY v1.2 Documentation</a> &#187; </li>
+      <li><a href="../index.html" accesskey="U">Tutorial</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="projguide">
+<span id="id1"></span><h1>项目开发指南<a class="headerlink" href="#projguide" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">kissy不仅仅是一个类库，它的一些特征(如loader机制)也让我们总结出了一套软件开发的最佳实践。</div>
+<div class="line">本章演示了如何使用KISSY完成一个项目编码的完整步骤，并提供示例的源码下载。</div>
+</div>
+<div class="section" id="id2">
+<h2>1. 项目简介<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>这是一个hello-world项目，仅由一个页面组成，页面中有一个居中的按钮，每次点击，就会弹出一个alert框，如下图所示：</p>
+<img  src='../../static/projguide/mockup.jpg' /><p>这个演示如此简单，以至于我们可以只在一个html页面里干完所有的事情。</p>
+<p>我们并不是想告诉大家如何用复杂的方式去做简单的事情，而是试图剥离代码的复杂性，让你把注意力集中在项目的开发过程上。</p>
+<p>请下载本示例的 <a class="reference external" href="../../static/projguide/hello-world.zip">源代码</a> ，打开 hello-world-demo &gt; hello-world.html 查看效果。</p>
+</div>
+<div class="section" id="id4">
+<h2>2. 目录组织<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>首先按照下图所示，创建该项目的目录结构</p>
+<img  src='../../static/projguide/folders.jpg' /><p>这些目录的用途如下：</p>
+<blockquote>
+<div><ul class="simple">
+<li>lib - 用于存放外部类库。</li>
+<li>hello-world - 用于存放该项目的组件。</li>
+<li>hello-world-dpl - 用于存放该项目的设计模式库(dpl)代码。</li>
+<li>hello-world-demo - 用于存放该项目的demo文件。</li>
+<li>readme.html - 用于记录项目的基本信息，如项目介绍，关键页面链接等。也可使用txt文件。</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id5">
+<h2>3. 引入外部库依赖<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>这里向lib文件夹添加了 <a class="reference external" href="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js">kissy.js</a> 和`reset.css &lt;<a class="reference external" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css">http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css</a>&gt;`_ 两个文件。</p>
+<p>在正式的项目中，引入完整的类库件会更好。</p>
+</div>
+<div class="section" id="id6">
+<h2>4. 编写项目组件<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>该项目中，我们需要一个组件来弹出alert框，并记录弹出次数。</p>
+<p>我们把这个组件功能就叫做dialog。</p>
+<p>在hello-world文件夹中新建了一个dialog.js文件，代码如下：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;hello-world/dialog&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
+
+    <span class="c1">//构造器</span>
+    <span class="kd">function</span> <span class="nx">Dialog</span><span class="p">(){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">amount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">//方法</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">augment</span><span class="p">(</span><span class="nx">Dialog</span><span class="p">,{</span>
+        <span class="nx">say</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">amount</span><span class="o">++</span><span class="p">;</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;hello world said &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">amount</span> <span class="o">+</span> <span class="s1">&#39; times !&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="k">return</span> <span class="nx">Dialog</span><span class="p">;</span>
+
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>这个组件十分简单，仅有一个say方法。</p>
+<p>显然，在正式的项目中，你的代码会更复杂，并且需要更好的文件组织，这是你可以参见kissy的 <a class="reference internal" href="../workflow/index.html#workflow"><em>组件开发指南</em></a> 。</p>
+</div>
+<div class="section" id="dpl">
+<h2>5. 编写项目dpl<a class="headerlink" href="#dpl" title="Permalink to this headline">¶</a></h2>
+<p>在正式编码之前，我们常常需要抽象出一个项目页面中共同的视觉元素，如盒子、进度条等。</p>
+<p>该项目假设设计师希望所有的button都是150px宽，40px高。故而在hello-world-dpl文件夹中新建了一个button.css文件。</p>
+<p>内容如下：</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/******************************************************************</span>
+<span class="c"> * @fileOverview “如何使用KISSY开发一个项目”范例代码</span>
+<span class="c"> *               本文件设置了按钮的统一样式</span>
+<span class="c"> * @author chenyu@taobao.com</span>
+<span class="c"> ******************************************************************/</span>
+
+<span class="nc">.button</span><span class="p">{</span><span class="k">width</span><span class="o">:</span><span class="m">150px</span><span class="p">;</span><span class="k">height</span><span class="o">:</span><span class="m">40px</span><span class="p">;</span><span class="k">font</span><span class="o">:</span><span class="m">28px</span> <span class="k">bold</span> <span class="s2">&quot;微软雅黑&quot;</span><span class="p">;}</span>
+</pre></div>
+</div>
+<p>上述文件虽然只有一行css语句，却足以说明dpl的用途。</p>
+<p>养成良好的注释习惯会让你和他人都收益不少（为了让教程更简洁，以下范例代码都将省略注释）。</p>
+<p>同样，在正式的项目中，你的dpl代码需要编写的更规范，可参见kissy-dpl的代码。</p>
+</div>
+<div class="section" id="demo">
+<h2>6. 编写项目demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
+<p>在有了组件和dpl之后，我们就可以进入正式的demo开发工作。</p>
+<div class="section" id="html">
+<h3>6.1 编写html<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h3>
+<p>在hello-world-demo文件夹中加入hello-world.html文件，代码如下：</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;title&gt;</span>hello world<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/css/base.css&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;../hello-world-dpl/button.css&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;css/hello-world.css&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;../lib/kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;js/hello-world.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;J_Button&quot;</span> <span class="na">class=</span><span class="s">&quot;button&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Click Me<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="css">
+<h3>6.2 插入页面级css<a class="headerlink" href="#css" title="Permalink to this headline">¶</a></h3>
+<p>在hello-world-demo &gt; css文件夹中加入hello-world.css文件，代码如下：</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nc">.button</span><span class="p">{</span><span class="k">position</span><span class="o">:</span><span class="k">fixed</span><span class="p">;</span><span class="k">top</span><span class="o">:</span><span class="m">50</span><span class="o">%</span><span class="p">;</span><span class="k">left</span><span class="o">:</span><span class="m">50</span><span class="o">%</span><span class="p">;</span><span class="k">margin</span><span class="o">:-</span><span class="m">20px</span> <span class="m">0</span> <span class="m">0</span> <span class="m">-75px</span><span class="p">;}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="js">
+<h3>6.3 插入页面级js<a class="headerlink" href="#js" title="Permalink to this headline">¶</a></h3>
+<p>在hello-world-demo &gt; js文件夹中加入hello-world.js文件，代码如下：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//包配置</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+    <span class="nx">packages</span><span class="o">:</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;hello-world&quot;</span><span class="p">,</span>
+            <span class="nx">path</span><span class="o">:</span><span class="s2">&quot;../&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+
+<span class="c1">//模块调用</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;hello-world/dialog&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Dialog</span><span class="p">){</span>
+
+    <span class="kd">var</span> <span class="nx">dialog</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dialog</span><span class="p">();</span>
+
+    <span class="nx">S</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;#J_Button&#39;</span><span class="p">,</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+        <span class="nx">dialog</span><span class="p">.</span><span class="nx">say</span><span class="p">();</span>
+    <span class="p">});</span>
+
+ <span class="p">})</span>
+</pre></div>
+</div>
+<p>注意：这个js文件分两大块内容，第一部分是包配置文件，第二部分是调用脚本。</p>
+<p>如果项目中多个页面都需要相同的配置，或者全局定义，可单独抽离出一个config.js文件。</p>
+<p>关于包配置更多的内容请参见kissy的 <a class="reference internal" href="../../api/seed/loader/index.html#loader"><em>loader</em></a> 模块。</p>
+</div>
+<div class="section" id="id7">
+<h3>6.3 图片<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>hello-world-demo &gt;  img 文件夹用于存放项目中用到的各种图片(虽然这个项目没有使用任何图片)。</p>
+</div>
+</div>
+<div class="section" id="readme">
+<h2>7. 编写readme<a class="headerlink" href="#readme" title="Permalink to this headline">¶</a></h2>
+<p>为你的项目创建一个readme文件是个不错的习惯，它既可以让你的工作变得更有条理，也能让别人快速了解你的项目。</p>
+<p>该项目的readme最终效果如下图所示：</p>
+<img  src='../../static/projguide/readme.png' /></div>
+<div class="section" id="id8">
+<h2>8. 其他<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>至此，我们的代码开发工作已经告一段路。</p>
+<p>但我们还可以使用ant等工具来帮助我们进行代码合并、压缩等工作。</p>
+<p>更多开发辅助工具参见kissy的前端常用工具。</p>
+</div>
+</div>
+
+
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../workflow/index.html" title="组件开发指南"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="../styleguide/js-style-rules.html" title="JavaScript 编码风格"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../index.html">KISSY v1.2 Documentation</a> &#187; </li>
+      <li><a href="../index.html" accesskey="U">Tutorial</a> &#187; </li> 
+    </ul>
+</div>
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            $("#openComment").attr("disabled",true);
+        }else{
+            $("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            $("#openComment").bind("change",function(){
+                window.localStorage.setItem("kissy-commment",$("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+    <div class="col-sub">
+
+<div class="s-box">
+    <div class="s-box-bd">
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo/index.html">Demos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html">快速上手</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../styleguide/index.html">最佳编码实践</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">项目开发指南</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">1. 项目简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">2. 目录组织</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">3. 引入外部库依赖</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">4. 编写项目组件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dpl">5. 编写项目dpl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demo">6. 编写项目demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#readme">7. 编写readme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">8. 其他</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../workflow/index.html">组件开发指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools/index.html">前端常用工具</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog/1.2.0.html">KISSY 1.2 升级指南</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</div>
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

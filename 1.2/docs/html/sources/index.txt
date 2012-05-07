@@ -9,3 +9,4 @@
 
     api/index.rst
     demo/index.rst
+    tutorials/index.rst
