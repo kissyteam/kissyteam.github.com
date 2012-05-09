@@ -122,20 +122,7 @@
 <p>在日常 Web 应用中, 经常用到异步请求, 比如, 异步加载一些评论信息, 异步加载图片列表等, 这样可以减少页面初始加载时的请求, 减轻服务器压力, 也加快主页面的初始打开速度.
 下面介绍个如何通过 <tt class="docutils literal"><span class="pre">getScript()</span></tt> 方法去请求 flickr 上提供的图片数据.</p>
 <p>先见示例:</p>
- <script>
- (function(){
-     var h=window.location.href,d=document;
-     if(h.indexOf("localhost/kissy_git/")!=-1){
-             d.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"'+' charset="utf-8"><'+'/script>');
-         }
-     else if(h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")!=-1){
-         d.write('<script src="http://fed.ued.taobao.net/kissy-team/kissy/build/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
-     }
-     else{
-         d.write('<script src="http://docs.kissyui.com/kissy/build/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
-     }
-     })();
- </script>
+ <script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
 <div class="demo">
      <style>
          #photo-list img  {
