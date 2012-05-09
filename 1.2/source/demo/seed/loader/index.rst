@@ -11,17 +11,7 @@ Module
 
     .. raw:: html
     
-        <script> 
-        (function(){
-            var h=window.location.href,d=document;
-            if(h.indexOf("localhost/kissy_git/")!=-1){
-                    d.write('<script src="http://localhost/kissy_git/kissy1.2/build/kissy.js"'+' charset="utf-8"><'+'/script>');
-                }
-            else{
-                d.write('<script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"'+' charset="utf-8">'+'<'+'/script>');
-            }
-            })();
-        </script>
+        <script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"></script>
     
 .. _seed-loader-demo2:
 
