@@ -186,6 +186,14 @@
 </div>
 </dd></dl>
 
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<dl class="data">
+<dt id="waterfall.align">
+<tt class="descclassname">waterfall.</tt><tt class="descname">align</tt><a class="headerlink" href="#waterfall.align" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 容器内元素和容器对齐方向。可取值 &#8220;left&#8221;, &#8220;center&#8221;, &#8220;right&#8221;. 默认 &#8220;center&#8221;</p>
+</dd></dl>
+
 <dl class="data">
 <dt id="waterfall.minColCount">
 <tt class="descclassname">waterfall.</tt><tt class="descname">minColCount</tt><a class="headerlink" href="#waterfall.minColCount" title="Permalink to this definition">¶</a></dt>
@@ -196,9 +204,21 @@
 <dt id="waterfall.effect">
 <tt class="descclassname">waterfall.</tt><tt class="descname">effect</tt><a class="headerlink" href="#waterfall.effect" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Object} - 各数据块展示时的动画效果, 默认为 { effect:&#8221;fadeIn&#8221;, duration:1 }, 可取: &#8220;fadeIn&#8221;, &#8220;slideDown&#8221;, &#8220;show&#8221;, 参数含义同 <a class="reference internal" href="../../core/anim/index.html#anim.Anim" title="anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt></a> .</p>
-<div class="admonition caution">
-<p class="first admonition-title">Caution</p>
-<p class="last">目前 waterfall 的动画效果只能用 <tt class="docutils literal"><span class="pre">fadeIn</span></tt>, 其他赞不支持!</p>
+</dd></dl>
+
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<dl class="data">
+<dt id="waterfall.adjustEffect">
+<tt class="descclassname">waterfall.</tt><tt class="descname">adjustEffect</tt><a class="headerlink" href="#waterfall.adjustEffect" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object} - 当窗口改变大小时，元素调整的动画特效，
+属性包括 <tt class="docutils literal"><span class="pre">easing</span></tt> 和 <tt class="docutils literal"><span class="pre">duration</span></tt> 默认没有特效，参数含义同 <a class="reference internal" href="../../core/anim/index.html#anim.Anim" title="anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt></a> 。
+例如：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">easing</span><span class="o">:</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="c1">// easing type</span>
+    <span class="nx">duration</span><span class="o">:</span><span class="mf">0.5</span> <span class="c1">// 调整动画时间</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 </dd></dl>
 
@@ -216,8 +236,84 @@
 <tt class="descclassname">waterfall.</tt><tt class="descname">adjust</tt><big>(</big><big>)</big><a class="headerlink" href="#waterfall.adjust" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>adjust</strong> ()</div>
-<div class="line">调整各个数据块的位置.</div>
+<div class="line">重新调整各个数据块的位置.</div>
 </div>
+</dd></dl>
+
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<dl class="method">
+<dt id="waterfall.isAdjusting">
+<tt class="descclassname">waterfall.</tt><tt class="descname">isAdjusting</tt><big>(</big><big>)</big><a class="headerlink" href="#waterfall.isAdjusting" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>isAdjusting</strong> ()</div>
+<div class="line">当前是否正在进行元素位置调整</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return type:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<dl class="method">
+<dt id="waterfall.isAdding">
+<tt class="descclassname">waterfall.</tt><tt class="descname">isAdding</tt><big>(</big><big>)</big><a class="headerlink" href="#waterfall.isAdding" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>isAdding</strong> ()</div>
+<div class="line">当前是否正在进行元素添加</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return type:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<dl class="method">
+<dt id="waterfall.adjustItem">
+<tt class="descclassname">waterfall.</tt><tt class="descname">adjustItem</tt><big>(</big><big>)</big><a class="headerlink" href="#waterfall.adjustItem" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>adjustItem</strong> (item,cfg)</div>
+<div class="line">对单个元素调整大小</div>
+</div>
+<p>:param {KISSY.Node} item 要调整的元素节点
+:param {Object} cfg 具体的调整配置
+:param {Function} cfg.callback 元素调整完毕后的回调函数
+:param {Function} cfg.process 元素的具体调整逻辑，
+如果返回数字则采用该数字做为高度重排同列所有元素，否则取调用 process后元素的实际高度做为重排依据。
+:param {Object} cfg.effect 同 <a class="reference internal" href="#waterfall.adjustEffect" title="waterfall.adjustEffect"><tt class="xref py py-data docutils literal"><span class="pre">waterfall.adjustEffect</span></tt></a>
+:param {String} cfg.effect.easing
+:param {Number} cfg.effect.duration</p>
+</dd></dl>
+
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<dl class="method">
+<dt id="waterfall.removeItem">
+<tt class="descclassname">waterfall.</tt><tt class="descname">removeItem</tt><big>(</big><big>)</big><a class="headerlink" href="#waterfall.removeItem" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>removeItem</strong> (item,cfg)</div>
+<div class="line">删除单个元素</div>
+</div>
+<p>:param {KISSY.Node} item 将要删除的元素节点
+:param {Object} cfg 具体的删除配置
+:param {Function} cfg.callback 元素调整完毕后的回调函数
+:param {Object} cfg.effect 同 <a class="reference internal" href="#waterfall.adjustEffect" title="waterfall.adjustEffect"><tt class="xref py py-data docutils literal"><span class="pre">waterfall.adjustEffect</span></tt></a>
+:param {String} cfg.effect.easing
+:param {Number} cfg.effect.duration</p>
 </dd></dl>
 
 <dl class="method">
@@ -240,6 +336,12 @@
 </tr>
 </tbody>
 </table>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">可通过在元素节点添加 <tt class="docutils literal"><span class="pre">ks-waterfall-fixed-left</span></tt> 或 <tt class="docutils literal"><span class="pre">ks-waterfall-fixed-right</span></tt> 来使得该元素永远固定在左边或右边.</p>
+</div>
 </dd></dl>
 
 <dl class="method">

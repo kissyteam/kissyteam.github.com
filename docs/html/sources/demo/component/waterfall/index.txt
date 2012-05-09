@@ -1,3 +1,5 @@
+.. _waterfall_demo:
+
 .. currentmodule:: waterfall
 
 Waterfall 使用示例
@@ -19,4 +21,5 @@ Demos
 
    demo1
    demo2
+   effect
 

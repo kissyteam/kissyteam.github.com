@@ -1,3 +1,4 @@
+.. _waterfall_tutorial:
 
 Waterfall
 =============================
