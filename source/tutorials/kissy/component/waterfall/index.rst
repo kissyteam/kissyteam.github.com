@@ -4,4 +4,74 @@ Waterfall
 =============================
 
 使用 Waterfall
-----------------------------
+-------------------------------------
+
+Refer
+```````````````````````````````````````````````````
+
+:mod:`API<waterfall>`
+
+:ref:`Demo <waterfall_demo>`
+
+
+静态使用
+````````````````````````````````````````
+
+可以在容器内实现服务器端输出一堆需要 waterfall 布局的 div，然后初始化 waterfall 即可，例如：
+
+:ref:`waterfall 静态 demo<waterfall_demo_static>`
+
+注意服务器输出的 html 已经包含有需要 waterfall 布局的元素了：
+
+.. code-block:: html
+
+    <div id='container' style="position: relative;">
+        <div class="ks-waterfall"><img src="http://farm7.static.flickr.com/6072/6128820646_75d4f4f26d_m.jpg" width="192" height="113">
+            <div class="title">untitled</div>
+        </div>
+        <div class="ks-waterfall"><img src="http://farm7.static.flickr.com/6073/6128760690_1a440d382c_m.jpg" width="192" height="288">
+            <div class="title">Southern Weddings Feature! ? Jesi Haack Design Blog</div>
+        </div>
+        <div class="ks-waterfall"><img src="http://farm7.static.flickr.com/6067/6128732032_cb5f8b333a_m.jpg" width="192" height="239">
+            <div class="title"></div>
+        </div>
+        <div class="ks-waterfall"><img src="http://farm7.static.flickr.com/6089/6128421611_cac1c4b692_m.jpg" width="192" height="249">
+            <div class="title"></div>
+        </div>
+        <div class="ks-waterfall"><img src="http://farm7.static.flickr.com/6197/6129267012_3947cdc5d5_m.jpg" width="192" height="257">
+            <div class="title"></div>
+        </div>
+        <div class="ks-waterfall"><img src="http://farm7.static.flickr.com/6191/6128826187_6db718d081_m.jpg" width="192" height="296">
+            <div class="title">biscodeja-vu:
+
+                always wanted to since a child
+            </div>
+        </div>
+    </div>
+
+
+简单动态使用
+````````````````````````````````````````````````````
+
+进一步可以监听 window 的 scroll 和 resize 事件然后动态得往容器里添加元素或调整已有元素的位置，例如：
+
+:ref:`waterfall 简单动态加载 demo<waterfall_demo_loader>`
+
+
+调整特效使用
+`````````````````````````````````````````````````````````````
+
+在 waterfall 初始化完成后，可以对单个元素进行带特效的微调，也可以设置当窗口大小改变时所有元素位置重排的特效。
+例如：
+
+:ref:`waterfall 调整特效 demo<waterfall_demo_effect>`
+
+
+固定列使用
+````````````````````````````````````````````````````````````````````
+
+在初始化或后面的添加元素阶段，可以通过设置将某些元素固定到左边或右边（即使窗口发生改变导致元素位置重排后）。
+例如：
+
+:ref:`waterfall 定列设置 demo<waterfall_demo_fixed>`
+

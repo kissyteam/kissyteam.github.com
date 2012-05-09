@@ -1,4 +1,7 @@
+.. _waterfall_demo_static:
+
 .. currentmodule:: waterfall
+
 
 瀑布布局基本使用示例
 ======================================

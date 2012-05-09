@@ -1,3 +1,5 @@
+.. _waterfall_demo_effect:
+
 .. currentmodule:: waterfall
 
 瀑布布局调整特效示例

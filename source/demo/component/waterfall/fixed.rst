@@ -1,3 +1,5 @@
+.. _waterfall_demo_fixed:
+
 .. currentmodule:: waterfall
 
 瀑布布局固定列示例

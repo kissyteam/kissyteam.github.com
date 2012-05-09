@@ -1,4 +1,8 @@
+.. _waterfall_demo_loader:
+
 .. currentmodule:: waterfall
+
+
 
 加载动态数据的瀑布布局示例
 ======================================
