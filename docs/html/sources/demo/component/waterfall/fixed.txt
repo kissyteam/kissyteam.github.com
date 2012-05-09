@@ -1,6 +1,6 @@
 .. currentmodule:: waterfall
 
-瀑布布局调整特效示例
+瀑布布局固定列示例
 ======================================
 
 Class
@@ -8,14 +8,14 @@ Class
 
   * :class:`Waterfall`
 
-瀑布布局调整特效示例
+瀑布布局固定列示例
 --------------------------------------------------
 
     .. raw:: html
 
-        <iframe width="100%" height="700" class="iframe-demo" src="../../../static/demo/waterfall/effect.html"></iframe>
+        <iframe width="100%" height="700" class="iframe-demo" src="../../../static/demo/waterfall/fixed.html"></iframe>
 
-    .. literalinclude:: /_static/demo/waterfall/assets/effect.js
+    .. literalinclude:: /_static/demo/waterfall/assets/fixed.js
            :language: javascript
 
 

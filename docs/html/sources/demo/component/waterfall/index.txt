@@ -22,4 +22,4 @@ Demos
    demo1
    demo2
    effect
-
+   fixed
