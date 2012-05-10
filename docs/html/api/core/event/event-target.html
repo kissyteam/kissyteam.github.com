@@ -319,6 +319,16 @@
 </div>
 </dd></dl>
 
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>注意 S.EventTarget 仅用于 mix/augment ，不可以直接使用，例如需要全局事件的话可以：</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">globalEvent</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">mix</span><span class="p">({},</span><span class="nx">S</span><span class="p">.</span><span class="nx">EventTarget</span><span class="p">);</span>
+<span class="nx">globalEvent</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;Login:session:pass&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">isSessionPass</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
