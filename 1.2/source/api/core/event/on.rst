@@ -60,7 +60,7 @@ Demo
     .. code-block:: javascript
 
         Event.on('#foo','mouseenter mouseleave', function(e) {
-          DOM.toggleClass("enter");
+          DOM.toggleClass(this,"enter");
         });
 
     上述代码的作用是：一开始 foo 节点没有 enter 样式类, 当鼠标进入时给该节点添加 enter 样式类, 当鼠标移出时把 enter 样式类去掉. 这样就达到了 hover 的效果.

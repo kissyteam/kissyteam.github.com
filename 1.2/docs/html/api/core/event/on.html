@@ -171,7 +171,7 @@
 <p>上面的代码作用是：为 id 为 foo 的元素绑定 click 事件.当用户在该元素内部点击时, 则 alert 会弹出来.</p>
 <p><strong>多个事件用空格分开, 可以同时绑定多个事件</strong></p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;#foo&#39;</span><span class="p">,</span><span class="s1">&#39;mouseenter mouseleave&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">DOM</span><span class="p">.</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s2">&quot;enter&quot;</span><span class="p">);</span>
+  <span class="nx">DOM</span><span class="p">.</span><span class="nx">toggleClass</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="s2">&quot;enter&quot;</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 </div>
