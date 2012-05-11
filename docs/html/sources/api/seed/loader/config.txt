@@ -18,7 +18,22 @@ Methods
 
     :param Object config: KISSY 配置参数, 包括
 
-    :param Boolean combine: 是否开启自动 combo 模式，自动 combo 模式要求 use 前配置好依赖关系，详见 `教程 <loader_tutorial>`
+    :param Boolean debug: 是否开启调试模式
+
+    :param String base: KISSY 框架所在的基地址
+
+    :param Number comboMaxUrlLength: Combo url 的最长长度，默认 1024
+
+    :param String comboPrefix: Combo 前缀，默认 "??"
+
+    :param String comboSep: Combo 分隔符，默认 ","
+
+    :param String tag: KISSY 内置模块时间戳，默认 KISSY 当前 build 时间
+
+    :param Number timeout: 超时时间，单位秒。 默认 10
+
+    :param Boolean combine: 是否开启自动 combo 模式，默认 false 不开启.
+    自动 combo 模式要求 use 前配置好依赖关系，详见 `教程 <loader_tutorial>`.
 
     :param Array config.packages: 每个数组项为一个包的配置, 一个包配置包括 4 项：
 
@@ -45,7 +60,6 @@ Methods
     .. versionadded:: 1.3
 
         KISSY 内置 gallery 包
-
 
     :param Array config.map: 每个数组项是一个长度为 2 的数组，每个位置的具体格式为
 
