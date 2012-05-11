@@ -101,7 +101,7 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../lang/index.html" title="Lang 使用示例"
+      <a href="simple.html" title="简单配置包并使用"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="../index.html" title="Seed"
@@ -113,115 +113,33 @@
 </div>
 					
   <div class="section" id="loader">
-<h1>Loader 使用示例<a class="headerlink" href="#loader" title="Permalink to this headline">¶</a></h1>
+<span id="loader-demo"></span><h1>Loader 使用示例<a class="headerlink" href="#loader" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module">
 <h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><a class="reference internal" href="../../../api/seed/index.html#module-seed" title="seed"><tt class="xref py py-mod docutils literal"><span class="pre">seed</span></tt></a></div></blockquote>
 </div>
-<div class="section" id="x-loader">
-<h2>1.1.x 的 Loader 使用示例<a class="headerlink" href="#x-loader" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
-
-<button id='k11x'>1.1x 启动主模块</button>
-<script>
-    KISSY.add({
-       "1.1x-dep":{
-            fullpath:"http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/dep.js"
-       },
-       "1.1x-mod":{
-            fullpath:"http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/mod.js",
-            cssfullpath:"http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/mod.css",
-            requires:["1.1x-dep"]
-       }
-    });
-    KISSY.one("#k11x").on("click",function(){
-        KISSY.use("1.1x-mod");
-    });
-</script><p><strong>注册模块</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>
-   <span class="s2">&quot;1.1x-dep&quot;</span><span class="o">:</span><span class="p">{</span>
-        <span class="nx">fullpath</span><span class="o">:</span><span class="s2">&quot;http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/dep.js&quot;</span>
-   <span class="p">},</span>
-   <span class="s2">&quot;1.1x-mod&quot;</span><span class="o">:</span><span class="p">{</span>
-        <span class="nx">fullpath</span><span class="o">:</span><span class="s2">&quot;http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/mod.js&quot;</span><span class="p">,</span>
-        <span class="nx">cssfullpath</span><span class="o">:</span><span class="s2">&quot;http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/mod.css&quot;</span><span class="p">,</span>
-        <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;1.1x-dep&quot;</span><span class="p">]</span>
-   <span class="p">}</span>
-<span class="p">});</span>
-</pre></div>
+<div class="section" id="demos">
+<h2>Demos<a class="headerlink" href="#demos" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="simple.html">简单配置包并使用</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="simple-native.html">简单使用内置模块</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="combo.html">combo 使用内置模块</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="combo-common.html">不配置依赖 combo 使用 gallery</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="combo-require.html">配置依赖 combo 使用 gallery</a><ul class="simple">
+</ul>
+</li>
+</ul>
 </div>
-<p><strong>定义模块</strong></p>
-<p><a class="reference external" href="http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/dep.js">被依赖模块 1.1x dep</a></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;1.1x-dep&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;1.1x-dep loaded&quot;</span><span class="p">);</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-<p><a class="reference external" href="http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.1x/mod.js">主模块 1.1x mod</a></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;1.1x-mod&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;1.1x-mod loaded&quot;</span><span class="p">);</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-<p><strong>使用模块</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;1.1x-mod&quot;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div></blockquote>
-</div>
-<div class="section" id="seed-loader-demo2">
-<span id="id1"></span><h2>1.2 的 Loader 使用示例<a class="headerlink" href="#seed-loader-demo2" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><button id='k12'>1.2 启动主模块</button>
-<script>
-    KISSY.config({
-        packages:[
-            {
-                name:"1.2", //包名
-                tag:"20110323",//时间戳, 添加在动态脚本路径后面, 用于更新包内模块代码
-                path:"http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/", //包对应路径, 相对路径指相对于当前页面路径
-                charset:"gbk" //包里模块文件编码格式
-            }
-        ]
-    });
-    KISSY.one("#k12").on("click",function(){
-        KISSY.use("1.2/mod");
-    });
-</script><p><strong>包配置</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-    <span class="nx">packages</span><span class="o">:</span><span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;1.2&quot;</span><span class="p">,</span> <span class="c1">//包名</span>
-            <span class="nx">tag</span><span class="o">:</span><span class="s2">&quot;20110323&quot;</span><span class="p">,</span><span class="c1">//时间戳, 添加在动态脚本路径后面, 用于更新包内模块代码</span>
-            <span class="nx">path</span><span class="o">:</span><span class="s2">&quot;http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/&quot;</span><span class="p">,</span> <span class="c1">//包对应路径, 相对路径指相对于当前页面路径</span>
-            <span class="nx">charset</span><span class="o">:</span><span class="s2">&quot;gbk&quot;</span> <span class="c1">//包里模块文件编码格式</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-<p><strong>定义模块</strong></p>
-<p><a class="reference external" href="http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.2/dep.js">被依赖模块 1.2 dep</a></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;1.2/dep loaded&quot;</span><span class="p">);</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-<p><a class="reference external" href="http://lite-ext.googlecode.com/svn/trunk/lite-ext/playground/module_package/1.2/mod.js">主模块 1.2 mod</a></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;1.2/mod loaded&quot;</span><span class="p">);</span>
-<span class="p">},{</span>
-    <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;./dep&quot;</span><span class="p">,</span><span class="s2">&quot;./mod.css&quot;</span><span class="p">]</span> <span class="c1">//相对于当前模块js 定位</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-<p><strong>使用模块</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;1.2/mod&quot;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div></blockquote>
 </div>
 </div>
 
@@ -239,7 +157,7 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../lang/index.html" title="Lang 使用示例"
+      <a href="simple.html" title="简单配置包并使用"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="../index.html" title="Seed"
@@ -314,8 +232,9 @@
     <h2 class="s-box-hd">Seed</h2>
     <ul class="s-box-bd">
         <li><a href="#">loader</a></li>
-        <!--<li><a href="../kissy/index.html">kissy</a></li>
         <li><a href="../lang/index.html">lang</a></li>
+        <!--<li><a href="../kissy/index.html">kissy</a></li>
+
         <li><a href="../web/index.html">web</a></li>-->
     </ul>
 </ul>

@@ -200,7 +200,7 @@
 <div class="section" id="cdn-combo">
 <h2>cdn combo 构建文件例子<a class="headerlink" href="#cdn-combo" title="Permalink to this headline">¶</a></h2>
 <p>a 依赖 b ， b 依赖 c ，指定源码目录与对应的 cdn 目录后，运行以下构建文件可以得到 a 以及其所有依赖模块的 combo 地址</p>
-<p><tt class="docutils literal"><span class="pre">http://x.cdn/??a.js,b.js,c.js</span></tt> ，之后在页面显式指定路径后使用:（对于使用 kissy 自带模块比较多的情景，可以将使用到的 kissy 自身模块集合静态 combo 到页面底部或定义 <a class="reference internal" href="../../../api/seed/loader/add.html#loader-config-map"><em>map</em></a> 规则来减少使用 kissy 自身模块所导致的链接数过多问题。）</p>
+<p><tt class="docutils literal"><span class="pre">http://x.cdn/??a.js,b.js,c.js</span></tt> ，之后在页面显式指定路径后使用:（对于使用 kissy 自带模块比较多的情景，可以将使用到的 kissy 自身模块集合静态 combo 到页面底部或定义 <a class="reference internal" href="../../../api/seed/loader/config.html#loader-config-map"><em>map</em></a> 规则来减少使用 kissy 自身模块所导致的链接数过多问题。）</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
     <span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
             <span class="nx">map</span><span class="o">:</span><span class="p">[</span>

@@ -6,4 +6,5 @@
 .. toctree::
     :maxdepth: 3
 
+    seed/index
     component/index.rst

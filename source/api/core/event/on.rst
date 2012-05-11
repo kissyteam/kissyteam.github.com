@@ -39,6 +39,10 @@ Methods
         不能在 ``object`` , ``embed`` , ``applet`` 元素上注册事件.
 
 
+.. note::
+
+    Event.on 仅用于原生 dom 节点，不可以用于自定义事件源，自定义事件源请 mix Event.Target 后在本对象 fire.
+
 
 Demo
 -------------------------------------------------
