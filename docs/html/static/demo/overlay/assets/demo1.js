@@ -1,6 +1,7 @@
 KISSY.use('node,overlay,button', function(S, Node, O, Button) {
     //通过dom元素新建立popup
-    window.popup = new O.Popup(Node.one("#dpop"), {
+    window.popup = new O.Popup({
+        srcNode:'#dpop',
         trigger : '#img-download',//配置Popup的触发器
         triggerType : 'mouse',    //触发类型
         align : {
