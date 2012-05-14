@@ -41,6 +41,10 @@ Methods
 
                     类型字符串, 表示包名
 
+                .. attribute:: packages.debug
+
+                    类型 Boolean, 包内的脚本请求是是否加 -min 后缀，默认和 KISSY.config("debug") 相同.
+
                 .. attribute:: packages.tag
 
                     类型字符串, 最好为时间戳, 用于刷新客户端本包的模块文件缓存
