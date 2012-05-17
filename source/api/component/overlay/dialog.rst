@@ -117,7 +117,7 @@ Config Attributes Detail
 
     .. versionadded:: 1.3
 
-    可以设置 :mod:`proxy <DD.Proxy>` 或 :mod:`proxy <DD.Scroll>` 的控制选项， 例如：
+    可以设置 :class:`proxy <dd.Proxy>` 或 :class:`scroll <dd.Scroll>` 的控制选项， 例如：
 
     .. code-block:: javascript
 
