@@ -25,3 +25,4 @@ Demos
        demo8
        demo9
        demo10
+       proxy-scroll

@@ -243,10 +243,31 @@
 <dl class="data">
 <dt id="overlay.Dialog.config.draggable">
 <tt class="descclassname">Dialog.config.</tt><tt class="descname">draggable</tt><a class="headerlink" href="#overlay.Dialog.config.draggable" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Boolean} - 是否允许拖动头部移动, 注意启用时需同时 <tt class="docutils literal"><span class="pre">use(&quot;dd&quot;)</span></tt> , 例如：</p>
+<dd><p>{Boolean|Object} - 是否允许拖动头部移动及其控制, 注意启用时需同时 <tt class="docutils literal"><span class="pre">use(&quot;dd&quot;)</span></tt> , 例如：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd,overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
     <span class="k">new</span> <span class="nx">Overlay</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
         <span class="nx">draggable</span> <span class="o">:</span> <span class="kc">true</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<p>可以设置 <tt class="xref py py-mod docutils literal"><span class="pre">proxy</span></tt> 或 <tt class="xref py py-mod docutils literal"><span class="pre">proxy</span></tt> 的控制选项， 例如：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd,overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
+    <span class="k">new</span> <span class="nx">Overlay</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
+        <span class="nx">draggable</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="nx">proxy</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">node</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span>
+                    <span class="c1">// 生成代理节点</span>
+                <span class="p">},</span>
+                <span class="nx">destroyOnEnd</span><span class="o">:</span><span class="kc">true</span> <span class="c1">// 每次拖放都生成新的代理节点</span>
+            <span class="p">},</span>
+
+            <span class="nx">scroll</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">node</span><span class="o">:</span><span class="nb">window</span> <span class="c1">// 随窗口自动滚动</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
@@ -318,7 +339,7 @@
 <dl class="attribute">
 <dt id="overlay.Dialog.prototype.draggable">
 <tt class="descclassname">Dialog.prototype.</tt><tt class="descname">draggable</tt><a class="headerlink" href="#overlay.Dialog.prototype.draggable" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Boolean} - 头部是否可以拖放.</p>
+<dd><p>{Boolean} - 头部是否可以拖放及其控制.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -481,7 +502,7 @@
 	</div>
 </div>
 <div id="footer">
-    &copy; Copyright 2010~2011, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
 </div>
 </body>
 </html>

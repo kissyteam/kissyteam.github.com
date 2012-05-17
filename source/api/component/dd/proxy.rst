@@ -17,6 +17,7 @@ Config Attributes
 
   * :attr:`~Proxy.config.node`
   * :attr:`~Proxy.config.destroyOnEnd`
+  * :attr:`~Proxy.config.moveOnEnd`
   
 Methods
 -----------------------------------------------
