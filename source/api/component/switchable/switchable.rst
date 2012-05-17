@@ -351,17 +351,29 @@ Methods Detail
 .. note::
 
     添加操作详解：
-    1. 假设当前 activeIndex 为 x
-    2. 如果 steps == 1
-        2.1 插入新的 trigger 和 panel 到指定位置
-        2.2 如果 x 大于等于参数的 index，那么当前的 activeIndex++
-        2.3 强制 switch 到新的 activeIndex 的位置，保持当前panel内容不变（防止新元素排挤）
-        2.4 如果指定了 active,那么 switch 到新的插入位置 index
-    3. 如果 steps > 1
-        3.1 插入新的panel
-        3.2 如果 panel 插入后导致 length 增大,那么插入新的 trigger 到尾部
-        3.3 强制 switch 到 activeIndex 的位置，保持当前页位置不变（防止新元素排挤）
-        3.4 如果指定了 active,那么 switch 到新的插入位置 index 所应该在的页数（一页有多个panel）
+
+    #. 假设当前 activeIndex 为 x
+
+    #. 如果 steps == 1
+
+        #. 插入新的 trigger 和 panel 到指定位置
+
+        #. 如果 x 大于等于参数的 index，那么当前的 activeIndex++
+
+        #. 强制 switch 到新的 activeIndex 的位置，保持当前panel内容不变（防止新元素排挤）
+
+        #. 如果指定了 active,那么 switch 到新的插入位置 index
+
+    #. 如果 steps > 1
+
+        #. 插入新的panel
+
+        #. 如果 panel 插入后导致 length 增大,那么插入新的 trigger 到尾部
+
+        #. 强制 switch 到 activeIndex 的位置，保持当前页位置不变（防止新元素排挤）
+
+        #. 如果指定了 active,那么 switch 到新的插入位置 index 所应该在的页数（一页有多个panel）
+
 
 .. versionadded:: 1.3
 
@@ -375,17 +387,28 @@ Methods Detail
 .. note::
 
     删除操作详解：
-    1. 假设当前 activeIndex 为 x
-    2. 如果 steps == 1
-        2.1 如果 x 位置的元素就是要删除的元素： x==index
-            2.1.1 如果 x ==0,switch 到 1位置后，删除0元素，在设置 activeIndex 为 0
-            2.1.2 switch 到 x-1 位置，然后删除 x 位置元素
-        2.1 如果 x 的值大于 index,那么设置 activeIndex=x-1;
-        2.2 删除 trigger 和 x 元素
-     3. 如果 steps > 1
-        3.1 如果删除 x 元素导致页数-1，那么设置 trigger 为最后一个trigger，否则trigger为null
-        3.2 如果删除 x 元素导致 activeIndex 页为空，那么先 switch 到  activeIndex-1 的页，然后删除 x 元素
-        3.3 否则直接删除 trigger 和 x 位置 panel 元素，并重新强制 switch 到 activeIndex 元素（懒加载替换上来的元素）
+
+    #. 假设当前 activeIndex 为 x
+
+    #. 如果 steps == 1
+
+        #. 如果 x 位置的元素就是要删除的元素： x==index
+
+            #. 如果 x ==0,switch 到 1位置后，删除0元素，在设置 activeIndex 为 0
+
+            #. switch 到 x-1 位置，然后删除 x 位置元素
+
+        #. 如果 x 的值大于 index,那么设置 activeIndex=x-1;
+
+        #. 删除 trigger 和 x 元素
+
+    #. 如果 steps > 1
+
+        #. 如果删除 x 元素导致页数-1，那么设置 trigger 为最后一个trigger，否则trigger为null
+
+        #. 如果删除 x 元素导致 activeIndex 页为空，那么先 switch 到  activeIndex-1 的页，然后删除 x 元素
+
+        #. 否则直接删除 trigger 和 x 位置 panel 元素，并重新强制 switch 到 activeIndex 元素（懒加载替换上来的元素）
 
 
 .. versionadded:: 1.3
