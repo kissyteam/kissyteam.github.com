@@ -31,3 +31,5 @@ Demos
        demo9
        touch-slide
        touch-carousel
+       add-remove-tab
+       add-remove-carousel

@@ -152,7 +152,6 @@
 <li><a class="reference internal" href="#switchable.Switchable.config.effect" title="switchable.Switchable.config.effect"><tt class="xref py py-data docutils literal"><span class="pre">effect</span></tt></a></li>
 <li><a class="reference internal" href="#switchable.Switchable.config.duration" title="switchable.Switchable.config.duration"><tt class="xref py py-data docutils literal"><span class="pre">duration</span></tt></a></li>
 <li><a class="reference internal" href="#switchable.Switchable.config.easing" title="switchable.Switchable.config.easing"><tt class="xref py py-data docutils literal"><span class="pre">easing</span></tt></a></li>
-<li><tt class="xref py py-data docutils literal"><span class="pre">nativeAnim</span></tt></li>
 <li><a class="reference internal" href="#switchable.Switchable.config.lazyDataType" title="switchable.Switchable.config.lazyDataType"><tt class="xref py py-data docutils literal"><span class="pre">lazyDataType</span></tt></a></li>
 <li><a class="reference internal" href="#switchable.Switchable.config.aria" title="switchable.Switchable.config.aria"><tt class="xref py py-data docutils literal"><span class="pre">aria</span></tt></a></li>
 </ul>
@@ -182,6 +181,9 @@
 <li><a class="reference internal" href="#switchable.Switchable.prototype.next" title="switchable.Switchable.prototype.next"><tt class="xref py py-meth docutils literal"><span class="pre">next()</span></tt></a></li>
 <li><a class="reference internal" href="#switchable.Switchable.prototype.stop" title="switchable.Switchable.prototype.stop"><tt class="xref py py-meth docutils literal"><span class="pre">stop()</span></tt></a></li>
 <li><a class="reference internal" href="#switchable.Switchable.prototype.start" title="switchable.Switchable.prototype.start"><tt class="xref py py-meth docutils literal"><span class="pre">start()</span></tt></a></li>
+<li><a class="reference internal" href="#switchable.Switchable.prototype.add" title="switchable.Switchable.prototype.add"><tt class="xref py py-meth docutils literal"><span class="pre">add()</span></tt></a></li>
+<li><a class="reference internal" href="#switchable.Switchable.prototype.remove" title="switchable.Switchable.prototype.remove"><tt class="xref py py-meth docutils literal"><span class="pre">remove()</span></tt></a></li>
+<li><a class="reference internal" href="#switchable.Switchable.prototype.destroy" title="switchable.Switchable.prototype.destroy"><tt class="xref py py-meth docutils literal"><span class="pre">destroy()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -191,6 +193,9 @@
 <div><ul class="simple">
 <li><a class="reference internal" href="#switchable.Switchable.beforeSwitch" title="switchable.Switchable.beforeSwitch"><tt class="xref py py-func docutils literal"><span class="pre">beforeSwitch()</span></tt></a></li>
 <li><a class="reference internal" href="#switchable.Switchable.switch" title="switchable.Switchable.switch"><tt class="xref py py-func docutils literal"><span class="pre">switch()</span></tt></a></li>
+<li><a class="reference internal" href="#switchable.Switchable.add" title="switchable.Switchable.add"><tt class="xref py py-func docutils literal"><span class="pre">add()</span></tt></a></li>
+<li><a class="reference internal" href="#switchable.Switchable.remove" title="switchable.Switchable.remove"><tt class="xref py py-func docutils literal"><span class="pre">remove()</span></tt></a></li>
+<li><a class="reference internal" href="#switchable.Switchable.beforeRemove" title="switchable.Switchable.beforeRemove"><tt class="xref py py-func docutils literal"><span class="pre">beforeRemove()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -563,6 +568,118 @@
 </div>
 </dd></dl>
 
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<dl class="method">
+<dt id="switchable.Switchable.prototype.add">
+<tt class="descclassname">Switchable.prototype.</tt><tt class="descname">add</tt><big>(</big><big>)</big><a class="headerlink" href="#switchable.Switchable.prototype.add" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>add</strong> (cfg)</div>
+<div class="line">添加一项</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>cfg</strong> (<em>Object</em>) &#8211; 添加的具体配置</li>
+<li><strong>cfg.trigger</strong> (<em>HTMLElement</em>) &#8211; 导航的 trigger 节点</li>
+<li><strong>cfg.panel</strong> (<em>HTMLELement</em>) &#8211; 内容节点</li>
+<li><strong>cfg.index</strong> (<em>Number</em>) &#8211; 插入位置</li>
+<li><strong>cfg.active</strong> (<em>Boolean</em>) &#8211; 是否将新插入的内容节点激活显示</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>添加操作详解：
+1. 假设当前 activeIndex 为 x
+2. 如果 steps == 1</p>
+<blockquote>
+<div>2.1 插入新的 trigger 和 panel 到指定位置
+2.2 如果 x 大于等于参数的 index，那么当前的 activeIndex++
+2.3 强制 switch 到新的 activeIndex 的位置，保持当前panel内容不变（防止新元素排挤）
+2.4 如果指定了 active,那么 switch 到新的插入位置 index</div></blockquote>
+<ol class="last arabic" start="3">
+<li><dl class="first docutils">
+<dt>如果 steps &gt; 1</dt>
+<dd><p class="first last">3.1 插入新的panel
+3.2 如果 panel 插入后导致 length 增大,那么插入新的 trigger 到尾部
+3.3 强制 switch 到 activeIndex 的位置，保持当前页位置不变（防止新元素排挤）
+3.4 如果指定了 active,那么 switch 到新的插入位置 index 所应该在的页数（一页有多个panel）</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<dl class="method">
+<dt id="switchable.Switchable.prototype.remove">
+<tt class="descclassname">Switchable.prototype.</tt><tt class="descname">remove</tt><big>(</big><big>)</big><a class="headerlink" href="#switchable.Switchable.prototype.remove" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>remove</strong> (index)</div>
+<div class="line">删除一个内容节点</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>index</strong> (<em>Number</em>) &#8211; 将要删除的内容节点所在的位置</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>删除操作详解：
+1. 假设当前 activeIndex 为 x
+2. 如果 steps == 1</p>
+<blockquote class="last">
+<div><blockquote>
+<div><dl class="docutils">
+<dt>2.1 如果 x 位置的元素就是要删除的元素： x==index</dt>
+<dd>2.1.1 如果 x ==0,switch 到 1位置后，删除0元素，在设置 activeIndex 为 0
+2.1.2 switch 到 x-1 位置，然后删除 x 位置元素</dd>
+</dl>
+<p>2.1 如果 x 的值大于 index,那么设置 activeIndex=x-1;
+2.2 删除 trigger 和 x 元素</p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>如果 steps &gt; 1
+3.1 如果删除 x 元素导致页数-1，那么设置 trigger 为最后一个trigger，否则trigger为null
+3.2 如果删除 x 元素导致 activeIndex 页为空，那么先 switch 到  activeIndex-1 的页，然后删除 x 元素
+3.3 否则直接删除 trigger 和 x 位置 panel 元素，并重新强制 switch 到 activeIndex 元素（懒加载替换上来的元素）</li>
+</ol>
+</div></blockquote>
+</div>
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<dl class="method">
+<dt id="switchable.Switchable.prototype.destroy">
+<tt class="descclassname">Switchable.prototype.</tt><tt class="descname">destroy</tt><big>(</big><big>)</big><a class="headerlink" href="#switchable.Switchable.prototype.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>destroy</strong> (keepNode)</div>
+<div class="line">销毁该组件</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>keepNode</strong> (<em>Boolean</em>) &#8211; 是否保留节点，默认 false.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 <div class="section" id="events-detail">
 <h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
@@ -603,6 +720,78 @@
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
 <li><strong>ev</strong> (<em>Object</em>) &#8211; 事件对象</li>
 <li><strong>ev.currentIndex</strong> (<em>Number</em>) &#8211; 当前切换到的tab的索引号</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="switchable.Switchable.add">
+<tt class="descclassname">Switchable.</tt><tt class="descname">add</tt><big>(</big><big>)</big><a class="headerlink" href="#switchable.Switchable.add" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>add</strong> (ev)</div>
+<div class="line">添加节点后触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>ev</strong> (<em>Object</em>) &#8211; 事件对象</li>
+<li><strong>ev.index</strong> (<em>Number</em>) &#8211; 新节点所在的位置</li>
+<li><strong>trigger</strong> (<em>HTMLElement</em>) &#8211; 新 trigger 节点</li>
+<li><strong>panel</strong> (<em>HTMLElement</em>) &#8211; 新内容节点</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="switchable.Switchable.beforeRemove">
+<tt class="descclassname">Switchable.</tt><tt class="descname">beforeRemove</tt><big>(</big><big>)</big><a class="headerlink" href="#switchable.Switchable.beforeRemove" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>beforeRemove</strong> (ev)</div>
+<div class="line">删除节前触发. 当该事件的函数处理器返回 false, 则会阻止删除节动作.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>ev</strong> (<em>Object</em>) &#8211; 事件对象</li>
+<li><strong>ev.index</strong> (<em>Number</em>) &#8211; 将要删除的节点所在的位置</li>
+<li><strong>trigger</strong> (<em>HTMLElement</em>) &#8211; 将要被删除的 trigger 节点</li>
+<li><strong>panel</strong> (<em>HTMLElement</em>) &#8211; 将要被删除的内容节点</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="switchable.Switchable.remove">
+<tt class="descclassname">Switchable.</tt><tt class="descname">remove</tt><big>(</big><big>)</big><a class="headerlink" href="#switchable.Switchable.remove" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>remove</strong> (ev)</div>
+<div class="line">删除节点后触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>ev</strong> (<em>Object</em>) &#8211; 事件对象</li>
+<li><strong>ev.index</strong> (<em>Number</em>) &#8211; 删除的节点所在的位置</li>
+<li><strong>trigger</strong> (<em>HTMLElement</em>) &#8211; 被删除的 trigger 节点</li>
+<li><strong>panel</strong> (<em>HTMLElement</em>) &#8211; 被删除的内容节点</li>
 </ul>
 </td>
 </tr>
