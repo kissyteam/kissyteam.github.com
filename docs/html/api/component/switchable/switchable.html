@@ -588,6 +588,7 @@
 <li><strong>cfg.panel</strong> (<em>HTMLELement</em>) &#8211; 内容节点</li>
 <li><strong>cfg.index</strong> (<em>Number</em>) &#8211; 插入位置</li>
 <li><strong>cfg.active</strong> (<em>Boolean</em>) &#8211; 是否将新插入的内容节点激活显示</li>
+<li><strong>cfg.callback</strong> (<em>Function</em>) &#8211; 添加成功后的回调</li>
 </ul>
 </td>
 </tr>
@@ -629,7 +630,7 @@
 <dt id="switchable.Switchable.prototype.remove">
 <tt class="descclassname">Switchable.prototype.</tt><tt class="descname">remove</tt><big>(</big><big>)</big><a class="headerlink" href="#switchable.Switchable.prototype.remove" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line"><strong>remove</strong> (index)</div>
+<div class="line"><strong>remove</strong> (cfg)</div>
 <div class="line">删除一个内容节点</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -637,7 +638,12 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>index</strong> (<em>Number</em>) &#8211; 将要删除的内容节点所在的位置</td>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>cfg</strong> (<em>Function</em>) &#8211; 删除配置</li>
+<li><strong>cfg.callback</strong> (<em>Function</em>) &#8211; 删除成功后的回调</li>
+<li><strong>cfg.index</strong> (<em>Number</em>) &#8211; 将要删除的内容节点所在的位置</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>

@@ -150,11 +150,12 @@
             <span class="nx">btnDelete</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#btnDelete&quot;</span><span class="p">),</span>
             <span class="nx">checkIndex</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#checkIndex&quot;</span><span class="p">),</span>
             <span class="nx">btnDestroy</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#btnDestroy&quot;</span><span class="p">),</span>
+            <span class="nx">deleteIndex</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#deleteIndex&quot;</span><span class="p">),</span>
             <span class="nx">txtAdd</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#addIndex&#39;</span><span class="p">);</span>
 
         <span class="nx">btnDelete</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">txtAdd</span><span class="p">.</span><span class="nx">val</span><span class="p">();</span>
-            <span class="nx">carousel</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">index</span><span class="p">));</span>
+            <span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">deleteIndex</span><span class="p">.</span><span class="nx">val</span><span class="p">();</span>
+            <span class="nx">carousel</span><span class="p">.</span><span class="nx">remove</span><span class="p">({</span><span class="nx">index</span><span class="o">:</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">index</span><span class="p">)});</span>
         <span class="p">});</span>
 
         <span class="nx">btnAdd</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>

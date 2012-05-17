@@ -21,11 +21,12 @@ KISSY.use("event,switchable,datalazyload", function (S, Event, Switchable) {
             btnDelete = S.one("#btnDelete"),
             checkIndex = S.one("#checkIndex"),
             btnDestroy = S.one("#btnDestroy"),
+            deleteIndex=S.one("#deleteIndex"),
             txtAdd = S.one('#addIndex');
 
         btnDelete.on("click", function () {
-            var index = txtAdd.val();
-            carousel.remove(parseInt(index));
+            var index = deleteIndex.val();
+            carousel.remove({index:parseInt(index)});
         });
 
         btnAdd.on('click', function () {

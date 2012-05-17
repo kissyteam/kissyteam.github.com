@@ -38,7 +38,7 @@ KISSY.use("switchable", function (S, Switchable) {
 
         btnDel.on('click', function () {
             var index = txtDel.val();
-            tabs.remove(parseInt(index));
+            tabs.remove({index:parseInt(index)});
         });
 
     });
