@@ -404,15 +404,16 @@
 <dl class="data">
 <dt id="io.cfg.xhrFields">
 <tt class="descclassname">cfg.</tt><tt class="descname">xhrFields</tt><a class="headerlink" href="#io.cfg.xhrFields" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Object} -   设置到原生 xhr 对象的键值对.例如为了进行跨域请求你可以设置 <a class="reference external" href="https://developer.mozilla.org/en/http_access_control#Requests_with_credentials">withCredentials</a> 为 true.</p>
+<dd><p>{Object} -   设置到原生 xhr 对象的键值对.例如为了在标准浏览器进行跨域请求时携带cookie你可以设置 <a class="reference external" href="https://developer.mozilla.org/en/http_access_control#Requests_with_credentials">withCredentials</a> 为 true.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">io</span><span class="p">({</span>
-    <span class="nx">url</span><span class="o">:</span><span class="s2">&quot;ping.php&quot;</span><span class="p">,</span>
+    <span class="nx">url</span><span class="o">:</span><span class="s2">&quot;http://y.com/ping.php&quot;</span><span class="p">,</span>
     <span class="nx">xhrFields</span><span class="o">:</span><span class="p">{</span>
         <span class="nx">withCredentials</span><span class="o">:</span> <span class="kc">true</span>
     <span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
 </div>
+<p>这样 x.com 发送请求 y.com 会携带 y.com 的 cookie 信息.</p>
 </dd></dl>
 
 <dl class="data">
@@ -422,7 +423,13 @@
 <dl class="attribute">
 <dt id="io.cfg.xdr.src">
 <tt class="descclassname">cfg.xdr.</tt><tt class="descname">src</tt><a class="headerlink" href="#io.cfg.xdr.src" title="Permalink to this definition">¶</a></dt>
-<dd><p>{String} 完全跨域请求的 flash 发送程序地址。当完全跨域时,KISSY io 将采用 flash 发请求，默认采用 KISSY 自带 flash 发请求，也可将 kissy 自带的 flash 部署到其他地方，在 src 中指定。</p>
+<dd><p>{String} 完全跨域请求的 flash 发送程序地址。当完全跨域时,KISSY io 在</p>
+<blockquote>
+<div><ul class="simple">
+<li>ie 中将采用 flash 发请求，默认采用 KISSY 自带 flash 发请求，也可将 kissy 自带的 flash 部署到其他地方，在 src 中指定。</li>
+<li>标准浏览器将采用原生机制.</li>
+</ul>
+</div></blockquote>
 </dd></dl>
 
 <dl class="attribute">
