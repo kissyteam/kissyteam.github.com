@@ -6,7 +6,6 @@
 
 
 
-
 Class
 -----------------------------------------------
 
@@ -22,7 +21,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="520" class="iframe-demo" src="../../../static/demo/menu/decorate.html"></iframe>
+        <iframe width="100%" height="220" class="iframe-demo" src="../../../static/demo/menu/decorate.html"></iframe>
 
     .. literalinclude:: /_static/demo/menu/assets/decorate.js
            :language: javascript
