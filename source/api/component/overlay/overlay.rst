@@ -30,6 +30,8 @@ Config Attributes
   * :data:`~Overlay.config.closeAction`
   * :data:`~Overlay.config.elBefore`
   * :data:`~Overlay.config.render`
+  * :data:`~Overlay.config.mask`
+  * :data:`~Overlay.config.maskShared`
   
   
 Properties
@@ -43,6 +45,7 @@ Properties
   * :attr:`~Overlay.prototype.visible`
   * :attr:`~Overlay.prototype.el`
   * :attr:`~Overlay.prototype.contentEl`
+  * :attr:`~Overlay.prototype.maskNode`
   
 Methods
 -----------------------------------------------
@@ -186,13 +189,9 @@ Config Attributes Detail
         
 .. data:: Overlay.config.closable
 
-
-
     {Boolean} - 对话框右上角是否包括关闭按钮
     
 .. data:: Overlay.config.closeAction
-
-
 
     {String} - 点击关闭按钮的动作。默认 "hide" 隐藏，也可设置 "destroy" 销毁该组件.    
     
@@ -222,7 +221,16 @@ Config Attributes Detail
     .. note::
     
         使用该功能需要和 :class:`Resizable <resizable.Resizable>` 一起 use，例如： ``use("overlay,resizable")``
-    
+
+.. data:: Overlay.config.mask
+
+    {Boolean} - 默认 false. 是否应用全屏 mask 效果
+
+.. versionadded:: 1.3
+
+.. data:: Overlay.config.maskShared
+
+    {Boolean} - 默认 true. 是否共享用于 mask 效果的 mask 节点.
 
 Properties Detail
 -----------------------------------------------
@@ -288,6 +296,23 @@ Properties Detail
         
     一般调用悬浮层的 :meth:`~Overlay.prototype.render` 方法后, 可通过获取 :attr:`~Overlay.prototype.contentEl` 属性获取内容所在节点, 来动态修改悬浮层的内容.
 
+.. attribute:: Overlay.prototype.maskNode
+
+    {KISSY.Node} - 用于该 overlay mask 效果的 mask 节点.
+
+    .. note::
+
+        如果需要在显示前对 mask 进行动画，请监听 :func:`~Overlay.afterBindUI` :
+
+        .. code-block:: javascript
+
+            var o = new Overlay({mask:true});
+            o.on("afterBindUI",function(){
+                o.on("show",function(){
+                    o.get("maskNode").hide();
+                    o.get("maskNode").fadeIn();
+                });
+            });
 
 Methods Detail
 -----------------------------------------------
@@ -369,6 +394,21 @@ Events Detail
         });
         button.on("click",function(){
             o.show();
+        });
+
+.. function:: Overlay.afterBindUI
+
+    | **afterBindUI** ()
+    | 当悬浮层内部事件绑定后执行
+
+    .. code-block:: javascript
+
+        var o = new Overlay({mask:true});
+        o.on("afterBindUI",function(){
+            o.on("show",function(){
+                o.get("maskNode").hide();
+                o.get("maskNode").fadeIn();
+            });
         });
     
 

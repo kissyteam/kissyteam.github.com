@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>多个触发元素公用一个 Overlay &mdash; KISSY Docs</title>
+<title>Mask 动画效果 &mdash; KISSY Docs</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -101,10 +101,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="demo4.html" title="demo3 的另一种实现方式"
+      <a href="../button/index.html" title="Button 使用示例"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="demo2.html" title="新建 Markup"
+      <a href="proxy-scroll.html" title="代理加窗口自动滚动"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >Demos</a> &#187; </li>
@@ -113,8 +113,8 @@
     </ul>
 </div>
 					
-  <div class="section" id="overlay">
-<h1>多个触发元素公用一个 Overlay<a class="headerlink" href="#overlay" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="mask">
+<h1>Mask 动画效果<a class="headerlink" href="#mask" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -124,50 +124,60 @@
 </div></blockquote>
 </div>
 <div class="section" id="id1">
-<h2>多个触发元素公用一个 Overlay<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>Mask 动画效果<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><iframe width="100%" height="380" class="iframe-demo" src="../../../static/demo/overlay/demo3.html"></iframe></div></blockquote>
+<div><iframe width="100%" height="540" class="iframe-demo" src="../../../static/demo/overlay/mask-anim.html"></iframe></div></blockquote>
 <div class="section" id="id2">
 <h3>加入初始样式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
-    <span class="nc">.ks-overlay</span> <span class="p">{</span>
-        <span class="k">position</span><span class="o">:</span><span class="k">absolute</span><span class="p">;</span>
-        <span class="k">left</span><span class="o">:-</span><span class="m">9999px</span><span class="p">;</span>
-        <span class="k">top</span><span class="o">:-</span><span class="m">9999px</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="nt">&lt;/style&gt;</span>
-</pre></div>
-</div>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node, overlay&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">//新建共享popup层</span>
-    <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">,</span>
-        <span class="nx">popup</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">O</span><span class="p">({</span>
-            <span class="nx">elStyle</span><span class="o">:</span><span class="p">{</span>
-                <span class="nx">border</span><span class="o">:</span><span class="s2">&quot;2px solid gray&quot;</span><span class="p">,</span>
-                <span class="nx">lineHeight</span><span class="o">:</span><span class="mi">0</span>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node,overlay,button,dd&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">,</span> <span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">dialog</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">O</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
+        <span class="nx">width</span><span class="o">:</span><span class="mi">400</span><span class="p">,</span>
+        <span class="nx">headerContent</span><span class="o">:</span><span class="s1">&#39;收藏&#39;</span><span class="p">,</span>
+        <span class="nx">bodyContent</span><span class="o">:</span><span class="s1">&#39;&lt;iframe scrolling=&quot;no&quot; height=&quot;200&quot; width=&quot;398&quot; frameborder=&quot;0&quot; name=&quot;popupIframe&quot; src=&quot;http://favorite.taobao.com/popup/add_collection.htm?id=10166801469&amp;amp;itemtype=1&amp;amp;scjjc=1&amp;amp;_tb_token_=3b38ed73a7775&amp;amp;t=1305543755536&quot;&gt;&lt;/iframe&gt;&#39;</span><span class="p">,</span>
+        <span class="nx">mask</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+        <span class="nx">align</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">points</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nx">draggable</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">proxy</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">node</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                    <span class="kd">var</span> <span class="nx">el</span> <span class="o">=</span> <span class="nx">dialog</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;el&quot;</span><span class="p">);</span>
+                    <span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Node</span><span class="p">(</span><span class="s2">&quot;&lt;div class=&#39;ks-overlay-proxy&#39;&gt;&lt;/div&gt;&quot;</span><span class="p">);</span>
+                    <span class="nx">node</span><span class="p">.</span><span class="nx">height</span><span class="p">(</span><span class="nx">el</span><span class="p">.</span><span class="nx">height</span><span class="p">());</span>
+                    <span class="nx">node</span><span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="nx">el</span><span class="p">.</span><span class="nx">width</span><span class="p">());</span>
+                    <span class="nx">el</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;visibility&quot;</span><span class="p">,</span> <span class="s2">&quot;hidden&quot;</span><span class="p">);</span>
+                    <span class="k">return</span> <span class="nx">node</span><span class="p">;</span>
+                <span class="p">},</span> <span class="nx">destroyOnEnd</span><span class="o">:</span><span class="kc">true</span>
             <span class="p">},</span>
-            <span class="nx">width</span><span class="o">:</span><span class="mi">120</span><span class="p">,</span> <span class="c1">//配置高和宽</span>
-            <span class="nx">height</span><span class="o">:</span><span class="mi">120</span><span class="p">,</span>
-            <span class="nx">effect</span><span class="o">:</span><span class="p">{</span>
-                <span class="nx">effect</span><span class="o">:</span><span class="s2">&quot;slide&quot;</span><span class="p">,</span> <span class="c1">//popup层显示动画效果，slide是展开，也可以&quot;fade&quot;渐变</span>
-                <span class="nx">duration</span><span class="o">:</span><span class="mf">0.5</span>
+            <span class="nx">scroll</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">node</span><span class="o">:</span><span class="nb">window</span>
             <span class="p">}</span>
-        <span class="p">});</span>
-    <span class="c1">// 注意：使用定制的显示/隐藏方式</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#multi&quot;</span><span class="p">).</span><span class="nx">delegate</span><span class="p">(</span><span class="s2">&quot;mouseenter&quot;</span><span class="p">,</span> <span class="s2">&quot;img&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
-        <span class="nx">popup</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s1">&#39;&lt;img src=&quot;&#39;</span> <span class="o">+</span> <span class="nx">t</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;bigpicurl&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;&quot;/&gt;&#39;</span><span class="p">);</span>
-        <span class="nx">popup</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;align&#39;</span><span class="p">,</span> <span class="p">{</span>
-            <span class="nx">node</span><span class="o">:</span><span class="nx">t</span><span class="p">,</span>
-            <span class="nx">points</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;tr&quot;</span><span class="p">,</span> <span class="s2">&quot;tl&quot;</span><span class="p">]</span>
-        <span class="p">});</span>
-        <span class="nx">popup</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+        <span class="p">},</span>
+        <span class="nx">aria</span><span class="o">:</span><span class="kc">true</span>
     <span class="p">});</span>
 
-    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#multi&quot;</span><span class="p">).</span><span class="nx">delegate</span><span class="p">(</span><span class="s2">&quot;mouseleave&quot;</span><span class="p">,</span> <span class="s2">&quot;img&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">popup</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
+    <span class="nx">dialog</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;afterBindUI&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">dialog</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;show&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">dialog</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+            <span class="nx">dialog</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">();</span>
+        <span class="p">});</span>
+        <span class="nx">dialog</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;hide&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">dialog</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+            <span class="nx">dialog</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">fadeOut</span><span class="p">();</span>
+        <span class="p">});</span>
     <span class="p">});</span>
+
+    <span class="kd">var</span> <span class="nx">show</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">B</span><span class="p">({</span>
+        <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;收藏&quot;</span><span class="p">,</span>
+        <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+        <span class="nx">render</span><span class="o">:</span><span class="s2">&quot;#button-wrap&quot;</span>
+    <span class="p">});</span>
+    <span class="nx">show</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+    <span class="nx">show</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">dialog</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+    <span class="p">});</span>
+
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -190,10 +200,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="demo4.html" title="demo3 的另一种实现方式"
+      <a href="../button/index.html" title="Button 使用示例"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="demo2.html" title="新建 Markup"
+      <a href="proxy-scroll.html" title="代理加窗口自动滚动"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >Demos</a> &#187; </li>

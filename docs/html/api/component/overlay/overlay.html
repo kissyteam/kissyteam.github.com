@@ -147,6 +147,8 @@
 <li><a class="reference internal" href="#overlay.Overlay.config.closeAction" title="overlay.Overlay.config.closeAction"><tt class="xref py py-data docutils literal"><span class="pre">closeAction</span></tt></a></li>
 <li><a class="reference internal" href="#overlay.Overlay.config.elBefore" title="overlay.Overlay.config.elBefore"><tt class="xref py py-data docutils literal"><span class="pre">elBefore</span></tt></a></li>
 <li><a class="reference internal" href="#overlay.Overlay.config.render" title="overlay.Overlay.config.render"><tt class="xref py py-data docutils literal"><span class="pre">render</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.mask" title="overlay.Overlay.config.mask"><tt class="xref py py-data docutils literal"><span class="pre">mask</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.maskShared" title="overlay.Overlay.config.maskShared"><tt class="xref py py-data docutils literal"><span class="pre">maskShared</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -162,6 +164,7 @@
 <li><a class="reference internal" href="#overlay.Overlay.prototype.visible" title="overlay.Overlay.prototype.visible"><tt class="xref py py-attr docutils literal"><span class="pre">visible</span></tt></a></li>
 <li><a class="reference internal" href="#overlay.Overlay.prototype.el" title="overlay.Overlay.prototype.el"><tt class="xref py py-attr docutils literal"><span class="pre">el</span></tt></a></li>
 <li><a class="reference internal" href="#overlay.Overlay.prototype.contentEl" title="overlay.Overlay.prototype.contentEl"><tt class="xref py py-attr docutils literal"><span class="pre">contentEl</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.prototype.maskNode" title="overlay.Overlay.prototype.maskNode"><tt class="xref py py-attr docutils literal"><span class="pre">maskNode</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -372,6 +375,20 @@
 </div>
 </dd></dl>
 
+<dl class="data">
+<dt id="overlay.Overlay.config.mask">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">mask</tt><a class="headerlink" href="#overlay.Overlay.config.mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认 false. 是否应用全屏 mask 效果</p>
+</dd></dl>
+
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<dl class="data">
+<dt id="overlay.Overlay.config.maskShared">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">maskShared</tt><a class="headerlink" href="#overlay.Overlay.config.maskShared" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认 true. 是否共享用于 mask 效果的 mask 节点.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="properties-detail">
 <h2>Properties Detail<a class="headerlink" href="#properties-detail" title="Permalink to this headline">¶</a></h2>
@@ -446,6 +463,25 @@
 </pre></div>
 </div>
 <p>一般调用悬浮层的 <a class="reference internal" href="#overlay.Overlay.prototype.render" title="overlay.Overlay.prototype.render"><tt class="xref py py-meth docutils literal"><span class="pre">render()</span></tt></a> 方法后, 可通过获取 <a class="reference internal" href="#overlay.Overlay.prototype.contentEl" title="overlay.Overlay.prototype.contentEl"><tt class="xref py py-attr docutils literal"><span class="pre">contentEl</span></tt></a> 属性获取内容所在节点, 来动态修改悬浮层的内容.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="overlay.Overlay.prototype.maskNode">
+<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">maskNode</tt><a class="headerlink" href="#overlay.Overlay.prototype.maskNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>{KISSY.Node} - 用于该 overlay mask 效果的 mask 节点.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>如果需要在显示前对 mask 进行动画，请监听 <a class="reference internal" href="#overlay.Overlay.afterBindUI" title="overlay.Overlay.afterBindUI"><tt class="xref py py-func docutils literal"><span class="pre">afterBindUI()</span></tt></a> :</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Overlay</span><span class="p">({</span><span class="nx">mask</span><span class="o">:</span><span class="kc">true</span><span class="p">});</span>
+<span class="nx">o</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;afterBindUI&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">o</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;show&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+        <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">();</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
 </dd></dl>
 
 </div>
@@ -581,6 +617,24 @@
 <span class="p">});</span>
 <span class="nx">button</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
     <span class="nx">o</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="overlay.Overlay.afterBindUI">
+<tt class="descclassname">Overlay.</tt><tt class="descname">afterBindUI</tt><big>(</big><big>)</big><a class="headerlink" href="#overlay.Overlay.afterBindUI" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>afterBindUI</strong> ()</div>
+<div class="line">当悬浮层内部事件绑定后执行</div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Overlay</span><span class="p">({</span><span class="nx">mask</span><span class="o">:</span><span class="kc">true</span><span class="p">});</span>
+<span class="nx">o</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;afterBindUI&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">o</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;show&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+        <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">();</span>
+    <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
 </div>

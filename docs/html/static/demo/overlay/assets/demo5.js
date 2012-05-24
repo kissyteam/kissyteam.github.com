@@ -6,7 +6,7 @@ node.innerHTML = '<div class="loading" style="width:600px;height:200px;"> '
     + '</div>';
 
 KISSY.use('ua,event,node,overlay,button', function(S, UA, Event, Node, O, B) {
-    var popup = new O.Popup({
+    var popup = new O({
         content: node,
         width: 600,
         height: 200,
