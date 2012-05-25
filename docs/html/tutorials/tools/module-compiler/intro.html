@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>简介 &mdash; KISSY Docs</title>
+<title>原理介绍 &mdash; KISSY Docs</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -114,17 +114,26 @@
 </div>
 					
   <div class="section" id="id1">
-<h1>简介<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>原理介绍<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>是一个模块代码依赖自动合并工具.</li>
 <li>是一个模块代码规范辅助工具, 可以辅助规范模块编写, 不仅仅只适用动态加载场景, 也可以用来提高开发阶段效率.</li>
 <li>是一个模块代码部署工具. 结合 <a class="reference internal" href="../../../api/seed/loader/index.html#loader"><em>KISSY 1.2 Loader</em></a> , 用于模块代码部署阶段, 多个模块根据其依赖合并为一个文件, 减少 HTTP 链接数.</li>
 </ul>
-</div>
-<div class="section" id="id2">
-<h1>举例<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id3">
-<h2>开发阶段<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h3>下载<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">下载: <a class="reference external" href="https://github.com/kissyteam/kissy-tools/raw/master/module-compiler/module-compiler.jar">KISSY Module Compiler</a></div>
+<div class="line">推荐使用 Ant 整合调用： <a class="reference external" href="http://ant.apache.org/">Ant</a></div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>举例<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>开发阶段<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>例如：现在有两个模块代码文件 <tt class="docutils literal"><span class="pre">code/package/x.js</span></tt> 与 <tt class="docutils literal"><span class="pre">code/package/y.js</span></tt></p>
 <p><tt class="docutils literal"><span class="pre">x.js</span></tt> 中内容如下</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
@@ -170,7 +179,7 @@
 <p>这个过程如果模块多的话对于线上环境来说 HTTP 链接数不可承受, 使用 KISSY module compiler 则可以达到所有模块压缩为一个文件, 达到 http 链接数为 1 的目标.</p>
 </div>
 <div class="section" id="module-compiler">
-<h2>使用 Module Compiler<a class="headerlink" href="#module-compiler" title="Permalink to this headline">¶</a></h2>
+<h3>使用 Module Compiler<a class="headerlink" href="#module-compiler" title="Permalink to this headline">¶</a></h3>
 <p>简要如下:</p>
 <ol class="arabic simple">
 <li>配置 module compiler 指定需要的模块, 这里即 <tt class="docutils literal"><span class="pre">package/y</span></tt></li>
@@ -180,8 +189,8 @@
 <li>运行 closure compiler 压缩 <tt class="docutils literal"><span class="pre">package/y.combine.js</span></tt> 为 <tt class="docutils literal"><span class="pre">package/y-min.js</span></tt></li>
 </ol>
 </div>
-<div class="section" id="id4">
-<h2>线上部署阶段<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>线上部署阶段<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>载入 <tt class="docutils literal"><span class="pre">kissy</span></tt> 的压缩版本</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy-min.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
@@ -196,6 +205,7 @@
 <li>执行回调的得到模块 <tt class="docutils literal"><span class="pre">package/y</span></tt> 的值</li>
 </ol>
 <p>于是线上应用 HTTP 链接数为 1 . 若需要使用源码调试则可以在页面 url 后加上 <tt class="docutils literal"><span class="pre">?ks-debug</span></tt> 即可开启开发阶段的加载过程.以上即为近期交易平台化项目所采用的模块化框架.</p>
+</div>
 </div>
 </div>
 
