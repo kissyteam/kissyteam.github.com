@@ -17,5 +17,5 @@ Classes in Component
 .. toctree::
    :titlesonly:
 
-   Controller
+   controller
    uibase/index
