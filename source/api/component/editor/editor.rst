@@ -105,7 +105,8 @@ Configs Detail
 
 .. data:: Editor.config.height
 
-    {String|Number} - 继承自 :class:`~Component.UIBase.Box` 。注意表示：编辑器的整体高度。（ 包括 toolbar/statusbar ）
+    {String|Number} - 继承自 UIBase.Box :data:`~component.UIBase.Box.config.height` 。
+    注意该值表示编辑器的整体高度（ 包括 toolbar/statusbar ）。
 
 .. data:: Editor.config.customLink
 
