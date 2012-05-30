@@ -158,6 +158,7 @@
 <li><a class="reference internal" href="#component.Controller.prototype.removeChild" title="component.Controller.prototype.removeChild"><tt class="xref py py-meth docutils literal"><span class="pre">removeChild()</span></tt></a></li>
 <li><a class="reference internal" href="#component.Controller.prototype.removeChildren" title="component.Controller.prototype.removeChildren"><tt class="xref py py-meth docutils literal"><span class="pre">removeChildren()</span></tt></a></li>
 <li><a class="reference internal" href="#component.Controller.prototype.getChildAt" title="component.Controller.prototype.getChildAt"><tt class="xref py py-meth docutils literal"><span class="pre">getChildAt()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Controller.extend" title="component.Controller.extend"><tt class="xref py py-meth docutils literal"><span class="pre">extend()</span></tt></a> &lt;static&gt;</li>
 </ul>
 </div></blockquote>
 </div>
@@ -257,6 +258,32 @@
 <div class="section" id="methods-detail">
 <h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
+<dt id="component.Controller.extend">
+<tt class="descclassname">Controller.</tt><tt class="descname">extend</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Controller.extend" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>extend( [ extensions , ] methodDesc , staticAttributes , componentDesc )</strong> &lt;static&gt;</div>
+</div>
+<p>从当前组件类上扩展出一个子类组件</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>extensions</strong> (<em>Function[]</em>) &#8211; 扩展类数组</li>
+<li><strong>methodDesc</strong> (<em>Object</em>) &#8211; 方法集合键值对</li>
+<li><strong>staticAttributes</strong> (<em>Object</em>) &#8211; 放到新产生组件类上的静态属性集合键值对，其中 <tt class="docutils literal"><span class="pre">ATTRS</span></tt> 属性特殊对待.</li>
+<li><strong>componentDesc</strong> (<em>Object</em>) &#8211; 组件元信息.</li>
+<li><strong>componentDesc.xclass</strong> (<em>String</em>) &#8211; 组件 xclass 信息</li>
+<li><strong>componentDesc.priority</strong> (<em>Number</em>) &#8211; 组件 priority 信息</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="component.Controller.prototype.addChild">
 <tt class="descclassname">Controller.prototype.</tt><tt class="descname">addChild</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Controller.prototype.addChild" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
@@ -292,7 +319,7 @@
 <tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
 <li><strong>child</strong> (<em>{Controller}</em>) &#8211; 子组件实例</li>
-<li><strong>destroy</strong> (<em>{Boolean}</em>) &#8211; 是否同时调用 child 的 <tt class="xref py py-meth docutils literal"><span class="pre">UIBase.UIBase.destroy()</span></tt> 销毁该子组件实例.</li>
+<li><strong>destroy</strong> (<em>{Boolean}</em>) &#8211; 是否同时调用 child 的 <tt class="xref py py-meth docutils literal"><span class="pre">component.UIBase.destroy()</span></tt> 销毁该子组件实例.</li>
 </ul>
 </td>
 </tr>
@@ -312,7 +339,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>destroy</strong> (<em>{Boolean}</em>) &#8211; 是否同时调用:meth:<cite>UIBase.UIBase.destroy</cite> 销毁所有的子组件实例.</td>
+<tr><td>&nbsp;</td><td class="field-body"><strong>destroy</strong> (<em>{Boolean}</em>) &#8211; 是否同时调用:meth:<cite>component.UIBase.destroy</cite> 销毁所有的子组件实例.</td>
 </tr>
 </tbody>
 </table>
@@ -477,6 +504,7 @@
         <li><a href="../menubutton/index.html">menubutton</a></li>
         <li><a href="../tree/index.html">tree</a></li>
         <li><a href="../waterfall/index.html">waterfall</a></li>
+        <li><a href="../editor/index.html">editor</a></li>
         <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
     </ul>
 </ul>

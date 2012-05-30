@@ -40,6 +40,7 @@ Methods
     * :meth:`~Controller.prototype.removeChild`
     * :meth:`~Controller.prototype.removeChildren`
     * :meth:`~Controller.prototype.getChildAt`
+    * :meth:`~Controller.extend` <static>
     
 
 Class Detail
@@ -106,6 +107,20 @@ Properties Detail
 Methods Detail
 -----------------------------------------------
 
+.. method:: Controller.extend
+
+    | **extend( [ extensions , ] methodDesc , staticAttributes , componentDesc )** <static>
+
+    从当前组件类上扩展出一个子类组件
+
+    :param Function[] extensions: 扩展类数组
+    :param Object methodDesc: 方法集合键值对
+    :param Object staticAttributes: 放到新产生组件类上的静态属性集合键值对，其中 ``ATTRS`` 属性特殊对待.
+    :param Object componentDesc: 组件元信息.
+    :param String componentDesc.xclass: 组件 xclass 信息
+    :param Number componentDesc.priority: 组件 priority 信息
+
+
 .. method:: Controller.prototype.addChild
 
     | **addChild( child [ , index ] )**
@@ -123,7 +138,7 @@ Methods Detail
     从当前组件中删除改子组件
     
     :param {Controller} child: 子组件实例
-    :param {Boolean} destroy: 是否同时调用 child 的 :meth:`UIBase.UIBase.destroy` 销毁该子组件实例.     
+    :param {Boolean} destroy: 是否同时调用 child 的 :meth:`component.UIBase.destroy` 销毁该子组件实例.
     
     
 .. method:: Controller.prototype.removeChildren
@@ -132,7 +147,7 @@ Methods Detail
     
     删除该组件的所有子组件
     
-    :param {Boolean} destroy: 是否同时调用:meth:`UIBase.UIBase.destroy` 销毁所有的子组件实例.  
+    :param {Boolean} destroy: 是否同时调用:meth:`component.UIBase.destroy` 销毁所有的子组件实例.
      
 
 .. method:: Controller.prototype.getChildAt

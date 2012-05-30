@@ -25,3 +25,4 @@ Component
    suggest/index
    calendar/index
    imagezoom/index
+   editor/index
