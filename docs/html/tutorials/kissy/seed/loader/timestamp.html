@@ -134,18 +134,65 @@
 <div class="section" id="id2">
 <h2>设置内置模块时间戳<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>通过 KISSY.config(&#8220;tag&#8221;,..); 设置 kissy 内置模块的时间戳</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s2">&quot;tag&quot;</span><span class="p">,</span><span class="s2">&quot;1234&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id3">
 <h2>设置特定包时间戳<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>通过 KISSY.config(&#8220;packages&#8221;,...); 设置特定包的时间戳</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s2">&quot;packages&quot;</span><span class="p">,{</span>
+    <span class="nx">crm</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">tag</span><span class="o">:</span><span class="s2">&quot;xzxc&quot;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id4">
 <h2>设置特定模块时间戳<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>通过 KISSY.config(&#8220;modules&#8221;,...); 设置特定模块的时间戳</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s2">&quot;modules&quot;</span><span class="p">,{</span>
+    <span class="s2">&quot;crm/x&quot;</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">tag</span><span class="o">:</span><span class="s2">&quot;xzxc&quot;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id5">
 <h2>总示例<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+    <span class="c1">// 默认为 kissy build 时间，例如 20120531</span>
+    <span class="c1">// base:&#39;&#39;</span>
+    <span class="nx">packages</span><span class="o">:</span><span class="p">{</span>
+        <span class="s2">&quot;crm&quot;</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">base</span><span class="o">:</span><span class="s1">&#39;xx/&#39;</span><span class="p">,</span>
+            <span class="nx">tag</span><span class="o">:</span><span class="s1">&#39;a&#39;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;tc&quot;</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">base</span><span class="o">:</span><span class="s1">&#39;y/&#39;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+
+    <span class="nx">modules</span><span class="o">:</span><span class="p">{</span>
+        <span class="s2">&quot;crm/x&quot;</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">tag</span><span class="o">:</span><span class="s1">&#39;c&#39;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
 <p>那么载入 seed 后的实际加载为：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dom&quot;</span><span class="p">)</span>  <span class="o">=&gt;</span>  <span class="nx">dom</span><span class="p">.</span><span class="nx">js</span><span class="o">?</span><span class="nx">t</span><span class="o">=</span><span class="mi">20120531</span>
+
+<span class="nx">use</span><span class="p">(</span><span class="s2">&quot;crm/x2&quot;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">crm</span><span class="o">/</span><span class="nx">x2</span><span class="p">.</span><span class="nx">js</span><span class="o">?</span><span class="nx">t</span><span class="o">=</span><span class="nx">a</span>
+
+<span class="nx">use</span><span class="p">(</span><span class="s2">&quot;crm/x&quot;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">crm</span><span class="o">/</span><span class="nx">x</span><span class="p">.</span><span class="nx">js</span><span class="o">?</span><span class="nx">t</span><span class="o">=</span><span class="nx">c</span>
+
+<span class="nx">use</span><span class="p">(</span><span class="s2">&quot;tc/r&quot;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">tc</span><span class="o">/</span><span class="nx">r</span><span class="p">.</span><span class="nx">js</span><span class="o">?</span><span class="nx">t</span><span class="o">=</span><span class="mi">20120531</span>
+</pre></div>
+</div>
 </div>
 </div>
 
