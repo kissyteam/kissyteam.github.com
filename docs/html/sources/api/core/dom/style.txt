@@ -1,0 +1,82 @@
+﻿.. currentmodule:: dom
+
+
+style
+=================================
+
+
+
+Module
+-----------------------------------------------
+
+  :mod:`DOM <dom>`
+
+
+Methods
+-----------------------------------------------
+
+.. function:: style
+
+    | String **style** ( selector, name )
+    | 获取符合选择器的第一个元素 style 属性中 name 的值.
+    
+    :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
+    :param string name: style 属性名
+    :returns: 获取指定元素 style 属性中, name 的值.
+    :rtype: String
+
+
+    .. note::
+
+        请注意 :func:`style` 和 :func:`css` 在 **获取元素样式值上的区别** :
+
+        - 前者获取的是元素style属性中相应的样式值, 是个字面量;
+        - 后者是获取元素真实渲染到页面上的样式值, 是个计算值.
+	
+    例如
+	
+    .. code-block:: javascript
+		
+        var tag = S.guid("float");
+        DOM.addStyleSheet("." + tag + " {float:left}")
+
+        var d = DOM.create("<div class='" + tag + "' style='float:right'><" + "/div>")
+        DOM.append(d, document.body);
+        S.log(DOM.css(d, "float"));     // "right"
+        S.log(DOM.style(d, "float"));   // "right"
+
+        DOM.css(d, "float", "");
+
+        S.log(DOM.css(d, "float"));     // "left"
+        S.log(DOM.style(d, "float"));   // ""
+    
+
+    | void **style** ( selector, name, value )
+    | 给符合选择器的所有元素, 给其 style 属性中名为 name 的样式设置值为 value.
+    
+    :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
+    :param string name: css 样式属性名   
+    :param string value: 将要设置的样式值
+
+    .. note::
+
+        :func:`css` 和 :func:`style` 在设置元素的样式值上等价, 都是在元素的 style 属性设置样式值;
+	
+    例如
+	
+    .. code-block:: javascript
+		
+        DOM.css(d, "float", "");
+        DOM.style(d, "float", "");
+    
+
+    | void **style** ( selector, kv )
+    | 给符合选择器的所有元素设置样式值, 同样与 :func:`css` 等价.
+    
+    :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
+    :param object kv: 样式名与样式值的键值对, 例如
+    
+    .. code-block:: javascript
+
+        DOM.css('.widget', {position: 'absolute', top: '10px', left: '10px'});
+        DOM.style('.widget', {position: 'absolute', top: '10px', left: '10px'});
