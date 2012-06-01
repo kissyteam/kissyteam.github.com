@@ -15,3 +15,12 @@ Plugins
    :titlesonly:
 
    backColor
+   bold
+   checkboxSourcearea
+   draft
+   dragUpload
+   elementPath
+   flash
+   fontFamily
+   fontSize
+   foreColor

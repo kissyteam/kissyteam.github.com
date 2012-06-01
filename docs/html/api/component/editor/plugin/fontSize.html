@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Plugins &mdash; KISSY Docs</title>
+<title>fontSize &mdash; KISSY Docs</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../../static/kissy.css"/>
@@ -101,59 +101,126 @@
       <a href="../../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="backColor.html" title="backColor"
+      <a href="foreColor.html" title="foreColor"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../editor.html" title="Editor"
+      <a href="fontFamily.html" title="fontFamily"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../../index.html" >Component</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">Editor</a> &#187; </li> 
+      <li><a href="../index.html" >Editor</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Plugins</a> &#187; </li> 
     </ul>
 </div>
 					
-  <div class="section" id="plugins">
-<h1>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="fontsize">
+<h1>fontSize<a class="headerlink" href="#fontsize" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
-<div class="line">欢迎提交编辑器相关的插件到 KISSY Gallery</div>
+<div class="line">字体大小插件</div>
 </div>
-<div class="section" id="id1">
-<h2>插件集合<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="backColor.html">backColor</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="bold.html">bold</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="checkboxSourcearea.html">checkboxSourcearea</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="draft.html">draft</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="dragUpload.html">dragUpload</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="elementPath.html">elementPath</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="flash.html">flash</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="fontFamily.html">fontFamily</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="fontSize.html">fontSize</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="foreColor.html">foreColor</a><ul class="simple">
-</ul>
-</li>
+<div class="section" id="configs">
+<h2>Configs<a class="headerlink" href="#configs" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="editor.Editor.Plugin.fontSize.config.items">
+<tt class="descclassname">Editor.Plugin.fontSize.config.</tt><tt class="descname">items</tt><a class="headerlink" href="#editor.Editor.Plugin.fontSize.config.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="editor.Editor.Plugin.fontSize.config.width">
+<tt class="descclassname">Editor.Plugin.fontSize.config.</tt><tt class="descname">width</tt><a class="headerlink" href="#editor.Editor.Plugin.fontSize.config.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<p>无</p>
+</div>
+<div class="section" id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="#editor.Editor.Command.fontSize" title="editor.Editor.Command.fontSize"><tt class="xref py py-func docutils literal"><span class="pre">fontSize()</span></tt></a></li>
+<li><a class="reference internal" href="#editor.Editor.Command.queryFontSizeActive" title="editor.Editor.Command.queryFontSizeActive"><tt class="xref py py-func docutils literal"><span class="pre">queryFontSizeActive()</span></tt></a></li>
 </ul>
 </div>
+<div class="section" id="config-details">
+<h2>Config Details<a class="headerlink" href="#config-details" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt>
+<tt class="descclassname">Editor.Plugin.fontSize.config.</tt><tt class="descname">items</tt></dt>
+<dd><p>{Object[]} - 可选。字体大小下拉菜单的名称和值集合，默认包括 &#8220;8px&#8221;,&#8221;10px&#8221; 等。例如：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">[</span>
+    <span class="c1">//ie 不认识中文？？？</span>
+    <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;较大&quot;</span><span class="p">,</span>
+        <span class="nx">value</span><span class="o">:</span><span class="s2">&quot;20px&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;较小&quot;</span><span class="p">,</span>
+        <span class="nx">value</span><span class="o">:</span><span class="s2">&quot;10px&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt>
+<tt class="descclassname">Editor.Plugin.fontSize.config.</tt><tt class="descname">width</tt></dt>
+<dd><p>{String} - 可选。下拉菜单的宽度，默认 &#8220;55px&#8221;.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="command-details">
+<h2>Command Details<a class="headerlink" href="#command-details" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="editor.Editor.Command.fontSize">
+<tt class="descclassname">Editor.Command.</tt><tt class="descname">fontSize</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.Command.fontSize" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>fontSize(fontSize, [apply=true])</strong></div>
+<div class="line">对选区文字设置指定的字体大小</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>fontSize</strong> (<em>String</em>) &#8211; 指定字体大小值.</li>
+<li><strong>apply</strong> (<em>Boolean</em>) &#8211; 应用或取消指定的大小.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>实例：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s2">&quot;fontSize&quot;</span><span class="p">,</span><span class="s2">&quot;10px&quot;</span><span class="p">);</span> <span class="c1">//=&gt; 设置选区文字大小为10px.</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="editor.Editor.Command.queryFontSizeActive">
+<tt class="descclassname">Editor.Command.</tt><tt class="descname">queryFontSizeActive</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.Command.queryFontSizeActive" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>queryFontSizeActive(value, element)</strong></div>
+<div class="line">查看指定元素是否被设置了对应大小</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>value</strong> (<em>String</em>) &#8211; 指定的大小值，例如 &#8220;10px&#8221;</li>
+<li><strong>element</strong> (<em>KISSY.Node</em>) &#8211; 编辑器中的某个元素</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 </div>
 
@@ -171,15 +238,16 @@
       <a href="../../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="backColor.html" title="backColor"
+      <a href="foreColor.html" title="foreColor"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../editor.html" title="Editor"
+      <a href="fontFamily.html" title="fontFamily"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../../index.html" >Component</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">Editor</a> &#187; </li> 
+      <li><a href="../index.html" >Editor</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Plugins</a> &#187; </li> 
     </ul>
 </div>
 					<div>

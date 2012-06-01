@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Plugins &mdash; KISSY Docs</title>
+<title>fontFamily &mdash; KISSY Docs</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../../static/kissy.css"/>
@@ -101,58 +101,170 @@
       <a href="../../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="backColor.html" title="backColor"
+      <a href="fontSize.html" title="fontSize"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../editor.html" title="Editor"
+      <a href="flash.html" title="flash"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../../index.html" >Component</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">Editor</a> &#187; </li> 
+      <li><a href="../index.html" >Editor</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Plugins</a> &#187; </li> 
     </ul>
 </div>
 					
-  <div class="section" id="plugins">
-<h1>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="fontfamily">
+<h1>fontFamily<a class="headerlink" href="#fontfamily" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
-<div class="line">欢迎提交编辑器相关的插件到 KISSY Gallery</div>
+<div class="line">字体选择插件</div>
 </div>
-<div class="section" id="id1">
-<h2>插件集合<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="backColor.html">backColor</a><ul class="simple">
+<div class="section" id="configs">
+<h2>Configs<a class="headerlink" href="#configs" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="editor.Editor.Plugin.fontFamily.config.items">
+<tt class="descclassname">Editor.Plugin.fontFamily.config.</tt><tt class="descname">items</tt><a class="headerlink" href="#editor.Editor.Plugin.fontFamily.config.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="editor.Editor.Plugin.fontFamily.config.width">
+<tt class="descclassname">Editor.Plugin.fontFamily.config.</tt><tt class="descname">width</tt><a class="headerlink" href="#editor.Editor.Plugin.fontFamily.config.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<p>无</p>
+</div>
+<div class="section" id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="#editor.Editor.Command.fontFamily" title="editor.Editor.Command.fontFamily"><tt class="xref py py-func docutils literal"><span class="pre">fontFamily()</span></tt></a></li>
+<li><a class="reference internal" href="#editor.Editor.Command.queryFontFamilyActive" title="editor.Editor.Command.queryFontFamilyActive"><tt class="xref py py-func docutils literal"><span class="pre">queryFontFamilyActive()</span></tt></a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="bold.html">bold</a><ul class="simple">
+</div>
+<div class="section" id="config-details">
+<h2>Config Details<a class="headerlink" href="#config-details" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt>
+<tt class="descclassname">Editor.Plugin.fontFamily.config.</tt><tt class="descname">items</tt></dt>
+<dd><p>{Object[]} - 可选。字体下拉菜单的名称和值集合。默认：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">[</span>
+    <span class="c1">//ie 不认识中文？？？</span>
+    <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;宋体&quot;</span><span class="p">,</span>
+        <span class="nx">value</span><span class="o">:</span><span class="s2">&quot;SimSun&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;黑体&quot;</span><span class="p">,</span>
+        <span class="nx">value</span><span class="o">:</span><span class="s2">&quot;SimHei&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;隶书&quot;</span><span class="p">,</span>
+        <span class="nx">value</span><span class="o">:</span><span class="s2">&quot;LiSu&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;楷体&quot;</span><span class="p">,</span>
+        <span class="nx">value</span><span class="o">:</span><span class="s2">&quot;KaiTi_GB2312&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;微软雅黑&quot;</span><span class="p">,</span>
+        <span class="nx">value</span><span class="o">:</span><span class="s2">&quot;Microsoft YaHei&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;Georgia&quot;</span><span class="p">,</span>
+        <span class="nx">value</span><span class="o">:</span><span class="s2">&quot;Georgia&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;Times New Roman&quot;</span><span class="p">,</span>
+        <span class="nx">value</span><span class="o">:</span><span class="s2">&quot;Times New Roman&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;Impact&quot;</span><span class="p">,</span>
+        <span class="nx">value</span><span class="o">:</span><span class="s2">&quot;Impact&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;Courier New&quot;</span><span class="p">,</span>
+        <span class="nx">value</span><span class="o">:</span><span class="s2">&quot;Courier New&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span>
+        <span class="nx">value</span><span class="o">:</span><span class="s2">&quot;Arial&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;Verdana&quot;</span><span class="p">,</span>
+        <span class="nx">value</span><span class="o">:</span><span class="s2">&quot;Verdana&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;Tahoma&quot;</span><span class="p">,</span>
+        <span class="nx">value</span><span class="o">:</span><span class="s2">&quot;Tahoma&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt>
+<tt class="descclassname">Editor.Plugin.fontFamily.config.</tt><tt class="descname">width</tt></dt>
+<dd><p>{String} - 可选。下拉菜单的宽度，默认 &#8220;130px&#8221;.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="command-details">
+<h2>Command Details<a class="headerlink" href="#command-details" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="editor.Editor.Command.fontFamily">
+<tt class="descclassname">Editor.Command.</tt><tt class="descname">fontFamily</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.Command.fontFamily" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>fontFamily(fontFamily, [apply=true])</strong></div>
+<div class="line">对选区文字设置指定的字体</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>fontFamily</strong> (<em>String</em>) &#8211; 指定字体值.</li>
+<li><strong>apply</strong> (<em>Boolean</em>) &#8211; 应用或取消指定的字体.</li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="checkboxSourcearea.html">checkboxSourcearea</a><ul class="simple">
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>实例：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s2">&quot;fontFamily&quot;</span><span class="p">,</span><span class="s2">&quot;SimSun&quot;</span><span class="p">);</span> <span class="c1">//=&gt; 设置选区文字为宋体.</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="editor.Editor.Command.queryFontFamilyActive">
+<tt class="descclassname">Editor.Command.</tt><tt class="descname">queryFontFamilyActive</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.Command.queryFontFamilyActive" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>queryFontFamilyActive(value, element)</strong></div>
+<div class="line">查看指定元素是否被设置了对应字体</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>value</strong> (<em>String</em>) &#8211; 指定的字体值，例如 &#8220;SimSun&#8221;</li>
+<li><strong>element</strong> (<em>KISSY.Node</em>) &#8211; 编辑器中的某个元素</li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="draft.html">draft</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="dragUpload.html">dragUpload</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="elementPath.html">elementPath</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="flash.html">flash</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="fontFamily.html">fontFamily</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="fontSize.html">fontSize</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="foreColor.html">foreColor</a><ul class="simple">
-</ul>
-</li>
-</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>示例：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s2">&quot;queryFontFamilyActive&quot;</span><span class="p">,</span><span class="s2">&quot;SimSun&quot;</span><span class="p">,</span>
+<span class="nx">editor</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;document&quot;</span><span class="p">).</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">));</span> <span class="c1">//=&gt; 判断第一行第一个元素是否被设置了宋体</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -171,15 +283,16 @@
       <a href="../../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="backColor.html" title="backColor"
+      <a href="fontSize.html" title="fontSize"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../editor.html" title="Editor"
+      <a href="flash.html" title="flash"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../../index.html" >Component</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">Editor</a> &#187; </li> 
+      <li><a href="../index.html" >Editor</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Plugins</a> &#187; </li> 
     </ul>
 </div>
 					<div>

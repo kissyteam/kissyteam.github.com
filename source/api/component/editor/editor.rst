@@ -88,7 +88,7 @@ Configs Detail
 
 .. data:: Editor.config.pluginConfig
 
-    {Object} - 各个插件的配置键值对,例如
+    {Object} - 各个插件的配置键值对,每个插件的具体配置详见各个插件页面。例如
 
     .. code-block:: javascript
 
