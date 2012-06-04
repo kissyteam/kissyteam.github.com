@@ -61,7 +61,10 @@ Member Methods
    insertAfter.rst
    animate.rst
    stop.rst
+   pause.rst
+   resume.rst
    isRunning.rst
+   isPaused.rst
    show.rst
    hide.rst
    toggle.rst

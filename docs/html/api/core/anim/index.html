@@ -130,8 +130,11 @@
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference internal" href="#anim.Anim.prototype.isRunning" title="anim.Anim.prototype.isRunning"><tt class="xref py py-meth docutils literal"><span class="pre">isRunning()</span></tt></a></li>
+<li><a class="reference internal" href="#anim.Anim.prototype.isPaused" title="anim.Anim.prototype.isPaused"><tt class="xref py py-meth docutils literal"><span class="pre">isPaused()</span></tt></a></li>
 <li><a class="reference internal" href="#anim.Anim.prototype.run" title="anim.Anim.prototype.run"><tt class="xref py py-meth docutils literal"><span class="pre">run()</span></tt></a></li>
 <li><a class="reference internal" href="#anim.Anim.prototype.stop" title="anim.Anim.prototype.stop"><tt class="xref py py-meth docutils literal"><span class="pre">stop()</span></tt></a></li>
+<li><a class="reference internal" href="#anim.Anim.prototype.pause" title="anim.Anim.prototype.pause"><tt class="xref py py-meth docutils literal"><span class="pre">pause()</span></tt></a></li>
+<li><a class="reference internal" href="#anim.Anim.prototype.resume" title="anim.Anim.prototype.resume"><tt class="xref py py-meth docutils literal"><span class="pre">resume()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -140,6 +143,7 @@
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference internal" href="#anim.Anim.isRunning" title="anim.Anim.isRunning"><tt class="xref py py-meth docutils literal"><span class="pre">Anim.isRunning()</span></tt></a></li>
+<li><a class="reference internal" href="#anim.Anim.isPaused" title="anim.Anim.isPaused"><tt class="xref py py-meth docutils literal"><span class="pre">Anim.isPaused()</span></tt></a></li>
 <li><a class="reference internal" href="#anim.Anim.stop" title="anim.Anim.stop"><tt class="xref py py-meth docutils literal"><span class="pre">Anim.stop()</span></tt></a></li>
 </ul>
 </div></blockquote>
@@ -254,6 +258,26 @@
 </table>
 </dd></dl>
 
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<dl class="method">
+<dt id="anim.Anim.prototype.isPaused">
+<tt class="descclassname">Anim.prototype.</tt><tt class="descname">isPaused</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.prototype.isPaused" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>isPaused</strong> ()</div>
+<div class="line">判断当前动画对象是否被暂停.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return type:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="anim.Anim.prototype.run">
 <tt class="descclassname">Anim.prototype.</tt><tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.prototype.run" title="Permalink to this definition">¶</a></dt>
@@ -281,12 +305,57 @@
 </table>
 </dd></dl>
 
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<dl class="method">
+<dt id="anim.Anim.prototype.pause">
+<tt class="descclassname">Anim.prototype.</tt><tt class="descname">pause</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.prototype.pause" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>pause</strong> ()</div>
+<div class="line">在动画实例上调用, 暂停当前动画实例的动画.</div>
+</div>
+</dd></dl>
+
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<dl class="method">
+<dt id="anim.Anim.prototype.resume">
+<tt class="descclassname">Anim.prototype.</tt><tt class="descname">resume</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.prototype.resume" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>resume</strong> ()</div>
+<div class="line">在动画实例上调用, 继续当前动画实例的动画.</div>
+</div>
+</dd></dl>
+
 <dl class="method">
 <dt id="anim.Anim.isRunning">
 <tt class="descclassname">Anim.</tt><tt class="descname">isRunning</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.isRunning" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line">static <strong>Anim.isRunning</strong> (elem)</div>
 <div class="line"><a class="reference internal" href="#anim.Anim" title="anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt></a> 的静态方法, 用于判断 elem 上是否有动画对象在执行.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>elem</strong> (<em>HTMLElement|window</em>) &#8211; 作用动画的元素节点.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return type:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<dl class="method">
+<dt id="anim.Anim.isPaused">
+<tt class="descclassname">Anim.</tt><tt class="descname">isPaused</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.isPaused" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">static <strong>Anim.isPaused</strong> (elem)</div>
+<div class="line"><a class="reference internal" href="#anim.Anim" title="anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt></a> 的静态方法, 用于判断 elem 上是否有动画对象在暂停.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -329,6 +398,78 @@
 </ul>
 </div></blockquote>
 <p>不设置时, 表示停止所有队列中的所有动画;</p>
+</div></blockquote>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<dl class="method">
+<dt id="anim.Anim.pause">
+<tt class="descclassname">Anim.</tt><tt class="descname">pause</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.pause" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">static <strong>Anim.pause</strong> (elem, queueName)</div>
+<div class="line"><a class="reference internal" href="#anim.Anim" title="anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt></a> 的静态方法, 暂停某元素上的动画（集合）.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>elem</strong> (<em>HTMLElement|window</em>) &#8211; 作用动画的元素节点.</li>
+<li><strong>queueName</strong> (<em>String</em>) &#8211; <p>队列名字.</p>
+<p>设置 queueName 后, 表示停止元素上指定队列中的所有动画:</p>
+<blockquote>
+<div><blockquote>
+<div><ul>
+<li>null 表示默认队列的动画</li>
+<li>false 表示不排队的动画</li>
+<li>string 类型表示指定名称的队列的动画</li>
+</ul>
+</div></blockquote>
+<p>不设置时, 表示暂停所有队列中的所有动画;</p>
+</div></blockquote>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<dl class="method">
+<dt id="anim.Anim.resume">
+<tt class="descclassname">Anim.</tt><tt class="descname">resume</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.resume" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">static <strong>Anim.resume</strong> (elem, queueName)</div>
+<div class="line"><a class="reference internal" href="#anim.Anim" title="anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt></a> 的静态方法, 继续某元素上的动画（集合）.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>elem</strong> (<em>HTMLElement|window</em>) &#8211; 作用动画的元素节点.</li>
+<li><strong>queueName</strong> (<em>String</em>) &#8211; <p>队列名字.</p>
+<p>设置 queueName 后, 表示停止元素上指定队列中的所有动画:</p>
+<blockquote>
+<div><blockquote>
+<div><ul>
+<li>null 表示默认队列的动画</li>
+<li>false 表示不排队的动画</li>
+<li>string 类型表示指定名称的队列的动画</li>
+</ul>
+</div></blockquote>
+<p>不设置时, 表示继续所有队列中的所有动画;</p>
 </div></blockquote>
 </li>
 </ul>
