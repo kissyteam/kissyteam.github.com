@@ -5,7 +5,6 @@ API Documentation
 
 .. toctree::
    :titlesonly:
-   
 
    seed/index
    core/index
