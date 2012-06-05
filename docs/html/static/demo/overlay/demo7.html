@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Dialog - 从 Markup 中构建</title><script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
+<link href="http://a.tbcdn.cn/s/kissy/1.2.0/css/base.css" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/cool.css"/>
+
+<link href="../button/assets/custombutton.css" rel="stylesheet"/>
+</head>
+<body>
+<style>
+    .ks-overlay {
+        position:absolute;
+        left:-9999px;
+        top:-9999px;
+    }
+    
+    .tb-attention {
+        position: absolute;
+        left: -9999px;
+        top: -99999px;
+        margin-left: 5px;
+        width: 480px;
+
+        background-color: #FFFFFF;
+        border: 1px solid #C30009;
+    }
+
+    .tb-attention .tb-note-title {
+        background: none repeat scroll 0 0 #FFF8F7;
+        border-bottom: 1px solid #F3E9E7;
+        display: block;
+        height: 24px;
+        line-height: 24px;
+        padding-left: 8px;
+        position: relative;
+    }
+
+    .tb-key dl {
+        padding: 6px;
+    }
+
+    .tb-key dt {
+        float: left;
+        margin-top: 4px;
+        text-align: right;
+        width: 82px;
+    }
+
+    .tb-key dd {
+        float: left;
+        width: 338px;
+    }
+
+    .tb-key li {
+        background-color: #FFFFFF;
+        float: left;
+        line-height: 20px;
+        margin: 0 4px 4px 0;
+        padding: 1px;
+        position: relative;
+        vertical-align: middle;
+    }
+
+    .tb-key li a {
+        background-color: #FFFFFF;
+        border: 1px solid #C8C9CD;
+        color: #000000;
+        display: block;
+        min-width: 10px;
+        padding: 0 6px;
+        text-align: center;
+        text-decoration: none;
+        white-space: nowrap;
+        width: auto !important;
+    }
+
+    .tb-key li span {
+        padding-left: 1px;
+    }
+
+    .tb-key .tb-img li span {
+        display: block;
+        text-indent: -9999em;
+    }
+
+    .ks-clear:after {
+        content: '\20';
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .ks-clear {
+        *zoom: 1;
+    }
+
+    .tb-attention .ks-ext-close .ks-ext-close-x {
+        background: transparent url("http://img01.taobaocdn.com/tps/i1/T1krl0Xk8zXXXXXXXX-194-382.png") -75px -99px no-repeat;
+        height: 8px;
+    }
+
+    .tb-attention .ks-ext-close, .tb-attention .ks-ext-close:hover {
+        background: none;
+        border: none;
+    }
+</style>
+<br/><br/><br/>
+<div id="button-wrap"></div>
+
+<div class="tb-key tb-attention" id="choose">
+    <p class="ks-stdmod-header tb-note-title">请选择您要的商品信息
+    </p>
+    <div class="ks-stdmod-body tb-skin">
+        <dl class="tb-prop ks-clear">
+            <dt>尺　　码：</dt>
+            <dd>
+                <ul data-property="尺码" class="ks-clear J_TSaleProp  ">
+                    <li data-value="20503:3271530"><a href="#"><span>M</span></a></li>
+
+                    <li data-value="20503:3271531"><a href="#"><span>L</span></a></li>
+                    <li data-value="20503:3267945"><a href="#"><span>XL</span></a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl class="tb-prop ks-clear">
+            <dt>颜　　色：</dt>
+            <dd>
+
+                <ul data-property="颜色" class="ks-clear J_TSaleProp tb-img  ">
+                    <li data-value="1627207:3232483" title="TX043 白色">
+                        <a href="#" style="background:url(http://img01.taobaocdn.com/bao/uploaded/i1/290649218/T2DaRjXllMXXXXXXXX_!!290649218.jpg_30x30.jpg) center no-repeat;">
+                            <span>TX043 白色</span>
+                        </a>
+                    </li>
+                    <li data-value="1627207:3232484" title="TX043 蓝色">
+                        <a href="#" style="background:url(http://img04.taobaocdn.com/bao/uploaded/i4/290649218/T2OqJjXlpMXXXXXXXX_!!290649218.jpg_30x30.jpg) center no-repeat;">
+                            <span>TX043 蓝色</span>
+                        </a>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<script src="assets/demo7.js"></script>
+</body>
+</html>

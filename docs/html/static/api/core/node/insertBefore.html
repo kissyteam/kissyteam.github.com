@@ -1,0 +1,19 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <style>
+      p { background:yellow; }
+    </style>
+     <script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
+    </head>
+   <body>
+  <div id="foo">FOO!</div><p>I would like to say: </p>
+
+    <script>
+        KISSY.use("node",function(S,NodeList){
+            NodeList.all("p").insertBefore("#foo");
+        });        
+    </script>
+    
+    </body>
+    </html>  

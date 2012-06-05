@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>div { background:yellow; }</style>
+  <script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
+</head>
+<body>
+    <div id="foo">FOO!</div>
+  
+    <span>I have something to say... </span>
+  
+    <span> once more : </span>
+  
+    <script>
+        KISSY.use("node",function(S,NodeList){
+            NodeList.all("span").prependTo(NodeList.all("#foo"));
+        });        
+    </script>
+</body>
+</html>
