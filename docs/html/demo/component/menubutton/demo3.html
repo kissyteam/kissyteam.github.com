@@ -128,19 +128,19 @@
 <div class="section" id="id2">
 <h2>级联菜单<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><iframe width="100%" height="200" class="iframe-demo" src="../../../static/demo/menubutton/demo3.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;menubutton&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">MenuButton</span><span class="p">)</span> <span class="p">{</span>
+<div><iframe width="100%" height="200" class="iframe-demo" src="../../../static/demo/menubutton/demo3.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;menubutton&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">MenuButton</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;上海&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;上海市&quot;</span><span class="p">,</span><span class="s2">&quot;崇明&quot;</span><span class="p">],</span>
-        <span class="s2">&quot;河南&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;焦作&quot;</span><span class="p">,</span><span class="s2">&quot;洛阳&quot;</span><span class="p">],</span>
-        <span class="s2">&quot;浙江&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;杭州&quot;</span><span class="p">,</span><span class="s2">&quot;温州&quot;</span><span class="p">]</span>
+        <span class="s2">&quot;上海&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;上海市&quot;</span><span class="p">,</span> <span class="s2">&quot;崇明&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;河南&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;焦作&quot;</span><span class="p">,</span> <span class="s2">&quot;洛阳&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;浙江&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;杭州&quot;</span><span class="p">,</span> <span class="s2">&quot;温州&quot;</span><span class="p">]</span>
     <span class="p">};</span>
     <span class="c1">// 初始化第一个菜单</span>
     <span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MenuButton</span><span class="p">.</span><span class="nx">Select</span><span class="p">({</span>
         <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;c2c-&quot;</span><span class="p">,</span>
-        <span class="nx">menuAlign</span><span class="o">:</span><span class="p">{</span>
-            <span class="nx">offset</span><span class="o">:</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-        <span class="p">},</span>
         <span class="nx">menuCfg</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">align</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">offset</span><span class="o">:</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="p">},</span>
             <span class="nx">width</span><span class="o">:</span><span class="mi">70</span>
         <span class="p">}</span>
     <span class="p">});</span>
@@ -160,10 +160,10 @@
     <span class="c1">// 初始化第二个菜单</span>
     <span class="kd">var</span> <span class="nx">s2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MenuButton</span><span class="p">.</span><span class="nx">Select</span><span class="p">({</span>
         <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;c2c-&quot;</span><span class="p">,</span>
-        <span class="nx">menuAlign</span><span class="o">:</span><span class="p">{</span>
-            <span class="nx">offset</span><span class="o">:</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-        <span class="p">},</span>
         <span class="nx">menuCfg</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">align</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">offset</span><span class="o">:</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="p">},</span>
             <span class="nx">width</span><span class="o">:</span><span class="mi">70</span>
         <span class="p">}</span>
     <span class="p">});</span>
@@ -177,7 +177,7 @@
         <span class="c1">// 先把第二个菜单项整个删除;</span>
         <span class="nx">s2</span><span class="p">.</span><span class="nx">removeItems</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
         <span class="c1">// 再添加新项</span>
-        <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">vs</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v_</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">vs</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">v_</span><span class="p">)</span> <span class="p">{</span>
             <span class="nx">s2</span><span class="p">.</span><span class="nx">addItem</span><span class="p">(</span><span class="k">new</span> <span class="nx">MenuButton</span><span class="p">.</span><span class="nx">Option</span><span class="p">({</span>
                 <span class="nx">value</span><span class="o">:</span><span class="nx">v_</span><span class="p">,</span>
                 <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;c2c-&quot;</span><span class="p">,</span>
@@ -187,7 +187,7 @@
         <span class="nx">s2</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;selectedIndex&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="nx">s1</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">s1</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">v</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">);</span>
         <span class="nx">update</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span>
     <span class="p">});</span>

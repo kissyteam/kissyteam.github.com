@@ -55,9 +55,11 @@ KISSY.use("menu", function (S, Menu) {
         b = new Menu.SubMenu({
             prefixCls:"nav-",
             content:"<span class='title' style='width:58px'>淘宝网</span>",
-            menuAlign:{
-                offset:[-1, -1],
-                points:['bl', 'tl']
+            menuCfg:{
+                align:{
+                    offset:[-1, -1],
+                    points:['bl', 'tl']
+                }
             },
             menu:sb
         });

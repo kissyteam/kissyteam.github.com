@@ -131,14 +131,14 @@
 <div class="section" id="id2">
 <h2>自定义样式及分割线的使用<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><iframe width="100%" height="180" class="iframe-demo" src="../../../static/demo/menu/demo2.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node,menu&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">Menu</span><span class="p">)</span> <span class="p">{</span>
+<div><iframe width="100%" height="180" class="iframe-demo" src="../../../static/demo/menu/demo2.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node,menu&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">Menu</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// 初始化一个菜单, 仅包含一个菜单项</span>
     <span class="kd">var</span> <span class="nx">menu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">({</span>
-        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;my-&#39;</span><span class="p">,</span>
-        <span class="nx">render</span><span class="o">:</span> <span class="s1">&#39;#menu_container&#39;</span><span class="p">,</span>
+        <span class="nx">prefixCls</span><span class="o">:</span><span class="s1">&#39;my-&#39;</span><span class="p">,</span>
+        <span class="nx">render</span><span class="o">:</span><span class="s1">&#39;#menu_container&#39;</span><span class="p">,</span>
         <span class="nx">children</span><span class="o">:</span><span class="p">[</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
-            <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;my-&#39;</span><span class="p">,</span>
-            <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;首页&#39;</span>
+            <span class="nx">prefixCls</span><span class="o">:</span><span class="s1">&#39;my-&#39;</span><span class="p">,</span>
+            <span class="nx">content</span><span class="o">:</span><span class="s1">&#39;首页&#39;</span>
         <span class="p">}),</span>
             <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Separator</span><span class="p">({</span>
                 <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;my-&quot;</span>
@@ -147,30 +147,32 @@
 
     <span class="c1">// 依次添加两个子菜单</span>
     <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">([</span>
-        <span class="p">{</span><span class="s1">&#39;我的淘宝&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;已买到的宝贝&#39;</span><span class="p">,</span> <span class="s1">&#39;已卖出的宝贝&#39;</span><span class="p">]},</span>
-        <span class="p">{</span><span class="s1">&#39;收藏夹&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;收藏的宝贝&#39;</span><span class="p">,</span> <span class="s1">&#39;收藏的店铺&#39;</span><span class="p">]}</span>
-    <span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">idx</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="nx">k</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">{</span><span class="s1">&#39;我的淘宝&#39;</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;已买到的宝贝&#39;</span><span class="p">,</span> <span class="s1">&#39;已卖出的宝贝&#39;</span><span class="p">]},</span>
+        <span class="p">{</span><span class="s1">&#39;收藏夹&#39;</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;收藏的宝贝&#39;</span><span class="p">,</span> <span class="s1">&#39;收藏的店铺&#39;</span><span class="p">]}</span>
+    <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">idx</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="nx">k</span><span class="p">)</span> <span class="p">{</span>
             <span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">PopupMenu</span><span class="p">({</span>
-                <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;my-&#39;</span>
+                <span class="nx">prefixCls</span><span class="o">:</span><span class="s1">&#39;my-&#39;</span>
             <span class="p">});</span>
-            <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nx">p</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
-                    <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;my-&#39;</span><span class="p">,</span>
-                    <span class="nx">content</span><span class="o">:</span> <span class="nx">o</span>
+                    <span class="nx">prefixCls</span><span class="o">:</span><span class="s1">&#39;my-&#39;</span><span class="p">,</span>
+                    <span class="nx">content</span><span class="o">:</span><span class="nx">o</span>
                 <span class="p">}));</span>
             <span class="p">});</span>
 
             <span class="nx">menu</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">SubMenu</span><span class="p">({</span>
-                <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;my-&#39;</span><span class="p">,</span>
-                <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;&lt;div class=&#39;my-menuitem-content&#39;&gt;&quot;</span><span class="o">+</span><span class="nx">k</span><span class="o">+</span><span class="s2">&quot;&lt;/div&gt;&quot;</span><span class="p">,</span>
-                <span class="nx">menu</span><span class="o">:</span> <span class="nx">p</span><span class="p">,</span>
+                <span class="nx">prefixCls</span><span class="o">:</span><span class="s1">&#39;my-&#39;</span><span class="p">,</span>
+                <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;&lt;div class=&#39;my-menuitem-content&#39;&gt;&quot;</span> <span class="o">+</span> <span class="nx">k</span> <span class="o">+</span> <span class="s2">&quot;&lt;/div&gt;&quot;</span><span class="p">,</span>
+                <span class="nx">menu</span><span class="o">:</span><span class="nx">p</span><span class="p">,</span>
                 <span class="c1">// 设置子菜单与主菜单的对齐方式, 与 align 保持一致</span>
-                <span class="nx">menuAlign</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="nx">offset</span><span class="o">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+                <span class="nx">menuCfg</span><span class="o">:</span><span class="p">{</span>
+                    <span class="nx">align</span><span class="o">:</span><span class="p">{</span>
+                        <span class="nx">offset</span><span class="o">:</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+                    <span class="p">}</span>
                 <span class="p">},</span>
                 <span class="c1">// 设置菜单显示延迟时间</span>
-                <span class="nx">menuDelay</span><span class="o">:</span> <span class="mi">50</span>
+                <span class="nx">menuDelay</span><span class="o">:</span><span class="mi">50</span>
             <span class="p">}));</span>
 
             <span class="nx">menu</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Separator</span><span class="p">({</span>
@@ -180,8 +182,8 @@
     <span class="p">});</span>
 
     <span class="nx">menu</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
-        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;my-&#39;</span><span class="p">,</span>
-        <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;购物车&#39;</span>
+        <span class="nx">prefixCls</span><span class="o">:</span><span class="s1">&#39;my-&#39;</span><span class="p">,</span>
+        <span class="nx">content</span><span class="o">:</span><span class="s1">&#39;购物车&#39;</span>
     <span class="p">}));</span>
     <span class="nx">menu</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
 <span class="p">});</span>

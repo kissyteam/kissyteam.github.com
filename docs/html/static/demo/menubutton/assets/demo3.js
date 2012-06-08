@@ -1,16 +1,16 @@
-KISSY.use("menubutton", function(S, MenuButton) {
+KISSY.use("menubutton", function (S, MenuButton) {
     var data = {
-        "上海":["上海市","崇明"],
-        "河南":["焦作","洛阳"],
-        "浙江":["杭州","温州"]
+        "上海":["上海市", "崇明"],
+        "河南":["焦作", "洛阳"],
+        "浙江":["杭州", "温州"]
     };
     // 初始化第一个菜单
     var s1 = new MenuButton.Select({
         prefixCls:"c2c-",
-        menuAlign:{
-            offset:[0,-1]
-        },
         menuCfg:{
+            align:{
+                offset:[0, -1]
+            },
             width:70
         }
     });
@@ -30,10 +30,10 @@ KISSY.use("menubutton", function(S, MenuButton) {
     // 初始化第二个菜单
     var s2 = new MenuButton.Select({
         prefixCls:"c2c-",
-        menuAlign:{
-            offset:[0,-1]
-        },
         menuCfg:{
+            align:{
+                offset:[0, -1]
+            },
             width:70
         }
     });
@@ -47,7 +47,7 @@ KISSY.use("menubutton", function(S, MenuButton) {
         // 先把第二个菜单项整个删除;
         s2.removeItems(true);
         // 再添加新项
-        S.each(vs, function(v_) {
+        S.each(vs, function (v_) {
             s2.addItem(new MenuButton.Option({
                 value:v_,
                 prefixCls:"c2c-",
@@ -57,7 +57,7 @@ KISSY.use("menubutton", function(S, MenuButton) {
         s2.set("selectedIndex", 0);
     }
 
-    s1.on("click", function(e) {
+    s1.on("click", function (e) {
         var v = e.target.get("value");
         update(v);
     });
