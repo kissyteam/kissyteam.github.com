@@ -1,0 +1,438 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>动态发布方式 &mdash; KISSY v1.2 Documentation</title>
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
+<link rel="stylesheet" href="../../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../../static/pygments.css"/>
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+    (function(){
+        var js=[],h=window.location.href,d=document;
+            js.push("../../../../static/jquery.js");
+            js.push("../../../../static/underscore.js");
+            js.push("../../../../static/doctools.js");
+        for(var i=0;i<js.length;i++){
+            var j=js[i];
+            if(h.indexOf("localhost/kissy_git/")==-1&&j.indexOf("jquery.js")!=-1){
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
+            }else{
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
+            }
+        }
+    })();
+</script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="publishing-static.html" title="静态发布方式"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="flashplayer-parameters.html" title="FlashPlayer 参数"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../../index.html">KISSY v1.2 Documentation</a> &#187; </li>
+      <li><a href="../../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >Component</a> &#187; </li>
+      <li><a href="../index.html" >flash</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">flash 基础</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="id1">
+<h1>动态发布方式<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">具有以下几种动态发布方式:</div>
+<div class="line">- <a class="reference internal" href="#flash-dynamic-section1"><em>最小限度的动态发布</em></a></div>
+<div class="line">- <a class="reference internal" href="#flash-dynamic-section2"><em>套用CSS</em></a></div>
+<div class="line">- <a class="reference internal" href="#flash-dynamic-section3"><em>使用flashvars配置flash对象</em></a></div>
+<div class="line">- <a class="reference internal" href="#flash-dynamic-section4"><em>使用 JSON 配置flash对象</em></a></div>
+<div class="line">- <a class="reference internal" href="#flash-dynamic-section5"><em>使用快速安装(express install)</em></a></div>
+</div>
+<blockquote>
+<div></div></blockquote>
+<div class="section" id="flash-dynamic-section1">
+<span id="id2"></span><h2>最小限度的动态发布<a class="headerlink" href="#flash-dynamic-section1" title="Permalink to this headline">¶</a></h2>
+<p><strong>HTML步骤:</strong></p>
+<p>1, 在SWF内容前，至少引入以下JS：</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;ks-core.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;json.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;flash-pkg.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>2, 在期望插入SWF写上HTML钩子.如命名钩子为</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;myFlashContent&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>请不要在此入口HTML上写上其他HTML属性,此处内容将会被替换。</li>
+<li>尽可能减少针对此ID的CSS样式。</li>
+</ul>
+</div>
+<p><strong>Javascript步骤:</strong></p>
+<p>1, 期望插入的SWF对象之后，插入操作SWF的相关JS代码：</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;PATH2YOURSCRIPT.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>2, 或在SCRIPT标签中写上相关操作SWF的JS代码</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+    <span class="c1">//do sth.</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>3, 在代码中可以这么写：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Flash</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;#myFlashContent&#39;</span><span class="p">,</span>
+    <span class="p">{</span>
+     <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;PATH2YOURSWF.swf&#39;</span>
+    <span class="p">}</span>
+<span class="p">);</span>  <span class="c1">//注意  &quot;#&quot; 号.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="css">
+<span id="flash-dynamic-section2"></span><h2>套用CSS<a class="headerlink" href="#css" title="Permalink to this headline">¶</a></h2>
+<p><strong>HTML步骤:</strong></p>
+<p>同上面的 <a class="reference internal" href="#flash-dynamic-section1"><em>最小限度的动态发布</em></a></p>
+<p><strong>Javascript步骤:</strong></p>
+<p>1, 仅需要修改&#8221;最小限度的动态发布&#8221;第3步:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Flash</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;#myFlashContent&#39;</span><span class="p">,</span>
+    <span class="p">{</span>
+     <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;PATH2YOURSWF.swf&#39;</span><span class="p">,</span>
+     <span class="nx">attrs</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s1">&#39;class&#39;</span><span class="o">:</span><span class="s2">&quot;swfstyle&quot;</span><span class="p">,</span>
+                <span class="nx">width</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span>
+                <span class="nx">height</span><span class="o">:</span> <span class="mi">600</span>
+            <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>2, 如果希望仅由CSS来控制高宽变化，则请将高宽置 100%:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Flash</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;#myFlashContent&#39;</span><span class="p">,</span>
+    <span class="p">{</span>
+     <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;PATH2YOURSWF.swf&#39;</span><span class="p">,</span>
+     <span class="nx">attrs</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s1">&#39;class&#39;</span><span class="o">:</span><span class="s2">&quot;swfstyle&quot;</span><span class="p">,</span>  <span class="c1">// 指定样式名 ，多个请由英文半角逗号隔开。</span>
+                <span class="nx">width</span><span class="o">:</span> <span class="s2">&quot;100%&quot;</span><span class="p">,</span>
+                <span class="nx">height</span><span class="o">:</span> <span class="s2">&quot;100%&quot;</span>
+            <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>CSS步骤:</strong></p>
+<div class="highlight-html"><div class="highlight"><pre>.swfstyle {
+    width: 250px;
+    height: 250px;
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="flashvarsflash">
+<span id="flash-dynamic-section3"></span><h2>使用flashvars配置flash对象<a class="headerlink" href="#flashvarsflash" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">本部分描述将假设您已了解以下内容：</div>
+<div class="line"><br /></div>
+<div class="line-block">
+<div class="line">- <a class="reference internal" href="#flash-dynamic-section1"><em>最小限度的动态发布</em></a></div>
+<div class="line">- <a class="reference internal" href="#flash-dynamic-section2"><em>套用CSS</em></a></div>
+</div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">flashvars</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// 以下为传递给 flash 对象的参数</span>
+    <span class="nx">name1</span><span class="o">:</span> <span class="s1">&#39;configuration value #1&#39;</span><span class="p">,</span>
+    <span class="nx">name2</span><span class="o">:</span> <span class="s1">&#39;configuration value #2&#39;</span><span class="p">,</span>
+    <span class="nx">name3</span><span class="o">:</span> <span class="s1">&#39;Hello World! I am changing&#39;</span>
+<span class="p">}</span>
+
+<span class="nx">Flash</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;#myFlashContent&#39;</span><span class="p">,</span>
+    <span class="p">{</span>
+     <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;PATH2YOURSWF.swf&#39;</span><span class="p">,</span>
+     <span class="nx">params</span><span class="o">:</span><span class="p">{</span>
+           <span class="nx">flashvars</span> <span class="o">:</span> <span class="nx">flashvars</span>
+     <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="json-flash">
+<span id="flash-dynamic-section4"></span><h2>使用 JSON 配置flash对象<a class="headerlink" href="#json-flash" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">本部分描述将假设您已了解以下内容：</div>
+<div class="line-block">
+<div class="line">- <a class="reference internal" href="#flash-dynamic-section1"><em>最小限度的动态发布</em></a></div>
+<div class="line">- <a class="reference internal" href="#flash-dynamic-section2"><em>套用CSS</em></a></div>
+</div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">flashvars</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// 以下为传递给 flash 对象的参数</span>
+    <span class="c1">// config 对象将被自动JSON字符串化</span>
+    <span class="nx">config</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">clip</span><span class="o">:</span>  <span class="p">{</span>
+            <span class="nx">autoPlay</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nx">autoBuffering</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">source</span><span class="o">:</span> <span class="p">[</span>
+                  <span class="s1">&#39;http://movie_a.flv&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;http://movie_b.flv&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;http://movie_c.flv&#39;</span>
+                  <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">array</span><span class="o">:</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="nx">Flash</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;#myFlashContent&#39;</span><span class="p">,</span>
+    <span class="p">{</span>
+     <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;PATH2YOURSWF.swf&#39;</span><span class="p">,</span>
+     <span class="nx">params</span><span class="o">:</span><span class="p">{</span>
+           <span class="nx">flashvars</span> <span class="o">:</span> <span class="nx">flashvars</span>
+     <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="express-install">
+<span id="flash-dynamic-section5"></span><h2>使用快速安装(express install)<a class="headerlink" href="#express-install" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">本部分描述将假设您已了解以下内容：</div>
+<div class="line-block">
+<div class="line">- <a class="reference internal" href="#flash-dynamic-section1"><em>最小限度的动态发布</em></a></div>
+<div class="line">- <a class="reference internal" href="#flash-dynamic-section2"><em>套用CSS</em></a></div>
+<div class="line">- <a class="reference external" href="http://www.adobe.com/devnet/flashplayer/articles/express_install.html">Flash快速安装(express install)</a></div>
+</div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">F</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;#myFlashContent&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;assets/test.swf&#39;</span><span class="p">,</span>
+    <span class="nx">xi</span><span class="o">:</span> <span class="s1">&#39;express-install/expressInstall.swf&#39;</span><span class="p">,</span>
+    <span class="nx">version</span><span class="o">:</span> <span class="mf">20.2</span>   <span class="c1">// 强行观摩 :p</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">需要flash player 8 版本以上。</p>
+</div>
+</div>
+</div>
+
+
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="publishing-static.html" title="静态发布方式"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="flashplayer-parameters.html" title="FlashPlayer 参数"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../../index.html">KISSY v1.2 Documentation</a> &#187; </li>
+      <li><a href="../../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >Component</a> &#187; </li>
+      <li><a href="../index.html" >flash</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">flash 基础</a> &#187; </li> 
+    </ul>
+</div>
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            $("#openComment").attr("disabled",true);
+        }else{
+            $("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            $("#openComment").bind("change",function(){
+                window.localStorage.setItem("kissy-commment",$("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../../seed/loader/index.html">loader</a></li>
+        <li><a href="../../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../../seed/lang/index.html">lang</a></li>
+        <li><a href="../../../seed/web/index.html">web</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../../core/ua/index.html">ua</a></li>
+        <li><a href="../../../core/dom/index.html">dom</a></li>
+        <li><a href="../../../core/event/index.html">event</a></li>
+        <li><a href="../../../core/node/index.html">node</a></li>
+        <li><a href="../../../core/json/index.html">json</a></li>
+        <li><a href="../../../core/ajax/index.html">ajax</a></li>
+        <li><a href="../../../core/cookie/index.html">cookie</a></li>
+        <li><a href="../../../core/base/index.html">base</a></li>
+        <li><a href="../../../core/anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../../mvc/index.html">mvc</a></li>
+        <li><a href="../../template/index.html">template</a></li>
+        <li><a href="../../datalazyload/index.html">datalazyload</a></li>
+        <li><a href="../index.html">flash</a></li>
+        <li><a href="../../dd/index.html">dd</a></li>
+        <li><a href="../../resizable/index.html">resizable</a></li>
+        <li><a href="../../switchable/index.html">switchable</a></li>
+        <li><a href="../../suggest/index.html">suggest</a></li>
+        <li><a href="../../calendar/index.html">calendar</a></li>
+        <li><a href="../../imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../../overlay/index.html">overlay</a></li>
+        <li><a href="../../uibase/index.html">uibase</a></li>
+        <li><a href="../../component/index.html">component</a></li>
+        <li><a href="../../button/index.html">button</a></li>
+        <li><a href="../../menu/index.html">menu</a></li>
+        <li><a href="../../menubutton/index.html">menubutton</a></li>
+        <li><a href="../../tree/index.html">tree</a></li>
+        <li><a href="../../waterfall/index.html">waterfall</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
+        <li><a href="../../editor/index.html">editor</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

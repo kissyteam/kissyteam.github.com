@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>div { background:yellow; }</style>
+  <script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"></script>
+</head>
+<body>
+    <div id="foo">FOO! is </div>
+  
+    <span>I have something to say... </span>
+  
+    <span> once more : </span>
+  
+    <script>
+        KISSY.use("node",function(S,NodeList){
+            NodeList.all("span").appendTo(NodeList.all("#foo"));
+        });        
+    </script>
+</body>
+</html>

@@ -1,0 +1,758 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>Overlay &mdash; KISSY v1.2 Documentation</title>
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+    (function(){
+        var js=[],h=window.location.href,d=document;
+            js.push("../../../static/jquery.js");
+            js.push("../../../static/underscore.js");
+            js.push("../../../static/doctools.js");
+        for(var i=0;i<js.length;i++){
+            var j=js[i];
+            if(h.indexOf("localhost/kissy_git/")==-1&&j.indexOf("jquery.js")!=-1){
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
+            }else{
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
+            }
+        }
+    })();
+</script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="dialog.html" title="Dialog"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="Overlay"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.2 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Overlay</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="overlay">
+<h1>Overlay<a class="headerlink" href="#overlay" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">悬浮的对话框</div>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#overlay.Overlay" title="overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="config-attributes">
+<h2>Config Attributes<a class="headerlink" href="#config-attributes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#overlay.Overlay.config.prefixCls" title="overlay.Overlay.config.prefixCls"><tt class="xref py py-data docutils literal"><span class="pre">prefixCls</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.srcNode" title="overlay.Overlay.config.srcNode"><tt class="xref py py-data docutils literal"><span class="pre">srcNode</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.width" title="overlay.Overlay.config.width"><tt class="xref py py-data docutils literal"><span class="pre">width</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.height" title="overlay.Overlay.config.height"><tt class="xref py py-data docutils literal"><span class="pre">height</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.elCls" title="overlay.Overlay.config.elCls"><tt class="xref py py-data docutils literal"><span class="pre">elCls</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.content" title="overlay.Overlay.config.content"><tt class="xref py py-data docutils literal"><span class="pre">content</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.zIndex" title="overlay.Overlay.config.zIndex"><tt class="xref py py-data docutils literal"><span class="pre">zIndex</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.x" title="overlay.Overlay.config.x"><tt class="xref py py-data docutils literal"><span class="pre">x</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.y" title="overlay.Overlay.config.y"><tt class="xref py py-data docutils literal"><span class="pre">y</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.xy" title="overlay.Overlay.config.xy"><tt class="xref py py-data docutils literal"><span class="pre">xy</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.align" title="overlay.Overlay.config.align"><tt class="xref py py-data docutils literal"><span class="pre">align</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.effect" title="overlay.Overlay.config.effect"><tt class="xref py py-data docutils literal"><span class="pre">effect</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.resize" title="overlay.Overlay.config.resize"><tt class="xref py py-data docutils literal"><span class="pre">resize</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.closable" title="overlay.Overlay.config.closable"><tt class="xref py py-data docutils literal"><span class="pre">closable</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.closeAction" title="overlay.Overlay.config.closeAction"><tt class="xref py py-data docutils literal"><span class="pre">closeAction</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.elBefore" title="overlay.Overlay.config.elBefore"><tt class="xref py py-data docutils literal"><span class="pre">elBefore</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.render" title="overlay.Overlay.config.render"><tt class="xref py py-data docutils literal"><span class="pre">render</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#overlay.Overlay.prototype.x" title="overlay.Overlay.prototype.x"><tt class="xref py py-attr docutils literal"><span class="pre">x</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.prototype.y" title="overlay.Overlay.prototype.y"><tt class="xref py py-attr docutils literal"><span class="pre">y</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.prototype.xy" title="overlay.Overlay.prototype.xy"><tt class="xref py py-attr docutils literal"><span class="pre">xy</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.prototype.align" title="overlay.Overlay.prototype.align"><tt class="xref py py-attr docutils literal"><span class="pre">align</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.prototype.closable" title="overlay.Overlay.prototype.closable"><tt class="xref py py-attr docutils literal"><span class="pre">closable</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.prototype.visible" title="overlay.Overlay.prototype.visible"><tt class="xref py py-attr docutils literal"><span class="pre">visible</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.prototype.el" title="overlay.Overlay.prototype.el"><tt class="xref py py-attr docutils literal"><span class="pre">el</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.prototype.contentEl" title="overlay.Overlay.prototype.contentEl"><tt class="xref py py-attr docutils literal"><span class="pre">contentEl</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#overlay.Overlay.prototype.render" title="overlay.Overlay.prototype.render"><tt class="xref py py-meth docutils literal"><span class="pre">render()</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.prototype.show" title="overlay.Overlay.prototype.show"><tt class="xref py py-meth docutils literal"><span class="pre">show()</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.prototype.hide" title="overlay.Overlay.prototype.hide"><tt class="xref py py-meth docutils literal"><span class="pre">hide()</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.prototype.align" title="overlay.Overlay.prototype.align"><tt class="xref py py-meth docutils literal"><span class="pre">align()</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.prototype.center" title="overlay.Overlay.prototype.center"><tt class="xref py py-meth docutils literal"><span class="pre">center()</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.prototype.move" title="overlay.Overlay.prototype.move"><tt class="xref py py-meth docutils literal"><span class="pre">move()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#overlay.Overlay.hide" title="overlay.Overlay.hide"><tt class="xref py py-func docutils literal"><span class="pre">hide()</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.show" title="overlay.Overlay.show"><tt class="xref py py-func docutils literal"><span class="pre">show()</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.beforeVisibleChange" title="overlay.Overlay.beforeVisibleChange"><tt class="xref py py-func docutils literal"><span class="pre">beforeVisibleChange()</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.afterRenderUI" title="overlay.Overlay.afterRenderUI"><tt class="xref py py-func docutils literal"><span class="pre">afterRenderUI()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="overlay.Overlay">
+<em class="property">class </em><tt class="descclassname">overlay.</tt><tt class="descname">Overlay</tt><a class="headerlink" href="#overlay.Overlay" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>Overlay</strong> (config)</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 配置项, 详细见下方 <strong>Config Attributes Detail</strong> .</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>使用前请加上初始样式</p>
+<div class="last highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+    <span class="nc">.ks-overlay</span> <span class="p">{</span>
+        <span class="k">position</span><span class="o">:</span><span class="k">absolute</span><span class="p">;</span>
+        <span class="k">left</span><span class="o">:-</span><span class="m">9999px</span><span class="p">;</span>
+        <span class="k">top</span><span class="o">:-</span><span class="m">9999px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="config-attributes-detail">
+<h2>Config Attributes Detail<a class="headerlink" href="#config-attributes-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="overlay.Overlay.config.prefixCls">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">prefixCls</tt><a class="headerlink" href="#overlay.Overlay.config.prefixCls" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 可选, 默认为&#8221;ks-&#8221;, 样式类名前缀, 如悬浮层根元素会加上样式类：&#8221;ks-overlay&#8221;. kissy 1.2 版本以前设置无效, 都为 &#8220;ks-&#8221;.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.render">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">render</tt><a class="headerlink" href="#overlay.Overlay.config.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>{KISSY.Node} - 浮层需要渲染的容器节点。默认 body.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.elBefore">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">elBefore</tt><a class="headerlink" href="#overlay.Overlay.config.elBefore" title="Permalink to this definition">¶</a></dt>
+<dd><p>{KISSY.Node} - 浮层根节点需要渲染的参照元素，渲染在该元素之前。和 render 同时配置的话，该配置优先。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.srcNode">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">srcNode</tt><a class="headerlink" href="#overlay.Overlay.config.srcNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 可选, 用于取悬浮层根节点, 可为&#8221;#id&#8221;或&#8221;.class&#8221;. 当不设置时表示新建一个 HTMLElement 插入到页面中.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">初始 srcNode 不能设置为 display:none ，需要设置为 position:absolute;left:-9999px;top:-9999px;</p>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.width">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">width</tt><a class="headerlink" href="#overlay.Overlay.config.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number | String} - 可选, 悬浮层宽度. 整数表示单元为 px.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.height">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">height</tt><a class="headerlink" href="#overlay.Overlay.config.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number | String} - 可选, 悬浮层高度. 整数表示单元为 px.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.elCls">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">elCls</tt><a class="headerlink" href="#overlay.Overlay.config.elCls" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 可选, 添加到悬浮层根元素的样式.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.content">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">content</tt><a class="headerlink" href="#overlay.Overlay.config.content" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 可选, 设置悬浮层的内容 html.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.zIndex">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">zIndex</tt><a class="headerlink" href="#overlay.Overlay.config.zIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 可选, 默认为 9999, 设置悬浮层的 z-index 值.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.x">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">x</tt><a class="headerlink" href="#overlay.Overlay.config.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 可选, 悬浮层相对于文档根节点的 x 坐标.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.y">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">y</tt><a class="headerlink" href="#overlay.Overlay.config.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 可选, 浮层相对于文档根节点的 y 坐标.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.xy">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">xy</tt><a class="headerlink" href="#overlay.Overlay.config.xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Array&lt;Number&gt;} - 可选, 相当于将数组第一个元素设置为 <a class="reference internal" href="#overlay.Overlay.config.x" title="overlay.Overlay.config.x"><tt class="xref py py-attr docutils literal"><span class="pre">x</span></tt></a> 的值, 将数组的第二个元素设置为 <a class="reference internal" href="#overlay.Overlay.config.y" title="overlay.Overlay.config.y"><tt class="xref py py-attr docutils literal"><span class="pre">y</span></tt></a> 的值.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.align">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">align</tt><a class="headerlink" href="#overlay.Overlay.config.align" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object} - 可选, 悬浮层对齐的相关配置, 例如：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">node</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>         <span class="c1">// 类型选择器字符串, 对齐参考元素, falsy 值为可视区域</span>
+    <span class="nx">points</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;tr&#39;</span><span class="p">,</span><span class="s1">&#39;tl&#39;</span><span class="p">],</span> <span class="c1">// 类型字符串数组, 表示 overlay 的 tl 与参考节点的 tr 对齐</span>
+    <span class="nx">offset</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>      <span class="c1">// 类型整数数组, 表示 overlay 最终位置与经 node 和 points 计算后位置的偏移,</span>
+                        <span class="c1">// 数组第一个元素表示 x 轴偏移, 第二个元素表示 y 轴偏移.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">points</span></tt> 字符串数组元素的取值范围为  t,b,c 与 l,r,c 的两两组合,分别表示 top,bottom,center 与 left,right,center 的两两组合,
+可以表示 9 种取值范围.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>第一个字符取值 t,b,c , 第二个字符取值 l,r,c. 如下图所示</p>
+<div class="last"><img  src='../../../static/api/component/overlay/align.png' /></div></div>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.effect">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">effect</tt><a class="headerlink" href="#overlay.Overlay.config.effect" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object} - 可选, 显示或隐藏时的特效支持, 例如：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">effect</span><span class="o">:</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>    <span class="c1">// {String} - 可选, 默认为&#39;none&#39;, &#39;none&#39;(无特效), &#39;fade&#39;(渐隐显示), &#39;slide&#39;(滑动显示).</span>
+    <span class="nx">easing</span><span class="o">:</span><span class="s1">&#39;&#39;</span><span class="p">,</span>        <span class="c1">// {String} - 可选, 同 KISSY.Anim 的 easing 参数配置.</span>
+    <span class="nx">duratiion</span><span class="o">:</span><span class="mi">3</span>       <span class="c1">// {Number} - 可选, 动画持续时间, 以秒为单位.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.closable">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">closable</tt><a class="headerlink" href="#overlay.Overlay.config.closable" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 对话框右上角是否包括关闭按钮</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.closeAction">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">closeAction</tt><a class="headerlink" href="#overlay.Overlay.config.closeAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 点击关闭按钮的动作。默认 &#8220;hide&#8221; 隐藏，也可设置 &#8220;destroy&#8221; 销毁该组件.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.mask">
+<tt class="descclassname">overlay.</tt><tt class="descname">mask</tt><a class="headerlink" href="#overlay.mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 浮层显示时是否使用遮罩层盖住页面其他元素</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.resize">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">resize</tt><a class="headerlink" href="#overlay.Overlay.config.resize" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object} - 可选, 拖动调整大小的配置, 例如：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">minWidth</span><span class="o">:</span><span class="mi">100</span><span class="p">,</span> <span class="c1">//类型整数, 表示拖动调整大小的最小宽度</span>
+    <span class="nx">maxWidth</span><span class="o">:</span><span class="mi">1000</span><span class="p">,</span> <span class="c1">//类型整数, 表示拖动调整大小的最大宽度</span>
+    <span class="nx">minHeight</span><span class="o">:</span><span class="mi">100</span><span class="p">,</span> <span class="c1">//类型整数, 表示拖动调整大小的最小高度</span>
+    <span class="nx">maxHeight</span><span class="o">:</span><span class="mi">1000</span><span class="p">,</span> <span class="c1">//类型整数, 表示拖动调整大小的最大高度</span>
+    <span class="nx">handlers</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;t&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">,</span><span class="s2">&quot;l&quot;</span><span class="p">,</span><span class="s2">&quot;tr&quot;</span><span class="p">,</span><span class="s2">&quot;tl&quot;</span><span class="p">,</span><span class="s2">&quot;br&quot;</span><span class="p">,</span><span class="s2">&quot;bl&quot;</span><span class="p">]</span> <span class="c1">//类型字符串数组, 取自上述 8 个值的集合.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">handlers</span></tt> 配置表示的数组元素可取上述八种值之一, t,b,l,r 分别表示 top,bottom,left,right, 加上组合共八种取值,
+可在上, 下, 左, 右以及左上, 左下, 右上, 右下进行拖动.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">使用该功能需要和 <a class="reference internal" href="../resizable/index.html#resizable.Resizable" title="resizable.Resizable"><tt class="xref py py-class docutils literal"><span class="pre">Resizable</span></tt></a> 一起 use，例如： <tt class="docutils literal"><span class="pre">use(&quot;overlay,resizable&quot;)</span></tt></p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="properties-detail">
+<h2>Properties Detail<a class="headerlink" href="#properties-detail" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>当根据配置实例化 overlay 得到当前实例后, 可调用实例上的 get 方法得到实例的特定属性以及 set 方法设置属性的值, 例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Overlay</span><span class="p">({</span> <span class="nx">xy</span> <span class="o">:</span> <span class="p">[</span><span class="mi">400</span><span class="p">,</span><span class="mi">200</span><span class="p">]</span> <span class="p">});</span>
+<span class="nx">o</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;xy&quot;</span><span class="p">,[</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">]);</span>    <span class="c1">//设置当前实例的绝对坐标</span>
+<span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;xy&quot;</span><span class="p">);</span>    <span class="c1">//获取当前实例的绝对坐标</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="attribute">
+<dt id="overlay.Overlay.prototype.x">
+<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">x</tt><a class="headerlink" href="#overlay.Overlay.prototype.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 悬浮层相对于文档根节点的 x 坐标.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="overlay.Overlay.prototype.y">
+<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">y</tt><a class="headerlink" href="#overlay.Overlay.prototype.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 浮层相对于文档根节点的 y 坐标.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="overlay.Overlay.prototype.xy">
+<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">xy</tt><a class="headerlink" href="#overlay.Overlay.prototype.xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Array&lt;Number&gt;} - 相当于将数组第一个元素设置为 <a class="reference internal" href="#overlay.Overlay.config.x" title="overlay.Overlay.config.x"><tt class="xref py py-attr docutils literal"><span class="pre">x</span></tt></a> 的值, 将数组的第二个元素设置为 <a class="reference internal" href="#overlay.Overlay.config.y" title="overlay.Overlay.config.y"><tt class="xref py py-attr docutils literal"><span class="pre">y</span></tt></a> 的值.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="overlay.Overlay.prototype.align">
+<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">align</tt><a class="headerlink" href="#overlay.Overlay.prototype.align" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object} - 悬浮层对齐的相关配置.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="overlay.Overlay.prototype.visible">
+<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">visible</tt><a class="headerlink" href="#overlay.Overlay.prototype.visible" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 悬浮层的是否显示.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="overlay.Overlay.prototype.closable">
+<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">closable</tt><a class="headerlink" href="#overlay.Overlay.prototype.closable" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 右上角关闭区域有无.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="overlay.Overlay.prototype.el">
+<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">el</tt><a class="headerlink" href="#overlay.Overlay.prototype.el" title="Permalink to this definition">¶</a></dt>
+<dd><p>{KISSY.Node} - 获取悬浮层的根节点 .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">必须在调用 <a class="reference internal" href="#overlay.Overlay.prototype.render" title="overlay.Overlay.prototype.render"><tt class="xref py py-meth docutils literal"><span class="pre">render()</span></tt></a> 方法之后才可以获取.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="overlay.Overlay.prototype.contentEl">
+<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">contentEl</tt><a class="headerlink" href="#overlay.Overlay.prototype.contentEl" title="Permalink to this definition">¶</a></dt>
+<dd><p>{KISSY.Node} - 获取悬浮层真正内容所在的节点.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">必须在调用  <a class="reference internal" href="#overlay.Overlay.prototype.render" title="overlay.Overlay.prototype.render"><tt class="xref py py-meth docutils literal"><span class="pre">render()</span></tt></a> 方法之后才可以获取.</p>
+</div>
+<p>悬浮层的 html 结构如下</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div&gt;</span><span class="c">&lt;!-- 悬浮层根节点 --&gt;</span>
+    <span class="nt">&lt;div&gt;</span><span class="c">&lt;!-- 悬浮层内容节点 ---&gt;</span>
+        <span class="c">&lt;!-- 悬浮层真正内容所在 --&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</div>
+<p>一般调用悬浮层的 <a class="reference internal" href="#overlay.Overlay.prototype.render" title="overlay.Overlay.prototype.render"><tt class="xref py py-meth docutils literal"><span class="pre">render()</span></tt></a> 方法后, 可通过获取 <a class="reference internal" href="#overlay.Overlay.prototype.contentEl" title="overlay.Overlay.prototype.contentEl"><tt class="xref py py-attr docutils literal"><span class="pre">contentEl</span></tt></a> 属性获取内容所在节点, 来动态修改悬浮层的内容.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="overlay.Overlay.prototype.render">
+<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">render</tt><big>(</big><big>)</big><a class="headerlink" href="#overlay.Overlay.prototype.render" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>render</strong> ()</div>
+<div class="line">渲染当前实例, 生成对应的 dom 节点并添加到页面文档树中.</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="overlay.Overlay.prototype.show">
+<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">show</tt><big>(</big><big>)</big><a class="headerlink" href="#overlay.Overlay.prototype.show" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>show</strong> ()</div>
+<div class="line">显示悬浮层, 位置根据 <a class="reference internal" href="#overlay.Overlay.config.align" title="overlay.Overlay.config.align"><tt class="xref py py-attr docutils literal"><span class="pre">align</span></tt></a> 或者 <a class="reference internal" href="#overlay.Overlay.config.xy" title="overlay.Overlay.config.xy"><tt class="xref py py-attr docutils literal"><span class="pre">xy</span></tt></a> 确定.</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="overlay.Overlay.prototype.hide">
+<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">hide</tt><big>(</big><big>)</big><a class="headerlink" href="#overlay.Overlay.prototype.hide" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>hide</strong> ()</div>
+<div class="line">隐藏悬浮层.</div>
+</div>
+</dd></dl>
+
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.2.</span></p>
+<dl class="method">
+<dt>
+<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">align</tt><big>(</big><big>)</big></dt>
+<dd><div class="line-block">
+<div class="line"><strong>align</strong> (node,points,offset)</div>
+<div class="line">设置对齐</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>node</strong> (<em>string|KISSY.Node|HTMLDOMNode</em>) &#8211; 类型对齐的参考元素</li>
+<li><strong>points</strong> (<em>Array&lt;string&gt;</em>) &#8211; 对齐的参考位置</li>
+<li><strong>offset</strong> (<em>Array&lt;number&gt;</em>) &#8211; 相对对齐元素的偏移</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ol class="last arabic simple">
+<li>调用该方法前请先调用 <a class="reference internal" href="#overlay.Overlay.prototype.render" title="overlay.Overlay.prototype.render"><tt class="xref py py-meth docutils literal"><span class="pre">render()</span></tt></a>.  .</li>
+<li>推荐使用 <tt class="docutils literal"><span class="pre">set(&quot;align&quot;,{</span> <span class="pre">node:node,</span> <span class="pre">points:points,</span> <span class="pre">offset;offset});</span></tt> 来代替该方法.</li>
+</ol>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="overlay.Overlay.prototype.center">
+<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">center</tt><big>(</big><big>)</big><a class="headerlink" href="#overlay.Overlay.prototype.center" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>center</strong> ()</div>
+<div class="line">将悬浮层放在当前视窗中央.</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">调用该方法前请先调用 <a class="reference internal" href="#overlay.Overlay.prototype.render" title="overlay.Overlay.prototype.render"><tt class="xref py py-meth docutils literal"><span class="pre">render()</span></tt></a>.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="overlay.Overlay.prototype.move">
+<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">move</tt><big>(</big><big>)</big><a class="headerlink" href="#overlay.Overlay.prototype.move" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>move</strong> (x,y)</div>
+<div class="line">设置悬浮层相对于文档左上角的坐标偏移</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>number</em>) &#8211; 横坐标偏移量</li>
+<li><strong>y</strong> (<em>number</em>) &#8211; 纵坐标偏移量</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="events-detail">
+<h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="overlay.Overlay.hide">
+<tt class="descclassname">Overlay.</tt><tt class="descname">hide</tt><big>(</big><big>)</big><a class="headerlink" href="#overlay.Overlay.hide" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>hide</strong> ()</div>
+<div class="line">当悬浮层隐藏时触发</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="overlay.Overlay.show">
+<tt class="descclassname">Overlay.</tt><tt class="descname">show</tt><big>(</big><big>)</big><a class="headerlink" href="#overlay.Overlay.show" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>show</strong> ()</div>
+<div class="line">当悬浮层显示时触发</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="overlay.Overlay.afterRenderUI">
+<tt class="descclassname">Overlay.</tt><tt class="descname">afterRenderUI</tt><big>(</big><big>)</big><a class="headerlink" href="#overlay.Overlay.afterRenderUI" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>afterRenderUI</strong> ()</div>
+<div class="line">当悬浮层 dom 节点生成后触发，可用于根节点事件的初始化，例如监控弹出层的 mouseenter（整个生命周期只注册一次）</div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Overlay</span><span class="p">();</span>
+<span class="nx">o</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;afterRenderUI&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;el&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseenter&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;mouseenter overlay&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+<span class="nx">button</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">o</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="overlay.Overlay.beforeVisibleChange">
+<tt class="descclassname">Overlay.</tt><tt class="descname">beforeVisibleChange</tt><big>(</big><big>)</big><a class="headerlink" href="#overlay.Overlay.beforeVisibleChange" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>beforeVisibleChange</strong> (ev)</div>
+<div class="line">当悬浮层隐藏或显示前触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>ev.newVal</strong> (<em>Boolean</em>) &#8211; 将要隐藏时为 false, 将要显示时为 true</li>
+<li><strong>ev.prevVal</strong> (<em>Boolean</em>) &#8211; 当前悬浮层显示与否</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Returns:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last">{Boolean} - 返回 false 时, 则会阻止将要进行的显示或隐藏动作.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="dialog.html" title="Dialog"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="Overlay"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.2 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Overlay</a> &#187; </li> 
+    </ul>
+</div>
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            $("#openComment").attr("disabled",true);
+        }else{
+            $("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            $("#openComment").bind("change",function(){
+                window.localStorage.setItem("kissy-commment",$("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/loader/index.html">loader</a></li>
+        <li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/lang/index.html">lang</a></li>
+        <li><a href="../../seed/web/index.html">web</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../core/ua/index.html">ua</a></li>
+        <li><a href="../../core/dom/index.html">dom</a></li>
+        <li><a href="../../core/event/index.html">event</a></li>
+        <li><a href="../../core/node/index.html">node</a></li>
+        <li><a href="../../core/json/index.html">json</a></li>
+        <li><a href="../../core/ajax/index.html">ajax</a></li>
+        <li><a href="../../core/cookie/index.html">cookie</a></li>
+        <li><a href="../../core/base/index.html">base</a></li>
+        <li><a href="../../core/anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../mvc/index.html">mvc</a></li>
+        <li><a href="../template/index.html">template</a></li>
+        <li><a href="../datalazyload/index.html">datalazyload</a></li>
+        <li><a href="../flash/index.html">flash</a></li>
+        <li><a href="../dd/index.html">dd</a></li>
+        <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="../switchable/index.html">switchable</a></li>
+        <li><a href="../suggest/index.html">suggest</a></li>
+        <li><a href="../calendar/index.html">calendar</a></li>
+        <li><a href="../imagezoom/index.html">imagezoom</a></li>
+        <li><a href="index.html">overlay</a></li>
+        <li><a href="../uibase/index.html">uibase</a></li>
+        <li><a href="../component/index.html">component</a></li>
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
+        <li><a href="../waterfall/index.html">waterfall</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
+        <li><a href="../editor/index.html">editor</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

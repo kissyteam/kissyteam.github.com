@@ -1,0 +1,446 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>DataLazyload &mdash; KISSY v1.2 Documentation</title>
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+    (function(){
+        var js=[],h=window.location.href,d=document;
+            js.push("../../../static/jquery.js");
+            js.push("../../../static/underscore.js");
+            js.push("../../../static/doctools.js");
+        for(var i=0;i<js.length;i++){
+            var j=js[i];
+            if(h.indexOf("localhost/kissy_git/")==-1&&j.indexOf("jquery.js")!=-1){
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
+            }else{
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
+            }
+        }
+    })();
+</script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../flash/index.html" title="flash"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="../template/index.html" title="Template"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.2 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" accesskey="U">Component</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <span class="target" id="module-datalazyload"></span><div class="section" id="datalazyload">
+<h1>DataLazyload<a class="headerlink" href="#datalazyload" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">数据延迟加载组件.</div>
+<div class="line">很多时候, 用户在第一屏就发生了跳转, 大量&#8221;未曾露面&#8221;的图片下载对用户来说是无意义的.</div>
+<div class="line">DataLazyload 可以 &#8220;揣测&#8221; 用户的行为, 当用户想看某个区域时, 才开始下载这个区域的图片.</div>
+<div class="line">除了延迟图片下载, DataLazyload 还可以延迟某个区域的所有 html 的渲染, 这对 Tabs 等 UI 组件很有裨益, 能提高整个页面的性能.</div>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#datalazyload.DataLazyload" title="datalazyload.DataLazyload"><tt class="xref py py-class docutils literal"><span class="pre">DataLazyload</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="config-attributes">
+<h2>Config Attributes<a class="headerlink" href="#config-attributes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#datalazyload.mod" title="datalazyload.mod"><tt class="xref py py-data docutils literal"><span class="pre">mod</span></tt></a></li>
+<li><a class="reference internal" href="#datalazyload.diff" title="datalazyload.diff"><tt class="xref py py-data docutils literal"><span class="pre">diff</span></tt></a></li>
+<li><a class="reference internal" href="#datalazyload.placeholder" title="datalazyload.placeholder"><tt class="xref py py-data docutils literal"><span class="pre">placeholder</span></tt></a></li>
+<li><a class="reference internal" href="#datalazyload.execScript" title="datalazyload.execScript"><tt class="xref py py-data docutils literal"><span class="pre">execScript</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#datalazyload.containers" title="datalazyload.containers"><tt class="xref py py-attr docutils literal"><span class="pre">containers</span></tt></a></li>
+<li><a class="reference internal" href="#datalazyload.config" title="datalazyload.config"><tt class="xref py py-attr docutils literal"><span class="pre">config</span></tt></a></li>
+<li><a class="reference internal" href="#datalazyload.images" title="datalazyload.images"><tt class="xref py py-attr docutils literal"><span class="pre">images</span></tt></a></li>
+<li><a class="reference internal" href="#datalazyload.areaes" title="datalazyload.areaes"><tt class="xref py py-attr docutils literal"><span class="pre">areaes</span></tt></a></li>
+<li><a class="reference internal" href="#datalazyload.callbacks" title="datalazyload.callbacks"><tt class="xref py py-attr docutils literal"><span class="pre">callbacks</span></tt></a></li>
+<li><a class="reference internal" href="#datalazyload.threshold" title="datalazyload.threshold"><tt class="xref py py-attr docutils literal"><span class="pre">threshold</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#datalazyload.addCallback" title="datalazyload.addCallback"><tt class="xref py py-meth docutils literal"><span class="pre">addCallback()</span></tt></a></li>
+<li><a class="reference internal" href="#datalazyload.loadCustomLazyData" title="datalazyload.loadCustomLazyData"><tt class="xref py py-meth docutils literal"><span class="pre">loadCustomLazyData()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="datalazyload.DataLazyload">
+<em class="property">class </em><tt class="descclassname">datalazyload.</tt><tt class="descname">DataLazyload</tt><a class="headerlink" href="#datalazyload.DataLazyload" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>DataLazyload</strong> (containers[, config])</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>containers</strong> (<em>String|HTMLElement|Array&lt;HTMLElement&gt;</em>) &#8211; 默认为 document.body , 图片所在容器(可以多个)</li>
+<li><strong>config</strong> (<em>Object</em>) &#8211; 配置项, 详细见下方 <strong>Config Attributes Detail</strong> .</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="config-attributes-detail">
+<h2>Config Attributes Detail<a class="headerlink" href="#config-attributes-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="datalazyload.mod">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">mod</tt><a class="headerlink" href="#datalazyload.mod" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 默认是 &#8216;manul&#8217;,懒处理模式.</p>
+<blockquote>
+<div><ul class="simple">
+<li>&#8216;auto&#8217; : 自动化. html 输出时, 不对 img.src 做任何处理</li>
+<li>&#8216;manual&#8217; : 输出 html 时, 已经将需要延迟加载的图片的 src 属性替换为 &#8216;data-ks-lazyload&#8217;</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>对于 textarea 数据, 只有手动模式;</li>
+<li>当使用 &#8216;manual&#8217; 模式时, 对 img 元素使用 <tt class="docutils literal"><span class="pre">data-ks-lazyload</span></tt> 后, 如果这个 img 元素或其父级元素为隐藏状态, 此时, datalazyload 无法起作用, 因为隐藏状态下的 img 的 <tt class="docutils literal"><span class="pre">offset.top</span></tt> 计算永远为 0, 永远处于 datalazyload 阈值之内, 这种情况下, 直接使用 textarea 更靠谱.</li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="datalazyload.diff">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">diff</tt><a class="headerlink" href="#datalazyload.diff" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 当前视窗往下, diff px 外的 img/textarea 延迟加载, 适当设置此值, 可以让用户在拖动时感觉数据已经加载好, 默认为当前视窗高度(两屏以外的才延迟加载).</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="datalazyload.placeholder">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">placeholder</tt><a class="headerlink" href="#datalazyload.placeholder" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 默认为 null , 图像的占位图.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="datalazyload.execScript">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">execScript</tt><a class="headerlink" href="#datalazyload.execScript" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认为 true , 是否执行 textarea 里面的脚本.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="properties-detail">
+<h2>Properties Detail<a class="headerlink" href="#properties-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="attribute">
+<dt id="datalazyload.containers">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">containers</tt><a class="headerlink" href="#datalazyload.containers" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Array} - 可读写, 图片所在容器(可以多个), 默认为 document.body</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="datalazyload.config">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">config</tt><a class="headerlink" href="#datalazyload.config" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object} - 可读写 ,配置参数</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="datalazyload.images">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">images</tt><a class="headerlink" href="#datalazyload.images" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Array&lt;String&gt;} - 可读写 ,需要延迟下载的图片列表</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="datalazyload.areaes">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">areaes</tt><a class="headerlink" href="#datalazyload.areaes" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Array&lt;String&gt;} - 可读写 ,需要延迟处理的 textarea列表</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="datalazyload.callbacks">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">callbacks</tt><a class="headerlink" href="#datalazyload.callbacks" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object} - 可读写 ,和延迟项绑定的回调函数, 元素列表和函数列表一一对应</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="datalazyload.threshold">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">threshold</tt><a class="headerlink" href="#datalazyload.threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 可读写 , 需要开始延迟的 Y 坐标值</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="datalazyload.addCallback">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">addCallback</tt><big>(</big><big>)</big><a class="headerlink" href="#datalazyload.addCallback" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>addCallback</strong> (el, fn)</div>
+<div class="line">添加回调函数. 当 el 即将出现在视图中时, 触发 fn</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="datalazyload.loadCustomLazyData">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">loadCustomLazyData</tt><big>(</big><big>)</big><a class="headerlink" href="#datalazyload.loadCustomLazyData" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">static <strong>loadCustomLazyData</strong> (containers, type)</div>
+<div class="line">加载自定义延迟数据</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>containers</strong> (<em>HTMLElement|Array&lt;HTMLElement&gt;</em>) &#8211; 包含自定义延迟加载项的容器元素</li>
+<li><strong>type</strong> (<em>String</em>) &#8211; 延迟加载方式, 可取:</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple">
+<li><tt class="docutils literal"><span class="pre">textarea</span></tt> 或 <tt class="docutils literal"><span class="pre">area-data</span></tt> , 即表示延迟加载使用的是 <tt class="docutils literal"><span class="pre">textarea</span></tt> 方式;</li>
+<li><tt class="docutils literal"><span class="pre">img</span></tt> 或 <tt class="docutils literal"><span class="pre">img-src</span></tt>, 即表示延迟加载使用的是 <tt class="docutils literal"><span class="pre">img</span></tt> 方式.</li>
+</ol>
+</dd></dl>
+
+</div>
+</div>
+
+
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../flash/index.html" title="flash"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="../template/index.html" title="Template"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.2 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" accesskey="U">Component</a> &#187; </li> 
+    </ul>
+</div>
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            $("#openComment").attr("disabled",true);
+        }else{
+            $("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            $("#openComment").bind("change",function(){
+                window.localStorage.setItem("kissy-commment",$("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/loader/index.html">loader</a></li>
+        <li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/lang/index.html">lang</a></li>
+        <li><a href="../../seed/web/index.html">web</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../core/ua/index.html">ua</a></li>
+        <li><a href="../../core/dom/index.html">dom</a></li>
+        <li><a href="../../core/event/index.html">event</a></li>
+        <li><a href="../../core/node/index.html">node</a></li>
+        <li><a href="../../core/json/index.html">json</a></li>
+        <li><a href="../../core/ajax/index.html">ajax</a></li>
+        <li><a href="../../core/cookie/index.html">cookie</a></li>
+        <li><a href="../../core/base/index.html">base</a></li>
+        <li><a href="../../core/anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../mvc/index.html">mvc</a></li>
+        <li><a href="../template/index.html">template</a></li>
+        <li><a href="#">datalazyload</a></li>
+        <li><a href="../flash/index.html">flash</a></li>
+        <li><a href="../dd/index.html">dd</a></li>
+        <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="../switchable/index.html">switchable</a></li>
+        <li><a href="../suggest/index.html">suggest</a></li>
+        <li><a href="../calendar/index.html">calendar</a></li>
+        <li><a href="../imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../uibase/index.html">uibase</a></li>
+        <li><a href="../component/index.html">component</a></li>
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
+        <li><a href="../waterfall/index.html">waterfall</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
+        <li><a href="../editor/index.html">editor</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

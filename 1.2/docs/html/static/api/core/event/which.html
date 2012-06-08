@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head><script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"></script>
+</head>
+<body>
+  
+<input id="whichkey" value="type something with keyboar or mouseup">
+<div id="log"></div>
+<script>
+    var $=KISSY.Node.all;
+    $('#whichkey').on('keydown mouseup',function(e){ 
+      $('#log').html(e.type + ': ' +  e.which );
+    });  
+
+</script>
+
+</body>
+</html>

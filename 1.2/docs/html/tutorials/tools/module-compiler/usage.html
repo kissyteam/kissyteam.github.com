@@ -1,0 +1,546 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>使用说明 &mdash; KISSY v1.2 Documentation</title>
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+    (function(){
+        var js=[],h=window.location.href,d=document;
+            js.push("../../../static/jquery.js");
+            js.push("../../../static/underscore.js");
+            js.push("../../../static/doctools.js");
+        for(var i=0;i<js.length;i++){
+            var j=js[i];
+            if(h.indexOf("localhost/kissy_git/")==-1&&j.indexOf("jquery.js")!=-1){
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
+            }else{
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
+            }
+        }
+    })();
+</script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../use-sphinx.html" title="Sphinx 使用介绍"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="intro.html" title="原理介绍"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.2 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >Tutorial</a> &#187; </li>
+      <li><a href="../index.html" >前端常用工具</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">KISSY Module Compiler</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="id1">
+<h1>使用说明<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>该工具为一个 jar 包, 推荐嵌入到 ant 中, 作为项目构建的一个阶段.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">ant 以及相关压缩工具可直接使用 <a class="reference external" href="https://github.com/kissyteam/kissy-tools">kissy-tools</a> 中的文件,
+建议直接下载整个 kissy-tools 作为项目工具一部分.</p>
+</div>
+<p>使用前请先下载 kissy-tools 源码到硬盘 <tt class="docutils literal"><span class="pre">x:/kissy-tools/</span></tt> , 假设项目源码在 <tt class="docutils literal"><span class="pre">x:/code/</span></tt> , 如上一节包括两个模块文件: <tt class="docutils literal"><span class="pre">x:/code/package/x.js</span></tt> 以及 <tt class="docutils literal"><span class="pre">x:/code/package/y.js</span></tt> , 模块文件编码为 <tt class="docutils literal"><span class="pre">gbk</span></tt> , 则 ant 的调用为：</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;java</span> <span class="na">classname=</span><span class="s">&quot;com.taobao.f2e.Main&quot;</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-requires&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;package/y&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-baseUrls&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;x:/code/&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-encodings&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;gbk&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-outputEncoding&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-excludes&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;bizcore&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-output&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;x:/code/package/y.combine.js&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;classpath&gt;</span>
+        <span class="nt">&lt;pathelement</span> <span class="na">path=</span><span class="s">&quot;x:/kissy-tools/module-compiler/module-compiler.jar&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;pathelement</span> <span class="na">path=</span><span class="s">&quot;${java.class.path}&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/classpath&gt;</span>
+
+<span class="nt">&lt;/java&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="id2">
+<h2>参数说明<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>如上所示该工具需要一些参数, 包括 <tt class="docutils literal"><span class="pre">requires</span></tt>  , <tt class="docutils literal"><span class="pre">baseUrls</span></tt> , <tt class="docutils literal"><span class="pre">encodings</span></tt> , <tt class="docutils literal"><span class="pre">outputEncoding</span></tt> , <tt class="docutils literal"><span class="pre">excludes</span></tt> , <tt class="docutils literal"><span class="pre">output</span></tt> , 具体格式如下：</p>
+<div class="section" id="requires">
+<h3>requires<a class="headerlink" href="#requires" title="Permalink to this headline">¶</a></h3>
+<p>需要打包的模块名集合, 该模块以及其递归依赖都会被一并打包. 多个模块名用 <tt class="docutils literal"><span class="pre">,</span></tt> 分隔. 如以上示例： <tt class="docutils literal"><span class="pre">package/y</span></tt> .</p>
+</div>
+<div class="section" id="baseurls">
+<h3>baseUrls<a class="headerlink" href="#baseurls" title="Permalink to this headline">¶</a></h3>
+<p>模块文件查找目录集合, 一般是业务模块的源码目录, 多个目录间以 <tt class="docutils literal"><span class="pre">,</span></tt> 分隔.
+如以上示例 <tt class="docutils literal"><span class="pre">x:/code/</span></tt> .</p>
+</div>
+<div class="section" id="cdnurls">
+<h3>cdnUrls<a class="headerlink" href="#cdnurls" title="Permalink to this headline">¶</a></h3>
+<p>可选。模块文件查找目录对应的 cdn 路径集合，多个目录间以 <tt class="docutils literal"><span class="pre">,</span></tt> 分割。顺序对应于 <tt class="docutils literal"><span class="pre">baseUrls</span></tt> .
+如 <tt class="docutils literal"><span class="pre">x:/code/</span></tt> 上线后对应 <tt class="docutils literal"><span class="pre">http://x.cdn/code/</span></tt> ，则配置该参数为 <tt class="docutils literal"><span class="pre">http://x.cdn/code/</span></tt> .
+改参数主要用于生成 cdn combo 的完整地址。</p>
+</div>
+<div class="section" id="minsuffix">
+<h3>minSuffix<a class="headerlink" href="#minsuffix" title="Permalink to this headline">¶</a></h3>
+<p>可选。生成的 cdn combo 地址模块文件后是否加 -min 后缀，默认不加。例如：
+<tt class="docutils literal"><span class="pre">http://a.tbcdn.cn/s/??a.js,b.js</span></tt> ，设置 minSuffix 后，生成：
+<tt class="docutils literal"><span class="pre">http://a.tbcdn.cn/s/??a-min.js,b-min.js</span></tt></p>
+</div>
+<div class="section" id="outputcombo">
+<h3>outputCombo<a class="headerlink" href="#outputcombo" title="Permalink to this headline">¶</a></h3>
+<p>可选。是否生成对应的 combo 地址而不是合并后的文件。
+例如指定需要的模块 a 后可以输出该模块与其递归依赖的所有模块组成的 combo 地址：
+<tt class="docutils literal"><span class="pre">http://a.tbcdn.cn/s/??a.js,b.js,c.js</span></tt></p>
+</div>
+<div class="section" id="encodings">
+<h3>encodings<a class="headerlink" href="#encodings" title="Permalink to this headline">¶</a></h3>
+<p>指明模块目录中文件的编码, 顺序对应于 <tt class="docutils literal"><span class="pre">baseUrls</span></tt> , 多个编码以 <tt class="docutils literal"><span class="pre">,</span></tt> 分隔. 如以上示例： <tt class="docutils literal"><span class="pre">gbk</span></tt> ,
+表示业务模块为 <tt class="docutils literal"><span class="pre">gbk</span></tt> 编码.</p>
+</div>
+<div class="section" id="outputencoding">
+<h3>outputEncoding<a class="headerlink" href="#outputencoding" title="Permalink to this headline">¶</a></h3>
+<p>指明最后合并打包文件的编码格式. 如以上示例 <tt class="docutils literal"><span class="pre">utf-8</span></tt> .</p>
+</div>
+<div class="section" id="excludes">
+<h3>excludes<a class="headerlink" href="#excludes" title="Permalink to this headline">¶</a></h3>
+<p><tt class="docutils literal"><span class="pre">optional</span></tt> , 指明 <tt class="docutils literal"><span class="pre">requires</span></tt> 递归依赖模块中不需要打包的模块名称集合, 该集合内的模块是单独动态加载或静态引入的, 多个模块以 <tt class="docutils literal"><span class="pre">,</span></tt> 分隔.
+如以上示例 <tt class="docutils literal"><span class="pre">bizcore</span></tt> 表示 <tt class="docutils literal"><span class="pre">bizcore</span></tt> 模块不需要合并打包, 而是静态引入到页面中的.</p>
+</div>
+<div class="section" id="output">
+<h3>output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h3>
+<p>可选。指明最终合并打包后的文件路径以及名称. 如以上示例： <tt class="docutils literal"><span class="pre">x:/code/package/y.combine.js</span></tt> ,
+表示该工具产生的合并后文件为 <tt class="docutils literal"><span class="pre">x:/code/package/y.combine.js</span></tt> .</p>
+<div class="line-block">
+<div class="line">一般建议文件名要和 &#8220;入口模块文件名&#8221; + &#8220;-min&#8221; 一致.</div>
+</div>
+</div>
+</div>
+<div class="section" id="cdn-combo">
+<h2>cdn combo 构建文件例子<a class="headerlink" href="#cdn-combo" title="Permalink to this headline">¶</a></h2>
+<p>a 依赖 b ， b 依赖 c ，指定源码目录与对应的 cdn 目录后，运行以下构建文件可以得到 a 以及其所有依赖模块的 combo 地址</p>
+<p><tt class="docutils literal"><span class="pre">http://x.cdn/??a.js,b.js,c.js</span></tt> ，之后在页面显式指定路径后使用:（对于使用 kissy 自带模块比较多的情景，可以将使用到的 kissy 自身模块集合静态 combo 到页面底部或定义 <a class="reference internal" href="../../../api/seed/loader/add.html#loader-config-map"><em>map</em></a> 规则来减少使用 kissy 自身模块所导致的链接数过多问题。）</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+            <span class="nx">map</span><span class="o">:</span><span class="p">[</span>
+                <span class="p">[</span><span class="sr">/http:\/\/a.tbcdn.cn\/s\/kissy\/1.2.0\/(?:suggest|switchable)-min.js(.+)$/</span><span class="p">,</span>
+                <span class="s2">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/??suggest-min.js,switchable-min.js$1&quot;</span><span class="p">]</span>
+            <span class="p">]</span>
+    <span class="p">});</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>
+        <span class="nx">a</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">fullpath</span><span class="o">:</span><span class="s2">&quot;http://x.cdn/??a.js,b.js,c.js&quot;</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p><strong>请用 kissy-tools 项目下的 ant 运行此构建文件，文件编码为 utf-8</strong></p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="c">&lt;!--</span>
+<span class="c">build example for kissy loader</span>
+<span class="c">@author yiminghe@gmail.com</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">name=</span><span class="s">&quot;compressor.build&quot;</span> <span class="na">default=</span><span class="s">&quot;build&quot;</span> <span class="na">basedir=</span><span class="s">&quot;.&quot;</span> <span class="na">xmlns:ac=</span><span class="s">&quot;antlib:net.sf.antcontrib&quot;</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!--入口文件模块所在目录--&gt;</span>
+    <span class="nt">&lt;dirname</span> <span class="na">property=</span><span class="s">&quot;current.dir&quot;</span> <span class="na">file=</span><span class="s">&quot;${ant.file.compressor.build}&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;assets.dir&quot;</span> <span class="na">location=</span><span class="s">&quot;${current.dir}/&quot;</span><span class="nt">/&gt;</span>
+    
+    <span class="c">&lt;!--项目文件编码--&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;charset&quot;</span> <span class="na">value=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">/&gt;</span>
+
+    <span class="c">&lt;!-- kissy tools 项目源码目录 --&gt;</span>
+    <span class="c">&lt;!-- 注意：请用 kissy tools 中的 ant 运行此 xml --&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;ks.tools&quot;</span> <span class="na">value=</span><span class="s">&quot;d:\code\kissy_git\kissy-tools\&quot;</span><span class="nt">/&gt;</span>
+   
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;module.compiler&quot;</span> <span class="na">value=</span><span class="s">&quot;${ks.tools}\module-compiler\module-compiler.jar&quot;</span><span class="nt">/&gt;</span>   
+    
+    <span class="c">&lt;!--js  combo 地址获取--&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#39;combo&#39;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;java</span> <span class="na">classname=</span><span class="s">&quot;com.taobao.f2e.Main&quot;</span><span class="nt">&gt;</span>
+
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-requires&quot;</span><span class="nt">/&gt;</span>
+                    <span class="c">&lt;!-- 入口模块 --&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;a&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-baseUrls&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;${assets.dir}&quot;</span><span class="nt">/&gt;</span>
+                    <span class="c">&lt;!-- 本地路径和cdn路径的对应 --&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-cdnUrls&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;http://x.cdn/&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-encodings&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;${charset}&quot;</span><span class="nt">/&gt;</span>
+                    <span class="c">&lt;!-- 输出 cdn combo 形式 --&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-outputCombo&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+                    <span class="c">&lt;!-- cdn combo 文件地址是否带 \-min --&gt;</span>  
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-minSuffix&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>                    
+                    <span class="nt">&lt;classpath&gt;</span>
+                        <span class="nt">&lt;pathelement</span> <span class="na">path=</span><span class="s">&quot;${module.compiler}&quot;</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;pathelement</span> <span class="na">path=</span><span class="s">&quot;${java.class.path}&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/classpath&gt;</span>
+                <span class="nt">&lt;/java&gt;</span>
+    <span class="nt">&lt;/target&gt;</span>
+
+    <span class="c">&lt;!--项目(js,css)构建--&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;build&quot;</span> <span class="na">depends=</span><span class="s">&quot;combo&quot;</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/project&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>运行机制举例<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>模块 <tt class="docutils literal"><span class="pre">biz/x</span></tt> 依赖于模块 <tt class="docutils literal"><span class="pre">biz/y</span></tt> ， 模块 <tt class="docutils literal"><span class="pre">biz/y</span></tt> 依赖于模块 <tt class="docutils literal"><span class="pre">biz/z</span></tt> 。</p>
+<ol class="arabic simple">
+<li>开发阶段可以载入 <tt class="docutils literal"><span class="pre">kissy.js</span></tt> ， 那么 <tt class="docutils literal"><span class="pre">KISSY.use(&quot;biz/x&quot;)</span></tt> 会递归动态下载 <tt class="docutils literal"><span class="pre">biz/x.js</span></tt> ， <tt class="docutils literal"><span class="pre">biz/y.js</span></tt> ， <tt class="docutils literal"><span class="pre">biz/z.js</span></tt> 。</li>
+<li>部署阶段使用 module compiler 指定  <tt class="docutils literal"><span class="pre">-requires</span> <span class="pre">biz/x</span> <span class="pre">,</span> <span class="pre">-output</span> <span class="pre">biz/x-combine.js</span></tt> 并将 <tt class="docutils literal"><span class="pre">biz/x-combine.js</span></tt> 压缩为 <tt class="docutils literal"><span class="pre">biz/x-min.js</span></tt> .</li>
+<li>生产环境载入 <tt class="docutils literal"><span class="pre">kissy-min.js</span></tt> ，那么同样的 <tt class="docutils literal"><span class="pre">KISSY.use(&quot;biz/x&quot;)</span></tt> 就只会动态下载 <tt class="docutils literal"><span class="pre">biz/x-min.js</span></tt> 了。</li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h2>合并构建文件例子<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>将入口模块目录下的所有模块的依赖模块都合并到自身</p>
+<p><strong>请用 kissy-tools 项目下的 ant 运行此构建文件，文件编码为 utf-8</strong></p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="c">&lt;!--</span>
+<span class="c">build example for kissy loader</span>
+<span class="c">@author yiminghe@gmail.com</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">name=</span><span class="s">&quot;compressor.build&quot;</span> <span class="na">default=</span><span class="s">&quot;build&quot;</span> <span class="na">basedir=</span><span class="s">&quot;.&quot;</span> <span class="na">xmlns:ac=</span><span class="s">&quot;antlib:net.sf.antcontrib&quot;</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!--入口文件模块所在目录--&gt;</span>
+    <span class="nt">&lt;dirname</span> <span class="na">property=</span><span class="s">&quot;current.dir&quot;</span> <span class="na">file=</span><span class="s">&quot;${ant.file.compressor.build}&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;page.dir&quot;</span> <span class="na">location=</span><span class="s">&quot;${current.dir}&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;page.dir.tmp&quot;</span> <span class="na">location=</span><span class="s">&quot;${current.dir}/tmp/&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;assets.dir&quot;</span> <span class="na">location=</span><span class="s">&quot;${current.dir}/../../../&quot;</span><span class="nt">/&gt;</span>
+    <span class="c">&lt;!--项目文件编码--&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;charset&quot;</span> <span class="na">value=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">/&gt;</span>
+    <span class="c">&lt;!--bom utf-8--&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;bom&quot;</span> <span class="na">value=</span><span class="s">&quot;&amp;#xFEFF;&quot;</span><span class="nt">/&gt;</span>
+
+    <span class="c">&lt;!-- kissy tools 项目源码目录 --&gt;</span>
+    <span class="c">&lt;!-- 注意：请用 kissy tools 中的 ant 运行此 xml --&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;ks.tools&quot;</span> <span class="na">value=</span><span class="s">&quot;d:\code\kissy_git\kissy-tools\&quot;</span><span class="nt">/&gt;</span>
+    <span class="c">&lt;!--第三方工具--&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;yui.compiler&quot;</span> <span class="na">value=</span><span class="s">&quot;${ks.tools}\yuicompressor\yuicompressor.jar&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;module.compiler&quot;</span> <span class="na">value=</span><span class="s">&quot;${ks.tools}\module-compiler\module-compiler.jar&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;closure.compiler&quot;</span> <span class="na">value=</span><span class="s">&quot;${ks.tools}\closure-compiler\compiler.jar&quot;</span><span class="nt">/&gt;</span>
+
+    <span class="c">&lt;!-- js 构建--&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#39;jsrun&#39;</span> <span class="na">depends=</span><span class="s">&quot;native2ascii&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/target&gt;</span>
+
+    <span class="c">&lt;!-- css 合并--&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;concat-css&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;concat</span> <span class="na">destfile=</span><span class="s">&quot;category.css&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;path</span> <span class="na">path=</span><span class="s">&quot;../mods/common/cate_base.css&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;path</span> <span class="na">path=</span><span class="s">&quot;../mods/common/cate_search.css&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;path</span> <span class="na">path=</span><span class="s">&quot;../mods/common/cate_lastused.css&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;path</span> <span class="na">path=</span><span class="s">&quot;../mods/common/cate_select.css&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;path</span> <span class="na">path=</span><span class="s">&quot;../mods/common/cate_select.css&quot;</span><span class="nt">/&gt;</span>
+            <span class="c">&lt;!--去除 bom--&gt;</span>
+            <span class="nt">&lt;filterchain&gt;</span>
+                <span class="nt">&lt;deletecharacters</span> <span class="na">chars=</span><span class="s">&quot;${bom}&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/filterchain&gt;</span>
+        <span class="nt">&lt;/concat&gt;</span>
+        <span class="nt">&lt;concat</span> <span class="na">destfile=</span><span class="s">&quot;publish.css&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;path</span> <span class="na">path=</span><span class="s">&quot;../mods/common/publish_base.css&quot;</span><span class="nt">/&gt;</span>
+            <span class="c">&lt;!--去除 bom--&gt;</span>
+            <span class="nt">&lt;filterchain&gt;</span>
+                <span class="nt">&lt;deletecharacters</span> <span class="na">chars=</span><span class="s">&quot;${bom}&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/filterchain&gt;</span>
+        <span class="nt">&lt;/concat&gt;</span>
+    <span class="nt">&lt;/target&gt;</span>
+
+    <span class="c">&lt;!-- css 压缩--&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;compressor-css&quot;</span> <span class="na">depends=</span><span class="s">&quot;concat-css&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;apply</span> <span class="na">executable=</span><span class="s">&quot;java&quot;</span> <span class="na">verbose=</span><span class="s">&quot;true&quot;</span>
+               <span class="na">dest=</span><span class="s">&quot;${page.dir}&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;fileset</span> <span class="na">dir=</span><span class="s">&quot;${page.dir}&quot;</span>
+                     <span class="na">includes=</span><span class="s">&quot;**/*.css&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">line=</span><span class="s">&quot;-jar&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">path=</span><span class="s">&quot;${yui.compiler}&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">line=</span><span class="s">&quot;--charset ${charset}&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;srcfile/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">line=</span><span class="s">&quot;-o&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;targetfile/&gt;</span>
+            <span class="nt">&lt;mapper</span> <span class="na">type=</span><span class="s">&quot;regexp&quot;</span> <span class="na">from=</span><span class="s">&quot;^(.*)\.(css|js)$&quot;</span> <span class="na">to=</span><span class="s">&quot;\1-min.\2&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/apply&gt;</span>
+    <span class="nt">&lt;/target&gt;</span>
+
+    <span class="c">&lt;!--js  依赖打包--&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#39;combo&#39;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ac:for</span> <span class="na">param=</span><span class="s">&quot;page&quot;</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!--入口模块文件所在目录的所有模块循环处理--&gt;</span>
+            <span class="nt">&lt;path&gt;</span>
+                <span class="nt">&lt;fileset</span> <span class="na">dir=</span><span class="s">&quot;${page.dir}&quot;</span> <span class="na">includes=</span><span class="s">&quot;*.js&quot;</span> <span class="na">excludes=</span><span class="s">&quot;*.combo.js,*-min.js&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/path&gt;</span>
+            <span class="nt">&lt;sequential&gt;</span>
+                <span class="nt">&lt;ac:var</span> <span class="na">name=</span><span class="s">&quot;var.modname&quot;</span> <span class="na">unset=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;basename</span> <span class="na">property=</span><span class="s">&quot;var.modname&quot;</span> <span class="na">file=</span><span class="s">&quot;@{page}&quot;</span> <span class="na">suffix=</span><span class="s">&quot;.js&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;echo&gt;</span>
+                    build ${var.modname} in @{page}
+                <span class="nt">&lt;/echo&gt;</span>
+                <span class="nt">&lt;java</span> <span class="na">classname=</span><span class="s">&quot;com.taobao.f2e.Main&quot;</span><span class="nt">&gt;</span>
+
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-requires&quot;</span><span class="nt">/&gt;</span>
+                    <span class="c">&lt;!-- 入口模块 --&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;ip/combo/b/${var.modname}&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-baseUrls&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;${assets.dir}&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-encodings&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;${charset}&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-outputEncoding&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;${charset}&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-output&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;${page.dir}/${var.modname}.combo.js&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;classpath&gt;</span>
+                        <span class="nt">&lt;pathelement</span> <span class="na">path=</span><span class="s">&quot;${module.compiler}&quot;</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;pathelement</span> <span class="na">path=</span><span class="s">&quot;${java.class.path}&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/classpath&gt;</span>
+                <span class="nt">&lt;/java&gt;</span>
+
+            <span class="nt">&lt;/sequential&gt;</span>
+        <span class="nt">&lt;/ac:for&gt;</span>
+
+    <span class="nt">&lt;/target&gt;</span>
+
+    <span class="c">&lt;!--换行符统一处理--&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;crlf&quot;</span> <span class="na">depends=</span><span class="s">&quot;combo&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;fixcrlf</span> <span class="na">includes=</span><span class="s">&quot;*.combo.js&quot;</span>
+                 <span class="na">srcdir=</span><span class="s">&quot;${page.dir}&quot;</span>
+                 <span class="na">encoding=</span><span class="s">&quot;${charset}&quot;</span>
+                 <span class="na">eol=</span><span class="s">&quot;crlf&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/fixcrlf&gt;</span>
+    <span class="nt">&lt;/target&gt;</span>
+
+    <span class="c">&lt;!-- js ASCII 化 --&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;native2ascii&quot;</span> <span class="na">depends=</span><span class="s">&quot;minify&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;mkdir</span> <span class="na">dir=</span><span class="s">&quot;${page.dir.tmp}&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;move</span> <span class="na">todir=</span><span class="s">&quot;${page.dir.tmp}&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;fileset</span> <span class="na">dir=</span><span class="s">&quot;${page.dir}&quot;</span> <span class="na">includes=</span><span class="s">&quot;*-min.js&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/move&gt;</span>
+        <span class="nt">&lt;native2ascii</span> <span class="na">encoding=</span><span class="s">&quot;${charset}&quot;</span>
+                      <span class="na">src=</span><span class="s">&quot;${page.dir.tmp}&quot;</span>
+                      <span class="na">dest=</span><span class="s">&quot;${page.dir}&quot;</span>
+                      <span class="na">includes=</span><span class="s">&quot;*.js&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;delete</span> <span class="na">dir=</span><span class="s">&quot;${page.dir.tmp}&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/target&gt;</span>
+
+    <span class="c">&lt;!--js 压缩--&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;minify&quot;</span> <span class="na">depends=</span><span class="s">&quot;crlf&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;apply</span> <span class="na">executable=</span><span class="s">&quot;java&quot;</span>
+               <span class="na">verbose=</span><span class="s">&quot;true&quot;</span>
+               <span class="na">dest=</span><span class="s">&quot;${page.dir}&quot;</span>
+               <span class="na">failonerror=</span><span class="s">&quot;true&quot;</span>
+               <span class="na">parallel=</span><span class="s">&quot;false&quot;</span>
+                <span class="nt">&gt;</span>
+            <span class="nt">&lt;fileset</span> <span class="na">dir=</span><span class="s">&quot;${page.dir}&quot;</span>
+                     <span class="na">includes=</span><span class="s">&quot;**/*.combo.js&quot;</span>
+                    <span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">line=</span><span class="s">&quot;-jar&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">path=</span><span class="s">&quot;${closure.compiler}&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">line=</span><span class="s">&quot;--charset ${charset}&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;--warning_level&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;QUIET&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;--js&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;srcfile/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;--js_output_file&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;targetfile/&gt;</span>
+            <span class="nt">&lt;mapper</span> <span class="na">type=</span><span class="s">&quot;regexp&quot;</span> <span class="na">from=</span><span class="s">&quot;^(.*)\.combo\.js$&quot;</span> <span class="na">to=</span><span class="s">&quot;\1-min.js&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/apply&gt;</span>
+    <span class="nt">&lt;/target&gt;</span>
+
+    <span class="c">&lt;!--项目(js,css)构建--&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;build&quot;</span> <span class="na">depends=</span><span class="s">&quot;jsrun,compressor-css&quot;</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/project&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../use-sphinx.html" title="Sphinx 使用介绍"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="intro.html" title="原理介绍"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.2 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >Tutorial</a> &#187; </li>
+      <li><a href="../index.html" >前端常用工具</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">KISSY Module Compiler</a> &#187; </li> 
+    </ul>
+</div>
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            $("#openComment").attr("disabled",true);
+        }else{
+            $("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            $("#openComment").bind("change",function(){
+                window.localStorage.setItem("kissy-commment",$("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+    <div class="col-sub">
+
+<div class="s-box">
+    <div class="s-box-bd">
+        <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../demo/index.html">Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Tutorial</a></li>
+</ul>
+
+    </div>
+</div>
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

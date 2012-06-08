@@ -1,0 +1,347 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>旋转木马（二） &mdash; KISSY v1.2 Documentation</title>
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+    (function(){
+        var js=[],h=window.location.href,d=document;
+            js.push("../../../static/jquery.js");
+            js.push("../../../static/underscore.js");
+            js.push("../../../static/doctools.js");
+        for(var i=0;i<js.length;i++){
+            var j=js[i];
+            if(h.indexOf("localhost/kissy_git/")==-1&&j.indexOf("jquery.js")!=-1){
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
+            }else{
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
+            }
+        }
+    })();
+</script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="demo8.html" title="手风琴效果"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="demo6.html" title="普通旋转木马"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.2 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >Demos</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Switchable 使用示例</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="id1">
+<h1>旋转木马（二）<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="../../../api/component/switchable/switchable.html#switchable.Switchable" title="switchable.Switchable"><tt class="xref py py-class docutils literal"><span class="pre">Switchable</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>旋转木马（二）<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><iframe width="100%" height="180" class="iframe-demo" src="../../../static/demo/switchable/demo7.html"></iframe><p><strong>组织 HTML 结构</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;J_TinySlide&quot;</span> <span class="na">class=</span><span class="s">&quot;s-demo tiny-slide-wrap&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tiny-hd pr&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;sk-title&quot;</span> <span class="na">href=</span><span class="s">&quot;http://try.taobao.com/index.htm?id=try2&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/p/fp/2011a/assets/space.gif&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;h3&gt;</span>(18240件免费商品)<span class="nt">&lt;/h3&gt;</span>
+
+        <span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">&quot;上一页&quot;</span> <span class="na">href=</span><span class="s">&quot;javascript:void(0);&quot;</span> <span class="na">hidefocus=</span><span class="s">&quot;true&quot;</span> <span class="na">class=</span><span class="s">&quot;tiny-prev&quot;</span> <span class="na">id=</span><span class="s">&quot;J_TinyPrev&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+
+        <span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">&quot;下一页&quot;</span> <span class="na">href=</span><span class="s">&quot;javascript:void(0);&quot;</span> <span class="na">hidefocus=</span><span class="s">&quot;true&quot;</span> <span class="na">class=</span><span class="s">&quot;tiny-next&quot;</span> <span class="na">id=</span><span class="s">&quot;J_TinyNext&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tiny-slide-content clearfix&quot;</span> <span class="na">data-active-index=</span><span class="s">&quot;1&quot;</span> <span class="na">style=</span><span class="s">&quot;position: relative;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ol</span> <span class="na">class=</span><span class="s">&quot;ks-switchable-content&quot;</span> <span class="na">style=</span><span class="s">&quot;position: absolute; width: 288px;left:0px; &quot;</span><span class="nt">&gt;</span>
+
+            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;tiny-item&quot;</span> <span class="na">style=</span><span class="s">&quot;display: block; float: left;&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://try.taobao.com/item/item_detail.htm?TBG=55010.103950.1&amp;SPM=1.55010.103950.1.0.0.0&amp;item_id=593722&quot;</span> <span class="na">class=</span><span class="s">&quot;tiny-pic&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">alt=</span><span class="s">&quot;欧美经典鳄鱼纹包&quot;</span> <span class="na">width=</span><span class="s">&quot;122&quot;</span> <span class="na">height=</span><span class="s">&quot;100&quot;</span> <span class="na">src=</span><span class="s">&quot;http://img03.taobaocdn.com/tps/i3/T14eycXeXXXXXXXXXX-122-100.jpg&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;des&quot;</span><span class="nt">&gt;</span>欧美经典鳄鱼纹包<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;price&quot;</span><span class="nt">&gt;</span>原价:374<span class="nt">&lt;/p&gt;</span>
+
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;full&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span> <span class="na">href=</span><span class="s">&quot;http://try.taobao.com/item/item_detail.htm?TBG=55010.103950.2&amp;SPM=1.55010.103950.2.0.0.0&amp;item_id=593722&quot;</span><span class="nt">&gt;&lt;/a&gt;&lt;/p&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;tiny-item&quot;</span> <span class="na">style=</span><span class="s">&quot;display: block; float: left;&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://try.taobao.com/item/item_detail.htm?TBG=55010.103950.3&amp;SPM=1.55010.103950.3.0.0.0&amp;item_id=608713&quot;</span> <span class="na">class=</span><span class="s">&quot;tiny-pic&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">alt=</span><span class="s">&quot;新款无叶风扇&quot;</span> <span class="na">width=</span><span class="s">&quot;122&quot;</span> <span class="na">height=</span><span class="s">&quot;100&quot;</span> <span class="na">src=</span><span class="s">&quot;http://img02.taobaocdn.com/tps/i2/T1SeycXepXXXXXXXXX-122-100.jpg&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;des&quot;</span><span class="nt">&gt;</span>新款无叶风扇<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;price&quot;</span><span class="nt">&gt;</span>原价:498<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;full&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span> <span class="na">href=</span><span class="s">&quot;http://try.taobao.com/item/item_detail.htm?TBG=55010.103950.4&amp;SPM=1.55010.103950.4.0.0.0&amp;item_id=608713&quot;</span><span class="nt">&gt;&lt;/a&gt;&lt;/p&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+
+            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;tiny-item&quot;</span> <span class="na">style=</span><span class="s">&quot;display: block; float: left;&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://try.taobao.com/item/item_detail.htm?TBG=55010.103950.5&amp;SPM=1.55010.103950.5.0.0.0&amp;item_id=570730&quot;</span> <span class="na">class=</span><span class="s">&quot;tiny-pic&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">alt=</span><span class="s">&quot;波西米亚抹胸长裙&quot;</span> <span class="na">width=</span><span class="s">&quot;122&quot;</span> <span class="na">height=</span><span class="s">&quot;100&quot;</span> <span class="na">src=</span><span class="s">&quot;http://img04.taobaocdn.com/tps/i4/T17KycXd4XXXXXXXXX-122-100.jpg&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;des&quot;</span><span class="nt">&gt;</span>波西米亚抹胸长裙<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;price&quot;</span><span class="nt">&gt;</span>原价:97<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;full&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span> <span class="na">href=</span><span class="s">&quot;http://try.taobao.com/item/item_detail.htm?TBG=55010.103950.6&amp;SPM=1.55010.103950.6.0.0.0&amp;item_id=570730&quot;</span><span class="nt">&gt;&lt;/a&gt;&lt;/p&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;tiny-item&quot;</span> <span class="na">style=</span><span class="s">&quot;display: block; float: left;&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://try.taobao.com/item/item_detail.htm?TBG=55010.103950.7&amp;SPM=1.55010.103950.7.0.0.0&amp;item_id=608721&quot;</span> <span class="na">class=</span><span class="s">&quot;tiny-pic&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">alt=</span><span class="s">&quot;触摸板无线键盘&quot;</span> <span class="na">width=</span><span class="s">&quot;122&quot;</span> <span class="na">height=</span><span class="s">&quot;100&quot;</span> <span class="na">src=</span><span class="s">&quot;http://img01.taobaocdn.com/tps/i1/T1XuCcXd0XXXXXXXXX-122-100.jpg&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;des&quot;</span><span class="nt">&gt;</span>触摸板无线键盘<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;price&quot;</span><span class="nt">&gt;</span>原价:348<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;full&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span> <span class="na">href=</span><span class="s">&quot;http://try.taobao.com/item/item_detail.htm?TBG=55010.103950.8&amp;SPM=1.55010.103950.8.0.0.0&amp;item_id=608721&quot;</span><span class="nt">&gt;&lt;/a&gt;&lt;/p&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;tiny-item&quot;</span> <span class="na">style=</span><span class="s">&quot;display: block; float: left;&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://try.taobao.com/item/item_detail.htm?TBG=55010.103950.9&amp;SPM=1.55010.103950.9.0.0.0&amp;item_id=546704&quot;</span> <span class="na">class=</span><span class="s">&quot;tiny-pic&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">alt=</span><span class="s">&quot;奕而乐笔记本冰座&quot;</span> <span class="na">width=</span><span class="s">&quot;122&quot;</span> <span class="na">height=</span><span class="s">&quot;100&quot;</span> <span class="na">src=</span><span class="s">&quot;http://img01.taobaocdn.com/tps/i1/T1RKycXepXXXXXXXXX-122-100.jpg&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;des&quot;</span><span class="nt">&gt;</span>奕而乐笔记本冰座<span class="nt">&lt;/p&gt;</span>
+
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;price&quot;</span><span class="nt">&gt;</span>原价:59<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;full&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span> <span class="na">href=</span><span class="s">&quot;http://try.taobao.com/item/item_detail.htm?TBG=55010.103950.10&amp;SPM=1.55010.103950.10.0.0.0&amp;item_id=546704&quot;</span><span class="nt">&gt;&lt;/a&gt;&lt;/p&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+
+        <span class="nt">&lt;/ol&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;ks-switchable-nav&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;ks-active&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</div>
+<p><strong>JS 初始化</strong></p>
+<p>通过容器元素的 id 和相关配置, 构建 <a class="reference internal" href="../../../api/component/switchable/carousel.html#switchable.Carousel" title="switchable.Carousel"><tt class="xref py py-class docutils literal"><span class="pre">Carousel</span></tt></a> 对象 :</p>
+<div class="highlight-javascript"><div class="highlight"><pre> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;switchable&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Switchable</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//通过DOM元素新建旋转木马</span>
+    <span class="kd">var</span> <span class="nx">tiny_slide</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Switchable</span><span class="p">.</span><span class="nx">Carousel</span><span class="p">(</span><span class="s1">&#39;#J_TinySlide&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">activeIndex</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nx">effect</span><span class="o">:</span> <span class="s1">&#39;scrollx&#39;</span><span class="p">,</span>
+        <span class="nx">easing</span><span class="o">:</span> <span class="s1">&#39;easeOutStrong&#39;</span><span class="p">,</span>
+        <span class="nx">viewSize</span><span class="o">:</span> <span class="p">[</span><span class="mi">274</span><span class="p">],</span>
+        <span class="nx">circular</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">prevBtnCls</span><span class="o">:</span> <span class="s1">&#39;tiny-prev&#39;</span><span class="p">,</span>
+        <span class="nx">nextBtnCls</span><span class="o">:</span> <span class="s1">&#39;tiny-next&#39;</span><span class="p">,</span>
+        <span class="nx">interval</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="nx">lazyDataType</span><span class="o">:</span> <span class="s1">&#39;img-src&#39;</span> <span class="c1">//延迟加载图片？</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="demo8.html" title="手风琴效果"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="demo6.html" title="普通旋转木马"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.2 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >Demos</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Switchable 使用示例</a> &#187; </li> 
+    </ul>
+</div>
+					<div>
+    <label>
+        评论：
+        <select id='openComment'>
+            <option value='1'>打开</option>
+            <option value='0'>关闭</option>
+        </select>
+    </label>
+    <script>
+        if(!window.localStorage){
+            $("#openComment").attr("disabled",true);
+        }else{
+            $("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
+            $("#openComment").bind("change",function(){
+                window.localStorage.setItem("kissy-commment",$("#openComment").val());
+                window.location.reload();
+            });
+        }
+    </script>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box demo-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/loader/index.html">loader</a></li>
+        <li><a href="../../seed/lang/index.html">lang</a></li>
+        <!--<li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/web/index.html">web</a></li>-->
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <!--<li><a href="../../core/ua/index.html">ua</a></li>
+        <li><a href="../../core/dom/index.html">DOM</a></li>
+        <li><a href="../../core/event/index.html">event</a></li>
+        <li><a href="../../core/node/index.html">node</a></li>
+        <li><a href="../../core/json/index.html">json</a></li>
+        <li><a href="../../core/ajax/index.html">ajax</a></li>
+        <li><a href="../../core/cookie/index.html">cookie</a></li>
+        <li><a href="../../core/base/index.html">base</a></li>-->
+        <li><a href="../../core/anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="../mvc/index.html">mvc</a></li>
+        <!--<li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../template/index.html">template</a></li>-->
+        <li><a href="../datalazyload/index.html">datalazyload</a></li>
+        <!--<li><a href="../flash/index.html">flash</a></li>-->
+        <li><a href="../dd/index.html">dd</a></li>
+        <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="index.html">switchable</a></li>
+        <li><a href="../suggest/index.html">suggest</a></li>
+        <li><a href="../calendar/index.html">calendar</a></li>
+        <li><a href="../imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
+        <li><a href="../waterfall/index.html">waterfall</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
+        <li><a href="../editor/index.html">editor</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>
