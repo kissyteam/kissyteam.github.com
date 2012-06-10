@@ -17,6 +17,7 @@ Config Attributes
   * :data:`minColCount`
   * :data:`effect`
   * :data:`colWidth`
+  * :data:`align`
 
 Methods
 -----------------------------------------------
@@ -57,6 +58,10 @@ Config Attributes Detail
 .. data:: minColCount
 
     {Number} - 最小列数, 默认为 1. 当窗口变小时, 计算得到的列数不能小于该值.
+
+.. data:: align
+
+    {String} - 容器内元素和容器对齐方向。可取值 "left", "center", "right". 默认 "center"
 
 .. data:: effect
 
