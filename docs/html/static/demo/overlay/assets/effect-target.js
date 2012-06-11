@@ -22,14 +22,27 @@ KISSY.use("node,overlay,button,dd", function (S, Node, O, B) {
         aria:true
     });
 
-    dialog.on("afterBindUI", function () {
-        dialog.on("show", function () {
-            dialog.get("maskNode").hide();
-            dialog.get("maskNode").fadeIn(.3);
+    var o = dialog;
+
+    o.on("afterBindUI", function () {
+        o.on("show", function () {
+            o.get("maskNode").css('opacity', 0);
+            o.get("maskNode").animate({
+                opacity:.5
+            }, {
+                duration:.3
+            });
         });
-        dialog.on("hide", function () {
-            dialog.get("maskNode").show();
-            dialog.get("maskNode").fadeOut(.3);
+        o.on("hide", function () {
+            o.get("maskNode").show();
+            o.get("maskNode").animate({
+                opacity:0
+            }, {
+                duration:.3,
+                complete:function () {
+                    o.get("maskNode").hide();
+                }
+            });
         });
     });
 

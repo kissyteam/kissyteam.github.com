@@ -154,14 +154,27 @@
         <span class="nx">aria</span><span class="o">:</span><span class="kc">true</span>
     <span class="p">});</span>
 
-    <span class="nx">dialog</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;afterBindUI&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="nx">dialog</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;show&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="nx">dialog</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
-            <span class="nx">dialog</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(.</span><span class="mi">3</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="nx">dialog</span><span class="p">;</span>
+
+    <span class="nx">o</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;afterBindUI&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">o</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;show&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;opacity&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+            <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
+                <span class="nx">opacity</span><span class="o">:</span><span class="p">.</span><span class="mi">5</span>
+            <span class="p">},</span> <span class="p">{</span>
+                <span class="nx">duration</span><span class="o">:</span><span class="p">.</span><span class="mi">3</span>
+            <span class="p">});</span>
         <span class="p">});</span>
-        <span class="nx">dialog</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;hide&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="nx">dialog</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
-            <span class="nx">dialog</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">fadeOut</span><span class="p">(.</span><span class="mi">3</span><span class="p">);</span>
+        <span class="nx">o</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;hide&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+            <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
+                <span class="nx">opacity</span><span class="o">:</span><span class="mi">0</span>
+            <span class="p">},</span> <span class="p">{</span>
+                <span class="nx">duration</span><span class="o">:</span><span class="p">.</span><span class="mi">3</span><span class="p">,</span>
+                <span class="nx">complete</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                    <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
         <span class="p">});</span>
     <span class="p">});</span>
 

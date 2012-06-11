@@ -101,7 +101,7 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../button/index.html" title="Button 使用示例"
+      <a href="effect-target.html" title="Effect target 效果"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="proxy-scroll.html" title="代理加窗口自动滚动"
@@ -157,14 +157,24 @@
         <span class="nx">aria</span><span class="o">:</span><span class="kc">true</span>
     <span class="p">});</span>
 
-    <span class="nx">dialog</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;afterBindUI&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="nx">dialog</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;show&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="nx">dialog</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
-            <span class="nx">dialog</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="nx">dialog</span><span class="p">;</span>
+
+    <span class="nx">o</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;afterBindUI&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">o</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;show&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;opacity&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+            <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
+                <span class="nx">opacity</span><span class="o">:</span><span class="p">.</span><span class="mi">5</span>
+            <span class="p">});</span>
         <span class="p">});</span>
-        <span class="nx">dialog</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;hide&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="nx">dialog</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
-            <span class="nx">dialog</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">fadeOut</span><span class="p">();</span>
+        <span class="nx">o</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;hide&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+            <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
+                <span class="nx">opacity</span><span class="o">:</span><span class="mi">0</span>
+            <span class="p">},</span> <span class="p">{</span>
+                <span class="nx">complete</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                    <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
         <span class="p">});</span>
     <span class="p">});</span>
 
@@ -200,7 +210,7 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../button/index.html" title="Button 使用示例"
+      <a href="effect-target.html" title="Effect target 效果"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="proxy-scroll.html" title="代理加窗口自动滚动"
