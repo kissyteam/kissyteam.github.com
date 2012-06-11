@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Overlay 使用示例 &mdash; KISSY Docs</title>
+<title>Effect target 效果 &mdash; KISSY Docs</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -101,19 +101,20 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="demo1.html" title="从 Markup 中构建"
+      <a href="../button/index.html" title="Button 使用示例"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../imagezoom/demo3.html" title="多图模式"
+      <a href="mask-anim.html" title="Mask 动画效果"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >Demos</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">Component</a> &#187; </li> 
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Overlay 使用示例</a> &#187; </li> 
     </ul>
 </div>
 					
-  <div class="section" id="overlay">
-<h1>Overlay 使用示例<a class="headerlink" href="#overlay" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="effect-target">
+<h1>Effect target 效果<a class="headerlink" href="#effect-target" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -122,53 +123,58 @@
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="demos">
-<h2>Demos<a class="headerlink" href="#demos" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>Effect target 效果<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="demo1.html">从 Markup 中构建</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demo2.html">新建 Markup</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demo3.html">多个触发元素公用一个 Overlay</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demo4.html">demo3 的另一种实现方式（不推荐）</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demo5.html">异步加载弹出层内容</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demo6.html">对话框 新建 + Mask + aria</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demo7.html">对话框 从 Markup 中构建</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demo8.html">对话框 限制 + 可缩放</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demo9.html">对话框 fixed 居中</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demo10.html">对话框运动到某个位置</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="proxy-scroll.html">代理加窗口自动滚动</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="mask-anim.html">Mask 动画效果</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="effect-target.html">Effect target 效果</a><ul class="simple">
-</ul>
-</li>
-</ul>
+<div><iframe width="100%" height="540" class="iframe-demo" src="../../../static/demo/overlay/effect-target.html"></iframe></div></blockquote>
+<div class="section" id="id2">
+<h3>加入初始样式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node,overlay,button,dd&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">,</span> <span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">show</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">B</span><span class="p">({</span>
+        <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;收藏&quot;</span><span class="p">,</span>
+        <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+        <span class="nx">render</span><span class="o">:</span><span class="s2">&quot;#button-wrap&quot;</span>
+    <span class="p">});</span>
+    <span class="nx">show</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+
+    <span class="kd">var</span> <span class="nx">dialog</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">O</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
+        <span class="nx">width</span><span class="o">:</span><span class="mi">400</span><span class="p">,</span>
+        <span class="nx">headerContent</span><span class="o">:</span><span class="s1">&#39;收藏&#39;</span><span class="p">,</span>
+        <span class="nx">bodyContent</span><span class="o">:</span><span class="s1">&#39;&lt;iframe scrolling=&quot;no&quot; height=&quot;200&quot; width=&quot;398&quot; frameborder=&quot;0&quot; name=&quot;popupIframe&quot; src=&quot;http://favorite.taobao.com/popup/add_collection.htm?id=10166801469&amp;amp;itemtype=1&amp;amp;scjjc=1&amp;amp;_tb_token_=3b38ed73a7775&amp;amp;t=1305543755536&quot;&gt;&lt;/iframe&gt;&#39;</span><span class="p">,</span>
+        <span class="nx">mask</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+        <span class="nx">align</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">points</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nx">effect</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">duration</span><span class="o">:</span><span class="p">.</span><span class="mi">3</span><span class="p">,</span>
+            <span class="nx">easing</span><span class="o">:</span><span class="s1">&#39;backOut&#39;</span><span class="p">,</span>
+            <span class="nx">target</span><span class="o">:</span><span class="nx">show</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;el&quot;</span><span class="p">)</span>
+        <span class="p">},</span>
+        <span class="nx">aria</span><span class="o">:</span><span class="kc">true</span>
+    <span class="p">});</span>
+
+    <span class="nx">dialog</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;afterBindUI&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">dialog</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;show&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">dialog</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+            <span class="nx">dialog</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(.</span><span class="mi">3</span><span class="p">);</span>
+        <span class="p">});</span>
+        <span class="nx">dialog</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;hide&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">dialog</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+            <span class="nx">dialog</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">fadeOut</span><span class="p">(.</span><span class="mi">3</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+
+
+    <span class="nx">show</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">dialog</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+    <span class="p">});</span>
+
+<span class="p">});</span>
+</pre></div>
 </div>
 </div></blockquote>
+</div>
 </div>
 </div>
 
@@ -186,14 +192,15 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="demo1.html" title="从 Markup 中构建"
+      <a href="../button/index.html" title="Button 使用示例"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../imagezoom/demo3.html" title="多图模式"
+      <a href="mask-anim.html" title="Mask 动画效果"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../index.html" >Demos</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">Component</a> &#187; </li> 
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Overlay 使用示例</a> &#187; </li> 
     </ul>
 </div>
 					<div>
@@ -297,7 +304,7 @@
         <li><a href="../suggest/index.html">suggest</a></li>
         <li><a href="../calendar/index.html">calendar</a></li>
         <li><a href="../imagezoom/index.html">imagezoom</a></li>
-        <li><a href="#">overlay</a></li>
+        <li><a href="index.html">overlay</a></li>
         <li><a href="../button/index.html">button</a></li>
         <li><a href="../menu/index.html">menu</a></li>
         <li><a href="../menubutton/index.html">menubutton</a></li>

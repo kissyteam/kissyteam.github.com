@@ -27,3 +27,4 @@ Demos
        demo10
        proxy-scroll
        mask-anim
+       effect-target
