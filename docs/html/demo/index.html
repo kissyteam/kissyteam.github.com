@@ -317,6 +317,9 @@
 <li class="toctree-l3"><a class="reference internal" href="component/overlay/mask-anim.html">Mask 动画效果</a><ul class="simple">
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="component/overlay/effect-target.html">Effect target 效果</a><ul class="simple">
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="component/button/index.html">Button 使用示例</a><ul>
@@ -336,6 +339,9 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="component/menu/index.html">Menu 使用示例</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="component/menu/demo1.html">menu 的基本使用</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="component/menu/xclass.html">使用 xclass 生成 menu</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="component/menu/decorate.html">从已有 html 生成菜单</a><ul class="simple">
@@ -360,6 +366,9 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="component/menubutton/index.html">MenuButton 使用示例</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="component/menubutton/demo1.html">简单菜单按钮/从已有 html 生成菜单按钮</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="component/menubutton/xclass.html">使用 xclass 生成菜单按钮</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="component/menubutton/demo2.html">模拟 selectbox</a><ul class="simple">
@@ -434,27 +443,7 @@
     <li><a href="../index.html">KISSY Docs</a> &#187; </li> 
     </ul>
 </div>
-					<div>
-    <label>
-        评论：
-        <select id='openComment'>
-            <option value='1'>打开</option>
-            <option value='0'>关闭</option>
-        </select>
-    </label>
-    <script>
-        if(!window.localStorage){
-            $("#openComment").attr("disabled",true);
-        }else{
-            $("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
-            $("#openComment").bind("change",function(){
-                window.localStorage.setItem("kissy-commment",$("#openComment").val());
-                window.location.reload();
-            });
-        }
-    </script>
-</div>
-<div id="disqus_thread"></div>
+					<div id="disqus_thread"></div>
 <script>
     if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -472,9 +461,6 @@
     })();
     }
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-
 <!--<div id="google-search-box">
     <div id="cse" style="width: 100%;">Loading</div>
     <script>

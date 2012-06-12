@@ -13,13 +13,13 @@
     margin-right: auto;
 }
 
-
-/** 布局基础样式 **/
+    /** 布局基础样式 **/
 .col-main {
     float: left;
     width: 100%;
     /* bug fix: 主栏没有内容时，在 Firefox 和 Chrome 等浏览器下，布局不对 */
     min-height: 1px;
+    overflow: hidden;
 }
 
 .col-sub, .col-extra {
@@ -35,7 +35,7 @@
     clear: both;
 }
 
-.layout, .main-wrap, .col-sub, .col-extra {
+.layout, .main-wrap, .col-sub, .col-extra, .s-module {
     *zoom: 1;
 }
 
@@ -69,7 +69,7 @@ a:hover, a:active {
 #header,
 #content,
 #footer {
-    width: 950px;
+    width: 1000px;
     margin: 0 auto;
 }
 
@@ -107,7 +107,6 @@ a:hover, a:active {
     font-size: 14px;
     height: 17px;
     border-left: 1px solid #DDDDDD;
-    line-height: 17px;
     margin: 47px 0 0 -1px;
     padding: 0 10px;
     font-weight: bold;
@@ -144,23 +143,11 @@ a:hover, a:active {
 
 .con ul li {
     padding-left: 25px;
-    height: 22px;
-}
-
-.con ul li span {
-    padding-left: 40px;
-}
-
-.con ul li span.s-first {
-    padding-left: 0px;
-    display: inline-block;
-    width: 80px;
 }
 
 .con .s-captain {
     font-size: 14px;
     height: 20px;
-    line-height: 20px;
     margin: 5px 0;
     color: #222;
 }
@@ -219,9 +206,6 @@ a:hover, a:active {
     /*.s-kissy-gallery .con{ height:140px;}*/
 .s-kissy-gallery .con ul li {
     background-position: 10px 13px;
-    overflow: hidden;
-    line-height: 25px;
-    height: 25px;
 }
 
 .s-kissy-gallery .con ul li span {
@@ -237,9 +221,6 @@ a:hover, a:active {
 
 .s-kissy-util .con ul li {
     background-position: 10px 13px;
-    overflow: hidden;
-    line-height: 25px;
-    height: 25px;
 }
 
 .s-kissy-util .con ul li span {
@@ -267,17 +248,14 @@ a:hover, a:active {
 
 .s-announce .con li {
     font-size: 14px;
-    height: 25px;
     padding-left: 15px;
     background-position: 0px 11px;
-    overflow: hidden;
 }
 
 .s-announce .con li span.s-announce-con {
     padding-left: 0px;
     display: inline-block;
     width: 200px;
-    overflow: hidden;
     height: 24px;
     color: #444;
 }
@@ -285,14 +263,12 @@ a:hover, a:active {
 .s-announce .con li span.s-announce-more {
     padding-left: 0px;
     display: inline-block;
-    overflow: hidden;
     height: 24px;
     float: right;
 }
 
 .s-announce .con li a {
     display: inline-block;
-    height: 25px;
 }
 
 .s-announce .con li a:hover {
@@ -307,10 +283,8 @@ a:hover, a:active {
 
 .s-kissy-standard .con li {
     font-size: 14px;
-    height: 25px;
     padding-left: 10px;
     background-position: 0px 11px;
-    overflow: hidden;
 }
 
 .s-kissy-standard ul li span {
@@ -319,10 +293,8 @@ a:hover, a:active {
 
 .s-kissy-tool .con li {
     font-size: 14px;
-    height: 25px;
     padding-left: 10px;
     background-position: 0px 11px;
-    overflow: hidden;
 }
 
 .s-kissy-tool .con li span {
@@ -331,7 +303,6 @@ a:hover, a:active {
 
 .s-kissy-tool .con li a {
     display: inline-block;
-    height: 25px;
 }
 
 .s-kissy-join .con div, .s-kissy-introduce .con div {
@@ -361,8 +332,11 @@ a:hover, a:active {
 .searchbox input {
     border: 1px solid #999;
     height: 20px;
-    line-height: 20px;
     vertical-align: middle;
+}
+
+.con {
+    line-height: 1.7;
 }
 </style>
 <link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon"/>
@@ -424,6 +398,20 @@ Yeah!
                 <p style="margin-top:5px;">你可以查看<a href="docs/html/tutorials/quickstart/index.html">快速上手</a>，对KISSY做个快速了解。</p>
             </div>
         </div>
+
+        <div class="s-kissy-gallery s-module">
+            <div class="title">投票
+                <span style="padding-left:5px;color:#80c269;font-size:12px;font-weight:normal;">你的投票决定 KISSY 的未来</span>
+            </div>
+            <div class="con">
+                <iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dE9hdTVWdjJTTHBDUXhOWEhKU0xqcFE6MQ"
+                        scrolling='no'
+                        width="660" height="450" frameborder="0"
+                        marginheight="0" marginwidth="0">正在载入...
+                </iframe>
+            </div>
+        </div>
+
         <div class="s-kissy-base s-module">
             <div class="title">API文档</div>
             <div class="con clearfix">
@@ -431,24 +419,24 @@ Yeah!
                     <div>
                         <div class="s-captain">Seed（种子）</div>
                         <ul class="api-seed">
-                            <li><span class="s-first"><a href="docs/html/api/seed/loader/">loader</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/seed/kissy/index.html">kissy</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/seed/lang/index.html">lang</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/seed/web/index.html">web</a></span></li>
+                            <li><span><a href="docs/html/api/seed/loader/">loader</a></span></li>
+                            <li><span><a href="docs/html/api/seed/kissy/index.html">kissy</a></span></li>
+                            <li><span><a href="docs/html/api/seed/lang/index.html">lang</a></span></li>
+                            <li><span><a href="docs/html/api/seed/web/index.html">web</a></span></li>
                         </ul>
                     </div>
                     <div>
                         <div class="s-captain">Core（核心文件）<span class="s-cheat"><a href="kcs/core.html">作弊条</a></span></div>
                         <ul class="api-core">
-                            <li><span class="s-first"><a href="docs/html/api/core/ua">ua</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/core/dom">dom</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/core/event">event</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/core/node">node</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/core/json">json</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/core/ajax">ajax</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/core/cookie">cookie</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/core/base">base</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/core/anim">anim</a></span></li>
+                            <li><span><a href="docs/html/api/core/ua">ua</a></span></li>
+                            <li><span><a href="docs/html/api/core/dom">dom</a></span></li>
+                            <li><span><a href="docs/html/api/core/event">event</a></span></li>
+                            <li><span><a href="docs/html/api/core/node">node</a></span></li>
+                            <li><span><a href="docs/html/api/core/json">json</a></span></li>
+                            <li><span><a href="docs/html/api/core/ajax">ajax</a></span></li>
+                            <li><span><a href="docs/html/api/core/cookie">cookie</a></span></li>
+                            <li><span><a href="docs/html/api/core/base">base</a></span></li>
+                            <li><span><a href="docs/html/api/core/anim">anim</a></span></li>
                         </ul>
                     </div>
                 </div>
@@ -456,25 +444,25 @@ Yeah!
                     <div>
                         <div class="s-captain">Components（UI组件）<span class="s-cheat"><a href="kcs/widget.html">作弊条</a></span></div>
                         <ul class="api-component">
-                            <li><span class="s-first"><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/component/mvc">mvc</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/component/template">template</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/component/datalazyload">datalazyload</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/component/flash">flash</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/component/dd">dd</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/component/resizable">resizable</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/component/switchable">switchable</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/component/suggest">suggest</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/component/calendar">calendar</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/component/imagezoom">imagezoom</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/component/overlay">overlay</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/component/button">button</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/component/menu">menu</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/component/menubutton">menubutton</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/component/tree">tree</a></span></li>
-                            <li><span class="s-first"><a href="http://docs.kissyui.com/kissy/src/validation/demo/">validation</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/component/waterfall">waterfall</a></span></li>
-                            <li><span class="s-first"><a href="docs/html/api/component/editor">editor</a></span></li>
+                            <li><span><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></span></li>
+                            <li><span><a href="docs/html/api/component/mvc">mvc</a></span></li>
+                            <li><span><a href="docs/html/api/component/template">template</a></span></li>
+                            <li><span><a href="docs/html/api/component/datalazyload">datalazyload</a></span></li>
+                            <li><span><a href="docs/html/api/component/flash">flash</a></span></li>
+                            <li><span><a href="docs/html/api/component/dd">dd</a></span></li>
+                            <li><span><a href="docs/html/api/component/resizable">resizable</a></span></li>
+                            <li><span><a href="docs/html/api/component/switchable">switchable</a></span></li>
+                            <li><span><a href="docs/html/api/component/suggest">suggest</a></span></li>
+                            <li><span><a href="docs/html/api/component/calendar">calendar</a></span></li>
+                            <li><span><a href="docs/html/api/component/imagezoom">imagezoom</a></span></li>
+                            <li><span><a href="docs/html/api/component/overlay">overlay</a></span></li>
+                            <li><span><a href="docs/html/api/component/button">button</a></span></li>
+                            <li><span><a href="docs/html/api/component/menu">menu</a></span></li>
+                            <li><span><a href="docs/html/api/component/menubutton">menubutton</a></span></li>
+                            <li><span><a href="docs/html/api/component/tree">tree</a></span></li>
+                            <li><span><a href="http://docs.kissyui.com/kissy/src/validation/demo/">validation</a></span></li>
+                            <li><span><a href="docs/html/api/component/waterfall">waterfall</a></span></li>
+                            <li><span><a href="docs/html/api/component/editor">editor</a></span></li>
                         </ul>
                     </div>
 
@@ -528,6 +516,34 @@ Yeah!
                 <div> google group：<a href='http://groups.google.com/group/kissy-ui/' target="_blank">kissy-ui</a></div>
                 <div>技术支持旺旺：kissyteam</div>
                 <div>邮箱：<a href="mailto:kissyteam@gmail.com" target="_self">kissyteam@gmail.com </a></div>
+            </div>
+        </div>
+
+        <div class="s-kissy-gallery s-module">
+            <div class="title">
+                您的建议
+            </div>
+            <div class="con comment">
+                <div id="disqus_thread"></div>
+                <script>
+                    if ((window.location.hostname.indexOf("kissyui.com") != -1 ) && window.localStorage.getItem("kissy-commment") != "0") {
+                        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                        var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+                        // The following are highly recommended additional parameters. Remove the slashes in front to use.
+                        //var disqus_identifier = '/anim';
+                        //var disqus_url = window.location;
+
+                        /* * * DON'T EDIT BELOW THIS LINE * * */
+                        (function () {
+                            var dsq = document.createElement('script');
+                            dsq.type = 'text/javascript';
+                            dsq.async = true;
+                            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+                    }
+                </script>
             </div>
         </div>
     </div>
@@ -595,26 +611,9 @@ Yeah!
             </ul>
         </div>
     </div>
-
-    <div class="s-kissy-tool s-module">
-        <div class="title">
-            <span><a href="other/third.html#tools">更多&gt;&gt;</a></span>
-            常用工具推荐
-        </div>
-        <div class="con">
-            <ul>
-                <li><span><a href="docs/html/tutorials/tools/module-compiler/index.html" data-ver=",1.2">KISSY Module Compiler: </a></span><span>模块依赖合并</span></li>
-                <li><span><a href="http://code.google.com/intl/zh-CN/closure/compiler/">Closure Compiler: </a></span><span>JS压缩</span></li>
-                <li><span><a href="http://developer.yahoo.com/yui/compressor/">YUI Compressor: </a></span><span>CSS压缩</span></li>
-                <li><span><a href="http://code.google.com/p/jsdoc-toolkit/">JsDoc Toolkit:</a></span><span>文档生成</span></li>
-                <li><span><a href="http://code.google.com/closure/utilities/">Closure Linter:</a></span><span>检查校验</span></li>
-                <li><span><a href="http://ant.apache.org/">Ant: </a></span><span>自动配置、打包</span></li>
-            </ul>
-        </div>
-    </div>
-
-
 </div>
+
+
 </div>
 </div>
 <div id="footer">

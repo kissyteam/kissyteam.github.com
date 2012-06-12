@@ -5,7 +5,6 @@ KISSY.use("ua,event,node,overlay,button", function(S, UA, Event, Node, O, B) {
         elStyle:{
             position: UA.ie == 6 ? "absolute" : "fixed"
         },
-        <!-- width height 一定要设-->
         bodyContent: '<img '
             + 'width="424" '
             + 'height="282" '

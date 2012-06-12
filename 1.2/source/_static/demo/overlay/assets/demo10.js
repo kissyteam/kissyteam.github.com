@@ -58,7 +58,6 @@ KISSY.use("dom,node,ua,event,overlay", function(S, DOM, Node, UA, Event, Overlay
             elStyle:{
                 overflow:'hidden'
             },
-            <!-- width height 一定要设-->
             bodyContent:'<img '
                     + 'width="424" '
                     + 'height="282" '

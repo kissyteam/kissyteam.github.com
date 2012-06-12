@@ -134,56 +134,55 @@
 <span class="nt">&lt;/style&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><pre>KISSY.use("ua,event,node,overlay,button", function(S, UA, Event, Node, O, B) {
-    var dialog = new O.Dialog({
-        width:424,
-        elCls: 'my',
-        elStyle:{
-            position: UA.ie == 6 ? "absolute" : "fixed"
-        },
-        &lt;!-- width height 一定要设--&gt;
-        bodyContent: '&lt;img '
-            + 'width="424" '
-            + 'height="282" '
-            + 'src="http://img02.taobaocdn.com/tps/i2/T10J9bXnlgXXXXXXXX-424-282.jpg?noq=y" /&gt;',
-        mask: true,
-        draggable: true,
-        align: {
-            points: ['cc', 'cc']
-        },
-        closeAction:"destroy"
-    });
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;ua,event,node,overlay,button&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">UA</span><span class="p">,</span> <span class="nx">Event</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">,</span> <span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">dialog</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">O</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
+        <span class="nx">width</span><span class="o">:</span><span class="mi">424</span><span class="p">,</span>
+        <span class="nx">elCls</span><span class="o">:</span> <span class="s1">&#39;my&#39;</span><span class="p">,</span>
+        <span class="nx">elStyle</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">position</span><span class="o">:</span> <span class="nx">UA</span><span class="p">.</span><span class="nx">ie</span> <span class="o">==</span> <span class="mi">6</span> <span class="o">?</span> <span class="s2">&quot;absolute&quot;</span> <span class="o">:</span> <span class="s2">&quot;fixed&quot;</span>
+        <span class="p">},</span>
+        <span class="nx">bodyContent</span><span class="o">:</span> <span class="s1">&#39;&lt;img &#39;</span>
+            <span class="o">+</span> <span class="s1">&#39;width=&quot;424&quot; &#39;</span>
+            <span class="o">+</span> <span class="s1">&#39;height=&quot;282&quot; &#39;</span>
+            <span class="o">+</span> <span class="s1">&#39;src=&quot;http://img02.taobaocdn.com/tps/i2/T10J9bXnlgXXXXXXXX-424-282.jpg?noq=y&quot; /&gt;&#39;</span><span class="p">,</span>
+        <span class="nx">mask</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">draggable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">align</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">points</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nx">closeAction</span><span class="o">:</span><span class="s2">&quot;destroy&quot;</span>
+    <span class="p">});</span>
 
-    var b1 = new B({
-        content: "我在可视区域的正中间，点击关闭销毁",
-        prefixCls: "goog-",
-        render: "#button-wrap"
-    });
-    b1.render();
+    <span class="kd">var</span> <span class="nx">b1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">B</span><span class="p">({</span>
+        <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;我在可视区域的正中间，点击关闭销毁&quot;</span><span class="p">,</span>
+        <span class="nx">prefixCls</span><span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+        <span class="nx">render</span><span class="o">:</span> <span class="s2">&quot;#button-wrap&quot;</span>
+    <span class="p">});</span>
+    <span class="nx">b1</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
 
-    dialog.on("destroy", function() {
-        b1.detach("click", show);
-        Event.detach(window, "scroll", center);
-    });
+    <span class="nx">dialog</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;destroy&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">b1</span><span class="p">.</span><span class="nx">detach</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="nx">show</span><span class="p">);</span>
+        <span class="nx">Event</span><span class="p">.</span><span class="nx">detach</span><span class="p">(</span><span class="nb">window</span><span class="p">,</span> <span class="s2">&quot;scroll&quot;</span><span class="p">,</span> <span class="nx">center</span><span class="p">);</span>
+    <span class="p">});</span>
 
-    b1.on('click', show);
+    <span class="nx">b1</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">show</span><span class="p">);</span>
 
-    function show() {
-        dialog.show();
-    }
+    <span class="kd">function</span> <span class="nx">show</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">dialog</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+    <span class="p">}</span>
 
-    function center() {
-        S.log("ie center");
-        if (dialog.get("visible")) {
-            dialog.center();
-        }
-    }
+    <span class="kd">function</span> <span class="nx">center</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;ie center&quot;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">dialog</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;visible&quot;</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nx">dialog</span><span class="p">.</span><span class="nx">center</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-    if (UA.ie == 6) {
-        Event.on(window, "scroll", center);
-    }
-});
-</pre>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">ie</span> <span class="o">==</span> <span class="mi">6</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nb">window</span><span class="p">,</span> <span class="s2">&quot;scroll&quot;</span><span class="p">,</span> <span class="nx">center</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
 </div>
 </div></blockquote>
 </div>
@@ -215,27 +214,7 @@
       <li><a href="index.html" accesskey="U">Overlay 使用示例</a> &#187; </li> 
     </ul>
 </div>
-					<div>
-    <label>
-        评论：
-        <select id='openComment'>
-            <option value='1'>打开</option>
-            <option value='0'>关闭</option>
-        </select>
-    </label>
-    <script>
-        if(!window.localStorage){
-            $("#openComment").attr("disabled",true);
-        }else{
-            $("#openComment").val(window.localStorage.getItem("kissy-commment")||"1");
-            $("#openComment").bind("change",function(){
-                window.localStorage.setItem("kissy-commment",$("#openComment").val());
-                window.location.reload();
-            });
-        }
-    </script>
-</div>
-<div id="disqus_thread"></div>
+					<div id="disqus_thread"></div>
 <script>
     if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -253,9 +232,6 @@
     })();
     }
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-
 <!--<div id="google-search-box">
     <div id="cse" style="width: 100%;">Loading</div>
     <script>
