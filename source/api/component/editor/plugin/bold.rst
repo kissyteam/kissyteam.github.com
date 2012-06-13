@@ -21,7 +21,7 @@ Commands
 ----------------------------------------------------------
 
 * :func:`~Editor.Command.bold`
-
+* :func:`~Editor.Command.queryBoldActive`
 
 
 Command Details
@@ -29,11 +29,19 @@ Command Details
 
 .. function:: Editor.Command.bold
 
-    | **bold(color, [effect])**
+    | **bold([effect])**
     | 对选区文字加粗
 
     :param Boolean effect: 加粗或取消加粗
 
+
+.. function:: Editor.Command.queryBoldActive
+
+    | **bold(elementPath)**
+    | 当前路径是否被加粗覆盖
+
+    :param Editor.ElementPath elementPath: 元素路径
+    :rtype: boolean
 
 .. note::
 

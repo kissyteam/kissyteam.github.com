@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Plugins &mdash; KISSY Docs</title>
+<title>image &mdash; KISSY Docs</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../../static/kissy.css"/>
@@ -101,88 +101,151 @@
       <a href="../../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="backColor.html" title="backColor"
+      <a href="indent.html" title="indent"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../editor.html" title="Editor"
+      <a href="heading.html" title="heading"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../../index.html" >Component</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">Editor</a> &#187; </li> 
+      <li><a href="../index.html" >Editor</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Plugins</a> &#187; </li> 
     </ul>
 </div>
 					
-  <div class="section" id="plugins">
-<h1>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="image">
+<h1>image<a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
-<div class="line">欢迎提交编辑器相关的插件到 KISSY Gallery</div>
+<div class="line">插入图片插件</div>
+</div>
+<div class="section" id="configs">
+<h2>Configs<a class="headerlink" href="#configs" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="editor.Editor.Plugin.image.config.remote">
+<tt class="descclassname">Editor.Plugin.image.config.</tt><tt class="descname">remote</tt><a class="headerlink" href="#editor.Editor.Plugin.image.config.remote" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="editor.Editor.Plugin.fontSize.config.upload">
+<tt class="descclassname">Editor.Plugin.fontSize.config.</tt><tt class="descname">upload</tt><a class="headerlink" href="#editor.Editor.Plugin.fontSize.config.upload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<p>无</p>
+</div>
+<div class="section" id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<p>无</p>
+</div>
+<div class="section" id="config-details">
+<h2>Config Details<a class="headerlink" href="#config-details" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="editor.Editor.Plugin.fontSize.config.remote">
+<tt class="descclassname">Editor.Plugin.fontSize.config.</tt><tt class="descname">remote</tt><a class="headerlink" href="#editor.Editor.Plugin.fontSize.config.remote" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 图片配置，如果设为 false ，则图片弹层中网络图片 tab 消失</p>
+</dd></dl>
+
+<dl class="data">
+<dt>
+<tt class="descclassname">Editor.Plugin.fontSize.config.</tt><tt class="descname">upload</tt></dt>
+<dd><p>{Object} - 图片配置，上传图片配置, 不需要上传功能可不配置, 包括以下子配置.</p>
+<dl class="data">
+<dt id="editor.Editor.Plugin.fontSize.config.upload.serverUrl">
+<tt class="descclassname">Editor.Plugin.fontSize.config.upload.</tt><tt class="descname">serverUrl</tt><a class="headerlink" href="#editor.Editor.Plugin.fontSize.config.upload.serverUrl" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 接受文件数据的服务器端程序地址, 格式为 multipart/form-data , 返回格式为：</p>
+<blockquote>
+<div><ul class="simple">
+<li>正确：{&#8220;imgUrl&#8221;:&#8221;<a class="reference external" href="http://xx.com/yy.jpg">http://xx.com/yy.jpg</a>&#8220;}</li>
+<li>错误：{&#8220;error&#8221;:&#8221;i am error!&#8221;}</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="data">
+<dt id="editor.Editor.Plugin.fontSize.config.upload.serverParams">
+<tt class="descclassname">Editor.Plugin.fontSize.config.upload.</tt><tt class="descname">serverParams</tt><a class="headerlink" href="#editor.Editor.Plugin.fontSize.config.upload.serverParams" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object} - 键值对. 传给服务器的格外参数, 如果 value 是函数则传递函数执行结果.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="editor.Editor.Plugin.fontSize.config.upload.suffix">
+<tt class="descclassname">Editor.Plugin.fontSize.config.upload.</tt><tt class="descname">suffix</tt><a class="headerlink" href="#editor.Editor.Plugin.fontSize.config.upload.suffix" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 允许图片的后缀名.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="editor.Editor.Plugin.fontSize.config.upload.fileInput">
+<tt class="descclassname">Editor.Plugin.fontSize.config.upload.</tt><tt class="descname">fileInput</tt><a class="headerlink" href="#editor.Editor.Plugin.fontSize.config.upload.fileInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 传给服务器的文件域名.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="editor.Editor.Plugin.fontSize.config.upload.sizeLimit">
+<tt class="descclassname">Editor.Plugin.fontSize.config.upload.</tt><tt class="descname">sizeLimit</tt><a class="headerlink" href="#editor.Editor.Plugin.fontSize.config.upload.sizeLimit" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 限制上传的文件大小, 单位 KB, ie 下只能作为提示.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="editor.Editor.Plugin.fontSize.config.upload.extraHtml">
+<tt class="descclassname">Editor.Plugin.fontSize.config.upload.</tt><tt class="descname">extraHtml</tt><a class="headerlink" href="#editor.Editor.Plugin.fontSize.config.upload.extraHtml" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 放入图片上传区域的其他 html.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="id1">
-<h2>插件集合<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="backColor.html">backColor</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="bold.html">bold</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="checkboxSourcearea.html">checkboxSourcearea</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="draft.html">draft</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="dragUpload.html">dragUpload</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="elementPath.html">elementPath</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="flash.html">flash</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="fontFamily.html">fontFamily</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="fontSize.html">fontSize</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="foreColor.html">foreColor</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="heading.html">heading</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="image.html">image</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="indent.html">indent</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="outdent.html">outdent</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="italic.html">italic</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="justifyCenter.html">justifyCenter</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="justifyLeft.html">justifyLeft</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="justifyRight.html">justifyRight</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="link.html">link</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="maximize.html">maximize</a><ul class="simple">
-</ul>
-</li>
-</ul>
+<h2>实例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">pluginConfig</span><span class="o">:</span> <span class="p">{</span>
+    <span class="c1">// 图片插件配置</span>
+    <span class="s2">&quot;image&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="c1">//上传图片配置, 不需要上传功能可不配置</span>
+        <span class="nx">upload</span><span class="o">:</span> <span class="p">{</span>
+            <span class="c1">//返回格式</span>
+            <span class="c1">//正确：{&quot;imgUrl&quot;:&quot;http://xx.com/yy.jpg&quot;}</span>
+            <span class="c1">//错误：{&quot;error&quot;:&quot;i am error!&quot;}</span>
+            <span class="c1">//接受图片的服务器</span>
+            <span class="c1">//发送一个文件过去, 格式为 multipart/form-data</span>
+            <span class="nx">serverUrl</span><span class="o">:</span> <span class="s2">&quot;/code/upload/upload.jsp&quot;</span><span class="p">,</span>
+            <span class="c1">//传给服务器的格外参数, 是函数则传递函数执行结果</span>
+            <span class="nx">serverParams</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">yy</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="s2">&quot;xx&quot;</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="c1">//后缀名白名单</span>
+            <span class="nx">suffix</span><span class="o">:</span> <span class="s2">&quot;png,jpg,jpeg,gif&quot;</span><span class="p">,</span>
+            <span class="c1">//传递给server的文件域名字</span>
+            <span class="nx">fileInput</span><span class="o">:</span> <span class="s2">&quot;Filedata&quot;</span><span class="p">,</span>
+            <span class="c1">//限制上传的文件大小, 单位KB,</span>
+            <span class="c1">//无法客户端限制, 只能作为提示信息</span>
+            <span class="nx">sizeLimit</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
+            <span class="c1">//k</span>
+            <span class="c1">//自己想要添加的其他输入域</span>
+            <span class="nx">extraHtml</span><span class="o">:</span> <span class="s2">&quot;&lt;p style=&#39;margin-top:5px;&#39;&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;input type=&#39;checkbox&#39; name=&#39;ke_img_up_watermark_1&#39;&gt; 图片加水印, 防止别人盗用&lt;/p&gt;&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>如果页面中设置了 document.domain=&#8217;xx.com&#8217;, 那么这时上传图片服务器要返回一段设置 domain 的 html, 例如</p>
+<div class="last highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">domain</span><span class="o">=</span><span class="s2">&quot;xx.com&quot;</span><span class="p">;</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        {&quot;imgUrl&quot;:&quot;http://img03.taobaocdn.com/sns_album/i3/T13fhRXftcXXb1upjX.jpg&quot;}
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -201,15 +264,16 @@
       <a href="../../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="backColor.html" title="backColor"
+      <a href="indent.html" title="indent"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../editor.html" title="Editor"
+      <a href="heading.html" title="heading"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../../index.html">KISSY Docs</a> &#187; </li>
       <li><a href="../../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../../index.html" >Component</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">Editor</a> &#187; </li> 
+      <li><a href="../index.html" >Editor</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Plugins</a> &#187; </li> 
     </ul>
 </div>
 					<div id="disqus_thread"></div>
