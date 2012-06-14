@@ -1,16 +1,15 @@
 .. currentmodule:: editor
 
-link
+removeFormat
 ===============================
 
-|  链接插件
+|  清除格式插件
 
 
 Configs
 -------------------------------
 
-.. data:: Editor.Plugin.link.config.target
-
+无
 
 Events
 --------------------------------------------------------
@@ -21,12 +20,13 @@ Events
 Commands
 ----------------------------------------------------------
 
-无
+* :func:`~Editor.commands.removeFormat`
 
 
-Config Details
+Commands Details
 ------------------------------------------------------
 
-.. data:: Editor.Plugin.link.config.target
+.. function:: Editor.commands.removeFormat
 
-    {String} - 默认为 "", 表示在当前窗口打开新链接, 也可以指定 "_blank" , 则可以在新窗口打开链接.
+    | **indent()**
+    | 对选区清除格式.

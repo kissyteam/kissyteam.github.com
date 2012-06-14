@@ -20,13 +20,13 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.Command.indent`
+* :func:`~Editor.commands.indent`
 
 
-Command Details
+Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.Command.indent
+.. function:: Editor.commands.indent
 
     | **indent()**
     | 对选区缩进

@@ -14,24 +14,53 @@ Configs
 Events
 --------------------------------------------------------
 
-无
+* :func:`~Editor.events.afterMaximizeWindow`
+* :func:`~Editor.events.afterRestoreWindow`
+* :func:`~Editor.events.beforeMaximizeWindow`
+* :func:`~Editor.events.beforeRestoreWindow`
 
 
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.Command.maximizeWindow`
-* :func:`~Editor.Command.restoreWindow`
+* :func:`~Editor.commands.maximizeWindow`
+* :func:`~Editor.commands.restoreWindow`
 
-Command Details
+
+
+Events Details
+-------------------------------------------
+
+.. function:: Editor.events.afterMaximizeWindow
+
+    | **maximizeWindow()**
+    | 最大化窗口后触发
+
+.. function:: Editor.events.afterRestoreWindow
+
+    | **maximizeWindow()**
+    | 恢复窗口后触发
+
+.. function:: Editor.events.beforeRestoreWindow
+
+    | **maximizeWindow()**
+    | 恢复窗口前触发，返回 false 可阻止最大化
+
+.. function:: Editor.events.beforeMaximizeWindow
+
+    | **maximizeWindow()**
+    | 最大化窗口前触发，返回 false 可阻止最大化
+
+
+Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.Command.maximizeWindow
+.. function:: Editor.commands.maximizeWindow
 
     | **maximizeWindow()**
     | 窗口最大化
 
-.. function:: Editor.Command.restoreWindow
+.. function:: Editor.commands.restoreWindow
 
     | **restoreWindow()**
     | 窗口最恢复

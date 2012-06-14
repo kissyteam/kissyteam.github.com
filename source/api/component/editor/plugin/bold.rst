@@ -20,14 +20,14 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.Command.bold`
-* :func:`~Editor.Command.queryBoldActive`
+* :func:`~Editor.commands.bold`
+* :func:`~Editor.commands.queryBoldActive`
 
 
-Command Details
+Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.Command.bold
+.. function:: Editor.commands.bold
 
     | **bold([effect])**
     | 对选区文字加粗
@@ -35,7 +35,7 @@ Command Details
     :param Boolean effect: 加粗或取消加粗
 
 
-.. function:: Editor.Command.queryBoldActive
+.. function:: Editor.commands.queryBoldActive
 
     | **bold(elementPath)**
     | 当前路径是否被加粗覆盖

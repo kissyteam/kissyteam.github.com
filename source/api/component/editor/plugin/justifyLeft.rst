@@ -20,20 +20,20 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.Command.justifyLeft`
-* :func:`~Editor.Command.queryJustifyLeftActive`
+* :func:`~Editor.commands.justifyLeft`
+* :func:`~Editor.commands.queryJustifyLeftActive`
 
 
-Command Details
+Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.Command.justifyLeft
+.. function:: Editor.commands.justifyLeft
 
     | **justifyCenter()**
     | 对选区文字居左
 
 
-.. function:: Editor.Command.queryJustifyLeftActive
+.. function:: Editor.commands.queryJustifyLeftActive
 
     | **queryJustifyLeftActive(elementPath)**
     | 当前路径是否是居左对齐

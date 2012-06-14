@@ -1,15 +1,16 @@
 .. currentmodule:: editor
 
-outdent
+unorderedList
 ===============================
 
-|  缩出插件
+|  无序列表插件
 
 
 Configs
 -------------------------------
 
 无
+
 
 Events
 --------------------------------------------------------
@@ -20,22 +21,22 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.Command.outdent`
-* :func:`~Editor.Command.queryOutdentActive`
+* :func:`~Editor.commands.insertUnorderedList`
+* :func:`~Editor.commands.queryInsertUnorderedListActive`
 
-Command Details
+Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.Command.outdent
+.. function:: Editor.commands.insertUnorderedList
 
-    | **outdent**
-    | 对选区缩出
+    | **insertUnorderedList**
+    | 对选区设置为无序列表
 
 
-.. function:: Editor.Command.queryOutdentActive
+.. function:: Editor.commands.queryInsertUnorderedListActive
 
     | **queryOutdentActive(elementPath)**
-    | 返回当前路径是否可以缩出
+    | 返回当前路径是否是无序列表
 
     :param Editor.ElementPath elementPath: 元素路径
     :rtype: boolean

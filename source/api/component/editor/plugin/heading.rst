@@ -20,13 +20,13 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.Command.heading`
+* :func:`~Editor.commands.heading`
 
 
-Command Details
+Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.Command.heading
+.. function:: Editor.commands.heading
 
     | **heading(tag)**
     | 对选区设置标题的插件
@@ -43,7 +43,7 @@ Command Details
         editor.execCommand("heading",'h1');
 
 
-.. function:: Editor.Command.queryHeadingActive
+.. function:: Editor.commands.queryHeadingActive
 
     | **queryHeadingActive(elementPath, tag)**
     | 对选区设置标题的插件

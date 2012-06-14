@@ -20,20 +20,20 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.Command.justifyCenter`
-* :func:`~Editor.Command.queryJustifyCenterActive`
+* :func:`~Editor.commands.justifyCenter`
+* :func:`~Editor.commands.queryJustifyCenterActive`
 
 
-Command Details
+Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.Command.justifyCenter
+.. function:: Editor.commands.justifyCenter
 
     | **justifyCenter()**
     | 对选区文字居中
 
 
-.. function:: Editor.Command.queryJustifyCenterActive
+.. function:: Editor.commands.queryJustifyCenterActive
 
     | **queryJustifyCenterActive(elementPath)**
     | 当前路径是否是居中对齐

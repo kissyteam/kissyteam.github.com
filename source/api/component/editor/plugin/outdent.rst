@@ -20,19 +20,19 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.Command.outdent`
-* :func:`~Editor.Command.queryOutdentActive`
+* :func:`~Editor.commands.outdent`
+* :func:`~Editor.commands.queryOutdentActive`
 
-Command Details
+Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.Command.outdent
+.. function:: Editor.commands.outdent
 
     | **outdent**
     | 对选区缩出
 
 
-.. function:: Editor.Command.queryOutdentActive
+.. function:: Editor.commands.queryOutdentActive
 
     | **queryOutdentActive(elementPath)**
     | 返回当前路径是否可以缩出

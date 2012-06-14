@@ -101,7 +101,7 @@
       <a href="../../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../../../../demo/index.html" title="Demos"
+      <a href="multipleUpload.html" title="multiUpload"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="link.html" title="link"
@@ -125,20 +125,64 @@
 </div>
 <div class="section" id="events">
 <h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
-<p>无</p>
+<ul class="simple">
+<li><a class="reference internal" href="#editor.Editor.events.afterMaximizeWindow" title="editor.Editor.events.afterMaximizeWindow"><tt class="xref py py-func docutils literal"><span class="pre">afterMaximizeWindow()</span></tt></a></li>
+<li><a class="reference internal" href="#editor.Editor.events.afterRestoreWindow" title="editor.Editor.events.afterRestoreWindow"><tt class="xref py py-func docutils literal"><span class="pre">afterRestoreWindow()</span></tt></a></li>
+<li><a class="reference internal" href="#editor.Editor.events.beforeMaximizeWindow" title="editor.Editor.events.beforeMaximizeWindow"><tt class="xref py py-func docutils literal"><span class="pre">beforeMaximizeWindow()</span></tt></a></li>
+<li><a class="reference internal" href="#editor.Editor.events.beforeRestoreWindow" title="editor.Editor.events.beforeRestoreWindow"><tt class="xref py py-func docutils literal"><span class="pre">beforeRestoreWindow()</span></tt></a></li>
+</ul>
 </div>
 <div class="section" id="commands">
 <h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="#editor.Editor.Command.maximizeWindow" title="editor.Editor.Command.maximizeWindow"><tt class="xref py py-func docutils literal"><span class="pre">maximizeWindow()</span></tt></a></li>
-<li><a class="reference internal" href="#editor.Editor.Command.restoreWindow" title="editor.Editor.Command.restoreWindow"><tt class="xref py py-func docutils literal"><span class="pre">restoreWindow()</span></tt></a></li>
+<li><a class="reference internal" href="#editor.Editor.commands.maximizeWindow" title="editor.Editor.commands.maximizeWindow"><tt class="xref py py-func docutils literal"><span class="pre">maximizeWindow()</span></tt></a></li>
+<li><a class="reference internal" href="#editor.Editor.commands.restoreWindow" title="editor.Editor.commands.restoreWindow"><tt class="xref py py-func docutils literal"><span class="pre">restoreWindow()</span></tt></a></li>
 </ul>
 </div>
-<div class="section" id="command-details">
-<h2>Command Details<a class="headerlink" href="#command-details" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="events-details">
+<h2>Events Details<a class="headerlink" href="#events-details" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="editor.Editor.Command.maximizeWindow">
-<tt class="descclassname">Editor.Command.</tt><tt class="descname">maximizeWindow</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.Command.maximizeWindow" title="Permalink to this definition">¶</a></dt>
+<dt id="editor.Editor.events.afterMaximizeWindow">
+<tt class="descclassname">Editor.events.</tt><tt class="descname">afterMaximizeWindow</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.events.afterMaximizeWindow" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>maximizeWindow()</strong></div>
+<div class="line">最大化窗口后触发</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.Editor.events.afterRestoreWindow">
+<tt class="descclassname">Editor.events.</tt><tt class="descname">afterRestoreWindow</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.events.afterRestoreWindow" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>maximizeWindow()</strong></div>
+<div class="line">恢复窗口后触发</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.Editor.events.beforeRestoreWindow">
+<tt class="descclassname">Editor.events.</tt><tt class="descname">beforeRestoreWindow</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.events.beforeRestoreWindow" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>maximizeWindow()</strong></div>
+<div class="line">恢复窗口前触发，返回 false 可阻止最大化</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.Editor.events.beforeMaximizeWindow">
+<tt class="descclassname">Editor.events.</tt><tt class="descname">beforeMaximizeWindow</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.events.beforeMaximizeWindow" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>maximizeWindow()</strong></div>
+<div class="line">最大化窗口前触发，返回 false 可阻止最大化</div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="commands-details">
+<h2>Commands Details<a class="headerlink" href="#commands-details" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="editor.Editor.commands.maximizeWindow">
+<tt class="descclassname">Editor.commands.</tt><tt class="descname">maximizeWindow</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.commands.maximizeWindow" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>maximizeWindow()</strong></div>
 <div class="line">窗口最大化</div>
@@ -146,8 +190,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="editor.Editor.Command.restoreWindow">
-<tt class="descclassname">Editor.Command.</tt><tt class="descname">restoreWindow</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.Command.restoreWindow" title="Permalink to this definition">¶</a></dt>
+<dt id="editor.Editor.commands.restoreWindow">
+<tt class="descclassname">Editor.commands.</tt><tt class="descname">restoreWindow</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.commands.restoreWindow" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>restoreWindow()</strong></div>
 <div class="line">窗口最恢复</div>
@@ -171,7 +215,7 @@
       <a href="../../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../../../../demo/index.html" title="Demos"
+      <a href="multipleUpload.html" title="multiUpload"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="link.html" title="link"

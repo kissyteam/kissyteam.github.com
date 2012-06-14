@@ -21,8 +21,8 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.Command.fontSize`
-* :func:`~Editor.Command.queryFontSizeActive`
+* :func:`~Editor.commands.fontSize`
+* :func:`~Editor.commands.queryFontSizeActive`
 
 
 Config Details
@@ -52,10 +52,10 @@ Config Details
     {String} - 可选。下拉菜单的宽度，默认 "55px".
 
 
-Command Details
+Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.Command.fontSize
+.. function:: Editor.commands.fontSize
 
     | **fontSize(fontSize, [apply=true])**
     | 对选区文字设置指定的字体大小
@@ -70,7 +70,7 @@ Command Details
     editor.execCommand("fontSize","10px"); //=> 设置选区文字大小为10px.
 
 
-.. function:: Editor.Command.queryFontSizeActive
+.. function:: Editor.commands.queryFontSizeActive
 
     | **queryFontSizeActive(value, element)**
     | 查看指定元素是否被设置了对应大小

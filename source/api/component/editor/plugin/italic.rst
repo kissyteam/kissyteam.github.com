@@ -20,14 +20,14 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.Command.italic`
-* :func:`~Editor.Command.queryItalicActive`
+* :func:`~Editor.commands.italic`
+* :func:`~Editor.commands.queryItalicActive`
 
 
-Command Details
+Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.Command.italic
+.. function:: Editor.commands.italic
 
     | **italic([effect])**
     | 对选区文字斜体
@@ -35,7 +35,7 @@ Command Details
     :param Boolean effect: 斜体或取消斜体
 
 
-.. function:: Editor.Command.queryItalicActive
+.. function:: Editor.commands.queryItalicActive
 
     | **queryItalicActive(elementPath)**
     | 当前路径是否是斜体覆盖

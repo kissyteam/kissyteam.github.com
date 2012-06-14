@@ -34,3 +34,19 @@ Plugins
    justifyRight
    link
    maximize
+   multipleUpload
+   orderedList
+   pageBreak
+   preview
+   removeFormat
+   resize
+   separator
+   smiley
+   sourceArea
+   strikeThrough
+   table
+   underline
+   undo
+   unorderedList
+   video
+   xiamiMusic

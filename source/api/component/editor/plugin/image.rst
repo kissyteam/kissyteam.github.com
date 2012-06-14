@@ -10,7 +10,7 @@ Configs
 -------------------------------
 
 .. data:: Editor.Plugin.image.config.remote
-.. data:: Editor.Plugin.fontSize.config.upload
+.. data:: Editor.Plugin.image.config.upload
 
 
 Events
@@ -28,17 +28,17 @@ Commands
 Config Details
 ------------------------------------------------------
 
-.. data:: Editor.Plugin.fontSize.config.remote
+.. data:: Editor.Plugin.image.config.remote
 
     {Boolean} - 图片配置，如果设为 false ，则图片弹层中网络图片 tab 消失
 
-.. data:: Editor.Plugin.fontSize.config.upload
+.. data:: Editor.Plugin.image.config.upload
 
     {Object} - 图片配置，上传图片配置, 不需要上传功能可不配置, 包括以下子配置.
 
 
 
-    .. data:: Editor.Plugin.fontSize.config.upload.serverUrl
+    .. data:: Editor.Plugin.image.config.upload.serverUrl
 
         {String} - 接受文件数据的服务器端程序地址, 格式为 multipart/form-data , 返回格式为：
 
@@ -46,27 +46,27 @@ Config Details
                    * 错误：{"error":"i am error!"}
 
 
-    .. data:: Editor.Plugin.fontSize.config.upload.serverParams
+    .. data:: Editor.Plugin.image.config.upload.serverParams
 
            {Object} - 键值对. 传给服务器的格外参数, 如果 value 是函数则传递函数执行结果.
 
 
-    .. data:: Editor.Plugin.fontSize.config.upload.suffix
+    .. data:: Editor.Plugin.image.config.upload.suffix
 
            {String} - 允许图片的后缀名.
 
 
-    .. data:: Editor.Plugin.fontSize.config.upload.fileInput
+    .. data:: Editor.Plugin.image.config.upload.fileInput
 
            {String} - 传给服务器的文件域名.
 
 
-    .. data:: Editor.Plugin.fontSize.config.upload.sizeLimit
+    .. data:: Editor.Plugin.image.config.upload.sizeLimit
 
            {Number} - 限制上传的文件大小, 单位 KB, ie 下只能作为提示.
 
 
-    .. data:: Editor.Plugin.fontSize.config.upload.extraHtml
+    .. data:: Editor.Plugin.image.config.upload.extraHtml
 
            {String} - 放入图片上传区域的其他 html.
 

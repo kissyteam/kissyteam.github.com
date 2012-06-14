@@ -21,8 +21,8 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.Command.fontFamily`
-* :func:`~Editor.Command.queryFontFamilyActive`
+* :func:`~Editor.commands.fontFamily`
+* :func:`~Editor.commands.queryFontFamilyActive`
 
 Config Details
 ------------------------------------------------------
@@ -92,10 +92,10 @@ Config Details
 
 
 
-Command Details
+Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.Command.fontFamily
+.. function:: Editor.commands.fontFamily
 
     | **fontFamily(fontFamily, [apply=true])**
     | 对选区文字设置指定的字体
@@ -110,7 +110,7 @@ Command Details
     editor.execCommand("fontFamily","SimSun"); //=> 设置选区文字为宋体.
 
 
-.. function:: Editor.Command.queryFontFamilyActive
+.. function:: Editor.commands.queryFontFamilyActive
 
     | **queryFontFamilyActive(value, element)**
     | 查看指定元素是否被设置了对应字体

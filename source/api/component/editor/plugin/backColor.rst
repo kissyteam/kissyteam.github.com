@@ -20,14 +20,13 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.Command.backColor`
+* :func:`~Editor.commands.backColor`
 
 
-
-Command Details
+Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.Command.backColor
+.. function:: Editor.commands.backColor
 
     | **backColor(color)**
     | 对选区设置背景色
