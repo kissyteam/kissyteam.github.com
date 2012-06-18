@@ -16,3 +16,4 @@ Demos
 
        simple
        auto-combo
+       simple-plugin

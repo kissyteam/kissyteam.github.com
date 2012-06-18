@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Editor 使用示例 &mdash; KISSY Docs</title>
+<title>editor 按需加载+自动combo &mdash; KISSY Docs</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../static/kissy.css"/>
@@ -104,31 +104,64 @@
     </ul>
 </div>
 					
-  <div class="section" id="editor">
-<h1>Editor 使用示例<a class="headerlink" href="#editor" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="editor-combo">
+<h1>editor 按需加载+自动combo<a class="headerlink" href="#editor-combo" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="../../../api/component/editor/editor.html#editor.Editor" title="editor.Editor"><tt class="xref py py-class docutils literal"><span class="pre">Editor</span></tt></a></li>
+<li><a class="reference internal" href="../../../api/component/editor/index.html#module-editor" title="editor"><tt class="xref py py-class docutils literal"><span class="pre">editor</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="demos">
-<h2>Demos<a class="headerlink" href="#demos" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>editor 按需加载+自动combo<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="simple.html">editor 的简单使用</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="auto-combo.html">editor 按需加载+自动combo</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="simple-plugin.html">editor 插件的简单编写</a><ul class="simple">
-</ul>
-</li>
-</ul>
+<div><iframe width="100%" height="150" class="iframe-demo" src="../../../static/demo/editor/auto-combo.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s2">&quot;combine&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;editor&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Editor</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="kd">var</span> <span class="nx">cfg</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="c1">// 是否初始聚焦</span>
+            <span class="nx">focused</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nx">autoRender</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nx">attachForm</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nx">baseZIndex</span><span class="o">:</span><span class="mi">10000</span><span class="p">,</span>
+            <span class="c1">// 自定义样式</span>
+            <span class="c1">// customStyle:&quot;p{line-height: 1.4;margin: 1.12em 0;padding: 0;}&quot;,</span>
+            <span class="c1">// 自定义外部样式</span>
+            <span class="c1">// customLink:[&quot;http://localhost/customLink.css&quot;,&quot;http://xx.com/y2.css&quot;],</span>
+            <span class="c1">// render:&quot;#container&quot;,</span>
+            <span class="nx">render</span><span class="o">:</span><span class="s1">&#39;#editorContainer&#39;</span><span class="p">,</span>
+            <span class="nx">width</span><span class="o">:</span><span class="s1">&#39;80%&#39;</span><span class="p">,</span>
+            <span class="nx">height</span><span class="o">:</span><span class="s2">&quot;400px&quot;</span>
+        <span class="p">};</span>
+
+        <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;editor/plugin/sourceArea/,&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;editor/plugin/fontSize/,&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;editor/plugin/image/&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">SourceArea</span><span class="p">,</span> <span class="nx">FontSize</span><span class="p">,</span> <span class="nx">Image</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="nx">cfg</span><span class="p">.</span><span class="nx">plugins</span> <span class="o">=</span> <span class="p">[</span><span class="nx">SourceArea</span><span class="p">,</span> <span class="nx">FontSize</span><span class="p">,</span> <span class="k">new</span> <span class="nx">Image</span><span class="p">({</span>
+                <span class="nx">upload</span><span class="o">:</span><span class="p">{</span>
+                    <span class="nx">serverUrl</span><span class="o">:</span><span class="s2">&quot;http://localhost/kissy_git/kissy/src/editor/demo/upload.php&quot;</span><span class="p">,</span>
+                    <span class="nx">serverParams</span><span class="o">:</span><span class="p">{</span>
+                        <span class="nx">waterMark</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                            <span class="k">return</span> <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#ke_img_up_watermark_1&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">checked</span><span class="p">;</span>
+                        <span class="p">}</span>
+                    <span class="p">},</span>
+                    <span class="nx">suffix</span><span class="o">:</span><span class="s2">&quot;png,jpg,jpeg,gif&quot;</span><span class="p">,</span>
+                    <span class="nx">fileInput</span><span class="o">:</span><span class="s2">&quot;Filedata&quot;</span><span class="p">,</span>
+                    <span class="nx">sizeLimit</span><span class="o">:</span><span class="mi">1000</span><span class="p">,</span> <span class="c1">//k</span>
+                    <span class="nx">extraHtml</span><span class="o">:</span><span class="s2">&quot;&lt;p style=&#39;margin-top:10px;&#39;&gt;&lt;input type=&#39;checkbox&#39; id=&#39;ke_img_up_watermark_1&#39; checked=&#39;checked&#39;&gt; 图片加水印，防止别人盗用&lt;/p&gt;&quot;</span>
+                <span class="p">}</span>
+            <span class="p">})];</span>
+
+            <span class="k">new</span> <span class="nx">Editor</span><span class="p">(</span><span class="nx">cfg</span><span class="p">);</span>
+        <span class="p">});</span>
+
+    <span class="p">});</span>
+<span class="p">})();</span>
+</pre></div>
 </div>
 </div></blockquote>
 </div>

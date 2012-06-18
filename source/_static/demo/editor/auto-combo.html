@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>Demo - editor 的基本使用</title>
+<title>Demo - editor 按需加载 + 自动 combo</title>
 <link href="http://docs.kissyui.com/kissy/build/css/base.css" rel="stylesheet"/>
 <link href="http://assets.daily.taobao.net/s/kissy/1.3.0pr1/editor/theme/cool/editor-min.css"
       rel="stylesheet"/>
@@ -11,7 +11,13 @@
 <body>
 
 <div id="editorContainer" style="margin:20px "></div>
-<script src="assets/simple.js"></script>
+<script>
+    // 线上不要运行：
+    KISSY.config("map", [
+        [/\?t=.+/, ""]
+    ]);
+</script>
+<script src="assets/auto-combo.js"></script>
 
 </body>
 </html>
