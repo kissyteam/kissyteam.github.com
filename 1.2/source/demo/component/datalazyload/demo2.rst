@@ -3,9 +3,6 @@
 DataLazyload 自动模式
 =====================================================
 
-
-
-
 Class
 -----------------------------------------------
 
@@ -13,6 +10,12 @@ Class
 
 DataLazyload 自动模式
 -------------------------------
+
+    .. raw:: html
+
+    	  <iframe width="100%" height="450" class="iframe-demo" src="../../../static/demo/datalazyload/auto_demo.html"></iframe>
+
+
 
     使用自动模式时, 设置配置项中的 ``mod`` 为 'auto' , 如下:
 
