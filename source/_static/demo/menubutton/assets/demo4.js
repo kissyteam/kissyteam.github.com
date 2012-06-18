@@ -1,35 +1,43 @@
-KISSY.ready(function(S) {
-        KISSY.use("menubutton,button,menu", function(S, MenuButton, Button, Menu) {
-            var $ = S.all;
+KISSY.ready(function (S) {
+    KISSY.use("menubutton,button,menu", function (S, MenuButton, Button, Menu) {
+        var $ = S.all;
 
-            var b = new Button({
-                prefixCls:"goog-",
-                content:"已买到的宝贝"
-            });
+        var b = new Button({
+            id:'button-test1',
+            content:"已买到的宝贝",
+            elCls:'ks-button-collapse-right',
+            render:'#container',
+            listeners:{
+                click:function () {
+                    S.log(this.get("content"));
+                }
+            }
+        }).render();
 
-            var mb = new MenuButton({
-                prefixCls:"goog-",
-                matchElWidth:false,
-                content:"请选择"
-            });
-
-            mb.addItem(new Menu.Item({content:"已买到的宝贝",
-                prefixCls:"goog-"}));
-
-            mb.addItem(new Menu.Item({content:"已卖出的宝贝",
-                prefixCls:"goog-"}));
-
-
-            // 渲染为一组分离按钮
-            new Button.Split({
-                first:b,
-                second:mb
-            }).render();
-
-
-            b.on("click", function() {
-                S.log(b.get("content") + " : clicked");
-            });
-
-        });
+        new MenuButton({
+            content:"",
+            render:'#container',
+            matchElWidth:false,
+            elCls:'ks-button-collapse-left empty-button',
+            menu:{
+                xclass:'popupmenu',
+                children:[
+                    {
+                        xclass:'menuitem',
+                        content:"已买到的宝贝"
+                    },
+                    {
+                        xclass:'menuitem',
+                        content:"已卖出的宝贝"
+                    }
+                ]
+            },
+            listeners:{
+                click:function (e) {
+                    b.set("content", e.target.get("content"));
+                    this.set("collapsed", true);
+                }
+            }
+        }).render();
     });
+});
