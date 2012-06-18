@@ -127,6 +127,15 @@
 </ul>
 </div></blockquote>
 </div>
+<div class="section" id="config-attributes">
+<h2>Config Attributes<a class="headerlink" href="#config-attributes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#component.UIBase.config.listeners" title="component.UIBase.config.listeners"><tt class="xref py py-attr docutils literal"><span class="pre">listeners</span></tt></a></li>
+<li><a class="reference internal" href="#component.UIBase.config.plugins" title="component.UIBase.config.plugins"><tt class="xref py py-attr docutils literal"><span class="pre">plugins</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
 <div class="section" id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -157,6 +166,57 @@
 </table>
 </dd></dl>
 
+</div>
+<div class="section" id="config-attributes-detail">
+<h2>Config Attributes Detail<a class="headerlink" href="#config-attributes-detail" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="component.UIBase.config.listeners">
+<tt class="descclassname">UIBase.config.</tt><tt class="descname">listeners</tt><a class="headerlink" href="#component.UIBase.config.listeners" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object} - 配置组件的事件绑定. 例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">listeners</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">customEvent</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">type</span><span class="p">);</span> <span class="c1">// =&gt; &quot;customEvent&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">or</span>
+
+<span class="p">{</span>
+    <span class="nx">listeners</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">customEvent</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">fn</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+                <span class="c1">// e.type // =&gt; customEvent</span>
+                <span class="c1">// this.xx =&gt; 1</span>
+            <span class="p">},</span>
+            <span class="nx">scope</span><span class="o">:</span><span class="p">{</span><span class="nx">xx</span><span class="o">:</span><span class="mi">1</span><span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.UIBase.config.plugins">
+<tt class="descclassname">UIBase.config.</tt><tt class="descname">plugins</tt><a class="headerlink" href="#component.UIBase.config.plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Function[]|Object[]} - 插件构造器数组或插件对象数组. 例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span> <span class="nx">Plugin1</span><span class="p">,</span><span class="nx">Plugin2</span> <span class="p">]</span>
+<span class="p">}</span>
+
+<span class="nx">or</span>
+
+<span class="p">{</span>
+    <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span><span class="k">new</span> <span class="nx">Plugin1</span><span class="p">(</span><span class="nx">cfg</span><span class="p">),</span><span class="k">new</span> <span class="nx">Plugin2</span><span class="p">(</span><span class="nx">cfg</span><span class="p">)]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div></blockquote>
 </div>
 <div class="section" id="methods-detail">
 <h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>

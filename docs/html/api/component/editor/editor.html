@@ -132,15 +132,16 @@
 <div><ul class="simple">
 <li><a class="reference internal" href="../component/uibase/box.html#component.UIBase.Box.config.width" title="component.UIBase.Box.config.width"><tt class="xref py py-data docutils literal"><span class="pre">width</span></tt></a></li>
 <li><a class="reference internal" href="../component/controller.html#component.Controller.config.focused" title="component.Controller.config.focused"><tt class="xref py py-data docutils literal"><span class="pre">focused</span></tt></a></li>
-<li><a class="reference internal" href="#editor.Editor.config.pluginConfig" title="editor.Editor.config.pluginConfig"><tt class="xref py py-data docutils literal"><span class="pre">pluginConfig</span></tt></a></li>
-<li><a class="reference internal" href="#editor.Editor.config.height" title="editor.Editor.config.height"><tt class="xref py py-data docutils literal"><span class="pre">height</span></tt></a></li>
+<li><a class="reference internal" href="../component/uibase/box.html#component.UIBase.Box.config.height" title="component.UIBase.Box.config.height"><tt class="xref py py-data docutils literal"><span class="pre">height</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.config.customStyle" title="editor.Editor.config.customStyle"><tt class="xref py py-data docutils literal"><span class="pre">customStyle</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.config.customLink" title="editor.Editor.config.customLink"><tt class="xref py py-data docutils literal"><span class="pre">customLink</span></tt></a></li>
+<li><tt class="xref py py-data docutils literal"><span class="pre">plugins</span></tt></li>
+<li><tt class="xref py py-data docutils literal"><span class="pre">listeners</span></tt></li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="properties">
-<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference internal" href="#editor.Editor.prototype.textarea" title="editor.Editor.prototype.textarea"><tt class="xref py py-attr docutils literal"><span class="pre">textarea</span></tt></a></li>
@@ -163,8 +164,6 @@
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference internal" href="../component/controller.html#component.Controller.extend" title="component.Controller.extend"><tt class="xref py py-meth docutils literal"><span class="pre">extend()</span></tt></a> &lt;static&gt;</li>
-<li><a class="reference internal" href="#editor.Editor.prototype.use" title="editor.Editor.prototype.use"><tt class="xref py py-meth docutils literal"><span class="pre">use()</span></tt></a></li>
-<li><a class="reference internal" href="#editor.Editor.prototype.adjustHeight" title="editor.Editor.prototype.adjustHeight"><tt class="xref py py-meth docutils literal"><span class="pre">adjustHeight()</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.prototype.execCommand" title="editor.Editor.prototype.execCommand"><tt class="xref py py-meth docutils literal"><span class="pre">execCommand()</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.prototype.sync" title="editor.Editor.prototype.sync"><tt class="xref py py-meth docutils literal"><span class="pre">sync()</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.prototype.getDocHtml" title="editor.Editor.prototype.getDocHtml"><tt class="xref py py-meth docutils literal"><span class="pre">getDocHtml()</span></tt></a></li>
@@ -248,29 +247,6 @@
 <div class="section" id="configs-detail">
 <h2>Configs Detail<a class="headerlink" href="#configs-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="data">
-<dt id="editor.Editor.config.pluginConfig">
-<tt class="descclassname">Editor.config.</tt><tt class="descname">pluginConfig</tt><a class="headerlink" href="#editor.Editor.config.pluginConfig" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Object} - 各个插件的配置键值对,每个插件的具体配置详见各个插件页面。例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s2">&quot;image&quot;</span><span class="o">:</span><span class="p">{</span>
-        <span class="nx">defaultMargin</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span>
-        <span class="nx">upload</span><span class="o">:</span><span class="p">{</span>
-            <span class="nx">url</span><span class="o">:</span><span class="s1">&#39;xx.htm&#39;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="data">
-<dt id="editor.Editor.config.height">
-<tt class="descclassname">Editor.config.</tt><tt class="descname">height</tt><a class="headerlink" href="#editor.Editor.config.height" title="Permalink to this definition">¶</a></dt>
-<dd><p>{String|Number} - 继承自 UIBase.Box <a class="reference internal" href="../component/uibase/box.html#component.UIBase.Box.config.height" title="component.UIBase.Box.config.height"><tt class="xref py py-data docutils literal"><span class="pre">height</span></tt></a> 。
-注意该值表示编辑器的整体高度（ 包括 toolbar/statusbar ）。</p>
-</dd></dl>
-
-<dl class="data">
 <dt id="editor.Editor.config.customLink">
 <tt class="descclassname">Editor.config.</tt><tt class="descname">customLink</tt><a class="headerlink" href="#editor.Editor.config.customLink" title="Permalink to this definition">¶</a></dt>
 <dd><p>{String[]} - 自定义样式表 url 数组.</p>
@@ -283,8 +259,8 @@
 </dd></dl>
 
 </div>
-<div class="section" id="properties-detail">
-<h2>Properties Detail<a class="headerlink" href="#properties-detail" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="attributes-detail">
+<h2>Attributes Detail<a class="headerlink" href="#attributes-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="attribute">
 <dt id="editor.Editor.SOURCE_MODE">
 <tt class="descclassname">Editor.</tt><tt class="descname">SOURCE_MODE</tt><a class="headerlink" href="#editor.Editor.SOURCE_MODE" title="Permalink to this definition">¶</a></dt>
@@ -360,37 +336,6 @@
 </div>
 <div class="section" id="methods-detail">
 <h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="editor.Editor.prototype.use">
-<tt class="descclassname">Editor.prototype.</tt><tt class="descname">use</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.prototype.use" title="Permalink to this definition">¶</a></dt>
-<dd><div class="line-block">
-<div class="line"><strong>use( mods, callback)</strong></div>
-<div class="line">加载编辑器内置插件</div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>mods</strong> (<em>String[]</em>) &#8211; 插件名称数组</li>
-<li><strong>callback</strong> (<em>Function</em>) &#8211; 插件载入后的回调</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="editor.Editor.prototype.adjustHeight">
-<tt class="descclassname">Editor.prototype.</tt><tt class="descname">adjustHeight</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.prototype.adjustHeight" title="Permalink to this definition">¶</a></dt>
-<dd><div class="line-block">
-<div class="line"><strong>adjustHeight()</strong></div>
-<div class="line">在 editor toolbar/statusbar 高度发生变化后需要调用该方法调整 textarea 高度.</div>
-</div>
-</dd></dl>
-
 <dl class="method">
 <dt id="editor.Editor.prototype.execCommand">
 <tt class="descclassname">Editor.prototype.</tt><tt class="descname">execCommand</tt><big>(</big><em>commandName</em>, <em>arg1</em>, <em>arg2</em>, <em>...</em><big>)</big><a class="headerlink" href="#editor.Editor.prototype.execCommand" title="Permalink to this definition">¶</a></dt>

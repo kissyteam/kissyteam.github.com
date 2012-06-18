@@ -9,6 +9,7 @@ KISSY.ready(function(S) {
 
             var mb = new MenuButton({
                 prefixCls:"goog-",
+                matchElWidth:false,
                 content:"请选择"
             });
 
@@ -27,7 +28,7 @@ KISSY.ready(function(S) {
 
 
             b.on("click", function() {
-                alert(b.get("content") + " : clicked");
+                S.log(b.get("content") + " : clicked");
             });
 
         });

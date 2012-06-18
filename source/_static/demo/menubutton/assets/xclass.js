@@ -4,6 +4,7 @@ KISSY.use("menubutton,menu", function (S, MenuButton, Menu) {
     var button = new MenuButton({
         prefixCls:"goog-",
         content:"我的淘宝",
+        matchElWidth:false,
         // 按照创建菜单的方式创建一个弹出菜单
         menu:{
             xclass:'popupmenu',
@@ -27,9 +28,9 @@ KISSY.use("menubutton,menu", function (S, MenuButton, Menu) {
                 fn:function (e) {
                     var m = e.target;
                     if (m.get("checked")) {
-                        alert('选中:' + m.get('content'));
+                        S.log('选中:' + m.get('content'));
                     } else {
-                        alert('未选中:' + m.get('content'));
+                        S.log('未选中:' + m.get('content'));
                     }
                 }
             }

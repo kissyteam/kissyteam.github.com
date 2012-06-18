@@ -134,6 +134,7 @@
     <span class="kd">var</span> <span class="nx">button</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MenuButton</span><span class="p">({</span>
         <span class="nx">prefixCls</span><span class="o">:</span><span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
         <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;我的淘宝&quot;</span><span class="p">,</span>
+        <span class="nx">matchElWidth</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
         <span class="c1">// 按照创建菜单的方式创建一个弹出菜单</span>
         <span class="nx">menu</span><span class="o">:</span><span class="p">{</span>
             <span class="nx">xclass</span><span class="o">:</span><span class="s1">&#39;popupmenu&#39;</span><span class="p">,</span>
@@ -157,9 +158,9 @@
                 <span class="nx">fn</span><span class="o">:</span><span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
                     <span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
                     <span class="k">if</span> <span class="p">(</span><span class="nx">m</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">))</span> <span class="p">{</span>
-                        <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;选中:&#39;</span> <span class="o">+</span> <span class="nx">m</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">));</span>
+                        <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;选中:&#39;</span> <span class="o">+</span> <span class="nx">m</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">));</span>
                     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                        <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;未选中:&#39;</span> <span class="o">+</span> <span class="nx">m</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">));</span>
+                        <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;未选中:&#39;</span> <span class="o">+</span> <span class="nx">m</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">));</span>
                     <span class="p">}</span>
                 <span class="p">}</span>
             <span class="p">}</span>

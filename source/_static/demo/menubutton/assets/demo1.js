@@ -13,6 +13,7 @@ KISSY.use("menubutton,menu", function(S, MenuButton, Menu) {
     var button = new MenuButton({
         prefixCls: "goog-",
         content: "我的淘宝",
+        matchElWidth:false,
         menu: menu
     });
 
@@ -20,15 +21,16 @@ KISSY.use("menubutton,menu", function(S, MenuButton, Menu) {
     menu.on('click', function(e) {
         var m = e.target;
         if (m.get("checked")) {
-            alert('选中:'+m.get('content'));
+            S.log('选中:'+m.get('content'));
         } else {
-            alert('未选中:'+m.get('content'));
+            S.log('未选中:'+m.get('content'));
         }
     });
 
     // 从已有HTML中生成菜单按钮
-    new MenuButton({
+    window.srcNode=new MenuButton({
         srcNode:"#exist",
+        matchElWidth:false,
         prefixCls:"goog-"
     }).render();
 });
