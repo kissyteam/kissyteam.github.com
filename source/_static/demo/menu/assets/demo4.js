@@ -71,7 +71,7 @@ KISSY.use("menu", function (S, Menu) {
                     c.show();
                     content = content.substring(0, index) +
 
-                    "<span class='" + "goog-menuitem-hit" + "'>" + content.substring(index, index + str.length) + "<" + "/span>" + content.substring(index + str.length, content.length);
+                    "<span class='" + "ks-menuitem-hit" + "'>" + content.substring(index, index + str.length) + "<" + "/span>" + content.substring(index + str.length, content.length);
 
                     // 匹配子串着重 wrap
                     c.get("el").html(content);

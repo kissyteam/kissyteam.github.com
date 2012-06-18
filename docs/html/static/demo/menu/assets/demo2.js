@@ -30,7 +30,7 @@ KISSY.use("node,menu", function (S, Node, Menu) {
 
             menu.addChild(new Menu.SubMenu({
                 prefixCls:'my-',
-                content:"<div class='my-menuitem-content'>" + k + "</div>",
+                content:"<div class='ks-menuitem-content'>" + k + "</div>",
                 menu:p,
                 // 设置子菜单与主菜单的对齐方式, 与 align 保持一致
                 menuCfg:{
