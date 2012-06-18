@@ -45,7 +45,6 @@ KISSY.use("tree", function(S, Tree) {
 
         var tree = new Tree({
             content:"淘宝网",
-            prefixCls:"goog-",
             isLeaf:false,
             // showRootNode:false,
             render:"#treeContainer"
@@ -56,7 +55,6 @@ KISSY.use("tree", function(S, Tree) {
                 var c = getNode(data, node.get("content")).children;
                 S.each(c, function (v) {
                     node.addChild(new Tree.Node({
-                        prefixCls:"goog-",
                         isLeaf:!(v.children && v.children.length),
                         content:v.content
                     }));

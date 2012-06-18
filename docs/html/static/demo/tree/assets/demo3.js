@@ -4,7 +4,7 @@ KISSY.use("tree", function(S, Tree) {
 	//通过DOM元素结构新建一棵树
 	var tree = new Tree({
 		content : "淘宝网",
-		prefixCls : "goog-",
+
 		expanded : true,
 		srcNode : "#root"
 	});

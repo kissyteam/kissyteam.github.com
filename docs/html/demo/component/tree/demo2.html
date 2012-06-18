@@ -147,27 +147,27 @@
 	<span class="c1">//通过DOM元素生成一棵可选择树</span>
 	<span class="kd">var</span> <span class="nx">tree</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tree</span><span class="p">.</span><span class="nx">CheckTree</span><span class="p">({</span>
 		<span class="nx">content</span> <span class="o">:</span> <span class="s2">&quot;淘宝网&quot;</span><span class="p">,</span>
-		<span class="nx">prefixCls</span> <span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+
 		<span class="nx">expanded</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
 		<span class="nx">render</span> <span class="o">:</span> <span class="s2">&quot;#treeContainer&quot;</span>
 	<span class="p">});</span>
 
 	<span class="c1">//新建一个树结点favorates</span>
 	<span class="kd">var</span> <span class="nx">favorates</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tree</span><span class="p">.</span><span class="nx">CheckNode</span><span class="p">({</span>
-		<span class="nx">prefixCls</span> <span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+
 		<span class="nx">content</span> <span class="o">:</span> <span class="s2">&quot;收藏夹&quot;</span><span class="p">,</span>
 		<span class="nx">tree</span> <span class="o">:</span> <span class="nx">tree</span>
 	<span class="p">});</span>
 	
 	<span class="c1">//在favorates结点下添加新的子结点</span>
 	<span class="nx">favorates</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Tree</span><span class="p">.</span><span class="nx">CheckNode</span><span class="p">({</span>
-		<span class="nx">prefixCls</span> <span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+
 		<span class="nx">content</span> <span class="o">:</span> <span class="s2">&quot;收藏的宝贝&quot;</span>
 	<span class="p">}));</span>
 
 	<span class="c1">//在favorates结点下再添加新的子结点</span>
 	<span class="nx">favorates</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Tree</span><span class="p">.</span><span class="nx">CheckNode</span><span class="p">({</span>
-		<span class="nx">prefixCls</span> <span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+
 		<span class="nx">content</span> <span class="o">:</span> <span class="s2">&quot;收藏的店铺&quot;</span>
 	<span class="p">}));</span>
 	
@@ -178,23 +178,23 @@
 <span class="cm">	 * 以下同理都是增加树了了结点以及子子结点</span>
 <span class="cm">	 */</span>
 	<span class="nx">tree</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Tree</span><span class="p">.</span><span class="nx">CheckNode</span><span class="p">({</span>
-		<span class="nx">prefixCls</span> <span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+
 		<span class="nx">content</span> <span class="o">:</span> <span class="s2">&quot;我要买&quot;</span>
 	<span class="p">}));</span>
 
 	<span class="kd">var</span> <span class="nx">one</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tree</span><span class="p">.</span><span class="nx">CheckNode</span><span class="p">({</span>
-		<span class="nx">prefixCls</span> <span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+
 		<span class="nx">content</span> <span class="o">:</span> <span class="s2">&quot;我的淘宝&quot;</span><span class="p">,</span>
 		<span class="nx">tree</span> <span class="o">:</span> <span class="nx">tree</span>
 	<span class="p">});</span>
 
 	<span class="nx">one</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Tree</span><span class="p">.</span><span class="nx">CheckNode</span><span class="p">({</span>
-		<span class="nx">prefixCls</span> <span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+
 		<span class="nx">content</span> <span class="o">:</span> <span class="s2">&quot;已买到的宝贝&quot;</span>
 	<span class="p">}));</span>
 
 	<span class="nx">one</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Tree</span><span class="p">.</span><span class="nx">CheckNode</span><span class="p">({</span>
-		<span class="nx">prefixCls</span> <span class="o">:</span> <span class="s2">&quot;goog-&quot;</span><span class="p">,</span>
+
 		<span class="nx">content</span> <span class="o">:</span> <span class="s2">&quot;已卖出的宝贝&quot;</span>
 	<span class="p">}));</span>
 
