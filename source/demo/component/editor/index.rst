@@ -1,5 +1,7 @@
 .. currentmodule:: editor
 
+.. _editor-demo:
+
 Editor 使用示例
 ======================================
 
@@ -17,3 +19,4 @@ Demos
        simple
        auto-combo
        simple-plugin
+       decorate

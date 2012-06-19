@@ -1,0 +1,475 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>从现有 textarea 创建 editor &mdash; KISSY Docs</title>
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };    
+    (function(){
+        var js=[],h=window.location.href,d=document;
+            js.push("../../../static/jquery.js");
+            js.push("../../../static/underscore.js");
+            js.push("../../../static/doctools.js");
+        for(var i=0;i<js.length;i++){
+            var j=js[i];
+            if(h.indexOf("localhost/kissy_git/")==-1
+            &&
+            
+            h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
+            &&
+            j.indexOf("jquery.js")!=-1){
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');   
+            }else{
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');   
+            }
+        }
+    })();
+</script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../../../tutorials/index.html" title="Tutorial"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="simple-plugin.html" title="editor 插件的简单编写"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >Demos</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Editor 使用示例</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="textarea-editor">
+<h1>从现有 textarea 创建 editor<a class="headerlink" href="#textarea-editor" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="../../../api/component/editor/index.html#module-editor" title="editor"><tt class="xref py py-class docutils literal"><span class="pre">editor</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id1">
+<h2>从现有 textarea 创建 editor<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><iframe width="100%" height="550" class="iframe-demo" src="../../../static/demo/editor/decorate.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;editor/full&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Editor</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="kd">var</span> <span class="nx">cfg</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="c1">// 是否初始聚焦</span>
+            <span class="nx">focused</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nx">autoRender</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nx">attachForm</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nx">baseZIndex</span><span class="o">:</span><span class="mi">10000</span><span class="p">,</span>
+            <span class="c1">// 自定义样式</span>
+            <span class="c1">// customStyle:&quot;p{line-height: 1.4;margin: 1.12em 0;padding: 0;}&quot;,</span>
+            <span class="c1">// 自定义外部样式</span>
+            <span class="c1">// customLink:[&quot;http://localhost/customLink.css&quot;,&quot;http://xx.com/y2.css&quot;],</span>
+            <span class="c1">// render:&quot;#container&quot;,</span>
+            <span class="nx">srcNode</span><span class="o">:</span><span class="s1">&#39;#editorEl&#39;</span><span class="p">,</span>
+            <span class="nx">width</span><span class="o">:</span><span class="s1">&#39;80%&#39;</span><span class="p">,</span>
+            <span class="nx">height</span><span class="o">:</span><span class="s2">&quot;400px&quot;</span>
+        <span class="p">};</span>
+
+        <span class="kd">var</span> <span class="nx">plugins</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;sourceArea&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,separator&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,bold&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,italic,&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;fontFamily,&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;fontSize,&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;strikeThrough,&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;underline,&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;separator,&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;checkboxSourcearea&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,image&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,link&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,foreColor&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,backColor&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,resize&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,draft&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,undo&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,indent&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,outdent&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,unorderedList&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,orderedList&quot;</span> <span class="o">+</span>
+            <span class="c1">//&quot;,elementPath&quot; +</span>
+            <span class="s2">&quot;,pageBreak&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,preview&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,maximize&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,removeFormat&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,heading&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,justifyLeft&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,justifyCenter&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,justifyRight&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,table&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,smiley&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,flash&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,xiamiMusic&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,multipleUpload&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,video&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;,dragUpload&quot;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">);</span>
+
+        <span class="kd">var</span> <span class="nx">fullPlugins</span> <span class="o">=</span> <span class="p">[];</span>
+
+        <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">plugins</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">fullPlugins</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;editor/plugin/&quot;</span> <span class="o">+</span> <span class="nx">p</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span><span class="p">;</span>
+        <span class="p">});</span>
+
+        <span class="kd">var</span> <span class="nx">pluginConfig</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nx">link</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">target</span><span class="o">:</span><span class="s2">&quot;_blank&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;image&quot;</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">defaultMargin</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span>
+                <span class="c1">// remote:false,</span>
+                <span class="nx">upload</span><span class="o">:</span><span class="p">{</span>
+                    <span class="nx">serverUrl</span><span class="o">:</span><span class="s2">&quot;upload.php&quot;</span><span class="p">,</span>
+                    <span class="nx">serverParams</span><span class="o">:</span><span class="p">{</span>
+                        <span class="nx">waterMark</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                            <span class="k">return</span> <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#ke_img_up_watermark_1&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">checked</span><span class="p">;</span>
+                        <span class="p">}</span>
+                    <span class="p">},</span>
+                    <span class="nx">suffix</span><span class="o">:</span><span class="s2">&quot;png,jpg,jpeg,gif&quot;</span><span class="p">,</span>
+                    <span class="nx">fileInput</span><span class="o">:</span><span class="s2">&quot;Filedata&quot;</span><span class="p">,</span>
+                    <span class="nx">sizeLimit</span><span class="o">:</span><span class="mi">1000</span><span class="p">,</span> <span class="c1">//k</span>
+                    <span class="nx">extraHtml</span><span class="o">:</span><span class="s2">&quot;&lt;p style=&#39;margin-top:10px;&#39;&gt;&lt;input type=&#39;checkbox&#39; id=&#39;ke_img_up_watermark_1&#39; checked=&#39;checked&#39;&gt; 图片加水印，防止别人盗用&lt;/p&gt;&quot;</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;flash&quot;</span><span class="o">:</span><span class="p">{</span>
+                <span class="s2">&quot;defaultWidth&quot;</span><span class="o">:</span><span class="s2">&quot;300&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;defaultHeight&quot;</span><span class="o">:</span><span class="s2">&quot;300&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;templates&quot;</span><span class="o">:</span><span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="nx">demo</span><span class="o">:</span><span class="s2">&quot;模板1效果演示html&quot;</span><span class="p">,</span>
+                    <span class="nx">html</span><span class="o">:</span><span class="s2">&quot;&lt;div style=&#39;border:1px solid red&#39;&gt;模板1效果演示html&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="nx">demo</span><span class="o">:</span><span class="s2">&quot;模板2效果演示html&quot;</span><span class="p">,</span>
+                    <span class="nx">html</span><span class="o">:</span><span class="s2">&quot;&lt;div style=&#39;border:1px solid red&#39;&gt;模板2效果演示html&lt;/div&gt;&quot;</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;multipleUpload&quot;</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">serverUrl</span><span class="o">:</span><span class="s2">&quot;http://localhost/kissy_git/kissy/src/editor/demo/upload.php&quot;</span><span class="p">,</span>
+                <span class="nx">serverParams</span><span class="o">:</span><span class="p">{</span>
+                    <span class="nx">waterMark</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#ke_img_up_watermark_2&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">checked</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;previewWidth&quot;</span><span class="o">:</span><span class="s2">&quot;80px&quot;</span><span class="p">,</span>
+                <span class="nx">sizeLimit</span><span class="o">:</span><span class="mi">1000</span><span class="p">,</span> <span class="c1">//k,, numberLimit:15,</span>
+                <span class="nx">extraHtml</span><span class="o">:</span><span class="s2">&quot;&lt;p style=&#39;margin-top:10px;&#39;&gt;&quot;</span> <span class="o">+</span>
+                    <span class="s2">&quot;&lt;input type=&#39;checkbox&#39; &quot;</span> <span class="o">+</span>
+                    <span class="s2">&quot;style=&#39;vertical-align:middle;margin:0 5px;&#39; &quot;</span> <span class="o">+</span>
+                    <span class="s2">&quot;id=&#39;ke_img_up_watermark_2&#39;&gt;&quot;</span> <span class="o">+</span>
+                    <span class="s2">&quot;&lt;span style=&#39;vertical-align:middle;&#39;&gt;图片加水印，防止别人盗用&lt;/span&gt;&lt;/p&gt;&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;video&quot;</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">urlCfg</span><span class="o">:</span><span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nx">reg</span><span class="o">:</span><span class="sr">/tudou\.com/i</span><span class="p">,</span>
+                        <span class="nx">url</span><span class="o">:</span><span class="s2">&quot;http://bangpai.daily.taobao.net/json/getTudouVideo.htm&quot;</span><span class="p">,</span>
+                        <span class="nx">paramName</span><span class="o">:</span><span class="s2">&quot;url&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;urlTip&quot;</span><span class="o">:</span><span class="s2">&quot;请输入优酷网、土豆网、酷7网的视频播放页链接...&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;providers&quot;</span><span class="o">:</span><span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="c1">// 允许白名单</span>
+                        <span class="nx">reg</span><span class="o">:</span><span class="sr">/taohua\.com/i</span><span class="p">,</span>
+                        <span class="c1">//默认高宽</span>
+                        <span class="nx">width</span><span class="o">:</span><span class="mi">480</span><span class="p">,</span>
+                        <span class="nx">height</span><span class="o">:</span><span class="mi">400</span><span class="p">,</span>
+                        <span class="nx">detect</span><span class="o">:</span><span class="kd">function</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="k">return</span> <span class="nx">url</span><span class="p">;</span>
+                        <span class="p">}</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="nx">reg</span><span class="o">:</span><span class="sr">/youku\.com/i</span><span class="p">,</span>
+                        <span class="nx">width</span><span class="o">:</span><span class="mi">480</span><span class="p">,</span>
+                        <span class="nx">height</span><span class="o">:</span><span class="mi">400</span><span class="p">,</span>
+                        <span class="nx">detect</span><span class="o">:</span><span class="kd">function</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/id_([^.]+)\.html$/</span><span class="p">);</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="k">return</span> <span class="s2">&quot;http://player.youku.com/player.php/sid/&quot;</span> <span class="o">+</span> <span class="nx">m</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;/v.swf&quot;</span><span class="p">;</span>
+                            <span class="p">}</span>
+                            <span class="nx">m</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/v_playlist\/([^.]+)\.html$/</span><span class="p">);</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="k">return</span><span class="p">;</span>
+                                <span class="c1">//return &quot;http://player.youku.com/player.php/sid/&quot; + m[1] + &quot;/v.swf&quot;;</span>
+                            <span class="p">}</span>
+                            <span class="k">return</span> <span class="nx">url</span><span class="p">;</span>
+                        <span class="p">}</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="nx">reg</span><span class="o">:</span><span class="sr">/tudou\.com/i</span><span class="p">,</span>
+                        <span class="nx">width</span><span class="o">:</span><span class="mi">480</span><span class="p">,</span>
+                        <span class="nx">height</span><span class="o">:</span><span class="mi">400</span><span class="p">,</span>
+                        <span class="nx">detect</span><span class="o">:</span><span class="kd">function</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="k">return</span> <span class="nx">url</span><span class="p">;</span>
+                        <span class="p">}</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="nx">reg</span><span class="o">:</span><span class="sr">/ku6\.com/i</span><span class="p">,</span>
+                        <span class="nx">width</span><span class="o">:</span><span class="mi">480</span><span class="p">,</span>
+                        <span class="nx">height</span><span class="o">:</span><span class="mi">400</span><span class="p">,</span>
+                        <span class="nx">detect</span><span class="o">:</span><span class="kd">function</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/show[^\/]*\/([^.]+)\.html$/</span><span class="p">);</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="k">return</span> <span class="s2">&quot;http://player.ku6.com/refer/&quot;</span> <span class="o">+</span> <span class="nx">m</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;/v.swf&quot;</span><span class="p">;</span>
+                            <span class="p">}</span>
+                            <span class="k">return</span> <span class="nx">url</span><span class="p">;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;draft&quot;</span><span class="o">:</span><span class="p">{</span>
+                <span class="c1">// 当前编辑器的历史是否要单独保存到一个键值而不是公用</span>
+                <span class="c1">// saveKey:&quot;xxx&quot;,</span>
+                <span class="nx">interval</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span>
+                <span class="nx">limit</span><span class="o">:</span><span class="mi">10</span><span class="p">,</span>
+                <span class="s2">&quot;helpHtml&quot;</span><span class="o">:</span><span class="s2">&quot;&lt;div &quot;</span> <span class="o">+</span>
+                    <span class="s2">&quot;style=&#39;width:200px;&#39;&gt;&quot;</span> <span class="o">+</span>
+                    <span class="s2">&quot;&lt;div style=&#39;padding:5px;&#39;&gt;草稿箱能够自动保存您最新编辑的内容，&quot;</span> <span class="o">+</span>
+                    <span class="s2">&quot;如果发现内容丢失，&quot;</span> <span class="o">+</span>
+                    <span class="s2">&quot;请选择恢复编辑历史&lt;/div&gt;&lt;/div&gt;&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;resize&quot;</span><span class="o">:</span><span class="p">{</span>
+                <span class="c1">//direction:[&quot;y&quot;]</span>
+            <span class="p">},</span>
+
+            <span class="s2">&quot;dragUpload&quot;</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">suffix</span><span class="o">:</span><span class="s2">&quot;png,jpg,jpeg,gif&quot;</span><span class="p">,</span>
+                <span class="nx">fileInput</span><span class="o">:</span><span class="s2">&quot;Filedata&quot;</span><span class="p">,</span>
+                <span class="nx">sizeLimit</span><span class="o">:</span><span class="mi">1000</span><span class="p">,</span>
+                <span class="nx">serverUrl</span><span class="o">:</span><span class="s2">&quot;upload.php&quot;</span><span class="p">,</span>
+                <span class="nx">serverParams</span><span class="o">:</span><span class="p">{</span>
+                    <span class="nx">waterMark</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">};</span>
+
+        <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">fullPlugins</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">makeArray</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+
+            <span class="nx">args</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
+
+            <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">args</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arg</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">argStr</span> <span class="o">=</span> <span class="nx">plugins</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">cfg</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">cfg</span> <span class="o">=</span> <span class="nx">pluginConfig</span><span class="p">[</span><span class="nx">argStr</span><span class="p">])</span> <span class="p">{</span>
+                    <span class="nx">args</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">arg</span><span class="p">(</span><span class="nx">cfg</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+
+            <span class="nx">cfg</span><span class="p">.</span><span class="nx">plugins</span> <span class="o">=</span> <span class="nx">args</span><span class="p">;</span>
+
+            <span class="k">new</span> <span class="nx">Editor</span><span class="p">(</span><span class="nx">cfg</span><span class="p">);</span>
+        <span class="p">});</span>
+
+    <span class="p">});</span>
+<span class="p">})();</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../../../tutorials/index.html" title="Tutorial"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="simple-plugin.html" title="editor 插件的简单编写"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >Demos</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Editor 使用示例</a> &#187; </li> 
+    </ul>
+</div>
+					<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box demo-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/loader/index.html">loader</a></li>
+        <li><a href="../../seed/lang/index.html">lang</a></li>
+        <!--<li><a href="../../seed/kissy/index.html">kissy</a></li>
+
+        <li><a href="../../seed/web/index.html">web</a></li>-->
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <!--<li><a href="../../core/ua/index.html">ua</a></li>
+        <li><a href="../../core/dom/index.html">DOM</a></li>
+        <li><a href="../../core/event/index.html">event</a></li>
+        <li><a href="../../core/node/index.html">node</a></li>
+        <li><a href="../../core/json/index.html">json</a></li>
+        <li><a href="../../core/ajax/index.html">ajax</a></li>
+        <li><a href="../../core/cookie/index.html">cookie</a></li>
+        <li><a href="../../core/base/index.html">base</a></li>-->
+        <li><a href="../../core/anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="../mvc/index.html">mvc</a></li>
+        <!--<li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../template/index.html">template</a></li>-->
+        <li><a href="../datalazyload/index.html">datalazyload</a></li>
+        <!--<li><a href="../flash/index.html">flash</a></li>-->
+        <li><a href="../dd/index.html">dd</a></li>
+        <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="../switchable/index.html">switchable</a></li>
+        <li><a href="../suggest/index.html">suggest</a></li>
+        <li><a href="../calendar/index.html">calendar</a></li>
+        <li><a href="../imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
+        <li><a href="../waterfall/index.html">waterfall</a></li>
+        <li><a href="index.html">editor</a></li>
+        <li><a href="../combobox/index.html">combobox</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

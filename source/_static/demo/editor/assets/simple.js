@@ -38,7 +38,7 @@
             ",outdent" +
             ",unorderedList" +
             ",orderedList" +
-            ",elementPath" +
+            //",elementPath" +
             ",pageBreak" +
             ",preview" +
             ",maximize" +
