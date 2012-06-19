@@ -13,7 +13,7 @@ Class
     * :class:`Node`
     
     
-Config Attributes
+Configs
 -----------------------------------------------
 
     * :data:`~Node.config.content`
@@ -51,14 +51,14 @@ Class Detail
     
     * 继承自 :class:`~component.Controller` , 包含其全部配置,属性,方法,事件.
     
-    :param Object config: 配置项.详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项.详细见下方 **Configs Detail** .
     
     .. note::
 
         从已有元素实例 Node 对象时 , 元素节点标明类名 ``{prefixCls}tree-item`` .
         ``prefixCls`` 为配置的类名前缀，默认为 ``ks-`` .
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
 
 .. data:: Node.config.content

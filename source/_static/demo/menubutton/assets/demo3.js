@@ -36,7 +36,7 @@ KISSY.use("menubutton", function (S, MenuButton) {
     var s2 = new MenuButton.Select({
         prefixCls:"c2c-",
         width:70,
-        menuCfg:{
+        menu:{
             xclass:'popupmenu',
             align:{
                 offset:[0, -1]

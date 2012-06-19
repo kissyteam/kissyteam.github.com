@@ -20,6 +20,8 @@ Configs
     * :data:`~Editor.config.customLink`
     * :data:`~component.UIBase.config.plugins`
     * :data:`~component.UIBase.config.listeners`
+    * :data:`~component.UIBase.config.srcNode`
+
 
 Attributes
 ----------------------------------------------------
@@ -98,7 +100,7 @@ Class Detail
         从已有元素实例 Editor 对象时：
 
         #. 元素节点标明类名 ``{prefixCls}editor`` .
-        #. textarea 节点标明类名 ``{prefixCls}editor-textarea`` .
+        #. textarea 节点标明类名 ``ks-editor-textarea`` .
         #. ``prefixCls`` 为配置的类名前缀，默认为 ``ks-`` .
 
 

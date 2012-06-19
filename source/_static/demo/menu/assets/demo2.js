@@ -18,9 +18,6 @@ KISSY.use("node,menu", function (S, Node, Menu) {
         {'收藏夹':['收藏的宝贝', '收藏的店铺']}
     ], function (obj, idx) {
         S.each(obj, function (v, k) {
-            var p = new Menu.PopupMenu({
-                prefixCls:'my-'
-            });
             S.each(v, function (o) {
                 p.addChild(new Menu.Item({
                     prefixCls:'my-',
@@ -31,9 +28,10 @@ KISSY.use("node,menu", function (S, Node, Menu) {
             menu.addChild(new Menu.SubMenu({
                 prefixCls:'my-',
                 content:"<div class='ks-menuitem-content'>" + k + "</div>",
-                menu:p,
                 // 设置子菜单与主菜单的对齐方式, 与 align 保持一致
-                menuCfg:{
+                menu:{
+                    xclass:'popupmenu',
+                    prefixCls:'my-',
                     align:{
                         offset:[-2, 0]
                     }

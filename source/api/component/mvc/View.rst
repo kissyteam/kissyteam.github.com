@@ -13,7 +13,7 @@ Class
     * :class:`View`
     
     
-Config Attributes
+Configs
 -----------------------------------------------
 
     * :data:`~View.config.el`
@@ -42,10 +42,10 @@ Class Detail
     * 继承自 :class:`~base.Base` , 包含其全部配置,属性,方法,事件.
     * 视图代表一个节点容器，主要用于事件代理
     
-    :param Object config: 配置项.详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项.详细见下方 **Configs Detail** .
     
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
 
 .. data:: View.config.el

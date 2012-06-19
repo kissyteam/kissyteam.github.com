@@ -14,7 +14,7 @@ Class
   * :class:`~Droppable`
 
   
-Config Attributes
+Configs
 -----------------------------------------------
   
   * :data:`~Droppable.config.node`
@@ -42,10 +42,10 @@ Class Detail
     
     | **Droppable** ( config )
     
-    :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项, 详细见下方 **Configs Detail** .
 
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
 
 .. data:: Droppable.config.node

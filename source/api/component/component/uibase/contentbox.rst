@@ -13,7 +13,7 @@ Class
     * :class:`UIBase.ContentBox`
     
 
-Config Attributes
+Configs
 -----------------------------------------------
 
     * :data:`~UIBase.ContentBox.config.content`
@@ -36,7 +36,7 @@ Class Detail
     
     
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
     
 .. data:: UIBase.ContentBox.config.content

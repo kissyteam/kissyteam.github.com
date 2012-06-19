@@ -13,7 +13,7 @@ Class
     * :class:`UIBase.Close`
   
 
-Config Attributes
+Configs
 -----------------------------------------------
 
     * :data:`~UIBase.Close.config.closable`
@@ -29,10 +29,10 @@ Class Detail
 
     | **UIBase.Close** (config)
     
-    :param Object config: 配置项，详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项，详细见下方 **Configs Detail** .
     
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
     
 .. data:: UIBase.Close.config.closable

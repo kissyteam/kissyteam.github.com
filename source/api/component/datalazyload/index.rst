@@ -15,7 +15,7 @@ Class
   * :class:`DataLazyload`
 
   
-Config Attributes
+Configs
 -----------------------------------------------
   
   * :data:`mod`
@@ -51,10 +51,10 @@ Class Detail
     | **DataLazyload** (containers[, config])
     
     :param String|HTMLElement|Array<HTMLElement> containers: 默认为 document.body , 图片所在容器(可以多个)
-    :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项, 详细见下方 **Configs Detail** .
     
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
 
 

@@ -22,7 +22,7 @@ Class
   * :class:`~suggest.Suggest`
 
   
-Config Attributes
+Configs
 -----------------------------------------------
 
   * :data:`containerCls`
@@ -89,7 +89,7 @@ Class Detail
     
     :param String|HTMLElement textInput: 输入框.
     :param String|Array<Object> dataSource: 获取提示的数据源, 可为远程URL, 或本地数据.
-    :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项, 详细见下方 **Configs Detail** .
     
     提示层的默认HTML结构如下：
     
@@ -108,7 +108,7 @@ Class Detail
         </div>
 
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
 
 

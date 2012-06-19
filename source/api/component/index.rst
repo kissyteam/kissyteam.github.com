@@ -25,4 +25,5 @@ Component
    suggest/index
    calendar/index
    imagezoom/index
+   combobox/index
    editor/index

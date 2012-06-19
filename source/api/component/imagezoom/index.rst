@@ -10,7 +10,7 @@ Class
 
     * :class:`ImageZoom`
 
-Config Attributes
+Configs
 -----------------------------------------------
 
     * :data:`~ImageZoom.config.imageNode`
@@ -69,15 +69,15 @@ Class Detail
     | **ImageZoom** (trigger,config)
     
     :param String|KISSY.Node|HTMLElement: 小图元素或选择器 .
-    :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项, 详细见下方 **Configs Detail** .
     
     | **ImageZoom** (config)
 
-    :param Object config: 配置项, 详细见下方 **Config Attributes Detail** . 原本的 trigger 在 1.2 中由配置项中的 :data:`~ImageZoom.config.imageNode` 代替
+    :param Object config: 配置项, 详细见下方 **Configs Detail** . 原本的 trigger 在 1.2 中由配置项中的 :data:`~ImageZoom.config.imageNode` 代替
 
     
 
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
 
 .. data:: ImageZoom.config.imageNode

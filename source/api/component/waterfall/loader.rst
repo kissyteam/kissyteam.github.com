@@ -8,7 +8,7 @@ Class
 
   * :class:`Waterfall.Loader`
 
-Config Attributes
+Configs
 -----------------------------------------------
 
   * :data:`container`
@@ -41,13 +41,13 @@ Class Detail
     | **Waterfall.Loader** (config)
     | 继承自 :class:`Waterfall` , 异步获取数据后, 再进行排列.
 
-    :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项, 详细见下方 **Configs Detail** .
 
     .. note::
 
         如果你使用时, 想要自行写接口获取数据块, 可以直接使用  :class:`Waterfall` ;
 
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
 
 .. data:: diff

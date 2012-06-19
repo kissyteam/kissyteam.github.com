@@ -13,7 +13,7 @@ Class
 
   * :class:`~Scroll`
 
-Config Attributes
+Configs
 -----------------------------------------------
 
   * :attr:`~Scroll.config.node`
@@ -35,10 +35,10 @@ Class Detail
     
     | **Scroll** (config)
 
-    :param Object config: 配置项, 详细见下方 **Config Attributes Detail**
+    :param Object config: 配置项, 详细见下方 **Configs Detail**
     
 
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
     
 .. attribute:: Scroll.config.node

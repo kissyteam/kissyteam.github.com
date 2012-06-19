@@ -11,7 +11,7 @@ Class
 
   * :class:`Dialog`
 
-Config Attributes
+Configs
 -----------------------------------------------
 
   除了 :attr:`~Overlay.config.content` 配置项外与 :class:`Overlay` 的配置项完全相同, 其他新增配置项如下：
@@ -52,7 +52,7 @@ Class Detail
     
     | **Dialog** (config)
     
-    :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项, 详细见下方 **Configs Detail** .
     
     对话框的 DOM 结构为：
     
@@ -86,7 +86,7 @@ Class Detail
             }
         </style>        
 
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
 
     除了 :attr:`~Overlay.prototype.content` 配置项外与 :class:`Overlay` 的配置项完全相同, 但是新增了一些配置项如下所示：

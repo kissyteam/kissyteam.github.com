@@ -13,7 +13,7 @@ Class
     * :class:`UIBase.Mask`
   
 
-Config Attributes
+Configs
 -----------------------------------------------
 
     * :data:`~UIBase.Mask.config.mask`
@@ -26,10 +26,10 @@ Class Detail
 
     | **UIBase.Mask** (config)
     
-    :param Object config: 配置项，详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项，详细见下方 **Configs Detail** .
     
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
     
 .. data:: UIBase.Mask.config.mask

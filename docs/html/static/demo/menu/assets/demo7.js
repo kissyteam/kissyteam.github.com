@@ -8,7 +8,11 @@ KISSY.use("menu", function (S, Menu) {
             autoHideOnMouseLeave:true,
             // ms，鼠标脱离菜单多长时间后自动隐藏
             autoHideDelay:300,
-            width:150
+            width:150,
+            align:{
+                offset:[-1, -1],
+                points:['bl', 'tl']
+            }
         });
 
         sb.addChild(new Menu.Item({
@@ -55,12 +59,6 @@ KISSY.use("menu", function (S, Menu) {
         b = new Menu.SubMenu({
             prefixCls:"nav-",
             content:"<span class='title' style='width:58px'>淘宝网</span>",
-            menuCfg:{
-                align:{
-                    offset:[-1, -1],
-                    points:['bl', 'tl']
-                }
-            },
             menu:sb
         });
 

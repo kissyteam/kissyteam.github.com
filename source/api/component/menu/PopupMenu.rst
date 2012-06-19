@@ -23,7 +23,7 @@ Class Detail
     * 扩充自 :class:`~component.UIBase.Position`, 包含其全部配置,属性,方法,事件.
     * 扩充自 :class:`~component.UIBase.Align`, 包含其全部配置,属性,方法,事件.
     
-    :param Object config: 配置项，详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项，详细见下方 **Configs Detail** .
     
     .. note::
 
@@ -31,7 +31,7 @@ Class Detail
         ``prefixCls`` 为配置的类名前缀，默认为 ``ks-`` .
         
         
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
 
 .. data:: PopupMenu.config.autoHideOnMouseLeave

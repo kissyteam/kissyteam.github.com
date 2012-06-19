@@ -13,7 +13,7 @@ Class
     * :class:`UIBase.Position`
   
 
-Config Attributes
+Configs
 -----------------------------------------------
 
     * :data:`~UIBase.Position.config.x`
@@ -43,10 +43,10 @@ Class Detail
 
     | **UIBase.Position** (config)
     
-    :param Object config: 配置项，详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项，详细见下方 **Configs Detail** .
     
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
     
 .. data:: UIBase.Position.config.zIndex

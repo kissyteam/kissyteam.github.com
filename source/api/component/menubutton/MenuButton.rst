@@ -11,11 +11,11 @@ Class
 
     * :class:`MenuButton`
     
-Config Attributes
+Configs
 -----------------------------------------------
 
     * :data:`~MenuButton.config.menu`
-    * :data:`~MenuButton.config.menuCfg`        
+    * :data:`~MenuButton.config.matchElWidth`
 
 Attributes
 ----------------------------------------------------
@@ -46,47 +46,36 @@ Class Detail
     
     * 继承自 :class:`~button.Button` , 包含其全部配置,属性,方法,事件.
     
-    :param Object config: 配置项，详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项，详细见下方 **Configs Detail** .
     
 .. note::
 
     从已有元素实例 MenuButton 对象时 , 元素节点标明类名 ``{prefixCls}menu-button`` . 
     ``prefixCls`` 为配置的类名前缀，默认为 ``ks-`` .    
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
 
-.. data:: MenuButton.config.menuCfg
-
-    {Object} - 可选，下拉框菜单配置，具体参考 :class:`~menu.Menu` ，默认值
-
-.. data:: MenuButton.config.menuCfg.align
-
-    {Object} - 可选，下拉框菜单相对于下拉按钮的对齐方式，具体参考 :data:`~component.UIBase.Box.config.align` ，默认值
-
-        .. code-block:: javascript
-
-            {
-                points:["bl","tl"],
-                overflow:{
-                    failX:1,
-                    failY:1,
-                    adjustX:1,
-                    adjustY:1
-                }
-            }
-    
 .. data:: MenuButton.config.menu
 
-    {Menu} - 可选，将已存在的 :class:`~menu.Menu` 实例和下拉按钮关联起来. 如不指定，则调用 :meth:`~MenuButton.prototype.addItem` 时自动生成.
-        
+    {Object} - 可选，下拉框菜单配置/实例，具体参考 :class:`~menu.Menu` ，默认值
+
+    .. code-block:: javascript
+
+        {
+            xclass:'popupmenu'
+        }
+
+.. data:: MenuButton.config.matchElWidth
+
+    {Boolean} - 是否下拉菜单和按钮宽度一致。默认 true.
   
 Attributes Detail
 -----------------------------------------------------
 
 .. attribute:: MenuButton.prototype.menu
 
-    {Menu} - 关联的下拉菜单实例
+    {Menu} - 关联的下拉菜单实例/配置项
     
 .. attribute:: MenuButton.prototype.collapsed
 

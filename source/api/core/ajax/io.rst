@@ -8,7 +8,7 @@ Module
 
   * :mod:`io`
 
-Config Attributes
+Configs
 -----------------------------------------------
 
   * :data:`cfg.url`

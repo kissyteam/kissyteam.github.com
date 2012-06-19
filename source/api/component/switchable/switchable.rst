@@ -11,7 +11,7 @@ Class
   * :class:`Switchable`
 
   
-Config Attributes
+Configs
 -----------------------------------------------
   
   * :data:`~Switchable.config.markupType`
@@ -83,10 +83,10 @@ Class Detail
     | **Switchable** (container[, config])
 
     :param String|HTMLElement container: 容器
-    :param object config: 可选, 配置项, 详细见下方 **Config Attributes Detail** .
+    :param object config: 可选, 配置项, 详细见下方 **Configs Detail** .
 
 
-Config Attributes Detail
+Configs Detail
 ---------------------------------------------------------------------
 
 .. data:: Switchable.config.markupType

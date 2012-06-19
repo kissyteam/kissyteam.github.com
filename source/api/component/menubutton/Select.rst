@@ -11,7 +11,7 @@ Class
 
     * :class:`Select`
     
-Config Attributes
+Configs
 -----------------------------------------------
 
     * :data:`~Select.config.defaultCaption`
@@ -36,14 +36,14 @@ Class Detail
     
     * 继承自 :class:`MenuButton` , 包含其全部配置,属性,方法,事件.
     
-    :param Object config: 配置项，详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项，详细见下方 **Configs Detail** .
     
 .. note::
 
     从已有元素实例 MenuButton 对象时 , 元素节点标明类名 ``{prefixCls}select`` . 
     ``prefixCls`` 为配置的类名前缀，默认为 ``ks-`` .    
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
 
 .. data:: Select.config.defaultCaption

@@ -8,7 +8,7 @@ Class
 
   * :class:`Waterfall`
  
-Config Attributes
+Configs
 -----------------------------------------------
 
   * :data:`container`
@@ -45,10 +45,10 @@ Class Detail
     | **Waterfall** (config)
     | 将容器内的每个数据块进行瀑布排列.
 
-    :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项, 详细见下方 **Configs Detail** .
 
 
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
 
 .. data:: container

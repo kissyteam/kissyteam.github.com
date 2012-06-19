@@ -13,7 +13,7 @@ Class
     * :class:`Router`
     
     
-Config Attributes
+Configs
 -----------------------------------------------
 
     * :data:`~Router.config.routes`
@@ -47,10 +47,10 @@ Class Detail
     * 继承自 :class:`~base.Base` , 包含其全部配置,属性,方法,事件.
     * 路由代表一个对 url 路由的策略和处理规则
     
-    :param Object config: 配置项.详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项.详细见下方 **Configs Detail** .
     
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
 
 .. data:: Router.config.routes

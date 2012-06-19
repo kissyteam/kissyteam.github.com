@@ -13,7 +13,7 @@ Class
 
   * :class:`Calendar`
 
-Config Attributes
+Configs
 -----------------------------------------------
 
   * :data:`date`
@@ -64,9 +64,9 @@ Class Detail
     | **Calendar** (trigger,config)
     
     :param String|HTMLDOMNode|KISSY.Node trigger: 配置项, 触点/容器id .
-    :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项, 详细见下方 **Configs Detail** .
 
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
     
 .. data:: date
@@ -155,7 +155,7 @@ Methods Detail
     | **render** (config)
     | 通过render可以带入如上任意参数并重新渲染日历
 
-    :param Object config: 配置项, 详细见上方 **Config Attributes Detail**
+    :param Object config: 配置项, 详细见上方 **Configs Detail**
 
     .. code-block:: javascript
 

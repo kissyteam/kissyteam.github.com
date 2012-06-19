@@ -13,7 +13,7 @@ Class
     * :class:`UIBase.Constrain`
   
 
-Config Attributes
+Configs
 -----------------------------------------------
 
     * :data:`~UIBase.Constrain.config.constrain`
@@ -31,10 +31,10 @@ Class Detail
 
     | **UIBase.Constrain** (config)
     
-    :param Object config: 配置项，详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项，详细见下方 **Configs Detail** .
     
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
     
 .. data:: UIBase.Constrain.config.constrain

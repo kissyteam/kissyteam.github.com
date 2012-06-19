@@ -13,7 +13,7 @@ Class
 
   * :class:`DraggableDelegate`
 
-Config Attributes
+Configs
 -----------------------------------------------
 
   * :attr:`~DraggableDelegate.config.container`
@@ -53,10 +53,10 @@ Class Detail
     
     * 继承自 :class:`dd.Draggable` , 包含其全部配置,属性,方法,事件.
 
-    :param Object config: 配置项, 详细见下方 **Config Attributes Detail**
+    :param Object config: 配置项, 详细见下方 **Configs Detail**
     
 
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
     
 .. attribute:: DraggableDelegate.config.container

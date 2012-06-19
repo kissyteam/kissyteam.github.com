@@ -126,12 +126,12 @@
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="config-attributes">
-<h2>Config Attributes<a class="headerlink" href="#config-attributes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="configs">
+<h2>Configs<a class="headerlink" href="#configs" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference internal" href="#menubutton.MenuButton.config.menu" title="menubutton.MenuButton.config.menu"><tt class="xref py py-data docutils literal"><span class="pre">menu</span></tt></a></li>
-<li><a class="reference internal" href="#menubutton.MenuButton.config.menuCfg" title="menubutton.MenuButton.config.menuCfg"><tt class="xref py py-data docutils literal"><span class="pre">menuCfg</span></tt></a></li>
+<li><a class="reference internal" href="#menubutton.MenuButton.config.matchElWidth" title="menubutton.MenuButton.config.matchElWidth"><tt class="xref py py-data docutils literal"><span class="pre">matchElWidth</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -179,7 +179,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 配置项，详细见下方 <strong>Config Attributes Detail</strong> .</td>
+<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 配置项，详细见下方 <strong>Configs Detail</strong> .</td>
 </tr>
 </tbody>
 </table>
@@ -191,37 +191,23 @@
 <tt class="docutils literal"><span class="pre">prefixCls</span></tt> 为配置的类名前缀，默认为 <tt class="docutils literal"><span class="pre">ks-</span></tt> .</p>
 </div>
 </div>
-<div class="section" id="config-attributes-detail">
-<h2>Config Attributes Detail<a class="headerlink" href="#config-attributes-detail" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt id="menubutton.MenuButton.config.menuCfg">
-<tt class="descclassname">MenuButton.config.</tt><tt class="descname">menuCfg</tt><a class="headerlink" href="#menubutton.MenuButton.config.menuCfg" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Object} - 可选，下拉框菜单配置，具体参考 <a class="reference internal" href="../menu/Menu.html#menu.Menu" title="menu.Menu"><tt class="xref py py-class docutils literal"><span class="pre">Menu</span></tt></a> ，默认值</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="menubutton.MenuButton.config.menuCfg.align">
-<tt class="descclassname">MenuButton.config.menuCfg.</tt><tt class="descname">align</tt><a class="headerlink" href="#menubutton.MenuButton.config.menuCfg.align" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Object} - 可选，下拉框菜单相对于下拉按钮的对齐方式，具体参考 <tt class="xref py py-data docutils literal"><span class="pre">align</span></tt> ，默认值</p>
-<blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nx">points</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;bl&quot;</span><span class="p">,</span><span class="s2">&quot;tl&quot;</span><span class="p">],</span>
-    <span class="nx">overflow</span><span class="o">:</span><span class="p">{</span>
-        <span class="nx">failX</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
-        <span class="nx">failY</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
-        <span class="nx">adjustX</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
-        <span class="nx">adjustY</span><span class="o">:</span><span class="mi">1</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
-</dd></dl>
-
+<div class="section" id="configs-detail">
+<h2>Configs Detail<a class="headerlink" href="#configs-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="data">
 <dt id="menubutton.MenuButton.config.menu">
 <tt class="descclassname">MenuButton.config.</tt><tt class="descname">menu</tt><a class="headerlink" href="#menubutton.MenuButton.config.menu" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Menu} - 可选，将已存在的 <a class="reference internal" href="../menu/Menu.html#menu.Menu" title="menu.Menu"><tt class="xref py py-class docutils literal"><span class="pre">Menu</span></tt></a> 实例和下拉按钮关联起来. 如不指定，则调用 <a class="reference internal" href="#menubutton.MenuButton.prototype.addItem" title="menubutton.MenuButton.prototype.addItem"><tt class="xref py py-meth docutils literal"><span class="pre">addItem()</span></tt></a> 时自动生成.</p>
+<dd><p>{Object} - 可选，下拉框菜单配置/实例，具体参考 <a class="reference internal" href="../menu/Menu.html#menu.Menu" title="menu.Menu"><tt class="xref py py-class docutils literal"><span class="pre">Menu</span></tt></a> ，默认值</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">xclass</span><span class="o">:</span><span class="s1">&#39;popupmenu&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="menubutton.MenuButton.config.matchElWidth">
+<tt class="descclassname">MenuButton.config.</tt><tt class="descname">matchElWidth</tt><a class="headerlink" href="#menubutton.MenuButton.config.matchElWidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 是否下拉菜单和按钮宽度一致。默认 true.</p>
 </dd></dl>
 
 </div>
@@ -230,7 +216,7 @@
 <dl class="attribute">
 <dt id="menubutton.MenuButton.prototype.menu">
 <tt class="descclassname">MenuButton.prototype.</tt><tt class="descname">menu</tt><a class="headerlink" href="#menubutton.MenuButton.prototype.menu" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Menu} - 关联的下拉菜单实例</p>
+<dd><p>{Menu} - 关联的下拉菜单实例/配置项</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -456,6 +442,7 @@
         <li><a href="../tree/index.html">tree</a></li>
         <li><a href="../waterfall/index.html">waterfall</a></li>
         <li><a href="../editor/index.html">editor</a></li>
+        <li><a href="../combobox/index.html">combobox</a></li>
         <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
     </ul>
 </ul>

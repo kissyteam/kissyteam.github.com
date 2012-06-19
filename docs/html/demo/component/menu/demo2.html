@@ -151,9 +151,6 @@
         <span class="p">{</span><span class="s1">&#39;收藏夹&#39;</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;收藏的宝贝&#39;</span><span class="p">,</span> <span class="s1">&#39;收藏的店铺&#39;</span><span class="p">]}</span>
     <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">idx</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="nx">k</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">PopupMenu</span><span class="p">({</span>
-                <span class="nx">prefixCls</span><span class="o">:</span><span class="s1">&#39;my-&#39;</span>
-            <span class="p">});</span>
             <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nx">p</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">Item</span><span class="p">({</span>
                     <span class="nx">prefixCls</span><span class="o">:</span><span class="s1">&#39;my-&#39;</span><span class="p">,</span>
@@ -164,9 +161,10 @@
             <span class="nx">menu</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">new</span> <span class="nx">Menu</span><span class="p">.</span><span class="nx">SubMenu</span><span class="p">({</span>
                 <span class="nx">prefixCls</span><span class="o">:</span><span class="s1">&#39;my-&#39;</span><span class="p">,</span>
                 <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;&lt;div class=&#39;ks-menuitem-content&#39;&gt;&quot;</span> <span class="o">+</span> <span class="nx">k</span> <span class="o">+</span> <span class="s2">&quot;&lt;/div&gt;&quot;</span><span class="p">,</span>
-                <span class="nx">menu</span><span class="o">:</span><span class="nx">p</span><span class="p">,</span>
                 <span class="c1">// 设置子菜单与主菜单的对齐方式, 与 align 保持一致</span>
-                <span class="nx">menuCfg</span><span class="o">:</span><span class="p">{</span>
+                <span class="nx">menu</span><span class="o">:</span><span class="p">{</span>
+                    <span class="nx">xclass</span><span class="o">:</span><span class="s1">&#39;popupmenu&#39;</span><span class="p">,</span>
+                    <span class="nx">prefixCls</span><span class="o">:</span><span class="s1">&#39;my-&#39;</span><span class="p">,</span>
                     <span class="nx">align</span><span class="o">:</span><span class="p">{</span>
                         <span class="nx">offset</span><span class="o">:</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
                     <span class="p">}</span>
@@ -312,8 +310,10 @@
         <li><a href="index.html">menu</a></li>
         <li><a href="../menubutton/index.html">menubutton</a></li>
         <li><a href="../tree/index.html">tree</a></li>
-        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
         <li><a href="../waterfall/index.html">waterfall</a></li>
+        <li><a href="../editor/index.html">editor</a></li>
+        <li><a href="../combobox/index.html">combobox</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
     </ul>
 </ul>
         

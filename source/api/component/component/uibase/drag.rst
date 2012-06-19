@@ -13,7 +13,7 @@ Class
     * :class:`UIBase.Drag`
   
 
-Config Attributes
+Configs
 -----------------------------------------------
 
     * :data:`~UIBase.Drag.config.handlers`
@@ -27,10 +27,10 @@ Class Detail
 
     | **UIBase.Drag** (config)
     
-    :param Object config: 配置项，详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项，详细见下方 **Configs Detail** .
     
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
     
 .. data:: UIBase.Drag.config.draggable

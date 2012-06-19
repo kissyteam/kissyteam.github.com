@@ -13,7 +13,7 @@ Class
     * :class:`Collection`
     
     
-Config Attributes
+Configs
 -----------------------------------------------
 
     * :data:`~Collection.config.model`
@@ -63,9 +63,9 @@ Class Detail
     * 继承自 :class:`~base.Base` , 包含其全部配置,属性,方法,事件.
     * 集合代表 :class:`Model` 的集合，并具备自动和服务器同步的一些功能
     
-    :param Object config: 配置项.详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项.详细见下方 **Configs Detail** .
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
 
 .. data:: Collection.config.model

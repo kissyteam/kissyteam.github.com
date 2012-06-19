@@ -12,7 +12,7 @@ Class
 
   * :class:`~Proxy`
 
-Config Attributes
+Configs
 -----------------------------------------------
 
   * :attr:`~Proxy.config.node`
@@ -33,10 +33,10 @@ Class Detail
     
     | **Proxy** (config)
 
-    :param Object config: 配置项, 详细见下方 **Config Attributes Detail**
+    :param Object config: 配置项, 详细见下方 **Configs Detail**
     
 
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
     
 .. attribute:: Proxy.config.node

@@ -10,7 +10,7 @@ Class
 
     * :class:`Button`
 
-Config Attributes
+Configs
 -----------------------------------------------    
 
     * :data:`~Button.config.content`
@@ -43,10 +43,10 @@ Class Detail
     * 继承自 :class:`~component.Controller` , 包含其全部配置,属性,方法,事件.
     * 扩充自 :class:`~component.UIBase.ContentBox` , 包含其全部配置,属性,方法,事件.
     
-    :param Object config: 配置项，详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项，详细见下方 **Configs Detail** .
     
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
     
 .. data:: Button.config.content

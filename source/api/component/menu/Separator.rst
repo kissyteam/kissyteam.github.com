@@ -21,7 +21,7 @@ Class Detail
     
     * 继承自 :class:`~menu.Item` , 包含其全部配置,属性,方法,事件.
     
-    :param Object config: 配置项，详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项，详细见下方 **Configs Detail** .
     
     .. note::
 

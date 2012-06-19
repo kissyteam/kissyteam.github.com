@@ -13,7 +13,7 @@ Class
     * :class:`Model`
     
     
-Config Attributes
+Configs
 -----------------------------------------------
 
     * :data:`~Model.config.idAttribute`
@@ -67,9 +67,9 @@ Class Detail
     * 继承自 :class:`~base.Base` , 包含其全部配置,属性,方法,事件.
     * 模型代表数据记录，并具备自动和服务器进行同步的一些功能
     
-    :param Object config: 配置项.详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项.详细见下方 **Configs Detail** .
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
 
 .. data:: Model.config.idAttribute

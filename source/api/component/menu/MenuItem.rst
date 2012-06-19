@@ -13,7 +13,7 @@ Class
     * :class:`Item`
     
 
-Config Attributes
+Configs
 -----------------------------------------------
 
     * :data:`~Item.config.selectable`    
@@ -39,14 +39,14 @@ Class Detail
     
     * 继承自 :class:`~component.Controller` , 包含其全部配置,属性,方法,事件.
     
-    :param Object config: 配置项，详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项，详细见下方 **Configs Detail** .
     
     .. note::
 
         从已有元素实例 Menu 对象时 , 元素节点标明类名 ``{prefixCls}menuitem`` .
         ``prefixCls`` 为配置的类名前缀，默认为 ``ks-`` .
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
 
 .. data:: Item.config.selectable

@@ -12,7 +12,7 @@ Class
   * :class:`Popup`
 
   
-Config Attributes
+Configs
 -----------------------------------------------
 
   与 :class:`Overlay` 的配置项完全相同, 其他新增配置项如下：
@@ -47,7 +47,7 @@ Class Detail
     
     | **Popup** (config)
     
-    :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项, 详细见下方 **Configs Detail** .
     
 .. note::
 
@@ -64,7 +64,7 @@ Class Detail
         </style>    
 
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
 
     与 :class:`Overlay` 的配置项完全相同, 其他新增配置项如下：

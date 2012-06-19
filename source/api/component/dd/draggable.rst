@@ -13,7 +13,7 @@ Class
 
   * :class:`Draggable`
 
-Config Attributes
+Configs
 -----------------------------------------------
 
   * :data:`~Draggable.config.node`
@@ -60,7 +60,7 @@ Class Detail
     
     :param Object config: 实例化可拖放对象的配置项, 详细见下节.
 
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
 
 .. data:: Draggable.config.node

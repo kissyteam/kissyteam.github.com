@@ -13,7 +13,7 @@ Class Detail
     | **Slide** (container[, config])
 
 
-Config Attributes Detail
+Configs Detail
 ---------------------------------------------------------------------
 
     Slide 接口及配置项, 与 :class:`Switchable` 相同, 其中以下配置项的默认值有所区别:

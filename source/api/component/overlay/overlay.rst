@@ -10,7 +10,7 @@ Class
 
   * :class:`Overlay`
 
-Config Attributes
+Configs
 -----------------------------------------------
 
   * :data:`~Overlay.config.prefixCls`
@@ -72,7 +72,7 @@ Class Detail
     
     | **Overlay** (config)
     
-    :param Object config: 配置项, 详细见下方 **Config Attributes Detail** .
+    :param Object config: 配置项, 详细见下方 **Configs Detail** .
 
 
 .. note::
@@ -90,7 +90,7 @@ Class Detail
         </style>
         
     
-Config Attributes Detail
+Configs Detail
 -----------------------------------------------
     
 .. data:: Overlay.config.prefixCls
