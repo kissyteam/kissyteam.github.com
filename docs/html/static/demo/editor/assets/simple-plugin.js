@@ -1,6 +1,5 @@
 (function () {
-    KISSY.config("combine", true);
-    KISSY.use("editor", function (S, Editor) {
+    KISSY.use("editor/full", function (S, Editor) {
 
         // 自定义插件
         function Plugin1(cfg) {
