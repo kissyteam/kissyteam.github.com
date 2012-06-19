@@ -39,7 +39,6 @@
             focused:true,
             autoRender:true,
             attachForm:true,
-            baseZIndex:10000,
             // 自定义样式
             // customStyle:"p{line-height: 1.4;margin: 1.12em 0;padding: 0;}",
             // 自定义外部样式
