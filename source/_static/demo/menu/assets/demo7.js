@@ -6,8 +6,6 @@ KISSY.use("menu", function (S, Menu) {
             prefixCls:"nav-",
             // boolean，是否鼠标脱离菜单后自动隐藏
             autoHideOnMouseLeave:true,
-            // ms，鼠标脱离菜单多长时间后自动隐藏
-            autoHideDelay:300,
             width:150,
             align:{
                 offset:[-1, -1],
@@ -31,8 +29,6 @@ KISSY.use("menu", function (S, Menu) {
             width:90,
             // boolean，是否鼠标脱离菜单后自动隐藏
             autoHideOnMouseLeave:true,
-            // ms，鼠标脱离菜单多长时间后自动隐藏
-            autoHideDelay:300,
             children:[
                 new Menu.Item({
                     prefixCls:"nav-",

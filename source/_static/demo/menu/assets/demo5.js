@@ -6,8 +6,6 @@ KISSY.use("menu", function (S, Menu) {
         width:200,
         // boolean，是否鼠标脱离菜单后自动隐藏
         autoHideOnMouseLeave:true,
-        // ms，鼠标脱离菜单多长时间后自动隐藏
-        autoHideDelay:300,
         prefixCls:prefixCls,
         align:{
             offset:[-1, -1],
