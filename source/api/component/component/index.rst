@@ -9,11 +9,6 @@ Component
 Classes in Component
 -----------------------------------------------
 
-
-
-
-
-
 .. toctree::
    :titlesonly:
 

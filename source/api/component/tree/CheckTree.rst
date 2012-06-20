@@ -26,6 +26,7 @@ Class Detail
 .. class:: CheckTree
 
     | **CheckTree** (config)
+    | xclass: 'check-tree'
     
     * 继承自 :class:`Tree.CheckNode <tree.CheckNode>` , 包含其全部配置,属性,方法,事件.
     

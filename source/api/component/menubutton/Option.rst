@@ -17,6 +17,7 @@ Class Detail
 .. class:: Option
 
     | **Option** (config)
+    | xclass: 'option'
     
     * 继承自 :class:`~menu.Item` , 包含其全部配置,属性,方法,事件.
     * 不过其默认 :data:`~menu.Item.config.selectable` 为 ``true`` ，可选择

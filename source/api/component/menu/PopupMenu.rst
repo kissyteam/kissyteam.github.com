@@ -23,6 +23,7 @@ Class Detail
 .. class:: PopupMenu
 
     | **PopupMenu** (config)
+    | xclass: 'popupmenu'
     
     * 继承自 :class:`~menu.Menu` , 包含其全部配置,属性,方法,事件.
     * 扩充自 :class:`~component.UIBase.Position`, 包含其全部配置,属性,方法,事件.

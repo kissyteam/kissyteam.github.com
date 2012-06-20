@@ -43,6 +43,7 @@ Class Detail
 .. class:: MenuButton
 
     | **MenuButton** (config)
+    | xclass: 'menubutton'
     
     * 继承自 :class:`~button.Button` , 包含其全部配置,属性,方法,事件.
     

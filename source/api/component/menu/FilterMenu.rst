@@ -32,6 +32,7 @@ Class Detail
 .. class:: FilterMenu
 
     | **FilterMenu** (config)
+    | xclass: 'filtermenu'
     
     * 继承自 :class:`~menu.Menu` , 包含其全部配置,属性,方法,事件.
     

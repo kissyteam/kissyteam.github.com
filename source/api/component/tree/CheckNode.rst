@@ -28,6 +28,7 @@ Class Detail
 .. class:: CheckNode
 
     | **CheckNode** (config)
+    | xclass: 'tree-check-item'
     
     * 继承自 :class:`Tree.Node <tree.Node>` , 包含其全部配置,属性,方法,事件.
     

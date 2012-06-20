@@ -30,6 +30,7 @@ Class Detail
 .. class:: Menu
 
     | **Menu** (config)
+    | xclass: 'menu'
     
     * 继承自 :class:`~component.Controller` , 包含其全部配置,属性,方法,事件.
     

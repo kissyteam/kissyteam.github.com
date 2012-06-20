@@ -33,7 +33,8 @@ Class Detail
 .. class:: Select
 
     | **Select** (config)
-    
+    | xclass: 'select'
+
     * 继承自 :class:`MenuButton` , 包含其全部配置,属性,方法,事件.
     
     :param Object config: 配置项，详细见下方 **Configs Detail** .

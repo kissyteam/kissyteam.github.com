@@ -46,6 +46,7 @@ Class Detail
 .. class:: Popup
     
     | **Popup** (config)
+    | xclass: 'popup'
     
     :param Object config: 配置项, 详细见下方 **Configs Detail** .
     

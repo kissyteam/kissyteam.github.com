@@ -48,6 +48,7 @@ Class Detail
 .. class:: Node
 
     | **Node** (config)
+    | xclass: 'tree-item'
     
     * 继承自 :class:`~component.Controller` , 包含其全部配置,属性,方法,事件.
     

@@ -18,6 +18,7 @@ Class Detail
 .. class:: Separator
 
     | **Separator** (config)
+    | xclass: 'menuseparator'
     
     * 继承自 :class:`~menu.Item` , 包含其全部配置,属性,方法,事件.
     
