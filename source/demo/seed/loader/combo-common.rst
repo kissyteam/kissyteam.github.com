@@ -1,6 +1,6 @@
 .. _loader_demo_combo_common:
 
-.. currentmodule:: loader
+.. currentmodule:: seed
 
 不配置依赖 combo 使用 gallery
 ===============================

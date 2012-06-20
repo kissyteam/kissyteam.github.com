@@ -1,6 +1,6 @@
 ﻿.. _loader_demo:
 
-.. currentmodule:: loader
+.. currentmodule:: seed
 
 Loader 使用示例
 ===============================

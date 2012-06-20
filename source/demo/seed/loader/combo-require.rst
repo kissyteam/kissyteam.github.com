@@ -1,6 +1,6 @@
 .. _loader_demo_combo_require:
 
-.. currentmodule:: loader
+.. currentmodule:: seed
 
 配置依赖 combo 使用 gallery
 ===============================

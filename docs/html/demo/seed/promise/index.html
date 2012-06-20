@@ -1,0 +1,360 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>Promise 使用示例 &mdash; KISSY Docs</title>
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
+<link rel="stylesheet" href="../../../static/kissy.css"/>
+<link rel="stylesheet" href="../../../static/pygments.css"/>
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };    
+    (function(){
+        var js=[],h=window.location.href,d=document;
+            js.push("../../../static/jquery.js");
+            js.push("../../../static/underscore.js");
+            js.push("../../../static/doctools.js");
+        for(var i=0;i<js.length;i++){
+            var j=js[i];
+            if(h.indexOf("localhost/kissy_git/")==-1
+            &&
+            
+            h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
+            &&
+            j.indexOf("jquery.js")!=-1){
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');   
+            }else{
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');   
+            }
+        }
+    })();
+</script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../../core/index.html" title="Core"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="../lang/index.html" title="Lang 使用示例"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >Demos</a> &#187; </li>
+      <li><a href="../index.html" accesskey="U">Seed</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="promise">
+<span id="promise-demo"></span><h1>Promise 使用示例<a class="headerlink" href="#promise" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><a class="reference internal" href="../../../api/seed/promise/promise.html#seed.Promise" title="seed.Promise"><tt class="xref py py-class docutils literal"><span class="pre">Promise</span></tt></a></p>
+<p><a class="reference internal" href="../../../api/seed/promise/defer.html#seed.Defer" title="seed.Defer"><tt class="xref py py-class docutils literal"><span class="pre">Defer</span></tt></a></p>
+</div></blockquote>
+</div>
+<div class="section" id="demos">
+<h2>Demos<a class="headerlink" href="#demos" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>链式传递的效果<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<iframe width="100%" height="50" class="iframe-demo"
+src="../../../static/demo/promise/index.html?type=chain"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Defer</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">promise</span><span class="p">;</span>
+    <span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">v</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span> <span class="c1">// =&gt; 2</span>
+        <span class="p">});</span>
+    <span class="nx">d</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// 该位置也可以放在 then 前面</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="resolve-then">
+<h3>resolve 和 then 没有顺序依赖<a class="headerlink" href="#resolve-then" title="Permalink to this headline">¶</a></h3>
+<iframe width="100%" height="50" class="iframe-demo"
+ src="../../../static/demo/promise/index.html?type=chain-order"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Defer</span><span class="p">();</span>
+    <span class="nx">d</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// 该位置也可以放在 then 前面</span>
+    <span class="kd">var</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">promise</span><span class="p">;</span>
+    <span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">v</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span> <span class="c1">// =&gt; 2</span>
+        <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>错误可以被传递<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<iframe width="100%" height="50" class="iframe-demo"
+src="../../../static/demo/promise/index.html?type=error-propagate"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Defer</span><span class="p">();</span>
+    <span class="nx">d</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="s2">&quot;wrong&quot;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">promise</span><span class="p">;</span>
+    <span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">v</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span>
+        <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">reason</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">reason</span><span class="p">);</span> <span class="c1">// =&gt; &quot;wrong&quot;</span>
+        <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="promise-promise">
+<h3>前一个 promise 如果处理了错误并返回会影响下一个 promise 的成功回调<a class="headerlink" href="#promise-promise" title="Permalink to this headline">¶</a></h3>
+<iframe width="100%" height="50" class="iframe-demo"
+src="../../../static/demo/promise/index.html?type=error-recovery"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Defer</span><span class="p">();</span>
+    <span class="nx">d</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="s2">&quot;wrong&quot;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">promise</span><span class="p">;</span>
+    <span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">v</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">},</span><span class="kd">function</span> <span class="p">(</span><span class="nx">reason</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span> <span class="c1">// =&gt; 2</span>
+        <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">reason</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">reason</span><span class="p">);</span> <span class="c1">// 不执行</span>
+        <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>前一个 promise 的成功或失败回调如果抛出异常则影响下一个 promise 的失败回调<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<iframe width="100%" height="50" class="iframe-demo"
+src="../../../static/demo/promise/index.html?type=error-throw"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Defer</span><span class="p">();</span>
+    <span class="nx">d</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">promise</span><span class="p">;</span>
+    <span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="nx">v</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">},</span><span class="kd">function</span> <span class="p">(</span><span class="nx">reason</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span> <span class="c1">// 不回调</span>
+        <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">reason</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">reason</span><span class="p">);</span> <span class="c1">// =&gt;2</span>
+        <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>成功回调可以返回新的 promise 进行嵌套处理<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<iframe width="100%" height="50" class="iframe-demo"
+src="../../../static/demo/promise/index.html?type=nest"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Defer</span><span class="p">();</span>
+    <span class="nx">d</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">promise</span><span class="p">;</span>
+    <span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Defer</span><span class="p">();</span>
+        <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">d</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">v</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">promise</span><span class="p">;</span>
+    <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span> <span class="c1">// 一秒后弹出 2</span>
+        <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../../core/index.html" title="Core"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="../lang/index.html" title="Lang 使用示例"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >Demos</a> &#187; </li>
+      <li><a href="../index.html" accesskey="U">Seed</a> &#187; </li> 
+    </ul>
+</div>
+					<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box demo-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../loader/index.html">loader</a></li>
+        <li><a href="../lang/index.html">lang</a></li>
+        <!--<li><a href="../kissy/index.html">kissy</a></li>
+
+        <li><a href="../web/index.html">web</a></li>-->
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <!--<li><a href="../../core/ua/index.html">ua</a></li>
+        <li><a href="../../core/dom/index.html">DOM</a></li>
+        <li><a href="../../core/event/index.html">event</a></li>
+        <li><a href="../../core/node/index.html">node</a></li>
+        <li><a href="../../core/json/index.html">json</a></li>
+        <li><a href="../../core/ajax/index.html">ajax</a></li>
+        <li><a href="../../core/cookie/index.html">cookie</a></li>
+        <li><a href="../../core/base/index.html">base</a></li>-->
+        <li><a href="../../core/anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../component/mvc/index.html">mvc</a></li>
+        <!--<li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../../component/template/index.html">template</a></li>-->
+        <li><a href="../../component/datalazyload/index.html">datalazyload</a></li>
+        <!--<li><a href="../../component/flash/index.html">flash</a></li>-->
+        <li><a href="../../component/dd/index.html">dd</a></li>
+        <li><a href="../../component/resizable/index.html">resizable</a></li>
+        <li><a href="../../component/switchable/index.html">switchable</a></li>
+        <li><a href="../../component/suggest/index.html">suggest</a></li>
+        <li><a href="../../component/calendar/index.html">calendar</a></li>
+        <li><a href="../../component/imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../../component/overlay/index.html">overlay</a></li>
+        <li><a href="../../component/button/index.html">button</a></li>
+        <li><a href="../../component/menu/index.html">menu</a></li>
+        <li><a href="../../component/menubutton/index.html">menubutton</a></li>
+        <li><a href="../../component/tree/index.html">tree</a></li>
+        <li><a href="../../component/waterfall/index.html">waterfall</a></li>
+        <li><a href="../../component/editor/index.html">editor</a></li>
+        <li><a href="../../component/combobox/index.html">combobox</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

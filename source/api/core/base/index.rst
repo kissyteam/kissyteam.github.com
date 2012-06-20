@@ -12,7 +12,7 @@ Module
   :mod:`base`
 
 
-Methods
+Classes
 -----------------------------------------------
 
 .. toctree::

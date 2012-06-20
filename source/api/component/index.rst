@@ -13,7 +13,6 @@ Component
    dd/index
    resizable/index
    mvc/index
-   uibase/index
    component/index
    overlay/index
    button/index

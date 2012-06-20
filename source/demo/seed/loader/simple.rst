@@ -1,6 +1,6 @@
 .. _loader_demo_simple:
 
-.. currentmodule:: loader
+.. currentmodule:: seed
 
 简单配置包并使用
 ===============================

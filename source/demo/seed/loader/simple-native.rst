@@ -1,6 +1,6 @@
 .. _loader_demo_simple_native:
 
-.. currentmodule:: loader
+.. currentmodule:: seed
 
 简单使用内置模块
 ===============================

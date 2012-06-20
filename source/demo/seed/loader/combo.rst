@@ -1,6 +1,6 @@
 .. _loader_demo_combo:
 
-.. currentmodule:: loader
+.. currentmodule:: seed
 
 combo 使用内置模块
 ===============================
