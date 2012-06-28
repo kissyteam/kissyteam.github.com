@@ -29,9 +29,10 @@ Commands Details
 .. function:: Editor.commands.heading
 
     | **heading(tag)**
-    | 对选区设置标题的插件
+    | 对选区设置或取消标题的插件
+    | 支持 queryCommandValue，返回选区设置标题
 
-    :param String tag: 标题的标签名称。例如 'h1'
+    :param String tag: 标题的标签名称。例如 'h1','p'
 
 
 .. note::
@@ -41,21 +42,3 @@ Commands Details
     .. code-block:: javascript
 
         editor.execCommand("heading",'h1');
-
-
-.. function:: Editor.commands.queryHeadingActive
-
-    | **queryHeadingActive(elementPath, tag)**
-    | 对选区设置标题的插件
-
-    :param Editor.ElementPath elementPath: 元素路径
-    :param String tag: 标题的标签名称。例如 'h1'
-
-
-.. note::
-
-    调用命令方式
-
-    .. code-block:: javascript
-
-        editor.execCommand("queryHeadingActive",elementPath,'h1');

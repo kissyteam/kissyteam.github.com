@@ -21,7 +21,6 @@ Commands
 ----------------------------------------------------------
 
 * :func:`~Editor.commands.bold`
-* :func:`~Editor.commands.queryBoldActive`
 
 
 Commands Details
@@ -29,19 +28,10 @@ Commands Details
 
 .. function:: Editor.commands.bold
 
-    | **bold([effect])**
-    | 对选区文字加粗
+    | **bold()**
+    | toggle 选区文字加粗.
+    | 支持 queryCommandValue 返回当前路径是否被加粗覆盖.
 
-    :param Boolean effect: 加粗或取消加粗
-
-
-.. function:: Editor.commands.queryBoldActive
-
-    | **bold(elementPath)**
-    | 当前路径是否被加粗覆盖
-
-    :param Editor.ElementPath elementPath: 元素路径
-    :rtype: boolean
 
 .. note::
 
@@ -51,4 +41,6 @@ Commands Details
 
         editor.execCommand("bold"); // 设置选区文字加粗
 
-        editor.execCommand("bold",false); // 取消选区文字加粗
+        editor.execCommand("bold"); // 取消选区文字加粗
+
+        editor.queryCommandValue("bold") //=>false

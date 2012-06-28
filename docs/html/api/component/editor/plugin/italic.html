@@ -131,7 +131,6 @@
 <h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference internal" href="#editor.Editor.commands.italic" title="editor.Editor.commands.italic"><tt class="xref py py-func docutils literal"><span class="pre">italic()</span></tt></a></li>
-<li><a class="reference internal" href="#editor.Editor.commands.queryItalicActive" title="editor.Editor.commands.queryItalicActive"><tt class="xref py py-func docutils literal"><span class="pre">queryItalicActive()</span></tt></a></li>
 </ul>
 </div>
 <div class="section" id="commands-details">
@@ -140,53 +139,12 @@
 <dt id="editor.Editor.commands.italic">
 <tt class="descclassname">Editor.commands.</tt><tt class="descname">italic</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.commands.italic" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line"><strong>italic([effect])</strong></div>
-<div class="line">对选区文字斜体</div>
+<div class="line"><strong>italic()</strong></div>
+<div class="line">对选区文字设置斜体或取消斜体</div>
+<div class="line">支持 queryCommandValue，返回当前路径是否是斜体覆盖</div>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>effect</strong> (<em>Boolean</em>) &#8211; 斜体或取消斜体</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
-<dl class="function">
-<dt id="editor.Editor.commands.queryItalicActive">
-<tt class="descclassname">Editor.commands.</tt><tt class="descname">queryItalicActive</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.commands.queryItalicActive" title="Permalink to this definition">¶</a></dt>
-<dd><div class="line-block">
-<div class="line"><strong>queryItalicActive(elementPath)</strong></div>
-<div class="line">当前路径是否是斜体覆盖</div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>elementPath</strong> (<em>Editor.ElementPath</em>) &#8211; 元素路径</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Return type:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body">boolean</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">Returns:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body">当前路径是否是斜体覆盖</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>调用命令方式</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s2">&quot;italic&quot;</span><span class="p">);</span>
-
-<span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s2">&quot;italic&quot;</span><span class="p">,</span><span class="kc">false</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 

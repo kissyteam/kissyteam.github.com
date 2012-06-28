@@ -22,7 +22,6 @@ Commands
 ----------------------------------------------------------
 
 * :func:`~Editor.commands.fontFamily`
-* :func:`~Editor.commands.queryFontFamilyActive`
 
 Config Details
 ------------------------------------------------------
@@ -97,31 +96,16 @@ Commands Details
 
 .. function:: Editor.commands.fontFamily
 
-    | **fontFamily(fontFamily, [apply=true])**
-    | 对选区文字设置指定的字体
+    | **fontFamily(fontFamily)**
+    | 对选区文字设置或取消指定的字体.
+    | 支持 queryCommandValue，返回当前元素是否被设置了对应字体
 
     :param String fontFamily: 指定字体值.
-    :param Boolean apply: 应用或取消指定的字体.
 
 实例：
 
 .. code-block:: javascript
 
     editor.execCommand("fontFamily","SimSun"); //=> 设置选区文字为宋体.
-
-
-.. function:: Editor.commands.queryFontFamilyActive
-
-    | **queryFontFamilyActive(value, element)**
-    | 查看指定元素是否被设置了对应字体
-
-    :param String value: 指定的字体值，例如 "SimSun"
-    :param KISSY.Node element: 编辑器中的某个元素
-
-示例：
-
-.. code-block:: javascript
-
-    editor.execCommand("queryFontFamilyActive","SimSun",
-    editor.get("document").one("span")); //=> 判断第一行第一个元素是否被设置了宋体
-
+    editor.execCommand("fontFamily","SimSun"); //=> 取消设置选区文字为宋体.
+    editor.queryCommandValue("fontFamily"); //=> 返回 "SimSun";

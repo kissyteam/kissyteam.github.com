@@ -22,7 +22,6 @@ Commands
 ----------------------------------------------------------
 
 * :func:`~Editor.commands.underline`
-* :func:`~Editor.commands.queryUnderlineActive`
 
 
 Commands Details
@@ -30,26 +29,6 @@ Commands Details
 
 .. function:: Editor.commands.underline
 
-    | **underline([effect])**
-    | 对选区文字下划线
-
-    :param Boolean effect: 下划线或取消下划线
-
-
-.. function:: Editor.commands.queryUnderlineActive
-
-    | **underline(elementPath)**
-    | 当前路径是否被下划线覆盖
-
-    :param Editor.ElementPath elementPath: 元素路径
-    :rtype: boolean
-
-.. note::
-
-    调用命令方式
-
-    .. code-block:: javascript
-
-        editor.execCommand("underline"); // 设置选区文字下划线
-
-        editor.execCommand("underline",false); // 取消选区文字下划线
+    | **underline()**
+    | 对选区文字下划线或取消
+    | 支持 queryCommandValue，返回当前路径是否被下划线覆盖

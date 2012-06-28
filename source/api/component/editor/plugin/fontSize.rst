@@ -22,7 +22,6 @@ Commands
 ----------------------------------------------------------
 
 * :func:`~Editor.commands.fontSize`
-* :func:`~Editor.commands.queryFontSizeActive`
 
 
 Config Details
@@ -57,23 +56,16 @@ Commands Details
 
 .. function:: Editor.commands.fontSize
 
-    | **fontSize(fontSize, [apply=true])**
-    | 对选区文字设置指定的字体大小
+    | **fontSize(fontSize)**
+    | 对选区文字设置或取消指定的字体大小
+    | 支持 queryCommandValue，返回当前元素是否被设置了对应大小
 
     :param String fontSize: 指定字体大小值.
-    :param Boolean apply: 应用或取消指定的大小.
 
 实例：
 
 .. code-block:: javascript
 
     editor.execCommand("fontSize","10px"); //=> 设置选区文字大小为10px.
-
-
-.. function:: Editor.commands.queryFontSizeActive
-
-    | **queryFontSizeActive(value, element)**
-    | 查看指定元素是否被设置了对应大小
-
-    :param String value: 指定的大小值，例如 "10px"
-    :param KISSY.Node element: 编辑器中的某个元素
+    editor.execCommand("fontSize","10px"); //=> 取消设置选区文字大小为10px.
+    editor.queryCommandValue("fontSize"); //=> 返回 10px

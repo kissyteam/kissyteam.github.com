@@ -186,7 +186,8 @@
 <div class="section" id="excludes">
 <h3>excludes<a class="headerlink" href="#excludes" title="Permalink to this headline">¶</a></h3>
 <p><tt class="docutils literal"><span class="pre">optional</span></tt> , 指明 <tt class="docutils literal"><span class="pre">requires</span></tt> 递归依赖模块中不需要打包的模块名称集合, 该集合内的模块是单独动态加载或静态引入的, 多个模块以 <tt class="docutils literal"><span class="pre">,</span></tt> 分隔.
-如以上示例 <tt class="docutils literal"><span class="pre">bizcore</span></tt> 表示 <tt class="docutils literal"><span class="pre">bizcore</span></tt> 模块不需要合并打包, 而是静态引入到页面中的.</p>
+如以上示例 <tt class="docutils literal"><span class="pre">bizcore</span></tt> 表示 <tt class="docutils literal"><span class="pre">bizcore</span></tt> 模块不需要合并打包, 而是静态引入到页面中的.
+最常见的是把用到的 kissy 的所有模块都加入到 excludes 中，防止打包时提示 kissy 模块找不到.</p>
 </div>
 <div class="section" id="output">
 <h3>output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h3>

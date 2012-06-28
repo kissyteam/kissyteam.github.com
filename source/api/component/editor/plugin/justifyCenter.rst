@@ -21,7 +21,6 @@ Commands
 ----------------------------------------------------------
 
 * :func:`~Editor.commands.justifyCenter`
-* :func:`~Editor.commands.queryJustifyCenterActive`
 
 
 Commands Details
@@ -30,13 +29,5 @@ Commands Details
 .. function:: Editor.commands.justifyCenter
 
     | **justifyCenter()**
-    | 对选区文字居中
-
-
-.. function:: Editor.commands.queryJustifyCenterActive
-
-    | **queryJustifyCenterActive(elementPath)**
-    | 当前路径是否是居中对齐
-
-    :param Editor.ElementPath elementPath: 元素路径
-    :rtype: boolean
+    | 对选区文字居中或取消
+    | 支持 queryCommandValue，返回选区是否居中

@@ -21,7 +21,6 @@ Commands
 ----------------------------------------------------------
 
 * :func:`~Editor.commands.outdent`
-* :func:`~Editor.commands.queryOutdentActive`
 
 Commands Details
 ------------------------------------------------------
@@ -30,12 +29,4 @@ Commands Details
 
     | **outdent**
     | 对选区缩出
-
-
-.. function:: Editor.commands.queryOutdentActive
-
-    | **queryOutdentActive(elementPath)**
-    | 返回当前路径是否可以缩出
-
-    :param Editor.ElementPath elementPath: 元素路径
-    :rtype: boolean
+    | 支持 queryCommandValue，返回当前路径是否可以缩出

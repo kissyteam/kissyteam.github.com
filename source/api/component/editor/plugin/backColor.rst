@@ -29,7 +29,7 @@ Commands Details
 .. function:: Editor.commands.backColor
 
     | **backColor(color)**
-    | 对选区设置背景色
+    | 对选区设置背景色.该命令不支持 queryCommandValue.
 
     :param String color: 颜色的 16 进制字符串。例如 '#ffffff'
 

@@ -167,6 +167,8 @@
 <div><ul class="simple">
 <li><a class="reference internal" href="../component/controller.html#component.Controller.extend" title="component.Controller.extend"><tt class="xref py py-meth docutils literal"><span class="pre">extend()</span></tt></a> &lt;static&gt;</li>
 <li><a class="reference internal" href="#editor.Editor.prototype.execCommand" title="editor.Editor.prototype.execCommand"><tt class="xref py py-meth docutils literal"><span class="pre">execCommand()</span></tt></a></li>
+<li><a class="reference internal" href="#editor.Editor.prototype.hasCommand" title="editor.Editor.prototype.hasCommand"><tt class="xref py py-meth docutils literal"><span class="pre">hasCommand()</span></tt></a></li>
+<li><a class="reference internal" href="#editor.Editor.prototype.queryCommandValue" title="editor.Editor.prototype.queryCommandValue"><tt class="xref py py-meth docutils literal"><span class="pre">queryCommandValue()</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.prototype.sync" title="editor.Editor.prototype.sync"><tt class="xref py py-meth docutils literal"><span class="pre">sync()</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.prototype.getDocHtml" title="editor.Editor.prototype.getDocHtml"><tt class="xref py py-meth docutils literal"><span class="pre">getDocHtml()</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.prototype.focus" title="editor.Editor.prototype.focus"><tt class="xref py py-meth docutils literal"><span class="pre">focus()</span></tt></a></li>
@@ -179,6 +181,7 @@
 <li><a class="reference internal" href="#editor.Editor.prototype.insertElement" title="editor.Editor.prototype.insertElement"><tt class="xref py py-meth docutils literal"><span class="pre">insertElement()</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.prototype.insertHtml" title="editor.Editor.prototype.insertHtml"><tt class="xref py py-meth docutils literal"><span class="pre">insertHtml()</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.prototype.addButton" title="editor.Editor.prototype.addButton"><tt class="xref py py-meth docutils literal"><span class="pre">addButton()</span></tt></a></li>
+<li><a class="reference internal" href="#editor.Editor.prototype.addSelect" title="editor.Editor.prototype.addSelect"><tt class="xref py py-meth docutils literal"><span class="pre">addSelect()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -364,6 +367,42 @@
 <li><strong>arg1</strong> &#8211; 对应命令所需要的参数</li>
 </ul>
 </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="editor.Editor.prototype.hasCommand">
+<tt class="descclassname">Editor.prototype.</tt><tt class="descname">hasCommand</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.prototype.hasCommand" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>hasCommand(commandName)</strong></div>
+<div class="line">编辑器是否存在该命令</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>commandName</strong> (<em>String</em>) &#8211; 命令名称，由各个插件提供</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="editor.Editor.prototype.queryCommandValue">
+<tt class="descclassname">Editor.prototype.</tt><tt class="descname">queryCommandValue</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.prototype.queryCommandValue" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>queryCommandValue(commandName)</strong></div>
+<div class="line">查询该命令对应的当前编辑值</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>commandName</strong> (<em>String</em>) &#8211; 命令名称，由各个插件提供</td>
 </tr>
 </tbody>
 </table>
@@ -571,6 +610,48 @@
 <p>例如:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">addButton</span><span class="p">(</span><span class="s2">&quot;plugin2&quot;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">content</span><span class="o">:</span><span class="s1">&#39;&lt;div style=&quot;margin: 2px;border: 1px solid red;padding: 1px;&quot;&gt;p2&lt;/div&gt;&#39;</span><span class="p">,</span>
+    <span class="nx">listeners</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">click</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;i am running&#39;</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="editor.Editor.prototype.addSelect">
+<tt class="descclassname">Editor.prototype.</tt><tt class="descname">addSelect</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.prototype.addSelect" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>addSelect(id, cfg)</strong></div>
+<div class="line">为编辑器工具栏增加一个下拉菜单按钮. 一般用于插件编写.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>id</strong> (<em>String</em>) &#8211; 按钮 id</li>
+<li><strong>cfg</strong> (<em>Object</em>) &#8211; select 配置，详见 <a class="reference internal" href="../menubutton/Select.html#menubutton.Select" title="menubutton.Select"><tt class="xref py py-class docutils literal"><span class="pre">Select</span></tt></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>例如:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">addSelect</span><span class="p">(</span><span class="s2">&quot;plugin2&quot;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">children</span><span class="o">:</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+            <span class="nx">value</span><span class="o">:</span><span class="s2">&quot;11&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
+            <span class="nx">value</span><span class="o">:</span><span class="s2">&quot;22&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
     <span class="nx">listeners</span><span class="o">:</span><span class="p">{</span>
         <span class="nx">click</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;i am running&#39;</span><span class="p">)</span>

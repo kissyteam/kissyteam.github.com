@@ -45,6 +45,8 @@ Methods
 
     * :meth:`~component.Controller.extend` <static>
     * :meth:`~Editor.prototype.execCommand`
+    * :meth:`~Editor.prototype.hasCommand`
+    * :meth:`~Editor.prototype.queryCommandValue`
     * :meth:`~Editor.prototype.sync`
     * :meth:`~Editor.prototype.getDocHtml`
     * :meth:`~Editor.prototype.focus`
@@ -57,6 +59,7 @@ Methods
     * :meth:`~Editor.prototype.insertElement`
     * :meth:`~Editor.prototype.insertHtml`
     * :meth:`~Editor.prototype.addButton`
+    * :meth:`~Editor.prototype.addSelect`
     
 Events
 --------------------------------------------------------
@@ -186,6 +189,20 @@ Methods Detail
     :param String commandName: 命令名称，由各个插件提供
     :param arg1: 对应命令所需要的参数
 
+.. method:: Editor.prototype.hasCommand
+
+    | **hasCommand(commandName)**
+    | 编辑器是否存在该命令
+
+    :param String commandName: 命令名称，由各个插件提供
+
+
+.. method:: Editor.prototype.queryCommandValue
+
+    | **queryCommandValue(commandName)**
+    | 查询该命令对应的当前编辑值
+
+    :param String commandName: 命令名称，由各个插件提供
 
 .. method:: Editor.prototype.sync
 
@@ -288,6 +305,36 @@ Methods Detail
 
         editor.addButton("plugin2", {
             content:'<div style="margin: 2px;border: 1px solid red;padding: 1px;">p2</div>',
+            listeners:{
+                click:function () {
+                    alert('i am running')
+                }
+            }
+        });
+
+.. method:: Editor.prototype.addSelect
+
+    | **addSelect(id, cfg)**
+    | 为编辑器工具栏增加一个下拉菜单按钮. 一般用于插件编写.
+
+    :param String id: 按钮 id
+    :param Object cfg: select 配置，详见 :class:`~menubutton.Select`
+
+    例如:
+
+    .. code-block:: javascript
+
+        editor.addSelect("plugin2", {
+            children:[
+                {
+                    content:"1",
+                    value:"11"
+                },
+                {
+                    content:"2",
+                    value:"22"
+                }
+            ],
             listeners:{
                 click:function () {
                     alert('i am running')

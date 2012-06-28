@@ -22,7 +22,6 @@ Commands
 ----------------------------------------------------------
 
 * :func:`~Editor.commands.insertUnorderedList`
-* :func:`~Editor.commands.queryInsertUnorderedListActive`
 
 Commands Details
 ------------------------------------------------------
@@ -30,13 +29,5 @@ Commands Details
 .. function:: Editor.commands.insertUnorderedList
 
     | **insertUnorderedList**
-    | 对选区设置为无序列表
-
-
-.. function:: Editor.commands.queryInsertUnorderedListActive
-
-    | **queryOutdentActive(elementPath)**
-    | 返回当前路径是否是无序列表
-
-    :param Editor.ElementPath elementPath: 元素路径
-    :rtype: boolean
+    | 对选区设置为无序列表或取消
+    | 支持 queryCommandValue，返回当前路径是否是无序列表

@@ -140,7 +140,6 @@
 <h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference internal" href="#editor.Editor.commands.fontFamily" title="editor.Editor.commands.fontFamily"><tt class="xref py py-func docutils literal"><span class="pre">fontFamily()</span></tt></a></li>
-<li><a class="reference internal" href="#editor.Editor.commands.queryFontFamilyActive" title="editor.Editor.commands.queryFontFamilyActive"><tt class="xref py py-func docutils literal"><span class="pre">queryFontFamilyActive()</span></tt></a></li>
 </ul>
 </div>
 <div class="section" id="config-details">
@@ -217,19 +216,16 @@
 <dt id="editor.Editor.commands.fontFamily">
 <tt class="descclassname">Editor.commands.</tt><tt class="descname">fontFamily</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.commands.fontFamily" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line"><strong>fontFamily(fontFamily, [apply=true])</strong></div>
-<div class="line">对选区文字设置指定的字体</div>
+<div class="line"><strong>fontFamily(fontFamily)</strong></div>
+<div class="line">对选区文字设置或取消指定的字体.</div>
+<div class="line">支持 queryCommandValue，返回当前元素是否被设置了对应字体</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>fontFamily</strong> (<em>String</em>) &#8211; 指定字体值.</li>
-<li><strong>apply</strong> (<em>Boolean</em>) &#8211; 应用或取消指定的字体.</li>
-</ul>
-</td>
+<tr><td>&nbsp;</td><td class="field-body"><strong>fontFamily</strong> (<em>String</em>) &#8211; 指定字体值.</td>
 </tr>
 </tbody>
 </table>
@@ -237,33 +233,8 @@
 
 <p>实例：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s2">&quot;fontFamily&quot;</span><span class="p">,</span><span class="s2">&quot;SimSun&quot;</span><span class="p">);</span> <span class="c1">//=&gt; 设置选区文字为宋体.</span>
-</pre></div>
-</div>
-<dl class="function">
-<dt id="editor.Editor.commands.queryFontFamilyActive">
-<tt class="descclassname">Editor.commands.</tt><tt class="descname">queryFontFamilyActive</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.commands.queryFontFamilyActive" title="Permalink to this definition">¶</a></dt>
-<dd><div class="line-block">
-<div class="line"><strong>queryFontFamilyActive(value, element)</strong></div>
-<div class="line">查看指定元素是否被设置了对应字体</div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>value</strong> (<em>String</em>) &#8211; 指定的字体值，例如 &#8220;SimSun&#8221;</li>
-<li><strong>element</strong> (<em>KISSY.Node</em>) &#8211; 编辑器中的某个元素</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<p>示例：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s2">&quot;queryFontFamilyActive&quot;</span><span class="p">,</span><span class="s2">&quot;SimSun&quot;</span><span class="p">,</span>
-<span class="nx">editor</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;document&quot;</span><span class="p">).</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">));</span> <span class="c1">//=&gt; 判断第一行第一个元素是否被设置了宋体</span>
+<span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s2">&quot;fontFamily&quot;</span><span class="p">,</span><span class="s2">&quot;SimSun&quot;</span><span class="p">);</span> <span class="c1">//=&gt; 取消设置选区文字为宋体.</span>
+<span class="nx">editor</span><span class="p">.</span><span class="nx">queryCommandValue</span><span class="p">(</span><span class="s2">&quot;fontFamily&quot;</span><span class="p">);</span> <span class="c1">//=&gt; 返回 &quot;SimSun&quot;;</span>
 </pre></div>
 </div>
 </div>

@@ -20,23 +20,14 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.commands.justifyLeft`
-* :func:`~Editor.commands.queryJustifyRightActive`
+* :func:`~Editor.commands.justifyRight`
 
 
 Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.commands.justifyLeft
+.. function:: Editor.commands.justifyRight
 
     | **justifyCenter()**
     | 对选区文字居右
-
-
-.. function:: Editor.commands.queryJustifyRightActive
-
-    | **queryJustifyRightActive(elementPath)**
-    | 当前路径是否是居右对齐
-
-    :param Editor.ElementPath elementPath: 元素路径
-    :rtype: boolean
+    | 支持 queryCommandValue，返回选区是否居右

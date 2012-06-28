@@ -140,7 +140,6 @@
 <h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference internal" href="#editor.Editor.commands.fontSize" title="editor.Editor.commands.fontSize"><tt class="xref py py-func docutils literal"><span class="pre">fontSize()</span></tt></a></li>
-<li><a class="reference internal" href="#editor.Editor.commands.queryFontSizeActive" title="editor.Editor.commands.queryFontSizeActive"><tt class="xref py py-func docutils literal"><span class="pre">queryFontSizeActive()</span></tt></a></li>
 </ul>
 </div>
 <div class="section" id="config-details">
@@ -177,19 +176,16 @@
 <dt id="editor.Editor.commands.fontSize">
 <tt class="descclassname">Editor.commands.</tt><tt class="descname">fontSize</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.commands.fontSize" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line"><strong>fontSize(fontSize, [apply=true])</strong></div>
-<div class="line">对选区文字设置指定的字体大小</div>
+<div class="line"><strong>fontSize(fontSize)</strong></div>
+<div class="line">对选区文字设置或取消指定的字体大小</div>
+<div class="line">支持 queryCommandValue，返回当前元素是否被设置了对应大小</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>fontSize</strong> (<em>String</em>) &#8211; 指定字体大小值.</li>
-<li><strong>apply</strong> (<em>Boolean</em>) &#8211; 应用或取消指定的大小.</li>
-</ul>
-</td>
+<tr><td>&nbsp;</td><td class="field-body"><strong>fontSize</strong> (<em>String</em>) &#8211; 指定字体大小值.</td>
 </tr>
 </tbody>
 </table>
@@ -197,30 +193,10 @@
 
 <p>实例：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s2">&quot;fontSize&quot;</span><span class="p">,</span><span class="s2">&quot;10px&quot;</span><span class="p">);</span> <span class="c1">//=&gt; 设置选区文字大小为10px.</span>
+<span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s2">&quot;fontSize&quot;</span><span class="p">,</span><span class="s2">&quot;10px&quot;</span><span class="p">);</span> <span class="c1">//=&gt; 取消设置选区文字大小为10px.</span>
+<span class="nx">editor</span><span class="p">.</span><span class="nx">queryCommandValue</span><span class="p">(</span><span class="s2">&quot;fontSize&quot;</span><span class="p">);</span> <span class="c1">//=&gt; 返回 10px</span>
 </pre></div>
 </div>
-<dl class="function">
-<dt id="editor.Editor.commands.queryFontSizeActive">
-<tt class="descclassname">Editor.commands.</tt><tt class="descname">queryFontSizeActive</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.commands.queryFontSizeActive" title="Permalink to this definition">¶</a></dt>
-<dd><div class="line-block">
-<div class="line"><strong>queryFontSizeActive(value, element)</strong></div>
-<div class="line">查看指定元素是否被设置了对应大小</div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>value</strong> (<em>String</em>) &#8211; 指定的大小值，例如 &#8220;10px&#8221;</li>
-<li><strong>element</strong> (<em>KISSY.Node</em>) &#8211; 编辑器中的某个元素</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
 </div>
 </div>
 
