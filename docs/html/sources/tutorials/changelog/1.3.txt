@@ -1,0 +1,289 @@
+﻿.. raw:: html
+
+    <style>
+        li {
+            margin-top:10px;
+        }
+
+        .col-sub li {
+            margin-top:0;
+        }
+    </style>
+
+KISSY 1.3 升级指南
+=========================================
+
+
+标记含义
+------------------------------------
+
+ * [+] this is a new feature
+ * [*] this is an improvement
+ * [!] this is a change
+ 
+ 
+1.2 -> 1.3 改动点
+-------------------------------------
+
+Bug fix
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. 修复 70+ 个 bug 以及一系列优化：
+
+    详见： https://github.com/kissyteam/kissy/issues?milestone=1&page=1&state=closed
+
+
+结构
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [!] 删除 kissy-aio
+
+#. [+] 增加教程中心
+
+    http://docs.kissyui.com/docs/html/tutorials/index.html
+            
+seed 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [+] 增加 S.Defer/Promise ，支持 Promise 规范
+
+    详见： http://docs.kissyui.com/docs/html/api/seed/promise/index.html
+           
+#. [+] S.config 增加 combine 配置，支持自动 combo
+
+    详见： http://docs.kissyui.com/docs/html/api/seed/loader/config.html
+
+#. [+] 支持 <script src='seed|kissy.js' data-config="json"></script> data-config parse 为 json 传入 S.config
+
+#. [!] KISSY.add(fn) fn 中 this 为模块对象
+
+#. [!] 删除 KISSY.app 方法
+
+#. [+] package 增加 debug 配置，可以对包级别设置 debug
+
+#. [!] 删除 csspath/cssfullpath 配置
+
+#. [+] 内置 gallery 包
+
+#. [+] 增加 KISSY.keys
+
+#. [+] 支持 KISSY.config({packages:{},modules:{}}); modules,packages 均可配置时间戳，具体使用详见 api/demo/tutorial 文档
+
+http://docs.kissyui.com/docs/html/api/seed/index.html
+
+http://docs.kissyui.com/docs/html/demo/seed/index.html
+
+http://docs.kissyui.com/docs/html/tutorials/kissy/seed/index.html
+
+
+ua
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [+] html 标签加入 ua 标志，例如 "ks-ie ke-ie6"
+
+
+event
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [+] Event 模块：on/detach 支持事件分组
+
+http://docs.kissyui.com/docs/html/api/core/event/on.html
+
+http://docs.kissyui.com/docs/html/api/core/event/detach.html
+
+#. [+] Event 模块：fireHandler api 增加
+
+http://docs.kissyui.com/docs/html/api/core/event/fireHandler.html
+
+#. [*] publish 支持空格分隔的多个事件名字符串
+
+ajax
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [+] io 调用返回 Promise 类型，可以进行链式操作
+
+http://docs.kissyui.com/docs/html/api/core/ajax/xhr.html#io.XhrObj
+
+#. [+] io 调用返回的 XhrObject 增加 getNativeXhr 方法，用于取得原生 xhr 对象，对其上的 upload 上传进度进行监听
+
+http://docs.kissyui.com/docs/html/api/core/ajax/xhr.html#io.getNativeXhr
+
+#. [+] io 增加配置 beforeSend ，可用于发送前监听 nativeXhr 事件，例如 upload progress
+
+http://docs.kissyui.com/docs/html/api/core/ajax/io.html#io.cfg.beforeSend
+
+anim
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [*] 支持 backgroundPosition 作为动画属性
+#. [+] 增加 pause/resume api
+
+http://docs.kissyui.com/docs/html/api/core/anim/index.html#anim.Anim.prototype.pause
+
+dom
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [*] 支持 css("backgroundPosition") in ie
+#. [+] DOM 增加 contents/wrap/wrapAll/unwrap/wrapInner
+
+http://docs.kissyui.com/docs/html/api/core/dom/contents.html
+http://docs.kissyui.com/docs/html/api/core/dom/wrap.html
+http://docs.kissyui.com/docs/html/api/core/dom/wrapAll.html
+http://docs.kissyui.com/docs/html/api/core/dom/unwrap.html
+http://docs.kissyui.com/docs/html/api/core/dom/wrapInner.html
+
+#. [+] DOM 增加 nodeName 方法，返回小写的 nodeName
+
+http://docs.kissyui.com/docs/html/api/core/dom/nodeName.html
+
+#. [+] DOM 增加 outerHTML 方法，全浏览器兼容
+
+http://docs.kissyui.com/docs/html/api/core/dom/outerHTML.html
+
+node
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. 增加 dom/event/anim 添加的 api
+
+base
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [*] validator 返回 false 则 set 整体无效 ( set({x:1,y:2}), x 出错，则 y 也无效)
+#. [+] set 第二个参数增加 error 属性
+
+http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.opts.error
+
+
+input-selection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [+] 增加模块 input-selection，兼容 ie 下的 input selection api 为 w3c 标准
+
+http://docs.kissyui.com/docs/html/demo/component/input-selection/index.html
+
+
+dd
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [+] 增加 constrain
+
+http://docs.kissyui.com/docs/html/api/component/dd/constrain.html
+
+#. [+] 支持分组
+
+http://docs.kissyui.com/docs/html/api/component/dd/draggable.html#dd.Draggable.config.groups
+
+http://docs.kissyui.com/docs/html/api/component/dd/droppable.html#dd.Droppable.config.groups
+
+
+component
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [*] 优化所有组件性能
+
+#. [!] 删除 uibase 模块，合并 uibase 到 component 模块
+
+#. [!] 所有组件 设置 prefixCls 只作用于组件最外层根节点 class
+
+#. [+] 所有组件 children 可配置带有 xclass 的组件描述 json 对象（懒加载提高初始化效率），例如：
+
+http://docs.kissyui.com/docs/html/demo/component/menubutton/xclass.html
+
+#. [+] 所有组件 可配置 plugins，直接绑定事件
+
+http://docs.kissyui.com/docs/html/api/component/component/uibase/UIBase.html#component.UIBase.config.plugins
+
+#. [+] 所有组件 可配置 listeners，直接绑定事件
+
+http://docs.kissyui.com/docs/html/api/component/component/uibase/UIBase.html#component.UIBase.config.listeners
+
+
+calendar
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [*] 新的 ui，增加 destroy 方法
+
+
+overlay
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [+] popup 增加 toggle/mouseDelay 配置
+
+http://docs.kissyui.com/docs/html/api/component/overlay/popup.html#overlay.Overlay.prototype.toggle
+
+http://docs.kissyui.com/docs/html/api/component/overlay/popup.html#overlay.Overlay.prototype.mouseDelay
+
+#. [!] popup 构造器参数只能是配置对象
+
+#. [+] dialog draggable 支持 dd proxy 以及 dd scroll
+
+http://docs.kissyui.com/docs/html/api/component/overlay/dialog.html#overlay.Dialog.config.draggable
+
+
+menu/menubutton
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [*] Submenu 支持 click 事件
+
+#. [!] autoHideDelay 单位变为秒（KISSY 内所有事件单位均为秒）
+
+#. [!] 去除 menu/menubutton 的 menuCfg 配置，可配置在 menu 上
+
+#. [!] 去除 select 的 selectedItem 与 selectedIndex 配置，通过 value 可获得同样的效果
+
+#. [+] 增加 matchElWidth 菜单是否自动和 menubutton 保持宽度一致
+
+http://docs.kissyui.com/docs/html/api/component/menubutton/MenuButton.html#menubutton.MenuButton.config.matchElWidth
+
+http://docs.kissyui.com/docs/html/api/component/menu/
+
+datalazyload
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [+] 增加 autoDestroy 配置
+#. [+] 增加 removeElements/addElements/removeCallback 与 destroy 接口
+#. [*] 缓冲检测 scroll 和 resize, 并只加载显示在当前屏幕中的懒加载元素
+#. [*] 监控 div 容器滚动，以及横轴滚动
+
+http://docs.kissyui.com/docs/html/api/component/datalazyload/
+
+
+switchable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. switchable 增加 lazyImgAttribute/lazyTextareaClass 解决嵌套 lazyload 问题
+#. switchable 增加 pauseOnScroll，只在可视窗口时才滚动.
+#. switchable 增加 add/remove/destroy
+#. [!] switchable _switchView 参数变化，覆盖注意（不推荐覆盖）
+
+http://docs.kissyui.com/docs/html/api/component/switchable/
+
+
+waterfall
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. waterfall 增加方法 adjustItem/removeItem/start 以及配置 adjustEffect。支持调整时的动画。
+#. waterfall item class 支持配置 ks-waterfall-item-fixed-right/left 固定列。
+
+http://docs.kissyui.com/docs/html/api/component/switchable/
+
+tree
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [!] label 配置/属性名称改做 content
+
+http://docs.kissyui.com/docs/html/api/component/tree/
+
+combobox
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. 增加升级版的 suggest
+
+http://docs.kissyui.com/docs/html/api/component/combobox/
+
+template
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. 支持 {{@if t}} t {{/if}}, 等价于 {{#if t}} t {{/if}}
+
+http://docs.kissyui.com/docs/html/api/component/template/

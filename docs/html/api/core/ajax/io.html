@@ -153,6 +153,7 @@
 <li><a class="reference internal" href="#io.cfg.xdr" title="io.cfg.xdr"><tt class="xref py py-data docutils literal"><span class="pre">cfg.xdr</span></tt></a></li>
 <li><a class="reference internal" href="#io.cfg.xhrFields" title="io.cfg.xhrFields"><tt class="xref py py-data docutils literal"><span class="pre">cfg.xhrFields</span></tt></a></li>
 <li><a class="reference internal" href="#io.cfg.form" title="io.cfg.form"><tt class="xref py py-data docutils literal"><span class="pre">cfg.form</span></tt></a></li>
+<li><a class="reference internal" href="#io.cfg.beforeSend" title="io.cfg.beforeSend"><tt class="xref py py-data docutils literal"><span class="pre">cfg.beforeSend</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -459,6 +460,37 @@
 <li>如果 form 的 enctype 为 <cite>&#8220;multipart/form-data`</cite> 则会采用 <a class="reference external" href="http://www.webtoolkit.info/ajax-file-upload.html">iframe</a> 的方式进行无刷新文件上传，</li>
 <li>否则将 form 内的输入域和值序列化后通过 xhr 发送到服务器.</li>
 </ul>
+</dd></dl>
+
+<p class="versionadded">
+<span class="versionmodified">New in version 1.3.</span></p>
+<dl class="data">
+<dt id="io.cfg.beforeSend">
+<tt class="descclassname">cfg.</tt><tt class="descname">beforeSend</tt><a class="headerlink" href="#io.cfg.beforeSend" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Function} - 发送请求前的拦截函数，传入参数 （xhrObject, config）</p>
+<ul class="simple">
+<li>xhrObject 为 <a class="reference internal" href="xhr.html#io.XhrObj" title="io.XhrObj"><tt class="xref py py-class docutils literal"><span class="pre">io.XhrObj</span></tt></a> 类型</li>
+</ul>
+<p>例如可以通过该函数实现上传进度监控</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="nx">IO</span><span class="p">({</span>
+    <span class="nx">url</span><span class="o">:</span><span class="s1">&#39;./upload.php&#39;</span><span class="p">,</span>
+    <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;post&quot;</span><span class="p">,</span>
+    <span class="nx">processData</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
+    <span class="nx">data</span><span class="o">:</span><span class="nx">formData</span><span class="p">,</span>
+    <span class="nx">dataType</span><span class="o">:</span><span class="s1">&#39;json&#39;</span><span class="p">,</span>
+    <span class="nx">contentType</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
+    <span class="nx">beforeSend</span><span class="o">:</span><span class="kd">function</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 上传监听 upload</span>
+        <span class="nx">xhr</span><span class="p">.</span><span class="nx">getNativeXhr</span><span class="p">().</span><span class="nx">upload</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;progress&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">({</span> <span class="s1">&#39;loaded&#39;</span><span class="o">:</span><span class="nx">ev</span><span class="p">.</span><span class="nx">loaded</span><span class="p">,</span> <span class="s1">&#39;total&#39;</span><span class="o">:</span><span class="nx">ev</span><span class="p">.</span><span class="nx">total</span> <span class="p">});</span>
+        <span class="p">});</span>
+    <span class="p">},</span>
+    <span class="nx">success</span><span class="o">:</span><span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
