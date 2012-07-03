@@ -26,3 +26,4 @@ Component
    imagezoom/index
    combobox/index
    editor/index
+   grid/index

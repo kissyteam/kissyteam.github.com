@@ -1,0 +1,439 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>Util &mdash; KISSY Docs</title>
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
+<link rel="stylesheet" href="../../../_static/kissy.css"/>
+<link rel="stylesheet" href="../../../_static/pygments.css"/>
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };    
+    (function(){
+        var js=[],h=window.location.href,d=document;
+            js.push("../../../_static/jquery.js");
+            js.push("../../../_static/underscore.js");
+            js.push("../../../_static/doctools.js");
+        for(var i=0;i<js.length;i++){
+            var j=js[i];
+            if(h.indexOf("localhost/kissy_git/")==-1
+            &&
+            
+            h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
+            &&
+            j.indexOf("jquery.js")!=-1){
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');   
+            }else{
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');   
+            }
+        }
+    })();
+</script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+    
+	<div  class="layout grid-s6m0">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../../../demo/index.html" title="Demos"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="Plugins.html" title="Plugins"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Grid</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="util">
+<h1>Util<a class="headerlink" href="#util" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">工具类</div>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#grid.Util" title="grid.Util"><tt class="xref py py-class docutils literal"><span class="pre">Util</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#grid.Util.maskElement" title="grid.Util.maskElement"><tt class="xref py py-meth docutils literal"><span class="pre">maskElement()</span></tt></a> &lt;static&gt;</li>
+<li><a class="reference internal" href="#grid.Util.unmaskElement" title="grid.Util.unmaskElement"><tt class="xref py py-meth docutils literal"><span class="pre">unmaskElement()</span></tt></a> &lt;static&gt;</li>
+<li><a class="reference internal" href="#grid.Util.Format.dateRenderer" title="grid.Util.Format.dateRenderer"><tt class="xref py py-meth docutils literal"><span class="pre">dateRenderer()</span></tt></a> &lt;static&gt;</li>
+<li><a class="reference internal" href="#grid.Util.Format.datetimeRenderer" title="grid.Util.Format.datetimeRenderer"><tt class="xref py py-meth docutils literal"><span class="pre">datetimeRenderer()</span></tt></a> &lt;static&gt;</li>
+<li><a class="reference internal" href="#grid.Util.Format.enumRenderer" title="grid.Util.Format.enumRenderer"><tt class="xref py py-meth docutils literal"><span class="pre">enumRenderer()</span></tt></a> &lt;static&gt;</li>
+<li><a class="reference internal" href="#grid.Util.Format.multipleItemsRenderer" title="grid.Util.Format.multipleItemsRenderer"><tt class="xref py py-meth docutils literal"><span class="pre">multipleItemsRenderer()</span></tt></a> &lt;static&gt;</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="grid.Util">
+<em class="property">class </em><tt class="descclassname">grid.</tt><tt class="descname">Util</tt><a class="headerlink" href="#grid.Util" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li>此类是个帮助类，不实例化对象，包含mask和 renderer</li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="grid.Util.maskElement">
+<tt class="descclassname">Util.</tt><tt class="descname">maskElement</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Util.maskElement" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>maskElement(element, [msg], [msgCls])</strong> &lt;static&gt;</div>
+<div class="line">屏蔽指定元素</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>element</strong> (<em>String|DOM|Node</em>) &#8211; 要屏蔽的元素，可以是选择器、DOM或者Node节点</li>
+<li><strong>msg</strong> (<em>String</em>) &#8211; 显示在屏蔽层上的信息</li>
+<li><strong>msgCls</strong> (<em>String</em>) &#8211; 信息应用的样式</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="grid.Util.unmaskElement">
+<tt class="descclassname">Util.</tt><tt class="descname">unmaskElement</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Util.unmaskElement" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>unmaskElement(element)</strong> &lt;static&gt;</div>
+<div class="line">接触元素的屏蔽</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>element</strong> (<em>String|DOM|Node</em>) &#8211; 要屏蔽的元素，可以是选择器、DOM或者Node节点</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="grid.Util.Format.dateRenderer">
+<tt class="descclassname">Util.Format.</tt><tt class="descname">dateRenderer</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Util.Format.dateRenderer" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>dateRenderer(value)</strong> &lt;static&gt;</div>
+<div class="line">将毫秒数转换成日期文本</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>value</strong> (<em>Number</em>) &#8211; 日期的毫秒数</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Returns:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">日期文本</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return type:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">String</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="grid.Util.Format.datetimeRenderer">
+<tt class="descclassname">Util.Format.</tt><tt class="descname">datetimeRenderer</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Util.Format.datetimeRenderer" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>datetimeRenderer(value)</strong> &lt;static&gt;</div>
+<div class="line">将毫秒数转换成日期时间文本</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>value</strong> (<em>Number</em>) &#8211; 日期时间的毫秒数</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Returns:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">日期时间文本</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return type:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">String</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="grid.Util.Format.enumRenderer">
+<tt class="descclassname">Util.Format.</tt><tt class="descname">enumRenderer</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Util.Format.enumRenderer" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>enumRenderer(enum)</strong> &lt;static&gt;</div>
+<div class="line">返回格式化枚举的函数</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>enum</strong> (<em>Object</em>) &#8211; 键值对</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Returns:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">格式化枚举的函数</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return type:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">Function</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">emum</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;1&#39;</span><span class="o">:</span><span class="s1">&#39;通过&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="o">:</span><span class="s1">&#39;不通过&#39;</span><span class="p">),</span>
+    <span class="nx">grid</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Grid</span><span class="p">({</span>
+        <span class="p">...</span>
+        <span class="nx">columns</span><span class="o">:</span><span class="p">[</span>
+            <span class="p">{</span><span class="nx">dataIndex</span> <span class="o">:</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="nx">title</span> <span class="o">:</span> <span class="s1">&#39;审核结果&#39;</span><span class="p">,</span><span class="nx">renderer</span> <span class="o">:</span> <span class="nx">Util</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">enumRenderer</span><span class="p">(</span><span class="nx">emum</span><span class="p">)}</span>
+        <span class="p">]</span>
+        <span class="p">...</span>
+    <span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="grid.Util.Format.multipleItemsRenderer">
+<tt class="descclassname">Util.Format.</tt><tt class="descname">multipleItemsRenderer</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Util.Format.multipleItemsRenderer" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>multipleItemsRenderer(enum)</strong> &lt;static&gt;</div>
+<div class="line">返回格式化多选项的函数</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>enum</strong> (<em>Object</em>) &#8211; 键值对</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Returns:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">格式化多选项的函数</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return type:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">Function</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">emum</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;1&#39;</span><span class="o">:</span><span class="s1">&#39;淘宝&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="o">:</span><span class="s1">&#39;京东&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="o">:</span><span class="s1">&#39;当当&#39;</span><span class="p">),</span>
+    <span class="nx">grid</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Grid</span><span class="p">({</span>
+        <span class="p">...</span>
+        <span class="nx">columns</span><span class="o">:</span><span class="p">[</span>
+            <span class="p">{</span><span class="nx">dataIndex</span> <span class="o">:</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="nx">title</span> <span class="o">:</span> <span class="s1">&#39;B2C 商城&#39;</span><span class="p">,</span><span class="nx">renderer</span> <span class="o">:</span> <span class="nx">Util</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">enumRenderer</span><span class="p">(</span><span class="nx">emum</span><span class="p">)}</span> <span class="c1">// {c:&#39;1,3&#39;}时，则显示 &#39;淘宝,当当&#39;</span>
+        <span class="p">]</span>
+        <span class="p">...</span>
+    <span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../../../demo/index.html" title="Demos"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="Plugins.html" title="Plugins"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY Docs</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Grid</a> &#187; </li> 
+    </ul>
+</div>
+					<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/loader/index.html">loader</a></li>
+        <li><a href="../../seed/promise/index.html">promise</a></li>
+        <li><a href="../../seed/lang/index.html">lang</a></li>
+        <li><a href="../../seed/web/index.html">web</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../core/ua/index.html">ua</a></li>
+        <li><a href="../../core/dom/index.html">dom</a></li>
+        <li><a href="../../core/event/index.html">event</a></li>
+        <li><a href="../../core/node/index.html">node</a></li>
+        <li><a href="../../core/json/index.html">json</a></li>
+        <li><a href="../../core/ajax/index.html">ajax</a></li>
+        <li><a href="../../core/cookie/index.html">cookie</a></li>
+        <li><a href="../../core/base/index.html">base</a></li>
+        <li><a href="../../core/anim/index.html">anim</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../mvc/index.html">mvc</a></li>
+        <li><a href="../template/index.html">template</a></li>
+        <li><a href="../datalazyload/index.html">datalazyload</a></li>
+        <li><a href="../flash/index.html">flash</a></li>
+        <li><a href="../dd/index.html">dd</a></li>
+        <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="../switchable/index.html">switchable</a></li>
+        <li><a href="../suggest/index.html">suggest</a></li>
+        <li><a href="../calendar/index.html">calendar</a></li>
+        <li><a href="../imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../component/index.html">component</a></li>
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
+        <li><a href="../waterfall/index.html">waterfall</a></li>
+        <li><a href="../combobox/index.html">combobox</a></li>
+        <li><a href="index.html">grid</a></li>
+        <li><a href="../editor/index.html">editor</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
+    </ul>
+</ul>
+        
+    </div>
+	</div>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>
