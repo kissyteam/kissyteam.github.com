@@ -18,7 +18,7 @@ DraggableDelegate 使用示例
 
     .. raw:: html
 
-        <iframe width="100%" height="360" class="iframe-demo" src="../../../static/demo/dd/demo3.html"></iframe>
+        <iframe width="100%" height="360" class="iframe-demo" src="../../../_static/demo/dd/demo3.html"></iframe>
 
     **引入 kissy.js**
 

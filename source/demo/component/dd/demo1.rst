@@ -13,7 +13,7 @@ Draggable & Proxy 使用示例
 
     .. raw:: html
 
-        <iframe width="100%" height="200" class="iframe-demo" src="../../../static/demo/dd/demo1.html"></iframe>
+        <iframe width="100%" height="200" class="iframe-demo" src="../../../_static/demo/dd/demo1.html"></iframe>
 
 
     **引入 kissy.js**

@@ -19,7 +19,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="320" class="iframe-demo" src="../../../static/demo/dd/demo4.html"></iframe>
+        <iframe width="100%" height="320" class="iframe-demo" src="../../../_static/demo/dd/demo4.html"></iframe>
 
 
     **引入 kissy.js**

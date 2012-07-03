@@ -15,7 +15,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="340" class="iframe-demo" src="../../../static/demo/suggest/demo5.html"></iframe>
+        <iframe width="100%" height="340" class="iframe-demo" src="../../../_static/demo/suggest/demo5.html"></iframe>
 
 
     没错, 上面这个就是淘宝首页的搜索框完整代码, 里面定制了很多, 例如, 不同tab公用一个suggest, 定制页脚, 替换返回数据等, 具体分析如下;

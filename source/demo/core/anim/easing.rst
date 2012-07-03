@@ -17,5 +17,5 @@ Easing 可视化
 
     .. raw:: html
 
-        <iframe width="100%" height="800" class="iframe-demo" src="../../../static/demo/anim/easing.html"></iframe>
+        <iframe width="100%" height="800" class="iframe-demo" src="../../../_static/demo/anim/easing.html"></iframe>
 

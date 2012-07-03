@@ -92,7 +92,7 @@ Demo
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/on_1.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../_static/api/core/event/on_1.html"></iframe>
 
 
     .. literalinclude:: /_static/api/core/event/on_1.html

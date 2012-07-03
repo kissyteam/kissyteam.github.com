@@ -13,7 +13,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="400" class="iframe-demo" src="../../../static/demo/overlay/proxy-scroll.html"></iframe>
+        <iframe width="100%" height="400" class="iframe-demo" src="../../../_static/demo/overlay/proxy-scroll.html"></iframe>
 
 
 代码

@@ -36,7 +36,7 @@ Methods
 --------------------------------------------------
 .. raw:: html
 
-    <iframe width="100%" height="135" class="iframe-demo"  src="../../../static/api/core/node/instance_all.html"></iframe>
+    <iframe width="100%" height="135" class="iframe-demo"  src="../../../_static/api/core/node/instance_all.html"></iframe>
 
 .. literalinclude:: /_static/api/core/node/instance_all.html
        :language: html

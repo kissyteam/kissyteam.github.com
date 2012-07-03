@@ -100,7 +100,7 @@ Properties Detail
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/pageX.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../_static/api/core/event/pageX.html"></iframe>
 
     .. literalinclude:: /_static/api/core/event/pageX.html
        :language: html
@@ -133,7 +133,7 @@ Properties Detail
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/target.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../_static/api/core/event/target.html"></iframe>
 
     .. literalinclude:: /_static/api/core/event/target.html
        :language: html
@@ -142,7 +142,7 @@ Properties Detail
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/target_2.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../_static/api/core/event/target_2.html"></iframe>
 
     .. literalinclude:: /_static/api/core/event/target_2.html
        :language: html
@@ -170,7 +170,7 @@ Properties Detail
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/which.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../_static/api/core/event/which.html"></iframe>
 
     .. literalinclude:: /_static/api/core/event/which.html
        :language: html
@@ -184,7 +184,7 @@ Properties Detail
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/isImmediatePropagationStopped.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../_static/api/core/event/isImmediatePropagationStopped.html"></iframe>
 
     .. literalinclude:: /_static/api/core/event/isImmediatePropagationStopped.html
        :language: html
@@ -204,7 +204,7 @@ Methods Detail
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/preventDefault.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../_static/api/core/event/preventDefault.html"></iframe>
 
     .. literalinclude:: /_static/api/core/event/preventDefault.html
        :language: html
@@ -222,7 +222,7 @@ Methods Detail
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/stopImmediatePropagation.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../_static/api/core/event/stopImmediatePropagation.html"></iframe>
 
 
     .. literalinclude:: /_static/api/core/event/stopImmediatePropagation.html
@@ -277,7 +277,7 @@ Methods Detail
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../static/api/core/event/isPropagationStopped.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../_static/api/core/event/isPropagationStopped.html"></iframe>
 
 
     .. literalinclude:: /_static/api/core/event/isPropagationStopped.html

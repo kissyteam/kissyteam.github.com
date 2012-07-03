@@ -16,7 +16,7 @@ Module
 
     .. raw:: html
 
-        <iframe width="100%" height="200" class="iframe-demo" src="../../../static/demo/loader/combo-require.html"></iframe>
+        <iframe width="100%" height="200" class="iframe-demo" src="../../../_static/demo/loader/combo-require.html"></iframe>
 
     .. literalinclude:: /_static/demo/loader/assets/combo-require.js
            :language: javascript

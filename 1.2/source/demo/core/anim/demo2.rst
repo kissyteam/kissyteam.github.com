@@ -17,7 +17,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="200" class="iframe-demo" src="../../../static/demo/anim/demo2.html"></iframe>
+        <iframe width="100%" height="200" class="iframe-demo" src="../../../_static/demo/anim/demo2.html"></iframe>
 
     .. literalinclude:: /_static/demo/anim/assets/demo2.js
            :language: javascript

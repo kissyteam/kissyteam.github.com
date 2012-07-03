@@ -18,7 +18,7 @@ Droppable 基本使用
 
     .. raw:: html
 
-        <iframe width="100%" height="300" class="iframe-demo" src="../../../static/demo/dd/demo2.html"></iframe>
+        <iframe width="100%" height="300" class="iframe-demo" src="../../../_static/demo/dd/demo2.html"></iframe>
 
 
     **引入 kissy.js**

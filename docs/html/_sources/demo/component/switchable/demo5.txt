@@ -17,7 +17,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="150" class="iframe-demo" src="../../../static/demo/switchable/demo5.html"></iframe>
+        <iframe width="100%" height="150" class="iframe-demo" src="../../../_static/demo/switchable/demo5.html"></iframe>
 
 
     **组织 HTML 结构**

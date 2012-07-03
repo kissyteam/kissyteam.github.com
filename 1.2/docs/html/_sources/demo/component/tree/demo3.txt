@@ -20,7 +20,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="200" class="iframe-demo" src="../../../static/demo/tree/demo3.html"></iframe>
+        <iframe width="100%" height="200" class="iframe-demo" src="../../../_static/demo/tree/demo3.html"></iframe>
 
     **载入1.2的 kissy**
 
@@ -62,4 +62,4 @@ Class
     
     .. note::
 
-        使用树还需要自己定义皮肤样式, 以上参考的是 `google 的样式 <../../../static/demo/tree/assets/tree.css>`_
+        使用树还需要自己定义皮肤样式, 以上参考的是 `google 的样式 <../../../_static/demo/tree/assets/tree.css>`_

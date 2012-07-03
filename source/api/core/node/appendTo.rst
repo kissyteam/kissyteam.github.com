@@ -83,7 +83,7 @@ Demo
 
     .. raw:: html
 
-        <iframe width="100%" height="135"  class="iframe-demo" src="../../../static/api/core/node/appendTo.html"></iframe>
+        <iframe width="100%" height="135"  class="iframe-demo" src="../../../_static/api/core/node/appendTo.html"></iframe>
 
     .. literalinclude:: /_static/api/core/node/appendTo.html
        :language: html

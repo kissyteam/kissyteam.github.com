@@ -18,7 +18,7 @@ Resizable 的基本使用
 
     .. raw:: html
 
-        <iframe width="100%" height="400" class="iframe-demo" src="../../../static/demo/resizable/demo1.html"></iframe>
+        <iframe width="100%" height="400" class="iframe-demo" src="../../../_static/demo/resizable/demo1.html"></iframe>
 
     **载入1.2的 kissy**
 

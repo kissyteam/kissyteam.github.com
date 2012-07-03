@@ -15,7 +15,7 @@ portal 示例
 
     .. raw:: html
 
-        <iframe width="100%" height="700" class="iframe-demo" src="../../../static/demo/dd/portal.html"></iframe>
+        <iframe width="100%" height="700" class="iframe-demo" src="../../../_static/demo/dd/portal.html"></iframe>
 
 
     **代码**

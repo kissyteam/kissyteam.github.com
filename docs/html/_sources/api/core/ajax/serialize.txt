@@ -96,7 +96,7 @@ Demo
 
     .. raw:: html
 
-         <iframe width="100%" height="200" class="iframe-demo"  src="../../../static/api/core/ajax/serialize.html"></iframe>
+         <iframe width="100%" height="200" class="iframe-demo"  src="../../../_static/api/core/ajax/serialize.html"></iframe>
 
 
     .. literalinclude:: /_static/api/core/ajax/serialize.html

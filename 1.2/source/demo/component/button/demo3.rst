@@ -18,7 +18,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="80" class="iframe-demo" src="../../../static/demo/button/demo3.html"></iframe>
+        <iframe width="100%" height="80" class="iframe-demo" src="../../../_static/demo/button/demo3.html"></iframe>
 
     **载入1.2的 kissy**
 

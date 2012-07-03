@@ -15,7 +15,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="550" class="iframe-demo" src="../../../static/demo/menubutton/demo2.html"></iframe>
+        <iframe width="100%" height="550" class="iframe-demo" src="../../../_static/demo/menubutton/demo2.html"></iframe>
 
     原本的 select 的 HTML 代码如下:
 

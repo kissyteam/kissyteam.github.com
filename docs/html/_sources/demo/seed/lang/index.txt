@@ -16,7 +16,7 @@ Class
 
     .. raw:: html
 
-        <iframe class="iframe-demo" width="100%" height="235" src="../../../static/api/seed/lang/demo.html"></iframe>
+        <iframe class="iframe-demo" width="100%" height="235" src="../../../_static/api/seed/lang/demo.html"></iframe>
 
     .. code-block:: html
 

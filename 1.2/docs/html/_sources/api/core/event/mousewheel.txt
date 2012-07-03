@@ -23,7 +23,7 @@ mousewheel
 
 .. raw:: html
 
-    <iframe width="100%" height="400" class="iframe-demo" src="../../../static/api/core/event/mousewheel.html"></iframe>
+    <iframe width="100%" height="400" class="iframe-demo" src="../../../_static/api/core/event/mousewheel.html"></iframe>
     
     
 .. literalinclude:: /_static/api/core/event/mousewheel.html

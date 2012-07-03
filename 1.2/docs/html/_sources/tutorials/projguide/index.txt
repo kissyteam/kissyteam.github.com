@@ -20,7 +20,7 @@
 
 我们并不是想告诉大家如何用复杂的方式去做简单的事情，而是试图剥离代码的复杂性，让你把注意力集中在项目的开发过程上。
 
-请下载本示例的 `源代码 <../../static/projguide/hello-world.zip>`_ ，打开 hello-world-demo > hello-world.html 查看效果。
+请下载本示例的 `源代码 <../../_static/projguide/hello-world.zip>`_ ，打开 hello-world-demo > hello-world.html 查看效果。
     
 
 2. 目录组织

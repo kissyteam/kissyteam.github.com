@@ -13,7 +13,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="80" class="iframe-demo" src="../../../static/demo/button/demo2.html"></iframe>
+        <iframe width="100%" height="80" class="iframe-demo" src="../../../_static/demo/button/demo2.html"></iframe>
 
     **载入1.2的 kissy**
 
@@ -28,4 +28,4 @@ Class
 
     .. note::
 
-        按钮完整的皮肤样式定义, 可以参考 `google 的样式 <../../../static/demo/button/assets/custombutton.css>`_
+        按钮完整的皮肤样式定义, 可以参考 `google 的样式 <../../../_static/demo/button/assets/custombutton.css>`_

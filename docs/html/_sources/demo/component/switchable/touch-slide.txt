@@ -16,7 +16,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="180" class="iframe-demo" src="../../../static/demo/switchable/touch-slide.html"></iframe>
+        <iframe width="100%" height="180" class="iframe-demo" src="../../../_static/demo/switchable/touch-slide.html"></iframe>
 
 
     **JS 初始化**

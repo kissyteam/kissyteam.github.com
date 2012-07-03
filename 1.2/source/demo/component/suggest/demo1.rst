@@ -15,7 +15,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="300" class="iframe-demo" src="../../../static/demo/suggest/demo1.html"></iframe>
+        <iframe width="100%" height="300" class="iframe-demo" src="../../../_static/demo/suggest/demo1.html"></iframe>
 
 
     见代码中的注释:
