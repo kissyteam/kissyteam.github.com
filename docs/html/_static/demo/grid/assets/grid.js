@@ -70,7 +70,7 @@ KISSY.use('grid',function(S,Grid){
 			forceFit:true,
 			plugins:[Grid.Plugins.CheckSelection],
 			store : store,
-			bbar : {xclass:'number-paggingbar',store : store}
+			bbar : {xclass:'pagingbar-number',store : store}
 		});
 		grid.render();
 		store.load();
@@ -95,7 +95,7 @@ KISSY.use('grid',function(S,Grid){
 			forceFit:true,
 			plugins:[Grid.Plugins.CheckSelection],
 			store : store,
-			bbar : {xclass:'number-paggingbar',store : store}
+			bbar : {xclass:'pagingbar-number',store : store}
 		});
 		grid.render();
 		store.load();

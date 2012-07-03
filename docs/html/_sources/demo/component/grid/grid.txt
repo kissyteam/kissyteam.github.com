@@ -13,7 +13,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="80" class="iframe-demo" src="../../../_static/demo/grid/grid.html"></iframe>
+        <iframe width="100%" height="1200" class="iframe-demo" src="../../../_static/demo/grid/grid.html"></iframe>
 
 
     .. literalinclude:: /_static/demo/grid/assets/grid.js
