@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  p { background:yellow; }
+</style>
+ <script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
+</head>
+<body>
+
+<p>I would like to say: </p>  <div id="foo">FOO!</div>
+
+<script>
+    KISSY.use("node",function(S,NodeList){
+        NodeList.all("#foo").after(NodeList.all("p"));
+    });        
+</script>
+
+</body>
+</html>  

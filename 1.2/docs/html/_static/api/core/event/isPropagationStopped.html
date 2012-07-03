@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+<script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"></script>
+</head>
+<body>
+  
+  <button>click me</button>
+  <div id="stop-log"></div>
+  
+<script>
+var $=KISSY.Node.all;
+function propStopped(e) {
+  var msg = "";
+  if ( e.isPropagationStopped ) {
+    msg =  "called"
+  } else {
+    msg = "not called";
+  }
+  $("#stop-log").append( "<div>" + msg + "</div>" );
+}
+
+$("button").on('click',function(event) {
+  propStopped(event);
+  event.stopPropagation();
+  propStopped(event);
+});  
+</script>
+
+</body>
+</html>

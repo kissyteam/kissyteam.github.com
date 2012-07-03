@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        button { margin:10px; }
+    </style>
+    <script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"></script>
+</head>
+<body>
+    
+    <div class='outer' id='s'>
+        <div class='item'>
+            item1
+        </div>
+    </div>
+    
+    <div class='outer'>
+        <div class='item'>
+            item2
+        </div>
+    </div>
+    
+    <div class='item'>
+        item3
+    </div>
+    
+    <button>$(".item")</button>
+    <button>$(".outer").all(".item")</button>
+    <button>$("#s").all(".item")</button>
+    
+<script>
+    KISSY.ready(function(S){
+        var $=S.all;
+        $("button").on("click",function(){
+            $("div").css("color","");
+            var el=$(this);
+            var content=el.html();
+            eval(content).css("color","red");
+        });
+        
+    });
+</script>
+</body>
+</html>

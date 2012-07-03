@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>portal</title>
+<script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"></script>
+
+<style>
+    #cols {
+        width: 1000px;
+    }
+
+    #leftCol, #rightCol {
+
+        margin: 0 50px;
+        float: left;
+
+        border: 1px solid red;
+    }
+
+    #rightCol {
+        border: 1px solid green;
+    }
+
+    .component {
+        width: 100px;
+        height: 100px;
+        margin: 50px;
+        border: 1px solid purple;
+    }
+
+    .col .header {
+        border-bottom: 1px solid purple;
+        cursor: move;
+    }
+
+    .ks-dd-dragging * {
+        visibility: hidden;
+    }
+
+    .ks-dd-dragging {
+        border: 2px blue dashed;
+    }
+
+    .ks-dd-drop-over {
+        background: #ffff00;
+    }
+</style>
+</head>
+<body>
+<h1> portal demo</h1>
+<p>
+    拖动 header 调整组件与布局栏的位置
+</p>
+
+<div id="cols">
+    <div class="header" style="margin: 30px auto;width: 100px;">
+        开始
+    </div>
+    <div id="leftCol" class="col" style=" width: 350px;height: 500px;">
+
+        <div class="header">
+            draggble col 1
+        </div>
+
+        <div class="component">
+            <div class="header">
+                draggble component 1
+            </div>
+        </div>
+
+    </div>
+
+    <div id="rightCol" class="col" style=" width: 350px;height: 500px;">
+
+        <div class="header">
+            draggble col 2
+        </div>
+
+        <div class="component">
+            <div class="header">
+                draggble component 2
+            </div>
+        </div>
+
+    </div>
+    <div style="clear:both;"></div>
+</div>
+<script src="./assets/portal.js"></script>
+</body>
+</html>
