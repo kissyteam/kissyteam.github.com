@@ -21,7 +21,6 @@ Demos
     .. toctree::
        :titlesonly:
 
-
        demo1
        demo3
        demo2
