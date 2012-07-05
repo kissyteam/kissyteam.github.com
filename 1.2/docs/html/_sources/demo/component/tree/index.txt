@@ -21,8 +21,10 @@ Demos
     .. toctree::
        :titlesonly:
 
+
        demo1
        demo3
        demo2
        demo4
+       lazy-check
 
