@@ -18,13 +18,7 @@ DataLazyload 手动模式
   页面加载的时候采用了懒加载，向下滚动的时候才会加载后面的图片，网速快的时候不很明显，网速慢的时候就会显示出懒加载的优点。你可以使用firefox或者ie开发工具中的网络工具查看懒加载过程。
 
 	
-  **载入1.2的 kissy**
 
-  .. code-block:: html
-
-	  <script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy-min.js"></script>
-		
-	
   **使用DataLazyload**
 	
   .. code-block:: js

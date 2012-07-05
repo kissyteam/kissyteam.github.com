@@ -16,13 +16,6 @@ Draggable & Proxy 使用示例
         <iframe width="100%" height="200" class="iframe-demo" src="../../../_static/demo/dd/demo1.html"></iframe>
 
 
-    **引入 kissy.js**
-
-    .. code-block:: html
-
-        <script src='http://a.tbcdn.cn/s/kissy/1.2.0/kissy-min.js'></script>
-
-
     **组织HTML**
 
     .. code-block:: html
