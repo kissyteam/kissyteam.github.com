@@ -111,18 +111,30 @@ Config Details
                         }
                     }
 
+
 .. note::
 
-    #.该插件使用 flash 技术, 必须在根域名下提供 crossdomain.xml , 例如 http://www.taobao.com/crossdomain.xml , 内容如下
+    #. 该插件使用 flash 技术, 必须在根域名下提供 crossdomain.xml , 例如 http://www.taobao.com/crossdomain.xml , 内容如下
 
-    .. code-block:: xml
+        .. code-block:: xml
 
-        <cross-domain-policy>
-            <allow-access-from domain="*.taobao.com"/>
-            <allow-access-from domain="*.taobao.net"/>
-            <allow-access-from domain="*.taobaocdn.com"/>
-            <allow-access-from domain="*.tbcdn.cn"/>
-            <allow-access-from domain="*.allyes.com"/>
-        </cross-domain-policy>
+            <cross-domain-policy>
+                <allow-access-from domain="*.taobao.com"/>
+                <allow-access-from domain="*.taobao.net"/>
+                <allow-access-from domain="*.taobaocdn.com"/>
+                <allow-access-from domain="*.tbcdn.cn"/>
+                <allow-access-from domain="*.allyes.com"/>
+            </cross-domain-policy>
 
-    #.serverUrl 必须使用绝对地址, 否则如果编辑器组件和应用页面不在同一个hostname时, firefox下请求会发到编辑器组件所在的hostname.
+
+    #. serverUrl 必须使用绝对地址, 否则如果编辑器组件和应用页面不在同一个hostname时, firefox下请求会发到编辑器组件所在的hostname.
+
+    #. 多图上传在非 ie 下并不会携带 cookie，如确实需要可通过 serverParams 传递：
+
+        .. code-block:: javascript
+
+            serverParams: {
+                cookie: function () {
+                    return document.cookie;
+                }
+            }

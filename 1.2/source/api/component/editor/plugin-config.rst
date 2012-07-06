@@ -100,7 +100,7 @@
         		            },
         		            //后缀名白名单
         		            suffix: "png,jpg,jpeg,gif",
-        		            //传递给server的文件域名字
+        		            // 传递给server的文件域名字
         		            fileInput: "Filedata",
         		            //限制上传的文件大小, 单位KB,
         		            //无法客户端限制, 只能作为提示信息
@@ -334,6 +334,10 @@
         		        //发送一个文件过去, 格式为 multipart/form-data
         		        //接受图片的服务器, 注意必须绝对地址
         		        serverUrl: "http://xx.com/code/upload/upload.jsp",
+
+        		        // 传递给 server 的文件域名字
+        		        fileInput: "Filedata",
+
         		        //同图片配置
         		        serverParams: {
         		            waterMark: function () {
@@ -358,25 +362,34 @@
         		        numberLimit: 15
         		    }
         		}
+
     		
         .. note::
-    
-    
-            #.该插件使用 flash 技术, 必须在根域名下提供 crossdomain.xml , 例如 http://www.taobao.com/crossdomain.xml , 内容如下
-            
-            .. code-block:: xml
-            
-                <cross-domain-policy>
-                    <allow-access-from domain="*.taobao.com"/>
-                    <allow-access-from domain="*.taobao.net"/>
-                    <allow-access-from domain="*.taobaocdn.com"/>
-                    <allow-access-from domain="*.tbcdn.cn"/>
-                    <allow-access-from domain="*.allyes.com"/>
-                </cross-domain-policy>
-            
-            #.serverUrl 必须使用绝对地址, 否则如果编辑器组件和应用页面不在同一个hostname时, firefox下请求会发到编辑器组件所在的hostname.
-             
-    
+
+            #. 该插件使用 flash 技术, 必须在根域名下提供 crossdomain.xml, 例如 http://www.taobao.com/crossdomain.xml , 内容如下
+
+                .. code-block:: xml
+
+                    <cross-domain-policy>
+                        <allow-access-from domain="*.taobao.com"/>
+                        <allow-access-from domain="*.taobao.net"/>
+                        <allow-access-from domain="*.taobaocdn.com"/>
+                        <allow-access-from domain="*.tbcdn.cn"/>
+                        <allow-access-from domain="*.allyes.com"/>
+                    </cross-domain-policy>
+
+
+            #. serverUrl 必须使用绝对地址, 否则如果编辑器组件和应用页面不在同一个hostname时, firefox下请求会发到编辑器组件所在的hostname.
+
+            #. 多图上传在非 ie 下并不会携带 cookie，如确实需要可通过 serverParams 传递：
+
+                .. code-block:: javascript
+
+                    serverParams: {
+                        cookie: function () {
+                            return document.cookie;
+                        }
+                    }
     
     
     .. attribute:: pluginConfig.video

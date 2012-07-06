@@ -267,8 +267,10 @@
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>#.该插件使用 flash 技术, 必须在根域名下提供 crossdomain.xml , 例如 <a class="reference external" href="http://www.taobao.com/crossdomain.xml">http://www.taobao.com/crossdomain.xml</a> , 内容如下</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;cross-domain-policy&gt;</span>
+<ol class="last arabic">
+<li><p class="first">该插件使用 flash 技术, 必须在根域名下提供 crossdomain.xml , 例如 <a class="reference external" href="http://www.taobao.com/crossdomain.xml">http://www.taobao.com/crossdomain.xml</a> , 内容如下</p>
+<blockquote>
+<div><div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;cross-domain-policy&gt;</span>
     <span class="nt">&lt;allow-access-from</span> <span class="na">domain=</span><span class="s">&quot;*.taobao.com&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;allow-access-from</span> <span class="na">domain=</span><span class="s">&quot;*.taobao.net&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;allow-access-from</span> <span class="na">domain=</span><span class="s">&quot;*.taobaocdn.com&quot;</span><span class="nt">/&gt;</span>
@@ -277,7 +279,22 @@
 <span class="nt">&lt;/cross-domain-policy&gt;</span>
 </pre></div>
 </div>
-<p class="last">#.serverUrl 必须使用绝对地址, 否则如果编辑器组件和应用页面不在同一个hostname时, firefox下请求会发到编辑器组件所在的hostname.</p>
+</div></blockquote>
+</li>
+<li><p class="first">serverUrl 必须使用绝对地址, 否则如果编辑器组件和应用页面不在同一个hostname时, firefox下请求会发到编辑器组件所在的hostname.</p>
+</li>
+<li><p class="first">多图上传在非 ie 下并不会携带 cookie，如确实需要可通过 serverParams 传递：</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">serverParams</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">cookie</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
 </div>
 </div>
 </div>
