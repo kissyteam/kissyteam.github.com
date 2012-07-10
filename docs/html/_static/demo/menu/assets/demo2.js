@@ -37,7 +37,7 @@ KISSY.use("node,menu", function (S, Node, Menu) {
                     }
                 },
                 // 设置菜单显示延迟时间
-                menuDelay:50
+                menuDelay:0.5
             }));
 
             menu.addChild(new Menu.Separator({

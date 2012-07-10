@@ -50,7 +50,7 @@ Configs Detail
 
 .. data:: SubMenu.config.menuDelay
 
-    {Number} - 可选，默认 300，单位毫秒。鼠标掠过后多长时间显示子菜单.     
+    {Number} - 可选，默认 0.15，单位秒。鼠标掠过后多长时间显示子菜单.
     
 .. data:: SubMenu.config.menu
 
