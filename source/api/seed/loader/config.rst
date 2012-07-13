@@ -191,6 +191,10 @@ map 范例：combo 使用的 kissy 组件
     请求
 
 
+.. note::
+
+    1.3+ 推荐采用自动 combo
+
 packages 范例: 包配置
 ``````````````````````````````````````````
     .. code-block:: javascript

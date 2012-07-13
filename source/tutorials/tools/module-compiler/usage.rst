@@ -126,7 +126,11 @@ a 依赖 b ， b 依赖 c ，指定源码目录与对应的 cdn 目录后，运�
         
         KISSY.use("a");
     </script>
-    
+
+
+.. note::
+
+    1.3+ 推荐使用自动 combo
     
 **请用 kissy-tools 项目下的 ant 运行此构建文件，文件编码为 utf-8**
 

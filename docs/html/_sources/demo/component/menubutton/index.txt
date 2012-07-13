@@ -30,19 +30,9 @@ Tips
 Q. 如何提高性能
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. combo menu component uibase menubutton
+#. 线上使用自动 combo
 
-    页面底部静态引入组件以及组件依赖模块:
-    
-    .. code-block:: html
-    
-        <script src='http://a.tbcdn.cn/s/kissy/1.2.0/??uibase-min.js,component-min.js,button-min.js,menu-min.js,menubutton-min.js'></script>
-        
 #. 使用 xclass 批量设置数据
-
-#. 先 addItem 再 render，
-
-    由于 render 会导致生成节点插入到文档树，那么请尽量构建好数据再 render
 
 #. setTimeout 来渲染多个组件，
 
