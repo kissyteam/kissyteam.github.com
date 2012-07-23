@@ -37,7 +37,6 @@ Configs
   * :data:`~Switchable.config.duration`
   * :data:`~Switchable.config.easing`
   * :data:`~Switchable.config.lazyDataType`
-  * :data:`~Switchable.config.aria`
   * :data:`~Switchable.config.lazyImgAttribute`
   * :data:`~Switchable.config.lazyTextareaClass`
  
@@ -250,9 +249,13 @@ Configs Detail
 
         - 支持懒加载, 需要载入 S.Datalazyload, 详见 :class:`~datalazyload.DataLazyload`
 
-.. data:: Switchable.config.aria
+.. data:: Switchable.config.lazyImgAttribute
 
-    {Boolean} - 无障碍访问支持, 默认为 false, 即关闭.
+    {String} - 懒加载图片的属性名。默认 "data-ks-lazyload-custom".
+
+.. data:: Switchable.config.lazyTextareaClass
+
+    {String} - 懒加载 textarea 的类名。默认 "ks-datalazyload-custom".
 
 
 Attributes Detail
@@ -289,14 +292,6 @@ Attributes Detail
 .. attribute:: Switchable.prototype.switchTimer
 
     {Object} - 只读, 切换定时器, 一般作为内部使用
-
-.. attribute:: Switchable.prototype.lazyImgAttribute
-
-    {String} - 懒加载图片的属性名。默认 "data-ks-lazyload-custom".
-
-.. attribute:: Switchable.prototype.lazyTextareaClass
-
-    {String} - 懒加载 textarea 的类名。默认 "ks-datalazyload-custom".
 
 
 Methods Detail

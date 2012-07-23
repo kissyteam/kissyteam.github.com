@@ -38,7 +38,6 @@ Config Attributes
   * :data:`~Switchable.config.effect`
   * :data:`~Switchable.config.duration`
   * :data:`~Switchable.config.easing`
-  * :data:`~Switchable.config.nativeAnim`
   * :data:`~Switchable.config.lazyDataType`
   * :data:`~Switchable.config.aria`
  
