@@ -300,6 +300,10 @@ Methods Detail
     | **render** ()
     | 渲染当前实例, 生成对应的 dom 节点并添加到页面文档树中.
 
+.. note::
+
+    默认不显示，要显示出来要调用 show 方法.
+
 .. method:: Overlay.prototype.show
 
     | **show** ()
@@ -322,9 +326,8 @@ Methods Detail
     :param Array<number> offset: 相对对齐元素的偏移
         
     .. note::
-    
-        1. 调用该方法前请先调用 :meth:`render`.  .
-        2. 推荐使用 ``set("align",{ node:node, points:points, offset;offset});`` 来代替该方法.  
+
+        1. 推荐使用 ``set("align",{ node:node, points:points, offset:offset});`` 来代替该方法.
     
 .. method:: Overlay.prototype.center
 
