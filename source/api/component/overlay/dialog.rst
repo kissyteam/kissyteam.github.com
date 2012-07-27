@@ -21,7 +21,6 @@ Configs
   * :data:`~Dialog.config.footerContent`
   * :data:`~Dialog.config.draggable`
   * :data:`~Dialog.config.aria`
-  * :data:`~Dialog.config.constrain`
   
 Attributes
 -----------------------------------------------
@@ -32,7 +31,6 @@ Attributes
   * :attr:`~Dialog.prototype.body`
   * :attr:`~Dialog.prototype.footer`
   * :attr:`~Dialog.prototype.draggable`
-  * :attr:`~Dialog.prototype.constrain`
   
 Methods
 -----------------------------------------------
@@ -144,30 +142,6 @@ Configs Detail
     {Boolean} - 默认为 false, 是否开启 aria 支持. 开启后, 窗口显示出来时自动获得焦点并且 tab 键只能在窗口内部转移焦点.
     
 
-        
-.. data:: Dialog.config.constrain
-
-    {Boolean | String} - 和 :class:`~Draggable.Draggable` 配合, 限制拖动的范围.
-        * 取值选择器字符串时, 则在限制拖动范围为根据该选择器字符串取到的第一个节点所在区域.
-        * 取值 true 时, 只能在当前视窗范围内拖动.
-        * 取值 false 时, 可任意移动, 例如：
-
-    .. code-block:: javascript
-    
-        KISSY.use("dd,overlay",function(S,DD,Overlay){
-            new Overlay.Dialog({
-                draggable : true,
-                contrain:true // 限制拖动区域为当前视窗范围
-            });
-        });
-        
-        KISSY.use("dd,overlay",function(S,DD,Overlay){
-            new Overlay.Dialog({
-                draggable : true,
-                contrain:"#container" // 限制拖动区域为 container 节点所占据区域
-            });
-        });
-
 Attributes Detail
 -----------------------------------------------
     
@@ -191,11 +165,7 @@ Attributes Detail
 
 .. attribute:: Dialog.prototype.draggable
 
-    {Boolean} - 头部是否可以拖放及其控制.
-
-.. attribute:: Dialog.prototype.constrain
-
-    {Boolean|String} - 拖放区域范围.
+    {Boolean|Object} - 头部是否可以拖放及其控制.
 
     
 Methods Detail

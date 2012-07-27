@@ -137,7 +137,6 @@
 <li><a class="reference internal" href="#overlay.Dialog.config.footerContent" title="overlay.Dialog.config.footerContent"><tt class="xref py py-data docutils literal"><span class="pre">footerContent</span></tt></a></li>
 <li><a class="reference internal" href="#overlay.Dialog.config.draggable" title="overlay.Dialog.config.draggable"><tt class="xref py py-data docutils literal"><span class="pre">draggable</span></tt></a></li>
 <li><a class="reference internal" href="#overlay.Dialog.config.aria" title="overlay.Dialog.config.aria"><tt class="xref py py-data docutils literal"><span class="pre">aria</span></tt></a></li>
-<li><a class="reference internal" href="#overlay.Dialog.config.constrain" title="overlay.Dialog.config.constrain"><tt class="xref py py-data docutils literal"><span class="pre">constrain</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -150,7 +149,6 @@
 <li><a class="reference internal" href="#overlay.Dialog.prototype.body" title="overlay.Dialog.prototype.body"><tt class="xref py py-attr docutils literal"><span class="pre">body</span></tt></a></li>
 <li><a class="reference internal" href="#overlay.Dialog.prototype.footer" title="overlay.Dialog.prototype.footer"><tt class="xref py py-attr docutils literal"><span class="pre">footer</span></tt></a></li>
 <li><a class="reference internal" href="#overlay.Dialog.prototype.draggable" title="overlay.Dialog.prototype.draggable"><tt class="xref py py-attr docutils literal"><span class="pre">draggable</span></tt></a></li>
-<li><a class="reference internal" href="#overlay.Dialog.prototype.constrain" title="overlay.Dialog.prototype.constrain"><tt class="xref py py-attr docutils literal"><span class="pre">constrain</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -281,35 +279,6 @@
 <dd><p>{Boolean} - 默认为 false, 是否开启 aria 支持. 开启后, 窗口显示出来时自动获得焦点并且 tab 键只能在窗口内部转移焦点.</p>
 </dd></dl>
 
-<dl class="data">
-<dt id="overlay.Dialog.config.constrain">
-<tt class="descclassname">Dialog.config.</tt><tt class="descname">constrain</tt><a class="headerlink" href="#overlay.Dialog.config.constrain" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>{Boolean | String} - 和 <tt class="xref py py-class docutils literal"><span class="pre">Draggable</span></tt> 配合, 限制拖动的范围.</dt>
-<dd><ul class="first last simple">
-<li>取值选择器字符串时, 则在限制拖动范围为根据该选择器字符串取到的第一个节点所在区域.</li>
-<li>取值 true 时, 只能在当前视窗范围内拖动.</li>
-<li>取值 false 时, 可任意移动, 例如：</li>
-</ul>
-</dd>
-</dl>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd,overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
-    <span class="k">new</span> <span class="nx">Overlay</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
-        <span class="nx">draggable</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nx">contrain</span><span class="o">:</span><span class="kc">true</span> <span class="c1">// 限制拖动区域为当前视窗范围</span>
-    <span class="p">});</span>
-<span class="p">});</span>
-
-<span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dd,overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DD</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
-    <span class="k">new</span> <span class="nx">Overlay</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
-        <span class="nx">draggable</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nx">contrain</span><span class="o">:</span><span class="s2">&quot;#container&quot;</span> <span class="c1">// 限制拖动区域为 container 节点所占据区域</span>
-    <span class="p">});</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-</dd></dl>
-
 </div>
 <div class="section" id="attributes-detail">
 <h2>Attributes Detail<a class="headerlink" href="#attributes-detail" title="Permalink to this headline">¶</a></h2>
@@ -340,13 +309,7 @@
 <dl class="attribute">
 <dt id="overlay.Dialog.prototype.draggable">
 <tt class="descclassname">Dialog.prototype.</tt><tt class="descname">draggable</tt><a class="headerlink" href="#overlay.Dialog.prototype.draggable" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Boolean} - 头部是否可以拖放及其控制.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="overlay.Dialog.prototype.constrain">
-<tt class="descclassname">Dialog.prototype.</tt><tt class="descname">constrain</tt><a class="headerlink" href="#overlay.Dialog.prototype.constrain" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Boolean|String} - 拖放区域范围.</p>
+<dd><p>{Boolean|Object} - 头部是否可以拖放及其控制.</p>
 </dd></dl>
 
 </div>
