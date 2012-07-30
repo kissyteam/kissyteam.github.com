@@ -14,39 +14,39 @@ Plugins
 .. toctree::
    :titlesonly:
 
-   backColor
+   back-color
    bold
-   checkboxSourcearea
+   checkbox-sourcearea
    draft
-   dragUpload
-   elementPath
+   drag-upload
+   element-path
    flash
-   fontFamily
-   fontSize
-   foreColor
+   font-family
+   font-size
+   fore-color
    heading
    image
    indent
    outdent
    italic
-   justifyCenter
-   justifyLeft
-   justifyRight
+   justify-center
+   justify-left
+   justify-right
    link
    maximize
-   multipleUpload
-   orderedList
-   pageBreak
+   multiple-upload
+   ordered-list
+   page-break
    preview
-   removeFormat
+   remove-format
    resize
    separator
    smiley
-   sourceArea
-   strikeThrough
+   sourcearea
+   strike-through
    table
    underline
    undo
-   unorderedList
+   unordered-list
    video
-   xiamiMusic
+   xiami-music

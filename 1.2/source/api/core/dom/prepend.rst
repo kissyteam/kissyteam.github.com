@@ -32,6 +32,6 @@ Methods
 		    var DOM = S.DOM,Event = S.Event;
 		    var u = DOM.get('#J_ul');
 		    //将节点 <li>0</li> 添加到ul的第一个 li 节点
-		    DOM.prepend('<li>0</li>',u);
+		    DOM.prepend(DOM.create('<li>0</li>'),u);
 	    });
     
