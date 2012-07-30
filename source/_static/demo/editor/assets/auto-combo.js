@@ -17,7 +17,7 @@
             height:"400px"
         };
 
-        KISSY.use("editor/plugin/sourcearea/," +
+        KISSY.use("editor/plugin/source-area/," +
             "editor/plugin/font-size/," +
             "editor/plugin/image/", function (S, SourceArea, FontSize, Image) {
 

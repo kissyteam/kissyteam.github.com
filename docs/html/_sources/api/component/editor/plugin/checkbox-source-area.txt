@@ -1,6 +1,6 @@
 .. currentmodule:: editor
 
-checkbox-sourcearea
+checkbox-source-area
 ===============================
 
 |  框选切换源码

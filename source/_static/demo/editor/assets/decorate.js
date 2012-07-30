@@ -16,7 +16,7 @@
             height:"400px"
         };
 
-        var plugins = ("sourcearea" +
+        var plugins = ("source-area" +
             ",separator" +
             ",bold" +
             ",italic," +
@@ -25,7 +25,7 @@
             "strike-through," +
             "underline," +
             "separator," +
-            "checkbox-sourcearea" +
+            "checkbox-source-area" +
             ",image" +
             ",link" +
             ",fore-color" +

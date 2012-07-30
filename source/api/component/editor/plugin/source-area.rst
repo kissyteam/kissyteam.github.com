@@ -1,6 +1,6 @@
 .. currentmodule:: editor
 
-sourcearea
+source-area
 ===============================
 
 |  源码按钮插件

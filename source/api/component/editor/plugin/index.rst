@@ -16,7 +16,7 @@ Plugins
 
    back-color
    bold
-   checkbox-sourcearea
+   checkbox-source-area
    draft
    drag-upload
    element-path
@@ -42,7 +42,7 @@ Plugins
    resize
    separator
    smiley
-   sourcearea
+   source-area
    strike-through
    table
    underline
