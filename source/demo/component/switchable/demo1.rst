@@ -55,7 +55,12 @@ Class
 
         很多朋友在使用 Switchable 时, 经常会碰到 panels 从最后一个切换到第一个时, 出现白屏现象, 经过我们仔细排查后, 发现总体有以下三种情况:
 
-        1) ks-switchable-content 及其子元素 CSS 设置不正确, ks-switchable-content 该层不需要设置宽高, 因为会根据子元素个数和子元素宽高自动设置. 请完全参考上述事例, 特别是设置 diaplay, margin, position 这种属性时更要注意;
-        2) 在使用 scrollx/scrolly 动画时, panels 各元素需要 **固定宽/高** ;
-        3) 页面当引入了 http://a.tbcdn.cn/tbra/1.0/tbra-widgets.js 时, 也会诡异的出现白屏. 可能是 tbra 修改了一些原生方法影响到 switchable;
-        4) 当 Switchable 和 Datalazyload 一起使用时, 注意, 有可能还是会出现白屏, 原因是, 切换时, 特别是从第一个切换到最后一个时, 动画过程中, 经过中间元素时, 还没有触发 lazyload 替换内容导致动画过程中有白屏;
+        1) ks-switchable-content 及其子元素 CSS 设置不正确, ks-switchable-content 该层不需要设置宽高,
+         因为会根据子元素个数和子元素宽高自动设置.
+        2) ks-switchable-content 被设置为 overflow:hidden，请在整个容器根元素上设置 overflow:hidden
+        请完全参考上述事例, 特别是设置 diaplay, margin, position 这种属性时更要注意;
+        3) 在使用 scrollx/scrolly 动画时, panels 各元素需要 **固定宽/高** ;
+        4) 页面当引入了 http://a.tbcdn.cn/tbra/1.0/tbra-widgets.js 时, 也会诡异的出现白屏.
+        可能是 tbra 修改了一些原生方法影响到 switchable;
+        5) 当 Switchable 和 Datalazyload 一起使用时, 注意, 有可能还是会出现白屏,
+        原因是, 切换时, 特别是从第一个切换到最后一个时, 动画过程中, 经过中间元素时, 还没有触发 lazyload 替换内容导致动画过程中有白屏;

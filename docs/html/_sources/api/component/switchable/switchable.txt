@@ -281,6 +281,10 @@ Attributes Detail
 
     {HTMLElement} - 只读, 存放面板的容器元素
 
+.. note::
+
+    content 元素不可以为 overflow:hidden，否则从最后一屏切换到第一屏时会出白屏现象.请在整个容器根元素上设置 overflow:hidden
+
 .. attribute:: Switchable.prototype.length
 
     {Number} - 只读, 触发器或面板的个数
