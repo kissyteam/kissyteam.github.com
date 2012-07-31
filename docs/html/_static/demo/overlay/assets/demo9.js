@@ -19,7 +19,7 @@ KISSY.use("ua,event,node,overlay,button", function(S, UA, Event, Node, O, B) {
 
     var b1 = new B({
         content: "我在可视区域的正中间，点击关闭销毁",
-        prefixCls: "goog-",
+
         render: "#button-wrap"
     });
     b1.render();

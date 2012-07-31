@@ -1,7 +1,7 @@
 KISSY.use("node,menu", function (S, Node, Menu) {
     // 初始化一个菜单, 仅包含一个菜单项
     var menu = new Menu({
-        prefixCls:'goog-',
+
         render:'#menu_container',
         width:200,
         children:[

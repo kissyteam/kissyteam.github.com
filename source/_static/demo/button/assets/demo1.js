@@ -3,7 +3,6 @@ KISSY.use("button", function(S, Button) {
     var b = new Button({
         content: "我是类Google按钮1",
         render: "#button_container",
-        prefixCls: "goog-",
         tooltip: "点击我有惊喜~"
     });
     
@@ -19,7 +18,6 @@ KISSY.use("button", function(S, Button) {
     var b1 = new Button({
         content: "我是类Google按钮2",
         elBefore: "#exist",
-        prefixCls: "goog-",
         tooltip: "点击我有惊喜~"
     });
 
@@ -32,7 +30,6 @@ KISSY.use("button", function(S, Button) {
     // 从已有DOM中生成一个按钮
     var exist = new Button({
         srcNode:"#exist",
-        prefixCls: "goog-",
         tooltip: "点击我有惊喜~"
     });
     exist.render();

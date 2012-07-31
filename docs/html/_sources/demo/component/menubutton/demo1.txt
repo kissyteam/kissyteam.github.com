@@ -24,11 +24,11 @@ Class
 
     .. code-block:: html
 
-        <div class="goog-inline-block goog-button" id="exist">
+        <div class="ks-inline-block ks-button" id="exist">
             我的淘宝
-            <div class="goog-menu goog-popupmenu">
-                <div class="goog-menuitem">已买到的宝贝</div>
-                <div class="goog-menuseparator"></div>
-                <div class="goog-menuitem">已卖出的宝贝</div>
+            <div class="ks-menu ks-popupmenu">
+                <div class="ks-menuitem">已买到的宝贝</div>
+                <div class="ks-menuseparator"></div>
+                <div class="ks-menuitem">已卖出的宝贝</div>
             </div>
         </div>

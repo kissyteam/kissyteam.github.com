@@ -2,7 +2,6 @@ KISSY.use("node,button", function(S, Node, Button) {
     var b = new Button({
         content:"我是类Google按钮",
         render: "#button_container",
-        prefixCls: "goog-",
         tooltip: "点击我有惊喜~"
     });
     b.render();

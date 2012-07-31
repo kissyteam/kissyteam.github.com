@@ -3,19 +3,19 @@ KISSY.use("node,overlay,dd,resizable,button", function (S, Node, O, DD, R, B) {
         sh = false;
     var b1 = new B({
         content:"显示",
-        prefixCls:"goog-",
+
         render:"#button-wrap"
     });
     b1.render();
     var b2 = new B({
         content:"释放",
-        prefixCls:"goog-",
+
         render:"#button-wrap"
     });
     b2.render();
     var b3 = new B({
         content:"限制",
-        prefixCls:"goog-",
+
         render:"#button-wrap"
     });
     b3.render();

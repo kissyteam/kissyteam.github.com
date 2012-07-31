@@ -1,25 +1,25 @@
 KISSY.use("menu", function (S, Menu) {
     // 构建各个菜单项
     var m1 = new Menu.Item({
-        prefixCls: "goog-",
+
         selectable: true,
         pinyin: "nx",
         content: "女鞋"
     }),
         m2 = new Menu.Item({
-        prefixCls: "goog-",
+
         selectable: true,
         pinyin: "jjfw",
         content: "家居服务"
     }),
         m3 = new Menu.Item({
-        prefixCls: "goog-",
+
         selectable: true,
         pinyin: "sj",
         content: "手机"
     }),
         m4 = new Menu.Item({
-        prefixCls: "goog-",
+
         selectable: true,
         pinyin: "nznf",
         content: "女装女服"
@@ -30,7 +30,7 @@ KISSY.use("menu", function (S, Menu) {
         width: 200,
         // 支持多选
         allowMultiple: true,
-        prefixCls: "goog-",
+
         label: "请输入"
     });
     // 依次添加各个菜单项

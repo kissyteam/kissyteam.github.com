@@ -28,7 +28,7 @@ KISSY.use("node,overlay,button,dd", function(S, Node, O, B) {
 
     var show = new B({
         content: "收藏",
-        prefixCls: "goog-",
+
         render: "#button-wrap"
     });
     show.render();

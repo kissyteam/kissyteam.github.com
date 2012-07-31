@@ -22,8 +22,7 @@ KISSY.use("anim,node,button",function(S,Anim,Node,Button){
             });
 
      var b = new Button({
-        content: "开始动画",
-        prefixCls: "goog-"
+        content: "开始动画"
     });
     b.render();
     b.on("click", function() {

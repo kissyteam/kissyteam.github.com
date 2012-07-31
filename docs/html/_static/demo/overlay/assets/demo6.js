@@ -13,7 +13,7 @@ KISSY.use("node,overlay,button", function(S, Node, O, B) {
 
     var show = new B({
         content: "收藏",
-        prefixCls: "goog-",
+
         render: "#button-wrap"
     });
     show.render();
@@ -23,7 +23,7 @@ KISSY.use("node,overlay,button", function(S, Node, O, B) {
 
     var dis = new B({
         content: "销毁",
-        prefixCls: "goog-",
+
         render: "#button-wrap"
     });
     dis.render();

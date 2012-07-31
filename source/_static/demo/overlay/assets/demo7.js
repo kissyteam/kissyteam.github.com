@@ -1,7 +1,7 @@
 KISSY.use("node,overlay,button", function(S, Node, O, B) {
     var show = new B({
         content: "选择",
-        prefixCls: "goog-",
+
         render: "#button-wrap"
     });
     show.render();

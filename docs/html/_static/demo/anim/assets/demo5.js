@@ -2,14 +2,11 @@ KISSY.use("anim,node,button", function(S, Anim, Node, Button) {
     var $ = Node.all;
 
     var go = new Button({
-        content: "GO!",
-        prefixCls: "goog-"
+        content: "GO!"
     }), stop = new Button({
-        content: "STOP!",
-        prefixCls: "goog-"
+        content: "STOP!"
     }), back = new Button({
-        content: "BACK!",
-        prefixCls: "goog-"
+        content: "BACK!"
     });
     go.render();
     stop.render();

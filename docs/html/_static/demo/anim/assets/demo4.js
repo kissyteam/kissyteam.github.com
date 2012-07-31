@@ -3,8 +3,7 @@ KISSY.use("node,button", function(S, Node, Button) {
 
     var scrollUp = new Button({
         content: "滚动到下面的按钮",
-        render: "#scrollUp",
-        prefixCls: "goog-"
+        render: "#scrollUp"
     });
     scrollUp.render();
     scrollUp.on("click", function() {
@@ -15,8 +14,7 @@ KISSY.use("node,button", function(S, Node, Button) {
 
     var scrollDown = new Button({
         content: "滚动到上面的按钮",
-        render: "#scrollDown",
-        prefixCls: "goog-"
+        render: "#scrollDown"
     });
     scrollDown.render();
     scrollDown.on("click", function() {

@@ -14,7 +14,7 @@ KISSY.use("overlay,button", function(S, Overlay, Button) {
     var b = new Button({
         content: " OK ",
         render: p.get('footer'),
-        prefixCls: "goog-",
+
         tooltip: "点击关闭~"
     });
 

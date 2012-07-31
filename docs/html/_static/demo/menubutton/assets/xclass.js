@@ -2,7 +2,7 @@ KISSY.use("menubutton,menu", function (S, MenuButton, Menu) {
 
     // 创建一个菜单按钮, 并关联 menu 为刚才创建的弹出菜单
     var button = new MenuButton({
-        prefixCls:"goog-",
+
         content:"我的淘宝",
         matchElWidth:false,
         // 按照创建菜单的方式创建一个弹出菜单

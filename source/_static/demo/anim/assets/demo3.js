@@ -5,8 +5,7 @@ KISSY.use("anim,node,button", function(S, Anim, Node, Button) {
 
     var demo_show = new Button({
         content: "show/hide",
-        render: "#demo_show",
-        prefixCls: "goog-"
+        render: "#demo_show"
     });
     demo_show.render();
     demo_show.on("click", function() {
@@ -15,8 +14,7 @@ KISSY.use("anim,node,button", function(S, Anim, Node, Button) {
 
     var demo_slide = new Button({
         content: "show/hide",
-        render: "#demo_slide",
-        prefixCls: "goog-"
+        render: "#demo_slide"
     });
     demo_slide.render();
     demo_slide.on("click", function() {
@@ -28,8 +26,7 @@ KISSY.use("anim,node,button", function(S, Anim, Node, Button) {
 
     var demo_fade = new Button({
         content: "show/hide",
-        render: "#demo_fade",
-        prefixCls: "goog-"
+        render: "#demo_fade"
     });
     demo_fade.render();
     demo_fade.on("click", function() {

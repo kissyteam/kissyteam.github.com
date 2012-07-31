@@ -1,7 +1,6 @@
 KISSY.use("anim,button", function(S, Anim, Button) {
     var b = new Button({
-        content: "run scroll animation",
-        prefixCls: "goog-"
+        content: "run scroll animation"
     });
     b.render();
     b.on("click", function() {

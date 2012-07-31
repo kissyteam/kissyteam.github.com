@@ -11,8 +11,7 @@ KISSY.use("node, button, resizable", function(S, Node, Button, Resizable) {
         maxWidth:700
     });
     var b = new Button({
-        content: "销毁",
-        prefixCls: "goog-"
+        content: "销毁"
     });
     b.render();
     b.on("click", function() {

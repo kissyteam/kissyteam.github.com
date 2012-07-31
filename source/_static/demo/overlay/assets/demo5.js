@@ -31,7 +31,7 @@ KISSY.use('ua,event,node,overlay,button', function(S, UA, Event, Node, O, B) {
     }
     var show = new B({
         content: "显示",
-        prefixCls: "goog-",
+
         render: "#button-wrap"
     });
     show.render();
@@ -41,7 +41,7 @@ KISSY.use('ua,event,node,overlay,button', function(S, UA, Event, Node, O, B) {
 
     var hide = new B({
         content: "隐藏",
-        prefixCls: "goog-",
+
         render: "#button-wrap"
     });
     hide.render();

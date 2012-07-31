@@ -13,7 +13,7 @@ KISSY.use('node,overlay,button', function(S, Node, O, Button) {
 
     var b = new Button({
         content: "销毁",
-        prefixCls: "goog-",
+
         render: "#button-wrap"
     });
     b.render();
