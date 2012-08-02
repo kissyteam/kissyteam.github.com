@@ -1,0 +1,345 @@
+/* 居中 */
+#header, #content, #footer {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/** 布局基础样式 **/
+.col-main {
+    float: left;
+    width: 100%;
+    /* bug fix: 主栏没有内容时，在 Firefox 和 Chrome 等浏览器下，布局不对 */
+    min-height: 1px;
+    overflow: hidden;
+}
+
+.col-sub, .col-extra {
+    float: left;
+    /*position: relative;  按需设置，仅在需要时添加 */
+}
+
+/** 清除浮动 **/
+.layout:after, .main-wrap:after, .col-sub:after, .col-extra:after {
+    content: '\20';
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.layout, .main-wrap, .col-sub, .col-extra, .s-module {
+    *zoom: 1;
+}
+
+/* global */
+html {
+    color: #666;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: #00A0E9;
+}
+
+a:hover, a:active {
+    color: #FF6600;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/* head */
+#header,
+#content,
+#footer {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#header {
+    overflow: hidden;
+    height: 90px;
+    border-bottom: 1px solid #AACCEE;
+}
+
+#header .logo {
+    border: medium none;
+    float: left;
+    margin: 20px 0 0 1px;
+    padding: 0;
+}
+
+#header .desc {
+    color: #888;
+    float: left;
+    font-size: 15px;
+    margin-left: 5px;
+    margin-top: 47px;
+}
+
+#header .navigation {
+    float: right;
+    list-style: none outside none;
+    margin: 0;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+#header .navigation li {
+    float: left;
+    font-size: 14px;
+    border-left: 1px solid #DDDDDD;
+    margin: 47px 0 0 -1px;
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+#header .navigation li label{
+    color: #00A0E9;
+    font-weight: bold;
+}
+
+/* layout */
+.grid-m0s5 .main-wrap {
+    margin-right: 278px;
+}
+
+.grid-m0s5 .col-sub {
+    margin-left: -270px;
+    width: 270px;
+}
+
+/* content */
+.title {
+    font-size: 16px;
+    padding: 3px 0 3px 12px;
+    color: #444;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+
+.title span {
+    float: right;
+    font-size: 12px;
+}
+
+.con {
+    padding: 7px;
+    font-size: 14px;
+}
+
+.con ul li {
+    padding-left: 25px;
+}
+
+.con .s-captain {
+    font-size: 14px;
+    height: 20px;
+    margin: 5px 0;
+    color: #222;
+}
+
+.con .s-fleft {
+    float: left;
+    width: 325px;
+}
+
+.s-module {
+    margin-top: 20px;
+}
+
+.s-smaller {
+    font-size: 12px;
+}
+
+.s-smaller a {
+    color: #666;
+}
+
+.s-smaller a:hover {
+    color: #FF6600;
+}
+
+.s-strong {
+    color: #333;
+}
+
+.s-switchable {
+    height: 150px;
+}
+
+.s-kissy-base {
+}
+
+.s-kissy-base .con {
+    padding-left: 12px;
+}
+
+.s-kissy-base .con ul li .s-smaller a {
+    color: #333;
+}
+
+.s-kissy-base .con ul li .s-smaller a:hover {
+    color: #FF6600;
+}
+
+.s-cheat {
+    font-size: 12px;
+}
+
+.s-kissy-gallery {
+}
+
+/*.s-kissy-gallery .con{ height:140px;}*/
+.s-kissy-gallery .con ul li {
+    background-position: 10px 13px;
+}
+
+.s-kissy-gallery .con ul li span {
+    padding-left: 0;
+}
+
+.s-kissy-gallery .con ul li .s-desc {
+    color: #666;
+}
+
+.s-kissy-util {
+}
+
+.s-kissy-util .con ul li {
+    background-position: 10px 13px;
+}
+
+.s-kissy-util .con ul li span {
+    padding-left: 0;
+}
+
+.s-kissy-util .con ul li .s-desc {
+    color: #666;
+}
+
+.s-kissy-join {
+}
+
+.s-kissy-join .con {
+}
+
+.s-announce ul,
+.s-kissy-standard ul,
+.s-kissy-tool ul {
+    margin-left: 7px;
+}
+
+.s-announce .con {
+}
+
+.s-announce .con li {
+    font-size: 14px;
+    padding-left: 15px;
+    background-position: 0px 11px;
+}
+
+.s-announce .con li span.s-announce-con {
+    padding-left: 0px;
+    display: inline-block;
+    width: 200px;
+    height: 24px;
+    color: #444;
+}
+
+.s-announce .con li span.s-announce-more {
+    padding-left: 0px;
+    display: inline-block;
+    height: 24px;
+    float: right;
+}
+
+.s-announce .con li a {
+    display: inline-block;
+}
+
+.s-announce .con li a:hover {
+    color: #FF6600;
+}
+
+.s-kissy-dpl,
+.s-kissy-editor,
+.s-kissy-ajbridge {
+    height: 56px;
+}
+
+.s-kissy-standard .con li {
+    font-size: 14px;
+    padding-left: 10px;
+    background-position: 0px 11px;
+}
+
+.s-kissy-standard ul li span {
+    padding-left: 5px;
+}
+
+.s-kissy-tool .con li {
+    font-size: 14px;
+    padding-left: 10px;
+    background-position: 0px 11px;
+}
+
+.s-kissy-tool .con li span {
+    padding-left: 5px;
+}
+
+.s-kissy-tool .con li a {
+    display: inline-block;
+}
+
+.s-kissy-join .con div, .s-kissy-introduce .con div {
+    margin-left: 7px;
+}
+
+/* footer */
+#footer {
+    margin-top: 10px;
+    padding: 10px 0 20px 0;
+    text-align: center;
+    color: #666;;
+    border-top: 1px solid #ddd;
+}
+
+/** 搜索box **/
+#header {
+    position: relative;
+}
+
+#searchbox {
+    position: absolute;
+    right: 22px;
+    top: 15px;
+}
+
+.searchbox input {
+    border: 1px solid #999;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.con {
+    line-height: 1.7;
+}
+
+.api-component {
+    overflow: hidden;
+    zoom: 1;
+}
+
+.api-component li {
+    width: 130px;
+    float: left;
+}
