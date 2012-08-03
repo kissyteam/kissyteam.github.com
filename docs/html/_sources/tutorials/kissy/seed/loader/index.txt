@@ -9,5 +9,6 @@ Loader
 
     simple.rst
     timestamp.rst
+    common-lib.rst
 
 

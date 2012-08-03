@@ -1,0 +1,238 @@
+使用 KISSY Loader 组织公用的模块库
+==============================================
+
+Refer
+```````````````````````````````````````````````````
+
+| :ref:`api <Loader>`
+
+| :ref:`demo <loader_demo>`
+
+概述
+`````````````````````````````````
+
+通过 KISSY Loader 可以在一个企业内部搭建公用的模块库，通过使用 KISSY Loader 模块化组织，
+使用者可以统一得任意调用任何模块，配合依赖配置还可以对一次 use 的公用模块进行自动 combo.
+
+
+目录结构
+```````````````````````````````````
+
+举例：目前存在 comment 模块需要在多个应用间共享使用.那么代码可以放置在以下目录结构
+
+
+
+.. code-block:: javascript
+
+    /assets/common-lib/comment/1.0/index.js
+
+
+
+其中
+
+
+
+1. index.js 是 comment 所有子模块合并后的代码，入口模块名为 "common-lib/comment/1.0/index"
+
+2. 1.0 表示版本号，大的升级可以直接替换改文件夹，小的升级可直接覆盖
+
+
+
+同时 common-lib 本身也有自己的一个 js 处理一些全局事情：
+
+.. code-block:: javascript
+
+    /assets/common-lib/config.js
+
+
+包配置
+```````````````````````````````````````
+
+根据目录结构，在 config.js 中配置包：
+
+
+
+.. code-block:: javascript
+
+    KISSY.config({
+        packages:[{
+            name: "common-lib",
+            path: '/assets/'
+        }]
+    });
+
+
+
+时间戳配置
+``````````````````````````````````````
+
+由于存在小升级更新问题，如果组件升级后需要调用者下次调用时立即更新就需要一个时间戳机制，我们可以利用另一个随时更新的 js 来控制时间戳：
+
+
+
+.. code-block:: javascript
+
+    /assets/common-lib/timestamp.js
+
+
+
+其中只有一个全局变量定义：
+
+
+
+.. code-block:: javascript
+
+    window.COMMON_LIB_STAMP=1;
+
+
+
+
+如果某个组件小升级后需要立即更新，那么修改该文件发布即可。
+
+
+在 config.js 中通过 getScript + 随机时间戳来每次获取该值的最新值，并设置给对应的包
+
+
+
+.. code-block:: javascript
+
+    S.getScript("timestamp.js?t="+S.now(),function(){
+        KISSY.config({
+            packages:[{
+                name: "common-lib",
+                path: '/assets/',
+                tag: window.COMMON_LIB_STAMP
+            }]
+        });
+    });
+
+
+
+注意由于是异步设置包，那么还需要一个通知机制，来通知客户端何时时间戳已经设置完毕，在 config.js 中添加:
+
+
+
+.. code-block:: javascript
+
+    var commonDefer=new S.Defer();
+
+    S.getScript("timestamp.js?t="+S.now(),function(){
+            KISSY.config({
+                packages:[{
+                    name: "common-lib",
+                    path: '/assets/',
+                    tag: window.COMMON_LIB_STAMP
+                }]
+            });
+            commonDefer.resolve(S);
+        });
+
+.. note::
+
+    1.2 也可以采用类似的实现
+
+    .. code-block:: javascript
+
+        var commonReady=0,queue=[];
+
+        function commonOk(fn){
+          if(commonReady) {
+            fn(S);
+          }else{
+            queue.push(fn);
+          }
+        }
+
+        S.getScript("timestamp.js?t="+S.now(),function(){
+                KISSY.config({
+                    packages:[{
+                        name: "common-lib",
+                        path: '/assets/',
+                        tag: window.COMMON_LIB_STAMP
+                    }]
+                });
+                commonReady=1;
+                S.each(queue,function(q){q(S);})
+            });
+
+
+调用方使用
+````````````````````````````````````
+
+
+任何其他应用的调用者都可以引用 config.js，然后在应用中
+
+
+.. code-block:: javascript
+
+    commonDefer.then(function(S){
+        S.use("common-lib/comment/1.0/")
+    });
+
+
+即可使用公用的 comment 模块.
+
+
+进一步得自动 combo
+`````````````````````````````````````
+
+进一步可以引用 deps.js ，使用方法同 timestamp.js，每次调用都获取最新的内容，其中 deps.js 由组件开发者配置一些依赖信息
+
+
+例如
+
+
+
+.. code-block:: javascript
+
+    KISSY.config("modules",{
+        "common-lib/comment/1.0/index":{
+            requires: "common-lib/comment/common/1.0/index"
+        }
+    });
+
+
+同时修改 config.js
+
+
+
+.. code-block:: javascript
+
+    var commonDefer=new S.Defer(),num=0;
+
+    S.getScript("timestamp.js?t="+S.now(),function(){
+            KISSY.config({
+                packages:[{
+                    name: "common-lib",
+                    path: '/assets/',
+                    tag: window.COMMON_LIB_STAMP
+                }]
+            });
+            num++;
+            if(num==2)commonDefer.resolve(S);
+    });
+
+    S.getScript("deps.js?t="+S.now(),function(){
+        num++;
+        if(num==2)commonDefer.resolve(S);
+    });
+
+
+
+那么调用者设置 combine true 后，即可通过同样的调用
+
+
+
+.. code-block:: javascript
+
+    commonDefer.then(function(S){
+        S.use("common-lib/comment/1.0/")
+    });
+
+
+
+最终会产生自动 combo 的请求：
+
+.. code-block:: javascript
+
+    /assets/common-lib/??comment/common/1.0/index,comment/1.0/index
