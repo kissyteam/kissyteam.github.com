@@ -132,8 +132,9 @@
     <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;gbk&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-outputEncoding&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-excludes&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;bizcore&quot;</span><span class="nt">/&gt;</span>
+    <span class="c">&lt;!-- add since kissy module compiler 2.0--&gt;</span>
+    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-excludeReg&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;biz(/.*)?&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-output&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;x:/code/package/y.combine.js&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;classpath&gt;</span>
@@ -146,7 +147,7 @@
 </div>
 <div class="section" id="id2">
 <h2>参数说明<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>如上所示该工具需要一些参数, 包括 <tt class="docutils literal"><span class="pre">requires</span></tt>  , <tt class="docutils literal"><span class="pre">baseUrls</span></tt> , <tt class="docutils literal"><span class="pre">encodings</span></tt> , <tt class="docutils literal"><span class="pre">outputEncoding</span></tt> , <tt class="docutils literal"><span class="pre">excludes</span></tt> , <tt class="docutils literal"><span class="pre">output</span></tt> , 具体格式如下：</p>
+<p>如上所示该工具需要一些参数, 包括 <tt class="docutils literal"><span class="pre">requires</span></tt>  , <tt class="docutils literal"><span class="pre">baseUrls</span></tt> , <tt class="docutils literal"><span class="pre">encodings</span></tt> , <tt class="docutils literal"><span class="pre">outputEncoding</span></tt> , <tt class="docutils literal"><span class="pre">excludeReg</span></tt> , <tt class="docutils literal"><span class="pre">output</span></tt> , 具体格式如下：</p>
 <div class="section" id="requires">
 <h3>requires<a class="headerlink" href="#requires" title="Permalink to this headline">¶</a></h3>
 <p>需要打包的模块名集合, 该模块以及其递归依赖都会被一并打包. 多个模块名用 <tt class="docutils literal"><span class="pre">,</span></tt> 分隔. 如以上示例： <tt class="docutils literal"><span class="pre">package/y</span></tt> .</p>
@@ -183,10 +184,10 @@
 <h3>outputEncoding<a class="headerlink" href="#outputencoding" title="Permalink to this headline">¶</a></h3>
 <p>指明最后合并打包文件的编码格式. 如以上示例 <tt class="docutils literal"><span class="pre">utf-8</span></tt> .</p>
 </div>
-<div class="section" id="excludes">
-<h3>excludes<a class="headerlink" href="#excludes" title="Permalink to this headline">¶</a></h3>
-<p><tt class="docutils literal"><span class="pre">optional</span></tt> , 指明 <tt class="docutils literal"><span class="pre">requires</span></tt> 递归依赖模块中不需要打包的模块名称集合, 该集合内的模块是单独动态加载或静态引入的, 多个模块以 <tt class="docutils literal"><span class="pre">,</span></tt> 分隔.
-如以上示例 <tt class="docutils literal"><span class="pre">bizcore</span></tt> 表示 <tt class="docutils literal"><span class="pre">bizcore</span></tt> 模块不需要合并打包, 而是静态引入到页面中的.
+<div class="section" id="excludereg">
+<h3>excludeReg<a class="headerlink" href="#excludereg" title="Permalink to this headline">¶</a></h3>
+<p><tt class="docutils literal"><span class="pre">optional</span></tt> , 指明 <tt class="docutils literal"><span class="pre">requires</span></tt> 递归依赖模块中不需要打包的模块名称正则式（java语法）。
+例 <tt class="docutils literal"><span class="pre">biz(/.*)?</span></tt> 表示 <tt class="docutils literal"><span class="pre">biz</span></tt> 以及 <tt class="docutils literal"><span class="pre">biz/xx</span></tt> 模块不需要合并打包, 而是静态引入到页面中的.
 最常见的是把用到的 kissy 的所有模块都加入到 excludes 中，防止打包时提示 kissy 模块找不到.</p>
 </div>
 <div class="section" id="output">

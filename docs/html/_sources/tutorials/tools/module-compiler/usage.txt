@@ -25,8 +25,9 @@
         <arg value="gbk"/>
         <arg value="-outputEncoding"/>
         <arg value="utf-8"/>
-        <arg value="-excludes"/>
-        <arg value="bizcore"/>
+        <!-- add since kissy module compiler 2.0-->
+        <arg value="-excludeReg"/>
+        <arg value="biz(/.*)?"/>
         <arg value="-output"/>
         <arg value="x:/code/package/y.combine.js"/>
         <classpath>
@@ -39,7 +40,7 @@
 参数说明    
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
     
-如上所示该工具需要一些参数, 包括 ``requires``  , ``baseUrls`` , ``encodings`` , ``outputEncoding`` , ``excludes`` , ``output`` , 具体格式如下：
+如上所示该工具需要一些参数, 包括 ``requires``  , ``baseUrls`` , ``encodings`` , ``outputEncoding`` , ``excludeReg`` , ``output`` , 具体格式如下：
 
 requires
 ----------------------------------------------------
@@ -86,11 +87,11 @@ outputEncoding
 指明最后合并打包文件的编码格式. 如以上示例 ``utf-8`` .
 
 
-excludes
+excludeReg
 -------------------------------------
 
-``optional`` , 指明 ``requires`` 递归依赖模块中不需要打包的模块名称集合, 该集合内的模块是单独动态加载或静态引入的, 多个模块以 ``,`` 分隔.
-如以上示例 ``bizcore`` 表示 ``bizcore`` 模块不需要合并打包, 而是静态引入到页面中的.
+``optional`` , 指明 ``requires`` 递归依赖模块中不需要打包的模块名称正则式（java语法）。
+例 ``biz(/.*)?`` 表示 ``biz`` 以及 ``biz/xx`` 模块不需要合并打包, 而是静态引入到页面中的.
 最常见的是把用到的 kissy 的所有模块都加入到 excludes 中，防止打包时提示 kissy 模块找不到.
 
 output
