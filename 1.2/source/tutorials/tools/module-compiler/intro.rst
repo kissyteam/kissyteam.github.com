@@ -14,7 +14,7 @@
 下载
 ~~~~~~~~~~~~~~~~~~~~
 
-| 下载: `KISSY Module Compiler <https://github.com/kissyteam/kissy-tools/raw/master/module-compiler/module-compiler.jar>`_
+| 下载: `KISSY Module Compiler <https://github.com/kissyteam/kissy-tools/raw/master/module-compiler/module-compiler1.2.jar>`_
 | 推荐使用 Ant 整合调用： `Ant <http://ant.apache.org/>`_
 
 

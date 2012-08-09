@@ -118,9 +118,10 @@
 <div class="section" id="id2">
 <h2>简介<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>是一个模块代码依赖自动合并工具.</li>
+<li>是一个自动模块依赖合并工具.</li>
+<li>是一个自动模块依赖抽取工具.</li>
 <li>是一个模块代码规范辅助工具, 可以辅助规范模块编写, 不仅仅只适用动态加载场景, 也可以用来提高开发阶段效率.</li>
-<li>是一个模块代码部署工具. 结合 <a class="reference internal" href="../../../api/seed/loader/index.html#loader"><em>KISSY 1.2 Loader</em></a> , 用于模块代码部署阶段, 多个模块根据其依赖合并为一个文件, 减少 HTTP 链接数.</li>
+<li>是一个模块代码部署工具. 结合 <a class="reference internal" href="../../../api/seed/loader/index.html#loader"><em>KISSY Loader</em></a> , 用于模块代码部署阶段, 多个模块根据其依赖合并为一个文件, 减少 HTTP 链接数.</li>
 </ul>
 <div class="section" id="id3">
 <h3>下载<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
@@ -131,14 +132,14 @@
 </div>
 </div>
 <div class="section" id="id4">
-<h2>举例<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>直观解释<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id5">
 <h3>开发阶段<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>例如：现在有两个模块代码文件 <tt class="docutils literal"><span class="pre">code/package/x.js</span></tt> 与 <tt class="docutils literal"><span class="pre">code/package/y.js</span></tt></p>
 <p><tt class="docutils literal"><span class="pre">x.js</span></tt> 中内容如下</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
     <span class="k">return</span> <span class="s2">&quot;x&quot;</span><span class="p">;</span>
-<span class="p">});</span>
+<span class="p">},{</span> <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;overlay&#39;</span><span class="p">,</span><span class="s1">&#39;dd&#39;</span><span class="p">]</span> <span class="p">});</span>
 </pre></div>
 </div>
 <p><tt class="docutils literal"><span class="pre">y.js</span></tt> 中内容如下</p>
@@ -172,14 +173,28 @@
 <ol class="arabic simple">
 <li>加载 <tt class="docutils literal"><span class="pre">y.js</span></tt> .</li>
 <li>加载 <tt class="docutils literal"><span class="pre">x.js</span></tt> .</li>
+<li>加载 <tt class="docutils literal"><span class="pre">overlay.js</span></tt> .</li>
+<li>加载 <tt class="docutils literal"><span class="pre">dd.js</span></tt> .</li>
+<li>初始化 <tt class="docutils literal"><span class="pre">overlay</span></tt> 模块.</li>
+<li>初始化 <tt class="docutils literal"><span class="pre">dd</span></tt> 模块.</li>
 <li>初始化 <tt class="docutils literal"><span class="pre">package/x</span></tt> 模块.</li>
 <li>初始化 <tt class="docutils literal"><span class="pre">package/y</span></tt> 模块.</li>
 <li>回调中可以得到 <tt class="docutils literal"><span class="pre">package/y</span></tt> 的模块值了.</li>
 </ol>
-<p>这个过程如果模块多的话对于线上环境来说 HTTP 链接数不可承受, 使用 KISSY module compiler 则可以达到所有模块压缩为一个文件, 达到 http 链接数为 1 的目标.</p>
+<p>这个过程如果模块多的话对于线上环境来说 HTTP 链接数不可承受,
+使用 KISSY module compiler 则可以达到减少 http 链接数的作用.</p>
+</div>
+<div class="section" id="id6">
+<h3>下面介绍 KISSY Module Compiler 的两个用法：模块依赖自动合并与模块依赖自动抽取<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id7">
+<h3>1. 自动模块依赖合并<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">该功能需要配合 KISSY &gt;= 1.2 使用.</p>
 </div>
 <div class="section" id="module-compiler">
-<h3>使用 Module Compiler<a class="headerlink" href="#module-compiler" title="Permalink to this headline">¶</a></h3>
+<h4>1.1 使用 Module Compiler<a class="headerlink" href="#module-compiler" title="Permalink to this headline">¶</a></h4>
 <p>简要如下:</p>
 <ol class="arabic simple">
 <li>配置 module compiler 指定需要的模块, 这里即 <tt class="docutils literal"><span class="pre">package/y</span></tt></li>
@@ -189,8 +204,8 @@
 <li>运行 closure compiler 压缩 <tt class="docutils literal"><span class="pre">package/y.combine.js</span></tt> 为 <tt class="docutils literal"><span class="pre">package/y-min.js</span></tt></li>
 </ol>
 </div>
-<div class="section" id="id6">
-<h3>线上部署阶段<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h4>1.2 线上部署阶段<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <p>载入 <tt class="docutils literal"><span class="pre">kissy</span></tt> 的压缩版本</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy-min.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
@@ -199,12 +214,100 @@
 <p>线上过程：</p>
 <ol class="arabic simple">
 <li>加载 <tt class="docutils literal"><span class="pre">package/y-min.js</span></tt></li>
+<li>加载 <tt class="docutils literal"><span class="pre">overlay.js</span></tt></li>
+<li>加载 <tt class="docutils literal"><span class="pre">dd.js</span></tt></li>
+<li>初始化 <tt class="docutils literal"><span class="pre">overlay</span></tt> 模块</li>
+<li>初始化 <tt class="docutils literal"><span class="pre">dd</span></tt> 模块</li>
 <li>检查 <tt class="docutils literal"><span class="pre">package/x</span></tt> 模块, 发现已经载入</li>
 <li>初始化 <tt class="docutils literal"><span class="pre">package/x</span></tt> 模块</li>
 <li>初始化 <tt class="docutils literal"><span class="pre">package/y</span></tt> 模块</li>
 <li>执行回调的得到模块 <tt class="docutils literal"><span class="pre">package/y</span></tt> 的值</li>
 </ol>
-<p>于是线上应用 HTTP 链接数为 1 . 若需要使用源码调试则可以在页面 url 后加上 <tt class="docutils literal"><span class="pre">?ks-debug</span></tt> 即可开启开发阶段的加载过程.以上即为近期交易平台化项目所采用的模块化框架.</p>
+<p>于是线上应用 HTTP 链接数为 3 .
+若需要使用源码调试则可以在页面 url 后加上 <tt class="docutils literal"><span class="pre">?ks-debug</span></tt> 即可开启开发阶段的加载过程.</p>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>2. 自动模块依赖抽取<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">该功能需要配合 KISSY 1.3 使用.</p>
+</div>
+<div class="section" id="id10">
+<h4>2.1 使用 Module Compiler<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<p>简要如下:</p>
+<ol class="arabic simple">
+<li>复制源码目录 code/package 到 build/package</li>
+<li>配置 module compiler 指定复制后的目录, 这里即 <tt class="docutils literal"><span class="pre">build/package</span></tt></li>
+<li>配置 module compiler 指定进行模块名补全（如果源码模块中已经写了模块名则可以忽略该步）</li>
+<li>配置 module compiler 指定依赖抽取文件路径，比如 <tt class="docutils literal"><span class="pre">build/deps.js</span></tt></li>
+<li>运行 module compiler 进行依赖抽取</li>
+<li>对 build 目录中的所有文件进行压缩处理</li>
+</ol>
+</div>
+<div class="section" id="id11">
+<h4>2.2 线上部署阶段<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<p>载入 <tt class="docutils literal"><span class="pre">kissy</span></tt> 的压缩版本以及依赖文件</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;kissy-min.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;build/deps.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>deps.js 的内容为</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s2">&quot;modules&quot;</span><span class="p">,{</span>
+    <span class="s2">&quot;package/x&quot;</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;overlay&#39;</span><span class="p">,</span><span class="s1">&#39;dd&#39;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;package/y&quot;</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;./x&#39;</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>使用模块部分同 <a class="reference internal" href="#module-compiler-dev"><em>开发阶段</em></a> .加上 combine 参数</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s2">&quot;combine&quot;</span><span class="p">,</span><span class="s2">&quot;true&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>线上过程：</p>
+<ol class="arabic simple">
+<li>use(&#8220;package/y&#8221;)</li>
+<li>加载 combo 链接 build/package/??x-min.js,y-min.js</li>
+<li>加载 combo 链接 s/kissy/??overlay-min.js,dd-min.js</li>
+<li>执行 use 回调</li>
+</ol>
+<p>于是线上应用 HTTP 链接数为 2 .
+若需要使用源码调试则可以在页面 url 后加上 <tt class="docutils literal"><span class="pre">?ks-debug</span></tt> 即可载入源码调试.</p>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>3. 自动依赖合并与自动依赖抽取结合<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">该功能需要配合 KISSY 1.3 使用.</p>
+</div>
+<p>自动依赖抽取也可以配合自动依赖抽取合并使用，在依赖合并过程中，同时生成依赖入口文件的依赖信息.</p>
+<p>例如我们可以在合并 package/x, package/y 的代码到 package/y 的同时生成 package y 的依赖信息 deps.js：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s2">&quot;modules&quot;</span><span class="p">,{</span>
+    <span class="s2">&quot;package/y&quot;</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;overlay&quot;</span><span class="p">,</span><span class="s2">&quot;dd&quot;</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>那么在线上运行时指定 combine</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s2">&quot;combine&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>那么使用：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;package/y&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){});</span>
+</pre></div>
+</div>
+<p>过程如下：</p>
+<ol class="arabic simple">
+<li>载入 package/y-min.js（包含 x-min.js）</li>
+<li>载入 combo 链接 s/kissy/??overlay.js,dd.js</li>
+<li>执行回调</li>
+</ol>
+<p>于是线上应用 HTTP 链接数为 2 .若需要使用源码调试则可以在页面 url 后加上 <tt class="docutils literal"><span class="pre">?ks-debug</span></tt> 即可载入源码调试.</p>
 </div>
 </div>
 </div>
