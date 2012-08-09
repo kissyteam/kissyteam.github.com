@@ -1,13 +1,11 @@
 .. currentmodule:: editor
 
-multi-upload
-===============================
-
-|  插入图片插件
-
+multiple-upload
+=====================================================
+| 批量上传
 
 Configs
--------------------------------
+--------------------------------------------------------------
 
 .. data:: Editor.Plugin.multiUpload.config.serverUrl
 .. data:: Editor.Plugin.multiUpload.config.serverParams
@@ -77,7 +75,7 @@ Config Details
 .. code-block:: javascript
 
         pluginConfig: {
-                        "multi-upload": {
+                        "multiple-upload": {
                             //同图片上传插件配置
                             //返回格式
                             //正确：{"imgUrl":""}
