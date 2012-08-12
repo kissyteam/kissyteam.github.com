@@ -12,7 +12,7 @@ KISSY 组件开发规范
 
 .. raw:: html
 
-            <img  src='../../_static/workflow/workflow.png' />
+    <img  src='../../_static/workflow/workflow.png' width='600' />
 
 上图中讲述了在开发一个组建中, 最详细的步骤, 但千万别吓着了, 因为, 在实际过程中, 有些东西并不需要这么多(具体要看你写的组件的复杂程度), 可以精简为以下几点.
 

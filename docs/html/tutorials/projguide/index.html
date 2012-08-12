@@ -20,7 +20,7 @@
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
-    };    
+    };
     (function(){
         var js=[],h=window.location.href,d=document;
             js.push("../../_static/jquery.js");
@@ -30,13 +30,13 @@
             var j=js[i];
             if(h.indexOf("localhost/kissy_git/")==-1
             &&
-            
+
             h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
             &&
             j.indexOf("jquery.js")!=-1){
-                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');   
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
             }else{
-                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');   
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
             }
         }
     })();
@@ -84,8 +84,7 @@
 </div>
 
 <div id="content">
-    
-	<div  class="layout grid-s6m0">
+	<div  id="layout" class="layout grid-s6m0e7">
 			<div class="col-main">
 				<div class="main-wrap">
                     
@@ -104,7 +103,7 @@
       <a href="../workflow/index.html" title="组件开发指南"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../styleguide/js-style-rules.html" title="JavaScript 编码风格"
+      <a href="../styleguide/kissy-source-style.html" title="KISSY 源码规范"
          accesskey="P">previous</a> | </li>
     <li><a href="../../index.html">KISSY v1.3rc Documentation</a> &#187; </li>
       <li><a href="../index.html" accesskey="U">Tutorial</a> &#187; </li> 
@@ -284,7 +283,7 @@
       <a href="../workflow/index.html" title="组件开发指南"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../styleguide/js-style-rules.html" title="JavaScript 编码风格"
+      <a href="../styleguide/kissy-source-style.html" title="KISSY 源码规范"
          accesskey="P">previous</a> | </li>
     <li><a href="../../index.html">KISSY v1.3rc Documentation</a> &#187; </li>
       <li><a href="../index.html" accesskey="U">Tutorial</a> &#187; </li> 
@@ -328,6 +327,7 @@
 </div>-->
 				</div>
 			</div>
+		
     <div class="col-sub">
 
 <div class="s-box">
@@ -361,7 +361,43 @@
     </div>
 </div>
     </div>
+    <div class="col-extra">
+        
+	<div class="s-box">
+		<div class="s-box-hd">
+			<h3>本节提纲</h3>
+		</div>
+		<div class="s-box-bd">
+			<ul>
+<li><a class="reference internal" href="#">项目开发指南</a><ul>
+<li><a class="reference internal" href="#id2">1. 项目简介</a></li>
+<li><a class="reference internal" href="#id4">2. 目录组织</a></li>
+<li><a class="reference internal" href="#id5">3. 引入外部库依赖</a></li>
+<li><a class="reference internal" href="#id6">4. 编写项目组件</a></li>
+<li><a class="reference internal" href="#dpl">5. 编写项目dpl</a></li>
+<li><a class="reference internal" href="#demo">6. 编写项目demo</a><ul>
+<li><a class="reference internal" href="#html">6.1 编写html</a></li>
+<li><a class="reference internal" href="#css">6.2 插入页面级css</a></li>
+<li><a class="reference internal" href="#js">6.3 插入页面级js</a></li>
+<li><a class="reference internal" href="#id7">6.3 图片</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#readme">7. 编写readme</a></li>
+<li><a class="reference internal" href="#id8">8. 其他</a></li>
+</ul>
+</li>
+</ul>
+
+		</div>
 	</div>
+
+    </div>
+	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
 </div>
 <div id="footer">
     &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>

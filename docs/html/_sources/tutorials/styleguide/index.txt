@@ -13,3 +13,4 @@
    google-js-style.rst
    js-lang-rules.rst
    js-style-rules.rst
+   kissy-source-style.rst

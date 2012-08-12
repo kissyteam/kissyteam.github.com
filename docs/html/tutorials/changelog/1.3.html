@@ -20,7 +20,7 @@
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
-    };    
+    };
     (function(){
         var js=[],h=window.location.href,d=document;
             js.push("../../_static/jquery.js");
@@ -30,13 +30,13 @@
             var j=js[i];
             if(h.indexOf("localhost/kissy_git/")==-1
             &&
-            
+
             h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
             &&
             j.indexOf("jquery.js")!=-1){
-                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');   
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
             }else{
-                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');   
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
             }
         }
     })();
@@ -84,8 +84,7 @@
 </div>
 
 <div id="content">
-    
-	<div  class="layout grid-s6m0">
+	<div  id="layout" class="layout grid-s6m0e7">
 			<div class="col-main">
 				<div class="main-wrap">
                     
@@ -455,6 +454,7 @@
 </div>-->
 				</div>
 			</div>
+		
     <div class="col-sub">
 
 <div class="s-box">
@@ -482,7 +482,57 @@
     </div>
 </div>
     </div>
+    <div class="col-extra">
+        
+	<div class="s-box">
+		<div class="s-box-hd">
+			<h3>本节提纲</h3>
+		</div>
+		<div class="s-box-bd">
+			<ul>
+<li><a class="reference internal" href="#">KISSY 1.3rc 升级指南</a><ul>
+<li><a class="reference internal" href="#id1">标记含义</a></li>
+<li><a class="reference internal" href="#rc">1.2 -&gt; 1.3rc 改动点</a><ul>
+<li><a class="reference internal" href="#bug-fix">Bug fix</a></li>
+<li><a class="reference internal" href="#id2">结构</a></li>
+<li><a class="reference internal" href="#seed">seed</a></li>
+<li><a class="reference internal" href="#ua">ua</a></li>
+<li><a class="reference internal" href="#event">event</a></li>
+<li><a class="reference internal" href="#ajax">ajax</a></li>
+<li><a class="reference internal" href="#anim">anim</a></li>
+<li><a class="reference internal" href="#dom">dom</a></li>
+<li><a class="reference internal" href="#node">node</a></li>
+<li><a class="reference internal" href="#base">base</a></li>
+<li><a class="reference internal" href="#input-selection">input-selection</a></li>
+<li><a class="reference internal" href="#dd">dd</a></li>
+<li><a class="reference internal" href="#component">component</a></li>
+<li><a class="reference internal" href="#calendar">calendar</a></li>
+<li><a class="reference internal" href="#overlay">overlay</a></li>
+<li><a class="reference internal" href="#menu-menubutton">menu/menubutton</a></li>
+<li><a class="reference internal" href="#datalazyload">datalazyload</a></li>
+<li><a class="reference internal" href="#switchable">switchable</a></li>
+<li><a class="reference internal" href="#waterfall">waterfall</a></li>
+<li><a class="reference internal" href="#tree">tree</a></li>
+<li><a class="reference internal" href="#combobox">combobox</a></li>
+<li><a class="reference internal" href="#template">template</a></li>
+<li><a class="reference internal" href="#editor">editor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kissy-1-4-roadmap">KISSY 1.4 RoadMap</a></li>
+</ul>
+
+		</div>
 	</div>
+
+    </div>
+	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
 </div>
 <div id="footer">
     &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>

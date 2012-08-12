@@ -17,6 +17,12 @@ kissy/layout.html
         {%- include "globaltoc.html" %}
         {%- endif %}
     </div>
+    {%- if sidebars %}
+    {% else %}
+    <div class="col-extra">
+        {% include "localtoc.html" %}
+    </div>
+    {%- endif %}
 {%- endif %}
 {%- endmacro %}
 <html>
@@ -45,9 +51,9 @@ kissy/layout.html
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
         HAS_SOURCE: {{ has_source | lower }}
-    };    
+    };
     (function(){
-        var js=[],h=window.location.href,d=document; 
+        var js=[],h=window.location.href,d=document;
         {%- for scriptfile in script_files %}
             js.push("{{ pathto(scriptfile, 1) }}");
         {%- endfor %}
@@ -55,13 +61,13 @@ kissy/layout.html
             var j=js[i];
             if(h.indexOf("localhost/kissy_git/")==-1
             &&
-            
+
             h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
             &&
             j.indexOf("jquery.js")!=-1){
-                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');   
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
             }else{
-                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');   
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
             }
         }
     })();
@@ -91,8 +97,7 @@ kissy/layout.html
 
 {%- block content %}
 <div id="content">
-    
-	<div  class="layout grid-s6m0">
+	<div  id="layout" class="layout grid-s6m0e7">
 		{%- block document %}
 			<div class="col-main">
 				<div class="main-wrap">
@@ -103,8 +108,13 @@ kissy/layout.html
 				</div>
 			</div>
 		{%- endblock %}
-		{%- block sidebar1 %}{{ sidebar() }}{% endblock %}
+		{{ sidebar() }}
 	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
 </div>
 {%- endblock %}
 

@@ -20,7 +20,7 @@
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
-    };    
+    };
     (function(){
         var js=[],h=window.location.href,d=document;
             js.push("../../../../_static/jquery.js");
@@ -30,13 +30,13 @@
             var j=js[i];
             if(h.indexOf("localhost/kissy_git/")==-1
             &&
-            
+
             h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
             &&
             j.indexOf("jquery.js")!=-1){
-                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');   
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
             }else{
-                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');   
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
             }
         }
     })();
@@ -84,8 +84,7 @@
 </div>
 
 <div id="content">
-    
-	<div  class="layout grid-s6m0">
+	<div  id="layout" class="layout grid-s6m0e7">
 			<div class="col-main">
 				<div class="main-wrap">
                     
@@ -363,6 +362,7 @@
 </div>-->
 				</div>
 			</div>
+		
     <div class="col-sub"><ul class="s-box api-toctree">
     <h2 class="s-box-hd">Seed</h2>
     <ul class="s-box-bd">
@@ -418,7 +418,13 @@
 </ul>
         
     </div>
+    
 	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
 </div>
 <div id="footer">
     &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>

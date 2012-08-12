@@ -20,7 +20,7 @@
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
-    };    
+    };
     (function(){
         var js=[],h=window.location.href,d=document;
             js.push("../../_static/jquery.js");
@@ -30,13 +30,13 @@
             var j=js[i];
             if(h.indexOf("localhost/kissy_git/")==-1
             &&
-            
+
             h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
             &&
             j.indexOf("jquery.js")!=-1){
-                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');   
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
             }else{
-                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');   
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
             }
         }
     })();
@@ -84,8 +84,7 @@
 </div>
 
 <div id="content">
-    
-	<div  class="layout grid-s6m0">
+	<div  id="layout" class="layout grid-s6m0e7">
 			<div class="col-main">
 				<div class="main-wrap">
                     
@@ -192,6 +191,7 @@
 </div>-->
 				</div>
 			</div>
+		
     <div class="col-sub">
 
 <div class="s-box">
@@ -209,6 +209,7 @@
 <li class="toctree-l3"><a class="reference internal" href="google-js-style.html">Google JavaScript 规范</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">JavaScript 语言规范</a></li>
 <li class="toctree-l3"><a class="reference internal" href="js-style-rules.html">JavaScript 编码风格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kissy-source-style.html">KISSY 源码规范</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../projguide/index.html">项目开发指南</a></li>
@@ -223,7 +224,16 @@
     </div>
 </div>
     </div>
+    <div class="col-extra">
+        
+
+    </div>
 	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
 </div>
 <div id="footer">
     &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>

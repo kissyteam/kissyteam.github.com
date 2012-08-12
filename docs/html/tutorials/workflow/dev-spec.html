@@ -20,7 +20,7 @@
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
-    };    
+    };
     (function(){
         var js=[],h=window.location.href,d=document;
             js.push("../../_static/jquery.js");
@@ -30,13 +30,13 @@
             var j=js[i];
             if(h.indexOf("localhost/kissy_git/")==-1
             &&
-            
+
             h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
             &&
             j.indexOf("jquery.js")!=-1){
-                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');   
+                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
             }else{
-                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');   
+                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
             }
         }
     })();
@@ -84,8 +84,7 @@
 </div>
 
 <div id="content">
-    
-	<div  class="layout grid-s6m0">
+	<div  id="layout" class="layout grid-s6m0e7">
 			<div class="col-main">
 				<div class="main-wrap">
                     
@@ -120,7 +119,7 @@
 <div class="section" id="id1">
 <h2>0, 概述<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>在组建开发的各个流程中, 需要注意的地方, 完整列举出来, 有以下:</p>
-<img  src='../../_static/workflow/workflow.png' /><p>上图中讲述了在开发一个组建中, 最详细的步骤, 但千万别吓着了, 因为, 在实际过程中, 有些东西并不需要这么多(具体要看你写的组件的复杂程度), 可以精简为以下几点.</p>
+<img  src='../../_static/workflow/workflow.png' width='600' /><p>上图中讲述了在开发一个组建中, 最详细的步骤, 但千万别吓着了, 因为, 在实际过程中, 有些东西并不需要这么多(具体要看你写的组件的复杂程度), 可以精简为以下几点.</p>
 </div>
 <div class="section" id="api">
 <h2>1, 确定 API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
@@ -317,6 +316,7 @@
 </div>-->
 				</div>
 			</div>
+		
     <div class="col-sub">
 
 <div class="s-box">
@@ -345,7 +345,40 @@
     </div>
 </div>
     </div>
+    <div class="col-extra">
+        
+	<div class="s-box">
+		<div class="s-box-hd">
+			<h3>本节提纲</h3>
+		</div>
+		<div class="s-box-bd">
+			<ul>
+<li><a class="reference internal" href="#">KISSY 组件开发规范</a><ul>
+<li><a class="reference internal" href="#id1">0, 概述</a></li>
+<li><a class="reference internal" href="#api">1, 确定 API</a></li>
+<li><a class="reference internal" href="#id2">2, 模块编写</a></li>
+<li><a class="reference internal" href="#demo">3, demo 编写</a></li>
+<li><a class="reference internal" href="#readme-txt">4, readme.txt 编写</a></li>
+<li><a class="reference internal" href="#id3">5, 文档编写</a></li>
+<li><a class="reference internal" href="#id6">6, 单元测试编写</a><ul>
+<li><a class="reference internal" href="#id7">6.1 测试准备页面</a></li>
+<li><a class="reference internal" href="#id8">6.2 测试用例脚本编写</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+		</div>
 	</div>
+
+    </div>
+	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
 </div>
 <div id="footer">
     &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
