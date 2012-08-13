@@ -112,10 +112,273 @@
 </div>
 					
   <div class="section" id="css">
-<span id="styleguide-csscodingstyle"></span><h1>CSS 编码规范<a class="headerlink" href="#css" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>待整理</li>
-</ul>
+<h1>CSS 编码规范<a class="headerlink" href="#css" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>css 校验<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>除了 css hack 和浏览器私有属性，
+推荐使用 <a class="reference external" href="http://jigsaw.w3.org/css-validator/">w3c css validator</a> 校验其余的代码.</p>
+</div>
+<div class="section" id="id2">
+<h2>代码规范<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>一般性命名<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>使用小写字母，复合词以 <tt class="docutils literal"><span class="pre">-</span></tt> 分隔; 例如 <tt class="docutils literal"><span class="pre">nav.css</span></tt> , <tt class="docutils literal"><span class="pre">login-nav.css</span></tt> , <tt class="docutils literal"><span class="pre">login-page</span></tt></p>
+</div>
+<div class="section" id="id">
+<h3>id 和类的命名<a class="headerlink" href="#id" title="Permalink to this headline">¶</a></h3>
+<p>为 id 和样式类使用有意义或通用的名字，避免由于 css 命名更改引起的不必要的文档或模板改变；例如</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* 不推荐： 无意义 */</span>
+<span class="nf">#yee-1901</span> <span class="p">{}</span>
+
+<span class="c">/* 不推荐： 表现层的命名 */</span>
+<span class="nc">.button-green</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* 推荐: 具体 */</span>
+<span class="nf">#gallery</span> <span class="p">{}</span>
+<span class="nf">#login</span> <span class="p">{}</span>
+<span class="nc">.video</span> <span class="p">{}</span>
+
+<span class="c">/* 推荐: 通用 */</span>
+<span class="nc">.effect</span> <span class="p">{}</span>
+<span class="nc">.alt</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>id 和 class 的命名长度应该适中，不要太简略也不要太详细；例如</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* 不推荐 */</span>
+<span class="nf">#navigation</span> <span class="p">{}</span>
+<span class="nc">.atr</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* 推荐 */</span>
+<span class="nf">#nav</span> <span class="p">{}</span>
+<span class="nc">.author</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>元素选择器<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>为了 <a class="reference external" href="http://www.stevesouders.com/blog/2009/06/18/simplifying-css-selectors/">性能原因</a> ，
+请避免元素选择器和类选择器以及 id 选择器混用;例如</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* 不推荐 */</span>
+<span class="nt">ul</span><span class="nf">#example</span> <span class="p">{}</span>
+<span class="nt">div</span><span class="nc">.error</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* 推荐 */</span>
+<span class="nf">#example</span> <span class="p">{}</span>
+<span class="nc">.error</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>简写属性名字<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>为了提高可读性，尽可能的使用简写属性。例如</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* 不推荐 */</span>
+<span class="nt">border-top-style</span><span class="o">:</span> <span class="nt">none</span><span class="o">;</span>
+<span class="nt">font-family</span><span class="o">:</span> <span class="nt">palatino</span><span class="o">,</span> <span class="nt">georgia</span><span class="o">,</span> <span class="nt">serif</span><span class="o">;</span>
+<span class="nt">font-size</span><span class="o">:</span> <span class="nt">100</span><span class="o">%;</span>
+<span class="nt">line-height</span><span class="o">:</span> <span class="nt">1</span><span class="nc">.6</span><span class="o">;</span>
+<span class="nt">padding-bottom</span><span class="o">:</span> <span class="nt">2em</span><span class="o">;</span>
+<span class="nt">padding-left</span><span class="o">:</span> <span class="nt">1em</span><span class="o">;</span>
+<span class="nt">padding-right</span><span class="o">:</span> <span class="nt">1em</span><span class="o">;</span>
+<span class="nt">padding-top</span><span class="o">:</span> <span class="nt">0</span><span class="o">;</span>
+</pre></div>
+</div>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* 推荐 */</span>
+<span class="nt">border-top</span><span class="o">:</span> <span class="nt">0</span><span class="o">;</span>
+<span class="nt">font</span><span class="o">:</span> <span class="nt">100</span><span class="o">%/</span><span class="nt">1</span><span class="nc">.6</span> <span class="nt">palatino</span><span class="o">,</span> <span class="nt">georgia</span><span class="o">,</span> <span class="nt">serif</span><span class="o">;</span>
+<span class="nt">padding</span><span class="o">:</span> <span class="nt">0</span> <span class="nt">1em</span> <span class="nt">2em</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>0 和单位<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>对属性值为 0 的情况省略单位；例如</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">margin</span><span class="o">:</span> <span class="nt">0</span><span class="o">;</span>
+<span class="nt">padding</span><span class="o">:</span> <span class="nt">0</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>0 前缀情况<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>省略属性值中的 0 前缀;例如</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">font-size</span><span class="o">:</span> <span class="nc">.8em</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>16 进制的颜色值表示<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>尽可能使用 3 个字符的 16 进制颜色值；例如</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* 不推荐 */</span>
+<span class="nt">color</span><span class="o">:</span> <span class="nf">#eebbcc</span><span class="o">;</span>
+</pre></div>
+</div>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* 推荐 */</span>
+<span class="nt">color</span><span class="o">:</span> <span class="nf">#ebc</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>前缀<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>为了防止冲突，对于应用特定的样式附加应用前缀；例如</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nc">.login-help</span> <span class="p">{}</span> <span class="c">/* login page */</span>
+<span class="nf">#detail-note</span> <span class="p">{}</span> <span class="c">/* detail page */</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="hacks">
+<h3>hacks<a class="headerlink" href="#hacks" title="Permalink to this headline">¶</a></h3>
+<p>避免 css hack ， 考虑使用特定浏览器前缀表示；例如</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nc">.ks-ie6</span> <span class="nt">p</span> <span class="p">{</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">1em</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>格式规范<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h3>属性声明顺序<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>按照字母顺序声明属性，排序时忽略私有的浏览器前缀，对于特定的浏览器，私有的浏览器前缀应该参与排序;例如</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">background</span><span class="o">:</span> <span class="nt">fuchsia</span><span class="o">;</span>
+<span class="nt">border</span><span class="o">:</span> <span class="nt">1px</span> <span class="nt">solid</span><span class="o">;</span>
+<span class="nt">-moz-border-radius</span><span class="o">:</span> <span class="nt">4px</span><span class="o">;</span>
+<span class="nt">-webkit-border-radius</span><span class="o">:</span> <span class="nt">4px</span><span class="o">;</span>
+<span class="nt">border-radius</span><span class="o">:</span> <span class="nt">4px</span><span class="o">;</span>
+<span class="nt">color</span><span class="o">:</span> <span class="nt">black</span><span class="o">;</span>
+<span class="nt">text-align</span><span class="o">:</span> <span class="nt">center</span><span class="o">;</span>
+<span class="nt">text-indent</span><span class="o">:</span> <span class="nt">2em</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h3>块缩进<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>块的内容应该被缩进；例如</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="k">@media</span> <span class="nt">screen</span><span class="o">,</span> <span class="nt">projection</span> <span class="p">{</span>
+
+  <span class="nt">html</span> <span class="p">{</span>
+    <span class="k">background</span><span class="o">:</span> <span class="m">#fff</span><span class="p">;</span>
+    <span class="k">color</span><span class="o">:</span> <span class="m">#444</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h3>分号<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>使用分号结束单个属性的定义；例如</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* 不推荐 */</span>
+<span class="nc">.test</span> <span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">100px</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* 推荐 */</span>
+<span class="nc">.test</span> <span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id15">
+<h3>空格<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>在属性名冒号后加一个空格，例如</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* 不推荐 */</span>
+<span class="nc">.test</span> <span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span><span class="k">block</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* 推荐 */</span>
+<span class="nc">.test</span> <span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id16">
+<h3>空行<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>多个选择以及声明间以行分隔；例如</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* 不推荐 */</span>
+<span class="nt">a</span><span class="nd">:focus</span><span class="o">,</span> <span class="nt">a</span><span class="nd">:active</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span> <span class="k">top</span><span class="o">:</span> <span class="m">1px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* 推荐 */</span>
+<span class="nt">h1</span><span class="o">,</span>
+<span class="nt">h2</span><span class="o">,</span>
+<span class="nt">h3</span> <span class="p">{</span>
+  <span class="k">font-weight</span><span class="o">:</span> <span class="k">normal</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">2</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>多个 css 规则间以空行分隔；例如</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">html</span> <span class="p">{</span>
+  <span class="k">background</span><span class="o">:</span> <span class="m">#fff</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">50</span><span class="o">%</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id17">
+<h3>引号<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<p>尽可能的不用引号，迫不得已时使用单引号.</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* 不推荐 */</span>
+<span class="k">@import</span> <span class="nt">url</span><span class="o">(</span><span class="s2">&quot;//www.google.com/css/maia.css&quot;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="nt">html</span> <span class="p">{</span>
+  <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;open sans&quot;</span><span class="o">,</span> <span class="n">arial</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* 推荐 */</span>
+<span class="k">@import</span> <span class="nt">url</span><span class="o">(//</span><span class="nt">www</span><span class="nc">.google.com</span><span class="o">/</span><span class="nt">css</span><span class="o">/</span><span class="nt">maia</span><span class="nc">.css</span><span class="o">)</span><span class="p">;</span>
+
+<span class="nt">html</span> <span class="p">{</span>
+  <span class="k">font-family</span><span class="o">:</span> <span class="s1">&#39;open sans&#39;</span><span class="o">,</span> <span class="n">arial</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id18">
+<h3>注释<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p>成组的 css 规则间用块状注释和空行分离;例如</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* Header */</span>
+
+<span class="nf">#login-header</span> <span class="p">{}</span>
+
+<span class="nf">#login-header-below</span> <span class="p">{}</span>
+
+<span class="c">/* Footer */</span>
+
+<span class="nf">#login-footer</span> <span class="p">{}</span>
+
+<span class="nf">#login-footer-below</span> <span class="p">{}</span>
+
+<span class="c">/* Gallery */</span>
+
+<span class="nc">.login-gallery</span> <span class="p">{}</span>
+
+<span class="nc">.login-gallery-other</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id19">
+<h2>参考文档<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml">http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml</a></p>
+</div>
 </div>
 
 
@@ -215,6 +478,43 @@
     </div>
     <div class="col-extra">
         
+	<div class="s-box">
+		<div class="s-box-hd">
+			<h3>本节提纲</h3>
+		</div>
+		<div class="s-box-bd">
+			<ul>
+<li><a class="reference internal" href="#">CSS 编码规范</a><ul>
+<li><a class="reference internal" href="#id1">css 校验</a></li>
+<li><a class="reference internal" href="#id2">代码规范</a><ul>
+<li><a class="reference internal" href="#id3">一般性命名</a></li>
+<li><a class="reference internal" href="#id">id 和类的命名</a></li>
+<li><a class="reference internal" href="#id4">元素选择器</a></li>
+<li><a class="reference internal" href="#id6">简写属性名字</a></li>
+<li><a class="reference internal" href="#id7">0 和单位</a></li>
+<li><a class="reference internal" href="#id8">0 前缀情况</a></li>
+<li><a class="reference internal" href="#id9">16 进制的颜色值表示</a></li>
+<li><a class="reference internal" href="#id10">前缀</a></li>
+<li><a class="reference internal" href="#hacks">hacks</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id11">格式规范</a><ul>
+<li><a class="reference internal" href="#id12">属性声明顺序</a></li>
+<li><a class="reference internal" href="#id13">块缩进</a></li>
+<li><a class="reference internal" href="#id14">分号</a></li>
+<li><a class="reference internal" href="#id15">空格</a></li>
+<li><a class="reference internal" href="#id16">空行</a></li>
+<li><a class="reference internal" href="#id17">引号</a></li>
+<li><a class="reference internal" href="#id18">注释</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id19">参考文档</a></li>
+</ul>
+</li>
+</ul>
+
+		</div>
+	</div>
 
     </div>
 	</div>

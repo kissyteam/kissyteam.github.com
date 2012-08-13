@@ -126,7 +126,7 @@
 <li>文件名称使用小写表示，复合词用 <tt class="docutils literal"><span class="pre">-</span></tt> 分隔，例如 <tt class="docutils literal"><span class="pre">attr.js</span></tt> , <tt class="docutils literal"><span class="pre">iframe-transport.js</span></tt> .</li>
 <li>所有的代码以模块形式组织，模块名如果写的话需要和文件路径保持一致，例如</li>
 </ol>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;ajax/iframe-transport&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;ajax/iframe-transport&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -149,7 +149,7 @@
 </pre></div>
 </div>
 <p>私有成员函数以 <tt class="docutils literal"><span class="pre">_</span></tt> 开头，推荐放入闭包中，使用 camelCasing，例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;dom&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;dom&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
     <span class="kd">var</span> <span class="nx">DOM</span><span class="o">=</span><span class="p">{</span>
         <span class="nx">width</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
             <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_getWidth</span><span class="p">();</span>
@@ -202,7 +202,7 @@
 <span class="cm">   adjust alignment, for example:</span>
 <span class="cm">   http://docs.kissyui.com</span>
 <span class="cm">*/</span>
-<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">overlay</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;align&quot;</span><span class="p">,{});</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">overlay</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;align&#39;</span><span class="p">,{});</span>
 </pre></div>
 </div>
 </div>
@@ -210,7 +210,7 @@
 <h2>代码组织<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>一个模块文件中不要包含多个公开的类，例如</p>
 <p>不要这样：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;overlay&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
     <span class="kd">function</span> <span class="nx">Overlay</span><span class="p">(){</span>
 
     <span class="p">}</span>
@@ -222,14 +222,14 @@
 </pre></div>
 </div>
 <p>要这样分成两个模块（文件）：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;overlay&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;overlay&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
     <span class="kd">function</span> <span class="nx">Overlay</span><span class="p">(){</span>
 
     <span class="p">}</span>
 <span class="p">});</span>
 
 
-<span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;overlay/dialog&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;overlay/dialog&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
     <span class="kd">function</span> <span class="nx">Dialog</span><span class="p">(){</span>
 
     <span class="p">}</span>
@@ -297,7 +297,35 @@
 <div class="section" id="id6">
 <h2>一般规则<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id7">
-<h3>大括号用法<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<h3>长度<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>请确保每行不要超过 80 个字符，必要时进行换行</p>
+</div>
+<div class="section" id="id8">
+<h3>函数参数长度<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>如果函数参数长度一行超过 80 个字符，那么请每个参数独占一行，并以 4 个空格缩进。例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">x</span><span class="p">.</span><span class="nx">y</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="nx">veryLongLongLongLongLongLongLong</span><span class="p">(</span>
+    <span class="nx">veryLongveryLongveryLongveryLong</span><span class="p">,</span>
+    <span class="nx">veryLongveryLongveryLongveryLongveryLong</span><span class="p">,</span>
+    <span class="nx">veryLongveryLongveryLongveryLong</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>引号<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>尽可能使用单引号，而不是双引号；例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// 推荐</span>
+<span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="s1">&#39;&lt;a href=&quot;://taobao.com&quot;&gt;&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// 不推荐</span>
+<span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="s2">&quot;&lt;a href=&#39;://taobao.com&#39;&gt;&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>大括号用法<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>大括号后请换行.</li>
 <li>结束大括号需要和开始大括号的那一行开头语句对齐.</li>
@@ -330,8 +358,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id8">
-<h3>空格用法<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h3>空格用法<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>如果大括号不换行，那么需要在 <tt class="docutils literal"><span class="pre">{</span></tt> 后和 <tt class="docutils literal"><span class="pre">}</span></tt> 前加入空格，例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">getter</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span> <span class="p">};</span>
 </pre></div>
@@ -424,8 +452,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id9">
-<h3>缩进<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id12">
+<h3>缩进<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>使用连续的4个空白字符表示缩进</li>
 <li>不要使用 tab 来表示缩进</li>
@@ -571,9 +599,12 @@
 <li><a class="reference internal" href="#id4">注释</a></li>
 <li><a class="reference internal" href="#id5">代码组织</a></li>
 <li><a class="reference internal" href="#id6">一般规则</a><ul>
-<li><a class="reference internal" href="#id7">大括号用法</a></li>
-<li><a class="reference internal" href="#id8">空格用法</a></li>
-<li><a class="reference internal" href="#id9">缩进</a></li>
+<li><a class="reference internal" href="#id7">长度</a></li>
+<li><a class="reference internal" href="#id8">函数参数长度</a></li>
+<li><a class="reference internal" href="#id9">引号</a></li>
+<li><a class="reference internal" href="#id10">大括号用法</a></li>
+<li><a class="reference internal" href="#id11">空格用法</a></li>
+<li><a class="reference internal" href="#id12">缩进</a></li>
 </ul>
 </li>
 </ul>

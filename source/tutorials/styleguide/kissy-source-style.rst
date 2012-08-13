@@ -19,7 +19,7 @@ KISSY 源码规范
 
 .. code-block:: javascript
 
-    KISSY.add("ajax/iframe-transport",function(){
+    KISSY.add('ajax/iframe-transport',function(){
     });
 
 
@@ -48,7 +48,7 @@ KISSY 源码规范
 
 .. code-block:: javascript
 
-    KISSY.add("dom",function(){
+    KISSY.add('dom',function(){
         var DOM={
             width: function(){
                 return this._getWidth();
@@ -109,7 +109,7 @@ css 类名
        adjust alignment, for example:
        http://docs.kissyui.com
     */
-    var x = overlay.set("align",{});
+    var x = overlay.set('align',{});
 
 
 代码组织
@@ -121,7 +121,7 @@ css 类名
 
 .. code-block:: javascript
 
-    KISSY.add("overlay",function(){
+    KISSY.add('overlay',function(){
         function Overlay(){
 
         }
@@ -135,14 +135,14 @@ css 类名
 
 .. code-block:: javascript
 
-    KISSY.add("overlay",function(){
+    KISSY.add('overlay',function(){
         function Overlay(){
 
         }
     });
 
 
-    KISSY.add("overlay/dialog",function(){
+    KISSY.add('overlay/dialog',function(){
         function Dialog(){
 
         }
@@ -212,6 +212,42 @@ css 类名
 
 一般规则
 ---------------------------------------
+
+长度
+``````````````````````````````````````
+
+请确保每行不要超过 80 个字符，必要时进行换行
+
+
+函数参数长度
+``````````````````````````````
+
+如果函数参数长度一行超过 80 个字符，那么请每个参数独占一行，并以 4 个空格缩进。例如
+
+.. code-block:: javascript
+
+    var x.y.z = veryLongLongLongLongLongLongLong(
+        veryLongveryLongveryLongveryLong,
+        veryLongveryLongveryLongveryLongveryLong,
+        veryLongveryLongveryLongveryLong) {
+        // ...
+    };
+
+
+引号
+``````````````````````````````
+
+尽可能使用单引号，而不是双引号；例如
+
+.. code-block:: javascript
+
+    // 推荐
+    var x='<a href="://taobao.com">';
+
+.. code-block:: javascript
+
+    // 不推荐
+    var x="<a href='://taobao.com'>";
 
 大括号用法
 ``````````````````````````````````````````
