@@ -6,45 +6,116 @@ HTML 编码规范
 基本规范
 -----------
 
-* 使用符合语义的标签书写 HTML 文档, 选择恰当的元素表达所需的含义;
-* 元素的标签和属性名必须小写, 属性值必须加双引号;
-* 元素嵌套遵循 (X)HTML Strict 嵌套规则, 推荐使用Firefox插件 `HTML Validator <http://www.w3.org/TR/html4/>`_ 进行检查;
-* 正确区分自闭合元素和非自闭合元素. 非法闭合包括：<br>..</br>、<script />、<iframe />, 非法闭合会导致页面嵌套错误问题;
-* 通过给元素设置自定义属性来存放与 JavaScript 交互的数据, 属性名格式为 data-xx (例如：data-lazyload-url)
+语义
+``````````````````````````````````
 
-文档模板
------------
+使用符合语义的标签书写 HTML 文档, 选择恰当的元素表达所需的含义;
 
 .. code-block:: html
 
-    <!doctype html>
-    <html>
-    <head>
-    <meta charset="utf-8" />
-    <title>Sample page</title>
-    <link rel="stylesheet" href="css_example_url" />
-    <script src="js_example_url"></script>
-    </head>
-    <body>
-    <div id="page">
-        <div id="header">
-            页头
-        </div>
-        <div id="content">
-            主体
-        </div>
-        <div id="footer">
-            页尾
-        </div>
-    </div>
-    <script>
-    // 你的代码
-    </script>
-    </body>
-    </html>
+    <!-- 不推荐 -->
+    <div onclick="goToRecommendations();">All recommendations</div>
+
+.. code-block:: html
+
+    <!-- 推荐 -->
+    <a href="recommendations/">All recommendations</a>
+
+大小写
+````````````````````````````````````
+
+元素的标签和属性名必须小写, 属性值必须加双引号; 例如
+
+.. code-block:: html
+
+    <!-- 不推荐 -->
+    <A HREF='/'>Home</A>
+
+
+.. code-block:: html
+
+    <!-- 推荐 -->
+    <a href="/">Home</a>
+
+缩进
+```````````````````````````````````````
+
+* 使用四个空格来表示缩进，不要使用 tab 键;
+
+* 在块状元素，列表，表格元素后面使用新行，并且对它的子元素进行缩进.
+
+例如
+
+.. code-block:: html
+
+    <ul>
+        <li>
+            1
+        </li>
+    </ul>
+
+
+空格
+``````````````````````````````````````````
+
+去除比不必要的空格; 例如
+
+.. code-block:: html
+
+    <!-- 不推荐 -->
+    <p>test                  </p>
+
+.. code-block:: html
+
+    <!-- 推荐 -->
+    <p>test</p>
+
+嵌套
+``````````````````````````````````````
+
+* 元素嵌套遵循 (X)HTML Strict 嵌套规则, 推荐使用Firefox插件 `HTML Validator <http://www.w3.org/TR/html4/>`_ 进行检查;
+* 正确区分自闭合元素和非自闭合元素. 非法闭合包括：<br>..</br>、<script />、<iframe />, 非法闭合会导致页面嵌套错误问题;
+
+.. code-block:: html
+
+    <!-- 不推荐 -->
+    <title>Test</title>
+    <article>This is only a test.
+
+.. code-block:: html
+
+    <!-- 推荐 -->
+    <!DOCTYPE html>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <article>This is only a test.</article>
+
+
+引号
+`````````````````````````````````````````````
+
+使用双引号来标识 html 的属性; 例如
+
+.. code-block:: html
+
+    <!-- 不推荐 -->
+    <a class='maia-button maia-button-secondary'>Sign in</a>
+
+.. code-block:: html
+
+    <!-- 推荐 -->
+    <a class="maia-button maia-button-secondary">Sign in</a>
+
+
+
+
+自定义属性
+```````````````````````````````````````
+
+通过给元素设置自定义属性来存放与 JavaScript 交互的数据, 属性名格式为 data-xx (例如：data-lazyload-url)
 
 DOCTYPE
------------
+````````````````````````````````````````
 
 页面文档类型统一使用HTML5 DOCTYPE. 代码如下：
 
@@ -53,16 +124,16 @@ DOCTYPE
     <!doctype html>
 
 编码
------------
+````````````````````````````````````
 
-声明方法遵循HTML5的规范.
+声明方法遵循HTML5的规范.推荐使用 ``utf-8`` 编码.
 
 .. code-block:: html
 
     <meta charset="utf-8" />
 
 注释
------------
+``````````````````````````````````````
 
 建议对超过10行的页面模块进行注释, 以降低开发人员的嵌套成本和后期的维护成本. 例如：
 
@@ -78,8 +149,83 @@ DOCTYPE
         ...
     </div> <!-- .sample END -->
 
+协议
+```````````````````````````````````````````
+
+如果链接和当前页面一致则忽略链接的协议部分，例如
+
+.. code-block:: html
+
+    <!-- 不推荐 -->
+    <script src="http://www.taobao.com/fp.js"></script>
+
+.. code-block:: html
+
+    <!-- 推荐 -->
+    <script src="//www.taobao.com/fp.js"></script>
+
+.. code-block:: css
+
+    /* 不推荐 */
+    .example {
+      background: url(http://www.taobao.com/fp.css);
+    }
+
+.. code-block:: css
+
+    /* 推荐 */
+    .example {
+      background: url(//www.taobao.com/fp.css);
+    }
+
+TODO
+````````````````````````````````````
+
+* 使用 TODO 来标记待做事情，便于后期搜索.
+* 在 TODO 后添加 (姓名或邮件) 来表示分类.
+
+例如
+
+.. code-block:: html
+
+    <!-- TODO(yiminghe): remove duplicate tag -->
+    <p><span>2</span></p>
+
+
+焦点分离
+````````````````````````````````````
+
+* 将表现，行为和结构分离：不要在 html 和模板中加入除了结构以外的东西.
+* 在文档中引入尽可能少的样式和脚本
+
+.. code-block:: html
+
+    <!-- 不推荐 -->
+    <!DOCTYPE html>
+    <title>HTML sucks</title>
+    <link rel="stylesheet" href="base.css" media="screen">
+    <link rel="stylesheet" href="grid.css" media="screen">
+    <link rel="stylesheet" href="print.css" media="print">
+    <h1 style="font-size: 1em;">HTML sucks</h1>
+    <p>I’ve read about this on a few sites but now I’m sure:
+      <u>HTML is stupid!!1</u>
+    <center>I can’t believe there’s no way to control the styling of
+      my website without doing everything all over again!</center>
+
+.. code-block:: html
+
+    <!-- 推荐 -->
+    <!DOCTYPE html>
+    <title>My first CSS-only redesign</title>
+    <link rel="stylesheet" href="default.css">
+    <h1>My first CSS-only redesign</h1>
+    <p>I’ve read about this on a few sites but today I’m actually
+      doing it: separating concerns and avoiding anything in the HTML of
+      my website that is presentational.
+    <p>It’s awesome!
+
 元素
------------
+----------------------------------------------
 
 结构性元素
 ~~~~~~~~~~~
@@ -100,6 +246,25 @@ DOCTYPE
 * ``link`` link 用于引入 css 资源时, 可省去 media(默认为all) 和 type(默认为text/css) 属性;
 * ``style`` type 默认为 text/css, 可以省去;
 * ``script`` type 属性可以省去; 不赞成使用lang属性; 不要使用古老的<!– //–>这种hack脚本, 它用于阻止第一代浏览器(Netscape 1和Mosaic)将脚本显示成文字;
+
+.. code-block:: html
+
+    <!-- 不推荐 -->
+    <link rel="stylesheet" href="//www.google.com/css/maia.css"
+      type="text/css">
+
+    <!-- 不推荐 -->
+    <script src="//www.google.com/js/gweb/analytics/autotrack.js"
+      type="text/javascript"></script>
+
+.. code-block:: html
+
+    <!-- 推荐 -->
+    <link rel="stylesheet" href="//www.google.com/css/maia.css">
+
+    <!-- 推荐 -->
+    <script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+
 * ``noscript`` 在用户代理不支持 JavaScript 的情况下提供说明;
 
 文本元素
@@ -115,13 +280,25 @@ DOCTYPE
 媒体元素
 ~~~~~~~~~~~
 
-* ``img`` 请勿将img元素作为定位布局的工具, 不要用他显示空白图片; 必要时给img元素增加alt属性;
+* ``img`` 请勿将img元素作为定位布局的工具, 不要用他显示空白图片; 给img元素增加alt属性;例如
+
+.. code-block:: html
+
+    <!-- 不推荐 -->
+    <img src="spreadsheet.png">
+
+.. code-block:: html
+
+    <!-- 推荐 -->
+    <img src="spreadsheet.png" alt="Spreadsheet screenshot.">
+
 * ``object`` 可以用来插入Flash;
 
 列表元素
 ~~~~~~~~~~~
 
-* ``dl`` 表示关联列表, dd是对dt的解释; dt和dd的对应关系比较随意：一个dt对应多个dd、多个dt对应一个dd、多个dt对应多个dd, 都合法; 可用于名词/单词解释、日程列表、站点目录;
+* ``dl`` 表示关联列表, dd是对dt的解释; dt和dd的对应关系比较随意：
+一个dt对应多个dd、多个dt对应一个dd、多个dt对应多个dd, 都合法; 可用于名词/单词解释、日程列表、站点目录;
 * ``ul`` 表示无序列表;
 * ``ol`` 表示有序列表, 可用于排行榜等;
 * ``li`` 表示列表项, 必须是ul/ol的子元素;
@@ -133,9 +310,43 @@ DOCTYPE
 * 推荐使用 fieldset, legend 组织表单
 * 表单元素的 name 不能设定为 action, enctype, method, novalidate, target, submit 会导致表单提交混乱
 
+
+文档模板
+-----------
+
+.. code-block:: html
+
+    <!doctype html>
+    <html>
+        <head>
+            <meta charset="utf-8" />
+            <title>Sample page</title>
+            <link rel="stylesheet" href="css_example_url" />
+        </head>
+        <body>
+            <div id="page">
+                <div id="header">
+                    页头
+                </div>
+                <div id="content">
+                    主体
+                </div>
+                <div id="footer">
+                    页尾
+                </div>
+            </div>
+            <script src="js_example_url"></script>
+            <script>
+            // 你的代码
+            </script>
+        </body>
+    </html>
+
+
 参考文档
 -----------
 
 * http://www.w3.org/TR/html4/
 * http://www.w3.org/TR/html5/
 * http://reference.sitepoint.com/html/
+* http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml
