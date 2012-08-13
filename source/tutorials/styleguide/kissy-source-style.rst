@@ -229,7 +229,7 @@ css 类名
     var x.y.z = veryLongLongLongLongLongLongLong(
         veryLongveryLongveryLongveryLong,
         veryLongveryLongveryLongveryLongveryLong,
-        veryLongveryLongveryLongveryLong) {
+        veryLongveryLongveryLongvery) {
         // ...
     };
 
