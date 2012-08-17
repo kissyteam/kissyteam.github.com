@@ -32,5 +32,4 @@ Class
         - `google 的菜单项样式 <../../../_static/demo/menu/assets/menuitem.css>`_
         - `google 的子菜单项样式 <../../../_static/demo/menu/assets/submenu.css>`_
         - `google 的过滤菜单样式 <../../../_static/demo/menu/assets/filtermenu.css>`_
-        - `google 的菜单分隔线样式 <../../../_static/demo/menu/assets/menuseparator.css>`_
 
