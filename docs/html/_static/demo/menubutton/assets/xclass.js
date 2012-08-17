@@ -14,9 +14,7 @@ KISSY.use("menubutton,menu", function (S, MenuButton, Menu) {
                     content:"已买到的宝贝",
                     checkable:true
                 },
-                {
-                    xclass:'menuseparator'
-                },
+
                 {
                     xclass:'menuitem',
                     content:"已卖出的宝贝"
