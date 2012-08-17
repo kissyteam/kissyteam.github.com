@@ -28,7 +28,6 @@ Class
             我的淘宝
             <div class="ks-menu ks-popupmenu">
                 <div class="ks-menuitem">已买到的宝贝</div>
-                <div class="ks-menuseparator"></div>
                 <div class="ks-menuitem">已卖出的宝贝</div>
             </div>
         </div>
