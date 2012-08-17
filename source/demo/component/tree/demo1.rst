@@ -40,6 +40,5 @@ Class
 
     .. note::
 
-        #. 使用树还需要自己定义皮肤样式, 以上参考的是 `google 的样式 <../../../_static/demo/tree/assets/tree.css>`_
         #. 如果一次性树节点太多，可通过懒加载来减少初始启动时间。参考:  :ref:`Lazy Tree <kissy-tree-lazy>`
 

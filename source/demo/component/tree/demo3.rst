@@ -54,7 +54,3 @@ Class
 
     .. literalinclude:: /_static/demo/tree/assets/demo3.js
            :language: javascript
-    
-    .. note::
-
-        使用树还需要自己定义皮肤样式, 以上参考的是 `google 的样式 <../../../_static/demo/tree/assets/tree.css>`_
