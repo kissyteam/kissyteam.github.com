@@ -147,9 +147,3 @@ Methods
     :param String target: 在 Flash 中注册的ID.  必选`
 
     :returns: {Boolean} - 只有有成功执行过 S.Flash.add() 的 SWF 返回 true,其他返回 false.
-
-
-
-.. note::
-
-    这文档要写细还真难。不过呢，我相信你很容易就知道怎么使用了，来看看这个 `测试页面 <http://docs.kissyui.com/kissy/src/flash/tests/test.html>`_

@@ -25,9 +25,3 @@ Demos
        demo3
        demo4
        portal
-       
-       
-More Demos
--------------------------------------------
-
-`原始测试例子集合 <http://docs.kissyui.com/kissy/src/dd/demo.html>`_       

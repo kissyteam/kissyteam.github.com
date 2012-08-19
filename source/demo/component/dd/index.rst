@@ -13,6 +13,7 @@ Class
   * :class:`DDM`
   * :class:`Proxy`
   * :class:`Scroll`
+  * :class:`Constrain`
 
 Demos
 -----------------------------------------------
@@ -24,6 +25,7 @@ Demos
        demo2
        demo3
        demo4
+       constrain
        portal
        
        
