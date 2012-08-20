@@ -17,8 +17,6 @@ Droppable 基本使用
         <iframe width="100%" height="300" class="iframe-demo" src="../../../_static/demo/dd/demo2.html"></iframe>
 
 
-
-
     **组织HTML**
 
     .. code-block:: html

@@ -28,7 +28,7 @@ Class Detail
 .. class:: CheckNode
 
     | **CheckNode** (config)
-    | xclass: 'check-treeitem'
+    | xclass: 'check-tree-node'
     
     * 继承自 :class:`Tree.Node <tree.Node>` , 包含其全部配置,属性,方法,事件.
     
@@ -36,7 +36,7 @@ Class Detail
     
     .. note::
 
-        从已有元素实例 Node 对象时 , 元素节点标明类名 ``{prefixCls}tree-item-check`` .
+        从已有元素实例 Node 对象时 , 元素节点标明类名 ``{prefixCls}tree-node-check`` .
         ``prefixCls`` 为配置的类名前缀，默认为 ``ks-`` .
         
 

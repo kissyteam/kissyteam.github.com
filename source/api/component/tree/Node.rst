@@ -48,7 +48,7 @@ Class Detail
 .. class:: Node
 
     | **Node** (config)
-    | xclass: 'tree-item'
+    | xclass: 'tree-node'
     
     * 继承自 :class:`~component.Controller` , 包含其全部配置,属性,方法,事件.
     
@@ -56,7 +56,7 @@ Class Detail
     
     .. note::
 
-        从已有元素实例 Node 对象时 , 元素节点标明类名 ``{prefixCls}tree-item`` .
+        从已有元素实例 Node 对象时 , 元素节点标明类名 ``{prefixCls}tree-node`` .
         ``prefixCls`` 为配置的类名前缀，默认为 ``ks-`` .
     
 Configs Detail

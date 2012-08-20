@@ -30,21 +30,21 @@ Class
 		<div id="treeContainer" style="width: 200px;">
 			<!-- 直接通过DOM中已有的结构生成一棵树  -->
 			<div id='root' class="ks-tree-root">
-				<span class="ks-tree-item-label">淘宝网</span>
+				<span class="ks-tree-node-label">淘宝网</span>
 				<div class="ks-tree-children">
-					<div class="ks-tree-item">
-						<span class="ks-tree-item-label">收藏夹</span>
+					<div class="ks-tree-node">
+						<span class="ks-tree-node-label">收藏夹</span>
 						<div class="ks-tree-children">
-							<div class="ks-tree-item">
-								<span class="ks-tree-item-label">收藏的宝贝</span>
+							<div class="ks-tree-node">
+								<span class="ks-tree-node-label">收藏的宝贝</span>
 							</div>
-							<div class="ks-tree-item ks-tree-item-folder">
-								<span class="ks-tree-item-label">收藏的店铺</span>
+							<div class="ks-tree-node ks-tree-node-folder">
+								<span class="ks-tree-node-label">收藏的店铺</span>
 							</div>
 						</div>
 					</div>
-					<div class="ks-tree-item">
-						<span class="ks-tree-item-label">我要买</span>
+					<div class="ks-tree-node">
+						<span class="ks-tree-node-label">我要买</span>
 					</div>
 				</div>
 			</div>
