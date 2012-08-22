@@ -1,0 +1,52 @@
+/*
+ * Copyright 2009 The Closure Library Authors. All Rights Reserved.
+ *
+ * Use of this source code is governed by an Apache 2.0 License.
+ * See the COPYING file for details.
+ */
+
+/*
+ * Standard styling for menus created by goog.ui.MenuRenderer.
+ *
+ * @author attila@google.com (Attila Bodis)
+ */
+
+.ks-menu {
+    background: #fff;
+    border-color: #ccc #666 #666 #ccc;
+    border-style: solid;
+    border-width: 1px;
+    cursor: default;
+    font: normal 13px Arial, sans-serif;
+    margin: 0;
+    outline: none;
+    padding: 4px 0;
+}
+
+.ks-ext-position {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    z-index: 20000; /* Arbitrary, but some apps depend on it... */
+}
+
+.ks-menu .ks-separator {
+    border-top: 1px solid #ccc;
+    margin: 4px 0;
+    padding: 0;
+}
+
+.ks-menuitem-checked .ks-menuitem-checkbox {
+    /* Client apps may override the URL at which they serve the sprite. */
+    background: url(https://ssl.gstatic.com/editor/editortoolbar.png) no-repeat -512px 0;
+}
+
+.ks-menuitem-checkbox {
+    background-repeat: no-repeat;
+    height: 16px;
+    left: 6px;
+    position: absolute;
+    right: auto;
+    vertical-align: middle;
+    width: 16px;
+}
