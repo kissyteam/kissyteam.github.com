@@ -158,3 +158,5 @@ Methods Detail
         globalEvent.on('Login:session:pass', function(){
           isSessionPass = true;
         });
+
+    汇入的普通对象不要有 item length 等属性，详见 `#204 <https://github.com/kissyteam/kissy/issues/204>`_

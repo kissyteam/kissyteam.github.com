@@ -157,4 +157,3 @@ Methods Detail
         globalEvent.on('Login:session:pass', function(){
           isSessionPass = true;
         });
-
