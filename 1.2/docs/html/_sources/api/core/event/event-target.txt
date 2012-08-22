@@ -136,6 +136,7 @@ Methods Detail
            }
         });
 
+
         var dog = new Dog('Lady Gogo');
 
         // 添加监听函数
