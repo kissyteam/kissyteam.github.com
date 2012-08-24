@@ -125,7 +125,10 @@
 <div class="section" id="form">
 <h3>form 同步<a class="headerlink" href="#form" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><p>如果后端通过 form 提交(submit)来获得用户输入数据, 则只需配置参数 <a class="reference internal" href="usage.html#editor.KISSY.Editor" title="editor.KISSY.Editor"><tt class="xref py py-class docutils literal"><span class="pre">attachForm</span></tt></a>  .</p>
+<div><dl class="docutils">
+<dt>如果后端通过 form 提交(submit)来获得用户输入数据, 则只需配置参数</dt>
+<dd><a class="reference internal" href="usage.html#editor.KISSY.Editor" title="editor.KISSY.Editor"><tt class="xref py py-class docutils literal"><span class="pre">attachForm</span></tt></a>  .</dd>
+</dl>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// 是否监控编辑器所属的表单提交</span>
 <span class="s2">&quot;attachForm&quot;</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
 </pre></div>
@@ -145,21 +148,34 @@
 </div>
 </div>
 <div class="section" id="id3">
-<h2>自动保存<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>拒绝访问错误<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>当引入 sns 组件时可能会出现初始化编辑器时报 <tt class="docutils literal"><span class="pre">拒绝访问错误</span></tt> ，这时请在页头一开始就设置 domain</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">domain</span> <span class="o">=</span> <span class="s1">&#39;taobao.com&#39;</span><span class="p">;</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h2>自动保存<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div>自动保存为 localStorage/flash 机制, 保存在本地, 可 <a class="reference internal" href="plugin-config.html#editor.pluginConfig.draft" title="editor.pluginConfig.draft"><tt class="xref py py-attr docutils literal"><span class="pre">配置参数</span></tt></a> .</div></blockquote>
 </div>
-<div class="section" id="id4">
-<h2>字数统计<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>字数统计<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>可参考以下 demo  :</p>
-<p><a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/wordCount.html">http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/wordCount.html</a></p>
+<p><a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/cdn/1.2.0/wordCount.html">http://docs.kissyui.com/kissy-editor/demo/cdn/1.2.0/wordCount.html</a></p>
 <p>其中 <a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/word-count.js">wordcount 代码</a> 自行下载, 随意修改.</p>
 </div></blockquote>
 </div>
-<div class="section" id="ctrol-enter">
-<h2>绑定 ctrol-enter<a class="headerlink" href="#ctrol-enter" title="Permalink to this headline">¶</a></h2>
-<p>不少的应用场景要求在编辑器编辑区域内按下 ctrol+enter 按键时, 编辑器所在表单会自动提交, 解决方案是监控编辑器的文档按键事件：</p>
+<div class="section" id="ctrl-enter">
+<h2>绑定 ctrl-enter<a class="headerlink" href="#ctrl-enter" title="Permalink to this headline">¶</a></h2>
+<p>不少的应用场景要求在编辑器编辑区域内按下 ctrl+enter 按键时, 编辑器所在表单会自动提交, 解决方案是监控编辑器的文档按键事件：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">editor</span><span class="p">.</span><span class="nb">document</span><span class="p">,</span> <span class="s2">&quot;keydown&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">ev</span><span class="p">.</span><span class="nx">keyCode</span> <span class="o">==</span> <span class="mi">13</span> <span class="o">&amp;&amp;</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">ctrlKey</span><span class="p">)</span> <span class="p">{</span>
@@ -177,7 +193,7 @@
 <h2>placeholder(tip) 功能<a class="headerlink" href="#placeholder-tip" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>可参考以下 demo  :</p>
-<p><a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/tip.html">http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/tip.html</a></p>
+<p><a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/cdn/1.2.0/tip.html">http://docs.kissyui.com/kissy-editor/demo/cdn/1.2.0/tip.html</a></p>
 <p>其中 <a class="reference external" href="http://docs.kissyui.com/kissy-editor/demo/tip.js">tip 代码</a> 自行下载，随意修改。</p>
 </div></blockquote>
 </div>
@@ -194,8 +210,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>编辑器焦点事件<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>编辑器焦点事件<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>可以通过监听编辑器实例对象的 &#8220;focus&#8221; &#8220;blur&#8221; 事件来获得编辑器焦点转移情况</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">editor</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Editor</span><span class="p">(..);</span>
 
@@ -211,8 +227,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id6">
-<h2>多编辑器草稿混淆问题<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h2>多编辑器草稿混淆问题<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p>因为目前编辑器草稿箱使用客户端存储：</p>
 <ol class="arabic simple">
 <li>标准浏览器使用本地存储，那么同一个 host 下的编辑器公用存储空间</li>
@@ -226,8 +242,8 @@
 这时就不需要 <tt class="docutils literal"><span class="pre">use(&quot;draft&quot;)</span></tt> 了.</p>
 </div>
 </div>
-<div class="section" id="id7">
-<h2>如何自己添加编辑器功能按钮 (初级模式)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h2>如何自己添加编辑器功能按钮 (初级模式)<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p>举例：要做一个简单的插件，统计用户的编辑内容中元素 a 的个数，那么可以这么做:</p>
 <ol class="arabic simple">
 <li>等待编辑器完成</li>
@@ -286,8 +302,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id8">
-<h2>如何使得编辑内容超长数字自动换行<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h2>如何使得编辑内容超长数字自动换行<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <p>设置 <a class="reference internal" href="usage.html#editor.KISSY.Editor.config.customStyle" title="editor.KISSY.Editor.config.customStyle"><tt class="xref py py-attr docutils literal"><span class="pre">customStyle</span></tt></a> 为</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">body</span> <span class="p">{</span><span class="nx">word</span><span class="o">-</span><span class="nx">wrap</span><span class="o">:</span><span class="k">break</span><span class="o">-</span><span class="nx">word</span><span class="p">;</span><span class="nx">word</span><span class="o">-</span><span class="k">break</span><span class="o">:</span><span class="k">break</span><span class="o">-</span><span class="nx">all</span><span class="p">;}</span>
 </pre></div>
@@ -296,8 +312,8 @@
 <blockquote>
 <div><a class="reference external" href="http://ued.taobao.com/blog/2010/10/14/research-of-word-wrap/">http://ued.taobao.com/blog/2010/10/14/research-of-word-wrap/</a></div></blockquote>
 </div>
-<div class="section" id="id9">
-<h2>如何程序触发全屏与恢复<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h2>如何程序触发全屏与恢复<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <p>在编辑器实例上直接调用对应的命令即可：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">editor</span><span class="o">=</span><span class="k">new</span> <span class="nx">Editor</span><span class="p">(...);</span>
 <span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s2">&quot;maximizeWindow&quot;</span><span class="p">);</span> <span class="c1">// =&gt; 手动全屏</span>

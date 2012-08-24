@@ -20,7 +20,8 @@ FAQ
 form 同步
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-	如果后端通过 form 提交(submit)来获得用户输入数据, 则只需配置参数 :class:`attachForm <editor.KISSY.Editor>`  .
+	如果后端通过 form 提交(submit)来获得用户输入数据, 则只需配置参数
+	 :class:`attachForm <editor.KISSY.Editor>`  .
 	
 	.. code-block:: javascript
 
@@ -43,6 +44,21 @@ form 同步
 
 	``editor.setData(html:string)`` :设置当前编辑器的内容, 参数为html, 类型为 string 字符串
 
+
+拒绝访问错误
+------------------------------
+
+    当引入 sns 组件时可能会出现初始化编辑器时报 ``拒绝访问错误`` ，这时请在页头一开始就设置 domain
+
+    .. code-block:: html
+
+        <head>
+            <script>
+            document.domain = 'taobao.com';
+            </script>
+        </head>
+
+
 自动保存
 -----------------
 	
@@ -53,14 +69,14 @@ form 同步
 
     可参考以下 demo  :
 
-    http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/wordCount.html
+    http://docs.kissyui.com/kissy-editor/demo/cdn/1.2.0/wordCount.html
 
     其中 `wordcount 代码 <http://docs.kissyui.com/kissy-editor/demo/word-count.js>`_ 自行下载, 随意修改.
 	
-绑定 ctrol-enter
+绑定 ctrl-enter
 ----------------------------------
 
-不少的应用场景要求在编辑器编辑区域内按下 ctrol+enter 按键时, 编辑器所在表单会自动提交, 解决方案是监控编辑器的文档按键事件：
+不少的应用场景要求在编辑器编辑区域内按下 ctrl+enter 按键时, 编辑器所在表单会自动提交, 解决方案是监控编辑器的文档按键事件：
     
     
 .. code-block:: javascript
@@ -83,7 +99,7 @@ placeholder(tip) 功能
 
     可参考以下 demo  :
 
-    http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/tip.html
+    http://docs.kissyui.com/kissy-editor/demo/cdn/1.2.0/tip.html
 
     其中 `tip 代码 <http://docs.kissyui.com/kissy-editor/demo/tip.js>`_ 自行下载，随意修改。
     
