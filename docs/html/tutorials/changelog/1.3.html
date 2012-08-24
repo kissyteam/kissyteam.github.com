@@ -118,7 +118,44 @@
 </style><div class="section" id="kissy-1-3rc">
 <h1>KISSY 1.3rc 升级指南<a class="headerlink" href="#kissy-1-3rc" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>标记含义<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>简单来说，新版本包括以下改进：<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>加强了模块化机制<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://docs.kissyui.com/docs/html/demo/seed/loader/index.html">http://docs.kissyui.com/docs/html/demo/seed/loader/index.html</a></p>
+<p><a class="reference external" href="http://docs.kissyui.com/docs/html/tutorials/kissy/seed/loader/index.html">http://docs.kissyui.com/docs/html/tutorials/kissy/seed/loader/index.html</a></p>
+</div>
+<div class="section" id="xclass">
+<h3>提升了组件性能，支持 xclass 懒加载组件<a class="headerlink" href="#xclass" title="Permalink to this headline">¶</a></h3>
+<p>嵌套组件可以不用 new 出来，指定 json 格式即可：</p>
+<p><a class="reference external" href="http://docs.kissyui.com/docs/html/demo/component/menubutton/xclass.html">http://docs.kissyui.com/docs/html/demo/component/menubutton/xclass.html</a></p>
+</div>
+<div class="section" id="api">
+<h3>扩充了框架能力，核心以及多个组件 api 有所增加<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
+<p>支持 Promise 规范：</p>
+<p><a class="reference external" href="http://docs.kissyui.com/docs/html/api/seed/promise/index.html">http://docs.kissyui.com/docs/html/api/seed/promise/index.html</a></p>
+<p>switchable 增加了 add/remove，支持触屏：</p>
+<p><a class="reference external" href="http://docs.kissyui.com/docs/html/demo/component/switchable/index.html">http://docs.kissyui.com/docs/html/demo/component/switchable/index.html</a></p>
+</div>
+<div class="section" id="id3">
+<h3>提高了 api 易用性和统一性<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>所有新组件都支持动态的 plugin 机制</p>
+<p><a class="reference external" href="http://docs.kissyui.com/docs/html/demo/component/editor/simple-plugin.html">http://docs.kissyui.com/docs/html/demo/component/editor/simple-plugin.html</a></p>
+<p>以及通过 listeners 支持方便的事件绑定</p>
+<p><a class="reference external" href="http://docs.kissyui.com/docs/html/demo/component/menubutton/xclass.html">http://docs.kissyui.com/docs/html/demo/component/menubutton/xclass.html</a></p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>一些需要注意的不兼容性问题<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>删除了 kissy-aio.js/uibase.js 静态文件，请静态引入以上文件时注意</li>
+<li>删除了 KISSY.app 方法，请使用推荐的模块化机制</li>
+<li>新组件配置 prefixCls 时组件样式有改变，请注意</li>
+</ol>
+</div>
+<div class="section" id="change-log">
+<h2>详细 change log<a class="headerlink" href="#change-log" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>标记含义<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>[+] this is a new feature</li>
@@ -127,8 +164,6 @@
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="rc">
-<h2>1.2 -&gt; 1.3rc 改动点<a class="headerlink" href="#rc" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="bug-fix">
 <h3>Bug fix<a class="headerlink" href="#bug-fix" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
@@ -139,8 +174,8 @@
 </li>
 </ol>
 </div>
-<div class="section" id="id2">
-<h3>结构<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>结构<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p class="first">[!] 删除 kissy-aio</p>
 </li>
@@ -470,8 +505,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../workflow/index.html">组件开发指南</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tools/index.html">前端常用工具</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">KISSY 1.3rc 升级指南</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">标记含义</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rc">1.2 -&gt; 1.3rc 改动点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">简单来说，新版本包括以下改进：</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">一些需要注意的不兼容性问题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#change-log">详细 change log</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#kissy-1-4-roadmap">KISSY 1.4 RoadMap</a></li>
@@ -491,10 +527,18 @@
 		<div class="s-box-bd">
 			<ul>
 <li><a class="reference internal" href="#">KISSY 1.3rc 升级指南</a><ul>
-<li><a class="reference internal" href="#id1">标记含义</a></li>
-<li><a class="reference internal" href="#rc">1.2 -&gt; 1.3rc 改动点</a><ul>
+<li><a class="reference internal" href="#id1">简单来说，新版本包括以下改进：</a><ul>
+<li><a class="reference internal" href="#id2">加强了模块化机制</a></li>
+<li><a class="reference internal" href="#xclass">提升了组件性能，支持 xclass 懒加载组件</a></li>
+<li><a class="reference internal" href="#api">扩充了框架能力，核心以及多个组件 api 有所增加</a></li>
+<li><a class="reference internal" href="#id3">提高了 api 易用性和统一性</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">一些需要注意的不兼容性问题</a></li>
+<li><a class="reference internal" href="#change-log">详细 change log</a><ul>
+<li><a class="reference internal" href="#id5">标记含义</a></li>
 <li><a class="reference internal" href="#bug-fix">Bug fix</a></li>
-<li><a class="reference internal" href="#id2">结构</a></li>
+<li><a class="reference internal" href="#id6">结构</a></li>
 <li><a class="reference internal" href="#seed">seed</a></li>
 <li><a class="reference internal" href="#ua">ua</a></li>
 <li><a class="reference internal" href="#event">event</a></li>
