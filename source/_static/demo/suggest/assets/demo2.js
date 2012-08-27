@@ -1,6 +1,5 @@
 KISSY.use("suggest", function(S, Suggest) {
-    // 1.1.6
-    //Suggest = S.Suggest;
+
 
     // 有啊
     // http://youa.baidu.com/suggest/se/s?cmd=suggest&type=kwd&max_count=10&callback=suggestCallback&keyword=n

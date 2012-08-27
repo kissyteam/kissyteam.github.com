@@ -122,20 +122,17 @@
 <h2>淘宝首页的搜索提示<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><iframe width="100%" height="300" class="iframe-demo" src="../../../_static/demo/suggest/demo1.html"></iframe><p>见代码中的注释:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node,suggest&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">Suggest</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 如果是 1.1.6, Node 和 Suggest 都是直接在 KISSY 上的</span>
-    <span class="c1">//Node = S.Node;</span>
-    <span class="c1">//Suggest = S.Suggest;</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node,suggest&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">Suggest</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="c1">// 初始化一个Suggest 对象, 给定所提示input的元素节点, 数据源, 及配置项</span>
     <span class="kd">var</span> <span class="nx">_suggest</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Suggest</span><span class="p">(</span><span class="s1">&#39;#qstab&#39;</span><span class="p">,</span> <span class="s1">&#39;http://suggest.taobao.com/sug?code=utf-8&amp;extras=1&#39;</span><span class="p">,</span> <span class="p">{</span>
             <span class="nx">resultFormat</span><span class="o">:</span> <span class="s1">&#39;约%result%个宝贝&#39;</span><span class="p">,</span>
             <span class="nx">dataType</span><span class="o">:</span> <span class="mi">1</span>
         <span class="p">}),</span>
-        <span class="c1">// 切换 tab, 当切换到不同 tab 时, 数据源和显示格式有所差异</span>
+    <span class="c1">// 切换 tab, 当切换到不同 tab 时, 数据源和显示格式有所差异</span>
         <span class="nx">tab</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;.tb-srch-may-tab&#39;</span><span class="p">),</span>
         <span class="nx">tabList</span> <span class="o">=</span> <span class="nx">tab</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">),</span>
-        <span class="nx">switchToTab</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">switchToTab</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// 动态设置数据源和结果格式</span>
             <span class="nx">_suggest</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">resultFormat</span> <span class="o">=</span> <span class="s1">&#39;约%result%个宝贝&#39;</span><span class="p">;</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
@@ -144,7 +141,7 @@
             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
                 <span class="nx">_suggest</span><span class="p">.</span><span class="nx">dataSource</span> <span class="o">=</span> <span class="s1">&#39;http://suggest.taobao.com/sug?code=utf-8&amp;extras=1&amp;callback=KISSY.Suggest.callback&#39;</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">tabList</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">tab</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">tabList</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">tab</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nx">tab</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Node</span><span class="p">(</span><span class="nx">tab</span><span class="p">);</span>
 
                 <span class="nx">tab</span><span class="p">[(</span><span class="nx">i</span> <span class="o">==</span> <span class="nx">n</span><span class="p">)</span> <span class="o">?</span> <span class="s2">&quot;addClass&quot;</span> <span class="o">:</span> <span class="s2">&quot;removeClass&quot;</span><span class="p">](</span><span class="s1">&#39;current&#39;</span><span class="p">);</span>
@@ -152,17 +149,37 @@
         <span class="p">};</span>
 
     <span class="c1">// 绑定 tab 切换</span>
-    <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">tabList</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">tab</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">tabList</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">tab</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">tab</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Node</span><span class="p">(</span><span class="nx">tab</span><span class="p">);</span>
-        <span class="nx">tab</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">tab</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
             <span class="nx">ev</span><span class="p">.</span><span class="nx">halt</span><span class="p">();</span>
             <span class="nx">switchToTab</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
         <span class="p">});</span>
     <span class="p">});</span>
 
-    <span class="nx">_suggest</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;beforeSubmit&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">_suggest</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;beforeSubmit&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">alert</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">});</span>
+
+    <span class="kd">function</span> <span class="nx">retFalse</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">var</span> <span class="nx">start</span><span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;#start&quot;</span><span class="p">),</span><span class="nx">stop</span><span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;#stop&quot;</span><span class="p">);</span>
+
+    <span class="nx">stop</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">_suggest</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span>
+        <span class="nx">stop</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">disabled</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="nx">start</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">disabled</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
+        <span class="nx">_suggest</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;beforeStart&quot;</span><span class="p">,</span> <span class="nx">retFalse</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="nx">start</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">_suggest</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+        <span class="nx">start</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">disabled</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="nx">stop</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">disabled</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
+        <span class="nx">_suggest</span><span class="p">.</span><span class="nx">detach</span><span class="p">(</span><span class="s2">&quot;beforeStart&quot;</span><span class="p">,</span> <span class="nx">retFalse</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>

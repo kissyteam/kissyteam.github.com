@@ -1,6 +1,5 @@
 KISSY.use("suggest", function(S, Suggest) {
-    // 1.1.6
-    //Suggest = S.Suggest;
+
     // Google
     var dataUrl = 'http://clients1.google.com/complete/search?hl=en';
     var sug = new Suggest('#gq', dataUrl, {
