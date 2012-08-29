@@ -1,7 +1,5 @@
 ﻿.. currentmodule:: event
 
-
-
 valuechange
 ====================================
 
