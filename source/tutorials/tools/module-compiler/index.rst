@@ -136,6 +136,7 @@ outputDependency
 2. 模块依赖自动抽取
 ``````````````````````````````````````````
 
+
 配置一下 build.xml
 
 .. literalinclude:: /_static/module-compiler/tb_kissy_1.3/build-combo.xml
