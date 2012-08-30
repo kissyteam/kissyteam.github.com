@@ -23,4 +23,3 @@ Component
    combobox/index
    input-selection/index
    editor/index
-   grid/index
