@@ -41,7 +41,7 @@ Methods
    focusout.rst
    hashchange.rst
    valuechange.rst
-   mousenter.rst
+   mouseenter.rst
    mouseleave.rst
    mousewheel.rst
     
