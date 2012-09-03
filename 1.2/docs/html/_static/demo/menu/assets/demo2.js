@@ -6,10 +6,7 @@ KISSY.use("node,menu", function(S, Node, Menu) {
         children:[new Menu.Item({
             prefixCls: 'my-',
             content: '首页'
-        }),
-            new Menu.Separator({
-                prefixCls:"my-"
-            })]
+        })]
     });
 
     // 依次添加两个子菜单
@@ -38,10 +35,6 @@ KISSY.use("node,menu", function(S, Node, Menu) {
                 },
                 // 设置菜单显示延迟时间
                 menuDelay: 50
-            }));
-
-            menu.addChild(new Menu.Separator({
-                prefixCls:"my-"
             }));
         });
     });

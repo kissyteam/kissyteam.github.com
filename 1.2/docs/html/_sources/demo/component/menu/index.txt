@@ -12,7 +12,6 @@ Class
 
   * :class:`Menu`
   * :class:`Item`
-  * :class:`Separator`
   * :class:`SubMenu`
   * :class:`PopupMenu`
   * :class:`FilterMenu`

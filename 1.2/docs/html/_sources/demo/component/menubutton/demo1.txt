@@ -32,7 +32,6 @@ Class
             我的淘宝
             <div class="goog-menu goog-popupmenu">
                 <div class="goog-menuitem">已买到的宝贝</div>
-                <div class="goog-menuseparator"></div>
                 <div class="goog-menuitem">已卖出的宝贝</div>
             </div>
         </div>

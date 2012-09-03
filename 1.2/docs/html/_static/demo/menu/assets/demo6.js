@@ -13,9 +13,6 @@ KISSY.use("menu", function (S, Menu) {
             content: '<a href="javascript:void(0)" tabindex="-1">'+s+'</a>'}));
     });
 
-    menu.addChild(new Menu.Separator({
-        prefixCls:prefixCls
-    }));
 
     var sb = new Menu.PopupMenu({
         prefixCls:prefixCls,

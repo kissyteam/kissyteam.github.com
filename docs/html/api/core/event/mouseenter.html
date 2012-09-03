@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>mouseenter &mdash; KISSY v1.2 Documentation</title>
+<title>mouseenter &mdash; KISSY v1.3rc Documentation</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../_static/kissy.css"/>
@@ -16,7 +16,7 @@
 <script>
     var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '',
+        VERSION:     'rc',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
@@ -28,7 +28,12 @@
             js.push("../../../_static/doctools.js");
         for(var i=0;i<js.length;i++){
             var j=js[i];
-            if(h.indexOf("localhost/kissy_git/")==-1&&j.indexOf("jquery.js")!=-1){
+            if(h.indexOf("localhost/kissy_git/")==-1
+            &&
+
+            h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
+            &&
+            j.indexOf("jquery.js")!=-1){
                 d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
             }else{
                 d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
@@ -79,8 +84,7 @@
 </div>
 
 <div id="content">
-
-	<div  class="layout grid-s6m0">
+	<div  id="layout" class="layout grid-s6m0e7">
 			<div class="col-main">
 				<div class="main-wrap">
                     
@@ -95,7 +99,16 @@
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.2 Documentation</a> &#187; </li> 
+    <li class="right" >
+      <a href="mouseleave.html" title="mouseleave"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="valuechange.html" title="valuechange"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3rc Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Event</a> &#187; </li> 
     </ul>
 </div>
 					
@@ -121,7 +134,16 @@
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.2 Documentation</a> &#187; </li> 
+    <li class="right" >
+      <a href="mouseleave.html" title="mouseleave"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="valuechange.html" title="valuechange"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3rc Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Event</a> &#187; </li> 
     </ul>
 </div>
 					<div id="disqus_thread"></div>
@@ -162,11 +184,13 @@
 </div>-->
 				</div>
 			</div>
+		
     <div class="col-sub"><ul class="s-box api-toctree">
     <h2 class="s-box-hd">Seed</h2>
     <ul class="s-box-bd">
-        <li><a href="../../seed/loader/index.html">loader</a></li>
         <li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/loader/index.html">loader</a></li>
+        <li><a href="../../seed/promise/index.html">promise</a></li>
         <li><a href="../../seed/lang/index.html">lang</a></li>
         <li><a href="../../seed/web/index.html">web</a></li>
     </ul>
@@ -202,20 +226,26 @@
         <li><a href="../../component/calendar/index.html">calendar</a></li>
         <li><a href="../../component/imagezoom/index.html">imagezoom</a></li>
         <li><a href="../../component/overlay/index.html">overlay</a></li>
-        <li><a href="../../component/uibase/index.html">uibase</a></li>
         <li><a href="../../component/component/index.html">component</a></li>
         <li><a href="../../component/button/index.html">button</a></li>
         <li><a href="../../component/menu/index.html">menu</a></li>
         <li><a href="../../component/menubutton/index.html">menubutton</a></li>
         <li><a href="../../component/tree/index.html">tree</a></li>
         <li><a href="../../component/waterfall/index.html">waterfall</a></li>
-        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
+        <li><a href="../../component/combobox/index.html">combobox</a></li>
         <li><a href="../../component/editor/index.html">editor</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
     </ul>
 </ul>
         
     </div>
+    
 	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
 </div>
 <div id="footer">
     &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>

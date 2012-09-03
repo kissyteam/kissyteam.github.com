@@ -17,7 +17,6 @@ Classes in Menu
 
    Menu
    MenuItem
-   Separator
    SubMenu
    PopupMenu
    FilterMenu

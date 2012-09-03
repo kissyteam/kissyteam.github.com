@@ -40,7 +40,7 @@ Class Detail
     
     .. note::
 
-        从已有元素实例 Separator 对象时 , 元素节点标明类名 ``{prefixCls}filtermenu`` .
+        从已有元素实例 FilterMenu 对象时 , 元素节点标明类名 ``{prefixCls}filtermenu`` .
         ``prefixCls`` 为配置的类名前缀，默认为 ``ks-`` .
     
     

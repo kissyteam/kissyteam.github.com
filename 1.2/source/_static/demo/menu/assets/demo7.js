@@ -18,9 +18,7 @@ KISSY.use("menu", function (S, Menu) {
             prefixCls:"nav-",
             content:"<a>我要卖</a>"}));
 
-        sb.addChild(new Menu.Separator({
-            prefixCls:"nav-"
-        }));
+
 
         var sb2 = new Menu.PopupMenu({
             prefixCls:"nav-",

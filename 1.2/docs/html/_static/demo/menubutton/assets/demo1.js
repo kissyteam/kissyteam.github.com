@@ -5,7 +5,6 @@ KISSY.use("menubutton,menu", function(S, MenuButton, Menu) {
         children:[
             // 设置菜单项并且设置可支持多选
             new Menu.Item({content:"已买到的宝贝",prefixCls:"goog-", checkable: true}),
-            new Menu.Separator({prefixCls:"goog-"}),
             new Menu.Item({content:"已卖出的宝贝",prefixCls:"goog-", checkable: true})]
     });
 
