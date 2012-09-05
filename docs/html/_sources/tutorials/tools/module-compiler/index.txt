@@ -1,4 +1,4 @@
-﻿.. module:: module-compiler.
+﻿.. module:: module-compiler
 
 KISSY Module Compiler
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

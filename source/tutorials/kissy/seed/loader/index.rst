@@ -10,5 +10,6 @@ Loader
     simple.rst
     timestamp.rst
     common-lib.rst
+    conditional-loader.rst
 
 
