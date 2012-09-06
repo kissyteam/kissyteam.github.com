@@ -3,7 +3,6 @@ KISSY.use("menubutton", function (S, MenuButton) {
         // 调用 Select.decorate 接口替换已有的 select 元素
         var select = MenuButton.Select.decorate('#decorateSelect', {
             prefixCls:"c2c-",
-            width:250,
             // 设置对齐方式, 与普通的 Align 大体一致
             // 该配置同菜单配置项
             menuCfg:{
@@ -27,7 +26,7 @@ KISSY.use("menubutton", function (S, MenuButton) {
         var select = MenuButton.Select.decorate('#decorateSelect2', {
             //defaultCaption:"请选择",
             prefixCls:"pix-",
-            width:250,
+            width:285,
             menuCfg:{
                 align:{
                     points:['tl', 'tl'],

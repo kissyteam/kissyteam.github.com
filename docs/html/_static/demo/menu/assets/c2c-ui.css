@@ -1,5 +1,7 @@
-
 .c2c-button {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
     margin: 2px;
     border: 0;
     padding: 0;
@@ -9,20 +11,12 @@
     cursor: default;
     outline: none;
     background-color: #FFF;
-    line-height: 18px;
     border-style: solid;
     border-color: #8ab6dd;
     white-space: nowrap;
     border-width: 1px;
     border-radius: 2px;
-    position: relative;
-    height: 20px;
 }
-
-.c2c-button .ks-menu-button-caption{
-    line-height: 18px;
-}
-
 
 /* State: disabled. */
 .c2c-button-disabled {
@@ -31,16 +25,20 @@
     filter: alpha(opacity = 30);
 }
 
+.c2c-menu-button {
+    position: relative;
+}
+
 .c2c-button-disabled {
     border-color: #999 !important;
 }
+
 /* State: hover. */
-.c2c-button-hover ,
-.c2c-button-focused ,
+.c2c-button-hover,
+.c2c-button-focused,
 .c2c-menu-buttonmenu-button-open {
     border-color: #ffad33 !important; /* Hover border wins. */
 }
-
 
 ::root .c2c-menu-button-caption,
 ::root .c2c-menu-button-dropdown {
@@ -55,7 +53,7 @@
     filter: alpha(opacity = 30);
 }
 
-.c2c-menu-button-disabled ,
+.c2c-menu-button-disabled,
 .c2c-menu-button-disabled .c2c-menu-button-caption,
 .c2c-menu-button-disabled .c2c-menu-button-dropdown {
     border-color: #999 !important;
@@ -87,20 +85,22 @@
 .c2c-menu-button-caption {
     padding: 0 4px 0 0;
     vertical-align: top;
-    margin: 0 4px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
 }
 
 /* Dropdown arrow style. */
-.c2c-button .ks-menu-button-dropdown {
+.c2c-menu-button-dropdown {
     height: 20px;
     width: 20px;
     /* Client apps may override the URL at which they serve the sprite. */
     background: url(http://img01.taobaocdn.com/tps/i1/T1xqXwXmRuXXXXXXXX-22-44.png) no-repeat -1px -1px;
     vertical-align: top;
-    position: absolute;
-    right: 0;
-    top:0;
-    border: none;
+
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
 }
 
 .c2c-button-hover .c2c-menu-button-dropdown,
@@ -116,6 +116,11 @@
 
 /* menu arrow icon end */
 /* menu begin */
+.c2c-popupmenu {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
 
 .c2c-menu {
     background: #fff;
