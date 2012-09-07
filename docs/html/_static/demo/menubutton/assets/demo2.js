@@ -2,6 +2,7 @@ KISSY.use("menubutton", function (S, MenuButton) {
     (function () {
         // 调用 Select.decorate 接口替换已有的 select 元素
         var select = MenuButton.Select.decorate('#decorateSelect', {
+            width:200,
             prefixCls:"c2c-",
             // 设置对齐方式, 与普通的 Align 大体一致
             // 该配置同菜单配置项
