@@ -3,7 +3,9 @@ KISSY.use("node,overlay,button,dd", function (S, Node, O, B) {
         width:400,
         headerContent:'收藏',
         bodyContent:'<iframe scrolling="no" height="200" width="398" frameborder="0" name="popupIframe" src="http://favorite.taobao.com/popup/add_collection.htm?id=10166801469&amp;itemtype=1&amp;scjjc=1&amp;_tb_token_=3b38ed73a7775&amp;t=1305543755536"></iframe>',
-        mask:true,
+        mask:{
+            effect:'fade'
+        },
         align:{
             points:['cc', 'cc']
         },
@@ -23,27 +25,6 @@ KISSY.use("node,overlay,button,dd", function (S, Node, O, B) {
             }
         },
         aria:true
-    });
-
-    var o = dialog;
-
-    o.on("afterBindUI", function () {
-        o.on("show", function () {
-            o.get("maskNode").css('opacity', 0);
-            o.get("maskNode").animate({
-                opacity:.5
-            });
-        });
-        o.on("hide", function () {
-            o.get("maskNode").show();
-            o.get("maskNode").animate({
-                opacity:0
-            }, {
-                complete:function () {
-                    o.get("maskNode").hide();
-                }
-            });
-        });
     });
 
     var show = new B({

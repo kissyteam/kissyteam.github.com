@@ -141,7 +141,11 @@
         <span class="nx">width</span><span class="o">:</span><span class="mi">400</span><span class="p">,</span>
         <span class="nx">headerContent</span><span class="o">:</span><span class="s1">&#39;收藏&#39;</span><span class="p">,</span>
         <span class="nx">bodyContent</span><span class="o">:</span><span class="s1">&#39;&lt;iframe scrolling=&quot;no&quot; height=&quot;200&quot; width=&quot;398&quot; frameborder=&quot;0&quot; name=&quot;popupIframe&quot; src=&quot;http://favorite.taobao.com/popup/add_collection.htm?id=10166801469&amp;amp;itemtype=1&amp;amp;scjjc=1&amp;amp;_tb_token_=3b38ed73a7775&amp;amp;t=1305543755536&quot;&gt;&lt;/iframe&gt;&#39;</span><span class="p">,</span>
-        <span class="nx">mask</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+        <span class="nx">mask</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">duration</span><span class="o">:</span><span class="p">.</span><span class="mi">3</span><span class="p">,</span>
+            <span class="nx">effect</span><span class="o">:</span><span class="s1">&#39;fade&#39;</span><span class="p">,</span>
+            <span class="nx">easing</span><span class="o">:</span><span class="s1">&#39;backOut&#39;</span>
+        <span class="p">},</span>
         <span class="nx">align</span><span class="o">:</span><span class="p">{</span>
             <span class="nx">points</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">]</span>
         <span class="p">},</span>
@@ -152,31 +156,6 @@
         <span class="p">},</span>
         <span class="nx">aria</span><span class="o">:</span><span class="kc">true</span>
     <span class="p">});</span>
-
-    <span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="nx">dialog</span><span class="p">;</span>
-
-    <span class="nx">o</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;afterBindUI&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="nx">o</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;show&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;opacity&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-            <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
-                <span class="nx">opacity</span><span class="o">:</span><span class="p">.</span><span class="mi">5</span>
-            <span class="p">},</span> <span class="p">{</span>
-                <span class="nx">duration</span><span class="o">:</span><span class="p">.</span><span class="mi">3</span>
-            <span class="p">});</span>
-        <span class="p">});</span>
-        <span class="nx">o</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;hide&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
-            <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
-                <span class="nx">opacity</span><span class="o">:</span><span class="mi">0</span>
-            <span class="p">},</span> <span class="p">{</span>
-                <span class="nx">duration</span><span class="o">:</span><span class="p">.</span><span class="mi">3</span><span class="p">,</span>
-                <span class="nx">complete</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-                    <span class="nx">o</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;maskNode&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
-                <span class="p">}</span>
-            <span class="p">});</span>
-        <span class="p">});</span>
-    <span class="p">});</span>
-
 
     <span class="nx">show</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="nx">dialog</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
