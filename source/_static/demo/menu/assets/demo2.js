@@ -29,7 +29,7 @@ KISSY.use("node,menu,separator", function (S, Node, Menu,Separator) {
 
             menu.addChild(new Menu.SubMenu({
                 prefixCls: 'my-',
-                content: "<div class='ks-menuitem-content'>" + k + "</div>",
+                content:  k,
                 // 设置子菜单与主菜单的对齐方式, 与 align 保持一致
                 menu: {
                     xclass: 'popupmenu',
