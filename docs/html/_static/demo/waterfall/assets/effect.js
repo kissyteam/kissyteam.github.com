@@ -1,4 +1,4 @@
-﻿KISSY.use("waterfall,ajax,template,node,button", function (S, Waterfall, io, Template, Node, Button) {
+﻿KISSY.use("waterfall,ajax,template,node", function (S, Waterfall, io, Template, Node) {
     var $ = Node.all;
 
     var tpl = Template($('#tpl').html()),
