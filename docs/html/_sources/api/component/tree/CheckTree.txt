@@ -16,9 +16,9 @@ Class
 Events
 --------------------------------------------------------
 
-    * :func:`~CheckTree.click`    
-    * :func:`~CheckTree.expand`    
-    * :func:`~CheckTree.collapse`     
+    * :func:`~CheckTree.Events.click`    
+    * :func:`~CheckTree.Events.expand`    
+    * :func:`~CheckTree.Events.collapse`     
     
 Class Detail
 --------------------------
@@ -41,7 +41,7 @@ Class Detail
 Events Detail
 ------------------------------------------------------
 
-.. function:: CheckTree.click
+.. function:: CheckTree.Events.click
 
     | **click(e)**
     | 当树节点被点击后触发
@@ -49,7 +49,7 @@ Events Detail
     :param Tree.Node e.target: 当前被点击的树节点  
     
     
-.. function:: CheckTree.expand
+.. function:: CheckTree.Events.expand
 
     | **expand(e)**
     | 当树节点被扩展时触发
@@ -57,7 +57,7 @@ Events Detail
     :param Tree.Node e.target: 当前被扩展的树节点
     
     
-.. function:: CheckTree.collapse
+.. function:: CheckTree.Events.collapse
 
     | **collapse(e)**
     | 当树节点被收缩后触发

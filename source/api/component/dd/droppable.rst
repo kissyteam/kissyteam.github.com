@@ -29,10 +29,10 @@ Methods
 Events
 -----------------------------------------------
 
-  * :func:`~Droppable.dropenter`
-  * :func:`~Droppable.dropover`
-  * :func:`~Droppable.dropexit`
-  * :func:`~Droppable.drophit`
+  * :func:`~Droppable.Event.dropenter`
+  * :func:`~Droppable.Event.dropover`
+  * :func:`~Droppable.Event.dropexit`
+  * :func:`~Droppable.Event.drophit`
 
 
 Class Detail
@@ -68,7 +68,7 @@ Methods Detail
 Events Detail
 -----------------------------------------------
 
-.. function:: Droppable.dropenter
+.. function:: Droppable.Event.dropenter
 
     | **dropenter** ( ev )
     | 当一个 :mod:`Draggable` 对象根据其 :data:`Draggable.mode` 配置达到和当前 Droppable 实例交互条件时触发.
@@ -77,7 +77,7 @@ Events Detail
     :param Object ev.drag: 当前交互的 Draggable 对象.
     :param Object ev.drop: 自身, 当前Droppable对象.
 
-.. function:: Droppable.dropover 
+.. function:: Droppable.Event.dropover 
 
     | **dropover** ( ev )
     | 当一个 :mod:`Draggable` 在当前 Droppable 实例上移动时触发, 可简单理解成 mouseover. 相当于 html5 dd API targetNode 的 dragover 事件的概念.
@@ -85,7 +85,7 @@ Events Detail
     :param Object ev.drag: 当前交互的 Draggable 对象.
     :param Object ev.drop: 自身, 当前Droppable对象.
 
-.. function:: Droppable.dropexit
+.. function:: Droppable.Event.dropexit
 
     | **dropexit** ( ev )
     | 当一个 :mod:`Draggable` 离开当前 Droppable 实例时触发, 可简单理解成 mouseleave. 相当于 html5 dd API targetNode 的 dragleave 事件的概念.
@@ -93,7 +93,7 @@ Events Detail
     :param Object ev.drag: 当前交互的 Draggable 对象.
     :param Object ev.drop: 自身, 当前Droppable对象.
 
-.. function:: Droppable.drophit
+.. function:: Droppable.Event.drophit
 
     | **drophit** ( ev )
     | 当一个 :mod:`Draggable` 被放置在当前 Droppable 实例时触发. 相当于 html5 dd API targetNode 的 drop 事件的概念.

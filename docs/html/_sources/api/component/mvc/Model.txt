@@ -48,7 +48,7 @@ Methods
 Events
 -----------------------------------------------
 
-  * :func:`~Model.events.destroy`        
+  * :func:`~Model.Events.destroy`        
 
 继承于 :class:`base.Base` 的
 
@@ -229,7 +229,7 @@ Methods Detail
 Events Detail
 ------------------------------------------------------------------
 
-.. function:: Model.events.destroy
+.. function:: Model.Events.destroy
 
     | **destroy ( e )**
     | 当模型被销毁后出发.( 即调用 :meth:`~Model.prototype.destroy` 后 )                 

@@ -42,14 +42,14 @@ Methods
 Events
 -----------------------------------------------
 
-  * :func:`~Draggable.dragstart`
-  * :func:`~Draggable.drag`
-  * :func:`~Draggable.dragend`
-  * :func:`~Draggable.dragenter`
-  * :func:`~Draggable.dragover`
-  * :func:`~Draggable.dragexit`
-  * :func:`~Draggable.dragdrophit`
-  * :func:`~Draggable.dragdropmiss`
+  * :func:`~Draggable.Events.dragstart`
+  * :func:`~Draggable.Events.drag`
+  * :func:`~Draggable.Events.dragend`
+  * :func:`~Draggable.Events.dragenter`
+  * :func:`~Draggable.Events.dragover`
+  * :func:`~Draggable.Events.dragexit`
+  * :func:`~Draggable.Events.dragdrophit`
+  * :func:`~Draggable.Events.dragdropmiss`
 
 
 Class Detail
@@ -144,14 +144,14 @@ Methods Detail
 Events Detail
 -----------------------------------------------
 
-.. function:: Draggable.dragstart
+.. function:: Draggable.Events.dragstart
 
     | **dragstart** ( ev )
     | 当可拖放对象开始被用户拖放时触发.
     
     :param Object ev.drag: 自身, 当前拖放对象.
 
-.. function:: Draggable.drag
+.. function:: Draggable.Events.drag
 
     | **drag** ( ev )
     | 当可拖放对象拖放过程中触发.
@@ -162,14 +162,14 @@ Events Detail
     :param Number ev.pageY: 当前鼠标的绝对纵坐标.
     :param Object ev.drag: 自身, 当前拖放对象.
 
-.. function:: Draggable.dragend
+.. function:: Draggable.Events.dragend
 
     | **dragend** ( ev )
     | 当用户鼠标弹起放弃拖放时触发.
 
     :param Object ev.drag: 自身, 当前拖放对象.
 
-.. function:: Draggable.dragenter
+.. function:: Draggable.Events.dragenter
 
     | **dragenter** ( ev )
     | 当前 Draggable 对象达到一个 Droppable 对象时触发, 可简单理解成 mouseenter.
@@ -177,7 +177,7 @@ Events Detail
     :param Object ev.drag: 自身, 当前拖放对象.
     :param Object ev.drop: 当前交互的Droppable对象.
     
-.. function:: Draggable.dragover
+.. function:: Draggable.Events.dragover
 
     | **dragover** ( ev )
     | 当前 Draggable 对象在一个 Droppable 实例上移动时触发, 可简单理解成 mouseover.
@@ -185,7 +185,7 @@ Events Detail
     :param Object ev.drag: 自身, 当前拖放对象.
     :param Object ev.drop: 当前交互的Droppable对象.
 
-.. function:: Draggable.dragexit
+.. function:: Draggable.Events.dragexit
 
     | **dragexit** ( ev )
     | 当前 Draggable 对象离开一个 Droppable 实例上移动时触发, 可简单理解成 mouseleave. 相当于 html5 dd API targetNode 的 dragleave 事件的概念.
@@ -193,7 +193,7 @@ Events Detail
     :param Object ev.drag: 自身, 当前拖放对象.
     :param Object ev.drop: 当前交互的Droppable对象.
     
-.. function:: Draggable.dragdrophit
+.. function:: Draggable.Events.dragdrophit
 
     | **dragdrophit** ( ev )
     | 当前 Draggable 对象被放置在一个 Droppable 实例时触发. 相当于 html5 dd API targetNode 的 drop 事件的概念.
@@ -201,7 +201,7 @@ Events Detail
     :param Object ev.drag: 自身, 当前拖放对象.
     :param Object ev.drop: 当前交互的Droppable对象.
     
-.. function:: Draggable.dragdropmiss
+.. function:: Draggable.Events.dragdropmiss
 
     | **dragdropmiss** ( ev )
     | 当用户鼠标弹起但是没有放置当前 ``Draggable`` 对象到一个 Droppable 对象时触发.
@@ -210,11 +210,11 @@ Events Detail
 
 .. note ::
 
-    ``Draggable`` 默认实例化后仅表示会根据鼠标拖放触发 :func:`~Draggable.drag` 事件, 并不会导致节点移动，
+    ``Draggable`` 默认实例化后仅表示会根据鼠标拖放触发 :func:`~Draggable.Events.drag` 事件, 并不会导致节点移动，
     通过以下设置来使得节点跟随鼠标移动：
     
     ..    
-        1. 可监听 :func:`~Draggable.drag` 事件, 根据事件对象参数的坐标设置拖放节点的具体位置.
+        1. 可监听 :func:`~Draggable.Events.drag` 事件, 根据事件对象参数的坐标设置拖放节点的具体位置.
     
         
         .. code-block:: javascript

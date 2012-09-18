@@ -21,5 +21,6 @@ Component
    waterfall/index
    mvc/index
    combobox/index
+   xtemplate/index
    input-selection/index
    editor/index

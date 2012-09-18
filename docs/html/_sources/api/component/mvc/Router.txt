@@ -33,8 +33,8 @@ Static Methods
 Events
 --------------------------------------------------
 
-    * :func:`~Router.events.route`
-    * :js:func:`~Router.events.route:x`    
+    * :func:`~Router.Events.route`
+    * :js:func:`~Router.Events.route:x`    
     
     
 Class Detail
@@ -137,7 +137,7 @@ Static Methods Detail
 Events Detail
 ----------------------------------------------------------
 
-.. function:: Router.events.route
+.. function:: Router.Events.route
 
     | **route( e )**
     | 当发生路由处理时触发
@@ -147,7 +147,7 @@ Events Detail
     :param Object e.query: 同 :func:`~Router.config.routes.fn` 中 query 格式    
     
             
-.. js:function:: Router.events.route:x
+.. js:function:: Router.Events.route:x
 
     | **route( e )**
     | 当发生路由处理时触发, x 替换为当前的规则名，例如 url 改变到 "/" 时触发 "route:/"

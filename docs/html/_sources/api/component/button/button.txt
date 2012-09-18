@@ -34,7 +34,7 @@ Attributes
 Events
 -----------------------------------------------
 
-  * :func:`click`
+  * :func:`~Button.Events.click`
 
 Class Detail
 --------------------------
@@ -101,7 +101,7 @@ Attributes Detail
 Events Detail
 -----------------------------------------------
 
-.. function:: click
+.. function:: Button.Events.click
     
     | **click** (e)
     | 当按钮被点击或被获得焦点后按键 enter|space 触发

@@ -137,9 +137,9 @@
 <h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#tree.Tree.click" title="tree.Tree.click"><tt class="xref py py-func docutils literal"><span class="pre">click()</span></tt></a></li>
-<li><a class="reference internal" href="#tree.Tree.expand" title="tree.Tree.expand"><tt class="xref py py-func docutils literal"><span class="pre">expand()</span></tt></a></li>
-<li><a class="reference internal" href="#tree.Tree.collapse" title="tree.Tree.collapse"><tt class="xref py py-func docutils literal"><span class="pre">collapse()</span></tt></a></li>
+<li><a class="reference internal" href="#tree.Tree.Events.click" title="tree.Tree.Events.click"><tt class="xref py py-func docutils literal"><span class="pre">click()</span></tt></a></li>
+<li><a class="reference internal" href="#tree.Tree.Events.expand" title="tree.Tree.Events.expand"><tt class="xref py py-func docutils literal"><span class="pre">expand()</span></tt></a></li>
+<li><a class="reference internal" href="#tree.Tree.Events.collapse" title="tree.Tree.Events.collapse"><tt class="xref py py-func docutils literal"><span class="pre">collapse()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -184,8 +184,8 @@
 <div class="section" id="events-detail">
 <h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="tree.Tree.click">
-<tt class="descclassname">Tree.</tt><tt class="descname">click</tt><big>(</big><big>)</big><a class="headerlink" href="#tree.Tree.click" title="Permalink to this definition">¶</a></dt>
+<dt id="tree.Tree.Events.click">
+<tt class="descclassname">Tree.Events.</tt><tt class="descname">click</tt><big>(</big><big>)</big><a class="headerlink" href="#tree.Tree.Events.click" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>click(e)</strong></div>
 <div class="line">当树节点被点击后触发</div>
@@ -202,8 +202,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="tree.Tree.expand">
-<tt class="descclassname">Tree.</tt><tt class="descname">expand</tt><big>(</big><big>)</big><a class="headerlink" href="#tree.Tree.expand" title="Permalink to this definition">¶</a></dt>
+<dt id="tree.Tree.Events.expand">
+<tt class="descclassname">Tree.Events.</tt><tt class="descname">expand</tt><big>(</big><big>)</big><a class="headerlink" href="#tree.Tree.Events.expand" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>expand(e)</strong></div>
 <div class="line">当树节点扩展后触发</div>
@@ -220,8 +220,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="tree.Tree.collapse">
-<tt class="descclassname">Tree.</tt><tt class="descname">collapse</tt><big>(</big><big>)</big><a class="headerlink" href="#tree.Tree.collapse" title="Permalink to this definition">¶</a></dt>
+<dt id="tree.Tree.Events.collapse">
+<tt class="descclassname">Tree.Events.</tt><tt class="descname">collapse</tt><big>(</big><big>)</big><a class="headerlink" href="#tree.Tree.Events.collapse" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>collapse(e)</strong></div>
 <div class="line">当树节点收缩后触发</div>
@@ -240,7 +240,7 @@
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p>默认情况下，双击树节点的文字部分或单击扩展图标才会展开收缩其子节点，
-如果你需要改变为：单击树节点的文字部分也展开收缩其子节点，可以监控 <a class="reference internal" href="#tree.Tree.click" title="tree.Tree.click"><tt class="xref py py-func docutils literal"><span class="pre">click()</span></tt></a> 事件</p>
+如果你需要改变为：单击树节点的文字部分也展开收缩其子节点，可以监控 <a class="reference internal" href="#tree.Tree.Events.click" title="tree.Tree.Events.click"><tt class="xref py py-func docutils literal"><span class="pre">click()</span></tt></a> 事件</p>
 <div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">tree</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
     <span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
     <span class="k">if</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;children&quot;</span><span class="p">).</span><span class="nx">length</span><span class="p">){</span>

@@ -22,7 +22,7 @@ Attributes
 Events
 --------------------------------------------------------
 
-    * :func:`~Menu.click`
+    * :func:`~Menu.Events.click`
 
 Class Detail
 --------------------------
@@ -62,7 +62,7 @@ Attributes Detail
 Events Detail
 ------------------------------------------------------
 
-.. function:: Menu.click
+.. function:: Menu.Events.click
 
     | **click(e)**
     | 当子菜单项被点击后触发

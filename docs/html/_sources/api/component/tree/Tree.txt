@@ -20,9 +20,9 @@ Configs
 Events
 --------------------------------------------------------
 
-    * :func:`~Tree.click`    
-    * :func:`~Tree.expand`    
-    * :func:`~Tree.collapse`     
+    * :func:`~Tree.Events.click`    
+    * :func:`~Tree.Events.expand`    
+    * :func:`~Tree.Events.collapse`     
     
 Class Detail
 --------------------------
@@ -52,7 +52,7 @@ Configs Detail
 Events Detail
 ------------------------------------------------------
 
-.. function:: Tree.click
+.. function:: Tree.Events.click
 
     | **click(e)**
     | 当树节点被点击后触发
@@ -60,7 +60,7 @@ Events Detail
     :param Tree.Node e.target: 当前被点击的树节点  
     
     
-.. function:: Tree.expand
+.. function:: Tree.Events.expand
 
     | **expand(e)**
     | 当树节点扩展后触发
@@ -68,7 +68,7 @@ Events Detail
     :param Tree.Node e.target: 当前被扩展的树节点
     
     
-.. function:: Tree.collapse
+.. function:: Tree.Events.collapse
 
     | **collapse(e)**
     | 当树节点收缩后触发
@@ -79,7 +79,7 @@ Events Detail
 .. tip::
 
     默认情况下，双击树节点的文字部分或单击扩展图标才会展开收缩其子节点，
-    如果你需要改变为：单击树节点的文字部分也展开收缩其子节点，可以监控 :func:`~Tree.click` 事件
+    如果你需要改变为：单击树节点的文字部分也展开收缩其子节点，可以监控 :func:`~Tree.Events.click` 事件
     
     .. code-block:: javascript
     

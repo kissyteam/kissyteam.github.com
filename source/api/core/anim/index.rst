@@ -31,7 +31,7 @@ Static Methods
 Events
 -----------------------------------------------
 
-  * :func:`complete`
+  * :func:`~Anim.Events.complete`
 
 Class Detail
 -----------------------------------------------
@@ -211,7 +211,7 @@ Methods Detail
 Events Detail
 -----------------------------------------------
 
-.. function:: complete
+.. function:: Anim.Events.complete
 
     | **complete** ()
     | 动画结束后, 触发该事件.

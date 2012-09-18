@@ -36,12 +36,12 @@ Config Details
 Events Details
 -------------------------------------------
 
-.. function:: Editor.events.resizeStart
+.. function:: Editor.Events.resizeStart
 
     | **resizeStart()**
     | 调整开始时触发
 
-.. function:: Editor.events.resize
+.. function:: Editor.Events.resize
 
     | **resize()**
     | 调整过程中周期触发

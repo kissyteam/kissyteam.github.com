@@ -36,8 +36,8 @@ Methods
 
     * :meth:`~Collection.prototype.sort`
     * :meth:`~Collection.prototype.toJSON`
-    * :meth:`~Collection.prototype.add`
-    * :meth:`~Collection.prototype.remove`
+    * :meth:`~Collection.Events.add`
+    * :meth:`~Collection.Events.remove`
     * :meth:`~Collection.prototype.at`
     * :meth:`~Collection.prototype.load`
     * :meth:`~Collection.prototype.create`
@@ -48,10 +48,10 @@ Methods
 Events
 -----------------------------------------------------
 
-    * :func:`~Collection.prototype.add`    
-    * :func:`~Collection.prototype.remove`    
-    * :func:`~Collection.prototype.afterModelsChange`    
-    * :js:func:`~Collection.prototype.*Change`
+    * :func:`~Collection.Events.add`    
+    * :func:`~Collection.Events.remove`    
+    * :func:`~Collection.Events.afterModelsChange`    
+    * :func:`~Collection.Events.*Change`
     
 Class Detail
 --------------------------
@@ -118,7 +118,7 @@ Methods Detail
     | 对模型对象数组进行排序        
     
     
-.. method:: Collection.prototype.add
+.. method:: Collection.Events.add
 
     | **add ( model [ ,opts ] )**
     | 将json数据或模型插入到集合对象 
@@ -130,7 +130,7 @@ Methods Detail
         
             {boolean} - 默认 false。是否不触发 add 事件
     
-.. method:: Collection.prototype.remove
+.. method:: Collection.Events.remove
 
     | **remove ( model [ ,opts ] )**
     | 将json数据或模型从集合对象中删除 
@@ -225,7 +225,7 @@ Methods Detail
 Events Detail
 ---------------------------------------------------------------------
 
-.. function:: Collection.prototype.add
+.. function:: Collection.Events.add
 
     | **add** (e)
     | 当一个模型对象新加入时触发的事件
@@ -233,19 +233,19 @@ Events Detail
     :param * e.model: 新加入的模型对象    
     
     
-.. function:: Collection.prototype.remove
+.. function:: Collection.Events.remove
 
     | **add** (e)
     | 当一个模型对象从集合中删除时触发的事件
     
     :param * e.model: 删除的模型对象   
     
-.. function:: Collection.prototype.afterModelsChange
+.. function:: Collection.Events.afterModelsChange
 
     | **add** ()
     | 当集合整体设置 models （模型对象数组）后出发
     
-.. js:function:: Collection.prototype.*Change
+.. js:function:: Collection.Events.*Change
 
     | ***Change** (e)
     | 当集合整体设置 models （模型对象数组）后或集合内模型发生改变时触发

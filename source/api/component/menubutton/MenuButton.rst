@@ -35,7 +35,7 @@ Methods
 Events
 --------------------------------------------------------
 
-    * :func:`~MenuButton.click`
+    * :func:`~MenuButton.Events.click`
 
 Class Detail
 --------------------------
@@ -120,7 +120,7 @@ Methods Detail
 Events Detail
 ------------------------------------------------------
 
-.. function:: MenuButton.click
+.. function:: MenuButton.Events.click
 
     | **click(e)**
     | 当子菜单项被点击后触发

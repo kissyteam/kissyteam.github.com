@@ -35,7 +35,38 @@ Configs Detail
     
 .. data:: UIBase.Drag.config.draggable
 
-    {Boolean} - 该组件是否可拖放
+    {Boolean|Object} - 是否允许拖动头部移动及其控制, 注意启用时需同时 ``use("dd")`` , 例如：
+
+    .. code-block:: javascript
+
+        KISSY.use("dd,overlay",function(S,DD,Overlay){
+            new Overlay.Dialog({
+                draggable : true
+            });
+        });
+
+    .. versionadded:: 1.3
+
+    可以设置 :class:`proxy <dd.Proxy>` 或 :class:`scroll <dd.Scroll>` 的控制选项， 例如：
+
+    .. code-block:: javascript
+
+            KISSY.use("dd,overlay",function(S,DD,Overlay){
+                new Overlay.Dialog({
+                    draggable : {
+                        proxy:{
+                            node:function(){
+                                // 生成代理节点
+                            },
+                            destroyOnEnd:true // 每次拖放都生成新的代理节点
+                        },
+
+                        scroll:{
+                            node:window // 随窗口自动滚动
+                        }
+                    }
+                });
+            });
     
 
 .. data:: UIBase.Drag.config.handlers

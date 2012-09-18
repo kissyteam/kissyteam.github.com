@@ -23,18 +23,18 @@ Attributes
 Events
 -----------------------------------------------
 
-  * :func:`~DDM.dragstart`
-  * :func:`~DDM.drag`
-  * :func:`~DDM.dragend`
-  * :func:`~DDM.dragenter`
-  * :func:`~DDM.dragover`
-  * :func:`~DDM.dragexit`
-  * :func:`~DDM.dragdrophit`
-  * :func:`~DDM.dragdropmiss`
-  * :func:`~DDM.dropenter`
-  * :func:`~DDM.dropover`
-  * :func:`~DDM.dropexit`
-  * :func:`~DDM.drophit`
+  * :func:`~DDM.Events.dragstart`
+  * :func:`~DDM.Events.drag`
+  * :func:`~DDM.Events.dragend`
+  * :func:`~DDM.Events.dragenter`
+  * :func:`~DDM.Events.dragover`
+  * :func:`~DDM.Events.dragexit`
+  * :func:`~DDM.Events.dragdrophit`
+  * :func:`~DDM.Events.dragdropmiss`
+  * :func:`~DDM.Events.dropenter`
+  * :func:`~DDM.Events.dropover`
+  * :func:`~DDM.Events.dropexit`
+  * :func:`~DDM.Events.drophit`
 
 
 Class Detail
@@ -63,62 +63,62 @@ Attributes Detail
 Events Detail
 -----------------------------------------------
 
-.. function:: DDM.dragstart
+.. function:: DDM.Events.dragstart
     
     | **dragstart** (ev)
     | 同 :func:`Draggable.dragstart` , 只不过在 DDM 上触发.
 
-.. function:: DDM.drag
+.. function:: DDM.Events.drag
 
     | **drag** (ev)
     | 同 :func:`Draggable.drag` , 只不过在 DDM 上触发.
 
-.. function:: DDM.dragend
+.. function:: DDM.Events.dragend
 
     | **dragend** (ev)
     | 同 :func:`Draggable.dragend` , 只不过在 DDM 上触发.
 
-.. function:: DDM.dragenter
+.. function:: DDM.Events.dragenter
 
     | **dragenter** (ev)
     | 同 :func:`Draggable.dragenter` , 只不过在 DDM 上触发.
 
-.. function:: DDM.dragover
+.. function:: DDM.Events.dragover
 
     | **dragover** (ev)
     | 同 :func:`Draggable.dragover` , 只不过在 DDM 上触发.
 
-.. function:: DDM.dragexit
+.. function:: DDM.Events.dragexit
 
     | **dragexit** (ev)
     | 同 :func:`Draggable.dragexit` , 只不过在 DDM 上触发.
 
-.. function:: DDM.dragdrophit
+.. function:: DDM.Events.dragdrophit
 
     | **dragdrophit** (ev)
     | 同 :func:`Draggable.dragdrophit` , 只不过在 DDM 上触发.
 
-.. function:: DDM.dragdropmiss
+.. function:: DDM.Events.dragdropmiss
 
     | **dragdropmiss** (ev)
     | 同 :func:`Draggable.dragdropmiss` , 只不过在 DDM 上触发.
 
-.. function:: DDM.dropenter
+.. function:: DDM.Events.dropenter
 
     | **dropenter** (ev)
     | 同 :func:`Droppable.dropenter` , 只不过在 DDM 上触发.
 
-.. function:: DDM.dropover
+.. function:: DDM.Events.dropover
 
     | **dropover** (ev)
     | 同 :func:`Droppable.dropover` , 只不过在 DDM 上触发.
 
-.. function:: DDM.dropexit
+.. function:: DDM.Events.dropexit
 
     | **dropexit** (ev)
     | 同 :func:`Droppable.dropexit` , 只不过在 DDM 上触发.
 
-.. function:: DDM.drophit
+.. function:: DDM.Events.drophit
 
     | **drophit** (ev)
     | 同 :func:`Droppable.drophit` , 只不过在 DDM 上触发.

@@ -130,10 +130,10 @@
 <blockquote>
 <div><p>与 <a class="reference internal" href="overlay.html#overlay.Overlay" title="overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> 的配置项完全相同, 其他新增配置项如下：</p>
 <ul class="simple">
-<li><a class="reference internal" href="#overlay.Overlay.prototype.trigger" title="overlay.Overlay.prototype.trigger"><tt class="xref py py-data docutils literal"><span class="pre">trigger</span></tt></a></li>
-<li><a class="reference internal" href="#overlay.Overlay.prototype.triggerType" title="overlay.Overlay.prototype.triggerType"><tt class="xref py py-data docutils literal"><span class="pre">triggerType</span></tt></a></li>
-<li><a class="reference internal" href="#overlay.Overlay.prototype.mouseDelay" title="overlay.Overlay.prototype.mouseDelay"><tt class="xref py py-data docutils literal"><span class="pre">mouseDelay</span></tt></a></li>
-<li><a class="reference internal" href="#overlay.Overlay.prototype.toggle" title="overlay.Overlay.prototype.toggle"><tt class="xref py py-data docutils literal"><span class="pre">toggle</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Popup.prototype.trigger" title="overlay.Popup.prototype.trigger"><tt class="xref py py-data docutils literal"><span class="pre">trigger</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Popup.prototype.triggerType" title="overlay.Popup.prototype.triggerType"><tt class="xref py py-data docutils literal"><span class="pre">triggerType</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Popup.prototype.mouseDelay" title="overlay.Popup.prototype.mouseDelay"><tt class="xref py py-data docutils literal"><span class="pre">mouseDelay</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Popup.prototype.toggle" title="overlay.Popup.prototype.toggle"><tt class="xref py py-data docutils literal"><span class="pre">toggle</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -157,7 +157,7 @@
 <h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li>同 <a class="reference internal" href="overlay.html#overlay.Overlay" title="overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> , 包括 <a class="reference internal" href="overlay.html#overlay.Overlay.show" title="overlay.Overlay.show"><tt class="xref py py-func docutils literal"><span class="pre">show()</span></tt></a> , <a class="reference internal" href="overlay.html#overlay.Overlay.hide" title="overlay.Overlay.hide"><tt class="xref py py-func docutils literal"><span class="pre">hide()</span></tt></a> , <a class="reference internal" href="overlay.html#overlay.Overlay.beforeVisibleChange" title="overlay.Overlay.beforeVisibleChange"><tt class="xref py py-func docutils literal"><span class="pre">beforeVisibleChange()</span></tt></a> .</li>
+<li>同 <a class="reference internal" href="overlay.html#overlay.Overlay" title="overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -170,6 +170,9 @@
 <div class="line"><strong>Popup</strong> (config)</div>
 <div class="line">xclass: &#8216;popup&#8217;</div>
 </div>
+<ul class="simple">
+<li>继承自 <a class="reference internal" href="overlay.html#overlay.Overlay" title="overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> , 包含其全部配置,属性,方法,事件.</li>
+</ul>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -197,47 +200,30 @@
 </div>
 <div class="section" id="configs-detail">
 <h2>Configs Detail<a class="headerlink" href="#configs-detail" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div>与 <a class="reference internal" href="overlay.html#overlay.Overlay" title="overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> 的配置项完全相同, 其他新增配置项如下：</div></blockquote>
 <dl class="data">
-<dt id="overlay.Overlay.prototype.trigger">
-<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">trigger</tt><a class="headerlink" href="#overlay.Overlay.prototype.trigger" title="Permalink to this definition">¶</a></dt>
+<dt id="overlay.Popup.prototype.trigger">
+<tt class="descclassname">Popup.prototype.</tt><tt class="descname">trigger</tt><a class="headerlink" href="#overlay.Popup.prototype.trigger" title="Permalink to this definition">¶</a></dt>
 <dd><p>{String|HTMLElement|KISSY.Node} - 触点</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="overlay.Overlay.prototype.triggerType">
-<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">triggerType</tt><a class="headerlink" href="#overlay.Overlay.prototype.triggerType" title="Permalink to this definition">¶</a></dt>
+<dt id="overlay.Popup.prototype.triggerType">
+<tt class="descclassname">Popup.prototype.</tt><tt class="descname">triggerType</tt><a class="headerlink" href="#overlay.Popup.prototype.triggerType" title="Permalink to this definition">¶</a></dt>
 <dd><p>{String} - 可选, 默认为&#8217;click&#8217;, 触发类型, 可选&#8217;click&#8217;, &#8216;mouse&#8217;.</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="overlay.Overlay.prototype.mouseDelay">
-<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">mouseDelay</tt><a class="headerlink" href="#overlay.Overlay.prototype.mouseDelay" title="Permalink to this definition">¶</a></dt>
+<dt id="overlay.Popup.prototype.mouseDelay">
+<tt class="descclassname">Popup.prototype.</tt><tt class="descname">mouseDelay</tt><a class="headerlink" href="#overlay.Popup.prototype.mouseDelay" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Number} - 可选, triggerType 为 mouse 时, Popup 显示的延迟时间, 默认为 100ms.</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="overlay.Overlay.prototype.toggle">
-<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">toggle</tt><a class="headerlink" href="#overlay.Overlay.prototype.toggle" title="Permalink to this definition">¶</a></dt>
+<dt id="overlay.Popup.prototype.toggle">
+<tt class="descclassname">Popup.prototype.</tt><tt class="descname">toggle</tt><a class="headerlink" href="#overlay.Popup.prototype.toggle" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Boolean} - 可选, triggerType 为 click 时, Popup 是否有toggle功能，默认为false，不开启</p>
 </dd></dl>
 
-</div>
-<div class="section" id="attributes-detail">
-<h2>Attributes Detail<a class="headerlink" href="#attributes-detail" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div>同 <a class="reference internal" href="overlay.html#overlay.Overlay" title="overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> .</div></blockquote>
-</div>
-<div class="section" id="methods-detail">
-<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div>同 <a class="reference internal" href="overlay.html#overlay.Overlay" title="overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> .</div></blockquote>
-</div>
-<div class="section" id="events-detail">
-<h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div>同 <a class="reference internal" href="overlay.html#overlay.Overlay" title="overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> , 包括 <a class="reference internal" href="overlay.html#overlay.Overlay.show" title="overlay.Overlay.show"><tt class="xref py py-func docutils literal"><span class="pre">show()</span></tt></a> , <a class="reference internal" href="overlay.html#overlay.Overlay.hide" title="overlay.Overlay.hide"><tt class="xref py py-func docutils literal"><span class="pre">hide()</span></tt></a> , <a class="reference internal" href="overlay.html#overlay.Overlay.beforeVisibleChange" title="overlay.Overlay.beforeVisibleChange"><tt class="xref py py-func docutils literal"><span class="pre">beforeVisibleChange()</span></tt></a> .</div></blockquote>
 </div>
 </div>
 

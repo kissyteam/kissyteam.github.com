@@ -30,7 +30,8 @@ Configs
 Attributes
 -----------------------------------------------     
 
-    * :attr:`~UIBase.Box.prototype.el` 
+    * :attr:`~UIBase.Box.prototype.el`
+    * :attr:`~UIBase.Box.prototype.visible`
     
 Methods
 -----------------------------------------------
@@ -42,9 +43,9 @@ Methods
 Events
 -----------------------------------------------
 
-  * :func:`hide`
-  * :func:`show`
-  * :func:`beforeVisibleChange`    
+  * :func:`~UIBase.Box.Events.hide`
+  * :func:`~UIBase.Box.Events.show`
+  * :func:`~UIBase.Box.Events.beforeVisibleChange`
 
     
 
@@ -120,7 +121,9 @@ Attributes Detail
 
     {KISSY.Node} - 该组件的根节点. 注意调用 render() 后才可以取得.
 
+.. attribute:: UIBase.Box.prototype.visible
 
+    {Boolean} - 该组件是否显示
         
     
 Methods Detail
@@ -142,17 +145,17 @@ Methods Detail
 Events Detail
 -----------------------------------------------
 
-.. function:: hide
+.. function:: UIBase.Box.Events.hide
     
     | **hide** ()
     | 当组件隐藏时触发
 
-.. function:: show
+.. function:: UIBase.Box.Events.show
 
     | **show** ()
     | 当组件显示时触发
 
-.. function:: beforeVisibleChange
+.. function:: UIBase.Box.Events.beforeVisibleChange
 
     | **beforeVisibleChange** (ev)
     | 当组件隐藏或显示前触发

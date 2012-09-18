@@ -47,8 +47,8 @@ Methods
 Events
 --------------------------------------------------------
 
-    * :func:`~Combobox.events.afterCollapsedChange`
-    * :func:`~Combobox.events.click`
+    * :func:`~Combobox.Events.afterCollapsedChange`
+    * :func:`~Combobox.Events.click`
 
 Class Detail
 --------------------------
@@ -130,19 +130,21 @@ Configs Detail
 
     例如高亮的处理:
 
-    {
-        format:function(query, data){
-            var ret = [];
-            for (var i = 0; i < data.length; i++) {
-                ret[i] = {
-                    content:(data[i] + "")
-                            .replace(new RegExp(S.escapeRegExp(query), "g"),
-                            "<b>$&</b>")
-                };
+    .. code-block:: javascript
+
+        {
+            format:function(query, data){
+                var ret = [];
+                for (var i = 0; i < data.length; i++) {
+                    ret[i] = {
+                        content:(data[i] + "")
+                                .replace(new RegExp(S.escapeRegExp(query), "g"),
+                                "<b>$&</b>")
+                    };
+                }
+                return ret;
             }
-            return ret;
         }
-    }
 
 .. data:: Combobox.config.multiple
 
@@ -202,7 +204,7 @@ Methods Detail
 Events Detail
 ------------------------------------------------------
 
-.. function:: Combobox.events.click
+.. function:: Combobox.Events.click
 
     | **click(e)**
     | 当用户选择自动补全下拉框内的项时触发
@@ -210,7 +212,7 @@ Events Detail
     :param {MenuItem} e.target: 选择的下拉菜单项
 
 
-.. function:: Combobox.events.afterCollapsedChange
+.. function:: Combobox.Events.afterCollapsedChange
 
     | **afterCollapsedChange(e)**
     | 当下拉菜单显示或隐藏时触发

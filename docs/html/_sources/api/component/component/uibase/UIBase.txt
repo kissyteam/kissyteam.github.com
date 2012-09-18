@@ -23,7 +23,13 @@ Methods
 -----------------------------------------------
 
     * :meth:`~UIBase.prototype.render`    
-    * :meth:`~UIBase.prototype.destroy`    
+    * :meth:`~UIBase.prototype.destroy`
+
+
+Events
+-----------------------------------------------
+
+  * :func:`~UIBase.Events.afterRenderUI`
 
 Class Detail
 --------------------------
@@ -107,5 +113,13 @@ Methods Detail
     | **destroy ( )**
 
     销毁该组件（删除节点以及去除事件绑定）.
+
+Events Detail
+-----------------------------------------------
+
+.. function:: UIBase.Events.afterRenderUI
+
+    | **afterRenderUI** ()
+    | 当组件被渲染 dom 时触发
 
     

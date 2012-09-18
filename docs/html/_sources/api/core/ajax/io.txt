@@ -42,10 +42,10 @@ Configs
 Events
 -----------------------------------------------
 
-  * :func:`start`
-  * :func:`send`
-  * :func:`success`
-  * :func:`error`
+  * :func:`~io.Events.start`
+  * :func:`~io.Events.send`
+  * :func:`~io.Events.success`
+  * :func:`~io.Events.error`
 
 
 Methods Detail
@@ -332,7 +332,7 @@ Events Detail
                 indicator.hide();
         });
 
-.. function:: start
+.. function:: io.Events.start
 
     | **start** ()
     | 当配置初始化后，获取传输对象前触发。事件对象包括一下属性
@@ -344,17 +344,17 @@ Events Detail
 
         当前的请求关联的 :class:`~io.XhrObj` 对象
 
-.. function:: send
+.. function:: io.Events.send
 
     | **send** ()
     | 请求发送前触发。可用于 loading indicator 显示时机。事件对象同 ``start`` 事件.
 
-.. function:: success
+.. function:: io.Events.success
 
     | **success** ()
     | 服务器返回成功后触发.事件对象同 ``start`` 事件.
 
-.. function:: error
+.. function:: io.Events.error
 
     | **error** ()
     | 服务器返回失败后触发.事件对象同 ``start`` 事件.
@@ -364,8 +364,6 @@ Demo
 -------------------------------------------      
 
     **载入并执行一段脚本**
-
-
 
     .. code-block:: javascript
 

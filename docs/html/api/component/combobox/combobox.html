@@ -172,8 +172,8 @@
 <h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#combobox.Combobox.events.afterCollapsedChange" title="combobox.Combobox.events.afterCollapsedChange"><tt class="xref py py-func docutils literal"><span class="pre">afterCollapsedChange()</span></tt></a></li>
-<li><a class="reference internal" href="#combobox.Combobox.events.click" title="combobox.Combobox.events.click"><tt class="xref py py-func docutils literal"><span class="pre">click()</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.Combobox.Events.afterCollapsedChange" title="combobox.Combobox.Events.afterCollapsedChange"><tt class="xref py py-func docutils literal"><span class="pre">afterCollapsedChange()</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.Combobox.Events.click" title="combobox.Combobox.Events.click"><tt class="xref py py-func docutils literal"><span class="pre">click()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -274,32 +274,21 @@
 <dd><p>{Function} - 可选。自定义下拉菜单属性的函数，传入参数 query(自动补全框当前值) , data(匹配数据数组)。
 返回对象数组，其中对象的 content 属性表示菜单项显示内容，textContent 表示放入到自动补全框的内容，disabled 表示当前项是否被禁用.</p>
 <p>例如高亮的处理:</p>
-<dl class="docutils">
-<dt>{</dt>
-<dd><dl class="first docutils">
-<dt>format:function(query, data){</dt>
-<dd><p class="first">var ret = [];
-for (var i = 0; i &lt; data.length; i++) {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>ret[i] = {</dt>
-<dd><dl class="first last docutils">
-<dt>content:(data[i] + &#8220;&#8221;)</dt>
-<dd>.replace(new RegExp(S.escapeRegExp(query), &#8220;g&#8221;),
-&#8220;&lt;b&gt;$&amp;&lt;/b&gt;&#8221;)</dd>
-</dl>
-</dd>
-</dl>
-<p>};</p>
-</div></blockquote>
-<p class="last">}
-return ret;</p>
-</dd>
-</dl>
-<p class="last">}</p>
-</dd>
-</dl>
-<p>}</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">format</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="nx">data</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">ret</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">ret</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="nx">content</span><span class="o">:</span><span class="p">(</span><span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+                        <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">escapeRegExp</span><span class="p">(</span><span class="nx">query</span><span class="p">),</span> <span class="s2">&quot;g&quot;</span><span class="p">),</span>
+                        <span class="s2">&quot;&lt;b&gt;$&amp;&lt;/b&gt;&quot;</span><span class="p">)</span>
+            <span class="p">};</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">ret</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="data">
@@ -390,8 +379,8 @@ return ret;</p>
 <div class="section" id="events-detail">
 <h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="combobox.Combobox.events.click">
-<tt class="descclassname">Combobox.events.</tt><tt class="descname">click</tt><big>(</big><big>)</big><a class="headerlink" href="#combobox.Combobox.events.click" title="Permalink to this definition">¶</a></dt>
+<dt id="combobox.Combobox.Events.click">
+<tt class="descclassname">Combobox.Events.</tt><tt class="descname">click</tt><big>(</big><big>)</big><a class="headerlink" href="#combobox.Combobox.Events.click" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>click(e)</strong></div>
 <div class="line">当用户选择自动补全下拉框内的项时触发</div>
@@ -408,8 +397,8 @@ return ret;</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="combobox.Combobox.events.afterCollapsedChange">
-<tt class="descclassname">Combobox.events.</tt><tt class="descname">afterCollapsedChange</tt><big>(</big><big>)</big><a class="headerlink" href="#combobox.Combobox.events.afterCollapsedChange" title="Permalink to this definition">¶</a></dt>
+<dt id="combobox.Combobox.Events.afterCollapsedChange">
+<tt class="descclassname">Combobox.Events.</tt><tt class="descname">afterCollapsedChange</tt><big>(</big><big>)</big><a class="headerlink" href="#combobox.Combobox.Events.afterCollapsedChange" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>afterCollapsedChange(e)</strong></div>
 <div class="line">当下拉菜单显示或隐藏时触发</div>

@@ -27,15 +27,15 @@ Attributes
 Methods
 -----------------------------------------------
 
-  * :meth:`~DroppableDelegate.destroy`
+  * :meth:`~DroppableDelegate.prototype.destroy`
 
 Events
 -----------------------------------------------
 
-  * :func:`~DroppableDelegate.dropenter`
-  * :func:`~DroppableDelegate.dropover`
-  * :func:`~DroppableDelegate.dropexit`
-  * :func:`~DroppableDelegate.drophit`
+  * :func:`~DroppableDelegate.Events.dropenter`
+  * :func:`~DroppableDelegate.Events.dropover`
+  * :func:`~DroppableDelegate.Events.dropexit`
+  * :func:`~DroppableDelegate.Events.drophit`
 
 
 Class Detail
@@ -73,7 +73,7 @@ Attributes Detail
 Methods Detail
 -----------------------------------------------
 
-.. method:: DroppableDelegate.destroy
+.. method:: DroppableDelegate.prototype.destroy
 
     | **destroy** ()
     | 销毁可放对象实例, 清除绑定事件
@@ -81,23 +81,23 @@ Methods Detail
 Events Detail
 -----------------------------------------------
 
-.. function:: DroppableDelegate.dropenter
+.. function:: DroppableDelegate.Events.dropenter
 
     | **dropenter** (ev)
-    | 同 :func:`Droppable.dropenter`
+    | 同 :func:~Droppable.Events.dropenter`
 
-.. function:: DroppableDelegate.dropover
+.. function:: DroppableDelegate.Events.dropover
 
     | **dropover** (ev)
-    | 同 :func:`Droppable.dropover`
+    | 同 :func:~Droppable.Events.dropover`
 
-.. function:: DroppableDelegate.dropexit
+.. function:: DroppableDelegate.Events.dropexit
 
     | **dropexit** (ev)
-    | 同 :func:`Droppable.dropexit`
+    | 同 :func:~Droppable.Events.dropexit`
 
-.. function:: DroppableDelegate.drophit
+.. function:: DroppableDelegate.Events.drophit
 
     | **drophit** (ev)
-    | 同 :func:`Droppable.drophit`
+    | 同 :func:~Droppable.Events.drophit`
 

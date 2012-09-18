@@ -22,9 +22,9 @@ Methods
 Events
 -----------------------------------------------
 
-  * :func:`~Attribute.prototype.beforeAttrNameChange`
-  * :func:`~Attribute.prototype.afterAttrNameChange`
-  * :js:func:`~Attribute.prototype.*Change`
+  * :func:`~Attribute.Events.beforeAttrNameChange`
+  * :func:`~Attribute.Events.afterAttrNameChange`
+  * :js:func:`~Attribute.Events.*Change`
 
 Class Detail
 --------------------------
@@ -155,7 +155,7 @@ Methods Detail
 Events Detail
 -----------------------------------------------
 
-.. function:: Attribute.prototype.beforeAttrNameChange
+.. function:: Attribute.Events.beforeAttrNameChange
 
     | **beforeAttrNameChange** (e)
     | 名为 "attrName" 的属性, 在改变它的值之前触发该事件.
@@ -166,7 +166,7 @@ Events Detail
     :param String e.subAttrName:  当前的完整属性名，例如 "x.y"
 
 
-.. function:: Attribute.prototype.afterAttrNameChange
+.. function:: Attribute.Events.afterAttrNameChange
 
     | **afterAttrNameChange** (e)
     | 名为 "attrName" 的属性, 在改变它的值之后触发该事件.
@@ -177,10 +177,8 @@ Events Detail
     :param String e.subAttrName:  当前的完整属性名，例如 "x.y"
 
 
-.. js:function:: Attribute.prototype.*Change
+.. js:function:: Attribute.Events.*Change
 
-
-    
     | ***Change** (e)
     | 每调用 :func:`~Attribute.prototype.set` 一次后就触发一次该事件.
     
@@ -188,7 +186,6 @@ Events Detail
     :param Array e.subAttrName: 本次 set 导致的属性全名集合        
     :param Array e.newVal: 本次 set 导致的属性当前值集合
     :param Array e.prevVal: 本次 set 导致的属性在 set 前的值集合
-    
     
     .. note::
 

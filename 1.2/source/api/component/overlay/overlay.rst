@@ -49,6 +49,7 @@ Methods
 -----------------------------------------------
 
   * :meth:`~Overlay.prototype.render`
+  * :meth:`~Overlay.prototype.destroy`
   * :meth:`~Overlay.prototype.show`
   * :meth:`~Overlay.prototype.hide`
   * :meth:`~Overlay.prototype.align`
@@ -300,9 +301,14 @@ Methods Detail
     | **render** ()
     | 渲染当前实例, 生成对应的 dom 节点并添加到页面文档树中.
 
-.. note::
+    .. note::
 
-    默认不显示，要显示出来要调用 show 方法.
+        默认不显示，要显示出来要调用 show 方法.
+
+.. method:: Overlay.prototype.destroy
+
+    | **destroy** ()
+    | 销毁当前实例（以及 dom 节点）
 
 .. method:: Overlay.prototype.show
 
@@ -313,8 +319,6 @@ Methods Detail
 
     | **hide** ()
     | 隐藏悬浮层.
-
-.. deprecated:: 1.2
 
 .. method:: Overlay.prototype.align
 

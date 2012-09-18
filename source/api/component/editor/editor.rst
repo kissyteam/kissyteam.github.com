@@ -64,29 +64,29 @@ Methods
 Events
 --------------------------------------------------------
 
-    * :func:`~Editor.events.wysiwygMode`
-    * :func:`~Editor.events.sourceMode`
-    * :func:`~Editor.events.selectionChange`
-    * :func:`~Editor.events.dialogShow`
-    * :func:`~Editor.events.focus`
-    * :func:`~Editor.events.blur`
-    * :func:`~Editor.events.paste`
+    * :func:`~Editor.Events.wysiwygMode`
+    * :func:`~Editor.Events.sourceMode`
+    * :func:`~Editor.Events.selectionChange`
+    * :func:`~Editor.Events.dialogShow`
+    * :func:`~Editor.Events.focus`
+    * :func:`~Editor.Events.blur`
+    * :func:`~Editor.Events.paste`
 
 可选插件在编辑器上触发的事件
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    * :func:`~Editor.events.afterMaximizeWindow`
-    * :func:`~Editor.events.afterRestoreWindow`
-    * :func:`~Editor.events.beforeMaximizeWindow`
-    * :func:`~Editor.events.beforeRestoreWindow`
-    * :func:`~Editor.events.resizeStart`
-    * :func:`~Editor.events.resize`
-    * :func:`~Editor.events.beforeUndo`
-    * :func:`~Editor.events.beforeRedo`
-    * :func:`~Editor.events.afterUndo`
-    * :func:`~Editor.events.afterRedo`
-    * :func:`~Editor.events.beforeSave`
-    * :func:`~Editor.events.afterSave`
+    * :func:`~Editor.Events.afterMaximizeWindow`
+    * :func:`~Editor.Events.afterRestoreWindow`
+    * :func:`~Editor.Events.beforeMaximizeWindow`
+    * :func:`~Editor.Events.beforeRestoreWindow`
+    * :func:`~Editor.Events.resizeStart`
+    * :func:`~Editor.Events.resize`
+    * :func:`~Editor.Events.beforeUndo`
+    * :func:`~Editor.Events.beforeRedo`
+    * :func:`~Editor.Events.afterUndo`
+    * :func:`~Editor.Events.afterRedo`
+    * :func:`~Editor.Events.beforeSave`
+    * :func:`~Editor.Events.afterSave`
 
 Class Detail
 --------------------------
@@ -346,36 +346,36 @@ Methods Detail
 Events Detail
 ------------------------------------------------------
 
-.. function:: Editor.events.paste
+.. function:: Editor.Events.paste
 
     | **paste(e)**
     | 当用户黏贴文本触发，可返回值用来修改用户的黏贴内容
 
     :param e.html: 用户的黏贴内容
 
-.. function:: Editor.events.focus
+.. function:: Editor.Events.focus
 
     | **wysiwygMode(e)**
     | 当编辑区域获得焦点时触发
 
-.. function:: Editor.events.blur
+.. function:: Editor.Events.blur
 
     | **wysiwygMode(e)**
     | 当编辑区域失去焦点时触发
 
-.. function:: Editor.events.wysiwygMode
+.. function:: Editor.Events.wysiwygMode
 
     | **wysiwygMode(e)**
     | 当切换到可视化模式后触发
 
 
-.. function:: Editor.events.sourceMode
+.. function:: Editor.Events.sourceMode
 
     | **sourceMode(e)**
     | 当切换到源码模式后触发
 
 
-.. function:: Editor.events.selectionChange
+.. function:: Editor.Events.selectionChange
 
     | **selectionChange(e)**
     | 当用户光标路径变化后触发
@@ -385,7 +385,7 @@ Events Detail
     :param {KISSY.Node} element: 光标开始处所在的非文字节点元素.
 
 
-.. function:: Editor.events.dialogShow
+.. function:: Editor.Events.dialogShow
 
     | **dialogShow(e)**
     | 当弹出插件窗口事触发

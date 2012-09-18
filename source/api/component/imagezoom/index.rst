@@ -48,8 +48,8 @@ Methods
 Events
 -----------------------------------------------
 
-    * :func:`~ImageZoom.show`
-    * :func:`~ImageZoom.hide`
+    * :func:`~ImageZoom.Event.show`
+    * :func:`~ImageZoom.Event.hide`
 
 
 Class Detail
@@ -201,12 +201,12 @@ Methods Detail
 Events Detail
 -----------------------------------------------
 
-.. function:: ImageZoom.show
+.. function:: ImageZoom.Event.show
     
     | **show** ()
     | 放大区域显示之后.
 
-.. function:: ImageZoom.hide
+.. function:: ImageZoom.Event.hide
 
     | **hide** ()
     | 放大区域隐藏之后.

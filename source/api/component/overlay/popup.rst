@@ -17,10 +17,10 @@ Configs
 
   与 :class:`Overlay` 的配置项完全相同, 其他新增配置项如下：
   
-  * :data:`~Overlay.prototype.trigger`
-  * :data:`~Overlay.prototype.triggerType`
-  * :data:`~Overlay.prototype.mouseDelay`
-  * :data:`~Overlay.prototype.toggle`
+  * :data:`~Popup.prototype.trigger`
+  * :data:`~Popup.prototype.triggerType`
+  * :data:`~Popup.prototype.mouseDelay`
+  * :data:`~Popup.prototype.toggle`
   
 Attributes
 -----------------------------------------------
@@ -37,8 +37,7 @@ Methods
 Events
 -----------------------------------------------
 
-  * 同 :class:`Overlay` , 包括 :func:`~Overlay.show` , :func:`~Overlay.hide` , :func:`~Overlay.beforeVisibleChange` .
-
+  * 同 :class:`Overlay`
 
 Class Detail
 -----------------------------------------------
@@ -47,7 +46,9 @@ Class Detail
     
     | **Popup** (config)
     | xclass: 'popup'
-    
+
+    * 继承自 :class:`~Overlay` , 包含其全部配置,属性,方法,事件.
+
     :param Object config: 配置项, 详细见下方 **Configs Detail** .
     
 .. note::
@@ -67,41 +68,19 @@ Class Detail
     
 Configs Detail
 -----------------------------------------------
-
-    与 :class:`Overlay` 的配置项完全相同, 其他新增配置项如下：
     
-.. data:: Overlay.prototype.trigger
+.. data:: Popup.prototype.trigger
 
     {String|HTMLElement|KISSY.Node} - 触点
 
-.. data:: Overlay.prototype.triggerType
+.. data:: Popup.prototype.triggerType
 
     {String} - 可选, 默认为'click', 触发类型, 可选'click', 'mouse'.
 
-.. data:: Overlay.prototype.mouseDelay
+.. data:: Popup.prototype.mouseDelay
 
     {Number} - 可选, triggerType 为 mouse 时, Popup 显示的延迟时间, 默认为 100ms.
 
-.. data:: Overlay.prototype.toggle
+.. data:: Popup.prototype.toggle
 
     {Boolean} - 可选, triggerType 为 click 时, Popup 是否有toggle功能，默认为false，不开启
-
-Attributes Detail
------------------------------------------------
-
-    同 :class:`Overlay` .
-    
-    
-Methods Detail
------------------------------------------------
-
-    同 :class:`Overlay` .
-    
-    
-Events Detail
------------------------------------------------
-
-    同 :class:`Overlay` , 包括 :func:`~Overlay.show` , :func:`~Overlay.hide` , :func:`~Overlay.beforeVisibleChange` .
-
-                              
-

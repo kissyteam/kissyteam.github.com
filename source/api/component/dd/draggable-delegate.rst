@@ -34,14 +34,14 @@ Methods
 Events
 -----------------------------------------------
 
-  * :func:`~DraggableDelegate.dragstart`
-  * :func:`~DraggableDelegate.drag`
-  * :func:`~DraggableDelegate.dragend`
-  * :func:`~DraggableDelegate.dragenter`
-  * :func:`~DraggableDelegate.dragover`
-  * :func:`~DraggableDelegate.dragexit`
-  * :func:`~DraggableDelegate.dragdrophit`
-  * :func:`~DraggableDelegate.dragdropmiss`
+  * :func:`~DraggableDelegate.Events.dragstart`
+  * :func:`~DraggableDelegate.Events.drag`
+  * :func:`~DraggableDelegate.Events.dragend`
+  * :func:`~DraggableDelegate.Events.dragenter`
+  * :func:`~DraggableDelegate.Events.dragover`
+  * :func:`~DraggableDelegate.Events.dragexit`
+  * :func:`~DraggableDelegate.Events.dragdrophit`
+  * :func:`~DraggableDelegate.Events.dragdropmiss`
 
 
 Class Detail
@@ -98,43 +98,43 @@ Methods Detail
 Events Detail
 -----------------------------------------------
 
-.. function:: DraggableDelegate.dragstart
+.. function:: DraggableDelegate.Events.dragstart
     
     | **dragstart** (ev)
-    | 同 :func:`Draggable.dragstart`
+    | 同 :func:`Draggable.Events.dragstart`
 
-.. function:: DraggableDelegate.drag
+.. function:: DraggableDelegate.Events.drag
 
     | **drag** (ev)
-    | 同 :func:`Draggable.drag`
+    | 同 :func:`Draggable.Events.drag`
 
-.. function:: DraggableDelegate.dragend
+.. function:: DraggableDelegate.Events.dragend
 
     | **dragend** (ev)
-    | 同 :func:`Draggable.dragend`
+    | 同 :func:`Draggable.Events.dragend`
 
-.. function:: DraggableDelegate.dragenter
+.. function:: DraggableDelegate.Events.dragenter
 
     | **dragenter** (ev)
-    | 同 :func:`Draggable.dragenter`
+    | 同 :func:`Draggable.Events.dragenter`
 
-.. function:: DraggableDelegate.dragover
+.. function:: DraggableDelegate.Events.dragover
 
     | **dragover** (ev)
-    | 同 :func:`Draggable.dragover`
+    | 同 :func:`Draggable.Events.dragover`
 
-.. function:: DraggableDelegate.dragexit
+.. function:: DraggableDelegate.Events.dragexit
 
     | **dragexit** (ev)
-    | 同 :func:`Draggable.dragexit`
+    | 同 :func:`Draggable.Events.dragexit`
 
-.. function:: DraggableDelegate.dragdrophit
+.. function:: DraggableDelegate.Events.dragdrophit
 
     | **dragdrophit** (ev)
-    | 同 :func:`Draggable.dragdrophit`
+    | 同 :func:`Draggable.Events.dragdrophit`
 
-.. function:: DraggableDelegate.dragdropmiss
+.. function:: DraggableDelegate.Events.dragdropmiss
 
     | **dragdropmiss** (ev)
-    | 同 :func:`Draggable.dragdropmiss`
+    | 同 :func:`Draggable.Events.dragdropmiss`
 

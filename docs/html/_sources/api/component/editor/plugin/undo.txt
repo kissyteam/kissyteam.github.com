@@ -32,32 +32,32 @@ Commands
 Events Details
 -------------------------------------------
 
-.. function:: Editor.events.beforeUndo
+.. function:: Editor.Events.beforeUndo
 
     | **beforeUndo()**
     | 历史撤销前触发.返回 false 取消操作
 
-.. function:: Editor.events.beforeRedo
+.. function:: Editor.Events.beforeRedo
 
     | **beforeRedo()**
     | 历史重做前触发.返回 false 取消操作
 
-.. function:: Editor.events.beforeSave
+.. function:: Editor.Events.beforeSave
 
     | **beforeSave()**
     | 记录历史前触发.返回 false 取消操作
 
-.. function:: Editor.events.afterUndo
+.. function:: Editor.Events.afterUndo
 
     | **afterUndo()**
     | 历史撤销后触发.
 
-.. function:: Editor.events.afterRedo
+.. function:: Editor.Events.afterRedo
 
     | **afterRedo()**
     | 历史重做后触发.
 
-.. function:: Editor.events.afterSave
+.. function:: Editor.Events.afterSave
 
     | **afterSave()**
     | 记录历史后触发.

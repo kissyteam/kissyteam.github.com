@@ -30,22 +30,22 @@ Commands
 Events Details
 -------------------------------------------
 
-.. function:: Editor.events.afterMaximizeWindow
+.. function:: Editor.Events.afterMaximizeWindow
 
     | **maximizeWindow()**
     | 最大化窗口后触发
 
-.. function:: Editor.events.afterRestoreWindow
+.. function:: Editor.Events.afterRestoreWindow
 
     | **maximizeWindow()**
     | 恢复窗口后触发
 
-.. function:: Editor.events.beforeRestoreWindow
+.. function:: Editor.Events.beforeRestoreWindow
 
     | **maximizeWindow()**
     | 恢复窗口前触发，返回 false 可阻止最大化
 
-.. function:: Editor.events.beforeMaximizeWindow
+.. function:: Editor.Events.beforeMaximizeWindow
 
     | **maximizeWindow()**
     | 最大化窗口前触发，返回 false 可阻止最大化
