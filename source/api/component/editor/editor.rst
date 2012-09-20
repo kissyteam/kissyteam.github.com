@@ -19,6 +19,7 @@ Configs
     * :data:`~Editor.config.customStyle`
     * :data:`~Editor.config.customLink`
     * :data:`~Editor.config.attachForm`
+    * :data:`~Editor.config.textarea`
     * :data:`~component.UIBase.config.plugins`
     * :data:`~component.UIBase.config.listeners`
     * :data:`~component.UIBase.config.srcNode`
@@ -115,6 +116,18 @@ Configs Detail
 .. data:: Editor.config.customLink
 
     {String[]} - 自定义样式表 url 数组.
+
+.. data:: Editor.config.textarea
+
+    {String} - optional. 自定义产生 textarea 节点的 html.
+
+    例如可以指定全新产生 editor 所属 textarea 的 name 值
+
+    .. code-block:: javascript
+
+        new Editor({
+            textarea: '<textarea name="custom"></textarea>'
+        });
 
 .. data:: Editor.config.attachForm
 
