@@ -25,4 +25,5 @@ Component
    calendar/index
    imagezoom/index
    combobox/index
+   xtemplate/index
    editor/index

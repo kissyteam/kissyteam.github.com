@@ -1,3 +1,5 @@
+.. _xtemplate_demo:
+
 .. currentmodule:: xtemplate
 
 xtemplate 使用示例
