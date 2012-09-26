@@ -11,13 +11,18 @@ Class
   * :class:`mvc.Collection`
   * :class:`mvc.View`
   * :class:`mvc.Router`
-  
+
+
 Method
 -----------------------------------------------
 
   * :func:`mvc.sync`
 
+
 Demos
 -----------------------------------------------
 
-    `新窗口打开 <../../../../../../kissy/src/mvc/demo.html>`_
+    `hash-based mvc <../../../_static/demo/mvc/note-hash.html>`_
+
+    `html5-history-based mvc <../../../_static/demo/mvc/note-html5/>`_
+
