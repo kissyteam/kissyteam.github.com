@@ -14,13 +14,13 @@
 
 .. raw:: html
 
-        <img  src='../../_static/projguide/mockup.jpg' />
+        <img  src='../../../../source/raw/projguide/mockup.jpg' />
 
 这个演示如此简单，以至于我们可以只在一个html页面里干完所有的事情。
 
 我们并不是想告诉大家如何用复杂的方式去做简单的事情，而是试图剥离代码的复杂性，让你把注意力集中在项目的开发过程上。
 
-请下载本示例的 `源代码 <../../_static/projguide/hello-world.zip>`_ ，打开 hello-world-demo > hello-world.html 查看效果。
+请下载本示例的 `源代码 <../../../../source/raw/projguide/hello-world.zip>`_ ，打开 hello-world-demo > hello-world.html 查看效果。
     
 
 2. 目录组织
@@ -31,7 +31,7 @@
 
 .. raw:: html
 
-        <img  src='../../_static/projguide/folders.jpg' />
+        <img  src='../../../../source/raw/projguide/folders.jpg' />
 
 这些目录的用途如下：
 
@@ -196,7 +196,7 @@ hello-world-demo >  img 文件夹用于存放项目中用到的各种图片(虽�
 
 .. raw:: html
 
-        <img  src='../../_static/projguide/readme.png' />
+        <img  src='../../../../source/raw/projguide/readme.png' />
 
 8. 其他
 ------------------------------

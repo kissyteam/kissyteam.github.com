@@ -119,7 +119,7 @@
 <div class="section" id="id1">
 <h2>0, 概述<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>在组建开发的各个流程中, 需要注意的地方, 完整列举出来, 有以下:</p>
-<img  src='../../_static/workflow/workflow.png' width='600' /><p>上图中讲述了在开发一个组建中, 最详细的步骤, 但千万别吓着了, 因为, 在实际过程中, 有些东西并不需要这么多(具体要看你写的组件的复杂程度), 可以精简为以下几点.</p>
+<img  src='../../../../source/raw/workflow/workflow.png' width='600' /><p>上图中讲述了在开发一个组建中, 最详细的步骤, 但千万别吓着了, 因为, 在实际过程中, 有些东西并不需要这么多(具体要看你写的组件的复杂程度), 可以精简为以下几点.</p>
 </div>
 <div class="section" id="api">
 <h2>1, 确定 API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
@@ -129,7 +129,7 @@
 <div class="section" id="id2">
 <h2>2, 模块编写<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>必须. 推荐的目录结构如下, 例如组件为 Overlay 弹层, 那么该组件的目录结构应为：</p>
-<img  src='../../_static/styleguide/component-guide.png' /><p>目录中必须包含版本号子目录以及 index 模块, 模块名为 <tt class="docutils literal"><span class="pre">gallery/overlay/1.0/index</span></tt> ,用来指明该组件依赖的子模块, 子模块的名约定为 <tt class="docutils literal"><span class="pre">gallery/overlay/1.0/xx</span></tt> ,如果组件比较简单也可只有这一个源码文件. 例如 index.js</p>
+<img  src='../../../../source/raw/styleguide/component-guide.png' /><p>目录中必须包含版本号子目录以及 index 模块, 模块名为 <tt class="docutils literal"><span class="pre">gallery/overlay/1.0/index</span></tt> ,用来指明该组件依赖的子模块, 子模块的名约定为 <tt class="docutils literal"><span class="pre">gallery/overlay/1.0/xx</span></tt> ,如果组件比较简单也可只有这一个源码文件. 例如 index.js</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;gallery/overlay/1.0/index&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">O</span><span class="p">){</span>
 
     <span class="k">return</span> <span class="nx">O</span><span class="p">;</span>

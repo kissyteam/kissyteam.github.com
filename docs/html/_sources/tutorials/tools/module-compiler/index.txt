@@ -32,7 +32,7 @@ KISSY Module Compiler
 举例
 ===============================================
 
-`下载 kissy module compiler demo <../../../_static/module-compiler/tb_kissy_1.3.zip>`_
+`下载 kissy module compiler demo <../../../../../source/raw/module-compiler/tb_kissy_1.3.zip>`_
 
 源文件结构:
 
@@ -47,17 +47,17 @@ KISSY Module Compiler
 
 其中 x.js 内容为：
 
-.. literalinclude:: /_static/module-compiler/tb_kissy_1.3/src/biz/x.js
+.. literalinclude:: /raw/module-compiler/tb_kissy_1.3/src/biz/x.js
            :language: javascript
 
 其中 y.js 内容为：
 
-.. literalinclude:: /_static/module-compiler/tb_kissy_1.3/src/biz/y.js
+.. literalinclude:: /raw/module-compiler/tb_kissy_1.3/src/biz/y.js
            :language: javascript
 
 其中 run.js 内容为：
 
-.. literalinclude:: /_static/module-compiler/tb_kissy_1.3/src/biz/page/run.js
+.. literalinclude:: /raw/module-compiler/tb_kissy_1.3/src/biz/page/run.js
            :language: javascript
 
 
@@ -69,7 +69,7 @@ KISSY Module Compiler
 
 配置一下 build.xml
 
-.. literalinclude:: /_static/module-compiler/tb_kissy_1.3/build.xml
+.. literalinclude:: /raw/module-compiler/tb_kissy_1.3/build.xml
            :language: xml
 
 1.1 参数说明
@@ -116,12 +116,12 @@ outputDependency
 
 其中 run.combo.js 内容为:
 
-.. literalinclude:: /_static/module-compiler/tb_kissy_1.3/build/biz/page/run.combo.js
+.. literalinclude:: /raw/module-compiler/tb_kissy_1.3/build/biz/page/run.combo.js
            :language: javascript
 
 其中 run.deps.js 内容为:
 
-.. literalinclude:: /_static/module-compiler/tb_kissy_1.3/build/biz/page/run.dep.js
+.. literalinclude:: /raw/module-compiler/tb_kissy_1.3/build/biz/page/run.dep.js
            :language: javascript
 
 
@@ -138,7 +138,7 @@ outputDependency
 
 配置一下 build.xml
 
-.. literalinclude:: /_static/module-compiler/tb_kissy_1.3/build-combo.xml
+.. literalinclude:: /raw/module-compiler/tb_kissy_1.3/build-combo.xml
            :language: xml
 
 2.1 参数说明
@@ -182,22 +182,22 @@ fixModuleName
 
 其中 deps.js 内容为：
 
-.. literalinclude:: /_static/module-compiler/tb_kissy_1.3/build-combo/deps.js
+.. literalinclude:: /raw/module-compiler/tb_kissy_1.3/build-combo/deps.js
            :language: javascript
 
 其中 x.js 内容为：
 
-.. literalinclude:: /_static/module-compiler/tb_kissy_1.3/build-combo/biz/x.js
+.. literalinclude:: /raw/module-compiler/tb_kissy_1.3/build-combo/biz/x.js
            :language: javascript
 
 其中 y.js 内容为：
 
-.. literalinclude:: /_static/module-compiler/tb_kissy_1.3/build-combo/biz/y.js
+.. literalinclude:: /raw/module-compiler/tb_kissy_1.3/build-combo/biz/y.js
            :language: javascript
 
 其中 run.js 内容为：
 
-.. literalinclude:: /_static/module-compiler/tb_kissy_1.3/build-combo/biz/page/run.js
+.. literalinclude:: /raw/module-compiler/tb_kissy_1.3/build-combo/biz/page/run.js
            :language: javascript
 
 .. note::

@@ -79,9 +79,9 @@ Demo
 
     .. raw:: html
 
-        <iframe width="100%" height="135"  class="iframe-demo" src="../../../_static/api/core/node/after.html"></iframe>
+        <iframe width="100%" height="135"  class="iframe-demo" src="../../../../../source/raw/api/core/node/after.html"></iframe>
 
-    .. literalinclude:: /_static/api/core/node/after.html
+    .. literalinclude:: /raw/api/core/node/after.html
        :language: html
 
 

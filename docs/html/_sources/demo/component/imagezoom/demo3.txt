@@ -14,7 +14,7 @@ Class
     .. raw:: html
 
 
-        <iframe width="100%" height="430" class="iframe-demo" src="../../../_static/demo/imagezoom/demo3.html"></iframe>
+        <iframe width="100%" height="430" class="iframe-demo" src="../../../../../source/raw/demo/imagezoom/demo3.html"></iframe>
 
-    .. literalinclude:: /_static/demo/imagezoom/assets/demo3.js
+    .. literalinclude:: /raw/demo/imagezoom/assets/demo3.js
            :language: javascript

@@ -18,12 +18,12 @@ Resizable 的基本使用
 
     .. raw:: html
 
-        <iframe width="100%" height="400" class="iframe-demo" src="../../../_static/demo/resizable/demo1.html"></iframe>
+        <iframe width="100%" height="400" class="iframe-demo" src="../../../../../source/raw/demo/resizable/demo1.html"></iframe>
 
 
     **初始化按钮**
 
-    .. literalinclude:: /_static/demo/resizable/assets/demo1.js
+    .. literalinclude:: /raw/demo/resizable/assets/demo1.js
            :language: javascript
 
 

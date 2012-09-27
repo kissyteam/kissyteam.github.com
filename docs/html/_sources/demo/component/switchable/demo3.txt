@@ -15,7 +15,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="300" class="iframe-demo" src="../../../_static/demo/switchable/demo3.html"></iframe>
+        <iframe width="100%" height="300" class="iframe-demo" src="../../../../../source/raw/demo/switchable/demo3.html"></iframe>
 
 
     **组织 HTML 结构**
@@ -81,7 +81,7 @@ Class
 
     通过容器元素的 id 和相关配置, 构建 :class:`Switchable` 对象 :
 
-    .. literalinclude:: /_static/demo/switchable/assets/demo3.js
+    .. literalinclude:: /raw/demo/switchable/assets/demo3.js
            :language: javascript
 
 

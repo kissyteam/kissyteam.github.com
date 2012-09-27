@@ -125,7 +125,7 @@
 <div class="section" id="id1">
 <h2>使用基本的 Switchable<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><iframe width="100%" height="180" class="iframe-demo" src="../../../_static/demo/switchable/demo1.html"></iframe><p><strong>组织 HTML 结构</strong></p>
+<div><iframe width="100%" height="180" class="iframe-demo" src="../../../../../source/raw/demo/switchable/demo1.html"></iframe><p><strong>组织 HTML 结构</strong></p>
 <p>通常情况下, Switchable 组件的 HTML 结构为外层一个容器元素,内部又分成 trigger 列表 和 panel 列表 两部分,trigger 列表可无, 如下的 HTML 结构最为常见:</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;J_Slide&quot;</span><span class="nt">&gt;</span>  <span class="c">&lt;!-- 容器元素 --&gt;</span>
     <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;ks-switchable-nav&quot;</span><span class="nt">&gt;</span>  <span class="c">&lt;!-- 触发器列表 --&gt;</span>
@@ -158,17 +158,16 @@
 <div class="admonition caution">
 <p class="first admonition-title">Caution</p>
 <p>很多朋友在使用 Switchable 时, 经常会碰到 panels 从最后一个切换到第一个时, 出现白屏现象, 经过我们仔细排查后, 发现总体有以下三种情况:</p>
+<p>#. ks-switchable-content 及其子元素 CSS 设置不正确, ks-switchable-content 该层不需要设置宽高,
+因为会根据子元素个数和子元素宽高自动设置.</p>
+<p>#. ks-switchable-content 被设置为 overflow:hidden，请在整个容器根元素上设置 overflow:hidden
+请完全参考上述事例, 特别是设置 diaplay, margin, position 这种属性时更要注意;</p>
 <ol class="arabic simple">
-<li>ks-switchable-content 及其子元素 CSS 设置不正确, ks-switchable-content 该层不需要设置宽高,</li>
+<li>在使用 scrollx/scrolly 动画时, panels 各元素需要 <strong>固定宽/高</strong> ;</li>
 </ol>
-<blockquote>
-<div>因为会根据子元素个数和子元素宽高自动设置.</div></blockquote>
-<p class="last">2) ks-switchable-content 被设置为 overflow:hidden，请在整个容器根元素上设置 overflow:hidden
-请完全参考上述事例, 特别是设置 diaplay, margin, position 这种属性时更要注意;
-3) 在使用 scrollx/scrolly 动画时, panels 各元素需要 <strong>固定宽/高</strong> ;
-4) 页面当引入了 <a class="reference external" href="http://a.tbcdn.cn/tbra/1.0/tbra-widgets.js">http://a.tbcdn.cn/tbra/1.0/tbra-widgets.js</a> 时, 也会诡异的出现白屏.
-可能是 tbra 修改了一些原生方法影响到 switchable;
-5) 当 Switchable 和 Datalazyload 一起使用时, 注意, 有可能还是会出现白屏,
+<p>#. 页面当引入了 <a class="reference external" href="http://a.tbcdn.cn/tbra/1.0/tbra-widgets.js">http://a.tbcdn.cn/tbra/1.0/tbra-widgets.js</a> 时, 也会诡异的出现白屏.
+可能是 tbra 修改了一些原生方法影响到 switchable;</p>
+<p class="last">#.) 当 Switchable 和 Datalazyload 一起使用时, 注意, 有可能还是会出现白屏,
 原因是, 切换时, 特别是从第一个切换到最后一个时, 动画过程中, 经过中间元素时, 还没有触发 lazyload 替换内容导致动画过程中有白屏;</p>
 </div>
 </div></blockquote>

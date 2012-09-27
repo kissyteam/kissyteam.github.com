@@ -57,7 +57,7 @@ KISSY 提供的动画特效支持主要由三个子模块组成 [1]_ :
                 margin: 8px;
             }
             .loading {
-                background: transparent url(../../_static/loading.gif) no-repeat;
+                background: transparent url(../../../../source/_static/loading.gif) no-repeat;
                 width: 100px;
                 height: 100px !important;
                 margin: 20px;

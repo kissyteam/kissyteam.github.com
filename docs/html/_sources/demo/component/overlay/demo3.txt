@@ -13,7 +13,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="380" class="iframe-demo" src="../../../_static/demo/overlay/demo3.html"></iframe>
+        <iframe width="100%" height="380" class="iframe-demo" src="../../../../../source/raw/demo/overlay/demo3.html"></iframe>
 
 
 加入初始样式
@@ -29,5 +29,5 @@ Class
                 }
             </style>
 
-    .. literalinclude:: /_static/demo/overlay/assets/demo3.js
+    .. literalinclude:: /raw/demo/overlay/assets/demo3.js
            :language: javascript

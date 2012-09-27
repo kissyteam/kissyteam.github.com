@@ -13,7 +13,7 @@ DataLazyload 自动模式
 
     .. raw:: html
 
-    	  <iframe width="100%" height="450" class="iframe-demo" src="../../../_static/demo/datalazyload/auto_demo.html"></iframe>
+    	  <iframe width="100%" height="450" class="iframe-demo" src="../../../../../source/raw/demo/datalazyload/auto_demo.html"></iframe>
 
 
 

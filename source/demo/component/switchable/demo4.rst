@@ -16,7 +16,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="240" class="iframe-demo" src="../../../_static/demo/switchable/demo4.html"></iframe>
+        <iframe width="100%" height="240" class="iframe-demo" src="../../../../../source/raw/demo/switchable/demo4.html"></iframe>
 
 
     **组织 HTML 结构**
@@ -45,5 +45,5 @@ Class
 
     **JS 初始化**
 
-    .. literalinclude:: /_static/demo/switchable/assets/demo4.js
+    .. literalinclude:: /raw/demo/switchable/assets/demo4.js
            :language: javascript

@@ -27,7 +27,7 @@ KISSY 中提供了 Ajax 异步请求功能, 下面仅介绍最常用的 :func:`~
                 margin: 8px;
             }
             .loading {
-                background: transparent url(../../_static/loading.gif) no-repeat;
+                background: transparent url(../../../../source/_static/loading.gif) no-repeat;
                 width: 100px;
                 height: 100px;
                 margin: 20px;

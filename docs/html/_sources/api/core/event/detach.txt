@@ -20,8 +20,10 @@ Methods
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
     :param string eventType: 包含一个或多个事件名称的字符串, 多个事件名以空格分开
+
         .. versionadded:: 1.3
-                    也可以包含事件分组，例如 "click.one" , ".two" 等
+
+            也可以包含事件分组，例如 "click.one" , ".two" 等
 
     :param function(eventObject) fn: 绑定事件时的回调函数
     :param object scope: 绑定的事件处理器的对应 this 值
@@ -82,8 +84,8 @@ Demo
 -------------------------------------------------
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../_static/api/core/event/detach_1.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/detach_1.html"></iframe>
 
-    .. literalinclude:: /_static/api/core/event/detach_1.html
+    .. literalinclude:: /raw/api/core/event/detach_1.html
        :language: html
 

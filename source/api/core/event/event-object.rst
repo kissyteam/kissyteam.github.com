@@ -100,9 +100,9 @@ Properties Detail
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../_static/api/core/event/pageX.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/pageX.html"></iframe>
 
-    .. literalinclude:: /_static/api/core/event/pageX.html
+    .. literalinclude:: /raw/api/core/event/pageX.html
        :language: html
 
 
@@ -133,18 +133,18 @@ Properties Detail
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../_static/api/core/event/target.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/target.html"></iframe>
 
-    .. literalinclude:: /_static/api/core/event/target.html
+    .. literalinclude:: /raw/api/core/event/target.html
        :language: html
 
     简单的委托实现, 点击处理器被绑定到 ul 上面,  点击 li 会使得该 li 下的子 ul 菜单显示与隐藏.
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../_static/api/core/event/target_2.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/target_2.html"></iframe>
 
-    .. literalinclude:: /_static/api/core/event/target_2.html
+    .. literalinclude:: /raw/api/core/event/target_2.html
        :language: html
 
 .. attribute:: type
@@ -170,9 +170,9 @@ Properties Detail
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../_static/api/core/event/which.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/which.html"></iframe>
 
-    .. literalinclude:: /_static/api/core/event/which.html
+    .. literalinclude:: /raw/api/core/event/which.html
        :language: html
 
 .. attribute:: isImmediatePropagationStopped
@@ -184,9 +184,9 @@ Properties Detail
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../_static/api/core/event/isImmediatePropagationStopped.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/isImmediatePropagationStopped.html"></iframe>
 
-    .. literalinclude:: /_static/api/core/event/isImmediatePropagationStopped.html
+    .. literalinclude:: /raw/api/core/event/isImmediatePropagationStopped.html
        :language: html
 
 
@@ -204,9 +204,9 @@ Methods Detail
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../_static/api/core/event/preventDefault.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/preventDefault.html"></iframe>
 
-    .. literalinclude:: /_static/api/core/event/preventDefault.html
+    .. literalinclude:: /raw/api/core/event/preventDefault.html
        :language: html
 
 
@@ -222,10 +222,10 @@ Methods Detail
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../_static/api/core/event/stopImmediatePropagation.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/stopImmediatePropagation.html"></iframe>
 
 
-    .. literalinclude:: /_static/api/core/event/stopImmediatePropagation.html
+    .. literalinclude:: /raw/api/core/event/stopImmediatePropagation.html
        :language: html
 
 
@@ -277,8 +277,8 @@ Methods Detail
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../_static/api/core/event/isPropagationStopped.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/isPropagationStopped.html"></iframe>
 
 
-    .. literalinclude:: /_static/api/core/event/isPropagationStopped.html
+    .. literalinclude:: /raw/api/core/event/isPropagationStopped.html
        :language: html

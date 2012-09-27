@@ -17,7 +17,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="180" class="iframe-demo" src="../../../_static/demo/switchable/demo6.html"></iframe>
+        <iframe width="100%" height="180" class="iframe-demo" src="../../../../../source/raw/demo/switchable/demo6.html"></iframe>
 
 
     **组织 HTML 结构**
@@ -62,6 +62,6 @@ Class
 
     通过容器元素的 id 和相关配置, 构建 :class:`Carousel` 对象 :
 
-    .. literalinclude:: /_static/demo/switchable/assets/demo6.js
+    .. literalinclude:: /raw/demo/switchable/assets/demo6.js
          :language: javascript
 

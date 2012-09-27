@@ -13,7 +13,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="160" class="iframe-demo" src="../../../_static/demo/button/demo4.html"></iframe>
+        <iframe width="100%" height="160" class="iframe-demo" src="../../../../../source/raw/demo/button/demo4.html"></iframe>
 
 
     **组织HTML代码**
@@ -24,5 +24,5 @@ Class
 
     **初始化按钮**
 
-    .. literalinclude:: /_static/demo/button/assets/demo4.js
+    .. literalinclude:: /raw/demo/button/assets/demo4.js
            :language: javascript

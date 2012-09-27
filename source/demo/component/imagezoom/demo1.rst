@@ -14,9 +14,9 @@ Class
     .. raw:: html
 
 
-        <iframe width="100%" height="360" class="iframe-demo" src="../../../_static/demo/imagezoom/demo1.html"></iframe>
+        <iframe width="100%" height="360" class="iframe-demo" src="../../../../../source/raw/demo/imagezoom/demo1.html"></iframe>
 
-    .. literalinclude:: /_static/demo/imagezoom/assets/demo1.js
+    .. literalinclude:: /raw/demo/imagezoom/assets/demo1.js
            :language: javascript
 
     1.1.6 版本的调用接口:

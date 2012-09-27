@@ -16,9 +16,9 @@ Module
 
     .. raw:: html
 
-        <iframe width="100%" height="200" class="iframe-demo" src="../../../_static/demo/loader/simple.html"></iframe>
+        <iframe width="100%" height="200" class="iframe-demo" src="../../../../../source/raw/demo/loader/simple.html"></iframe>
 
-    .. literalinclude:: /_static/demo/loader/assets/simple.js
+    .. literalinclude:: /raw/demo/loader/assets/simple.js
            :language: javascript
 
 
@@ -26,13 +26,13 @@ Module
 
     ``被依赖模块 1.2 dep``
 
-    .. literalinclude:: /_static/demo/loader/assets/module_package/1.2/dep.js
+    .. literalinclude:: /raw/demo/loader/assets/module_package/1.2/dep.js
                :language: javascript
 
 
     ``主模块 1.2 mod``
 
-    .. literalinclude:: /_static/demo/loader/assets/module_package/1.2/mod.js
+    .. literalinclude:: /raw/demo/loader/assets/module_package/1.2/mod.js
                    :language: javascript
 
     **使用模块**

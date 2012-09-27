@@ -19,11 +19,11 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="200" class="iframe-demo" src="../../../_static/demo/tree/demo4.html"></iframe>
+        <iframe width="100%" height="200" class="iframe-demo" src="../../../../../source/raw/demo/tree/demo4.html"></iframe>
 
 
     **监听 expand 事件懒加载树节点**
 
-    .. literalinclude:: /_static/demo/tree/assets/demo4.js
+    .. literalinclude:: /raw/demo/tree/assets/demo4.js
            :language: javascript
     

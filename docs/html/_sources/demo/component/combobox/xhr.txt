@@ -13,7 +13,7 @@ autocomplete 的动态使用
 
     .. raw:: html
 
-        <iframe width="100%" height="450" class="iframe-demo" src="../../../_static/demo/combobox/xhr.html"></iframe>
+        <iframe width="100%" height="450" class="iframe-demo" src="../../../../../source/raw/demo/combobox/xhr.html"></iframe>
 
-    .. literalinclude:: /_static/demo/combobox/assets/xhr.js
+    .. literalinclude:: /raw/demo/combobox/assets/xhr.js
            :language: javascript

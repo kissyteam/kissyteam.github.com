@@ -89,9 +89,9 @@ Demo
 
     .. raw:: html
 
-        <iframe width="100%" height="135"  class="iframe-demo" src="../../../_static/api/core/node/append-1.html"></iframe>
+        <iframe width="100%" height="135"  class="iframe-demo" src="../../../../../source/raw/api/core/node/append-1.html"></iframe>
 
-    .. literalinclude:: /_static/api/core/node/append-1.html
+    .. literalinclude:: /raw/api/core/node/append-1.html
        :language: html
 
 
@@ -99,9 +99,9 @@ Demo
 **给所有段落添加一个文本节点**
     .. raw:: html
 
-        <iframe width="100%" height="135"  class="iframe-demo" src="../../../_static/api/core/node/append-2.html"></iframe>
+        <iframe width="100%" height="135"  class="iframe-demo" src="../../../../../source/raw/api/core/node/append-2.html"></iframe>
 
-    .. literalinclude:: /_static/api/core/node/append-2.html
+    .. literalinclude:: /raw/api/core/node/append-2.html
        :language: html
 
 
@@ -110,7 +110,7 @@ Demo
 
     .. raw:: html
 
-        <iframe width="100%" height="135"  class="iframe-demo" src="../../../_static/api/core/node/append-3.html"></iframe>
+        <iframe width="100%" height="135"  class="iframe-demo" src="../../../../../source/raw/api/core/node/append-3.html"></iframe>
 
-    .. literalinclude:: /_static/api/core/node/append-3.html
+    .. literalinclude:: /raw/api/core/node/append-3.html
        :language: html

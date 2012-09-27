@@ -47,8 +47,7 @@ Method
                 dataType: "jsonp"
             });
         };
-  
-    
+
 Demo
 ------------------------------------
 
@@ -56,9 +55,9 @@ Demo
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo"  src="../../../_static/api/core/ajax/jsonp.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo"  src="../../../../../source/raw/api/core/ajax/jsonp.html"></iframe>
 
-    .. literalinclude:: /_static/api/core/ajax/jsonp.html
+    .. literalinclude:: /raw/api/core/ajax/jsonp.html
        :language: html
 
 

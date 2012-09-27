@@ -20,7 +20,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="200" class="iframe-demo" src="../../../_static/demo/tree/demo2.html"></iframe>
+        <iframe width="100%" height="200" class="iframe-demo" src="../../../../../source/raw/demo/tree/demo2.html"></iframe>
 
 
     **HTML关键代码**
@@ -34,5 +34,5 @@ Class
 
     **初始化树**
 
-    .. literalinclude:: /_static/demo/tree/assets/demo2.js
+    .. literalinclude:: /raw/demo/tree/assets/demo2.js
            :language: javascript

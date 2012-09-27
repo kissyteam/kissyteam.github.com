@@ -249,7 +249,7 @@ reST 是一种简单的标记语言, 规则非常简单.
 
     .. raw:: html
 
-        <img  src='../../_static/workflow/workflow.png' />
+        <img  src='../../../../source/raw/workflow/workflow.png' />
 
 
 **注释**

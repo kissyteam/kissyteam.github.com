@@ -18,10 +18,10 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="200" class="iframe-demo" src="../../../_static/demo/tree/lazy-check.html"></iframe>
+        <iframe width="100%" height="200" class="iframe-demo" src="../../../../../source/raw/demo/tree/lazy-check.html"></iframe>
 
 
     **监听 expand 事件懒加载树节点**
 
-    .. literalinclude:: /_static/demo/tree/assets/lazy-check.js
+    .. literalinclude:: /raw/demo/tree/assets/lazy-check.js
            :language: javascript

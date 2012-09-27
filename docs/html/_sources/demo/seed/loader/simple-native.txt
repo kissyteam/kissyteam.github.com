@@ -16,9 +16,9 @@ Module
 
     .. raw:: html
 
-        <iframe width="100%" height="200" class="iframe-demo" src="../../../_static/demo/loader/simple-native.html"></iframe>
+        <iframe width="100%" height="200" class="iframe-demo" src="../../../../../source/raw/demo/loader/simple-native.html"></iframe>
 
-    .. literalinclude:: /_static/demo/loader/assets/simple-native.js
+    .. literalinclude:: /raw/demo/loader/assets/simple-native.js
            :language: javascript
 
 
