@@ -1,7 +1,7 @@
 .. module:: xtemplate
 
 
-XTemplate
+XTemplate (beta)
 ===============================
 
 
