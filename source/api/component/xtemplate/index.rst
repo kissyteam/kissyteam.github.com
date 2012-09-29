@@ -19,6 +19,7 @@ Configs
     * :data:`~XTemplate.config.subTpls`
     * :data:`~XTemplate.config.commands`
     * :data:`~XTemplate.config.name`
+    * :data:`~XTemplate.config.cache`
 
 Methods
 --------------------------------------------------------
@@ -80,6 +81,9 @@ Configs Detail
 
     {Object} - 模版名称，可在 chrome dev tools 中看到以该值为名称的模板文件代码
 
+.. data:: XTemplate.config.cache
+
+    {Boolean} - 是否缓存生成的模板函数，默认 true.
 
 Methods Detail
 ----------------------------------------------------------------------------------------------------------
