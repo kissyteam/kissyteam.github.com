@@ -76,6 +76,13 @@ x.js:
         };
     });
 
+.. note::
+
+    kissy-xtemplate 暂时安装步鄹：
+
+    #. 下载  https://github.com/kissyteam/kissy/zipball/master 并解压
+
+    #. 进入目录执行 npm install . -g
 
 使用模版
 ``````````````````````````````
