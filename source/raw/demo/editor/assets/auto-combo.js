@@ -19,7 +19,8 @@
 
         KISSY.use("editor/plugin/source-area/," +
             "editor/plugin/font-size/," +
-            "editor/plugin/image/", function (S, SourceArea, FontSize, Image) {
+            "editor/plugin/image/," +
+            "editor/plugin/code/", function (S, SourceArea, FontSize, Image,Code) {
 
             cfg.plugins = [SourceArea, FontSize, new Image({
                 upload:{
@@ -34,7 +35,7 @@
                     sizeLimit:1000, //k
                     extraHtml:"<p style='margin-top:10px;'><input type='checkbox' id='ke_img_up_watermark_1' checked='checked'> 图片加水印，防止别人盗用</p>"
                 }
-            })];
+            }),Code];
 
             new Editor(cfg);
         });

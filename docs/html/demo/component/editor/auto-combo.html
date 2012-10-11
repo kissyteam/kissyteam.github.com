@@ -146,7 +146,8 @@
 
         <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;editor/plugin/source-area/,&quot;</span> <span class="o">+</span>
             <span class="s2">&quot;editor/plugin/font-size/,&quot;</span> <span class="o">+</span>
-            <span class="s2">&quot;editor/plugin/image/&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">SourceArea</span><span class="p">,</span> <span class="nx">FontSize</span><span class="p">,</span> <span class="nx">Image</span><span class="p">)</span> <span class="p">{</span>
+            <span class="s2">&quot;editor/plugin/image/,&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;editor/plugin/code/&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">SourceArea</span><span class="p">,</span> <span class="nx">FontSize</span><span class="p">,</span> <span class="nx">Image</span><span class="p">,</span><span class="nx">Code</span><span class="p">)</span> <span class="p">{</span>
 
             <span class="nx">cfg</span><span class="p">.</span><span class="nx">plugins</span> <span class="o">=</span> <span class="p">[</span><span class="nx">SourceArea</span><span class="p">,</span> <span class="nx">FontSize</span><span class="p">,</span> <span class="k">new</span> <span class="nx">Image</span><span class="p">({</span>
                 <span class="nx">upload</span><span class="o">:</span><span class="p">{</span>
@@ -161,7 +162,7 @@
                     <span class="nx">sizeLimit</span><span class="o">:</span><span class="mi">1000</span><span class="p">,</span> <span class="c1">//k</span>
                     <span class="nx">extraHtml</span><span class="o">:</span><span class="s2">&quot;&lt;p style=&#39;margin-top:10px;&#39;&gt;&lt;input type=&#39;checkbox&#39; id=&#39;ke_img_up_watermark_1&#39; checked=&#39;checked&#39;&gt; 图片加水印，防止别人盗用&lt;/p&gt;&quot;</span>
                 <span class="p">}</span>
-            <span class="p">})];</span>
+            <span class="p">}),</span><span class="nx">Code</span><span class="p">];</span>
 
             <span class="k">new</span> <span class="nx">Editor</span><span class="p">(</span><span class="nx">cfg</span><span class="p">);</span>
         <span class="p">});</span>

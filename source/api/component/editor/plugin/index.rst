@@ -50,3 +50,4 @@ Plugins
    unordered-list
    video
    xiami-music
+   code
