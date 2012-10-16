@@ -16,7 +16,7 @@ Methods
 
 .. function:: KISSY.buffer
 
-    | Boolean **KISSY.buffer** (fn, ms, context)
+    | Function **KISSY.buffer** (fn, ms, context)
     | 将 fn 缓存一段时间后, 再被调用执行
     
     :param Function fn: 要缓存的函数;
