@@ -155,26 +155,7 @@ Yeah!
                 <span style="padding-left:5px;color:#80c269;font-size:12px;font-weight:normal;">存放社区贡献的组件，会选择性地整合到KISSY中。</span>
             </div>
             <div class="con">
-                <ul>
-                    <li><span><a href="../kissy-gallery/gallery/randombox/" target="_blank">randombox：</a></span>
-                        <span class="s-desc">随机摇奖</span></li>
-                    <li><span><a href="../kissy-gallery/gallery/scrollspy/" target="_blank">scrollspy：</a></span>
-                        <span class="s-desc">scrollspy for kissy</span></li>
-                    <li><span><a href="../kissy-gallery/gallery/checkcode/" target="_blank">checkcode：</a></span>
-                        <span class="s-desc">统一验证码</span></li>
-                    <li><span><a href="../kissy-gallery/gallery/browsercache/1.0/demo.html" target="_blank">browsercache：</a></span>
-                        <span class="s-desc">浏览器端的缓存机制</span></li>
-                    <li><span><a href="../kissy-gallery/gallery/combine/1.0/demo.html" target="_blank">combine：</a></span>
-                        <span class="s-desc">适用 KISSY 1.2 的自动 combo patch</span></li>
-                    <li><span><a href="../kissy-gallery/gallery/countdown/" target="_blank">countdown：</a></span><span class="s-desc">倒计时特效</span></li>
-                    <li><span><a href="../kissy-gallery/gallery/chart/1.0/demo.html" target="_blank">chart：</a></span><span class="s-desc">支持多种表现形式的图表</span></li>
-                    <li><span><a href="../kissy-gallery/gallery/kscroll/" target="_blank">kscroll：</a></span><span class="s-desc">以假乱真的滚动条</span></li>
-                    <li><span><a href="../kissy-gallery/gallery/form/" target="_blank">form/uploader：</a></span><span class="s-desc">异步文件上传</span></li>
-                    <li><span><a href="../kissy-gallery/gallery/reflection/1.0/demo.html" target="_blank">reflection：</a></span><span class="s-desc">图片倒影</span></li>
-                    <li><span><a href="../kissy-gallery/gallery/urlparser/1.0/demo.html" target="_blank">urlparser：</a></span><span class="s-desc">url 解析器</span></li>
-                    <li><span><a href="../kissy-gallery/gallery/juicer/" target="_blank">juicer：</a></span><span class="s-desc">超快的模板引擎</span></li>
-                    <li><span><a href="../kissy-gallery/gallery/wwgroup/1.0/demo.html" target="_blank">wwgroup：</a></span>
-                        <span class="s-desc">ww 点灯</span></li>
+                <ul id='gallery_list'>
                     <li><span><a href="../kissy-gallery/" target="_blank">更多 Gallery ...</a></span></li>
                 </ul>
             </div>
@@ -341,5 +322,25 @@ Yeah!
 <div id="footer">
     <div>&copy;2009 - 2029 KISSY UI LIBRARY</div>
 </div>
+<script src="http://a.tbcdn.cn/s/kissy/1.3.0rc/kissy-min.js"></script>
+<script>
+KISSY.use('xtemplate',function(S,XTemplate){
+
+    var tpl='{{#each gs}}'+
+    
+    '<li><span><a href="../kissy-gallery/gallery/{{name}}/" target="_blank">{{name}}：</a></span>  <span class="s-desc">{{desc}}</span></li>'+
+    
+    '{{/each}}';
+    
+    S.io({
+        url: (location.hostname=='docs.kissyui.com'?'':'../')+'kissy-gallery/index.js',
+        dataType: 'json',
+        success: function(data) {         
+            data.gs=data.gs.slice(0,12);   
+            S.all('#gallery_list').prepend(new XTemplate(tpl).render(data));    
+        }
+    });
+});
+</script>
 </body>
 </html>
