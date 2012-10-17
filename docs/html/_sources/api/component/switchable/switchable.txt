@@ -3,7 +3,7 @@
 Switchable
 ===================================================================
 
-|  Switchable 的核心类, S.Tabs/S.Slide/S.Accordion/S.Carousel 都是扩展自它.
+|  Switchable 的核心类, Switchable.Tabs/Switchable.Slide/Switchable.Accordion/Switchable.Carousel 都是扩展自它.
 
 Class
 -----------------------------------------------
@@ -481,4 +481,9 @@ Events Detail
     :param HTMLElement trigger: 被删除的 trigger 节点
     :param HTMLElement panel: 被删除的内容节点
 
+
+.. important::
+
+    如果 panel css 指定了高宽，或内部图片指定了高宽，或设置了 :data:`~Switchable.config.viewSize` 都没问题，
+    否则在网速慢时都会因为初始化取不到面板高度而出问题。
 

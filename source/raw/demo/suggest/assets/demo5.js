@@ -2,7 +2,7 @@
  * demo5 js代码不仅仅是这些
  */
 KISSY.ready(function(S) {
-    S.use('switchable,suggest,searchsuggest', function(S) {
+    S.use('switchable,suggest,searchsuggest', function(S,Switchable) {
         var DOM = S.DOM, Event = S.Event,
             form = DOM.get("#J_TSearchForm"),
             q = form["q"],
@@ -39,7 +39,7 @@ KISSY.ready(function(S) {
         tabpanels = DOM.query(".tab-panel", DOM.get("#J_TSearchTabs").parentNode);
         searchType = form["search_type"];
 
-        var searchTab = new S.Tabs(DOM.get("#J_TSearchTabs").parentNode, {
+        var searchTab = new Switchable.Tabs(DOM.get("#J_TSearchTabs").parentNode, {
             aria:true,
             activeTriggerCls:'current',
             triggerType:'click'

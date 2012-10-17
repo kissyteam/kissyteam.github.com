@@ -3,7 +3,7 @@
 Switchable
 ===================================================================
 
-|  Switchable 的核心类, S.Tabs/S.Slide/S.Accordion/S.Carousel 都是扩展自它.
+|  Switchable 的核心类, Switchable.Tabs/Switchable.Slide/Switchable.Accordion/Switchable.Carousel 都是扩展自它.
 
 
 
