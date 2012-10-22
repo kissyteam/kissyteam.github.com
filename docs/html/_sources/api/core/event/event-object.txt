@@ -25,15 +25,16 @@ Properties
     * :attr:`type`
     * :attr:`which`
     * :attr:`isImmediatePropagationStopped`
+    * :attr:`isDefaultPrevented`
+    * :attr:`isPropagationStopped`
 
 Methods
 -----------------------------------------------
 
   * :meth:`preventDefault`
+  * :meth:`halt`
   * :meth:`stopImmediatePropagation`
   * :meth:`stopPropagation`
-  * :meth:`isDefaultPrevented`
-  * :meth:`isPropagationStopped`
 
 Class Detail
 -----------------------------------------------
@@ -189,7 +190,34 @@ Properties Detail
     .. literalinclude:: /raw/api/core/event/isImmediatePropagationStopped.html
        :language: html
 
+.. attribute:: isDefaultPrevented
 
+    判断 :meth:`~event.preventDefault` 是否被调用了.
+
+
+    .. code-block:: javascript
+
+        $("a").click(function(event){
+          alert( event.isDefaultPrevented ); // false
+          event.preventDefault();
+          alert( event.isDefaultPrevented ); // true
+        });
+
+
+.. attribute:: isPropagationStopped
+
+    判断 :meth:`~event.stopPropagation` 是否被调用了.
+
+
+    判断 stopPropagation 是否被调用
+
+    .. raw:: html
+
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/isPropagationStopped.html"></iframe>
+
+
+    .. literalinclude:: /raw/api/core/event/isPropagationStopped.html
+       :language: html
 
 Methods Detail
 -------------------------------------
@@ -251,34 +279,10 @@ Methods Detail
           // do something
         });
 
+.. method:: halt
 
-.. method:: isDefaultPrevented
+    | **halt** (stopImmediatePropagation)
+    | 如果 stopImmediatePropagation==true 则相当于调用 stopImmediatePropagation + preventDefault
+    | 否则相当于调用 stopPropagation + preventDefault
 
-    | **isDefaultPrevented** ()
-    | 判断 :meth:`~event.preventDefault` 是否被调用了.
-
-
-    .. code-block:: javascript
-
-        $("a").click(function(event){
-          alert( event.isDefaultPrevented() ); // false
-          event.preventDefault();
-          alert( event.isDefaultPrevented() ); // true
-        });
-
-
-.. method:: isPropagationStopped
-
-    | **isPropagationStopped** ()
-    | 判断 :meth:`~event.stopPropagation` 是否被调用了.
-
-
-    判断 stopPropagation 是否被调用
-
-    .. raw:: html
-
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/isPropagationStopped.html"></iframe>
-
-
-    .. literalinclude:: /raw/api/core/event/isPropagationStopped.html
-       :language: html
+    :param boolean stopImmediatePropagation: 是否立即停止冒泡
