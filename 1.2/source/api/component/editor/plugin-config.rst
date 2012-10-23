@@ -441,6 +441,6 @@
     
     .. code-block:: html
     
-        <script src="http://a.tbcdn.cn/s/kissy/1.1.x/editor/biz/ext/editor-plugin-pkg-min.js"></script>
+        <script src="http://a.tbcdn.cn/s/kissy/1.2.0/editor/biz/ext/editor-plugin-pkg-min.js"></script>
     
             

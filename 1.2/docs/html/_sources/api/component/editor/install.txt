@@ -11,7 +11,7 @@
 
 .. code-block:: html
 
-    <link href="http://a.tbcdn.cn/s/kissy/1.x.x/cssreset/reset-min.css" rel="stylesheet"/>
+    <link href="http://a.tbcdn.cn/s/kissy/1.2.0/css/base-min.css" rel="stylesheet"/>
 
 
 2) 在页头加入编辑器淘宝主题 css
@@ -19,41 +19,16 @@
 .. code-block:: html
 
     <!--[if lt IE 8]>
-    <link href="http://a.tbcdn.cn/s/kissy/1.x.x/editor/theme/cool/editor-pkg-sprite-min.css" rel="stylesheet"/>
+    <link href="http://a.tbcdn.cn/s/kissy/1.2.0/editor/theme/cool/editor-pkg-sprite-min.css" rel="stylesheet"/>
     <![endif]-->
     <!--[if gte IE 8]><!-->
-    <link href="http://a.tbcdn.cn/s/kissy/1.x.x/editor/theme/cool/editor-pkg-min-datauri.css" rel="stylesheet"/>
+    <link href="http://a.tbcdn.cn/s/kissy/1.2.0/editor/theme/cool/editor-pkg-min-datauri.css" rel="stylesheet"/>
     <!--<![endif]-->
-    
-.. note::
 
-    1.x 表示 1.1.7 或 1.2.0   
 
 
 引入 javascript
 --------------------------
-
-kissy 1.1.6
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-建议升级到 kissy 1.1.7 及以上，情况特殊的话可引：
-
-.. code-block:: html
-
-    <script src="http://a.tbcdn.cn/s/kissy/1.1.6/editor/editor-pkg-min.js"></script>
-
-kissy 1.1.7
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: html
-
-    <script src="http://a.tbcdn.cn/s/kissy/1.1.7/??kissy-min.js,
-    uibase/uibase-pkg-min.js,
-    dd/dd-pkg-min.js,overlay/overlay-pkg-min.js,
-    editor/editor-all-pkg-min.js"></script>
-
-kissy 1.2.0
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **静态引入**
 
@@ -93,7 +68,8 @@ kissy 1.2.0
 
 .. note::
 
-    默认动态引入时，编辑器不可 use "video" ,"music" ,"multi-upload" ,"checkbox-source" 插件，如果需要这样插件，需要覆盖 editor 模块配置：
+    默认动态引入时，编辑器不可 use "video" ,"music" ,"multi-upload" ,"checkbox-source" 插件，
+    如果需要这样插件，需要覆盖 editor 模块配置：
     
     .. code-block:: javascript
     

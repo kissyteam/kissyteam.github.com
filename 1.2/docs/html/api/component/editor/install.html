@@ -115,45 +115,23 @@
 <ol class="arabic simple">
 <li>在页头加入 reset css (淘宝页面一般都已引入)</li>
 </ol>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.x.x/cssreset/reset-min.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span><span class="nt">/&gt;</span>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/css/base-min.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span><span class="nt">/&gt;</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
 <li>在页头加入编辑器淘宝主题 css</li>
 </ol>
 <div class="highlight-html"><div class="highlight"><pre><span class="c">&lt;!--[if lt IE 8]&gt;</span>
-<span class="c">&lt;link href=&quot;http://a.tbcdn.cn/s/kissy/1.x.x/editor/theme/cool/editor-pkg-sprite-min.css&quot; rel=&quot;stylesheet&quot;/&gt;</span>
+<span class="c">&lt;link href=&quot;http://a.tbcdn.cn/s/kissy/1.2.0/editor/theme/cool/editor-pkg-sprite-min.css&quot; rel=&quot;stylesheet&quot;/&gt;</span>
 <span class="c">&lt;![endif]--&gt;</span>
 <span class="c">&lt;!--[if gte IE 8]&gt;&lt;!--&gt;</span>
-<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.x.x/editor/theme/cool/editor-pkg-min-datauri.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/editor/theme/cool/editor-pkg-min-datauri.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span><span class="nt">/&gt;</span>
 <span class="c">&lt;!--&lt;![endif]--&gt;</span>
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">1.x 表示 1.1.7 或 1.2.0</p>
 </div>
 </div>
 <div class="section" id="javascript">
 <h2>引入 javascript<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="kissy-1-1-6">
-<h3>kissy 1.1.6<a class="headerlink" href="#kissy-1-1-6" title="Permalink to this headline">¶</a></h3>
-<p>建议升级到 kissy 1.1.7 及以上，情况特殊的话可引：</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.1.6/editor/editor-pkg-min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="kissy-1-1-7">
-<h3>kissy 1.1.7<a class="headerlink" href="#kissy-1-1-7" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.1.7/??kissy-min.js,</span>
-<span class="s">uibase/uibase-pkg-min.js,</span>
-<span class="s">dd/dd-pkg-min.js,overlay/overlay-pkg-min.js,</span>
-<span class="s">editor/editor-all-pkg-min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="kissy-1-2-0">
-<h3>kissy 1.2.0<a class="headerlink" href="#kissy-1-2-0" title="Permalink to this headline">¶</a></h3>
 <p><strong>静态引入</strong></p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/??kissy-min.js,</span>
 <span class="s">uibase-min.js,</span>
@@ -187,7 +165,8 @@
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>默认动态引入时，编辑器不可 use &#8220;video&#8221; ,&#8221;music&#8221; ,&#8221;multi-upload&#8221; ,&#8221;checkbox-source&#8221; 插件，如果需要这样插件，需要覆盖 editor 模块配置：</p>
+<p>默认动态引入时，编辑器不可 use &#8220;video&#8221; ,&#8221;music&#8221; ,&#8221;multi-upload&#8221; ,&#8221;checkbox-source&#8221; 插件，
+如果需要这样插件，需要覆盖 editor 模块配置：</p>
 <div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>
     <span class="nx">editor</span><span class="o">:</span><span class="p">{</span>
         <span class="nx">fullpath</span><span class="o">:</span><span class="s2">&quot;http://a.tbcdn.cn/s/kissy/1.2.0/??editor-min.js,editor/biz/ext/editor-plugin-pkg-min.js&quot;</span>
@@ -198,7 +177,6 @@
     <span class="nx">Editor</span><span class="p">(...).</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;video&quot;</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
