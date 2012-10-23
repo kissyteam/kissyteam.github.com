@@ -32,6 +32,7 @@ Configs
   * :data:`~Switchable.config.autoplay`
   * :data:`~Switchable.config.interval`
   * :data:`~Switchable.config.pauseOnHover`
+  * :data:`~Switchable.config.pauseOnScroll`
   * :data:`~Switchable.config.circular`
   * :data:`~Switchable.config.effect`
   * :data:`~Switchable.config.duration`
@@ -221,6 +222,9 @@ Configs Detail
 
     {Boolean} - triggerType 为 mouse 时, 鼠标悬停在 slide 上是否暂停自动播放, 默认为 true.
 
+.. data:: Switchable.config.pauseOnScroll
+
+    {Boolean} - 轮播不在视窗时是否停止自动轮播。默认 false
 
 .. data:: Switchable.config.circular
 
