@@ -491,3 +491,5 @@ Events Detail
     如果 panel css 指定了高宽，或内部图片指定了高宽，或设置了 :data:`~Switchable.config.viewSize` 都没问题，
     否则在网速慢时都会因为初始化取不到面板高度而出问题。
 
+    switchable-content 样式不能设置 ``overflow:hidden`` ，请在整个容器上设置 ``overflow:hidden`` .
+
