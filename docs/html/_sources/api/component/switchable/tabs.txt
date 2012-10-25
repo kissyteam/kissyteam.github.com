@@ -13,3 +13,11 @@ Class Detail
 
     | **Tabs** (container[, config])
 
+
+Configs Detail
+---------------------------------------------------------------------
+
+.. data:: Tabs.config.aria
+
+    {Boolean} - 是否支持键盘以及 aria. 默认 true
+

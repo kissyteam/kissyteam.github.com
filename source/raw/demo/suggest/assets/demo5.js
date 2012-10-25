@@ -40,7 +40,6 @@ KISSY.ready(function(S) {
         searchType = form["search_type"];
 
         var searchTab = new Switchable.Tabs(DOM.get("#J_TSearchTabs").parentNode, {
-            aria:true,
             activeTriggerCls:'current',
             triggerType:'click'
         });

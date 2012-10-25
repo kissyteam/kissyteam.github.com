@@ -23,8 +23,7 @@ KISSY.use("node,overlay,button,dd", function (S, Node, O, B) {
             scroll:{
                 node:window
             }
-        },
-        aria:true
+        }
     });
 
     var show = new B({

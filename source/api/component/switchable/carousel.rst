@@ -17,6 +17,10 @@ Configs Detail
 ---------------------------------------------------------------------
 
     Carousel 接口及配置项, 与 :class:`Switchable` 相同, 其中以下配置项的默认值有所区别:
+
+    .. data:: Tabs.config.aria
+
+        {Boolean} - 是否支持键盘以及 aria. 默认 false
     
     .. data:: Switchable.config.circular
         :noindex:

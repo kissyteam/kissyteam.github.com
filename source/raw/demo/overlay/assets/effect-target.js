@@ -22,8 +22,7 @@ KISSY.use("node,overlay,button,dd", function (S, Node, O, B) {
             duration:.3,
             easing:'backOut',
             target:show.get("el")
-        },
-        aria:true
+        }
     });
 
     show.on("click", function () {
