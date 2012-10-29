@@ -29,7 +29,7 @@ textarea 延迟加载
 
   .. code-block:: html
 
-      <textarea class='ks-datalazyload invisible'/>dom code</textarea/>
+      <textarea class='ks-datalazyload invisible'/>dom code</textarea>
 
     
 
