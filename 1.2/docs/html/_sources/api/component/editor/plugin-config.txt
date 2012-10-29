@@ -404,7 +404,6 @@
         		    "video": {
         		        urlCfg: [{
         		            reg: /tudou\.com/i,
-        		            //地址配置后端咨询：石冲
         		            url: "http://bangpai.daily.taobao.net/json/getTudouVideo.htm?" + "url=@url@&callback=@callback@"
         		        }],
         		        //输入框提示信息     
