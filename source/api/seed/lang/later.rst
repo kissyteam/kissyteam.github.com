@@ -23,6 +23,7 @@ Methods
     :param object o: fn 上下文对象
     :param Array data: 传递的参数. 可以为单个对象, 最后会转换成数组, 依次传递给执行函数.
     :returns: timer 对象. 包含属性
+
               .. attribute:: timer.interval
               
                     是否周期执行
