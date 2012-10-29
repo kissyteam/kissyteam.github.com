@@ -158,8 +158,13 @@
 <span class="nt">&lt;body&gt;</span>
 <span class="nt">&lt;h1&gt;</span>mousewheel compatibility<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;detach&quot;</span><span class="nt">&gt;</span>detach<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;t&#39;</span> <span class="na">style=</span><span class="s">&quot;width:500px;border: 1px solid red;height:200px&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;tt&#39;</span> <span class="na">style=</span><span class="s">&quot;width:500px;border: 1px solid red;height:100px;overflow: auto;&quot;</span><span class="nt">&gt;</span>
     mousewheel on me
+    <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;height: 500px&quot;</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;t&#39;</span> <span class="na">style=</span><span class="s">&quot;width:500px;border: 1px solid red;&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">&quot;color: red&quot;</span><span class="nt">&gt;</span>
     note:<span class="nt">&lt;br/&gt;</span>
@@ -181,7 +186,7 @@
                 <span class="s2">&quot;deltaY:{deltaY}&lt;br/&gt;&quot;</span> <span class="o">+</span>
                 <span class="s2">&quot;&lt;/p&gt;&quot;</span><span class="p">;</span>
         <span class="kd">var</span> <span class="nx">tt</span><span class="p">;</span>
-        <span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&quot;mousewheel&quot;</span><span class="p">,</span> <span class="nx">tt</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;#tt&#39;</span><span class="p">,</span> <span class="s2">&quot;mousewheel&quot;</span><span class="p">,</span> <span class="nx">tt</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
 
             <span class="nx">DOM</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">S</span><span class="p">.</span><span class="nx">substitute</span><span class="p">(</span><span class="nx">tmpl</span><span class="p">,</span> <span class="p">{</span>
                 <span class="nx">wheelDelta</span><span class="o">:</span><span class="nx">e</span><span class="p">.</span><span class="nx">wheelDelta</span><span class="p">,</span>
