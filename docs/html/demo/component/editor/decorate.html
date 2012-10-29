@@ -261,7 +261,7 @@
                         <span class="nx">width</span><span class="o">:</span> <span class="mi">480</span><span class="p">,</span>
                         <span class="nx">height</span><span class="o">:</span> <span class="mi">400</span><span class="p">,</span>
                         <span class="nx">detect</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
-                            <span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/id_([^.]+)\.html$/</span><span class="p">);</span>
+                            <span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/id_([^.]+)\.html(\?[^?]+)?$/</span><span class="p">);</span>
                             <span class="k">if</span> <span class="p">(</span><span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
                                 <span class="k">return</span> <span class="s2">&quot;http://player.youku.com/player.php/sid/&quot;</span> <span class="o">+</span> <span class="nx">m</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;/v.swf&quot;</span><span class="p">;</span>
                             <span class="p">}</span>
@@ -286,7 +286,7 @@
                         <span class="nx">width</span><span class="o">:</span> <span class="mi">480</span><span class="p">,</span>
                         <span class="nx">height</span><span class="o">:</span> <span class="mi">400</span><span class="p">,</span>
                         <span class="nx">detect</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
-                            <span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/show[^\/]*\/([^.]+)\.html$/</span><span class="p">);</span>
+                            <span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/show[^\/]*\/([^\/]+)\.html(\?[^?]+)?$/</span><span class="p">);</span>
                             <span class="k">if</span> <span class="p">(</span><span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
                                 <span class="k">return</span> <span class="s2">&quot;http://player.ku6.com/refer/&quot;</span> <span class="o">+</span> <span class="nx">m</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;/v.swf&quot;</span><span class="p">;</span>
                             <span class="p">}</span>

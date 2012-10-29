@@ -404,28 +404,50 @@
         		    "video": {
         		        urlCfg: [{
         		            reg: /tudou\.com/i,
-        		            url: "http://bangpai.daily.taobao.net/json/getTudouVideo.htm?" + "url=@url@&callback=@callback@"
+        		            url: "http://bangpai.taobao.com/json/getTudouVideo.htm?" + "url=@url@&callback=@callback@"
         		        }],
         		        //输入框提示信息     
         		        urlTip: "请输入优酷网、土豆网、酷7网的视频播放页链接...",
         		        //静态转换规则, 从用户输入转换为flash地址, 例如优酷：
-        		        providers: [{
-        		            reg: /youku\.com/i,
-        		            width: 480,
-        		            height: 400,
-        		            detect: function (url) {
-        		                var m = url.match(/id_([^.]+)\.html$/);
-        		                if (m) {
-        		                    return "http://player.youku.com/player.php/sid/" + m[1] + "/v.swf";
-        		                }
-        		                m = url.match(/v_playlist\/([^.]+)\.html$/);
-        		                if (m) {
-        		                    return;
-        		                    //return "http://player.youku.com/player.php/sid/" + m[1] + "/v.swf";
-        		                }
-        		                return url;
-        		            }
-        		        }]
+        		        providers: [
+        		            {
+                                reg:/youku\.com/i,
+                                width:480,
+                                height:400,
+                                detect: function (url) {
+                                    var m = url.match(/id_([^.]+)\.html(\?[^?]+)?$/);
+                                    if (m) {
+                                        return "http://player.youku.com/player.php/sid/" + m[1] + "/v.swf";
+                                    }
+                                    m = url.match(/v_playlist\/([^.]+)\.html$/);
+                                    if (m) {
+                                        return;
+                                        //return "http://player.youku.com/player.php/sid/" + m[1] + "/v.swf";
+                                    }
+                                    return url;
+                                }
+                            },
+                            {
+                                reg:/tudou\.com/i,
+                                width:480,
+                                height:400,
+                                detect:function(url) {
+                                    return url;
+                                }
+                            },
+                            {
+                                reg:/ku6\.com/i,
+                                width:480,
+                                height:400,
+                                detect:function(url) {
+                                    var m = url.match(/show[^\/]*\/([^\/]+)\.html(\?[^?]+)?$/);
+                                    if (m) {
+                                        return "http://player.ku6.com/refer/" + m[1] + "/v.swf";
+                                    }
+                                    return url;
+                                }
+                            }
+        		        ]
         		    }
         		}
     		

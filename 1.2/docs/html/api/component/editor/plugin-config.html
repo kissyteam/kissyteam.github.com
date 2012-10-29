@@ -545,28 +545,50 @@ tt.descclassname, em.property {
     <span class="s2">&quot;video&quot;</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">urlCfg</span><span class="o">:</span> <span class="p">[{</span>
             <span class="nx">reg</span><span class="o">:</span> <span class="sr">/tudou\.com/i</span><span class="p">,</span>
-            <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://bangpai.daily.taobao.net/json/getTudouVideo.htm?&quot;</span> <span class="o">+</span> <span class="s2">&quot;url=@url@&amp;callback=@callback@&quot;</span>
+            <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://bangpai.taobao.com/json/getTudouVideo.htm?&quot;</span> <span class="o">+</span> <span class="s2">&quot;url=@url@&amp;callback=@callback@&quot;</span>
         <span class="p">}],</span>
         <span class="c1">//输入框提示信息</span>
         <span class="nx">urlTip</span><span class="o">:</span> <span class="s2">&quot;请输入优酷网、土豆网、酷7网的视频播放页链接...&quot;</span><span class="p">,</span>
         <span class="c1">//静态转换规则, 从用户输入转换为flash地址, 例如优酷：</span>
-        <span class="nx">providers</span><span class="o">:</span> <span class="p">[{</span>
-            <span class="nx">reg</span><span class="o">:</span> <span class="sr">/youku\.com/i</span><span class="p">,</span>
-            <span class="nx">width</span><span class="o">:</span> <span class="mi">480</span><span class="p">,</span>
-            <span class="nx">height</span><span class="o">:</span> <span class="mi">400</span><span class="p">,</span>
-            <span class="nx">detect</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
-                <span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/id_([^.]+)\.html$/</span><span class="p">);</span>
-                <span class="k">if</span> <span class="p">(</span><span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="k">return</span> <span class="s2">&quot;http://player.youku.com/player.php/sid/&quot;</span> <span class="o">+</span> <span class="nx">m</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;/v.swf&quot;</span><span class="p">;</span>
-                <span class="p">}</span>
-                <span class="nx">m</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/v_playlist\/([^.]+)\.html$/</span><span class="p">);</span>
-                <span class="k">if</span> <span class="p">(</span><span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="k">return</span><span class="p">;</span>
-                    <span class="c1">//return &quot;http://player.youku.com/player.php/sid/&quot; + m[1] + &quot;/v.swf&quot;;</span>
-                <span class="p">}</span>
-                <span class="k">return</span> <span class="nx">url</span><span class="p">;</span>
+        <span class="nx">providers</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+        <span class="nx">reg</span><span class="o">:</span><span class="sr">/youku\.com/i</span><span class="p">,</span>
+        <span class="nx">width</span><span class="o">:</span><span class="mi">480</span><span class="p">,</span>
+        <span class="nx">height</span><span class="o">:</span><span class="mi">400</span><span class="p">,</span>
+        <span class="nx">detect</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/id_([^.]+)\.html(\?[^?]+)?$/</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="s2">&quot;http://player.youku.com/player.php/sid/&quot;</span> <span class="o">+</span> <span class="nx">m</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;/v.swf&quot;</span><span class="p">;</span>
             <span class="p">}</span>
-        <span class="p">}]</span>
+            <span class="nx">m</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/v_playlist\/([^.]+)\.html$/</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span><span class="p">;</span>
+                <span class="c1">//return &quot;http://player.youku.com/player.php/sid/&quot; + m[1] + &quot;/v.swf&quot;;</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="nx">url</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">reg</span><span class="o">:</span><span class="sr">/tudou\.com/i</span><span class="p">,</span>
+        <span class="nx">width</span><span class="o">:</span><span class="mi">480</span><span class="p">,</span>
+        <span class="nx">height</span><span class="o">:</span><span class="mi">400</span><span class="p">,</span>
+        <span class="nx">detect</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">url</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">reg</span><span class="o">:</span><span class="sr">/ku6\.com/i</span><span class="p">,</span>
+        <span class="nx">width</span><span class="o">:</span><span class="mi">480</span><span class="p">,</span>
+        <span class="nx">height</span><span class="o">:</span><span class="mi">400</span><span class="p">,</span>
+        <span class="nx">detect</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/show[^\/]*\/([^\/]+)\.html(\?[^?]+)?$/</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="s2">&quot;http://player.ku6.com/refer/&quot;</span> <span class="o">+</span> <span class="nx">m</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;/v.swf&quot;</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="nx">url</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+        <span class="p">]</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
