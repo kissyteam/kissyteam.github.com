@@ -14,8 +14,13 @@
 <body>
 <h1>mousewheel compatibility</h1>
 <button id="detach">detach</button>
-<div id='t' style="width:500px;border: 1px solid red;height:200px">
+<div id='tt' style="width:500px;border: 1px solid red;height:100px;overflow: auto;">
     mousewheel on me
+    <div style="height: 500px">
+
+    </div>
+</div>
+<div id='t' style="width:500px;border: 1px solid red;">
 </div>
 <p style="color: red">
     note:<br/>
@@ -37,7 +42,7 @@
                 "deltaY:{deltaY}<br/>" +
                 "</p>";
         var tt;
-        Event.on(t, "mousewheel", tt = function(e) {
+        Event.on('#tt', "mousewheel", tt = function(e) {
 
             DOM.html(t, S.substitute(tmpl, {
                 wheelDelta:e.wheelDelta,
