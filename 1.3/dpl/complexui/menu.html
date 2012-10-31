@@ -1,0 +1,247 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>普通菜单</title>
+    <link
+            href="http://a.tbcdn.cn/s/kissy/1.3.0rc/css/dpl/??base.css,badges.css,forms.css,icons.css,labels.css,tables.css"
+            rel="stylesheet"/>
+    <link
+            href="http://a.tbcdn.cn/s/kissy/1.3.0rc/??button/assets/dpl.css,calendar/assets/dpl.css,menu/assets/dpl.css,combobox/assets/dpl.css,menubutton/assets/dpl.css,overlay/assets/dpl.css,split-button/assets/dpl.css,tabs/assets/dpl.css,toolbar/assets/dpl.css,tree/assets/dpl.css"
+            rel="stylesheet"/>
+
+    <link href="../assets/docs.css" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/prettify.css">
+<script type="text/javascript" src="../assets/prettify.js"></script>
+</head>
+<body onload="prettyPrint()">
+<div class="container">
+    <div class="row-fluid">
+        <div class="span8">
+            <h1>普通菜单</h1>
+
+            <div id="menuitem_container" style="width:200px;position:relative;height:150px;">
+
+            </div>
+            <label>禁用：<input type="checkbox" id='dis'/></label>
+
+            <br/>
+            <h1>多选菜单</h1>
+
+            <div id="menuitem_container2" style="width:200px;position:relative;height:150px;">
+
+            </div>            
+        </div>
+        <div class="span16">
+            <div style="height: 20px;"></div>
+            <pre class="prettyprint linenums">
+KISSY.use("node,menu,separator", function (S, Node, Menu,Separator) {
+
+    var sb = new Menu.PopupMenu({
+        // boolean，是否鼠标脱离菜单后自动隐藏
+        // autoHideOnMouseLeave:true,
+        width:160
+    });
+
+    sb.addChild(new Menu.Item({
+        content:"submenuitem1"
+    }));
+
+    sb.addChild(new Menu.Item({
+        content:"submenuitem2",
+        disabled:true
+    }));
+
+    sb.addChild(new Separator());
+
+
+    var sb2 = new Menu.PopupMenu({
+        // boolean，是否鼠标脱离菜单后自动隐藏
+        // autoHideOnMouseLeave:true,
+        children:[
+            new Menu.Item({
+                content:"submenuitem141"})
+        ]
+    });
+
+    sb2.addChild(new Menu.Item({
+        content:"submenuitem22"
+    }));
+
+    var b2 = new Menu.SubMenu({
+        content:"sub-sub-menu",
+        menu:sb2
+    });
+
+    sb.addChild(b2);
+
+    var b = new Menu.SubMenu({
+        content:"submenu",
+        menu:sb
+    });
+
+    var menu = new Menu({
+        render:"#menuitem_container",
+        children:[b, new Menu.Item({
+            content:"alone"
+        })]
+    });
+
+    menu.render();
+
+    menu.on("click", function (ev) {
+        S.log("selected : " + ev.target.get("content"));
+    });
+
+    var dis = Node.one("#dis");
+
+    dis.on("click", function () {
+        menu.set("disabled", !!dis[0].checked);
+    });
+
+    dis[0].checked = false;
+
+    new Menu({
+        render:"#menuitem_container2",
+        children:[
+            {
+                xclass:'menuitem',
+                checkable:true,
+                content:"checkable menuitem"
+            },
+            {
+                xclass:'separator'
+            },
+            {
+                xclass:'submenu',
+                content:'submenu',
+                menu:{
+                    xclass:'popupmenu',
+                    children:[
+                        {
+                            xclass:'menuitem',
+                            checkable:true,
+                            content:"checkable menuitem1"
+                        },
+                        {
+                            xclass:'menuitem',
+                            checkable:true,
+                            content:"checkable menuitem2"
+                        }
+                    ]
+                }
+            }
+        ]
+    }).render();
+});                
+            </pre>
+        </div>
+    </div>
+
+
+</div>
+<script src="http://a.tbcdn.cn/s/kissy/1.3.0rc/kissy.js" data-config="{combine:true}"></script>
+<script>
+    KISSY.use("node,menu,separator", function (S, Node, Menu,Separator) {
+
+        var sb = new Menu.PopupMenu({
+            // boolean，是否鼠标脱离菜单后自动隐藏
+            // autoHideOnMouseLeave:true,
+            width:160
+        });
+
+        sb.addChild(new Menu.Item({
+            content:"submenuitem1"
+        }));
+
+        sb.addChild(new Menu.Item({
+            content:"submenuitem2",
+            disabled:true
+        }));
+
+        sb.addChild(new Separator());
+
+
+        var sb2 = new Menu.PopupMenu({
+            // boolean，是否鼠标脱离菜单后自动隐藏
+            // autoHideOnMouseLeave:true,
+            children:[
+                new Menu.Item({
+                    content:"submenuitem141"})
+            ]
+        });
+
+        sb2.addChild(new Menu.Item({
+            content:"submenuitem22"
+        }));
+
+        var b2 = new Menu.SubMenu({
+            content:"sub-sub-menu",
+            menu:sb2
+        });
+
+        sb.addChild(b2);
+
+        var b = new Menu.SubMenu({
+            content:"submenu",
+            menu:sb
+        });
+
+        var menu = new Menu({
+            render:"#menuitem_container",
+            children:[b, new Menu.Item({
+                content:"alone"
+            })]
+        });
+
+        menu.render();
+
+        menu.on("click", function (ev) {
+            S.log("selected : " + ev.target.get("content"));
+        });
+
+        var dis = Node.one("#dis");
+
+        dis.on("click", function () {
+            menu.set("disabled", !!dis[0].checked);
+        });
+
+        dis[0].checked = false;
+
+        new Menu({
+            render:"#menuitem_container2",
+            children:[
+                {
+                    xclass:'menuitem',
+                    checkable:true,
+                    content:"checkable menuitem"
+                },
+                {
+                    xclass:'separator'
+                },
+                {
+                    xclass:'submenu',
+                    content:'submenu',
+                    menu:{
+                        xclass:'popupmenu',
+                        children:[
+                            {
+                                xclass:'menuitem',
+                                checkable:true,
+                                content:"checkable menuitem1"
+                            },
+                            {
+                                xclass:'menuitem',
+                                checkable:true,
+                                content:"checkable menuitem2"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }).render();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>KISSY Grids Demo</title>
+<link rel="stylesheet" href="http://docs.kissyui.com/kissy/src/css/src/dpl/base.css">
+<style>
+    .show-grid {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .show-grid .span1,
+    .show-grid .span2,
+    .show-grid .span4,
+    .show-grid .span6,
+    .show-grid .span8,
+    .show-grid .span16,
+    .show-grid .span12,
+    .show-grid .span24 {
+        background-color: #EEE;
+        text-align: center;
+        border-radius: 3px;
+        min-height: 30px;
+        line-height: 30px;
+    }
+
+    .show-grid .show-grid .span6 {
+        background-color: #CCC;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .fixed-row {
+         width: 100%; 
+         overflow-x: scroll;
+    }
+    .fixed-row .row {
+        width: 1200px
+    }
+    ol.linenums {
+        padding: 0;
+    }
+</style>
+<link rel="stylesheet" href="../assets/docs.css">
+<link rel="stylesheet" href="../assets/prettify.css">
+</head>
+<body onload="prettyPrint()">
+<div class="container">
+
+    <div class="page-header">
+        <h1>
+            默认栅格
+            <small>24列栅格系统</small>
+        </h1>
+    </div>
+    <div class="fixed-row">
+        <div class="row show-grid">
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+            <div class="span1">1</div>
+        </div>
+        <div class="row show-grid">
+            <div class="span2">2</div>
+            <div class="span2">2</div>
+            <div class="span2">2</div>
+            <div class="span2">2</div>
+            <div class="span2">2</div>
+            <div class="span2">2</div>
+            <div class="span2">2</div>
+            <div class="span2">2</div>
+            <div class="span2">2</div>
+            <div class="span2">2</div>
+            <div class="span2">2</div>
+            <div class="span2">2</div>
+        </div>
+        <div class="row show-grid">
+            <div class="span4">4</div>
+            <div class="span4">4</div>
+            <div class="span4">4</div>
+            <div class="span4">4</div>
+            <div class="span4">4</div>
+            <div class="span4">4</div>
+        </div>
+        <div class="row show-grid">
+            <div class="span8">8</div>
+            <div class="span8">8</div>
+            <div class="span8">8</div>
+        </div>
+        <div class="row show-grid">
+            <div class="span8">8</div>
+            <div class="span16">16</div>
+        </div>
+        <div class="row show-grid">
+            <div class="span12">12</div>
+            <div class="span12">12</div>
+        </div>
+        <div class="row show-grid">
+            <div class="span24">24</div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span12">
+            <p>
+                默认的<strong>24列、1190px</strong>宽度的栅格系统。
+            </p>
+            <p>页面被我们分割成24个基础列，你通过指定横跨多少列来控制每个区域的宽度。</p>
+        </div>
+        <!-- /.span -->
+        <div class="span12">
+            <pre class="prettyprint linenums">&lt;div class="row"&gt;
+  &lt;div class="span8"&gt;...&lt;/div&gt;
+  &lt;div class="span16"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+        </div>
+    </div>
+
+    <br>
+
+    <h2>带有偏移量的列</h2>
+    <div class="fixed-row">
+        <div class="row show-grid">
+            <div class="span8">8</div>
+            <div class="span8 offset8">8 offset 8</div>
+        </div>
+        <!-- /row -->
+        <div class="row show-grid">
+            <div class="span6 offset6">6 offset 6</div>
+            <div class="span6 offset6">6 offset 6</div>
+        </div>
+        <!-- /row -->
+        <div class="row show-grid">
+            <div class="span16 offset8">16 offset 8</div>
+        </div>
+        <!-- /row -->
+    </div>
+    <pre class="prettyprint linenums">
+&lt;div class="row"&gt;
+  &lt;div class="span8"&gt;...&lt;/div&gt;
+  &lt;div class="span8 offset8"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+    <br>
+
+    <h2>嵌套列</h2>
+        <div class="row-fluid">
+            <div class="span15">
+                <p>
+                    有时我们需要在某一列中嵌套一个栅格，只需要在
+                    <code>.span*</code>
+                    中增加一个
+                    <code>.row</code>
+                    ， 并在
+                    <code>.row</code>
+                    中增加若干
+                    <code>.span*</code>
+                    。
+                </p>
+                <h3>样例</h3>
+                <p>
+                    嵌套行中的列横跨宽度相加必须等于其外部列的宽度。 例如：一个
+                    <code>.span12</code>
+                    列中可以有两个
+                    <code>.span6</code>
+                    列。
+                </p>
+                <div class="row show-grid">
+                    <div class="span12">
+                        Level 1 of column
+                        <div class="row show-grid">
+                            <div class="span6">Level 2</div>
+                            <div class="span6">Level 2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.span -->
+            <div class="span9">
+                <pre class="prettyprint linenums">&lt;div class="row"&gt;
+      &lt;div class="span12"&gt;
+        Level 1 of column
+        &lt;div class="row"&gt;
+          &lt;div class="span6"&gt;Level 2&lt;/div&gt;
+          &lt;div class="span6"&gt;Level 2&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    </pre>
+            </div>
+            <!-- /.span -->
+        </div>
+        <!-- /.row -->
+
+</div>
+
+
+<hr>
+
+<div class="container-fluid">
+
+    <div class="page-header">
+        <h1>
+            自适应栅格
+            <small>基于百分比的列宽</small>
+        </h1>
+    </div>
+
+    <h2>自适应列</h2>
+    <div class="row-fluid show-grid">
+        <div class="span2 span-first">2</div>
+        <div class="span2">2</div>
+        <div class="span2">2</div>
+        <div class="span2">2</div>
+        <div class="span2">2</div>
+        <div class="span2">2</div>
+        <div class="span2">2</div>
+        <div class="span2">2</div>
+        <div class="span2">2</div>
+        <div class="span2">2</div>
+        <div class="span2">2</div>
+        <div class="span2">2</div>
+    </div>
+    <div class="row-fluid show-grid">
+        <div class="span8 span-first">8</div>
+        <div class="span8">8</div>
+        <div class="span8">8</div>
+    </div>
+    <div class="row-fluid show-grid">
+        <div class="span8 span-first">8</div>
+        <div class="span16">16</div>
+    </div>
+    <div class="row-fluid show-grid">
+        <div class="span12 span-first">12</div>
+        <div class="span12">12</div>
+    </div>
+    <div class="row-fluid show-grid">
+        <div class="span24 span-first">24</div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span12">
+            <h3>自适应的行</h3>
+            <p>
+                通过简单的修改
+                <code>.row</code>
+                为
+                <code>.row-fluid</code>
+                可以定义自适应行。 而列定义完全保持和原来相同，简单快速的在定宽和自适应间切换。
+            </p>
+        </div>
+        <!-- /.span -->
+        <div class="span12">
+            <h3>代码</h3>
+            <pre class="prettyprint linenums">&lt;div class="row-fluid"&gt;
+  &lt;div class="span8"&gt;...&lt;/div&gt;
+  &lt;div class="span16"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+        </div>
+        <!-- /.span -->
+    </div>
+    <!-- /.row -->
+
+    <h2>自适应嵌套</h2>
+    <div class="row-fluid">
+        <div class="span12">
+            <p>在自适应列的嵌套中，子列的数值之和不一定等于父列，而是按照百分比计算的宽度。</p>
+            <div class="row-fluid show-grid">
+                <div class="span24 span-first">
+                    Fluid 24
+                    <div class="row-fluid show-grid">
+                        <div class="span6 span-first">Fluid 6</div>
+                        <div class="span6">Fluid 6</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.span -->
+        <div class="span12">
+            <pre class="prettyprint linenums">&lt;div class="row-fluid"&gt;
+  &lt;div class="span24"&gt;
+    Level 1 of column
+    &lt;div class="row-fluid"&gt;
+      &lt;div class="span6"&gt;Level 2&lt;/div&gt;
+      &lt;div class="span12"&gt;Level 2&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+        </div>
+        <!-- /.span -->
+    </div>
+    <!-- /.row -->
+
+
+</div>
+<script type="text/javascript" src="../assets/prettify.js"></script>
+</body>
+</html>
