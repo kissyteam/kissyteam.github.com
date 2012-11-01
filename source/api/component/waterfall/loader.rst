@@ -11,27 +11,31 @@ Class
 Configs
 -----------------------------------------------
 
-  * :data:`container`
-  * :data:`minColCount`
-  * :data:`effect`
-  * :data:`colWidth`
+ * :data:`~Waterfall.config.container`
+ * :data:`~Waterfall.config.minColCount`
+ * :data:`~Waterfall.config.effect`
+ * :data:`~Waterfall.config.colWidth`
 
-  以上配置项都是继承自  :class:`Waterfall` , 另外, 自身还有:
+以上配置项都是继承自  :class:`Waterfall` , 另外, 自身还有:
 
-  * :data:`diff`
-  * :data:`load`
+  * :data:`~Waterfall.config.diff`
+  * :data:`~Waterfall.config.load`
 
 Methods
 -----------------------------------------------
 
-  * :meth:`adjust`
-  * :meth:`addItems`
-  * :meth:`destroy`
-  * :meth:`start`
-  * :meth:`end`
+  * :meth:`~Waterfall.prototype.adjust`
+  * :meth:`~Waterfall.prototype.addItems`
+  * :meth:`~Waterfall.prototype.destroy`
+  * :meth:`~Waterfall.prototype.isAdjusting`
+  * :meth:`~Waterfall.prototype.isAdding`
+  * :meth:`~Waterfall.prototype.adjustItem`
+  * :meth:`~Waterfall.prototype.removeItem`
 
-  以上配置项都是继承自  :class:`Waterfall` .
+以上配置项都是继承自  :class:`Waterfall` , 另外, 自身还有:
 
+  * :data:`~Waterfall.prototype.start`
+  * :data:`~Waterfall.prototype.end`
 
 Class Detail
 -----------------------------------------------
@@ -50,11 +54,11 @@ Class Detail
 Configs Detail
 -----------------------------------------------
 
-.. data:: diff
+.. data:: Waterfall.config.diff
 
     {Number} - 滚动时, 当最小高度的列超过在屏幕高度+已滚动高度+diff时, 会去加载更多数据.
 
-.. data:: load
+.. data:: Waterfall.config.load
 
     {Function} - 用户自定义加载数据. 设置这个, 指定如何加载更多数据, 及加载数据后如何格式化成 HTML, 完全由用户自定义, 更加灵活.
 
@@ -102,16 +106,21 @@ Methods Detail
 
 .. versionadded:: 1.3
 
-.. method:: start
+.. method:: Waterfall.prototype.start
 
     | **start** ()
     | 开始监控 scroll 事件（随时可能会动态加载）
 
 
-.. method:: end
+.. method:: Waterfall.prototype.end
 
     | **end** ()
     | 停止监控 scroll 事件（停止动态加载）
+
+
+.. important::
+
+    瀑布流区块中的图片请设置 display block ，否则在 firefox 中会导致区块错乱.
 
 
 
