@@ -50,10 +50,15 @@ Class Detail
     
     | **DataLazyload** (containers[, config])
     
-    :param String|HTMLElement|Array<HTMLElement> containers: 默认为 document.body , 图片所在容器(可以多个)
+    :param String|HTMLElement|Array<HTMLElement> containers: 默认为 document.body ,
+    图片所在容器(可以多个)
     :param Object config: 配置项, 详细见下方 **Configs Detail** .
     
-    
+.. note::
+
+    容器内需要懒加载的图片的真实地址需要放在 ``data-ks-lazyload`` 中。
+    需要懒加载的 textarea 需具备样式类 ``ks-datalazyload``
+
 Configs Detail
 -----------------------------------------------
 
@@ -131,7 +136,9 @@ Methods Detail
     :param String type: 延迟加载方式, 可取:
 
     1. ``textarea`` 或 ``area-data`` , 即表示延迟加载使用的是 ``textarea`` 方式;
+        此时 textarea 需要有样式类 ``ks-datalazyload-custom``
     2. ``img`` 或 ``img-src``, 即表示延迟加载使用的是 ``img`` 方式.
+        此时 img 的真实地址须放在属性 ``data-ks-lazyload-custom`` 中
 
 
 

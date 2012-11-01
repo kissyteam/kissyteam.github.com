@@ -173,16 +173,19 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>containers</strong> (<em>String|HTMLElement|Array&lt;HTMLElement&gt;</em>) &#8211; 默认为 document.body , 图片所在容器(可以多个)</li>
-<li><strong>config</strong> (<em>Object</em>) &#8211; 配置项, 详细见下方 <strong>Configs Detail</strong> .</li>
-</ul>
-</td>
+<tr><td>&nbsp;</td><td class="field-body"><strong>containers</strong> (<em>String|HTMLElement|Array&lt;HTMLElement&gt;</em>) &#8211; 默认为 document.body ,</td>
 </tr>
 </tbody>
 </table>
+<p>图片所在容器(可以多个)
+:param Object config: 配置项, 详细见下方 <strong>Configs Detail</strong> .</p>
 </dd></dl>
 
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">容器内需要懒加载的图片的真实地址需要放在 <tt class="docutils literal"><span class="pre">data-ks-lazyload</span></tt> 中。
+需要懒加载的 textarea 需具备样式类 <tt class="docutils literal"><span class="pre">ks-datalazyload</span></tt></p>
+</div>
 </div>
 <div class="section" id="configs-detail">
 <h2>Configs Detail<a class="headerlink" href="#configs-detail" title="Permalink to this headline">¶</a></h2>
@@ -294,9 +297,19 @@
 </tr>
 </tbody>
 </table>
-<ol class="arabic simple">
-<li><tt class="docutils literal"><span class="pre">textarea</span></tt> 或 <tt class="docutils literal"><span class="pre">area-data</span></tt> , 即表示延迟加载使用的是 <tt class="docutils literal"><span class="pre">textarea</span></tt> 方式;</li>
-<li><tt class="docutils literal"><span class="pre">img</span></tt> 或 <tt class="docutils literal"><span class="pre">img-src</span></tt>, 即表示延迟加载使用的是 <tt class="docutils literal"><span class="pre">img</span></tt> 方式.</li>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt><tt class="docutils literal"><span class="pre">textarea</span></tt> 或 <tt class="docutils literal"><span class="pre">area-data</span></tt> , 即表示延迟加载使用的是 <tt class="docutils literal"><span class="pre">textarea</span></tt> 方式;</dt>
+<dd><p class="first last">此时 textarea 需要有样式类 <tt class="docutils literal"><span class="pre">ks-datalazyload-custom</span></tt></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><tt class="docutils literal"><span class="pre">img</span></tt> 或 <tt class="docutils literal"><span class="pre">img-src</span></tt>, 即表示延迟加载使用的是 <tt class="docutils literal"><span class="pre">img</span></tt> 方式.</dt>
+<dd><p class="first last">此时 img 的真实地址须放在属性 <tt class="docutils literal"><span class="pre">data-ks-lazyload-custom</span></tt> 中</p>
+</dd>
+</dl>
+</li>
 </ol>
 </dd></dl>
 
