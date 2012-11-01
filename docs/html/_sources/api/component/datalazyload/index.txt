@@ -65,7 +65,7 @@ Configs Detail
 
 .. data:: mod
 
-    {String} - 默认是 'manul',懒处理模式.
+    {String} - 默认是 'manual',懒处理模式.
     
         * 'auto' : 自动化. html 输出时, 不对 img.src 做任何处理
         * 'manual' : 输出 html 时, 已经将需要延迟加载的图片的 src 属性替换为 'data-ks-lazyload'
