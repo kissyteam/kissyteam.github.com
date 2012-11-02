@@ -95,8 +95,8 @@ KISSY.use("tree", function (S, Tree) {
             <h1>KISSY Check Tree</h1>
 
 
-            <a href="javascript:void(0)" id="expandAll" class="ks-button">展开全部</a>&nbsp;
-            <a href="javascript:void(0)" id="collapseAll" class="ks-button">关闭全部</a>
+            <a href="javascript:void(0)" id="expandAll-check" class="ks-button">展开全部</a>&nbsp;
+            <a href="javascript:void(0)" id="collapseAll-check" class="ks-button">关闭全部</a>
 
             <div id="treeContainer2" style="width: 200px;margin: 20px 0;">
 
@@ -141,10 +141,10 @@ KISSY.use("tree", function (S, Tree) {
     tree.on("click", function (e) {
         S.log("action : " + e.target.get("content"));
     });
-    $("#expandAll").on("click", function () {
+    $("#expandAll-check").on("click", function () {
         tree.expandAll();
     });
-    $("#collapseAll").on("click", function () {
+    $("#collapseAll-check").on("click", function () {
         tree.collapseAll();
     });
 });
@@ -158,8 +158,8 @@ KISSY.use("tree", function (S, Tree) {
             <h1>KISSY Decorated Simple Tree</h1>
 
 
-            <a href="javascript:void(0)" id="expandAll" class="ks-button">展开全部</a>&nbsp;
-            <a href="javascript:void(0)" id="collapseAll" class="ks-button">关闭全部</a>
+            <a href="javascript:void(0)" id="expandAll-decorate" class="ks-button">展开全部</a>&nbsp;
+            <a href="javascript:void(0)" id="collapseAll-decorate" class="ks-button">关闭全部</a>
 
             <div id="treeContainer3" style="width: 200px;margin: 20px 0;">
 
@@ -201,10 +201,10 @@ KISSY.use("tree", function (S, Tree) {
     tree.on("click", function (e) {
         S.log("action : " + e.target.get("content"));
     });
-    $("#expandAll").on("click", function () {
+    $("#expandAll-decorate").on("click", function () {
         tree.expandAll();
     });
-    $("#collapseAll").on("click", function () {
+    $("#collapseAll-decorate").on("click", function () {
         tree.collapseAll();
     });
 });                
@@ -217,8 +217,8 @@ KISSY.use("tree", function (S, Tree) {
             <h1>KISSY Decorated Check Tree</h1>
 
 
-            <a href="javascript:void(0)" id="expandAll" class="ks-button">展开全部</a>&nbsp;
-            <a href="javascript:void(0)" id="collapseAll" class="ks-button">关闭全部</a>
+            <a href="javascript:void(0)" id="expandAll-decorate-check" class="ks-button">展开全部</a>&nbsp;
+            <a href="javascript:void(0)" id="collapseAll-decorate-check" class="ks-button">关闭全部</a>
 
             <div id="treeContainer4" style="width: 200px;margin: 20px 0;">
 
@@ -266,11 +266,11 @@ KISSY.use("tree", function (S, Tree) {
         S.log("action : " + e.target.get("content"));
     });
 
-    $("#expandAll").on("click", function () {
+    $("#expandAll-decorate-check").on("click", function () {
         tree.expandAll();
     });
 
-    $("#collapseAll").on("click", function () {
+    $("#collapseAll-decorate-check").on("click", function () {
         tree.collapseAll();
     });
 });                
@@ -442,8 +442,8 @@ KISSY.use("tree", function (S, Tree) {
             <h1>KISSY Simple Tree using xclass</h1>
 
 
-            <a href="javascript:void(0)" id="expandAll" class="ks-button">展开全部</a>&nbsp;
-            <a href="javascript:void(0)" id="collapseAll" class="ks-button">关闭全部</a>
+            <a href="javascript:void(0)" id="expandAll-xclass" class="ks-button">展开全部</a>&nbsp;
+            <a href="javascript:void(0)" id="collapseAll-xclass" class="ks-button">关闭全部</a>
 
             <div id="treeContainer7" style="width: 200px;margin: 20px 0;">
 
@@ -507,10 +507,10 @@ KISSY.use("tree", function (S, Tree) {
     tree.on("click", function (e) {
         S.log("action : " + e.target.get("content"));
     });
-    $("#expandAll").on("click", function () {
+    $("#expandAll-xclass").on("click", function () {
         tree.expandAll();
     });
-    $("#collapseAll").on("click", function () {
+    $("#collapseAll-xclass").on("click", function () {
         tree.collapseAll();
     });
 });                
@@ -665,11 +665,11 @@ KISSY.use("tree", function (S, Tree) {
                 S.log("action : " + e.target.get("content"));
             });
 
-            $("#expandAll").on("click", function () {
+            $("#expandAll-check").on("click", function () {
                 tree.expandAll();
             });
 
-            $("#collapseAll").on("click", function () {
+            $("#collapseAll-check").on("click", function () {
                 tree.collapseAll();
             });
         });
@@ -691,11 +691,11 @@ KISSY.use("tree", function (S, Tree) {
                 S.log("action : " + e.target.get("content"));
             });
 
-            $("#expandAll").on("click", function () {
+            $("#expandAll-decorate").on("click", function () {
                 tree.expandAll();
             });
 
-            $("#collapseAll").on("click", function () {
+            $("#collapseAll-decorate").on("click", function () {
                 tree.collapseAll();
             });
         });
@@ -718,11 +718,11 @@ KISSY.use("tree", function (S, Tree) {
                 S.log("action : " + e.target.get("content"));
             });
 
-            $("#expandAll").on("click", function () {
+            $("#expandAll-decorate-check").on("click", function () {
                 tree.expandAll();
             });
 
-            $("#collapseAll").on("click", function () {
+            $("#collapseAll-decorate-check").on("click", function () {
                 tree.collapseAll();
             });
         });
@@ -925,10 +925,10 @@ KISSY.use("tree", function (S, Tree) {
             tree.on("click", function (e) {
                 S.log("action : " + e.target.get("content"));
             });
-            $("#expandAll").on("click", function () {
+            $("#expandAll-xclass").on("click", function () {
                 tree.expandAll();
             });
-            $("#collapseAll").on("click", function () {
+            $("#collapseAll-xclass").on("click", function () {
                 tree.collapseAll();
             });
         });
