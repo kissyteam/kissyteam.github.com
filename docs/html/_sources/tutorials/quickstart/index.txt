@@ -12,7 +12,7 @@ KISSY 概览
 
 **KISSY 提供什么?**
 
-    - 稳定的核心, 包括 :ref:`oo <KISSY>`, :mod:`DOM <dom>`, :mod:`Event <event>`, :mod:`Anim <anim>`, :mod:`Ajax <io>` 等;
+    - 稳定的核心, 包括 :ref:`oo <KISSY>`, :mod:`dom <dom>`, :mod:`Event <event>`, :mod:`Anim <anim>`, :mod:`Ajax <io>` 等;
     - 强大且易用的脚本加载器, 特有的 :ref:`Loader`;
     - 丰富的UI组件, 包括 :mod:`Switchable <switchable>`, :mod:`Overlay <overlay>`, :mod:`Draggable and Droppable <dd>` 等;
     - 更有设计模式库 `DPL </kissy-dpl/base/index.html>`_, :mod:`KISSY 富文本编辑器 <editor>`, `AJBridge </kissy-ajbridge/docs/index.html>`_ 等强大组件.

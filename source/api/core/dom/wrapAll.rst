@@ -7,7 +7,7 @@ wrapAll
 Module
 -----------------------------------------------
 
-  :mod:`DOM <dom>`
+  :mod:`dom <dom>`
 
 
 Methods

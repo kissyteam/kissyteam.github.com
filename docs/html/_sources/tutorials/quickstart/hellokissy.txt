@@ -29,7 +29,7 @@ Hello KISSY
 
 这个例子中, 
     #. :func:`KISSY.ready() <seed.KISSY.ready>` 指在 DOM 加载完毕之后执行代码. 就像 jQuery 中的 ``$(document).ready()``.
-    #. :mod:`DOM <dom>`, KISSY 的 DOM 模块 , 提供常用 DOM 操作, 如元素选择/遍历, 样式的获取/修改等等.
+    #. :mod:`dom <dom>`, KISSY 的 DOM 模块 , 提供常用 DOM 操作, 如元素选择/遍历, 样式的获取/修改等等.
     #. :mod:`event`, KISSY 的 Event 模块 , 提供事件处理功能, 如事件添加/删除, ``mouseenter/mouseleave`` 事件的支持等.
     #. :func:`DOM.get(selector) <dom.get>`, 根据给出的 ``selector`` 获取符合条件的 **第一个节点**; 另外还有一个类似的方法叫做 :func:`DOM.query(selector) <dom.query>` , 与前者不同的是, 得到的是 **所有** 符合条件的元素.
     #. :func:`DOM.attr(elem, name, val) <dom.attr>`, 获取/设置元素某个属性, 这里, 在动画开始前给按钮设置不可用状态.
