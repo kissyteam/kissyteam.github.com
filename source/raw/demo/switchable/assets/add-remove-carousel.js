@@ -11,7 +11,6 @@ KISSY.use("event,switchable,datalazyload", function (S, Event, Switchable) {
             circular:false,
             prevBtnCls:'prev',
             nextBtnCls:'next',
-            mouseAsTouch:true,
             disableBtnCls:'disable',
             lazyDataType:'img-src'
         });

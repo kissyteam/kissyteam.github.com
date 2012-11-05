@@ -9,7 +9,6 @@
             steps: 5,
             viewSize: [680],
             circular: false,
-            mouseAsTouch:true,
             prevBtnCls: 'prev',
             nextBtnCls: 'next',
             //autoplay:true,//是否自动切换
