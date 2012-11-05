@@ -275,12 +275,6 @@ maximize
 
 .. code-block:: html
 
-    <script src="http://a.tbcdn.cn/s/kissy/1.1.7/editor/biz/ext/editor-plugin-pkg-min.js"></script>
-    
-或
-
-.. code-block:: html
-
     <script src="http://a.tbcdn.cn/s/kissy/1.2.0/editor/biz/ext/editor-plugin-pkg-min.js"></script>    
 
 
