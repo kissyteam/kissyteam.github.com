@@ -217,6 +217,19 @@
 </pre></div>
 </div>
 </div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>使用自定义按钮模拟 file input 时，注意请将 file input 设置透明覆盖在自定义按钮上面。</p>
+<p>不要：</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="c1">// &lt;button id=&#39;myFileUploadButton&#39;&gt;</span>
+<span class="c1">// &lt;input type=&#39;file&#39; id=&#39;nativeFile&#39;&gt;</span>
+<span class="c1">// 不要这样做</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;#myFileUploadButton&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;#nativeFile&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 

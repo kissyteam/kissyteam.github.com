@@ -65,3 +65,19 @@ Demo
     .. literalinclude:: /raw/api/core/ajax/upload.html
        :language: html
 
+
+.. note::
+
+    使用自定义按钮模拟 file input 时，注意请将 file input 设置透明覆盖在自定义按钮上面。
+
+    不要：
+
+    .. code-block:: javascript
+
+        // <button id='myFileUploadButton'>
+        // <input type='file' id='nativeFile'>
+        // 不要这样做
+        KISSY.all('#myFileUploadButton').on('click',function(){
+            KISSY.get('#nativeFile').click();
+        });
+

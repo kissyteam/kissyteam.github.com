@@ -59,6 +59,8 @@ Methods
    parent
    next
    prev
+   first
+   last
    siblings
    children
    contains
@@ -70,6 +72,7 @@ Methods
    insertAfter
    append
    prepend
+   replaceWith
    data
    removeData
    hasData
