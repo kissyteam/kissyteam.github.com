@@ -131,7 +131,6 @@
         <span class="kd">var</span> <span class="nx">cfg</span> <span class="o">=</span> <span class="p">{</span>
             <span class="c1">// 是否初始聚焦</span>
             <span class="nx">focused</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nx">autoRender</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
             <span class="nx">attachForm</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
             <span class="c1">// 自定义样式</span>
             <span class="c1">// customStyle:&quot;p{line-height: 1.4;margin: 1.12em 0;padding: 0;}&quot;,</span>
@@ -337,7 +336,7 @@
 
             <span class="nx">cfg</span><span class="p">.</span><span class="nx">plugins</span> <span class="o">=</span> <span class="nx">args</span><span class="p">;</span>
 
-            <span class="kd">var</span> <span class="nx">editor</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Editor</span><span class="p">(</span><span class="nx">cfg</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nx">editor</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Editor</span><span class="p">(</span><span class="nx">cfg</span><span class="p">).</span><span class="nx">render</span><span class="p">();</span>
 
             <span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;#getCur&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
                 <span class="nx">alert</span><span class="p">(</span><span class="nx">editor</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">));</span>
