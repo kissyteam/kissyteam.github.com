@@ -104,7 +104,7 @@ Configs Detail
 Methods Detail
 -----------------------------------------------
 
-.. versionadded:: 1.3
+
 
 .. method:: Waterfall.prototype.start
 

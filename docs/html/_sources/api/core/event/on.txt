@@ -17,18 +17,18 @@ Methods
     | 为符合匹配的 dom 节点的相应事件添加事件处理器
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
-    :param string eventType: 包含一个或多个事件名称的字符串, 多个事件名以空格分开
-
-        .. versionadded:: 1.3
-
-            事件可以通过加点来表示分组，例如 "click.one" , "click.two"
+    :param string eventType: 包含一个或多个事件名称的字符串, 多个事件名以空格分开。
+        事件可以通过加点来表示分组，例如 "click.one" , "click.two"
 
     :param function(eventObject) fn: 当事件触发时的回调函数
     :param object scope: 回调函数的 this 值. 如果不指定默认为绑定事件的当前元素
 
 
+.. note::
+
     ``on`` 方法是给文档添加行为的主要方式. 所有的事件类型, 例如 ``focus`` , ``mouseover`` , ``resize`` 都是有效的事件类型.
-    ( ``window`` 的 ``beforeunload`` 和 ``error`` 事件使用了不标准的方式, 该方法不支持, 请直接在 ``window`` 对象上注册事件处理器).
+
+    ``window`` 的 ``beforeunload`` 和 ``error`` 事件使用了不标准的方式, 该方法不支持, 请直接在 ``window`` 对象上注册事件处理器.
 
     当一个节点的某个事件出发时, 绑定该事件的所有处理器都会被调用.如果有多个事件处理器, 则他们的执行顺序和绑定的顺序保持一致, 当所有的事件处理器执行完毕后,
     事件才继续向上传播.

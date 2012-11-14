@@ -109,10 +109,7 @@ Configs Detail
 
     .. data:: Overlay.config.effect.target
 
-        {String|KISSY.Node} - 可选,
-
-        .. versionadded:: 1.3
-            动画的参考元素.
+        {String|KISSY.Node} - 可选,动画的参考元素.
 
     .. data:: Overlay.config.effect.effect
 

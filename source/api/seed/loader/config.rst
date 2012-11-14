@@ -62,14 +62,11 @@ Methods
 
                     类型字符串, 表示宝贝所有模块定义文件的编码格式, 默认 utf-8
 
-        .. versionadded:: 1.3
-            {
+        .. note::
 
-                KISSY 内置 gallery 包
+            KISSY 内置 gallery 包
 
-            }
-
-    :param Object config.modules: .. versionadded:: 1.3 以单个模块为键，单个模块配置对象为值的键值对对象。单个模块配置对象包括：
+    :param Object config.modules: 以单个模块为键，单个模块配置对象为值的键值对对象。单个模块配置对象包括：
 
         .. attribute:: module.requires
 
@@ -93,7 +90,7 @@ Methods
 
 
 
-.. versionadded:: 1.3
+
 
 .. function:: KISSY.config
 
@@ -104,7 +101,7 @@ Methods
     :param value: 参数值. 如果不设置则返回参数名称对应的参数值.
     :returns: 如果设置了参数值无返回。否则返回参数名称对应的参数值.
 
-.. versionadded:: 1.3
+
 
 配置也可以通过配置到引用 seed/kissy.js 的脚本标签上. 例如
 

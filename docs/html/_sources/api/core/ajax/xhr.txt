@@ -38,9 +38,7 @@ Class Detail
 .. class:: XhrObj
 
     | **XhrObj** (config)
-    | 原生 XMLHttpRequest 以及 jsonp 等非 xhr 请求对象的一个封装类.
-        .. versionadded:: 1.3
-            继承自 :class:`~seed.Promise` .
+    | 原生 XMLHttpRequest 以及 jsonp 等非 xhr 请求对象的一个封装类. 继承自 :class:`~seed.Promise` .
 
     :param Object config:  当前请求发送时的配置信息, 参见 :ref:`IO Config <io-config>`.
 

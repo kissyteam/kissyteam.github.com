@@ -95,7 +95,7 @@ Methods Detail
 
     :rtype: Boolean
 
-.. versionadded:: 1.3
+
 
 .. method:: Anim.prototype.isPaused
 
@@ -117,14 +117,14 @@ Methods Detail
     
     :param Boolean finish: false 时, 动画会在当前帧直接停止, 为 true 时, 动画停止时会立刻跳到最后一帧
 
-.. versionadded:: 1.3
+
 
 .. method:: Anim.prototype.pause
 
     | **pause** ()
     | 在动画实例上调用, 暂停当前动画实例的动画.
 
-.. versionadded:: 1.3
+
 
 .. method:: Anim.prototype.resume
 
@@ -139,7 +139,7 @@ Methods Detail
     :param HTMLElement|window elem: 作用动画的元素节点.
     :rtype: Boolean
 
-.. versionadded:: 1.3
+
 
 .. method:: Anim.isPaused
 
@@ -171,7 +171,7 @@ Methods Detail
                              
                              不设置时, 表示停止所有队列中的所有动画;
 
-.. versionadded:: 1.3
+
 
 .. method:: Anim.pause
 
@@ -189,7 +189,7 @@ Methods Detail
 
                              不设置时, 表示暂停所有队列中的所有动画;
 
-.. versionadded:: 1.3
+
 
 .. method:: Anim.resume
 

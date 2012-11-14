@@ -348,8 +348,6 @@ Methods Detail
     
         只有设置了 :data:`~Switchable.config.autoplay` true 时有效
 
-.. versionadded:: 1.3
-
 .. method:: Switchable.prototype.add
 
     | **add** (cfg)
@@ -388,9 +386,6 @@ Methods Detail
 
         #. 如果指定了 active,那么 switch 到新的插入位置 index 所应该在的页数（一页有多个panel）
 
-
-.. versionadded:: 1.3
-
 .. method:: Switchable.prototype.remove
 
     | **remove** (cfg)
@@ -425,9 +420,6 @@ Methods Detail
         #. 如果删除 x 元素导致 activeIndex 页为空，那么先 switch 到  activeIndex-1 的页，然后删除 x 元素
 
         #. 否则直接删除 trigger 和 x 位置 panel 元素，并重新强制 switch 到 activeIndex 元素（懒加载替换上来的元素）
-
-
-.. versionadded:: 1.3
 
 .. method:: Switchable.prototype.destroy
 

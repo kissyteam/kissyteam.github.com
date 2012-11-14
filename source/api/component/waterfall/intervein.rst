@@ -71,7 +71,7 @@ Configs Detail
 
     {Object} - 各数据块展示时的动画效果, 默认为 { effect:"fadeIn", duration:1 }, 可取: "fadeIn", "slideDown", "show", 参数含义同 :class:`~anim.Anim` .
 
-.. versionadded:: 1.3
+
 
 .. data:: Waterfall.config.adjustEffect
 
@@ -99,7 +99,7 @@ Methods Detail
     | **adjust** ()
     | 重新调整各个数据块的位置.
 
-.. versionadded:: 1.3
+
 
 .. method:: Waterfall.prototype.isAdjusting
 
@@ -108,7 +108,7 @@ Methods Detail
 
     :rtype: Boolean
 
-.. versionadded:: 1.3
+
 
 .. method:: Waterfall.prototype.isAdding
 
@@ -117,7 +117,7 @@ Methods Detail
 
     :rtype: Boolean
 
-.. versionadded:: 1.3
+
 
 .. method:: Waterfall.prototype.adjustItem
 
@@ -133,7 +133,7 @@ Methods Detail
     :param {String} cfg.effect.easing
     :param {Number} cfg.effect.duration
 
-.. versionadded:: 1.3
+
 
 .. method:: Waterfall.prototype.removeItem
 
@@ -155,7 +155,7 @@ Methods Detail
     :param Array<HTMLElement|KISSY.Node> items: 待添加的数据块数组
     :param Function callback: 添加完数据后的回调函数
 
-    .. versionadded:: 1.3
+
 
     .. note::
 

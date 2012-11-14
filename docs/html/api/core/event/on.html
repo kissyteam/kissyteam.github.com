@@ -135,10 +135,8 @@
 <tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
 <li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="../dom/selector.html#dom-selector"><em>KISSY selector</em></a></li>
-<li><strong>eventType</strong> (<em>string</em>) &#8211; <p>包含一个或多个事件名称的字符串, 多个事件名以空格分开</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.3.</span></p>
-</li>
+<li><strong>eventType</strong> (<em>string</em>) &#8211; 包含一个或多个事件名称的字符串, 多个事件名以空格分开。
+事件可以通过加点来表示分组，例如 &#8220;click.one&#8221; , &#8220;click.two&#8221;</li>
 <li><strong>fn</strong> (<em>function(eventObject)</em>) &#8211; 当事件触发时的回调函数</li>
 <li><strong>scope</strong> (<em>object</em>) &#8211; 回调函数的 this 值. 如果不指定默认为绑定事件的当前元素</li>
 </ul>
@@ -146,12 +144,15 @@
 </tr>
 </tbody>
 </table>
-<p><tt class="docutils literal"><span class="pre">on</span></tt> 方法是给文档添加行为的主要方式. 所有的事件类型, 例如 <tt class="docutils literal"><span class="pre">focus</span></tt> , <tt class="docutils literal"><span class="pre">mouseover</span></tt> , <tt class="docutils literal"><span class="pre">resize</span></tt> 都是有效的事件类型.
-( <tt class="docutils literal"><span class="pre">window</span></tt> 的 <tt class="docutils literal"><span class="pre">beforeunload</span></tt> 和 <tt class="docutils literal"><span class="pre">error</span></tt> 事件使用了不标准的方式, 该方法不支持, 请直接在 <tt class="docutils literal"><span class="pre">window</span></tt> 对象上注册事件处理器).</p>
-<p>当一个节点的某个事件出发时, 绑定该事件的所有处理器都会被调用.如果有多个事件处理器, 则他们的执行顺序和绑定的顺序保持一致, 当所有的事件处理器执行完毕后,
-事件才继续向上传播.</p>
 </dd></dl>
 
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><tt class="docutils literal"><span class="pre">on</span></tt> 方法是给文档添加行为的主要方式. 所有的事件类型, 例如 <tt class="docutils literal"><span class="pre">focus</span></tt> , <tt class="docutils literal"><span class="pre">mouseover</span></tt> , <tt class="docutils literal"><span class="pre">resize</span></tt> 都是有效的事件类型.</p>
+<p><tt class="docutils literal"><span class="pre">window</span></tt> 的 <tt class="docutils literal"><span class="pre">beforeunload</span></tt> 和 <tt class="docutils literal"><span class="pre">error</span></tt> 事件使用了不标准的方式, 该方法不支持, 请直接在 <tt class="docutils literal"><span class="pre">window</span></tt> 对象上注册事件处理器.</p>
+<p class="last">当一个节点的某个事件出发时, 绑定该事件的所有处理器都会被调用.如果有多个事件处理器, 则他们的执行顺序和绑定的顺序保持一致, 当所有的事件处理器执行完毕后,
+事件才继续向上传播.</p>
+</div>
 <dl class="function">
 <dt id="event.add">
 <tt class="descclassname">event.</tt><tt class="descname">add</tt><big>(</big><big>)</big><a class="headerlink" href="#event.add" title="Permalink to this definition">¶</a></dt>
