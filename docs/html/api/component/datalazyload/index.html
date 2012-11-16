@@ -154,8 +154,58 @@
 <div class="section" id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <blockquote>
+<div><ul>
+<li><p class="first"><a class="reference internal" href="#datalazyload.addCallback" title="datalazyload.addCallback"><tt class="xref py py-meth docutils literal"><span class="pre">addCallback()</span></tt></a></p>
+</li>
+<li><p class="first"><a class="reference internal" href="#datalazyload.removeCallback" title="datalazyload.removeCallback"><tt class="xref py py-meth docutils literal"><span class="pre">removeCallback()</span></tt></a></p>
+</li>
+<li><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">meth:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><cite>addElements</cite></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">meth:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><cite>removeElements</cite></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">meth:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><cite>refresh</cite></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">meth:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><cite>destroy</cite></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="static-methods">
+<h2>Static Methods<a class="headerlink" href="#static-methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#datalazyload.addCallback" title="datalazyload.addCallback"><tt class="xref py py-meth docutils literal"><span class="pre">addCallback()</span></tt></a></li>
 <li><a class="reference internal" href="#datalazyload.loadCustomLazyData" title="datalazyload.loadCustomLazyData"><tt class="xref py py-meth docutils literal"><span class="pre">loadCustomLazyData()</span></tt></a></li>
 </ul>
 </div></blockquote>
@@ -277,6 +327,63 @@
 </div>
 </dd></dl>
 
+<dl class="method">
+<dt id="datalazyload.removeCallback">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">removeCallback</tt><big>(</big><big>)</big><a class="headerlink" href="#datalazyload.removeCallback" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>removeCallback</strong> (el, fn)</div>
+<div class="line">删除回调函数. 参数同 <tt class="docutils literal"><span class="pre">addCallback</span></tt></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="datalazyload.addElements">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">addElements</tt><big>(</big><big>)</big><a class="headerlink" href="#datalazyload.addElements" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>addElements</strong> (els)</div>
+<div class="line">添加元素到懒加载列表.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>els</strong> (<em>HTMLElement[]</em>) &#8211; 新的懒加载元素列表</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datalazyload.removeElements">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">removeElements</tt><big>(</big><big>)</big><a class="headerlink" href="#datalazyload.removeElements" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>removeElements</strong> (els)</div>
+<div class="line">从懒加载列表中删除元素.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>els</strong> (<em>HTMLElement[]</em>) &#8211; 已有的懒加载元素列表</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datalazyload.refresh">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">refresh</tt><big>(</big><big>)</big><a class="headerlink" href="#datalazyload.refresh" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>refresh</strong> ()</div>
+<div class="line">强制立刻检测懒加载元素</div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="static-methods-detail">
+<h2>Static Methods Detail<a class="headerlink" href="#static-methods-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="datalazyload.loadCustomLazyData">
 <tt class="descclassname">datalazyload.</tt><tt class="descname">loadCustomLazyData</tt><big>(</big><big>)</big><a class="headerlink" href="#datalazyload.loadCustomLazyData" title="Permalink to this definition">¶</a></dt>

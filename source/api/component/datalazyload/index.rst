@@ -39,6 +39,15 @@ Methods
 -----------------------------------------------
 
   * :meth:`addCallback`
+  * :meth:`removeCallback`
+  * :meth: `addElements`
+  * :meth: `removeElements`
+  * :meth: `refresh`
+  * :meth: `destroy`
+
+Static Methods
+-----------------------------------------------
+
   * :meth:`loadCustomLazyData`
 
 
@@ -126,6 +135,34 @@ Methods Detail
     | **addCallback** (el, fn)
     | 添加回调函数. 当 el 即将出现在视图中时, 触发 fn
 
+
+.. method:: removeCallback
+
+    | **removeCallback** (el, fn)
+    | 删除回调函数. 参数同 ``addCallback``
+
+
+.. method:: addElements
+
+    | **addElements** (els)
+    | 添加元素到懒加载列表.
+
+    :param HTMLElement[] els: 新的懒加载元素列表
+
+.. method:: removeElements
+
+    | **removeElements** (els)
+    | 从懒加载列表中删除元素.
+
+    :param HTMLElement[] els: 已有的懒加载元素列表
+
+.. method:: refresh
+
+    | **refresh** ()
+    | 强制立刻检测懒加载元素
+
+Static Methods Detail
+-----------------------------------------------
 
 .. method:: loadCustomLazyData
 
