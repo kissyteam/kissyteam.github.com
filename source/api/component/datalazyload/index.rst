@@ -40,10 +40,10 @@ Methods
 
   * :meth:`addCallback`
   * :meth:`removeCallback`
-  * :meth: `addElements`
-  * :meth: `removeElements`
-  * :meth: `refresh`
-  * :meth: `destroy`
+  * :meth:`addElements`
+  * :meth:`removeElements`
+  * :meth:`refresh`
+  * :meth:`destroy`
 
 Static Methods
 -----------------------------------------------
@@ -160,6 +160,11 @@ Methods Detail
 
     | **refresh** ()
     | 强制立刻检测懒加载元素
+
+.. method:: destroy
+
+    | **destroy** ()
+    | 停止监控并销毁组件
 
 Static Methods Detail
 -----------------------------------------------
