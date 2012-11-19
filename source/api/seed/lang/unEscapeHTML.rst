@@ -28,3 +28,13 @@ Methods
     .. code-block:: javascript
 
         KISSY.unEscapeHTML("&lt;a&gt;x&lt;/a&gt;"); // =>  "<a>x</a>"
+
+.. note::
+
+    该函数只会 unescape 以下字符序列（正则式）
+
+    .. code-block:: javascript
+
+        &amp; &lt; &gt; &#x60; &#x2F; &quot; &#x27; &#\d{1,5}
+
+

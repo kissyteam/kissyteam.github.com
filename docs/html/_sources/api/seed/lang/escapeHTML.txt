@@ -28,3 +28,12 @@ Methods
     .. code-block:: javascript
 
         KISSY.escapeHTML("<a>x</a>"); // =>  "&lt;a&gt;x&lt;/a&gt;"
+
+.. note::
+
+    此函数只会对以下符号进行 escape：
+
+    .. code-block:: javascript
+
+        & > < ` / " '
+
