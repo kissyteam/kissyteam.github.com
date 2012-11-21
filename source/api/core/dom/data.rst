@@ -39,7 +39,7 @@ Methods
     .. note::
 
         embed, object, applet 这三个标签不能设置 expando .
-        如果判断是否设置了扩展属性, 请使用 :func:`DOM.hasData <dom.hasData>`
+        如果判断是否设置了扩展属性, 请使用 :func:`dom.hasData <dom.hasData>`
 
     .. code-block:: javascript
 

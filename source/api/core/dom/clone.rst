@@ -21,8 +21,8 @@ Methods
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
     :param boolean deep: 是否深度克隆（克隆节点的子孙节点）
-    :param boolean withDataAndEvent: 节点是否具备源节点的 :func:`DOM.data <dom.data>` 属性以及 :mod:`事件 <event>`
-    :param boolean deepWithDataAndEvent: 子孙节点是否具备源节点对应子孙节点的 :func:`DOM.data <dom.data>` 属性以及 :mod:`事件 <event>`
+    :param boolean withDataAndEvent: 节点是否具备源节点的 :func:`dom.data <dom.data>` 属性以及 :mod:`事件 <event>`
+    :param boolean deepWithDataAndEvent: 子孙节点是否具备源节点对应子孙节点的 :func:`dom.data <dom.data>` 属性以及 :mod:`事件 <event>`
     :returns: 符合选择器的第一个元素的克隆元素.
     :rtype: HTMLElement
 

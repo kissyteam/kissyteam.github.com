@@ -355,7 +355,7 @@ Methods Detail
 
     :param Object cfg: 添加的具体配置
     :param HTMLElement cfg.trigger: 导航的 trigger 节点
-    :param HTMLELement cfg.panel: 内容节点
+    :param HTMLElement cfg.panel: 内容节点
     :param Number cfg.index: 插入位置
     :param Boolean cfg.active: 是否将新插入的内容节点激活显示
     :param Function cfg.callback: 添加成功后的回调

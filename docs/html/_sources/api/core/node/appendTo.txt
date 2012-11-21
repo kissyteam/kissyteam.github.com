@@ -17,9 +17,9 @@ Methods
     | NodeList **appendTo** ( containers )
     | 将当前节点列表中的每个元素插入到容器列表的每个元素的最后一个子节点后面.
     
-    :param HTMLELement|string|NodeList content: 将要插入的内容
+    :param HTMLElement|string|NodeList content: 将要插入的内容
 
-        * HTMLELement|NodeList: 已有或新创建的节点
+        * HTMLElement|NodeList: 已有或新创建的节点
         * string: 选择器字符串, 查找已有的容器节点
     :rtype: NodeList
     
