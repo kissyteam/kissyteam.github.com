@@ -24,9 +24,7 @@ Properties
     * :attr:`target`
     * :attr:`type`
     * :attr:`which`
-    * :attr:`isImmediatePropagationStopped`
-    * :attr:`isDefaultPrevented`
-    * :attr:`isPropagationStopped`
+
 
 Methods
 -----------------------------------------------
@@ -35,6 +33,9 @@ Methods
   * :meth:`halt`
   * :meth:`stopImmediatePropagation`
   * :meth:`stopPropagation`
+  * :meth:`isImmediatePropagationStopped`
+  * :meth:`isDefaultPrevented`
+  * :meth:`isPropagationStopped`
 
 Class Detail
 -----------------------------------------------
@@ -176,48 +177,6 @@ Properties Detail
     .. literalinclude:: /raw/api/core/event/which.html
        :language: html
 
-.. attribute:: isImmediatePropagationStopped
-
-    {Boolean} - 默认false . 是否停止了该事件的后续所有事件处理器执行, 通过调用 :meth:`~event.stopImmediatePropagation` 设置状态.
-
-    检查是否 ``stopImmediatePropagation()`` 被调用了
-
-
-    .. raw:: html
-
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/isImmediatePropagationStopped.html"></iframe>
-
-    .. literalinclude:: /raw/api/core/event/isImmediatePropagationStopped.html
-       :language: html
-
-.. attribute:: isDefaultPrevented
-
-    判断 :meth:`~event.preventDefault` 是否被调用了.
-
-
-    .. code-block:: javascript
-
-        $("a").click(function(event){
-          alert( event.isDefaultPrevented ); // false
-          event.preventDefault();
-          alert( event.isDefaultPrevented ); // true
-        });
-
-
-.. attribute:: isPropagationStopped
-
-    判断 :meth:`~event.stopPropagation` 是否被调用了.
-
-
-    判断 stopPropagation 是否被调用
-
-    .. raw:: html
-
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/isPropagationStopped.html"></iframe>
-
-
-    .. literalinclude:: /raw/api/core/event/isPropagationStopped.html
-       :language: html
 
 Methods Detail
 -------------------------------------
@@ -225,7 +184,7 @@ Methods Detail
 .. method:: preventDefault
 
     | **preventDefault** ()
-    | 阻止默认行为的发生.例如点击链接不会使浏览器跳转到新的地址. 我们可以使用 :attr:`~event.isDefaultPrevented` 来判断是否某个事件处理器里调用了这个方法.
+    | 阻止默认行为的发生.例如点击链接不会使浏览器跳转到新的地址. 我们可以使用 :meth:`~event.isDefaultPrevented` 来判断是否某个事件处理器里调用了这个方法.
 
 
     阻止链接的跳转
@@ -243,7 +202,7 @@ Methods Detail
 
     | **stopImmediatePropagation** ()
     | 停止当前事件冒泡. 不光停止冒泡到下一个事件目标, 当前目标上的任何后续监听函数, 也马上取消执行.
-    | 用 :attr:`~event.isImmediatePropagationStopped` 来判断是否调用了该方法.
+    | 用 :meth:`~event.isImmediatePropagationStopped` 来判断是否调用了该方法.
 
 
     阻止其他的事件处理器执行
@@ -261,7 +220,7 @@ Methods Detail
 .. method:: stopPropagation
 
     | **stopPropagation** ()
-    | 停止事件沿 dom 树向上冒泡, 组织祖先节点的所有事件处理器执行.我们可以使用 :attr:`~event.isPropagationStopped` 来判断当前方法是否执行过.
+    | 停止事件沿 dom 树向上冒泡, 组织祖先节点的所有事件处理器执行.我们可以使用 :meth:`~event.isPropagationStopped` 来判断当前方法是否执行过.
     | 该方法在 :func:`~event.fire` 中也起作用.
 
     .. note::
@@ -286,3 +245,50 @@ Methods Detail
     | 否则相当于调用 stopPropagation + preventDefault
 
     :param boolean stopImmediatePropagation: 是否立即停止冒泡
+
+
+.. method:: isImmediatePropagationStopped
+
+    | **isImmediatePropagationStopped** ()
+    是否停止了该事件的后续所有事件处理器执行, 通过调用 :meth:`~event.stopImmediatePropagation` 设置状态.
+
+    检查是否 ``stopImmediatePropagation()`` 被调用了
+
+
+    .. raw:: html
+
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/isImmediatePropagationStopped.html"></iframe>
+
+    .. literalinclude:: /raw/api/core/event/isImmediatePropagationStopped.html
+       :language: html
+
+.. method:: isDefaultPrevented
+
+    | **isDefaultPrevented** ()
+    判断 :meth:`~event.preventDefault` 是否被调用了.
+
+
+    .. code-block:: javascript
+
+        $("a").click(function(event){
+          alert( event.isDefaultPrevented() ); // false
+          event.preventDefault();
+          alert( event.isDefaultPrevented() ); // true
+        });
+
+
+.. method:: isPropagationStopped
+
+    | **isPropagationStopped** ()
+    判断 :meth:`~event.stopPropagation` 是否被调用了.
+
+
+    判断 stopPropagation 是否被调用
+
+    .. raw:: html
+
+        <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/isPropagationStopped.html"></iframe>
+
+
+    .. literalinclude:: /raw/api/core/event/isPropagationStopped.html
+       :language: html

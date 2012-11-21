@@ -138,9 +138,6 @@
 <li><a class="reference internal" href="#event.target" title="event.target"><tt class="xref py py-attr docutils literal"><span class="pre">target</span></tt></a></li>
 <li><a class="reference internal" href="#event.type" title="event.type"><tt class="xref py py-attr docutils literal"><span class="pre">type</span></tt></a></li>
 <li><a class="reference internal" href="#event.which" title="event.which"><tt class="xref py py-attr docutils literal"><span class="pre">which</span></tt></a></li>
-<li><a class="reference internal" href="#event.isImmediatePropagationStopped" title="event.isImmediatePropagationStopped"><tt class="xref py py-attr docutils literal"><span class="pre">isImmediatePropagationStopped</span></tt></a></li>
-<li><a class="reference internal" href="#event.isDefaultPrevented" title="event.isDefaultPrevented"><tt class="xref py py-attr docutils literal"><span class="pre">isDefaultPrevented</span></tt></a></li>
-<li><a class="reference internal" href="#event.isPropagationStopped" title="event.isPropagationStopped"><tt class="xref py py-attr docutils literal"><span class="pre">isPropagationStopped</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -152,6 +149,9 @@
 <li><a class="reference internal" href="#event.halt" title="event.halt"><tt class="xref py py-meth docutils literal"><span class="pre">halt()</span></tt></a></li>
 <li><a class="reference internal" href="#event.stopImmediatePropagation" title="event.stopImmediatePropagation"><tt class="xref py py-meth docutils literal"><span class="pre">stopImmediatePropagation()</span></tt></a></li>
 <li><a class="reference internal" href="#event.stopPropagation" title="event.stopPropagation"><tt class="xref py py-meth docutils literal"><span class="pre">stopPropagation()</span></tt></a></li>
+<li><a class="reference internal" href="#event.isImmediatePropagationStopped" title="event.isImmediatePropagationStopped"><tt class="xref py py-meth docutils literal"><span class="pre">isImmediatePropagationStopped()</span></tt></a></li>
+<li><a class="reference internal" href="#event.isDefaultPrevented" title="event.isDefaultPrevented"><tt class="xref py py-meth docutils literal"><span class="pre">isDefaultPrevented()</span></tt></a></li>
+<li><a class="reference internal" href="#event.isPropagationStopped" title="event.isPropagationStopped"><tt class="xref py py-meth docutils literal"><span class="pre">isPropagationStopped()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -382,101 +382,6 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 </div>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="event.isImmediatePropagationStopped">
-<tt class="descclassname">event.</tt><tt class="descname">isImmediatePropagationStopped</tt><a class="headerlink" href="#event.isImmediatePropagationStopped" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Boolean} - 默认false . 是否停止了该事件的后续所有事件处理器执行, 通过调用 <a class="reference internal" href="#event.stopImmediatePropagation" title="event.stopImmediatePropagation"><tt class="xref py py-meth docutils literal"><span class="pre">stopImmediatePropagation()</span></tt></a> 设置状态.</p>
-<p>检查是否 <tt class="docutils literal"><span class="pre">stopImmediatePropagation()</span></tt> 被调用了</p>
-<iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/isImmediatePropagationStopped.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-  
-  <span class="nt">&lt;button&gt;</span>click me<span class="nt">&lt;/button&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;stop-log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-  
-<span class="nt">&lt;script&gt;</span>
-<span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
-<span class="kd">function</span> <span class="nx">immediatePropStopped</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-  <span class="k">if</span> <span class="p">(</span> <span class="nx">e</span><span class="p">.</span><span class="nx">isImmediatePropagationStopped</span> <span class="p">)</span> <span class="p">{</span>
-    <span class="nx">msg</span> <span class="o">=</span>  <span class="s2">&quot;called&quot;</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;not called&quot;</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#stop-log&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span> <span class="s2">&quot;&lt;div&gt;&quot;</span> <span class="o">+</span> <span class="nx">msg</span> <span class="o">+</span> <span class="s2">&quot;&lt;/div&gt;&quot;</span> <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">immediatePropStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
-  <span class="nx">event</span><span class="p">.</span><span class="nx">stopImmediatePropagation</span><span class="p">();</span>
-  <span class="nx">immediatePropStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
-<span class="p">});</span>  
-<span class="nt">&lt;/script&gt;</span>
-
-<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="event.isDefaultPrevented">
-<tt class="descclassname">event.</tt><tt class="descname">isDefaultPrevented</tt><a class="headerlink" href="#event.isDefaultPrevented" title="Permalink to this definition">¶</a></dt>
-<dd><p>判断 <a class="reference internal" href="#event.preventDefault" title="event.preventDefault"><tt class="xref py py-meth docutils literal"><span class="pre">preventDefault()</span></tt></a> 是否被调用了.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
-  <span class="nx">alert</span><span class="p">(</span> <span class="nx">event</span><span class="p">.</span><span class="nx">isDefaultPrevented</span> <span class="p">);</span> <span class="c1">// false</span>
-  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-  <span class="nx">alert</span><span class="p">(</span> <span class="nx">event</span><span class="p">.</span><span class="nx">isDefaultPrevented</span> <span class="p">);</span> <span class="c1">// true</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="event.isPropagationStopped">
-<tt class="descclassname">event.</tt><tt class="descname">isPropagationStopped</tt><a class="headerlink" href="#event.isPropagationStopped" title="Permalink to this definition">¶</a></dt>
-<dd><p>判断 <a class="reference internal" href="#event.stopPropagation" title="event.stopPropagation"><tt class="xref py py-meth docutils literal"><span class="pre">stopPropagation()</span></tt></a> 是否被调用了.</p>
-<p>判断 stopPropagation 是否被调用</p>
-<iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/isPropagationStopped.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-  
-  <span class="nt">&lt;button&gt;</span>click me<span class="nt">&lt;/button&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;stop-log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-  
-<span class="nt">&lt;script&gt;</span>
-<span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
-<span class="kd">function</span> <span class="nx">propStopped</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-  <span class="k">if</span> <span class="p">(</span> <span class="nx">e</span><span class="p">.</span><span class="nx">isPropagationStopped</span> <span class="p">)</span> <span class="p">{</span>
-    <span class="nx">msg</span> <span class="o">=</span>  <span class="s2">&quot;called&quot;</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;not called&quot;</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#stop-log&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span> <span class="s2">&quot;&lt;div&gt;&quot;</span> <span class="o">+</span> <span class="nx">msg</span> <span class="o">+</span> <span class="s2">&quot;&lt;/div&gt;&quot;</span> <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">propStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
-  <span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
-  <span class="nx">propStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
-<span class="p">});</span>  
-<span class="nt">&lt;/script&gt;</span>
-
-<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</pre></div>
-</div>
-</dd></dl>
-
 </div>
 <div class="section" id="methods-detail">
 <h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
@@ -485,7 +390,7 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <tt class="descclassname">event.</tt><tt class="descname">preventDefault</tt><big>(</big><big>)</big><a class="headerlink" href="#event.preventDefault" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>preventDefault</strong> ()</div>
-<div class="line">阻止默认行为的发生.例如点击链接不会使浏览器跳转到新的地址. 我们可以使用 <a class="reference internal" href="#event.isDefaultPrevented" title="event.isDefaultPrevented"><tt class="xref py py-attr docutils literal"><span class="pre">isDefaultPrevented</span></tt></a> 来判断是否某个事件处理器里调用了这个方法.</div>
+<div class="line">阻止默认行为的发生.例如点击链接不会使浏览器跳转到新的地址. 我们可以使用 <a class="reference internal" href="#event.isDefaultPrevented" title="event.isDefaultPrevented"><tt class="xref py py-meth docutils literal"><span class="pre">isDefaultPrevented()</span></tt></a> 来判断是否某个事件处理器里调用了这个方法.</div>
 </div>
 <p>阻止链接的跳转</p>
 <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/preventDefault.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -521,7 +426,7 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <dd><div class="line-block">
 <div class="line"><strong>stopImmediatePropagation</strong> ()</div>
 <div class="line">停止当前事件冒泡. 不光停止冒泡到下一个事件目标, 当前目标上的任何后续监听函数, 也马上取消执行.</div>
-<div class="line">用 <a class="reference internal" href="#event.isImmediatePropagationStopped" title="event.isImmediatePropagationStopped"><tt class="xref py py-attr docutils literal"><span class="pre">isImmediatePropagationStopped</span></tt></a> 来判断是否调用了该方法.</div>
+<div class="line">用 <a class="reference internal" href="#event.isImmediatePropagationStopped" title="event.isImmediatePropagationStopped"><tt class="xref py py-meth docutils literal"><span class="pre">isImmediatePropagationStopped()</span></tt></a> 来判断是否调用了该方法.</div>
 </div>
 <p>阻止其他的事件处理器执行</p>
 <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/stopImmediatePropagation.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -563,7 +468,7 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <tt class="descclassname">event.</tt><tt class="descname">stopPropagation</tt><big>(</big><big>)</big><a class="headerlink" href="#event.stopPropagation" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>stopPropagation</strong> ()</div>
-<div class="line">停止事件沿 dom 树向上冒泡, 组织祖先节点的所有事件处理器执行.我们可以使用 <a class="reference internal" href="#event.isPropagationStopped" title="event.isPropagationStopped"><tt class="xref py py-attr docutils literal"><span class="pre">isPropagationStopped</span></tt></a> 来判断当前方法是否执行过.</div>
+<div class="line">停止事件沿 dom 树向上冒泡, 组织祖先节点的所有事件处理器执行.我们可以使用 <a class="reference internal" href="#event.isPropagationStopped" title="event.isPropagationStopped"><tt class="xref py py-meth docutils literal"><span class="pre">isPropagationStopped()</span></tt></a> 来判断当前方法是否执行过.</div>
 <div class="line">该方法在 <a class="reference internal" href="fire.html#event.fire" title="event.fire"><tt class="xref py py-func docutils literal"><span class="pre">fire()</span></tt></a> 中也起作用.</div>
 </div>
 <div class="admonition note">
@@ -597,6 +502,110 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="event.isImmediatePropagationStopped">
+<tt class="descclassname">event.</tt><tt class="descname">isImmediatePropagationStopped</tt><big>(</big><big>)</big><a class="headerlink" href="#event.isImmediatePropagationStopped" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>isImmediatePropagationStopped</strong> ()</div>
+</div>
+<p>是否停止了该事件的后续所有事件处理器执行, 通过调用 <a class="reference internal" href="#event.stopImmediatePropagation" title="event.stopImmediatePropagation"><tt class="xref py py-meth docutils literal"><span class="pre">stopImmediatePropagation()</span></tt></a> 设置状态.</p>
+<p>检查是否 <tt class="docutils literal"><span class="pre">stopImmediatePropagation()</span></tt> 被调用了</p>
+<iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/isImmediatePropagationStopped.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  
+  <span class="nt">&lt;button&gt;</span>click me<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;stop-log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+  
+<span class="nt">&lt;script&gt;</span>
+<span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">immediatePropStopped</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="nx">e</span><span class="p">.</span><span class="nx">isImmediatePropagationStopped</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">msg</span> <span class="o">=</span>  <span class="s2">&quot;called&quot;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;not called&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#stop-log&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span> <span class="s2">&quot;&lt;div&gt;&quot;</span> <span class="o">+</span> <span class="nx">msg</span> <span class="o">+</span> <span class="s2">&quot;&lt;/div&gt;&quot;</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">immediatePropStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">stopImmediatePropagation</span><span class="p">();</span>
+  <span class="nx">immediatePropStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+<span class="p">});</span>  
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="event.isDefaultPrevented">
+<tt class="descclassname">event.</tt><tt class="descname">isDefaultPrevented</tt><big>(</big><big>)</big><a class="headerlink" href="#event.isDefaultPrevented" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>isDefaultPrevented</strong> ()</div>
+</div>
+<p>判断 <a class="reference internal" href="#event.preventDefault" title="event.preventDefault"><tt class="xref py py-meth docutils literal"><span class="pre">preventDefault()</span></tt></a> 是否被调用了.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+  <span class="nx">alert</span><span class="p">(</span> <span class="nx">event</span><span class="p">.</span><span class="nx">isDefaultPrevented</span><span class="p">()</span> <span class="p">);</span> <span class="c1">// false</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+  <span class="nx">alert</span><span class="p">(</span> <span class="nx">event</span><span class="p">.</span><span class="nx">isDefaultPrevented</span><span class="p">()</span> <span class="p">);</span> <span class="c1">// true</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="event.isPropagationStopped">
+<tt class="descclassname">event.</tt><tt class="descname">isPropagationStopped</tt><big>(</big><big>)</big><a class="headerlink" href="#event.isPropagationStopped" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>isPropagationStopped</strong> ()</div>
+</div>
+<p>判断 <a class="reference internal" href="#event.stopPropagation" title="event.stopPropagation"><tt class="xref py py-meth docutils literal"><span class="pre">stopPropagation()</span></tt></a> 是否被调用了.</p>
+<p>判断 stopPropagation 是否被调用</p>
+<iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/isPropagationStopped.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  
+  <span class="nt">&lt;button&gt;</span>click me<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;stop-log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+  
+<span class="nt">&lt;script&gt;</span>
+<span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">propStopped</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="nx">e</span><span class="p">.</span><span class="nx">isPropagationStopped</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">msg</span> <span class="o">=</span>  <span class="s2">&quot;called&quot;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;not called&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#stop-log&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span> <span class="s2">&quot;&lt;div&gt;&quot;</span> <span class="o">+</span> <span class="nx">msg</span> <span class="o">+</span> <span class="s2">&quot;&lt;/div&gt;&quot;</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">propStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+  <span class="nx">propStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+<span class="p">});</span>  
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
