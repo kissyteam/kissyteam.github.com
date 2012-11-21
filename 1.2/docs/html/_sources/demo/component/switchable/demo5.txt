@@ -1,7 +1,7 @@
 .. currentmodule:: switchable
 
 
-淘宝滚动新闻条
+滚动新闻条
 ========================================================
 
 
@@ -12,7 +12,7 @@ Class
   * :class:`Switchable`
 
 
-淘宝滚动新闻条
+滚动新闻条
 --------------------------------------------------
 
     .. raw:: html
@@ -28,7 +28,7 @@ Class
             <div id="demo5" class="section scroll-news">
                 <ul class="news-items">
                     <li><a target="_blank" href="#">“一分钱”轻松体验淘宝网购流程</a></li>
-                    <li><a target="_blank" href="#">开通网银，百付宝为您一路护航</a></li>
+                    <li><a target="_blank" href="#">开通网银，支付宝为您一路护航</a></li>
                     <li><a target="_blank" href="#">新手买家？帮助教程带您走通淘宝</a></li>
                     <li><a target="_blank" href="#">尽情挥洒你的创意，共建淘宝</a></li>
                     <li><a target="_blank" href="#">认准标识，精选实力卖家任您选择</a></li>
