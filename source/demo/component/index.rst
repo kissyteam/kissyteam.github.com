@@ -22,5 +22,4 @@ Component
    mvc/index
    combobox/index
    xtemplate/index
-   input-selection/index
    editor/index

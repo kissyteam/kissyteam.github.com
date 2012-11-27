@@ -73,3 +73,17 @@ Methods
         DOM.prop("input","disabled", false);
         DOM.prop("input","checked", true);
         DOM.val("input","someValue");
+
+
+selectionStart/End 兼容
+``````````````````````````````````````````````
+
+在 ie 下对于 selectionStart/End 做了兼容处理，demo ：
+
+    .. raw:: html
+
+        <iframe width="100%" height="300" class="iframe-demo" src="../../../../../source/raw/demo/dom/selection-start.html"></iframe>
+
+
+    .. literalinclude:: /raw/demo/dom/selection-start.js
+           :language: javascript

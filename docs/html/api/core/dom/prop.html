@@ -211,6 +211,47 @@
 </div>
 </dd></dl>
 
+<div class="section" id="selectionstart-end">
+<h3>selectionStart/End 兼容<a class="headerlink" href="#selectionstart-end" title="Permalink to this headline">¶</a></h3>
+<p>在 ie 下对于 selectionStart/End 做了兼容处理，demo ：</p>
+<blockquote>
+<div><iframe width="100%" height="300" class="iframe-demo" src="../../../../../source/raw/demo/dom/selection-start.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;dom&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">DOM</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;#t&quot;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;#b&quot;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;#s&quot;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;#e&quot;</span><span class="p">);</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">t</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s2">&quot;1\n2\n3\n4\n5\n6\n7&quot;</span><span class="p">;</span>
+        <span class="nx">t</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+        <span class="nx">DOM</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&quot;selectionStart&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="nx">DOM</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&quot;selectionEnd&quot;</span><span class="p">,</span> <span class="nx">t</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nx">b</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">t</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+        <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&quot;selectionStart&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; - &quot;</span> <span class="o">+</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&quot;selectionEnd&quot;</span><span class="p">));</span>
+    <span class="p">};</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">t</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+        <span class="kd">var</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&quot;selectionStart&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">t</span><span class="p">.</span><span class="nx">selectionStart</span> <span class="o">!=</span> <span class="s2">&quot;number&quot;</span> <span class="o">&amp;&amp;</span> <span class="nx">t</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="nx">next</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;\n&quot;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">next</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="nx">DOM</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&quot;selectionStart&quot;</span><span class="p">,</span> <span class="nx">next</span><span class="p">);</span>
+    <span class="p">};</span>
+
+    <span class="nx">e</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">t</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+        <span class="kd">var</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&quot;selectionEnd&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">t</span><span class="p">.</span><span class="nx">selectionEnd</span> <span class="o">!=</span> <span class="s2">&quot;number&quot;</span> <span class="o">&amp;&amp;</span> <span class="nx">t</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="nx">next</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;\n&quot;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">next</span><span class="o">--</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="nx">DOM</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&quot;selectionEnd&quot;</span><span class="p">,</span> <span class="nx">next</span><span class="p">);</span>
+    <span class="p">};</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
 </div>
 </div>
 
