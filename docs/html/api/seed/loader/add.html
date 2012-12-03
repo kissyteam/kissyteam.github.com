@@ -137,7 +137,6 @@
 <li><strong>name</strong> (<em>string</em>) &#8211; 模块名</li>
 <li><strong>fn</strong> (<em>function</em>) &#8211; 模块定义函数</li>
 <li><strong>config</strong> (<em>object</em>) &#8211; 模块的一些格外属性, 包括</li>
-<li><strong>config.attach</strong> (<em>Boolean</em>) &#8211; 默认 true,表示模块定义时是否执行定义函数 fn, 只有在 use 时才执行, 懒加载原则</li>
 <li><strong>config.requires</strong> (<em>Array&lt;String&gt;</em>) &#8211; 模块的一些依赖项, 如果需要载入 css 则, 数组项为 .css 结尾名字</li>
 </ul>
 </td>
@@ -151,7 +150,6 @@
 <p>范例: 添加模块</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;yourmod&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){},</span>
     <span class="p">{</span>
-        <span class="nx">attach</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span><span class="c1">// 模块定义时不会执行定义函数 fn, 只有在 use 时才执行, 懒加载原则</span>
         <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;depMod1&#39;</span><span class="p">,</span><span class="s1">&#39;depMod2&#39;</span><span class="p">,</span><span class="s1">&#39;./mod.css&#39;</span><span class="p">]</span> <span class="c1">// 该模块的一些依赖项,</span>
                                                    <span class="c1">// 注意 css 为和模块 js 同目录下的 mod.css</span>
     <span class="p">}</span>
@@ -181,6 +179,8 @@
 <span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;tc/mods/mod1&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){},{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;./mod2&#39;</span><span class="p">]});</span>
 </pre></div>
 </div>
+<p class="versionchanged">
+<span class="versionmodified">Changed in version 1.3: </span>KISSY.add 表示模块定义, fn 并不会执行, 只有在 use 时才执行, 懒加载原则.</p>
 </dd></dl>
 
 </div>
@@ -228,13 +228,8 @@
 <div class="section" id="id3">
 <h2>静态部署<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>部署时也可以不采用动态加载, 仅仅将 kissy loader 作为代码组织的一种方式, 将所有的模块打包到一个文件静态引入放在页面中,
-当使用 <tt class="docutils literal"><span class="pre">KISSY.use</span></tt> 时如果模块已经过静态引入在页面中, 则不会发送请求, 这时建议所有模块的属性都设置为</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;custommod&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){},{</span><span class="nx">attach</span><span class="o">:</span><span class="kc">false</span><span class="p">});</span>
-</pre></div>
-</div>
-<p><tt class="docutils literal"><span class="pre">attach</span></tt> 设置为  false, 表示只有在 <tt class="docutils literal"><span class="pre">use</span></tt> 时才会运行模块定义函数, 消除模块过多而导致的页面初始化时的停滞问题. 若定义模块时不写模块名则默认 <tt class="docutils literal"><span class="pre">attach</span></tt> 为 <tt class="docutils literal"><span class="pre">false</span></tt> .</p>
-</div></blockquote>
+<div>部署时也可以不采用动态加载, 仅仅将 kissy loader 作为代码组织的一种方式, 将所有的模块打包到一个文件静态引入放在页面中,
+当使用 <tt class="docutils literal"><span class="pre">KISSY.use</span></tt> 时如果模块已经过静态引入在页面中, 则不会发送请求.</div></blockquote>
 </div>
 </div>
 
