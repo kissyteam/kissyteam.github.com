@@ -129,7 +129,7 @@
 <div class="section" id="id2">
 <h3>加入初始样式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node,overlay,button,dd&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">,</span> <span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node,overlay,button&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">,</span> <span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">dialog</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">O</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
         <span class="nx">width</span><span class="o">:</span><span class="mi">400</span><span class="p">,</span>
         <span class="nx">headerContent</span><span class="o">:</span><span class="s1">&#39;收藏&#39;</span><span class="p">,</span>
@@ -139,21 +139,6 @@
         <span class="p">},</span>
         <span class="nx">align</span><span class="o">:</span><span class="p">{</span>
             <span class="nx">points</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">]</span>
-        <span class="p">},</span>
-        <span class="nx">draggable</span><span class="o">:</span><span class="p">{</span>
-            <span class="nx">proxy</span><span class="o">:</span><span class="p">{</span>
-                <span class="nx">node</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-                    <span class="kd">var</span> <span class="nx">el</span> <span class="o">=</span> <span class="nx">dialog</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;el&quot;</span><span class="p">);</span>
-                    <span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Node</span><span class="p">(</span><span class="s2">&quot;&lt;div class=&#39;ks-overlay-proxy&#39;&gt;&lt;/div&gt;&quot;</span><span class="p">);</span>
-                    <span class="nx">node</span><span class="p">.</span><span class="nx">height</span><span class="p">(</span><span class="nx">el</span><span class="p">.</span><span class="nx">height</span><span class="p">());</span>
-                    <span class="nx">node</span><span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="nx">el</span><span class="p">.</span><span class="nx">width</span><span class="p">());</span>
-                    <span class="nx">el</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;visibility&quot;</span><span class="p">,</span> <span class="s2">&quot;hidden&quot;</span><span class="p">);</span>
-                    <span class="k">return</span> <span class="nx">node</span><span class="p">;</span>
-                <span class="p">},</span> <span class="nx">destroyOnEnd</span><span class="o">:</span><span class="kc">true</span>
-            <span class="p">},</span>
-            <span class="nx">scroll</span><span class="o">:</span><span class="p">{</span>
-                <span class="nx">node</span><span class="o">:</span><span class="nb">window</span>
-            <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">});</span>
 

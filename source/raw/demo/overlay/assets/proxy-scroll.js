@@ -1,4 +1,8 @@
-KISSY.use("node,overlay,button,dd", function(S, Node, O, B) {
+KISSY.use("node,overlay," +
+    "component/plugin/drag," +
+    "dd/plugin/scroll," +
+    "dd/plugin/proxy,"+
+    "button", function(S, Node, O,DragPlugin, ScrollPlugin, ProxyPlugin, B) {
     var dialog = new O.Dialog({
         width: 400,
         headerContent: '收藏',
@@ -7,22 +11,30 @@ KISSY.use("node,overlay,button,dd", function(S, Node, O, B) {
         align: {
             points: ['cc', 'cc']
         },
-        draggable:{
-            proxy:{
-                node:function () {
-                    var el = dialog.get("el");
-                    var node = new Node("<div class='ks-overlay-proxy'></div>");
-                    node.height(el.height());
-                    node.width(el.width());
-                    el.css("visibility", "hidden");
-                    return node;
-                }
-                ,destroyOnEnd:true
-            },
-            scroll:{
-                node:window
-            }
-        }
+        plugins: [
+            new DragPlugin({
+                handlers: [function () {
+                    return dialog.get('header');
+                }],
+                plugins: [
+                    new ProxyPlugin({
+                        hideNodeOnDrag: 1,
+                        node: function () {
+                            var el = dialog.get("el");
+                            var node = new Node("<div class='ks-overlay-proxy'></div>");
+                            node.height(el.height());
+                            node.width(el.width());
+                            return node;
+                        },
+                        destroyOnEnd: true
+                    }),
+
+                    new ScrollPlugin({
+                        node: window
+                    })
+                ]
+            })
+        ]
     });
 
     var show = new B({

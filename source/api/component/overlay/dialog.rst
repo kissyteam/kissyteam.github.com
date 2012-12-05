@@ -19,7 +19,6 @@ Configs
   * :data:`~component.UIBase.StdMod.config.headerContent`
   * :data:`~component.UIBase.StdMod.config.bodyContent`
   * :data:`~component.UIBase.StdMod.config.footerContent`
-  * :data:`~component.UIBase.Drag.config.draggable`
   
 Attributes
 -----------------------------------------------

@@ -138,48 +138,58 @@
 <span class="nt">&lt;/style&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node,overlay,dd,resizable,button&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">,</span> <span class="nx">DD</span><span class="p">,</span> <span class="nx">R</span><span class="p">,</span> <span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node,overlay,component/plugin/resize,&quot;</span> <span class="o">+</span>
+    <span class="s2">&quot;component/plugin/drag,&quot;</span> <span class="o">+</span>
+    <span class="s2">&quot;dd/plugin/constrain&quot;</span> <span class="o">+</span>
+    <span class="s2">&quot;,button&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">,</span> <span class="nx">ResizePlugin</span><span class="p">,</span> <span class="nx">DragPlugin</span><span class="p">,</span> <span class="nx">ConstrainPlugin</span><span class="p">,</span> <span class="nx">DD</span><span class="p">,</span> <span class="nx">R</span><span class="p">,</span> <span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">stat</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
         <span class="nx">sh</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">b1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">B</span><span class="p">({</span>
-        <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;显示&quot;</span><span class="p">,</span>
-
-        <span class="nx">render</span><span class="o">:</span><span class="s2">&quot;#button-wrap&quot;</span>
+        <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;显示&quot;</span><span class="p">,</span>
+        <span class="nx">render</span><span class="o">:</span> <span class="s2">&quot;#button-wrap&quot;</span>
     <span class="p">});</span>
     <span class="nx">b1</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
     <span class="kd">var</span> <span class="nx">b2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">B</span><span class="p">({</span>
-        <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;释放&quot;</span><span class="p">,</span>
+        <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;释放&quot;</span><span class="p">,</span>
 
-        <span class="nx">render</span><span class="o">:</span><span class="s2">&quot;#button-wrap&quot;</span>
+        <span class="nx">render</span><span class="o">:</span> <span class="s2">&quot;#button-wrap&quot;</span>
     <span class="p">});</span>
     <span class="nx">b2</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
     <span class="kd">var</span> <span class="nx">b3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">B</span><span class="p">({</span>
-        <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;限制&quot;</span><span class="p">,</span>
+        <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;限制&quot;</span><span class="p">,</span>
 
-        <span class="nx">render</span><span class="o">:</span><span class="s2">&quot;#button-wrap&quot;</span>
+        <span class="nx">render</span><span class="o">:</span> <span class="s2">&quot;#button-wrap&quot;</span>
     <span class="p">});</span>
     <span class="nx">b3</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
 
     <span class="kd">var</span> <span class="nx">dialog</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">O</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
-        <span class="nx">width</span><span class="o">:</span><span class="mi">400</span><span class="p">,</span>
-        <span class="nx">bodyStyle</span><span class="o">:</span><span class="p">{</span>
-            <span class="nx">height</span><span class="o">:</span><span class="mi">100</span>
+        <span class="nx">width</span><span class="o">:</span> <span class="mi">400</span><span class="p">,</span>
+        <span class="nx">bodyStyle</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">height</span><span class="o">:</span> <span class="mi">100</span>
         <span class="p">},</span>
-        <span class="nx">mask</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
-        <span class="nx">align</span><span class="o">:</span><span class="p">{</span>
-            <span class="nx">node</span><span class="o">:</span><span class="s1">&#39;#c1&#39;</span><span class="p">,</span>
-            <span class="nx">points</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">]</span>
+        <span class="nx">mask</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">align</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">node</span><span class="o">:</span> <span class="s1">&#39;#c1&#39;</span><span class="p">,</span>
+            <span class="nx">points</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">]</span>
         <span class="p">},</span>
-        <span class="c1">// 定义是否可拖拽</span>
-        <span class="nx">draggable</span><span class="o">:</span><span class="p">{</span>
-            <span class="nx">constrain</span><span class="o">:</span><span class="s1">&#39;#c1&#39;</span> <span class="c1">// 设置限制在哪个容器中</span>
-        <span class="p">},</span>
-        <span class="nx">closable</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
-        <span class="nx">resize</span><span class="o">:</span><span class="p">{</span>            <span class="c1">// 可缩放大小, 并设置最小宽度/最小高度/缩放位置</span>
-            <span class="nx">minWidth</span><span class="o">:</span><span class="mi">150</span><span class="p">,</span>
-            <span class="nx">minHeight</span><span class="o">:</span><span class="mi">70</span><span class="p">,</span>
-            <span class="nx">handlers</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;l&quot;</span><span class="p">,</span> <span class="s2">&quot;tr&quot;</span><span class="p">,</span> <span class="s2">&quot;tl&quot;</span><span class="p">,</span> <span class="s2">&quot;br&quot;</span><span class="p">,</span> <span class="s2">&quot;bl&quot;</span><span class="p">]</span>
-        <span class="p">}</span>
+
+        <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+            <span class="k">new</span> <span class="nx">DragPlugin</span><span class="p">({</span>
+                <span class="nx">handlers</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;.ks-stdmod-header&#39;</span><span class="p">],</span>
+                <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span><span class="k">new</span> <span class="nx">ConstrainPlugin</span><span class="p">({</span>
+                    <span class="nx">constrain</span><span class="o">:</span> <span class="s1">&#39;#c1&#39;</span> <span class="c1">// 设置限制在哪个容器中</span>
+                <span class="p">})]</span>
+            <span class="p">}),</span>
+
+            <span class="k">new</span> <span class="nx">ResizePlugin</span><span class="p">({</span>
+                <span class="c1">// 可缩放大小, 并设置最小宽度/最小高度/缩放位置</span>
+                <span class="nx">minWidth</span><span class="o">:</span> <span class="mi">150</span><span class="p">,</span>
+                <span class="nx">minHeight</span><span class="o">:</span> <span class="mi">70</span><span class="p">,</span>
+                <span class="nx">handlers</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;l&quot;</span><span class="p">,</span> <span class="s2">&quot;tr&quot;</span><span class="p">,</span> <span class="s2">&quot;tl&quot;</span><span class="p">,</span> <span class="s2">&quot;br&quot;</span><span class="p">,</span> <span class="s2">&quot;bl&quot;</span><span class="p">]</span>
+            <span class="p">})</span>
+        <span class="p">],</span>
+
+        <span class="nx">closable</span><span class="o">:</span> <span class="kc">false</span>
     <span class="p">});</span>
     <span class="nx">dialog</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;show&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">stat</span><span class="p">)</span> <span class="p">{</span>
@@ -193,8 +203,8 @@
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">sh</span><span class="p">)</span> <span class="p">{</span>
             <span class="nx">dialog</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
             <span class="nx">dialog</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;align&quot;</span><span class="p">,</span> <span class="p">{</span>
-                <span class="nx">node</span><span class="o">:</span><span class="s1">&#39;#c1&#39;</span><span class="p">,</span>
-                <span class="nx">points</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">]</span>
+                <span class="nx">node</span><span class="o">:</span> <span class="s1">&#39;#c1&#39;</span><span class="p">,</span>
+                <span class="nx">points</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">]</span>
             <span class="p">});</span>
             <span class="nx">b1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">,</span> <span class="s1">&#39;隐藏&#39;</span><span class="p">);</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -205,18 +215,20 @@
     <span class="p">});</span>
 
     <span class="nx">b2</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="nx">dialog</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;draggable&#39;</span><span class="p">,</span> <span class="p">{</span>
-            <span class="nx">constrain</span><span class="o">:</span><span class="kc">false</span>
-        <span class="p">});</span>
+        <span class="nx">dialog</span><span class="p">.</span><span class="nx">getPlugin</span><span class="p">(</span><span class="s1">&#39;component/plugin/drag&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">getPlugin</span><span class="p">(</span><span class="s1">&#39;dd/plugin/constrain&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;constrain&#39;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
         <span class="nx">stat</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
         <span class="nx">dialog</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;bodyContent&#39;</span><span class="p">,</span> <span class="s1">&#39;我自由啦&#39;</span><span class="p">);</span>
     <span class="p">});</span>
 
     <span class="nx">b3</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="nx">dialog</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;draggable&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">constrain</span><span class="o">:</span><span class="s2">&quot;#c1&quot;</span><span class="p">});</span>
+        <span class="nx">dialog</span><span class="p">.</span><span class="nx">getPlugin</span><span class="p">(</span><span class="s1">&#39;component/plugin/drag&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">getPlugin</span><span class="p">(</span><span class="s1">&#39;dd/plugin/constrain&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;constrain&#39;</span><span class="p">,</span> <span class="s2">&quot;#c1&quot;</span><span class="p">);</span>
         <span class="nx">dialog</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;align&quot;</span><span class="p">,</span> <span class="p">{</span>
-            <span class="nx">node</span><span class="o">:</span><span class="s1">&#39;#c1&#39;</span><span class="p">,</span>
-            <span class="nx">points</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">]</span>
+            <span class="nx">node</span><span class="o">:</span> <span class="s1">&#39;#c1&#39;</span><span class="p">,</span>
+            <span class="nx">points</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">]</span>
         <span class="p">});</span>
         <span class="nx">stat</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
         <span class="nx">dialog</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;bodyContent&#39;</span><span class="p">,</span> <span class="s1">&#39;我的位置只能在容器中&#39;</span><span class="p">);</span>

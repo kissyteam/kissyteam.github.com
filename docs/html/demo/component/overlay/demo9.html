@@ -138,11 +138,11 @@
 <span class="nt">&lt;/style&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;ua,event,node,overlay,button&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">UA</span><span class="p">,</span> <span class="nx">Event</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">,</span> <span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;ua,event,node,overlay,button,component/plugin/drag&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">UA</span><span class="p">,</span> <span class="nx">Event</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">,</span> <span class="nx">B</span><span class="p">,</span> <span class="nx">DragPlugin</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">dialog</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">O</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
-        <span class="nx">width</span><span class="o">:</span><span class="mi">424</span><span class="p">,</span>
+        <span class="nx">width</span><span class="o">:</span> <span class="mi">424</span><span class="p">,</span>
         <span class="nx">elCls</span><span class="o">:</span> <span class="s1">&#39;my&#39;</span><span class="p">,</span>
-        <span class="nx">elStyle</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">elStyle</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">position</span><span class="o">:</span> <span class="nx">UA</span><span class="p">.</span><span class="nx">ie</span> <span class="o">==</span> <span class="mi">6</span> <span class="o">?</span> <span class="s2">&quot;absolute&quot;</span> <span class="o">:</span> <span class="s2">&quot;fixed&quot;</span>
         <span class="p">},</span>
         <span class="nx">bodyContent</span><span class="o">:</span> <span class="s1">&#39;&lt;img &#39;</span>
@@ -150,11 +150,15 @@
             <span class="o">+</span> <span class="s1">&#39;height=&quot;282&quot; &#39;</span>
             <span class="o">+</span> <span class="s1">&#39;src=&quot;http://img02.taobaocdn.com/tps/i2/T10J9bXnlgXXXXXXXX-424-282.jpg?noq=y&quot; /&gt;&#39;</span><span class="p">,</span>
         <span class="nx">mask</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nx">draggable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+            <span class="k">new</span> <span class="nx">DragPlugin</span><span class="p">({</span>
+                <span class="nx">handlers</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;.ks-stdmod-header&#39;</span><span class="p">]</span>
+            <span class="p">})</span>
+        <span class="p">],</span>
         <span class="nx">align</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">points</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">]</span>
         <span class="p">},</span>
-        <span class="nx">closeAction</span><span class="o">:</span><span class="s2">&quot;destroy&quot;</span>
+        <span class="nx">closeAction</span><span class="o">:</span> <span class="s2">&quot;destroy&quot;</span>
     <span class="p">});</span>
 
     <span class="kd">var</span> <span class="nx">b1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">B</span><span class="p">({</span>
@@ -164,7 +168,7 @@
     <span class="p">});</span>
     <span class="nx">b1</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
 
-    <span class="nx">dialog</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;destroy&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">dialog</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;destroy&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="nx">b1</span><span class="p">.</span><span class="nx">detach</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="nx">show</span><span class="p">);</span>
         <span class="nx">Event</span><span class="p">.</span><span class="nx">detach</span><span class="p">(</span><span class="nb">window</span><span class="p">,</span> <span class="s2">&quot;scroll&quot;</span><span class="p">,</span> <span class="nx">center</span><span class="p">);</span>
     <span class="p">});</span>

@@ -12,6 +12,7 @@ valuechange
 #. keydown/up 需要过滤不可见字符
 #. 程序设值不可以触发原生事件
 #. 从浏览器自带的 input 自动提示列表中鼠标选择项，不会触发 keydown keyup，但 input 值变化
+#. 右键鼠标黏贴不能支持
 
 .. note::
 
