@@ -28,7 +28,7 @@
         d.write('<script src="http://docs.kissyui.com/kissy/build/kissy.js"' + ' charset="utf-8">' + '<' + '/script>');
         d.write("<script>KISSY.config('packages',{" +
             "gallery:{" +
-            " base:'http://http://docs.kissyui.com/kissy-gallery/gallery-build/'" +
+            " base:'http://docs.kissyui.com/kissy-gallery/gallery-build/'" +
             "  }" +
             "});</script>");
     }
