@@ -62,5 +62,5 @@ KISSY.add(function(S, Node, mvc, Template) {
 
     return EditView;
 }, {
-    requires:['node','mvc','template']
+    requires:['node','mvc','gallery/template/1.0/']
 });

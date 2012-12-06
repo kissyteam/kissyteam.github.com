@@ -10,7 +10,6 @@ Component
    dd/index
    resizable/index
    switchable/index
-   suggest/index
    calendar/index
    imagezoom/index
    overlay/index
