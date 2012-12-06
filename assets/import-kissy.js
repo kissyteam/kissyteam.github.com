@@ -4,7 +4,7 @@
         d.write('<script src="http://localhost/kissy_git/kissy/build/kissy.js"' + ' charset="utf-8"><' + '/script>');
         d.write("<script>KISSY.config('packages',{" +
             "gallery:{" +
-            " base:'http://localhost/kissy_git/kissy/kissy-gallery/gallery-build/'" +
+            " base:'http://localhost/kissy_git/kissy-gallery/gallery-build/'" +
             "  }" +
             "});</script>");
     }
@@ -12,7 +12,7 @@
         d.write('<script src="http://chengyu.taobao.ali.com/kissy_git/kissy/build/kissy.js"' + ' charset="utf-8"><' + '/script>');
         d.write("<script>KISSY.config('packages',{" +
             "gallery:{" +
-            " base:'http://chengyu.taobao.ali.com/kissy_git/kissy/kissy-gallery/gallery-build/'" +
+            " base:'http://chengyu.taobao.ali.com/kissy_git/kissy-gallery/gallery-build/'" +
             "  }" +
             "});</script>");
     }
@@ -20,7 +20,7 @@
         d.write('<script src="http://fed.ued.taobao.net/kissy-team/kissy/build/kissy.js"' + ' charset="utf-8">' + '<' + '/script>');
         d.write("<script>KISSY.config('packages',{" +
             "gallery:{" +
-            " base:'http://fed.ued.taobao.net/kissy-team/kissy/kissy-gallery/gallery-build/'" +
+            " base:'http://fed.ued.taobao.net/kissy-team/kissy-gallery/gallery-build/'" +
             "  }" +
             "});</script>");
     }
