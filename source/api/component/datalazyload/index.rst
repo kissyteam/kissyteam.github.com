@@ -86,7 +86,13 @@ Configs Detail
 
 .. data:: diff
 
-    {Number} - 当前视窗往下, diff px 外的 img/textarea 延迟加载, 适当设置此值, 可以让用户在拖动时感觉数据已经加载好, 默认为当前视窗高度(两屏以外的才延迟加载).
+    {Number|Object} -
+
+        * Number 类型时当前视窗往下, diff px 外的 img/textarea 延迟加载, 适当设置此值,
+        可以让用户在拖动时感觉数据已经加载好, 默认为当前视窗高度(两屏以外的才延迟加载).
+
+        * Object 类型可以指定 left/top/right/bottom 数值，表示预加载当前视窗以外上下左右的距离的元素.
+
 
 .. data:: placeholder
 
