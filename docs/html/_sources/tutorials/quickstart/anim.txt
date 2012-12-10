@@ -67,8 +67,8 @@ KISSY 提供的动画特效支持主要由三个子模块组成 [1]_ :
         <div id="photo-list"></div>
 
         <script>
-            KISSY.ready(function(S){
-                var $=S.all;
+            KISSY.use('node',function (S,Node) {
+                var $=Node.all;
                 var API = 'http://api.flickr.com/services/rest/?'
                     params = {
                         'method': 'flickr.favorites.getPublicList',

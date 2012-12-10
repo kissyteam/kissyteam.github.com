@@ -37,7 +37,7 @@ KISSY 中提供了 Ajax 异步请求功能, 下面仅介绍最常用的 :func:`~
         <div id="photo-list"></div>
 
         <script>
-            KISSY.ready(function(S){
+            KISSY.use('node',function (S,Node) {
                 var API = 'http://api.flickr.com/services/rest/?'
                     params = {
                         'method': 'flickr.favorites.getPublicList',
@@ -47,10 +47,10 @@ KISSY 中提供了 Ajax 异步请求功能, 下面仅介绍最常用的 :func:`~
                         'format': 'json',
                         'jsoncallback': 'getFavorites'
                     },
-                    photoList = S.one('#photo-list');
+                    photoList = Node.one('#photo-list');
 
-                S.one('#fetch-btn').on('click', function() {
-                    S.one(this).attr('disabled', true);
+                Node.one('#fetch-btn').on('click', function() {
+                    Node.one(this).attr('disabled', true);
                     photoList.addClass('loading');
                     S.getScript(API + S.param(params));
                 });
@@ -76,37 +76,37 @@ KISSY 中提供了 Ajax 异步请求功能, 下面仅介绍最常用的 :func:`~
 .. code-block:: javascript
    :linenos:
 
-    KISSY.ready(function(S){
-        var API = 'http://api.flickr.com/services/rest/?'
-            params = {
-                'method': 'flickr.favorites.getPublicList',
-                'api_key': '5d93c2e473e39e9307e86d4a01381266',
-                'user_id': '26211501@N07',
-                'per_page': 10,
-                'format': 'json',
-                'jsoncallback': 'getFavorites'
-            },
-            photoList = S.one('#photo-list');
+    KISSY.use('node',function (S,Node) {
+                    var API = 'http://api.flickr.com/services/rest/?'
+                        params = {
+                            'method': 'flickr.favorites.getPublicList',
+                            'api_key': '5d93c2e473e39e9307e86d4a01381266',
+                            'user_id': '26211501@N07',
+                            'per_page': 10,
+                            'format': 'json',
+                            'jsoncallback': 'getFavorites'
+                        },
+                        photoList = Node.one('#photo-list');
 
-        S.one('#fetch-btn').on('click', function() {
-            S.one(this).attr('disabled', true);
-            photoList.addClass('loading');
-            S.getScript(API + S.param(params));
-        });
+                    Node.one('#fetch-btn').on('click', function() {
+                        Node.one(this).attr('disabled', true);
+                        photoList.addClass('loading');
+                        S.getScript(API + S.param(params));
+                    });
 
-        window.getFavorites = function(data) {
-            var html = 'Fetch photo failed, pls try again!';
+                    window.getFavorites = function(data) {
+                        var html = 'Fetch photo failed, pls try again!';
 
-            if (data.stat === 'ok') {
-                html = '';
-                S.each(data.photos.photo, function(item, i){
-                    html += '<img src="http://farm' + item.farm + '.static.flickr.com/'
-                            + item.server + '/' + item.id + '_' + item.secret + '_t.jpg" />';
+                        if (data.stat === 'ok') {
+                            html = '';
+                            S.each(data.photos.photo, function(item, i){
+                                html += '<img src="http://farm' + item.farm + '.static.flickr.com/'
+                                        + item.server + '/' + item.id + '_' + item.secret + '_t.jpg" />';
+                            });
+                        }
+                        photoList.removeClass('loading').html(html);
+                    }
                 });
-            }
-            photoList.removeClass('loading').html(html);
-        }
-    });
 
 
 稍加解释下:

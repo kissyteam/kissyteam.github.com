@@ -11,15 +11,14 @@ Hello KISSY
 .. code-block:: javascript
    :linenos:
    
-    KISSY.ready(function(S){
-        var DOM = S.DOM, Event = S.Event,
-            btn = DOM.get('#demo-btn');
+    KISSY.use('dom,event,anim',function(S,DOM,Event,Anim){
+        var btn = DOM.get('#demo-btn');
 
         Event.on(btn, 'click', function() {
             DOM.attr(btn, 'disabled', true);
 
-            S.Anim('#demo-img', 'left: 400px; opacity: 0', 2, 'easeOut', function() {
-                S.Anim('#demo-txt',
+            new Anim('#demo-img', 'left: 400px; opacity: 0', 2, 'easeOut', function() {
+                new Anim('#demo-txt',
                        'left: 0; opacity: 1; fontSize: 28px',
                        2, 'bounceOut').run();
             }).run();

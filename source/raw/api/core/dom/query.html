@@ -29,7 +29,7 @@
     <button>{"selector":".item","context":"#s"}</button>
     
 <script>
-    KISSY.ready(function(S){
+    KISSY.use('core',function (S) {
         var $=S.all;
         $(".item",$(".outer")).css("color","red");
         $("button").on("click",function(){

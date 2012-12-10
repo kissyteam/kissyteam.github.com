@@ -181,31 +181,40 @@
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;style&gt;</span>
-        <span class="nt">button</span> <span class="p">{</span> <span class="k">margin</span><span class="o">:</span><span class="m">5px</span><span class="p">;</span> <span class="p">}</span>
-        <span class="nt">button</span><span class="nf">#theone</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span><span class="nb">red</span><span class="p">;</span> <span class="k">background</span><span class="o">:</span><span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+        <span class="nt">button</span> <span class="p">{</span>
+            <span class="k">margin</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nt">button</span><span class="nf">#theone</span> <span class="p">{</span>
+            <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+            <span class="k">background</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span>
+        <span class="p">}</span>
     <span class="nt">&lt;/style&gt;</span>
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;theone&quot;</span><span class="nt">&gt;</span>Does nothing...<span class="nt">&lt;/button&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;bind&quot;</span><span class="nt">&gt;</span>Bind Click<span class="nt">&lt;/button&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;unbind&quot;</span><span class="nt">&gt;</span>Unbind Click<span class="nt">&lt;/button&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;display:none;&quot;</span><span class="nt">&gt;</span>Click!<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;theone&quot;</span><span class="nt">&gt;</span>Does nothing...<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;bind&quot;</span><span class="nt">&gt;</span>Bind Click<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;unbind&quot;</span><span class="nt">&gt;</span>Unbind Click<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;display:none;&quot;</span><span class="nt">&gt;</span>Click!<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;script&gt;</span>
-<span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
-<span class="kd">function</span> <span class="nx">aClick</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">().</span><span class="nx">fadeOut</span><span class="p">();</span>
-<span class="p">}</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#bind&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// could use .bind(&#39;click&#39;, aClick) instead but for variety...</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#theone&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="nx">aClick</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Can Click!&quot;</span><span class="p">);</span>
-<span class="p">});</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#unbind&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#theone&quot;</span><span class="p">).</span><span class="nx">detach</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">aClick</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Does nothing...&quot;</span><span class="p">);</span>
-<span class="p">});</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;core&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
 
+        <span class="kd">function</span> <span class="nx">aClick</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">().</span><span class="nx">fadeOut</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#bind&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="c1">// could use .bind(&#39;click&#39;, aClick) instead but for variety...</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#theone&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">aClick</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Can Click!&quot;</span><span class="p">);</span>
+        <span class="p">});</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#unbind&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#theone&quot;</span><span class="p">).</span><span class="nx">detach</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">aClick</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Does nothing...&quot;</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 
 <span class="nt">&lt;/body&gt;</span>

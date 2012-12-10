@@ -9,7 +9,7 @@
 #. 一律小写, 必须是英文单词或产品名称的拼音, 多个单词用连字符(-)连接. 只能出现英文字母、数字和连字符, 严禁出现中文.
 #. 出现版本号时, 需要用字母 v 做为前缀, 小版本号用点号(.)隔开, 比如 global-v8.js 或 detail-v2.2.js .
 #. 该命名规范适用于 html, css, js, swf, php, xml, png, gif, jpg, ico 等前端维护的所有文件类型和相关目录.
-#. js 和 css 压缩文件, 统一以 -min 结尾, 比如源码文件为 kissy.js, 压缩后为 kissy-min.js .
+#. js 和 css 压缩文件, 统一以 -min 结尾, 比如源码文件为 seed.js, 压缩后为 seed-min.js .
 
 
 文件编码约定

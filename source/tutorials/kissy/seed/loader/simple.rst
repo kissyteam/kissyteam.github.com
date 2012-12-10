@@ -38,7 +38,7 @@ combo 使用内置模块
     配置的两种方式 :
 
     #. KISSY.config()
-    #. <script src='seed/kissy.js' data-config={}></script>
+    #. <script src='seed.js' data-config={}></script>
 
 
 combo 使用应用模块

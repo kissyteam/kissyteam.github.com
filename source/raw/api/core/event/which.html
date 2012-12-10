@@ -2,18 +2,20 @@
 <html>
 <head>
 
-<script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
+    <script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
 </head>
 <body>
-  
+
 <input id="whichkey" value="type something with keyboar or mouseup">
+
 <div id="log"></div>
 <script>
-    var $=KISSY.Node.all;
-    $('#whichkey').on('keydown mouseup',function(e){ 
-      $('#log').html(e.type + ': ' +  e.which );
-    });  
-
+    KISSY.use('core', function (S) {
+        var $ = KISSY.Node.all;
+        $('#whichkey').on('keydown mouseup', function (e) {
+            $('#log').html(e.type + ': ' + e.which);
+        });
+    });
 </script>
 
 </body>

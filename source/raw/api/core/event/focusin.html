@@ -1,32 +1,34 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>  
+<head>
     <style>
         .info {
-            display:none;
-            color:red;
+            display: none;
+            color: red;
         }
     </style>
     <script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
 </head>
 <body>
-  <form id='f'>
-    
+<form id='f'>
+
     <div>
         <label>姓名：<input/><span class='info'> i get focus</span></label>
     </div>
-    
+
     <div>
         <label>密码：<input/><span class='info'>i get focus</span></label>
     </div>
-    
-  </form>
+
+</form>
 <script>
-    var $=KISSY.all;
-    
-    $("#f").on("focusin",function(e){
-        var t=$(e.target);
-        t.next(".info").stop(true).show().fadeOut();
+    KISSY.use('core', function (S) {
+        var $ = KISSY.all;
+
+        $("#f").on("focusin", function (e) {
+            var t = $(e.target);
+            t.next(".info").stop(true).show().fadeOut();
+        });
     });
 </script>
 

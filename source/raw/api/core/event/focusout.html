@@ -1,36 +1,38 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>  
+<head>
     <style>
         .info {
-            color:red;
+            color: red;
         }
     </style>
     <script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
 </head>
 <body>
-  <form id='f'>
-    
+<form id='f'>
+
     <div>
         <label>姓名：<input/><span class='info'> i lose focus</span></label>
     </div>
-    
+
     <div>
         <label>密码：<input/><span class='info'>i lose focus</span></label>
     </div>
-    
-  </form>
+
+</form>
 <script>
-    var $=KISSY.all;
-    
-    $("#f").on("focusout",function(e){
-        var t=$(e.target);
-        t.next(".info").html("i lost focus");
-    });
-    
-    $("#f").on("focusin",function(e){
-        var t=$(e.target);
-        t.next(".info").html("i get focus");
+    KISSY.use('core', function (S) {
+        var $ = KISSY.all;
+
+        $("#f").on("focusout", function (e) {
+            var t = $(e.target);
+            t.next(".info").html("i lost focus");
+        });
+
+        $("#f").on("focusin", function (e) {
+            var t = $(e.target);
+            t.next(".info").html("i get focus");
+        });
     });
 </script>
 

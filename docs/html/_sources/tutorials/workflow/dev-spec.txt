@@ -90,7 +90,7 @@ KISSY 组件开发规范
             <title>overlay demo</title>
         </head>
         <body>
-            <script src='../../../kissy/build/kissy.js'></script>
+            <script src='../../../kissy/build/seed.js'></script>
             <script src='base.js'></script>
             <script src='position.js'></script>
             <script src='index.js'></script>
@@ -139,7 +139,7 @@ KISSY 组件开发规范
             <script src="../../../kissy/tools/jasmine/jasmine.js"></script>
             <script src="../../../kissy/tools/jasmine/jasmine-html.js"></script>
             <script src="../../../kissy/tools/jasmine/event-simulate.js"></script>
-            <script src="../../../kissy/build/kissy.js"></script>
+            <script src="../../../kissy/build/seed.js"></script>
         </head>
         <body>
             <script src='base.js'></script>

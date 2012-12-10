@@ -129,9 +129,9 @@
 <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;style&gt;</span>
         <span class="nt">div</span> <span class="p">{</span>
-            <span class="k">border</span><span class="o">:</span><span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
-            <span class="k">width</span><span class="o">:</span><span class="m">100px</span><span class="p">;</span>
-            <span class="k">margin</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span>
+            <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
+            <span class="k">width</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+            <span class="k">margin</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="nt">&lt;/style&gt;</span>
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
@@ -147,9 +147,10 @@
 <span class="nt">&lt;/div&gt;</span>
 
 <span class="nt">&lt;script&gt;</span>
-    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
-        <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">).</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;.d1&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">).</span><span class="nx">end</span><span class="p">().</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;.d2&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span><span class="s2">&quot;green&quot;</span><span class="p">);;</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;core&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">).</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;.d1&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">).</span><span class="nx">end</span><span class="p">().</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;.d2&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">);</span>
+
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 

@@ -147,8 +147,8 @@
      <div id="photo-list"></div>
 
      <script>
-         KISSY.ready(function(S){
-             var $=S.all;
+         KISSY.use('node',function (S,Node) {
+             var $=Node.all;
              var API = 'http://api.flickr.com/services/rest/?'
                  params = {
                      'method': 'flickr.favorites.getPublicList',

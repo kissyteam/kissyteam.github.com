@@ -99,7 +99,7 @@ Methods
 
 
 
-配置也可以通过配置到引用 seed/kissy.js 的脚本标签上. 例如
+配置也可以通过配置到引用 seed.js 的脚本标签上. 例如
 
 .. code-block:: html
 

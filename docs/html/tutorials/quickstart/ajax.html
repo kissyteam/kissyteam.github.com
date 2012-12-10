@@ -122,7 +122,7 @@
      <div id="photo-list"></div>
 
      <script>
-         KISSY.ready(function(S){
+         KISSY.use('node',function (S,Node) {
              var API = 'http://api.flickr.com/services/rest/?'
                  params = {
                      'method': 'flickr.favorites.getPublicList',
@@ -132,10 +132,10 @@
                      'format': 'json',
                      'jsoncallback': 'getFavorites'
                  },
-                 photoList = S.one('#photo-list');
+                 photoList = Node.one('#photo-list');
 
-             S.one('#fetch-btn').on('click', function() {
-                 S.one(this).attr('disabled', true);
+             Node.one('#fetch-btn').on('click', function() {
+                 Node.one(this).attr('disabled', true);
                  photoList.addClass('loading');
                  S.getScript(API + S.param(params));
              });
@@ -185,37 +185,37 @@
 28
 29
 30
-31</pre></div></td><td class="code"><div class="highlight"><pre> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
-     <span class="kd">var</span> <span class="nx">API</span> <span class="o">=</span> <span class="s1">&#39;http://api.flickr.com/services/rest/?&#39;</span>
-         <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
-             <span class="s1">&#39;method&#39;</span><span class="o">:</span> <span class="s1">&#39;flickr.favorites.getPublicList&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;api_key&#39;</span><span class="o">:</span> <span class="s1">&#39;5d93c2e473e39e9307e86d4a01381266&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;user_id&#39;</span><span class="o">:</span> <span class="s1">&#39;26211501@N07&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;per_page&#39;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-             <span class="s1">&#39;format&#39;</span><span class="o">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;jsoncallback&#39;</span><span class="o">:</span> <span class="s1">&#39;getFavorites&#39;</span>
-         <span class="p">},</span>
-         <span class="nx">photoList</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#photo-list&#39;</span><span class="p">);</span>
+31</pre></div></td><td class="code"><div class="highlight"><pre> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;node&#39;</span><span class="p">,</span><span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Node</span><span class="p">)</span> <span class="p">{</span>
+                 <span class="kd">var</span> <span class="nx">API</span> <span class="o">=</span> <span class="s1">&#39;http://api.flickr.com/services/rest/?&#39;</span>
+                     <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
+                         <span class="s1">&#39;method&#39;</span><span class="o">:</span> <span class="s1">&#39;flickr.favorites.getPublicList&#39;</span><span class="p">,</span>
+                         <span class="s1">&#39;api_key&#39;</span><span class="o">:</span> <span class="s1">&#39;5d93c2e473e39e9307e86d4a01381266&#39;</span><span class="p">,</span>
+                         <span class="s1">&#39;user_id&#39;</span><span class="o">:</span> <span class="s1">&#39;26211501@N07&#39;</span><span class="p">,</span>
+                         <span class="s1">&#39;per_page&#39;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+                         <span class="s1">&#39;format&#39;</span><span class="o">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
+                         <span class="s1">&#39;jsoncallback&#39;</span><span class="o">:</span> <span class="s1">&#39;getFavorites&#39;</span>
+                     <span class="p">},</span>
+                     <span class="nx">photoList</span> <span class="o">=</span> <span class="nx">Node</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#photo-list&#39;</span><span class="p">);</span>
 
-     <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#fetch-btn&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-         <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-         <span class="nx">photoList</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;loading&#39;</span><span class="p">);</span>
-         <span class="nx">S</span><span class="p">.</span><span class="nx">getScript</span><span class="p">(</span><span class="nx">API</span> <span class="o">+</span> <span class="nx">S</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="nx">params</span><span class="p">));</span>
-     <span class="p">});</span>
+                 <span class="nx">Node</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#fetch-btn&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                     <span class="nx">Node</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+                     <span class="nx">photoList</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;loading&#39;</span><span class="p">);</span>
+                     <span class="nx">S</span><span class="p">.</span><span class="nx">getScript</span><span class="p">(</span><span class="nx">API</span> <span class="o">+</span> <span class="nx">S</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="nx">params</span><span class="p">));</span>
+                 <span class="p">});</span>
 
-     <span class="nb">window</span><span class="p">.</span><span class="nx">getFavorites</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-         <span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="s1">&#39;Fetch photo failed, pls try again!&#39;</span><span class="p">;</span>
+                 <span class="nb">window</span><span class="p">.</span><span class="nx">getFavorites</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+                     <span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="s1">&#39;Fetch photo failed, pls try again!&#39;</span><span class="p">;</span>
 
-         <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">stat</span> <span class="o">===</span> <span class="s1">&#39;ok&#39;</span><span class="p">)</span> <span class="p">{</span>
-             <span class="nx">html</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-             <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">photos</span><span class="p">.</span><span class="nx">photo</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">i</span><span class="p">){</span>
-                 <span class="nx">html</span> <span class="o">+=</span> <span class="s1">&#39;&lt;img src=&quot;http://farm&#39;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">farm</span> <span class="o">+</span> <span class="s1">&#39;.static.flickr.com/&#39;</span>
-                         <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">server</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">secret</span> <span class="o">+</span> <span class="s1">&#39;_t.jpg&quot; /&gt;&#39;</span><span class="p">;</span>
+                     <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">stat</span> <span class="o">===</span> <span class="s1">&#39;ok&#39;</span><span class="p">)</span> <span class="p">{</span>
+                         <span class="nx">html</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+                         <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">photos</span><span class="p">.</span><span class="nx">photo</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">i</span><span class="p">){</span>
+                             <span class="nx">html</span> <span class="o">+=</span> <span class="s1">&#39;&lt;img src=&quot;http://farm&#39;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">farm</span> <span class="o">+</span> <span class="s1">&#39;.static.flickr.com/&#39;</span>
+                                     <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">server</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">secret</span> <span class="o">+</span> <span class="s1">&#39;_t.jpg&quot; /&gt;&#39;</span><span class="p">;</span>
+                         <span class="p">});</span>
+                     <span class="p">}</span>
+                     <span class="nx">photoList</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;loading&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">html</span><span class="p">);</span>
+                 <span class="p">}</span>
              <span class="p">});</span>
-         <span class="p">}</span>
-         <span class="nx">photoList</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;loading&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">html</span><span class="p">);</span>
-     <span class="p">}</span>
- <span class="p">});</span>
 </pre></div>
 </td></tr></table></div>
 <dl class="docutils">

@@ -212,18 +212,25 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/pageX.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
-  <span class="nt">&lt;style&gt;body</span> <span class="p">{</span><span class="k">background-color</span><span class="o">:</span> <span class="m">#eef</span><span class="p">;</span> <span class="p">}</span>
-<span class="nt">div</span> <span class="p">{</span> <span class="k">padding</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span> <span class="p">}</span><span class="nt">&lt;/style&gt;</span>
+    <span class="nt">&lt;style&gt;body</span> <span class="p">{</span>
+        <span class="k">background-color</span><span class="o">:</span> <span class="m">#eef</span><span class="p">;</span>
+    <span class="p">}</span>
 
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">div</span> <span class="p">{</span>
+        <span class="k">padding</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="p">}</span><span class="nt">&lt;/style&gt;</span>
+
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
 <span class="nt">&lt;script&gt;</span>
-    <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
-    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;mousemove&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span> 
-            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#log&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;e.pageX: &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pageX</span> <span class="o">+</span> <span class="s2">&quot;, e.pageY: &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pageY</span><span class="p">);</span> 
-<span class="p">});</span> 
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;core&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;mousemove&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#log&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;e.pageX: &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pageX</span> <span class="o">+</span> <span class="s2">&quot;, e.pageY: &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pageY</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 
 <span class="nt">&lt;/body&gt;</span>
@@ -257,26 +264,31 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/target.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
-  <span class="nt">&lt;style&gt;</span>
-<span class="nt">span</span><span class="o">,</span> <span class="nt">strong</span><span class="o">,</span> <span class="nt">p</span> <span class="p">{</span> 
-  <span class="k">padding</span><span class="o">:</span> <span class="m">8px</span><span class="p">;</span> <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span> <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#999</span><span class="p">;</span>  <span class="p">}</span>
+    <span class="nt">&lt;style&gt;</span>
+        <span class="nt">span</span><span class="o">,</span> <span class="nt">strong</span><span class="o">,</span> <span class="nt">p</span> <span class="p">{</span>
+            <span class="k">padding</span><span class="o">:</span> <span class="m">8px</span><span class="p">;</span>
+            <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+            <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#999</span><span class="p">;</span>
+        <span class="p">}</span>
     <span class="nt">&lt;/style&gt;</span>
 
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
-  
+
 <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
 <span class="nt">&lt;div&gt;</span>
-  <span class="nt">&lt;p&gt;</span>
-    <span class="nt">&lt;strong&gt;&lt;span&gt;</span>click<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
-  <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+        <span class="nt">&lt;strong&gt;&lt;span&gt;</span>click<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;script&gt;</span>
-    <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#log&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;clicked: &quot;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">nodeName</span><span class="p">);</span>
-    <span class="p">});</span>  
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;core&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#log&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;clicked: &quot;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">nodeName</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 
 <span class="nt">&lt;/body&gt;</span>
@@ -288,33 +300,37 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
-  
+
 <span class="nt">&lt;ul&gt;</span>
-  <span class="nt">&lt;li&gt;</span>item 1
-    <span class="nt">&lt;ul&gt;</span>
-      <span class="nt">&lt;li&gt;</span>sub item 1-a<span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li&gt;</span>sub item 1-b<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
-  <span class="nt">&lt;/li&gt;</span>
-  <span class="nt">&lt;li&gt;</span>item 2
-    <span class="nt">&lt;ul&gt;</span>
-      <span class="nt">&lt;li&gt;</span>sub item 2-a<span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li&gt;</span>sub item 2-b<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
-  <span class="nt">&lt;/li&gt;</span>  
+    <span class="nt">&lt;li&gt;</span>item 1
+        <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;</span>sub item 1-a<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>sub item 1-b<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>item 2
+        <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;</span>sub item 2-a<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>sub item 2-b<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
 <span class="nt">&lt;/ul&gt;</span>
 <span class="nt">&lt;script&gt;</span>
-    <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
-    <span class="kd">function</span> <span class="nx">handler</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">$target</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
-      <span class="k">if</span><span class="p">(</span> <span class="nx">$target</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
-        <span class="nx">$target</span><span class="p">.</span><span class="nx">children</span><span class="p">().</span><span class="nx">toggle</span><span class="p">();</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="nx">handler</span><span class="p">).</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;core&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+
+        <span class="kd">function</span> <span class="nx">handler</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">$target</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">$target</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">))</span> <span class="p">{</span>
+                <span class="nx">$target</span><span class="p">.</span><span class="nx">children</span><span class="p">().</span><span class="nx">toggle</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">handler</span><span class="p">).</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+    <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 
 <span class="nt">&lt;/body&gt;</span>
@@ -344,18 +360,20 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
-  
+
 <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;whichkey&quot;</span> <span class="na">value=</span><span class="s">&quot;type something with keyboar or mouseup&quot;</span><span class="nt">&gt;</span>
+
 <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
 <span class="nt">&lt;script&gt;</span>
-    <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#whichkey&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;keydown mouseup&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span> 
-      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#log&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">type</span> <span class="o">+</span> <span class="s1">&#39;: &#39;</span> <span class="o">+</span>  <span class="nx">e</span><span class="p">.</span><span class="nx">which</span> <span class="p">);</span>
-    <span class="p">});</span>  
-
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;core&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#whichkey&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;keydown mouseup&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#log&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">type</span> <span class="o">+</span> <span class="s1">&#39;: &#39;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">which</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 
 <span class="nt">&lt;/body&gt;</span>
@@ -379,21 +397,24 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
-  
+
 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.taobao.com&quot;</span><span class="nt">&gt;</span>default click action is prevented<span class="nt">&lt;/a&gt;</span>
+
 <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
 
 <span class="nt">&lt;script&gt;</span>
-    <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;div/&gt;&#39;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;default &#39;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">type</span> <span class="o">+</span> <span class="s1">&#39; prevented&#39;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">appendTo</span><span class="p">(</span><span class="s1">&#39;#log&#39;</span><span class="p">);</span>
-<span class="p">});</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;core&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;div/&gt;&#39;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;default &#39;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">type</span> <span class="o">+</span> <span class="s1">&#39; prevented&#39;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nx">appendTo</span><span class="p">(</span><span class="s1">&#39;#log&#39;</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 
 <span class="nt">&lt;/body&gt;</span>
@@ -414,28 +435,40 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/stopImmediatePropagation.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
-  <span class="nt">&lt;style&gt;</span>
-<span class="nt">p</span> <span class="p">{</span> <span class="k">height</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">150px</span><span class="p">;</span> <span class="k">background-color</span><span class="o">:</span> <span class="m">#ccf</span><span class="p">;</span> <span class="p">}</span>
-<span class="nt">div</span> <span class="p">{</span><span class="k">height</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">150px</span><span class="p">;</span> <span class="k">background-color</span><span class="o">:</span> <span class="m">#cfc</span><span class="p">;</span> <span class="p">}</span>
-<span class="nt">&lt;/style&gt;</span>
+    <span class="nt">&lt;style&gt;</span>
+        <span class="nt">p</span> <span class="p">{</span>
+            <span class="k">height</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>
+            <span class="k">width</span><span class="o">:</span> <span class="m">150px</span><span class="p">;</span>
+            <span class="k">background-color</span><span class="o">:</span> <span class="m">#ccf</span><span class="p">;</span>
+        <span class="p">}</span>
 
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">div</span> <span class="p">{</span>
+            <span class="k">height</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>
+            <span class="k">width</span><span class="o">:</span> <span class="m">150px</span><span class="p">;</span>
+            <span class="k">background-color</span><span class="o">:</span> <span class="m">#cfc</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="nt">&lt;/style&gt;</span>
+
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
-  <span class="nt">&lt;p&gt;</span>paragraph<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>paragraph<span class="nt">&lt;/p&gt;</span>
+
 <span class="nt">&lt;div&gt;</span>division<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;script&gt;</span>
-    <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
-      <span class="nx">event</span><span class="p">.</span><span class="nx">stopImmediatePropagation</span><span class="p">();</span>
-    <span class="p">});</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
-      <span class="c1">// This function won&#39;t be executed</span>
-      <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">,</span> <span class="s2">&quot;#f00&quot;</span><span class="p">);</span>
-    <span class="p">});</span>  
-    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-      <span class="c1">// This function will be executed</span>
-        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">,</span> <span class="s2">&quot;#f00&quot;</span><span class="p">);</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;core&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">event</span><span class="p">.</span><span class="nx">stopImmediatePropagation</span><span class="p">();</span>
+        <span class="p">});</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// This function won&#39;t be executed</span>
+            <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">,</span> <span class="s2">&quot;#f00&quot;</span><span class="p">);</span>
+        <span class="p">});</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// This function will be executed</span>
+            <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">,</span> <span class="s2">&quot;#f00&quot;</span><span class="p">);</span>
+        <span class="p">});</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 
@@ -498,30 +531,33 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
-  
-  <span class="nt">&lt;button&gt;</span>click me<span class="nt">&lt;/button&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;stop-log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-  
-<span class="nt">&lt;script&gt;</span>
-<span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
-<span class="kd">function</span> <span class="nx">immediatePropStopped</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-  <span class="k">if</span> <span class="p">(</span> <span class="nx">e</span><span class="p">.</span><span class="nx">isImmediatePropagationStopped</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
-    <span class="nx">msg</span> <span class="o">=</span>  <span class="s2">&quot;called&quot;</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;not called&quot;</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#stop-log&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span> <span class="s2">&quot;&lt;div&gt;&quot;</span> <span class="o">+</span> <span class="nx">msg</span> <span class="o">+</span> <span class="s2">&quot;&lt;/div&gt;&quot;</span> <span class="p">);</span>
-<span class="p">}</span>
 
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">immediatePropStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
-  <span class="nx">event</span><span class="p">.</span><span class="nx">stopImmediatePropagation</span><span class="p">();</span>
-  <span class="nx">immediatePropStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
-<span class="p">});</span>  
+<span class="nt">&lt;button&gt;</span>click me<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;stop-log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;core&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+
+        <span class="kd">function</span> <span class="nx">immediatePropStopped</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">isImmediatePropagationStopped</span><span class="p">())</span> <span class="p">{</span>
+                <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;called&quot;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;not called&quot;</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#stop-log&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;&lt;div&gt;&quot;</span> <span class="o">+</span> <span class="nx">msg</span> <span class="o">+</span> <span class="s2">&quot;&lt;/div&gt;&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">immediatePropStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+            <span class="nx">event</span><span class="p">.</span><span class="nx">stopImmediatePropagation</span><span class="p">();</span>
+            <span class="nx">immediatePropStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 
 <span class="nt">&lt;/body&gt;</span>
@@ -558,30 +594,33 @@ screenX, screenY, shiftKey, srcElement, target, toElement, view, wheelDelta, whi
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://docs.kissyui.com/assets/import-kissy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
-  
-  <span class="nt">&lt;button&gt;</span>click me<span class="nt">&lt;/button&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;stop-log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-  
-<span class="nt">&lt;script&gt;</span>
-<span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
-<span class="kd">function</span> <span class="nx">propStopped</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-  <span class="k">if</span> <span class="p">(</span> <span class="nx">e</span><span class="p">.</span><span class="nx">isPropagationStopped</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
-    <span class="nx">msg</span> <span class="o">=</span>  <span class="s2">&quot;called&quot;</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;not called&quot;</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#stop-log&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span> <span class="s2">&quot;&lt;div&gt;&quot;</span> <span class="o">+</span> <span class="nx">msg</span> <span class="o">+</span> <span class="s2">&quot;&lt;/div&gt;&quot;</span> <span class="p">);</span>
-<span class="p">}</span>
 
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">propStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
-  <span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
-  <span class="nx">propStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
-<span class="p">});</span>  
+<span class="nt">&lt;button&gt;</span>click me<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;stop-log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;core&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+
+        <span class="kd">function</span> <span class="nx">propStopped</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">isPropagationStopped</span><span class="p">())</span> <span class="p">{</span>
+                <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;called&quot;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;not called&quot;</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#stop-log&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;&lt;div&gt;&quot;</span> <span class="o">+</span> <span class="nx">msg</span> <span class="o">+</span> <span class="s2">&quot;&lt;/div&gt;&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">propStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+            <span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+            <span class="nx">propStopped</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 
 <span class="nt">&lt;/body&gt;</span>
