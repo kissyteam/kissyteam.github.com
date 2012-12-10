@@ -6,7 +6,7 @@
             this.config = cfg || {};
         }
 
-        Plugin1.prototype.renderUI = function (editor) {
+        Plugin1.prototype.pluginRenderUI = function (editor) {
             var cfg = this.config;
             editor.addButton("plugin1", {
                 content:'<div style="margin: 2px;border: 1px solid red;padding: 1px;">p1</div>',
@@ -22,7 +22,7 @@
         function Plugin2() {
         }
 
-        Plugin2.prototype.renderUI = function (editor) {
+        Plugin2.prototype.pluginRenderUI = function (editor) {
             editor.addButton("plugin2", {
                 content:'<div style="margin: 2px;border: 1px solid red;padding: 1px;">p2</div>',
                 listeners:{

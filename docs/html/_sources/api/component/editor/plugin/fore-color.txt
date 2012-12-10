@@ -5,6 +5,13 @@ fore-color
 
 |  字体颜色插件
 
+.. code-block:: javascript
+
+    KISSY.use('editor',function(S,Editor){
+        S.use('editor/plugin/fore-color',function(S,plugin){
+            // use
+        });
+    });
 
 Configs
 -------------------------------

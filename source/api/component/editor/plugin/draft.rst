@@ -5,6 +5,13 @@ draft
 
 |  草稿箱插件
 
+.. code-block:: javascript
+
+    KISSY.use('editor',function(S,Editor){
+        S.use('editor/plugin/draft',function(S,Draft){
+            // use
+        });
+    });
 
 Configs
 -------------------------------

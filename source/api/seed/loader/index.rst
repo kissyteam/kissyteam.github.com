@@ -10,10 +10,6 @@ loader
 | :ref:`demo <loader_demo>`
 | :ref:`教程 <loader_tutorial>`
 
-Module
------------------------------------------------
-
-  :mod:`seed`
 
 Methods
 -----------------------------------------------
@@ -21,7 +17,7 @@ Methods
 .. toctree::
    :titlesonly:
 
-   getScript
-   config
    add
+   config
+   getScript
    use

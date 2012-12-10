@@ -11,4 +11,3 @@ Demos
 
    loader/index
    lang/index
-   promise/index

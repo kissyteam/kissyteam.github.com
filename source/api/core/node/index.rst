@@ -8,6 +8,14 @@ Node
     你只需要把 ``KISSY.all`` 看做 ``jquery`` 中的 ``$`` 就可以了,
     链式操作你会喜欢的！
 
+
+.. code-block:: javascript
+
+    KISSY.use('node',function(S,Node){
+        // use Node
+    });
+
+
 Module
 -----------------------------------------------
 

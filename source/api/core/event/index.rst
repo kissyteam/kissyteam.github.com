@@ -5,6 +5,12 @@ Event
 
 |  事件机制
 
+.. code-block:: javascript
+
+    KISSY.use('event',function(S,Event){
+        // use Event
+    });
+
 Module
 -----------------------------------------------
 

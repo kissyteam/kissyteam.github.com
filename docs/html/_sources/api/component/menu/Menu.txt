@@ -7,6 +7,11 @@ Menu
 
 |  菜单.
 
+.. code-block:: javascript
+
+    KISSY.use('menu',function(S,Menu){
+        // use Menu
+    });
 
 Class
 ---------------------------------

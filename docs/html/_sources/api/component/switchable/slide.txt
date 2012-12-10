@@ -5,6 +5,12 @@ Slide
 
 |  Slide
 
+.. code-block:: javascript
+
+    KISSY.use('switchable',function(S,Switchable){
+        // use Switchable.Slide
+    });
+
 Class Detail
 ---------------------------------------------------------------------
 

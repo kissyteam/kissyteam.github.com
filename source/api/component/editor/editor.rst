@@ -5,6 +5,13 @@ Editor
 
 |  编辑器.
 
+
+.. code-block:: javascript
+
+    KISSY.use('editor',function(S,Editor){
+        // use Editor
+    });
+
 Class
 ---------------------------------
 
@@ -13,15 +20,15 @@ Class
 Configs
 ------------------------------------------
 
-    * :data:`~component.UIBase.Box.config.width`
+    * :data:`~component.extension.Box.config.width`
     * :data:`~component.Controller.config.focused`
-    * :data:`~component.UIBase.Box.config.height`
+    * :data:`~component.extension.Box.config.height`
     * :data:`~Editor.config.customStyle`
     * :data:`~Editor.config.customLink`
     * :data:`~Editor.config.attachForm`
     * :data:`~Editor.config.textarea`
-    * :data:`~component.UIBase.config.plugins`
-    * :data:`~component.UIBase.config.listeners`
+    * :data:`~rich-base.RichBase.config.plugins`
+    * :data:`~rich-base.RichBase.config.listeners`
     * :data:`~component.UIBase.config.srcNode`
 
 

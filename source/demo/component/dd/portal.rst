@@ -8,7 +8,7 @@ Class
 
   * :class:`DroppableDelegate`
   * :class:`DraggableDelegate`
-  * :class:`Proxy`
+  * :class:`~dd.plugin.Proxy`
 
 portal 示例
 ---------------------------------------------------------------

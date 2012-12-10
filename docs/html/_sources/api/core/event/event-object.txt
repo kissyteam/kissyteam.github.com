@@ -250,10 +250,8 @@ Methods Detail
 .. method:: isImmediatePropagationStopped
 
     | **isImmediatePropagationStopped** ()
-    是否停止了该事件的后续所有事件处理器执行, 通过调用 :meth:`~event.stopImmediatePropagation` 设置状态.
-
-    检查是否 ``stopImmediatePropagation()`` 被调用了
-
+    | 是否停止了该事件的后续所有事件处理器执行, 通过调用 :meth:`~event.stopImmediatePropagation` 设置状态.
+    | 检查是否 ``stopImmediatePropagation()`` 被调用了
 
     .. raw:: html
 
@@ -265,8 +263,7 @@ Methods Detail
 .. method:: isDefaultPrevented
 
     | **isDefaultPrevented** ()
-    判断 :meth:`~event.preventDefault` 是否被调用了.
-
+    | 判断 :meth:`~event.preventDefault` 是否被调用了.
 
     .. code-block:: javascript
 
@@ -280,10 +277,8 @@ Methods Detail
 .. method:: isPropagationStopped
 
     | **isPropagationStopped** ()
-    判断 :meth:`~event.stopPropagation` 是否被调用了.
-
-
-    判断 stopPropagation 是否被调用
+    | 判断 :meth:`~event.stopPropagation` 是否被调用了.
+    | 判断 stopPropagation 是否被调用
 
     .. raw:: html
 

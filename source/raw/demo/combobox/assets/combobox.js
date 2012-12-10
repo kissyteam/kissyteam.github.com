@@ -10,10 +10,9 @@ KISSY.use("combobox", function (S, ComboBox) {
         var basicComboBox = new ComboBox({
             width:200,
             render:"#newNew",
-            dataSource:{
-                xclass:'combobox-LocalDataSource',
+            dataSource:new ComboBox.LocalDataSource({
                 data:data
-            },
+            }),
             maxItemCount:5,
             format:function (query, data) {
                 var ret = [];

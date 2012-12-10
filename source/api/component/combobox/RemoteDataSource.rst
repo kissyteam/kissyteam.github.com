@@ -6,6 +6,12 @@ RemoteDataSource
 
 |  本地数据源.
 
+.. code-block:: javascript
+
+    KISSY.use('combobox',function(S,Combobox){
+        // use Combobox.RemoteDataSource
+    });
+
 Class
 ---------------------------------
 
@@ -27,7 +33,7 @@ Class Detail
 
     | **RemoteDataSource** (config)
     
-    :param Object config: 配置项. xclass 为 'combobox-RemoteDataSource'
+    :param Object config: 配置项.
 
 
 Configs Detail

@@ -3,9 +3,13 @@
 Draggable
 ===============================================
 
-
-
 |  拖拽功能
+
+.. code-block:: javascript
+
+    KISSY.use('dd',function(S,dd){
+        // use dd.Draggable
+    });
 
 
 Class
@@ -16,6 +20,7 @@ Class
 Configs
 -----------------------------------------------
 
+  * :data:`~rich-base.RichBase.config.plugins`
   * :data:`~Draggable.config.node`
   * :data:`~Draggable.config.handlers`
   * :data:`~Draggable.config.bufferTime`
@@ -37,7 +42,9 @@ Attributes
 Methods
 -----------------------------------------------
 
-  * :meth:`~Draggable.destroy`
+  * :meth:`~rich-base.RichBase.config.plug`
+  * :meth:`~rich-base.RichBase.config.unplug`
+  * :meth:`~rich-base.RichBase.config.destroy`
 
 Events
 -----------------------------------------------
@@ -58,6 +65,7 @@ Class Detail
 .. class:: Draggable
     
     | **Draggable** (config)
+    | 继承自 :class:`~rich-base.RichBase` ，包含其所有配置，属性，方法.
     
     :param Object config: 实例化可拖放对象的配置项, 详细见下节.
 
@@ -74,7 +82,9 @@ Configs Detail
 
 .. data:: Draggable.config.handlers
 
-    {Array<String|HTMLElement>} - 作为鼠标在其上按下时触发节点拖放的钩子. 如果不设置, 则整个 ``node`` 作为触发钩子.
+    {Array<String|HTMLElement>} - 作为鼠标在其上按下时触发节点拖放的钩子.
+    字符串时表示选择器字符串.
+    如果不设置, 则整个 ``node`` 作为触发钩子.
 
     .. note ::
 
@@ -131,15 +141,6 @@ Attributes Detail
     .. note::
 
         实例属性通过 ``get`` 方法获取, 例如 ``drag.get("node")``
-
-
-Methods Detail
------------------------------------------------
-
-.. method:: Draggable.destroy
-    
-    | **destroy** ()
-    | 销毁当前可拖放对象实例, 清除绑定事件.     
 
 Events Detail
 -----------------------------------------------

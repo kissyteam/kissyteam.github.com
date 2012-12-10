@@ -5,6 +5,13 @@ drag-upload
 
 |  拖放上传插件
 
+.. code-block:: javascript
+
+    KISSY.use('editor',function(S,Editor){
+        S.use('editor/plugin/drag-upload',function(S,plugin){
+            // use
+        });
+    });
 
 Configs
 -------------------------------

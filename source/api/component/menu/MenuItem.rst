@@ -7,6 +7,13 @@ Menu.Item
 
 |  菜单项.
 
+.. code-block:: javascript
+
+    KISSY.use('menu',function(S,Menu){
+        // use Menu.Item
+    });
+
+
 Class
 ---------------------------------
 

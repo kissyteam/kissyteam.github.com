@@ -7,6 +7,12 @@ Resizable
 
 |  缩放功能.
 
+.. code-block:: javascript
+
+    KISSY.use('resizable',function(S,Resizable){
+        // use Resizable
+    });
+
 Class
 ---------------------------------
 

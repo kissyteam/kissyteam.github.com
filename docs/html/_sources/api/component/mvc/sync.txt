@@ -3,6 +3,11 @@
 mvc.sync
 ===============================
 
+.. code-block:: javascript
+
+    KISSY.use('mvc',function(S,mvc){
+        // use mvc.sync
+    });
 
 
 |  同步函数.

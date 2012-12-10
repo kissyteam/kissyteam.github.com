@@ -5,6 +5,13 @@ element-path
 
 |  节点路径插件
 
+.. code-block:: javascript
+
+    KISSY.use('editor',function(S,Editor){
+        S.use('editor/plugin/element-path',function(S,plugin){
+            // use
+        });
+    });
 
 Configs
 -------------------------------

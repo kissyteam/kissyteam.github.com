@@ -3,10 +3,19 @@
 Waterfall
 ======================================
 
+
+.. code-block:: javascript
+
+    KISSY.use('waterfall',function(S,Waterfall){
+        // use Waterfall
+    });
+
+
 Class
 -----------------------------------------------
 
   * :class:`Waterfall`
+
  
 Configs
 -----------------------------------------------

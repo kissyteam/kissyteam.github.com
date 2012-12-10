@@ -1,29 +1,9 @@
-KISSY.use("dd,node", function (S, DD, Node) {
+KISSY.use("dd,node,dd/plugin/scroll,dd/plugin/proxy", function (S, DD, Node,Scroll,Proxy) {
 
 
-    var DDM = DD.DDM,
-        $ = Node.all,
+    var $ = Node.all,
         DraggableDelegate = DD.DraggableDelegate,
-        DroppableDelegate = DD.DroppableDelegate,
-        Draggable = DD.Draggable,
-        Droppable = DD.Droppable,
-        Scroll = DD.Scroll,
-        Proxy = DD.Proxy;
-
-    var proxy = new Proxy({
-        /**
-         * 如何产生替代节点
-         * @param drag 当前拖对象
-         */
-        node:function (drag) {
-            var n = $(drag.get("dragNode").clone(true));
-            n.attr("id", S.guid("ks-dd-proxy"));
-            n.css("opacity", 0.2);
-            return n;
-        },
-        moveOnEnd:false,
-        destroyOnEnd:true
-    });
+        DroppableDelegate = DD.DroppableDelegate;
 
     var dragDelegate = new DraggableDelegate({
         container:"#cols",
@@ -32,10 +12,25 @@ KISSY.use("dd,node", function (S, DD, Node) {
         selector:function (el) {
             el = $(el);
             return el.hasClass('col') || el.hasClass('component');
-        }
-    });
+        },
 
-    proxy.attachDrag(dragDelegate);
+        plugins:[
+            new Proxy({
+                /**
+                 * 如何产生替代节点
+                 * @param drag 当前拖对象
+                 */
+                node:function (drag) {
+                    var n = drag.get("dragNode").clone();
+                    n.removeAttr('id');
+                    n.css("opacity", 0.2);
+                    return n;
+                },
+                moveOnEnd:false,
+                destroyOnEnd:true
+            })
+        ]
+    });
 
     /**
      * 一列也为可拖放节点，防止空列无法拖入

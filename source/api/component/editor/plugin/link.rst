@@ -5,6 +5,13 @@ link
 
 |  链接插件
 
+.. code-block:: javascript
+
+    KISSY.use('editor',function(S,Editor){
+        S.use('editor/plugin/link',function(S,plugin){
+            // use
+        });
+    });
 
 Configs
 -------------------------------

@@ -13,6 +13,13 @@ UA
 |     UA.mobile 返回字符串，目前支持 apple, nokia, android, opera mini/mobile 等设备/浏览器的探测.
 
 
+.. code-block:: javascript
+
+    KISSY.use('ua',function(S,UA){
+        // use UA
+    });
+
+
 Module
 -----------------------------------------------
 

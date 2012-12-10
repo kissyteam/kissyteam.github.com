@@ -5,6 +5,13 @@ font-family
 
 |  字体选择插件
 
+.. code-block:: javascript
+
+    KISSY.use('editor',function(S,Editor){
+        S.use('editor/plugin/font-family',function(S,plugin){
+            // use
+        });
+    });
 
 Configs
 -------------------------------

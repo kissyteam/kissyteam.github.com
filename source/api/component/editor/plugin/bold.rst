@@ -5,6 +5,13 @@ bold
 
 |  字体加粗插件
 
+.. code-block:: javascript
+
+    KISSY.use('editor',function(S,Editor){
+        S.use('editor/plugin/bold',function(S,bold){
+            // use bold
+        });
+    });
 
 Configs
 -------------------------------

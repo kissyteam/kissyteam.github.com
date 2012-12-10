@@ -5,6 +5,13 @@ Switchable
 
 |  Switchable 的核心类, Switchable.Tabs/Switchable.Slide/Switchable.Accordion/Switchable.Carousel 都是扩展自它.
 
+
+.. code-block:: javascript
+
+    KISSY.use('switchable',function(S,Switchable){
+        // use Switchable
+    });
+
 Class
 -----------------------------------------------
 

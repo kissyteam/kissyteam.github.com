@@ -9,6 +9,13 @@ cookie
 
         推荐阅读 NCZ 的这篇文章： `HTTP cookies explained <http://www.nczonline.net/blog/2009/05/05/http-cookies-explained/>`_
 
+
+.. code-block:: javascript
+
+    KISSY.use('cookie',function(S,Cookie){
+        // use Cookie
+    });
+
 Module
 -----------------------------------------------
 

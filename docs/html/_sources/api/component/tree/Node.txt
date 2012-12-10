@@ -7,6 +7,12 @@ Node
 
 |  树节点.
 
+.. code-block:: javascript
+
+    KISSY.use('tree',function(S,Tree){
+        // use Tree.Node
+    });
+
 Class
 ---------------------------------
 

@@ -1,7 +1,7 @@
 KISSY.use("node,overlay,component/plugin/resize," +
     "component/plugin/drag," +
     "dd/plugin/constrain" +
-    ",button", function (S, Node, O, ResizePlugin, DragPlugin, ConstrainPlugin, DD, R, B) {
+    ",button", function (S, Node, O, ResizePlugin, DragPlugin, ConstrainPlugin, B) {
     var stat = true,
         sh = false;
     var b1 = new B({

@@ -3,6 +3,14 @@
 Waterfall.Loader
 ======================================
 
+
+.. code-block:: javascript
+
+    KISSY.use('waterfall',function(S,Waterfall){
+        // use Waterfall.Loader
+    });
+
+
 Class
 -----------------------------------------------
 

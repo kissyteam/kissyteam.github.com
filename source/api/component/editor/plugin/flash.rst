@@ -5,6 +5,13 @@ flash
 
 |  拖放上传插件
 
+.. code-block:: javascript
+
+    KISSY.use('editor',function(S,Editor){
+        S.use('editor/plugin/flash',function(S,plugin){
+            // use
+        });
+    });
 
 Configs
 -------------------------------

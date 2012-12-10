@@ -5,6 +5,12 @@ Anim
 
 |  动画
 
+.. code-block:: javascript
+
+    KISSY.use('anim',function(S,Anim){
+        // use Anim
+    });
+
 Class
 -----------------------------------------------
 

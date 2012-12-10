@@ -5,6 +5,13 @@ back-color
 
 |  背景色插件
 
+.. code-block:: javascript
+
+    KISSY.use('editor',function(S,Editor){
+        S.use('editor/plugin/back-color',function(S,BackColor){
+            // use BackColor
+        });
+    });
 
 Configs
 -------------------------------

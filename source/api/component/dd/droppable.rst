@@ -3,10 +3,14 @@
 Droppable
 ===============================================
 
-
-
 |  放置功能
 
+
+.. code-block:: javascript
+
+    KISSY.use('dd',function(S,dd){
+        // use dd.Droppable
+    });
 
 Class
 -----------------------------------------------
@@ -19,11 +23,6 @@ Configs
   
   * :data:`~Droppable.config.node`
   * :data:`~Droppable.config.groups`
- 
-Methods
------------------------------------------------
-
-  * :meth:`~Droppable.destroy`
 
   
 Events
@@ -41,6 +40,7 @@ Class Detail
 .. class:: Droppable
     
     | **Droppable** ( config )
+    | 继承自 :class:`~rich-base.RichBase` ，包含其所有配置，属性，方法.
     
     :param Object config: 配置项, 详细见下方 **Configs Detail** .
 
@@ -55,14 +55,6 @@ Configs Detail
 .. data:: Droppable.config.groups
 
     {Object} - 可与拖动对象交互的节点.
-    
-Methods Detail
------------------------------------------------
-
-.. method:: Droppable.destroy
-    
-    | **destroy** ()
-    | 销毁可放对象实例, 清除绑定事件.
 
     
 Events Detail

@@ -10,9 +10,3 @@ Seed
 
    loader/index
    kissy/index
-   lang/index
-   web/index
-   promise/index
-
-
-

@@ -1,5 +1,6 @@
+KISSY.use('promise',function(S,Promise){
 KISSY.all("button").on("click", function () {
-    var d = new KISSY.Defer();
+    var d = new Promise.Defer();
     d.resolve(1); // 该位置也可以放在 then 前面
     var promise = d.promise;
     promise.then(function (v) {
@@ -7,4 +8,5 @@ KISSY.all("button").on("click", function () {
     }).then(function (v) {
             alert(v); // => 2
         });
+});
 });

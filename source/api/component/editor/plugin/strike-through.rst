@@ -5,6 +5,13 @@ strike-through
 
 |  字体删除线插件
 
+.. code-block:: javascript
+
+    KISSY.use('editor',function(S,Editor){
+        S.use('editor/plugin/strike-through',function(S,plugin){
+            // use
+        });
+    });
 
 Configs
 -------------------------------

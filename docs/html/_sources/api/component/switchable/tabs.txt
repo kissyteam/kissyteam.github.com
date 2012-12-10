@@ -6,6 +6,12 @@ Tabs
 |  卡盘
 |  Tabs 接口及配置项, 与 :class:`Switchable` 完全相同.
 
+.. code-block:: javascript
+
+    KISSY.use('switchable',function(S,Switchable){
+        // use Switchable.Tabs
+    });
+
 Class Detail
 ---------------------------------------------------------------------
 

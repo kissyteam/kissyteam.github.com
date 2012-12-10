@@ -5,6 +5,13 @@ ImageZoom
 
 |  图片放大镜效果
 
+
+.. code-block:: javascript
+
+    KISSY.use('imagezoom',function(S,ImageZoom){
+        // use ImageZoom
+    });
+
 Class
 -----------------------------------------------
 
@@ -96,7 +103,7 @@ Configs Detail
 
 .. data:: ImageZoom.config.align
 
-    {Object} - 同 :data:`~component.UIBase.Align.config.align` .
+    {Object} - 同 :data:`~component.extension.Align.config.align` .
 
 .. data:: ImageZoom.config.preload
 

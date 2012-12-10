@@ -3,9 +3,13 @@
 DroppableDelegate
 ===============================================
 
-
-
 |  为 Draggable 对象提供所需要的代理节点
+
+.. code-block:: javascript
+
+    KISSY.use('dd',function(S,dd){
+        // use dd.DroppableDelegate
+    });
 
 
 Class
@@ -23,11 +27,6 @@ Attributes
 -----------------------------------------------
 
   * :data:`~DroppableDelegate.prototype.node`
-  
-Methods
------------------------------------------------
-
-  * :meth:`~DroppableDelegate.prototype.destroy`
 
 Events
 -----------------------------------------------
@@ -69,14 +68,6 @@ Attributes Detail
 
     {KISSY.Node} - 表示当前容器内正在和 Draggble 对象交互的节点,  通过 selector 获取.
 
-
-Methods Detail
------------------------------------------------
-
-.. method:: DroppableDelegate.prototype.destroy
-
-    | **destroy** ()
-    | 销毁可放对象实例, 清除绑定事件
 
 Events Detail
 -----------------------------------------------

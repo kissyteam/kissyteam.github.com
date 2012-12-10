@@ -6,7 +6,7 @@ Constrain 范围限制使用示例
 Class
 -----------------------------------------------
 
-  * :class:`Constrain`
+  * :class:`~dd.plugin.Constrain`
 
 Constrain 使用示例
 ----------------------------------------------

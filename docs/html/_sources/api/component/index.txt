@@ -12,6 +12,7 @@ Component
    dd/index
    resizable/index
    mvc/index
+   rich-base/index
    component/index
    overlay/index
    button/index

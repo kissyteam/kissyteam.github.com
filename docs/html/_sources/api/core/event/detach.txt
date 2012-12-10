@@ -20,7 +20,7 @@ Methods
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
     :param string eventType: 包含一个或多个事件名称的字符串, 多个事件名以空格分开，
-    也可以包含事件分组，例如 "click.one" , ".two" 等
+     也可以包含事件分组，例如 "click.one" , ".two" 等
 
     :param function(eventObject) fn: 绑定事件时的回调函数
     :param object scope: 绑定的事件处理器的对应 this 值

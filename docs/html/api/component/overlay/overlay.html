@@ -5,42 +5,24 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Overlay &mdash; KISSY v1.3rc Documentation</title>
+<title>Overlay &mdash; KISSY v1.3 Documentation</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../_static/kissy.css"/>
-<link rel="stylesheet" href="../../../_static/pygments.css"/>
+    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
 <link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
-<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
 
 <script>
     var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     'rc',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
     };
-    (function(){
-        var js=[],h=window.location.href,d=document;
-            js.push("../../../_static/jquery.js");
-            js.push("../../../_static/underscore.js");
-            js.push("../../../_static/doctools.js");
-        for(var i=0;i<js.length;i++){
-            var j=js[i];
-            if(h.indexOf("localhost/kissy_git/")==-1
-            &&
-
-            h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
-            &&
-            j.indexOf("jquery.js")!=-1){
-                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
-            }else{
-                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
-            }
-        }
-    })();
-</script> 
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js"></script> 
 <script>
 
     var _gaq = _gaq || [];
@@ -105,7 +87,7 @@
     <li class="right" >
       <a href="index.html" title="Overlay"
          accesskey="P">previous</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3rc Documentation</a> &#187; </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
       <li><a href="../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../index.html" >Component</a> &#187; </li>
       <li><a href="index.html" accesskey="U">Overlay</a> &#187; </li> 
@@ -116,6 +98,11 @@
 <h1>Overlay<a class="headerlink" href="#overlay" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line">悬浮的对话框</div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;overlay&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
+    <span class="c1">// use Overlay</span>
+<span class="p">});</span>
+</pre></div>
 </div>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
@@ -130,23 +117,23 @@
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference internal" href="../component/controller.html#component.Controller.config.prefixCls" title="component.Controller.config.prefixCls"><tt class="xref py py-data docutils literal"><span class="pre">prefixCls</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/UIBase.html#component.UIBase.config.srcNode" title="component.UIBase.config.srcNode"><tt class="xref py py-data docutils literal"><span class="pre">srcNode</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/box.html#component.UIBase.Box.config.width" title="component.UIBase.Box.config.width"><tt class="xref py py-data docutils literal"><span class="pre">width</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/box.html#component.UIBase.Box.config.height" title="component.UIBase.Box.config.height"><tt class="xref py py-data docutils literal"><span class="pre">height</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/box.html#component.UIBase.Box.config.elCls" title="component.UIBase.Box.config.elCls"><tt class="xref py py-data docutils literal"><span class="pre">elCls</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/contentbox.html#component.UIBase.ContentBox.config.content" title="component.UIBase.ContentBox.config.content"><tt class="xref py py-data docutils literal"><span class="pre">content</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/position.html#component.UIBase.Position.config.zIndex" title="component.UIBase.Position.config.zIndex"><tt class="xref py py-data docutils literal"><span class="pre">zIndex</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/position.html#component.UIBase.Position.config.x" title="component.UIBase.Position.config.x"><tt class="xref py py-data docutils literal"><span class="pre">x</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/position.html#component.UIBase.Position.config.y" title="component.UIBase.Position.config.y"><tt class="xref py py-data docutils literal"><span class="pre">y</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/position.html#component.UIBase.Position.config.xy" title="component.UIBase.Position.config.xy"><tt class="xref py py-data docutils literal"><span class="pre">xy</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/align.html#component.UIBase.Align.config.align" title="component.UIBase.Align.config.align"><tt class="xref py py-data docutils literal"><span class="pre">align</span></tt></a></li>
+<li><a class="reference internal" href="../component/UIBase.html#component.UIBase.config.srcNode" title="component.UIBase.config.srcNode"><tt class="xref py py-data docutils literal"><span class="pre">srcNode</span></tt></a></li>
+<li><a class="reference internal" href="../rich-base/index.html#rich-base.RichBase.config.plugins" title="rich-base.RichBase.config.plugins"><tt class="xref py py-data docutils literal"><span class="pre">plugins</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/box.html#component.extension.Box.config.width" title="component.extension.Box.config.width"><tt class="xref py py-data docutils literal"><span class="pre">width</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/box.html#component.extension.Box.config.height" title="component.extension.Box.config.height"><tt class="xref py py-data docutils literal"><span class="pre">height</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/box.html#component.extension.Box.config.elCls" title="component.extension.Box.config.elCls"><tt class="xref py py-data docutils literal"><span class="pre">elCls</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/contentbox.html#component.extension.ContentBox.config.content" title="component.extension.ContentBox.config.content"><tt class="xref py py-data docutils literal"><span class="pre">content</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/position.html#component.extension.Position.config.zIndex" title="component.extension.Position.config.zIndex"><tt class="xref py py-data docutils literal"><span class="pre">zIndex</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/position.html#component.extension.Position.config.x" title="component.extension.Position.config.x"><tt class="xref py py-data docutils literal"><span class="pre">x</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/position.html#component.extension.Position.config.y" title="component.extension.Position.config.y"><tt class="xref py py-data docutils literal"><span class="pre">y</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/position.html#component.extension.Position.config.xy" title="component.extension.Position.config.xy"><tt class="xref py py-data docutils literal"><span class="pre">xy</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/align.html#component.extension.Align.config.align" title="component.extension.Align.config.align"><tt class="xref py py-data docutils literal"><span class="pre">align</span></tt></a></li>
 <li><a class="reference internal" href="#overlay.Overlay.config.effect" title="overlay.Overlay.config.effect"><tt class="xref py py-data docutils literal"><span class="pre">effect</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/resize.html#component.UIBase.Resize.config.resize" title="component.UIBase.Resize.config.resize"><tt class="xref py py-data docutils literal"><span class="pre">resize</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/close.html#component.UIBase.Close.config.closable" title="component.UIBase.Close.config.closable"><tt class="xref py py-data docutils literal"><span class="pre">closable</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/close.html#component.UIBase.Close.config.closeAction" title="component.UIBase.Close.config.closeAction"><tt class="xref py py-data docutils literal"><span class="pre">closeAction</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/box.html#component.UIBase.Box.config.elBefore" title="component.UIBase.Box.config.elBefore"><tt class="xref py py-data docutils literal"><span class="pre">elBefore</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/box.html#component.UIBase.Box.config.render" title="component.UIBase.Box.config.render"><tt class="xref py py-data docutils literal"><span class="pre">render</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/mask.html#component.UIBase.Mask.config.mask" title="component.UIBase.Mask.config.mask"><tt class="xref py py-data docutils literal"><span class="pre">mask</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.closable" title="overlay.Overlay.config.closable"><tt class="xref py py-data docutils literal"><span class="pre">closable</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.closeAction" title="overlay.Overlay.config.closeAction"><tt class="xref py py-data docutils literal"><span class="pre">closeAction</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/box.html#component.extension.Box.config.elBefore" title="component.extension.Box.config.elBefore"><tt class="xref py py-data docutils literal"><span class="pre">elBefore</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/box.html#component.extension.Box.config.render" title="component.extension.Box.config.render"><tt class="xref py py-data docutils literal"><span class="pre">render</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.config.mask" title="overlay.Overlay.config.mask"><tt class="xref py py-data docutils literal"><span class="pre">mask</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -154,15 +141,15 @@
 <h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="../component/uibase/position.html#component.UIBase.Position.prototype.x" title="component.UIBase.Position.prototype.x"><tt class="xref py py-attr docutils literal"><span class="pre">x</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/position.html#component.UIBase.Position.prototype.y" title="component.UIBase.Position.prototype.y"><tt class="xref py py-attr docutils literal"><span class="pre">y</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/position.html#component.UIBase.Position.prototype.xy" title="component.UIBase.Position.prototype.xy"><tt class="xref py py-attr docutils literal"><span class="pre">xy</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/align.html#component.UIBase.Align.prototype.align" title="component.UIBase.Align.prototype.align"><tt class="xref py py-attr docutils literal"><span class="pre">align</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/close.html#component.UIBase.Close.prototype.closable" title="component.UIBase.Close.prototype.closable"><tt class="xref py py-attr docutils literal"><span class="pre">closable</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/box.html#component.UIBase.Box.prototype.visible" title="component.UIBase.Box.prototype.visible"><tt class="xref py py-attr docutils literal"><span class="pre">visible</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/box.html#component.UIBase.Box.prototype.el" title="component.UIBase.Box.prototype.el"><tt class="xref py py-attr docutils literal"><span class="pre">el</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/contentbox.html#component.UIBase.ContentBox.prototype.contentEl" title="component.UIBase.ContentBox.prototype.contentEl"><tt class="xref py py-attr docutils literal"><span class="pre">contentEl</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/mask.html#component.UIBase.Mask.prototype.maskNode" title="component.UIBase.Mask.prototype.maskNode"><tt class="xref py py-attr docutils literal"><span class="pre">maskNode</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/position.html#component.extension.Position.prototype.x" title="component.extension.Position.prototype.x"><tt class="xref py py-attr docutils literal"><span class="pre">x</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/position.html#component.extension.Position.prototype.y" title="component.extension.Position.prototype.y"><tt class="xref py py-attr docutils literal"><span class="pre">y</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/position.html#component.extension.Position.prototype.xy" title="component.extension.Position.prototype.xy"><tt class="xref py py-attr docutils literal"><span class="pre">xy</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/align.html#component.extension.Align.prototype.align" title="component.extension.Align.prototype.align"><tt class="xref py py-attr docutils literal"><span class="pre">align</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.prototype.closable" title="overlay.Overlay.prototype.closable"><tt class="xref py py-attr docutils literal"><span class="pre">closable</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/box.html#component.extension.Box.prototype.visible" title="component.extension.Box.prototype.visible"><tt class="xref py py-attr docutils literal"><span class="pre">visible</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/box.html#component.extension.Box.prototype.el" title="component.extension.Box.prototype.el"><tt class="xref py py-attr docutils literal"><span class="pre">el</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/contentbox.html#component.extension.ContentBox.prototype.contentEl" title="component.extension.ContentBox.prototype.contentEl"><tt class="xref py py-attr docutils literal"><span class="pre">contentEl</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.prototype.maskNode" title="overlay.Overlay.prototype.maskNode"><tt class="xref py py-attr docutils literal"><span class="pre">maskNode</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -170,12 +157,16 @@
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="../component/uibase/UIBase.html#component.UIBase.prototype.render" title="component.UIBase.prototype.render"><tt class="xref py py-meth docutils literal"><span class="pre">render()</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/UIBase.html#component.UIBase.prototype.destroy" title="component.UIBase.prototype.destroy"><tt class="xref py py-meth docutils literal"><span class="pre">destroy()</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/box.html#component.UIBase.Box.prototype.show" title="component.UIBase.Box.prototype.show"><tt class="xref py py-meth docutils literal"><span class="pre">show()</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/box.html#component.UIBase.Box.prototype.hide" title="component.UIBase.Box.prototype.hide"><tt class="xref py py-meth docutils literal"><span class="pre">hide()</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/align.html#component.UIBase.Align.prototype.center" title="component.UIBase.Align.prototype.center"><tt class="xref py py-meth docutils literal"><span class="pre">center()</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/position.html#component.UIBase.Position.prototype.move" title="component.UIBase.Position.prototype.move"><tt class="xref py py-meth docutils literal"><span class="pre">move()</span></tt></a></li>
+<li><tt class="xref py py-meth docutils literal"><span class="pre">plug()</span></tt></li>
+<li><tt class="xref py py-meth docutils literal"><span class="pre">unplug()</span></tt></li>
+<li><a class="reference internal" href="../component/UIBase.html#component.UIBase.prototype.render" title="component.UIBase.prototype.render"><tt class="xref py py-meth docutils literal"><span class="pre">render()</span></tt></a></li>
+<li><tt class="xref py py-meth docutils literal"><span class="pre">destroy()</span></tt></li>
+<li><a class="reference internal" href="../component/extension/box.html#component.extension.Box.prototype.show" title="component.extension.Box.prototype.show"><tt class="xref py py-meth docutils literal"><span class="pre">show()</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/box.html#component.extension.Box.prototype.hide" title="component.extension.Box.prototype.hide"><tt class="xref py py-meth docutils literal"><span class="pre">hide()</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/align.html#component.extension.Align.prototype.center" title="component.extension.Align.prototype.center"><tt class="xref py py-meth docutils literal"><span class="pre">center()</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/position.html#component.extension.Position.prototype.move" title="component.extension.Position.prototype.move"><tt class="xref py py-meth docutils literal"><span class="pre">move()</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.prototype.loading" title="overlay.Overlay.prototype.loading"><tt class="xref py py-meth docutils literal"><span class="pre">loading()</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Overlay.prototype.unloading" title="overlay.Overlay.prototype.unloading"><tt class="xref py py-meth docutils literal"><span class="pre">unloading()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -183,10 +174,10 @@
 <h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="../component/uibase/box.html#component.UIBase.Box.Events.hide" title="component.UIBase.Box.Events.hide"><tt class="xref py py-func docutils literal"><span class="pre">hide()</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/box.html#component.UIBase.Box.Events.show" title="component.UIBase.Box.Events.show"><tt class="xref py py-func docutils literal"><span class="pre">show()</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/box.html#component.UIBase.Box.Events.beforeVisibleChange" title="component.UIBase.Box.Events.beforeVisibleChange"><tt class="xref py py-func docutils literal"><span class="pre">beforeVisibleChange()</span></tt></a></li>
-<li><a class="reference internal" href="../component/uibase/UIBase.html#component.UIBase.Events.afterRenderUI" title="component.UIBase.Events.afterRenderUI"><tt class="xref py py-func docutils literal"><span class="pre">afterRenderUI()</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/box.html#component.extension.Box.Events.hide" title="component.extension.Box.Events.hide"><tt class="xref py py-func docutils literal"><span class="pre">hide()</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/box.html#component.extension.Box.Events.show" title="component.extension.Box.Events.show"><tt class="xref py py-func docutils literal"><span class="pre">show()</span></tt></a></li>
+<li><a class="reference internal" href="../component/extension/box.html#component.extension.Box.Events.beforeVisibleChange" title="component.extension.Box.Events.beforeVisibleChange"><tt class="xref py py-func docutils literal"><span class="pre">beforeVisibleChange()</span></tt></a></li>
+<li><a class="reference internal" href="../component/UIBase.html#component.UIBase.Events.afterRenderUI" title="component.UIBase.Events.afterRenderUI"><tt class="xref py py-func docutils literal"><span class="pre">afterRenderUI()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -199,16 +190,16 @@
 <div class="line"><strong>Overlay</strong> (config)</div>
 <div class="line">xclass: &#8216;overlay&#8217;</div>
 </div>
-<ul class="simple">
-<li>继承自</li>
-</ul>
+<div class="line-block">
+<div class="line">继承自</div>
+</div>
 <p><a class="reference internal" href="../component/controller.html#component.Controller" title="component.Controller"><tt class="xref py py-class docutils literal"><span class="pre">Controller</span></tt></a>
-<a class="reference internal" href="../component/uibase/box.html#component.UIBase.Box" title="component.UIBase.Box"><tt class="xref py py-class docutils literal"><span class="pre">Box</span></tt></a>
-<a class="reference internal" href="../component/uibase/contentbox.html#component.UIBase.ContentBox" title="component.UIBase.ContentBox"><tt class="xref py py-class docutils literal"><span class="pre">ContentBox</span></tt></a> ,
-<a class="reference internal" href="../component/uibase/align.html#component.UIBase.Align" title="component.UIBase.Align"><tt class="xref py py-class docutils literal"><span class="pre">Align</span></tt></a> ,
-<a class="reference internal" href="../component/uibase/position.html#component.UIBase.Position" title="component.UIBase.Position"><tt class="xref py py-class docutils literal"><span class="pre">Position</span></tt></a> ,
-<a class="reference internal" href="../component/uibase/resize.html#component.UIBase.Resize" title="component.UIBase.Resize"><tt class="xref py py-class docutils literal"><span class="pre">Resize</span></tt></a> ,
-<a class="reference internal" href="../component/uibase/mask.html#component.UIBase.Mask" title="component.UIBase.Mask"><tt class="xref py py-class docutils literal"><span class="pre">Mask</span></tt></a> ,
+<tt class="xref py py-class docutils literal"><span class="pre">Box</span></tt>
+<a class="reference internal" href="../component/extension/contentbox.html#component.extension.ContentBox" title="component.extension.ContentBox"><tt class="xref py py-class docutils literal"><span class="pre">ContentBox</span></tt></a> ,
+<a class="reference internal" href="../component/extension/align.html#component.extension.Align" title="component.extension.Align"><tt class="xref py py-class docutils literal"><span class="pre">Align</span></tt></a> ,
+<a class="reference internal" href="../component/extension/position.html#component.extension.Position" title="component.extension.Position"><tt class="xref py py-class docutils literal"><span class="pre">Position</span></tt></a> ,
+<tt class="xref py py-class docutils literal"><span class="pre">Resize</span></tt> ,
+<tt class="xref py py-class docutils literal"><span class="pre">Mask</span></tt> ,
 包含其全部配置,属性,方法,事件.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -250,7 +241,7 @@
 <dl class="data">
 <dt id="overlay.Overlay.config.effect.effect">
 <tt class="descclassname">Overlay.config.effect.</tt><tt class="descname">effect</tt><a class="headerlink" href="#overlay.Overlay.config.effect.effect" title="Permalink to this definition">¶</a></dt>
-<dd><p>{String} - 可选, 默认为&#8217;none&#8217;, &#8216;none&#8217;(无特效), &#8216;fade&#8217;(渐隐显示), &#8216;slide&#8217;(滑动显示).</p>
+<dd><p>{String} - 可选. 可取值 &#8216;fade&#8217;(渐隐显示), &#8216;slide&#8217;(滑动显示).</p>
 </dd></dl>
 
 <dl class="data">
@@ -278,6 +269,78 @@
 </div></blockquote>
 </dd></dl>
 
+<dl class="data">
+<dt id="overlay.Overlay.config.closable">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">closable</tt><a class="headerlink" href="#overlay.Overlay.config.closable" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 对话框右上角是否包括关闭按钮</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.closeAction">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">closeAction</tt><a class="headerlink" href="#overlay.Overlay.config.closeAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 点击关闭按钮的动作。默认 &#8220;hide&#8221; 隐藏，也可设置 &#8220;destroy&#8221; 销毁该组件.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.mask">
+<tt class="descclassname">Overlay.config.</tt><tt class="descname">mask</tt><a class="headerlink" href="#overlay.Overlay.config.mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean|Object} - 组件显示时是否使用遮罩层盖住页面其他元素</p>
+<dl class="data">
+<dt id="overlay.Overlay.config.mask.closeOnClick">
+<tt class="descclassname">Overlay.config.mask.</tt><tt class="descname">closeOnClick</tt><a class="headerlink" href="#overlay.Overlay.config.mask.closeOnClick" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 可选. 点击遮罩层是否关闭 overlay. (具体隐藏或销毁依赖 <a class="reference internal" href="#overlay.Overlay.config.closeAction" title="overlay.Overlay.config.closeAction"><tt class="xref py py-data docutils literal"><span class="pre">closeAction</span></tt></a>)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.mask.effect">
+<tt class="descclassname">Overlay.config.mask.</tt><tt class="descname">effect</tt><a class="headerlink" href="#overlay.Overlay.config.mask.effect" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 可选. 遮罩层显示隐藏效果. (取值 &#8216;fade&#8217;,&#8217;slide&#8217;)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="overlay.Overlay.config.mask.duration">
+<tt class="descclassname">Overlay.config.mask.</tt><tt class="descname">duration</tt><a class="headerlink" href="#overlay.Overlay.config.mask.duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 可选. 效果持续时间. 单位秒</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="attributes-detail">
+<h2>Attributes Detail<a class="headerlink" href="#attributes-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="attribute">
+<dt id="overlay.Overlay.prototype.closable">
+<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">closable</tt><a class="headerlink" href="#overlay.Overlay.prototype.closable" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 设置后显示或隐藏关闭按钮.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="overlay.Overlay.prototype.maskNode">
+<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">maskNode</tt><a class="headerlink" href="#overlay.Overlay.prototype.maskNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>{KISSY.Node} - 遮罩层节点.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="overlay.Overlay.prototype.loading">
+<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">loading</tt><big>(</big><big>)</big><a class="headerlink" href="#overlay.Overlay.prototype.loading" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>loading</strong> ()</div>
+<div class="line">生成一个加载盖住当前组件内容</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="overlay.Overlay.prototype.unloading">
+<tt class="descclassname">Overlay.prototype.</tt><tt class="descname">unloading</tt><big>(</big><big>)</big><a class="headerlink" href="#overlay.Overlay.prototype.unloading" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>unloading</strong> ()</div>
+<div class="line">隐藏生成的加载层</div>
+</div>
+</dd></dl>
+
 </div>
 </div>
 
@@ -300,7 +363,7 @@
     <li class="right" >
       <a href="index.html" title="Overlay"
          accesskey="P">previous</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3rc Documentation</a> &#187; </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
       <li><a href="../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../index.html" >Component</a> &#187; </li>
       <li><a href="index.html" accesskey="U">Overlay</a> &#187; </li> 
@@ -349,10 +412,7 @@
     <h2 class="s-box-hd">Seed</h2>
     <ul class="s-box-bd">
         <li><a href="../../seed/kissy/index.html">kissy</a></li>
-        <li><a href="../../seed/lang/index.html">lang</a></li>
         <li><a href="../../seed/loader/index.html">loader</a></li>
-        <li><a href="../../seed/promise/index.html">promise</a></li>
-        <li><a href="../../seed/web/index.html">web</a></li>
     </ul>
 </ul>
 
@@ -387,12 +447,14 @@
         <li><a href="../menubutton/index.html">menubutton</a></li>
         <li><a href="../mvc/index.html">mvc</a></li>
         <li><a href="index.html">overlay</a></li>
+        <li><a href="../promise/index.html">promise</a></li>
         <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="../rich-base/index.html">rich-base</a></li>
         <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
         <li><a href="../switchable/index.html">switchable</a></li>
         <li><a href="../tree/index.html">tree</a></li>
          <li><a href="../waterfall/index.html">waterfall</a></li>
-        <li><a href="../xtemplate/index.html">xtemplate (beta)</a></li>
+        <li><a href="../xtemplate/index.html">xtemplate</a></li>
     </ul>
 </ul>
         
