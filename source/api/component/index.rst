@@ -7,22 +7,23 @@ Component
 .. toctree::
    :titlesonly:
 
-   datalazyload/index
-   flash/index
-   dd/index
-   resizable/index
-   mvc/index
-   rich-base/index
-   component/index
-   overlay/index
    button/index
+   calendar/index
+   combobox/index
+   component/index
+   datalazyload/index
+   dd/index
+   editor/index
+   flash/index
+   imagezoom/index
    menu/index
    menubutton/index
-   tree/index
-   waterfall/index
+   mvc/index
+   overlay/index
+   resizable/index
+   rich-base/index
    switchable/index
-   calendar/index
-   imagezoom/index
-   combobox/index
+   tree/index
+   uri/index
+   waterfall/index
    xtemplate/index
-   editor/index

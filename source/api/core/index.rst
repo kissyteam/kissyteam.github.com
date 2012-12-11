@@ -9,15 +9,15 @@ Core
    :titlesonly:
 
 
-   ua/index
+   ajax/index
+   anim/index
+   base/index
+   cookie/index
    dom/index
    event/index
-   node/index
    json/index
-   ajax/index
-   cookie/index
-   base/index
-   anim/index
+   node/index
+   ua/index
 
 
 

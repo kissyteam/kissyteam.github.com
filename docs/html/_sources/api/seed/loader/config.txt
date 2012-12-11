@@ -46,6 +46,14 @@ Methods
 
                     类型Boolean, 如果总和 combine 设置为 true，但是单个包 combine 设置为 false，则该包内文件不进行自动 combo
 
+                .. attribute:: package.ignorePackageNameInUri
+
+                    类型Boolean, 默认 false.
+                    是否在请求的模块路径中省去 package name.
+                    例如 ``use('xx/a')`` 配置 xx package 的 base 为 ``http://test.com/`` 则设置 ignorePackageNameInUri 后请求地址为：
+                    ``http://test.com/a.js``
+
+
                 .. attribute:: package.base
 
                     类型字符串, 表示包所在的 ``url`` 路径, 相对路径表示相对于当前页面路径, 如果需要相对于当前执行脚本路径, 则需要自己处理：
@@ -82,10 +90,6 @@ Methods
                 .. attribute:: 位置1
 
                     类型字符串或函数，相当于调用 "str".replace(位置0,位置1)。将请求路径中匹配位置 0 正则表达式匹配的内容替换为位置 1 的字符串值或返回结果.
-
-
-
-
 
 
 .. function:: KISSY.config

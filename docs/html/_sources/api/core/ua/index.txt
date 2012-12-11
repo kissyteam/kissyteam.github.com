@@ -77,6 +77,30 @@ Properties Detail
 
     {String} - shell 的标志符。此标识符表示用户所用浏览器的外壳标识。
 
+.. attribute:: os
+
+    {String} - 操作系统标志符。例如 ``windows`` ``android`` ``ios`` ``linux``
+
+.. attribute:: ipad
+
+    {Number} - ipad ios 版本号。例如 ``5.0``
+
+.. attribute:: iphone
+
+    {Number} - iphone ios 版本号。例如 ``5.0``
+
+.. attribute:: ipod
+
+    {Number} - ipod ios 版本号。例如 ``5.0``
+
+.. attribute:: ios
+
+    {Number} - ios 版本号。例如 ``5.0``
+
+.. attribute:: android
+
+    {Number} - android 版本号。例如 ``5.0``
+
 
 .. note::
 
@@ -84,8 +108,6 @@ Properties Detail
     可以首先使用 UA.shell 返回的标识符判断当前浏览器类型，若需浏览器具体版本信息，可以再通过 UA[UA.shell] 取出版本号。
 
 .. important::
-
-    若你需要更详细的浏览器外壳判断（包括国产第三方浏览器探测），你必须单独引入 ua-extra.js，这样，更加丰富的浏览器信息将会被添加到 KISSY.UA 的属性中。
 
     通过 KISSY.UA 的属性，你可以获取浏览器等用户代理的信息。属性值遵循以下规则：
 
