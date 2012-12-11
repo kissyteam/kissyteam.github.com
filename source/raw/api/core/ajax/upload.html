@@ -16,7 +16,7 @@
   </form>
 
 <script>
-    KISSY.ready(function(S){
+    KISSY.use('core',function (S) {
         var $=KISSY.Node.all;        
         $("#up").on("click",function(){            
             S.io.upload("doUpload.html","#f",function(d){

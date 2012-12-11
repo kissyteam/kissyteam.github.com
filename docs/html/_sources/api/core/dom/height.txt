@@ -27,7 +27,7 @@ Methods
         - 注意: 该方法与 :func:`innerHeight` 和 :func:`outerHeight` 的区别.
 
     | void **height** ( selector, value )
-    | 给符合选择器的所有元素设置高度值. 相当于 :func:`DOM.css(selector,"height",value) <dom.css>`
+    | 给符合选择器的所有元素设置高度值. 相当于 :func:`dom.css(selector,"height",value) <dom.css>`
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
     :param string value: 宽度值        

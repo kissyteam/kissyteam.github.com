@@ -6,6 +6,13 @@ Popup
 
 |  弹出层
 
+
+.. code-block:: javascript
+
+    KISSY.use('overlay',function(S,Overlay){
+        // use Overlay.Popup
+    });
+
 Class
 -----------------------------------------------
 

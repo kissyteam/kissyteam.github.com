@@ -5,12 +5,20 @@ image
 
 |  插入图片插件
 
+.. code-block:: javascript
+
+    KISSY.use('editor',function(S,Editor){
+        S.use('editor/plugin/image',function(S,plugin){
+            // use
+        });
+    });
 
 Configs
 -------------------------------
 
 .. data:: Editor.Plugin.image.config.remote
 .. data:: Editor.Plugin.image.config.upload
+.. data:: Editor.Plugin.image.config.defaultMargin
 
 
 Events
@@ -31,6 +39,12 @@ Config Details
 .. data:: Editor.Plugin.image.config.remote
 
     {Boolean} - 图片配置，如果设为 false ，则图片弹层中网络图片 tab 消失
+
+
+.. data:: Editor.Plugin.image.config.defaultMargin
+
+    {Number} - 图片间距，默认为 10
+
 
 .. data:: Editor.Plugin.image.config.upload
 

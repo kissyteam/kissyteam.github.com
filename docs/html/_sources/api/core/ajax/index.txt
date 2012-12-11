@@ -5,6 +5,14 @@ ajax
 
 |  ajax
 
+
+.. code-block:: javascript
+
+    KISSY.use('ajax',function(S,io){
+        // use io
+    });
+
+
   .. toctree::
    :titlesonly:
    :hidden:

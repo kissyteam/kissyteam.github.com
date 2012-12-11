@@ -5,6 +5,13 @@ Switchable
 
 |  Switchable 的核心类, Switchable.Tabs/Switchable.Slide/Switchable.Accordion/Switchable.Carousel 都是扩展自它.
 
+
+.. code-block:: javascript
+
+    KISSY.use('switchable',function(S,Switchable){
+        // use Switchable
+    });
+
 Class
 -----------------------------------------------
 
@@ -348,8 +355,6 @@ Methods Detail
     
         只有设置了 :data:`~Switchable.config.autoplay` true 时有效
 
-.. versionadded:: 1.3
-
 .. method:: Switchable.prototype.add
 
     | **add** (cfg)
@@ -357,7 +362,7 @@ Methods Detail
 
     :param Object cfg: 添加的具体配置
     :param HTMLElement cfg.trigger: 导航的 trigger 节点
-    :param HTMLELement cfg.panel: 内容节点
+    :param HTMLElement cfg.panel: 内容节点
     :param Number cfg.index: 插入位置
     :param Boolean cfg.active: 是否将新插入的内容节点激活显示
     :param Function cfg.callback: 添加成功后的回调
@@ -387,9 +392,6 @@ Methods Detail
         #. 强制 switch 到 activeIndex 的位置，保持当前页位置不变（防止新元素排挤）
 
         #. 如果指定了 active,那么 switch 到新的插入位置 index 所应该在的页数（一页有多个panel）
-
-
-.. versionadded:: 1.3
 
 .. method:: Switchable.prototype.remove
 
@@ -425,9 +427,6 @@ Methods Detail
         #. 如果删除 x 元素导致 activeIndex 页为空，那么先 switch 到  activeIndex-1 的页，然后删除 x 元素
 
         #. 否则直接删除 trigger 和 x 位置 panel 元素，并重新强制 switch 到 activeIndex 元素（懒加载替换上来的元素）
-
-
-.. versionadded:: 1.3
 
 .. method:: Switchable.prototype.destroy
 

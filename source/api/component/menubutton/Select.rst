@@ -5,6 +5,11 @@ Select
 
 |  菜单.
 
+.. code-block:: javascript
+
+    KISSY.use('menubutton',function(S,MenuButton){
+        // use MenuButton.Select
+    });
 
 Class
 ---------------------------------

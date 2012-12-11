@@ -1,5 +1,6 @@
+KISSY.use('promise',function(S,Promise){
 KISSY.all("button").on("click", function () {
-    var d = new KISSY.Defer();
+    var d = new Promise.Defer();
     d.reject("wrong");
     var promise = d.promise;
     promise.then(function (v) {
@@ -11,4 +12,5 @@ KISSY.all("button").on("click", function () {
         }, function (reason) {
             alert(reason); // 不执行
         });
+});
 });

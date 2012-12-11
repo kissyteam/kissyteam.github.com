@@ -11,9 +11,9 @@ Class
   * :class:`DraggableDelegate`
   * :class:`DroppableDelegate`
   * :class:`DDM`
-  * :class:`Proxy`
-  * :class:`Scroll`
-  * :class:`Constrain`
+  * :class:`~dd.plugin.Proxy`
+  * :class:`~dd.plugin.Scroll`
+  * :class:`~dd.plugin.Constrain`
 
 Demos
 -----------------------------------------------

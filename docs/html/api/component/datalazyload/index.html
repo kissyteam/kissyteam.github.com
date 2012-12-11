@@ -5,42 +5,24 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>DataLazyload &mdash; KISSY v1.3rc Documentation</title>
+<title>DataLazyload &mdash; KISSY v1.3 Documentation</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../_static/kissy.css"/>
-<link rel="stylesheet" href="../../../_static/pygments.css"/>
+    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
 <link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
-<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
 
 <script>
     var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     'rc',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
     };
-    (function(){
-        var js=[],h=window.location.href,d=document;
-            js.push("../../../_static/jquery.js");
-            js.push("../../../_static/underscore.js");
-            js.push("../../../_static/doctools.js");
-        for(var i=0;i<js.length;i++){
-            var j=js[i];
-            if(h.indexOf("localhost/kissy_git/")==-1
-            &&
-
-            h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
-            &&
-            j.indexOf("jquery.js")!=-1){
-                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
-            }else{
-                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
-            }
-        }
-    })();
-</script> 
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js"></script> 
 <script>
 
     var _gaq = _gaq || [];
@@ -103,9 +85,9 @@
       <a href="../flash/index.html" title="flash"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../template/index.html" title="Template"
+      <a href="../index.html" title="Component"
          accesskey="P">previous</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3rc Documentation</a> &#187; </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
       <li><a href="../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../index.html" accesskey="U">Component</a> &#187; </li> 
     </ul>
@@ -118,6 +100,11 @@
 <div class="line">很多时候, 用户在第一屏就发生了跳转, 大量&#8221;未曾露面&#8221;的图片下载对用户来说是无意义的.</div>
 <div class="line">DataLazyload 可以 &#8220;揣测&#8221; 用户的行为, 当用户想看某个区域时, 才开始下载这个区域的图片.</div>
 <div class="line">除了延迟图片下载, DataLazyload 还可以延迟某个区域的所有 html 的渲染, 这对 Tabs 等 UI 组件很有裨益, 能提高整个页面的性能.</div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;datalazyload&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DataLazyload</span><span class="p">){</span>
+    <span class="c1">// use DataLazyload</span>
+<span class="p">});</span>
+</pre></div>
 </div>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
@@ -156,6 +143,18 @@
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference internal" href="#datalazyload.addCallback" title="datalazyload.addCallback"><tt class="xref py py-meth docutils literal"><span class="pre">addCallback()</span></tt></a></li>
+<li><a class="reference internal" href="#datalazyload.removeCallback" title="datalazyload.removeCallback"><tt class="xref py py-meth docutils literal"><span class="pre">removeCallback()</span></tt></a></li>
+<li><a class="reference internal" href="#datalazyload.addElements" title="datalazyload.addElements"><tt class="xref py py-meth docutils literal"><span class="pre">addElements()</span></tt></a></li>
+<li><a class="reference internal" href="#datalazyload.removeElements" title="datalazyload.removeElements"><tt class="xref py py-meth docutils literal"><span class="pre">removeElements()</span></tt></a></li>
+<li><a class="reference internal" href="#datalazyload.refresh" title="datalazyload.refresh"><tt class="xref py py-meth docutils literal"><span class="pre">refresh()</span></tt></a></li>
+<li><a class="reference internal" href="#datalazyload.destroy" title="datalazyload.destroy"><tt class="xref py py-meth docutils literal"><span class="pre">destroy()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="static-methods">
+<h2>Static Methods<a class="headerlink" href="#static-methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
 <li><a class="reference internal" href="#datalazyload.loadCustomLazyData" title="datalazyload.loadCustomLazyData"><tt class="xref py py-meth docutils literal"><span class="pre">loadCustomLazyData()</span></tt></a></li>
 </ul>
 </div></blockquote>
@@ -173,12 +172,15 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>containers</strong> (<em>String|HTMLElement|Array&lt;HTMLElement&gt;</em>) &#8211; 默认为 document.body ,</td>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>containers</strong> (<em>String|HTMLElement|Array&lt;HTMLElement&gt;</em>) &#8211; 默认为 document.body ,
+图片所在容器(可以多个)</li>
+<li><strong>config</strong> (<em>Object</em>) &#8211; 配置项, 详细见下方 <strong>Configs Detail</strong> .</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
-<p>图片所在容器(可以多个)
-:param Object config: 配置项, 详细见下方 <strong>Configs Detail</strong> .</p>
 </dd></dl>
 
 <div class="admonition note">
@@ -211,7 +213,14 @@
 <dl class="data">
 <dt id="datalazyload.diff">
 <tt class="descclassname">datalazyload.</tt><tt class="descname">diff</tt><a class="headerlink" href="#datalazyload.diff" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Number} - 当前视窗往下, diff px 外的 img/textarea 延迟加载, 适当设置此值, 可以让用户在拖动时感觉数据已经加载好, 默认为当前视窗高度(两屏以外的才延迟加载).</p>
+<dd><p>{Number|Object} -</p>
+<blockquote>
+<div><ul class="simple">
+<li>Number 类型时当前视窗往下, diff px 外的 img/textarea 延迟加载, 适当设置此值,
+可以让用户在拖动时感觉数据已经加载好, 默认为当前视窗高度(两屏以外的才延迟加载).</li>
+<li>Object 类型可以指定 left/top/right/bottom 数值，表示预加载当前视窗以外上下左右的距离的元素.</li>
+</ul>
+</div></blockquote>
 </dd></dl>
 
 <dl class="data">
@@ -278,6 +287,72 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="datalazyload.removeCallback">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">removeCallback</tt><big>(</big><big>)</big><a class="headerlink" href="#datalazyload.removeCallback" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>removeCallback</strong> (el, fn)</div>
+<div class="line">删除回调函数. 参数同 <tt class="docutils literal"><span class="pre">addCallback</span></tt></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="datalazyload.addElements">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">addElements</tt><big>(</big><big>)</big><a class="headerlink" href="#datalazyload.addElements" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>addElements</strong> (els)</div>
+<div class="line">添加元素到懒加载列表.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>els</strong> (<em>HTMLElement[]</em>) &#8211; 新的懒加载元素列表</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datalazyload.removeElements">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">removeElements</tt><big>(</big><big>)</big><a class="headerlink" href="#datalazyload.removeElements" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>removeElements</strong> (els)</div>
+<div class="line">从懒加载列表中删除元素.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>els</strong> (<em>HTMLElement[]</em>) &#8211; 已有的懒加载元素列表</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="datalazyload.refresh">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">refresh</tt><big>(</big><big>)</big><a class="headerlink" href="#datalazyload.refresh" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>refresh</strong> ()</div>
+<div class="line">强制立刻检测懒加载元素</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="datalazyload.destroy">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">destroy</tt><big>(</big><big>)</big><a class="headerlink" href="#datalazyload.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>destroy</strong> ()</div>
+<div class="line">停止监控并销毁组件</div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="static-methods-detail">
+<h2>Static Methods Detail<a class="headerlink" href="#static-methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
 <dt id="datalazyload.loadCustomLazyData">
 <tt class="descclassname">datalazyload.</tt><tt class="descname">loadCustomLazyData</tt><big>(</big><big>)</big><a class="headerlink" href="#datalazyload.loadCustomLazyData" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
@@ -333,9 +408,9 @@
       <a href="../flash/index.html" title="flash"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../template/index.html" title="Template"
+      <a href="../index.html" title="Component"
          accesskey="P">previous</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3rc Documentation</a> &#187; </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
       <li><a href="../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../index.html" accesskey="U">Component</a> &#187; </li> 
     </ul>
@@ -383,10 +458,7 @@
     <h2 class="s-box-hd">Seed</h2>
     <ul class="s-box-bd">
         <li><a href="../../seed/kissy/index.html">kissy</a></li>
-        <li><a href="../../seed/lang/index.html">lang</a></li>
         <li><a href="../../seed/loader/index.html">loader</a></li>
-        <li><a href="../../seed/promise/index.html">promise</a></li>
-        <li><a href="../../seed/web/index.html">web</a></li>
     </ul>
 </ul>
 
@@ -421,15 +493,14 @@
         <li><a href="../menubutton/index.html">menubutton</a></li>
         <li><a href="../mvc/index.html">mvc</a></li>
         <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../promise/index.html">promise</a></li>
         <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="../rich-base/index.html">rich-base</a></li>
         <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
-        <li><a href="../suggest/index.html">suggest</a></li>
         <li><a href="../switchable/index.html">switchable</a></li>
-        <li><a href="../template/index.html">template</a></li>
         <li><a href="../tree/index.html">tree</a></li>
-        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
-        <li><a href="../waterfall/index.html">waterfall</a></li>
-        <li><a href="../xtemplate/index.html">xtemplate (beta)</a></li>
+         <li><a href="../waterfall/index.html">waterfall</a></li>
+        <li><a href="../xtemplate/index.html">xtemplate</a></li>
     </ul>
 </ul>
         

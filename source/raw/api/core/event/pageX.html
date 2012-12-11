@@ -1,18 +1,25 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-  <style>body {background-color: #eef; }
-div { padding: 20px; }</style>
+    <style>body {
+        background-color: #eef;
+    }
 
-<script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
+    div {
+        padding: 20px;
+    }</style>
+
+    <script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
 </head>
 <body>
-  <div id="log"></div>
+<div id="log"></div>
 <script>
-    var $=KISSY.Node.all;
-    $(document).on('mousemove',function(e){ 
-            $("#log").text("e.pageX: " + e.pageX + ", e.pageY: " + e.pageY); 
-}); 
+    KISSY.use('core', function (S) {
+        var $ = KISSY.Node.all;
+        $(document).on('mousemove', function (e) {
+            $("#log").text("e.pageX: " + e.pageX + ", e.pageY: " + e.pageY);
+        });
+    });
 </script>
 
 </body>

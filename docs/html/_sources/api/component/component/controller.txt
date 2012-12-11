@@ -6,7 +6,6 @@ Component.Controller
 |  组件基类.仅用于 KISSY 内部组件继承，目前不建议外部使用，欢迎 review
 
 
-
 Class
 ---------------------------------
 

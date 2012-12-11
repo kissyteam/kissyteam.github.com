@@ -40,5 +40,5 @@ KISSY.add(function(S, Node,mvc, Template) {
 
     return NoteView;
 }, {
-    requires:['node','mvc','template']
+    requires:['node','mvc','gallery/template/1.0/']
 });

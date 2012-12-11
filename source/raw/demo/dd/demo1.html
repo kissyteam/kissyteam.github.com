@@ -22,14 +22,14 @@
 
 
 <script>
-    KISSY.use("dd",function(S,DD){
+    KISSY.use("dd,dd/plugin/proxy",function(S,DD,Proxy){
         var drag=new DD.Draggable({
             node:'#test-drag',
             cursor:'move',
             move:true
         });
 
-        new DD.Proxy().attach(drag);
+        drag.plug(Proxy);
     });
 </script>
 

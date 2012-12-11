@@ -4,9 +4,15 @@
 XTemplate (beta)
 ===============================
 
-
 | 富逻辑的 KISSY 模板引擎
 | :ref:`demo<xtemplate_demo>`
+
+
+.. code-block:: javascript
+
+    KISSY.use('xtemplate',function(S,XTemplate){
+        // use XTemplate
+    });
 
 Class
 ---------------------------------

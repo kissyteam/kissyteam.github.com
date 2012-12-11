@@ -321,6 +321,17 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="chrome-firefox">
+<h2>多读上传 chrome/firefox 失败问题<a class="headerlink" href="#chrome-firefox" title="Permalink to this headline">¶</a></h2>
+<p>多图上传在非 ie 下并不会携带 cookie，如确实需要可通过 serverParams 传递：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">serverParams</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">cookie</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 

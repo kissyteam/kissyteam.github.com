@@ -6,8 +6,7 @@ KISSY.use("node,overlay,button", function(S, Node, O, B) {
         mask: true,
         align: {
             points: ['cc', 'cc']
-        },
-        draggable: false
+        }
     });
 
     var show = new B({

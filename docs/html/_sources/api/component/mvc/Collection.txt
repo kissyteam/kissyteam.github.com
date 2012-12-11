@@ -3,9 +3,13 @@
 mvc.Collection
 ===============================
 
-
-
 |  集合类.
+
+.. code-block:: javascript
+
+    KISSY.use('mvc',function(S,mvc){
+        // use mvc.Collection
+    });
 
 Class
 ---------------------------------

@@ -279,7 +279,7 @@ Config Detail
     * 否则将 form 内的输入域和值序列化后通过 xhr 发送到服务器.
 
 
-.. versionadded:: 1.3
+
 
 .. data:: cfg.beforeSend
 

@@ -28,13 +28,13 @@ Methods
     .. note::
 
         - 对于不存在的 property , 该方法返回 ``undefined``
-        - 注意区别该方法与 :func:`DOM.attr <dom.attr>`, 也即区别 `DOM property 与 attribute <http://javascript.info/tutorial/attributes-and-custom-properties>`_ .
-        - 请使用 :func:`DOM.data <dom.data>` 方法来处理自定义属性, 而不要使用 :func:`DOM.prop <dom.prop>` 方法, 否则在 ie<9 下会有内存泄露.
+        - 注意区别该方法与 :func:`dom.attr <dom.attr>`, 也即区别 `DOM property 与 attribute <http://javascript.info/tutorial/attributes-and-custom-properties>`_ .
+        - 请使用 :func:`dom.data <dom.data>` 方法来处理自定义属性, 而不要使用 :func:`dom.prop <dom.prop>` 方法, 否则在 ie<9 下会有内存泄露.
         - ``prop`` 方法可以改变 ``DOM`` 元素的状态而不改变其对应的序列化 ``html`` 属性 ( IE <9 除外).
 
         例如设置 ``input`` 或 ``button`` 的 ``disabled`` property 或者 ``checkbox`` 的 ``checked`` property . 
-        最常见的情况即是用 ``prop`` 来设置 ``disabled`` 以及 ``checked`` 而不是 :func:`DOM.attr <dom.attr>` .
-        而 :func:`DOM.val <dom.val>` 方法用来设置和读取 `value` property.
+        最常见的情况即是用 ``prop`` 来设置 ``disabled`` 以及 ``checked`` 而不是 :func:`dom.attr <dom.attr>` .
+        而 :func:`dom.val <dom.val>` 方法用来设置和读取 `value` property.
 
 
     例如
@@ -73,3 +73,17 @@ Methods
         DOM.prop("input","disabled", false);
         DOM.prop("input","checked", true);
         DOM.val("input","someValue");
+
+
+selectionStart/End 兼容
+``````````````````````````````````````````````
+
+在 ie 下对于 selectionStart/End 做了兼容处理，demo ：
+
+    .. raw:: html
+
+        <iframe width="100%" height="300" class="iframe-demo" src="../../../../../source/raw/demo/dom/selection-start.html"></iframe>
+
+
+    .. literalinclude:: /raw/demo/dom/selection-start.js
+           :language: javascript

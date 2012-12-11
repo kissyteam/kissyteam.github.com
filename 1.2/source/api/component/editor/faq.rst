@@ -242,4 +242,18 @@ placeholder(tip) 功能
 
     var editor=new Editor(...);
     editor.execCommand("maximizeWindow"); // => 手动全屏
-    editor.execCommand("restoreWindow"); // => 手动恢复全屏         
+    editor.execCommand("restoreWindow"); // => 手动恢复全屏
+
+
+多读上传 chrome/firefox 失败问题
+---------------------------------------------------------------
+
+多图上传在非 ie 下并不会携带 cookie，如确实需要可通过 serverParams 传递：
+
+.. code-block:: javascript
+
+    serverParams: {
+        cookie: function () {
+            return document.cookie;
+        }
+    }

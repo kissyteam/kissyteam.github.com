@@ -7,6 +7,12 @@ mvc.Model
 
 |  模型类.
 
+.. code-block:: javascript
+
+    KISSY.use('mvc',function(S,mvc){
+        // use mvc.Model
+    });
+
 Class
 ---------------------------------
 

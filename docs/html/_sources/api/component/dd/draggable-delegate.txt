@@ -7,6 +7,12 @@ DraggableDelegate
 
 |  委托容器内的所有 Draggable 节点的拖放行为.
 
+.. code-block:: javascript
+
+    KISSY.use('dd',function(S,dd){
+        // use dd.DraggableDelegate
+    });
+
 
 Class
 -----------------------------------------------
@@ -25,11 +31,11 @@ Attributes
 
   * :data:`~DraggableDelegate.prototype.node`
   * :data:`~DraggableDelegate.prototype.dragNode`
-  
+
 Methods
 -----------------------------------------------
 
-  * :meth:`~DraggableDelegate.destroy`
+  同 :class:`~dd.Draggable`
 
 Events
 -----------------------------------------------
@@ -50,8 +56,7 @@ Class Detail
 .. class:: DraggableDelegate
     
     | **DraggableDelegate** (config)
-    
-    * 继承自 :class:`dd.Draggable` , 包含其全部配置,属性,方法,事件.
+    | 继承自 :class:`~dd.Draggable` , 包含其全部配置,属性,方法,事件.
 
     :param Object config: 配置项, 详细见下方 **Configs Detail**
     
@@ -86,14 +91,6 @@ Attributes Detail
 
     {KISSY.Node} - 当前正在拖动的被委托的容器内子节点.
 
-
-Methods Detail
------------------------------------------------
-
-.. method:: DraggableDelegate.destroy
-
-    | **destroy** ()
-    | 销毁当前可拖放对象实例, 清除绑定事件.
 
 Events Detail
 -----------------------------------------------

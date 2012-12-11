@@ -7,6 +7,13 @@ Menu.FilterMenu
 
 |  可过滤菜单.
 
+
+.. code-block:: javascript
+
+    KISSY.use('menu',function(S,menu){
+        // use menu.FilterMenu
+    });
+
 Class
 ---------------------------------
 

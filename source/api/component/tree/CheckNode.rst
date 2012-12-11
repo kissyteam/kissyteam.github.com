@@ -7,6 +7,12 @@ CheckNode
 
 |  可多选树节点.
 
+.. code-block:: javascript
+
+    KISSY.use('tree',function(S,Tree){
+        // use Tree.CheckNode
+    });
+
 Class
 ---------------------------------
 

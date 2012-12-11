@@ -49,8 +49,7 @@ ul li button{width:140px;}
 		<div id="J_rst"></div>
 	</div>
 <script>
-KISSY.ready(function(S){
-	var DOM = S.DOM,Event = S.Event;	
+    KISSY.use('dom,event',function (S,DOM,Event) {
 	Event.on('button','click',function(e){
 		var v = DOM.val("#J_input");
 		var fc = 'KISSY.'+DOM.text(this)+'('+v+');';

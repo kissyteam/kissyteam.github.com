@@ -5,6 +5,13 @@ code
 
 |  代码插件
 
+.. code-block:: javascript
+
+    KISSY.use('editor',function(S,Editor){
+        S.use('editor/plugin/code',function(S,Code){
+            // use
+        });
+    });
 
 Configs
 -------------------------------

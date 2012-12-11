@@ -17,7 +17,7 @@ Methods
     | NodeList **prepend** ( content )
     | 将参数内容插入到当前节点列表中的每个元素的开头.
     
-    :param HTMLELement|string|NodeList content: 将要插入的内容
+    :param HTMLElement|string|NodeList content: 将要插入的内容
     :rtype: NodeList
     
     该方法插入指定内容到当前节点列表的第一个元素前面(如果要插入到最后一个元素后面, 请用 :meth:`~NodeList.append` ).

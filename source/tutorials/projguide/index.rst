@@ -45,7 +45,7 @@
 3. 引入外部库依赖
 ------------------------------
 
-这里向lib文件夹添加了 `kissy.js <http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js>`_ 和`reset.css <http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css>`_ 两个文件。
+这里向lib文件夹添加了 `seed.js <http://a.tbcdn.cn/s/kissy/1.3.0/kissy.js>`_ 和`base.css <http://a.tbcdn.cn/s/kissy/1.3.0/css/dpl/base.css>`_ 两个文件。
 
 在正式的项目中，引入完整的类库件会更好。
 
@@ -130,7 +130,7 @@
     <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.3.0rc/css/base.css" />
     <link rel="stylesheet" href="../hello-world-dpl/button.css" />
     <link rel="stylesheet" href="css/hello-world.css" />
-    <script src="../lib/kissy.js"></script>
+    <script src="../lib/seed.js"></script>
     <script src="js/hello-world.js"></script>
     </head>
     <body>

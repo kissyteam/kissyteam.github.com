@@ -1,4 +1,4 @@
-KISSY.add({
+KISSY.config('modules',{
     "gallery/browsercache/1.0/":{
         requires:["gallery/local-storage/1.0/"]
     }

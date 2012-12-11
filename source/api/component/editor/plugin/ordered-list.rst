@@ -5,6 +5,13 @@ ordered-list
 
 |  有序列表插件
 
+.. code-block:: javascript
+
+    KISSY.use('editor',function(S,Editor){
+        S.use('editor/plugin/ordered-list',function(S,plugin){
+            // use
+        });
+    });
 
 Configs
 -------------------------------

@@ -6,7 +6,7 @@
             this.config = cfg || {};
         }
 
-        Plugin1.prototype.renderUI = function (editor) {
+        Plugin1.prototype.pluginRenderUI = function (editor) {
             var cfg = this.config;
             editor.addButton("plugin1", {
                 content:'<div style="margin: 2px;border: 1px solid red;padding: 1px;">p1</div>',
@@ -22,7 +22,7 @@
         function Plugin2() {
         }
 
-        Plugin2.prototype.renderUI = function (editor) {
+        Plugin2.prototype.pluginRenderUI = function (editor) {
             editor.addButton("plugin2", {
                 content:'<div style="margin: 2px;border: 1px solid red;padding: 1px;">p2</div>',
                 listeners:{
@@ -37,7 +37,6 @@
         var cfg = {
             // 是否初始聚焦
             focused:true,
-            autoRender:true,
             attachForm:true,
             // 自定义样式
             // customStyle:"p{line-height: 1.4;margin: 1.12em 0;padding: 0;}",
@@ -57,7 +56,7 @@
         ];
 
         KISSY.use("editor/plugin/button/", function () {
-            new Editor(cfg);
+            new Editor(cfg).render();
         });
 
     });

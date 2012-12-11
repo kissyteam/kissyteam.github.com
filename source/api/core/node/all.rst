@@ -19,10 +19,10 @@ Methods
     | 根据选择器字符串得到节点列表
     
     :param string selector: 选择器字符串
-    :param HTMLELement|Document|NodeList context:   选择器上下文, 
+    :param HTMLElement|Document|NodeList context:   选择器上下文,
     
 
-            格式参照 :func:`DOM.query` ，增加了 :class:`NodeList` 支持.
+            格式参照 :func:`dom.query` ，增加了 :class:`NodeList` 支持.
             
     :rtype: NodeList
     

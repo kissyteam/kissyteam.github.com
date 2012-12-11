@@ -11,6 +11,14 @@ json
             1. 老道已经写得足够好足够健壮；
             2. IE6/7 江河日下，相信不久的将来，就不需要这个模块了。
 
+
+.. code-block:: javascript
+
+    KISSY.use('json',function(S,JSON){
+        // use JSON
+    });
+
+
 Module
 -----------------------------------------------
 

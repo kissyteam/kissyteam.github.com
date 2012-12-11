@@ -6,6 +6,12 @@ LocalDataSource
 
 |  本地数据源.
 
+.. code-block:: javascript
+
+    KISSY.use('combobox',function(S,Combobox){
+        // use Combobox.LocalDataSource
+    });
+
 Class
 ---------------------------------
 
@@ -24,7 +30,7 @@ Class Detail
 
     | **LocalDataSource** (config)
     
-    :param Object config: 配置项. xclass 为 'combobox-LocalDataSource'
+    :param Object config: 配置项.
 
 
 Configs Detail

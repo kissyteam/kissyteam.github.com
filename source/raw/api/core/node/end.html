@@ -3,9 +3,9 @@
 <head>
     <style>
         div {
-            border:1px solid black;
-            width:100px;
-            margin:10px;
+            border: 1px solid black;
+            width: 100px;
+            margin: 10px;
         }
     </style>
     <script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
@@ -21,9 +21,10 @@
 </div>
 
 <script>
-    KISSY.ready(function(S){
-        var $=S.all;
-        $("body").all(".d1").css("color","red").end().all(".d2").css("color","green");;
+    KISSY.use('core', function (S) {
+        var $ = S.all;
+        $("body").all(".d1").css("color", "red").end().all(".d2").css("color", "green");
+
     });
 </script>
 

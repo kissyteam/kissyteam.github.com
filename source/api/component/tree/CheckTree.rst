@@ -7,6 +7,12 @@ CheckTree
 
 |  多选树（根节点）.
 
+.. code-block:: javascript
+
+    KISSY.use('tree',function(S,Tree){
+        // use Tree.CheckTree
+    });
+
 Class
 ---------------------------------
 

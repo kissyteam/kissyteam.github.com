@@ -2,7 +2,16 @@
 
 multiple-upload
 =====================================================
+
 | 批量上传
+
+.. code-block:: javascript
+
+    KISSY.use('editor',function(S,Editor){
+        S.use('editor/plugin/multiple-upload',function(S,plugin){
+            // use
+        });
+    });
 
 Configs
 --------------------------------------------------------------

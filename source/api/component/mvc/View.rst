@@ -7,6 +7,13 @@ mvc.View
 
 |  视图类.
 
+
+.. code-block:: javascript
+
+    KISSY.use('mvc',function(S,mvc){
+        // use mvc.View
+    });
+
 Class
 ---------------------------------
 

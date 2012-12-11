@@ -1,6 +1,6 @@
 KISSY.use("node, overlay", function(S, Node, O) {
     //新建共享popup层
-    var popup = new O.Popup({
+    var popup = new O({
         elStyle : {
             border : "2px solid gray",
             lineHeight : 0

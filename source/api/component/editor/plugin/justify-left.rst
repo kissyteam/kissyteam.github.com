@@ -5,6 +5,13 @@ justify-left
 
 |  居左对齐插件
 
+.. code-block:: javascript
+
+    KISSY.use('editor',function(S,Editor){
+        S.use('editor/plugin/justify-left',function(S,plugin){
+            // use
+        });
+    });
 
 Configs
 -------------------------------

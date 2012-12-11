@@ -9,8 +9,7 @@ KISSY.use("combobox", function (S, ComboBox) {
         render:S.one("#container"),
         hasTrigger:false,
         width:500,
-        dataSource:{
-            xclass:'combobox-RemoteDataSource',
+        dataSource:new ComboBox.RemoteDataSource({
             xhrCfg:{
                 url:'http://suggest.taobao.com/sug',
                 dataType:'jsonp',
@@ -24,7 +23,7 @@ KISSY.use("combobox", function (S, ComboBox) {
                 return results.result;
             },
             cache:true
-        },
+        }),
         format:function (query, results) {
             var ret = [];
             S.each(results, function (r) {

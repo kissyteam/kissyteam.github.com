@@ -17,10 +17,10 @@ KISSY 提供两种使用方式:
 #. :func:`S.one <node.NodeList.one>`  -  根据 css selector, 返回  :class:`~node.NodeList` 对象;
 #. :func:`S.all <node.NodeList.all>`  -  根据 css selector, 返回 :class:`~node.NodeList` 对象;
 
-上面两个方法, 和 :func:`DOM.get <dom.get>` / :func:`DOM.query <dom.query>` 是遥相呼应的.
+上面两个方法, 和 :func:`dom.get <dom.get>` / :func:`dom.query <dom.query>` 是遥相呼应的.
 唯一的不同是, ``get/query`` 返回的是原生 DOM ``Node/NodeList``.
    
-而 ``KISSY.Node/NodeList`` 类似 jQuery 全局对象, 但只包含 DOM/Event 等方法, 我们可以这样写代码：
+而 ``KISSY.NodeList`` 类似 jQuery 全局对象, 但只包含 DOM/Event 等方法, 我们可以这样写代码：
 
 
 .. code-block:: javascript
@@ -84,14 +84,14 @@ KISSY 提供两种使用方式:
         <div id="taobao"><div id="dest"></div></div>
         
         <script>
-        KISSY.ready(function(S) {
-            var DOM = S.DOM, Event = S.Event, timers = [];
+        KISSY.use('dom,event,node',function (S,DOM,Event,Node) {
+            var timers = [];
         
-            S.NodeList.prototype.icanfly = function() {
+            var i_can_fly = function(self) {
                 var targetX = 500, targetY = 100,
                     maxX = 650, maxY = 250;
         
-                S.each(this, function(item, i) {
+                S.each(self, function(item, i) {
                     var x = 0, y = 0, speed = Math.random() * 80;
                     timers[i] = S.later(function() {
                         x += Math.random() * speed * (x > maxX ? -1 : 1);
@@ -104,9 +104,9 @@ KISSY 提供两种使用方式:
                 });
             };
         
-            S.one('#go').on('click', function() {
+            Node.one('#go').on('click', function() {
                 S.each(timers, function(timer) { timer.cancel() });
-                S.all('.good-student').appendTo('#taobao').icanfly();
+                i_can_fly(Node.all('.good-student').appendTo('#taobao'));
             });
         })
         </script>
@@ -119,39 +119,39 @@ KISSY 提供两种使用方式:
 .. code-block:: javascript
    :linenos:
 
-   KISSY.ready(function(S) {
-       var DOM = S.DOM, Event = S.Event, timers = [];
-   
-       S.NodeList.prototype.icanfly = function() {
-           var targetX = 600, targetY = 200,
-               maxX = 750, maxY = 350;
-   
-           S.each(this, function(item, i) {
-               var x = 0, y = 0, speed = Math.random() * 80;
-               timers[i] = S.later(function() {
-                   x += Math.random() * speed * (x > maxX ? -1 : 1);
-                   y += Math.random() * speed * (y > maxY ? -1 : 1);
-                   DOM.css(item, { left: x, top: y });
-                   if(x > targetX && y > targetY && x < maxX && y < maxY) {
-                       timers[i].cancel();
-                   }
-               }, 100, true);
-           });
-       };
-   
-       S.one('#go').on('click', function() {
-           S.each(timers, function(timer) { timer.cancel() });
-           S.all('.good-student').appendTo('#taobao').icanfly();
-       });
-   })
+   KISSY.use('dom,event,node',function (S,DOM,Event,Node) {
+               var timers = [];
+
+               var i_can_fly = function(self) {
+                   var targetX = 500, targetY = 100,
+                       maxX = 650, maxY = 250;
+
+                   S.each(self, function(item, i) {
+                       var x = 0, y = 0, speed = Math.random() * 80;
+                       timers[i] = S.later(function() {
+                           x += Math.random() * speed * (x > maxX ? -1 : 1);
+                           y += Math.random() * speed * (y > maxY ? -1 : 1);
+                           DOM.css(item, { left: x, top: y });
+                           if(x > targetX && y > targetY && x < maxX && y < maxY) {
+                               timers[i].cancel();
+                           }
+                       }, 100, true);
+                   });
+               };
+
+               Node.one('#go').on('click', function() {
+                   S.each(timers, function(timer) { timer.cancel() });
+                   i_can_fly(Node.all('.good-student').appendTo('#taobao'));
+               });
+           })
    
 
 在这个小例子中, 先从 21 行开始看:
 
- #. ``S.one('#go').on('click', function(){});``, 选择 id 为 ``go`` 的元素, 即 button, 然后绑定点击事件.
- #. ``S.all('.good-student').appendTo('#taobao').icanfly();``, 获取所有 class 为 good-student 的元素, 即那些所有蓝色背景的小框, 然后 ``appendTo`` 到 id 为 taobao 的容器中, 最后执行第 4 行定义的 ``icanfly`` 动作.
- #. ``S.NodeList.prototype.icanfly``, 为 ``NodeList`` 添加一个 ``icanfly`` 方法, 再给 ``NodeList`` 中每个对象设置一个随机运动速度的定时器 ``timer``, 然后定时器不断修改该对象的位置, 到达目标区域时清楚定时器.
- #. 另外, 原生 ``DOMNode`` 和 Node 对象的相互转换, 可以使用 ``new S.Node(anElment)`` 将 ``DOMNode`` 转换成 ``Node`` 对象; 使用 ``node.getDOMNode()`` 获得对应的 ``DOMNode``; 对于 ``NodeList`` 也有对应的方法, 移步见 [1]_.
+ #. ``Node.one('#go').on('click', function(){});``, 选择 id 为 ``go`` 的元素, 即 button, 然后绑定点击事件.
+ #. ``Node.all('.good-student').appendTo('#taobao').icanfly();``, 获取所有 class 为 good-student 的元素, 即那些所有蓝色背景的小框, 然后 ``appendTo`` 到 id 为 taobao 的容器中, 最后执行第 4 行定义的 ``icanfly`` 动作.
+ #. ``icanfly``, 给 ``NodeList`` 中每个对象设置一个随机运动速度的定时器 ``timer``, 然后定时器不断修改该对象的位置, 到达目标区域时清楚定时器.
+ #. 另外, 原生 ``DOMNode`` 和 Node 对象的相互转换, 可以使用 ``new Node(anElment)`` 将 ``DOMNode`` 转换成 ``Node`` 对象; 使用 ``node.getDOMNode()`` 获得对应的 ``DOMNode``; 使用 ``node.getDOMNodes()`` 获得对应的 ``DOMNodes``;.
 
 
 使用 ``Node`` 可以让你一直 ``.`` 下去, 只要你愿意! 

@@ -7,6 +7,12 @@ Menu.PopupMenu
 
 |  悬浮菜单.
 
+.. code-block:: javascript
+
+    KISSY.use('menu',function(S,Menu){
+        // use Menu.PopupMenu
+    });
+
 Class
 ---------------------------------
 
@@ -26,8 +32,8 @@ Class Detail
     | xclass: 'popupmenu'
     
     * 继承自 :class:`~menu.Menu` , 包含其全部配置,属性,方法,事件.
-    * 扩充自 :class:`~component.UIBase.Position`, 包含其全部配置,属性,方法,事件.
-    * 扩充自 :class:`~component.UIBase.Align`, 包含其全部配置,属性,方法,事件.
+    * 扩充自 :class:`~component.extension.Position`, 包含其全部配置,属性,方法,事件.
+    * 扩充自 :class:`~component.extension.Align`, 包含其全部配置,属性,方法,事件.
     
     :param Object config: 配置项，详细见下方 **Configs Detail** .
     

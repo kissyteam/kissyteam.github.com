@@ -9,6 +9,14 @@ DataLazyload
 |  DataLazyload 可以 "揣测" 用户的行为, 当用户想看某个区域时, 才开始下载这个区域的图片.
 |  除了延迟图片下载, DataLazyload 还可以延迟某个区域的所有 html 的渲染, 这对 Tabs 等 UI 组件很有裨益, 能提高整个页面的性能.
 
+
+.. code-block:: javascript
+
+    KISSY.use('datalazyload',function(S,DataLazyload){
+        // use DataLazyload
+    });
+
+
 Class
 -----------------------------------------------
 
@@ -39,6 +47,15 @@ Methods
 -----------------------------------------------
 
   * :meth:`addCallback`
+  * :meth:`removeCallback`
+  * :meth:`addElements`
+  * :meth:`removeElements`
+  * :meth:`refresh`
+  * :meth:`destroy`
+
+Static Methods
+-----------------------------------------------
+
   * :meth:`loadCustomLazyData`
 
 
@@ -51,7 +68,7 @@ Class Detail
     | **DataLazyload** (containers[, config])
     
     :param String|HTMLElement|Array<HTMLElement> containers: 默认为 document.body ,
-    图片所在容器(可以多个)
+     图片所在容器(可以多个)
     :param Object config: 配置项, 详细见下方 **Configs Detail** .
     
 .. note::
@@ -77,7 +94,13 @@ Configs Detail
 
 .. data:: diff
 
-    {Number} - 当前视窗往下, diff px 外的 img/textarea 延迟加载, 适当设置此值, 可以让用户在拖动时感觉数据已经加载好, 默认为当前视窗高度(两屏以外的才延迟加载).
+    {Number|Object} -
+
+        * Number 类型时当前视窗往下, diff px 外的 img/textarea 延迟加载, 适当设置此值,
+          可以让用户在拖动时感觉数据已经加载好, 默认为当前视窗高度(两屏以外的才延迟加载).
+
+        * Object 类型可以指定 left/top/right/bottom 数值，表示预加载当前视窗以外上下左右的距离的元素.
+
 
 .. data:: placeholder
 
@@ -126,6 +149,39 @@ Methods Detail
     | **addCallback** (el, fn)
     | 添加回调函数. 当 el 即将出现在视图中时, 触发 fn
 
+
+.. method:: removeCallback
+
+    | **removeCallback** (el, fn)
+    | 删除回调函数. 参数同 ``addCallback``
+
+
+.. method:: addElements
+
+    | **addElements** (els)
+    | 添加元素到懒加载列表.
+
+    :param HTMLElement[] els: 新的懒加载元素列表
+
+.. method:: removeElements
+
+    | **removeElements** (els)
+    | 从懒加载列表中删除元素.
+
+    :param HTMLElement[] els: 已有的懒加载元素列表
+
+.. method:: refresh
+
+    | **refresh** ()
+    | 强制立刻检测懒加载元素
+
+.. method:: destroy
+
+    | **destroy** ()
+    | 停止监控并销毁组件
+
+Static Methods Detail
+-----------------------------------------------
 
 .. method:: loadCustomLazyData
 

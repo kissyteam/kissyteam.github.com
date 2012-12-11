@@ -6,21 +6,20 @@ Component
 .. toctree::
    :titlesonly:
 
+   button/index
+   calendar/index
+   combobox/index
    datalazyload/index
    dd/index
-   resizable/index
-   switchable/index
-   suggest/index
-   calendar/index
+   editor/index
    imagezoom/index
-   overlay/index
-   button/index
    menu/index
    menubutton/index
+   mvc/index
+   overlay/index
+   promise/index
+   resizable/index
+   switchable/index
    tree/index
    waterfall/index
-   mvc/index
-   combobox/index
    xtemplate/index
-   input-selection/index
-   editor/index

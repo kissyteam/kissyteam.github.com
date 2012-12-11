@@ -12,10 +12,9 @@ KISSY.use("combobox", function (S, ComboBox) {
             // 初始就聚焦
             focused:true,
             hasTrigger:false,
-            dataSource:{
-                data:data,
-                xclass:'combobox-LocalDataSource'
-            }
+            dataSource:new ComboBox.LocalDataSource({
+                data:data
+            })
         });
         basicComboBox.render();
 
@@ -32,10 +31,9 @@ KISSY.use("combobox", function (S, ComboBox) {
         var basicComboBox = new ComboBox({
             render:"#newNew",
             // width:S.one("#inp").css("width"),
-            dataSource:{
-                xclass:'combobox-LocalDataSource',
+            dataSource:new ComboBox.LocalDataSource({
                 data:data
-            },
+            }),
             hasTrigger:false,
             maxItemCount:2,
             format:function (query, data) {

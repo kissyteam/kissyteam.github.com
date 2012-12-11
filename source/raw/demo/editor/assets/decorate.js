@@ -4,7 +4,6 @@
         var cfg = {
             // 是否初始聚焦
             focused: true,
-            autoRender: true,
             attachForm: true,
             // 自定义样式
             // customStyle:"p{line-height: 1.4;margin: 1.12em 0;padding: 0;}",
@@ -210,7 +209,7 @@
 
             cfg.plugins = args;
 
-            var editor = new Editor(cfg);
+            var editor = new Editor(cfg).render();
 
             S.all("#getCur").on("click", function () {
                 alert(editor.get("data"));

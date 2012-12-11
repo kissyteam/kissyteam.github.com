@@ -5,42 +5,24 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Draggable &mdash; KISSY v1.3rc Documentation</title>
+<title>Draggable &mdash; KISSY v1.3 Documentation</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../_static/kissy.css"/>
-<link rel="stylesheet" href="../../../_static/pygments.css"/>
+    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
 <link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
-<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
 
 <script>
     var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     'rc',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
     };
-    (function(){
-        var js=[],h=window.location.href,d=document;
-            js.push("../../../_static/jquery.js");
-            js.push("../../../_static/underscore.js");
-            js.push("../../../_static/doctools.js");
-        for(var i=0;i<js.length;i++){
-            var j=js[i];
-            if(h.indexOf("localhost/kissy_git/")==-1
-            &&
-
-            h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
-            &&
-            j.indexOf("jquery.js")!=-1){
-                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
-            }else{
-                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
-            }
-        }
-    })();
-</script> 
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js"></script> 
 <script>
 
     var _gaq = _gaq || [];
@@ -105,7 +87,7 @@
     <li class="right" >
       <a href="index.html" title="DD"
          accesskey="P">previous</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3rc Documentation</a> &#187; </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
       <li><a href="../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../index.html" >Component</a> &#187; </li>
       <li><a href="index.html" accesskey="U">DD</a> &#187; </li> 
@@ -116,6 +98,11 @@
 <h1>Draggable<a class="headerlink" href="#draggable" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line">拖拽功能</div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;dd&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">dd</span><span class="p">){</span>
+    <span class="c1">// use dd.Draggable</span>
+<span class="p">});</span>
+</pre></div>
 </div>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
@@ -129,6 +116,7 @@
 <h2>Configs<a class="headerlink" href="#configs" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
+<li><a class="reference internal" href="../rich-base/index.html#rich-base.RichBase.config.plugins" title="rich-base.RichBase.config.plugins"><tt class="xref py py-data docutils literal"><span class="pre">plugins</span></tt></a></li>
 <li><a class="reference internal" href="#dd.Draggable.config.node" title="dd.Draggable.config.node"><tt class="xref py py-data docutils literal"><span class="pre">node</span></tt></a></li>
 <li><a class="reference internal" href="#dd.Draggable.config.handlers" title="dd.Draggable.config.handlers"><tt class="xref py py-data docutils literal"><span class="pre">handlers</span></tt></a></li>
 <li><a class="reference internal" href="#dd.Draggable.config.bufferTime" title="dd.Draggable.config.bufferTime"><tt class="xref py py-data docutils literal"><span class="pre">bufferTime</span></tt></a></li>
@@ -156,7 +144,9 @@
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#dd.Draggable.destroy" title="dd.Draggable.destroy"><tt class="xref py py-meth docutils literal"><span class="pre">destroy()</span></tt></a></li>
+<li><tt class="xref py py-meth docutils literal"><span class="pre">plug()</span></tt></li>
+<li><tt class="xref py py-meth docutils literal"><span class="pre">unplug()</span></tt></li>
+<li><tt class="xref py py-meth docutils literal"><span class="pre">destroy()</span></tt></li>
 </ul>
 </div></blockquote>
 </div>
@@ -182,6 +172,7 @@
 <em class="property">class </em><tt class="descclassname">dd.</tt><tt class="descname">Draggable</tt><a class="headerlink" href="#dd.Draggable" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>Draggable</strong> (config)</div>
+<div class="line">继承自 <a class="reference internal" href="../rich-base/index.html#rich-base.RichBase" title="rich-base.RichBase"><tt class="xref py py-class docutils literal"><span class="pre">RichBase</span></tt></a> ，包含其所有配置，属性，方法.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -212,7 +203,9 @@
 <dl class="data">
 <dt id="dd.Draggable.config.handlers">
 <tt class="descclassname">Draggable.config.</tt><tt class="descname">handlers</tt><a class="headerlink" href="#dd.Draggable.config.handlers" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Array&lt;String|HTMLElement&gt;} - 作为鼠标在其上按下时触发节点拖放的钩子. 如果不设置, 则整个 <tt class="docutils literal"><span class="pre">node</span></tt> 作为触发钩子.</p>
+<dd><p>{Array&lt;String|HTMLElement&gt;} - 作为鼠标在其上按下时触发节点拖放的钩子.
+字符串时表示选择器字符串.
+如果不设置, 则整个 <tt class="docutils literal"><span class="pre">node</span></tt> 作为触发钩子.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">handlers 的每个元素 DOM 节点必须位于配置项 <tt class="docutils literal"><span class="pre">node</span></tt> DOM 子树中.</p>
@@ -290,18 +283,6 @@
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">实例属性通过 <tt class="docutils literal"><span class="pre">get</span></tt> 方法获取, 例如 <tt class="docutils literal"><span class="pre">drag.get(&quot;node&quot;)</span></tt></p>
-</div>
-</dd></dl>
-
-</div>
-<div class="section" id="methods-detail">
-<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="dd.Draggable.destroy">
-<tt class="descclassname">Draggable.</tt><tt class="descname">destroy</tt><big>(</big><big>)</big><a class="headerlink" href="#dd.Draggable.destroy" title="Permalink to this definition">¶</a></dt>
-<dd><div class="line-block">
-<div class="line"><strong>destroy</strong> ()</div>
-<div class="line">销毁当前可拖放对象实例, 清除绑定事件.</div>
 </div>
 </dd></dl>
 
@@ -509,7 +490,7 @@
     <li class="right" >
       <a href="index.html" title="DD"
          accesskey="P">previous</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3rc Documentation</a> &#187; </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
       <li><a href="../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../index.html" >Component</a> &#187; </li>
       <li><a href="index.html" accesskey="U">DD</a> &#187; </li> 
@@ -558,10 +539,7 @@
     <h2 class="s-box-hd">Seed</h2>
     <ul class="s-box-bd">
         <li><a href="../../seed/kissy/index.html">kissy</a></li>
-        <li><a href="../../seed/lang/index.html">lang</a></li>
         <li><a href="../../seed/loader/index.html">loader</a></li>
-        <li><a href="../../seed/promise/index.html">promise</a></li>
-        <li><a href="../../seed/web/index.html">web</a></li>
     </ul>
 </ul>
 
@@ -596,15 +574,14 @@
         <li><a href="../menubutton/index.html">menubutton</a></li>
         <li><a href="../mvc/index.html">mvc</a></li>
         <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../promise/index.html">promise</a></li>
         <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="../rich-base/index.html">rich-base</a></li>
         <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
-        <li><a href="../suggest/index.html">suggest</a></li>
         <li><a href="../switchable/index.html">switchable</a></li>
-        <li><a href="../template/index.html">template</a></li>
         <li><a href="../tree/index.html">tree</a></li>
-        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
-        <li><a href="../waterfall/index.html">waterfall</a></li>
-        <li><a href="../xtemplate/index.html">xtemplate (beta)</a></li>
+         <li><a href="../waterfall/index.html">waterfall</a></li>
+        <li><a href="../xtemplate/index.html">xtemplate</a></li>
     </ul>
 </ul>
         

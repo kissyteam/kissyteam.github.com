@@ -5,6 +5,13 @@ indent
 
 |  缩进插件
 
+.. code-block:: javascript
+
+    KISSY.use('editor',function(S,Editor){
+        S.use('editor/plugin/indent',function(S,plugin){
+            // use
+        });
+    });
 
 Configs
 -------------------------------

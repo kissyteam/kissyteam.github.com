@@ -5,6 +5,12 @@ Button
 
 |  模拟按钮
 
+.. code-block:: javascript
+
+    KISSY.use('button',function(S,Button){
+        // use Button
+    });
+
 Class
 ---------------------------------
 
@@ -44,7 +50,7 @@ Class Detail
     | xclass: 'button'
     
     * 继承自 :class:`~component.Controller` , 包含其全部配置,属性,方法,事件.
-    * 扩充自 :class:`~component.UIBase.ContentBox` , 包含其全部配置,属性,方法,事件.
+    * 扩充自 :class:`~component.extension.ContentBox` , 包含其全部配置,属性,方法,事件.
     
     :param Object config: 配置项，详细见下方 **Configs Detail** .
     

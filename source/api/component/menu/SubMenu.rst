@@ -7,6 +7,12 @@ Menu.SubMenu
 
 |  包含子菜单的菜单项.
 
+.. code-block:: javascript
+
+    KISSY.use('menu',function(S,Menu){
+        // use Menu.SubMenu
+    });
+
 Class
 ---------------------------------
 

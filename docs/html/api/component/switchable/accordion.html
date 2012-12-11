@@ -5,42 +5,24 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>Accordion &mdash; KISSY v1.3rc Documentation</title>
+<title>Accordion &mdash; KISSY v1.3 Documentation</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../_static/kissy.css"/>
-<link rel="stylesheet" href="../../../_static/pygments.css"/>
+    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
 <link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
-<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
 
 <script>
     var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     'rc',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
     };
-    (function(){
-        var js=[],h=window.location.href,d=document;
-            js.push("../../../_static/jquery.js");
-            js.push("../../../_static/underscore.js");
-            js.push("../../../_static/doctools.js");
-        for(var i=0;i<js.length;i++){
-            var j=js[i];
-            if(h.indexOf("localhost/kissy_git/")==-1
-            &&
-
-            h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
-            &&
-            j.indexOf("jquery.js")!=-1){
-                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
-            }else{
-                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
-            }
-        }
-    })();
-</script> 
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js"></script> 
 <script>
 
     var _gaq = _gaq || [];
@@ -100,12 +82,12 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../suggest/index.html" title="Suggest"
+      <a href="../calendar/index.html" title="Calendar"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="carousel.html" title="Carousel"
          accesskey="P">previous</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3rc Documentation</a> &#187; </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
       <li><a href="../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../index.html" >Component</a> &#187; </li>
       <li><a href="index.html" accesskey="U">Switchable</a> &#187; </li> 
@@ -116,6 +98,11 @@
 <h1>Accordion<a class="headerlink" href="#accordion" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line">手风琴</div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;switchable&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Switchable</span><span class="p">){</span>
+    <span class="c1">// use Switchable.Accordion</span>
+<span class="p">});</span>
+</pre></div>
 </div>
 <div class="section" id="class-detail">
 <h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
@@ -133,14 +120,14 @@
 <blockquote>
 <div><p>Accordion 接口及配置项, 与 <a class="reference internal" href="switchable.html#switchable.Switchable" title="switchable.Switchable"><tt class="xref py py-class docutils literal"><span class="pre">Switchable</span></tt></a> 相同, 其中以下配置项的默认值有所区别:</p>
 <dl class="data">
-<dt id="switchable.Tabs.config.aria">
-<tt class="descclassname">Tabs.config.</tt><tt class="descname">aria</tt><a class="headerlink" href="#switchable.Tabs.config.aria" title="Permalink to this definition">¶</a></dt>
+<dt id="switchable.Switchable.config.aria">
+<tt class="descclassname">Switchable.config.</tt><tt class="descname">aria</tt><a class="headerlink" href="#switchable.Switchable.config.aria" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Boolean} - 是否支持键盘以及 aria. 默认 true</p>
 </dd></dl>
 
 <dl class="data">
-<dt>
-<tt class="descclassname">Switchable.config.</tt><tt class="descname">markupType</tt></dt>
+<dt id="switchable.Switchable.config.markupType">
+<tt class="descclassname">Switchable.config.</tt><tt class="descname">markupType</tt><a class="headerlink" href="#switchable.Switchable.config.markupType" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Number} - 默认为 1 , 选择自定义 trigger 和 panel 的 class.</p>
 </dd></dl>
 
@@ -174,12 +161,12 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../suggest/index.html" title="Suggest"
+      <a href="../calendar/index.html" title="Calendar"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="carousel.html" title="Carousel"
          accesskey="P">previous</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3rc Documentation</a> &#187; </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
       <li><a href="../../index.html" >API Documentation</a> &#187; </li>
       <li><a href="../index.html" >Component</a> &#187; </li>
       <li><a href="index.html" accesskey="U">Switchable</a> &#187; </li> 
@@ -228,10 +215,7 @@
     <h2 class="s-box-hd">Seed</h2>
     <ul class="s-box-bd">
         <li><a href="../../seed/kissy/index.html">kissy</a></li>
-        <li><a href="../../seed/lang/index.html">lang</a></li>
         <li><a href="../../seed/loader/index.html">loader</a></li>
-        <li><a href="../../seed/promise/index.html">promise</a></li>
-        <li><a href="../../seed/web/index.html">web</a></li>
     </ul>
 </ul>
 
@@ -266,15 +250,14 @@
         <li><a href="../menubutton/index.html">menubutton</a></li>
         <li><a href="../mvc/index.html">mvc</a></li>
         <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../promise/index.html">promise</a></li>
         <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="../rich-base/index.html">rich-base</a></li>
         <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
-        <li><a href="../suggest/index.html">suggest</a></li>
         <li><a href="index.html">switchable</a></li>
-        <li><a href="../template/index.html">template</a></li>
         <li><a href="../tree/index.html">tree</a></li>
-        <li><a href="http://docs.kissyui.com/kissy/src/validation/demo/" target="_blank">validation</a></li>
-        <li><a href="../waterfall/index.html">waterfall</a></li>
-        <li><a href="../xtemplate/index.html">xtemplate (beta)</a></li>
+         <li><a href="../waterfall/index.html">waterfall</a></li>
+        <li><a href="../xtemplate/index.html">xtemplate</a></li>
     </ul>
 </ul>
         

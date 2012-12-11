@@ -2,30 +2,33 @@
 <html>
 <head>
 
-<script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
+    <script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
 </head>
 <body>
-  
-  <button>click me</button>
-  <div id="stop-log"></div>
-  
-<script>
-var $=KISSY.Node.all;
-function immediatePropStopped(e) {
-  var msg = "";
-  if ( e.isImmediatePropagationStopped ) {
-    msg =  "called"
-  } else {
-    msg = "not called";
-  }
-  $("#stop-log").append( "<div>" + msg + "</div>" );
-}
 
-$("button").on('click',function(event) {
-  immediatePropStopped(event);
-  event.stopImmediatePropagation();
-  immediatePropStopped(event);
-});  
+<button>click me</button>
+<div id="stop-log"></div>
+
+<script>
+    KISSY.use('core', function (S) {
+        var $ = KISSY.Node.all;
+
+        function immediatePropStopped(e) {
+            var msg = "";
+            if (e.isImmediatePropagationStopped()) {
+                msg = "called"
+            } else {
+                msg = "not called";
+            }
+            $("#stop-log").append("<div>" + msg + "</div>");
+        }
+
+        $("button").on('click', function (event) {
+            immediatePropStopped(event);
+            event.stopImmediatePropagation();
+            immediatePropStopped(event);
+        });
+    });
 </script>
 
 </body>

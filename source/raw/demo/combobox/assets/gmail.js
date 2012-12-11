@@ -36,8 +36,7 @@ KISSY.use("combobox", function (S, ComboBox) {
             }
             return ret;
         },
-        dataSource:{
-            xclass:'combobox-LocalDataSource',
+        dataSource:new ComboBox.LocalDataSource({
             data:data,
             parse:function (query, data) {
                 var ret = [];
@@ -48,8 +47,7 @@ KISSY.use("combobox", function (S, ComboBox) {
                 });
                 return ret;
             }
-        }
-
+        })
     });
 
     basicComboBox.render();

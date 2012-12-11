@@ -12,13 +12,10 @@ Sphinx 使用介绍
 
     * Python 2.x (http://www.python.org/), 并将 Python 加入到 Path 中;
     * Setup Tools: Python 的一个包安装/管理工具(http://pypi.python.org/pypi/setuptools, win 下有 exe, 直接安装即可);
-    * 安装 docutils, cmd 下进入 kissyteam/tools/docutils-0.7, 运行 python setup.py install;
-
 
 **安装 Sphinx**
 
     * cmd 下运行: easy_install -U Sphinx;
-    * cmd 下进入 kissyteam/tools/sphinx-to-github, 运行 python setup.py install;
 
 
 **编译文档**

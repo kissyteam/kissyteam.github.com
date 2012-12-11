@@ -6,7 +6,15 @@ dom
 .. note::
 
     :mod:`KISSY Node <node>` 以及  :class:`~node.NodeList` 对象上的相关处理推荐直接调用其自身方法.
-    
+
+
+.. code-block:: javascript
+
+    KISSY.use('dom',function(S,DOM){
+        // use DOM
+    });
+
+
 Module
 -----------------------------------------------
 

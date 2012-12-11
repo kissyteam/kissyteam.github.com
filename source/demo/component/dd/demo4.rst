@@ -96,7 +96,7 @@ Class
                 selector:'.component'
             });
 
-    3) 生成 :class:`Proxy` 对象, 并关联到 :class:`DraggableDelegate` 对象
+    3) 生成 :class:`~dd.plugin.Proxy` 对象, 并关联到 :class:`DraggableDelegate` 对象
 
         .. code-block:: javascript
 
@@ -119,7 +119,7 @@ Class
 
             proxy.attach(dragDelegate);
 
-    4) 生成指定容器的 :class:`Scroll` 对象, 并关联到 :class:`DraggableDelegate` 对象
+    4) 生成指定容器的 :class:`~dd.plugin.Scroll` 对象, 并关联到 :class:`DraggableDelegate` 对象
 
         .. code-block:: javascript
 

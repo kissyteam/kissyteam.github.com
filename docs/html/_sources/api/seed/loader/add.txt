@@ -3,10 +3,6 @@
 add
 ======================================
 
-Module
------------------------------------------------
-
-  :mod:`seed`
 
 Methods
 -----------------------------------------------
@@ -19,8 +15,6 @@ Methods
     :param string name: 模块名
     :param function fn: 模块定义函数
     :param object config: 模块的一些格外属性, 包括
-        
-    :param Boolean config.attach: 默认 true,表示模块定义时是否执行定义函数 fn, 只有在 use 时才执行, 懒加载原则
             
     :param Array<String> config.requires: 模块的一些依赖项, 如果需要载入 css 则, 数组项为 .css 结尾名字
 
@@ -35,7 +29,6 @@ Methods
 
         KISSY.add("yourmod",function(S){},
             {
-                attach:false,// 模块定义时不会执行定义函数 fn, 只有在 use 时才执行, 懒加载原则
                 requires:['depMod1','depMod2','./mod.css'] // 该模块的一些依赖项,
                                                            // 注意 css 为和模块 js 同目录下的 mod.css
             }
@@ -69,11 +62,14 @@ Methods
 
     当模块名称 name 为包内模块< 参见 :func:`下文包配置<KISSY.config>` >时, 则requires的模块名称可使用相对路径 refer 包内其他模块
 
-
     .. code-block:: javascript
 
         // tc/mods/mod1 依赖于 tc/mods/mod2
         KISSY.add("tc/mods/mod1",function(){},{requires:['./mod2']});
+
+
+    .. versionchanged:: 1.3
+        KISSY.add 表示模块定义, fn 并不会执行, 只有在 use 时才执行, 懒加载原则.
 
 
 压缩模块
@@ -129,12 +125,4 @@ Methods
 ----------------------------------------------------
 
     部署时也可以不采用动态加载, 仅仅将 kissy loader 作为代码组织的一种方式, 将所有的模块打包到一个文件静态引入放在页面中,
-    当使用 ``KISSY.use`` 时如果模块已经过静态引入在页面中, 则不会发送请求, 这时建议所有模块的属性都设置为
-
-
-    .. code-block:: javascript
-
-        KISSY.add("custommod",function(){},{attach:false});
-
-
-    ``attach`` 设置为  false, 表示只有在 ``use`` 时才会运行模块定义函数, 消除模块过多而导致的页面初始化时的停滞问题. 若定义模块时不写模块名则默认 ``attach`` 为 ``false`` .
+    当使用 ``KISSY.use`` 时如果模块已经过静态引入在页面中, 则不会发送请求.

@@ -1,26 +1,31 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-  <style>
-span, strong, p { 
-  padding: 8px; display: block; border: 1px solid #999;  }
+    <style>
+        span, strong, p {
+            padding: 8px;
+            display: block;
+            border: 1px solid #999;
+        }
     </style>
 
-<script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
+    <script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
 </head>
 <body>
-  
+
 <div id="log"></div>
 <div>
-  <p>
-    <strong><span>click</span></strong>
-  </p>
+    <p>
+        <strong><span>click</span></strong>
+    </p>
 </div>
 <script>
-    var $=KISSY.Node.all;
-    $("body").on('click',function(event) {
-        $("#log").html("clicked: " + event.target.nodeName);
-    });  
+    KISSY.use('core', function (S) {
+        var $ = KISSY.Node.all;
+        $("body").on('click', function (event) {
+            $("#log").html("clicked: " + event.target.nodeName);
+        });
+    });
 </script>
 
 </body>

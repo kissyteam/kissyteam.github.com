@@ -6,6 +6,11 @@ Combobox
 |  复合输入框.
 | :ref:`Demo <combobox-demo>`
 
+.. code-block:: javascript
+
+    KISSY.use('combobox',function(S,Combobox){
+        // use Combobox
+    });
 
 Class
 ---------------------------------
@@ -27,7 +32,7 @@ Configs
     * :data:`~Combobox.config.updateInputOnDownUp`
     * :data:`~Combobox.config.literal`
     * :data:`~Combobox.config.alignWithCursor`
-    * :data:`~component.UIBase.config.plugins`
+    * :data:`~rich-base.RichBase.config.plugins`
     * :data:`~component.UIBase.config.srcNode`
 
 
@@ -103,15 +108,14 @@ Configs Detail
 
 .. data:: Combobox.config.dataSource
 
-    {Object|Combobox.LocalDataSource|Combobox.RemoteDataSource} - 数据源配置或者 xclass 形式的配置，
+    {Combobox.LocalDataSource|Combobox.RemoteDataSource} - 数据源配置
                 例如静态数据源的配置:
 
     .. code-block:: javascript
 
-        {
-            xclass:'combobox-LocalDataSource',
+        new ComboBox.LocalDataSource({
             data:["abc","123"]
-        }
+        })
 
 .. data:: Combobox.config.maxItemCount
 

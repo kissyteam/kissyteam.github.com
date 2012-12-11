@@ -5,6 +5,13 @@ resize
 
 |  调整大小插件
 
+.. code-block:: javascript
+
+    KISSY.use('editor',function(S,Editor){
+        S.use('editor/plugin/resize',function(S,plugin){
+            // use
+        });
+    });
 
 Configs
 -------------------------------

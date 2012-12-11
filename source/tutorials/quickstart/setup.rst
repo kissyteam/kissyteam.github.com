@@ -5,7 +5,7 @@ Setup
 
 如何使用 KISSY ? 
 
-* 先将 `http://docs.kissyui.com/kissy/build/kissy.js <http://docs.kissyui.com/kissy/build/kissy.js>`_ 引入到你的页面;
+* 先将 `http://docs.kissyui.com/kissy/build/seed.js <http://docs.kissyui.com/kissy/build/seed.js>`_ 引入到你的页面;
 * 接着, 稍加编写一些代码, 就可以实现下面的效果了:
 
 .. raw:: html
@@ -40,15 +40,14 @@ Setup
             <h2 id="demo-txt">Hello KISSY, NOT KITTY!</h2>
         </div>        
         <script>
-            KISSY.ready(function(S){
-                var DOM = S.DOM, Event = S.Event,
-                    btn = DOM.get('#demo-btn');
+           KISSY.use('dom,event,anim',function (S,DOM,Event,Anim) {
+                var btn = DOM.get('#demo-btn');
                 
                 Event.on(btn, 'click', function() {
                     DOM.attr(btn, 'disabled', true);
 
-                    S.Anim('#demo-img', 'left: 400px; opacity: 0', 2, 'easeOut', function() {
-                        S.Anim('#demo-txt',
+                    new Anim('#demo-img', 'left: 400px; opacity: 0', 2, 'easeOut', function() {
+                        new Anim('#demo-txt',
                                'left: 0; opacity: 1; fontSize: 28px',
                                2, 'bounceOut').run();
                     }).run();

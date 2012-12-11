@@ -1,22 +1,26 @@
-KISSY.use("dd,node", function (S, DD, Node) {
+KISSY.use("dd,node,dd/plugin/constrain", function (S, DD, Node,Constrain) {
     var $ = Node.all;
-    var drag = new DD.Draggable({
-        node: "#d",
-        move: 1
-    });
-    var c = new DD.Constrain({
+
+    var constrain=new Constrain({
         constrain: "#constrainContainer"
     });
 
-    c.attachDrag(drag);
+    var drag = new DD.Draggable({
+        node: "#d",
+        move: 1,
+        plugins:[
+            constrain
+        ]
+    });
 
     $("#cd").on("click", function () {
         $("#d").css({
             left: "10px",
             top: "10px"
         });
-        c.set("constrain", "#constrainContainer");
-        c.attachDrag(drag);
+        constrain.set("constrain", "#constrainContainer");
+        drag.unplug(constrain);
+        drag.plug(constrain);
     });
 
     $("#cw").on("click", function () {
@@ -24,8 +28,9 @@ KISSY.use("dd,node", function (S, DD, Node) {
             left: "10px",
             top: "10px"
         });
-        c.set("constrain", true);
-        c.attachDrag(drag);
+        constrain.set("constrain", true);
+        drag.unplug(constrain);
+        drag.plug(constrain);
     });
 
     $("#cn").on("click", function () {
@@ -33,7 +38,6 @@ KISSY.use("dd,node", function (S, DD, Node) {
             left: "10px",
             top: "10px"
         });
-
-        c.detachDrag(drag);
+        drag.unplug(constrain);
     });
 });

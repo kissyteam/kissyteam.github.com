@@ -6,6 +6,12 @@ Dialog
 |  对话框.
 |  扩展于 :class:`Overlay`
 
+.. code-block:: javascript
+
+    KISSY.use('overlay',function(S,Overlay){
+        // use Overlay.Dialog
+    });
+
 Class
 -----------------------------------------------
 
@@ -16,20 +22,19 @@ Configs
 
   除了 :class:`Overlay` 的所有配置之外还有：
 
-  * :data:`~component.UIBase.StdMod.config.headerContent`
-  * :data:`~component.UIBase.StdMod.config.bodyContent`
-  * :data:`~component.UIBase.StdMod.config.footerContent`
-  * :data:`~component.UIBase.Drag.config.draggable`
+  * :data:`~Dialog.config.headerContent`
+  * :data:`~Dialog.config.bodyContent`
+  * :data:`~Dialog.config.footerContent`
   
 Attributes
 -----------------------------------------------
 
   除了 :class:`Overlay` 的所有属性之外还有：
   
-  * :attr:`~component.UIBase.StdMod.prototype.header`
-  * :attr:`~component.UIBase.StdMod.prototype.body`
-  * :attr:`~component.UIBase.StdMod.prototype.footer`
-  
+  * :attr:`~Dialog.prototype.header`
+  * :attr:`~Dialog.prototype.body`
+  * :attr:`~Dialog.prototype.footer`
+
 Methods
 -----------------------------------------------
 
@@ -47,12 +52,7 @@ Class Detail
     
     | **Dialog** (config)
     | xclass: 'dialog'
-
-    * 继承自
-    :class:`~Overlay`
-    :class:`~component.UIBase.StdMod`
-    :class:`~component.UIBase.Drag` ,
-    包含其全部配置,属性,方法,事件.
+    | 继承自 :class:`~Overlay` 包含其全部配置,属性,方法,事件.
     
     :param Object config: 配置项, 详细见下方 **Configs Detail** .
     
@@ -87,3 +87,47 @@ Class Detail
                 top:-9999px;
             }
         </style>
+
+
+Configs Detail
+-----------------------------------------------
+
+.. data:: Dialog.config.headerContent
+
+    {String} - 组件的标题 html.
+
+.. data:: Dialog.config.bodyContent
+
+    {String} - 组件的体 html.
+
+.. data:: Dialog.config.footerContent
+
+    {String} - 组件的底部 html.
+
+.. data:: Dialog.config.headerStyle
+
+    {Object} - 组件的标题内联样式.
+
+.. data:: Dialog.config.bodyStyle
+
+    {Object} - 组件体的内联样式.
+
+.. data:: Dialog.config.footerStyle
+
+    {Object} - 组件的底部内联样式.
+
+
+Attributes Detail
+-----------------------------------------------
+
+.. attribute:: Dialog.prototype.header
+
+    {KISSY.Node} - 只读, 组件的头部节点.
+
+.. attribute:: Dialog.prototype.body
+
+    {KISSY.Node} - 只读, 组件的体部节点.
+
+.. attribute:: Dialog.prototype.footer
+
+    {KISSY.Node} - 只读, 组件的底部节点.

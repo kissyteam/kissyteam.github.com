@@ -13,7 +13,7 @@ Module
 Methods
 -----------------------------------------------
 
-.. versionadded:: 1.3
+
 
 .. method:: NodeList.isPaused
 

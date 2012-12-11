@@ -8,6 +8,7 @@ DD
 Classes in DD
 -----------------------------------------------
 
+
 .. toctree::
    :titlesonly:
 
@@ -16,6 +17,6 @@ Classes in DD
    ddm
    draggable-delegate
    droppable-delegate
-   proxy
-   scroll
-   constrain
+   plugin/proxy
+   plugin/scroll
+   plugin/constrain

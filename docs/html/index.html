@@ -5,42 +5,24 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>文档中心 &mdash; KISSY v1.3rc Documentation</title>
+<title>文档中心 &mdash; KISSY v1.3 Documentation</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="_static/kissy.css"/>
-<link rel="stylesheet" href="_static/pygments.css"/>
+    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
 <link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
-<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
 
 <script>
     var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     'rc',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE: true
     };
-    (function(){
-        var js=[],h=window.location.href,d=document;
-            js.push("_static/jquery.js");
-            js.push("_static/underscore.js");
-            js.push("_static/doctools.js");
-        for(var i=0;i<js.length;i++){
-            var j=js[i];
-            if(h.indexOf("localhost/kissy_git/")==-1
-            &&
-
-            h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/")==-1
-            &&
-            j.indexOf("jquery.js")!=-1){
-                d.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"><\/script>');
-            }else{
-                d.write('<script type="text/javascript" src="'+ j +'"><\/script>');
-            }
-        }
-    })();
-</script> 
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js"></script> 
 <script>
 
     var _gaq = _gaq || [];
@@ -102,7 +84,7 @@
     <li class="right" >
       <a href="api/index.html" title="API Documentation"
          accesskey="N">next</a> | </li>
-    <li><a href="#">KISSY v1.3rc Documentation</a> &#187; </li> 
+    <li><a href="#">KISSY v1.3 Documentation</a> &#187; </li> 
     </ul>
 </div>
 					
@@ -114,9 +96,6 @@
 <li class="toctree-l2"><a class="reference internal" href="api/seed/index.html">Seed</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api/seed/loader/index.html">loader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/seed/kissy/index.html">KISSY</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/seed/lang/index.html">lang</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/seed/web/index.html">web</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/seed/promise/index.html">promise</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/core/index.html">Core</a><ul>
@@ -132,12 +111,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/component/index.html">Component</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/component/template/index.html">Template</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/component/datalazyload/index.html">DataLazyload</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/component/flash/index.html">flash</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/component/dd/index.html">DD</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/component/resizable/index.html">Resizable</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/component/mvc/index.html">mvc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/component/rich-base/index.html">RichBase</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/component/component/index.html">Component</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/component/overlay/index.html">Overlay</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/component/button/index.html">Button</a></li>
@@ -146,7 +125,6 @@
 <li class="toctree-l3"><a class="reference internal" href="api/component/tree/index.html">Tree</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/component/waterfall/index.html">Waterfall</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/component/switchable/index.html">Switchable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/component/suggest/index.html">Suggest</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/component/calendar/index.html">Calendar</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/component/imagezoom/index.html">ImageZoom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/component/combobox/index.html">Combobox</a></li>
@@ -166,24 +144,23 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="demo/component/index.html">Component</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="demo/component/button/index.html">Button 使用示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo/component/calendar/index.html">Calendar 使用示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo/component/combobox/index.html">combobox 使用示例</a></li>
 <li class="toctree-l3"><a class="reference internal" href="demo/component/datalazyload/index.html">DataLazyload 使用示例</a></li>
 <li class="toctree-l3"><a class="reference internal" href="demo/component/dd/index.html">DD 使用示例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="demo/component/resizable/index.html">Resizable  使用示例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="demo/component/switchable/index.html">Switchable 使用示例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="demo/component/suggest/index.html">Suggest 使用示例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="demo/component/calendar/index.html">Calendar 使用示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo/component/editor/index.html">Editor 使用示例</a></li>
 <li class="toctree-l3"><a class="reference internal" href="demo/component/imagezoom/index.html">ImageZoom 使用示例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="demo/component/overlay/index.html">Overlay 使用示例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="demo/component/button/index.html">Button 使用示例</a></li>
 <li class="toctree-l3"><a class="reference internal" href="demo/component/menu/index.html">Menu 使用示例</a></li>
 <li class="toctree-l3"><a class="reference internal" href="demo/component/menubutton/index.html">MenuButton 使用示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo/component/mvc/index.html">mvc 使用示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo/component/overlay/index.html">Overlay 使用示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo/component/promise/index.html">Promise 使用示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo/component/resizable/index.html">Resizable  使用示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo/component/switchable/index.html">Switchable 使用示例</a></li>
 <li class="toctree-l3"><a class="reference internal" href="demo/component/tree/index.html">Tree 使用示例</a></li>
 <li class="toctree-l3"><a class="reference internal" href="demo/component/waterfall/index.html">Waterfall 使用示例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="demo/component/mvc/index.html">mvc 使用示例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="demo/component/combobox/index.html">combobox 使用示例</a></li>
 <li class="toctree-l3"><a class="reference internal" href="demo/component/xtemplate/index.html">xtemplate 使用示例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="demo/component/input-selection/index.html">input-selection demo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="demo/component/editor/index.html">Editor 使用示例</a></li>
 </ul>
 </li>
 </ul>
@@ -231,7 +208,7 @@
 <li class="toctree-l3"><a class="reference internal" href="tutorials/tools/use-sphinx.html">Sphinx 使用介绍</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/changelog/1.3.html">KISSY 1.3rc 升级指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/changelog/1.3.html">KISSY 1.3 升级指南</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/changelog/1.3.html#id1">简单来说，新版本包括以下改进：</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/changelog/1.3.html#id4">一些需要注意的不兼容性问题</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/changelog/1.3.html#change-log">详细 change log</a></li>
@@ -260,7 +237,7 @@
     <li class="right" >
       <a href="api/index.html" title="API Documentation"
          accesskey="N">next</a> | </li>
-    <li><a href="#">KISSY v1.3rc Documentation</a> &#187; </li> 
+    <li><a href="#">KISSY v1.3 Documentation</a> &#187; </li> 
     </ul>
 </div>
 					<div id="disqus_thread"></div>

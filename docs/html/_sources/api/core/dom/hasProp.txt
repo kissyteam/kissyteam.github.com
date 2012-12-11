@@ -28,6 +28,6 @@ Methods
 
     .. note::
 
-        当你使用该方法时, 请先考虑下是否是自定义 property , 如果是自定义 property 推荐采用 :func:`DOM.data <dom.data>` 系列方法.
-        如果是 DOM property , 一般直接判断 :func:`DOM.prop <dom.prop>` 返回值即可
+        当你使用该方法时, 请先考虑下是否是自定义 property , 如果是自定义 property 推荐采用 :func:`dom.data <dom.data>` 系列方法.
+        如果是 DOM property , 一般直接判断 :func:`dom.prop <dom.prop>` 返回值即可
         

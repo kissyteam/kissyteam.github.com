@@ -5,6 +5,13 @@ undo
 
 |  编辑历史管理插件
 
+.. code-block:: javascript
+
+    KISSY.use('editor',function(S,Editor){
+        S.use('editor/plugin/undo',function(S,plugin){
+            // use
+        });
+    });
 
 Configs
 -------------------------------

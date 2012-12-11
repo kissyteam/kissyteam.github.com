@@ -7,6 +7,13 @@ mvc.Router
 
 |  路由类.
 
+.. code-block:: javascript
+
+    KISSY.use('mvc',function(S,mvc){
+        // use mvc.Router
+    });
+
+
 Class
 ---------------------------------
 

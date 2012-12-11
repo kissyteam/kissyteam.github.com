@@ -8,6 +8,13 @@ Module
 
   :mod:`flash`
 
+
+.. code-block:: javascript
+
+    KISSY.use('flash',function(S,Flash){
+        // use Flash
+    });
+
 Methods
 -----------------------------------------------
 

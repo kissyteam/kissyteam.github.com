@@ -1,8 +1,8 @@
-KISSY.use("ua,event,node,overlay,button", function(S, UA, Event, Node, O, B) {
+KISSY.use("ua,event,node,overlay,button,component/plugin/drag", function (S, UA, Event, Node, O, B, DragPlugin) {
     var dialog = new O.Dialog({
-        width:424,
+        width: 424,
         elCls: 'my',
-        elStyle:{
+        elStyle: {
             position: UA.ie == 6 ? "absolute" : "fixed"
         },
         bodyContent: '<img '
@@ -10,11 +10,15 @@ KISSY.use("ua,event,node,overlay,button", function(S, UA, Event, Node, O, B) {
             + 'height="282" '
             + 'src="http://img02.taobaocdn.com/tps/i2/T10J9bXnlgXXXXXXXX-424-282.jpg?noq=y" />',
         mask: true,
-        draggable: true,
+        plugins: [
+            new DragPlugin({
+                handlers: ['.ks-stdmod-header']
+            })
+        ],
         align: {
             points: ['cc', 'cc']
         },
-        closeAction:"destroy"
+        closeAction: "destroy"
     });
 
     var b1 = new B({
@@ -24,7 +28,7 @@ KISSY.use("ua,event,node,overlay,button", function(S, UA, Event, Node, O, B) {
     });
     b1.render();
 
-    dialog.on("destroy", function() {
+    dialog.on("destroy", function () {
         b1.detach("click", show);
         Event.detach(window, "scroll", center);
     });
