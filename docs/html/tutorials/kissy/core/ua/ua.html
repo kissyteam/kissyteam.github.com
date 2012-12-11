@@ -1,0 +1,373 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>使用KISSY UA(检测userAgent类型) &mdash; KISSY v1.3 Documentation</title>
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
+<link rel="stylesheet" href="../../../../_static/kissy.css"/>
+    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js"></script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+	<div  id="layout" class="layout grid-s6m0e7">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../../component/index.html" title="Component"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="UA"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../../index.html" >Tutorial</a> &#187; </li>
+      <li><a href="../../index.html" >模块介绍</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">UA</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="kissy-ua-useragent">
+<h1>使用KISSY UA(检测userAgent类型)<a class="headerlink" href="#kissy-ua-useragent" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="refer">
+<h2>Refer<a class="headerlink" href="#refer" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../../../../api/core/ua/index.html#module-ua" title="ua"><tt class="xref py py-mod docutils literal"><span class="pre">ua</span></tt></a></p>
+</div>
+<div class="section" id="ua">
+<h2>在页面中引入UA<a class="headerlink" href="#ua" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;seed.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;ua&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">UA</span><span class="p">){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="nx">UA</span><span class="p">);</span> <span class="c1">// UA可以使用了</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>也可以直接引入core来使用ua，ua是core的子模块（不推荐）</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;seed.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;core&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">UA</span><span class="p">);</span> <span class="c1">//KISSY.UA可以使用了</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">由于core里有许多其他模块，除非你确定你用到了core里面的其他模块，否则我们推荐使用第一种方式来引入ua</p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>判断浏览器类型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;ua&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">UA</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">chrome</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your browser is chrome&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">safari</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your browser is safari&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">opera</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your browser is opera&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">firefox</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your browser is firefox&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">ie</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your browser is ie&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your browser is unknown&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>判断浏览器版本<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;ua&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">UA</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">ie</span> <span class="o">==</span> <span class="mi">6</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your browser is ie and version is 6&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">ie</span> <span class="o">==</span> <span class="mi">7</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your browser is ie and version is 7&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>版本号也可以通过UA[UA.shell]来获取，版本号遵循以下规则：</p>
+<ol class="last arabic simple">
+<li>表示当前引擎或浏览器的版本。版本号 1.2.3.4 会转换为数值 1.234</li>
+<li>如果不是当前引擎或浏览器，返回 0 或者 undefined</li>
+<li>如果当前浏览器版本号无法准确判定，均返回 0.1</li>
+</ol>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>判断浏览器内核<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;ua&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">UA</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">core</span> <span class="o">==</span> <span class="s1">&#39;webkit&#39;</span><span class="p">){</span>
+            <span class="kd">var</span> <span class="nx">version</span> <span class="o">=</span> <span class="nx">UA</span><span class="p">.</span><span class="nx">webkit</span><span class="p">;</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your browser is webkit and version is&#39;</span> <span class="o">+</span> <span class="nx">version</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">core</span> <span class="o">==</span> <span class="s1">&#39;gecko&#39;</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your browser is gecko&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">core</span> <span class="o">==</span> <span class="s1">&#39;trident&#39;</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your browser is trident&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">core</span> <span class="o">==</span> <span class="s1">&#39;presto&#39;</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your browser is presto&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="os">
+<h2>判断设备os类型及版本<a class="headerlink" href="#os" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;ua&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">UA</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">os</span> <span class="o">==</span> <span class="s1">&#39;windows&#39;</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your os is Windows&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">os</span> <span class="o">==</span> <span class="s1">&#39;Linux&#39;</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your os is Linux&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">os</span> <span class="o">==</span> <span class="s1">&#39;ios&#39;</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your os is ios and version is&#39;</span> <span class="o">+</span> <span class="nx">UA</span><span class="p">.</span><span class="nx">ios</span><span class="p">);</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">ipad</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your device is iPad&#39;</span><span class="p">);</span>
+            <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">iphone</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your device is iPhone&#39;</span><span class="p">);</span>
+            <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">ipod</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your device is iPod&#39;</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">os</span> <span class="o">==</span> <span class="s1">&#39;android&#39;</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your os is Android&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mobile">
+<h2>判断mobile浏览器类型<a class="headerlink" href="#mobile" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;ua&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">UA</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">mobile</span> <span class="o">==</span> <span class="s1">&#39;apple&#39;</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your device is Apple&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">mobile</span> <span class="o">==</span> <span class="s1">&#39;nokia&#39;</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your device is Nokia&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">mobile</span> <span class="o">==</span> <span class="s1">&#39;android&#39;</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your device is Android&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">mobile</span> <span class="o">==</span> <span class="s1">&#39;opera mini&#39;</span> <span class="o">||</span> <span class="nx">UA</span><span class="p">.</span><span class="nx">mobile</span> <span class="o">==</span> <span class="s1">&#39;opera mobi&#39;</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your browser is opera mobile&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>判断浏览器外壳<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-html"><div class="highlight"><pre> <span class="nt">&lt;script&gt;</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;ua&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">UA</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">shell</span> <span class="o">==</span> <span class="s1">&#39;chrome&#39;</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your browser is chrome and the version is&#39;</span> <span class="o">+</span> <span class="nx">UA</span><span class="p">[</span><span class="nx">UA</span><span class="p">.</span><span class="nx">shell</span><span class="p">]);</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">shell</span> <span class="o">==</span> <span class="s1">&#39;se360&#39;</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your browser is 360浏览器&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">shell</span> <span class="o">==</span> <span class="s1">&#39;tt&#39;</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your browser is 腾讯TT浏览器&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">shell</span> <span class="o">==</span> <span class="s1">&#39;maxthon&#39;</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your browser is 遨游浏览器&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">此处的外壳表示广义的外壳，即 IE, Firefox, Chrome, Opera, Safari 等浏览器都属于外壳。可以利用此标识符直接识别浏览器类型。 可以首先使用 UA.shell 返回的标识符判断当前浏览器类型，若需浏览器具体版本信息，可以再通过 UA[UA.shell] 取出版本号。</p>
+</div>
+</div>
+</div>
+
+
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../../component/index.html" title="Component"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="UA"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../../index.html" >Tutorial</a> &#187; </li>
+      <li><a href="../../index.html" >模块介绍</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">UA</a> &#187; </li> 
+    </ul>
+</div>
+					<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+		
+    <div class="col-sub">
+
+<div class="s-box">
+    <div class="s-box-bd">
+        <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/index.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../demo/index.html">Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Tutorial</a></li>
+</ul>
+
+    </div>
+</div>
+    </div>
+    <div class="col-extra">
+        
+	<div class="s-box">
+		<div class="s-box-hd">
+			<h3>本节提纲</h3>
+		</div>
+		<div class="s-box-bd">
+			<ul>
+<li><a class="reference internal" href="#">使用KISSY UA(检测userAgent类型)</a><ul>
+<li><a class="reference internal" href="#refer">Refer</a></li>
+<li><a class="reference internal" href="#ua">在页面中引入UA</a></li>
+<li><a class="reference internal" href="#id1">判断浏览器类型</a></li>
+<li><a class="reference internal" href="#id2">判断浏览器版本</a></li>
+<li><a class="reference internal" href="#id3">判断浏览器内核</a></li>
+<li><a class="reference internal" href="#os">判断设备os类型及版本</a></li>
+<li><a class="reference internal" href="#mobile">判断mobile浏览器类型</a></li>
+<li><a class="reference internal" href="#id4">判断浏览器外壳</a></li>
+</ul>
+</li>
+</ul>
+
+		</div>
+	</div>
+
+    </div>
+	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>
