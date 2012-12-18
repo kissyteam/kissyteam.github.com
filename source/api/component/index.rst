@@ -14,7 +14,6 @@ Component
    datalazyload/index
    dd/index
    editor/index
-   flash/index
    imagezoom/index
    menu/index
    menubutton/index
@@ -22,6 +21,7 @@ Component
    overlay/index
    resizable/index
    rich-base/index
+   swf/index
    switchable/index
    tree/index
    uri/index

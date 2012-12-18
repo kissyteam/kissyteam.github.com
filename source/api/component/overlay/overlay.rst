@@ -55,10 +55,10 @@ Attributes
 Methods
 -----------------------------------------------
 
-  * :meth:`~rich-base.RichBase.config.plug`
-  * :meth:`~rich-base.RichBase.config.unplug`
+  * :meth:`~rich-base.RichBase.prototype.plug`
+  * :meth:`~rich-base.RichBase.prototype.unplug`
   * :meth:`~component.UIBase.prototype.render`
-  * :meth:`~rich-base.RichBase.config.destroy`
+  * :meth:`~rich-base.RichBase.prototype.destroy`
   * :meth:`~component.extension.Box.prototype.show`
   * :meth:`~component.extension.Box.prototype.hide`
   * :meth:`~component.extension.Align.prototype.center`

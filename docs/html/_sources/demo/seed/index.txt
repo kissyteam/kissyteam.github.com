@@ -10,4 +10,4 @@ Demos
    :titlesonly:
 
    loader/index
-   lang/index
+   kissy/index
