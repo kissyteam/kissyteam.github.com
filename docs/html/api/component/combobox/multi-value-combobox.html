@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>RemoteDataSource &mdash; KISSY v1.3 Documentation</title>
+<title>MultiValueComboBox &mdash; KISSY v1.3 Documentation</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../_static/kissy.css"/>
@@ -82,10 +82,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../component/index.html" title="Component"
+      <a href="filter-select.html" title="FilterSelect"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="LocalDataSource.html" title="LocalDataSource"
+      <a href="combobox.html" title="ComboBox"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
       <li><a href="../../index.html" >API Documentation</a> &#187; </li>
@@ -94,13 +94,16 @@
     </ul>
 </div>
 					
-  <div class="section" id="remotedatasource">
-<h1>RemoteDataSource<a class="headerlink" href="#remotedatasource" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="multivaluecombobox">
+<h1>MultiValueComboBox<a class="headerlink" href="#multivaluecombobox" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
-<div class="line">本地数据源.</div>
+<div class="line-block">
+<div class="line">复合输入框.</div>
+</div>
+<div class="line"><a class="reference internal" href="../../../demo/component/combobox/index.html#combobox-demo"><em>Demo</em></a></div>
 </div>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;combobox&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">ComboBox</span><span class="p">){</span>
-    <span class="c1">// use ComboBox.RemoteDataSource</span>
+    <span class="c1">// use ComboBox.MultiValueComboBox</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -108,7 +111,7 @@
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#combobox.RemoteDataSource" title="combobox.RemoteDataSource"><tt class="xref py py-class docutils literal"><span class="pre">RemoteDataSource</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.MultiValueComboBox" title="combobox.MultiValueComboBox"><tt class="xref py py-class docutils literal"><span class="pre">MultiValueComboBox</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -116,73 +119,58 @@
 <h2>Configs<a class="headerlink" href="#configs" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#combobox.RemoteDataSource.config.paramName" title="combobox.RemoteDataSource.config.paramName"><tt class="xref py py-data docutils literal"><span class="pre">paramName</span></tt></a></li>
-<li><a class="reference internal" href="#combobox.RemoteDataSource.config.allowEmpty" title="combobox.RemoteDataSource.config.allowEmpty"><tt class="xref py py-data docutils literal"><span class="pre">allowEmpty</span></tt></a></li>
-<li><a class="reference internal" href="#combobox.RemoteDataSource.config.cache" title="combobox.RemoteDataSource.config.cache"><tt class="xref py py-data docutils literal"><span class="pre">cache</span></tt></a></li>
-<li><a class="reference internal" href="#combobox.RemoteDataSource.config.parse" title="combobox.RemoteDataSource.config.parse"><tt class="xref py py-data docutils literal"><span class="pre">parse</span></tt></a></li>
-<li><a class="reference internal" href="#combobox.RemoteDataSource.config.xhrCfg" title="combobox.RemoteDataSource.config.xhrCfg"><tt class="xref py py-data docutils literal"><span class="pre">xhrCfg</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.MultiValueComboBox.config.multiple" title="combobox.MultiValueComboBox.config.multiple"><tt class="xref py py-data docutils literal"><span class="pre">multiple</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.MultiValueComboBox.config.separator" title="combobox.MultiValueComboBox.config.separator"><tt class="xref py py-data docutils literal"><span class="pre">separator</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.MultiValueComboBox.config.separatorType" title="combobox.MultiValueComboBox.config.separatorType"><tt class="xref py py-data docutils literal"><span class="pre">separatorType</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.MultiValueComboBox.config.literal" title="combobox.MultiValueComboBox.config.literal"><tt class="xref py py-data docutils literal"><span class="pre">literal</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.MultiValueComboBox.config.alignWithCursor" title="combobox.MultiValueComboBox.config.alignWithCursor"><tt class="xref py py-data docutils literal"><span class="pre">alignWithCursor</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="class-detail">
 <h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="combobox.RemoteDataSource">
-<em class="property">class </em><tt class="descclassname">combobox.</tt><tt class="descname">RemoteDataSource</tt><a class="headerlink" href="#combobox.RemoteDataSource" title="Permalink to this definition">¶</a></dt>
+<dt id="combobox.MultiValueComboBox">
+<em class="property">class </em><tt class="descclassname">combobox.</tt><tt class="descname">MultiValueComboBox</tt><a class="headerlink" href="#combobox.MultiValueComboBox" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line"><strong>RemoteDataSource</strong> (config)</div>
+<div class="line"><strong>MultiValueComboBox</strong> (config)</div>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 配置项.</td>
-</tr>
-</tbody>
-</table>
+<ul class="simple">
+<li>继承自 <a class="reference internal" href="combobox.html#combobox.ComboBox" title="combobox.ComboBox"><tt class="xref py py-class docutils literal"><span class="pre">ComboBox</span></tt></a> , 包含其全部配置,属性,方法,事件.</li>
+</ul>
 </dd></dl>
 
 </div>
 <div class="section" id="configs-detail">
 <h2>Configs Detail<a class="headerlink" href="#configs-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="data">
-<dt id="combobox.RemoteDataSource.config.paramName">
-<tt class="descclassname">RemoteDataSource.config.</tt><tt class="descname">paramName</tt><a class="headerlink" href="#combobox.RemoteDataSource.config.paramName" title="Permalink to this definition">¶</a></dt>
-<dd><p>{String} - 用户输入发送到后端的参数名，默认 &#8216;q&#8217;</p>
+<dt id="combobox.MultiValueComboBox.config.multiple">
+<tt class="descclassname">MultiValueComboBox.config.</tt><tt class="descname">multiple</tt><a class="headerlink" href="#combobox.MultiValueComboBox.config.multiple" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认 false. 是否允许多个值的输入.</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="combobox.RemoteDataSource.config.parse">
-<tt class="descclassname">RemoteDataSource.config.</tt><tt class="descname">parse</tt><a class="headerlink" href="#combobox.RemoteDataSource.config.parse" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Function} - 可选. 如何根据用户输入对后台返回数据进行过滤。默认</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">parser</span><span class="p">(</span>
-    <span class="c1">// 用户输入</span>
-    <span class="nx">inputVal</span><span class="p">,</span>
-    <span class="c1">// 服务器返回数据</span>
-    <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
+<dt id="combobox.MultiValueComboBox.config.separator">
+<tt class="descclassname">MultiValueComboBox.config.</tt><tt class="descname">separator</tt><a class="headerlink" href="#combobox.MultiValueComboBox.config.separator" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 默认 &#8221;,;&#8221;. 当允许多个值输入时，分割多个值的分隔符.</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="combobox.RemoteDataSource.config.allowEmpty">
-<tt class="descclassname">RemoteDataSource.config.</tt><tt class="descname">allowEmpty</tt><a class="headerlink" href="#combobox.RemoteDataSource.config.allowEmpty" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Boolean} - 默认 false. 用户输入为空时是否发请求</p>
+<dt id="combobox.MultiValueComboBox.config.separatorType">
+<tt class="descclassname">MultiValueComboBox.config.</tt><tt class="descname">separatorType</tt><a class="headerlink" href="#combobox.MultiValueComboBox.config.separatorType" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认 &#8220;suffix&#8221;. 可取枚举值（&#8221;prefix&#8221;,&#8221;suffix&#8221;）. 表示分隔符在最前面( &#64;xx 模式)还是在最后面(gmail 模式).</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="combobox.RemoteDataSource.config.cache">
-<tt class="descclassname">RemoteDataSource.config.</tt><tt class="descname">cache</tt><a class="headerlink" href="#combobox.RemoteDataSource.config.cache" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Boolean} - 默认 false. 是否缓存服务器端数据</p>
+<dt id="combobox.MultiValueComboBox.config.alignWithCursor">
+<tt class="descclassname">MultiValueComboBox.config.</tt><tt class="descname">alignWithCursor</tt><a class="headerlink" href="#combobox.MultiValueComboBox.config.alignWithCursor" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认 false. 自动补全菜单是否和光标对齐.</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="combobox.RemoteDataSource.config.xhrCfg">
-<tt class="descclassname">RemoteDataSource.config.</tt><tt class="descname">xhrCfg</tt><a class="headerlink" href="#combobox.RemoteDataSource.config.xhrCfg" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Object} - 传递给 KISSY.io 的其他参数</p>
+<dt id="combobox.MultiValueComboBox.config.literal">
+<tt class="descclassname">MultiValueComboBox.config.</tt><tt class="descname">literal</tt><a class="headerlink" href="#combobox.MultiValueComboBox.config.literal" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 默认 &#8221; . 在该字符内的所有字符（包括分隔符）都算作普通字符.</p>
 </dd></dl>
 
 </div>
@@ -202,10 +190,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../component/index.html" title="Component"
+      <a href="filter-select.html" title="FilterSelect"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="LocalDataSource.html" title="LocalDataSource"
+      <a href="combobox.html" title="ComboBox"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
       <li><a href="../../index.html" >API Documentation</a> &#187; </li>

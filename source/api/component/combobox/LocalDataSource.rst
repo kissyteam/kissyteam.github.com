@@ -8,8 +8,8 @@ LocalDataSource
 
 .. code-block:: javascript
 
-    KISSY.use('combobox',function(S,Combobox){
-        // use Combobox.LocalDataSource
+    KISSY.use('combobox',function(S,ComboBox){
+        // use ComboBox.LocalDataSource
     });
 
 Class

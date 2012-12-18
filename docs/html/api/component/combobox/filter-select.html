@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>RemoteDataSource &mdash; KISSY v1.3 Documentation</title>
+<title>FilterSelect &mdash; KISSY v1.3 Documentation</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../_static/kissy.css"/>
@@ -82,10 +82,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../component/index.html" title="Component"
+      <a href="LocalDataSource.html" title="LocalDataSource"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="LocalDataSource.html" title="LocalDataSource"
+      <a href="multi-value-combobox.html" title="MultiValueComboBox"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
       <li><a href="../../index.html" >API Documentation</a> &#187; </li>
@@ -94,13 +94,13 @@
     </ul>
 </div>
 					
-  <div class="section" id="remotedatasource">
-<h1>RemoteDataSource<a class="headerlink" href="#remotedatasource" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="filterselect">
+<h1>FilterSelect<a class="headerlink" href="#filterselect" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
-<div class="line">本地数据源.</div>
+<div class="line">限定范围的输入框.</div>
 </div>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;combobox&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">ComboBox</span><span class="p">){</span>
-    <span class="c1">// use ComboBox.RemoteDataSource</span>
+    <span class="c1">// use ComboBox.FilterSelect</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -108,7 +108,7 @@
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#combobox.RemoteDataSource" title="combobox.RemoteDataSource"><tt class="xref py py-class docutils literal"><span class="pre">RemoteDataSource</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.FilterSelect" title="combobox.FilterSelect"><tt class="xref py py-class docutils literal"><span class="pre">FilterSelect</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -116,73 +116,30 @@
 <h2>Configs<a class="headerlink" href="#configs" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#combobox.RemoteDataSource.config.paramName" title="combobox.RemoteDataSource.config.paramName"><tt class="xref py py-data docutils literal"><span class="pre">paramName</span></tt></a></li>
-<li><a class="reference internal" href="#combobox.RemoteDataSource.config.allowEmpty" title="combobox.RemoteDataSource.config.allowEmpty"><tt class="xref py py-data docutils literal"><span class="pre">allowEmpty</span></tt></a></li>
-<li><a class="reference internal" href="#combobox.RemoteDataSource.config.cache" title="combobox.RemoteDataSource.config.cache"><tt class="xref py py-data docutils literal"><span class="pre">cache</span></tt></a></li>
-<li><a class="reference internal" href="#combobox.RemoteDataSource.config.parse" title="combobox.RemoteDataSource.config.parse"><tt class="xref py py-data docutils literal"><span class="pre">parse</span></tt></a></li>
-<li><a class="reference internal" href="#combobox.RemoteDataSource.config.xhrCfg" title="combobox.RemoteDataSource.config.xhrCfg"><tt class="xref py py-data docutils literal"><span class="pre">xhrCfg</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.FilterSelect.config.invalidMessage" title="combobox.FilterSelect.config.invalidMessage"><tt class="xref py py-data docutils literal"><span class="pre">invalidMessage</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="class-detail">
 <h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="combobox.RemoteDataSource">
-<em class="property">class </em><tt class="descclassname">combobox.</tt><tt class="descname">RemoteDataSource</tt><a class="headerlink" href="#combobox.RemoteDataSource" title="Permalink to this definition">¶</a></dt>
+<dt id="combobox.FilterSelect">
+<em class="property">class </em><tt class="descclassname">combobox.</tt><tt class="descname">FilterSelect</tt><a class="headerlink" href="#combobox.FilterSelect" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line"><strong>RemoteDataSource</strong> (config)</div>
+<div class="line"><strong>FilterSelect</strong> (config)</div>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 配置项.</td>
-</tr>
-</tbody>
-</table>
+<ul class="simple">
+<li>继承自 <a class="reference internal" href="combobox.html#combobox.ComboBox" title="combobox.ComboBox"><tt class="xref py py-class docutils literal"><span class="pre">ComboBox</span></tt></a> , 包含其全部配置,属性,方法,事件.</li>
+</ul>
 </dd></dl>
 
 </div>
 <div class="section" id="configs-detail">
 <h2>Configs Detail<a class="headerlink" href="#configs-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="data">
-<dt id="combobox.RemoteDataSource.config.paramName">
-<tt class="descclassname">RemoteDataSource.config.</tt><tt class="descname">paramName</tt><a class="headerlink" href="#combobox.RemoteDataSource.config.paramName" title="Permalink to this definition">¶</a></dt>
-<dd><p>{String} - 用户输入发送到后端的参数名，默认 &#8216;q&#8217;</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="combobox.RemoteDataSource.config.parse">
-<tt class="descclassname">RemoteDataSource.config.</tt><tt class="descname">parse</tt><a class="headerlink" href="#combobox.RemoteDataSource.config.parse" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Function} - 可选. 如何根据用户输入对后台返回数据进行过滤。默认</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">parser</span><span class="p">(</span>
-    <span class="c1">// 用户输入</span>
-    <span class="nx">inputVal</span><span class="p">,</span>
-    <span class="c1">// 服务器返回数据</span>
-    <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="data">
-<dt id="combobox.RemoteDataSource.config.allowEmpty">
-<tt class="descclassname">RemoteDataSource.config.</tt><tt class="descname">allowEmpty</tt><a class="headerlink" href="#combobox.RemoteDataSource.config.allowEmpty" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Boolean} - 默认 false. 用户输入为空时是否发请求</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="combobox.RemoteDataSource.config.cache">
-<tt class="descclassname">RemoteDataSource.config.</tt><tt class="descname">cache</tt><a class="headerlink" href="#combobox.RemoteDataSource.config.cache" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Boolean} - 默认 false. 是否缓存服务器端数据</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="combobox.RemoteDataSource.config.xhrCfg">
-<tt class="descclassname">RemoteDataSource.config.</tt><tt class="descname">xhrCfg</tt><a class="headerlink" href="#combobox.RemoteDataSource.config.xhrCfg" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Object} - 传递给 KISSY.io 的其他参数</p>
+<dt id="combobox.FilterSelect.config.invalidMessage">
+<tt class="descclassname">FilterSelect.config.</tt><tt class="descname">invalidMessage</tt><a class="headerlink" href="#combobox.FilterSelect.config.invalidMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 当用户的输入不匹配下拉提示的内容时的出错信息</p>
 </dd></dl>
 
 </div>
@@ -202,10 +159,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../component/index.html" title="Component"
+      <a href="LocalDataSource.html" title="LocalDataSource"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="LocalDataSource.html" title="LocalDataSource"
+      <a href="multi-value-combobox.html" title="MultiValueComboBox"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
       <li><a href="../../index.html" >API Documentation</a> &#187; </li>

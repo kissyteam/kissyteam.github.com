@@ -8,10 +8,10 @@ KISSY.use("combobox", function (S, ComboBox) {
         '"d23434" <d23434@gmail.com>'
     ];
 
-    var basicComboBox = new ComboBox({
+    var basicComboBox = new ComboBox.MultiValueComboBox({
         render:'#container',
-        multiple:true,
         width:500,
+        separator:',',
         hasTrigger:false,
         input:S.all('<textarea ' +
             'style="width: 100%;height:18px;" ' +

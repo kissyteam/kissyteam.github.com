@@ -6,7 +6,7 @@ combobox 的 weibo 模式
 Class
 -----------------------------------------------
 
-  * :class:`Combobox`
+  * :class:`ComboBox`
 
 combobox 的 weibo 模式
 --------------------------------------------------

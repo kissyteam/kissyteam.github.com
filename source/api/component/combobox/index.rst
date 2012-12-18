@@ -1,11 +1,11 @@
 .. module:: combobox
 
-Combobox
+ComboBox
 ==================================================
 
-|  Combobox
+|  ComboBox
 
-Classes in Combobox
+Classes in ComboBox
 -----------------------------------------------
 
 .. toctree::
@@ -13,5 +13,7 @@ Classes in Combobox
 
 
     combobox
+    multi-value-combobox
+    filter-select
     LocalDataSource
     RemoteDataSource

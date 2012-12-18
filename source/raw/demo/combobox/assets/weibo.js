@@ -8,9 +8,8 @@ KISSY.use("combobox", function (S, ComboBox) {
         'fool2fish'
     ];
 
-    var basicComboBox = new ComboBox({
+    var basicComboBox = new ComboBox.MultiValueComboBox({
         render:'#container',
-        multiple:true,
         width:500,
         hasTrigger:false,
         input:S.all('<textarea ' +

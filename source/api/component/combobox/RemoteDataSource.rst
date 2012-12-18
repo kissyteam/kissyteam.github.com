@@ -8,8 +8,8 @@ RemoteDataSource
 
 .. code-block:: javascript
 
-    KISSY.use('combobox',function(S,Combobox){
-        // use Combobox.RemoteDataSource
+    KISSY.use('combobox',function(S,ComboBox){
+        // use ComboBox.RemoteDataSource
     });
 
 Class
