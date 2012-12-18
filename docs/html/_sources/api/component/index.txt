@@ -9,6 +9,7 @@ Component
 
    button/index
    calendar/index
+   color/index
    combobox/index
    component/index
    datalazyload/index
@@ -21,6 +22,7 @@ Component
    overlay/index
    resizable/index
    rich-base/index
+   stylesheet/index
    swf/index
    switchable/index
    tree/index
