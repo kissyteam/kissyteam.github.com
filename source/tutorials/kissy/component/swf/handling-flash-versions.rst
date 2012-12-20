@@ -13,7 +13,7 @@ author: `龙藏 <oicuicu@gmail.com>`_
 .. code-block:: javascript
 
     KISSY.use('swf',function(S,SWF){
-        if(SWF.fpvGEQ('9.1.0') {
+        if(SWF.fpvGTE('9.1.0') {
             // 符合浏览SWF内容版本
         }
     });

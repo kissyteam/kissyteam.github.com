@@ -68,7 +68,7 @@ Static Methods
 -----------------------------------------------
 
   * :meth:`~SWF.fpv`
-  * :meth:`~SWF.fpvGEQ`
+  * :meth:`~SWF.fpvGTE`
   * :meth:`~SWF.getSrc`
 
 
@@ -182,9 +182,9 @@ Static Methods Detail
     :returns: {String[]} 版本号数组，例如 ['9','1','252']
 
 
-.. method:: SWF.fpvGEQ
+.. method:: SWF.fpvGTE
 
-    | **fpvGEQ( ver, force ) <static>**
+    | **fpvGTE( ver, force ) <static>**
     | 检查当前版本是否比提供的参数版本高
 
     :param String ver: 待比较的版本号，例如 "9.1.252"
