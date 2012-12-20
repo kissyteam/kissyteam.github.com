@@ -22,6 +22,8 @@ SWF
             render:'#container'
         });
 
+        swf.get('el') // => 对应 swf dom 节点
+
         swf.callSWF('save',[key,value]);
     });
 
@@ -76,6 +78,7 @@ Class Detail
 .. class:: SWF
     
     | **SWF** (config)
+    | 继承自 :class:`~base.Base`. 请用 get 获取属性值.
     
     :param Object config: 实例化可拖放对象的配置项, 详细见下节.
 
