@@ -21,7 +21,7 @@ KISSY 源码规范
 
 .. code-block:: javascript
 
-    KISSY.add('ajax/iframe-transport',function(){
+    KISSY.add('ajax/iframe-transport', function () {
     });
 
 
@@ -38,31 +38,31 @@ KISSY 源码规范
 .. code-block:: javascript
 
     var domAttribute = 'type';
-    function MenuButton(){
+    function MenuButton() {
     }
     MenuButton.prototype.alignWithEl = true;
     /**
      * @protected
      */
-    MenuButton.prototype.handleClickInternal=function(){};
+    MenuButton.prototype.handleClickInternal = function() {};
 
 私有成员函数以 ``_`` 开头，推荐放入闭包中，使用 camelCasing，例如
 
 .. code-block:: javascript
 
-    KISSY.add('dom',function(){
-        var DOM={
-            width: function(){
+    KISSY.add('dom', function () {
+        var DOM = {
+            width: function() {
                 return this._getWidth();
             },
-            _getWidth: function(){
+            _getWidth: function() {
 
             },
-            height: function(){
+            height: function() {
                 return getHeight(this);
             }
         };
-        function getHeight(){
+        function getHeight() {
 
         }
     });
@@ -91,7 +91,7 @@ css 类名
     /**
      * @class Overlay
      */
-    function Overlay(){
+    function Overlay() {
 
     }
 
@@ -111,7 +111,7 @@ css 类名
        adjust alignment, for example:
        http://docs.kissyui.com
     */
-    var x = overlay.set('align',{});
+    var x = overlay.set('align', {});
 
 
 代码组织
@@ -123,7 +123,7 @@ css 类名
 
 .. code-block:: javascript
 
-    KISSY.add('overlay',function(){
+    KISSY.add('overlay', function () {
         function Overlay(){
 
         }
@@ -137,14 +137,14 @@ css 类名
 
 .. code-block:: javascript
 
-    KISSY.add('overlay',function(){
+    KISSY.add('overlay', function () {
         function Overlay(){
 
         }
     });
 
 
-    KISSY.add('overlay/dialog',function(){
+    KISSY.add('overlay/dialog', function () {
         function Dialog(){
 
         }
@@ -165,7 +165,7 @@ css 类名
 
 .. code-block:: javascript
 
-    KISSY.add(function(S, Component){
+    KISSY.add(function (S, Component) {
 
         var DOM = S.DOM;
 
@@ -195,17 +195,17 @@ css 类名
                 /**
                  * @type String
                  */
-                content:{}
+                content: {}
             }
         });
 
         // ------------------------- private
 
-        function onHover(){
+        function onHover() {
 
         }
 
-    },{
+    }, {
         requires:['Component']
     });
 
@@ -244,7 +244,7 @@ css 类名
 .. code-block:: javascript
 
     // 推荐
-    var x='<a href="://taobao.com">';
+    var x = '<a href="://taobao.com">';
 
 .. code-block:: javascript
 
@@ -271,8 +271,8 @@ css 类名
 .. code-block:: javascript
 
     Draggable.ATTRS = {
-        node:{
-            getter: function(selector ){ return S.all(selector); }
+        node: {
+            getter: function (selector) { return S.all(selector); }
         }
     };
 
@@ -283,7 +283,7 @@ css 类名
     if (UA.ie) {
         do {
             doIe();
-        } while (i>0);
+        } while(i>0);
     }
 
 即使只有一条语句，也请加括号。 例如
@@ -301,7 +301,7 @@ css 类名
 
 .. code-block:: javascript
 
-    var x = { getter: function() { return 1; } };
+    var x = { getter: function () { return 1; } };
 
 如果 ``)`` 不是 ``;`` ， 那么 ``(`` 前和 ``)`` 后要加入空格，例如应当
 

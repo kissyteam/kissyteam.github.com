@@ -109,7 +109,7 @@
 <li>文件名称使用小写表示，复合词用 <tt class="docutils literal"><span class="pre">-</span></tt> 分隔，例如 <tt class="docutils literal"><span class="pre">attr.js</span></tt> , <tt class="docutils literal"><span class="pre">iframe-transport.js</span></tt> .</li>
 <li>所有的代码以模块形式组织，模块名如果写的话需要和文件路径保持一致，例如</li>
 </ol>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;ajax/iframe-transport&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;ajax/iframe-transport&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -122,29 +122,29 @@
 <li>对变量，非私有的成员函数，成员对象，局部变量使用 camelCasing，例如</li>
 </ol>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">domAttribute</span> <span class="o">=</span> <span class="s1">&#39;type&#39;</span><span class="p">;</span>
-<span class="kd">function</span> <span class="nx">MenuButton</span><span class="p">(){</span>
+<span class="kd">function</span> <span class="nx">MenuButton</span><span class="p">()</span> <span class="p">{</span>
 <span class="p">}</span>
 <span class="nx">MenuButton</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">alignWithEl</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 <span class="cm">/**</span>
 <span class="cm"> * @protected</span>
 <span class="cm"> */</span>
-<span class="nx">MenuButton</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">handleClickInternal</span><span class="o">=</span><span class="kd">function</span><span class="p">(){};</span>
+<span class="nx">MenuButton</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">handleClickInternal</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{};</span>
 </pre></div>
 </div>
 <p>私有成员函数以 <tt class="docutils literal"><span class="pre">_</span></tt> 开头，推荐放入闭包中，使用 camelCasing，例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;dom&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="kd">var</span> <span class="nx">DOM</span><span class="o">=</span><span class="p">{</span>
-        <span class="nx">width</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;dom&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">width</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
             <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_getWidth</span><span class="p">();</span>
         <span class="p">},</span>
-        <span class="nx">_getWidth</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">_getWidth</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
         <span class="p">},</span>
-        <span class="nx">height</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">height</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
             <span class="k">return</span> <span class="nx">getHeight</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">};</span>
-    <span class="kd">function</span> <span class="nx">getHeight</span><span class="p">(){</span>
+    <span class="kd">function</span> <span class="nx">getHeight</span><span class="p">()</span> <span class="p">{</span>
 
     <span class="p">}</span>
 <span class="p">});</span>
@@ -170,7 +170,7 @@
 <div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/**</span>
 <span class="cm"> * @class Overlay</span>
 <span class="cm"> */</span>
-<span class="kd">function</span> <span class="nx">Overlay</span><span class="p">(){</span>
+<span class="kd">function</span> <span class="nx">Overlay</span><span class="p">()</span> <span class="p">{</span>
 
 <span class="p">}</span>
 </pre></div>
@@ -185,7 +185,7 @@
 <span class="cm">   adjust alignment, for example:</span>
 <span class="cm">   http://docs.kissyui.com</span>
 <span class="cm">*/</span>
-<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">overlay</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;align&#39;</span><span class="p">,{});</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">overlay</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;align&#39;</span><span class="p">,</span> <span class="p">{});</span>
 </pre></div>
 </div>
 </div>
@@ -193,7 +193,7 @@
 <h2>代码组织<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>一个模块文件中不要包含多个公开的类，例如</p>
 <p>不要这样：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;overlay&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;overlay&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">function</span> <span class="nx">Overlay</span><span class="p">(){</span>
 
     <span class="p">}</span>
@@ -205,14 +205,14 @@
 </pre></div>
 </div>
 <p>要这样分成两个模块（文件）：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;overlay&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;overlay&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">function</span> <span class="nx">Overlay</span><span class="p">(){</span>
 
     <span class="p">}</span>
 <span class="p">});</span>
 
 
-<span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;overlay/dialog&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;overlay/dialog&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">function</span> <span class="nx">Dialog</span><span class="p">(){</span>
 
     <span class="p">}</span>
@@ -230,7 +230,7 @@
 <li>模块私有函数</li>
 </ol>
 <p>例如：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Component</span><span class="p">){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Component</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="kd">var</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">;</span>
 
@@ -260,17 +260,17 @@
             <span class="cm">/**</span>
 <span class="cm">             * @type String</span>
 <span class="cm">             */</span>
-            <span class="nx">content</span><span class="o">:</span><span class="p">{}</span>
+            <span class="nx">content</span><span class="o">:</span> <span class="p">{}</span>
         <span class="p">}</span>
     <span class="p">});</span>
 
     <span class="c1">// ------------------------- private</span>
 
-    <span class="kd">function</span> <span class="nx">onHover</span><span class="p">(){</span>
+    <span class="kd">function</span> <span class="nx">onHover</span><span class="p">()</span> <span class="p">{</span>
 
     <span class="p">}</span>
 
-<span class="p">},{</span>
+<span class="p">},</span> <span class="p">{</span>
     <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;Component&#39;</span><span class="p">]</span>
 <span class="p">});</span>
 </pre></div>
@@ -299,7 +299,7 @@
 <h3>引号<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p>尽可能使用单引号，而不是双引号；例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// 推荐</span>
-<span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="s1">&#39;&lt;a href=&quot;://taobao.com&quot;&gt;&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="s1">&#39;&lt;a href=&quot;://taobao.com&quot;&gt;&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// 不推荐</span>
@@ -320,8 +320,8 @@
 </div>
 <p>大括号内只包含一行语句的可以不换行，例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Draggable</span><span class="p">.</span><span class="nx">ATTRS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">node</span><span class="o">:</span><span class="p">{</span>
-        <span class="nx">getter</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">selector</span> <span class="p">){</span> <span class="k">return</span> <span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">selector</span><span class="p">);</span> <span class="p">}</span>
+    <span class="nx">node</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">getter</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">selector</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">selector</span><span class="p">);</span> <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">};</span>
 </pre></div>
@@ -330,7 +330,7 @@
 <div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">ie</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">do</span> <span class="p">{</span>
         <span class="nx">doIe</span><span class="p">();</span>
-    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nx">i</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="nx">i</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -344,7 +344,7 @@
 <div class="section" id="id12">
 <h3>空格用法<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p>如果大括号不换行，那么需要在 <tt class="docutils literal"><span class="pre">{</span></tt> 后和 <tt class="docutils literal"><span class="pre">}</span></tt> 前加入空格，例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">getter</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span> <span class="p">};</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">getter</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span> <span class="p">};</span>
 </pre></div>
 </div>
 <p>如果 <tt class="docutils literal"><span class="pre">)</span></tt> 不是 <tt class="docutils literal"><span class="pre">;</span></tt> ， 那么 <tt class="docutils literal"><span class="pre">(</span></tt> 前和 <tt class="docutils literal"><span class="pre">)</span></tt> 后要加入空格，例如应当</p>
