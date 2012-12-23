@@ -27,7 +27,8 @@ Methods
     :param String tag: KISSY 内置模块时间戳，默认 KISSY 当前 build 时间
 
     :param Boolean combine: 是否开启自动 combo 模式，默认 false 不开启.
-    自动 combo 模式要求 use 前配置好依赖关系，详见 :ref:`教程 <loader_tutorial>` .
+        自动 combo 模式要求 use 前配置好依赖关系，详见
+        :ref:`教程 <loader_tutorial>`
 
     :param Object config.packages: 以单个包名为键，单个包配置对象为值的键值对对象。单个包配置对象包括：
 

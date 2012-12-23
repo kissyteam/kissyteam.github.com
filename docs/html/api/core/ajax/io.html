@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>io &mdash; KISSY v1.3 Documentation</title>
+<title>IO &mdash; KISSY v1.3 Documentation</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../_static/kissy.css"/>
@@ -81,17 +81,26 @@
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
+    <li class="right" >
+      <a href="../anim/index.html" title="Anim"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="serialize.html" title="serialize"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">ajax</a> &#187; </li> 
     </ul>
 </div>
 					
   <div class="section" id="io">
-<h1>io<a class="headerlink" href="#io" title="Permalink to this headline">¶</a></h1>
+<h1>IO<a class="headerlink" href="#io" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module">
 <h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="index.html#module-io" title="io"><tt class="xref py py-mod docutils literal"><span class="pre">io</span></tt></a></li>
+<li><a class="reference internal" href="#io.IO" title="io.IO"><tt class="xref py py-class docutils literal"><span class="pre">IO</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -129,34 +138,46 @@
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="events">
-<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#io.io.Events.start" title="io.io.Events.start"><tt class="xref py py-func docutils literal"><span class="pre">start()</span></tt></a></li>
-<li><a class="reference internal" href="#io.io.Events.send" title="io.io.Events.send"><tt class="xref py py-func docutils literal"><span class="pre">send()</span></tt></a></li>
-<li><a class="reference internal" href="#io.io.Events.success" title="io.io.Events.success"><tt class="xref py py-func docutils literal"><span class="pre">success()</span></tt></a></li>
-<li><a class="reference internal" href="#io.io.Events.error" title="io.io.Events.error"><tt class="xref py py-func docutils literal"><span class="pre">error()</span></tt></a></li>
+<li><a class="reference internal" href="#io.readyState" title="io.readyState"><tt class="xref py py-attr docutils literal"><span class="pre">readyState</span></tt></a></li>
+<li><a class="reference internal" href="#io.status" title="io.status"><tt class="xref py py-attr docutils literal"><span class="pre">status</span></tt></a></li>
+<li><a class="reference internal" href="#io.statusText" title="io.statusText"><tt class="xref py py-attr docutils literal"><span class="pre">statusText</span></tt></a></li>
+<li><a class="reference internal" href="#io.responseText" title="io.responseText"><tt class="xref py py-attr docutils literal"><span class="pre">responseText</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="methods-detail">
-<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="io.io">
-<tt class="descclassname">io.</tt><tt class="descname">io</tt><big>(</big><big>)</big><a class="headerlink" href="#io.io" title="Permalink to this definition">¶</a></dt>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#io.getResponseHeader" title="io.getResponseHeader"><tt class="xref py py-meth docutils literal"><span class="pre">getResponseHeader()</span></tt></a></li>
+<li><a class="reference internal" href="#io.abort" title="io.abort"><tt class="xref py py-meth docutils literal"><span class="pre">abort()</span></tt></a></li>
+<li><a class="reference internal" href="#io.getNativeXhr" title="io.getNativeXhr"><tt class="xref py py-meth docutils literal"><span class="pre">getNativeXhr()</span></tt></a></li>
+<li><a class="reference internal" href="../../component/promise/promise.html#seed.Promise.prototype.then" title="seed.Promise.prototype.then"><tt class="xref py py-meth docutils literal"><span class="pre">then()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="io.IO">
+<em class="property">class </em><tt class="descclassname">io.</tt><tt class="descname">IO</tt><a class="headerlink" href="#io.IO" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line">XHR <strong>io</strong> ( cfg )</div>
-<div class="line">发送 io 请求</div>
+<div class="line"><strong>IO</strong> ( cfg )</div>
+<div class="line">构建 io 请求并发送, 继承自 <a class="reference internal" href="../../component/promise/promise.html#seed.Promise" title="seed.Promise"><tt class="xref py py-class docutils literal"><span class="pre">Promise</span></tt></a> .</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><strong>cfg</strong> (<em>Object</em>) &#8211; <p>用来配置请求的键值对对象.所有的配置项都是可选的,可以通过 <a class="reference internal" href="setupConfig.html#io.setupConfig" title="io.setupConfig"><tt class="xref py py-func docutils literal"><span class="pre">io.setupConfig()</span></tt></a> 来设置默认配置. 见下节</p>
-<p>返回 <a class="reference internal" href="xhr.html#io.XhrObj" title="io.XhrObj"><tt class="xref py py-class docutils literal"><span class="pre">XhrObj</span></tt></a> 对象.</p>
-</td>
+<tr><td>&nbsp;</td><td class="field-body"><strong>cfg</strong> (<em>Object</em>) &#8211; 用来配置请求的键值对对象.
+所有的配置项都是可选的,可以通过
+<a class="reference internal" href="setupConfig.html#io.setupConfig" title="io.setupConfig"><tt class="xref py py-func docutils literal"><span class="pre">io.setupConfig()</span></tt></a>
+来设置默认配置.</td>
 </tr>
 </tbody>
 </table>
@@ -174,7 +195,8 @@
 <dl class="data">
 <dt id="io.cfg.accepts">
 <tt class="descclassname">cfg.</tt><tt class="descname">accepts</tt><a class="headerlink" href="#io.cfg.accepts" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Object} - 该配置和 <a class="reference internal" href="#io.cfg.dataType" title="io.cfg.dataType"><tt class="xref py py-data docutils literal"><span class="pre">dataType</span></tt></a> 一起确定当前发送给服务器的 Accept 头. 默认包括</p>
+<dd><p>{Object} - 该配置和 <a class="reference internal" href="#io.cfg.dataType" title="io.cfg.dataType"><tt class="xref py py-data docutils literal"><span class="pre">dataType</span></tt></a>
+一起确定当前发送给服务器的 Accept 头. 默认包括</p>
 <blockquote>
 <div><div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="nx">xml</span><span class="o">:</span> <span class="s2">&quot;application/xml, text/xml&quot;</span><span class="p">,</span>
@@ -191,8 +213,7 @@
 <dt id="io.cfg.dataType">
 <tt class="descclassname">cfg.</tt><tt class="descname">dataType</tt><a class="headerlink" href="#io.cfg.dataType" title="Permalink to this definition">¶</a></dt>
 <dd><p>{String} - 期望能够从服务器返回的数据类型.</p>
-<blockquote>
-<div>如果没有指定，kissy 将尽量从返回的 <tt class="docutils literal"><span class="pre">mimeType</span></tt> | <tt class="docutils literal"><span class="pre">Content-type</span></tt> 相应头中推导出来 (&#8216;text/xml&#8217; 将推导出 xml , &#8216;text/json&#8217; 将推导出 json).</div></blockquote>
+<p>如果没有指定，kissy 将尽量从返回的 <tt class="docutils literal"><span class="pre">mimeType</span></tt> | <tt class="docutils literal"><span class="pre">Content-type</span></tt> 相应头中推导出来 (&#8216;text/xml&#8217; 将推导出 xml , &#8216;text/json&#8217; 将推导出 json).</p>
 <p>默认支持的类型（该类型的响应信息会作为第一个参数传到 <tt class="docutils literal"><span class="pre">success</span></tt> <tt class="docutils literal"><span class="pre">complete</span></tt> 回调中）有:</p>
 <blockquote>
 <div><ul class="simple">
@@ -439,7 +460,7 @@
 <tt class="descclassname">cfg.</tt><tt class="descname">beforeSend</tt><a class="headerlink" href="#io.cfg.beforeSend" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Function} - 发送请求前的拦截函数，传入参数 （xhrObject, config）</p>
 <ul class="simple">
-<li>xhrObject 为 <a class="reference internal" href="xhr.html#io.XhrObj" title="io.XhrObj"><tt class="xref py py-class docutils literal"><span class="pre">io.XhrObj</span></tt></a> 类型</li>
+<li>xhrObject 为 <tt class="xref py py-class docutils literal"><span class="pre">io.XhrObj</span></tt> 类型</li>
 </ul>
 <p>例如可以通过该函数实现上传进度监控</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="nx">IO</span><span class="p">({</span>
@@ -464,73 +485,72 @@
 </dd></dl>
 
 </div>
-<div class="section" id="events-detail">
-<h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>所有 io 请求都会在 io 模块上触发事件，可通过 <tt class="docutils literal"><span class="pre">io.on</span></tt> 来捕获所有的 io 请求，例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">indicator</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#indicator&quot;</span><span class="p">),</span><span class="nx">num</span><span class="p">;</span>
+<div class="section" id="attributes-detail">
+<h2>Attributes Detail<a class="headerlink" href="#attributes-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="attribute">
+<dt id="io.readyState">
+<tt class="descclassname">io.</tt><tt class="descname">readyState</tt><a class="headerlink" href="#io.readyState" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 表示请求完成状态。可用于判断当前请求是否完成. 4 表示完成，否则表示正在进行中.(xhr 会有更多取值，jsonp script 只有 0(初始化) 1(发送中) 4(完成))</p>
+</dd></dl>
 
-<span class="c1">//发送前显示 loading 状态</span>
-<span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;send&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">num</span><span class="o">++</span><span class="p">;</span>
-    <span class="nx">indicator</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
-<span class="p">});</span>
+<dl class="attribute">
+<dt id="io.status">
+<tt class="descclassname">io.</tt><tt class="descname">status</tt><a class="headerlink" href="#io.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 响应状态码. xhr 会有更多取值。``jsonp script`` 只有 200(成功) , 500(出错)</p>
+</dd></dl>
 
-<span class="c1">//发送后隐藏 loading 状态</span>
-<span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;complete&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">num</span><span class="o">--</span><span class="p">;</span>
-    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">num</span><span class="p">)</span>
-        <span class="nx">indicator</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
-<span class="p">});</span>
-</pre></div>
+<dl class="attribute">
+<dt id="io.statusText">
+<tt class="descclassname">io.</tt><tt class="descname">statusText</tt><a class="headerlink" href="#io.statusText" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 响应状态字符串. 最终同回调 <a class="reference internal" href="#io.cfg.complete" title="io.cfg.complete"><tt class="xref py py-data docutils literal"><span class="pre">complete</span></tt></a> 中的 <tt class="docutils literal"><span class="pre">textStatus</span></tt> 一致.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="io.responseText">
+<tt class="descclassname">io.</tt><tt class="descname">responseText</tt><big>(</big><em>responseXML</em><big>)</big><a class="headerlink" href="#io.responseText" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 返回响应对应的 text 和 xml（如果需要）.</p>
+</dd></dl>
+
 </div>
-</div></blockquote>
-<dl class="function">
-<dt id="io.io.Events.start">
-<tt class="descclassname">io.Events.</tt><tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#io.io.Events.start" title="Permalink to this definition">¶</a></dt>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="io.getResponseHeader">
+<tt class="descclassname">io.</tt><tt class="descname">getResponseHeader</tt><big>(</big><big>)</big><a class="headerlink" href="#io.getResponseHeader" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line"><strong>start</strong> ()</div>
-<div class="line">当配置初始化后，获取传输对象前触发。事件对象包括一下属性</div>
+<div class="line"><strong>getResponseHeader</strong> (key)</div>
+<div class="line">获得对应的响应头值.仅对于 xhr 请求有效.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>start.event.ajaxConfig</strong> (<em>Object</em>) &#8211; 当前的配置项</li>
-<li><strong>start.event.xhr</strong> (<em>Object</em>) &#8211; 当前的请求关联的 <a class="reference internal" href="xhr.html#io.XhrObj" title="io.XhrObj"><tt class="xref py py-class docutils literal"><span class="pre">XhrObj</span></tt></a> 对象</li>
-</ul>
-</td>
+<tr><td>&nbsp;</td><td class="field-body"><strong>key</strong> (<em>String</em>) &#8211; 响应头名</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<dl class="function">
-<dt id="io.io.Events.send">
-<tt class="descclassname">io.Events.</tt><tt class="descname">send</tt><big>(</big><big>)</big><a class="headerlink" href="#io.io.Events.send" title="Permalink to this definition">¶</a></dt>
+<dl class="method">
+<dt id="io.getNativeXhr">
+<tt class="descclassname">io.</tt><tt class="descname">getNativeXhr</tt><big>(</big><big>)</big><a class="headerlink" href="#io.getNativeXhr" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line"><strong>send</strong> ()</div>
-<div class="line">请求发送前触发。可用于 loading indicator 显示时机。事件对象同 <tt class="docutils literal"><span class="pre">start</span></tt> 事件.</div>
+<div class="line"><strong>getNativeXhr</strong> ()</div>
+<div class="line">获得内置原生的 xhr 对象</div>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="io.io.Events.success">
-<tt class="descclassname">io.Events.</tt><tt class="descname">success</tt><big>(</big><big>)</big><a class="headerlink" href="#io.io.Events.success" title="Permalink to this definition">¶</a></dt>
+<dl class="method">
+<dt id="io.abort">
+<tt class="descclassname">io.</tt><tt class="descname">abort</tt><big>(</big><big>)</big><a class="headerlink" href="#io.abort" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line"><strong>success</strong> ()</div>
-<div class="line">服务器返回成功后触发.事件对象同 <tt class="docutils literal"><span class="pre">start</span></tt> 事件.</div>
+<div class="line"><strong>abort</strong> ()</div>
+<div class="line">如果当前请求还没完成（进行中状态）则中断当前的请求，否则什么也不做.</div>
 </div>
-</dd></dl>
-
-<dl class="function">
-<dt id="io.io.Events.error">
-<tt class="descclassname">io.Events.</tt><tt class="descname">error</tt><big>(</big><big>)</big><a class="headerlink" href="#io.io.Events.error" title="Permalink to this definition">¶</a></dt>
-<dd><div class="line-block">
-<div class="line"><strong>error</strong> ()</div>
-<div class="line">服务器返回失败后触发.事件对象同 <tt class="docutils literal"><span class="pre">start</span></tt> 事件.</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">不仅可以中断 xhr 请求，还可以中断 jsonp 以及 script 请求，如果中断前该请求正在进行中则中断后会触发 <a class="reference internal" href="#io.cfg.error" title="io.cfg.error"><tt class="xref py py-data docutils literal"><span class="pre">error</span></tt></a> ( textStatus == &#8220;abort&#8221; ) 以及 <a class="reference internal" href="#io.cfg.complete" title="io.cfg.complete"><tt class="xref py py-data docutils literal"><span class="pre">complete</span></tt></a> 回调.</p>
 </div>
 </dd></dl>
 
@@ -539,7 +559,7 @@
 <h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><strong>载入并执行一段脚本</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">io</span><span class="p">({</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">IO</span><span class="p">({</span>
    <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
    <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;test.js&quot;</span><span class="p">,</span>
    <span class="nx">dataType</span><span class="o">:</span> <span class="s2">&quot;script&quot;</span>
@@ -547,7 +567,7 @@
 </pre></div>
 </div>
 <p><strong>发送数据给服务器，服务器返回后通知用户</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">io</span><span class="p">({</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">IO</span><span class="p">({</span>
    <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
    <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;some.php&quot;</span><span class="p">,</span>
    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
@@ -560,7 +580,7 @@
 </pre></div>
 </div>
 <p><strong>取得最新的 html 并显示</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">io</span><span class="p">({</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">IO</span><span class="p">({</span>
   <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;test.html&quot;</span><span class="p">,</span>
   <span class="nx">cache</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">html</span><span class="p">){</span>
@@ -572,7 +592,7 @@
 <p><strong>发送 xml 文档给服务器</strong></p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">xmlDocument</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">parseXML</span><span class="p">(</span><span class="s2">&quot;&lt;a&gt;h&lt;/a&gt;&quot;</span><span class="p">);</span>
 
-<span class="nx">io</span><span class="p">({</span>
+<span class="k">new</span> <span class="nx">IO</span><span class="p">({</span>
    <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;page.php&quot;</span><span class="p">,</span>
    <span class="nx">processData</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
    <span class="nx">contentType</span><span class="o">:</span><span class="s1">&#39;text/xml&#39;</span><span class="p">,</span>
@@ -588,7 +608,7 @@
 <span class="nt">&lt;/form&gt;</span>
 
 <span class="nt">&lt;script&gt;</span>
-    <span class="nx">io</span><span class="p">({</span>
+    <span class="k">new</span> <span class="nx">IO</span><span class="p">({</span>
         <span class="nx">url</span><span class="o">:</span><span class="s1">&#39;send.php&#39;</span><span class="p">,</span>
         <span class="nx">form</span><span class="o">:</span><span class="s1">&#39;#test&#39;</span><span class="p">,</span>
         <span class="nx">type</span><span class="o">:</span><span class="s1">&#39;post&#39;</span><span class="p">,</span>
@@ -617,7 +637,16 @@
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
+    <li class="right" >
+      <a href="../anim/index.html" title="Anim"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="serialize.html" title="serialize"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">ajax</a> &#187; </li> 
     </ul>
 </div>
 					<div id="disqus_thread"></div>

@@ -1,6 +1,6 @@
 .. currentmodule:: io
 
-io.post
+post
 =================================
 
 Module
@@ -29,11 +29,11 @@ Method
     | data 可忽略，同上个函数描述.
     
 
-    实际上该函数是 :meth:`~io.io` 的 shortcut
+    实际上该函数是 :class:`~io.IO` 的 shortcut
 
     .. code-block:: javascript
 
-        io.post = function(url, data, callback, dataType) {
+        IO.post = function(url, data, callback, dataType) {
             // data 参数可省略
             if (S.isFunction(data)) {
                 dataType = callback;
@@ -41,7 +41,7 @@ Method
                 data = undefined;
             }
 
-            return io({
+            return new IO({
                 type:"post",
                 url: url,
                 data: data,
@@ -63,14 +63,14 @@ Demo
 
     .. code-block:: javascript
 
-        KISSY.io.post("test.php");
+        KISSY.IO.post("test.php");
 
 
     **请求页面 test.php , 并附带一些参数传递给后端**
 
     .. code-block:: javascript
 
-        KISSY.io.post("test.php",{
+        KISSY.IO.post("test.php",{
             name:"john".
             time:"2pm"
         });
@@ -79,7 +79,7 @@ Demo
 
     .. code-block:: javascript
 
-        KISSY.io.post("test.php",function(d){
+        KISSY.IO.post("test.php",function(d){
             alert(d);
         });
 
@@ -87,6 +87,6 @@ Demo
 
     .. code-block:: javascript
 
-        KISSY.io.post("test.php",function(d){
+        KISSY.IO.post("test.php",function(d){
             alert(d);
         },"json");

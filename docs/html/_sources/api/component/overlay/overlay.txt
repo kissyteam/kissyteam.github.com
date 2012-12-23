@@ -83,13 +83,21 @@ Class Detail
     | xclass: 'overlay'
 
     | 继承自
+
     :class:`~component.Controller`
+
     :class:`~component.UIBase.Box`
+
     :class:`~component.extension.ContentBox` ,
+
     :class:`~component.extension.Align` ,
+
     :class:`~component.extension.Position` ,
+
     :class:`~component.UIBase.Resize` ,
+
     :class:`~component.UIBase.Mask` ,
+
     包含其全部配置,属性,方法,事件.
 
     :param Object config: 配置项, 详细见下方 **Configs Detail** .

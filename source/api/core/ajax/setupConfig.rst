@@ -1,6 +1,6 @@
 .. currentmodule:: io
 
-io.setupConfig
+setupConfig
 =================================
 
 
@@ -22,7 +22,7 @@ Method
     :param Object cfg: 用来配置默认请求配置的键值对对象。其中的每个配置都是可选的.
 
 
-    所有可配置的项参见 :meth:`KISSY.io() <io.io>` .通过 ``setupConfig`` 设置后，除非单个请求设置了对应的配置值，否则后续所有的 ajax 请求都使用该设置.
+    所有可配置的项参见 :class:`IO` .通过 ``setupConfig`` 设置后，除非单个请求设置了对应的配置值，否则后续所有的 ajax 请求都使用该设置.
 
 
     例如，下面代码在连续访问 ``ping.php`` 前，设置了 ``url`` 的默认值.
@@ -31,7 +31,7 @@ Method
 
     .. code-block:: javascript
 
-        io.setupConfig({
+        IO.setupConfig({
             url:'ping.php'
         });
 
@@ -42,7 +42,7 @@ Method
 
     .. code-block:: javascript
 
-        io({
+        IO({
             // url 没设置，就为 ping.php
             data : {name:'dan'}
         });
@@ -55,11 +55,11 @@ Demo
 
     .. code-block:: javascript
 
-        io.setupConfig({
+        IO.setupConfig({
             url:'/xmlhttp/',
             type:'post'
         });
 
-        io({
+        IO({
             data:{x:'mydata'}
         });

@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>io.jsonp &mdash; KISSY v1.3 Documentation</title>
+<title>jsonp &mdash; KISSY v1.3 Documentation</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../_static/kissy.css"/>
@@ -81,12 +81,21 @@
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
+    <li class="right" >
+      <a href="upload.html" title="upload"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="getJSON.html" title="getJSON"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">ajax</a> &#187; </li> 
     </ul>
 </div>
 					
-  <div class="section" id="io-jsonp">
-<h1>io.jsonp<a class="headerlink" href="#io-jsonp" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="jsonp">
+<h1>jsonp<a class="headerlink" href="#jsonp" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module">
 <h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -121,7 +130,7 @@
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">Return type:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><p class="first last"><a class="reference internal" href="xhr.html#io.XhrObj" title="io.XhrObj"><tt class="xref py py-class docutils literal"><span class="pre">XhrObj</span></tt></a></p>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last"><tt class="xref py py-class docutils literal"><span class="pre">XhrObj</span></tt></p>
 </td>
 </tr>
 </tbody>
@@ -130,15 +139,15 @@
 <div class="line">void <strong>jsonp</strong> ( url , [ callback ] )</div>
 <div class="line">data 可忽略，同上个函数描述.</div>
 </div>
-<p>实际上该函数是 <a class="reference internal" href="io.html#io.io" title="io.io"><tt class="xref py py-meth docutils literal"><span class="pre">io()</span></tt></a> 的 shortcut</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">io</span><span class="p">.</span><span class="nx">jsonp</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+<p>实际上该函数是 <a class="reference internal" href="io.html#io.IO" title="io.IO"><tt class="xref py py-class docutils literal"><span class="pre">IO</span></tt></a> 的 shortcut</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">IO</span><span class="p">.</span><span class="nx">jsonp</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// data 参数可省略</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">isFunction</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span> <span class="p">{</span>
         <span class="nx">callback</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
         <span class="nx">data</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="nx">io</span><span class="p">({</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">IO</span><span class="p">({</span>
         <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;get&quot;</span><span class="p">,</span>
         <span class="nx">url</span><span class="o">:</span> <span class="nx">url</span><span class="p">,</span>
         <span class="nx">data</span><span class="o">:</span> <span class="nx">data</span><span class="p">,</span>
@@ -185,8 +194,8 @@
         <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#jsonp&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
             <span class="nx">photoList</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;loading&#39;</span><span class="p">);</span>
-            
-            <span class="nx">S</span><span class="p">.</span><span class="nx">io</span><span class="p">({</span>
+
+            <span class="nx">S</span><span class="p">.</span><span class="nx">IO</span><span class="p">({</span>
                 <span class="nx">dataType</span><span class="o">:</span><span class="s1">&#39;jsonp&#39;</span><span class="p">,</span>
                 <span class="nx">url</span><span class="o">:</span><span class="s2">&quot;http://api.flickr.com/services/rest/&quot;</span><span class="p">,</span> 
                 <span class="nx">data</span><span class="o">:</span><span class="p">{</span>
@@ -246,7 +255,16 @@
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
+    <li class="right" >
+      <a href="upload.html" title="upload"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="getJSON.html" title="getJSON"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">ajax</a> &#187; </li> 
     </ul>
 </div>
 					<div id="disqus_thread"></div>

@@ -18,8 +18,8 @@
 <script>
     KISSY.use('core',function (S) {
         var $=KISSY.Node.all;        
-        $("#up").on("click",function(){            
-            S.io.upload("doUpload.html","#f",function(d){
+        $("#up").on("click",function(){
+            S.IO.upload("doUpload.html","#f",function(d){
                 alert("user : "+d.user+" \n email : "+d.email);                
             },"json");                                            
         });

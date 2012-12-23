@@ -1,6 +1,6 @@
 .. currentmodule:: io
 
-io.upload
+upload
 =================================
 
 
@@ -31,17 +31,17 @@ Method
     | data 可忽略，同上个函数描述.
     
 
-    实际上该函数是 :meth:`~io.io` 的 shortcut
+    实际上该函数是 :class:`~io.IO` 的 shortcut
 
     .. code-block:: javascript
 
-        io.upload = function(url, form, data, callback, dataType) {
+        IO.upload = function(url, form, data, callback, dataType) {
             if (S.isFunction(data)) {
                 dataType = callback;
                 callback = data;
                 data = null;
             }
-            return io({
+            return new IO({
                 url:url,
                 type:'post',
                 dataType:dataType,

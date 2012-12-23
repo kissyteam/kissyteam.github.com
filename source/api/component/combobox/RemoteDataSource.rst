@@ -67,4 +67,4 @@ Configs Detail
 
 .. data:: RemoteDataSource.config.xhrCfg
 
-    {Object} - 传递给 KISSY.io 的其他参数
+    {Object} - 传递给 :class:`~io.IO` 的其他参数

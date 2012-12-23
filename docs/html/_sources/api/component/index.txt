@@ -20,6 +20,7 @@ Component
    menubutton/index
    mvc/index
    overlay/index
+   promise/index
    resizable/index
    rich-base/index
    stylesheet/index

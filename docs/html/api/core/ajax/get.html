@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>io.get &mdash; KISSY v1.3 Documentation</title>
+<title>get &mdash; KISSY v1.3 Documentation</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../_static/kissy.css"/>
@@ -81,12 +81,21 @@
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
+    <li class="right" >
+      <a href="post.html" title="post"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="setupConfig.html" title="setupConfig"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">ajax</a> &#187; </li> 
     </ul>
 </div>
 					
-  <div class="section" id="io-get">
-<h1>io.get<a class="headerlink" href="#io-get" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="get">
+<h1>get<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module">
 <h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -122,7 +131,7 @@
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">Return type:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><p class="first last"><a class="reference internal" href="xhr.html#io.XhrObj" title="io.XhrObj"><tt class="xref py py-class docutils literal"><span class="pre">XhrObj</span></tt></a></p>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last"><tt class="xref py py-class docutils literal"><span class="pre">XhrObj</span></tt></p>
 </td>
 </tr>
 </tbody>
@@ -131,8 +140,8 @@
 <div class="line">XHR|HTMLElement <strong>get</strong> get( url , [ callback , dataType ] )</div>
 <div class="line">data 可忽略，同上个函数描述.</div>
 </div>
-<p>实际上该函数是 <a class="reference internal" href="io.html#io.io" title="io.io"><tt class="xref py py-func docutils literal"><span class="pre">io()</span></tt></a> 的 shortcut</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">io</span><span class="p">.</span><span class="nx">get</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">dataType</span><span class="p">)</span> <span class="p">{</span>
+<p>实际上该函数是 <a class="reference internal" href="io.html#io.IO" title="io.IO"><tt class="xref py py-class docutils literal"><span class="pre">IO</span></tt></a> 的 shortcut</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">IO</span><span class="p">.</span><span class="nx">get</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">dataType</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// data 参数可省略</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">isFunction</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span> <span class="p">{</span>
         <span class="nx">dataType</span> <span class="o">=</span> <span class="nx">callback</span><span class="p">;</span>
@@ -140,7 +149,7 @@
         <span class="nx">data</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="nx">io</span><span class="p">({</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">IO</span><span class="p">({</span>
         <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;get&quot;</span><span class="p">,</span>
         <span class="nx">url</span><span class="o">:</span> <span class="nx">url</span><span class="p">,</span>
         <span class="nx">data</span><span class="o">:</span> <span class="nx">data</span><span class="p">,</span>
@@ -157,24 +166,24 @@
 <h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><strong>请求页面 test.php , 但是忽略返回结果</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">);</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">IO</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>请求页面 test.php , 并附带一些参数传递给后端</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">,{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">IO</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">,{</span>
     <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;john&quot;</span><span class="p">.</span>
     <span class="nx">time</span><span class="o">:</span><span class="s2">&quot;2pm&quot;</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 <p><strong>alert 请求成功后返回的结果，数据类型由响应的 content-type 决定</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">IO</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
     <span class="nx">alert</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 <p><strong>alert 请求成功后返回的 json 数据，和响应的 content-type 无关</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">IO</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
     <span class="nx">alert</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span>
 <span class="p">},</span><span class="s2">&quot;json&quot;</span><span class="p">);</span>
 </pre></div>
@@ -196,7 +205,16 @@
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
+    <li class="right" >
+      <a href="post.html" title="post"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="setupConfig.html" title="setupConfig"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">ajax</a> &#187; </li> 
     </ul>
 </div>
 					<div id="disqus_thread"></div>

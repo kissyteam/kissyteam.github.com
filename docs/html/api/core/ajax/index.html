@@ -82,7 +82,7 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../anim/index.html" title="Anim"
+      <a href="setupConfig.html" title="setupConfig"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="../index.html" title="Core"
@@ -98,24 +98,9 @@
 <div class="line-block">
 <div class="line">ajax</div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre>  <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;ajax&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">io</span><span class="p">){</span>
-      <span class="c1">// use io</span>
-  <span class="p">});</span>
-
-
-<span class="p">..</span> <span class="nx">toctree</span><span class="o">::</span>
- <span class="o">:</span><span class="nx">titlesonly</span><span class="o">:</span>
- <span class="o">:</span><span class="nx">hidden</span><span class="o">:</span>
-
- <span class="nx">io</span>
- <span class="nx">xhr</span>
- <span class="nx">setupConfig</span>
- <span class="nx">get</span>
- <span class="nx">post</span>
- <span class="nx">getJSON</span>
- <span class="nx">jsonp</span>
- <span class="nx">upload</span>
- <span class="nx">serialize</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;ajax&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">IO</span><span class="p">){</span>
+    <span class="c1">// use IO</span>
+<span class="p">});</span>
 </pre></div>
 </div>
 <div class="section" id="module">
@@ -129,25 +114,125 @@
 <div class="section" id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><ul class="simple">
-<li><a class="reference internal" href="io.html#io.io" title="io.io"><tt class="xref py py-meth docutils literal"><span class="pre">io()</span></tt></a></li>
-<li><a class="reference internal" href="setupConfig.html#io.setupConfig" title="io.setupConfig"><tt class="xref py py-meth docutils literal"><span class="pre">setupConfig()</span></tt></a></li>
-<li><a class="reference internal" href="get.html#io.get" title="io.get"><tt class="xref py py-meth docutils literal"><span class="pre">get()</span></tt></a></li>
-<li><a class="reference internal" href="post.html#io.post" title="io.post"><tt class="xref py py-meth docutils literal"><span class="pre">post()</span></tt></a></li>
-<li><a class="reference internal" href="getJSON.html#io.getJSON" title="io.getJSON"><tt class="xref py py-meth docutils literal"><span class="pre">getJSON()</span></tt></a></li>
-<li><a class="reference internal" href="jsonp.html#io.jsonp" title="io.jsonp"><tt class="xref py py-meth docutils literal"><span class="pre">jsonp()</span></tt></a></li>
-<li><a class="reference internal" href="upload.html#io.upload" title="io.upload"><tt class="xref py py-meth docutils literal"><span class="pre">upload()</span></tt></a></li>
-<li><a class="reference internal" href="serialize.html#io.serialize" title="io.serialize"><tt class="xref py py-meth docutils literal"><span class="pre">serialize()</span></tt></a></li>
+<div><div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="setupConfig.html">setupConfig</a><ul class="simple">
 </ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get.html">get</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="post.html">post</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getJSON.html">getJSON</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jsonp.html">jsonp</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="upload.html">upload</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="serialize.html">serialize</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</div>
 </div></blockquote>
 </div>
 <div class="section" id="class">
 <h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><ul class="simple">
-<li><a class="reference internal" href="xhr.html#io.XhrObj" title="io.XhrObj"><tt class="xref py py-class docutils literal"><span class="pre">XhrObj</span></tt></a></li>
+<div><div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="io.html">IO</a><ul class="simple">
 </ul>
+</li>
+</ul>
+</div>
 </div></blockquote>
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<p>所有 io 请求都会在 io 模块上触发事件，可通过 <tt class="docutils literal"><span class="pre">IO.on</span></tt> 来捕获所有的 io 请求，例如</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">indicator</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#indicator&quot;</span><span class="p">),</span>
+<span class="nx">num</span><span class="p">;</span>
+
+<span class="c1">//发送前显示 loading 状态</span>
+<span class="nx">IO</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;send&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">num</span><span class="o">++</span><span class="p">;</span>
+    <span class="nx">indicator</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="c1">//发送后隐藏 loading 状态</span>
+<span class="nx">IO</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;complete&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">num</span><span class="o">--</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">num</span><span class="p">)</span>
+        <span class="nx">indicator</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="function">
+<dt id="io.io.Events.start">
+<tt class="descclassname">io.Events.</tt><tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#io.io.Events.start" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>start</strong> ()</div>
+<div class="line">当配置初始化后，获取传输对象前触发。事件对象包括一下属性</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>start.event.ajaxConfig</strong> (<em>Object</em>) &#8211; 当前的配置项</li>
+<li><strong>start.event.io</strong> (<em>Object</em>) &#8211; 当前的请求关联的 <a class="reference internal" href="io.html#io.IO" title="io.IO"><tt class="xref py py-class docutils literal"><span class="pre">IO</span></tt></a> 对象</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="io.io.Events.send">
+<tt class="descclassname">io.Events.</tt><tt class="descname">send</tt><big>(</big><big>)</big><a class="headerlink" href="#io.io.Events.send" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>send</strong> ()</div>
+<div class="line">请求发送前触发。可用于 loading indicator 显示时机。事件对象同 <tt class="docutils literal"><span class="pre">start</span></tt> 事件.</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="io.io.Events.success">
+<tt class="descclassname">io.Events.</tt><tt class="descname">success</tt><big>(</big><big>)</big><a class="headerlink" href="#io.io.Events.success" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>success</strong> ()</div>
+<div class="line">服务器返回成功后触发.事件对象同 <tt class="docutils literal"><span class="pre">start</span></tt> 事件.</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="io.io.Events.error">
+<tt class="descclassname">io.Events.</tt><tt class="descname">error</tt><big>(</big><big>)</big><a class="headerlink" href="#io.io.Events.error" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>error</strong> ()</div>
+<div class="line">服务器返回失败后触发.事件对象同 <tt class="docutils literal"><span class="pre">start</span></tt> 事件.</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="io.io.Events.complete">
+<tt class="descclassname">io.Events.</tt><tt class="descname">complete</tt><big>(</big><big>)</big><a class="headerlink" href="#io.io.Events.complete" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>complete</strong> ()</div>
+<div class="line">服务器返回（无论成功或失败）后触发.事件对象同 <tt class="docutils literal"><span class="pre">start</span></tt> 事件.</div>
+</div>
+</dd></dl>
+
 </div>
 </div>
 
@@ -165,7 +250,7 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../anim/index.html" title="Anim"
+      <a href="setupConfig.html" title="setupConfig"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="../index.html" title="Core"

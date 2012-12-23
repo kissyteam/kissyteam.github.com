@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>io.serialize &mdash; KISSY v1.3 Documentation</title>
+<title>serialize &mdash; KISSY v1.3 Documentation</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../_static/kissy.css"/>
@@ -81,12 +81,21 @@
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
+    <li class="right" >
+      <a href="io.html" title="IO"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="upload.html" title="upload"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">ajax</a> &#187; </li> 
     </ul>
 </div>
 					
-  <div class="section" id="io-serialize">
-<h1>io.serialize<a class="headerlink" href="#io-serialize" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="serialize">
+<h1>serialize<a class="headerlink" href="#serialize" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module">
 <h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -150,7 +159,7 @@
 </div>
 <p>运行</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
-    <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(</span><span class="s2">&quot;#f&quot;</span><span class="p">));</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">IO</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(</span><span class="s2">&quot;#f&quot;</span><span class="p">));</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -160,7 +169,7 @@
 </div>
 <p>也可以只序列化一部分</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
-    <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;#f&quot;</span><span class="p">).</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)));</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">IO</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;#f&quot;</span><span class="p">).</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)));</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -230,7 +239,7 @@
     <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;core&#39;</span><span class="p">,</span><span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">,</span><span class="nx">form</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;form&quot;</span><span class="p">);</span>        
         <span class="kd">function</span> <span class="nx">showValues</span><span class="p">()</span> <span class="p">{</span>
-          <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(</span><span class="nx">form</span><span class="p">);</span>
+          <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">IO</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(</span><span class="nx">form</span><span class="p">);</span>
           <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#results&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
         <span class="p">}</span>
 
@@ -261,7 +270,16 @@
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
+    <li class="right" >
+      <a href="io.html" title="IO"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="upload.html" title="upload"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">ajax</a> &#187; </li> 
     </ul>
 </div>
 					<div id="disqus_thread"></div>

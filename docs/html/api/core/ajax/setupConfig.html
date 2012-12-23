@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>io.setupConfig &mdash; KISSY v1.3 Documentation</title>
+<title>setupConfig &mdash; KISSY v1.3 Documentation</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../_static/kissy.css"/>
@@ -81,12 +81,21 @@
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
+    <li class="right" >
+      <a href="get.html" title="get"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="ajax"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">ajax</a> &#187; </li> 
     </ul>
 </div>
 					
-  <div class="section" id="io-setupconfig">
-<h1>io.setupConfig<a class="headerlink" href="#io-setupconfig" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="setupconfig">
+<h1>setupConfig<a class="headerlink" href="#setupconfig" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module">
 <h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -113,15 +122,15 @@
 </tr>
 </tbody>
 </table>
-<p>所有可配置的项参见 <a class="reference internal" href="io.html#io.io" title="io.io"><tt class="xref py py-meth docutils literal"><span class="pre">KISSY.io()</span></tt></a> .通过 <tt class="docutils literal"><span class="pre">setupConfig</span></tt> 设置后，除非单个请求设置了对应的配置值，否则后续所有的 ajax 请求都使用该设置.</p>
+<p>所有可配置的项参见 <a class="reference internal" href="io.html#io.IO" title="io.IO"><tt class="xref py py-class docutils literal"><span class="pre">IO</span></tt></a> .通过 <tt class="docutils literal"><span class="pre">setupConfig</span></tt> 设置后，除非单个请求设置了对应的配置值，否则后续所有的 ajax 请求都使用该设置.</p>
 <p>例如，下面代码在连续访问 <tt class="docutils literal"><span class="pre">ping.php</span></tt> 前，设置了 <tt class="docutils literal"><span class="pre">url</span></tt> 的默认值.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">io</span><span class="p">.</span><span class="nx">setupConfig</span><span class="p">({</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">IO</span><span class="p">.</span><span class="nx">setupConfig</span><span class="p">({</span>
     <span class="nx">url</span><span class="o">:</span><span class="s1">&#39;ping.php&#39;</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 <p>那么接下来的请求如果没有指定 <tt class="docutils literal"><span class="pre">url</span></tt> 配置，就会使用 <tt class="docutils literal"><span class="pre">ping.php</span></tt></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">io</span><span class="p">({</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">IO</span><span class="p">({</span>
     <span class="c1">// url 没设置，就为 ping.php</span>
     <span class="nx">data</span> <span class="o">:</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="s1">&#39;dan&#39;</span><span class="p">}</span>
 <span class="p">});</span>
@@ -134,12 +143,12 @@
 <h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>设置默认的请求地址为 <tt class="docutils literal"><span class="pre">/xmlhttp/</span></tt> ，并使用 <tt class="docutils literal"><span class="pre">POST</span></tt> 方式。那么接下来的请求都会往 <tt class="docutils literal"><span class="pre">/xmlhttp/</span></tt> 发送请求.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">io</span><span class="p">.</span><span class="nx">setupConfig</span><span class="p">({</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">IO</span><span class="p">.</span><span class="nx">setupConfig</span><span class="p">({</span>
     <span class="nx">url</span><span class="o">:</span><span class="s1">&#39;/xmlhttp/&#39;</span><span class="p">,</span>
     <span class="nx">type</span><span class="o">:</span><span class="s1">&#39;post&#39;</span>
 <span class="p">});</span>
 
-<span class="nx">io</span><span class="p">({</span>
+<span class="nx">IO</span><span class="p">({</span>
     <span class="nx">data</span><span class="o">:</span><span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="s1">&#39;mydata&#39;</span><span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
@@ -161,7 +170,16 @@
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
+    <li class="right" >
+      <a href="get.html" title="get"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="ajax"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">ajax</a> &#187; </li> 
     </ul>
 </div>
 					<div id="disqus_thread"></div>

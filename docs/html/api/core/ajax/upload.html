@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>io.upload &mdash; KISSY v1.3 Documentation</title>
+<title>upload &mdash; KISSY v1.3 Documentation</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../_static/kissy.css"/>
@@ -81,12 +81,21 @@
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
+    <li class="right" >
+      <a href="serialize.html" title="serialize"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="jsonp.html" title="jsonp"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">ajax</a> &#187; </li> 
     </ul>
 </div>
 					
-  <div class="section" id="io-upload">
-<h1>io.upload<a class="headerlink" href="#io-upload" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="upload">
+<h1>upload<a class="headerlink" href="#upload" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module">
 <h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -123,7 +132,7 @@
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">Return type:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><p class="first last"><a class="reference internal" href="xhr.html#io.XhrObj" title="io.XhrObj"><tt class="xref py py-class docutils literal"><span class="pre">XhrObj</span></tt></a></p>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last"><tt class="xref py py-class docutils literal"><span class="pre">XhrObj</span></tt></p>
 </td>
 </tr>
 </tbody>
@@ -132,14 +141,14 @@
 <div class="line">XHR <strong>upload</strong> ( url , form,[ callback , dataType ] )</div>
 <div class="line">data 可忽略，同上个函数描述.</div>
 </div>
-<p>实际上该函数是 <a class="reference internal" href="io.html#io.io" title="io.io"><tt class="xref py py-meth docutils literal"><span class="pre">io()</span></tt></a> 的 shortcut</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">io</span><span class="p">.</span><span class="nx">upload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">form</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">dataType</span><span class="p">)</span> <span class="p">{</span>
+<p>实际上该函数是 <a class="reference internal" href="io.html#io.IO" title="io.IO"><tt class="xref py py-class docutils literal"><span class="pre">IO</span></tt></a> 的 shortcut</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">IO</span><span class="p">.</span><span class="nx">upload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">form</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">dataType</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">isFunction</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span> <span class="p">{</span>
         <span class="nx">dataType</span> <span class="o">=</span> <span class="nx">callback</span><span class="p">;</span>
         <span class="nx">callback</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
         <span class="nx">data</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="nx">io</span><span class="p">({</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">IO</span><span class="p">({</span>
         <span class="nx">url</span><span class="o">:</span><span class="nx">url</span><span class="p">,</span>
         <span class="nx">type</span><span class="o">:</span><span class="s1">&#39;post&#39;</span><span class="p">,</span>
         <span class="nx">dataType</span><span class="o">:</span><span class="nx">dataType</span><span class="p">,</span>
@@ -177,8 +186,8 @@
 <span class="nt">&lt;script&gt;</span>
     <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;core&#39;</span><span class="p">,</span><span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>        
-        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#up&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>            
-            <span class="nx">S</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">upload</span><span class="p">(</span><span class="s2">&quot;doUpload.html&quot;</span><span class="p">,</span><span class="s2">&quot;#f&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#up&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">S</span><span class="p">.</span><span class="nx">IO</span><span class="p">.</span><span class="nx">upload</span><span class="p">(</span><span class="s2">&quot;doUpload.html&quot;</span><span class="p">,</span><span class="s2">&quot;#f&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
                 <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;user : &quot;</span><span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">user</span><span class="o">+</span><span class="s2">&quot; \n email : &quot;</span><span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">email</span><span class="p">);</span>                
             <span class="p">},</span><span class="s2">&quot;json&quot;</span><span class="p">);</span>                                            
         <span class="p">});</span>
@@ -219,7 +228,16 @@
     <li class="right" >
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
+    <li class="right" >
+      <a href="serialize.html" title="serialize"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="jsonp.html" title="jsonp"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Core</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">ajax</a> &#187; </li> 
     </ul>
 </div>
 					<div id="disqus_thread"></div>

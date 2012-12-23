@@ -1,6 +1,6 @@
 .. currentmodule:: io
 
-io.getJSON
+getJSON
 =================================
 
 
@@ -31,11 +31,11 @@ Method
     data 可忽略，同上个函数描述.    
     
 
-    实际上该函数是 :meth:`~io.io` 的 shortcut
+    实际上该函数是 :class:`~io.IO` 的 shortcut
 
     .. code-block:: javascript
 
-        io.getJSON = function(url, data, callback) {
+        IO.getJSON = function(url, data, callback) {
             // data 参数可省略
             if (S.isFunction(data)) {
                 dataType = callback;
@@ -43,7 +43,7 @@ Method
                 data = undefined;
             }
 
-            return io({
+            return new IO({
                 type:"get",
                 url: url,
                 data: data,

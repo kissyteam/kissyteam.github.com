@@ -1,12 +1,12 @@
 .. currentmodule:: io
 
-io
+IO
 =================================
 
 Module
 -----------------------------------------------
 
-  * :mod:`io`
+  * :class:`~io.IO`
 
 Configs
 -----------------------------------------------
@@ -39,27 +39,36 @@ Configs
   * :data:`cfg.form`
   * :data:`cfg.beforeSend`
 
-Events
+
+Attributes
 -----------------------------------------------
 
-  * :func:`~io.Events.start`
-  * :func:`~io.Events.send`
-  * :func:`~io.Events.success`
-  * :func:`~io.Events.error`
+  * :attr:`readyState`
+  * :attr:`status`
+  * :attr:`statusText`
+  * :attr:`responseText`
 
-
-Methods Detail
+Methods
 -----------------------------------------------
 
-.. method:: io
+  * :meth:`getResponseHeader`
+  * :meth:`abort`
+  * :meth:`getNativeXhr`
+  * :meth:`~seed.Promise.prototype.then`
 
-    | XHR **io** ( cfg )
-    | 发送 io 请求
-    
-    :param Object cfg: 用来配置请求的键值对对象.所有的配置项都是可选的,可以通过 :func:`io.setupConfig` 来设置默认配置. 见下节
-    
+Class Detail
+-----------------------------------------------
 
-       返回 :class:`~io.XhrObj` 对象.
+.. class:: IO
+
+    | **IO** ( cfg )
+    | 构建 io 请求并发送, 继承自 :class:`~seed.Promise` .
+    
+    :param Object cfg: 用来配置请求的键值对对象.
+        所有的配置项都是可选的,可以通过
+        :func:`io.setupConfig`
+        来设置默认配置.
+
 
 .. _io-config:
 
@@ -70,11 +79,11 @@ Config Detail
 
     {String} - 类型 String. 本次请求发送的地址.
 
+
 .. data:: cfg.accepts
 
-
-
-    {Object} - 该配置和 :data:`~io.cfg.dataType` 一起确定当前发送给服务器的 Accept 头. 默认包括
+    {Object} - 该配置和 :data:`~io.cfg.dataType`
+    一起确定当前发送给服务器的 Accept 头. 默认包括
 
         .. code-block:: javascript
 
@@ -89,8 +98,7 @@ Config Detail
 
     {String} - 期望能够从服务器返回的数据类型.
 
-
-        如果没有指定，kissy 将尽量从返回的 ``mimeType`` | ``Content-type`` 相应头中推导出来 ('text/xml' 将推导出 xml , 'text/json' 将推导出 json).
+    如果没有指定，kissy 将尽量从返回的 ``mimeType`` | ``Content-type`` 相应头中推导出来 ('text/xml' 将推导出 xml , 'text/json' 将推导出 json).
 
     默认支持的类型（该类型的响应信息会作为第一个参数传到 ``success`` ``complete`` 回调中）有:
 
@@ -103,8 +111,6 @@ Config Detail
 
 
 .. data:: cfg.processData
-
-
 
     {Boolean} -  默认 true . 当 :data:`~io.cfg.data` 为对象时是否用 :func:`~seed.KISSY.param` 序列化.
     例如当需要传送一个 xml 或 `formdata <http://www.w3.org/TR/XMLHttpRequest/#interface-formdata>`_ 到服务器时就不需要 param data，
@@ -310,55 +316,50 @@ Config Detail
         });
 
 
-Events Detail
+Attributes Detail
 -----------------------------------------------
 
-    所有 io 请求都会在 io 模块上触发事件，可通过 ``io.on`` 来捕获所有的 io 请求，例如
+.. attribute:: readyState
 
-    .. code-block:: javascript
+    {Number} - 表示请求完成状态。可用于判断当前请求是否完成. 4 表示完成，否则表示正在进行中.(xhr 会有更多取值，jsonp script 只有 0(初始化) 1(发送中) 4(完成))
 
-        var indicator=KISSY.one("#indicator"),num;
+.. attribute:: status
 
-        //发送前显示 loading 状态
-        io.on("send",function(){
-            num++;
-            indicator.show();
-        });
+    {Number} - 响应状态码. xhr 会有更多取值。``jsonp script`` 只有 200(成功) , 500(出错)
 
-        //发送后隐藏 loading 状态
-        io.on("complete",function(){
-            num--;
-            if(!num)
-                indicator.hide();
-        });
+.. attribute:: statusText
 
-.. function:: io.Events.start
+    {String} - 响应状态字符串. 最终同回调 :data:`~io.cfg.complete` 中的 ``textStatus`` 一致.
 
-    | **start** ()
-    | 当配置初始化后，获取传输对象前触发。事件对象包括一下属性
+.. attribute:: responseText(responseXML)
 
-    :param Object start.event.ajaxConfig:  当前的配置项
-
-    :param Object start.event.xhr:
+    {String} - 返回响应对应的 text 和 xml（如果需要）.
 
 
-        当前的请求关联的 :class:`~io.XhrObj` 对象
+Methods Detail
+-----------------------------------------------
 
-.. function:: io.Events.send
+.. method:: getResponseHeader
 
-    | **send** ()
-    | 请求发送前触发。可用于 loading indicator 显示时机。事件对象同 ``start`` 事件.
+    | **getResponseHeader** (key)
+    | 获得对应的响应头值.仅对于 xhr 请求有效.
 
-.. function:: io.Events.success
+    :param String key: 响应头名
 
-    | **success** ()
-    | 服务器返回成功后触发.事件对象同 ``start`` 事件.
+.. method:: getNativeXhr
 
-.. function:: io.Events.error
+    | **getNativeXhr** ()
+    | 获得内置原生的 xhr 对象
 
-    | **error** ()
-    | 服务器返回失败后触发.事件对象同 ``start`` 事件.
 
+.. method:: abort
+
+    | **abort** ()
+    | 如果当前请求还没完成（进行中状态）则中断当前的请求，否则什么也不做.
+
+    .. note::
+
+        不仅可以中断 xhr 请求，还可以中断 jsonp 以及 script 请求，如果中断前该请求正在进行中则中断后会触发 :data:`~io.cfg.error` ( textStatus == "abort" ) 以及 :data:`~io.cfg.complete` 回调.
 
 Demo
 -------------------------------------------      
@@ -367,7 +368,7 @@ Demo
 
     .. code-block:: javascript
 
-        io({
+        new IO({
            type: "GET",
            url: "test.js",
            dataType: "script"
@@ -378,7 +379,7 @@ Demo
 
     .. code-block:: javascript
 
-        io({
+        new IO({
            type: "POST",
            url: "some.php",
            data: {
@@ -393,7 +394,7 @@ Demo
 
     .. code-block:: javascript
 
-        io({
+        new IO({
           url: "test.html",
           cache: false,
           success: function(html){
@@ -407,7 +408,7 @@ Demo
 
         var xmlDocument=S.parseXML("<a>h</a>");
 
-        io({
+        new IO({
            url: "page.php",
            processData: false,
            contentType:'text/xml',
@@ -426,7 +427,7 @@ Demo
         </form>
 
         <script>
-            io({
+            new IO({
                 url:'send.php',
                 form:'#test',
                 type:'post',
