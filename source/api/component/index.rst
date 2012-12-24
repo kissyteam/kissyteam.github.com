@@ -26,6 +26,7 @@ Component
    stylesheet/index
    swf/index
    switchable/index
+   tabs/index
    tree/index
    uri/index
    waterfall/index

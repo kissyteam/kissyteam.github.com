@@ -20,6 +20,7 @@ Component
    promise/index
    resizable/index
    switchable/index
+   tabs/index
    tree/index
    waterfall/index
    xtemplate/index

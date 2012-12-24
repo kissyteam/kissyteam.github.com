@@ -23,7 +23,7 @@ Attributes
 -----------------------------------------------     
 
     * :attr:`~component.extension.ContentBox.prototype.contentEl`
-    
+    * :attr:`~component.extension.ContentBox.prototype.content`
 
 Class Detail
 --------------------------
@@ -48,6 +48,9 @@ Configs Detail
 Attributes Detail
 -------------------------------------------------------
 
+.. attribute:: extension.ContentBox.prototype.content
+
+    {String} - 设置的 content 属性
 
 .. attribute:: extension.ContentBox.prototype.contentEl
 

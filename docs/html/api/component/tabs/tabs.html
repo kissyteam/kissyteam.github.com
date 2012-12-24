@@ -1,0 +1,611 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>Tabs &mdash; KISSY v1.3 Documentation</title>
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
+<link rel="stylesheet" href="../../../_static/kissy.css"/>
+    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js"></script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+	<div  id="layout" class="layout grid-s6m0e7">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="tab.html" title="Tabs.Tab"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="Tabs"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Tabs</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <span class="target" id="module-button"></span><div class="section" id="tabs">
+<h1>Tabs<a class="headerlink" href="#tabs" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">标签页</div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;tabs&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Tabs</span><span class="p">){</span>
+    <span class="c1">// use Tabs</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#button.Tabs" title="button.Tabs"><tt class="xref py py-class docutils literal"><span class="pre">Tabs</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="configs">
+<h2>Configs<a class="headerlink" href="#configs" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#button.Tabs.config.items" title="button.Tabs.config.items"><tt class="xref py py-data docutils literal"><span class="pre">items</span></tt></a></li>
+<li><a class="reference internal" href="#button.Tabs.config.changeType" title="button.Tabs.config.changeType"><tt class="xref py py-data docutils literal"><span class="pre">changeType</span></tt></a></li>
+<li><a class="reference internal" href="#button.Tabs.config.tabSelectedCls" title="button.Tabs.config.tabSelectedCls"><tt class="xref py py-data docutils literal"><span class="pre">tabSelectedCls</span></tt></a></li>
+<li><a class="reference internal" href="#button.Tabs.config.panelSelectedCls" title="button.Tabs.config.panelSelectedCls"><tt class="xref py py-data docutils literal"><span class="pre">panelSelectedCls</span></tt></a></li>
+<li><a class="reference internal" href="#button.Tabs.config.barOrientation" title="button.Tabs.config.barOrientation"><tt class="xref py py-data docutils literal"><span class="pre">barOrientation</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#button.Tabs.prototype.addItem" title="button.Tabs.prototype.addItem"><tt class="xref py py-meth docutils literal"><span class="pre">addItem()</span></tt></a></li>
+<li><a class="reference internal" href="#button.Tabs.prototype.removeItemAt" title="button.Tabs.prototype.removeItemAt"><tt class="xref py py-meth docutils literal"><span class="pre">removeItemAt()</span></tt></a></li>
+<li><a class="reference internal" href="#button.Tabs.prototype.removeItemAt" title="button.Tabs.prototype.removeItemAt"><tt class="xref py py-meth docutils literal"><span class="pre">removeItemAt()</span></tt></a></li>
+<li><a class="reference internal" href="#button.Tabs.prototype.removeItemByTab" title="button.Tabs.prototype.removeItemByTab"><tt class="xref py py-meth docutils literal"><span class="pre">removeItemByTab()</span></tt></a></li>
+<li><a class="reference internal" href="#button.Tabs.prototype.removeItemByPanel" title="button.Tabs.prototype.removeItemByPanel"><tt class="xref py py-meth docutils literal"><span class="pre">removeItemByPanel()</span></tt></a></li>
+<li><a class="reference internal" href="#button.Tabs.prototype.getSelectedTab" title="button.Tabs.prototype.getSelectedTab"><tt class="xref py py-meth docutils literal"><span class="pre">getSelectedTab()</span></tt></a></li>
+<li><a class="reference internal" href="#button.Tabs.prototype.getSelectedPanel" title="button.Tabs.prototype.getSelectedPanel"><tt class="xref py py-meth docutils literal"><span class="pre">getSelectedPanel()</span></tt></a></li>
+<li><a class="reference internal" href="#button.Tabs.prototype.getTabs" title="button.Tabs.prototype.getTabs"><tt class="xref py py-meth docutils literal"><span class="pre">getTabs()</span></tt></a></li>
+<li><a class="reference internal" href="#button.Tabs.prototype.getPanels" title="button.Tabs.prototype.getPanels"><tt class="xref py py-meth docutils literal"><span class="pre">getPanels()</span></tt></a></li>
+<li><a class="reference internal" href="#button.Tabs.prototype.setSelectedTab" title="button.Tabs.prototype.setSelectedTab"><tt class="xref py py-meth docutils literal"><span class="pre">setSelectedTab()</span></tt></a></li>
+<li><a class="reference internal" href="#button.Tabs.prototype.setSelectedPanel" title="button.Tabs.prototype.setSelectedPanel"><tt class="xref py py-meth docutils literal"><span class="pre">setSelectedPanel()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="static-properties">
+<h2>Static Properties<a class="headerlink" href="#static-properties" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#button.Tabs.Orientation" title="button.Tabs.Orientation"><tt class="xref py py-attr docutils literal"><span class="pre">Orientation</span></tt></a></li>
+<li><a class="reference internal" href="#button.Tabs.ChangeType" title="button.Tabs.ChangeType"><tt class="xref py py-attr docutils literal"><span class="pre">ChangeType</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#button.Tabs.Events.beforeSelectedTabChange" title="button.Tabs.Events.beforeSelectedTabChange"><tt class="xref py py-data docutils literal"><span class="pre">beforeSelectedTabChange</span></tt></a></li>
+<li><a class="reference internal" href="#button.Tabs.Events.afterSelectedTabChange" title="button.Tabs.Events.afterSelectedTabChange"><tt class="xref py py-data docutils literal"><span class="pre">afterSelectedTabChange</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="button.Tabs">
+<em class="property">class </em><tt class="descclassname">button.</tt><tt class="descname">Tabs</tt><a class="headerlink" href="#button.Tabs" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>Tabs</strong> (config)</div>
+<div class="line">Tabs: &#8216;tabs&#8217;</div>
+</div>
+<ul class="simple">
+<li>继承自 <a class="reference internal" href="../component/controller.html#component.Controller" title="component.Controller"><tt class="xref py py-class docutils literal"><span class="pre">Controller</span></tt></a> , 包含其全部配置,属性,方法,事件.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 配置项，详细见下方 <strong>Configs Detail</strong> .</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="configs-detail">
+<h2>Configs Detail<a class="headerlink" href="#configs-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="button.Tabs.config.items">
+<tt class="descclassname">Tabs.config.</tt><tt class="descname">items</tt><a class="headerlink" href="#button.Tabs.config.items" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object[]} - 对象数组，可用于快速构建 tabs，单个对象包括 title 与 content 两个属性</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="button.Tabs.config.changeType">
+<tt class="descclassname">Tabs.config.</tt><tt class="descname">changeType</tt><a class="headerlink" href="#button.Tabs.config.changeType" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 枚举自 <tt class="xref py py-attr docutils literal"><span class="pre">changeType</span></tt> .取值 click 或者 mouse</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="button.Tabs.config.tabSelectedCls">
+<tt class="descclassname">Tabs.config.</tt><tt class="descname">tabSelectedCls</tt><a class="headerlink" href="#button.Tabs.config.tabSelectedCls" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - tab 选中的样式。默认 ks-tabs-tab-selected</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="button.Tabs.config.panelSelectedCls">
+<tt class="descclassname">Tabs.config.</tt><tt class="descname">panelSelectedCls</tt><a class="headerlink" href="#button.Tabs.config.panelSelectedCls" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - panel 选中的样式。默认 ks-tabs-panel-selected</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="button.Tabs.config.barOrientation">
+<tt class="descclassname">Tabs.config.</tt><tt class="descname">barOrientation</tt><a class="headerlink" href="#button.Tabs.config.barOrientation" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 枚举自 <a class="reference internal" href="#button.Tabs.Orientation" title="button.Tabs.Orientation"><tt class="xref py py-attr docutils literal"><span class="pre">Orientation</span></tt></a> .取值 click 或者 mouse</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="button.Tabs.prototype.addItem">
+<tt class="descclassname">Tabs.prototype.</tt><tt class="descname">addItem</tt><big>(</big><big>)</big><a class="headerlink" href="#button.Tabs.prototype.addItem" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>addItem(item )</strong></div>
+<div class="line">添加一个 tab 和 panel</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>item</strong> (<em>{Object}</em>) &#8211; 对象描述</li>
+<li><strong>item.title</strong> (<em>{Object}</em>) &#8211; tab 标题</li>
+<li><strong>item.content</strong> (<em>{Object}</em>) &#8211; panel 内容</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="button.Tabs.prototype.removeItemAt">
+<tt class="descclassname">Tabs.prototype.</tt><tt class="descname">removeItemAt</tt><big>(</big><big>)</big><a class="headerlink" href="#button.Tabs.prototype.removeItemAt" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>removeItemAt(index,destroy )</strong></div>
+<div class="line">是否移除指定位置的 item</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>index</strong> (<em>{Number}</em>) &#8211; item 下标</li>
+<li><strong>destroy</strong> (<em>{Boolean}</em>) &#8211; 是否销毁节点</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="button.Tabs.prototype.removeItemByTab">
+<tt class="descclassname">Tabs.prototype.</tt><tt class="descname">removeItemByTab</tt><big>(</big><big>)</big><a class="headerlink" href="#button.Tabs.prototype.removeItemByTab" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>removeItemByTab(tab, destroy )</strong></div>
+<div class="line">是否移除 tab 所在位置的 item</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>tab</strong> (<em>{Tabs.Tab}</em>) &#8211; tab 实例</li>
+<li><strong>destroy</strong> (<em>{Boolean}</em>) &#8211; 是否销毁节点</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="button.Tabs.prototype.removeItemByPanel">
+<tt class="descclassname">Tabs.prototype.</tt><tt class="descname">removeItemByPanel</tt><big>(</big><big>)</big><a class="headerlink" href="#button.Tabs.prototype.removeItemByPanel" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>removeItemByPanel(panel, destroy )</strong></div>
+<div class="line">是否移除 panel 所在位置的 item</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>panel</strong> (<em>{Tabs.Panel}</em>) &#8211; panel 实例</li>
+<li><strong>destroy</strong> (<em>{Boolean}</em>) &#8211; 是否销毁节点</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="button.Tabs.prototype.getSelectedTab">
+<tt class="descclassname">Tabs.prototype.</tt><tt class="descname">getSelectedTab</tt><big>(</big><big>)</big><a class="headerlink" href="#button.Tabs.prototype.getSelectedTab" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>getSelectedTab( )</strong></div>
+<div class="line">得到选中的 tab 实例</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Returns:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">{Tabs.Tab}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="button.Tabs.prototype.getSelectedPanel">
+<tt class="descclassname">Tabs.prototype.</tt><tt class="descname">getSelectedPanel</tt><big>(</big><big>)</big><a class="headerlink" href="#button.Tabs.prototype.getSelectedPanel" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>getSelectedPanel( )</strong></div>
+<div class="line">得到选中的 panel 实例</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Returns:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">{Tabs.Panel}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="button.Tabs.prototype.getTabs">
+<tt class="descclassname">Tabs.prototype.</tt><tt class="descname">getTabs</tt><big>(</big><big>)</big><a class="headerlink" href="#button.Tabs.prototype.getTabs" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>getTabs( )</strong></div>
+<div class="line">得到所有 tab 实例数组</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Returns:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">{Tabs.Tab[]}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="button.Tabs.prototype.getPanels">
+<tt class="descclassname">Tabs.prototype.</tt><tt class="descname">getPanels</tt><big>(</big><big>)</big><a class="headerlink" href="#button.Tabs.prototype.getPanels" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>getPanels( )</strong></div>
+<div class="line">得到所有 panel 实例数组</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Returns:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">{Tabs.Panel[]}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="button.Tabs.prototype.setSelectedTab">
+<tt class="descclassname">Tabs.prototype.</tt><tt class="descname">setSelectedTab</tt><big>(</big><big>)</big><a class="headerlink" href="#button.Tabs.prototype.setSelectedTab" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>setSelectedTab( tab )</strong></div>
+<div class="line">设置某个 tab 实例为选中</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="button.Tabs.prototype.setSelectedPanel">
+<tt class="descclassname">Tabs.prototype.</tt><tt class="descname">setSelectedPanel</tt><big>(</big><big>)</big><a class="headerlink" href="#button.Tabs.prototype.setSelectedPanel" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>setSelectedPanel( panel )</strong></div>
+<div class="line">设置某个 panel 实例为选中</div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="static-attributes">
+<h2>Static Attributes<a class="headerlink" href="#static-attributes" title="Permalink to this headline">¶</a></h2>
+<dl class="attribute">
+<dt id="button.Tabs.Orientation">
+<tt class="descclassname">Tabs.</tt><tt class="descname">Orientation</tt><a class="headerlink" href="#button.Tabs.Orientation" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object} -</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">TOP</span><span class="o">:</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span>
+    <span class="nx">BOTTOM</span><span class="o">:</span> <span class="s1">&#39;bottom&#39;</span><span class="p">,</span>
+    <span class="nx">LEFT</span><span class="o">:</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span>
+    <span class="nx">RIGHT</span><span class="o">:</span> <span class="s1">&#39;right&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="button.Tabs.ChangeType">
+<tt class="descclassname">Tabs.</tt><tt class="descname">ChangeType</tt><a class="headerlink" href="#button.Tabs.ChangeType" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object} -</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">MOUSE</span><span class="o">:</span><span class="s1">&#39;mouse&#39;</span><span class="p">,</span>
+    <span class="nx">CLICK</span><span class="o">:</span><span class="s1">&#39;click&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="events-details">
+<h2>Events Details<a class="headerlink" href="#events-details" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="button.Tabs.Events.beforeSelectedTabChange">
+<tt class="descclassname">Tabs.Events.</tt><tt class="descname">beforeSelectedTabChange</tt><big>(</big><big>)</big><a class="headerlink" href="#button.Tabs.Events.beforeSelectedTabChange" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>beforeSelectedTabChange</strong> (e)</div>
+<div class="line">选中 tab 改变前触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>e</strong> (<em>EventObject</em>) &#8211; 触发事件对象</li>
+<li><strong>e.newVal</strong> (<em>{Tabs.Tab}</em>) &#8211; 新的 tab 实例</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="button.Tabs.Events.afterSelectedTabChange">
+<tt class="descclassname">Tabs.Events.</tt><tt class="descname">afterSelectedTabChange</tt><big>(</big><big>)</big><a class="headerlink" href="#button.Tabs.Events.afterSelectedTabChange" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>beforeSelectedTabChange</strong> (e)</div>
+<div class="line">选中 tab 改变后触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>e</strong> (<em>EventObject</em>) &#8211; 触发事件对象</li>
+<li><strong>e.newVal</strong> (<em>{Tabs.Tab}</em>) &#8211; 新的 tab 实例</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="tab.html" title="Tabs.Tab"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="Tabs"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Tabs</a> &#187; </li> 
+    </ul>
+</div>
+					<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+		
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/loader/index.html">loader</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../core/ajax/index.html">ajax</a></li>
+        <li><a href="../../core/anim/index.html">anim</a></li>
+        <li><a href="../../core/base/index.html">base</a></li>
+        <li><a href="../../core/cookie/index.html">cookie</a></li>
+        <li><a href="../../core/dom/index.html">dom</a></li>
+        <li><a href="../../core/event/index.html">event</a></li>
+        <li><a href="../../core/json/index.html">json</a></li>
+        <li><a href="../../core/node/index.html">node</a></li>
+        <li><a href="../../core/ua/index.html">ua</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../calendar/index.html">calendar</a></li>
+        <li><a href="../color/index.html">color</a></li>
+        <li><a href="../combobox/index.html">combobox</a></li>
+        <li><a href="../component/index.html">component</a></li>
+        <li><a href="../datalazyload/index.html">datalazyload</a></li>
+        <li><a href="../dd/index.html">dd</a></li>
+        <li><a href="../editor/index.html">editor</a></li>
+        <li><a href="../imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="../mvc/index.html">mvc</a></li>
+        <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../promise/index.html">promise</a></li>
+        <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="../rich-base/index.html">rich-base</a></li>
+        <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../stylesheet/index.html">stylesheet</a></li>
+        <li><a href="../swf/index.html">swf</a></li>
+        <li><a href="../switchable/index.html">switchable</a></li>
+        <li><a href="index.html">tabs</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
+        <li><a href="../uri/index.html">uri</a></li>
+         <li><a href="../waterfall/index.html">waterfall</a></li>
+        <li><a href="../xtemplate/index.html">xtemplate</a></li>
+    </ul>
+</ul>
+        
+    </div>
+    
+	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>
