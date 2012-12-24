@@ -8,8 +8,9 @@ Tutorial
 
     quickstart/index.rst
     kissy/index.rst
-    styleguide/index.rst
-    projguide/index.rst
+    style-guide/index.rst
+    project-guide/index.rst
     workflow/index.rst
     tools/index.rst
-    changelog/1.3.rst
+    release-note/index.rst
+    change-log/index.rst

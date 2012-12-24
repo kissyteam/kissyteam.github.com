@@ -1,0 +1,440 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>KISSY 1.3.0 Released &mdash; KISSY v1.3 Documentation</title>
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
+<link rel="stylesheet" href="../../_static/kissy.css"/>
+    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js"></script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+	<div  id="layout" class="layout grid-s6m0e7">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../change-log/index.html" title="KISSY 升级指南"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="1.3.0rc.html" title="KISSY 1.3.0rc Released"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Tutorial</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">KISSY 发布声明</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="kissy-1-3-0-released">
+<h1>KISSY 1.3.0 Released<a class="headerlink" href="#kissy-1-3-0-released" title="Permalink to this headline">¶</a></h1>
+<style>
+   /* ==========================================================================
+      Lists
+      ========================================================================== */
+
+   /*
+    * Addresses margins set differently in IE6/7.
+    */
+
+    .main-wrap ul,
+    .main-wrap ul li {
+        list-style-type:disc;
+    }
+
+    .main-wrap ol,
+    .main-wrap ol li {
+        list-style-type:decimal;
+    }
+
+   .main-wrap dl,
+   .main-wrap menu,
+   .main-wrap ol,
+   .main-wrap ul {
+       margin: 1em 0;
+   }
+
+   .main-wrap dd {
+       margin: 0 0 0 40px;
+   }
+
+   /*
+    * Addresses paddings set differently in IE6/7.
+    */
+
+   .main-wrap menu,
+   .main-wrap ol,
+   .main-wrap ul {
+       padding: 0 0 0 40px;
+   }
+
+   .main-wrap blockquote {
+        margin:0;
+        padding:0;
+   }
+</style>
+
+<p>距离 <a href="http://docs.kissyui.com/docs/html/tutorials/release-note/1.2.0.html">KISSY 1.2.0</a>
+发布已过一年，自 <a href="http://ued.taobao.com/blog/2012/06/kissy-1-3-rc-released/">KISSY 1.3rc</a> 发布后，1.3 又继续经历了大淘宝店铺系统，搜索系统，商品详情系统的锤炼，并做了必要的调整和优化。
+今天终于可以高兴地宣布： KISSY 1.3.0 正式版发布了。
+你可以通过淘宝 cdn <a href="http://a.tbcdn.cn/s/kissy/1.3.0/seed-min.js">在线引用</a>（推荐）
+或者直接从 github <a href="https://github.com/kissyteam/kissy/archive/1.3.0.zip">下载</a>
+或者使用 <a href="https://npmjs.org/package/kissy">npm 安装</a>.
+官网文档也进行了相应更新，覆盖了 1.3 涉及到的新特性以及修改，请清除缓存后访问 <a href="http://docs.kissyui.com">KISSY 1.3 文档首页</a>.</p>
+
+<p>下面简单介绍下 1.3.0 相对于 1.2.0 的修改点以及增强：</p>
+
+<h1>不兼容修改</h1>
+
+<ul>
+<li><p>删除了 KISSY.app 方法，移除了 csspath/cssfullpath/path/fullpath 配置，
+请使用 1.3 推荐的 <a href="http://docs.kissyui.com/docs/html/api/seed/loader/">模块化机制</a> .</p></li>
+<li><p>KISSY.add(name, fn), fn 只有在 use 或者 require name 时执行。
+请需要对应模块功能时要 use 或者 require</p></li>
+<li><p>suggest/template/flash/validation 移到了 gallery。 使用的话请修改模块名字:
+<a href="http://docs.kissyui.com/kissy-gallery/gallery/suggest/">gallery/suggest/1.0/</a>,
+<a href="http://docs.kissyui.com/kissy-gallery/gallery/template/">gallery/template/1.0/</a>,
+<a href="http://docs.kissyui.com/kissy-gallery/gallery/validation/">gallery/validation/1.0/</a>,
+<a href="http://docs.kissyui.com/kissy-gallery/gallery/flash/">gallery/flash/1.0/</a>.</p></li>
+<li><p>dd 的代理和监控滚动功能独立为单独的模块：
+<a href="http://docs.kissyui.com/docs/html/api/component/dd/plugin/proxy.html">dd/pplugin/proxy</a>,
+<a href="http://docs.kissyui.com/docs/html/api/component/dd/plugin/scroll.html">dd/plugin/scroll</a>,
+使用方式也改为统一的插件 api:</p>
+
+<pre><code>new Draggable().plug(new ProxyPlugin())
+// or
+new Draggable({
+    plugins: [new ProxyPlugin()]
+})
+</code></pre></li>
+<li><p>overlay 的 resize 和 draggable 功能也独立为单独的模块：
+<a href="http://docs.kissyui.com/docs/html/api/component/component/plugin/drag.html">component/plugin/drag</a>,
+<a href="http://docs.kissyui.com/docs/html/api/component/component/plugin/resize.html">component/plugin/resize</a>,
+使用方式也改为统一的插件 api：</p>
+
+<pre><code>new Overlay().plug(new DragPlugin());
+// or
+new Overlay({
+    plugins:[new DragPlugin()]
+});
+</code></pre></li>
+<li><p>editor 重构</p>
+
+<ul><li>使用统一的组件 api</li>
+<li>使用统一的模块化机制</li></ul></li>
+</ul>
+
+<h2>注意点</h2>
+
+<ul>
+<li><p>不要静态引入 KISSY 模块文件，例如</p>
+
+<pre><code>&lt;script src='http://a.tbcdn.cn/s/kissy/1.3.0/overlay.js'&gt;&lt;/script&gt;
+</code></pre></li>
+<li><p>推荐只静态引入 seed-min.js，通过 use require 使用其他模块，另外：</p>
+
+<ul><li>尽量少 use</li>
+<li>线上设置 combo 模式（需要服务器支持 <a href="https://github.com/perusio/nginx-http-concat">combo</a> ）</li></ul></li>
+</ul>
+
+<h2>稳定性提升</h2>
+
+<ul>
+<li>使用 phantomjs travis nodejs 来支持 <a href="https://travis-ci.org/kissyteam/kissy">KISSY</a> 的持续集成。</li>
+<li>单元测试覆盖率提升，目测 80% 左右，后面需精确统计.</li>
+</ul>
+
+<h2>协作效率提升</h2>
+
+<ul>
+<li>package 机制支持多个业务间的无缝协作</li>
+<li>combo 模式支持每个业务耗费最小的链接数，后面会继续优化业务间的链接数</li>
+<li>内置 gallery package，更容易的通用模块共享机制，引用 cdn 版本直接 use('gallery/xx') 即可。</li>
+</ul>
+
+<h2>开发更便捷</h2>
+
+<ul>
+<li>线上 combo 模式与开发阶段匿名模块的无缝切换</li>
+<li>组件加强了一致性
+<ul><li>包括 new/render/plugin/listeners</li>
+<li>生命周期事件: afterRenderUI/afterBindUI/destroy/show/hide</li>
+<li>组件即模块， use/require 按需使用</li></ul></li>
+<li><p>组件通过 json 初始化达到更好的易用性</p>
+
+<pre><code>new Menu({
+    children:[{
+        content:'menuitem'
+    }],
+    plugins:[],
+    listeners:[]
+});
+
+
+new Tree({
+    content:'root',
+    children:[{
+        content:'node'
+    }]
+});
+</code></pre></li>
+<li><p>增加新的模块：
+<a href="http://docs.kissyui.com/docs/html/api/component/promise/index.html">promise</a>,
+<a href="http://docs.kissyui.com/docs/html/api/component/uri">uri</a>,
+<a href="http://docs.kissyui.com/docs/html/api/component/stylesheet">stylesheet</a>,
+<a href="http://docs.kissyui.com/docs/html/api/component/combobox">combobox</a>,
+<a href="http://docs.kissyui.com/docs/html/api/component/color">color</a>,
+<a href="http://docs.kissyui.com/docs/html/api/component/swf">swf</a>,
+<a href="http://docs.kissyui.com/docs/html/api/component/xtemplate">xtemplate</a></p></li>
+<li>KISSY 新的<a href="http://docs.kissyui.com/1.3/api/">英文 api 文档</a></li>
+</ul>
+
+<h2>性能与可访问性</h2>
+
+<h3>移动支持</h3>
+
+<ul>
+<li>所有模块按照设备能力按需加载</li>
+<li>线上启用 combo 模式减少链接数</li>
+<li>支持手势事件 <a href="http://docs.kissyui.com/docs/html/api/core/event/pinch.html">pinch</a>/
+<a href="http://docs.kissyui.com/docs/html/api/core/event/rotate.html">rotate</a>/
+<a href="http://docs.kissyui.com/docs/html/api/core/event/tap.html">tap</a> ....</li>
+<li>大部分组件支持触屏下使用</li>
+</ul>
+
+<h3>性能</h3>
+
+<ul>
+<li>在不同的浏览器下根据能力加载不同的模块。
+例如 ie 的兼容性代码不会被标准浏览器加载，例如 json2/event hashchange/dom ie...</li>
+<li>通过延迟初始化，提高了层级组件的性能.</li>
+</ul>
+
+<h1>详细 changelog</h1>
+
+<p>详细 changelog 可到<a href="http://docs.kissyui.com/docs/html/tutorials/changelog/1.3.html">文档页面</a>具体查看。</p>
+
+<p>1.3 修复的 bug 可到 github <a href="https://github.com/kissyteam/kissy/issues?milestone=1&amp;page=1&amp;state=closed">issues</a> 里查阅.</p>
+
+<h1>next -> 1.4</h1>
+
+<p>下个版本中初步规划在两个方面完善：</p>
+
+<ul>
+<li><p>基础架构</p>
+
+<ul><li>test coverage</li>
+<li>ie 持续集成探索</li>
+<li>链接数继续优化</li>
+<li>快速的 build 机制探索</li></ul></li>
+<li><p>基础组件</p>
+
+<ul><li>无缝的选择器</li>
+<li>data-picker</li>
+<li>color-picker</li>
+<li>switchable 重构</li>
+<li>grid</li></ul></li>
+</ul>
+
+<p>具体 roadmap 有兴趣可关注 <a href="https://github.com/kissyteam/kissy/issues?milestone=2&amp;page=1&amp;state=open">github</a></p>
+
+<h1>感谢</h1>
+
+<p>在此，感谢曾经帮助过或现在仍然在持续推动 KISSY 发展的人们，希望 KISSY 能帮助更多普通的中国前端工程师。</p>
+
+<p>特别感谢以下人员的工作：</p>
+
+<ul>
+<li>服务线团队对 KISSY 1.3 的首先尝试：
+常胤，玉门，七念，云休，棪木，清羽。</li>
+<li>KISSY Gallery 虚拟团队对 KISSY 组件化的无私贡献：
+剑平，常胤，翰文，玉门，七念，林谦，紫英，张挺，牧云，易敛，伯方，流火，元泉，基德。</li>
+<li>etao 兄弟团队对 KISSY 的不懈支持：
+李牧，左莫，基德，龙笛，逸才，雨异，云聪，阿大</li>
+<li>KISSY PIE 工具团队对基于 KISSY 开发效率的大幅提升：
+文龙，紫英，遇春，张挺，剑平</li>
+<li>年底升级项目团队包括 tmall 兄弟团队对 KISSY 的理解与宽容：
+游侠，水儿，石霸，霸先，大遒，渐飞，文龙，释然，凤寻，三七</li>
+</ul>
+
+<p>还有更多在日常工作中帮助过 KISSY 完善的工程师们：</p>
+
+<p>阿克，道璘，地极，董晓庆，额台，方元，飞长，妙净，鸣弦，墨锋，苏河，
+铁军，亚城，隐若，影风，元晃，缘灭，云谦，展炎，展烨，龙欣，龙刚，拔赤 …</p>
+
+<p>以及玉伯，小马，圆心对 KISSY 一如既往的支持.</p></div>
+
+
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../change-log/index.html" title="KISSY 升级指南"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="1.3.0rc.html" title="KISSY 1.3.0rc Released"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Tutorial</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">KISSY 发布声明</a> &#187; </li> 
+    </ul>
+</div>
+					<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+		
+    <div class="col-sub">
+
+<div class="s-box">
+    <div class="s-box-bd">
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo/index.html">Demos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html">快速上手</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kissy/index.html">模块介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../style-guide/index.html">最佳编码实践</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project-guide/index.html">项目开发指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workflow/index.html">组件开发指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools/index.html">前端常用工具</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">KISSY 发布声明</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="1.2.0.html">KISSY 1.2.0 Released</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.3.0rc.html">KISSY 1.3.0rc Released</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">KISSY 1.3.0 Released</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../change-log/index.html">KISSY 升级指南</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</div>
+    </div>
+    <div class="col-extra">
+        
+
+    </div>
+	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>
