@@ -60,14 +60,17 @@ http://docs.kissyui.com/docs/html/demo/component/menubutton/xclass.html
 
 #. 删除了 kissy-aio.js/uibase.js 静态文件，请静态引入以上文件时注意
 
-#. 删除了 KISSY.app 方法，请使用推荐的模块化机制
+#. 删除了 KISSY.app 方法，删除 csspath/cssfullpath/path/fullpath，请使用推荐的模块化机制
 
 #. KISSY.add(name,fn); fn 不会立即执行，只有 name 被 use 或 require 时才会执行
 
-#. dd proxy 与 scroll 插件使用方式有变
+#. dd proxy 与 scroll 插件使用方式有变, 变更为统一的插件机制
 
-#. overlay resizable/draggable api 变动
+#. overlay resizable/draggable api 变动, 变更为统一的插件机制
 
+#. editor api 变动，更改为 kissy 统一的组件 api 以及模块化加载方式
+
+#. suggest/template/flash/validation 移到 gallery
 
 
 详细 change log
@@ -98,7 +101,29 @@ Bug fix
 
     http://docs.kissyui.com/docs/html/tutorials/index.html
 
-            
+
+suggest
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [!] moved to gallery: gallery/suggest/1.0/
+
+
+validation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [!] moved to gallery: gallery/validation/1.0/
+
+
+template
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [!] moved to gallery: gallery/template/1.0/
+
+flash
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. [!] moved to gallery: gallery/flash/1.0/
+
 seed 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -289,19 +314,6 @@ http://docs.kissyui.com/docs/html/api/component/menubutton/MenuButton.html#menub
 
 http://docs.kissyui.com/docs/html/api/component/menu/
 
-
-suggest
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-moved to gallery: gallery/suggest/1.0/
-
-
-validation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-moved to gallery: gallery/validation/1.0/
-
-
 datalazyload
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -349,11 +361,19 @@ combobox
 http://docs.kissyui.com/docs/html/api/component/combobox/
 
 
-template
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+swf
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-moved to gallery: gallery/template/1.0/
+#. 方便加入 flash 节点
 
+http://docs.kissyui.com/docs/html/api/component/swf
+
+uri
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. 方便对 uri 进行结构化操作
+
+http://docs.kissyui.com/docs/html/api/component/uri
 
 xtemplate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
