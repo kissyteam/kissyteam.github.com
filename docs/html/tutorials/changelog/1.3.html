@@ -130,10 +130,12 @@
 <h2>一些需要注意的不兼容性问题<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>删除了 kissy-aio.js/uibase.js 静态文件，请静态引入以上文件时注意</li>
-<li>删除了 KISSY.app 方法，请使用推荐的模块化机制</li>
+<li>删除了 KISSY.app 方法，删除 csspath/cssfullpath/path/fullpath，请使用推荐的模块化机制</li>
 <li>KISSY.add(name,fn); fn 不会立即执行，只有 name 被 use 或 require 时才会执行</li>
-<li>dd proxy 与 scroll 插件使用方式有变</li>
-<li>overlay resizable/draggable api 变动</li>
+<li>dd proxy 与 scroll 插件使用方式有变, 变更为统一的插件机制</li>
+<li>overlay resizable/draggable api 变动, 变更为统一的插件机制</li>
+<li>editor api 变动，更改为 kissy 统一的组件 api 以及模块化加载方式</li>
+<li>suggest/template/flash/validation 移到 gallery</li>
 </ol>
 </div>
 <div class="section" id="change-log">
@@ -168,6 +170,30 @@
 <div><p><a class="reference external" href="http://docs.kissyui.com/docs/html/tutorials/index.html">http://docs.kissyui.com/docs/html/tutorials/index.html</a></p>
 </div></blockquote>
 </li>
+</ol>
+</div>
+<div class="section" id="suggest">
+<h3>suggest<a class="headerlink" href="#suggest" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>[!] moved to gallery: gallery/suggest/1.0/</li>
+</ol>
+</div>
+<div class="section" id="validation">
+<h3>validation<a class="headerlink" href="#validation" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>[!] moved to gallery: gallery/validation/1.0/</li>
+</ol>
+</div>
+<div class="section" id="template">
+<h3>template<a class="headerlink" href="#template" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>[!] moved to gallery: gallery/template/1.0/</li>
+</ol>
+</div>
+<div class="section" id="flash">
+<h3>flash<a class="headerlink" href="#flash" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>[!] moved to gallery: gallery/flash/1.0/</li>
 </ol>
 </div>
 <div class="section" id="seed">
@@ -343,14 +369,6 @@
 <p><a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/menubutton/MenuButton.html#menubutton.MenuButton.config.matchElWidth">http://docs.kissyui.com/docs/html/api/component/menubutton/MenuButton.html#menubutton.MenuButton.config.matchElWidth</a></p>
 <p><a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/menu/">http://docs.kissyui.com/docs/html/api/component/menu/</a></p>
 </div>
-<div class="section" id="suggest">
-<h3>suggest<a class="headerlink" href="#suggest" title="Permalink to this headline">¶</a></h3>
-<p>moved to gallery: gallery/suggest/1.0/</p>
-</div>
-<div class="section" id="validation">
-<h3>validation<a class="headerlink" href="#validation" title="Permalink to this headline">¶</a></h3>
-<p>moved to gallery: gallery/validation/1.0/</p>
-</div>
 <div class="section" id="datalazyload">
 <h3>datalazyload<a class="headerlink" href="#datalazyload" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
@@ -393,9 +411,19 @@
 </ol>
 <p><a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/combobox/">http://docs.kissyui.com/docs/html/api/component/combobox/</a></p>
 </div>
-<div class="section" id="template">
-<h3>template<a class="headerlink" href="#template" title="Permalink to this headline">¶</a></h3>
-<p>moved to gallery: gallery/template/1.0/</p>
+<div class="section" id="swf">
+<h3>swf<a class="headerlink" href="#swf" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>方便加入 flash 节点</li>
+</ol>
+<p><a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/swf">http://docs.kissyui.com/docs/html/api/component/swf</a></p>
+</div>
+<div class="section" id="uri">
+<h3>uri<a class="headerlink" href="#uri" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>方便对 uri 进行结构化操作</li>
+</ol>
+<p><a class="reference external" href="http://docs.kissyui.com/docs/html/api/component/uri">http://docs.kissyui.com/docs/html/api/component/uri</a></p>
 </div>
 <div class="section" id="xtemplate">
 <h3>xtemplate<a class="headerlink" href="#xtemplate" title="Permalink to this headline">¶</a></h3>
@@ -539,6 +567,10 @@
 <li><a class="reference internal" href="#id5">标记含义</a></li>
 <li><a class="reference internal" href="#bug-fix">Bug fix</a></li>
 <li><a class="reference internal" href="#id6">结构</a></li>
+<li><a class="reference internal" href="#suggest">suggest</a></li>
+<li><a class="reference internal" href="#validation">validation</a></li>
+<li><a class="reference internal" href="#template">template</a></li>
+<li><a class="reference internal" href="#flash">flash</a></li>
 <li><a class="reference internal" href="#seed">seed</a></li>
 <li><a class="reference internal" href="#ua">ua</a></li>
 <li><a class="reference internal" href="#event">event</a></li>
@@ -552,14 +584,13 @@
 <li><a class="reference internal" href="#calendar">calendar</a></li>
 <li><a class="reference internal" href="#overlay">overlay</a></li>
 <li><a class="reference internal" href="#menu-menubutton">menu/menubutton</a></li>
-<li><a class="reference internal" href="#suggest">suggest</a></li>
-<li><a class="reference internal" href="#validation">validation</a></li>
 <li><a class="reference internal" href="#datalazyload">datalazyload</a></li>
 <li><a class="reference internal" href="#switchable">switchable</a></li>
 <li><a class="reference internal" href="#waterfall">waterfall</a></li>
 <li><a class="reference internal" href="#tree">tree</a></li>
 <li><a class="reference internal" href="#combobox">combobox</a></li>
-<li><a class="reference internal" href="#template">template</a></li>
+<li><a class="reference internal" href="#swf">swf</a></li>
+<li><a class="reference internal" href="#uri">uri</a></li>
 <li><a class="reference internal" href="#xtemplate">xtemplate</a></li>
 <li><a class="reference internal" href="#promise">promise</a></li>
 <li><a class="reference internal" href="#editor">editor</a></li>
