@@ -127,7 +127,7 @@
     <head>
     <meta charset="utf-8" />
     <title>hello world</title>
-    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.3.0rc/css/base.css" />
+    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.3.0/css/dpl/base.css" />
     <link rel="stylesheet" href="../hello-world-dpl/button.css" />
     <link rel="stylesheet" href="css/hello-world.css" />
     <script src="../lib/seed.js"></script>
