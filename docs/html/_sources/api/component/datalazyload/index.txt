@@ -50,7 +50,10 @@ Methods
   * :meth:`removeCallback`
   * :meth:`addElements`
   * :meth:`removeElements`
+  * :meth:`getElements`
   * :meth:`refresh`
+  * :meth:`pause`
+  * :meth:`resume`
   * :meth:`destroy`
 
 Static Methods
@@ -170,10 +173,28 @@ Methods Detail
 
     :param HTMLElement[] els: 已有的懒加载元素列表
 
+.. method:: getElements
+
+    | **getElements** ()
+    | 得到懒加载元素列表
+
+    ::returns: {Object} eg: {images:[],textareas:[]}
+
 .. method:: refresh
 
     | **refresh** ()
     | 强制立刻检测懒加载元素
+
+.. method:: pause
+
+    | **pause** ()
+    | 暂停监控懒加载元素
+
+
+.. method:: resume
+
+    | **resume** ()
+    | 继续监控懒加载元素
 
 .. method:: destroy
 

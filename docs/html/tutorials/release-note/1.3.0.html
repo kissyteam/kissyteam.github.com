@@ -142,63 +142,27 @@
 </style>
 
 <p>距离 <a href="http://docs.kissyui.com/docs/html/tutorials/release-note/1.2.0.html">KISSY 1.2.0</a>
-发布已过一年，自 <a href="http://ued.taobao.com/blog/2012/06/kissy-1-3-rc-released/">KISSY 1.3rc</a> 发布后，1.3 又继续经历了大淘宝店铺系统，搜索系统，商品详情系统的锤炼，并做了必要的调整和优化。
+发布已过一年，自 <a href="http://ued.taobao.com/blog/2012/06/kissy-1-3-rc-released/">KISSY 1.3rc</a> 发布后，
+1.3 又继续经历了即将发布的大淘宝店铺系统，搜索系统，商品详情系统的锤炼，并做了必要的调整和优化。
 今天终于可以高兴地宣布： KISSY 1.3.0 正式版发布了。
 你可以通过淘宝 cdn <a href="http://a.tbcdn.cn/s/kissy/1.3.0/seed-min.js">在线引用</a>（推荐）
 或者直接从 github <a href="https://github.com/kissyteam/kissy/archive/1.3.0.zip">下载</a>
 或者使用 <a href="https://npmjs.org/package/kissy">npm 安装</a>.
-官网文档也进行了相应更新，覆盖了 1.3 涉及到的新特性以及修改，请清除缓存后访问 <a href="http://docs.kissyui.com">KISSY 1.3 文档首页</a>.</p>
+官网文档也进行了相应更新，覆盖了 1.3 涉及到的新特性以及修改，
+请清除缓存后访问 <a href="http://docs.kissyui.com">KISSY 1.3 文档首页</a>.</p>
 
-<p>下面简单介绍下 1.3.0 相对于 1.2.0 的修改点以及增强：</p>
+<p>下面简单介绍下 1.3.0 相对于 1.2.0 的新特性与不兼容之处，也可查看 <a href="http://www.slideshare.net/yiminghe/kissy-13released">发布 ppt</a> 介绍.</p>
 
-<h1>不兼容修改</h1>
+<h1>新特性</h1>
 
-<ul>
-<li><p>删除了 KISSY.app 方法，移除了 csspath/cssfullpath/path/fullpath 配置，
-请使用 1.3 推荐的 <a href="http://docs.kissyui.com/docs/html/api/seed/loader/">模块化机制</a> .</p></li>
-<li><p>KISSY.add(name, fn), fn 只有在 use 或者 require name 时执行。
-请需要对应模块功能时要 use 或者 require</p></li>
-<li><p>suggest/template/flash/validation 移到了 gallery。 使用的话请修改模块名字:
-<a href="http://docs.kissyui.com/kissy-gallery/gallery/suggest/">gallery/suggest/1.0/</a>,
-<a href="http://docs.kissyui.com/kissy-gallery/gallery/template/">gallery/template/1.0/</a>,
-<a href="http://docs.kissyui.com/kissy-gallery/gallery/validation/">gallery/validation/1.0/</a>,
-<a href="http://docs.kissyui.com/kissy-gallery/gallery/flash/">gallery/flash/1.0/</a>.</p></li>
-<li><p>dd 的代理和监控滚动功能独立为单独的模块：
-<a href="http://docs.kissyui.com/docs/html/api/component/dd/plugin/proxy.html">dd/pplugin/proxy</a>,
-<a href="http://docs.kissyui.com/docs/html/api/component/dd/plugin/scroll.html">dd/plugin/scroll</a>,
-使用方式也改为统一的插件 api:</p>
-
-<pre><code>new Draggable().plug(new ProxyPlugin())
-// or
-new Draggable({
-    plugins: [new ProxyPlugin()]
-})
-</code></pre></li>
-<li><p>overlay 的 resize 和 draggable 功能也独立为单独的模块：
-<a href="http://docs.kissyui.com/docs/html/api/component/component/plugin/drag.html">component/plugin/drag</a>,
-<a href="http://docs.kissyui.com/docs/html/api/component/component/plugin/resize.html">component/plugin/resize</a>,
-使用方式也改为统一的插件 api：</p>
-
-<pre><code>new Overlay().plug(new DragPlugin());
-// or
-new Overlay({
-    plugins:[new DragPlugin()]
-});
-</code></pre></li>
-<li><p>editor 重构</p>
-
-<ul><li>使用统一的组件 api</li>
-<li>使用统一的模块化机制</li></ul></li>
-</ul>
-
-<h2>注意点</h2>
+<h1>前提</h1>
 
 <ul>
 <li><p>不要静态引入 KISSY 模块文件，例如</p>
 
 <pre><code>&lt;script src='http://a.tbcdn.cn/s/kissy/1.3.0/overlay.js'&gt;&lt;/script&gt;
 </code></pre></li>
-<li><p>推荐只静态引入 seed-min.js，通过 use require 使用其他模块，另外：</p>
+<li><p>推荐只静态引入 <strong>seed-min.js</strong>，通过 <strong>use require</strong> 使用其他模块，另外：</p>
 
 <ul><li>尽量少 use</li>
 <li>线上设置 combo 模式（需要服务器支持 <a href="https://github.com/perusio/nginx-http-concat">combo</a> ）</li></ul></li>
@@ -258,26 +222,62 @@ new Tree({
 
 <h2>性能与可访问性</h2>
 
-<h3>移动支持</h3>
-
 <ul>
-<li>所有模块按照设备能力按需加载</li>
+<li><p>移动支持</p>
+
+<ul><li>所有模块按照设备能力按需加载</li>
 <li>线上启用 combo 模式减少链接数</li>
 <li>支持手势事件 <a href="http://docs.kissyui.com/docs/html/api/core/event/pinch.html">pinch</a>/
 <a href="http://docs.kissyui.com/docs/html/api/core/event/rotate.html">rotate</a>/
 <a href="http://docs.kissyui.com/docs/html/api/core/event/tap.html">tap</a> ....</li>
-<li>大部分组件支持触屏下使用</li>
+<li>大部分组件支持触屏下使用</li></ul></li>
+<li><p>性能</p>
+
+<ul><li>在不同的浏览器下根据能力加载不同的模块。
+例如 ie 的兼容性代码不会被标准浏览器加载，例如 json2/event hashchange/dom ie...</li>
+<li>通过延迟初始化，提高了层级组件的性能.</li></ul></li>
 </ul>
 
-<h3>性能</h3>
+<h1>不兼容处</h1>
 
 <ul>
-<li>在不同的浏览器下根据能力加载不同的模块。
-例如 ie 的兼容性代码不会被标准浏览器加载，例如 json2/event hashchange/dom ie...</li>
-<li>通过延迟初始化，提高了层级组件的性能.</li>
+<li><p>删除了 KISSY.app 方法，移除了 csspath/cssfullpath/path/fullpath 配置，
+请使用 1.3 推荐的 <a href="http://docs.kissyui.com/docs/html/api/seed/loader/">模块化机制</a> .</p></li>
+<li><p>KISSY.add(name, fn), fn 只有在 use 或者 require name 时执行。
+请需要对应模块功能时要 use 或者 require</p></li>
+<li><p>suggest/template/flash/validation 移到了 gallery。 使用的话请修改模块名字:
+<a href="http://docs.kissyui.com/kissy-gallery/gallery/suggest/">gallery/suggest/1.0/</a>,
+<a href="http://docs.kissyui.com/kissy-gallery/gallery/template/">gallery/template/1.0/</a>,
+<a href="http://docs.kissyui.com/kissy-gallery/gallery/validation/">gallery/validation/1.0/</a>,
+<a href="http://docs.kissyui.com/kissy-gallery/gallery/flash/">gallery/flash/1.0/</a>.</p></li>
+<li><p>dd 的代理和监控滚动功能独立为单独的模块：
+<a href="http://docs.kissyui.com/docs/html/api/component/dd/plugin/proxy.html">dd/pplugin/proxy</a>,
+<a href="http://docs.kissyui.com/docs/html/api/component/dd/plugin/scroll.html">dd/plugin/scroll</a>,
+使用方式也改为统一的插件 api:</p>
+
+<pre><code>new Draggable().plug(new ProxyPlugin())
+// or
+new Draggable({
+    plugins: [new ProxyPlugin()]
+})
+</code></pre></li>
+<li><p>overlay 的 resize 和 draggable 功能也独立为单独的模块：
+<a href="http://docs.kissyui.com/docs/html/api/component/component/plugin/drag.html">component/plugin/drag</a>,
+<a href="http://docs.kissyui.com/docs/html/api/component/component/plugin/resize.html">component/plugin/resize</a>,
+使用方式也改为统一的插件 api：</p>
+
+<pre><code>new Overlay().plug(new DragPlugin());
+// or
+new Overlay({
+    plugins:[new DragPlugin()]
+});
+</code></pre></li>
+<li><p>editor 重构</p>
+
+<ul><li>使用统一的组件 api 与模块化机制</li></ul></li>
 </ul>
 
-<h1>详细 changelog</h1>
+<h2>详细 changelog</h2>
 
 <p>详细 changelog 可到<a href="http://docs.kissyui.com/docs/html/tutorials/changelog/1.3.html">文档页面</a>具体查看。</p>
 
@@ -291,16 +291,17 @@ new Tree({
 <li><p>基础架构</p>
 
 <ul><li>test coverage</li>
-<li>ie 持续集成探索</li>
+<li>ie 持续集成探索??</li>
 <li>链接数继续优化</li>
 <li>快速的 build 机制探索</li></ul></li>
 <li><p>基础组件</p>
 
-<ul><li>无缝的选择器</li>
+<ul><li>date/datasource/graphic</li>
+<li>无缝加载的 css 选择器</li>
 <li>data-picker</li>
 <li>color-picker</li>
 <li>switchable 重构</li>
-<li>grid</li></ul></li>
+<li>grid??</li></ul></li>
 </ul>
 
 <p>具体 roadmap 有兴趣可关注 <a href="https://github.com/kissyteam/kissy/issues?milestone=2&amp;page=1&amp;state=open">github</a></p>
@@ -329,7 +330,11 @@ new Tree({
 <p>阿克，道璘，地极，董晓庆，额台，方元，飞长，妙净，鸣弦，墨锋，苏河，
 铁军，亚城，隐若，影风，元晃，缘灭，云谦，展炎，展烨，龙欣，龙刚，拔赤 …</p>
 
-<p>以及玉伯，小马，圆心对 KISSY 一如既往的支持.</p></div>
+<p>以及玉伯，小马，圆心对 KISSY 一如既往的支持.</p>
+
+<p>最后祝大家圣诞快乐！</p>
+
+<p><img src="http://img01.taobaocdn.com/tps/i1/T1GbQLXjtXXXb3RCMH-858-643.jpg" alt="KISSY 1.3" title="" /></p></div>
 
 
                     
