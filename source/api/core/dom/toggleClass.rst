@@ -27,8 +27,8 @@ Methods
 	
 	    KISSY.ready(function(S){
 		    var DOM = S.DOM,Event = S.Event;
-		    //点击 id 为 btn 的元素来控制 id 为 t1 的元素样式是 hide 和 show 交替
+		    //点击 id 为 btn 的元素来控制 id 为 t1 的元素样式 show 交替出现
 		    Event.on("#btn","click",function(e){
-			    DOM.toggleClass("#t1","hide show");
+			    DOM.toggleClass("#t1","show");
 		    });
 	    });

@@ -64,6 +64,7 @@ Methods
    viewportHeight
    viewportWidth
    scrollIntoView
+   dom-index
    parent
    next
    prev

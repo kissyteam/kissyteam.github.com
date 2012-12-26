@@ -94,6 +94,7 @@ Member Methods
         :func:`~dom.attr`, :func:`~dom.hasAttr`,
         :func:`~dom.prop`, :func:`~dom.hasProp`, :func:`~dom.val`, :func:`~dom.text`, :func:`~dom.css`, :func:`~dom.toggle`,
         :func:`~dom.offset`, :func:`~dom.scrollIntoView`, :func:`~dom.parent`,
+         :func:`~dom.index`,
         :func:`~dom.next`, :func:`~dom.prev`,
         :func:`~dom.first`, :func:`~dom.last`,
         :func:`~dom.siblings`, :func:`~dom.children`,

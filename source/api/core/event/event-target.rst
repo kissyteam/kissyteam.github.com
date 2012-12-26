@@ -56,7 +56,11 @@ Methods Detail
     
         .. attribute:: Target.publish.cfg.bubbles
         
-            类型 boolean. 是否支持冒泡。
+            类型 boolean. 是否支持冒泡。 默认 true
+
+        .. attribute:: Target.publish.cfg.defaultFn
+
+            类型 Function.
             
 
      
