@@ -33,6 +33,7 @@ Attributes
 -----------------------------------------------
 
   * 同 :class:`Overlay` .
+  * :attr:`~Popup.prototype.currentTrigger`
 
   
 Methods
@@ -45,6 +46,7 @@ Events
 -----------------------------------------------
 
   * 同 :class:`Overlay`
+  * :func:`~Popup.Events.afterCurrentTriggerChange`
 
 Class Detail
 -----------------------------------------------
@@ -78,11 +80,11 @@ Configs Detail
     
 .. data:: Popup.prototype.trigger
 
-    {String|HTMLElement|KISSY.Node} - 触点
+    {String|HTMLElement[]|KISSY.NodeList} - 触点集合
 
 .. data:: Popup.prototype.triggerType
 
-    {String} - 可选, 默认为'click', 触发类型, 可选'click', 'mouse'.
+    {String} - 可选, 默认为 'click', 触发类型, 可选 'click', 'mouse'.
 
 .. data:: Popup.prototype.mouseDelay
 
@@ -91,3 +93,20 @@ Configs Detail
 .. data:: Popup.prototype.toggle
 
     {Boolean} - 可选, triggerType 为 click 时, Popup 是否有toggle功能，默认为false，不开启
+
+Attributes Detail
+------------------------
+
+.. attribute:: Popup.prototype.currentTrigger
+
+    {KISSY.Node} - 当前的 trigger 节点
+
+Events Detail
+--------------------------
+
+.. function:: Popup.Events.afterCurrentTriggerChange
+
+    | **afterCurrentTriggerChange(e)**
+    | 当 currentTrigger 改变后触发
+
+    :param {KISSY.Node} e.newVal: 新的 trigger 元素

@@ -129,6 +129,7 @@
 <blockquote>
 <div><ul class="simple">
 <li>同 <a class="reference internal" href="overlay.html#overlay.Overlay" title="overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a> .</li>
+<li><a class="reference internal" href="#overlay.Popup.prototype.currentTrigger" title="overlay.Popup.prototype.currentTrigger"><tt class="xref py py-attr docutils literal"><span class="pre">currentTrigger</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -145,6 +146,7 @@
 <blockquote>
 <div><ul class="simple">
 <li>同 <a class="reference internal" href="overlay.html#overlay.Overlay" title="overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">Overlay</span></tt></a></li>
+<li><a class="reference internal" href="#overlay.Popup.Events.afterCurrentTriggerChange" title="overlay.Popup.Events.afterCurrentTriggerChange"><tt class="xref py py-func docutils literal"><span class="pre">afterCurrentTriggerChange()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -190,13 +192,13 @@
 <dl class="data">
 <dt id="overlay.Popup.prototype.trigger">
 <tt class="descclassname">Popup.prototype.</tt><tt class="descname">trigger</tt><a class="headerlink" href="#overlay.Popup.prototype.trigger" title="Permalink to this definition">¶</a></dt>
-<dd><p>{String|HTMLElement|KISSY.Node} - 触点</p>
+<dd><p>{String|HTMLElement[]|KISSY.NodeList} - 触点集合</p>
 </dd></dl>
 
 <dl class="data">
 <dt id="overlay.Popup.prototype.triggerType">
 <tt class="descclassname">Popup.prototype.</tt><tt class="descname">triggerType</tt><a class="headerlink" href="#overlay.Popup.prototype.triggerType" title="Permalink to this definition">¶</a></dt>
-<dd><p>{String} - 可选, 默认为&#8217;click&#8217;, 触发类型, 可选&#8217;click&#8217;, &#8216;mouse&#8217;.</p>
+<dd><p>{String} - 可选, 默认为 &#8216;click&#8217;, 触发类型, 可选 &#8216;click&#8217;, &#8216;mouse&#8217;.</p>
 </dd></dl>
 
 <dl class="data">
@@ -209,6 +211,36 @@
 <dt id="overlay.Popup.prototype.toggle">
 <tt class="descclassname">Popup.prototype.</tt><tt class="descname">toggle</tt><a class="headerlink" href="#overlay.Popup.prototype.toggle" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Boolean} - 可选, triggerType 为 click 时, Popup 是否有toggle功能，默认为false，不开启</p>
+</dd></dl>
+
+</div>
+<div class="section" id="attributes-detail">
+<h2>Attributes Detail<a class="headerlink" href="#attributes-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="attribute">
+<dt id="overlay.Popup.prototype.currentTrigger">
+<tt class="descclassname">Popup.prototype.</tt><tt class="descname">currentTrigger</tt><a class="headerlink" href="#overlay.Popup.prototype.currentTrigger" title="Permalink to this definition">¶</a></dt>
+<dd><p>{KISSY.Node} - 当前的 trigger 节点</p>
+</dd></dl>
+
+</div>
+<div class="section" id="events-detail">
+<h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="overlay.Popup.Events.afterCurrentTriggerChange">
+<tt class="descclassname">Popup.Events.</tt><tt class="descname">afterCurrentTriggerChange</tt><big>(</big><big>)</big><a class="headerlink" href="#overlay.Popup.Events.afterCurrentTriggerChange" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>afterCurrentTriggerChange(e)</strong></div>
+<div class="line">当 currentTrigger 改变后触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><strong>e.newVal</strong> (<em>{KISSY.Node}</em>) &#8211; 新的 trigger 元素</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>

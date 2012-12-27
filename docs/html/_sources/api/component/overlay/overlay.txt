@@ -86,17 +86,13 @@ Class Detail
 
     :class:`~component.Controller`
 
-    :class:`~component.UIBase.Box`
+    :class:`~component.extension.Box`
 
     :class:`~component.extension.ContentBox` ,
 
     :class:`~component.extension.Align` ,
 
     :class:`~component.extension.Position` ,
-
-    :class:`~component.UIBase.Resize` ,
-
-    :class:`~component.UIBase.Mask` ,
 
     包含其全部配置,属性,方法,事件.
 
