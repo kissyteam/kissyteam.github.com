@@ -12,11 +12,11 @@ pinch
 
 包括格外下面的属性：
 
-.. pinch.distance
+.. attribute:: pinch.distance
 
     {Number} 双指的绝对距离
 
-.. pinch.scale
+.. attribute:: pinch.scale
 
     {Number} 双指相对于开始调整时具体的倍数
 

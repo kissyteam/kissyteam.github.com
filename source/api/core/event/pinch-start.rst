@@ -12,12 +12,12 @@ pinchStart
 
 包括格外下面的属性：
 
-.. pinchStart.distance
+.. attribute:: pinchStart.distance
 
     {Number} 开始时双指的绝对距离
 
 
-.. pinchStart.scale
+.. attribute:: pinchStart.scale
 
     {Number} 固定为 1
 

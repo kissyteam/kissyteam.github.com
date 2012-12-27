@@ -12,15 +12,15 @@ swipe
 
 包括格外下面的属性：
 
-.. swipe.distance
+.. attribute:: swipe.distance
 
     {Number} 划过的距离，单位 px
 
-.. swipe.direction
+.. attribute:: swipe.direction
 
     {String} 划动方面，枚举： ``left`` ``right`` ``top`` ``bottom``
 
-.. swipe.duration
+.. attribute:: swipe.duration
 
     {Number} 滑动持续时间，单位秒
 

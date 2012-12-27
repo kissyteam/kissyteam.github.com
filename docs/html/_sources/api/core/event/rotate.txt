@@ -12,11 +12,11 @@ rotate
 
 包括格外下面的属性：
 
-.. rotate.angle
+.. attribute:: rotate.angle
 
     {Number} 当前双指的角度值
 
-.. rotate.rotation
+.. attribute:: rotate.rotation
 
     {Number} 双指和开始相比改变的角度值
 

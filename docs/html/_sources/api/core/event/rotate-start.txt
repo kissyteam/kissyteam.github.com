@@ -12,11 +12,11 @@ rotateStart
 
 包括格外下面的属性：
 
-.. rotateStart.angle
+.. attribute:: rotateStart.angle
 
     {Number} 开始时双指的角度值
 
-.. rotateStart.rotation
+.. attribute:: rotateStart.rotation
 
     {Number} 固定为  0
 
