@@ -32,7 +32,7 @@ after
 
 .. code-block:: javascript
 
-    DOM.wrap(".inner",DOM.create('<div class="new" />'));
+    DOM.wrapAll(".inner",DOM.create('<div class="new" />'));
 
 become
 

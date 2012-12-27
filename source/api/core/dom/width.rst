@@ -34,7 +34,8 @@ Methods
             var S = KISSY, DOM = S.DOM,
             elem = S.get('#test');
 
-            DOM.css(elem, 'width'); // 返回 80%
+            DOM.style(elem, 'width'); // 返回 80%
+            DOM.css(elem, 'width'); // 返回 80px
             DOM.css(elem, 'height'); // 返回 20px
 
             DOM.width(elem); // 返回 80
