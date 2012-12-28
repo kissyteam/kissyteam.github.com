@@ -10,19 +10,19 @@ Component.Extension.Align
 Class
 ---------------------------------
 
-    * :class:`~component.extension.Align`
+    * :class:`~extension.Align`
   
 
 Configs
 -----------------------------------------------
 
-    * :data:`~component.extension.config.align`
+    * :data:`~extension.Align.config.align`
     
 Methods
 -----------------------------------------------
 
-    * :meth:`~component.extension.prototype.align`
-    * :meth:`~component.extension.prototype.center`
+    * :meth:`~extension.Align.prototype.align`
+    * :meth:`~extension.Align.prototype.center`
     
 
 Class Detail
