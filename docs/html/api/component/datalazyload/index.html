@@ -419,6 +419,21 @@
 </ol>
 </dd></dl>
 
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>使用注意， 懒加载的 img 不能明确高宽时必须写一个空白图片作为占位符，例如  <a class="reference external" href="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif">http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif</a></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">&quot;&quot;</span> <span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif&quot;</span>
+<span class="na">data-ks-lazyload=</span><span class="s">&quot;http://img03.taobaocdn.com/imgextra/i3/184289596/T2ecfeXkFaXXXXXXXX_!!184289596.jpg&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+<p>最好预先知道高宽的话直接写上高宽：</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;img</span> <span class="na">width=</span><span class="s">&quot;950&quot;</span> <span class="na">height=</span><span class="s">&quot;119&quot;</span> <span class="na">alt=</span><span class="s">&quot;&quot;</span>
+<span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif&quot;</span>
+<span class="na">data-ks-lazyload=</span><span class="s">&quot;http://img03.taobaocdn.com/imgextra/i3/184289596/T2ecfeXkFaXXXXXXXX_!!184289596.jpg&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+<p class="last">否则会导致性能变差！</p>
+</div>
 </div>
 </div>
 

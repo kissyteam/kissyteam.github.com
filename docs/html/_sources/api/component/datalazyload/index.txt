@@ -218,4 +218,25 @@ Static Methods Detail
         此时 img 的真实地址须放在属性 ``data-ks-lazyload-custom`` 中
 
 
+.. note::
 
+    使用注意， 懒加载的 img 不能明确高宽时必须写一个空白图片作为占位符，例如  http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif
+
+
+    .. code-block:: html
+
+        <img alt="" src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif"
+        data-ks-lazyload="http://img03.taobaocdn.com/imgextra/i3/184289596/T2ecfeXkFaXXXXXXXX_!!184289596.jpg">
+
+
+    最好预先知道高宽的话直接写上高宽：
+
+
+    .. code-block:: html
+
+        <img width="950" height="119" alt=""
+        src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif"
+        data-ks-lazyload="http://img03.taobaocdn.com/imgextra/i3/184289596/T2ecfeXkFaXXXXXXXX_!!184289596.jpg">
+
+
+    否则会导致性能变差！
