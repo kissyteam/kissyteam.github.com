@@ -118,23 +118,10 @@
 <h2>Configs<a class="headerlink" href="#configs" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#datalazyload.mod" title="datalazyload.mod"><tt class="xref py py-data docutils literal"><span class="pre">mod</span></tt></a></li>
 <li><a class="reference internal" href="#datalazyload.diff" title="datalazyload.diff"><tt class="xref py py-data docutils literal"><span class="pre">diff</span></tt></a></li>
 <li><a class="reference internal" href="#datalazyload.placeholder" title="datalazyload.placeholder"><tt class="xref py py-data docutils literal"><span class="pre">placeholder</span></tt></a></li>
 <li><a class="reference internal" href="#datalazyload.execScript" title="datalazyload.execScript"><tt class="xref py py-data docutils literal"><span class="pre">execScript</span></tt></a></li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="attributes">
-<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ul class="simple">
-<li><a class="reference internal" href="#datalazyload.containers" title="datalazyload.containers"><tt class="xref py py-attr docutils literal"><span class="pre">containers</span></tt></a></li>
-<li><a class="reference internal" href="#datalazyload.config" title="datalazyload.config"><tt class="xref py py-attr docutils literal"><span class="pre">config</span></tt></a></li>
-<li><a class="reference internal" href="#datalazyload.images" title="datalazyload.images"><tt class="xref py py-attr docutils literal"><span class="pre">images</span></tt></a></li>
-<li><a class="reference internal" href="#datalazyload.areaes" title="datalazyload.areaes"><tt class="xref py py-attr docutils literal"><span class="pre">areaes</span></tt></a></li>
-<li><a class="reference internal" href="#datalazyload.callbacks" title="datalazyload.callbacks"><tt class="xref py py-attr docutils literal"><span class="pre">callbacks</span></tt></a></li>
-<li><a class="reference internal" href="#datalazyload.threshold" title="datalazyload.threshold"><tt class="xref py py-attr docutils literal"><span class="pre">threshold</span></tt></a></li>
+<li><a class="reference internal" href="#datalazyload.autoDestroy" title="datalazyload.autoDestroy"><tt class="xref py py-data docutils literal"><span class="pre">autoDestroy</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -168,19 +155,15 @@
 <dt id="datalazyload.DataLazyload">
 <em class="property">class </em><tt class="descclassname">datalazyload.</tt><tt class="descname">DataLazyload</tt><a class="headerlink" href="#datalazyload.DataLazyload" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line"><strong>DataLazyload</strong> (containers[, config])</div>
+<div class="line"><strong>DataLazyload</strong> (config)</div>
+<div class="line">继承自 <a class="reference internal" href="../../core/base/base.html#base.Base" title="base.Base"><tt class="xref py py-class docutils literal"><span class="pre">Base</span></tt></a></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>containers</strong> (<em>String|HTMLElement|Array&lt;HTMLElement&gt;</em>) &#8211; 默认为 document.body ,
-图片所在容器(可以多个)</li>
-<li><strong>config</strong> (<em>Object</em>) &#8211; 配置项, 详细见下方 <strong>Configs Detail</strong> .</li>
-</ul>
-</td>
+<tr><td>&nbsp;</td><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 配置项, 详细见下方 <strong>Configs Detail</strong> .</td>
 </tr>
 </tbody>
 </table>
@@ -195,22 +178,15 @@
 <div class="section" id="configs-detail">
 <h2>Configs Detail<a class="headerlink" href="#configs-detail" title="Permalink to this headline">¶</a></h2>
 <dl class="data">
-<dt id="datalazyload.mod">
-<tt class="descclassname">datalazyload.</tt><tt class="descname">mod</tt><a class="headerlink" href="#datalazyload.mod" title="Permalink to this definition">¶</a></dt>
-<dd><p>{String} - 默认是 &#8216;manual&#8217;,懒处理模式.</p>
-<blockquote>
-<div><ul class="simple">
-<li>&#8216;auto&#8217; : 自动化. html 输出时, 不对 img.src 做任何处理</li>
-<li>&#8216;manual&#8217; : 输出 html 时, 已经将需要延迟加载的图片的 src 属性替换为 &#8216;data-ks-lazyload&#8217;</li>
-</ul>
-</div></blockquote>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<ul class="last simple">
-<li>对于 textarea 数据, 只有手动模式;</li>
-<li>当使用 &#8216;manual&#8217; 模式时, 对 img 元素使用 <tt class="docutils literal"><span class="pre">data-ks-lazyload</span></tt> 后, 如果这个 img 元素或其父级元素为隐藏状态, 此时, datalazyload 无法起作用, 因为隐藏状态下的 img 的 <tt class="docutils literal"><span class="pre">offset.top</span></tt> 计算永远为 0, 永远处于 datalazyload 阈值之内, 这种情况下, 直接使用 textarea 更靠谱.</li>
-</ul>
-</div>
+<dt id="datalazyload.autoDestroy">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">autoDestroy</tt><a class="headerlink" href="#datalazyload.autoDestroy" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认为 true ,  当初始化时检测到的容器内懒加载元素都加载完毕后是否自动调用 <tt class="docutils literal"><span class="pre">destroy</span></tt> 方法</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="datalazyload.container">
+<tt class="descclassname">datalazyload.</tt><tt class="descname">container</tt><a class="headerlink" href="#datalazyload.container" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String|HTMLElement} - 默认为 document ,  图片所在容器</p>
 </dd></dl>
 
 <dl class="data">
@@ -229,7 +205,7 @@
 <dl class="data">
 <dt id="datalazyload.placeholder">
 <tt class="descclassname">datalazyload.</tt><tt class="descname">placeholder</tt><a class="headerlink" href="#datalazyload.placeholder" title="Permalink to this definition">¶</a></dt>
-<dd><p>{String} - 默认为 null , 图像的占位图.</p>
+<dd><p>{String} - 默认为 <a class="reference external" href="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif">http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif</a>, 如果懒加载图像没有设置 src 则作为图像的占位图.</p>
 </dd></dl>
 
 <dl class="data">
@@ -238,43 +214,10 @@
 <dd><p>{Boolean} - 默认为 true , 是否执行 textarea 里面的脚本.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="attributes-detail">
-<h2>Attributes Detail<a class="headerlink" href="#attributes-detail" title="Permalink to this headline">¶</a></h2>
-<dl class="attribute">
-<dt id="datalazyload.containers">
-<tt class="descclassname">datalazyload.</tt><tt class="descname">containers</tt><a class="headerlink" href="#datalazyload.containers" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Array} - 可读写, 图片所在容器(可以多个), 默认为 document.body</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="datalazyload.config">
-<tt class="descclassname">datalazyload.</tt><tt class="descname">config</tt><a class="headerlink" href="#datalazyload.config" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Object} - 可读写 ,配置参数</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="datalazyload.images">
-<tt class="descclassname">datalazyload.</tt><tt class="descname">images</tt><a class="headerlink" href="#datalazyload.images" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Array&lt;String&gt;} - 可读写 ,需要延迟下载的图片列表</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="datalazyload.areaes">
-<tt class="descclassname">datalazyload.</tt><tt class="descname">areaes</tt><a class="headerlink" href="#datalazyload.areaes" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Array&lt;String&gt;} - 可读写 ,需要延迟处理的 textarea列表</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="datalazyload.callbacks">
-<tt class="descclassname">datalazyload.</tt><tt class="descname">callbacks</tt><a class="headerlink" href="#datalazyload.callbacks" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Object} - 可读写 ,和延迟项绑定的回调函数, 元素列表和函数列表一一对应</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="datalazyload.threshold">
-<tt class="descclassname">datalazyload.</tt><tt class="descname">threshold</tt><a class="headerlink" href="#datalazyload.threshold" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Number} - 可读写 , 需要开始延迟的 Y 坐标值</p>
+<dl class="data">
+<dt>
+<tt class="descclassname">datalazyload.</tt><tt class="descname">autoDestroy</tt></dt>
+<dd><p>{boolean} - 当检测到无懒加载元素时是否销毁该组件，默认 true</p>
 </dd></dl>
 
 </div>
@@ -387,7 +330,7 @@
 <dt id="datalazyload.loadCustomLazyData">
 <tt class="descclassname">datalazyload.</tt><tt class="descname">loadCustomLazyData</tt><big>(</big><big>)</big><a class="headerlink" href="#datalazyload.loadCustomLazyData" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line">static <strong>loadCustomLazyData</strong> (containers, type)</div>
+<div class="line">static <strong>loadCustomLazyData</strong> (container, type)</div>
 <div class="line">加载自定义延迟数据</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -396,7 +339,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>containers</strong> (<em>HTMLElement|Array&lt;HTMLElement&gt;</em>) &#8211; 包含自定义延迟加载项的容器元素</li>
+<li><strong>container</strong> (<em>HTMLElement</em>) &#8211; 包含自定义延迟加载项的容器元素</li>
 <li><strong>type</strong> (<em>String</em>) &#8211; 延迟加载方式, 可取:</li>
 </ul>
 </td>
@@ -421,18 +364,49 @@
 
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>使用注意， 懒加载的 img 不能明确高宽时必须写一个空白图片作为占位符，例如  <a class="reference external" href="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif">http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif</a></p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">&quot;&quot;</span> <span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif&quot;</span>
-<span class="na">data-ks-lazyload=</span><span class="s">&quot;http://img03.taobaocdn.com/imgextra/i3/184289596/T2ecfeXkFaXXXXXXXX_!!184289596.jpg&quot;</span><span class="nt">&gt;</span>
+<p>几点性能注意：</p>
+<ol class="last arabic" start="0">
+<li><p class="first"><tt class="docutils literal"><span class="pre">autoDestroy</span></tt> 属性默认为 <tt class="docutils literal"><span class="pre">true</span></tt> ，那么当初始化时检测到的容器内懒加载元素都加载完毕后会自动调用 <tt class="docutils literal"><span class="pre">destroy</span></tt> 方法，</p>
+<blockquote>
+<div><p>若容器后面可能有动态添加的懒加载元素，请设置 <tt class="docutils literal"><span class="pre">autoDestroy</span></tt> 属性为false，并在后期手动调用 <tt class="docutils literal"><span class="pre">destroy</span></tt> 方法</p>
+</div></blockquote>
+</li>
+<li><p class="first">请注意实例化多个容器互相嵌套的 datalazyload 时重复检测问题，例如</p>
+<blockquote>
+<div><p>实例1</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">DataLazyLoad</span><span class="p">({</span>
+    <span class="nx">container</span><span class="o">:</span> <span class="nb">document</span>
+<span class="p">});</span>
 </pre></div>
 </div>
-<p>最好预先知道高宽的话直接写上高宽：</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;img</span> <span class="na">width=</span><span class="s">&quot;950&quot;</span> <span class="na">height=</span><span class="s">&quot;119&quot;</span> <span class="na">alt=</span><span class="s">&quot;&quot;</span>
-<span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif&quot;</span>
-<span class="na">data-ks-lazyload=</span><span class="s">&quot;http://img03.taobaocdn.com/imgextra/i3/184289596/T2ecfeXkFaXXXXXXXX_!!184289596.jpg&quot;</span><span class="nt">&gt;</span>
+<p>实例2</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">DataLazyLoad</span><span class="p">({</span>
+    <span class="nx">container</span><span class="o">:</span> <span class="s1">&#39;#xx&#39;</span>
+<span class="p">});</span>
 </pre></div>
 </div>
-<p class="last">否则会导致性能变差！</p>
+<p>若 #xx 的懒加载元素在实例1实例化前就存在，则会导致实例1与实例2重复检测同一元素问题.</p>
+</div></blockquote>
+</li>
+<li><p class="first">请注意不显示元素的检测，例如实例</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span>  <span class="o">=</span> <span class="k">new</span> <span class="nx">DataLazyLoad</span><span class="p">({</span>
+    <span class="nx">container</span><span class="o">:</span> <span class="s1">&#39;#yy&#39;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>若某种情况下，例如 tab 切换导致 #yy.display=&#8217;none&#8217;，之后的所有监控都是性能浪费.</p>
+<p>此时可以调用 ··pause·· 方法来暂停该实例的检测，</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">d</span><span class="p">.</span><span class="nx">pause</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>在再次 tab 切换后，#yy.display=&#8217;&#8217; ，调用 <tt class="docutils literal"><span class="pre">resume</span></tt> 来重新监控.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">d</span><span class="p">.</span><span class="nx">resume</span><span class="p">();</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
 </div>
 </div>
 </div>

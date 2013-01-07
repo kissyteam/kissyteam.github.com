@@ -25,23 +25,11 @@ Class
   
 Configs
 -----------------------------------------------
-  
-  * :data:`mod`
+
   * :data:`diff`
   * :data:`placeholder`
   * :data:`execScript`
-  
- 
-Attributes
------------------------------------------------
-
-  * :attr:`containers`
-  * :attr:`config`
-  * :attr:`images`
-  * :attr:`areaes`
-  * :attr:`callbacks`
-  * :attr:`threshold`
-
+  * :data:`autoDestroy`
   
 Methods
 -----------------------------------------------
@@ -68,10 +56,9 @@ Class Detail
 
 .. class:: DataLazyload
     
-    | **DataLazyload** (containers[, config])
-    
-    :param String|HTMLElement|Array<HTMLElement> containers: 默认为 document.body ,
-     图片所在容器(可以多个)
+    | **DataLazyload** (config)
+    | 继承自 :class:`~base.Base`
+
     :param Object config: 配置项, 详细见下方 **Configs Detail** .
     
 .. note::
@@ -82,18 +69,13 @@ Class Detail
 Configs Detail
 -----------------------------------------------
 
+.. data:: autoDestroy
 
-.. data:: mod
+    {Boolean} - 默认为 true ,  当初始化时检测到的容器内懒加载元素都加载完毕后是否自动调用 ``destroy`` 方法
 
-    {String} - 默认是 'manual',懒处理模式.
-    
-        * 'auto' : 自动化. html 输出时, 不对 img.src 做任何处理
-        * 'manual' : 输出 html 时, 已经将需要延迟加载的图片的 src 属性替换为 'data-ks-lazyload'
-        
-    .. note::
+.. data:: container
 
-        - 对于 textarea 数据, 只有手动模式;
-        - 当使用 'manual' 模式时, 对 img 元素使用 ``data-ks-lazyload`` 后, 如果这个 img 元素或其父级元素为隐藏状态, 此时, datalazyload 无法起作用, 因为隐藏状态下的 img 的 ``offset.top`` 计算永远为 0, 永远处于 datalazyload 阈值之内, 这种情况下, 直接使用 textarea 更靠谱.
+    {String|HTMLElement} - 默认为 document ,  图片所在容器
 
 .. data:: diff
 
@@ -104,46 +86,18 @@ Configs Detail
 
         * Object 类型可以指定 left/top/right/bottom 数值，表示预加载当前视窗以外上下左右的距离的元素.
 
-
 .. data:: placeholder
 
-    {String} - 默认为 null , 图像的占位图.
+    {String} - 默认为 http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif, 如果懒加载图像没有设置 src 则作为图像的占位图.
 
 .. data:: execScript
 
     {Boolean} - 默认为 true , 是否执行 textarea 里面的脚本.
 
+.. data:: autoDestroy
 
-Attributes Detail
------------------------------------------------
+    {boolean} - 当检测到无懒加载元素时是否销毁该组件，默认 true
 
-.. attribute:: containers
-
-    {Array} - 可读写, 图片所在容器(可以多个), 默认为 document.body
-    
-.. attribute:: config
-
-    {Object} - 可读写 ,配置参数
-    
-
-.. attribute:: images
-
-    {Array<String>} - 可读写 ,需要延迟下载的图片列表
-
-
-.. attribute:: areaes
-
-    {Array<String>} - 可读写 ,需要延迟处理的 textarea列表
-
-.. attribute:: callbacks
-
-    {Object} - 可读写 ,和延迟项绑定的回调函数, 元素列表和函数列表一一对应
-
-.. attribute:: threshold
-
-    {Number} - 可读写 , 需要开始延迟的 Y 坐标值
-
-    
 Methods Detail
 -----------------------------------------------
 
@@ -206,10 +160,10 @@ Static Methods Detail
 
 .. method:: loadCustomLazyData
 
-    | static **loadCustomLazyData** (containers, type)
+    | static **loadCustomLazyData** (container, type)
     | 加载自定义延迟数据
 
-    :param HTMLElement|Array<HTMLElement> containers: 包含自定义延迟加载项的容器元素
+    :param HTMLElement container: 包含自定义延迟加载项的容器元素
     :param String type: 延迟加载方式, 可取:
 
     1. ``textarea`` 或 ``area-data`` , 即表示延迟加载使用的是 ``textarea`` 方式;
@@ -220,23 +174,56 @@ Static Methods Detail
 
 .. note::
 
-    使用注意， 懒加载的 img 不能明确高宽时必须写一个空白图片作为占位符，例如  http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif
+    几点性能注意：
+
+    0. ``autoDestroy`` 属性默认为 ``true`` ，那么当初始化时检测到的容器内懒加载元素都加载完毕后会自动调用 ``destroy`` 方法，
+
+        若容器后面可能有动态添加的懒加载元素，请设置 ``autoDestroy`` 属性为false，并在后期手动调用 ``destroy`` 方法
 
 
-    .. code-block:: html
+    1. 请注意实例化多个容器互相嵌套的 datalazyload 时重复检测问题，例如
 
-        <img alt="" src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif"
-        data-ks-lazyload="http://img03.taobaocdn.com/imgextra/i3/184289596/T2ecfeXkFaXXXXXXXX_!!184289596.jpg">
+        实例1
 
+        .. code-block:: javascript
 
-    最好预先知道高宽的话直接写上高宽：
-
-
-    .. code-block:: html
-
-        <img width="950" height="119" alt=""
-        src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif"
-        data-ks-lazyload="http://img03.taobaocdn.com/imgextra/i3/184289596/T2ecfeXkFaXXXXXXXX_!!184289596.jpg">
+            new DataLazyLoad({
+                container: document
+            });
 
 
-    否则会导致性能变差！
+        实例2
+
+        .. code-block:: javascript
+
+            new DataLazyLoad({
+                container: '#xx'
+            });
+
+
+        若 #xx 的懒加载元素在实例1实例化前就存在，则会导致实例1与实例2重复检测同一元素问题.
+
+
+    2. 请注意不显示元素的检测，例如实例
+
+        .. code-block:: javascript
+
+            var  = new DataLazyLoad({
+                container: '#yy'
+            });
+
+
+        若某种情况下，例如 tab 切换导致 #yy.display='none'，之后的所有监控都是性能浪费.
+
+        此时可以调用 ··pause·· 方法来暂停该实例的检测，
+
+        .. code-block:: javascript
+
+            d.pause();
+
+
+        在再次 tab 切换后，#yy.display='' ，调用 ``resume`` 来重新监控.
+
+        .. code-block:: javascript
+
+            d.resume();
