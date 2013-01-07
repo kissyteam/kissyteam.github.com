@@ -196,8 +196,8 @@
 <blockquote>
 <div><ul class="simple">
 <li>Number 类型时当前视窗往下, diff px 外的 img/textarea 延迟加载, 适当设置此值,
-可以让用户在拖动时感觉数据已经加载好, 默认为当前视窗高度(两屏以外的才延迟加载).</li>
-<li>Object 类型可以指定 left/top/right/bottom 数值，表示预加载当前视窗以外上下左右的距离的元素.</li>
+可以让用户在拖动时感觉数据已经加载好, 默认为当前视窗（容器视窗）高度(两屏以外的才延迟加载).</li>
+<li>Object 类型可以指定 left/top/right/bottom 数值，表示预加载当前视窗（容器视窗）以外上下左右的距离的元素.</li>
 </ul>
 </div></blockquote>
 </dd></dl>
@@ -330,7 +330,7 @@
 <dt id="datalazyload.loadCustomLazyData">
 <tt class="descclassname">datalazyload.</tt><tt class="descname">loadCustomLazyData</tt><big>(</big><big>)</big><a class="headerlink" href="#datalazyload.loadCustomLazyData" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line">static <strong>loadCustomLazyData</strong> (container, type)</div>
+<div class="line">static <strong>loadCustomLazyData</strong> (containers, type)</div>
 <div class="line">加载自定义延迟数据</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -339,7 +339,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Parameters:</th></tr>
 <tr><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>container</strong> (<em>HTMLElement</em>) &#8211; 包含自定义延迟加载项的容器元素</li>
+<li><strong>containers</strong> (<em>HTMLElement[]</em>) &#8211; 包含自定义延迟加载项的容器元素</li>
 <li><strong>type</strong> (<em>String</em>) &#8211; 延迟加载方式, 可取:</li>
 </ul>
 </td>

@@ -82,9 +82,9 @@ Configs Detail
     {Number|Object} -
 
         * Number 类型时当前视窗往下, diff px 外的 img/textarea 延迟加载, 适当设置此值,
-          可以让用户在拖动时感觉数据已经加载好, 默认为当前视窗高度(两屏以外的才延迟加载).
+          可以让用户在拖动时感觉数据已经加载好, 默认为当前视窗（容器视窗）高度(两屏以外的才延迟加载).
 
-        * Object 类型可以指定 left/top/right/bottom 数值，表示预加载当前视窗以外上下左右的距离的元素.
+        * Object 类型可以指定 left/top/right/bottom 数值，表示预加载当前视窗（容器视窗）以外上下左右的距离的元素.
 
 .. data:: placeholder
 
@@ -160,10 +160,10 @@ Static Methods Detail
 
 .. method:: loadCustomLazyData
 
-    | static **loadCustomLazyData** (container, type)
+    | static **loadCustomLazyData** (containers, type)
     | 加载自定义延迟数据
 
-    :param HTMLElement container: 包含自定义延迟加载项的容器元素
+    :param HTMLElement[] containers: 包含自定义延迟加载项的容器元素
     :param String type: 延迟加载方式, 可取:
 
     1. ``textarea`` 或 ``area-data`` , 即表示延迟加载使用的是 ``textarea`` 方式;
