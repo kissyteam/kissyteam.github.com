@@ -132,7 +132,7 @@ Methods Detail
     | **getElements** ()
     | 得到懒加载元素列表
 
-    ::returns: {Object} eg: {images:[],textareas:[]}
+    :returns: {Object} 例如 { images: [], textareas: [] }
 
 .. method:: refresh
 
