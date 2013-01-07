@@ -176,9 +176,7 @@ Static Methods Detail
 
     几点性能注意：
 
-    0. ``autoDestroy`` 属性默认为 ``true`` ，那么当初始化时检测到的容器内懒加载元素都加载完毕后会自动调用 ``destroy`` 方法，
-
-        若容器后面可能有动态添加的懒加载元素，请设置 ``autoDestroy`` 属性为false，并在后期手动调用 ``destroy`` 方法
+    0. ``autoDestroy`` 属性默认为 ``true`` ，那么当初始化时检测到的容器内懒加载元素都加载完毕后会自动调用 ``destroy`` 方法，若容器后面可能有动态添加的懒加载元素，请设置 ``autoDestroy`` 属性为false，并在后期手动调用 ``destroy`` 方法
 
 
     1. 请注意实例化多个容器互相嵌套的 datalazyload 时重复检测问题，例如
@@ -214,7 +212,6 @@ Static Methods Detail
 
 
         若某种情况下，例如 tab 切换导致 #yy.display='none'，之后的所有监控都是性能浪费.
-
         此时可以调用 ··pause·· 方法来暂停该实例的检测，
 
         .. code-block:: javascript

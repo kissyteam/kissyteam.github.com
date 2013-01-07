@@ -366,10 +366,7 @@
 <p class="first admonition-title">Note</p>
 <p>几点性能注意：</p>
 <ol class="last arabic" start="0">
-<li><p class="first"><tt class="docutils literal"><span class="pre">autoDestroy</span></tt> 属性默认为 <tt class="docutils literal"><span class="pre">true</span></tt> ，那么当初始化时检测到的容器内懒加载元素都加载完毕后会自动调用 <tt class="docutils literal"><span class="pre">destroy</span></tt> 方法，</p>
-<blockquote>
-<div><p>若容器后面可能有动态添加的懒加载元素，请设置 <tt class="docutils literal"><span class="pre">autoDestroy</span></tt> 属性为false，并在后期手动调用 <tt class="docutils literal"><span class="pre">destroy</span></tt> 方法</p>
-</div></blockquote>
+<li><p class="first"><tt class="docutils literal"><span class="pre">autoDestroy</span></tt> 属性默认为 <tt class="docutils literal"><span class="pre">true</span></tt> ，那么当初始化时检测到的容器内懒加载元素都加载完毕后会自动调用 <tt class="docutils literal"><span class="pre">destroy</span></tt> 方法，若容器后面可能有动态添加的懒加载元素，请设置 <tt class="docutils literal"><span class="pre">autoDestroy</span></tt> 属性为false，并在后期手动调用 <tt class="docutils literal"><span class="pre">destroy</span></tt> 方法</p>
 </li>
 <li><p class="first">请注意实例化多个容器互相嵌套的 datalazyload 时重复检测问题，例如</p>
 <blockquote>
@@ -395,8 +392,8 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>若某种情况下，例如 tab 切换导致 #yy.display=&#8217;none&#8217;，之后的所有监控都是性能浪费.</p>
-<p>此时可以调用 ··pause·· 方法来暂停该实例的检测，</p>
+<p>若某种情况下，例如 tab 切换导致 #yy.display=&#8217;none&#8217;，之后的所有监控都是性能浪费.
+此时可以调用 ··pause·· 方法来暂停该实例的检测，</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">d</span><span class="p">.</span><span class="nx">pause</span><span class="p">();</span>
 </pre></div>
 </div>
