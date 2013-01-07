@@ -75,7 +75,7 @@ Configs Detail
 
 .. data:: container
 
-    {String|HTMLElement} - 默认为 document ,  图片所在容器
+    {String|HTMLElement} - 默认为 document ,  图片所在容器，当懒加载元素在容器中和视窗中同时出现时进行渲染。
 
 .. data:: diff
 
@@ -173,6 +173,14 @@ Static Methods Detail
 
 
 .. note::
+
+    当 第一个调用参数为数组时进入兼容模式( 1.2 )，此时懒加载元素是否渲染不判断是否在容器内，只判断是否出现在视窗中。例如
+
+    .. code-block:: javascript
+
+        new DataLazyLoad([document.getElementById('x1'),document.getElementById('x2')]);
+
+
 
     几点性能注意：
 
