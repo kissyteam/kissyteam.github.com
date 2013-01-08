@@ -18,7 +18,7 @@
             "  }" +
             "});" +
             "KISSY.config({" +
-            " base:'http://localhost/kissy_git/kissy/build/'"+
+            " base:'http://chengyu.taobao.ali.com/kissy_git/kissy/build/'"+
             "});</script>");
     }
     else if (h.indexOf("fed.ued.taobao.net/kissy-team/kissyteam/") != -1) {
