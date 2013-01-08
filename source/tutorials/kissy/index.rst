@@ -8,4 +8,5 @@
 
     seed/index
     core/index.rst
+    rich-base/index.rst
     component/index.rst
