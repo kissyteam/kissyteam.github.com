@@ -42,8 +42,8 @@ Methods
 
 以上配置项都是继承自  :class:`Waterfall` , 另外, 自身还有:
 
-  * :data:`~Waterfall.prototype.start`
-  * :data:`~Waterfall.prototype.end`
+  * :data:`~Waterfall.prototype.pause`
+  * :data:`~Waterfall.prototype.resume`
 
 Class Detail
 -----------------------------------------------
@@ -114,15 +114,15 @@ Methods Detail
 
 
 
-.. method:: Waterfall.prototype.start
+.. method:: Waterfall.prototype.resume
 
-    | **start** ()
-    | 开始监控 scroll 事件（随时可能会动态加载）
+    | **resume** ()
+    | 继续开始监控 scroll 事件（随时可能会动态加载）
 
 
-.. method:: Waterfall.prototype.end
+.. method:: Waterfall.prototype.pause
 
-    | **end** ()
+    | **pause** ()
     | 停止监控 scroll 事件（停止动态加载）
 
 
