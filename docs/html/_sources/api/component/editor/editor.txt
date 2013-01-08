@@ -30,6 +30,8 @@ Configs
     * :data:`~rich-base.RichBase.config.plugins`
     * :data:`~rich-base.RichBase.config.listeners`
     * :data:`~component.UIBase.config.srcNode`
+    * :data:`~Editor.config.mode`
+
 
 
 Attributes
@@ -119,6 +121,10 @@ Class Detail
 
 Configs Detail
 ---------------------------------------------------
+
+.. data:: Editor.config.mode
+
+   编辑器模式.取值 ``Editor.SOURCE_MODE`` 或 ``Editor.WYSIWYG_MODE`` .
 
 .. data:: Editor.config.customLink
 
