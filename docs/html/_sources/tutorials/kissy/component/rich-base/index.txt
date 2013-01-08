@@ -2,6 +2,8 @@
 RichBase 使用
 =============================
 
+author: `左莫 <zuomo@taobao.com>`_
+
 RichBase是一个基础类，通过继承RichBase可以以一种统一的方式创建自己的具有新的属性、并可作为事件目的(RichBase继承自Base，所以拥有Attribute，EventTarget的能力)的类。
 
 如何引用

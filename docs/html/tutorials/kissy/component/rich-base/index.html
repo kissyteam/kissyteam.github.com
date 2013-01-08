@@ -96,9 +96,10 @@
 					
   <div class="section" id="richbase">
 <h1>RichBase 使用<a class="headerlink" href="#richbase" title="Permalink to this headline">¶</a></h1>
+<p>author: <a class="reference external" href="mailto:zuomo&#37;&#52;&#48;taobao&#46;com">左莫</a></p>
 <p>RichBase是一个基础类，通过继承RichBase可以以一种统一的方式创建自己的具有新的属性、并可作为事件目的(RichBase继承自Base，所以拥有Attribute，EventTarget的能力)的类。</p>
-<div class="section" id="id1">
-<h2>如何引用<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>如何引用<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>要使用RichBase，首先要引入KISSY的种子文件</p>
 <p>html代码：</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://a.tbcdn.cn/s/kissy/1.3.0/seed-min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
@@ -118,8 +119,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id2">
-<h2>继承RichBase<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>继承RichBase<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>下面的代码定义完，Chunk就和RichBase有了同样的功能</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;brix/core/chunk&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">RichBase</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">Chunk</span> <span class="o">=</span> <span class="nx">RichBase</span><span class="p">.</span><span class="nx">extend</span><span class="p">({},{});</span>
@@ -130,8 +131,8 @@
 </pre></div>
 </div>
 <p>接下来会为大家介绍更多……</p>
-<div class="section" id="id3">
-<h3>构造函数<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>构造函数<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>我们上面定义的Chunk类并没有显示指定构造函数，RichBase内部会动态的构建一个function作为Chunk的构造函数，并且名字是&#8221;RichBaseDerived&#8221;,要显示的指定名称，只需要在在继承的最后一个参数写上名称即可</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">Chunk</span> <span class="o">=</span> <span class="nx">RichBase</span><span class="p">.</span><span class="nx">extend</span><span class="p">({},{},</span><span class="s1">&#39;Chunk&#39;</span><span class="p">);</span>
 </pre></div>
@@ -147,8 +148,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h3>初始化函数和析构函数<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>初始化函数和析构函数<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>RichBase在初始化时会自动调用各级类的initializer函数，在析构时会自动调用destructor函数，所以有初始或者析构处理只需定义相应的函数就可以了，不用显式调用父类的函数。</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">Chunk</span> <span class="o">=</span> <span class="nx">RichBase</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
     <span class="nx">initializer</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -211,8 +212,8 @@
 <div class="section" id="plugins">
 <h2>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h2>
 <p>Plugins机制可以用来在类的实例（而不是类本身）上动态添加特性。RichBase提供了一个配置（plugins）和三个函数（plug、unplug和getPlugin）用来管理插件。</p>
-<div class="section" id="id5">
-<h3>plugins<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>plugins<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>plugins的类型是Array，在类实例化的时候实例化plugin，并调用plugin的pluginInitializer初始化函数。在销毁的时候调用pluginDestructor析构函数。</p>
 </div>
 <div class="section" id="plug-plugin">
@@ -235,8 +236,8 @@
 <p>通过类plugin定义的的p.get(&#8216;pluginId&#8217;) || p.pluginId来拿到plugin的实例。</p>
 </div>
 </div>
-<div class="section" id="id6">
-<h2>扩展<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h2>扩展<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p>RichBase的extend还提供了扩展功能，把一个主类与多个扩充类合并为一个新类。KISSY内部的很多组件都是基于这个完成的。</p>
 <p>给个Overlay示例代码吧,具体的Overlay的实现并不仅仅如此</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">Overlay</span> <span class="o">=</span> <span class="nx">RichBase</span><span class="p">.</span><span class="nx">extend</span><span class="p">([</span>
@@ -272,8 +273,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id7">
-<h2>总结<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h2>总结<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p>RichBase为我们提供了如此多的特性，采用KISSY开发模块和组件的同学，果断的用RichBase吧。</p>
 </div>
 </div>
@@ -364,24 +365,24 @@
 		<div class="s-box-bd">
 			<ul>
 <li><a class="reference internal" href="#">RichBase 使用</a><ul>
-<li><a class="reference internal" href="#id1">如何引用</a></li>
-<li><a class="reference internal" href="#id2">继承RichBase</a><ul>
-<li><a class="reference internal" href="#id3">构造函数</a></li>
-<li><a class="reference internal" href="#id4">初始化函数和析构函数</a></li>
+<li><a class="reference internal" href="#id2">如何引用</a></li>
+<li><a class="reference internal" href="#id3">继承RichBase</a><ul>
+<li><a class="reference internal" href="#id4">构造函数</a></li>
+<li><a class="reference internal" href="#id5">初始化函数和析构函数</a></li>
 <li><a class="reference internal" href="#attrs">ATTRS属性</a></li>
 <li><a class="reference internal" href="#attrsbindsync">ATTRS的bind和sync</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#plugins">Plugins</a><ul>
-<li><a class="reference internal" href="#id5">plugins</a></li>
+<li><a class="reference internal" href="#id6">plugins</a></li>
 <li><a class="reference internal" href="#plug-plugin">plug(plugin)</a></li>
 <li><a class="reference internal" href="#unplug-plugin">unplug(plugin)</a></li>
 <li><a class="reference internal" href="#getplugin-id">getPlugin(id)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id6">扩展</a></li>
+<li><a class="reference internal" href="#id7">扩展</a></li>
 <li><a class="reference internal" href="#listeners">listeners</a></li>
-<li><a class="reference internal" href="#id7">总结</a></li>
+<li><a class="reference internal" href="#id8">总结</a></li>
 </ul>
 </li>
 </ul>
