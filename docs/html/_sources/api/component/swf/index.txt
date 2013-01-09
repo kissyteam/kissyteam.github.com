@@ -56,7 +56,7 @@ Attributes
 Static Property
 -----------------------------------------------
 
-  * :attr:`~SWF.STATUS`
+  * :attr:`~SWF.Status`
   
 Methods
 -----------------------------------------------
@@ -131,23 +131,23 @@ Attributes Detail
     
 .. attribute:: SWF.prototype.status
 
-    {enum} - 取值枚举自 :attr:`~SWF.STATUS`
+    {enum} - 取值枚举自 :attr:`~SWF.Status`
 
 
 Static Properties Detail
 -----------------------------------------------
 
-.. attribute:: SWF.STATUS
+.. attribute:: SWF.Status
 
-    .. attribute:: SWF.STATUS.NOT_INSTALLED
+    .. attribute:: SWF.Status.NOT_INSTALLED
 
         表示没有安装 flash 插件
 
-    .. attribute:: SWF.STATUS.SUCCESS
+    .. attribute:: SWF.Status.SUCCESS
 
         表示已成功插入 swf 元素
 
-    .. attribute:: SWF.STATUS.TOO_LOW
+    .. attribute:: SWF.Status.TOO_LOW
 
         表示没有安装 flash 插件
 
