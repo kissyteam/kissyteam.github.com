@@ -44,7 +44,7 @@ Class Detail
 
 .. class:: Anim
     
-    | **Anim** (elem, props[, duration, easing, callback])
+    | **Anim** (elem, props[, duration, easing, completeFn])
     | 得到绑定于某个 dom 节点的动画实例
 
     :param String|HTMLElement|KISSY.Node|window elem: 作用动画的元素节点或窗口（窗口时仅支持 scrollTop/Left）.
@@ -65,7 +65,7 @@ Class Detail
     :param Number duration: 默认为 1 , 动画持续时间, 以秒为单元.
     :param String easing: 默认为 'easeNone' , 动画平滑函数, 可取值 "easeNone","easeIn","easeOut","easeBoth","easeInStrong", "easeOutStrong","easeBothStrong","elasticIn","elasticOut", "elasticBoth","backIn","backOut","backBoth", "bounceIn","bounceOut","bounceBoth".
                         效果预览, 可以参考 :ref:`easing 可视化 <easing_visual>` .
-    :param function callback: 动画结束回调函数.
+    :param function completeFn: 动画到最后一帧后的回调函数.
     
     
     | **Anim** (elem, props[, config])
@@ -89,7 +89,7 @@ Class Detail
                 
             .. attribute:: config.complete
             
-                function。 动画结束回调函数.
+                function。 动画到最后一帧后的回调函数.
 
 Methods Detail
 -----------------------------------------------
@@ -121,7 +121,8 @@ Methods Detail
     | **stop** ([finish=false])
     | 在动画实例上调用, 结束当前动画实例的动画.
     
-    :param Boolean finish: false 时, 动画会在当前帧直接停止, 为 true 时, 动画停止时会立刻跳到最后一帧
+    :param Boolean finish: false 时, 动画会在当前帧直接停止（不触发 complete 回调）.
+     为 true 时, 动画停止时会立刻跳到最后一帧（触发 complete 回调）
 
 
 

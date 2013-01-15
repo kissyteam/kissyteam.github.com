@@ -20,16 +20,7 @@
 
     KISSY.use('event', function (S, Event) {
 
-        Event.on(document, "touchmove", function (e) {
-            // e.preventDefault();
-        });
-
-        Event.on('#t', 'touchstart', function (e) {
-            e.preventDefault();
-        });
-
         Event.on('#t', "pinch pinchStart pinchEnd", function (e) {
-            log(e.type + ' : ' + e.scale);
             S.log(e.type + ' : ' + e.scale);
         });
 

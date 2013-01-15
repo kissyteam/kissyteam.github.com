@@ -22,23 +22,15 @@
 
     KISSY.use('event', function (S, Event) {
 
-        Event.on(document, "touchmove", function (e) {
-            // e.preventDefault();
-        });
-
-        Event.on('#t', 'touchstart', function (e) {
-            e.preventDefault();
-        });
-
         Event.on('#t', "rotateEnd", function (e) {
-            log(e.type + ' : ' +
+            S.log(e.type + ' : ' +
                     e.originalEvent.changedTouches[0].target.nodeName + ' : ' +
                     e.rotation + ' : ' + e.angle);
             //S.log(e.type + ' : ' + e.rotation);
         });
 
         Event.on('#t', "rotate rotateStart", function (e) {
-            log(e.type + ' : ' +
+            S.log(e.type + ' : ' +
                     e.originalEvent.touches.length + ' : ' +
                     e.rotation + ' : ' + e.angle);
             //S.log(e.type + ' : ' + e.rotation);
