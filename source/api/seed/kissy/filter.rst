@@ -12,7 +12,7 @@ Methods
 
 .. function:: KISSY.filter
 
-    | Boolean **KISSY.filter** (arr,fn[,context])
+    | Array **KISSY.filter** (arr,fn[,context])
     | 遍历数组, 过滤出符合条件的数组项.
     
     :param Array arr: 需要遍历的数组.
