@@ -12,7 +12,7 @@
             },
             load:function (success, end) {
                 $('#loadingPins').show();
-                S.ajax({
+                S.IO({
                     data:{
                         'method':'flickr.photos.search',
                         'api_key':'5d93c2e473e39e9307e86d4a01381266',
