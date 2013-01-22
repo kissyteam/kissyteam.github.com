@@ -14,12 +14,13 @@ Methods
 
 .. method:: NodeList.height
 
-    | NodeList **height** ()
+    | Number **height** ()
     | 得到当前节点列表第一个节点的计算高度
         
     :rtype: number
     
-    和 ``css('height')`` 的区别在于该函数返回不带单位的纯数值, 而前者则返回带单位的原始值(例如 ``400px`` ).
+     ``css('height')`` 和 ``height()`` 的区别在于 ``height()`` 返回不带单位的纯数值,
+     而 ``css('height')`` 则返回带单位的原始值(例如 ``40%`` ).
     当需要数值计算时, 推荐该方法, 如图所示：(from jquery)
 
     .. raw:: html
