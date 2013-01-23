@@ -156,7 +156,7 @@
 <li><a class="reference internal" href="#io.getResponseHeader" title="io.getResponseHeader"><tt class="xref py py-meth docutils literal"><span class="pre">getResponseHeader()</span></tt></a></li>
 <li><a class="reference internal" href="#io.abort" title="io.abort"><tt class="xref py py-meth docutils literal"><span class="pre">abort()</span></tt></a></li>
 <li><a class="reference internal" href="#io.getNativeXhr" title="io.getNativeXhr"><tt class="xref py py-meth docutils literal"><span class="pre">getNativeXhr()</span></tt></a></li>
-<li><a class="reference internal" href="../../component/promise/promise.html#seed.Promise.prototype.then" title="seed.Promise.prototype.then"><tt class="xref py py-meth docutils literal"><span class="pre">then()</span></tt></a></li>
+<li><a class="reference internal" href="#io.then" title="io.then"><tt class="xref py py-meth docutils literal"><span class="pre">then()</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -299,11 +299,11 @@
 <dl class="data">
 <dt id="io.cfg.error">
 <tt class="descclassname">cfg.</tt><tt class="descname">error</tt><a class="headerlink" href="#io.cfg.error" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Function} -  <strong>error</strong> (null, textStatus, xhrObj) 请求失败时的回调函数.这个函数接受 2 个参数：</p>
+<dd><p>{Function} -  <strong>error</strong> (null, textStatus, io) 请求失败时的回调函数.这个函数接受 2 个参数：</p>
 <blockquote>
 <div><ul class="simple">
 <li>textStatus 表示错误信息，包括 &#8220;timeout&#8221; , &#8220;error&#8221; , &#8220;abort&#8221; 等</li>
-<li>xhrObj 表示这次请求代表的 xhr 对象.</li>
+<li>io 表示这次请求代表的 io 实例.</li>
 </ul>
 </div></blockquote>
 </dd></dl>
@@ -311,12 +311,12 @@
 <dl class="data">
 <dt id="io.cfg.success">
 <tt class="descclassname">cfg.</tt><tt class="descname">success</tt><a class="headerlink" href="#io.cfg.success" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Function} -  <strong>success</strong> ( data , textStatus , xhrObj) 请求成功时的回调函数.该函数传入三个参数.</p>
+<dd><p>{Function} -  <strong>success</strong> ( data , textStatus , io) 请求成功时的回调函数.该函数传入三个参数.</p>
 <blockquote>
 <div><ul class="simple">
 <li>data : 根据 dataType 格式化服务器响应信息的响应对象</li>
 <li>textStatus : 描述成功的状态，一般是 &#8220;success&#8221;</li>
-<li>xhrObj : 本次请求的 xhr 对象.</li>
+<li>io : 本次请求的 io 实例.</li>
 </ul>
 </div></blockquote>
 </dd></dl>
@@ -324,12 +324,12 @@
 <dl class="data">
 <dt id="io.cfg.complete">
 <tt class="descclassname">cfg.</tt><tt class="descname">complete</tt><a class="headerlink" href="#io.cfg.complete" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Function} -  <strong>complete</strong> ( data , textStatus , xhrObj) 请求完成时的回调函数.该函数传入三个参数.</p>
+<dd><p>{Function} -  <strong>complete</strong> ( data , textStatus , io) 请求完成时的回调函数.该函数传入三个参数.</p>
 <blockquote>
 <div><ul class="simple">
 <li>data : 根据 dataType 格式化服务器响应信息的响应对象，失败触发时为 null</li>
 <li>textStatus : 描述成功的状态，一般是 &#8220;success&#8221;</li>
-<li>xhrObj : 本次请求的 xhr 对象.</li>
+<li>io : 本次请求的 io 实例.</li>
 </ul>
 </div></blockquote>
 <div class="admonition note">
@@ -495,7 +495,7 @@
 <dl class="attribute">
 <dt id="io.status">
 <tt class="descclassname">io.</tt><tt class="descname">status</tt><a class="headerlink" href="#io.status" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Number} - 响应状态码. xhr 会有更多取值。``jsonp script`` 只有 200(成功) , 500(出错)</p>
+<dd><p>{Number} - 响应状态码. xhr 会有更多取值。<tt class="docutils literal"><span class="pre">jsonp</span> <span class="pre">script</span></tt> 只有 200(成功) , 500(出错)</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -535,7 +535,7 @@
 <tt class="descclassname">io.</tt><tt class="descname">getNativeXhr</tt><big>(</big><big>)</big><a class="headerlink" href="#io.getNativeXhr" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>getNativeXhr</strong> ()</div>
-<div class="line">获得内置原生的 xhr 对象</div>
+<div class="line">获得内置原生的 io 实例</div>
 </div>
 </dd></dl>
 
@@ -550,6 +550,31 @@
 <p class="first admonition-title">Note</p>
 <p class="last">不仅可以中断 xhr 请求，还可以中断 jsonp 以及 script 请求，如果中断前该请求正在进行中则中断后会触发 <a class="reference internal" href="#io.cfg.error" title="io.cfg.error"><tt class="xref py py-data docutils literal"><span class="pre">error</span></tt></a> ( textStatus == &#8220;abort&#8221; ) 以及 <a class="reference internal" href="#io.cfg.complete" title="io.cfg.complete"><tt class="xref py py-data docutils literal"><span class="pre">complete</span></tt></a> 回调.</p>
 </div>
+</dd></dl>
+
+<dl class="method">
+<dt id="io.then">
+<tt class="descclassname">io.</tt><tt class="descname">then</tt><big>(</big><big>)</big><a class="headerlink" href="#io.then" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>then</strong> (success, error)</div>
+<div class="line">监听当前请求的成功和失败，并返回新的 promise 实例</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>success</strong> (<em>Function</em>) &#8211; 成功回调，参数只有一个，为数组 [data,textStatus,io].
+其中 data 为服务器返回数据， textStatus 为当前请求状态， io 为当前请求实例.</li>
+<li><strong>error</strong> (<em>Function</em>) &#8211; 失败回调，参数只有一个，为数组 [null,textStatus,io]</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">{Promise} - 新的 promise 对象</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>

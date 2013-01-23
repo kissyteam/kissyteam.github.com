@@ -54,7 +54,7 @@ Methods
   * :meth:`getResponseHeader`
   * :meth:`abort`
   * :meth:`getNativeXhr`
-  * :meth:`~seed.Promise.prototype.then`
+  * :meth:`then`
 
 Class Detail
 -----------------------------------------------
@@ -163,26 +163,26 @@ Config Detail
 
 .. data:: cfg.error
 
-    {Function} -  **error** (null, textStatus, xhrObj) 请求失败时的回调函数.这个函数接受 2 个参数：
+    {Function} -  **error** (null, textStatus, io) 请求失败时的回调函数.这个函数接受 2 个参数：
 
         * textStatus 表示错误信息，包括 "timeout" , "error" , "abort" 等
-        * xhrObj 表示这次请求代表的 xhr 对象.
+        * io 表示这次请求代表的 io 实例.
 
 .. data:: cfg.success
 
-    {Function} -  **success** ( data , textStatus , xhrObj) 请求成功时的回调函数.该函数传入三个参数.
+    {Function} -  **success** ( data , textStatus , io) 请求成功时的回调函数.该函数传入三个参数.
 
         * data : 根据 dataType 格式化服务器响应信息的响应对象
         * textStatus : 描述成功的状态，一般是 "success"
-        * xhrObj : 本次请求的 xhr 对象.
+        * io : 本次请求的 io 实例.
 
 .. data:: cfg.complete
 
-    {Function} -  **complete** ( data , textStatus , xhrObj) 请求完成时的回调函数.该函数传入三个参数.
+    {Function} -  **complete** ( data , textStatus , io) 请求完成时的回调函数.该函数传入三个参数.
 
         * data : 根据 dataType 格式化服务器响应信息的响应对象，失败触发时为 null
         * textStatus : 描述成功的状态，一般是 "success"
-        * xhrObj : 本次请求的 xhr 对象.
+        * io : 本次请求的 io 实例.
 
     .. note::
         无论成功或失败都会触发改回调.
@@ -349,7 +349,7 @@ Methods Detail
 .. method:: getNativeXhr
 
     | **getNativeXhr** ()
-    | 获得内置原生的 xhr 对象
+    | 获得内置原生的 io 实例
 
 
 .. method:: abort
@@ -360,6 +360,17 @@ Methods Detail
     .. note::
 
         不仅可以中断 xhr 请求，还可以中断 jsonp 以及 script 请求，如果中断前该请求正在进行中则中断后会触发 :data:`~io.cfg.error` ( textStatus == "abort" ) 以及 :data:`~io.cfg.complete` 回调.
+
+.. method:: then
+
+    | **then** (success, error)
+    | 监听当前请求的成功和失败，并返回新的 promise 实例
+    
+    :param Function success: 成功回调，参数只有一个，为数组 [data,textStatus,io].
+        其中 data 为服务器返回数据， textStatus 为当前请求状态， io 为当前请求实例.
+    :param Function error: 失败回调，参数只有一个，为数组 [null,textStatus,io]
+    :return: {Promise} - 新的 promise 对象
+
 
 Demo
 -------------------------------------------      
