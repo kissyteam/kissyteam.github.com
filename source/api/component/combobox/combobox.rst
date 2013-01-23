@@ -24,6 +24,7 @@ Configs
     * :data:`~ComboBox.config.menu`
     * :data:`~ComboBox.config.dataSource`
     * :data:`~ComboBox.config.maxItemCount`
+    * :data:`~ComboBox.config.autoHighlightFirst`
     * :data:`~ComboBox.config.matchElWidth`
     * :data:`~ComboBox.config.format`
     * :data:`~ComboBox.config.updateInputOnDownUp`
@@ -87,6 +88,10 @@ Configs Detail
 .. data:: ComboBox.config.hasTrigger
 
     {Boolean} - 默认 true. 是否显示下拉按钮.
+
+.. data:: ComboBox.config.autoHighlightFirst
+
+    {Boolean} - 默认 false. 是否默认选中下拉提示第一项
 
 .. data:: ComboBox.config.menu
 
