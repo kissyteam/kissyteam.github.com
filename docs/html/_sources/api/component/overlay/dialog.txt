@@ -34,6 +34,9 @@ Attributes
   * :attr:`~Dialog.prototype.header`
   * :attr:`~Dialog.prototype.body`
   * :attr:`~Dialog.prototype.footer`
+  * :attr:`~Dialog.prototype.headerContent`
+  * :attr:`~Dialog.prototype.bodyContent`
+  * :attr:`~Dialog.prototype.footerContent`
 
 Methods
 -----------------------------------------------
@@ -131,3 +134,15 @@ Attributes Detail
 .. attribute:: Dialog.prototype.footer
 
     {KISSY.Node} - 只读, 组件的底部节点.
+
+.. data:: Dialog.prototype.headerContent
+
+    {String} - 可读写. 组件的标题 html.
+
+.. data:: Dialog.prototype.bodyContent
+
+    {String} - 可读写. 组件的体 html.
+
+.. data:: Dialog.prototype.footerContent
+
+    {String} - 可读写. 组件的底部 html.
