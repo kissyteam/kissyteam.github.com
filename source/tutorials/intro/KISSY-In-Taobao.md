@@ -108,22 +108,20 @@ KISSY 提供配套工具 KISSY Module Compiler 进行脚本打包以及抽取依
 
 1. 补全模块名，例如 a.js 变为
 
-
-    KISSY.add('myapp/a',function(){
-        return {a:'ok'}
-    });
+        KISSY.add('myapp/a',function(){
+            return {a:'ok'}
+        });
 
 2. 将各个模块的依赖收集为一个单独的文件，例如
 
-
-    KISSY.config('modules',{
-        'myapp/main':{
-            requires:['dom,','./a']
-        },
-        'myapp/a':{
-            requires:['json']
-        }
-    });
+        KISSY.config('modules',{
+            'myapp/main':{
+                requires:['dom,','./a']
+            },
+            'myapp/a':{
+                requires:['json']
+            }
+        });
 
 接着设置 KISSY 启用 combo 模式，并载入上述的依赖描述文件：
 
