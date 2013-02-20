@@ -80,7 +80,6 @@ KISSY 之外的每个模块必须属于一个包，一个包内可以有很多�
             base:'./x'
         }
     });
-
 ```
 
 之后在 x 目录下建立 myapp 目录，并在 myapp 目录下新建模块 a 对应的代码文件： a.js
@@ -92,7 +91,6 @@ KISSY 之外的每个模块必须属于一个包，一个包内可以有很多�
     },{
         requires:['json']
     });
-
 ```
 
 以及依赖 a 的入口主模块 main 的代码文件： main.js
@@ -106,7 +104,6 @@ KISSY 之外的每个模块必须属于一个包，一个包内可以有很多�
     },{
         requires:['dom','./a']
     });
-
 ```
 
 应用模块可依赖 KISSY 自身模块，例如以上的 dom json。
@@ -123,7 +120,6 @@ KISSY 之外的每个模块必须属于一个包，一个包内可以有很多�
             alert('page loaded');
         });
     </script>
-
 ```
 
 ### 工具支持
@@ -142,7 +138,6 @@ KISSY 之外的每个模块必须属于一个包，一个包内可以有很多�
             requires:['dom','json']
         }
     });
-
 ```
 
 接着设置 KISSY 启用 combo 模式，并载入上述的依赖描述文件：
@@ -150,7 +145,6 @@ KISSY 之外的每个模块必须属于一个包，一个包内可以有很多�
 ```javascript
 
     KISSY.config('combine',true);
-
 ```
 
 最后修改 index.html 引用 seed-min.js，打开网络面板后会发现现在只产生两个链接请求：
@@ -173,7 +167,6 @@ KISSY 之外的每个模块必须属于一个包，一个包内可以有很多�
         },{
             requires:['json']
         });
-
 ```
 
 2. 将各个模块的依赖收集为一个单独的文件，例如
@@ -188,7 +181,6 @@ KISSY 之外的每个模块必须属于一个包，一个包内可以有很多�
                 requires:['json']
             }
         });
-
 ```
 
 接着设置 KISSY 启用 combo 模式，并载入上述的依赖描述文件：
@@ -196,7 +188,6 @@ KISSY 之外的每个模块必须属于一个包，一个包内可以有很多�
 ```javascript
 
     KISSY.config('combine',true);
-
 ```
 
 访问 index.html，打开网络面板会发现同样只产生两个链接请求：
@@ -245,7 +236,6 @@ rich-base 和 component 模块充分利用了 javascript 语言的 minxin 和原
                 }]
             }).render();
         });
-
     ```
 
 2. 从已有的 dom 树节点得到组件实例。
@@ -283,7 +273,6 @@ Overlay 继承自 Component，然后静态地由一些分散的功能类扩展�
         }));
 
     });
-
 ```
 
 ### Brix
@@ -341,7 +330,6 @@ KISSY 也计划对 windows8 进行支持，在即将发布的 tmall windows8 app
             Event.on('#div','tap',function(){
             });
         });
-
     ```
 
 ### ZOOJS
@@ -369,7 +357,6 @@ KISSY 采用的单元测试框架为 jasmine ，测试代码举例如下：
             expect(S.mix({x:1},{y:1})).toEqual({x:1,y:1});
         });
     });
-
 ```
 
 然后打开启动测试的 html 文件 即可看到单元测试后的结果：
@@ -404,7 +391,6 @@ KISSY 采用的单元测试框架为 jasmine ，测试代码举例如下：
 ```javascript
 
     KISSY.use('shop/search,shop/category,...');
-
 ```
 
 在线上会发出两个 combo 请求：一个为店铺页面需要的应用模块集，一个为 KISSY 自己的模块集，例如
