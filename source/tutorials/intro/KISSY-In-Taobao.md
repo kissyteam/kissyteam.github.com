@@ -34,7 +34,9 @@ KISSY 作为国内一个完全自底向上开发起来的框架，诞生三年�
 不过由于 KISSY 开发时间还不长，在组件完备性以及可测试性上有待进一步完善，我们坚信这种情况会随着团队的不断努力而逐步解决。
 
 ## 架构
-KISSY 在开发中借鉴了众多类库和框架的思路，结合淘宝业务形成了一套松耦合，无污染，层次模块化的架构，如下图所示：
+KISSY 在开发中借鉴了众多类库和框架的思路，结合淘宝业务形成了一套松耦合，无污染，层次模块化的架构，如图1所示：
+
+图1： KISSY 整体架构图
 
 ![KISSY-architecture](http://img03.taobaocdn.com/tps/i3/T1QDBbXDliXXaoYMUR-865-661.png)
 
@@ -205,7 +207,9 @@ KISSY-PIE 包括了以下功能：
 * Less
 * Sass
 
-并且在命令行之外还提供了 web 操作界面，如下图所示：
+并且在命令行之外还提供了 web 操作界面，如图2所示：
+
+图2： KISSY-PIE 打包界面
 
 ![kissy-pie](http://img01.taobaocdn.com/tps/i1/T1.xNpXy0cXXXoylk9-771-513.png)
 
@@ -241,7 +245,9 @@ rich-base 和 component 模块充分利用了 javascript 语言的 minxin 和原
 2. 从已有的 dom 树节点得到组件实例。
 
 
-下面以 KISSY 中常用的一个组件 Overlay 为例讲解下，首先看类结构图：
+下面以 KISSY 中常用的一个组件 Overlay 为例讲解下，首先看图3类结构图：
+
+图3： Overlay 类结构图
 
 ![overlay](http://img04.taobaocdn.com/tps/i4/T1LzxpXrFaXXa8LGAz-643-262.png)
 
@@ -282,7 +288,7 @@ Overlay 继承自 Component，然后静态地由一些分散的功能类扩展�
 * 提取子模板，结合数据的更新，达到局部刷新，开发者不需要再关心页面的表现，而专心于数据的变化。
 * DOM 节点标明组件为属性，Brix 提供 Pagelet 按照统一的方式实例化。
 
-类库结构如下：
+图4： Brix 类库结构
 
 ![brix](http://img02.taobaocdn.com/tps/i2/T10wc7Xf4iXXcMABjZ-1027-1025.png)
 
@@ -343,7 +349,9 @@ KISSY 经过三年的开发代码库已经相当庞大了，模块间还常常�
 为了应对此问题，KISSY 也在逐渐完善单元测试，自动化测试与持续集成。
 
 ### 单元测试
-KISSY 一个模块的常见目录结构如下：
+KISSY 一个模块的常见目录结构如图5所示：
+
+图5： 模块目录结构
 
 ![KISSY test](http://img02.taobaocdn.com/tps/i2/T1vyNnXwlgXXbwfpMS-198-297.png)
 
@@ -359,14 +367,18 @@ KISSY 采用的单元测试框架为 jasmine ，测试代码举例如下：
     });
 ```
 
-然后打开启动测试的 html 文件 即可看到单元测试后的结果：
+然后打开启动测试的 html 文件 即可看到图6所示的单元测试结果：
+
+图6： 单元测试结果
 
 ![run test](http://img01.taobaocdn.com/tps/i1/T1nGRoXCReXXaUZeDF-610-234.png)
 
 ### 持续集成
 为了提高测试效率，KISSY 还依赖 travis 平台和 phamtomjs 进行持续集成测试。
 每次提交代码都会在 travis 平台上启动 phantomjs 来运行 KISSY 所有模块的单元测试代码。
-示例图如下：
+如图7所示：
+
+图7： travis 平台上的 KISSY
 
 ![travis](http://img01.taobaocdn.com/tps/i1/T18aU8XkBiXXcDcJnW-587-412.png)
 
@@ -374,7 +386,9 @@ KISSY 采用的单元测试框架为 jasmine ，测试代码举例如下：
 淘宝目前的绝大多数页面已经采用 KISSY 搭建，这次我选取两个大家使用比较多的应用来介绍下 KISSY 在淘宝的实践：
 
 ### 店铺页面
-店铺页面是商家店铺的门户，除了淘宝页头之下都可以由商家自定义内容。
+店铺页面是商家店铺的门户，除了淘宝页头之下都可以由商家自定义内容，如图8所示：
+
+图8：典型的店铺页面
 
 ![shop](http://img02.taobaocdn.com/tps/i2/T1OwZ9Xi4iXXb71EHc-985-567.png)
 
@@ -382,7 +396,9 @@ KISSY 采用的单元测试框架为 jasmine ，测试代码举例如下：
 每个模块负责页面一块区域的交互实现，这些模块又会调用 KISSY 的模块来实现自身的逻辑。
 而每个商家的店铺可能使用到的区块并不相同，这也意味着每个商家店铺所用到的程序模块也不相同。
 
-店铺模块与 KISSY 模块依赖关系如下：
+店铺模块与 KISSY 模块依赖关系如图9所示：
+
+图9：店铺模块与 KISSY 模块的关系
 
 ![shop-mods](http://img02.taobaocdn.com/tps/i2/T1jXc4XdFkXXX.coEd-494-265.png)
 
