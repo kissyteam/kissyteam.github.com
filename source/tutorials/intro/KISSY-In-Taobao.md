@@ -54,7 +54,6 @@ KISSY 的架构由淘宝复杂多变的业务决定，在松耦合、无污染�
 所有 UI 组件渲染机制的基类 component 模块以及具备一定逻辑的模板引擎 xtemplate。
 
 4. 第四层为独立可用的 KISSY 组件，用户可自由组合继承搭建最终页面。包括：
-
     * 工具模块，例如拖放，调整大小，操作 swf，操作样式表，mvc（model，router）架构等。
     * UI 组件，例如弹窗，菜单，标签，日历等。
 
@@ -297,10 +296,10 @@ KISSY 也尽量在各个平台给予支持，保证统一的开发体验。
 
 在 nodejs 上 KISSY 通过调整模块加载器使得 KISSY 可以直接将自身的模块加载到 nodejs 中使用。例如
 
-1. 可以使用 KISSY 的 UA 解析模块来分析日志中的 UA 串
-2. 可以载入 jsdom 模块在 nodejs 环境下做单元测试
-3. 用 xtemplate 在服务器端渲染前端模板
-4. 使用 KISSY 的 htmlparser，color 等工具模块
+* 可以使用 KISSY 的 UA 解析模块来分析日志中的 UA 串
+* 可以载入 jsdom 模块在 nodejs 环境下做单元测试
+* 用 xtemplate 在服务器端渲染前端模板
+* 使用 KISSY 的 htmlparser，color 等工具模块
 
 经统计约有 1000 万的盲人用户在使用淘宝，他们实际上是通过读屏器来和淘宝交互，
 KISSY 组件通过遵循 WAI-ARAI 规范来给盲人朋友提供无障碍的访问环境，网上人人平等。
