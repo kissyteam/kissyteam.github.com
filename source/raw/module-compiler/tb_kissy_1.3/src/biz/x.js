@@ -1,4 +1,4 @@
-KISSY.add(function(){
-},{
-    requires:["overlay","switchable"]
-});
+KISSY.add("biz/x", function() {
+    return 'x + overlay + switchable';
+}, {requires:["overlay", "switchable"]});
+
