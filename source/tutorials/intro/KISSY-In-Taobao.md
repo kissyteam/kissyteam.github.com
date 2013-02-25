@@ -219,7 +219,7 @@ KISSY 目前包括众多即开即用的组件，
 和 UI 性质的例如 overlay（弹窗），menu（菜单），menubutton（菜单按钮），imagezoom（放大镜），editor（编辑器），
 tabs（标签），tree（树）等。
 这些组件都基于公共的 rich-base 以及 component 模块：
-rich-base 和 component 模块充分利用了 javascript 语言的 minxin 和原型链继承，
+rich-base 和 component 模块充分利用了 javascript 语言的 mixin 和原型链继承，
 提供了属性绑定，类继承，扩展以及插件等特性。
 
 其中的重点是 Component，它是所有 UI 组件的基类，提供了两种通用的渲染方式：
