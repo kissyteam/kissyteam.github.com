@@ -9,6 +9,8 @@
         }
     });
     KISSY.use('biz/page/run', function (S, run) {
-        alert(run);
+    	S.ready(function(){
+    		S.all('body').text(run);
+    	});
     });
 </script>

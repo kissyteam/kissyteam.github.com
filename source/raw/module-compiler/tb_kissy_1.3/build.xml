@@ -27,7 +27,10 @@ build example for kissy loader
     
     <target name='prepare'>
         <mkdir dir="${build.dir}"></mkdir>
-        <mkdir dir="${page.build.dir}"></mkdir>
+        <mkdir dir="${page.build.dir}"></mkdir>     
+        <copy encoding="${charset}" todir="${build.dir}">
+            <fileset dir="${assets.dir}" includes="**/*.css"/>
+        </copy>
     </target>
     
     <!--js  combo 地址获取-->
