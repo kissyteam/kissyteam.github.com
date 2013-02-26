@@ -1,4 +1,4 @@
-KISSY.add("biz/y", function (S, x) {
-    return 'y + ' + x;
-}, {requires: ["./x"]});
+KISSY.add("biz/y", function(S, x) {
+  return"y + " + x
+}, {requires:["./x"]});
 
