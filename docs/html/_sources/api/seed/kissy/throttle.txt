@@ -12,7 +12,7 @@ Methods
 
 .. function:: KISSY.throttle
 
-    | Boolean **KISSY.throttle** (fn, ms, context)
+    | Function **KISSY.throttle** (fn, ms, context)
     | ms 时间内只执行 fn 一次, 即使这段时间内 fn 被调用多次.
     
     :param Function fn: 要缓存的函数;

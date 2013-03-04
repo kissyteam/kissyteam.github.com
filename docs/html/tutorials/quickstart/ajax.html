@@ -95,13 +95,13 @@
 					
   <div class="section" id="ajax">
 <span id="quickstart-ajax"></span><h1>Ajax<a class="headerlink" href="#ajax" title="Permalink to this headline">¶</a></h1>
-<p>KISSY 中提供了 Ajax 异步请求功能, 下面仅介绍最常用的 <a class="reference internal" href="../../api/seed/loader/getScript.html#seed.KISSY.getScript" title="seed.KISSY.getScript"><tt class="xref py py-func docutils literal"><span class="pre">getScript()</span></tt></a> 方法, 其他 ajax 模块中的方法, 如 <tt class="docutils literal"><span class="pre">get</span></tt>, <tt class="docutils literal"><span class="pre">post</span></tt> 等, 请参考 API 文档 <a class="footnote-reference" href="#id5" id="id1">[1]</a> .
-<tt class="docutils literal"><span class="pre">getScript</span></tt> 异步请求成功后, 可以执行请求回来的数据, 与 <tt class="docutils literal"><span class="pre">jQuery</span> <span class="pre">$.getScript</span></tt> 是一致的.
-这种请求方式, 我们一般称为 <tt class="docutils literal"><span class="pre">JSONP</span></tt>, 是最常用的跨域请求方式. 关于跨域可参见 <a class="footnote-reference" href="#id6" id="id2">[2]</a> .</p>
+<p>KISSY 中提供了 Ajax 异步请求功能, 下面仅介绍最常用的 <a class="reference internal" href="../../api/core/ajax/io.html#io.IO" title="io.IO"><tt class="xref py py-class docutils literal"><span class="pre">IO</span></tt></a> 类的 <tt class="docutils literal"><span class="pre">JSONP</span></tt> 方式,
+其他 ajax 模块中的方法, 如 <tt class="docutils literal"><span class="pre">get</span></tt>, <tt class="docutils literal"><span class="pre">post</span></tt> 等, 请参考 API 文档 <a class="footnote-reference" href="#id5" id="id1">[1]</a> .
+JSONP 是最常用的跨域请求方式. 关于跨域可参见 <a class="footnote-reference" href="#id6" id="id2">[2]</a> .</p>
 <div class="section" id="id3">
 <h2>使用 Ajax<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>在日常 Web 应用中, 经常用到异步请求, 比如, 异步加载一些评论信息, 异步加载图片列表等, 这样可以减少页面初始加载时的请求, 减轻服务器压力, 也加快主页面的初始打开速度.
-下面介绍个如何通过 <tt class="docutils literal"><span class="pre">getScript()</span></tt> 方法去请求 flickr 上提供的图片数据.</p>
+下面介绍个如何通过 <tt class="docutils literal"><span class="pre">io</span></tt> 模块去请求 flickr 上提供的图片数据.</p>
 <p>先见示例:</p>
  <script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
 <div class="demo">
@@ -122,36 +122,43 @@
      <div id="photo-list"></div>
 
      <script>
-         KISSY.use('node',function (S,Node) {
-             var API = 'http://api.flickr.com/services/rest/?'
+         KISSY.use('node,ajax',function (S,Node,IO) {
+             var API = 'http://api.flickr.com/services/rest/'
                  params = {
                      'method': 'flickr.favorites.getPublicList',
                      'api_key': '5d93c2e473e39e9307e86d4a01381266',
                      'user_id': '26211501@N07',
                      'per_page': 10,
-                     'format': 'json',
-                     'jsoncallback': 'getFavorites'
+                     'format': 'json'
                  },
                  photoList = Node.one('#photo-list');
 
              Node.one('#fetch-btn').on('click', function() {
                  Node.one(this).attr('disabled', true);
                  photoList.addClass('loading');
-                 S.getScript(API + S.param(params));
+                 Node.one('#fetch-btn')[0].disabled=true;
+
+                 new IO({
+                     url: API,
+                     data: params,
+                     dataType:'jsonp',
+                     'jsonp':'jsoncallback',
+                     success:function(data){
+                         var html = 'Fetch photo failed, pls try again!';
+                         if (data.stat === 'ok') {
+                             html = '';
+                             S.each(data.photos.photo, function(item, i){
+                                 html += '<img src="http://farm' + item.farm + '.static.flickr.com/'
+                                         + item.server + '/' + item.id + '_' + item.secret + '_t.jpg" />';
+                             });
+                         }
+                         photoList.removeClass('loading').html(html);
+                     },
+                     complete:function(){
+                         Node.one('#fetch-btn')[0].disabled=false;
+                     }
+                 });
              });
-
-             window.getFavorites = function(data) {
-                 var html = 'Fetch photo failed, pls try again!';
-
-                 if (data.stat === 'ok') {
-                     html = '';
-                     S.each(data.photos.photo, function(item, i){
-                         html += '<img src="http://farm' + item.farm + '.static.flickr.com/'
-                                 + item.server + '/' + item.id + '_' + item.secret + '_t.jpg" />';
-                     });
-                 }
-                 photoList.removeClass('loading').html(html);
-             }
          });
      </script>
 </div><p>再来看代码:</p>
@@ -185,53 +192,65 @@
 28
 29
 30
-31</pre></div></td><td class="code"><div class="highlight"><pre> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;node&#39;</span><span class="p">,</span><span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Node</span><span class="p">)</span> <span class="p">{</span>
-                 <span class="kd">var</span> <span class="nx">API</span> <span class="o">=</span> <span class="s1">&#39;http://api.flickr.com/services/rest/?&#39;</span>
-                     <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
-                         <span class="s1">&#39;method&#39;</span><span class="o">:</span> <span class="s1">&#39;flickr.favorites.getPublicList&#39;</span><span class="p">,</span>
-                         <span class="s1">&#39;api_key&#39;</span><span class="o">:</span> <span class="s1">&#39;5d93c2e473e39e9307e86d4a01381266&#39;</span><span class="p">,</span>
-                         <span class="s1">&#39;user_id&#39;</span><span class="o">:</span> <span class="s1">&#39;26211501@N07&#39;</span><span class="p">,</span>
-                         <span class="s1">&#39;per_page&#39;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-                         <span class="s1">&#39;format&#39;</span><span class="o">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
-                         <span class="s1">&#39;jsoncallback&#39;</span><span class="o">:</span> <span class="s1">&#39;getFavorites&#39;</span>
+31
+32
+33
+34
+35
+36
+37
+38</pre></div></td><td class="code"><div class="highlight"><pre>         <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;node,ajax&#39;</span><span class="p">,</span><span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Node</span><span class="p">,</span><span class="nx">IO</span><span class="p">)</span> <span class="p">{</span>
+             <span class="kd">var</span> <span class="nx">API</span> <span class="o">=</span> <span class="s1">&#39;http://api.flickr.com/services/rest/&#39;</span>
+                 <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
+                     <span class="s1">&#39;method&#39;</span><span class="o">:</span> <span class="s1">&#39;flickr.favorites.getPublicList&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;api_key&#39;</span><span class="o">:</span> <span class="s1">&#39;5d93c2e473e39e9307e86d4a01381266&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;user_id&#39;</span><span class="o">:</span> <span class="s1">&#39;26211501@N07&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;per_page&#39;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+                     <span class="s1">&#39;format&#39;</span><span class="o">:</span> <span class="s1">&#39;json&#39;</span>
+                 <span class="p">},</span>
+                 <span class="nx">photoList</span> <span class="o">=</span> <span class="nx">Node</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#photo-list&#39;</span><span class="p">);</span>
+
+             <span class="nx">Node</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#fetch-btn&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                 <span class="nx">Node</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+                 <span class="nx">photoList</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;loading&#39;</span><span class="p">);</span>
+                 <span class="nx">Node</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#fetch-btn&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">disabled</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+
+                 <span class="k">new</span> <span class="nx">IO</span><span class="p">({</span>
+                     <span class="nx">url</span><span class="o">:</span> <span class="nx">API</span><span class="p">,</span>
+                     <span class="nx">data</span><span class="o">:</span> <span class="nx">params</span><span class="p">,</span>
+                     <span class="nx">dataType</span><span class="o">:</span><span class="s1">&#39;jsonp&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;jsonp&#39;</span><span class="o">:</span><span class="s1">&#39;jsoncallback&#39;</span><span class="p">,</span>
+                     <span class="nx">success</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+                         <span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="s1">&#39;Fetch photo failed, pls try again!&#39;</span><span class="p">;</span>
+                         <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">stat</span> <span class="o">===</span> <span class="s1">&#39;ok&#39;</span><span class="p">)</span> <span class="p">{</span>
+                             <span class="nx">html</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+                             <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">photos</span><span class="p">.</span><span class="nx">photo</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">i</span><span class="p">){</span>
+                                 <span class="nx">html</span> <span class="o">+=</span> <span class="s1">&#39;&lt;img src=&quot;http://farm&#39;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">farm</span> <span class="o">+</span> <span class="s1">&#39;.static.flickr.com/&#39;</span>
+                                         <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">server</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">secret</span> <span class="o">+</span> <span class="s1">&#39;_t.jpg&quot; /&gt;&#39;</span><span class="p">;</span>
+                             <span class="p">});</span>
+                         <span class="p">}</span>
+                         <span class="nx">photoList</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;loading&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">html</span><span class="p">);</span>
                      <span class="p">},</span>
-                     <span class="nx">photoList</span> <span class="o">=</span> <span class="nx">Node</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#photo-list&#39;</span><span class="p">);</span>
-
-                 <span class="nx">Node</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#fetch-btn&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-                     <span class="nx">Node</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-                     <span class="nx">photoList</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;loading&#39;</span><span class="p">);</span>
-                     <span class="nx">S</span><span class="p">.</span><span class="nx">getScript</span><span class="p">(</span><span class="nx">API</span> <span class="o">+</span> <span class="nx">S</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="nx">params</span><span class="p">));</span>
-                 <span class="p">});</span>
-
-                 <span class="nb">window</span><span class="p">.</span><span class="nx">getFavorites</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-                     <span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="s1">&#39;Fetch photo failed, pls try again!&#39;</span><span class="p">;</span>
-
-                     <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">stat</span> <span class="o">===</span> <span class="s1">&#39;ok&#39;</span><span class="p">)</span> <span class="p">{</span>
-                         <span class="nx">html</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-                         <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">photos</span><span class="p">.</span><span class="nx">photo</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">i</span><span class="p">){</span>
-                             <span class="nx">html</span> <span class="o">+=</span> <span class="s1">&#39;&lt;img src=&quot;http://farm&#39;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">farm</span> <span class="o">+</span> <span class="s1">&#39;.static.flickr.com/&#39;</span>
-                                     <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">server</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">secret</span> <span class="o">+</span> <span class="s1">&#39;_t.jpg&quot; /&gt;&#39;</span><span class="p">;</span>
-                         <span class="p">});</span>
+                     <span class="nx">complete</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span>
+                         <span class="nx">Node</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#fetch-btn&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">disabled</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
                      <span class="p">}</span>
-                     <span class="nx">photoList</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;loading&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">html</span><span class="p">);</span>
-                 <span class="p">}</span>
+                 <span class="p">});</span>
              <span class="p">});</span>
+         <span class="p">});</span>
 </pre></div>
 </td></tr></table></div>
 <dl class="docutils">
 <dt>稍加解释下:</dt>
 <dd><ol class="first last arabic simple">
-<li>当点击按钮时, 组装 API 参数后, 发送请求. ps: 这里各个参数可以在 flickr API 文档中找到 <a class="footnote-reference" href="#id7" id="id4">[3]</a>, 最后的 jsoncallback 指定回调函数的名字.</li>
-<li>组装参数时, 使用到了 <a class="reference internal" href="../../api/seed/kissy/param.html#seed.KISSY.param" title="seed.KISSY.param"><tt class="xref py py-func docutils literal"><span class="pre">param()</span></tt></a> 方法, 是将对象 data 转换为 URL 中的参数字符串, 且是经过 encodeURI 编码的.</li>
+<li>当点击按钮时, 组装 API 参数后, 发送请求. ps: 这里各个参数可以在 flickr API 文档中找到 <a class="footnote-reference" href="#id7" id="id4">[3]</a></li>
 <li>在回调函数中, 获取传入的 json 数据, 稍加拼装就可以使用啦~</li>
-<li>最后的 <tt class="docutils literal"><span class="pre">window.getFavorites</span></tt> 是将方法 <tt class="docutils literal"><span class="pre">getFavorites</span></tt> 暴露给全局, 因为当请求后调用的就是全局范围内的 <tt class="docutils literal"><span class="pre">getFavorites</span></tt> 函数, 如果是对象中的方法, 同样可以将该对象暴露给全局后再调用其方法.</li>
 </ol>
 </dd>
 </dl>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>在简单介绍完 <tt class="docutils literal"><span class="pre">S.getScript</span></tt> 之后, 下面将讲述 KISSY 提供的动画支持 <a class="reference internal" href="anim.html#quickstart-anim"><em>Anim</em></a> ...</p>
+<p>在简单介绍完 <tt class="docutils literal"><span class="pre">io</span></tt> 之后, 下面将讲述 KISSY 提供的动画支持 <a class="reference internal" href="anim.html#quickstart-anim"><em>Anim</em></a> ...</p>
 <p class="rubric">参考链接</p>
 <table class="docutils footnote" frame="void" id="id5" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
