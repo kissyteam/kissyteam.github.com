@@ -133,24 +133,21 @@
 </pre></div>
 </div>
 <p>其中 x.js 内容为：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-<span class="p">},{</span>
-    <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;overlay&quot;</span><span class="p">,</span><span class="s2">&quot;switchable&quot;</span><span class="p">]</span>
-<span class="p">});</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span><span class="s2">&quot;x + overlay + switchable&quot;</span>
+<span class="p">},</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;overlay&quot;</span><span class="p">,</span> <span class="s2">&quot;switchable&quot;</span><span class="p">,</span><span class="s1">&#39;./x.css&#39;</span><span class="p">]});</span>
 </pre></div>
 </div>
 <p>其中 y.js 内容为：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-<span class="p">},{</span>
-    <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;./x&quot;</span><span class="p">]</span>
-<span class="p">});</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span><span class="s2">&quot;y + &quot;</span> <span class="o">+</span> <span class="nx">x</span>
+<span class="p">},</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;./x&quot;</span><span class="p">,</span><span class="s2">&quot;./y.css&quot;</span><span class="p">]});</span>
 </pre></div>
 </div>
 <p>其中 run.js 内容为：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-<span class="p">},{</span>
-    <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;../y&quot;</span><span class="p">]</span>
-<span class="p">})</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span><span class="s2">&quot;run + &quot;</span> <span class="o">+</span> <span class="nx">y</span>
+<span class="p">},</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;../y&quot;</span><span class="p">]});</span>
 </pre></div>
 </div>
 <div class="section" id="id6">
@@ -187,7 +184,10 @@
     
     <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#39;prepare&#39;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;mkdir</span> <span class="na">dir=</span><span class="s">&quot;${build.dir}&quot;</span><span class="nt">&gt;&lt;/mkdir&gt;</span>
-        <span class="nt">&lt;mkdir</span> <span class="na">dir=</span><span class="s">&quot;${page.build.dir}&quot;</span><span class="nt">&gt;&lt;/mkdir&gt;</span>
+        <span class="nt">&lt;mkdir</span> <span class="na">dir=</span><span class="s">&quot;${page.build.dir}&quot;</span><span class="nt">&gt;&lt;/mkdir&gt;</span>     
+        <span class="nt">&lt;copy</span> <span class="na">encoding=</span><span class="s">&quot;${charset}&quot;</span> <span class="na">todir=</span><span class="s">&quot;${build.dir}&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;fileset</span> <span class="na">dir=</span><span class="s">&quot;${assets.dir}&quot;</span> <span class="na">includes=</span><span class="s">&quot;**/*.css&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/copy&gt;</span>
     <span class="nt">&lt;/target&gt;</span>
     
     <span class="c">&lt;!--js  combo 地址获取--&gt;</span>
@@ -218,7 +218,7 @@
                     <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;${charset}&quot;</span><span class="nt">/&gt;</span>
 
                     <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-output&quot;</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;${page.build.dir}/${var.modname}.combo.js&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;${page.build.dir}/${var.modname}.js&quot;</span><span class="nt">/&gt;</span>
 
                     <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-outputDependency&quot;</span><span class="nt">/&gt;</span>
                     <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;${page.build.dir}/${var.modname}.dep.js&quot;</span><span class="nt">/&gt;</span>
@@ -277,29 +277,11 @@
 </pre></div>
 </div>
 <p>其中 run.combo.js 内容为:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/*</span>
-<span class="cm"> Combined modules by KISSY Module Compiler: </span>
-
-<span class="cm"> biz/x</span>
-<span class="cm"> biz/y</span>
-<span class="cm"> biz/page/run</span>
-<span class="cm">*/</span>
-
-<span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;biz/x&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-<span class="p">},</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;overlay&quot;</span><span class="p">,</span> <span class="s2">&quot;switchable&quot;</span><span class="p">]});</span>
-<span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;biz/y&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-<span class="p">},</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;./x&quot;</span><span class="p">]});</span>
-<span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;biz/page/run&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-<span class="p">},</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;../y&quot;</span><span class="p">]});</span>
-</pre></div>
-</div>
 <p>其中 run.deps.js 内容为:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/*Generated By KISSY Module Compiler*/</span>
-<span class="k">if</span><span class="p">(</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Loader</span><span class="p">){</span>
 <span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s1">&#39;modules&#39;</span><span class="p">,{</span>
-<span class="s1">&#39;biz/page/run&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="s1">&#39;overlay&#39;</span><span class="p">,</span><span class="s1">&#39;switchable&#39;</span><span class="p">}</span>
+<span class="s1">&#39;biz/page/run&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;overlay&#39;</span><span class="p">,</span><span class="s1">&#39;switchable&#39;</span><span class="p">,</span><span class="s1">&#39;biz/x.css&#39;</span><span class="p">,</span><span class="s1">&#39;biz/y.css&#39;</span><span class="p">]}</span>
 <span class="p">});</span>
-<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -414,27 +396,28 @@
 </div>
 <p>其中 deps.js 内容为：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/*Generated by KISSY Module Compiler*/</span>
-<span class="k">if</span><span class="p">(</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">Loader</span><span class="p">){</span>
 <span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s1">&#39;modules&#39;</span><span class="p">,</span> <span class="p">{</span>
 <span class="s1">&#39;biz/page/run&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;biz/y&#39;</span><span class="p">]},</span>
-<span class="s1">&#39;biz/y&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;biz/x&#39;</span><span class="p">]},</span>
-<span class="s1">&#39;biz/x&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;overlay&#39;</span><span class="p">,</span> <span class="s1">&#39;switchable&#39;</span><span class="p">]}</span>
+<span class="s1">&#39;biz/y&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;biz/x&#39;</span><span class="p">,</span><span class="s1">&#39;biz/y.css&#39;</span><span class="p">]},</span>
+<span class="s1">&#39;biz/x&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;overlay&#39;</span><span class="p">,</span><span class="s1">&#39;switchable&#39;</span><span class="p">,</span><span class="s1">&#39;biz/x.css&#39;</span><span class="p">]}</span>
 <span class="p">});</span>
-<span class="p">}</span>
 </pre></div>
 </div>
 <p>其中 x.js 内容为：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;biz/x&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-<span class="p">},</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;overlay&quot;</span><span class="p">,</span> <span class="s2">&quot;switchable&quot;</span><span class="p">]});</span>
+  <span class="k">return</span><span class="s2">&quot;x + overlay + switchable&quot;</span>
+<span class="p">},</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;overlay&quot;</span><span class="p">,</span> <span class="s2">&quot;switchable&quot;</span><span class="p">,</span> <span class="s2">&quot;biz/x.css&quot;</span><span class="p">]});</span>
 </pre></div>
 </div>
 <p>其中 y.js 内容为：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;biz/y&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-<span class="p">},</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;./x&quot;</span><span class="p">]});</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;biz/y&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span><span class="s2">&quot;y + &quot;</span> <span class="o">+</span> <span class="nx">x</span>
+<span class="p">},</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;./x&quot;</span><span class="p">,</span> <span class="s2">&quot;biz/y.css&quot;</span><span class="p">]});</span>
 </pre></div>
 </div>
 <p>其中 run.js 内容为：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;biz/page/run&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;biz/page/run&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span><span class="s2">&quot;run + &quot;</span> <span class="o">+</span> <span class="nx">y</span>
 <span class="p">},</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;../y&quot;</span><span class="p">]});</span>
 </pre></div>
 </div>

@@ -150,7 +150,7 @@ KISSY 提供两种使用方式:
 
  #. ``Node.one('#go').on('click', function(){});``, 选择 id 为 ``go`` 的元素, 即 button, 然后绑定点击事件.
  #. ``Node.all('.good-student').appendTo('#taobao').icanfly();``, 获取所有 class 为 good-student 的元素, 即那些所有蓝色背景的小框, 然后 ``appendTo`` 到 id 为 taobao 的容器中, 最后执行第 4 行定义的 ``icanfly`` 动作.
- #. ``icanfly``, 给 ``NodeList`` 中每个对象设置一个随机运动速度的定时器 ``timer``, 然后定时器不断修改该对象的位置, 到达目标区域时清楚定时器.
+ #. ``icanfly``, 给 ``NodeList`` 中每个对象设置一个随机运动速度的定时器 ``timer``, 然后定时器不断修改该对象的位置, 到达目标区域时清除定时器.
  #. 另外, 原生 ``DOMNode`` 和 Node 对象的相互转换, 可以使用 ``new Node(anElment)`` 将 ``DOMNode`` 转换成 ``Node`` 对象; 使用 ``node.getDOMNode()`` 获得对应的 ``DOMNode``; 使用 ``node.getDOMNodes()`` 获得对应的 ``DOMNodes``;.
 
 
