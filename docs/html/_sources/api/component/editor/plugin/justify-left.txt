@@ -27,13 +27,13 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.commands.justifyLeft`
+* :func:`~Editor.Commands.justifyLeft`
 
 
 Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.commands.justifyLeft
+.. function:: Editor.Commands.justifyLeft
 
     | **justifyCenter()**
     | 对选区文字居左

@@ -27,13 +27,13 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.commands.removeFormat`
+* :func:`~Editor.Commands.removeFormat`
 
 
 Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.commands.removeFormat
+.. function:: Editor.Commands.removeFormat
 
     | **indent()**
     | 对选区清除格式.

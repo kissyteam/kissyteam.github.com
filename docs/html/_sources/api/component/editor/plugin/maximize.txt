@@ -20,17 +20,17 @@ Configs
 Events
 --------------------------------------------------------
 
-* :func:`~Editor.events.afterMaximizeWindow`
-* :func:`~Editor.events.afterRestoreWindow`
-* :func:`~Editor.events.beforeMaximizeWindow`
-* :func:`~Editor.events.beforeRestoreWindow`
+* :func:`~Editor.Events.afterMaximizeWindow`
+* :func:`~Editor.Events.afterRestoreWindow`
+* :func:`~Editor.Events.beforeMaximizeWindow`
+* :func:`~Editor.Events.beforeRestoreWindow`
 
 
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.commands.maximizeWindow`
-* :func:`~Editor.commands.restoreWindow`
+* :func:`~Editor.Commands.maximizeWindow`
+* :func:`~Editor.Commands.restoreWindow`
 
 
 
@@ -61,12 +61,12 @@ Events Details
 Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.commands.maximizeWindow
+.. function:: Editor.Commands.maximizeWindow
 
     | **maximizeWindow()**
     | 窗口最大化
 
-.. function:: Editor.commands.restoreWindow
+.. function:: Editor.Commands.restoreWindow
 
     | **restoreWindow()**
     | 窗口最恢复

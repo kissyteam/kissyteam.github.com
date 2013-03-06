@@ -27,13 +27,13 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.commands.heading`
+* :func:`~Editor.Commands.heading`
 
 
 Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.commands.heading
+.. function:: Editor.Commands.heading
 
     | **heading(tag)**
     | 对选区设置或取消标题的插件

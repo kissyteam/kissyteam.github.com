@@ -28,12 +28,12 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.commands.insertOrderedList`
+* :func:`~Editor.Commands.insertOrderedList`
 
 Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.commands.insertOrderedList
+.. function:: Editor.Commands.insertOrderedList
 
     | **insertOrderedList**
     | 对选区设置或取消为有序列表

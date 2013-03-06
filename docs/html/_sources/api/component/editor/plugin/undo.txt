@@ -21,20 +21,20 @@ Configs
 Events
 --------------------------------------------------------
 
-* :func:`~Editor.events.beforeUndo`
-* :func:`~Editor.events.beforeRedo`
-* :func:`~Editor.events.afterUndo`
-* :func:`~Editor.events.afterRedo`
-* :func:`~Editor.events.beforeSave`
-* :func:`~Editor.events.afterSave`
+* :func:`~Editor.Events.beforeUndo`
+* :func:`~Editor.Events.beforeRedo`
+* :func:`~Editor.Events.afterUndo`
+* :func:`~Editor.Events.afterRedo`
+* :func:`~Editor.Events.beforeSave`
+* :func:`~Editor.Events.afterSave`
 
 
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.commands.save`
-* :func:`~Editor.commands.undo`
-* :func:`~Editor.commands.redo`
+* :func:`~Editor.Commands.save`
+* :func:`~Editor.Commands.undo`
+* :func:`~Editor.Commands.redo`
 
 Events Details
 -------------------------------------------
@@ -73,17 +73,17 @@ Events Details
 Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.commands.save
+.. function:: Editor.Commands.save
 
     | **save()**
     | 将当前内容存入历史
 
-.. function:: Editor.commands.undo
+.. function:: Editor.Commands.undo
 
     | **undo()**
     | 回退到上一个编辑历史
 
-.. function:: Editor.commands.redo
+.. function:: Editor.Commands.redo
 
     | **redo()**
     | 前进到下一个编辑历史

@@ -28,13 +28,13 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.commands.strikeThrough`
+* :func:`~Editor.Commands.strikeThrough`
 
 
 Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.commands.strikeThrough
+.. function:: Editor.Commands.strikeThrough
 
     | **strikeThrough()**
     | 对选区文字删除线或取消

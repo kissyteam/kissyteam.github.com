@@ -27,13 +27,13 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.commands.italic`
+* :func:`~Editor.Commands.italic`
 
 
 Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.commands.italic
+.. function:: Editor.Commands.italic
 
     | **italic()**
     | 对选区文字设置斜体或取消斜体

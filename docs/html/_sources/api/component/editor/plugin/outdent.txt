@@ -27,12 +27,12 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.commands.outdent`
+* :func:`~Editor.Commands.outdent`
 
 Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.commands.outdent
+.. function:: Editor.Commands.outdent
 
     | **outdent**
     | 对选区缩出

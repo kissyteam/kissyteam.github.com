@@ -28,7 +28,7 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.commands.fontSize`
+* :func:`~Editor.Commands.fontSize`
 
 
 Config Details
@@ -61,7 +61,7 @@ Config Details
 Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.commands.fontSize
+.. function:: Editor.Commands.fontSize
 
     | **fontSize(fontSize)**
     | 对选区文字设置或取消指定的字体大小

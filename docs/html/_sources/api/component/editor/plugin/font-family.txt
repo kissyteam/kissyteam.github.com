@@ -28,7 +28,7 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.commands.fontFamily`
+* :func:`~Editor.Commands.fontFamily`
 
 Config Details
 ------------------------------------------------------
@@ -101,7 +101,7 @@ Config Details
 Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.commands.fontFamily
+.. function:: Editor.Commands.fontFamily
 
     | **fontFamily(fontFamily)**
     | 对选区文字设置或取消指定的字体.

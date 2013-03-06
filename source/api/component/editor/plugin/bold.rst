@@ -27,13 +27,13 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.commands.bold`
+* :func:`~Editor.Commands.bold`
 
 
 Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.commands.bold
+.. function:: Editor.Commands.bold
 
     | **bold()**
     | toggle 选区文字加粗.

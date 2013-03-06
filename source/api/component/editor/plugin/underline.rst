@@ -28,13 +28,13 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.commands.underline`
+* :func:`~Editor.Commands.underline`
 
 
 Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.commands.underline
+.. function:: Editor.Commands.underline
 
     | **underline()**
     | 对选区文字下划线或取消

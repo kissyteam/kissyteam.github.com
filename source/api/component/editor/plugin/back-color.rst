@@ -27,13 +27,13 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.commands.backColor`
+* :func:`~Editor.Commands.backColor`
 
 
 Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.commands.backColor
+.. function:: Editor.Commands.backColor
 
     | **backColor(color)**
     | 对选区设置背景色.该命令不支持 queryCommandValue.

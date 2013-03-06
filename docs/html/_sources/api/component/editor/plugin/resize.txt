@@ -22,8 +22,8 @@ Configs
 Events
 --------------------------------------------------------
 
-* :func:`~Editor.events.resizeStart`
-* :func:`~Editor.events.resize`
+* :func:`~Editor.Events.resizeStart`
+* :func:`~Editor.Events.resize`
 
 
 Commands

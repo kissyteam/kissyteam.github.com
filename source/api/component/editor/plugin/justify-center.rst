@@ -27,13 +27,13 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.commands.justifyCenter`
+* :func:`~Editor.Commands.justifyCenter`
 
 
 Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.commands.justifyCenter
+.. function:: Editor.Commands.justifyCenter
 
     | **justifyCenter()**
     | 对选区文字居中或取消

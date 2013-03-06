@@ -28,12 +28,12 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.commands.insertUnorderedList`
+* :func:`~Editor.Commands.insertUnorderedList`
 
 Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.commands.insertUnorderedList
+.. function:: Editor.Commands.insertUnorderedList
 
     | **insertUnorderedList**
     | 对选区设置为无序列表或取消

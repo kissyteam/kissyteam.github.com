@@ -27,14 +27,14 @@ Events
 Commands
 ----------------------------------------------------------
 
-* :func:`~Editor.commands.foreColor`
+* :func:`~Editor.Commands.foreColor`
 
 
 
 Commands Details
 ------------------------------------------------------
 
-.. function:: Editor.commands.foreColor
+.. function:: Editor.Commands.foreColor
 
     | **foreColor(color)**
     | 对选区设置字体颜色插件
