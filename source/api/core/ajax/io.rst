@@ -122,7 +122,7 @@ Config Detail
 
 .. data:: cfg.cache
 
-    {Boolean} -  默认 true.如果设为 false, 则会自动给请求 url 加上时间戳.
+    {Boolean} -  :data:`~cfg.dataType` 为 **script** 或 **jsonp** 时默认 false，其他默认为 true. false 时则会自动给请求 url 加上时间戳.
 
 .. data:: cfg.contentType
 
