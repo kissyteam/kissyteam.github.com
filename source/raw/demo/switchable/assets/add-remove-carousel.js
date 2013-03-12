@@ -1,4 +1,4 @@
-KISSY.use("event,switchable,datalazyload", function (S, Event, Switchable) {
+KISSY.use("event,switchable,datalazyload,node", function (S, Event, Switchable) {
     var Carousel = Switchable.Carousel,
         DOM = S.DOM;
 
