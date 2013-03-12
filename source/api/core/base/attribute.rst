@@ -15,6 +15,7 @@ Methods
   * :meth:`~Attribute.prototype.addAttrs`
   * :meth:`~Attribute.prototype.hasAttr`
   * :meth:`~Attribute.prototype.get`
+  * :meth:`~Attribute.prototype.getAttrVals`
   * :meth:`~Attribute.prototype.set`
   * :meth:`~Attribute.prototype.reset`
 
@@ -130,6 +131,13 @@ Methods Detail
     .. note::
 
         当没有设置属性值时, 会取该属性的默认值.
+
+.. method:: Attribute.prototype.getAttrVals
+
+    |   Object **getAttrVals** ()
+    |   获取目前实例的所有属性键值对集合.
+
+    :returns: {Object} 属性键值对集合
 
 .. method:: Attribute.prototype.reset
 
