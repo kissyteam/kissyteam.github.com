@@ -95,8 +95,9 @@
 					
   <span class="target" id="module-module-compiler"></span><div class="section" id="kissy-module-compiler">
 <h1>KISSY Module Compiler<a class="headerlink" href="#kissy-module-compiler" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id1">
-<h2>简介<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>author: <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></p>
+<div class="section" id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>是一个自动模块依赖合并工具.</li>
 <li>是一个自动模块依赖抽取工具.</li>
@@ -104,15 +105,15 @@
 <li>是一个模块代码部署工具. 结合 <a class="reference internal" href="../../../api/seed/loader/index.html#loader"><em>KISSY Loader</em></a> , 用于模块代码部署阶段, 多个模块根据其依赖合并为一个文件, 减少 HTTP 链接数.</li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h2>下载<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>下载<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
 <div class="line">下载: <a class="reference external" href="https://github.com/kissyteam/kissy-tools/raw/master/module-compiler/module-compiler.jar">KISSY Module Compiler</a></div>
 <div class="line">推荐使用 Ant 整合调用： <a class="reference external" href="http://ant.apache.org/">Ant</a></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h2>使用说明<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>使用说明<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>该工具为一个 jar 包, 推荐嵌入到 ant 中, 作为项目构建的一个阶段.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -120,8 +121,8 @@
 建议直接下载整个 kissy-tools 作为项目工具一部分.</p>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>举例<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>举例<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="../../../../../source/raw/module-compiler/tb_kissy_1.3.zip">下载 kissy module compiler demo</a></p>
 <p>源文件结构:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">src</span><span class="o">/</span>
@@ -150,10 +151,10 @@
 <span class="p">},</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;../y&quot;</span><span class="p">]});</span>
 </pre></div>
 </div>
-<div class="section" id="id6">
-<h3>下面介绍 KISSY Module Compiler 的两个用法：模块依赖自动合并与模块依赖自动抽取<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id7">
-<h4>1. 模块依赖自动合并<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<h3>下面介绍 KISSY Module Compiler 的两个用法：模块依赖自动合并与模块依赖自动抽取<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h4>1. 模块依赖自动合并<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <p>配置一下 build.xml</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="c">&lt;!--</span>
 <span class="c">build example for kissy loader</span>
@@ -238,8 +239,8 @@
 <span class="nt">&lt;/project&gt;</span>
 </pre></div>
 </div>
-<div class="section" id="id8">
-<h5>1.1 参数说明<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id9">
+<h5>1.1 参数说明<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
 <div class="section" id="require">
 <h6>require<a class="headerlink" href="#require" title="Permalink to this headline">¶</a></h6>
 <p>需要打包的入口模块 .</p>
@@ -266,8 +267,8 @@
 <p>可选。入口模块的依赖配置文件。 使用 1.3 自动 combo 时需要.</p>
 </div>
 </div>
-<div class="section" id="id9">
-<h5>1.2 最终效果<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id10">
+<h5>1.2 最终效果<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h5>
 <p>目录结构</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">build</span><span class="o">/</span>
      <span class="nx">biz</span><span class="o">/</span>
@@ -285,16 +286,16 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id10">
-<h5>1.3 连接状况<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id11">
+<h5>1.3 连接状况<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h5>
 <ol class="arabic simple">
 <li>若服务器不支持自动 combo ，则不用引入 run.deps.js，最终三个链接 run.js 和 overlay.js 以及 switchable.js</li>
 <li>若服务器支持自动 combo ，则可引入 run.deps.js，配置 <tt class="docutils literal"><span class="pre">KISSY.config(&quot;combine&quot;,true)</span></tt> 后即可将switchable 和 overlay 的请求合为一个连接.最终两个连接 run.js 以及 ??overlay.js,switchable.js</li>
 </ol>
 </div>
 </div>
-<div class="section" id="id11">
-<h4>2. 模块依赖自动抽取<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id12">
+<h4>2. 模块依赖自动抽取<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
 <p>配置一下 build.xml</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="c">&lt;!--</span>
 <span class="c">build example for kissy loader</span>
@@ -359,22 +360,22 @@
 <span class="nt">&lt;/project&gt;</span>
 </pre></div>
 </div>
-<div class="section" id="id12">
-<h5>2.1 参数说明<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h5>
 <div class="section" id="id13">
-<h6>baseUrls<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h6>
+<h5>2.1 参数说明<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id14">
+<h6>baseUrls<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h6>
 <p>模块文件查找目录集合, 一般是业务模块的源码目录, 多个目录间以 , 分隔. 如 x:/code/ .</p>
 </div>
-<div class="section" id="id14">
-<h6>encodings<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id15">
+<h6>encodings<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h6>
 <p>指明模块目录中文件的编码, 顺序对应于 baseUrls , 多个编码以 , 分隔. 如以上示例： gbk , 表示业务模块为 gbk 编码.</p>
 </div>
-<div class="section" id="id15">
-<h6>outputEncoding<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id16">
+<h6>outputEncoding<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h6>
 <p>指明最后合并打包文件的编码格式. 如以上示例 utf-8 .</p>
 </div>
-<div class="section" id="id16">
-<h6>output<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id17">
+<h6>output<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h6>
 <p>最终依赖配置文件的路径</p>
 </div>
 <div class="section" id="fixmodulename">
@@ -382,8 +383,8 @@
 <p>默认 false. 是否自动补全模块名.</p>
 </div>
 </div>
-<div class="section" id="id17">
-<h5>2.2 最终效果<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id18">
+<h5>2.2 最终效果<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h5>
 <p>目录结构</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">build</span><span class="o">-</span><span class="nx">combo</span><span class="o">/</span>
             <span class="nx">deps</span><span class="p">.</span><span class="nx">js</span>
@@ -426,8 +427,8 @@
 <p class="last">注意自动 combo 需要配置 <tt class="docutils literal"><span class="pre">fixModuleName</span></tt> 以补全模块名。</p>
 </div>
 </div>
-<div class="section" id="id18">
-<h5>2.3 连接情况<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id19">
+<h5>2.3 连接情况<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h5>
 <p>通过引入 deps.js 以及配置 <tt class="docutils literal"><span class="pre">KISSY.config(&quot;combine&quot;,true)</span></tt> 最终应用会产生两个连接 ：</p>
 <ol class="arabic simple">
 <li>biz/??x.js,y.js,page/run.js</li>
@@ -538,13 +539,13 @@
 		<div class="s-box-bd">
 			<ul>
 <li><a class="reference internal" href="#">KISSY Module Compiler</a><ul>
-<li><a class="reference internal" href="#id1">简介</a></li>
-<li><a class="reference internal" href="#id2">下载</a></li>
-<li><a class="reference internal" href="#id4">使用说明</a></li>
-<li><a class="reference internal" href="#id5">举例</a><ul>
-<li><a class="reference internal" href="#id6">下面介绍 KISSY Module Compiler 的两个用法：模块依赖自动合并与模块依赖自动抽取</a><ul>
-<li><a class="reference internal" href="#id7">1. 模块依赖自动合并</a><ul>
-<li><a class="reference internal" href="#id8">1.1 参数说明</a><ul>
+<li><a class="reference internal" href="#id2">简介</a></li>
+<li><a class="reference internal" href="#id3">下载</a></li>
+<li><a class="reference internal" href="#id5">使用说明</a></li>
+<li><a class="reference internal" href="#id6">举例</a><ul>
+<li><a class="reference internal" href="#id7">下面介绍 KISSY Module Compiler 的两个用法：模块依赖自动合并与模块依赖自动抽取</a><ul>
+<li><a class="reference internal" href="#id8">1. 模块依赖自动合并</a><ul>
+<li><a class="reference internal" href="#id9">1.1 参数说明</a><ul>
 <li><a class="reference internal" href="#require">require</a></li>
 <li><a class="reference internal" href="#baseurls">baseUrls</a></li>
 <li><a class="reference internal" href="#encodings">encodings</a></li>
@@ -553,21 +554,21 @@
 <li><a class="reference internal" href="#outputdependency">outputDependency</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id9">1.2 最终效果</a></li>
-<li><a class="reference internal" href="#id10">1.3 连接状况</a></li>
+<li><a class="reference internal" href="#id10">1.2 最终效果</a></li>
+<li><a class="reference internal" href="#id11">1.3 连接状况</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id11">2. 模块依赖自动抽取</a><ul>
-<li><a class="reference internal" href="#id12">2.1 参数说明</a><ul>
-<li><a class="reference internal" href="#id13">baseUrls</a></li>
-<li><a class="reference internal" href="#id14">encodings</a></li>
-<li><a class="reference internal" href="#id15">outputEncoding</a></li>
-<li><a class="reference internal" href="#id16">output</a></li>
+<li><a class="reference internal" href="#id12">2. 模块依赖自动抽取</a><ul>
+<li><a class="reference internal" href="#id13">2.1 参数说明</a><ul>
+<li><a class="reference internal" href="#id14">baseUrls</a></li>
+<li><a class="reference internal" href="#id15">encodings</a></li>
+<li><a class="reference internal" href="#id16">outputEncoding</a></li>
+<li><a class="reference internal" href="#id17">output</a></li>
 <li><a class="reference internal" href="#fixmodulename">fixModuleName</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id17">2.2 最终效果</a></li>
-<li><a class="reference internal" href="#id18">2.3 连接情况</a></li>
+<li><a class="reference internal" href="#id18">2.2 最终效果</a></li>
+<li><a class="reference internal" href="#id19">2.3 连接情况</a></li>
 </ul>
 </li>
 </ul>

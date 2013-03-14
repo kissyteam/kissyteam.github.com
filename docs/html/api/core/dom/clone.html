@@ -164,6 +164,7 @@
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;goodbye&quot;</span><span class="nt">&gt;</span>
     Goodbye
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;hello&quot;</span><span class="nt">&gt;</span>Hello<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;hello&quot;</span><span class="nt">&gt;</span>Hello<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
@@ -178,7 +179,7 @@
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>源元素的对象以及数组类型的 data 属性只是引用被复制到 clone 后的元素，他们的值则会在源元素以及克隆元素间共享，如果想进行 deep copy，请手动进行</p>
-<div class="last highlight-html"><div class="highlight"><pre>var elem=KISSY.one(&quot;.hello&quot;).attr(&quot;cutom&quot;,{x:1});
+<div class="last highlight-html"><div class="highlight"><pre>var elem=KISSY.one(&quot;.hello&quot;).attr(&quot;custom&quot;,{x:1});
 elem.clone().attr(&quot;custom&quot;,{x:2});
 </pre></div>
 </div>

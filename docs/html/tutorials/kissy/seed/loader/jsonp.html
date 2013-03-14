@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>使用 KISSY Loader 管理时间戳 &mdash; KISSY v1.3 Documentation</title>
+<title>使用 KISSY Loader 载入一次性的 JSONP 数据 &mdash; KISSY v1.3 Documentation</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
 <link rel="stylesheet" href="../../../../_static/kissy.css"/>
@@ -81,22 +81,12 @@
     <li class="right" >
       <a href="../../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li class="right" >
-      <a href="common-lib.html" title="使用 KISSY Loader 组织公用的模块库"
-         accesskey="N">next</a> | </li>
-    <li class="right" >
-      <a href="simple.html" title="简单使用 KISSY Loader"
-         accesskey="P">previous</a> | </li>
-    <li><a href="../../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
-      <li><a href="../../../index.html" >Tutorial</a> &#187; </li>
-      <li><a href="../../index.html" >模块介绍</a> &#187; </li>
-      <li><a href="../index.html" >Seed</a> &#187; </li>
-      <li><a href="index.html" accesskey="U">Loader</a> &#187; </li> 
+    <li><a href="../../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
     </ul>
 </div>
 					
-  <div class="section" id="kissy-loader">
-<h1>使用 KISSY Loader 管理时间戳<a class="headerlink" href="#kissy-loader" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="kissy-loader-jsonp">
+<h1>使用 KISSY Loader 载入一次性的 JSONP 数据<a class="headerlink" href="#kissy-loader-jsonp" title="Permalink to this headline">¶</a></h1>
 <p>author: <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></p>
 <div class="section" id="refer">
 <h2>Refer<a class="headerlink" href="#refer" title="Permalink to this headline">¶</a></h2>
@@ -109,71 +99,87 @@
 </div>
 <div class="section" id="id2">
 <h2>概述<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>通过 kissy loader 可以对 kissy 内置模块，特定包，以及特定模块设置不同的时间戳，其中优先级关系为：</p>
-<p>特定模块时间戳 &gt; 特定包时间戳 &gt; 内置模块时间戳</p>
-<p>当某个模块优先级高的时间戳找不到时，会取值优先级低的时间戳。</p>
+<p>通过 KISSY Loader 可以把一些一次性的 JSONP 数据也当做一个模块，通过 require 和 use 将数据和逻辑紧密绑定在一起，
+提供了一个统一的数据使用方式，并且通过和逻辑代码的并行加载，提高了页面性能。</p>
 </div>
 <div class="section" id="id3">
-<h2>设置内置模块时间戳<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>通过 KISSY.config(&#8220;tag&#8221;,..); 设置 kissy 内置模块的时间戳</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s2">&quot;tag&quot;</span><span class="p">,</span><span class="s2">&quot;1234&quot;</span><span class="p">);</span>
-</pre></div>
-</div>
+<h2>前提<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>该 JSONP 数据为整个应用只取一次的数据，例如首屏广告请求。</li>
+<li>后端可以为此做出修改。</li>
+</ol>
 </div>
 <div class="section" id="id4">
-<h2>设置特定包时间戳<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>通过 KISSY.config(&#8220;packages&#8221;,...); 设置特定包的时间戳</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s2">&quot;packages&quot;</span><span class="p">,{</span>
-    <span class="nx">crm</span><span class="o">:</span><span class="p">{</span>
-        <span class="nx">tag</span><span class="o">:</span><span class="s2">&quot;xzxc&quot;</span>
-    <span class="p">}</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-</div>
+<h2>应用<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">http://www.x.com/jsonp/data</span></tt> 为数据提供方， <tt class="docutils literal"><span class="pre">http://www.x.com/index.html</span></tt> 为数据使用者，另外存在一个逻辑模块对数据进行处理。</p>
 <div class="section" id="id5">
-<h2>设置特定模块时间戳<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<p>通过 KISSY.config(&#8220;modules&#8221;,...); 设置特定模块的时间戳</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s2">&quot;modules&quot;</span><span class="p">,{</span>
-    <span class="s2">&quot;crm/x&quot;</span><span class="o">:</span><span class="p">{</span>
-        <span class="nx">tag</span><span class="o">:</span><span class="s2">&quot;xzxc&quot;</span>
+<h3>数据提供方<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p><tt class="docutils literal"><span class="pre">http://www.x.com/jsonp/data</span></tt> 返回数据应包裹为 KISSY 模块格式：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">test</span><span class="o">:</span> <span class="s1">&#39;&lt;?php echo $_GET[&#39;</span><span class="nx">test</span><span class="s1">&#39;] ?&gt;&#39;</span>
     <span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">此处为 php 举例.</p>
 </div>
 </div>
 <div class="section" id="id6">
-<h2>总示例<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h3>逻辑代码<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p><tt class="docutils literal"><span class="pre">http://x.cdn.cn/logic/process.js</span></tt> 应接收数据处理后，结合模版返回 html 字符串：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
+
+    <span class="kd">var</span> <span class="nx">tpl</span> <span class="o">=</span> <span class="s1">&#39;woo: {test}&#39;</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+        <span class="nx">data</span><span class="p">.</span><span class="nx">test</span><span class="o">+=</span><span class="s1">&#39; ok&#39;</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nx">S</span><span class="p">.</span><span class="nx">substitute</span><span class="p">(</span><span class="nx">tpl</span><span class="p">,</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>配置<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>首先页面 <tt class="docutils literal"><span class="pre">http://www.x.com/index.html</span></tt> 会配置数据源为 KISSY 模块和逻辑代码的包地址：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-    <span class="c1">// 默认为 kissy build 时间，例如 20120531</span>
-    <span class="c1">// base:&#39;&#39;</span>
-    <span class="nx">packages</span><span class="o">:</span><span class="p">{</span>
-        <span class="s2">&quot;crm&quot;</span><span class="o">:</span><span class="p">{</span>
-            <span class="nx">base</span><span class="o">:</span><span class="s1">&#39;xx/&#39;</span><span class="p">,</span>
-            <span class="nx">tag</span><span class="o">:</span><span class="s1">&#39;a&#39;</span>
-        <span class="p">},</span>
-        <span class="s2">&quot;tc&quot;</span><span class="o">:</span><span class="p">{</span>
-            <span class="nx">base</span><span class="o">:</span><span class="s1">&#39;y/&#39;</span>
+    <span class="nx">modules</span><span class="o">:</span><span class="p">{</span>
+        <span class="s1">&#39;x-com/data&#39;</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">fullpath</span><span class="o">:</span> <span class="s1">&#39;http://www.x.com/jsonp/data?test=success-test&#39;</span>
         <span class="p">}</span>
     <span class="p">},</span>
 
-    <span class="nx">modules</span><span class="o">:</span><span class="p">{</span>
-        <span class="s2">&quot;crm/x&quot;</span><span class="o">:</span><span class="p">{</span>
-            <span class="nx">tag</span><span class="o">:</span><span class="s1">&#39;c&#39;</span>
+    <span class="nx">packages</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">logic</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">base</span><span class="o">:</span><span class="s1">&#39;http://x.cdn.cn/&#39;</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>那么载入 seed 后的实际加载为：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;dom&quot;</span><span class="p">)</span>  <span class="o">=&gt;</span>  <span class="nx">dom</span><span class="p">.</span><span class="nx">js</span><span class="o">?</span><span class="nx">t</span><span class="o">=</span><span class="mi">20120531</span>
-
-<span class="nx">use</span><span class="p">(</span><span class="s2">&quot;crm/x2&quot;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">crm</span><span class="o">/</span><span class="nx">x2</span><span class="p">.</span><span class="nx">js</span><span class="o">?</span><span class="nx">t</span><span class="o">=</span><span class="nx">a</span>
-
-<span class="nx">use</span><span class="p">(</span><span class="s2">&quot;crm/x&quot;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">crm</span><span class="o">/</span><span class="nx">x</span><span class="p">.</span><span class="nx">js</span><span class="o">?</span><span class="nx">t</span><span class="o">=</span><span class="nx">c</span>
-
-<span class="nx">use</span><span class="p">(</span><span class="s2">&quot;tc/r&quot;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">tc</span><span class="o">/</span><span class="nx">r</span><span class="p">.</span><span class="nx">js</span><span class="o">?</span><span class="nx">t</span><span class="o">=</span><span class="mi">20120531</span>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">请只在这种方式下使用 <tt class="docutils literal"><span class="pre">fullpath</span></tt> 配置。</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>使用<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>最终页面 <tt class="docutils literal"><span class="pre">http://www.x.com/index.html</span></tt> 会并行取数据和逻辑代码后渲染页面：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;x-com/data,logic/process&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">process</span><span class="p">){</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="nx">process</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">})</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">推荐在这段代码放入头部 &lt;head&gt; 中加快执行。</p>
+</div>
 </div>
 </div>
 </div>
@@ -191,17 +197,7 @@
     <li class="right" >
       <a href="../../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li class="right" >
-      <a href="common-lib.html" title="使用 KISSY Loader 组织公用的模块库"
-         accesskey="N">next</a> | </li>
-    <li class="right" >
-      <a href="simple.html" title="简单使用 KISSY Loader"
-         accesskey="P">previous</a> | </li>
-    <li><a href="../../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
-      <li><a href="../../../index.html" >Tutorial</a> &#187; </li>
-      <li><a href="../../index.html" >模块介绍</a> &#187; </li>
-      <li><a href="../index.html" >Seed</a> &#187; </li>
-      <li><a href="index.html" accesskey="U">Loader</a> &#187; </li> 
+    <li><a href="../../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
     </ul>
 </div>
 					<div id="disqus_thread"></div>
@@ -264,13 +260,17 @@
 		</div>
 		<div class="s-box-bd">
 			<ul>
-<li><a class="reference internal" href="#">使用 KISSY Loader 管理时间戳</a><ul>
+<li><a class="reference internal" href="#">使用 KISSY Loader 载入一次性的 JSONP 数据</a><ul>
 <li><a class="reference internal" href="#refer">Refer</a></li>
 <li><a class="reference internal" href="#id2">概述</a></li>
-<li><a class="reference internal" href="#id3">设置内置模块时间戳</a></li>
-<li><a class="reference internal" href="#id4">设置特定包时间戳</a></li>
-<li><a class="reference internal" href="#id5">设置特定模块时间戳</a></li>
-<li><a class="reference internal" href="#id6">总示例</a></li>
+<li><a class="reference internal" href="#id3">前提</a></li>
+<li><a class="reference internal" href="#id4">应用</a><ul>
+<li><a class="reference internal" href="#id5">数据提供方</a></li>
+<li><a class="reference internal" href="#id6">逻辑代码</a></li>
+<li><a class="reference internal" href="#id7">配置</a></li>
+<li><a class="reference internal" href="#id8">使用</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

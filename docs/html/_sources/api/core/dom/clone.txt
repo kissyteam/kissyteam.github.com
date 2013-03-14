@@ -71,6 +71,7 @@ Methods
           <div class="goodbye">
             Goodbye
             <div class="hello">Hello</div>
+            <div class="hello">Hello</div>
           </div>
         </div>
 
@@ -90,7 +91,7 @@ Methods
 
         .. code-block:: html
 
-            var elem=KISSY.one(".hello").attr("cutom",{x:1});
+            var elem=KISSY.one(".hello").attr("custom",{x:1});
             elem.clone().attr("custom",{x:2});
         
         

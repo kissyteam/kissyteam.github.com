@@ -97,6 +97,7 @@
 					
   <div class="section" id="kissy-loader">
 <h1>使用 KISSY Loader 组织公用的模块库<a class="headerlink" href="#kissy-loader" title="Permalink to this headline">¶</a></h1>
+<p>author: <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></p>
 <div class="section" id="refer">
 <h2>Refer<a class="headerlink" href="#refer" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
@@ -106,13 +107,13 @@
 <div class="line"><a class="reference internal" href="../../../../demo/seed/loader/index.html#loader-demo"><em>demo</em></a></div>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>概述<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>概述<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>通过 KISSY Loader 可以在一个企业内部搭建公用的模块库，通过使用 KISSY Loader 模块化组织，
 使用者可以统一得任意调用任何模块，配合依赖配置还可以对一次 use 的公用模块进行自动 combo.</p>
 </div>
-<div class="section" id="id2">
-<h2>目录结构<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>目录结构<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>举例：目前存在 comment 模块需要在多个应用间共享使用.那么代码可以放置在以下目录结构</p>
 <div class="highlight-javascript"><pre>/assets/common-lib/comment/1.0/index.js</pre>
 </div>
@@ -125,8 +126,8 @@
 <div class="highlight-javascript"><pre>/assets/common-lib/config.js</pre>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>包配置<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>包配置<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>根据目录结构，在 config.js 中配置包：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
     <span class="nx">packages</span><span class="o">:</span><span class="p">[{</span>
@@ -137,8 +138,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h2>时间戳配置<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>时间戳配置<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>由于存在小升级更新问题，如果组件升级后需要调用者下次调用时立即更新就需要一个时间戳机制，我们可以利用另一个随时更新的 js 来控制时间戳：</p>
 <div class="highlight-javascript"><pre>/assets/common-lib/timestamp.js</pre>
 </div>
@@ -202,8 +203,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>调用方使用<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>调用方使用<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>任何其他应用的调用者都可以引用 config.js，然后在应用中</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">commonDefer</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
     <span class="nx">S</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;common-lib/comment/1.0/&quot;</span><span class="p">)</span>
@@ -344,11 +345,11 @@
 			<ul>
 <li><a class="reference internal" href="#">使用 KISSY Loader 组织公用的模块库</a><ul>
 <li><a class="reference internal" href="#refer">Refer</a></li>
-<li><a class="reference internal" href="#id1">概述</a></li>
-<li><a class="reference internal" href="#id2">目录结构</a></li>
-<li><a class="reference internal" href="#id3">包配置</a></li>
-<li><a class="reference internal" href="#id4">时间戳配置</a></li>
-<li><a class="reference internal" href="#id5">调用方使用</a></li>
+<li><a class="reference internal" href="#id2">概述</a></li>
+<li><a class="reference internal" href="#id3">目录结构</a></li>
+<li><a class="reference internal" href="#id4">包配置</a></li>
+<li><a class="reference internal" href="#id5">时间戳配置</a></li>
+<li><a class="reference internal" href="#id6">调用方使用</a></li>
 <li><a class="reference internal" href="#combo">进一步得自动 combo</a></li>
 </ul>
 </li>

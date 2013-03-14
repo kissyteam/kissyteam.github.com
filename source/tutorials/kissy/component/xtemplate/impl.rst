@@ -1,6 +1,8 @@
 构建前端 DSL template
 --------------------------------------
 
+author: `承玉 <yiminghe@gmail.com>`_
+
 .. raw:: html
 
     <p>目前在传统的软件开发领域 <a href="http://en.wikipedia.org/wiki/Domain-specific_language">DSL</a> 已经比较普遍，

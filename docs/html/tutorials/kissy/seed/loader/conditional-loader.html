@@ -97,6 +97,7 @@
 					
   <div class="section" id="kissy-loader">
 <h1>使用 KISSY Loader 进行条件加载<a class="headerlink" href="#kissy-loader" title="Permalink to this headline">¶</a></h1>
+<p>author: <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></p>
 <div class="section" id="refer">
 <h2>Refer<a class="headerlink" href="#refer" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
@@ -104,13 +105,13 @@
 <div class="line"><a class="reference internal" href="../../../../demo/seed/loader/index.html#loader-demo"><em>demo</em></a></div>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>概述<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>概述<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>通过 kissy loader 结合自动 combo 可以进行条件加载，对于不同的设备可以在运行时动态加载不同的模块，
 对于高级浏览器可以大大减小载入模块大小.</p>
 </div>
-<div class="section" id="id2">
-<h2>举例<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>举例<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>比如常见的本地存储模块，其实对于 ie&gt;7 以上完全不需要该模块，而 ie67 则需要使用一些复杂的代码来模拟本地存储能力，
 那么我们可以将这个功能分成适合两类浏览器的两个模块。</p>
 <p>高级浏览器就比较简单，模块内容为：</p>
@@ -134,8 +135,8 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-<div class="section" id="id3">
-<h3>使用<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>使用<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>其他模块在使用时就可以通过条件依赖加载来透明得使用：</p>
 <p>比如模块 a</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;biz/a&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">store</span><span class="p">){</span>
@@ -161,8 +162,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h3>线上<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>线上<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>那么当载入依赖关系并配置 combine:true，调用</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;biz/a&#39;</span><span class="p">);</span>
 </pre></div>
@@ -267,11 +268,11 @@
 			<ul>
 <li><a class="reference internal" href="#">使用 KISSY Loader 进行条件加载</a><ul>
 <li><a class="reference internal" href="#refer">Refer</a></li>
-<li><a class="reference internal" href="#id1">概述</a></li>
-<li><a class="reference internal" href="#id2">举例</a><ul>
-<li><a class="reference internal" href="#id3">使用</a></li>
+<li><a class="reference internal" href="#id2">概述</a></li>
+<li><a class="reference internal" href="#id3">举例</a><ul>
+<li><a class="reference internal" href="#id4">使用</a></li>
 <li><a class="reference internal" href="#combo">combo</a></li>
-<li><a class="reference internal" href="#id4">线上</a></li>
+<li><a class="reference internal" href="#id5">线上</a></li>
 </ul>
 </li>
 </ul>
