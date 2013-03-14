@@ -18,7 +18,7 @@ swipe
 
 .. attribute:: swipe.direction
 
-    {String} 划动方面，枚举： ``left`` ``right`` ``top`` ``bottom``
+    {String} 划动方面，枚举： ``left`` ``right`` ``up`` ``down``
 
 .. attribute:: swipe.duration
 
