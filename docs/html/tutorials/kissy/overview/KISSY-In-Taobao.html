@@ -1,0 +1,680 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<title>KISSY Overview &mdash; KISSY v1.3 Documentation</title>
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.2.0/css/reset.css"/>
+<link rel="stylesheet" href="../../../_static/kissy.css"/>
+    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js,searchtools.js"></script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/kissy/docs/" >English API Docs</a></li>
+    </ul>
+<div id="searchbox" style="display: none" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" size="28" class="ipt"/>
+      <input type="submit" value="Go" class="btn"/>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+</div>
+
+<div id="content">
+	<div  id="layout" class="layout grid-s6m0e7">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../seed/index.html" title="Seed"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="../index.html" title="使用介绍"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >Tutorial</a> &#187; </li>
+      <li><a href="../index.html" accesskey="U">使用介绍</a> &#187; </li> 
+    </ul>
+</div>
+					
+  <div class="section" id="kissy-overview">
+<h1>KISSY Overview<a class="headerlink" href="#kissy-overview" title="Permalink to this headline">¶</a></h1>
+<p>模块化高扩展性的前端框架 KISSY</p>
+<p>author: <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></p>
+<div class="section" id="id2">
+<h2>介绍<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>伴随着淘宝的快速发展，诞生已三年多的 KISSY 也取得了巨大的成长。
+目前应用于阿里集团的多个业务团队，特别是淘宝，天猫，一淘的绝大多数业务都采用了 KISSY，
+满足了从前台的 web page 到后台的 web app 再到移动端应用（起步阶段）的广泛需求。</p>
+<p>在阿里集团以外也有不少公司和个人使用 KISSY，交流旺旺群成员已将近千人，
+在 github 源码库也时常有外部人员参与提交 issue，发起 pull request，另外在 oschina 等开源社区也受到了一定的关注。</p>
+<p>淘宝在 2012 年 12 月 25 号发布了 KISSY 最新版本 1.3，
+在这篇文章中我将对 KISSY 1.3 结合在淘宝的实践做一次全面概述，希望能对想了解淘宝前端技术的朋友有所帮助。</p>
+</div>
+<div class="section" id="kissy">
+<h2>为什么选择 KISSY<a class="headerlink" href="#kissy" title="Permalink to this headline">¶</a></h2>
+<p>KISSY 作为国内一个完全自底向上开发起来的框架，诞生三年来历经淘宝的各种业务变化的考验，体现了 KISSY 的可扩展性，高稳定性和可维护性。
+它在以下方面具有一定优势:</p>
+<ul>
+<li><p class="first">拥有大量的中文文档： 方便不熟悉英文的国内开发者快速入门学习。</p>
+</li>
+<li><p class="first">在国内具备一定的社区规模： 通过旺旺群，google group，微博，官方网站等用户随时可以和开发人员快速交流。</p>
+</li>
+<li><p class="first">开发便捷： 在模块化，组件以及工具辅助方面形成了一套完善的机制，可以高效应对日常的需求开发。</p>
+</li>
+<li><p class="first">综合借鉴国际先进的框架类库设计：</p>
+<blockquote>
+<div><ul class="simple">
+<li>在吸收 jquery 稳定的 dom 核心之外提供了模块化，按需加载的基础架构。</li>
+<li>在学习 yui 坚实的架构之外着重于组件开发，积累了一批贴近淘宝应用的组件集。</li>
+<li>在研究 extjs 优秀的组件设计之外探索轻量级，可扩展的组件开发，同时满足 web app 与 web page 的需求。</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">应用场景广泛： 在各种设备上都有所支持。</p>
+<blockquote>
+<div><ul class="simple">
+<li>可以使用 seed 和 core 简单快速地搭建页面</li>
+<li>也可以进一步使用 KISSY 的大量组件构建富客户端应用</li>
+<li>也可以使用统一的 API 开发移动应用</li>
+<li>更可以利用 KISSY 灵活的模块化机制高效进行大规模团队协作</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>不过由于 KISSY 开发时间还不长，在组件完备性以及可测试性上有待进一步完善，我们坚信这种情况会随着团队的不断努力而逐步解决。</p>
+</div>
+<div class="section" id="id3">
+<h2>架构<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>KISSY 的架构由淘宝复杂多变的业务决定，在松耦合、无污染、模块化的核心前提下，也从众多优秀类库和框架的思路得到一些启发。 如图1所示：</p>
+<p>图1： KISSY 整体架构图</p>
+<img alt="KISSY-architecture" src="http://img03.taobaocdn.com/tps/i3/T1QDBbXDliXXaoYMUR-865-661.png" />
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>最底层的 seed 是类似目前流行的 AMD 模块化机制实现，为了更高效地共享通用组件加入了自动 combo 的支持，</dt>
+<dd><p class="first last">另外 seed 也包含一些像 each（循环数组以及对象），mix（合并对象），param（编码对象为 url），
+ready（等待 dom ready）等常用的静态工具方法以及 Path，Uri，Promise，UA 等模块化需要用到的基础类。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>seed 之上的第二层是处理 dom 兼容性的核心模块，其中每个模块都是由更小的模块打包合并而来。</dt>
+<dd><p class="first last">特殊之处在于 KISSY 把一些不标准浏览器的兼容代码单独抽取成内部模块，用户可用的外部模块会根据不同的设备分别依赖不同的内部模块。
+虽然加载不同的具体实现模块代码，但是最终提供给用户的是一致的模块名，api 以及渐进增强的能力。
+例如用户使用 event 模块，在 touch 设备上会加载 event/touch 模块从而可以使用一些手势事件，
+而在 ie&lt;9 下会加载 event/hashchange 模块，以类似 es5-shim 的方式来补全浏览器的能力，提供给用户统一的 api。</p>
+</dd>
+</dl>
+</li>
+</ol>
+<p>3. 第三层为组件架构层。提供包括模拟 es5 属性管理，插件和多继承机制的 rich-base 模块，
+所有 UI 组件渲染机制的基类 component 模块以及具备一定逻辑的模板引擎 xtemplate。</p>
+<ol class="arabic" start="4">
+<li><dl class="first docutils">
+<dt>第四层为独立可用的 KISSY 组件，用户可自由组合继承搭建最终页面。包括：</dt>
+<dd><ul class="first last simple">
+<li>工具模块，例如拖放，调整大小，操作 swf，操作样式表，mvc（model，router）架构等。</li>
+<li>UI 组件，例如弹窗，菜单，标签，日历等。</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>最外层为 KISSY gallery，KISSY 社区开发的一些通用模块会放入 gallery 中，</dt>
+<dd><p class="first last">从而可以方便得在所有使用 KISSY 的团队间共享模块。
+如果该模块确实十分通用则会经过重构放入 KISSY 自身。</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h2>模块化机制<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>介绍<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>由于淘宝业务的复杂，为了提高代码的可维护性和重用性，KISSY 在早期就引入了简单的模块化机制，并且随着前端技术的发展而不断改进。
+KISSY 1.3 的模块化机制与目前的 AMD 规范比较类似，并根据淘宝自身业务特点加入了自动 combo 功能。</p>
+<p>注：combo 举例：请求 a.tbcdn.cn/??a.js,b.js 相当于把 a.tbcdn.cn/a.js 与 a.tbcdn.cn/b.js 的文件内容合并后返回。</p>
+<p>KISSY 之外的每个模块必须属于一个包，一个包内可以有很多相关模块，它们具备相同的加载基地址。
+包的设计一方面通过约定优先配置的原则可以减少同一个包内多个模块的请求路径配置，
+另一方面也方便了部署在不同地址的多个应用间互相调用模块。
+所以开发应用前请先配置包地址，例如：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s1">&#39;packages&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">myapp</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">base</span><span class="o">:</span><span class="s1">&#39;./x&#39;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>之后在 x 目录下建立 myapp 目录，并在 myapp 目录下新建模块 a 对应的代码文件： a.js</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">JSON</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">a</span><span class="o">:</span><span class="s1">&#39;ok&#39;</span><span class="p">});</span>
+<span class="p">},{</span>
+    <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;json&#39;</span><span class="p">]</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>以及依赖 a 的入口主模块 main 的代码文件： main.js</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DOM</span><span class="p">,</span><span class="nx">a</span><span class="p">){</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">DOM</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span><span class="nx">a</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">},{</span>
+    <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;dom&#39;</span><span class="p">,</span><span class="s1">&#39;./a&#39;</span><span class="p">]</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>应用模块可依赖 KISSY 自身模块，例如以上的 dom json。</p>
+<p>最后新建 index.html 来调用应用模块：</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;http://a.tbcdn.cn/s/kissy/1.3.0/seed.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="c1">// ... 上述包配置</span>
+
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;myapp/main&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;page loaded&#39;</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>工具支持<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>打开上述 index.html 会发现链接数不少，有从淘宝 cdn 的链接也有本地的链接。
+因此 KISSY 提供了配套工具 KISSY Module Compiler 进行脚本打包以及抽取依赖后用 cdn combo 来解决这个问题，
+对工具有兴趣可查看参考资料中的链接地址，以下仅作简单介绍：</p>
+<div class="section" id="id7">
+<h4>脚本打包<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<p>如果应用脚本非常多，可以用 module compiler 将入口模块 main 以及其依赖的所有应用模块打包压缩到 main-min.js 中，
+同时 module compiler 会生成一份依赖描述文件：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s1">&#39;modules&#39;</span><span class="p">,{</span>
+    <span class="s1">&#39;myapp/main&#39;</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;dom&#39;</span><span class="p">,</span><span class="s1">&#39;json&#39;</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>接着设置 KISSY 启用 combo 模式，并载入上述的依赖描述文件：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s1">&#39;combine&#39;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>最后修改 index.html 引用 seed-min.js，打开网络面板后会发现现在只产生两个链接请求:</p>
+<div class="highlight-python"><pre>http://a.tbcdn.cn/s/kissy/??dom/base,json/native.js
+http://localhost/myapp/main-min.js</pre>
+</div>
+<p>注：在 ie&lt;9 等非标准浏览器下第一个链接地址会加上 dom/ie json/json2 等脚本地址</p>
+</div>
+<div class="section" id="id8">
+<h4>抽取依赖<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p>如果应用脚本不多，并且自身服务器也支持 combo 的话，那么可以采用更加灵活的抽取依赖后全部 combo 的解决方案。
+这时 module compiler 会做两件事情：</p>
+<ol class="arabic simple">
+<li>补全模块名，例如 a.js 变为</li>
+</ol>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;myapp/a&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">JSON</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">a</span><span class="o">:</span><span class="s1">&#39;ok&#39;</span><span class="p">});</span>
+<span class="p">},{</span>
+    <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;json&#39;</span><span class="p">]</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>将各个模块的依赖收集为一个单独的文件，例如</li>
+</ol>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s1">&#39;modules&#39;</span><span class="p">,{</span>
+    <span class="s1">&#39;myapp/main&#39;</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;dom,&#39;</span><span class="p">,</span><span class="s1">&#39;./a&#39;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;myapp/a&#39;</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;json&#39;</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>接着设置 KISSY 启用 combo 模式，并载入上述的依赖描述文件：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s1">&#39;combine&#39;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>访问 index.html，打开网络面板会发现同样只产生两个链接请求:</p>
+<div class="highlight-python"><pre>http://a.tbcdn.cn/s/kissy/??dom/base,json/native.js
+http://localhost/myapp/??a.js,main.js</pre>
+</div>
+</div>
+</div>
+<div class="section" id="kissy-pie">
+<h3>KISSY-PIE<a class="headerlink" href="#kissy-pie" title="Permalink to this headline">¶</a></h3>
+<p>KISSY 还提供了一套基于约定的前端打包解决方案 KISSY-PIE，通过统一的约定，提升应用的可维护性，将大家从重复的打包脚本的编写中解放出来。</p>
+<p>KISSY-PIE 包括了以下功能：</p>
+<ul class="simple">
+<li>JS（KISSY 的模块编译，HTML 模板到 KISSY 模块编译，代码压缩）</li>
+<li>CSS（基于 CSS-Combo 的合并，压缩）</li>
+<li>Less</li>
+<li>Sass</li>
+</ul>
+<p>并且在命令行之外还提供了 web 操作界面，如图2所示：</p>
+<p>图2： KISSY-PIE 打包界面</p>
+<img alt="kissy-pie" src="http://img01.taobaocdn.com/tps/i1/T1.xNpXy0cXXXoylk9-771-513.png" />
+</div>
+</div>
+<div class="section" id="id9">
+<h2>组件机制<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h3>核心<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>KISSY 目前包括众多即开即用的组件，
+包括工具性质的例如 dd（拖放），resizable（调整大小），swf（插入flash），stylesheet（操作样式表）等
+和 UI 性质的例如 overlay（弹窗），menu（菜单），menubutton（菜单按钮），imagezoom（放大镜），editor（编辑器），
+tabs（标签），tree（树）等。
+这些组件都基于公共的 rich-base 以及 component 模块：
+rich-base 和 component 模块充分利用了 javascript 语言的 mixin 和原型链继承，
+提供了属性绑定，类继承，扩展以及插件等特性。</p>
+<p>其中的重点是 Component，它是所有 UI 组件的基类，提供了两种通用的渲染方式：</p>
+<ol class="arabic">
+<li><p class="first">组件实例由 javascript 完全渲染 dom 树。</p>
+<blockquote>
+<div><p>其中对于 menu 等组件在 javascript 完全渲染的情况亦可以通过 json 初始化内部嵌套组件。例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;menu&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Menu</span><span class="p">){</span>
+    <span class="c1">// javascript 渲染一个菜单到 body</span>
+    <span class="k">new</span> <span class="nx">Menu</span><span class="p">({</span>
+        <span class="nx">children</span><span class="o">:</span><span class="p">[{</span>
+            <span class="nx">content</span><span class="o">:</span><span class="s1">&#39;item1&#39;</span>
+        <span class="p">}]</span>
+    <span class="p">}).</span><span class="nx">render</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">从已有的 dom 树节点得到组件实例。</p>
+</li>
+</ol>
+<p>下面以 KISSY 中常用的一个组件 Overlay 为例讲解下，首先看图3类结构图：</p>
+<p>图3： Overlay 类结构图</p>
+<img alt="overlay" src="http://img04.taobaocdn.com/tps/i4/T1LzxpXrFaXXa8LGAz-643-262.png" />
+<p>Overlay 继承自 Component，然后静态地由一些分散的功能类扩展而来，包括定位功能类，对齐功能类，关闭功能类，遮罩层功能类，
+这些功能类底层利用 javascript 的 mixin 功能将自己的方法和属性汇入到 Overlay 类中，使得最终的 Overlay 具备了这些能力。</p>
+<p>组件在运行时也可以选择性依赖某些插件模块，将插件的功能注入到组件中去，
+既避免了一个组件过于功能繁多导致的文件过大，又大大增强了组件的可扩展性。</p>
+<p>以下为 Overlay 的使用示例代码：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;overlay,component/plugin/resize&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">,</span><span class="nx">ReizePlugin</span><span class="p">){</span>
+
+    <span class="c1">// 完全由 javascript 将组件实例渲染到 body 中</span>
+    <span class="k">new</span> <span class="nx">Overlay</span><span class="p">({</span>
+        <span class="nx">content</span><span class="o">:</span><span class="s1">&#39;test&#39;</span>
+    <span class="p">}).</span><span class="nx">render</span><span class="p">();</span>
+
+    <span class="c1">// 从已有的 dom 树节点生成 Overlay 实例</span>
+    <span class="kd">var</span> <span class="nx">overlay</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Overlay</span><span class="p">({</span>
+        <span class="nx">srcNode</span><span class="o">:</span><span class="s1">&#39;#existing&#39;</span>
+    <span class="p">}).</span><span class="nx">render</span><span class="p">();</span>
+
+    <span class="c1">// 运行时加入调整大小的插件能力</span>
+    <span class="nx">overlay</span><span class="p">.</span><span class="nx">plug</span><span class="p">(</span><span class="k">new</span> <span class="nx">ReizePlugin</span><span class="p">({</span>
+        <span class="nx">handles</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span>
+    <span class="p">}));</span>
+
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="brix">
+<h3>Brix<a class="headerlink" href="#brix" title="Permalink to this headline">¶</a></h3>
+<p>除了 KISSY 自身的组件机制，一淘开发人员根据自己的应用特点在组件开发和使用上找寻了另一条途径。即 Brix 解决方案：</p>
+<ul class="simple">
+<li>基于统一的渲染方式：模板（tmpl）和数据（data）产生html片段后使用 innerHTML 到 DOM 节点中.</li>
+<li>提取子模板，结合数据的更新，达到局部刷新，开发者不需要再关心页面的表现，而专心于数据的变化。</li>
+<li>DOM 节点自定义属性设置组件标志，Brix 提供 Pagelet 按照统一的方式实例化组件。</li>
+</ul>
+<p>图4： Brix 类库结构</p>
+<img alt="brix" src="http://img02.taobaocdn.com/tps/i2/T10wc7Xf4iXXcMABjZ-1027-1025.png" />
+</div>
+</div>
+<div class="section" id="id11">
+<h2>设备普适性<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>当前 javascript 的使用范围越来越广，平台包括 pc 浏览器与读屏器，nodejs，移动端浏览器以及各种外壳，window8 等。
+KISSY 也尽量在各个平台给予支持，保证统一的开发体验。</p>
+<p>在 nodejs 上 KISSY 通过调整模块加载器使得 KISSY 可以直接将自身的模块加载到 nodejs 中使用。例如</p>
+<ul class="simple">
+<li>可以使用 KISSY 的 UA 解析模块来分析日志中的 UA 串</li>
+<li>可以载入 jsdom 模块在 nodejs 环境下做单元测试</li>
+<li>用 xtemplate 在服务器端渲染前端模板</li>
+<li>使用 KISSY 的 htmlparser，color 等工具模块</li>
+</ul>
+<p>经统计约有 1000 万残疾人用户在使用淘宝，其中不少是受影响最大的盲人朋友，他们实际上是通过读屏器来和淘宝交互，
+KISSY 组件通过遵循 WAI-ARAI 规范来给视力受损的朋友提供无障碍的访问环境，网上人人平等。</p>
+<p>KISSY 也计划对 windows8 进行支持，在即将发布的 tmall windows8 app 中仅仅通过使用 KISSY 的模块化机制以及一些语法糖 API
+就可以达到和平常开发一样的高效。</p>
+<p>随着用户越来越多地在移动设备上购物产生交易，移动应用在流量的比重上也越来越多，KISSY 及时适配移动设备，
+目前在两方面进行了支持：</p>
+<ol class="arabic">
+<li><p class="first">根据设备条件加载。</p>
+<blockquote>
+<div><p>对于移动端由于网络速度等原因对于文件大小比较敏感，KISSY 为了保证一致的 API 又不能随意删减功能，
+因而采取了独立兼容模块的方法来保持瘦身。</p>
+<p>在架构一节也阐述过，KISSY 对基础核心模块中的兼容非标准浏览器的模块进行选择性加载，
+同时移动设备上都是标准浏览器，从而可以大大减少实际下载到用户设备上的代码大小。</p>
+<p>部分组件也实行了拆分，将 pc 的功能交互独立到单独的模块，在移动触摸设备上只加载触摸交互需要用到的模块。</p>
+</div></blockquote>
+</li>
+<li><p class="first">渐进增强 API。</p>
+<blockquote>
+<div><p>对于触屏设备，很多交互是建立在手势操作上。而手势操作除了在 safari 上有 gesture 事件做有限支持外，
+在 android 上则完全没有对应事件。
+得益于 KISSY 易于扩展的事件机制，KISSY 在底层多点触摸 touch 事件的基础上模拟出了 tap rotate pinch
+等触屏设备上独有的事件，这对于用户则是透明，用户完全可以把这些事件当做原生事件来使用，例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;event&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Event</span><span class="p">){</span>
+    <span class="c1">// 监听 div 上的 tap 事件</span>
+    <span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;#div&#39;</span><span class="p">,</span><span class="s1">&#39;tap&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="section" id="zoojs">
+<h3>ZOOJS<a class="headerlink" href="#zoojs" title="Permalink to this headline">¶</a></h3>
+<p>另外淘宝北京团队还基于 KISSY 核心打造了专门面向 Web 无线设备的一整套工具库 ZOOJS，
+包含控件级的事件支持、触屏行为的封装、富控件、皮肤、App的基础架构等。
+这套独特的 Web 无线解决方案力争将 HTML5 和 CSS3 的优势发挥至最佳，做到即调即用。</p>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>测试与持续集成<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p>KISSY 经过三年的开发代码库已经相当庞大了，模块间还常常有依赖关系，修改代码有牵一发而动千钧的后果。
+为了应对此问题，KISSY 也在逐渐完善单元测试，自动化测试与持续集成。</p>
+<div class="section" id="id13">
+<h3>单元测试<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>KISSY 一个模块的常见目录结构如图5所示：</p>
+<p>图5： 模块目录结构</p>
+<img alt="KISSY test" src="http://img02.taobaocdn.com/tps/i2/T1vyNnXwlgXXbwfpMS-198-297.png" />
+<p>其中 tests 目录下为测试资源，runner 目录下启动测试的 html 文件，specs 下为对应模块的单元测试代码。
+KISSY 采用的单元测试框架为 jasmine ，测试代码举例如下：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;S.mix&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;works for simple case&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">expect</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">mix</span><span class="p">({</span><span class="nx">x</span><span class="o">:</span><span class="mi">1</span><span class="p">},{</span><span class="nx">y</span><span class="o">:</span><span class="mi">1</span><span class="p">})).</span><span class="nx">toEqual</span><span class="p">({</span><span class="nx">x</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="nx">y</span><span class="o">:</span><span class="mi">1</span><span class="p">});</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>然后打开启动测试的 html 文件 即可看到图6所示的单元测试结果：</p>
+<p>图6： 单元测试结果</p>
+<img alt="run test" src="http://img01.taobaocdn.com/tps/i1/T1nGRoXCReXXaUZeDF-610-234.png" />
+</div>
+<div class="section" id="id14">
+<h3>持续集成<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>为了提高测试效率，KISSY 还依赖 travis 平台和 phamtomjs 进行持续集成测试。
+每次提交代码都会在 travis 平台上启动 phantomjs 来运行 KISSY 所有模块的单元测试代码。
+如图7所示：</p>
+<p>图7： travis 平台上的 KISSY</p>
+<img alt="travis" src="http://img01.taobaocdn.com/tps/i1/T18aU8XkBiXXcDcJnW-587-412.png" />
+</div>
+</div>
+<div class="section" id="id15">
+<h2>淘宝应用场景举例<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<p>淘宝目前的绝大多数页面已经采用 KISSY 搭建，这次我选取两个大家使用比较多的应用来介绍下 KISSY 在淘宝的实践：</p>
+<div class="section" id="id16">
+<h3>店铺页面<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>店铺页面是商家店铺的门户，除了淘宝页头之下都可以由商家自定义内容，如图8所示：</p>
+<p>图8：典型的店铺页面</p>
+<img alt="shop" src="http://img02.taobaocdn.com/tps/i2/T1OwZ9Xi4iXXb71EHc-985-567.png" />
+<p>可以看出页面本身就是区块化的组织，在程序内部也是分成很多个模块，例如店内搜索模块，宝贝分类模块，销量统计模块等，
+每个模块负责页面一块区域的交互实现，这些模块又会调用 KISSY 的模块来实现自身的逻辑。
+而每个商家的店铺可能使用到的区块并不相同，这也意味着每个商家店铺所用到的程序模块也不相同。</p>
+<p>店铺模块与 KISSY 模块依赖关系如图9所示：</p>
+<p>图9：店铺模块与 KISSY 模块的关系</p>
+<img alt="shop-mods" src="http://img02.taobaocdn.com/tps/i2/T1jXc4XdFkXXX.coEd-494-265.png" />
+<p>在实际开发中配置店铺应用为一个包，其内的所有模块都放入这个包内，最后由页面初始化脚本加载当前店铺需要的模块列表。例如：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;shop/search,shop/category,...&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>在线上会发出两个 combo 请求：一个为店铺页面需要的应用模块集，一个为 KISSY 自己的模块集，例如:</p>
+<div class="highlight-python"><pre>http://a.tbcdn.cn/s/kissy/1.3.0/??dom/base.js,event/base.js,overlay.js...
+http://a.tbcdn.cn/p/shop/??search.js,category.js...</pre>
+</div>
+</div>
+<div class="section" id="id17">
+<h3>宝贝详情应用<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<p>宝贝详情页面用来展示商家单个商品的详细信息，评价，成交趋势等信息，并为下一步购买做准备，是目前淘宝访问量最大的页面。</p>
+<p>该应用和店铺应用紧密相关，从页面可以看出，很多区块和店铺页面对应区块相同，实际上在代码层面也是引用同一份模块，
+首先宝贝详情应用和店铺应用一样加载当前页面用到的店铺模块，然后再加载这个页面本身的应用模块。
+但是宝贝详情业务本身逻辑十分复杂，若像店铺应用一样也是采用模块 combo 的方式则会导致请求 url 过长，
+进而 KISSY 会对过长的 combo url 拆分成多个短的 url，反而适得其反。
+因此这里会把宝贝详情页自身的模块打包合并，将自己模块的主模块和依赖模块都合并到主模块中去，
+最终线上会发出三个请求，其中两个为 combo 请求，一个为非 combo 请求，例如:</p>
+<div class="highlight-python"><pre>http://a.tbcdn.cn/s/kissy/1.3.0/??dom/base.js,event/base.js,overlay.js...
+http://a.tbcdn.cn/p/shop/??search.js,category.js...
+http://a.tbcdn.cn/p/detail/main.js</pre>
+</div>
+</div>
+</div>
+<div class="section" id="id18">
+<h2>总结<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<p>KISSY 才刚刚处于成长初期，相对于国外成熟框架尚有不小差距，不过依然承受住了淘宝复杂多变业务的考验。
+下一步 KISSY 会继续完善基础组件例如 date，datasource，selector，graphics 等，
+重构已有组件例如 switchable，calendar 等，
+增加 package manager 方便基于 KISSY 模块的提交与共享，补全测试用例，实现代码覆盖率检测，不断提高运行稳定性。
+将来我们坚信 KISSY 会随着淘宝的发展而继续成长，也会随着国内外前端技术的不断发展而不断进步。
+希望有兴趣的你也能加入到 KISSY 开发中，一起学习进步，享受成长的乐趣。</p>
+<p>&#8212;</p>
+<p>参考资料：</p>
+<p>KISSY： <a class="reference external" href="http://docs.kissyui.com/">http://docs.kissyui.com/</a></p>
+<p>KISSY Module Compiler： <a class="reference external" href="http://docs.kissyui.com/docs/html/tutorials/tools/module-compiler/index.html">http://docs.kissyui.com/docs/html/tutorials/tools/module-compiler/index.html</a></p>
+<p>KISSY Module Compiler Node 版本：<a class="reference external" href="https://github.com/daxingplay/ModuleCompiler">https://github.com/daxingplay/ModuleCompiler</a></p>
+<p>OSCHINA 访谈：<a class="reference external" href="http://www.oschina.net/question/28_71454">http://www.oschina.net/question/28_71454</a></p>
+<p>nginx combo： <a class="reference external" href="https://github.com/perusio/nginx-http-concat">https://github.com/perusio/nginx-http-concat</a></p>
+<p>KISSY-PIE: <a class="reference external" href="https://github.com/maxbbn/front-build">https://github.com/maxbbn/front-build</a></p>
+<p>Brix: <a class="reference external" href="http://etaoux.github.com/brix/">http://etaoux.github.com/brix/</a></p>
+<p>ZOOJS: <a class="reference external" href="http://zoojs.org/doc/">http://zoojs.org/doc/</a></p>
+<p>KISSY on Travis: <a class="reference external" href="https://travis-ci.org/kissyteam/kissy">https://travis-ci.org/kissyteam/kissy</a></p>
+</div>
+</div>
+
+
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../seed/index.html" title="Seed"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="../index.html" title="使用介绍"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >Tutorial</a> &#187; </li>
+      <li><a href="../index.html" accesskey="U">使用介绍</a> &#187; </li> 
+    </ul>
+</div>
+					<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+		
+    <div class="col-sub">
+
+<div class="s-box">
+    <div class="s-box-bd">
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../demo/index.html">Demos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart/index.html">快速上手</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">使用介绍</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">KISSY Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../seed/index.html">Seed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../core/index.html">Core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../component/index.html">Component</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../style-guide/index.html">最佳编码实践</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../project-guide/index.html">项目开发指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workflow/index.html">组件开发指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/index.html">前端常用工具</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release-note/index.html">KISSY 发布声明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../change-log/index.html">KISSY 升级指南</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</div>
+    </div>
+    <div class="col-extra">
+        
+	<div class="s-box">
+		<div class="s-box-hd">
+			<h3>本节提纲</h3>
+		</div>
+		<div class="s-box-bd">
+			<ul>
+<li><a class="reference internal" href="#">KISSY Overview</a><ul>
+<li><a class="reference internal" href="#id2">介绍</a></li>
+<li><a class="reference internal" href="#kissy">为什么选择 KISSY</a></li>
+<li><a class="reference internal" href="#id3">架构</a></li>
+<li><a class="reference internal" href="#id4">模块化机制</a><ul>
+<li><a class="reference internal" href="#id5">介绍</a></li>
+<li><a class="reference internal" href="#id6">工具支持</a><ul>
+<li><a class="reference internal" href="#id7">脚本打包</a></li>
+<li><a class="reference internal" href="#id8">抽取依赖</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kissy-pie">KISSY-PIE</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id9">组件机制</a><ul>
+<li><a class="reference internal" href="#id10">核心</a></li>
+<li><a class="reference internal" href="#brix">Brix</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id11">设备普适性</a><ul>
+<li><a class="reference internal" href="#zoojs">ZOOJS</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id12">测试与持续集成</a><ul>
+<li><a class="reference internal" href="#id13">单元测试</a></li>
+<li><a class="reference internal" href="#id14">持续集成</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id15">淘宝应用场景举例</a><ul>
+<li><a class="reference internal" href="#id16">店铺页面</a></li>
+<li><a class="reference internal" href="#id17">宝贝详情应用</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id18">总结</a></li>
+</ul>
+</li>
+</ul>
+
+		</div>
+	</div>
+
+    </div>
+	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>
