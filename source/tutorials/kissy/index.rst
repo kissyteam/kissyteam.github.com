@@ -1,11 +1,12 @@
 
-模块介绍
+使用介绍
 =============================
 
 
 .. toctree::
     :maxdepth: 3
 
+    overview/KISSY-In-Taobao
     seed/index
-    core/index.rst
-    component/index.rst
+    core/index
+    component/index
