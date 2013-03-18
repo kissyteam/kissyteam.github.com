@@ -22,13 +22,12 @@ Methods
     :rtype: String
 
 
-    | void **html** ( selector , html[ , loadScripts , callback ] )
+    | void **html** ( selector , html[ , loadScripts] )
     | 给符合选择器的所有元素设置 innerHTML 值.
     
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
     :param string html: 将要设置的 html 值
     :param boolean loadScripts: 是否执行 html 中的内嵌脚本
-    :param function callback: 操作成功后的回调函数
 
 	.. code-block:: javascript
 	
