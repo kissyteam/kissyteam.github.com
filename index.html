@@ -347,6 +347,7 @@
         new IO({
             url: (location.hostname == 'docs.kissyui.com' ? '' : '../') + 'kissy-gallery/index.js',
             dataType: 'json',
+            cache:false,
             success: function (data) {
                 data.gs = data.gs.slice(0, 20);
                 Node.all('#gallery_list').prepend(new XTemplate(tpl).render(data));
