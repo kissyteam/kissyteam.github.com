@@ -1,8 +1,27 @@
+.col-sub ul,
+.col-sub li,
+.navigation ul,
+.navigation li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.col-sub ul {
+    margin-left: 20px;
+}
+
+.toctree-wrapper ul.simple {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     color: #444;
     font-size: 14px;
-    padding: 0 10px ;
+    padding: 0 10px;
 }
+
 p.rubric {
     margin-top: 30px;
     font-weight: bold;
@@ -75,7 +94,9 @@ table.field-list td, table.field-list th {
     border: 0 !important;
 }
 
-table .field-body{padding-left:20px;}
+table .field-body {
+    padding-left: 20px;
+}
 
 table.footnote td, table.footnote th {
     border: 0 !important;
@@ -96,10 +117,6 @@ table.citation td {
 }
 
 /* -- other body styles ----------------------------------------------------- */
-
-ul ul {
-    margin-left: 20px;
-}
 ol.arabic {
     list-style: decimal inside none;
 }
@@ -119,7 +136,6 @@ ol.lowerroman {
 ol.upperroman {
     list-style: upper-roman;
 }
-
 
 dt:target, .highlighted {
     background-color: #fffcdb;
@@ -191,8 +207,13 @@ div.viewcode-block:target {
 }
 
 /* general styles */
-a:link, a:visited{color:#00a0e9;}
-a:hover, a:active{color:#f60;}
+a:link, a:visited {
+    color: #00a0e9;
+}
+
+a:hover, a:active {
+    color: #f60;
+}
 
 a.headerlink {
     visibility: hidden;
@@ -208,8 +229,6 @@ dt:hover > a.headerlink {
     visibility: visible;
 }
 
-
-
 /* -- body styles ----------------------------------------------------------- */
 /*h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
@@ -217,13 +236,20 @@ dt:hover > a.headerlink {
 h1, h2, h3 {
     padding: 8px 0;
     font-family: tahoma, "Microsoft YaHei", sans-serif;
-    font-size:18px;
+    font-size: 18px;
 }
 
 /*.main-wrap h1{display:none;}*/
 
-h3{font-size:16px;font-weight:bold;}
-h4{font-size:14px;font-weight:bold;}
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 14px;
+    font-weight: bold;
+}
 
 h1 a.anchor, h2 a.anchor, h3 a.anchor, h4 a.anchor, h5 a.anchor, h6 a.anchor {
     display: none;
@@ -243,7 +269,9 @@ h5 a.anchor:hover, h6 a.anchor:hover {
     background-color: #eee;
 }
 
-.col-sub h2.s-box-hd{color:#888;}
+.col-sub h2.s-box-hd {
+    color: #888;
+}
 
 a.headerlink {
     font-size: 1em;
@@ -261,7 +289,6 @@ hr {
     border: 1px solid #ccc;
     margin: 10px 0;
 }
-
 
 pre {
     font: 14px/1.5 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
@@ -342,7 +369,6 @@ div.warning p.admonition-title {
     color: white;
 }
 
-
 div.admonition ul, div.admonition ol,
 div.admonition dl,
 div.warning ul, div.warning ol {
@@ -353,6 +379,7 @@ div.warning ul, div.warning ol {
 div.attention {
     border: 1px solid #0066cc;
 }
+
 div.attention p.admonition-title {
     background-color: #4da9ff;
     border-bottom-color: #0066cc;
@@ -362,6 +389,7 @@ div.attention p.admonition-title {
 div.caution {
     border: 1px solid #5d0880;
 }
+
 div.caution p.admonition-title {
     background-color: #a464e0;
     border-bottom-color: #5d0880;
@@ -371,22 +399,27 @@ div.caution p.admonition-title {
 div.danger {
     border: 1px solid #930127;
 }
+
 div.danger p.admonition-title {
     background-color: #fe779a;
     border-bottom-color: #930127;
     color: white;
 }
+
 div.important {
     border: 1px solid #1a6303;
 }
+
 div.important p.admonition-title {
     background-color: #5b983b;
     border-bottom-color: #1a6303;
     color: white;
 }
+
 div.hint {
     border: 1px solid #7ba30f;
 }
+
 div.hint p.admonition-title {
     background-color: #d2ea93;
     border-bottom-color: #7ba30f;
@@ -395,6 +428,7 @@ div.hint p.admonition-title {
 div.error {
     border: 1px solid #ab013a;
 }
+
 div.error p.admonition-title {
     background-color: #d35b94;
     border-bottom-color: #ab013a;
@@ -404,6 +438,7 @@ div.error p.admonition-title {
 div.tip {
     border: 1px solid #9bd703;
 }
+
 div.tip p.admonition-title {
     background-color: #f3faa2;
     border-bottom-color: #9bd703;
@@ -450,38 +485,44 @@ div.demo {
 
 .highlight .c1,
 .highlight .cm {
-    font-style: normal!important;
+    font-style: normal !important;
 }
-
 
 /*****************************************************************************
  * 复写部分api相关样式
  *****************************************************************************/
-.highlight{margin: 8px 0;}
+.highlight {
+    margin: 8px 0;
+}
 
 .main-wrap > .section > .section > blockquote,
 .main-wrap > .section > .section > dl,
 .main-wrap > .section > .section > .toctree-wrapper,
-.section blockquote ,
-.section .section .section{
+.section blockquote,
+.section .section .section {
     margin-left: 30px;
 }
+
 .main-wrap > .section > .section {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
 .main-wrap > .section > dl {
     border-bottom: 1px dotted #ccc;
     margin-bottom: 16px;
 }
+
 .main-wrap > .section > .line-block,
 .main-wrap > .section > .versionadded {
     font-size: 12px;
     margin-left: 30px;
 }
+
 tt {
     font-family: arial;
 }
+
 tt.descclassname, tt.descname {
     color: #9f2a2a;
 }
@@ -490,11 +531,18 @@ tt.descclassname, tt.descname, tt.xref {
     font-weight: bold;
 }
 
-.versionchanged tt{font-weight:normal;}
-.versionchanged, .versionadded, .versionmodified {margin:10px 0;}
-.versionmodified {
-    color:red;
+.versionchanged tt {
+    font-weight: normal;
 }
+
+.versionchanged, .versionadded, .versionmodified {
+    margin: 10px 0;
+}
+
+.versionmodified {
+    color: red;
+}
+
 .versionmodified, .section > h1 + .versionadded {
     background: #ffff66;
 }
@@ -504,7 +552,6 @@ dl.function, dl.class, dl.attribute, dl.data, dl.method, dl.staticmethod {
     margin-bottom: 15px;
     border-bottom: 1px dotted #ccc;
 }
-
 
 dl.function dt big, dl.class dt big, dl.method dt big, dl.staticmethod dt big {
     display: none;
@@ -517,14 +564,17 @@ dl.function dd, dl.class dd, dl.attribute dd, dl.data dd, dl.method dd, dl.stati
 dl.function dd>.line-block, dl.class dd>.line-block, dl.method dd>.line-block, dl.staticmethod dd>.line-block {
     margin: 10px 0 10px 0;
 }
+
 dl.function dd>.line-block .line:first-child, dl.class dd>.line-block .line:first-child, dl.method dd>.line-block .line:first-child, dl.staticmethod dd>.line-block .line:first-child {
     border-left: 3px solid #A4D3F2;
     padding-left: 6px;
 }
-li > tt.literal/* .pre*/,
-p > tt.literal/* .pre */{
+
+li > tt.literal /* .pre*/,
+p > tt.literal /* .pre */
+{
     font-family: 'Verdana';
-    background-color:  #f0f0f0;
+    background-color: #f0f0f0;
     color: #444;
 }
 
@@ -539,6 +589,7 @@ p > tt.literal/* .pre */{
     /* bug fix: 主栏没有内容时, 在 Firefox 和 Chrome 等浏览器下, 布局不对 */
     min-height: 1px;
 }
+
 .col-sub, .col-extra {
     float: left;
     /*position: relative;  按需设置, 仅在需要时添加 */
@@ -551,24 +602,25 @@ p > tt.literal/* .pre */{
     height: 0;
     clear: both;
 }
+
 .layout, .main-wrap, .col-sub, .col-extra {
     *zoom: 1;
 }
+
 .grid-s6m0e7 .main-wrap {
     margin-left: 210px;
-    padding-left:10px;
-    margin-right:260px;
+    padding-left: 10px;
+    margin-right: 260px;
     padding-right: 10px;
 }
 
-
 .grid-s6m0 .main-wrap {
     margin-left: 210px;
-    padding-left:10px;
+    padding-left: 10px;
 }
 
 .grid-s6m0e7 .col-sub,
-.grid-s6m0 .col-sub{
+.grid-s6m0 .col-sub {
     width: 200px;
     margin-left: -100%;
 }
@@ -581,31 +633,90 @@ p > tt.literal/* .pre */{
 /*****************************************************************************
  * 页头尾
  *****************************************************************************/
-#header {overflow:hidden;border-bottom: 1px solid #a4d3f2;color:#888;}
-#header .logo{float:left;margin:20px 0 0 0;padding:0;border:none;}
-#header .sub-title{float:left;margin:45px 5px 0 5px;font:25px "Microsoft YaHei";color:#aaa;}
-#header .desc{float:left;margin-top:50px;margin-left:5px;}
-#header  .navigation {float:right;margin:53px 0 0 0;overflow:hidden;list-style:none;}
-#header  .navigation li {float:left;margin-left:-1px;padding: 0 10px;line-height:1.1em;font-weight:bold;border-left:1px solid #ddd;}
+#header {
+    overflow: hidden;
+    border-bottom: 1px solid #a4d3f2;
+    color: #888;
+}
 
-.col-sub, .col-extra {border: 1px solid #a4d3f2;border-top:none;background:#f2f8fa;}
+#header .logo {
+    float: left;
+    margin: 20px 0 0 0;
+    padding: 0;
+    border: none;
+}
 
-#footer {clear:both;margin-top:20px;padding:30px 0;text-align:center;color:#888;border-top:1px solid #ccc;}
-#footer a {color: #888}
+#header .sub-title {
+    float: left;
+    margin: 45px 5px 0 5px;
+    font: 25px "Microsoft YaHei";
+    color: #aaa;
+}
+
+#header .desc {
+    float: left;
+    margin-top: 50px;
+    margin-left: 5px;
+}
+
+#header  .navigation {
+    float: right;
+    margin: 53px 0 0 0;
+    overflow: hidden;
+    list-style: none;
+}
+
+#header  .navigation li {
+    float: left;
+    margin-left: -1px;
+    padding: 0 10px;
+    line-height: 1.1em;
+    font-weight: bold;
+    border-left: 1px solid #ddd;
+}
+
+.col-sub, .col-extra {
+    border: 1px solid #a4d3f2;
+    border-top: none;
+    background: #f2f8fa;
+}
+
+#footer {
+    clear: both;
+    margin-top: 20px;
+    padding: 30px 0;
+    text-align: center;
+    color: #888;
+    border-top: 1px solid #ccc;
+}
+
+#footer a {
+    color: #888
+}
 
 /*****************************************************************************
  * 公共模块
  *****************************************************************************/
 /*盒子*/
-.s-box .s-box-hd h3{margin:0;font:bold 16px "Microsoft YaHei";}
-.s-box .s-box-bd{overflow:hidden;}
+.s-box .s-box-hd h3 {
+    margin: 0;
+    font: bold 16px "Microsoft YaHei";
+}
+
+.s-box .s-box-bd {
+    overflow: hidden;
+}
 
 .col-sub .s-box,
-.col-extra .s-box{margin-left:10px;margin-bottom: 10px;}
+.col-extra .s-box {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
 .col-sub .s-box .box-hd,
-.col-extra .s-box .box-hd{color: #444;}
-
-
+.col-extra .s-box .box-hd {
+    color: #444;
+}
 
 /* 隐藏某些元素 */
 tt.descclassname, em.property {
@@ -615,6 +726,7 @@ tt.descclassname, em.property {
 div.related {
     margin: 6px 0 20px;
 }
+
 div.related h3 {
     display: none;
 }
@@ -635,10 +747,10 @@ div.related li.right {
 }
 
 div.related ul {
-    padding:0;
+    padding: 0;
     height: 2em;
     border-bottom: 1px dotted #ccc;
-    list-style:none;
+    list-style: none;
 }
 
 div.related ul li {
@@ -646,7 +758,7 @@ div.related ul li {
     padding: 0;
     height: 2em;
     float: left;
-    list-style:none;
+    list-style: none;
 }
 
 div.related ul li.right {
@@ -665,10 +777,9 @@ div.related ul li a:hover {
     color: #f60;
 }
 
-
 /*left menu donot wrap*/
-.col-sub li{
-    white-space:nowrap;
+.col-sub li {
+    white-space: nowrap;
 }
 
 /** 搜索box **/
@@ -677,6 +788,7 @@ div.related ul li a:hover {
     right: 22px;
     top: 15px;
 }
+
 .searchbox input {
     border: 1px solid #999;
     height: 20px;
@@ -687,6 +799,7 @@ div.related ul li a:hover {
 #search-results, #searchbox2 {
     margin-top: 20px;
 }
+
 #search-results .search li span, #search-results .search li .context {
     display: none;
 }
