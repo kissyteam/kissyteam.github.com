@@ -12,22 +12,24 @@ Hello KISSY
    :linenos:
    
     KISSY.use('dom,event,anim',function(S,DOM,Event,Anim){
-        var btn = DOM.get('#demo-btn');
+        S.ready(function(){
+            var btn = DOM.get('#demo-btn');
 
-        Event.on(btn, 'click', function() {
-            DOM.attr(btn, 'disabled', true);
+            Event.on(btn, 'click', function() {
+                DOM.attr(btn, 'disabled', true);
 
-            new Anim('#demo-img', 'left: 400px; opacity: 0', 2, 'easeOut', function() {
-                new Anim('#demo-txt',
-                       'left: 0; opacity: 1; fontSize: 28px',
-                       2, 'bounceOut').run();
-            }).run();
+                new Anim('#demo-img', 'left: 400px; opacity: 0', 2, 'easeOut', function() {
+                    new Anim('#demo-txt',
+                           'left: 0; opacity: 1; fontSize: 28px',
+                           2, 'bounceOut').run();
+                }).run();
+            });
         });
     });
 
 
 这个例子中, 
-    #. :func:`KISSY.ready() <seed.KISSY.ready>` 指在 DOM 加载完毕之后执行代码. 就像 jQuery 中的 ``$(document).ready()``.
+    #. :func:`S.ready() <seed.KISSY.ready>` 指在 DOM 加载完毕之后执行代码. 就像 jQuery 中的 ``$(document).ready()``.
     #. :mod:`dom <dom>`, KISSY 的 DOM 模块 , 提供常用 DOM 操作, 如元素选择/遍历, 样式的获取/修改等等.
     #. :mod:`event`, KISSY 的 Event 模块 , 提供事件处理功能, 如事件添加/删除, ``mouseenter/mouseleave`` 事件的支持等.
     #. :func:`dom.get(selector) <dom.get>`, 根据给出的 ``selector`` 获取符合条件的 **第一个节点**; 另外还有一个类似的方法叫做 :func:`dom.query(selector) <dom.query>` , 与前者不同的是, 得到的是 **所有** 符合条件的元素.

@@ -109,17 +109,21 @@
 10
 11
 12
-13</pre></div></td><td class="code"><div class="highlight"><pre> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;dom,event,anim&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DOM</span><span class="p">,</span><span class="nx">Event</span><span class="p">,</span><span class="nx">Anim</span><span class="p">){</span>
-     <span class="kd">var</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;#demo-btn&#39;</span><span class="p">);</span>
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;dom,event,anim&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DOM</span><span class="p">,</span><span class="nx">Event</span><span class="p">,</span><span class="nx">Anim</span><span class="p">){</span>
+     <span class="nx">S</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+         <span class="kd">var</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;#demo-btn&#39;</span><span class="p">);</span>
 
-     <span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">btn</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-         <span class="nx">DOM</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="nx">btn</span><span class="p">,</span> <span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+         <span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">btn</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+             <span class="nx">DOM</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="nx">btn</span><span class="p">,</span> <span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 
-         <span class="k">new</span> <span class="nx">Anim</span><span class="p">(</span><span class="s1">&#39;#demo-img&#39;</span><span class="p">,</span> <span class="s1">&#39;left: 400px; opacity: 0&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;easeOut&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-             <span class="k">new</span> <span class="nx">Anim</span><span class="p">(</span><span class="s1">&#39;#demo-txt&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;left: 0; opacity: 1; fontSize: 28px&#39;</span><span class="p">,</span>
-                    <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;bounceOut&#39;</span><span class="p">).</span><span class="nx">run</span><span class="p">();</span>
-         <span class="p">}).</span><span class="nx">run</span><span class="p">();</span>
+             <span class="k">new</span> <span class="nx">Anim</span><span class="p">(</span><span class="s1">&#39;#demo-img&#39;</span><span class="p">,</span> <span class="s1">&#39;left: 400px; opacity: 0&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;easeOut&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                 <span class="k">new</span> <span class="nx">Anim</span><span class="p">(</span><span class="s1">&#39;#demo-txt&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;left: 0; opacity: 1; fontSize: 28px&#39;</span><span class="p">,</span>
+                        <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;bounceOut&#39;</span><span class="p">).</span><span class="nx">run</span><span class="p">();</span>
+             <span class="p">}).</span><span class="nx">run</span><span class="p">();</span>
+         <span class="p">});</span>
      <span class="p">});</span>
  <span class="p">});</span>
 </pre></div>
@@ -127,7 +131,7 @@
 <dl class="docutils">
 <dt>这个例子中,</dt>
 <dd><ol class="first last arabic simple">
-<li><a class="reference internal" href="../../api/seed/kissy/ready.html#seed.KISSY.ready" title="seed.KISSY.ready"><tt class="xref py py-func docutils literal"><span class="pre">KISSY.ready()</span></tt></a> 指在 DOM 加载完毕之后执行代码. 就像 jQuery 中的 <tt class="docutils literal"><span class="pre">$(document).ready()</span></tt>.</li>
+<li><a class="reference internal" href="../../api/seed/kissy/ready.html#seed.KISSY.ready" title="seed.KISSY.ready"><tt class="xref py py-func docutils literal"><span class="pre">S.ready()</span></tt></a> 指在 DOM 加载完毕之后执行代码. 就像 jQuery 中的 <tt class="docutils literal"><span class="pre">$(document).ready()</span></tt>.</li>
 <li><a class="reference internal" href="../../api/core/dom/index.html#module-dom" title="dom"><tt class="xref py py-mod docutils literal"><span class="pre">dom</span></tt></a>, KISSY 的 DOM 模块 , 提供常用 DOM 操作, 如元素选择/遍历, 样式的获取/修改等等.</li>
 <li><a class="reference internal" href="../../api/core/event/index.html#module-event" title="event"><tt class="xref py py-mod docutils literal"><span class="pre">event</span></tt></a>, KISSY 的 Event 模块 , 提供事件处理功能, 如事件添加/删除, <tt class="docutils literal"><span class="pre">mouseenter/mouseleave</span></tt> 事件的支持等.</li>
 <li><a class="reference internal" href="../../api/core/dom/get.html#dom.get" title="dom.get"><tt class="xref py py-func docutils literal"><span class="pre">dom.get(selector)</span></tt></a>, 根据给出的 <tt class="docutils literal"><span class="pre">selector</span></tt> 获取符合条件的 <strong>第一个节点</strong>; 另外还有一个类似的方法叫做 <a class="reference internal" href="../../api/core/dom/query.html#dom.query" title="dom.query"><tt class="xref py py-func docutils literal"><span class="pre">dom.query(selector)</span></tt></a> , 与前者不同的是, 得到的是 <strong>所有</strong> 符合条件的元素.</li>
