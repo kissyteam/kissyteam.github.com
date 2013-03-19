@@ -148,12 +148,6 @@
                         <span class="nx">end</span><span class="p">();</span>
                         <span class="k">return</span><span class="p">;</span>
                     <span class="p">}</span>
-                    <span class="c1">// 如果到最后一页了, 也结束加载</span>
-                    <span class="nx">nextpage</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">photos</span><span class="p">.</span><span class="nx">page</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-                    <span class="k">if</span> <span class="p">(</span><span class="nx">nextpage</span> <span class="o">&gt;</span> <span class="nx">d</span><span class="p">.</span><span class="nx">photos</span><span class="p">.</span><span class="nx">pages</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="nx">end</span><span class="p">();</span>
-                        <span class="k">return</span><span class="p">;</span>
-                    <span class="p">}</span>
                     <span class="c1">// 拼装每页数据</span>
                     <span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[];</span>
                     <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">photos</span><span class="p">.</span><span class="nx">photo</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
@@ -161,6 +155,11 @@
                         <span class="nx">items</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">new</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Node</span><span class="p">(</span><span class="nx">tpl</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">item</span><span class="p">)));</span>
                     <span class="p">});</span>
                     <span class="nx">success</span><span class="p">(</span><span class="nx">items</span><span class="p">);</span>
+                    <span class="c1">// 如果到最后一页了, 也结束加载</span>
+                    <span class="nx">nextpage</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">photos</span><span class="p">.</span><span class="nx">page</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nx">nextpage</span> <span class="o">&gt;</span> <span class="nx">d</span><span class="p">.</span><span class="nx">photos</span><span class="p">.</span><span class="nx">pages</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">end</span><span class="p">();</span>
+                    <span class="p">}</span>
                 <span class="p">},</span>
                 <span class="nx">complete</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
                     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#loadingPins&#39;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>

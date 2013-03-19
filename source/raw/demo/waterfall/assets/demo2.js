@@ -26,12 +26,6 @@
                         end();
                         return;
                     }
-                    // 如果到最后一页了, 也结束加载
-                    nextpage = d.photos.page + 1;
-                    if (nextpage > d.photos.pages) {
-                        end();
-                        return;
-                    }
                     // 拼装每页数据
                     var items = [];
                     S.each(d.photos.photo, function(item) {
@@ -39,6 +33,11 @@
                         items.push(new S.Node(tpl.render(item)));
                     });
                     success(items);
+                    // 如果到最后一页了, 也结束加载
+                    nextpage = d.photos.page + 1;
+                    if (nextpage > d.photos.pages) {
+                        end();
+                    }
                 },
                 complete: function() {
                     $('#loadingPins').hide();
