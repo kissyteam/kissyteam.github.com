@@ -135,7 +135,3 @@ DraggableDelegate 使用示例
                 }
 
                 drop.on("drophit",onhit);
-                
-    .. note::
-
-        此Demo使用了KISSY设计模式的Box样式, 详情可以参考 `KISSY设计模式 <http://docs.kissyui.com/kissy-dpl/base/>`_

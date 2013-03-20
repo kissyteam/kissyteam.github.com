@@ -70,7 +70,3 @@ Draggable & Proxy 使用示例
     .. code-block:: javascript
 
         new Proxy().attach(drag);
-
-    .. note::
-
-        此Demo使用了KISSY设计模式的Box样式, 详情可以参考 `KISSY设计模式 <http://docs.kissyui.com/kissy-dpl/base/>`_
