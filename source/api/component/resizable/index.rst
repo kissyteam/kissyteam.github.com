@@ -35,6 +35,14 @@ Methods
 
   * :meth:`destroy`
 
+
+Events
+-----------------------------------------------
+
+  * :func:`~resizable.Events.resizeStart`
+  * :func:`~resizable.Events.resize`
+  * :func:`~resizable.Events.resizeEnd`
+
 Class Detail
 --------------------------
 
@@ -86,4 +94,23 @@ Methods Detail
     
 .. note::
 
-    拖放 handler 的样式需要调用者自己编写.    
+    拖放 handler 的样式需要调用者自己编写.
+
+
+Events Detail
+-----------------------------------------------
+
+.. function:: resizable.Events.resizeStart
+
+    | **resizeStart** (e)
+    | 开始拖放后触发
+
+.. function:: resizable.Events.resize
+
+    | **resize** (e)
+    | 拖放中触发
+
+.. function:: resizable.Events.resizeEnd
+
+    | **resizeEnd** (e)
+    | 结束拖放后触发
