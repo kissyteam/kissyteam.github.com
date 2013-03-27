@@ -12,6 +12,21 @@
         left:-9999px;
         top:-9999px;
     }
+    .ks-overlay-hidden {
+        visibility: hidden;
+    }
+
+    .ks-overlay-mask-hidden {
+        display: none;
+    }
+
+    .ks-overlay-shown {
+        visibility: visible;
+    }
+
+    .ks-overlay-mask-shown{
+        display: block;
+    }
 </style>
 <style>
     body {
@@ -21,11 +36,10 @@
         position: absolute;
         z-index: 50;
         border-collapse: collapse;
-        visibility: hidden;
     }
     .popup td.corner {
-        height: 15px;
-        width: 19px;
+        height: 13px;
+        width: 17px;
     }
     .popup td#topleft {
         background-image: url(assets/bubble-1.png);
@@ -121,7 +135,7 @@
         </tr>
         <tr>
             <td id="bottomleft" class="corner"></td>
-            <td class="bottom"><img src="assets/bubble-tail2.png" width="30" height="29" alt="popup tail"/></td>
+            <td class="bottom"><img src="assets/bubble-tail2.png" width="30" height="27" alt="popup tail"/></td>
             <td class="corner" id="bottomright"></td>
         </tr>
     </table>

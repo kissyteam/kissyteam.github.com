@@ -111,6 +111,21 @@ Class Detail
                 left:-9999px;
                 top:-9999px;
             }
+            .ks-overlay-hidden {
+                visibility: hidden;
+            }
+
+            .ks-overlay-mask-hidden {
+                display: none;
+            }
+
+            .ks-overlay-shown {
+                visibility: visible;
+            }
+
+            .ks-overlay-mask-shown{
+                display: block;
+            }
         </style>
 
 
