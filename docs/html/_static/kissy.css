@@ -1,8 +1,13 @@
+ul, li {
+    list-style-image: url('bullet.gif');
+}
+
 .col-sub ul,
 .col-sub li,
 .navigation ul,
 .navigation li {
     list-style-type: none;
+    list-style-image: none;
     padding: 0;
     margin: 0;
 }
@@ -808,6 +813,33 @@ div.related ul li a:hover {
     border: 2px solid #ccccff;
 }
 
-.section .section .data .simple li {
-    list-style-image: url('bullet.gif');
+.source-button:link,.source-button:visited {
+    background-color: #00A0E8;
+    background-repeat: repeat-x;
+    border: 0 none;
+    border-radius: 0.25em 0.25em 0.25em 0.25em;
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1), 0 -4px 0 0 rgba(0, 0, 0, 0.2) inset;
+    color: #fff;
+    display: inline-block;
+    font-family: "Trebuchet MS",sans-serif;
+    font-size: 16px;
+    height: 40px;
+    line-height: 36px;
+    min-width: 100px;
+    padding: 0 20px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    transition: all 0.25s linear 0s;
+    opacity: 0.92;
+}
+.source-button:hover {
+    color: #fff;
+    opacity: 1;
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1), 0 -4px 0 0 rgba(0, 0, 0, 0.2) inset, 0 12px 24px 2px #3089D8 inset;
+}
+.source-button:active {
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1), 0 -4px 0 0 rgba(0, 0, 0, 0.2) inset, 0 12px 24px 2px #3089D8 inset;
+    top: 2px;
+    position: relative;
 }

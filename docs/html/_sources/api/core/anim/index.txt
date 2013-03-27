@@ -1,9 +1,11 @@
 .. module:: anim
 
-Anim
+anim
 ===============================================
 
-|  动画
+.. raw:: html
+
+    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.3.0/src/anim' target='_blank'>view anim source</a>
 
 .. code-block:: javascript
 

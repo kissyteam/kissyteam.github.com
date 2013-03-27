@@ -3,12 +3,9 @@
 cookie
 ====================================
 
-|  cookie
+.. raw:: html
 
-    .. note::
-
-        推荐阅读 NCZ 的这篇文章： `HTTP cookies explained <http://www.nczonline.net/blog/2009/05/05/http-cookies-explained/>`_
-
+    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.3.0/src/cookie' target='_blank'>view cookie source</a>
 
 .. code-block:: javascript
 
@@ -56,3 +53,10 @@ Methods
     :param String domain: 域
     :param String path: 路径
     :param Boolean secure: 安全标志
+
+
+
+
+.. note::
+
+    推荐阅读 NCZ 的这篇文章： `HTTP cookies explained <http://www.nczonline.net/blog/2009/05/05/http-cookies-explained/>`_

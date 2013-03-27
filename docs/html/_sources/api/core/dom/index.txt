@@ -3,9 +3,9 @@
 dom
 ====================================
 
-.. note::
+.. raw:: html
 
-    :mod:`KISSY Node <node>` 以及  :class:`~node.NodeList` 对象上的相关处理推荐直接调用其自身方法.
+    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.3.0/src/dom' target='_blank'>view dom source</a>
 
 
 .. code-block:: javascript
@@ -93,3 +93,9 @@ Methods
    wrapInner
    nodeName
    outerHTML
+
+
+
+.. note::
+
+    :mod:`KISSY Node <node>` 以及  :class:`~node.NodeList` 对象上的相关处理推荐直接调用其自身方法.

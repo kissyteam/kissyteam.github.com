@@ -2,15 +2,16 @@
 
 ajax
 ===============================================
+.. raw:: html
 
-|  ajax
-
+    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.3.0/src/ajax' target='_blank'>view ajax source</a>
 
 .. code-block:: javascript
 
     KISSY.use('ajax',function(S,IO){
         // use IO
     });
+
 
 
 Module

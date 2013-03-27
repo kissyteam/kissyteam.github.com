@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>UA &mdash; KISSY v1.3 Documentation</title>
+<title>ua &mdash; KISSY v1.3 Documentation</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.3.0/css/dpl/base-min.css"/>
 <link rel="stylesheet" href="../../../_static/kissy.css"/>
@@ -94,22 +94,8 @@
 </div>
 					
   <span class="target" id="module-ua"></span><div class="section" id="ua">
-<h1>UA<a class="headerlink" href="#ua" title="Permalink to this headline">¶</a></h1>
-<div class="line-block">
-<div class="line">通过 KISSY.UA, 你可以获取浏览器等用户代理信息. 属性值遵循以下规则：</div>
-<div class="line-block">
-<div class="line">表示当前引擎或浏览器的版本. 版本号 1.2.3.4 会转换为数值 1.234</div>
-<div class="line">如果不是当前引擎或浏览器, 返回 0</div>
-<div class="line">如果当前引擎或浏览器的版本号无法准确判定, 返回 0.1</div>
-</div>
-<div class="line">注意：</div>
-<div class="line-block">
-<div class="line">UA.core 返回字符串，目前支持 trident, webkit, gecko, presto 四大浏览器内核.</div>
-<div class="line">UA.shell 返回字符串，比如 firefox, opera, chrome, ie, safari</div>
-<div class="line">UA.mobile 返回字符串，目前支持 apple, nokia, android, opera mini/mobile 等设备/浏览器的探测.</div>
-</div>
-</div>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;ua&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">UA</span><span class="p">){</span>
+<h1>ua<a class="headerlink" href="#ua" title="Permalink to this headline">¶</a></h1>
+<a class='source-button' href='https://github.com/kissyteam/kissy/blob/1.3.0/src/seed/src/ua.js' target='_blank'>view ua source</a><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;ua&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">UA</span><span class="p">){</span>
     <span class="c1">// use UA</span>
 <span class="p">});</span>
 </pre></div>
@@ -231,8 +217,15 @@
 
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">此处的外壳表示广义的外壳，即 IE, Firefox, Chrome, Opera, Safari 等浏览器都属于外壳。可以利用此标识符直接识别浏览器类型。
-可以首先使用 UA.shell 返回的标识符判断当前浏览器类型，若需浏览器具体版本信息，可以再通过 UA[UA.shell] 取出版本号。</p>
+<p>此处的外壳表示广义的外壳，即 IE, Firefox, Chrome, Opera, Safari 等浏览器都属于外壳。可以利用此标识符直接识别浏览器类型。
+可以首先使用 UA.shell 返回的标识符判断当前浏览器类型，若需浏览器具体版本信息，可以再通过 UA[UA.shell] 取出版本号。
+* UA.core 返回字符串，目前支持 trident, webkit, gecko, presto 四大浏览器内核.
+* UA.shell 返回字符串，比如 firefox, opera, chrome, ie, safari
+* UA.mobile 返回字符串，目前支持 apple, nokia, android, opera mini/mobile 等设备/浏览器的探测.</p>
+<p class="last">通过 KISSY.UA, 你可以获取浏览器等用户代理信息. 属性值遵循以下规则：
+*  表示当前引擎或浏览器的版本. 版本号 1.2.3.4 会转换为数值 1.234
+*  如果不是当前引擎或浏览器, 返回 0
+*  如果当前引擎或浏览器的版本号无法准确判定, 返回 0.1</p>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
@@ -314,7 +307,7 @@
     <div class="col-sub"><ul class="s-box api-toctree">
     <h2 class="s-box-hd">Seed</h2>
     <ul class="s-box-bd">
-        <li><a href="../../seed/kissy/index.html">kissy</a></li>
+        <li><a href="../../seed/kissy/index.html">lang</a></li>
         <li><a href="../../seed/loader/index.html">loader</a></li>
     </ul>
 </ul>

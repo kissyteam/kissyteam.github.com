@@ -3,13 +3,9 @@
 json
 ====================================
 
-|  KISSY 直接采用了 Douglas Crockford 的 json2.js
+.. raw:: html
 
-    .. note::
-
-        为何不自己去写？原因有二：
-            1. 老道已经写得足够好足够健壮；
-            2. IE6/7 江河日下，相信不久的将来，就不需要这个模块了。
+    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.3.0/src/json' target='_blank'>view json source</a>
 
 
 .. code-block:: javascript

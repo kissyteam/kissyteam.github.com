@@ -1,12 +1,11 @@
 ﻿.. module:: node
 
-Node
+node
 ====================================
 
-.. note::
-    Node 包括 :mod:`dom <dom>` , :mod:`event` , :mod:`anim` 模块的所有功能, 推荐采用 ``Node`` 模块,
-    你只需要把 ``KISSY.all`` 看做 ``jquery`` 中的 ``$`` 就可以了,
-    链式操作你会喜欢的！
+.. raw:: html
+
+    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.3.0/src/node' target='_blank'>view node source</a>
 
 
 .. code-block:: javascript
@@ -15,6 +14,10 @@ Node
         // use Node
     });
 
+.. note::
+    node 包括 :mod:`dom <dom>` , :mod:`event` , :mod:`anim` 模块的所有功能, 推荐采用 ``Node`` 模块,
+    你只需要把 ``KISSY.all`` 看做 ``jquery`` 中的 ``$`` 就可以了,
+    链式操作你会喜欢的！
 
 Module
 -----------------------------------------------
@@ -141,3 +144,5 @@ Member Methods
             self.attr("id") // => d1 或者 d2
         });
     </script>
+
+

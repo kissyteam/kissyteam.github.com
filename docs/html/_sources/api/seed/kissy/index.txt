@@ -2,8 +2,13 @@
 
 .. _KISSY:
 
-KISSY
+lang
 ===============================
+
+.. raw:: html
+
+    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.3.0/src/seed/src/lang' target='_blank'>view lang source</a>
+
 
 .. toctree::
    :titlesonly:

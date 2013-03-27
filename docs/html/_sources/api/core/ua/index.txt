@@ -1,17 +1,11 @@
 .. module:: ua
 
-UA
+ua
 ====================================
 
-|  通过 KISSY.UA, 你可以获取浏览器等用户代理信息. 属性值遵循以下规则：
-|      表示当前引擎或浏览器的版本. 版本号 1.2.3.4 会转换为数值 1.234
-|      如果不是当前引擎或浏览器, 返回 0
-|      如果当前引擎或浏览器的版本号无法准确判定, 返回 0.1
-|  注意：
-|     UA.core 返回字符串，目前支持 trident, webkit, gecko, presto 四大浏览器内核.
-|     UA.shell 返回字符串，比如 firefox, opera, chrome, ie, safari
-|     UA.mobile 返回字符串，目前支持 apple, nokia, android, opera mini/mobile 等设备/浏览器的探测.
+.. raw:: html
 
+    <a class='source-button' href='https://github.com/kissyteam/kissy/blob/1.3.0/src/seed/src/ua.js' target='_blank'>view ua source</a>
 
 .. code-block:: javascript
 
@@ -106,6 +100,17 @@ Properties Detail
 
     此处的外壳表示广义的外壳，即 IE, Firefox, Chrome, Opera, Safari 等浏览器都属于外壳。可以利用此标识符直接识别浏览器类型。
     可以首先使用 UA.shell 返回的标识符判断当前浏览器类型，若需浏览器具体版本信息，可以再通过 UA[UA.shell] 取出版本号。
+    * UA.core 返回字符串，目前支持 trident, webkit, gecko, presto 四大浏览器内核.
+    * UA.shell 返回字符串，比如 firefox, opera, chrome, ie, safari
+    * UA.mobile 返回字符串，目前支持 apple, nokia, android, opera mini/mobile 等设备/浏览器的探测.
+
+
+    通过 KISSY.UA, 你可以获取浏览器等用户代理信息. 属性值遵循以下规则：
+    *  表示当前引擎或浏览器的版本. 版本号 1.2.3.4 会转换为数值 1.234
+    *  如果不是当前引擎或浏览器, 返回 0
+    *  如果当前引擎或浏览器的版本号无法准确判定, 返回 0.1
+
+
 
 .. important::
 
@@ -114,3 +119,4 @@ Properties Detail
         * 表示当前引擎或浏览器的版本。版本号 1.2.3.4 会转换为数值 1.234
         * 如果不是当前引擎或浏览器，返回 0 或者 undefined
         * 如果当前浏览器版本号无法准确判定，均返回 0.1
+
