@@ -1,7 +1,7 @@
-﻿KISSY.use("waterfall,ajax,gallery/template/1.0/,node,button", function(S, Waterfall, io, Template, Node, Button) {
+﻿KISSY.use("waterfall,ajax,node,button", function(S, Waterfall, io,  Node, Button) {
     var $ = Node.all;
 
-    var tpl = Template($('#tpl').html()),
+    var tpl = $('#tpl').html(),
         nextpage = 1,
         waterfall = new Waterfall.Loader({
         container:"#ColumnContainer",
@@ -30,7 +30,7 @@
                     var items = [];
                     S.each(d.photos.photo, function(item) {
                         item.height = Math.round(Math.random()*(300 - 180) + 180); // fake height
-                        items.push(new S.Node(tpl.render(item)));
+                        items.push(new S.Node(S.substitute(tpl,item)));
                     });
                     success(items);
                     // 如果到最后一页了, 也结束加载
