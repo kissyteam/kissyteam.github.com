@@ -1,5 +1,5 @@
 (function () {
-    KISSY.use("editor/full", function (S, Editor) {
+    KISSY.use("editor", function (S, Editor) {
 
         var cfg = {
             // 是否初始聚焦

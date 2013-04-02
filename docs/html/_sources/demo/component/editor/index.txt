@@ -16,7 +16,6 @@ Demos
     .. toctree::
        :titlesonly:
 
-       simple
        auto-combo
        simple-plugin
        decorate

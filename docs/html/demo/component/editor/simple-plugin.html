@@ -108,8 +108,7 @@
 <h2>editor 插件的简单编写<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><iframe width="100%" height="550" class="iframe-demo" src="../../../../../source/raw/demo/editor/simple-plugin.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;editor/full&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Editor</span><span class="p">)</span> <span class="p">{</span>
-
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;my/plugin&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// 自定义插件</span>
         <span class="kd">function</span> <span class="nx">Plugin1</span><span class="p">(</span><span class="nx">cfg</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">config</span> <span class="o">=</span> <span class="nx">cfg</span> <span class="o">||</span> <span class="p">{};</span>
@@ -118,9 +117,9 @@
         <span class="nx">Plugin1</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">pluginRenderUI</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">editor</span><span class="p">)</span> <span class="p">{</span>
             <span class="kd">var</span> <span class="nx">cfg</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">;</span>
             <span class="nx">editor</span><span class="p">.</span><span class="nx">addButton</span><span class="p">(</span><span class="s2">&quot;plugin1&quot;</span><span class="p">,</span> <span class="p">{</span>
-                <span class="nx">content</span><span class="o">:</span><span class="s1">&#39;&lt;div style=&quot;margin: 2px;border: 1px solid red;padding: 1px;&quot;&gt;p1&lt;/div&gt;&#39;</span><span class="p">,</span>
-                <span class="nx">listeners</span><span class="o">:</span><span class="p">{</span>
-                    <span class="nx">click</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;&lt;div style=&quot;margin: 2px;border: 1px solid red;padding: 1px;&quot;&gt;p1&lt;/div&gt;&#39;</span><span class="p">,</span>
+                <span class="nx">listeners</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">click</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
                         <span class="nx">editor</span><span class="p">.</span><span class="nx">insertHtml</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">guid</span><span class="p">(</span><span class="nx">cfg</span><span class="p">.</span><span class="nx">content</span><span class="p">));</span>
                     <span class="p">}</span>
                 <span class="p">}</span>
@@ -133,38 +132,46 @@
 
         <span class="nx">Plugin2</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">pluginRenderUI</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">editor</span><span class="p">)</span> <span class="p">{</span>
             <span class="nx">editor</span><span class="p">.</span><span class="nx">addButton</span><span class="p">(</span><span class="s2">&quot;plugin2&quot;</span><span class="p">,</span> <span class="p">{</span>
-                <span class="nx">content</span><span class="o">:</span><span class="s1">&#39;&lt;div style=&quot;margin: 2px;border: 1px solid red;padding: 1px;&quot;&gt;p2&lt;/div&gt;&#39;</span><span class="p">,</span>
-                <span class="nx">listeners</span><span class="o">:</span><span class="p">{</span>
-                    <span class="nx">click</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;&lt;div style=&quot;margin: 2px;border: 1px solid red;padding: 1px;&quot;&gt;p2&lt;/div&gt;&#39;</span><span class="p">,</span>
+                <span class="nx">listeners</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">click</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
                         <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;i am running&#39;</span><span class="p">)</span>
                     <span class="p">}</span>
                 <span class="p">}</span>
             <span class="p">});</span>
         <span class="p">};</span>
 
-
-        <span class="kd">var</span> <span class="nx">cfg</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="c1">// 是否初始聚焦</span>
-            <span class="nx">focused</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-            <span class="nx">attachForm</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-            <span class="c1">// 自定义样式</span>
-            <span class="c1">// customStyle:&quot;p{line-height: 1.4;margin: 1.12em 0;padding: 0;}&quot;,</span>
-            <span class="c1">// 自定义外部样式</span>
-            <span class="c1">// customLink:[&quot;http://localhost/customLink.css&quot;,&quot;http://xx.com/y2.css&quot;],</span>
-            <span class="c1">// render:&quot;#container&quot;,</span>
-            <span class="nx">render</span><span class="o">:</span><span class="s1">&#39;#editorContainer&#39;</span><span class="p">,</span>
-            <span class="nx">width</span><span class="o">:</span><span class="s1">&#39;80%&#39;</span><span class="p">,</span>
-            <span class="nx">height</span><span class="o">:</span><span class="s2">&quot;400px&quot;</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="nx">Plugin1</span><span class="o">:</span> <span class="nx">Plugin1</span><span class="p">,</span>
+            <span class="nx">Plugin2</span><span class="o">:</span> <span class="nx">Plugin2</span>
         <span class="p">};</span>
 
-        <span class="nx">cfg</span><span class="p">.</span><span class="nx">plugins</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="k">new</span> <span class="nx">Plugin1</span><span class="p">({</span>
-                <span class="nx">content</span><span class="o">:</span><span class="s2">&quot;o...&quot;</span>
-            <span class="p">}),</span>
-            <span class="nx">Plugin2</span>
-        <span class="p">];</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;editor/plugin/button/&#39;</span><span class="p">]</span>
+    <span class="p">});</span>
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;editor&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Editor</span><span class="p">)</span> <span class="p">{</span>
 
-        <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;editor/plugin/button/&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;my/plugin&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">P</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">cfg</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="c1">// 是否初始聚焦</span>
+                <span class="nx">focused</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nx">attachForm</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="c1">// 自定义样式</span>
+                <span class="c1">// customStyle:&quot;p{line-height: 1.4;margin: 1.12em 0;padding: 0;}&quot;,</span>
+                <span class="c1">// 自定义外部样式</span>
+                <span class="c1">// customLink:[&quot;http://localhost/customLink.css&quot;,&quot;http://xx.com/y2.css&quot;],</span>
+                <span class="c1">// render:&quot;#container&quot;,</span>
+                <span class="nx">render</span><span class="o">:</span> <span class="s1">&#39;#editorContainer&#39;</span><span class="p">,</span>
+                <span class="nx">width</span><span class="o">:</span> <span class="s1">&#39;80%&#39;</span><span class="p">,</span>
+                <span class="nx">height</span><span class="o">:</span> <span class="s2">&quot;400px&quot;</span>
+            <span class="p">};</span>
+
+            <span class="nx">cfg</span><span class="p">.</span><span class="nx">plugins</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="k">new</span> <span class="nx">P</span><span class="p">.</span><span class="nx">Plugin1</span><span class="p">({</span>
+                    <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;o...&quot;</span>
+                <span class="p">}),</span>
+                <span class="nx">P</span><span class="p">.</span><span class="nx">Plugin2</span>
+            <span class="p">];</span>
             <span class="k">new</span> <span class="nx">Editor</span><span class="p">(</span><span class="nx">cfg</span><span class="p">).</span><span class="nx">render</span><span class="p">();</span>
         <span class="p">});</span>
 
