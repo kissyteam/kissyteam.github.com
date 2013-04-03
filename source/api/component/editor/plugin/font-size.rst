@@ -16,7 +16,7 @@ font-size
 Configs
 -------------------------------
 
-.. data:: Editor.Plugin.fontSize.config.items
+.. data:: Editor.Plugin.fontSize.config.children
 .. data:: Editor.Plugin.fontSize.config.width
 
 Events
@@ -34,7 +34,7 @@ Commands
 Config Details
 ------------------------------------------------------
 
-.. data:: Editor.Plugin.fontSize.config.items
+.. data:: Editor.Plugin.fontSize.config.children
 
     {Object[]} - 可选。字体大小下拉菜单的名称和值集合，默认包括 "8px","10px" 等。例如：
 
@@ -43,11 +43,11 @@ Config Details
         [
             //ie 不认识中文？？？
             {
-                name:"较大",
+                content:"较大",
                 value:"20px"
             },
             {
-                name:"较小",
+                content:"较小",
                 value:"10px"
             }
         ]

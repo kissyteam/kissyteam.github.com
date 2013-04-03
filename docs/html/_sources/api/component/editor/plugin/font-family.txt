@@ -16,7 +16,7 @@ font-family
 Configs
 -------------------------------
 
-.. data:: Editor.Plugin.fontFamily.config.items
+.. data:: Editor.Plugin.fontFamily.config.children
 .. data:: Editor.Plugin.fontFamily.config.width
 
 Events
@@ -33,7 +33,7 @@ Commands
 Config Details
 ------------------------------------------------------
 
-.. data:: Editor.Plugin.fontFamily.config.items
+.. data:: Editor.Plugin.fontFamily.config.children
 
     {Object[]} - 可选。字体下拉菜单的名称和值集合。默认：
 
@@ -42,51 +42,51 @@ Config Details
         [
             //ie 不认识中文？？？
             {
-                name:"宋体",
+                content:"宋体",
                 value:"SimSun"
             },
             {
-                name:"黑体",
+                content:"黑体",
                 value:"SimHei"
             },
             {
-                name:"隶书",
+                content:"隶书",
                 value:"LiSu"
             },
             {
-                name:"楷体",
+                content:"楷体",
                 value:"KaiTi_GB2312"
             },
             {
-                name:"微软雅黑",
+                content:"微软雅黑",
                 value:"Microsoft YaHei"
             },
             {
-                name:"Georgia",
+                content:"Georgia",
                 value:"Georgia"
             },
             {
-                name:"Times New Roman",
+                content:"Times New Roman",
                 value:"Times New Roman"
             },
             {
-                name:"Impact",
+                content:"Impact",
                 value:"Impact"
             },
             {
-                name:"Courier New",
+                content:"Courier New",
                 value:"Courier New"
             },
             {
-                name:"Arial",
+                content:"Arial",
                 value:"Arial"
             },
             {
-                name:"Verdana",
+                content:"Verdana",
                 value:"Verdana"
             },
             {
-                name:"Tahoma",
+                content:"Tahoma",
                 value:"Tahoma"
             }
         ]
