@@ -21,8 +21,6 @@ Configs
 
     * :data:`~Tabs.config.items`
     * :data:`~Tabs.config.changeType`
-    * :data:`~Tabs.config.tabSelectedCls`
-    * :data:`~Tabs.config.panelSelectedCls`
     * :data:`~Tabs.config.barOrientation`
 
 Methods
@@ -78,14 +76,6 @@ Configs Detail
 .. data:: Tabs.config.changeType
 
     {String} - 枚举自 :attr:`~Tabs.changeType` .取值 click 或者 mouse
-
-.. data:: Tabs.config.tabSelectedCls
-
-    {String} - tab 选中的样式。默认 ks-tabs-tab-selected
-
-.. data:: Tabs.config.panelSelectedCls
-
-    {String} - panel 选中的样式。默认 ks-tabs-panel-selected
 
 .. data:: Tabs.config.barOrientation
 
