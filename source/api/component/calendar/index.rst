@@ -14,6 +14,10 @@ Calendar
         // use Calendar
     });
 
+.. hint::
+
+    如无必要，推荐使用 `gallery/calendar <http://t.cn/zTqcDbk>`_
+
 Class
 -----------------------------------------------
 
