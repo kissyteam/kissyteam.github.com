@@ -1,4 +1,4 @@
-KISSY.use("switchable", function (S, Switchable) {
+KISSY.use("switchable,node", function (S, Switchable) {
 
     var Tabs = Switchable.Tabs,
         btnAdd = S.one('#btnAdd'),

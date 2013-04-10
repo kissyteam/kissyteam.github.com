@@ -1,4 +1,4 @@
-KISSY.use("dom,event,anim,switchable", function(S, DOM, Event, Anim, Switchable) {
+KISSY.use("dom,event,anim,switchable,node", function(S, DOM, Event, Anim, Switchable) {
 	var Slide = Switchable.Slide, Easing = Anim.Easing;
 
 	S.ready(function(S) {

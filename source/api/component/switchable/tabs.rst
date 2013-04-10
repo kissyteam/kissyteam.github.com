@@ -12,6 +12,12 @@ Tabs
         // use Switchable.Tabs
     });
 
+
+.. warning::
+
+    本组件停止维护，推荐使用 `gallery/slide <http://t.cn/zTqcfXr>`_
+
+
 Class Detail
 ---------------------------------------------------------------------
 
