@@ -149,7 +149,7 @@ Static Properties Detail
 
     .. attribute:: SWF.Status.TOO_LOW
 
-        表示没有安装 flash 插件
+        表示当前版本号低于配置的版本号
 
 
 Methods Detail
