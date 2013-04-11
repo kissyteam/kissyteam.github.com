@@ -217,7 +217,7 @@ RichBase的extend还提供了扩展功能，把一个主类与多个扩充类合
 .. code-block:: javascript
 
     var Overlay = RichBase.extend([
-            Extension.ContentBox,
+            Extension.Box,
             Extension.Position,
             Loading,
             Extension.Align,

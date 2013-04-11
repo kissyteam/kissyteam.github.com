@@ -25,7 +25,7 @@ Configs
   * :data:`~component.extension.Box.config.width`
   * :data:`~component.extension.Box.config.height`
   * :data:`~component.extension.Box.config.elCls`
-  * :data:`~component.extension.ContentBox.config.content`
+  * :data:`~component.extension.Box.config.content`
   * :data:`~component.extension.Position.config.zIndex`
   * :data:`~component.extension.Position.config.x`
   * :data:`~component.extension.Position.config.y`
@@ -49,7 +49,7 @@ Attributes
   * :attr:`~Overlay.prototype.closable`
   * :attr:`~component.extension.Box.prototype.visible`
   * :attr:`~component.extension.Box.prototype.el`
-  * :attr:`~component.extension.ContentBox.prototype.contentEl`
+  * :attr:`~component.extension.Box.prototype.contentEl`
   * :attr:`~Overlay.prototype.maskNode`
   
 Methods
@@ -85,10 +85,6 @@ Class Detail
     | 继承自
 
     :class:`~component.Controller`
-
-    :class:`~component.extension.Box`
-
-    :class:`~component.extension.ContentBox` ,
 
     :class:`~component.extension.Align` ,
 

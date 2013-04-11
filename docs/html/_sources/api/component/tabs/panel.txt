@@ -19,13 +19,13 @@ Class
 Configs
 -----------------------------------------------
 
-    * :data:`~component.extension.ContentBox.config.content`
+    * :data:`~component.extension.Box.config.content`
     * :data:`~Panel.config.selected`
 
 Attributes
 ------------------------------------------------
 
-    * :data:`~component.extension.ContentBox.prototype.content`
+    * :data:`~component.extension.Box.prototype.content`
     * :data:`~Panel.prototype.selected`
 
 Class Detail

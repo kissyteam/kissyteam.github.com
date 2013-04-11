@@ -16,6 +16,7 @@ Class
 Configs
 -----------------------------------------------
 
+    * :data:`~component.extension.Box.config.content`
     * :data:`~component.extension.Box.config.width`
     * :data:`~component.extension.Box.config.height`
     * :data:`~component.extension.Box.config.elCls`
@@ -31,6 +32,8 @@ Attributes
 -----------------------------------------------     
 
     * :attr:`~component.extension.Box.prototype.el`
+    * :attr:`~component.extension.Box.prototype.contentEl`
+    * :attr:`~component.extension.Box.prototype.content`
     * :attr:`~component.extension.Box.prototype.visible`
     
 Methods
@@ -61,7 +64,11 @@ Class Detail
     
 Configs Detail
 -----------------------------------------------
-    
+
+.. data:: extension.Box.config.content
+
+    {String} - 可选, 设置内容 html.
+
 .. data:: extension.Box.config.width
 
     {Number} - 可选，组件的宽度，单位像素
@@ -120,6 +127,16 @@ Attributes Detail
 .. attribute:: extension.Box.prototype.el
 
     {KISSY.Node} - 该组件的根节点. 注意调用 render() 后才可以取得.
+
+.. attribute:: extension.Box.prototype.contentEl
+
+    {KISSY.Node} - 该组件的内容所在节点，一般和 el 相同（除了 :class:`overlay.Overlay` ，
+    :class:`menu.SubMenu` 等）.
+    注意调用 render() 后才可以取得.
+
+.. attribute:: extension.Box.prototype.content
+
+    {String} - 设置的 content 属性
 
 .. attribute:: extension.Box.prototype.visible
 

@@ -16,7 +16,6 @@ Classes in Component
    UIBase
    extension/align
    extension/box
-   extension/contentbox
    extension/position
    plugin/drag
    plugin/resize

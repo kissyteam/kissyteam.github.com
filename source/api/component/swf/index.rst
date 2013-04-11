@@ -195,7 +195,7 @@ Static Methods Detail
 .. method:: SWF.getSrc
 
     | **getSrc( swf ) <static>**
-    | swf 元素的地址素火星
+    | swf 元素的地址
 
     :param HTMLElement swf: swf 元素
     :returns: {String} swf 元素的地址属性

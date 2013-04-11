@@ -50,7 +50,7 @@ Class Detail
     | **Controller** (config)
     
     * 继承自 :class:`~component.UIBase` , 包含其全部配置,属性,方法,事件.
-    * 扩充自 :class:`~component.UIBase.Box` , 包含其全部配置,属性,方法,事件.
+    * 扩充自 :class:`~component.extension.Box` , 包含其全部配置,属性,方法,事件.
     
     :param Object config: 配置项，详细见下方 **Configs Detail** .
     

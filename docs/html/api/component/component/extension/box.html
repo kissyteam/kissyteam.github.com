@@ -82,7 +82,7 @@
       <a href="../../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="contentbox.html" title="Component.Extension.ContentBox"
+      <a href="position.html" title="Component.Extension.Position"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="align.html" title="Component.Extension.Align"
@@ -111,6 +111,7 @@
 <h2>Configs<a class="headerlink" href="#configs" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
+<li><a class="reference internal" href="#component.extension.Box.config.content" title="component.extension.Box.config.content"><tt class="xref py py-data docutils literal"><span class="pre">content</span></tt></a></li>
 <li><a class="reference internal" href="#component.extension.Box.config.width" title="component.extension.Box.config.width"><tt class="xref py py-data docutils literal"><span class="pre">width</span></tt></a></li>
 <li><a class="reference internal" href="#component.extension.Box.config.height" title="component.extension.Box.config.height"><tt class="xref py py-data docutils literal"><span class="pre">height</span></tt></a></li>
 <li><a class="reference internal" href="#component.extension.Box.config.elCls" title="component.extension.Box.config.elCls"><tt class="xref py py-data docutils literal"><span class="pre">elCls</span></tt></a></li>
@@ -129,6 +130,8 @@
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference internal" href="#component.extension.Box.prototype.el" title="component.extension.Box.prototype.el"><tt class="xref py py-attr docutils literal"><span class="pre">el</span></tt></a></li>
+<li><a class="reference internal" href="#component.extension.Box.prototype.contentEl" title="component.extension.Box.prototype.contentEl"><tt class="xref py py-attr docutils literal"><span class="pre">contentEl</span></tt></a></li>
+<li><a class="reference internal" href="#component.extension.Box.prototype.content" title="component.extension.Box.prototype.content"><tt class="xref py py-attr docutils literal"><span class="pre">content</span></tt></a></li>
 <li><a class="reference internal" href="#component.extension.Box.prototype.visible" title="component.extension.Box.prototype.visible"><tt class="xref py py-attr docutils literal"><span class="pre">visible</span></tt></a></li>
 </ul>
 </div></blockquote>
@@ -173,6 +176,12 @@
 </div>
 <div class="section" id="configs-detail">
 <h2>Configs Detail<a class="headerlink" href="#configs-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="component.extension.Box.config.content">
+<tt class="descclassname">extension.Box.config.</tt><tt class="descname">content</tt><a class="headerlink" href="#component.extension.Box.config.content" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 可选, 设置内容 html.</p>
+</dd></dl>
+
 <dl class="data">
 <dt id="component.extension.Box.config.width">
 <tt class="descclassname">extension.Box.config.</tt><tt class="descname">width</tt><a class="headerlink" href="#component.extension.Box.config.width" title="Permalink to this definition">¶</a></dt>
@@ -247,6 +256,20 @@
 <dt id="component.extension.Box.prototype.el">
 <tt class="descclassname">extension.Box.prototype.</tt><tt class="descname">el</tt><a class="headerlink" href="#component.extension.Box.prototype.el" title="Permalink to this definition">¶</a></dt>
 <dd><p>{KISSY.Node} - 该组件的根节点. 注意调用 render() 后才可以取得.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.extension.Box.prototype.contentEl">
+<tt class="descclassname">extension.Box.prototype.</tt><tt class="descname">contentEl</tt><a class="headerlink" href="#component.extension.Box.prototype.contentEl" title="Permalink to this definition">¶</a></dt>
+<dd><p>{KISSY.Node} - 该组件的内容所在节点，一般和 el 相同（除了 <a class="reference internal" href="../../overlay/overlay.html#overlay.Overlay" title="overlay.Overlay"><tt class="xref py py-class docutils literal"><span class="pre">overlay.Overlay</span></tt></a> ，
+<a class="reference internal" href="../../menu/SubMenu.html#menu.SubMenu" title="menu.SubMenu"><tt class="xref py py-class docutils literal"><span class="pre">menu.SubMenu</span></tt></a> 等）.
+注意调用 render() 后才可以取得.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.extension.Box.prototype.content">
+<tt class="descclassname">extension.Box.prototype.</tt><tt class="descname">content</tt><a class="headerlink" href="#component.extension.Box.prototype.content" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 设置的 content 属性</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -338,7 +361,7 @@
       <a href="../../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="contentbox.html" title="Component.Extension.ContentBox"
+      <a href="position.html" title="Component.Extension.Position"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="align.html" title="Component.Extension.Align"

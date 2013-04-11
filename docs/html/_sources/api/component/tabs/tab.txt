@@ -19,13 +19,13 @@ Class
 Configs
 -----------------------------------------------
 
-    * :data:`~component.extension.ContentBox.config.content`
+    * :data:`~component.extension.Box.config.content`
     * :data:`~Tab.config.selected`
 
 Attributes
 ------------------------------------------------
 
-    * :attr:`~component.extension.ContentBox.prototype.content`
+    * :attr:`~component.extension.Box.prototype.content`
     * :data:`~Tab.prototype.selected`
 
 Class Detail
