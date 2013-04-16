@@ -6,9 +6,8 @@ Loader
 .. toctree::
     :maxdepth: 3
 
-    simple.rst
-    timestamp.rst
-    common-lib.rst
-    conditional-loader.rst
-
-
+    simple
+    timestamp
+    common-lib
+    conditional-loader
+    alias

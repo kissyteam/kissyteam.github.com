@@ -16,6 +16,8 @@ Methods
 
     :param Boolean debug: 是否开启调试模式
 
+    :param Object alias: 模块别名配置. 详见 :ref:`别名介绍 <loader_alias_tutorial>`
+
     :param String base: KISSY 框架所在的基地址
 
     :param Number comboMaxUrlLength: Combo url 的最长长度，默认 1024
