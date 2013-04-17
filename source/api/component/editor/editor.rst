@@ -303,6 +303,17 @@ Methods Detail
 
     :param KISSY.Node element: 待插入的元素节点。（需从编辑器文档中创建）
 
+    .. note::
+
+        如果要兼容 firefox 浏览器，需要调用 focus 后延迟 50ms 调用该函数：
+
+        .. code-block:: javascript
+
+            editor.focus();
+            setTimeout(function(){
+                editor.insertElement(new KISSY.Node('<span>haha</span>'),
+                null,editor.get('document')[0]);
+            },50);
 
 .. method:: Editor.prototype.insertHtml
 
@@ -310,6 +321,18 @@ Methods Detail
     | 往编辑器中插入 html 串
 
     :param String html: 待插入的 html 字符串.
+
+    .. note::
+
+        如果要兼容 firefox 浏览器，需要调用 focus 后延迟 50ms 调用该函数：
+
+        .. code-block:: javascript
+
+            editor.focus();
+            setTimeout(function(){
+                editor.insertHtml('<span>haha</span>');
+            },50);
+
 
 
 .. method:: Editor.prototype.sync

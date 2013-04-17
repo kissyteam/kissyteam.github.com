@@ -554,6 +554,17 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>如果要兼容 firefox 浏览器，需要调用 focus 后延迟 50ms 调用该函数：</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">editor</span><span class="p">.</span><span class="nx">insertElement</span><span class="p">(</span><span class="k">new</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">Node</span><span class="p">(</span><span class="s1">&#39;&lt;span&gt;haha&lt;/span&gt;&#39;</span><span class="p">),</span>
+    <span class="kc">null</span><span class="p">,</span><span class="nx">editor</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;document&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="p">},</span><span class="mi">50</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -571,6 +582,16 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>如果要兼容 firefox 浏览器，需要调用 focus 后延迟 50ms 调用该函数：</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">editor</span><span class="p">.</span><span class="nx">insertHtml</span><span class="p">(</span><span class="s1">&#39;&lt;span&gt;haha&lt;/span&gt;&#39;</span><span class="p">);</span>
+<span class="p">},</span><span class="mi">50</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
 </dd></dl>
 
 <dl class="method">
