@@ -76,15 +76,36 @@ Class
 
     **初始化模块类实例**
 
-    1) 生成 :class:`DraggableDelegate` 对象
+    1) 生成 :class:`DraggableDelegate` 对象，并使用 Proxy 和 Scroll 插件
 
         .. code-block:: javascript
 
             var dragDelegate = new DraggableDelegate({
-                container:"#container2",
-                handlers:['.cheader'],
-                selector:'.component',
-                move:true
+                container: "#container2",
+                handlers: ['.cheader'],
+                selector: '.component',
+                move: true,
+                plugins: [
+                    new Proxy({
+                        /**
+                         * 如何产生替代节点
+                         * @param drag 当前拖对象
+                         */
+                        node: function (drag) {
+                            var n = S.one(drag.get("dragNode")[0].cloneNode());
+                            n.removeAttr('id');
+                            n.css("opacity", 0.8);
+                            return n;
+                        },
+                        // 主体位置不跟随 proxy
+                        moveOnEnd: false,
+                        // 每次 proxy 都重新生成
+                        destroyOnEnd: true
+                    }),
+                    new Scroll({
+                        node: "#container2"
+                    })
+                ]
             });
 
     2) 生成 :class:`DroppableDelegate` 对象
@@ -96,39 +117,6 @@ Class
                 selector:'.component'
             });
 
-    3) 生成 :class:`~dd.plugin.Proxy` 对象, 并关联到 :class:`DraggableDelegate` 对象
-
-        .. code-block:: javascript
-
-            var proxy = new Proxy({
-                /**
-                 * 如何产生替代节点
-                 * @param drag 当前拖对象
-                 */
-                node:function(drag) {
-                    var n = S.one(drag.get("dragNode")[0].cloneNode(true));
-                    n.attr("id", S.guid("ks-dd-proxy"));
-                    n.css("opacity", 0.8);
-                    return n;
-                },
-                // 主体位置不跟随 proxy
-                moveOnEnd:false,
-                // 每次 proxy 都重新生成
-                destroyOnEnd:true
-            });
-
-            proxy.attach(dragDelegate);
-
-    4) 生成指定容器的 :class:`~dd.plugin.Scroll` 对象, 并关联到 :class:`DraggableDelegate` 对象
-
-        .. code-block:: javascript
-
-            var s=new Scroll({
-                node:"#container2"
-            });
-
-            s.attach(dragDelegate);
-
 
     **交换节点位置**
 
@@ -136,7 +124,7 @@ Class
 
     .. code-block:: javascript
 
-        dragDelegate.on("dragover", function(ev) {
+        dragDelegate.on("dragover", function (ev) {
             var drag = ev.drag;
             var drop = ev.drop;
             var dragNode = drag.get("dragNode"),

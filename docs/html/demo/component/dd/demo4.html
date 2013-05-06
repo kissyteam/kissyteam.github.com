@@ -158,13 +158,34 @@
 </div>
 <p><strong>初始化模块类实例</strong></p>
 <ol class="arabic">
-<li><p class="first">生成 <a class="reference internal" href="../../../api/component/dd/draggable-delegate.html#dd.DraggableDelegate" title="dd.DraggableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt></a> 对象</p>
+<li><p class="first">生成 <a class="reference internal" href="../../../api/component/dd/draggable-delegate.html#dd.DraggableDelegate" title="dd.DraggableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt></a> 对象，并使用 Proxy 和 Scroll 插件</p>
 <blockquote>
 <div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">dragDelegate</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DraggableDelegate</span><span class="p">({</span>
-    <span class="nx">container</span><span class="o">:</span><span class="s2">&quot;#container2&quot;</span><span class="p">,</span>
-    <span class="nx">handlers</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;.cheader&#39;</span><span class="p">],</span>
-    <span class="nx">selector</span><span class="o">:</span><span class="s1">&#39;.component&#39;</span><span class="p">,</span>
-    <span class="nx">move</span><span class="o">:</span><span class="kc">true</span>
+    <span class="nx">container</span><span class="o">:</span> <span class="s2">&quot;#container2&quot;</span><span class="p">,</span>
+    <span class="nx">handlers</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;.cheader&#39;</span><span class="p">],</span>
+    <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;.component&#39;</span><span class="p">,</span>
+    <span class="nx">move</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+        <span class="k">new</span> <span class="nx">Proxy</span><span class="p">({</span>
+            <span class="cm">/**</span>
+<span class="cm">             * 如何产生替代节点</span>
+<span class="cm">             * @param drag 当前拖对象</span>
+<span class="cm">             */</span>
+            <span class="nx">node</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">drag</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="nx">drag</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;dragNode&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">cloneNode</span><span class="p">());</span>
+                <span class="nx">n</span><span class="p">.</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">);</span>
+                <span class="nx">n</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;opacity&quot;</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">);</span>
+                <span class="k">return</span> <span class="nx">n</span><span class="p">;</span>
+            <span class="p">},</span>
+            <span class="c1">// 主体位置不跟随 proxy</span>
+            <span class="nx">moveOnEnd</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="c1">// 每次 proxy 都重新生成</span>
+            <span class="nx">destroyOnEnd</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">}),</span>
+        <span class="k">new</span> <span class="nx">Scroll</span><span class="p">({</span>
+            <span class="nx">node</span><span class="o">:</span> <span class="s2">&quot;#container2&quot;</span>
+        <span class="p">})</span>
+    <span class="p">]</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -180,45 +201,10 @@
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">生成 <a class="reference internal" href="../../../api/component/dd/plugin/proxy.html#dd.dd.plugin.Proxy" title="dd.dd.plugin.Proxy"><tt class="xref py py-class docutils literal"><span class="pre">Proxy</span></tt></a> 对象, 并关联到 <a class="reference internal" href="../../../api/component/dd/draggable-delegate.html#dd.DraggableDelegate" title="dd.DraggableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt></a> 对象</p>
-<blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">proxy</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Proxy</span><span class="p">({</span>
-    <span class="cm">/**</span>
-<span class="cm">     * 如何产生替代节点</span>
-<span class="cm">     * @param drag 当前拖对象</span>
-<span class="cm">     */</span>
-    <span class="nx">node</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">drag</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="nx">drag</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;dragNode&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span>
-        <span class="nx">n</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="nx">S</span><span class="p">.</span><span class="nx">guid</span><span class="p">(</span><span class="s2">&quot;ks-dd-proxy&quot;</span><span class="p">));</span>
-        <span class="nx">n</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;opacity&quot;</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">);</span>
-        <span class="k">return</span> <span class="nx">n</span><span class="p">;</span>
-    <span class="p">},</span>
-    <span class="c1">// 主体位置不跟随 proxy</span>
-    <span class="nx">moveOnEnd</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
-    <span class="c1">// 每次 proxy 都重新生成</span>
-    <span class="nx">destroyOnEnd</span><span class="o">:</span><span class="kc">true</span>
-<span class="p">});</span>
-
-<span class="nx">proxy</span><span class="p">.</span><span class="nx">attach</span><span class="p">(</span><span class="nx">dragDelegate</span><span class="p">);</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p class="first">生成指定容器的 <a class="reference internal" href="../../../api/component/dd/plugin/scroll.html#dd.dd.plugin.Scroll" title="dd.dd.plugin.Scroll"><tt class="xref py py-class docutils literal"><span class="pre">Scroll</span></tt></a> 对象, 并关联到 <a class="reference internal" href="../../../api/component/dd/draggable-delegate.html#dd.DraggableDelegate" title="dd.DraggableDelegate"><tt class="xref py py-class docutils literal"><span class="pre">DraggableDelegate</span></tt></a> 对象</p>
-<blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">s</span><span class="o">=</span><span class="k">new</span> <span class="nx">Scroll</span><span class="p">({</span>
-    <span class="nx">node</span><span class="o">:</span><span class="s2">&quot;#container2&quot;</span>
-<span class="p">});</span>
-
-<span class="nx">s</span><span class="p">.</span><span class="nx">attach</span><span class="p">(</span><span class="nx">dragDelegate</span><span class="p">);</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
 </ol>
 <p><strong>交换节点位置</strong></p>
 <p>当触发 <tt class="xref py py-data docutils literal"><span class="pre">dragover</span></tt> 事件时, 交换当前 DraggableDelegate 的被委托节点与对应 DroppableDelegate 的被委托节点</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">dragDelegate</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;dragover&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">dragDelegate</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;dragover&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">drag</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">drag</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">drop</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">drop</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">dragNode</span> <span class="o">=</span> <span class="nx">drag</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;dragNode&quot;</span><span class="p">),</span>

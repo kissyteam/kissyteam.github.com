@@ -53,8 +53,8 @@ Draggable & Proxy 使用示例
             });
         });
 
-    **初始化 proxy 对象**
+    **插入 Proxy 插件**
 
     .. code-block:: javascript
 
-        new Proxy().attach(drag);
+        drag.plug(Proxy);
