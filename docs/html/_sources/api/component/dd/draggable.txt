@@ -78,7 +78,8 @@ Configs Detail
 
 .. data:: Draggable.config.groups
 
-    {Object} - 可拖动对象在的组。（设置后只和本组的 droppable 对象交互）
+    {Object} - 可拖动对象在的组。（设置后只和本组的 droppable 对象交互），默认和所有组的 droppable 都交互。
+    例如： {'x':1,'y':1} 表示属于 x 和 y 组
 
 .. data:: Draggable.config.handlers
 

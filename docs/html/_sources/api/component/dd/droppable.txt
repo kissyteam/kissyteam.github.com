@@ -54,7 +54,7 @@ Configs Detail
 
 .. data:: Droppable.config.groups
 
-    {Object} - 可与拖动对象交互的节点.
+    {Object} - 可与拖动对象交互的节点. 例如： {'x':1,'y':1} 表示属于 x 和 y 组.
 
     
 Events Detail
