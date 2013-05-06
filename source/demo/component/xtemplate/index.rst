@@ -297,6 +297,25 @@ Demos
         <button onclick='supportLocalBlockCommand();'>测试局部块状命令扩展</button>
     </p>
 
+
+局部后缀名判断命令扩展
+````````````````````````````````````````````
+
+代码:
+
+.. literalinclude:: /raw/demo/xtemplate/assets/endsWith-command.js
+    :language: javascript
+
+演示：
+
+.. raw:: html
+
+    <script src='../../../../../source/raw/demo/xtemplate/assets/endsWith-command.js'></script>
+
+    <p>
+        <button onclick='endsWithCommand();'>测试局部后缀名判断命令扩展</button>
+    </p>
+
 支持字符串作为全局子模板
 ````````````````````````````````````````````
 
@@ -371,6 +390,7 @@ Demos
     <p>
         <button onclick='supportFnLocalSubTpl();'>测试函数作为局部子模板</button>
     </p>
+
 
 
 支持简单表达式作为变量
