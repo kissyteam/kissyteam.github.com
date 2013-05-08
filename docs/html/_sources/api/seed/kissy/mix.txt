@@ -25,7 +25,7 @@ Methods
     
     .. note::
 
-        ``reveiver`` 会被改变，如果想要保留原始的 ``reveiver`` ，可以使用 :func:`KISSY.merge`
+        ``receiver`` 会被改变，如果想要保留原始的 ``receiver`` ，可以使用 :func:`KISSY.merge`
 
         .. code-block:: javascript
 
