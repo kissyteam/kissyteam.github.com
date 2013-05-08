@@ -153,7 +153,7 @@
 <dt id="cookie.set">
 <tt class="descclassname">cookie.</tt><tt class="descname">set</tt><big>(</big><big>)</big><a class="headerlink" href="#cookie.set" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line">String <strong>set</strong> ( name, val, expires[, domain, path, secure] )</div>
+<div class="line">String <strong>set</strong> ( name, val[, expires, domain, path, secure] )</div>
 <div class="line">设置cookie值</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -163,7 +163,7 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>name,</strong> (<em>String</em>) &#8211; cookie的名称</li>
 <li><strong>val</strong> (<em>String</em>) &#8211; cookie的值</li>
-<li><strong>expires</strong> (<em>number|date</em>) &#8211; 失效时间. number 类型时单位为天</li>
+<li><strong>expires</strong> (<em>number|date</em>) &#8211; 失效时间. number 类型时单位为天，不设置表示生效时间为本次浏览器进程。</li>
 <li><strong>domain</strong> (<em>String</em>) &#8211; 域</li>
 <li><strong>path</strong> (<em>String</em>) &#8211; 路径</li>
 <li><strong>secure</strong> (<em>Boolean</em>) &#8211; 安全标志</li>

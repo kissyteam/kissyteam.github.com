@@ -12,7 +12,7 @@ Methods
     | void **KISSY.add** (name,fn[,config])
     | 添加模块
 
-    :param string name: 模块名
+    :param string name: 模块名。可选。
     :param function fn: 模块定义函数
     :param object config: 模块的一些格外属性, 包括
             
@@ -28,6 +28,17 @@ Methods
     .. code-block:: javascript
 
         KISSY.add("yourmod",function(S){},
+            {
+                requires:['depMod1','depMod2','./mod.css'] // 该模块的一些依赖项,
+                                                           // 注意 css 为和模块 js 同目录下的 mod.css
+            }
+        );
+
+    范例: 添加匿名模块
+
+    .. code-block:: javascript
+
+        KISSY.add(function(S){},
             {
                 requires:['depMod1','depMod2','./mod.css'] // 该模块的一些依赖项,
                                                            // 注意 css 为和模块 js 同目录下的 mod.css

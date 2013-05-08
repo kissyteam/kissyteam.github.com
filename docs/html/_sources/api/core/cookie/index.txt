@@ -44,12 +44,12 @@ Methods
 		
 .. function:: set
 
-    | String **set** ( name, val, expires[, domain, path, secure] )
+    | String **set** ( name, val[, expires, domain, path, secure] )
     | 设置cookie值
     
     :param String name,: cookie的名称
     :param String val: cookie的值
-    :param number|date expires: 失效时间. number 类型时单位为天
+    :param number|date expires: 失效时间. number 类型时单位为天，不设置表示生效时间为本次浏览器进程。
     :param String domain: 域
     :param String path: 路径
     :param Boolean secure: 安全标志
