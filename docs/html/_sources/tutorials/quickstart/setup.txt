@@ -10,7 +10,7 @@ Setup
 
 .. raw:: html
 
-   <script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
+   <script src="http://a.tbcdn.cn/s/kissy/1.3.0/seed.js" data-config="{combine:true}"></script>
     <div class="demo">
         <style>
             .demo-wrap {

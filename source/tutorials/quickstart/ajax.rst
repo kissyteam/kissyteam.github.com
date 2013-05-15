@@ -17,7 +17,7 @@ JSONP 是最常用的跨域请求方式. 关于跨域可参见 [2]_ .
 
 .. raw:: html
 
-    <script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
+    <script src="http://a.tbcdn.cn/s/kissy/1.3.0/seed.js" data-config="{combine:true}"></script>
    <div class="demo">
         <style>
             #photo-list img  {

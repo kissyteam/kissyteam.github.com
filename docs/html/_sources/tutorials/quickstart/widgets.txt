@@ -19,7 +19,7 @@ Slide 效果就是 Taobao 上最最经常见的多张图片切换效果, 如:
 
 .. raw:: html
 
-    <script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
+    <script src="http://a.tbcdn.cn/s/kissy/1.3.0/seed.js" data-config="{combine:true}"></script>
     
     <div class="demo">
         <style>

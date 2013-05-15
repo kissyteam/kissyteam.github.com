@@ -39,7 +39,7 @@ KISSY 提供两种使用方式:
    
 .. raw:: html
 
-   <script src="http://docs.kissyui.com/assets/import-kissy.js"></script>
+   <script src="http://a.tbcdn.cn/s/kissy/1.3.0/seed.js" data-config="{combine:true}"></script>
    <div class="demo" style="height: 500px;">
         <style>
             .demo {
