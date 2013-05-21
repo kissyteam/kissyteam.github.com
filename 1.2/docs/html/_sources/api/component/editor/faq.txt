@@ -69,9 +69,9 @@ form 同步
 
     可参考以下 demo  :
 
-    http://docs.kissyui.com/kissy-editor/demo/cdn/1.2.0/wordCount.html
+    http://yiminghe.github.io/kissy-editor/demo/cdn/1.1.7/wordCount.html
 
-    其中 `wordcount 代码 <http://docs.kissyui.com/kissy-editor/demo/word-count.js>`_ 自行下载, 随意修改.
+    其中 `wordcount 代码 <http://yiminghe.github.io/kissy-editor/demo/word-count.js>`_ 自行下载, 随意修改.
 	
 绑定 ctrl-enter
 ----------------------------------
@@ -99,9 +99,9 @@ placeholder(tip) 功能
 
     可参考以下 demo  :
 
-    http://docs.kissyui.com/kissy-editor/demo/cdn/1.2.0/tip.html
+    http://docs.kissyui.com/kissy-editor/demo/cdn/1.1.7/tip.html
 
-    其中 `tip 代码 <http://docs.kissyui.com/kissy-editor/demo/tip.js>`_ 自行下载，随意修改。
+    其中 `tip 代码 <http://yiminghe.github.io/kissy-editor/demo/tip.js>`_ 自行下载，随意修改。
     
     
 截获 paste 事件
