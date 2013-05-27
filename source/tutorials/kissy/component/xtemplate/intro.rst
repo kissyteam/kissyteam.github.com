@@ -16,8 +16,6 @@ Refer
 构建模板
 ```````````````````````````````````````````````
 
-构建模板一般来说有三种方式：
-
 
 页面中的模板
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -36,6 +34,7 @@ Refer
 
     var tpl = KISSY.all('#tpl').html();
 
+
 javascript 中的模板
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -47,11 +46,10 @@ javascript 中的模板
 
 
 
-推荐：单独的模板文件
+单独的模板文件
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-推荐：将模板写入单独的模板文件，然后用 kissy-nodejs 的 kissy-xtemplate 命令生成对应的模板函数。
-不仅有利于代码的清晰，更省去了客户端生成模板函数的消耗，例如
+将模板写入单独的模板文件，然后用 kissy-pie 等工具生成模版字符串模块，例如
 
 
 x-tpl.html:
@@ -62,7 +60,8 @@ x-tpl.html:
         {{title}}
     </div>
 
-运行命令： ``kissy-xtemplate -t x-tpl.html -m tests/x -w`` (-w 表示监控 tpl 文件变化) 后生成
+
+运行工具后生成
 
 
 x.js:
@@ -70,22 +69,14 @@ x.js:
 .. code-block:: javascript
 
     KISSY.add('tests/x',function(){
-        return function(){
-          // ...
-        };
+        return '<div>.....';
     });
 
-.. note::
-
-    kissy-xtemplate 安装步鄹：
-
-    #. npm install -g kissy
 
 使用模版
 ``````````````````````````````
 
-
-注意 :class:`~xtemplate.XTemplate` 的第一个参数既可以是预先生成的函数也可以模版字符串，那么当由第一步生成模板后，
+注意 :class:`~xtemplate.XTemplate` 的第一个参数是模版字符串，那么当由第一步生成模板后，
 直接 new 并 render 即可。 例如
 
 
@@ -96,7 +87,7 @@ x.js:
     new XTemplate('<div>{{title}}</div>').render({title:'m'}) // => <div>m</div>
 
 
-或预先函数：
+或预先的模版文件：
 
 .. code-block:: javascript
 

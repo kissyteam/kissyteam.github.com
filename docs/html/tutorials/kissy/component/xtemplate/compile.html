@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>xtemplate &mdash; KISSY v1.3 Documentation</title>
+<title>使用 XTemplate 预编译机制 &mdash; KISSY v1.3 Documentation</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.3.0/css/dpl/base-min.css"/>
 <link rel="stylesheet" href="../../../../_static/kissy.css"/>
@@ -81,36 +81,57 @@
     <li class="right" >
       <a href="../../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li class="right" >
-      <a href="intro.html" title="使用 XTemplate"
-         accesskey="N">next</a> | </li>
-    <li class="right" >
-      <a href="../waterfall/index.html" title="Waterfall"
-         accesskey="P">previous</a> | </li>
-    <li><a href="../../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
-      <li><a href="../../../index.html" >Tutorial</a> &#187; </li>
-      <li><a href="../../index.html" >使用介绍</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">Component</a> &#187; </li> 
+    <li><a href="../../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
     </ul>
 </div>
 					
   <div class="section" id="xtemplate">
-<h1>xtemplate<a class="headerlink" href="#xtemplate" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">使用 XTemplate</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#refer">Refer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#id2">构建模板</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="intro.html#id3">页面中的模板</a></li>
-<li class="toctree-l3"><a class="reference internal" href="intro.html#javascript">javascript 中的模板</a></li>
-<li class="toctree-l3"><a class="reference internal" href="intro.html#id4">单独的模板文件</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#id5">使用模版</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="impl.html">构建前端 DSL template</a></li>
-</ul>
+<span id="xtemplate-tutorial"></span><h1>使用 XTemplate 预编译机制<a class="headerlink" href="#xtemplate" title="Permalink to this headline">¶</a></h1>
+<p>author: <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></p>
+<div class="section" id="refer">
+<h2>Refer<a class="headerlink" href="#refer" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../../../../api/component/xtemplate/index.html#module-xtemplate" title="xtemplate"><tt class="xref py py-mod docutils literal"><span class="pre">API</span></tt></a></p>
+<p><a class="reference internal" href="../../../../demo/component/xtemplate/index.html#xtemplate-demo"><em>Demo</em></a></p>
+<div class="section" id="id2">
+<h3>运行<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>将模板写入单独的模板文件，然后用 kissy-nodejs 的 kissy-xtemplate 命令生成对应的模板函数。
+不仅有利于代码的清晰，更省去了客户端生成模板函数的消耗，例如</p>
+<p>x-tpl.html:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div&gt;</span>
+    {{title}}
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</div>
+<p>运行命令： <tt class="docutils literal"><span class="pre">kissy-xtemplate</span> <span class="pre">-t</span> <span class="pre">x-tpl.html</span> <span class="pre">-m</span> <span class="pre">tests/x</span> <span class="pre">-w</span></tt> (-w 表示监控 tpl 文件变化) 后生成</p>
+<p>x.js:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;tests/x&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="c1">// ...</span>
+    <span class="p">};</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>kissy-xtemplate 安装步鄹：</p>
+<ol class="last arabic simple">
+<li>npm install -g kissy</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>使用<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>注意 <a class="reference internal" href="../../../../api/component/xtemplate/index.html#xtemplate.XTemplate" title="xtemplate.XTemplate"><tt class="xref py py-class docutils literal"><span class="pre">XTemplate</span></tt></a> 的第一个参数可以是预先生成的函数，那么当由第一步生成模板后，
+直接 new 并 render 即可。 例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;xtemplate,tests/x&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">XTemplate</span><span class="p">,</span><span class="nx">tpl</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">data</span><span class="o">=</span><span class="p">{</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;m&#39;</span>
+    <span class="p">};</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="k">new</span> <span class="nx">XTemplate</span><span class="p">(</span><span class="nx">tpl</span><span class="p">).</span><span class="nx">render</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span> <span class="c1">// =&gt; &#39;&lt;div&gt;m&lt;/div&gt;&#39;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -127,16 +148,7 @@
     <li class="right" >
       <a href="../../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
-    <li class="right" >
-      <a href="intro.html" title="使用 XTemplate"
-         accesskey="N">next</a> | </li>
-    <li class="right" >
-      <a href="../waterfall/index.html" title="Waterfall"
-         accesskey="P">previous</a> | </li>
-    <li><a href="../../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
-      <li><a href="../../../index.html" >Tutorial</a> &#187; </li>
-      <li><a href="../../index.html" >使用介绍</a> &#187; </li>
-      <li><a href="../index.html" accesskey="U">Component</a> &#187; </li> 
+    <li><a href="../../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
     </ul>
 </div>
 					<div id="disqus_thread"></div>
@@ -193,6 +205,24 @@
     </div>
     <div class="col-extra">
         
+	<div class="s-box">
+		<div class="s-box-hd">
+			<h3>本节提纲</h3>
+		</div>
+		<div class="s-box-bd">
+			<ul>
+<li><a class="reference internal" href="#">使用 XTemplate 预编译机制</a><ul>
+<li><a class="reference internal" href="#refer">Refer</a><ul>
+<li><a class="reference internal" href="#id2">运行</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id3">使用</a></li>
+</ul>
+</li>
+</ul>
+
+		</div>
+	</div>
 
     </div>
 	</div>

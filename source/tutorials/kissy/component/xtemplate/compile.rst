@@ -1,0 +1,65 @@
+.. _xtemplate_tutorial:
+
+使用 XTemplate 预编译机制
+-------------------------------------
+
+author: `承玉 <yiminghe@gmail.com>`_
+
+Refer
+```````````````````````````````````````````````````
+
+:mod:`API<xtemplate>`
+
+:ref:`Demo <xtemplate_demo>`
+
+
+运行
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+将模板写入单独的模板文件，然后用 kissy-nodejs 的 kissy-xtemplate 命令生成对应的模板函数。
+不仅有利于代码的清晰，更省去了客户端生成模板函数的消耗，例如
+
+
+x-tpl.html:
+
+.. code-block:: html
+
+    <div>
+        {{title}}
+    </div>
+
+运行命令： ``kissy-xtemplate -t x-tpl.html -m tests/x -w`` (-w 表示监控 tpl 文件变化) 后生成
+
+
+x.js:
+
+.. code-block:: javascript
+
+    KISSY.add('tests/x',function(){
+        return function(){
+          // ...
+        };
+    });
+
+.. note::
+
+    kissy-xtemplate 安装步鄹：
+
+    #. npm install -g kissy
+
+使用
+``````````````````````````````
+
+
+注意 :class:`~xtemplate.XTemplate` 的第一个参数可以是预先生成的函数，那么当由第一步生成模板后，
+直接 new 并 render 即可。 例如
+
+
+.. code-block:: javascript
+
+    KISSY.use('xtemplate,tests/x',function(S,XTemplate,tpl){
+        var data={
+            title: 'm'
+        };
+        alert(new XTemplate(tpl).render(data)); // => '<div>m</div>'
+    });
