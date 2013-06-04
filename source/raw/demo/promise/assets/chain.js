@@ -1,4 +1,4 @@
-KISSY.use('promise',function(S,Promise){
+KISSY.use('promise,node',function(S,Promise){
     KISSY.all("button").on("click", function () {
         var d = new Promise.Defer();
         var promise = d.promise;

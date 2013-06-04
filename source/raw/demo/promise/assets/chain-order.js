@@ -1,4 +1,4 @@
-KISSY.use('promise',function(S,Promise){
+KISSY.use('promise,node',function(S,Promise){
 KISSY.all("button").on("click", function () {
     var d = new Promise.Defer();
     d.resolve(1); // 该位置也可以放在 then 前面
