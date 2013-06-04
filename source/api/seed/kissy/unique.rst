@@ -22,6 +22,6 @@ Methods
 
     .. code-block:: javascript
 
-        KISSY.unique([a, b, a],true) => [b, a]
+        KISSY.unique(['a', 'b', 'a'],true) => ['b', 'a']
 
-        KISSY.unique([a, b, a]) => [a, b]
+        KISSY.unique(['a', 'b', 'a']) => ['a', 'b']
