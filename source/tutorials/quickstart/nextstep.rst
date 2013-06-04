@@ -25,8 +25,6 @@
 
 最后
 --------------------------
-终于到最后了, 一句话: 
-``KISSY -- An Enjoyable JavaScript Library. So Enjoy yourself!``
 
 
 .. rubric:: 联系我们
