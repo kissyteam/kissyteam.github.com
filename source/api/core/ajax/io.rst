@@ -148,7 +148,7 @@ Config Detail
 
 .. data:: cfg.crossDomain
 
-    {Boolean} - 默认同域请求为 true,不同域间为 false。设置该值为 true，则强制 script 以及 jsonp 请求通过 ``script`` 节点发送，用于服务器重定向到其他域脚本的场景.
+    {Boolean} - 默认同域请求为 false,不同域间为 true。设置该值为 true，则强制 script 以及 jsonp 请求通过 ``script`` 节点发送，用于服务器重定向到其他域脚本的场景.
 
 .. data:: cfg.data
 
