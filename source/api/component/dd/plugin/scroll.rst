@@ -41,7 +41,7 @@ Configs Detail
     
 .. attribute:: dd.plugin.Scroll.config.node
 
-    {String | HTMLElement} - 自动滚动容器, 随其内的可拖放节点自动滚动.
+    {String | HTMLElement | window } - 自动滚动容器, 随其内的可拖放节点自动滚动.
 
 .. attribute:: dd.plugin.Scroll.config.rate
 
