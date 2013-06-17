@@ -42,7 +42,23 @@ Class Detail
         从已有元素实例 PopupMenu 对象时 , 元素节点标明类名 ``{prefixCls}popupmenu`` .
         ``prefixCls`` 为配置的类名前缀，默认为 ``ks-`` .
         
-        
+
+
+.. note::
+
+    使用前请加上初始样式
+
+    .. code-block:: html
+
+        <style>
+            .ks-popupmenu {
+                position:absolute;
+                left:-9999px;
+                top:-9999px;
+            }
+        </style>
+
+
 Configs Detail
 -----------------------------------------------
 
