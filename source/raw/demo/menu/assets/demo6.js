@@ -40,7 +40,7 @@ KISSY.use("menu", function (S, Menu) {
     S.all("#bigimg").on("contextmenu", function(e) {
         e.halt();
         menu.render();
-        menu.set("xy", [e.pageX,e.pageY]);
+        menu.move(e.pageX,e.pageY);
         menu.show();
         // 接受键盘事件
         menu.get("el")[0].focus();
