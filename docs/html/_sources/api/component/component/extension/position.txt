@@ -17,6 +17,7 @@ Configs
 
     * :data:`~component.extension.Position.config.x`
     * :data:`~component.extension.Position.config.y`
+    * :data:`~component.extension.Position.config.xy`
     * :data:`~component.extension.Position.config.zIndex`
     
 Attributes
@@ -24,6 +25,7 @@ Attributes
 
   * :attr:`~component.extension.Position.prototype.x`
   * :attr:`~component.extension.Position.prototype.y`
+  * :attr:`~component.extension.Position.prototype.xy`
   * :attr:`~component.extension.Position.prototype.zIndex`
       
     
@@ -57,6 +59,11 @@ Configs Detail
 .. data:: extension.Position.config.y
 
     {Number} - 可选, 组件根节点相对于文档根节点的 y 坐标.
+
+.. data:: extension.Position.config.xy
+
+    {Array<Number>} - 可选, 相当于将数组第一个元素设置为 :attr:`x` 的值, 将数组的第二个元素设置为 :attr:`y` 的值.
+
     
 Attributes Detail
 ---------------------------------------------------------------
@@ -72,6 +79,10 @@ Attributes Detail
 .. attribute:: extension.Position.prototype.y
 
     {Number} - 组件根节点相对于文档根节点的 y 坐标.
+
+.. attribute:: extension.Position.prototype.xy
+
+    {Array<Number>} - 相当于将数组第一个元素设置为 :attr:`x` 的值, 将数组的第二个元素设置为 :attr:`y` 的值.
     
 Methods Detail
 -----------------------------------------------    

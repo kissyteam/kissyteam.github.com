@@ -29,6 +29,7 @@ Configs
   * :data:`~component.extension.Position.config.zIndex`
   * :data:`~component.extension.Position.config.x`
   * :data:`~component.extension.Position.config.y`
+  * :data:`~component.extension.Position.config.xy`
   * :data:`~component.extension.Align.config.align`
   * :data:`~overlay.Overlay.config.effect`
   * :data:`~overlay.Overlay.config.closable`
@@ -43,6 +44,7 @@ Attributes
 
   * :attr:`~component.extension.Position.prototype.x`
   * :attr:`~component.extension.Position.prototype.y`
+  * :attr:`~component.extension.Position.prototype.xy`
   * :attr:`~component.extension.Align.prototype.align`
   * :attr:`~Overlay.prototype.closable`
   * :attr:`~component.extension.Box.prototype.visible`
