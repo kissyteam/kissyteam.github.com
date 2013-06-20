@@ -105,23 +105,37 @@
 <h2>命名<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id3">
 <h3>文件与模块<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>文件名称使用小写表示，复合词用 <tt class="docutils literal"><span class="pre">-</span></tt> 分隔，例如 <tt class="docutils literal"><span class="pre">attr.js</span></tt> , <tt class="docutils literal"><span class="pre">iframe-transport.js</span></tt> .</li>
-<li>所有的代码以模块形式组织，模块名如果写的话需要和文件路径保持一致，例如</li>
-</ol>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;ajax/iframe-transport&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<ol class="arabic">
+<li><p class="first">文件名称使用小写表示，复合词用 <tt class="docutils literal"><span class="pre">-</span></tt> 分隔，例如 <tt class="docutils literal"><span class="pre">attr.js</span></tt> , <tt class="docutils literal"><span class="pre">iframe-transport.js</span></tt> .</p>
+</li>
+<li><p class="first">所有的代码以模块形式组织，模块名如果写的话需要和文件路径保持一致，例如</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;ajax/iframe-transport&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 <span class="p">});</span>
 </pre></div>
 </div>
+</div></blockquote>
+</li>
+</ol>
 </div>
 <div class="section" id="id4">
 <h3>变量、类与方法<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>对类，命名空间使用 PascalCasing， 例如 <tt class="docutils literal"><span class="pre">MenuButton</span></tt> , <tt class="docutils literal"><span class="pre">Overlay</span></tt> .</li>
-<li>对常量使用大写命名，复合词使用 <tt class="docutils literal"><span class="pre">_</span></tt> 分隔，例如 <tt class="docutils literal"><span class="pre">MAX_COMBO_URL_LENGTH</span></tt> .</li>
-<li>对变量，非私有的成员函数，成员对象，局部变量使用 camelCasing，例如</li>
-</ol>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">domAttribute</span> <span class="o">=</span> <span class="s1">&#39;type&#39;</span><span class="p">;</span>
+<ol class="arabic">
+<li><p class="first">对类，命名空间使用 PascalCasing， 例如 <tt class="docutils literal"><span class="pre">MenuButton</span></tt> , <tt class="docutils literal"><span class="pre">Overlay</span></tt> .</p>
+</li>
+<li><p class="first">即使缩略词也用 PascalCasing，例如 <tt class="docutils literal"><span class="pre">HtmlParser</span></tt> , <tt class="docutils literal"><span class="pre">Dom</span></tt> , <tt class="docutils literal"><span class="pre">Io</span></tt></p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">由于历史原因， KISSY 对于这点比较混乱，以后代码请遵从该规范</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">对常量使用大写命名，复合词使用 <tt class="docutils literal"><span class="pre">_</span></tt> 分隔，例如 <tt class="docutils literal"><span class="pre">MAX_COMBO_URL_LENGTH</span></tt> .</p>
+</li>
+<li><p class="first">对变量，非私有的成员函数，成员对象，局部变量使用 camelCasing，例如</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">domAttribute</span> <span class="o">=</span> <span class="s1">&#39;type&#39;</span><span class="p">;</span>
 <span class="kd">function</span> <span class="nx">MenuButton</span><span class="p">()</span> <span class="p">{</span>
 <span class="p">}</span>
 <span class="nx">MenuButton</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">alignWithEl</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
@@ -131,8 +145,11 @@
 <span class="nx">MenuButton</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">handleClickInternal</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{};</span>
 </pre></div>
 </div>
-<p>私有成员函数以 <tt class="docutils literal"><span class="pre">_</span></tt> 开头，推荐放入闭包中，使用 camelCasing，例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;dom&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</div></blockquote>
+</li>
+<li><p class="first">私有成员函数以 <tt class="docutils literal"><span class="pre">_</span></tt> 开头，推荐放入闭包中，使用 camelCasing，例如</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;dom&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="p">{</span>
         <span class="nx">width</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
             <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_getWidth</span><span class="p">();</span>
@@ -150,6 +167,9 @@
 <span class="p">});</span>
 </pre></div>
 </div>
+</div></blockquote>
+</li>
+</ol>
 </div>
 <div class="section" id="css">
 <h3>css 类名<a class="headerlink" href="#css" title="Permalink to this headline">¶</a></h3>
@@ -163,11 +183,12 @@
 </div>
 <div class="section" id="id5">
 <h2>注释<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>使用 <tt class="docutils literal"><span class="pre">/**</span> <span class="pre">xx</span> <span class="pre">*/</span></tt> 注释表示需要出现在文档中的注释，除此之外不要使用 <tt class="docutils literal"><span class="pre">/**</span> <span class="pre">xx</span> <span class="pre">*/</span></tt> 注释，</li>
-<li>注释使用 <a class="reference external" href="https://github.com/senchalabs/jsduck">jsduck</a> 规范，例如</li>
-</ol>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/**</span>
+<ol class="arabic">
+<li><p class="first">使用 <tt class="docutils literal"><span class="pre">/**</span> <span class="pre">xx</span> <span class="pre">*/</span></tt> 注释表示需要出现在文档中的注释，除此之外不要使用 <tt class="docutils literal"><span class="pre">/**</span> <span class="pre">xx</span> <span class="pre">*/</span></tt> 注释，</p>
+</li>
+<li><p class="first">注释使用 <a class="reference external" href="https://github.com/senchalabs/jsduck">jsduck</a> 规范，例如</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/**</span>
 <span class="cm"> * @class Overlay</span>
 <span class="cm"> */</span>
 <span class="kd">function</span> <span class="nx">Overlay</span><span class="p">()</span> <span class="p">{</span>
@@ -175,24 +196,35 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>用 <tt class="docutils literal"><span class="pre">//</span></tt> 表示一般性的单行注释，例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// get original offset</span>
+</div></blockquote>
+</li>
+<li><p class="first">用 <tt class="docutils literal"><span class="pre">//</span></tt> 表示一般性的单行注释，例如</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// get original offset</span>
 <span class="kd">var</span> <span class="nx">originalOffset</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">offset</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>用 <tt class="docutils literal"><span class="pre">/*</span> <span class="pre">*/</span></tt> 表示一般性的多行注释，例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/*</span>
+</div></blockquote>
+</li>
+<li><p class="first">用 <tt class="docutils literal"><span class="pre">/*</span> <span class="pre">*/</span></tt> 表示一般性的多行注释，例如</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/*</span>
 <span class="cm">   adjust alignment, for example:</span>
 <span class="cm">   http://docs.kissyui.com</span>
 <span class="cm">*/</span>
 <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">overlay</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;align&#39;</span><span class="p">,</span> <span class="p">{});</span>
 </pre></div>
 </div>
+</div></blockquote>
+</li>
+</ol>
 </div>
 <div class="section" id="id6">
 <h2>代码组织<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<p>一个模块文件中不要包含多个公开的类，例如</p>
-<p>不要这样：</p>
+<ol class="arabic">
+<li><p class="first">一个模块文件中不要包含多个公开的类，例如</p>
+<blockquote>
+<div><p>不要这样：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;overlay&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">function</span> <span class="nx">Overlay</span><span class="p">(){</span>
 
@@ -219,6 +251,9 @@
 <span class="p">});</span>
 </pre></div>
 </div>
+</div></blockquote>
+</li>
+</ol>
 <p>组件模块请按照以下的顺序组织：</p>
 <ol class="arabic simple">
 <li>模块变量声明</li>
@@ -309,46 +344,65 @@
 </div>
 <div class="section" id="id11">
 <h3>大括号用法<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>大括号后请换行.</li>
-<li>结束大括号需要和开始大括号的那一行开头语句对齐.</li>
-<li>如果后面没有开始大括号，那么结束大括号需要单独占一行</li>
-</ol>
-<div class="highlight-javascript"><pre>if (UA.ie) {
+<ol class="arabic">
+<li><p class="first">大括号后请换行.</p>
+</li>
+<li><p class="first">结束大括号需要和开始大括号的那一行开头语句对齐.</p>
+</li>
+<li><p class="first">如果后面没有开始大括号，那么结束大括号需要单独占一行</p>
+<blockquote>
+<div><div class="highlight-javascript"><pre>if (UA.ie) {
     alert('i'm ie');
 }</pre>
 </div>
-<p>大括号内只包含一行语句的可以不换行，例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Draggable</span><span class="p">.</span><span class="nx">ATTRS</span> <span class="o">=</span> <span class="p">{</span>
+</div></blockquote>
+</li>
+<li><p class="first">大括号内只包含一行语句的可以不换行，例如</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Draggable</span><span class="p">.</span><span class="nx">ATTRS</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">node</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">getter</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">selector</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">selector</span><span class="p">);</span> <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">};</span>
 </pre></div>
 </div>
-<p>如果后面没有 while else else if 等， 那么结束大括号需要单独占一行</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">ie</span><span class="p">)</span> <span class="p">{</span>
+</div></blockquote>
+</li>
+<li><p class="first">如果后面没有 while else else if 等， 那么结束大括号需要单独占一行</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">ie</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">do</span> <span class="p">{</span>
         <span class="nx">doIe</span><span class="p">();</span>
     <span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="nx">i</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>即使只有一条语句，也请加括号。 例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</div></blockquote>
+</li>
+<li><p class="first">即使只有一条语句，也请加括号。 例如</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">doSomething</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+</div></blockquote>
+</li>
+</ol>
 </div>
 <div class="section" id="id12">
 <h3>空格用法<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
-<p>如果大括号不换行，那么需要在 <tt class="docutils literal"><span class="pre">{</span></tt> 后和 <tt class="docutils literal"><span class="pre">}</span></tt> 前加入空格，例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">getter</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span> <span class="p">};</span>
+<ol class="arabic">
+<li><p class="first">如果大括号不换行，那么需要在 <tt class="docutils literal"><span class="pre">{</span></tt> 后和 <tt class="docutils literal"><span class="pre">}</span></tt> 前加入空格，例如</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">getter</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span> <span class="p">};</span>
 </pre></div>
 </div>
-<p>如果 <tt class="docutils literal"><span class="pre">)</span></tt> 不是 <tt class="docutils literal"><span class="pre">;</span></tt> ， 那么 <tt class="docutils literal"><span class="pre">(</span></tt> 前和 <tt class="docutils literal"><span class="pre">)</span></tt> 后要加入空格，例如应当</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">ie</span><span class="p">)</span> <span class="p">{</span>
+</div></blockquote>
+</li>
+<li><p class="first">如果 <tt class="docutils literal"><span class="pre">)</span></tt> 不是 <tt class="docutils literal"><span class="pre">;</span></tt> ， 那么 <tt class="docutils literal"><span class="pre">(</span></tt> 前和 <tt class="docutils literal"><span class="pre">)</span></tt> 后要加入空格，例如应当</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">UA</span><span class="p">.</span><span class="nx">ie</span><span class="p">)</span> <span class="p">{</span>
 
 <span class="p">}</span>
 
@@ -357,40 +411,55 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>在函数的参数间请加入空格</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">offset</span><span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+</div></blockquote>
+</li>
+<li><p class="first">在函数的参数间请加入空格</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">offset</span><span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
 
 <span class="p">}</span>
 
 <span class="nx">offset</span><span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">(</span></tt> 后与 <tt class="docutils literal"><span class="pre">)</span></tt> 前不要加入空格，例如应该</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">offset</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</div></blockquote>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">(</span></tt> 后与 <tt class="docutils literal"><span class="pre">)</span></tt> 前不要加入空格，例如应该</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">offset</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>而不是</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">offset</span><span class="p">(</span> <span class="nx">x</span><span class="p">,</span> <span class="mi">10</span> <span class="p">);</span>
 </pre></div>
 </div>
-<p>函数调用和 <tt class="docutils literal"><span class="pre">(</span></tt> 不要加入空白，例如应该</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">offset</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+</div></blockquote>
+</li>
+<li><p class="first">函数调用和 <tt class="docutils literal"><span class="pre">(</span></tt> 不要加入空白，例如应该</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">offset</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>而不是</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">offset</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">[</span></tt> 后和 <tt class="docutils literal"><span class="pre">]</span></tt> 前不要加上空格，例如应该</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
+</div></blockquote>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">[</span></tt> 后和 <tt class="docutils literal"><span class="pre">]</span></tt> 前不要加上空格，例如应该</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
 </pre></div>
 </div>
 <p>而不是</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">];</span>
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">=</span></tt> <tt class="docutils literal"><span class="pre">||</span></tt> <tt class="docutils literal"><span class="pre">==</span></tt> 等二元运算符前后都请加入空格，例如应该</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">];</span>
+</div></blockquote>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">=</span></tt> <tt class="docutils literal"><span class="pre">||</span></tt> <tt class="docutils literal"><span class="pre">==</span></tt> 等二元运算符前后都请加入空格，例如应该</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">];</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
 
@@ -413,8 +482,11 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>一元操作符后不要有空白，例如应该</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+</div></blockquote>
+</li>
+<li><p class="first">一元操作符后不要有空白，例如应该</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
 
 <span class="p">}</span>
 </pre></div>
@@ -425,8 +497,11 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>对象中 <tt class="docutils literal"><span class="pre">:</span></tt> 与属性名间不要有空格，与属性值间要有空格，例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+</div></blockquote>
+</li>
+<li><p class="first">对象中 <tt class="docutils literal"><span class="pre">:</span></tt> 与属性名间不要有空格，与属性值间要有空格，例如</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="nx">x</span><span class="o">:</span> <span class="mi">1</span>
     <span class="nx">y</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="mi">2</span><span class="p">;</span>
@@ -434,15 +509,20 @@
 <span class="p">}</span>
 </pre></div>
 </div>
+</div></blockquote>
+</li>
+</ol>
 </div>
 <div class="section" id="id13">
 <h3>缩进<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>使用连续的4个空白字符表示缩进</li>
-<li>不要使用 tab 来表示缩进</li>
-<li>对整块内容进行缩进，例如应该</li>
-</ol>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+<ol class="arabic">
+<li><p class="first">使用连续的4个空白字符表示缩进</p>
+</li>
+<li><p class="first">不要使用 tab 来表示缩进</p>
+</li>
+<li><p class="first">对整块内容进行缩进，例如应该</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">alert</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
     <span class="nx">alert</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 <span class="p">}</span>
@@ -455,8 +535,11 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>即使没有大括号，在一定情况下也要缩进，例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="k">switch</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+</div></blockquote>
+</li>
+<li><p class="first">即使没有大括号，在一定情况下也要缩进，例如</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="k">switch</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
         <span class="nx">alert</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
         <span class="k">break</span><span class="p">;</span>
@@ -465,6 +548,9 @@
 <span class="p">}</span>
 </pre></div>
 </div>
+</div></blockquote>
+</li>
+</ol>
 </div>
 </div>
 </div>

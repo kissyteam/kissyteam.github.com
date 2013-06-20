@@ -19,10 +19,10 @@ KISSY 源码规范
 
 #. 所有的代码以模块形式组织，模块名如果写的话需要和文件路径保持一致，例如
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    KISSY.add('ajax/iframe-transport', function () {
-    });
+        KISSY.add('ajax/iframe-transport', function () {
+        });
 
 
 变量、类与方法
@@ -30,42 +30,48 @@ KISSY 源码规范
 
 #. 对类，命名空间使用 PascalCasing， 例如 ``MenuButton`` , ``Overlay`` .
 
-#. 对常量使用大写命名，复合词使用 ``_`` 分隔，例如 ``MAX_COMBO_URL_LENGTH`` .
+#. 即使缩略词也用 PascalCasing，例如 ``HtmlParser`` , ``Dom`` , ``Io``
 
+    .. note::
+
+        由于历史原因， KISSY 对于这点比较混乱，以后代码请遵从该规范
+
+
+#. 对常量使用大写命名，复合词使用 ``_`` 分隔，例如 ``MAX_COMBO_URL_LENGTH`` .
 
 #. 对变量，非私有的成员函数，成员对象，局部变量使用 camelCasing，例如
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    var domAttribute = 'type';
-    function MenuButton() {
-    }
-    MenuButton.prototype.alignWithEl = true;
-    /**
-     * @protected
-     */
-    MenuButton.prototype.handleClickInternal = function() {};
-
-私有成员函数以 ``_`` 开头，推荐放入闭包中，使用 camelCasing，例如
-
-.. code-block:: javascript
-
-    KISSY.add('dom', function () {
-        var DOM = {
-            width: function() {
-                return this._getWidth();
-            },
-            _getWidth: function() {
-
-            },
-            height: function() {
-                return getHeight(this);
-            }
-        };
-        function getHeight() {
-
+        var domAttribute = 'type';
+        function MenuButton() {
         }
-    });
+        MenuButton.prototype.alignWithEl = true;
+        /**
+         * @protected
+         */
+        MenuButton.prototype.handleClickInternal = function() {};
+
+#. 私有成员函数以 ``_`` 开头，推荐放入闭包中，使用 camelCasing，例如
+
+    .. code-block:: javascript
+
+        KISSY.add('dom', function () {
+            var DOM = {
+                width: function() {
+                    return this._getWidth();
+                },
+                _getWidth: function() {
+
+                },
+                height: function() {
+                    return getHeight(this);
+                }
+            };
+            function getHeight() {
+
+            }
+        });
 
 
 css 类名
@@ -86,69 +92,69 @@ css 类名
 #. 使用 ``/** xx */`` 注释表示需要出现在文档中的注释，除此之外不要使用 ``/** xx */`` 注释，
 #. 注释使用 `jsduck <https://github.com/senchalabs/jsduck>`_ 规范，例如
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    /**
-     * @class Overlay
-     */
-    function Overlay() {
+        /**
+         * @class Overlay
+         */
+        function Overlay() {
 
-    }
+        }
 
 
-用 ``//`` 表示一般性的单行注释，例如
+#. 用 ``//`` 表示一般性的单行注释，例如
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    // get original offset
-    var originalOffset = node.offset();
+        // get original offset
+        var originalOffset = node.offset();
 
-用 ``/* */`` 表示一般性的多行注释，例如
+#. 用 ``/* */`` 表示一般性的多行注释，例如
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    /*
-       adjust alignment, for example:
-       http://docs.kissyui.com
-    */
-    var x = overlay.set('align', {});
+        /*
+           adjust alignment, for example:
+           http://docs.kissyui.com
+        */
+        var x = overlay.set('align', {});
 
 
 代码组织
 ----------------------------------------------
 
-一个模块文件中不要包含多个公开的类，例如
+#. 一个模块文件中不要包含多个公开的类，例如
 
-不要这样：
+    不要这样：
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    KISSY.add('overlay', function () {
-        function Overlay(){
+        KISSY.add('overlay', function () {
+            function Overlay(){
 
-        }
+            }
 
-        function Dialog(){
+            function Dialog(){
 
-        }
-    });
+            }
+        });
 
-要这样分成两个模块（文件）：
+    要这样分成两个模块（文件）：
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    KISSY.add('overlay', function () {
-        function Overlay(){
+        KISSY.add('overlay', function () {
+            function Overlay(){
 
-        }
-    });
+            }
+        });
 
 
-    KISSY.add('overlay/dialog', function () {
-        function Dialog(){
+        KISSY.add('overlay/dialog', function () {
+            function Dialog(){
 
-        }
-    });
+            }
+        });
 
 
 组件模块请按照以下的顺序组织：
@@ -254,169 +260,171 @@ css 类名
 大括号用法
 ``````````````````````````````````````````
 
+
 #.  大括号后请换行.
 
 #.  结束大括号需要和开始大括号的那一行开头语句对齐.
 
 #.  如果后面没有开始大括号，那么结束大括号需要单独占一行
 
-.. code-block:: javascript
+        .. code-block:: javascript
 
-    if (UA.ie) {
-        alert('i'm ie');
-    }
+            if (UA.ie) {
+                alert('i'm ie');
+            }
 
-大括号内只包含一行语句的可以不换行，例如
+#. 大括号内只包含一行语句的可以不换行，例如
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    Draggable.ATTRS = {
-        node: {
-            getter: function (selector) { return S.all(selector); }
+        Draggable.ATTRS = {
+            node: {
+                getter: function (selector) { return S.all(selector); }
+            }
+        };
+
+#. 如果后面没有 while else else if 等， 那么结束大括号需要单独占一行
+
+    .. code-block:: javascript
+
+        if (UA.ie) {
+            do {
+                doIe();
+            } while(i>0);
         }
-    };
 
-如果后面没有 while else else if 等， 那么结束大括号需要单独占一行
+#. 即使只有一条语句，也请加括号。 例如
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    if (UA.ie) {
-        do {
-            doIe();
-        } while(i>0);
-    }
-
-即使只有一条语句，也请加括号。 例如
-
-.. code-block:: javascript
-
-    for (var i = 0; i < 100; i++) {
-        doSomething();
-    }
+        for (var i = 0; i < 100; i++) {
+            doSomething();
+        }
 
 空格用法
 ``````````````````````````````````````````
 
-如果大括号不换行，那么需要在 ``{`` 后和 ``}`` 前加入空格，例如
+#. 如果大括号不换行，那么需要在 ``{`` 后和 ``}`` 前加入空格，例如
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    var x = { getter: function () { return 1; } };
-
-如果 ``)`` 不是 ``;`` ， 那么 ``(`` 前和 ``)`` 后要加入空格，例如应当
-
-.. code-block:: javascript
-
-    if (UA.ie) {
-
-    }
-
-    function x() {
-
-    }
-
-在函数的参数间请加入空格
-
-.. code-block:: javascript
-
-    function offset(el, value) {
-
-    }
-
-    offset(el, 10);
-
-``(`` 后与 ``)`` 前不要加入空格，例如应该
-
-.. code-block:: javascript
-
-    offset(x, 10);
-
-而不是
-
-.. code-block:: javascript
-
-    offset( x, 10 );
+        var x = { getter: function () { return 1; } };
 
 
-函数调用和 ``(`` 不要加入空白，例如应该
+#. 如果 ``)`` 不是 ``;`` ， 那么 ``(`` 前和 ``)`` 后要加入空格，例如应当
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    offset(x,10);
+        if (UA.ie) {
 
-而不是
-
-.. code-block:: javascript
-
-    offset (x,10);
-
-``[`` 后和 ``]`` 前不要加上空格，例如应该
-
-.. code-block:: javascript
-
-    var x = [1, 2];
-
-而不是
-
-.. code-block:: javascript
-
-    var x = [ 1, 2 ];
-
-``=`` ``||`` ``==`` 等二元运算符前后都请加入空格，例如应该
-
-.. code-block:: javascript
-
-    var x = [1,2];
-
-    if (i == 2) {
-
-    }
-
-    for (var i = 0; i < 2; i++) {
-
-    }
-
-而不是
-
-.. code-block:: javascript
-
-    var x=[1,2];
-
-    if (i==2) {
-
-    }
-
-    for (var i=0; i<2; i++) {
-
-    }
-
-
-一元操作符后不要有空白，例如应该
-
-.. code-block:: javascript
-
-    if (!x) {
-
-    }
-
-而不是
-
-.. code-block:: javascript
-
-    if (! x) {
-
-    }
-
-对象中 ``:`` 与属性名间不要有空格，与属性值间要有空格，例如
-
-.. code-block:: javascript
-
-    {
-        x: 1
-        y: function() {
-            return 2;
         }
-    }
+
+        function x() {
+
+        }
+
+#. 在函数的参数间请加入空格
+
+    .. code-block:: javascript
+
+        function offset(el, value) {
+
+        }
+
+        offset(el, 10);
+
+#. ``(`` 后与 ``)`` 前不要加入空格，例如应该
+
+    .. code-block:: javascript
+
+        offset(x, 10);
+
+    而不是
+
+    .. code-block:: javascript
+
+        offset( x, 10 );
+
+
+#. 函数调用和 ``(`` 不要加入空白，例如应该
+
+    .. code-block:: javascript
+
+        offset(x,10);
+
+    而不是
+
+    .. code-block:: javascript
+
+        offset (x,10);
+
+#. ``[`` 后和 ``]`` 前不要加上空格，例如应该
+
+    .. code-block:: javascript
+
+        var x = [1, 2];
+
+    而不是
+
+    .. code-block:: javascript
+
+        var x = [ 1, 2 ];
+
+#. ``=`` ``||`` ``==`` 等二元运算符前后都请加入空格，例如应该
+
+    .. code-block:: javascript
+
+        var x = [1,2];
+
+        if (i == 2) {
+
+        }
+
+        for (var i = 0; i < 2; i++) {
+
+        }
+
+    而不是
+
+    .. code-block:: javascript
+
+        var x=[1,2];
+
+        if (i==2) {
+
+        }
+
+        for (var i=0; i<2; i++) {
+
+        }
+
+
+#. 一元操作符后不要有空白，例如应该
+
+    .. code-block:: javascript
+
+        if (!x) {
+
+        }
+
+    而不是
+
+    .. code-block:: javascript
+
+        if (! x) {
+
+        }
+
+#. 对象中 ``:`` 与属性名间不要有空格，与属性值间要有空格，例如
+
+    .. code-block:: javascript
+
+        {
+            x: 1
+            y: function() {
+                return 2;
+            }
+        }
 
 
 缩进
@@ -428,31 +436,31 @@ css 类名
 
 #. 对整块内容进行缩进，例如应该
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    if (!x) {
-        alert(1);
-        alert(2);
-    }
-
-而不是
-
-.. code-block:: javascript
-
-    if (!x) {
-        alert(1);
-    alert(2);
-    }
-
-
-即使没有大括号，在一定情况下也要缩进，例如
-
-.. code-block:: javascript
-
-    switch (x) {
-        case 1:
+        if (!x) {
             alert(1);
-            break;
-        case 2:
             alert(2);
-    }
+        }
+
+    而不是
+
+    .. code-block:: javascript
+
+        if (!x) {
+            alert(1);
+        alert(2);
+        }
+
+
+#. 即使没有大括号，在一定情况下也要缩进，例如
+
+    .. code-block:: javascript
+
+        switch (x) {
+            case 1:
+                alert(1);
+                break;
+            case 2:
+                alert(2);
+        }
