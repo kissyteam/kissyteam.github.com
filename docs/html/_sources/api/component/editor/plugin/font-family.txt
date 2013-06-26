@@ -16,8 +16,8 @@ font-family
 Configs
 -------------------------------
 
-.. data:: Editor.Plugin.fontFamily.config.children
-.. data:: Editor.Plugin.fontFamily.config.width
+.. data:: Editor.Plugin.fontFamily.config.menu.children
+.. data:: Editor.Plugin.fontFamily.config.menu.width
 
 Events
 --------------------------------------------------------
@@ -33,7 +33,7 @@ Commands
 Config Details
 ------------------------------------------------------
 
-.. data:: Editor.Plugin.fontFamily.config.children
+.. data:: Editor.Plugin.fontFamily.config.menu.children
 
     {Object[]} - 可选。字体下拉菜单的名称和值集合。默认：
 
@@ -92,7 +92,7 @@ Config Details
         ]
 
 
-.. data:: Editor.Plugin.fontFamily.config.width
+.. data:: Editor.Plugin.fontFamily.config.menu.width
 
     {String} - 可选。下拉菜单的宽度，默认 "130px".
 

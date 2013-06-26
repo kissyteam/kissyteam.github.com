@@ -16,8 +16,8 @@ font-size
 Configs
 -------------------------------
 
-.. data:: Editor.Plugin.fontSize.config.children
-.. data:: Editor.Plugin.fontSize.config.width
+.. data:: Editor.Plugin.fontSize.config.menu.children
+.. data:: Editor.Plugin.fontSize.config.menu.width
 
 Events
 --------------------------------------------------------
@@ -34,7 +34,7 @@ Commands
 Config Details
 ------------------------------------------------------
 
-.. data:: Editor.Plugin.fontSize.config.children
+.. data:: Editor.Plugin.fontSize.config.menu.children
 
     {Object[]} - 可选。字体大小下拉菜单的名称和值集合，默认包括 "8px","10px" 等。例如：
 
@@ -53,7 +53,7 @@ Config Details
         ]
 
 
-.. data:: Editor.Plugin.fontSize.config.width
+.. data:: Editor.Plugin.fontSize.config.menu.width
 
     {String} - 可选。下拉菜单的宽度，默认 "55px".
 
