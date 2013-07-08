@@ -18,7 +18,7 @@ Hello KISSY
             Event.on(btn, 'click', function() {
                 DOM.attr(btn, 'disabled', true);
 
-                new Anim('#demo-img', 'left: 400px; opacity: 0', 2, 'easeOut', function() {
+                new Anim('#demo-img', {left: '400px',opacity: 0}, 2, 'easeOut', function() {
                     new Anim('#demo-txt',
                            'left: 0; opacity: 1; fontSize: 28px',
                            2, 'bounceOut').run();

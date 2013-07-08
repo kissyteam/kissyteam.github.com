@@ -37,7 +37,7 @@ JSONP 是最常用的跨域请求方式. 关于跨域可参见 [2]_ .
 
         <script>
             KISSY.use('node,ajax',function (S,Node,IO) {
-                var API = 'http://api.flickr.com/services/rest/'
+                var API = 'http://api.flickr.com/services/rest/',
                     params = {
                         'method': 'flickr.favorites.getPublicList',
                         'api_key': '5d93c2e473e39e9307e86d4a01381266',
@@ -83,7 +83,7 @@ JSONP 是最常用的跨域请求方式. 关于跨域可参见 [2]_ .
    :linenos:
 
             KISSY.use('node,ajax',function (S,Node,IO) {
-                var API = 'http://api.flickr.com/services/rest/'
+                var API = 'http://api.flickr.com/services/rest/',
                     params = {
                         'method': 'flickr.favorites.getPublicList',
                         'api_key': '5d93c2e473e39e9307e86d4a01381266',
