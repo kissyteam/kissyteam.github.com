@@ -85,17 +85,6 @@ Methods
             类型 String，单个模块的时间戳。仅在 combine 为 false 时生效。 combine:true 时取对应包的 tag.
 
 
-    :param Array config.map: 每个数组项是一个长度为 2 的数组，每个位置的具体格式为
-
-                .. attribute:: 位置0
-
-                    类型 RegExp，表示一个正则表达式.
-
-                .. attribute:: 位置1
-
-                    类型字符串或函数，相当于调用 "str".replace(位置0,位置1)。将请求路径中匹配位置 0 正则表达式匹配的内容替换为位置 1 的字符串值或返回结果.
-
-
 .. function:: KISSY.config
 
     | void **KISSY.config** (name,[value])
@@ -160,41 +149,6 @@ Methods
             }
         });
 
-
-
-.. _loader_config_map:
-
-map 范例：修改请求地址
-`````````````````````````````````
-    .. code-block:: javascript
-
-         S.config("map:,[
-            [/(.+myproject\/.+)-min.js(\?[^?]+)?$/, "$1.js$2"]
-         ]);
-
-
-    那么即使载入 kissy-min.js ，对于 myproject 目录下的模块 js 请求也会被替换为不带 -min 的请求，
-    该配置也可应用于 `本地调试 <http://lifesinger.wordpress.com/2011/07/24/online-local-debug/>`_
-
-
-map 范例：combo 使用的 kissy 组件
-`````````````````````````````````
-    .. code-block:: javascript
-
-        S.config({
-                map:[
-                    [/http:\/\/a.tbcdn.cn\/s\/kissy\/1.2.0\/(?:overlay|component|uibase|switchable)-min.js(.+)$/, "http://a.tbcdn.cn/s/kissy/1.2.0/??overlay-min.js,component-min.js,uibase-min.js,switchable-min.js$1"]
-                ]
-        });
-
-    那么当 use("overlay,switchable") 时只会产生一个
-    ``http://a.tbcdn.cn/s/kissy/1.2.0/??overlay-min.js,component-min.js,uibase-min.js,switchable-min.js``
-    请求
-
-
-.. note::
-
-    1.3+ 推荐采用自动 combo
 
 packages 范例: 包配置
 ``````````````````````````````````````````
