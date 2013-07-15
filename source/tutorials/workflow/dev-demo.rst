@@ -4,21 +4,24 @@
 ========================================
 
 |  开发一个 KISSY 的组件, 其实没有你想象中的难.
-|  拿类似于 `这种效果 <http://danyi.codetea.co.uk/2010/03/16/sliding-label/>`_ 的 表单label浮动功能 来举例.
+
 
 1, 准备工作
 -----------------------------------------
 
 首先为你的组件想好一个名字, 这里取名为 ``sliding-labels``, 定好构造器接口为 ``SlidingLabels``.
 
-在本地, 创建组件的目录结构, 可以参考 `示例 <https://github.com/kissyteam/kissy-gallery/tree/master/gallery/sliding-labels>`_ 或者 `这里 <https://github.com/kissyteam/kissy-gallery/tree/master/gallery/yours>`_.
+在本地, 创建组件的目录结构, 可以参考
+`示例 <http://gallery.kissyui.com/quickstart>`_
+或者 `规范 <http://gallery.kissyui.com/guide>`_.
 
 按照此目录结构, 修改文件夹文字, 及组件名等, 之后完成组件代码.
 
 2, 确定 API
 -----------------------------------------
 
-准备工作做好后, 可以先想下提供给外面的接口大概是什么样的. 比如这个表单 label 浮动, 属于展示型的组件, 没多少交互逻辑. 所以接口比较简单.
+准备工作做好后, 可以先想下提供给外面的接口大概是什么样的.
+比如这个表单 label 浮动, 属于展示型的组件, 没多少交互逻辑. 所以接口比较简单.
 
 **构造器接口:**
 
@@ -27,6 +30,7 @@
     function SlidingLabels(container, config) {
 
     })
+
 
 **配置接口:**
 
@@ -250,7 +254,7 @@
 4, demo 编写
 -----------------------------------------------------------------------------
 
-编写 demo.html, `在线查看 <http://docs.kissyui.com/kissy-gallery/gallery/sliding-labels/1.0/demo.html>`_
+编写 demo.html, 例如 `slide <http://gallery.kissyui.com/slide/1.1/demo/>`_
 
 
 
