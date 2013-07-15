@@ -39,6 +39,12 @@ Methods
     
     
 
+.. note::
+
+    该方法仅适用于 javascript 对象，不要再浏览器对象上调用，例如 node.style
+
+
+
     **简单 mix**
 
         .. code-block:: javascript

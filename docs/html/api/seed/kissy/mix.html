@@ -136,6 +136,11 @@
 <p><tt class="docutils literal"><span class="pre">S.mix</span></tt> 默认不是递归进行的. 如果其中一个属性为对象或者数组，那么他将会被接下来对象的同名属性对应的值所代替，即值不会被合并。
 如果设置了参数 <tt class="docutils literal"><span class="pre">deep</span> <span class="pre">=</span> <span class="pre">true</span></tt> ，那么会对数组和简单对象( <a class="reference internal" href="isPlainObject.html#seed.KISSY.isPlainObject" title="seed.KISSY.isPlainObject"><tt class="xref py py-func docutils literal"><span class="pre">KISSY.isPlainObject()</span></tt></a> )递归合并.</p>
 <p><tt class="docutils literal"><span class="pre">supplier</span> <span class="pre">undefined</span></tt> 的属性值不会被复制，不过对象从原型继承下来下的值则会被复制.</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>该方法仅适用于 javascript 对象，不要再浏览器对象上调用，例如 node.style</p>
 <p><strong>简单 mix</strong></p>
 <blockquote>
 <div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span>
@@ -185,10 +190,9 @@
 </pre></div>
 </div>
 </div></blockquote>
-<p>该方法在 KISSY 里具有非常重要的地位.
+<p class="last">该方法在 KISSY 里具有非常重要的地位.
 JavaScript 是一门动态语言, 利用 mixin 特性, 可以很方便的实现特性的静态复制和动态修改.</p>
-</dd></dl>
-
+</div>
 </div>
 </div>
 
