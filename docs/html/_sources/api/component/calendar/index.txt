@@ -16,7 +16,7 @@ Calendar
 
 .. hint::
 
-    如无必要，推荐使用 `gallery/calendar <http://t.cn/zTqcDbk>`_
+    如无必要，推荐使用 `gallery/calendar <http://gallery.kissyui.com/calendar/1.1/guide/>`_
 
 Class
 -----------------------------------------------
