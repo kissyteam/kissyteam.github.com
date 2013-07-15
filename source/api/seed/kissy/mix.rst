@@ -39,9 +39,9 @@ Methods
     
     
 
-.. note::
+    .. note::
 
-    该方法仅适用于 javascript 对象，不要再浏览器对象上调用，例如 node.style
+        该方法仅适用于 javascript 对象，不要再浏览器对象上调用，例如 node.style
 
 
 
@@ -98,7 +98,7 @@ Methods
 
             S.log(settings); // => { validate: true, limit: 5, name: bar }
 
-            
+
 
 
     该方法在 KISSY 里具有非常重要的地位.
