@@ -103,7 +103,7 @@ Configs Detail
 
 .. data:: Popup.prototype.mouseDelay
 
-    {Number} - 可选, triggerType 为 mouse 时, Popup 显示的延迟时间, 默认为 100ms.
+    {Number} - 单位秒. 可选, triggerType 为 mouse 时, Popup 显示的延迟时间, 默认为 0.1.
 
 .. data:: Popup.prototype.toggle
 
