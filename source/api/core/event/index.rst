@@ -5,7 +5,7 @@ event
 
 .. raw:: html
 
-    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.3.0/src/event' target='_blank'>view event source</a>
+    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.3.x/src/event' target='_blank'>view event source</a>
 
 
 .. code-block:: javascript

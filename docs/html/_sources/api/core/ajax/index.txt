@@ -4,7 +4,7 @@ ajax
 ===============================================
 .. raw:: html
 
-    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.3.0/src/ajax' target='_blank'>view ajax source</a>
+    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.3.x/src/ajax' target='_blank'>view ajax source</a>
 
 .. code-block:: javascript
 
