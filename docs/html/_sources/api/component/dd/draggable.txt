@@ -36,6 +36,7 @@ Attributes
   * :attr:`~Draggable.POINT`
   * :attr:`~Draggable.INTERSECT`
   * :attr:`~Draggable.STRICT`
+  * :attr:`~Draggable.prototype.disabled`
   * :attr:`~Draggable.prototype.node`
   * :attr:`~Draggable.prototype.dragNode`
   
@@ -131,17 +132,18 @@ Attributes Detail
 
     ``static``, {String} - 等于 "strict"
 
+.. attribute:: Draggable.prototype.disabled
+
+    {Boolean} - 是否禁用或启用拖放功能
+
 .. attribute:: Draggable.prototype.node
 
-    {KISSY.Node} - 表示当前拖动的节点, 在应用 ``DD.Proxy`` 时表示代理节点.
+    {KISSY.Node} - 只读。表示当前拖动的节点, 在应用 ``DD.Proxy`` 时表示代理节点.
     
 .. attribute:: Draggable.prototype.dragNode
 
-    {KISSY.Node} - 表示配置项中  :attr:`node` 的值.
+    {KISSY.Node} - 只读。表示配置项中 :attr:`node` 代表的节点.
 
-    .. note::
-
-        实例属性通过 ``get`` 方法获取, 例如 ``drag.get("node")``
 
 Events Detail
 -----------------------------------------------
@@ -233,5 +235,3 @@ Events Detail
             node:"#d",
             move:true
         });
-                
-                              
