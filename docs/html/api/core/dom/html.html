@@ -133,13 +133,15 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
 <li><strong>html</strong> (<em>string</em>) &#8211; 将要设置的 html 值</li>
-<li><strong>loadScripts</strong> (<em>boolean</em>) &#8211; <p>是否执行 html 中的内嵌脚本</p>
+<li><strong>loadScripts</strong> (<em>boolean</em>) &#8211; <p>是否执行 html 中的内嵌脚本，默认 false</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">;</span>
 
 <span class="c1">// 等价 document.createElement(&#39;div&#39;)</span>
 <span class="nx">DOM</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;&lt;div id=&quot;J_check&quot;&gt;&lt;/div&gt;&#39;</span><span class="p">);</span>
-<span class="nx">DOM</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;#J_check&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;h3&gt;This is the added part&lt;/h3&gt;&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="s2">&quot;&lt;h3&gt;This is the added part&lt;/h3&gt;&lt;script&gt;alert(1)&lt;/script&gt;&quot;</span><span class="p">;</span>
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;#J_check&quot;</span><span class="p">,</span> <span class="nx">html</span><span class="p">);</span> <span class="c1">// 不会 alert(1)</span>
 <span class="nx">DOM</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;#J_check&quot;</span><span class="p">);</span> <span class="c1">// =&gt; &lt;h3&gt;This is the added part&lt;/h3&gt;</span>
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;#J_check&quot;</span><span class="p">,</span> <span class="nx">html</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span> <span class="c1">// alert(1)</span>
 </pre></div>
 </div>
 </li>
@@ -150,6 +152,10 @@
 </table>
 </dd></dl>
 
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">内嵌脚本指 <tt class="docutils literal"><span class="pre">&lt;script&gt;xx&lt;/script&gt;</span></tt> or <tt class="docutils literal"><span class="pre">&lt;script</span> <span class="pre">src='yy'&gt;&lt;/script&gt;</span></tt></p>
+</div>
 </div>
 </div>
 
