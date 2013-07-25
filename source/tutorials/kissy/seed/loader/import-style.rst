@@ -53,7 +53,7 @@ ImportStyle是KISSY的模块样式引入工具。
       });
 
       /*下面是要我们手工维护的模块列表*/
-      importStyle('components/home/index');
+      KISSY.importStyle('components/home/index');
 
 
 上面是一淘酒店项目中摘出的ImportStyle使用Demo，可以看出使用方式很简单——提供模块依赖信息、包配置，
