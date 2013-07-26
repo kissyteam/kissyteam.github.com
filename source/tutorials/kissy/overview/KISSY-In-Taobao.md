@@ -112,7 +112,7 @@ KISSY 之外的每个模块必须属于一个包，一个包内可以有很多�
 
 ```html
 
-    <script src='http://g.tbcdn.cn/kissy/k/1.3.0/seed.js'></script>
+    <script src='http://g.tbcdn.cn/kissy/k/1.3.1/seed.js'></script>
     <script>
         // ... 上述包配置
 
