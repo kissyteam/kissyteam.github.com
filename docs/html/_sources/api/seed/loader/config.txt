@@ -11,12 +11,16 @@ Methods
 
     | void **KISSY.config** (config)
     | 设置或获取 KISSY 配置参数
+    .. versionadded:: 1.3.1
+            支持 group 配置，combo 多个包
 
     :param Object config: KISSY 配置参数, 包括
 
     :param Boolean debug: 是否开启调试模式
 
     :param Object alias: 模块别名配置. 详见 :ref:`别名介绍 <loader_alias_tutorial>`
+
+    :param Object group: 默认 false. 所有包的默认组配置. 详见 :ref:`组介绍 <loader_group_tutorial>`
 
     :param String base: KISSY 框架所在的基地址
 
@@ -37,6 +41,10 @@ Methods
                 .. attribute:: package.name
 
                     类型字符串, 表示包名
+
+                .. attribute:: package.group
+
+                    类型字符串, 表示包所属的组名。详见 :ref:`组介绍 <loader_group_tutorial>`
 
                 .. attribute:: package.debug
 

@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 
-<title>use &mdash; KISSY v1.3 Documentation</title>
+<title>importStyle &mdash; KISSY v1.3 Documentation</title>
 
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.3.0/css/dpl/base-min.css"/>
 <link rel="stylesheet" href="../../../_static/kissy.css"/>
@@ -82,10 +82,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="importStyle.html" title="importStyle"
+      <a href="../kissy/index.html" title="lang"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="getScript.html" title="getScript"
+      <a href="use.html" title="use"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
       <li><a href="../../index.html" >API Documentation</a> &#187; </li>
@@ -94,54 +94,32 @@
     </ul>
 </div>
 					
-  <div class="section" id="use">
-<h1>use<a class="headerlink" href="#use" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="importstyle">
+<h1>importStyle<a class="headerlink" href="#importstyle" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="seed.KISSY.use">
-<tt class="descclassname">KISSY.</tt><tt class="descname">use</tt><big>(</big><big>)</big><a class="headerlink" href="#seed.KISSY.use" title="Permalink to this definition">¶</a></dt>
-<dd><div class="line-block">
-<div class="line">void <strong>KISSY.use</strong> (modNames[,callback])</div>
-<div class="line">使用模块,和KISSY.add一起使用, 形成KISSY的模块加载体系</div>
-</div>
 <p class="versionadded">
-<span class="versionmodified">New in version 1.3.1: </span>增加 callback 对象类型的支持</p>
+<span class="versionmodified">New in version 1.3.1.</span></p>
+<dl class="function">
+<dt id="seed.KISSY.importStyle">
+<tt class="descclassname">KISSY.</tt><tt class="descname">importStyle</tt><big>(</big><big>)</big><a class="headerlink" href="#seed.KISSY.importStyle" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">void <strong>KISSY.importStyle</strong> (modNames)</div>
+<div class="line">阻塞加载 css 模块或 js 模块依赖的 css 模块, 和 KISSY.add 中的 require 配置一起使用.</div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>modNames</strong> (<em>String|String[]</em>) &#8211; 以 <tt class="docutils literal"><span class="pre">,</span></tt> 分割的模块名称集合字符串,例如 <tt class="docutils literal"><span class="pre">KISSY.use(&quot;custommod,custommod2&quot;);</span></tt></li>
-<li><strong>callback</strong> (<em>function|Object</em>) &#8211; 当 <tt class="docutils literal"><span class="pre">modNames</span></tt> 中所有模块加载完毕后执行的函数或者对象描述</li>
-<li><strong>callback.success</strong> (<em>function</em>) &#8211; 当 <tt class="docutils literal"><span class="pre">modNames</span></tt> 中所有模块加载完毕后执行的函数</li>
-<li><strong>callback.error</strong> (<em>function</em>) &#8211; 当前 use 失败时调用的函数，参数为失败的模块对象</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>modNames</strong> (<em>String|String[]</em>) &#8211; 以 <tt class="docutils literal"><span class="pre">,</span></tt> 分割的 js 模块或 css 模块名称集合字符串,例如 <tt class="docutils literal"><span class="pre">KISSY.use(&quot;mod1,mod2/xx.css&quot;);</span></tt></td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<p>范例: 使用模块</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;depMod1,depMod2&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DepMod1</span><span class="p">,</span><span class="nx">DepMod2</span><span class="p">){</span>
-<span class="p">});</span>
-
-<span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;depMod1,depMod2&quot;</span><span class="p">,{</span>
-    <span class="nx">success</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DepMod1</span><span class="p">,</span><span class="nx">DepMod2</span><span class="p">){</span>
-    <span class="p">},</span>
-    <span class="nx">error</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span>
-        <span class="kd">var</span> <span class="nx">errorMods</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">makeArray</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">});</span>
-</pre></div>
-</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">如果使用经过配置的包内的模块, 则这些包内模块不需要事先注册, 直接 <tt class="docutils literal"><span class="pre">use</span></tt> 即可,
-如果模块名以 <tt class="docutils literal"><span class="pre">/</span></tt> 结尾, 则自动加后缀 index , 例如
-<tt class="docutils literal"><span class="pre">use(&quot;mods/m1/&quot;)</span></tt> 相当于 <tt class="docutils literal"><span class="pre">use(&quot;mods/m1/index&quot;)</span></tt> ,
-即自动加载 <tt class="docutils literal"><span class="pre">m1</span></tt> 目录下的 <tt class="docutils literal"><span class="pre">index.js</span></tt></p>
+<p class="last">该函数的使用前提是实现载入自动生成的依赖描述文件，详见 <a class="reference internal" href="../../../tutorials/kissy/seed/loader/import-style.html#loader-import-style-tutorial"><em>importStyle 使用</em></a></p>
 </div>
 </div>
 </div>
@@ -160,10 +138,10 @@
       <a href="../../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="importStyle.html" title="importStyle"
+      <a href="../kissy/index.html" title="lang"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="getScript.html" title="getScript"
+      <a href="use.html" title="use"
          accesskey="P">previous</a> | </li>
     <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
       <li><a href="../../index.html" >API Documentation</a> &#187; </li>

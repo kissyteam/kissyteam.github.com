@@ -23,3 +23,4 @@ Methods
    config
    getScript
    use
+   importStyle
