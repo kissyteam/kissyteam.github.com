@@ -8,7 +8,7 @@ author: 阿古
 Refer
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-| :ref:`api <Loader>`
+| :func:`api <seed.KISSY.config>`
 
 | :ref:`demo <loader_demo>`
 

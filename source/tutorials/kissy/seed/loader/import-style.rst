@@ -8,7 +8,7 @@ author: `基德 <jide@taobao.com>`_
 Refer
 ```````````````````````````````````````````````````
 
-| :ref:`api <Loader>`
+| :func:`api <seed.KISSY.importStyle>`
 
 | :ref:`demo <loader_demo>`
 
