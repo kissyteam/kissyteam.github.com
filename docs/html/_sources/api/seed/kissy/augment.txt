@@ -10,11 +10,13 @@ Methods
 
 .. function:: KISSY.augment
 
-    | Function **KISSY.augment** ( r, s1 [, s2 , ...] )
+    | Function **KISSY.augment** ( r, s1 [, s2 , ...], ov = true, wl )
     | 将 s1,s2.... 的 prototype 属性的成员复制到 r.prototype 上.
     
     :param function r: 将要扩充的函数
-    :param function|object s1: 扩充来源函数或对象. 非函数对象时复制的就是 s 的成员.
+    :param function|object ...s1: 扩充来源函数或对象. 非函数对象时复制的就是 s 的成员.
+    :param boolean ov: 是否覆盖 r.prototype 同名属性.
+    :param Array<string> whitelist: 属性来源对象的属性白名单, 仅在名单中的属性进行复制.
     :return: r
     :rtype: function
     
