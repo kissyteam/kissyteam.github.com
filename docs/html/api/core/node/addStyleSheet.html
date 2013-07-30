@@ -103,10 +103,37 @@
 </div>
 <div class="section" id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="node.addStyleSheet">
+<tt class="descclassname">node.</tt><tt class="descname">addStyleSheet</tt><big>(</big><big>)</big><a class="headerlink" href="#node.addStyleSheet" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">void <strong>addStyleSheet</strong> ( cssText [, id ] )</div>
+<div class="line">将 cssText 字符串作为内联样式表内容添加到节点所属的文档中.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cssText</strong> (<em>string</em>) &#8211; 样式内容</li>
+<li><strong>id</strong> (<em>string</em>) &#8211; 内联样式表所在 style 节点的 id</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
 <p>或许根本不需要此方法，只需</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">styleEl</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;&lt;style&gt;p {color:red}&lt;/style&gt;&quot;</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="s2">&quot;head&quot;</span><span class="p">);</span>
+
+<span class="c1">// 区别点在于 addStyleSheet 可以处理 ie 的 hack （不推荐）</span>
+<span class="c1">// addStyleSheet(&#39;xx {_width:xx;}&#39;)</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
