@@ -16,6 +16,7 @@ Refer
 通过 KISSY Loader 可以把一些一次性的 JSONP 数据也当做一个模块，通过 require 和 use 将数据和逻辑紧密绑定在一起，
 提供了一个统一的数据使用方式，并且通过和逻辑代码的并行加载，提高了页面性能。
 
+.. versionadded:: 1.3.1
 
 前提
 ```````````````````````````````````
@@ -34,15 +35,13 @@ Refer
 数据提供方
 --------------------------------
 
-``http://www.x.com/jsonp/data`` 返回数据应包裹为 KISSY 模块格式：
+``http://www.x.com/jsonp/data?callback=KISSY.add`` 返回数据应为 jsonp 格式：
 
 
 .. code-block:: javascript
 
-    KISSY.add(function(){
-        return {
-            test: '<?php echo $_GET['test'] ?>'
-        }
+    KISSY.add({
+      test: '<?php echo $_GET['test'] ?>'
     });
 
 .. note::
@@ -79,7 +78,7 @@ Refer
     KISSY.config({
         modules:{
             'x-com/data':{
-                fullpath: 'http://www.x.com/jsonp/data?test=success-test'
+                fullpath: 'http://www.x.com/jsonp/data?test=success-test&callback=KISSY.add'
             }
         },
 
