@@ -116,7 +116,9 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>selector</strong> (<em>string|HTMLCollection|Array&lt;HTMLElement&gt;</em>) &#8211; 字符串格式参见 <a class="reference internal" href="selector.html#dom-selector"><em>KISSY selector</em></a></li>
-<li><strong>filter</strong> (<em>number|string|function</em>) &#8211; 过滤条件, 整数外的例子参见 <a class="reference internal" href="filter.html#dom.filter" title="dom.filter"><tt class="xref py py-func docutils literal"><span class="pre">dom.filter</span></tt></a> 的相应参数</li>
+<li><strong>filter</strong> (<em>number|string|function|string[]|function[]</em>) &#8211; 过滤条件,
+数组表示会返回所有符合 filter 的祖先元素，否则只会返回第一个符合条件的祖先元素。
+整数以及数组外的例子参见 <a class="reference internal" href="filter.html#dom.filter" title="dom.filter"><tt class="xref py py-func docutils literal"><span class="pre">dom.filter</span></tt></a> 的相应参数</li>
 </ul>
 </td>
 </tr>
@@ -139,6 +141,9 @@
 
 <span class="c1">// 寻找 elem 的祖先节点, 返回第一个拥有 container class 值的祖先</span>
 <span class="nx">DOM</span><span class="p">.</span><span class="nx">parent</span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span> <span class="s1">&#39;.container&#39;</span><span class="p">);</span>
+
+<span class="c1">// 寻找 elem 的祖先节点, 返回所有拥有 container class 值的祖先</span>
+<span class="nx">DOM</span><span class="p">.</span><span class="nx">parent</span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;.container&#39;</span><span class="p">]);</span>
 
 <span class="c1">// 寻找 elem 的祖先节点, 返回第一个 tagName 为 ul 的祖先</span>
 <span class="nx">DOM</span><span class="p">.</span><span class="nx">parent</span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span> <span class="s1">&#39;ul&#39;</span><span class="p">);</span>
