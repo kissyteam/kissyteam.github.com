@@ -61,7 +61,7 @@ Method
     .. code-block:: javascript
 
         KISSY.ready(function(S){
-            S.log(S.IO.serialize("#f"));
+            S.log(IO.serialize("#f"));
         });
 
     可得到如下字符串:
@@ -75,7 +75,7 @@ Method
     .. code-block:: javascript
 
         KISSY.ready(function(S){
-            S.log(S.IO.serialize(S.all("#f").all("input")));
+            S.log(IO.serialize(S.all("#f").all("input")));
         });
 
     可得到如下字符串:

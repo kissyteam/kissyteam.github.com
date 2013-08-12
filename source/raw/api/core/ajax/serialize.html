@@ -43,10 +43,10 @@
 
 
 <script>
-    KISSY.use('core',function (S) {
-        var $=S.all,form=$("form");        
+    KISSY.use('node,io',function (S,Node,IO) {
+        var $=Node.all,form=$("form");
         function showValues() {
-          var str = S.IO.serialize(form);
+          var str = IO.serialize(form);
           $("#results").text(str);
         }
 

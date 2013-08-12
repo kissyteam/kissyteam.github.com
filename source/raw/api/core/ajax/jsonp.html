@@ -21,15 +21,15 @@
     <button id='jsonp'>get pics from flickr</button>
     <div id="photo-list"></div>
 <script>
-    KISSY.use('core',function (S) {
-        var $ = S.all,
+    KISSY.use('node,io',function (S,Node,IO) {
+        var $ = Node.all,
             photoList = $('#photo-list');
         $("#jsonp").attr("disabled",false);
         $("#jsonp").on("click", function () {
             $(this).attr("disabled",true);
             photoList.addClass('loading');
 
-            S.IO({
+            new IO({
                 dataType:'jsonp',
                 url:"http://api.flickr.com/services/rest/", 
                 data:{

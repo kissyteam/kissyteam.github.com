@@ -16,10 +16,10 @@
   </form>
 
 <script>
-    KISSY.use('core',function (S) {
-        var $=KISSY.Node.all;        
+    KISSY.use('node,io',function (S,Node,IO) {
+        var $=Node.all;
         $("#up").on("click",function(){
-            S.IO.upload("doUpload.html","#f",function(d){
+            IO.upload("doUpload.html","#f",function(d){
                 alert("user : "+d.user+" \n email : "+d.email);                
             },"json");                                            
         });

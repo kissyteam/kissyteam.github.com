@@ -156,7 +156,7 @@
 </div>
 <p>运行</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
-    <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">IO</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(</span><span class="s2">&quot;#f&quot;</span><span class="p">));</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">IO</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(</span><span class="s2">&quot;#f&quot;</span><span class="p">));</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -166,7 +166,7 @@
 </div>
 <p>也可以只序列化一部分</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
-    <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">IO</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;#f&quot;</span><span class="p">).</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)));</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">IO</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;#f&quot;</span><span class="p">).</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)));</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -233,10 +233,10 @@
 
 
 <span class="nt">&lt;script&gt;</span>
-    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;core&#39;</span><span class="p">,</span><span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">,</span><span class="nx">form</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;form&quot;</span><span class="p">);</span>        
+    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;node,io&#39;</span><span class="p">,</span><span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Node</span><span class="p">,</span><span class="nx">IO</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">,</span><span class="nx">form</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;form&quot;</span><span class="p">);</span>
         <span class="kd">function</span> <span class="nx">showValues</span><span class="p">()</span> <span class="p">{</span>
-          <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">IO</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(</span><span class="nx">form</span><span class="p">);</span>
+          <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">IO</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(</span><span class="nx">form</span><span class="p">);</span>
           <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#results&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
         <span class="p">}</span>
 

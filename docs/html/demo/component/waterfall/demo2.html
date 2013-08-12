@@ -121,7 +121,7 @@
 &lt;/script&gt;</pre>
 </div>
 <p><strong>使用脚本生成瀑布</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;waterfall,ajax,node,button&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Waterfall</span><span class="p">,</span> <span class="nx">io</span><span class="p">,</span>  <span class="nx">Node</span><span class="p">,</span> <span class="nx">Button</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;waterfall,ajax,node,button&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Waterfall</span><span class="p">,</span> <span class="nx">IO</span><span class="p">,</span>  <span class="nx">Node</span><span class="p">,</span> <span class="nx">Button</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
 
     <span class="kd">var</span> <span class="nx">tpl</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#tpl&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(),</span>
@@ -130,7 +130,7 @@
         <span class="nx">container</span><span class="o">:</span><span class="s2">&quot;#ColumnContainer&quot;</span><span class="p">,</span>
         <span class="nx">load</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">success</span><span class="p">,</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
             <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#loadingPins&#39;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
-            <span class="nx">S</span><span class="p">.</span><span class="nx">IO</span><span class="p">({</span>
+            <span class="k">new</span> <span class="nx">IO</span><span class="p">({</span>
                 <span class="nx">data</span><span class="o">:</span><span class="p">{</span>
                     <span class="s1">&#39;method&#39;</span><span class="o">:</span> <span class="s1">&#39;flickr.photos.search&#39;</span><span class="p">,</span>
                     <span class="s1">&#39;api_key&#39;</span><span class="o">:</span> <span class="s1">&#39;5d93c2e473e39e9307e86d4a01381266&#39;</span><span class="p">,</span>

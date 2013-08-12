@@ -13,11 +13,11 @@
   <button id='getJSON'>get json from script</button>
 
 <script>
-    KISSY.use('core',function(S){
-        var $=KISSY.Node.all;        
+    KISSY.use('node,io',function(S,Node,IO){
+        var $=Node.all;
         $("#getJSON").on("click",function(){
             
-            S.IO.getJSON("kissy.js",function(d){
+            IO.getJSON("kissy.js",function(d){
                 alert("user : "+d.user+" \n email : "+d.email);                
             });
                                             
