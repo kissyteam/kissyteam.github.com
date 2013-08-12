@@ -261,7 +261,7 @@
 <dt id="io.cfg.context">
 <tt class="descclassname">cfg.</tt><tt class="descname">context</tt><a class="headerlink" href="#io.cfg.context" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Object} - 设置回调函数中的 this 值,默认为当前配置项.例如可以把一个 dom 节点作为 complete 回调函数的上下文:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">io</span><span class="p">({</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">IO</span><span class="p">({</span>
     <span class="nx">url</span><span class="o">:</span><span class="s1">&#39;test.html&#39;</span><span class="p">,</span>
     <span class="nx">context</span><span class="o">:</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span>
     <span class="nx">complete</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span>
@@ -398,7 +398,7 @@
 <dt id="io.cfg.xhrFields">
 <tt class="descclassname">cfg.</tt><tt class="descname">xhrFields</tt><a class="headerlink" href="#io.cfg.xhrFields" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Object} -   设置到原生 xhr 对象的键值对.例如为了在标准浏览器进行跨域请求时携带cookie你可以设置 <a class="reference external" href="https://developer.mozilla.org/en/http_access_control#Requests_with_credentials">withCredentials</a> 为 true.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">io</span><span class="p">({</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">IO</span><span class="p">({</span>
     <span class="nx">url</span><span class="o">:</span><span class="s2">&quot;http://y.com/ping.php&quot;</span><span class="p">,</span>
     <span class="nx">xhrFields</span><span class="o">:</span><span class="p">{</span>
         <span class="nx">withCredentials</span><span class="o">:</span> <span class="kc">true</span>
@@ -462,7 +462,7 @@
 <li>xhrObject 为 <tt class="xref py py-class docutils literal"><span class="pre">io.XhrObj</span></tt> 类型</li>
 </ul>
 <p>例如可以通过该函数实现上传进度监控</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="nx">IO</span><span class="p">({</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">IO</span><span class="p">({</span>
     <span class="nx">url</span><span class="o">:</span><span class="s1">&#39;./upload.php&#39;</span><span class="p">,</span>
     <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;post&quot;</span><span class="p">,</span>
     <span class="nx">processData</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>

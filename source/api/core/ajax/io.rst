@@ -138,7 +138,7 @@ Config Detail
 
     .. code-block:: javascript
 
-        io({
+        new IO({
             url:'test.html',
             context:document.body,
             complete:function(){
@@ -241,7 +241,7 @@ Config Detail
 
     .. code-block:: javascript
 
-        io({
+        new IO({
             url:"http://y.com/ping.php",
             xhrFields:{
                 withCredentials: true
@@ -297,7 +297,7 @@ Config Detail
 
     .. code-block:: javascript
 
-        var xhr = IO({
+        var xhr = new IO({
             url:'./upload.php',
             type:"post",
             processData:false,
