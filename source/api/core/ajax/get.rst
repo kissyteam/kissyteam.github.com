@@ -58,14 +58,14 @@ Demo
 
     .. code-block:: javascript
 
-        KISSY.IO.get("test.php");
+        IO.get("test.php");
 
 
     **请求页面 test.php , 并附带一些参数传递给后端**
 
     .. code-block:: javascript
 
-        KISSY.IO.get("test.php",{
+        IO.get("test.php",{
             name:"john".
             time:"2pm"
         });
@@ -74,7 +74,7 @@ Demo
 
     .. code-block:: javascript
 
-        KISSY.IO.get("test.php",function(d){
+        IO.get("test.php",function(d){
             alert(d);
         });
 
@@ -82,6 +82,6 @@ Demo
 
     .. code-block:: javascript
 
-        KISSY.IO.get("test.php",function(d){
+        IO.get("test.php",function(d){
             alert(d);
         },"json");

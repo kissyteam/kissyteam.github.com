@@ -63,14 +63,14 @@ Demo
 
     .. code-block:: javascript
 
-        KISSY.IO.post("test.php");
+       IO.post("test.php");
 
 
     **请求页面 test.php , 并附带一些参数传递给后端**
 
     .. code-block:: javascript
 
-        KISSY.IO.post("test.php",{
+        IO.post("test.php",{
             name:"john".
             time:"2pm"
         });
@@ -79,7 +79,7 @@ Demo
 
     .. code-block:: javascript
 
-        KISSY.IO.post("test.php",function(d){
+        IO.post("test.php",function(d){
             alert(d);
         });
 
@@ -87,6 +87,6 @@ Demo
 
     .. code-block:: javascript
 
-        KISSY.IO.post("test.php",function(d){
+        IO.post("test.php",function(d){
             alert(d);
         },"json");

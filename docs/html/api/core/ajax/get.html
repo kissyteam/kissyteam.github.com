@@ -163,24 +163,24 @@
 <h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><strong>请求页面 test.php , 但是忽略返回结果</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">IO</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">);</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">IO</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>请求页面 test.php , 并附带一些参数传递给后端</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">IO</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">,{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">IO</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">,{</span>
     <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;john&quot;</span><span class="p">.</span>
     <span class="nx">time</span><span class="o">:</span><span class="s2">&quot;2pm&quot;</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 <p><strong>alert 请求成功后返回的结果，数据类型由响应的 content-type 决定</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">IO</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">IO</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
     <span class="nx">alert</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 <p><strong>alert 请求成功后返回的 json 数据，和响应的 content-type 无关</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">IO</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">IO</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;test.php&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
     <span class="nx">alert</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span>
 <span class="p">},</span><span class="s2">&quot;json&quot;</span><span class="p">);</span>
 </pre></div>
