@@ -156,7 +156,7 @@ KISSY.use("menu", function (S, Menu) {
         var min = $("#min").attr("checked"), html = "";
 
         var base = $("#cdn").attr("checked") ?
-            "http://a.tbcdn.cn/s/kissy/1.3.0/" :
+            "http://g.tbcdn.cn/kissy/k/1.3.1/" :
             S.config("base");
 
         html += gen(base + 'css/dpl/', 'simple', function (m) {
