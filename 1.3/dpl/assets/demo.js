@@ -1,7 +1,5 @@
-KISSY.use("menu", function (S, Menu) {
-
-
-    var $ = S.all;
+KISSY.use("node", function (S, Node) {
+    var $ = Node.all;
 
     var simple = {
         base: {
@@ -169,5 +167,4 @@ KISSY.use("menu", function (S, Menu) {
 
         $("#result").html(html);
     });
-
 });
