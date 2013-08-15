@@ -7,7 +7,7 @@
 
 <title>KISSY Overview &mdash; KISSY v1.3 Documentation</title>
 
-<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/1.3.0/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.3.1/css/dpl/base-min.css"/>
 <link rel="stylesheet" href="../../../_static/kissy.css"/>
     <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
 <link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
@@ -483,7 +483,7 @@ KISSY 采用的单元测试框架为 jasmine ，测试代码举例如下：</p>
 </pre></div>
 </div>
 <p>在线上会发出两个 combo 请求：一个为店铺页面需要的应用模块集，一个为 KISSY 自己的模块集，例如:</p>
-<div class="highlight-python"><pre>http://a.tbcdn.cn/s/kissy/1.3.0/??dom/base.js,event/base.js,overlay.js...
+<div class="highlight-python"><pre>http://g.tbcdn.cn/kissy/k/1.3.1/??dom/base.js,event/base.js,overlay.js...
 http://a.tbcdn.cn/p/shop/??search.js,category.js...</pre>
 </div>
 </div>
@@ -496,7 +496,7 @@ http://a.tbcdn.cn/p/shop/??search.js,category.js...</pre>
 进而 KISSY 会对过长的 combo url 拆分成多个短的 url，反而适得其反。
 因此这里会把宝贝详情页自身的模块打包合并，将自己模块的主模块和依赖模块都合并到主模块中去，
 最终线上会发出三个请求，其中两个为 combo 请求，一个为非 combo 请求，例如:</p>
-<div class="highlight-python"><pre>http://a.tbcdn.cn/s/kissy/1.3.0/??dom/base.js,event/base.js,overlay.js...
+<div class="highlight-python"><pre>http://g.tbcdn.cn/kissy/k/1.3.1/??dom/base.js,event/base.js,overlay.js...
 http://a.tbcdn.cn/p/shop/??search.js,category.js...
 http://a.tbcdn.cn/p/detail/main.js</pre>
 </div>

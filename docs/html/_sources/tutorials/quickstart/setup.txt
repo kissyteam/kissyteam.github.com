@@ -5,7 +5,7 @@ Setup
 
 如何使用 KISSY ? 
 
-* 先将 `http://a.tbcdn.cn/s/kissy/1.3.0/seed-min.js <http://a.tbcdn.cn/s/kissy/1.3.0/seed-min.js>`_ 引入到你的页面;
+* 先将 `http://g.tbcdn.cn/kissy/k/1.3.1/seed-min.js <http://g.tbcdn.cn/kissy/k/1.3.1/seed-min.js>`_ 引入到你的页面;
 * 接着, 稍加编写一些代码, 就可以实现下面的效果了:
 
 .. raw:: html
