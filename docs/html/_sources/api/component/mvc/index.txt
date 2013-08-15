@@ -30,11 +30,7 @@ Method in mvc
 Refer
 ------------------------------------------
 
-`KISSY MVC Demo <http://docs.kissyui.com/kissy/src/mvc/demo.html?t=999>`_
-
 `KISSY MVC Overview <http://www.slideshare.net/yiminghe/kissy-mvc>`_
-
-
    
 .. note::
 

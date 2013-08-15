@@ -27,8 +27,3 @@ Demos
        demo5
        demo6
        demo7
-
-More Demos
--------------------------------------------
-
-`原始测试例子集合 <http://docs.kissyui.com/kissy/src/menu/demo.html>`_ 
