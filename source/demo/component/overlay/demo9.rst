@@ -42,7 +42,8 @@ Class
                 .ks-overlay-mask-shown{
                     display: block;
                 }
-            </style>      
+            </style>
+
 
     .. literalinclude:: /raw/demo/overlay/assets/demo9.js
            :language: javascript

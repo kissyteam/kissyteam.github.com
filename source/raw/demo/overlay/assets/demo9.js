@@ -1,5 +1,5 @@
 KISSY.use("ua,event,node,overlay,button,component/plugin/drag", function (S, UA, Event, Node, O, B, DragPlugin) {
-    var dialog = new O.Dialog({
+    var dialog = new O({
         width: 424,
         elCls: 'my',
         elStyle: {
@@ -10,11 +10,6 @@ KISSY.use("ua,event,node,overlay,button,component/plugin/drag", function (S, UA,
             + 'height="282" '
             + 'src="http://img02.taobaocdn.com/tps/i2/T10J9bXnlgXXXXXXXX-424-282.jpg?noq=y" />',
         mask: true,
-        plugins: [
-            new DragPlugin({
-                handlers: ['.ks-stdmod-header']
-            })
-        ],
         align: {
             points: ['cc', 'cc']
         },
