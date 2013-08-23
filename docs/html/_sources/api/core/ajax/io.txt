@@ -154,6 +154,24 @@ Config Detail
 
     {String|Object} - 如果为 Object 类型则会通过 :func:`~Lang.KISSY.param` 格式化为字符串.
 
+
+.. note::
+
+    data 不能为嵌套 object 等复杂类型，例如:
+
+    不能是
+	.. code-block:: javascript
+
+		{data:[{x:1}]}
+		
+    可以为
+
+    .. code-block:: javascript
+
+        {data:[1]}
+
+
+
 .. data:: cfg.serializeArray
 
     {Boolean} - 默认 true。表示序列化 :data:`~io.cfg.data` 时是否给数组值对应的键名加 ``[]`` ，例如
@@ -199,31 +217,22 @@ Config Detail
 
     {String|Function} - 覆盖这次 jsonp 请求 callback 函数对应的值 (``callback={jsonpCallback}``). 这个值将取代 kissy 默认生成的 UUID 值.
 
-
         当传入函数时，该函数需要返回字符串，每次请求都会调用该函数得到用于替换的字符串.
 
 
 .. data:: cfg.mimeType
 
-
-
     {String} -  跨平台设置 xhr 的 `mimeType <https://developer.mozilla.org/en/XmlHttpRequest#overrideMimeType%28%29>`_
 
 .. data:: cfg.password
-
-
 
     {String} -  对于需要验证的 http 请求设置密码.
 
 .. data:: cfg.username
 
-
-
     {String} -  对于需要验证的 http 请求设置用户名.
 
 .. data:: cfg.scriptCharset
-
-
 
     {String} -  用于 dataType ``jsonp`` 和 ``script`` ，设定传输用的 script 节点的 ``charset`` 属性。只有当返回编码和当前页面编码不一致时使用.
 
@@ -283,8 +292,6 @@ Config Detail
 
     * 如果 form 的 enctype 为 `"multipart/form-data`` 则会采用 `iframe <http://www.webtoolkit.info/ajax-file-upload.html>`_ 的方式进行无刷新文件上传，
     * 否则将 form 内的输入域和值序列化后通过 xhr 发送到服务器.
-
-
 
 
 .. data:: cfg.beforeSend

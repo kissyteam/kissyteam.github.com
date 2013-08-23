@@ -283,6 +283,21 @@
 <dd><p>{String|Object} - 如果为 Object 类型则会通过 <tt class="xref py py-func docutils literal"><span class="pre">param()</span></tt> 格式化为字符串.</p>
 </dd></dl>
 
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>data 不能为嵌套 object 等复杂类型，例如:</p>
+<dl class="docutils">
+<dt>不能是</dt>
+<dd><div class="first last highlight-javascript"><div class="highlight"><pre><span class="p">{</span><span class="nx">data</span><span class="o">:</span><span class="p">[{</span><span class="nx">x</span><span class="o">:</span><span class="mi">1</span><span class="p">}]}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>可以为</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="p">{</span><span class="nx">data</span><span class="o">:</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span>
+</pre></div>
+</div>
+</div>
 <dl class="data">
 <dt id="io.cfg.serializeArray">
 <tt class="descclassname">cfg.</tt><tt class="descname">serializeArray</tt><a class="headerlink" href="#io.cfg.serializeArray" title="Permalink to this definition">¶</a></dt>
