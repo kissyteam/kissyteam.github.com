@@ -1,116 +1,116 @@
 KISSY.ready(function(){
-	
-	KISSY.use("switchable,data/widget,data/tools", function(S,Switchable,widget,tools){
-		var $=S.all;
 
-		var tab = new Switchable.Tabs("#content",{
-			aria:false,
-			triggerType:"click",
-			switchTo:~location.href.indexOf("tools")?1:0
-		});
+    KISSY.use("switchable,data/widget,data/tools", function(S,Switchable,widget,tools){
+        var $=S.all;
 
-		
-		
-		(function(){
-			var nav ='', content='';
-			S.each(widget, function(item){
-				nav += '<li><a target="_self" href="#'+item.name+'">'+item.name+'</a><p>'+item.title+'</p></li>';
-				content += '<a  name="'+item.name+'"></a>';
-				content +=  '<dl class="list">';
-				content +=  '<dt><a href="'+item.href+'">'+item.name+'</a></dt>';
-				content +=  '<dd class="img"><a href="'+item.href+'"><img src="'+item.pic+'" alt="'+item.name+'"/></a></dd>';
-				content +=  '<dd class="url"><label>¹ÙÍøµØÖ·£º</label>  <a href="'+item.href+'">'+item.href+'</a></dd>';
-				content +=  '<dd class="version"><label>ÍÆ¼ö°æ±¾£º</label> '+item.version+'</dd>';
-				content +=  '<dd class="reason"><label>ÍÆ¼öÀíÓÉ£º</label>   '+item.reason+'</dd>';
-				content +=  '<dd class="intro"><label>×é¼ş¼ò½é£º</label>  '+item.intro+'</dd>';
-				content +=  '</dl>';
-			})
-			$("#nav-widget ul").html(nav);
-			$("#content-widget").html(content);
-		})();
-		
+        var tab = new Switchable.Tabs("#content",{
+            aria:false,
+            triggerType:"click",
+            switchTo:~location.href.indexOf("tools")?1:0
+        });
 
-		(function(){
-			var nav ='', content='';
-			S.each(tools, function(item){
-				nav += '<li><a target="_self" href="#'+item.name+'">'+item.name+'</a><p>'+item.title+'</p></li>';
-				content += '<a name="'+item.name+'"></a>';
-				content +=  '<dl class="list">';
-				content +=  '<dt><a href="'+item.href+'">'+item.name+'</a></dt>';
-				content +=  '<dd class="url"><label>¹ÙÍøµØÖ·£º</label>  <a href="'+item.href+'">'+item.href+'</a></dd>';
-				content +=  '<dd class="intro"><label>×é¼ş¼ò½é£º</label>  '+item.intro+'</dd>';
-				content +=  '</dl>';
-			})
-			$("#nav-tools ul").html(nav);
-			$("#content-tools").html(content);
-		})();
 
-	})
-	
-	
+
+        (function(){
+            var nav ='', content='';
+            S.each(widget, function(item){
+                nav += '<li><a target="_self" href="#'+item.name+'">'+item.name+'</a><p>'+item.title+'</p></li>';
+                content += '<a  name="'+item.name+'"></a>';
+                content +=  '<dl class="list">';
+                content +=  '<dt><a href="'+item.href+'">'+item.name+'</a></dt>';
+                content +=  '<dd class="img"><a href="'+item.href+'"><img src="'+item.pic+'" alt="'+item.name+'"/></a></dd>';
+                content +=  '<dd class="url"><label>å®˜ç½‘åœ°å€ï¼š</label>  <a href="'+item.href+'">'+item.href+'</a></dd>';
+                content +=  '<dd class="version"><label>æ¨èç‰ˆæœ¬ï¼š</label> '+item.version+'</dd>';
+                content +=  '<dd class="reason"><label>æ¨èç†ç”±ï¼š</label>   '+item.reason+'</dd>';
+                content +=  '<dd class="intro"><label>ç»„ä»¶ç®€ä»‹ï¼š</label>  '+item.intro+'</dd>';
+                content +=  '</dl>';
+            })
+            $("#nav-widget ul").html(nav);
+            $("#content-widget").html(content);
+        })();
+
+
+        (function(){
+            var nav ='', content='';
+            S.each(tools, function(item){
+                nav += '<li><a target="_self" href="#'+item.name+'">'+item.name+'</a><p>'+item.title+'</p></li>';
+                content += '<a name="'+item.name+'"></a>';
+                content +=  '<dl class="list">';
+                content +=  '<dt><a href="'+item.href+'">'+item.name+'</a></dt>';
+                content +=  '<dd class="url"><label>å®˜ç½‘åœ°å€ï¼š</label>  <a href="'+item.href+'">'+item.href+'</a></dd>';
+                content +=  '<dd class="intro"><label>ç»„ä»¶ç®€ä»‹ï¼š</label>  '+item.intro+'</dd>';
+                content +=  '</dl>';
+            })
+            $("#nav-tools ul").html(nav);
+            $("#content-tools").html(content);
+        })();
+
+    })
+
+
 });
 
 
 
 KISSY.add("data/widget", function(){
 
-	return [{
-		"name": "SWFUpload",
-		"title": "FlashÎÄ¼şÉÏ´«×é¼ş",
-		"pic": "http://img04.taobaocdn.com/tps/i4/T1lvqDXdVDXXXXXXXX-120-120.png",
-		"href": "http://swfupload.org/",
-		"version": "v2.2.0.1 ",
-		"reason": "Ö§³ÖÅúÁ¿ÉÏ´«£¬Ö§³Ö¸÷ÖÖÊÂ¼ş×¢²á£¬demo·á¸»",
-		"intro": "SWFUpload ÊÇÒ»¸öĞ¡ÇÉÊµÓÃµÄJavaScript/FlashÎÄ¼şÉÏ´«×é¼ş¡£¿ÉÒÔÔÚÒ»¸ö´°¿ÚÖĞÍ¬Ê±Ñ¡Ôñ¶à¸öÎÄ¼şÉÏ´«¡¢ËùÓĞÊÂ¼ş¶¼¿ÉÒÔÔö¼Ó»Øµ÷º¯Êı¡¢¿ÉÒÔÔÚÎÄ¼şÉÏ´«Ö®Ç°»ñÈ¡ÎÄ¼şĞÅÏ¢¡¢¿ÉÒÔÊ¹ÓÃxhtml,css¶¨ÒåÉÏ´«¿Ø¼şµÄÑùÊ½¡¢¿ÉÒÔÊ¹ÓÃxhtml,cssÏÔÊ¾ÉÏ´«×´Ì¬ĞÅÏ¢¡¢ÎŞĞèË¢ĞÂÒ³Ãæ£¬È«²¿¶¼ÊÇ¡®Òì²½¡¯¡¢Ö»ÒªÄãµÄä¯ÀÀÆ÷Ö§³Öflash¾Í¿ÉÒÔÊ¹ÓÃ¡¢²»ÄÜÊ¹ÓÃjs,flashµÄÍøÒ³Ò²ÄÜÓÅÑÅ½µ¼¶¡¢ÔÚÉÏ´«Ö®Ç°¿ÉÒÔÔÚ¿Í»§¶ËĞ£ÑéÎÄ¼ş´óĞ¡¡¢¿ÉÒÔ¶¨ÖÆÄãÒªÉÏ´«µÄÎÄ¼şÀàĞÍ¡¢ÉÏ´«Ö®Ç°¿ÉÒÔÔö¼õÉÏ´«¶ÓÁĞÖĞµÄÎÄ¼ş£¨ÉÏ´«ÖĞµÄÎÄ¼şÆäÊµÒ²¿ÉÒÔÈ¡Ïû£©"
-	},{
-		"name": "Highcharts",
-		"title": "Í¼±í¿Ø¼ş",
-		"pic": "http://img01.taobaocdn.com/tps/i1/T1SLGDXgBBXXXXXXXX-120-120.png",
-		"href": "http://www.highcharts.com/",
-		"version": "2.1.9",
-		"reason": "Ãâ·Ñ»¹°üÓÊÅ¶Ç×¡£",
-		"intro": " HighchartsÊÇÒ»¸ö´¿½Å±¾ÊµÏÖµÄ±íµ¥¿Ø¼ş£¬¿ÉÒÔ¸øÄãµÄwebÓ¦ÓÃÉú³ÉÖ»¹ÜµÄÍ¼±í¡£HighchartsÌá¹©·á¸»µÄÍ¼±íÑùÊ½£¬°üÀ¨ line, spline, area, areaspline, column, bar, pie and scatter£¬ÊµÔÚÊÇ¾Ó¼ÒÂÃĞĞ£¬É±ÈËÃğ¿ÚÖ®±Ø±¸¿Ø¼ş¡£"
-	},{
-		"name": "zeroclipboard",
-		"title": "flash¼ôÌù°å",
-		"pic": "http://img01.taobaocdn.com/tps/i1/T10yiDXfRkXXXXXXXX-120-120.png",
-		"href": "http://code.google.com/p/zeroclipboard/",
-		"version": " 2.1.9",
-		"reason": "flashÊµÏÖµÄ¼ôÌù°å¡£",
-		"intro": "Provides 'Copy to Clipboard' functionality for your web site using JavaScript and Flash"
-	},{
-		"name": "xml_to_json",
-		"title": "xml to json",
-		"pic": "http://img02.taobaocdn.com/tps/i2/T1Og1DXolsXXXXXXXX-120-120.png",
-		"href": "http://www.thomasfrank.se/xml_to_json.html",
-		"version": "1.1",
-		"reason": "ºÜ¿ì£¬ºÜĞ¡£¬ºÜÌìÕæ£¬¾ßÌåÔõÃ´ÑùÄãÓÃ¹ı¾ÍÖªµÀÁË",
-		"intro": "½«XML×ª»»ÎªJSON¡£"
-	},{
-		"name": "Blowfish",
-		"title": "¼ÓÃÜ/½âÃÜ",
-		"pic": "http://img03.taobaocdn.com/tps/i3/T1nd1DXhhMXXXXXXXX-137-140.jpg",
-		"href": "http://dren.ch/js_blowfish/",
-		"version": "v1",
-		"reason": "µ÷ÓÃºÜ·½±ã(²»Ö§³ÖÖĞÎÄ) ",
-		"intro": "ÖøÃûµÄblowfish¼ÓÃÜ½âÃÜËã·¨µÄjavascript°æ¡£"
-	},{
-		"name": "SyntaxHighlighter",
-		"title": "Óï·¨¸ßÁÁ",
-		"pic": "http://img02.taobaocdn.com/tps/i2/T1qwmFXn8aXXXXXXXX-120-120.png",
-		"href": "http://alexgorbatchev.com/SyntaxHighlighter/",
-		"version": "3.0.83",
-		"reason": "ÃûÆø´ó£¬¹¦ÄÜÈ«£¬ÈİÒ×À©Õ¹",
-		"intro": "JavascriptÓï·¨¸ßÁÁ×é¼ş¡£"
-	},{
-		"name": "LESSCSS",
-		"title": "CSS±à³Ì ^^",
-		"pic": "http://img02.taobaocdn.com/tps/i2/T1tLaFXeNfXXXXXXXX-120-120.png",
-		"href": "http://lesscss.org/ ",
-		"version": "1.1.5",
-		"reason": "ÏñĞ´´úÂëÒ»ÑùĞ´CSS£¬<font color=red>¹ÙÍøĞèÒª·­Ç½</font>£¬ÇëÖ±½Ó·ÃÎÊ<a href='http://www.lesscss.net/'>LESSÖĞÎÄÍø</a>",
-		"intro": "LESS ½« CSS ¸³ÓèÁË¶¯Ì¬ÓïÑÔµÄÌØĞÔ£¬Èç ±äÁ¿£¬ ¼Ì³Ğ£¬ ÔËËã£¬ º¯Êı. LESS ¼È¿ÉÒÔÔÚ ¿Í»§¶Ë ÉÏÔËĞĞ (Ö§³ÖIE 6+, Webkit, Firefox)£¬Ò²¿ÉÒ»ÔÚ·şÎñ¶ËÔËĞĞ (½èÖú Node.js). "
-	}];
+    return [{
+        "name": "SWFUpload",
+        "title": "Flashæ–‡ä»¶ä¸Šä¼ ç»„ä»¶",
+        "pic": "http://img04.taobaocdn.com/tps/i4/T1lvqDXdVDXXXXXXXX-120-120.png",
+        "href": "http://swfupload.org/",
+        "version": "v2.2.0.1 ",
+        "reason": "æ”¯æŒæ‰¹é‡ä¸Šä¼ ï¼Œæ”¯æŒå„ç§äº‹ä»¶æ³¨å†Œï¼Œdemoä¸°å¯Œ",
+        "intro": "SWFUpload æ˜¯ä¸€ä¸ªå°å·§å®ç”¨çš„JavaScript/Flashæ–‡ä»¶ä¸Šä¼ ç»„ä»¶ã€‚å¯ä»¥åœ¨ä¸€ä¸ªçª—å£ä¸­åŒæ—¶é€‰æ‹©å¤šä¸ªæ–‡ä»¶ä¸Šä¼ ã€æ‰€æœ‰äº‹ä»¶éƒ½å¯ä»¥å¢åŠ å›è°ƒå‡½æ•°ã€å¯ä»¥åœ¨æ–‡ä»¶ä¸Šä¼ ä¹‹å‰è·å–æ–‡ä»¶ä¿¡æ¯ã€å¯ä»¥ä½¿ç”¨xhtml,csså®šä¹‰ä¸Šä¼ æ§ä»¶çš„æ ·å¼ã€å¯ä»¥ä½¿ç”¨xhtml,cssæ˜¾ç¤ºä¸Šä¼ çŠ¶æ€ä¿¡æ¯ã€æ— éœ€åˆ·æ–°é¡µé¢ï¼Œå…¨éƒ¨éƒ½æ˜¯â€˜å¼‚æ­¥â€™ã€åªè¦ä½ çš„æµè§ˆå™¨æ”¯æŒflashå°±å¯ä»¥ä½¿ç”¨ã€ä¸èƒ½ä½¿ç”¨js,flashçš„ç½‘é¡µä¹Ÿèƒ½ä¼˜é›…é™çº§ã€åœ¨ä¸Šä¼ ä¹‹å‰å¯ä»¥åœ¨å®¢æˆ·ç«¯æ ¡éªŒæ–‡ä»¶å¤§å°ã€å¯ä»¥å®šåˆ¶ä½ è¦ä¸Šä¼ çš„æ–‡ä»¶ç±»å‹ã€ä¸Šä¼ ä¹‹å‰å¯ä»¥å¢å‡ä¸Šä¼ é˜Ÿåˆ—ä¸­çš„æ–‡ä»¶ï¼ˆä¸Šä¼ ä¸­çš„æ–‡ä»¶å…¶å®ä¹Ÿå¯ä»¥å–æ¶ˆï¼‰"
+    },{
+        "name": "Highcharts",
+        "title": "å›¾è¡¨æ§ä»¶",
+        "pic": "http://img01.taobaocdn.com/tps/i1/T1SLGDXgBBXXXXXXXX-120-120.png",
+        "href": "http://www.highcharts.com/",
+        "version": "2.1.9",
+        "reason": "å…è´¹è¿˜åŒ…é‚®å“¦äº²ã€‚",
+        "intro": " Highchartsæ˜¯ä¸€ä¸ªçº¯è„šæœ¬å®ç°çš„è¡¨å•æ§ä»¶ï¼Œå¯ä»¥ç»™ä½ çš„webåº”ç”¨ç”Ÿæˆåªç®¡çš„å›¾è¡¨ã€‚Highchartsæä¾›ä¸°å¯Œçš„å›¾è¡¨æ ·å¼ï¼ŒåŒ…æ‹¬ line, spline, area, areaspline, column, bar, pie and scatterï¼Œå®åœ¨æ˜¯å±…å®¶æ—…è¡Œï¼Œæ€äººç­å£ä¹‹å¿…å¤‡æ§ä»¶ã€‚"
+    },{
+        "name": "zeroclipboard",
+        "title": "flashå‰ªè´´æ¿",
+        "pic": "http://img01.taobaocdn.com/tps/i1/T10yiDXfRkXXXXXXXX-120-120.png",
+        "href": "http://code.google.com/p/zeroclipboard/",
+        "version": " 2.1.9",
+        "reason": "flashå®ç°çš„å‰ªè´´æ¿ã€‚",
+        "intro": "Provides 'Copy to Clipboard' functionality for your web site using JavaScript and Flash"
+    },{
+        "name": "xml_to_json",
+        "title": "xml to json",
+        "pic": "http://img02.taobaocdn.com/tps/i2/T1Og1DXolsXXXXXXXX-120-120.png",
+        "href": "http://www.thomasfrank.se/xml_to_json.html",
+        "version": "1.1",
+        "reason": "å¾ˆå¿«ï¼Œå¾ˆå°ï¼Œå¾ˆå¤©çœŸï¼Œå…·ä½“æ€ä¹ˆæ ·ä½ ç”¨è¿‡å°±çŸ¥é“äº†",
+        "intro": "å°†XMLè½¬æ¢ä¸ºJSONã€‚"
+    },{
+        "name": "Blowfish",
+        "title": "åŠ å¯†/è§£å¯†",
+        "pic": "http://img03.taobaocdn.com/tps/i3/T1nd1DXhhMXXXXXXXX-137-140.jpg",
+        "href": "http://dren.ch/js_blowfish/",
+        "version": "v1",
+        "reason": "è°ƒç”¨å¾ˆæ–¹ä¾¿(ä¸æ”¯æŒä¸­æ–‡) ",
+        "intro": "è‘—åçš„blowfishåŠ å¯†è§£å¯†ç®—æ³•çš„javascriptç‰ˆã€‚"
+    },{
+        "name": "SyntaxHighlighter",
+        "title": "è¯­æ³•é«˜äº®",
+        "pic": "http://img02.taobaocdn.com/tps/i2/T1qwmFXn8aXXXXXXXX-120-120.png",
+        "href": "http://alexgorbatchev.com/SyntaxHighlighter/",
+        "version": "3.0.83",
+        "reason": "åæ°”å¤§ï¼ŒåŠŸèƒ½å…¨ï¼Œå®¹æ˜“æ‰©å±•",
+        "intro": "Javascriptè¯­æ³•é«˜äº®ç»„ä»¶ã€‚"
+    },{
+        "name": "LESSCSS",
+        "title": "CSSç¼–ç¨‹ ^^",
+        "pic": "http://img02.taobaocdn.com/tps/i2/T1tLaFXeNfXXXXXXXX-120-120.png",
+        "href": "http://lesscss.org/ ",
+        "version": "1.1.5",
+        "reason": "åƒå†™ä»£ç ä¸€æ ·å†™CSSï¼Œ<font color=red>å®˜ç½‘éœ€è¦ç¿»å¢™</font>ï¼Œè¯·ç›´æ¥è®¿é—®<a href='http://www.lesscss.net/'>LESSä¸­æ–‡ç½‘</a>",
+        "intro": "LESS å°† CSS èµ‹äºˆäº†åŠ¨æ€è¯­è¨€çš„ç‰¹æ€§ï¼Œå¦‚ å˜é‡ï¼Œ ç»§æ‰¿ï¼Œ è¿ç®—ï¼Œ å‡½æ•°. LESS æ—¢å¯ä»¥åœ¨ å®¢æˆ·ç«¯ ä¸Šè¿è¡Œ (æ”¯æŒIE 6+, Webkit, Firefox)ï¼Œä¹Ÿå¯ä¸€åœ¨æœåŠ¡ç«¯è¿è¡Œ (å€ŸåŠ© Node.js). "
+    }];
 
 });
 
@@ -121,207 +121,207 @@ KISSY.add("data/widget", function(){
 
 KISSY.add("data/tools", function(){
 
-	return [{
-			"name": "KISSY Html Beautifier and Minifier",
-			"title": "KISSY°æHtmlÃÀ»¯Ñ¹Ëõ¹¤¾ß",
-			"pic": "",
-			"href": "http://docs.kissyui.com/kissy/src/htmlparser/demo.html",
-			"version": "",
-			"reason": "³ĞÓñĞ´µÄ",
-			"intro": "KISSY×÷Õß³ĞÓñĞ´µÄHtmlÃÀ»¯ºÍÑ¹Ëõ¹¤¾ß"
-		},{
-			"name": "KISSY Module Compiler",
-			"title": "KISSYÄ£¿éÒÀÀµºÏ²¢¹¤¾ß",
-			"pic": "",
-			"href": "http://docs.kissyui.com/",
-			"version": "",
-			"reason": "",
-			"intro": "KISSYÄ£¿éÒÀÀµºÏ²¢¹¤¾ß"
-		},{
-			"name": "YUI Compressor",
-			"title": "´úÂëÑ¹Ëõ",
-			"pic": "#",
-			"href": "http://developer.yahoo.com/yui/compressor/",
-			"version": "",
-			"reason": "",
-			"intro": "CSSÑ¹Ëõ"
-		},{
-			"name": "JsDoc Toolkit:",
-			"title": "JSÎÄµµ¹¤¾ß",
-			"pic": "#",
-			"href": "http://code.google.com/p/jsdoc-toolkit/",
-			"version": "",
-			"reason": "",
-			"intro": "¸ù¾İ´úÂë×¢ÊÍÉú³ÉÎÄµµ£¬¿ÉÒÔ¶¨ÖÆÎÄµµÄ£°æ·ç¸ñ."
-		},{
-			"name": "Ant",
-			"title": "Ä£¿é´ò°ü",
-			"pic": "#",
-			"href": "http://ant.apache.org/",
-			"version": "",
-			"reason": "",
-			"intro": "×Ô¶¯ÅäÖÃ¡¢´ò°ü£¬µ±È»²»½ö½öÊÇÕâĞ©£¬¸ü¶à¹¦ÄÜÄã¿ÉÒÔ×Ô¼ºÈ¥ÍÚ¾ò¡£"
-		},{
-			"name": "iDebug",
-			"title": "µ÷ÊÔ¹¤¾ß",
-			"pic": "#",
-			"href": "#",
-			"version": "",
-			"reason": "",
-			"intro": "Ò³Ãæµ÷ÊÔ"
-		},{
-			"name": "CSSEmbed",
-			"title": "Í¼Æ¬×ªDataURI",
-			"pic": "#",
-			"href": "",
-			"version": "",
-			"reason": "",
-			"intro": "Í¼Æ¬×ªDataURI"
-		},{
-			"name": "ConvertZ",
-			"title": "·±¼ò×ª»»",
-			"pic": "#",
-			"href": "",
-			"version": "",
-			"reason": "",
-			"intro": "·±¼ò×ª»»"
-		},{
-			"name": "PNGOut",
-			"title": "PNGÓÅ»¯",
-			"pic": "#",
-			"href": "",
-			"version": "",
-			"reason": "",
-			"intro": "PNGÓÅ»¯"
-		},{
-			"name": "csslint",
-			"title": "css¼ì²é",
-			"pic": "#",
-			"href": "http://csslint.net/",
-			"version": "",
-			"reason": "",
-			"intro": "Ò»¸öÔÚÏß¼ì²éÄãcss´úÂëµÄ¹¤¾ß"
-		},{
-			"name": "JPEG & PNG Stripper",
-			"title": "Í¼Æ¬ÓÅ»¯",
-			"pic": "#",
-			"href": "http://www.steelbytes.com/?mid=30",
-			"version": "",
-			"reason": "",
-			"intro": "A tool for stripping/cleaning/removing uncessary metadata (junk) from JPG/JPEG/JFIF & PNG files. The image quality IS NOT AFFECTED. Includes command line support. Just specify a folder or file on the commandline (wildcards allowed)"
-		},{
-			"name": "ÔÚÏßÖÆ×÷loading",
-			"title": "ÔÚÏßÖÆ×÷loadingÍ¼Æ¬",
-			"pic": "#",
-			"href": "http://preloaders.net/",
-			"version": "",
-			"reason": "",
-			"intro": "¶àÖÖÑùÊ½£¬¿É¶¨ÖÆ´óĞ¡£¬ËÙ¶ÈµÈ£¬´Ó´ËÔÙÒ²²»ÓÃµ£ĞÄÕÒ²»µ½ºÃµÄ¾Õ»¨ÁË"
-		},{
-			"name": "ASCII Generator",
-			"title": "ÔÚÏßÖÆ×÷ascii×Ö·ûÍ¼",
-			"pic": "",
-			"href": "http://www.network-science.de/ascii/",
-			"version": "",
-			"reason": "",
-			"intro": "ÔÚÏßÖÆ×÷ascii×Ö·ûÍ¼£¬¸´ÖÆµ½ÄãµÄ´úÂëÀïÃæ£¬´«ËµÖĞµÄ×°13ÀûÆ÷¡£"
-		},{
-			"name": "ÔÚÏßÑ¹ËõjpgÍ¼Æ¬",
-			"title": "ÔÚÏßÍ¼Æ¬Ñ¹Ëõ",
-			"pic": "",
-			"href": "http://www.jpegmini.com/main/home",
-			"version": "",
-			"reason": "",
-			"intro": "¿ÉÒÔÎŞËğÑ¹ËõÄãµÄÍ¼Æ¬£¬Ñ¹ËõÂÊÄÜ´ïµ½50%ÒÔÉÏ¡£"
-		},{
-			"name": "Base64 converter for embeded URI Images",
-			"title": "×ªDataURI",
-			"pic": "",
-			"href": "http://www.abluestar.com/utilities/encode_base64/index.php",
-			"version": "",
-			"reason": "",
-			"intro": "ÔÚÏß°ÑÄãµÄÍ¼Æ¬±àÂë³ÉBASE64"
-		},{
-			"name": "ÔÚÏßcss3ÑùÊ½Éú³É",
-			"title": "css3¸¨Öú¹¤¾ß",
-			"pic": "",
-			"href": "http://css3please.com/",
-			"version": "",
-			"reason": "",
-			"intro": "Èç¹ûÄã³õÑ§css3£¬¼Ç²»×¡ÄÇĞ©ÊôĞÔºÍÃû×Ö£¬Õâ¸öÎŞÒÉÊÇÄã×îºÃµÄÑ¡Ôñ¡£"
-		},{
-			"name": "DynaTrace AJAX",
-			"title": "ĞÔÄÜ·ÖÎö",
-			"pic": "",
-			"href": "http://www.dynatrace.com/en/",
-			"version": "",
-			"reason": "",
-			"intro": "DynaTrace AJAXÊÇÒ»¸öÔËĞĞÔÚIEä¯ÀÀÆ÷ÏÂµÄÃâ·ÑÒ³ÃæĞÔÄÜ·ÖÎö¹¤¾ß£¬Ëü¿ÉÒÔÖ§³ÖÖ÷Á÷µÄIE6¡¢IE7¡¢IE8ä¯ÀÀÆ÷¡£Õâ¿î¹¤¾ßÕıÊÇDynaTraceÎª½øÈëÇ°¶ËĞÔÄÜ·ÖÎöÁìÓò¶ø·¢²¼µÄ¡£Äú¿ÉÒÔÀûÓÃËüÀ´·ÖÎöÒ³ÃæäÖÈ¾Ê±¼ä¡¢DOM·½·¨Ö´ĞĞÊ±¼ä£¬ÉõÖÁ¿ÉÒÔ¿´µ½JS´úÂëµÄ½âÎöÊ±¼ä¡£Á¬JQueryµÄ´´Ê¼Õß John Resig Ò²¶¦Á¦ÍÆ¼öÁËÒ»°Ñ¡£"
-		},{
-			"name": "FastStone Capture",
-			"title": "Ç°¶Ë¸¨ÖúĞ¡¹¤¾ß",
-			"pic": "",
-			"href": "http://www.faststone.org/",
-			"version": "",
-			"reason": "",
-			"intro": "FastStone CaptureÊÇÒ»¿îÁé»î¼òµ¥µÄÆÁÄ»×¥Í¼Èí¼ş¡£Ëü¿ÉÒÔ×¥È¡Ä³¸ö´°¿Ú»òÕß¶ÔÏóµÄÍ¼Æ¬£¬Ò²¿ÉÒÔÈ«ÆÁ»òÕßÒÔ¾ØĞÎÄ£Ê½×¥Í¼£¬ÉõÖÁ¿ÉÒÔ°´ÕÕÊÖ»æµÄÈÎÒâĞÎ×´×¥Í¼¡£ÁíÍâËü»¹Ö§³Ö¸¡¶¯Ìõ¡¢ÈÈ¼ü¡¢µ÷Õû´óĞ¡¡¢¼ô²Ã¡¢ÎÄ×Ö×¢ÊÍ¡¢´òÓ¡ÒÔ¼°ÓÊ¼ş·¢ËÍµÈ¹¦ÄÜ¡£Ö§³Ö°üÀ¨BMP¡¢JPEG¡¢JPEG 2000¡¢GIF¡¢PNG¡¢PCX¡¢TIFF¡¢WMF¡¢ICOºÍTGAÔÚÄÚµÄËùÓĞÖ÷Á÷Í¼Æ¬¸ñÊ½£¬Æä¶ÀÓĞµÄ¹â»¬ºÍÃ«´Ì´¦Àí¼¼ÊõÈÃÍ¼Æ¬¸ü¼ÓÇåÎú£¬Ìá¹©Ëõ·Å¡¢Ğı×ª¡¢¼õÇĞ¡¢ÑÕÉ«µ÷Õû¹¦ÄÜ¡£Ö»ÒªµãµãÊó±ê¾ÍÄÜËæĞÄ×¥È¡ÆÁÄ»ÉÏµÄÈÎºÎ¶«Î÷£¬Ö§³ÖÍÏ·Å£¬¿ÉÒÔÖ±½Ó´ÓÏµÍ³¡¢ä¯ÀÀÆ÷»òÆäËû³ÌĞòÖĞµ¼ÈëÍ¼Æ¬£¬ÊÕ²Ø¼Ğ¹¦ÄÜÈÃÄãÄÜ¸üºÃµÄÊÕ¼¯¸ü¶à¾«²ÊÍ¼Æ¬¡£"
-		},{
-			"name": "IETester",
-			"title": "¶à°æ±¾IE",
-			"pic": "",
-			"href": "http://ietester.com/",
-			"version": "",
-			"reason": "",
-			"intro": "IETester °üº¬5¸ö°æ±¾µÄIE£¨5.5/6.0/7.0/8.0/9.0 Preview£©£¬ÍêÈ«¿ÉÒÔÂú×ã¶Ô IE ¼æÈİĞÔµÄ²âÊÔ¡££¨ÖµµÃÌáĞÑµÄÊÇ£¬ÓĞÊ±ºòÕâÍæÒâ²»¿¿Æ×£¬»¹ÊÇ×°ĞéÄâ»úºÃ¡££©"
-		},{
-			"name": "IE Sieve",
-			"title": "EÄÚ´æĞ¹Â©¼ì²â",
-			"pic": "",
-			"href": "http://home.wanadoo.nl/jsrosman/",
-			"version": "",
-			"reason": "",
-			"intro": "IEÄÚ´æĞ¹Â©¼ì²â¹¤¾ß¡£"
-		},{
-			"name": "js-beautify",
-			"title": "´úÂëÃÀ»¯",
-			"pic": "",
-			"href": "http://jsbeautifier.org/",
-			"version": "",
-			"reason": "ÄÜ¸ñÊ½»¯JSON,Ñ¹Ëõ¹ıµÄjs´úÂë",
-			"intro": "Beautify, unpack or deobfuscate JavaScript, make JSON/JSONP readable, etc.."
-		},{
-			"name": "jsfiddle",
-			"title": "´æ·Å½Å±¾Æ¬¶Î",  
-			"pic": "",
-			"href": "http://jsfiddle.net/",
-			"version": "",
-			"reason": "",
-			"intro": "ÓÃÕâ¸ö´æ·ÅÒ»Ğ©¼òµ¥µÄdemo»òÕßÔÚÏßµ÷ÊÔ»¹ÊÇÂù·½±ãµÄ¡£"
-		},{
-			"name": "Network Delay Simulator",
-			"title": "µÍÍøËÙÄ£Äâ¹¤¾ß",  
-			"pic": "",
-			"href": "http://www.akmalabs.com/home.php",
-			"version": "",
-			"reason": "",
-			"intro": "µÍÍøËÙÄ£Äâ¹¤¾ß¡£"
-		},{
-			"name": "browserstack",
-			"title": "ÔÚÏß¶àä¯ÀÀÆ÷¹¤¾ß",  
-			"pic": "",
-			"href": "http://www.browserstack.com/user/dashboard",
-			"version": "",
-			"reason": "",
-			"intro": "ÔÚÏß¶àä¯ÀÀÆ÷¹¤¾ß"
-		},{
-			"name": "spritecow",
-			"title": "spriteÖúÊÖ",  
-			"pic": "",
-			"href": "http://www.spritecow.com/",
-			"version": "",
-			"reason": "",
-			"intro": "°ïÄã¿ìËÙÉú³É×ø±ê"
-		}];
+    return [{
+        "name": "KISSY Html Beautifier and Minifier",
+        "title": "KISSYç‰ˆHtmlç¾åŒ–å‹ç¼©å·¥å…·",
+        "pic": "",
+        "href": "http://docs.kissyui.com/kissy/src/html-parser/demo.html",
+        "version": "",
+        "reason": "æ‰¿ç‰å†™çš„",
+        "intro": "KISSYä½œè€…æ‰¿ç‰å†™çš„Htmlç¾åŒ–å’Œå‹ç¼©å·¥å…·"
+    },{
+        "name": "KISSY Module Compiler",
+        "title": "KISSYæ¨¡å—ä¾èµ–åˆå¹¶å·¥å…·",
+        "pic": "",
+        "href": "http://docs.kissyui.com/",
+        "version": "",
+        "reason": "",
+        "intro": "KISSYæ¨¡å—ä¾èµ–åˆå¹¶å·¥å…·"
+    },{
+        "name": "YUI Compressor",
+        "title": "ä»£ç å‹ç¼©",
+        "pic": "#",
+        "href": "http://developer.yahoo.com/yui/compressor/",
+        "version": "",
+        "reason": "",
+        "intro": "CSSå‹ç¼©"
+    },{
+        "name": "JsDoc Toolkit:",
+        "title": "JSæ–‡æ¡£å·¥å…·",
+        "pic": "#",
+        "href": "http://code.google.com/p/jsdoc-toolkit/",
+        "version": "",
+        "reason": "",
+        "intro": "æ ¹æ®ä»£ç æ³¨é‡Šç”Ÿæˆæ–‡æ¡£ï¼Œå¯ä»¥å®šåˆ¶æ–‡æ¡£æ¨¡ç‰ˆé£æ ¼."
+    },{
+        "name": "Ant",
+        "title": "æ¨¡å—æ‰“åŒ…",
+        "pic": "#",
+        "href": "http://ant.apache.org/",
+        "version": "",
+        "reason": "",
+        "intro": "è‡ªåŠ¨é…ç½®ã€æ‰“åŒ…ï¼Œå½“ç„¶ä¸ä»…ä»…æ˜¯è¿™äº›ï¼Œæ›´å¤šåŠŸèƒ½ä½ å¯ä»¥è‡ªå·±å»æŒ–æ˜ã€‚"
+    },{
+        "name": "iDebug",
+        "title": "è°ƒè¯•å·¥å…·",
+        "pic": "#",
+        "href": "#",
+        "version": "",
+        "reason": "",
+        "intro": "é¡µé¢è°ƒè¯•"
+    },{
+        "name": "CSSEmbed",
+        "title": "å›¾ç‰‡è½¬DataURI",
+        "pic": "#",
+        "href": "",
+        "version": "",
+        "reason": "",
+        "intro": "å›¾ç‰‡è½¬DataURI"
+    },{
+        "name": "ConvertZ",
+        "title": "ç¹ç®€è½¬æ¢",
+        "pic": "#",
+        "href": "",
+        "version": "",
+        "reason": "",
+        "intro": "ç¹ç®€è½¬æ¢"
+    },{
+        "name": "PNGOut",
+        "title": "PNGä¼˜åŒ–",
+        "pic": "#",
+        "href": "",
+        "version": "",
+        "reason": "",
+        "intro": "PNGä¼˜åŒ–"
+    },{
+        "name": "csslint",
+        "title": "cssæ£€æŸ¥",
+        "pic": "#",
+        "href": "http://csslint.net/",
+        "version": "",
+        "reason": "",
+        "intro": "ä¸€ä¸ªåœ¨çº¿æ£€æŸ¥ä½ cssä»£ç çš„å·¥å…·"
+    },{
+        "name": "JPEG & PNG Stripper",
+        "title": "å›¾ç‰‡ä¼˜åŒ–",
+        "pic": "#",
+        "href": "http://www.steelbytes.com/?mid=30",
+        "version": "",
+        "reason": "",
+        "intro": "A tool for stripping/cleaning/removing uncessary metadata (junk) from JPG/JPEG/JFIF & PNG files. The image quality IS NOT AFFECTED. Includes command line support. Just specify a folder or file on the commandline (wildcards allowed)"
+    },{
+        "name": "åœ¨çº¿åˆ¶ä½œloading",
+        "title": "åœ¨çº¿åˆ¶ä½œloadingå›¾ç‰‡",
+        "pic": "#",
+        "href": "http://preloaders.net/",
+        "version": "",
+        "reason": "",
+        "intro": "å¤šç§æ ·å¼ï¼Œå¯å®šåˆ¶å¤§å°ï¼Œé€Ÿåº¦ç­‰ï¼Œä»æ­¤å†ä¹Ÿä¸ç”¨æ‹…å¿ƒæ‰¾ä¸åˆ°å¥½çš„èŠèŠ±äº†"
+    },{
+        "name": "ASCII Generator",
+        "title": "åœ¨çº¿åˆ¶ä½œasciiå­—ç¬¦å›¾",
+        "pic": "",
+        "href": "http://www.network-science.de/ascii/",
+        "version": "",
+        "reason": "",
+        "intro": "åœ¨çº¿åˆ¶ä½œasciiå­—ç¬¦å›¾ï¼Œå¤åˆ¶åˆ°ä½ çš„ä»£ç é‡Œé¢ï¼Œä¼ è¯´ä¸­çš„è£…13åˆ©å™¨ã€‚"
+    },{
+        "name": "åœ¨çº¿å‹ç¼©jpgå›¾ç‰‡",
+        "title": "åœ¨çº¿å›¾ç‰‡å‹ç¼©",
+        "pic": "",
+        "href": "http://www.jpegmini.com/main/home",
+        "version": "",
+        "reason": "",
+        "intro": "å¯ä»¥æ— æŸå‹ç¼©ä½ çš„å›¾ç‰‡ï¼Œå‹ç¼©ç‡èƒ½è¾¾åˆ°50%ä»¥ä¸Šã€‚"
+    },{
+        "name": "Base64 converter for embeded URI Images",
+        "title": "è½¬DataURI",
+        "pic": "",
+        "href": "http://www.abluestar.com/utilities/encode_base64/index.php",
+        "version": "",
+        "reason": "",
+        "intro": "åœ¨çº¿æŠŠä½ çš„å›¾ç‰‡ç¼–ç æˆBASE64"
+    },{
+        "name": "åœ¨çº¿css3æ ·å¼ç”Ÿæˆ",
+        "title": "css3è¾…åŠ©å·¥å…·",
+        "pic": "",
+        "href": "http://css3please.com/",
+        "version": "",
+        "reason": "",
+        "intro": "å¦‚æœä½ åˆå­¦css3ï¼Œè®°ä¸ä½é‚£äº›å±æ€§å’Œåå­—ï¼Œè¿™ä¸ªæ— ç–‘æ˜¯ä½ æœ€å¥½çš„é€‰æ‹©ã€‚"
+    },{
+        "name": "DynaTrace AJAX",
+        "title": "æ€§èƒ½åˆ†æ",
+        "pic": "",
+        "href": "http://www.dynatrace.com/en/",
+        "version": "",
+        "reason": "",
+        "intro": "DynaTrace AJAXæ˜¯ä¸€ä¸ªè¿è¡Œåœ¨IEæµè§ˆå™¨ä¸‹çš„å…è´¹é¡µé¢æ€§èƒ½åˆ†æå·¥å…·ï¼Œå®ƒå¯ä»¥æ”¯æŒä¸»æµçš„IE6ã€IE7ã€IE8æµè§ˆå™¨ã€‚è¿™æ¬¾å·¥å…·æ­£æ˜¯DynaTraceä¸ºè¿›å…¥å‰ç«¯æ€§èƒ½åˆ†æé¢†åŸŸè€Œå‘å¸ƒçš„ã€‚æ‚¨å¯ä»¥åˆ©ç”¨å®ƒæ¥åˆ†æé¡µé¢æ¸²æŸ“æ—¶é—´ã€DOMæ–¹æ³•æ‰§è¡Œæ—¶é—´ï¼Œç”šè‡³å¯ä»¥çœ‹åˆ°JSä»£ç çš„è§£ææ—¶é—´ã€‚è¿JQueryçš„åˆ›å§‹è€… John Resig ä¹Ÿé¼åŠ›æ¨èäº†ä¸€æŠŠã€‚"
+    },{
+        "name": "FastStone Capture",
+        "title": "å‰ç«¯è¾…åŠ©å°å·¥å…·",
+        "pic": "",
+        "href": "http://www.faststone.org/",
+        "version": "",
+        "reason": "",
+        "intro": "FastStone Captureæ˜¯ä¸€æ¬¾çµæ´»ç®€å•çš„å±å¹•æŠ“å›¾è½¯ä»¶ã€‚å®ƒå¯ä»¥æŠ“å–æŸä¸ªçª—å£æˆ–è€…å¯¹è±¡çš„å›¾ç‰‡ï¼Œä¹Ÿå¯ä»¥å…¨å±æˆ–è€…ä»¥çŸ©å½¢æ¨¡å¼æŠ“å›¾ï¼Œç”šè‡³å¯ä»¥æŒ‰ç…§æ‰‹ç»˜çš„ä»»æ„å½¢çŠ¶æŠ“å›¾ã€‚å¦å¤–å®ƒè¿˜æ”¯æŒæµ®åŠ¨æ¡ã€çƒ­é”®ã€è°ƒæ•´å¤§å°ã€å‰ªè£ã€æ–‡å­—æ³¨é‡Šã€æ‰“å°ä»¥åŠé‚®ä»¶å‘é€ç­‰åŠŸèƒ½ã€‚æ”¯æŒåŒ…æ‹¬BMPã€JPEGã€JPEG 2000ã€GIFã€PNGã€PCXã€TIFFã€WMFã€ICOå’ŒTGAåœ¨å†…çš„æ‰€æœ‰ä¸»æµå›¾ç‰‡æ ¼å¼ï¼Œå…¶ç‹¬æœ‰çš„å…‰æ»‘å’Œæ¯›åˆºå¤„ç†æŠ€æœ¯è®©å›¾ç‰‡æ›´åŠ æ¸…æ™°ï¼Œæä¾›ç¼©æ”¾ã€æ—‹è½¬ã€å‡åˆ‡ã€é¢œè‰²è°ƒæ•´åŠŸèƒ½ã€‚åªè¦ç‚¹ç‚¹é¼ æ ‡å°±èƒ½éšå¿ƒæŠ“å–å±å¹•ä¸Šçš„ä»»ä½•ä¸œè¥¿ï¼Œæ”¯æŒæ‹–æ”¾ï¼Œå¯ä»¥ç›´æ¥ä»ç³»ç»Ÿã€æµè§ˆå™¨æˆ–å…¶ä»–ç¨‹åºä¸­å¯¼å…¥å›¾ç‰‡ï¼Œæ”¶è—å¤¹åŠŸèƒ½è®©ä½ èƒ½æ›´å¥½çš„æ”¶é›†æ›´å¤šç²¾å½©å›¾ç‰‡ã€‚"
+    },{
+        "name": "IETester",
+        "title": "å¤šç‰ˆæœ¬IE",
+        "pic": "",
+        "href": "http://ietester.com/",
+        "version": "",
+        "reason": "",
+        "intro": "IETester åŒ…å«5ä¸ªç‰ˆæœ¬çš„IEï¼ˆ5.5/6.0/7.0/8.0/9.0 Previewï¼‰ï¼Œå®Œå…¨å¯ä»¥æ»¡è¶³å¯¹ IE å…¼å®¹æ€§çš„æµ‹è¯•ã€‚ï¼ˆå€¼å¾—æé†’çš„æ˜¯ï¼Œæœ‰æ—¶å€™è¿™ç©æ„ä¸é è°±ï¼Œè¿˜æ˜¯è£…è™šæ‹Ÿæœºå¥½ã€‚ï¼‰"
+    },{
+        "name": "IE Sieve",
+        "title": "Eå†…å­˜æ³„æ¼æ£€æµ‹",
+        "pic": "",
+        "href": "http://home.wanadoo.nl/jsrosman/",
+        "version": "",
+        "reason": "",
+        "intro": "IEå†…å­˜æ³„æ¼æ£€æµ‹å·¥å…·ã€‚"
+    },{
+        "name": "js-beautify",
+        "title": "ä»£ç ç¾åŒ–",
+        "pic": "",
+        "href": "http://jsbeautifier.org/",
+        "version": "",
+        "reason": "èƒ½æ ¼å¼åŒ–JSON,å‹ç¼©è¿‡çš„jsä»£ç ",
+        "intro": "Beautify, unpack or deobfuscate JavaScript, make JSON/JSONP readable, etc.."
+    },{
+        "name": "jsfiddle",
+        "title": "å­˜æ”¾è„šæœ¬ç‰‡æ®µ",
+        "pic": "",
+        "href": "http://jsfiddle.net/",
+        "version": "",
+        "reason": "",
+        "intro": "ç”¨è¿™ä¸ªå­˜æ”¾ä¸€äº›ç®€å•çš„demoæˆ–è€…åœ¨çº¿è°ƒè¯•è¿˜æ˜¯è›®æ–¹ä¾¿çš„ã€‚"
+    },{
+        "name": "Network Delay Simulator",
+        "title": "ä½ç½‘é€Ÿæ¨¡æ‹Ÿå·¥å…·",
+        "pic": "",
+        "href": "http://www.akmalabs.com/home.php",
+        "version": "",
+        "reason": "",
+        "intro": "ä½ç½‘é€Ÿæ¨¡æ‹Ÿå·¥å…·ã€‚"
+    },{
+        "name": "browserstack",
+        "title": "åœ¨çº¿å¤šæµè§ˆå™¨å·¥å…·",
+        "pic": "",
+        "href": "http://www.browserstack.com/user/dashboard",
+        "version": "",
+        "reason": "",
+        "intro": "åœ¨çº¿å¤šæµè§ˆå™¨å·¥å…·"
+    },{
+        "name": "spritecow",
+        "title": "spriteåŠ©æ‰‹",
+        "pic": "",
+        "href": "http://www.spritecow.com/",
+        "version": "",
+        "reason": "",
+        "intro": "å¸®ä½ å¿«é€Ÿç”Ÿæˆåæ ‡"
+    }];
 
 });
 
@@ -330,13 +330,13 @@ KISSY.add("data/tools", function(){
 
 /*
 
-,{
-			"name": "",
-			"pic": "",
-			"href": "",
-			"version": "",
-			"reason": "",
-			"intro": ""
-		}
+ ,{
+ "name": "",
+ "pic": "",
+ "href": "",
+ "version": "",
+ "reason": "",
+ "intro": ""
+ }
 
-*/
+ */
