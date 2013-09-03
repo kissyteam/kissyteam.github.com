@@ -38,8 +38,12 @@ Methods
 
     .. note::
 
-        embed, object, applet 这三个标签不能设置 expando .
-        如果判断是否设置了扩展属性, 请使用 :func:`dom.hasData <dom.hasData>`
+        1. embed, object, applet 这三个标签不能设置 expando .
+        
+        1. 如果判断是否设置了扩展属性, 请使用 :func:`dom.hasData <dom.hasData>`
+        
+        1. 该函数并不能读取 data-xx 伪属性，例如 ``<div data-x="y"></div>``
+        
 
     .. code-block:: javascript
 

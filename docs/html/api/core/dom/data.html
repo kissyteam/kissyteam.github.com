@@ -163,8 +163,15 @@
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">embed, object, applet 这三个标签不能设置 expando .
-如果判断是否设置了扩展属性, 请使用 <a class="reference internal" href="hasData.html#dom.hasData" title="dom.hasData"><tt class="xref py py-func docutils literal"><span class="pre">dom.hasData</span></tt></a></p>
+<ol class="arabic simple">
+<li>embed, object, applet 这三个标签不能设置 expando .</li>
+</ol>
+<ol class="arabic simple">
+<li>如果判断是否设置了扩展属性, 请使用 <a class="reference internal" href="hasData.html#dom.hasData" title="dom.hasData"><tt class="xref py py-func docutils literal"><span class="pre">dom.hasData</span></tt></a></li>
+</ol>
+<ol class="last arabic simple">
+<li>该函数并不能读取 data-xx 伪属性，例如 <tt class="docutils literal"><span class="pre">&lt;div</span> <span class="pre">data-x=&quot;y&quot;&gt;&lt;/div&gt;</span></tt></li>
+</ol>
 </div>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">;</span>
 
