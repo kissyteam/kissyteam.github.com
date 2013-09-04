@@ -69,11 +69,11 @@ Configs Detail
 
 .. data:: Color.config.g
 
-    {Number} - greeb 值
+    {Number} - green 值
 
 .. data:: Color.config.b
 
-    {Number} - green 值
+    {Number} - blur 值
 
 
 Methods Detail
