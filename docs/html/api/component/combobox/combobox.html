@@ -119,6 +119,8 @@
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference internal" href="#combobox.ComboBox.config.hasTrigger" title="combobox.ComboBox.config.hasTrigger"><tt class="xref py py-data docutils literal"><span class="pre">hasTrigger</span></tt></a></li>
+<li><a class="reference internal" href="../component/controller.html#component.Controller.config.focused" title="component.Controller.config.focused"><tt class="xref py py-data docutils literal"><span class="pre">focused</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.ComboBox.config.placeholder" title="combobox.ComboBox.config.placeholder"><tt class="xref py py-data docutils literal"><span class="pre">placeholder</span></tt></a></li>
 <li><a class="reference internal" href="#combobox.ComboBox.config.menu" title="combobox.ComboBox.config.menu"><tt class="xref py py-data docutils literal"><span class="pre">menu</span></tt></a></li>
 <li><a class="reference internal" href="#combobox.ComboBox.config.dataSource" title="combobox.ComboBox.config.dataSource"><tt class="xref py py-data docutils literal"><span class="pre">dataSource</span></tt></a></li>
 <li><a class="reference internal" href="#combobox.ComboBox.config.maxItemCount" title="combobox.ComboBox.config.maxItemCount"><tt class="xref py py-data docutils literal"><span class="pre">maxItemCount</span></tt></a></li>
@@ -222,6 +224,12 @@
 </dd></dl>
 
 <dl class="data">
+<dt id="combobox.ComboBox.config.placeholder">
+<tt class="descclassname">ComboBox.config.</tt><tt class="descname">placeholder</tt><a class="headerlink" href="#combobox.ComboBox.config.placeholder" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 默认无. 输入框的提示信息.</p>
+</dd></dl>
+
+<dl class="data">
 <dt id="combobox.ComboBox.config.autoHighlightFirst">
 <tt class="descclassname">ComboBox.config.</tt><tt class="descname">autoHighlightFirst</tt><a class="headerlink" href="#combobox.ComboBox.config.autoHighlightFirst" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Boolean} - 默认 false. 是否默认选中下拉提示第一项</p>
@@ -320,7 +328,7 @@
 <dl class="attribute">
 <dt id="combobox.ComboBox.prototype.collapsed">
 <tt class="descclassname">ComboBox.prototype.</tt><tt class="descname">collapsed</tt><a class="headerlink" href="#combobox.ComboBox.prototype.collapsed" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Boolean} - 自动补全菜单是否已经显示.</p>
+<dd><p>{Boolean} - 自动补全菜单是否已经收起.</p>
 </dd></dl>
 
 </div>
@@ -368,13 +376,13 @@
 <tt class="descclassname">ComboBox.Events.</tt><tt class="descname">afterCollapsedChange</tt><big>(</big><big>)</big><a class="headerlink" href="#combobox.ComboBox.Events.afterCollapsedChange" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>afterCollapsedChange(e)</strong></div>
-<div class="line">当下拉菜单显示或隐藏时触发</div>
+<div class="line">当下拉菜单显示或收起时触发</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>e.newVal</strong> (<em>{Boolean}</em>) &#8211; 当前下拉菜单是否是隐藏状态</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>e.newVal</strong> (<em>{Boolean}</em>) &#8211; 当前下拉菜单是否是收起状态</td>
 </tr>
 </tbody>
 </table>

@@ -21,6 +21,8 @@ Configs
 ------------------------------------------
 
     * :data:`~ComboBox.config.hasTrigger`
+    * :data:`~component.Controller.config.focused`
+    * :data:`~ComboBox.config.placeholder`
     * :data:`~ComboBox.config.menu`
     * :data:`~ComboBox.config.dataSource`
     * :data:`~ComboBox.config.maxItemCount`
@@ -104,6 +106,10 @@ Configs Detail
 
     {Boolean} - 默认 true. 是否显示下拉按钮.
 
+.. data:: ComboBox.config.placeholder
+
+    {String} - 默认无. 输入框的提示信息.
+
 .. data:: ComboBox.config.autoHighlightFirst
 
     {Boolean} - 默认 false. 是否默认选中下拉提示第一项
@@ -186,7 +192,7 @@ Attributes Detail
 
 .. attribute:: ComboBox.prototype.collapsed
 
-    {Boolean} - 自动补全菜单是否已经显示.
+    {Boolean} - 自动补全菜单是否已经收起.
 
 
 Methods Detail
@@ -214,6 +220,6 @@ Events Detail
 .. function:: ComboBox.Events.afterCollapsedChange
 
     | **afterCollapsedChange(e)**
-    | 当下拉菜单显示或隐藏时触发
+    | 当下拉菜单显示或收起时触发
 
-    :param {Boolean} e.newVal: 当前下拉菜单是否是隐藏状态
+    :param {Boolean} e.newVal: 当前下拉菜单是否是收起状态
