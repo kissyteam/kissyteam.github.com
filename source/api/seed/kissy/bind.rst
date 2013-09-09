@@ -12,13 +12,13 @@ Methods
 
 .. function:: KISSY.bind
 
-    | Array **KISSY.bind** (fn , context[, arg1[, arg2[, ...]]])
+    | Function **KISSY.bind** (fn , context[, arg1[, arg2[, ...]]])
     | 创建一个新函数，该函数可以在固定的上下文以及传递部分固定参数放在用户参数前面给原函数并执行
     
     :param function fn: 需要固定上下文以及固定部分参数的函数
     :param object context: 执行 ``fn`` 时的 ``this`` 值. 如果新函数用于构造器则该参数无用.
     :returns: 符合需求的新函数
-    :rtype: function
+    :rtype: Function
     
 
     示例: **改变运行上下文**
