@@ -74,6 +74,23 @@ Demos
         <button onclick='supportIf();'>测试 if 语句</button>
     </p>
 
+支持 if not 语句
+`````````````````````````````````````
+
+代码:
+
+.. literalinclude:: /raw/demo/xtemplate/assets/support-if-not.js
+    :language: javascript
+
+演示：
+
+.. raw:: html
+
+    <script src='../../../../../source/raw/demo/xtemplate/assets/support-if-not.js'></script>
+
+    <p>
+        <button onclick='supportIfNot();'>测试 if 语句</button>
+    </p>
 
 支持 each 语句循环对象数组
 `````````````````````````````````````

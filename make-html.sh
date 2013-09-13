@@ -1,0 +1,1 @@
+sphinx-build -d docs/doctrees -b html source docs/html
