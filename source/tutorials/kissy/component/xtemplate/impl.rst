@@ -1,30 +1,45 @@
 构建前端 DSL template
---------------------------------------
+=====================
 
-author: `承玉 <yiminghe@gmail.com>`_
+目前在传统的软件开发领域
+`DSL <http://en.wikipedia.org/wiki/Domain-specific_language>`__
+已经比较普遍， 特别是 `Martin Fowler <http://martinfowler.com/>`__
+的突出贡献。 而在前端领域尚较少涉及，而如果在前端开发中合理使用 DSL
+同样也可以有效得\ **减少代码数量，提高可读性**\ ，常见的一个应用场景即前端模板的构建。
+本质上说模板也是一个微型语言，因此可以从DSL的角度着手，使用工具快速构建一个适合于特定前端框架的模板引擎。
+本文将以 `KISSY
+XTemplate <http://docs.kissyui.com/docs/html/demo/component/xtemplate/index.html>`__
+为例介绍如何构建前端的 DSL。
 
-.. raw:: html
+注： 本文持续更新地址： `xtemplate at
+github <https://github.com/kissyteam/kissy/blob/master/src/xtemplate/impl.md>`__.
+`xtemplate at
+docs.kissyui.com <http://docs.kissyui.com/docs/html/tutorials/kissy/component/xtemplate/impl.html>`__.
 
-    <p>目前在传统的软件开发领域 <a href="http://en.wikipedia.org/wiki/Domain-specific_language">DSL</a> 已经比较普遍，
-    特别是 <a href="http://martinfowler.com/">Martin Fowler</a> 的突出贡献。
-    而在前端领域尚较少涉及，而如果在前端开发中合理使用 DSL 同样也可以有效得<strong>减少代码数量，提高可读性</strong>，常见的一个应用场景即前端模板的构建。
-    本质上说模板也是一个微型语言，因此可以从DSL的角度着手，使用工具快速构建一个适合于特定前端框架的模板引擎。
-    本文将以 <a href="http://docs.kissyui.com/docs/html/demo/component/xtemplate/index.html">KISSY XTemplate</a>
-    为例介绍如何构建前端的 DSL。</p>
+首先 npm 安装 kissy
+-------------------
 
-    <p>注：
-    本文持续更新地址：
-    <a href="https://github.com/kissyteam/kissy/blob/master/src/xtemplate/impl.md">xtemplate at github</a>. DSL 也是初学，敬请勘误.</p>
+::
 
-    <h1>首先 npm 安装 kissy</h1>
+     npm install -g kissy
 
-    <pre><code> npm install -g kissy
-    </code></pre>
+通常测试版不会发送到 npm，这时推荐下载指定的 git
+版本到本地目录安装，例如下载
+`主干 <https://github.com/kissyteam/kissy/archive/master.zip>`__ 到
+d:/code
 
-    <h1>xtemplate 示例代码</h1>
+::
 
-    <pre><code>this is kissy xtemplate: {{date}}
-    {{#if n &gt; n*2}}
+    cd d:/code
+    npm link
+
+xtemplate 示例代码
+------------------
+
+::
+
+    this is kissy xtemplate: {{date}}
+    {{#if n > n*2}}
         {{{no escape}}}
         {{each array}}
             index: {{xindex}}
@@ -41,54 +56,62 @@ author: `承玉 <yiminghe@gmail.com>`_
             {{custom_tpl param2}}
         {{/custom_block}}
     {{/if}}
-    </code></pre>
 
-    <h1>模板词法/语法</h1>
+模板词法/语法
+-------------
 
-    <p>这一步主要是为了下一步构建自定义语言的语法树做准备，这里采用使用工具<strong>自动生成语法解析器</strong>（parser）的方向来做，
-    如果你打算手写解析器则可以略过此步（事实上可以略过本文）。</p>
+这一步主要是为了下一步构建自定义语言的语法树做准备，这里采用使用工具\ **自动生成语法解析器**\ （parser）的方向来做，
+如果你打算手写解析器则可以略过此步（事实上可以略过本文）。
 
-    <p>由于本文关注前端技术，
-    故词法以及语法都采用 json 格式描述，词法直接采用正则表达式，
-    语法采用变形的 <a href="http://en.wikipedia.org/wiki/Backus%E2%80%93Naur_Form">BNF</a> 形式，
-    例如 xtemplate 的 <a href="https://github.com/kissyteam/kissy/blob/master/src/xtemplate/src/parser-grammar.kison">词法语法文件</a></p>
+由于本文关注前端技术， 故词法以及语法都采用 json
+格式描述，词法直接采用正则表达式， 语法采用变形的
+`BNF <http://en.wikipedia.org/wiki/Backus%E2%80%93Naur_Form>`__ 形式，
+例如 xtemplate 的
+`词法语法文件 <https://github.com/kissyteam/kissy/blob/master/src/xtemplate/src/parser-grammar.kison>`__
 
-    <p>工具采用 kissy 开发的 <a href="http://en.wikipedia.org/wiki/LALR">LALR</a> 语法解析器生成器 <a href="https://github.com/kissyteam/kissy/tree/master/src/kison">kison</a>.</p>
+工具采用 kissy 开发的 `LALR <http://en.wikipedia.org/wiki/LALR>`__
+语法解析器生成器
+`kison <https://github.com/kissyteam/kissy/tree/master/src/kison>`__.
 
-    <p>词法关注如何从输入代码中解析出最基本的代码单元（关键词，字符串，数字...），例如 xtemplate 的部分词法</p>
+词法关注如何从输入代码中解析出最基本的代码单元（关键词，字符串，数字...），例如
+xtemplate 的部分词法
 
-    <pre><code>{
-        state: 't',
+::
+
+    {
+        state: ['t'],
         regexp: /^{{/,
         token: 'OPEN'
     },
     {
-        state: 't',
+        state: ['t'],
         regexp: /^}}/,
         token: 'CLOSE'
     },
     {
-        state: 't',
-        regexp: /^&lt;=/,
+        state: ['t'],
+        regexp: /^<=/,
         token: 'LE'
     },
     {
-        state: 't',
+        state: ['t'],
         regexp: /^\+/,
         token: 'PLUS'
     },
     {
-        state: 't',
+        state: ['t'],
         regexp: /^[a-zA-Z0-9_$-]+/,
         token: 'ID'
     },
-    </code></pre>
 
-    <p>其中 state 表示单个状态，词法解析过程也是一个状态机变换状态的过程.</p>
+其中 state 表示单个状态，词法解析过程也是一个状态机变换状态的过程.
 
-    <p>而语法解析关注与从词法单元中识别出有效的程序结构，即语法解析树，例如 xtemplate 的部分语法描述：</p>
+而语法解析关注与从词法单元中识别出有效的程序结构，即语法解析树，例如
+xtemplate 的部分语法描述：
 
-    <pre><code>{
+::
+
+    {
         symbol: 'Expression',
         rhs: ['ConditionalOrExpression']
     },
@@ -105,18 +128,21 @@ author: `承玉 <yiminghe@gmail.com>`_
         symbol: 'statement',
         rhs: ['openBlock', 'program', 'closeBlock']
     }
-    </code></pre>
 
-    <p>其中对应 BNF 形式中： symbol ::= rhs</p>
+其中对应 BNF 形式中： symbol ::= rhs
 
-    <h1>构建模板抽象语法树</h1>
+构建模板抽象语法树
+------------------
 
-    <p>语法词法只是描述了如何识别模板语言，而构建语法树的过程则需要在语法识别过程中由调用者自行构建，
-    kison 支持在每个语法规则项中添加动作函数，通过工具在识别语言过程中（遍历<a href="http://en.wikipedia.org/wiki/Parse_tree">语法解析树</a>）
-    同时有选择性得构建异型<a href="http://en.wikipedia.org/wiki/Abstract_syntax_tree">抽象语法树</a>，
-    例如 xtemplate 的树节点构建过程：</p>
+语法词法只是描述了如何识别模板语言，而构建语法树的过程则需要在语法识别过程中由调用者自行构建，
+kison
+支持在每个语法规则项中添加动作函数，通过工具在识别语言过程中（遍历\ `语法解析树 <http://en.wikipedia.org/wiki/Parse_tree>`__\ ）
+同时有选择性得构建异型\ `抽象语法树 <http://en.wikipedia.org/wiki/Abstract_syntax_tree>`__\ ，
+例如 xtemplate 的树节点构建过程：
 
-    <pre><code>{
+::
+
+    {
         symbol: 'program',
         rhs: ['statements', 'inverse', 'statements'],
         action: function () {
@@ -131,149 +157,185 @@ author: `承玉 <yiminghe@gmail.com>`_
         symbol: 'RelationalExpression',
         rhs: ['RelationalExpression', 'LE', 'AdditiveExpression'],
         action: function () {
-            return new this.yy.RelationalExpression(this.$1, '&lt;=', this.$3);
+            return new this.yy.RelationalExpression(this.$1, '<=', this.$3);
         }
     }
-    </code></pre>
 
-    <p>其中 最基本的表达式(PrimaryExpression)可以直接是变量词法单元的值，而复杂的比较表达式以及整个程序则是自底向上由子树构建起来.</p>
+其中
+最基本的表达式(PrimaryExpression)可以直接是变量词法单元的值，而复杂的比较表达式以及整个程序则是自底向上由子树构建起来.
 
-    <p>最后使用 <strong>kissy-kison</strong> 命令</p>
+最后使用 **kissy-kison** 命令
 
-    <pre><code>kissy-kison -g parser.kison -m xtemplate/parser
-    </code></pre>
+::
 
-    <p>就可以生成模板解析函数模块，大致为：</p>
+    kissy-kison -g parser.kison -m xtemplate/parser
 
-    <pre><code>KISSY.add('xtemplate/parser', function(){
+就可以生成模板解析函数模块，大致为：
+
+::
+
+    KISSY.add('xtemplate/parser', function(){
         function parse(code){
             // ...
         }
         return parse;
     });
-    </code></pre>
 
-    <h1>模板编译</h1>
+模板编译
+--------
 
-    <p>最后一步即是模板编译过程，将模板代码编译为 javascript 代码，填入数据执行后即可得到真正的渲染 html.</p>
+最后一步即是模板编译过程，将模板代码编译为 javascript
+代码，填入数据执行后即可得到真正的渲染 html.
 
-    <h2>调用 parse</h2>
+调用 parse
+~~~~~~~~~~
 
-    <p>经过上一步得到解析函数后，调用</p>
+经过上一步得到解析函数后，调用
 
-    <pre><code>parse(tempalteCode)
-    </code></pre>
+::
 
-    <p>即得到一棵抽象语法树，例如 xtemplate 的一段代码：</p>
+    parse(templateCode)
 
-    <pre><code>{{#each data}}
+即得到一棵抽象语法树，例如 xtemplate 的一段代码：
+
+::
+
+    {{#each data}}
     {{#if n === ../n2 * 5}}
     {{n + 10.1}}
     {{/if}}
     {{/each}}
-    </code></pre>
 
-    <p>对应的抽象语法树：</p>
+对应的抽象语法树：
 
-    <p><img src="http://img04.taobaocdn.com/tps/i4/T1iEDUXmpdXXcyYdHO-265-555.png" alt="xtemplate ast" title="" /></p>
+.. figure:: http://img04.taobaocdn.com/tps/i4/T1iEDUXmpdXXcyYdHO-265-555.png
+   :alt: xtemplate ast
 
-    <h2>翻译代码</h2>
+   xtemplate ast
+翻译代码
+~~~~~~~~
 
-    <p>接着就可以采用 <a href="http://en.wikipedia.org/wiki/Visitor_pattern">visitor</a> 模式将生成具体代码的逻辑写入 visitor 对象，遍历 ast 将对应的子树或节点转换成 javascript 代码，</p>
+接着就可以采用
+`visitor <http://en.wikipedia.org/wiki/Visitor_pattern>`__
+模式将生成具体代码的逻辑写入 visitor 对象，遍历 ast
+将对应的子树或节点转换成 javascript 代码，
 
-    <p>这步可以继续优雅得采用代码模板，将代码模板的数据替换成模板对应的 javascript 单元。
-    不过为了不折磨大脑，最后放松下，可以直接采用原生的代码拼接：</p>
+这步可以继续优雅得采用代码模板，将代码模板的数据替换成模板对应的
+javascript 单元。
+不过为了不折磨大脑，最后放松下，可以直接采用原生的代码拼接：
 
-    <pre><code>visitor.tplNode=function(node){
+::
 
-        if(node.escapeHTML){
-            codes.push("if("+node.id+" in data) { ret.push(KISSY.escapeHTML(data."+node.js+");) }"+
+    visitor.tplNode=function(node){
+
+        if(node.escapeHtml){
+            codes.push("if("+node.id+" in data) { ret.push(KISSY.escapeHtml(data."+node.js+");) }"+
             " else { KISSY.warn('not found')!; }");
         }else{
         }
 
     };
-    </code></pre>
 
-    <p>不过确实还是挺折磨.</p>
+不过确实还是挺折磨.
 
-    <h2>离线编译</h2>
+离线编译
+~~~~~~~~
 
-    <p>大多数 DSL 都是推荐在使用前就转换成目标语言，而客户端在不太注重性能的情况下也可以在终端用户使用时在线编译。</p>
+大多数 DSL
+都是推荐在使用前就转换成目标语言，而客户端在不太注重性能的情况下也可以在终端用户使用时在线编译。
 
-    <p>xtemplate 通过 <strong>kissy-xtemplate</strong> 命令支持将模板代码离线编译为模板函数模块，这样客户端可以直接require该模块，
-    省去了客户端编译过程，同时开发中直接面对 html 类似的模板代码，省去了字符串嵌入模板的繁琐。</p>
+xtemplate 通过 **kissy-xtemplate**
+命令支持将模板代码离线编译为模板函数模块，这样客户端可以直接require该模块，
+省去了客户端编译过程，同时开发中直接面对 html
+类似的模板代码，省去了字符串嵌入模板的繁琐。
 
-    <p>例如 t-tpl.html</p>
+例如 t.xtpl.html
 
-    <pre><code>{{ offline }} compile
-    </code></pre>
+::
 
-    <p>运行</p>
+    {{ offline }} compile
 
-    <pre><code>kissy-xtemplate -t t-tpl.html -m tests/t -w
-    </code></pre>
+运行
 
-    <p>可得到 t.js</p>
+::
 
-    <pre><code>KISSY.add('tests/t',function(){
+    kissy-xtemplate -n tests -p ./ -w
+
+(-w 表示监控包目录内的 tpl 文件变化, -n 表示包名, -p
+表示对应包所在的目录)
+
+可得到 t.js
+
+::
+
+    KISSY.add('tests/t',function(){
         function render(data){
         }
         return render;
     });
-    </code></pre>
 
-    <p>离线编译的一个缺点是编译出来的代码肯定比原生模板大很多，这也正体现了 DSL 节省代码，易读的特性（代码肯定不可读了）。</p>
+离线编译的一个缺点是编译出来的代码肯定比原生模板大很多，这也正体现了 DSL
+节省代码，易读的特性（代码肯定不可读了）。
 
-    <h1>下一步</h1>
+下一步
+------
 
-    <p>目前存在两大问题：</p>
+目前存在两大问题：
 
-    <h2>体积较大</h2>
+体积较大
+~~~~~~~~
 
-    <pre><code>压缩前 130k， 不过 gzip+compress 后由于生成的重复代码比较多，降到 10k，
+::
+
+    压缩前 130k， 不过 gzip+compress 后由于生成的重复代码比较多，降到 10k，
     不过仍然需要优化生成代码: 减少模板解析器的代码。同时也可优化模板转化为最终代码的大小，这在离线编译情况下很有用。
-    </code></pre>
 
-    <h2>xtemplate 模块需要拆分</h2>
+xtemplate 模块需要拆分
+~~~~~~~~~~~~~~~~~~~~~~
 
-    <pre><code>当选择离线编译，实际上 xtemplate 的编译代码可以不用下载，
+::
+
+    当选择离线编译，实际上 xtemplate 的编译代码可以不用下载，
     可拆分为两个模块: xtemplate/runtime 以及 xtemplate/compiler
 
     这样当选择离线编译时直接use xtemplate/runtime 载入模板的功能基础设施即可。
-    </code></pre>
 
-    <h1>xtemplate 文档</h1>
+xtemplate 文档
+--------------
 
-    <p><a href="http://docs.kissyui.com/docs/html/api/component/xtemplate/index.html">api</a></p>
+`api <http://docs.kissyui.com/docs/html/api/component/xtemplate/index.html>`__
 
-    <p><a href="http://docs.kissyui.com/docs/html/demo/component/xtemplate/index.html">demo</a></p>
+`demo <http://docs.kissyui.com/docs/html/demo/component/xtemplate/index.html>`__
 
-    <p><a href="http://docs.kissyui.com/docs/html/tutorials/kissy/component/xtemplate/index.html">tutorial</a></p>
+`tutorial <http://docs.kissyui.com/docs/html/tutorials/kissy/component/xtemplate/index.html>`__
 
-    <h1>推荐书籍</h1>
+推荐书籍
+--------
 
-    <p>感谢这些作者，没有这些书籍， 这个任务不可能完成</p>
+感谢这些作者，没有这些书籍， 这个任务不可能完成
 
-    <p><a href="http://book.douban.com/subject/3296317/">Compilers: Principles,Techniques and Tools</a></p>
+`Compilers: Principles,Techniques and
+Tools <http://book.douban.com/subject/3296317/>`__
 
-    <p><a href="http://book.douban.com/subject/4768014/">DSL In Action</a></p>
+`DSL In Action <http://book.douban.com/subject/4768014/>`__
 
-    <p><a href="http://book.douban.com/subject/10482195/">Language Implementation Patterns: Create Your Own Domain-Specific and General Programming Languages</a></p>
+`Language Implementation Patterns: Create Your Own Domain-Specific and
+General Programming
+Languages <http://book.douban.com/subject/10482195/>`__
 
-    <h1>致谢</h1>
+致谢
+----
 
-    <p>在开发过程中参考一了下工具：</p>
+在开发过程中参考一了下工具：
 
-    <p><a href="http://velocity.apache.org/">velocity</a></p>
+`velocity <http://velocity.apache.org/>`__
 
-    <p><a href="https://developers.google.com/closure/templates/">closure templates</a></p>
+`closure templates <https://developers.google.com/closure/templates/>`__
 
-    <p><a href="http://www.gnu.org/software/bison/">bison</a></p>
+`bison <http://www.gnu.org/software/bison/>`__
 
-    <p><a href="http://zaach.github.com/jison/">jison</a></p>
+`jison <http://zaach.github.com/jison/>`__
 
-    <p><a href="http://handlebarsjs.com/">handlebar</a></p>
+`handlebar <http://handlebarsjs.com/>`__
 
-    <p><a href="http://mustache.github.com/">mustache</a></p>
-
+`mustache <http://mustache.github.com/>`__

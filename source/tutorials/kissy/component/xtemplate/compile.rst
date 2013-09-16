@@ -20,7 +20,7 @@ Refer
 不仅有利于代码的清晰，更省去了客户端生成模板函数的消耗，例如
 
 
-x-tpl.html:
+x.xtpl.html:
 
 .. code-block:: html
 
@@ -28,7 +28,8 @@ x-tpl.html:
         {{title}}
     </div>
 
-运行命令： ``kissy-xtemplate -t x-tpl.html -m tests/x -w`` (-w 表示监控 tpl 文件变化) 后生成
+运行命令： ``kissy-xtemplate -n tests -p ./ -w`` 后生成模板函数.
+(-w 表示监控包目录内的 tpl 文件变化, -n 表示包名, -p 表示对应包所在的目录)
 
 
 x.js:
@@ -47,6 +48,12 @@ x.js:
 
     #. npm install -g kissy
 
+    通常测试版不会发送到 npm，这时推荐下载指定的 git 版本到本地目录安装，
+    例如下载 `主干<https://github.com/kissyteam/kissy/archive/master.zip>`_ 到 d:/code
+
+    #. cd d:/code
+    #. npm link
+
 使用
 ``````````````````````````````
 
@@ -57,7 +64,7 @@ x.js:
 
 .. code-block:: javascript
 
-    KISSY.use('xtemplate,tests/x',function(S,XTemplate,tpl){
+    KISSY.use('xtemplate/runtime,tests/x',function(S,XTemplate,tpl){
         var data={
             title: 'm'
         };

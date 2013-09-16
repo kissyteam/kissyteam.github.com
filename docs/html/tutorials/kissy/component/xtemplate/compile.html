@@ -96,13 +96,14 @@
 <h3>运行<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>将模板写入单独的模板文件，然后用 kissy-nodejs 的 kissy-xtemplate 命令生成对应的模板函数。
 不仅有利于代码的清晰，更省去了客户端生成模板函数的消耗，例如</p>
-<p>x-tpl.html:</p>
+<p>x.xtpl.html:</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div&gt;</span>
     {{title}}
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
 </div>
-<p>运行命令： <tt class="docutils literal"><span class="pre">kissy-xtemplate</span> <span class="pre">-t</span> <span class="pre">x-tpl.html</span> <span class="pre">-m</span> <span class="pre">tests/x</span> <span class="pre">-w</span></tt> (-w 表示监控 tpl 文件变化) 后生成</p>
+<p>运行命令： <tt class="docutils literal"><span class="pre">kissy-xtemplate</span> <span class="pre">-n</span> <span class="pre">tests</span> <span class="pre">-p</span> <span class="pre">./</span> <span class="pre">-w</span></tt> 后生成模板函数.
+(-w 表示监控包目录内的 tpl 文件变化, -n 表示包名, -p 表示对应包所在的目录)</p>
 <p>x.js:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;tests/x&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
     <span class="k">return</span> <span class="kd">function</span><span class="p">(){</span>
@@ -114,8 +115,14 @@
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>kissy-xtemplate 安装步鄹：</p>
-<ol class="last arabic simple">
+<ol class="arabic simple">
 <li>npm install -g kissy</li>
+</ol>
+<p>通常测试版不会发送到 npm，这时推荐下载指定的 git 版本到本地目录安装，
+例如下载 <a href="#id4"><span class="problematic" id="id5">`主干&lt;https://github.com/kissyteam/kissy/archive/master.zip&gt;`_</span></a> 到 d:/code</p>
+<ol class="last arabic simple">
+<li>cd d:/code</li>
+<li>npm link</li>
 </ol>
 </div>
 </div>
@@ -124,7 +131,7 @@
 <h2>使用<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>注意 <a class="reference internal" href="../../../../api/component/xtemplate/index.html#xtemplate.XTemplate" title="xtemplate.XTemplate"><tt class="xref py py-class docutils literal"><span class="pre">XTemplate</span></tt></a> 的第一个参数可以是预先生成的函数，那么当由第一步生成模板后，
 直接 new 并 render 即可。 例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;xtemplate,tests/x&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">XTemplate</span><span class="p">,</span><span class="nx">tpl</span><span class="p">){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;xtemplate/runtime,tests/x&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">XTemplate</span><span class="p">,</span><span class="nx">tpl</span><span class="p">){</span>
     <span class="kd">var</span> <span class="nx">data</span><span class="o">=</span><span class="p">{</span>
         <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;m&#39;</span>
     <span class="p">};</span>
