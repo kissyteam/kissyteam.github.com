@@ -48,7 +48,7 @@ KISSY 提供的动画特效支持主要由三个子模块组成 [1]_ :
 
 .. raw:: html
 
-      <script src="http://dev.kissyui.com/kissy/build/seed.js" data-config="{combine:true}"></script>
+      <script src="http://g.tbcdn.cn/kissy/k/1.3.2/seed.js" data-config="{combine:true}"></script>
    <div class="demo">
         <style>
             #photo-list img  {

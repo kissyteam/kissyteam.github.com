@@ -5,12 +5,12 @@ Setup
 
 如何使用 KISSY ? 
 
-* 先将 `http://dev.kissyui.com/kissy/build/seed-min.js <http://dev.kissyui.com/kissy/build/seed-min.js>`_ 引入到你的页面;
+* 先将 `http://g.tbcdn.cn/kissy/k/1.3.2/seed-min.js <http://g.tbcdn.cn/kissy/k/1.3.2/seed-min.js>`_ 引入到你的页面;
 * 接着, 稍加编写一些代码, 就可以实现下面的效果了:
 
 .. raw:: html
 
-   <script src="http://dev.kissyui.com/kissy/build/seed.js" data-config="{combine:true}"></script>
+   <script src="http://g.tbcdn.cn/kissy/k/1.3.2/seed.js" data-config="{combine:true}"></script>
     <div class="demo">
         <style>
             .demo-wrap {
