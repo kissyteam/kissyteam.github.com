@@ -16,7 +16,7 @@ singleTap
 .. raw:: html
 
     <iframe width="100%" height="300" class="iframe-demo"
-     src="../../../../../source/raw/api/core/event/double-tap.html"></iframe>
+     src="/1.3/source/raw/api/core/event/double-tap.html"></iframe>
 
 .. literalinclude:: /raw/api/core/event/double-tap.html
        :language: html

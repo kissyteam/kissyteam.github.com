@@ -13,7 +13,7 @@ Draggable & Proxy 使用示例
 
     .. raw:: html
 
-        <iframe width="100%" height="200" class="iframe-demo" src="../../../../../source/raw/demo/dd/demo1.html"></iframe>
+        <iframe width="100%" height="200" class="iframe-demo" src="/1.3/source/raw/demo/dd/demo1.html"></iframe>
 
 
     **组织HTML**

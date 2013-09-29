@@ -5,7 +5,7 @@ base
 
 .. raw:: html
 
-    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.3.x/src/base' target='_blank'>view base source</a>
+    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.4.x/src/base' target='_blank'>view base source</a>
 
 .. code-block:: javascript
 

@@ -106,7 +106,7 @@ Demo
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/delegate.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="/1.3/source/raw/api/core/event/delegate.html"></iframe>
 
     .. literalinclude:: /raw/api/core/event/delegate.html
        :language: html
@@ -117,7 +117,7 @@ Demo
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/delegate_2.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="/1.3/source/raw/api/core/event/delegate_2.html"></iframe>
 
     .. literalinclude:: /raw/api/core/event/delegate_2.html
        :language: html
@@ -127,7 +127,7 @@ Demo
 
     .. raw:: html
 
-        <iframe width="100%" height="370" class="iframe-demo" src="../../../../../source/raw/api/core/event/delegate_mouse.html"></iframe>
+        <iframe width="100%" height="370" class="iframe-demo" src="/1.3/source/raw/api/core/event/delegate_mouse.html"></iframe>
 
     .. literalinclude:: /raw/api/core/event/delegate_mouse.html
        :language: html

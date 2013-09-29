@@ -13,7 +13,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="550" class="iframe-demo" src="../../../../../source/raw/demo/editor/decorate.html"></iframe>
+        <iframe width="100%" height="550" class="iframe-demo" src="/1.4/source/raw/demo/editor/decorate.html"></iframe>
 
     .. literalinclude:: /raw/demo/editor/assets/decorate.js
            :language: javascript

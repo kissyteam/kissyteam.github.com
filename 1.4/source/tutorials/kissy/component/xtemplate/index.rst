@@ -5,5 +5,6 @@ xtemplate
 .. toctree::
     :maxdepth: 3
 
-    intro.rst
+    intro
+    compile
     impl

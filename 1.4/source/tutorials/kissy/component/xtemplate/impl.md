@@ -172,6 +172,7 @@ kison 支持在每个语法规则项中添加动作函数，通过工具在识�
 
 ![xtemplate ast](http://img04.taobaocdn.com/tps/i4/T1iEDUXmpdXXcyYdHO-265-555.png)
 
+
 ### 翻译代码
 
 接着就可以采用 [visitor](http://en.wikipedia.org/wiki/Visitor_pattern) 模式将生成具体代码的逻辑写入 visitor 对象，遍历 ast 将对应的子树或节点转换成 javascript 代码，

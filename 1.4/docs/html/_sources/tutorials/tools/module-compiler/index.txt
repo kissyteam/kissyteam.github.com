@@ -34,7 +34,7 @@ author: `承玉 <yiminghe@gmail.com>`_
 举例
 ===============================================
 
-`下载 kissy module compiler demo <../../../../../source/raw/module-compiler/tb_kissy_1.3.zip>`_
+`下载 kissy module compiler demo </1.4/source/raw/module-compiler/tb_kissy_1.3.zip>`_
 
 源文件结构:
 
@@ -113,15 +113,15 @@ outputDependency
     build/
          biz/
             page/
-                run.combo.js
-                run.deps.js
+                run.js
+                run.dep.js
 
-其中 run.combo.js 内容为:
+其中 run.js 内容为:
 
-.. literalinclude:: /raw/module-compiler/tb_kissy_1.3/build/biz/page/run.combo.js
+.. literalinclude:: /raw/module-compiler/tb_kissy_1.3/build/biz/page/run.js
            :language: javascript
 
-其中 run.deps.js 内容为:
+其中 run.dep.js 内容为:
 
 .. literalinclude:: /raw/module-compiler/tb_kissy_1.3/build/biz/page/run.dep.js
            :language: javascript

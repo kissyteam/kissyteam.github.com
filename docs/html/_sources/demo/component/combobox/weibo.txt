@@ -13,7 +13,7 @@ combobox 的 weibo 模式
 
     .. raw:: html
 
-        <iframe width="100%" height="450" class="iframe-demo" src="../../../../../source/raw/demo/combobox/weibo.html"></iframe>
+        <iframe width="100%" height="450" class="iframe-demo" src="/1.3/source/raw/demo/combobox/weibo.html"></iframe>
 
 
 .. note::

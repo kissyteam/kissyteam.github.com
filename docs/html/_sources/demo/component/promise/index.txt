@@ -21,7 +21,7 @@ Demos
 .. raw:: html
 
     <iframe width="100%" height="50" class="iframe-demo"
-    src="../../../../../source/raw/demo/promise/index.html?type=chain"></iframe>
+    src="/1.3/source/raw/demo/promise/index.html?type=chain"></iframe>
 
 .. literalinclude:: /raw/demo/promise/assets/chain.js
        :language: javascript
@@ -33,7 +33,7 @@ resolve 和 then 没有顺序依赖
 .. raw:: html
 
     <iframe width="100%" height="50" class="iframe-demo"
-     src="../../../../../source/raw/demo/promise/index.html?type=chain-order"></iframe>
+     src="/1.3/source/raw/demo/promise/index.html?type=chain-order"></iframe>
 
 .. literalinclude:: /raw/demo/promise/assets/chain-order.js
        :language: javascript
@@ -45,7 +45,7 @@ resolve 和 then 没有顺序依赖
 .. raw:: html
 
     <iframe width="100%" height="50" class="iframe-demo"
-    src="../../../../../source/raw/demo/promise/index.html?type=error-propagate"></iframe>
+    src="/1.3/source/raw/demo/promise/index.html?type=error-propagate"></iframe>
 
 .. literalinclude:: /raw/demo/promise/assets/error-propagate.js
        :language: javascript
@@ -57,7 +57,7 @@ resolve 和 then 没有顺序依赖
 .. raw:: html
 
     <iframe width="100%" height="50" class="iframe-demo"
-    src="../../../../../source/raw/demo/promise/index.html?type=error-recovery"></iframe>
+    src="/1.3/source/raw/demo/promise/index.html?type=error-recovery"></iframe>
 
 .. literalinclude:: /raw/demo/promise/assets/error-recovery.js
        :language: javascript
@@ -70,7 +70,7 @@ resolve 和 then 没有顺序依赖
 .. raw:: html
 
     <iframe width="100%" height="50" class="iframe-demo"
-    src="../../../../../source/raw/demo/promise/index.html?type=error-throw"></iframe>
+    src="/1.3/source/raw/demo/promise/index.html?type=error-throw"></iframe>
 
 .. literalinclude:: /raw/demo/promise/assets/error-throw.js
        :language: javascript
@@ -83,7 +83,7 @@ resolve 和 then 没有顺序依赖
 .. raw:: html
 
     <iframe width="100%" height="50" class="iframe-demo"
-    src="../../../../../source/raw/demo/promise/index.html?type=nest"></iframe>
+    src="/1.3/source/raw/demo/promise/index.html?type=nest"></iframe>
 
 .. literalinclude:: /raw/demo/promise/assets/nest.js
        :language: javascript

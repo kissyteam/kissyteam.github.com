@@ -5,7 +5,7 @@ node
 
 .. raw:: html
 
-    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.3.x/src/node' target='_blank'>view node source</a>
+    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.4.x/src/node' target='_blank'>view node source</a>
 
 
 .. code-block:: javascript
@@ -97,7 +97,7 @@ Member Methods
         :func:`~dom.attr`, :func:`~dom.hasAttr`,
         :func:`~dom.prop`, :func:`~dom.hasProp`, :func:`~dom.val`, :func:`~dom.text`, :func:`~dom.css`, :func:`~dom.toggle`,
         :func:`~dom.offset`, :func:`~dom.scrollIntoView`, :func:`~dom.parent`,
-         :func:`~dom.index`,
+        :func:`~dom.index`,
         :func:`~dom.next`, :func:`~dom.prev`,
         :func:`~dom.first`, :func:`~dom.last`,
         :func:`~dom.siblings`, :func:`~dom.children`,

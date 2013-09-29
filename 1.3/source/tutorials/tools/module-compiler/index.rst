@@ -34,7 +34,7 @@ author: `承玉 <yiminghe@gmail.com>`_
 举例
 ===============================================
 
-`下载 kissy module compiler demo <../../../../../source/raw/module-compiler/tb_kissy_1.3.zip>`_
+`下载 kissy module compiler demo </1.3/source/raw/module-compiler/tb_kissy_1.3.zip>`_
 
 源文件结构:
 
@@ -101,7 +101,7 @@ output
 
 outputDependency
 ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
-可选。入口模块的依赖配置文件。 使用 1.3 自动 combo 时需要.
+可选。入口模块的依赖配置文件。 使用自动 combo 时需要.
 
 1.2 最终效果
 --------------------------------
@@ -113,17 +113,17 @@ outputDependency
     build/
          biz/
             page/
-                run.combo.js
-                run.deps.js
+                run.js
+                run.dep.js
 
 其中 run.combo.js 内容为:
 
-.. literalinclude:: /raw/module-compiler/tb_kissy_1.3/build/biz/page/run.combo.js
+.. literalinclude:: ../../../../source/raw/module-compiler/tb_kissy_1.3/build/biz/page/run.js
            :language: javascript
 
-其中 run.deps.js 内容为:
+其中 run.dep.js 内容为:
 
-.. literalinclude:: /raw/module-compiler/tb_kissy_1.3/build/biz/page/run.dep.js
+.. literalinclude:: ../../../../source/raw/module-compiler/tb_kissy_1.3/build/biz/page/run.dep.js
            :language: javascript
 
 

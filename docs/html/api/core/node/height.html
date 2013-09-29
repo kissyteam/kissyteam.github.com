@@ -8,7 +8,7 @@
 
 <title>height &mdash; KISSY v1.3 Documentation</title>
 
-<link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.3.2/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="http://dev.kissyui.com/kissy/build/css/dpl/base-min.css"/>
 <link rel="stylesheet" href="../../../_static/kissy.css"/>
     <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
 <link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
@@ -52,7 +52,7 @@
         <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
         <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
         <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
-        <li><a href="http://docs.kissyui.com/1.3/api/" >English API Docs</a></li>
+        <li><a href="http://docs.kissyui.com/1.4/api/" >English API Docs</a></li>
         <li><a href="http://blog.kissyui.com/" target="_blank">Offical Blog</a></li>
     </ul>
 <div id="searchbox" class="searchbox">
@@ -122,7 +122,7 @@
 </tbody>
 </table>
 <p>当需要数值计算时, 推荐该方法, 如图所示：(from jquery)</p>
-<img  src='../../../../../source/raw/api/core/node/height.png' />
+<img  src='/1.3/source/raw/api/core/node/height.png' />
 
 
 该方法也可以用来得到 windw 和 document 的高度<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Node</span><span class="p">){</span>
@@ -154,7 +154,7 @@
 <h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
 <p><strong>得到各种各样的高度, 黄色高亮区域代表 iframe 体</strong></p>
 <blockquote>
-<div><iframe width="100%" height="135"  class="iframe-demo" src="../../../../../source/raw/api/core/node/height-get.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div><iframe width="100%" height="135"  class="iframe-demo" src="/1.3/source/raw/api/core/node/height-get.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
   <span class="nt">&lt;style&gt;</span>
@@ -163,7 +163,7 @@
   <span class="nt">p</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span><span class="m">150px</span><span class="p">;</span> <span class="k">border</span><span class="o">:</span><span class="m">1px</span> <span class="nb">red</span> <span class="k">solid</span><span class="p">;</span> <span class="p">}</span>
   <span class="nt">div</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span><span class="nb">red</span><span class="p">;</span> <span class="k">font-weight</span><span class="o">:</span><span class="k">bold</span><span class="p">;</span> <span class="p">}</span>
   <span class="nt">&lt;/style&gt;</span>
-  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://g.tbcdn.cn/kissy/k/1.3.2/seed.js&quot;</span> <span class="na">data-config=</span><span class="s">&quot;{combine:true}&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://dev.kissyui.com/kissy/build/seed.js&quot;</span> <span class="na">data-config=</span><span class="s">&quot;{combine:true}&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
   <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;getp&quot;</span><span class="nt">&gt;</span>Get Paragraph Height<span class="nt">&lt;/button&gt;</span>
@@ -200,12 +200,12 @@
 </div></blockquote>
 <p><strong>设置元素的高度</strong></p>
 <blockquote>
-<div><iframe width="100%" height="135"  class="iframe-demo" src="../../../../../source/raw/api/core/node/height-set.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div><iframe width="100%" height="135"  class="iframe-demo" src="/1.3/source/raw/api/core/node/height-set.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
   <span class="nt">&lt;style&gt;div</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span><span class="m">50px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span><span class="m">70px</span><span class="p">;</span> <span class="k">float</span><span class="o">:</span><span class="k">left</span><span class="p">;</span> <span class="k">margin</span><span class="o">:</span><span class="m">5px</span><span class="p">;</span>
         <span class="k">background</span><span class="o">:</span><span class="k">rgb</span><span class="p">(</span><span class="m">255</span><span class="o">,</span><span class="m">140</span><span class="o">,</span><span class="m">0</span><span class="p">);</span> <span class="k">cursor</span><span class="o">:</span><span class="k">pointer</span><span class="p">;</span> <span class="p">}</span>  <span class="nt">&lt;/style&gt;</span>
-  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://g.tbcdn.cn/kissy/k/1.3.2/seed.js&quot;</span> <span class="na">data-config=</span><span class="s">&quot;{combine:true}&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://dev.kissyui.com/kissy/build/seed.js&quot;</span> <span class="na">data-config=</span><span class="s">&quot;{combine:true}&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
   <span class="nt">&lt;div&gt;&lt;/div&gt;</span>

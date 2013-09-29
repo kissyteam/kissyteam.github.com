@@ -20,17 +20,15 @@ ImportStyle是KISSY的模块样式引入工具。
 提供页面上使用的组件列表及组件的依赖关系，ImportStyle可以帮助你阻塞地加载所有依赖的样式。
 如果你的应用需要颗粒化地做按需加载，ImportStyle会是非常顺手的工具。
 
-.. versionadded:: 1.3.1
 
 先决条件
 ```````````````````````````````````````````````````
-* 页面基于KISSY 1.3.1及以上版本开发
 * 头部引入
     .. code-block:: html
 
-        <script src='http://g.tbcdn.cn/kissy/k/1.3.2/??seed-min.js,import-style-min.js'></script>
+        <script src='http://dev.kissyui.com/kissy/build/??seed-min.js,import-style-min.js'></script>
 
-* 页面是基于KISSY 1.3模块规范开发的，如依赖css，需要显式在requires里声明
+* 页面是基于 KISSY 模块规范开发的，如依赖css，需要显式在requires里声明
 
 使用指南
 ```````````````````````````````````````````````````

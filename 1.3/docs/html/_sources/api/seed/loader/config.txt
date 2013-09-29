@@ -11,8 +11,6 @@ Methods
 
     | void **KISSY.config** (config)
     | 设置或获取 KISSY 配置参数
-    .. versionadded:: 1.3.1
-            支持 group 配置，combo 多个包
 
     :param Object config: KISSY 配置参数, 包括
 

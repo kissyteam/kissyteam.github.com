@@ -211,7 +211,6 @@ kison
 .. figure:: http://img04.taobaocdn.com/tps/i4/T1iEDUXmpdXXcyYdHO-265-555.png
    :alt: xtemplate ast
 
-   xtemplate ast
 翻译代码
 ~~~~~~~~
 

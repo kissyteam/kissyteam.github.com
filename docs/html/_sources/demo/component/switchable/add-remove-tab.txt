@@ -18,7 +18,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="400" class="iframe-demo" src="../../../../../source/raw/demo/switchable/add-remove-tab.html"></iframe>
+        <iframe width="100%" height="400" class="iframe-demo" src="/1.3/source/raw/demo/switchable/add-remove-tab.html"></iframe>
 
 
     **JS 初始化**

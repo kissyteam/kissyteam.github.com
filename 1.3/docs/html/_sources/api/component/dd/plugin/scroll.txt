@@ -53,5 +53,5 @@ Configs Detail
 
     .. raw:: html
 
-        <img src='../../../../../../source/raw/api/component/dd/scroll.png' />
+        <img src='/1.3/source/raw/api/component/dd/scroll.png' />
 

@@ -7,7 +7,7 @@ KISSY 源码规范
 
     提交到  https://github.com/kissyteam/kissy 中的代码请遵循此规范.
 
-    推荐下载使用 `kissy idea 配置 <../../../../source/tutorials/style-guide/idea-settings-kissy.jar>`_ .
+    推荐下载使用 `kissy idea 配置 </1.4/source/tutorials/style-guide/idea-settings-kissy.jar>`_ .
 
 命名
 ----------------------------------

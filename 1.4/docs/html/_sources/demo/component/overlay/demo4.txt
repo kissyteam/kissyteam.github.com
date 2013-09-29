@@ -13,7 +13,7 @@ demo3 的另一种实现方式（不推荐）
 
     .. raw:: html
 
-        <iframe width="100%" height="380" class="iframe-demo" src="../../../../../source/raw/demo/overlay/demo4.html"></iframe>
+        <iframe width="100%" height="380" class="iframe-demo" src="/1.4/source/raw/demo/overlay/demo4.html"></iframe>
 
 
 加入初始样式

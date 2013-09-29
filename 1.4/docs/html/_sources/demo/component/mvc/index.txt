@@ -22,7 +22,7 @@ Method
 Demos
 -----------------------------------------------
 
-    `hash-based mvc <../../../../../source/raw/demo/mvc/note-hash.html>`_
+    `hash-based mvc </1.4/source/raw/demo/mvc/note-hash.html>`_
 
-    `html5-history-based mvc <../../../../../source/raw/demo/mvc/note-html5/>`_
+    `html5-history-based mvc </1.4/source/raw/demo/mvc/note-html5/>`_
 

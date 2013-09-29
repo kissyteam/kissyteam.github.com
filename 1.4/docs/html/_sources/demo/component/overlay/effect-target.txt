@@ -13,7 +13,7 @@ Effect target 效果
 
     .. raw:: html
 
-        <iframe width="100%" height="540" class="iframe-demo" src="../../../../../source/raw/demo/overlay/effect-target.html"></iframe>
+        <iframe width="100%" height="540" class="iframe-demo" src="/1.4/source/raw/demo/overlay/effect-target.html"></iframe>
 
 加入初始样式
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

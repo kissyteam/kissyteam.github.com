@@ -48,7 +48,7 @@ copyright = u'2010, kissyteam'
 # built documents.
 #
 # The short X.Y version.
-version = '1.3'
+version = '1.4'
 # The full version, including alpha/beta/rc tags.
 # release = 'rc'
 

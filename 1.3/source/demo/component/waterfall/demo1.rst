@@ -16,7 +16,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="700" class="iframe-demo" src="../../../../../source/raw/demo/waterfall/demo1.html"></iframe>
+        <iframe width="100%" height="700" class="iframe-demo" src="/1.3/source/raw/demo/waterfall/demo1.html"></iframe>
 
     **添加css控制**
     

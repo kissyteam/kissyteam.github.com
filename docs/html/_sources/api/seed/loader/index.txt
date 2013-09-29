@@ -7,7 +7,7 @@ loader
 
 .. raw:: html
 
-    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.3.x/src/seed/src/loader' target='_blank'>view loader source</a>
+    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.4.x/src/seed/src/loader' target='_blank'>view loader source</a>
 
 .. note::
 

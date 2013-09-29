@@ -17,4 +17,4 @@ Calendar Demo
 
  .. raw:: html
 
-    <iframe width="100%" height="500" class="iframe-demo" src="../../../../../source/raw/demo/calendar/demo1.html"></iframe>
+    <iframe width="100%" height="500" class="iframe-demo" src="/1.3/source/raw/demo/calendar/demo1.html"></iframe>

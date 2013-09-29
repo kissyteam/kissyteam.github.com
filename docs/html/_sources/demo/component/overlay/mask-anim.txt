@@ -13,7 +13,7 @@ Mask 动画效果
 
     .. raw:: html
 
-        <iframe width="100%" height="540" class="iframe-demo" src="../../../../../source/raw/demo/overlay/mask-anim.html"></iframe>
+        <iframe width="100%" height="540" class="iframe-demo" src="/1.3/source/raw/demo/overlay/mask-anim.html"></iframe>
 
 加入初始样式
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

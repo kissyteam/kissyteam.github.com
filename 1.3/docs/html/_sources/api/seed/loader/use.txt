@@ -11,8 +11,6 @@ Methods
 
     | void **KISSY.use** (modNames[,callback])
     | 使用模块,和KISSY.add一起使用, 形成KISSY的模块加载体系
-    .. versionadded:: 1.3.1
-        增加 callback 对象类型的支持
 
     :param String|String[] modNames: 以 ``,`` 分割的模块名称集合字符串,例如 ``KISSY.use("custommod,custommod2");``
     :param function|Object callback: 当 ``modNames`` 中所有模块加载完毕后执行的函数或者对象描述

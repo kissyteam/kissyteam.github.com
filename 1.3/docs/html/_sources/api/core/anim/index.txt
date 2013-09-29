@@ -5,7 +5,7 @@ anim
 
 .. raw:: html
 
-    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.3.x/src/anim' target='_blank'>view anim source</a>
+    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.4.x/src/anim' target='_blank'>view anim source</a>
 
 .. code-block:: javascript
 

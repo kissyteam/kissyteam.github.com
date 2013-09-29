@@ -64,7 +64,7 @@ Configs Detail
 
         .. raw:: html
 
-            <img  src='../../../../../../source/raw/api/component/overlay/align.png' />
+            <img  src='/1.4/source/raw/api/component/overlay/align.png' />
     
 Methods Detail
 -----------------------------------------------    

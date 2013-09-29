@@ -13,7 +13,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="350" class="iframe-demo" src="../../../../../source/raw/demo/overlay/demo5.html"></iframe>
+        <iframe width="100%" height="350" class="iframe-demo" src="/1.3/source/raw/demo/overlay/demo5.html"></iframe>
 
 
 加入初始样式

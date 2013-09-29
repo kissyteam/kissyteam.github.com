@@ -13,7 +13,7 @@ DraggableDelegate 使用示例
 
     .. raw:: html
 
-        <iframe width="100%" height="360" class="iframe-demo" src="../../../../../source/raw/demo/dd/demo3.html"></iframe>
+        <iframe width="100%" height="360" class="iframe-demo" src="/1.4/source/raw/demo/dd/demo3.html"></iframe>
 
 
 

@@ -12,7 +12,7 @@ DataLazyload 手动模式
 -------------------------------
   .. raw:: html
 	
-	  <iframe width="100%" height="450" class="iframe-demo" src="../../../../../source/raw/demo/datalazyload/manual_demo.html"></iframe>
+	  <iframe width="100%" height="450" class="iframe-demo" src="/1.3/source/raw/demo/datalazyload/manual_demo.html"></iframe>
 		
 		
   页面加载的时候采用了懒加载，向下滚动的时候才会加载后面的图片，网速快的时候不很明显，网速慢的时候就会显示出懒加载的优点。你可以使用firefox或者ie开发工具中的网络工具查看懒加载过程。

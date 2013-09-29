@@ -7,8 +7,6 @@ importStyle
 Methods
 -----------------------------------------------
 
-.. versionadded:: 1.3.1
-
 .. function:: KISSY.importStyle
 
     | void **KISSY.importStyle** (modNames)

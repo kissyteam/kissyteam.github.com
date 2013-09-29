@@ -16,6 +16,7 @@ Sphinx 使用介绍
 **安装 Sphinx**
 
     * cmd 下运行: easy_install -U Sphinx;
+    
 
 **安装 nodejs**
 
@@ -23,10 +24,11 @@ Sphinx 使用介绍
 **安装 nodejs 依赖**
 
 		* cmd 进入 kissyteam 目录下运行: node install
+		
 
 **编译文档**
 
-    * cmd 进入 kissyteam 目录, 运行 make.bat html , 在 docs 下生成 html;
+    * cmd 进入 kissyteam 目录, 运行 make.bat , 在 docs 下生成 html;
     * 如果你想进一步了解如何创建 sphinx 工程, 见 http://code.google.com/p/pymotwcn/wiki/SphinxprojectHowto ;
 
 
@@ -252,7 +254,7 @@ reST 是一种简单的标记语言, 规则非常简单.
 
     .. raw:: html
 
-        <img  src='../../../../source/raw/workflow/workflow.png' />
+        <img  src='/1.3/source/raw/workflow/workflow.png' />
 
 
 **注释**

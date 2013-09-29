@@ -8,14 +8,11 @@ Component
    :titlesonly:
 
    button/index
-   calendar/index
    color/index
    combobox/index
    component/index
-   datalazyload/index
    dd/index
    editor/index
-   imagezoom/index
    menu/index
    menubutton/index
    mvc/index
@@ -25,7 +22,6 @@ Component
    rich-base/index
    stylesheet/index
    swf/index
-   switchable/index
    tabs/index
    tree/index
    uri/index

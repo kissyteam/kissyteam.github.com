@@ -15,7 +15,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="700" class="iframe-demo" src="../../../../../source/raw/demo/waterfall/fixed.html"></iframe>
+        <iframe width="100%" height="700" class="iframe-demo" src="/1.3/source/raw/demo/waterfall/fixed.html"></iframe>
 
     .. literalinclude:: /raw/demo/waterfall/assets/fixed.js
            :language: javascript

@@ -77,7 +77,7 @@ Demo
 
     .. raw:: html
 
-        <iframe width="100%" height="135"  class="iframe-demo" src="../../../../../source/raw/api/core/node/insertAfter.html"></iframe>
+        <iframe width="100%" height="135"  class="iframe-demo" src="/1.3/source/raw/api/core/node/insertAfter.html"></iframe>
 
     .. literalinclude:: /raw/api/core/node/insertAfter.html
        :language: html

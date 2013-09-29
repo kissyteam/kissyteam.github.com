@@ -8,7 +8,7 @@
 
 <title>prop &mdash; KISSY v1.3 Documentation</title>
 
-<link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.3.2/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="http://dev.kissyui.com/kissy/build/css/dpl/base-min.css"/>
 <link rel="stylesheet" href="../../../_static/kissy.css"/>
     <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
 <link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
@@ -52,7 +52,7 @@
         <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
         <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
         <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
-        <li><a href="http://docs.kissyui.com/1.3/api/" >English API Docs</a></li>
+        <li><a href="http://docs.kissyui.com/1.4/api/" >English API Docs</a></li>
         <li><a href="http://blog.kissyui.com/" target="_blank">Offical Blog</a></li>
     </ul>
 <div id="searchbox" class="searchbox">
@@ -130,12 +130,12 @@
 <p class="first admonition-title">Note</p>
 <ul class="simple">
 <li>对于不存在的 property , 该方法返回 <tt class="docutils literal"><span class="pre">undefined</span></tt></li>
-<li>注意区别该方法与 <a class="reference internal" href="attr.html#dom.attr" title="dom.attr"><tt class="xref py py-func docutils literal"><span class="pre">dom.attr</span></tt></a>, 也即区别 <a class="reference external" href="http://javascript.info/tutorial/attributes-and-custom-properties">DOM property 与 attribute</a> .</li>
+<li>注意区别该方法与 <tt class="xref py py-func docutils literal"><span class="pre">dom.attr</span></tt>, 也即区别 <a class="reference external" href="http://javascript.info/tutorial/attributes-and-custom-properties">DOM property 与 attribute</a> .</li>
 <li>请使用 <a class="reference internal" href="data.html#dom.data" title="dom.data"><tt class="xref py py-func docutils literal"><span class="pre">dom.data</span></tt></a> 方法来处理自定义属性, 而不要使用 <a class="reference internal" href="#dom.prop" title="dom.prop"><tt class="xref py py-func docutils literal"><span class="pre">dom.prop</span></tt></a> 方法, 否则在 ie&lt;9 下会有内存泄露.</li>
 <li><tt class="docutils literal"><span class="pre">prop</span></tt> 方法可以改变 <tt class="docutils literal"><span class="pre">DOM</span></tt> 元素的状态而不改变其对应的序列化 <tt class="docutils literal"><span class="pre">html</span></tt> 属性 ( IE &lt;9 除外).</li>
 </ul>
 <p class="last">例如设置 <tt class="docutils literal"><span class="pre">input</span></tt> 或 <tt class="docutils literal"><span class="pre">button</span></tt> 的 <tt class="docutils literal"><span class="pre">disabled</span></tt> property 或者 <tt class="docutils literal"><span class="pre">checkbox</span></tt> 的 <tt class="docutils literal"><span class="pre">checked</span></tt> property .
-最常见的情况即是用 <tt class="docutils literal"><span class="pre">prop</span></tt> 来设置 <tt class="docutils literal"><span class="pre">disabled</span></tt> 以及 <tt class="docutils literal"><span class="pre">checked</span></tt> 而不是 <a class="reference internal" href="attr.html#dom.attr" title="dom.attr"><tt class="xref py py-func docutils literal"><span class="pre">dom.attr</span></tt></a> .
+最常见的情况即是用 <tt class="docutils literal"><span class="pre">prop</span></tt> 来设置 <tt class="docutils literal"><span class="pre">disabled</span></tt> 以及 <tt class="docutils literal"><span class="pre">checked</span></tt> 而不是 <tt class="xref py py-func docutils literal"><span class="pre">dom.attr</span></tt> .
 而 <a class="reference internal" href="val.html#dom.val" title="dom.val"><tt class="xref py py-func docutils literal"><span class="pre">dom.val</span></tt></a> 方法用来设置和读取 <cite>value</cite> property.</p>
 </div>
 <p>例如</p>
@@ -194,7 +194,7 @@
 <h3>selectionStart/End 兼容<a class="headerlink" href="#selectionstart-end" title="Permalink to this headline">¶</a></h3>
 <p>在 ie 下对于 selectionStart/End 做了兼容处理，demo ：</p>
 <blockquote>
-<div><iframe width="100%" height="300" class="iframe-demo" src="../../../../../source/raw/demo/dom/selection-start.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;dom&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">DOM</span><span class="p">)</span> <span class="p">{</span>
+<div><iframe width="100%" height="300" class="iframe-demo" src="/1.3/source/raw/demo/dom/selection-start.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;dom&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">DOM</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;#t&quot;</span><span class="p">);</span>
     <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;#b&quot;</span><span class="p">);</span>
     <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;#s&quot;</span><span class="p">);</span>

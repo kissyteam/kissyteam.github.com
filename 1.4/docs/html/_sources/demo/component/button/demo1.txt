@@ -13,7 +13,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="80" class="iframe-demo" src="../../../../../source/raw/demo/button/demo1.html"></iframe>
+        <iframe width="100%" height="80" class="iframe-demo" src="/1.4/source/raw/demo/button/demo1.html"></iframe>
 
 
     **初始化按钮**

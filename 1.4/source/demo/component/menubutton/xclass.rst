@@ -16,7 +16,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="120" class="iframe-demo" src="../../../../../source/raw/demo/menubutton/xclass.html"></iframe>
+        <iframe width="100%" height="120" class="iframe-demo" src="/1.4/source/raw/demo/menubutton/xclass.html"></iframe>
 
     .. literalinclude:: /raw/demo/menubutton/assets/xclass.js
            :language: javascript

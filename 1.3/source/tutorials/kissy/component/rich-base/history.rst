@@ -3,7 +3,7 @@ RichBase 的前世今生
 
 author: `逸才 <yicai@taobao.com>`__
 
-KISSY 从 1.3.x 版本开始，提供一个叫做 RichBase 的模块，顾名思义，它是
+KISSY 从 1.4.x 版本开始，提供一个叫做 RichBase 的模块，顾名思义，它是
 Base 的富集，直接从 Base 继承。但在我们挖 RichBase
 的身份是红是黑之前，先有些基础知识得普及一下。
 

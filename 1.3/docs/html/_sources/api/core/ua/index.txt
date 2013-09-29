@@ -5,7 +5,7 @@ ua
 
 .. raw:: html
 
-    <a class='source-button' href='https://github.com/kissyteam/kissy/blob/1.3.0/src/seed/src/ua.js' target='_blank'>view ua source</a>
+    <a class='source-button' href='https://github.com/kissyteam/kissy/blob/1.4.x/src/seed/src/ua.js' target='_blank'>view ua source</a>
 
 .. code-block:: javascript
 

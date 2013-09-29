@@ -48,7 +48,7 @@ Demo
 
     .. raw:: html
 
-        <iframe width="100%" height="135" class="iframe-demo" src="../../../../../source/raw/api/core/event/fire.html"></iframe>
+        <iframe width="100%" height="135" class="iframe-demo" src="/1.4/source/raw/api/core/event/fire.html"></iframe>
 
     .. literalinclude:: /raw/api/core/event/fire.html
        :language: html

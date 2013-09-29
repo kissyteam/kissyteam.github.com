@@ -19,7 +19,7 @@ Class
 
     .. raw:: html
 
-        <iframe width="100%" height="180" class="iframe-demo" src="../../../../../source/raw/demo/menu/demo4.html"></iframe>
+        <iframe width="100%" height="180" class="iframe-demo" src="/1.3/source/raw/demo/menu/demo4.html"></iframe>
 
     .. literalinclude:: /raw/demo/menu/assets/demo4.js
            :language: javascript

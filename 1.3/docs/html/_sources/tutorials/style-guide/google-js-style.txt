@@ -7,5 +7,5 @@ Google JavaScript 规范
     width="100%" 
     height="400"
     style='border:none;'
-    src="../../../../source/tutorials/style-guide/google/javascriptguide.xml"
+    src="/1.3/source/tutorials/style-guide/google/javascriptguide.xml"
     onload="this.height=this.contentWindow.document.documentElement.scrollHeight"></iframe>

@@ -26,7 +26,7 @@ rotateStart
 .. raw:: html
 
     <iframe width="100%" height="300" class="iframe-demo"
-     src="../../../../../source/raw/api/core/event/rotate.html"></iframe>
+     src="/1.4/source/raw/api/core/event/rotate.html"></iframe>
 
 .. literalinclude:: /raw/api/core/event/rotate.html
        :language: html

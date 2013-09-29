@@ -13,7 +13,7 @@ autocomplete 的静态使用
 
     .. raw:: html
 
-        <iframe width="100%" height="450" class="iframe-demo" src="../../../../../source/raw/demo/combobox/static.html"></iframe>
+        <iframe width="100%" height="450" class="iframe-demo" src="/1.4/source/raw/demo/combobox/static.html"></iframe>
 
 
 .. note::

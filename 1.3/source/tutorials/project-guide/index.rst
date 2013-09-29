@@ -10,7 +10,7 @@ author: `水儿 <shuier@taobao.com>`_
 店铺页面是由一个个模块组成的，页面主要可以看到950布局下的店铺招牌和导航模块，还有190布局下的宝贝分类模块，及750布局下的宝贝推荐模块
 
 这个项目是以淘宝旺铺的一个简化版和理想版，想通过这个项目的介绍让大家对基于kissy 1.3开发一个项目的过程，有一个直观的认识和参考， 也许你们能够做出更好的出来。
-请 `下载本示例的源代码 <../../../../source/raw/projguide/dream-shop.zip>`_ ，打开 dream-shop > src > demo > pages > index.php 查看效果。
+请 `下载本示例的源代码 </1.3/source/raw/projguide/dream-shop.zip>`_ ，打开 dream-shop > src > demo > pages > index.php 查看效果。
 
 目录组织
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

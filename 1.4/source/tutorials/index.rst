@@ -5,8 +5,6 @@ Tutorial
 .. toctree::
     :maxdepth: 3
 
-
-    quickstart/index.rst
     kissy/index.rst
     style-guide/index.rst
     project-guide/index.rst

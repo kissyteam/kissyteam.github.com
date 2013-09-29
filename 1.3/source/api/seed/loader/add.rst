@@ -79,7 +79,7 @@ Methods
         KISSY.add("tc/mods/mod1",function(){},{requires:['./mod2']});
 
 
-    .. versionchanged:: 1.3
+    .. note::
         KISSY.add 表示模块定义, fn 并不会执行, 只有在 use 时才执行, 懒加载原则.
 
 

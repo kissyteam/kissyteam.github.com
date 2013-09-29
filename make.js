@@ -97,9 +97,9 @@ var stableBuildDir = './docs/';
 var sphinxOptions = ['-d', buildDir + 'doctrees', sourceDir ];
 (function () {
     if (program.clean) {
-        fs.rmdirSync(buildDir);
+        fs.remove(buildDir);
         if (program.stable) {
-            fs.rmdirSync(stableBuildDir);
+            fs.remove(stableBuildDir);
         }
         return;
     }

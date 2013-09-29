@@ -13,7 +13,7 @@ combobox 的简单使用
 
     .. raw:: html
 
-        <iframe width="100%" height="450" class="iframe-demo" src="../../../../../source/raw/demo/combobox/gmail.html"></iframe>
+        <iframe width="100%" height="450" class="iframe-demo" src="/1.4/source/raw/demo/combobox/gmail.html"></iframe>
 
 
 .. note::

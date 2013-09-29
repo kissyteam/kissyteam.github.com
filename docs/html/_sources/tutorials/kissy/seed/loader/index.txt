@@ -13,3 +13,4 @@ Loader
     alias
     import-style
     group
+    jsonp
