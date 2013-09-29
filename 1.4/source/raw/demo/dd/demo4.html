@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Demo - 基于拖放委托 + 容器自动滚动的拖放排序</title>
+    <script src="http://dev.kissyui.com/kissy/build/seed.js" data-config="{combine:true}"></script>
+    <link href="http://dev.kissyui.com/kissy/build/css/dpl/base.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/box.css"/>
+    <link rel="stylesheet" href="assets/demo4.css"/>
+    <style>
+        .ks-dd-dragging * {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+
+
+<button id="add"> add module</button>
+<br/><br/>
+
+<script type="x-template" id="newTpl">
+    <div class="box component">
+        <s class="box-tp"><b></b></s>
+
+        <div class="box-hd cheader">
+            <h3>拖动头</h3>
+        </div>
+        <div class="box-bd">drag proxy {id}
+        </div>
+        <s class="box-bt"><b></b></s>
+    </div>
+</script>
+
+<div id="container2" class="container">
+
+
+    <div class="box component">
+        <s class="box-tp"><b></b></s>
+
+        <div class="box-hd cheader">
+            <h3>拖动头</h3>
+        </div>
+        <div class="box-bd">
+            drag proxy 1
+        </div>
+        <s class="box-bt"><b></b></s>
+    </div>
+    <div class="box component">
+        <s class="box-tp"><b></b></s>
+
+        <div class="box-hd cheader">
+            <h3>拖动头</h3>
+        </div>
+        <div class="box-bd">
+            drag proxy 2
+        </div>
+        <s class="box-bt"><b></b></s>
+    </div>
+    <div class="box component">
+        <s class="box-tp"><b></b></s>
+
+        <div class="box-hd cheader">
+            <h3>拖动头</h3>
+        </div>
+        <div class="box-bd">
+            drag proxy 3
+        </div>
+        <s class="box-bt"><b></b></s>
+    </div>
+</div>
+
+<script>
+    KISSY.use("node,dd,dd/plugin/scroll,dd/plugin/proxy", function (S, Node, DD, Scroll, Proxy) {
+
+        var DDM = DD.DDM,
+                DraggableDelegate = DD.DraggableDelegate,
+                DroppableDelegate = DD.DroppableDelegate,
+                Draggable = DD.Draggable,
+                Droppable = DD.Droppable;
+
+        /**
+         * 拖放排序
+         */
+        S.ready(function () {
+
+            var dragDelegate = new DraggableDelegate({
+                container: "#container2",
+                handlers: ['.cheader'],
+                selector: '.component',
+                move: true,
+                plugins: [
+                    new Proxy({
+                        /**
+                         * 如何产生替代节点
+                         * @param drag 当前拖对象
+                         */
+                        node: function (drag) {
+                            var n = S.one(drag.get("dragNode")[0].cloneNode());
+                            n.removeAttr('id');
+                            n.css("opacity", 0.8);
+                            return n;
+                        },
+                        // 主体位置不跟随 proxy
+                        moveOnEnd: false,
+                        // 每次 proxy 都重新生成
+                        destroyOnEnd: true
+                    }),
+                    new Scroll({
+                        node: "#container2"
+                    })
+                ]
+            });
+
+            var dropDelegate = new DroppableDelegate({
+                container: "#container2",
+                selector: '.component'
+            });
+
+            dragDelegate.on("dragover", function (ev) {
+                var drag = ev.drag;
+                var drop = ev.drop;
+                var dragNode = drag.get("dragNode"),
+                        dropNode = drop.get("node");
+                var middleDropX = (dropNode.offset().left * 2 + dropNode.width()) / 2;
+                if (ev.pageX > middleDropX) {
+                    var next = dropNode.next();
+                    if (next && next[0] == dragNode[0]) {
+
+                    } else {
+                        dragNode.insertAfter(dropNode);
+                    }
+                } else {
+                    var prev = dropNode.prev();
+                    if (prev && prev[0] == dragNode[0]) {
+                    } else {
+                        dragNode.insertBefore(dropNode);
+                    }
+                }
+            });
+
+            var container = S.one("#container2");
+            var id = 4;
+            container.unselectable();
+
+            var newTpl= S.one('#newTpl').html();
+            S.one("#add").on("click", function () {
+                new Node(S.substitute(newTpl,{
+                    id:(id++)
+                })).appendTo(container).unselectable();
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

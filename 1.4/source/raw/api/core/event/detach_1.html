@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        button {
+            margin: 5px;
+        }
+
+        button#theone {
+            color: red;
+            background: yellow;
+        }
+    </style>
+    <script src="http://dev.kissyui.com/kissy/build/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<button id="theone">Does nothing...</button>
+<button id="bind">Bind Click</button>
+<button id="unbind">Unbind Click</button>
+<div style="display:none;">Click!</div>
+<script>
+    KISSY.use('core', function (S) {
+        var $ = KISSY.Node.all;
+
+        function aClick() {
+            $("div").show().fadeOut();
+        }
+
+        $("#bind").on('click', function () {
+            // could use .bind('click', aClick) instead but for variety...
+            $("#theone").on('click', aClick)
+                    .text("Can Click!");
+        });
+        $("#unbind").on('click', function () {
+            $("#theone").detach('click', aClick)
+                    .text("Does nothing...");
+        });
+    });
+</script>
+
+</body>
+</html>

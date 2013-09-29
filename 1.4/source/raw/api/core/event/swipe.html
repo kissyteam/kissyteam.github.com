@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <script src="http://dev.kissyui.com/kissy/build/seed.js" data-config="{combine:true}"></script>
+    <script src="../../../log.js"></script>
+</head>
+<body>
+
+<h1>open in ios safari/chrome mobile to test swipe event</h1>
+
+<div id='t' tabindex='0'
+     style='border:1px solid green;
+     width:200px;height:200px;margin:10px'>
+    swipe me
+</div>
+
+<div style="height: 1080px"></div>
+<script>
+    KISSY.use('event', function (S, Event) {
+        Event.on('#t', "swipe", function (e) {
+            log(e.type + ' : fired');
+            log(e.direction);
+            log(e.distance);
+            log(e.duration);
+        });
+        // for chrome
+        Event.on('#t', "swiping", function (e) {
+            if(e.direction=='left'){
+                e.preventDefault();
+            }
+            if(e.direction=='right'){
+                e.preventDefault();
+            }
+            // if need to prevent default y scroll
+            if(e.direction=='up'){
+                e.preventDefault();
+            }
+            if(e.direction=='down'){
+                e.preventDefault();
+            }
+        });
+    });
+</script>
+</body>
+</html>

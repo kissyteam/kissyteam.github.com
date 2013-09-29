@@ -1,0 +1,478 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="data-spm" content="1" data-spm-protocol="i" />
+
+<title>mvc.Router &mdash; KISSY v1.3 Documentation</title>
+
+<link rel="stylesheet" href="http://dev.kissyui.com/kissy/build/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="../../../_static/kissy.css"/>
+    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js,searchtools.js"></script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/1.4/api/" >English API Docs</a></li>
+        <li><a href="http://blog.kissyui.com/" target="_blank">Offical Blog</a></li>
+    </ul>
+<div id="searchbox" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+        <input type="text" name="q" size="28" class="ipt"/>
+        <input type="submit" value="Go" class="btn"/>
+        <input type="hidden" name="check_keywords" value="yes"/>
+        <input type="hidden" name="area" value="default"/>
+    </form>
+</div>
+
+</div>
+
+<div id="content">
+	<div  id="layout" class="layout grid-s6m0e7">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="sync.html" title="mvc.sync"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="View.html" title="mvc.View"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">mvc</a> &#187; </li> 
+    </ul>
+</div>
+					<div class="body">
+  <div class="section" id="mvc-router">
+<h1>mvc.Router<a class="headerlink" href="#mvc-router" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">路由类.</div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;mvc&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">mvc</span><span class="p">){</span>
+    <span class="c1">// use mvc.Router</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#mvc.Router" title="mvc.Router"><tt class="xref py py-class docutils literal"><span class="pre">Router</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="configs">
+<h2>Configs<a class="headerlink" href="#configs" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#mvc.Router.config.routes" title="mvc.Router.config.routes"><tt class="xref py py-data docutils literal"><span class="pre">routes</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#mvc.Router.prototype.addRoutes" title="mvc.Router.prototype.addRoutes"><tt class="xref py py-meth docutils literal"><span class="pre">addRoutes()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="static-methods">
+<h2>Static Methods<a class="headerlink" href="#static-methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#mvc.Router.navigate" title="mvc.Router.navigate"><tt class="xref py py-func docutils literal"><span class="pre">navigate()</span></tt></a></li>
+<li><a class="reference internal" href="#mvc.Router.start" title="mvc.Router.start"><tt class="xref py py-func docutils literal"><span class="pre">start()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#mvc.Router.Events.route" title="mvc.Router.Events.route"><tt class="xref py py-func docutils literal"><span class="pre">route()</span></tt></a></li>
+<li><a class="reference internal" href="#Router.Events.route:x" title="Router.Events.route:x"><tt class="xref js js-func docutils literal"><span class="pre">route:x()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mvc.Router">
+<em class="property">class </em><tt class="descclassname">mvc.</tt><tt class="descname">Router</tt><a class="headerlink" href="#mvc.Router" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>Router</strong> (config)</div>
+</div>
+<ul class="simple">
+<li>继承自 <a class="reference internal" href="../../core/base/base.html#base.Base" title="base.Base"><tt class="xref py py-class docutils literal"><span class="pre">Base</span></tt></a> , 包含其全部配置,属性,方法,事件.</li>
+<li>路由代表一个对 url 路由的策略和处理规则</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 配置项.详细见下方 <strong>Configs Detail</strong> .</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="configs-detail">
+<h2>Configs Detail<a class="headerlink" href="#configs-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="mvc.Router.config.routes">
+<tt class="descclassname">Router.config.</tt><tt class="descname">routes</tt><a class="headerlink" href="#mvc.Router.config.routes" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object} - 可选，路由策略和规则</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;&quot;</span><span class="o">:</span><span class="s2">&quot;index&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;/edit/:id&quot;</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">paths</span><span class="p">,</span><span class="nx">query</span><span class="p">){</span>
+        <span class="c1">// /editor/99?q=1</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="nx">paths</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>  <span class="c1">// =&gt; 99</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="nx">query</span><span class="p">.</span><span class="nx">q</span><span class="p">);</span> <span class="c1">// =&gt; 1</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;/new/*u&quot;</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">paths</span><span class="p">){</span>
+       <span class="c1">// /new/kissy-mvc-is-good/right</span>
+       <span class="nx">alert</span><span class="p">(</span><span class="nx">paths</span><span class="p">.</span><span class="nx">u</span><span class="p">);</span> <span class="c1">// =&gt; kissy-mvc-is-good/right</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;test_regexp&quot;</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">reg</span><span class="o">:</span><span class="sr">/\/list-(\w)/</span><span class="p">,</span>
+        <span class="nx">callback</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">matches</span><span class="p">,</span><span class="nx">query</span><span class="p">){</span>
+            <span class="c1">// /list-t</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">matches</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="c1">// =&gt; t</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>用于指定当 url 符合一定规则时执行指定的函数，当函数为字符串时表示路由实例上的函数，规则有 3 种</p>
+<ol class="arabic simple">
+<li>:id 用于匹配 url / 间部分</li>
+<li>*u 用户匹配从当前位置到结尾的 url 部分</li>
+<li>直接配置正则表达式</li>
+</ol>
+<p>调用函数形式为</p>
+<dl class="function">
+<dt id="mvc.Router.config.routes.fn">
+<tt class="descclassname">Router.config.routes.</tt><tt class="descname">fn</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Router.config.routes.fn" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>fn( paths [ , querys ] )</strong></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>paths</strong> (<em>Object</em>) &#8211; 包含规则路径参数和当前 url 匹配值为键值对的对象。当规则直接配置为正则表达式时，该参数值为匹配正则式的分组数组。</li>
+<li><strong>querys</strong> (<em>Object</em>) &#8211; 包含当前url的查询参数和值为键值对的对象</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="mvc.Router.prototype.addRoutes">
+<tt class="descclassname">Router.prototype.</tt><tt class="descname">addRoutes</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Router.prototype.addRoutes" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>addRoutes ( routes )</strong></div>
+<div class="line">添加路由</div>
+</div>
+<p>:param Object routes : 格式同 <a class="reference internal" href="#mvc.Router.config.routes" title="mvc.Router.config.routes"><tt class="xref py py-data docutils literal"><span class="pre">routes</span></tt></a> 配置.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="static-methods-detail">
+<h2>Static Methods Detail<a class="headerlink" href="#static-methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="mvc.Router.navigate">
+<tt class="descclassname">Router.</tt><tt class="descname">navigate</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Router.navigate" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>navigate ( path [ , opts ] )</strong></div>
+<div class="line">导航 url 到 path</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>path</strong> (<em>String</em>) &#8211; 将要设置的 url 值</li>
+<li><strong>opts</strong> (<em>Object</em>) &#8211; <p>包括以下控制选项</p>
+<dl class="attribute">
+<dt id="mvc.Router.navigate.opts.triggerRoute">
+<tt class="descclassname">Router.navigate.opts.</tt><tt class="descname">triggerRoute</tt><a class="headerlink" href="#mvc.Router.navigate.opts.triggerRoute" title="Permalink to this definition">¶</a></dt>
+<dd><p>{boolean} - 默认 false。是否强制触发对应该路径的路由处理。默认如果当前路径和 path 相同则不会发生任何动作.</p>
+</dd></dl>
+
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="mvc.Router.start">
+<tt class="descclassname">Router.</tt><tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Router.start" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>start( [ opts ] )</strong></div>
+<div class="line">开始路由规则处理，一个页面仅限入口调用一次</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>opts</strong> (<em>Object</em>) &#8211; <p>包括以下控制选项</p>
+<dl class="attribute">
+<dt id="mvc.Router.start.opts.triggerRoute">
+<tt class="descclassname">Router.start.opts.</tt><tt class="descname">triggerRoute</tt><a class="headerlink" href="#mvc.Router.start.opts.triggerRoute" title="Permalink to this definition">¶</a></dt>
+<dd><p>{boolean} - 默认 false。是否触发当前路径的路由处理函数，默认只有当下次 url 发生变化时才处理.</p>
+</dd></dl>
+
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="events-detail">
+<h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="mvc.Router.Events.route">
+<tt class="descclassname">Router.Events.</tt><tt class="descname">route</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Router.Events.route" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>route( e )</strong></div>
+<div class="line">当发生路由处理时触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>e.name</strong> (<em>String</em>) &#8211; 当前的路由处理规则名称</li>
+<li><strong>e.paths</strong> (<em>Object</em>) &#8211; 同 <a class="reference internal" href="#mvc.Router.config.routes.fn" title="mvc.Router.config.routes.fn"><tt class="xref py py-func docutils literal"><span class="pre">fn()</span></tt></a> 中 paths 格式</li>
+<li><strong>e.query</strong> (<em>Object</em>) &#8211; 同 <a class="reference internal" href="#mvc.Router.config.routes.fn" title="mvc.Router.config.routes.fn"><tt class="xref py py-func docutils literal"><span class="pre">fn()</span></tt></a> 中 query 格式</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Router.Events.route:x">
+<tt class="descclassname">Router.Events.</tt><tt class="descname">route:x</tt><big>(</big><big>)</big><a class="headerlink" href="#Router.Events.route:x" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>route( e )</strong></div>
+<div class="line">当发生路由处理时触发, x 替换为当前的规则名，例如 url 改变到 &#8220;/&#8221; 时触发 &#8220;route:/&#8221;</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>e.name</strong> (<em>String</em>) &#8211; 当前的路由处理规则名称</li>
+<li><strong>e.paths</strong> (<em>Object</em>) &#8211; 同 <a class="reference internal" href="#mvc.Router.config.routes.fn" title="mvc.Router.config.routes.fn"><tt class="xref py py-func docutils literal"><span class="pre">fn()</span></tt></a> 中 paths 格式</li>
+<li><strong>e.query</strong> (<em>Object</em>) &#8211; 同 <a class="reference internal" href="#mvc.Router.config.routes.fn" title="mvc.Router.config.routes.fn"><tt class="xref py py-func docutils literal"><span class="pre">fn()</span></tt></a> 中 query 格式</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+</div>
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="sync.html" title="mvc.sync"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="View.html" title="mvc.View"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Component</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">mvc</a> &#187; </li> 
+    </ul>
+</div>
+					<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+		
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/kissy/index.html">lang</a></li>
+        <li><a href="../../seed/loader/index.html">loader</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../core/ajax/index.html">ajax</a></li>
+        <li><a href="../../core/anim/index.html">anim</a></li>
+        <li><a href="../../core/base/index.html">base</a></li>
+        <li><a href="../../core/cookie/index.html">cookie</a></li>
+        <li><a href="../../core/dom/index.html">dom</a></li>
+        <li><a href="../../core/event/index.html">event</a></li>
+        <li><a href="../../core/json/index.html">json</a></li>
+        <li><a href="../../core/node/index.html">node</a></li>
+        <li><a href="../../core/ua/index.html">ua</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../calendar/index.html">calendar</a></li>
+        <li><a href="../color/index.html">color</a></li>
+        <li><a href="../combobox/index.html">combobox</a></li>
+        <li><a href="../component/index.html">component</a></li>
+        <li><a href="../datalazyload/index.html">datalazyload</a></li>
+        <li><a href="../dd/index.html">dd</a></li>
+        <li><a href="../editor/index.html">editor</a></li>
+        <li><a href="../imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="index.html">mvc</a></li>
+        <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../promise/index.html">promise</a></li>
+        <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="../rich-base/index.html">rich-base</a></li>
+        <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../stylesheet/index.html">stylesheet</a></li>
+        <li><a href="../swf/index.html">swf</a></li>
+        <li><a href="../switchable/index.html">switchable</a></li>
+        <li><a href="../tabs/index.html">tabs</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
+        <li><a href="../uri/index.html">uri</a></li>
+         <li><a href="../waterfall/index.html">waterfall</a></li>
+        <li><a href="../xtemplate/index.html">xtemplate</a></li>
+    </ul>
+</ul>
+        
+    </div>
+    
+	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

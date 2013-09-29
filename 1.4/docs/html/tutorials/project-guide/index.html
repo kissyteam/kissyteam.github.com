@@ -1,0 +1,726 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="data-spm" content="1" data-spm-protocol="i" />
+
+<title>项目简介 &mdash; KISSY v1.3 Documentation</title>
+
+<link rel="stylesheet" href="http://dev.kissyui.com/kissy/build/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="../../_static/kissy.css"/>
+    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js,searchtools.js"></script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/1.4/api/" >English API Docs</a></li>
+        <li><a href="http://blog.kissyui.com/" target="_blank">Offical Blog</a></li>
+    </ul>
+<div id="searchbox" class="searchbox">
+    <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" size="28" class="ipt"/>
+        <input type="submit" value="Go" class="btn"/>
+        <input type="hidden" name="check_keywords" value="yes"/>
+        <input type="hidden" name="area" value="default"/>
+    </form>
+</div>
+
+</div>
+
+<div id="content">
+	<div  id="layout" class="layout grid-s6m0e7">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../workflow/index.html" title="组件开发指南"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="../style-guide/kissy-source-style.html" title="KISSY 源码规范"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../index.html" accesskey="U">Tutorial</a> &#187; </li> 
+    </ul>
+</div>
+					<div class="body">
+  <div class="section" id="id1">
+<h1>项目简介<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>author: <a class="reference external" href="mailto:shuier&#37;&#52;&#48;taobao&#46;com">水儿</a></p>
+<p>这是一个理想中的店铺浏览项目，dream-shop ，页面展示如下所示：</p>
+<img alt="http://img02.taobaocdn.com/tps/i2/T1kqtNXAXfXXXbps2S-1263-885.png" src="http://img02.taobaocdn.com/tps/i2/T1kqtNXAXfXXXbps2S-1263-885.png" />
+<p>店铺页面是由一个个模块组成的，页面主要可以看到950布局下的店铺招牌和导航模块，还有190布局下的宝贝分类模块，及750布局下的宝贝推荐模块</p>
+<p>这个项目是以淘宝旺铺的一个简化版和理想版，想通过这个项目的介绍让大家对基于kissy 1.3开发一个项目的过程，有一个直观的认识和参考， 也许你们能够做出更好的出来。
+请 <a class="reference external" href="../../../../source/raw/projguide/dream-shop.zip">下载本示例的源代码</a> ，打开 dream-shop &gt; src &gt; demo &gt; pages &gt; index.php 查看效果。</p>
+<div class="section" id="id4">
+<h2>目录组织<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>首先按照下图所示，创建该项目的目录结构</p>
+<img alt="http://img01.taobaocdn.com/tps/i1/T1hQtzXsxgXXafEjcD-222-359.jpg" src="http://img01.taobaocdn.com/tps/i1/T1hQtzXsxgXXafEjcD-222-359.jpg" />
+<p>这些目录的用途如下：
+dream-shop - 项目名称
+&#8211;.idea - 是idea工程自动生成的，忽略
+&#8211; build-combo - 是项目组件打包后自动生成的目录
+&#8211; src - 源码目录，存放项目源码
+&#8212;- assets - 存放项目的资源文件
+&#8212;&#8212; css - 存放项目样式文件
+&#8212;&#8212; img - 存放项目图片
+&#8212;&#8212; js - 存放项目脚本
+&#8212;- demo - 存放项目的html
+&#8211; tools - 工具目录，存放项目项目中用到的工具包
+&#8212;- kissy-tools - kissy complier结合ant合成的工具包
+&#8211; build-js.xml - 用于打包的ant脚本
+&#8211; dream-shop.iml - idea工程自动生成的，忽略
+&#8211; readme.txt - 用于记录项目的基本信息， 如项目介绍，关键页面链接等。</p>
+</div>
+<div class="section" id="id5">
+<h2>编写项目组件<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>建立目录结构<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>项目组件的目录结构如下：</p>
+<img alt="http://img01.taobaocdn.com/tps/i1/T1uhpzXttgXXXO4Zsa-278-281.jpg" src="http://img01.taobaocdn.com/tps/i1/T1uhpzXttgXXXO4Zsa-278-281.jpg" />
+<p>说明：</p>
+<p>&#8211; js
+&#8212;- shop - 组件的包名，比较重要（因为可能要被其他业务方引用），需要好好命名
+&#8212;&#8212; mods - 该目录下存放的都是一个一个模块的脚本
+&#8212;&#8212; widget - 该目录下存放一些共用的组件
+&#8212;&#8212; init - 负责脚本的初始化逻辑</p>
+</div>
+<div class="section" id="id7">
+<h3>编写脚本<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>示例：店铺招牌模块的脚本</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// 不用写组件名，打包后会自动生成</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Core</span><span class="p">){</span>
+
+    <span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span> <span class="nx">E</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Event</span><span class="p">,</span> <span class="nx">D</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">;</span>
+
+    <span class="c1">// 构造器</span>
+    <span class="kd">function</span> <span class="nx">TshopPbsmShopCustomBanner</span><span class="p">(</span><span class="nx">context</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">_mod</span> <span class="o">=</span> <span class="nx">context</span><span class="p">.</span><span class="nx">mod</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">self</span><span class="p">.</span><span class="nx">_mod</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+
+        <span class="nx">self</span><span class="p">.</span><span class="nx">_init</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 方法</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">augment</span><span class="p">(</span><span class="nx">TshopPbsmShopCustomBanner</span><span class="p">,{</span>
+        <span class="nx">_init</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;TshopPbsmShopCustomBanner init start&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+    <span class="nx">TshopPbsmShopCustomBanner</span><span class="p">.</span><span class="nx">selector</span> <span class="o">=</span> <span class="s1">&#39;.tshop-pbsm-shop-banner&#39;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">TshopPbsmShopCustomBanner</span><span class="p">;</span>
+    <span class="c1">// 依赖的组件，可以是kissy的组件，也可以是本地的组件</span>
+<span class="p">},{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;core&#39;</span><span class="p">]});</span>
+</pre></div>
+</div>
+<p>模块初始化逻辑init.js</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
+
+   <span class="c1">// 模块间的依赖关系</span>
+   <span class="cm">/*Generated by KISSY Module Compiler*/</span>
+   <span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s1">&#39;modules&#39;</span><span class="p">,</span> <span class="p">{</span>
+   <span class="s1">&#39;shop/mods/item-cates&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;core&#39;</span><span class="p">]},</span>
+   <span class="s1">&#39;shop/mods/header&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;core&#39;</span><span class="p">,</span><span class="s1">&#39;cookie&#39;</span><span class="p">,</span><span class="s1">&#39;suggest&#39;</span><span class="p">,</span><span class="s1">&#39;overlay&#39;</span><span class="p">,</span><span class="s1">&#39;shop/widget/compatible&#39;</span><span class="p">]},</span>
+   <span class="s1">&#39;shop/mods/custom-banner&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;core&#39;</span><span class="p">]},</span>
+   <span class="s1">&#39;shop/widget/compatible&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;core&#39;</span><span class="p">]},</span>
+   <span class="s1">&#39;shop/mods/item-recommend&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;core&#39;</span><span class="p">,</span><span class="s1">&#39;shop/widget/compatible&#39;</span><span class="p">]},</span>
+   <span class="s1">&#39;shop/mods/nav&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;core&#39;</span><span class="p">,</span><span class="s1">&#39;overlay&#39;</span><span class="p">,</span><span class="s1">&#39;shop/widget/compatible&#39;</span><span class="p">]}</span>
+   <span class="p">});</span>
+
+   <span class="c1">// 包配置</span>
+   <span class="nx">S</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="nx">combine</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>  <span class="c1">// 是否开启combo模式</span>
+            <span class="nx">debug</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>     <span class="c1">// 是否开启debug模式</span>
+            <span class="nx">packages</span><span class="o">:</span><span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;shop&quot;</span><span class="p">,</span>                       <span class="c1">//包名</span>
+                    <span class="nx">tag</span><span class="o">:</span><span class="s2">&quot;20130131&quot;</span><span class="p">,</span>                   <span class="c1">//时间戳, 添加在动态脚本路径后面, 用于更新包内模块代码</span>
+                    <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;../../../build-combo/&quot;</span><span class="p">,</span>   <span class="c1">//包对应路径, 相对路径指相对于当前页面路径</span>
+                    <span class="nx">charset</span><span class="o">:</span><span class="s2">&quot;utf-8&quot;</span>                      <span class="c1">//包里模块文件编码格式</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+   <span class="p">);</span>
+
+   <span class="c1">// 页面实际存在的模块，由开发给出</span>
+    <span class="kd">var</span> <span class="nx">mods</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">shop_config</span><span class="p">.</span><span class="nx">mods</span><span class="p">;</span>
+
+   <span class="c1">// 获取需要use的模块名称数字</span>
+    <span class="kd">var</span> <span class="nx">comboMods</span> <span class="o">=</span> <span class="p">[];</span>
+
+     <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">mods</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+         <span class="nx">comboMods</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">&quot;shop/mods/&quot;</span><span class="o">+</span><span class="nx">mods</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+     <span class="p">}</span>
+
+    <span class="c1">// 把需要use的模块放在一起一次use，这样这些模块的js脚本就会combo请求，只会有一个请求</span>
+     <span class="nx">S</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">comboMods</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
+         <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">makeArray</span><span class="p">(</span><span class="nx">arguments</span><span class="p">).</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+         <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">args</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">mod</span><span class="p">){</span>
+             <span class="k">new</span> <span class="nx">mod</span><span class="p">({</span><span class="nx">mod</span><span class="o">:</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;#page &quot;</span> <span class="o">+</span> <span class="nx">mod</span><span class="p">.</span><span class="nx">selector</span><span class="p">)});</span>
+         <span class="p">})</span>
+     <span class="p">});</span>
+
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>打包<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>方式一：打包可以用ant结合kissy 1.3打包工具KISSY Module Compiler
+方式二：利用kissy pie，对1.3的支持正在开发中</p>
+<p>下面介绍一下idea下ant结合kissy 1.3打包工具KISSY Module Compiler的步骤.</p>
+<div class="section" id="ant">
+<h4>使用ant打包<a class="headerlink" href="#ant" title="Permalink to this headline">¶</a></h4>
+<p>第一步：编写ant打包脚本</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="c">&lt;!--</span>
+<span class="c">build example for kissy loader</span>
+<span class="c">@author yiminghe@gmail.com</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">name=</span><span class="s">&quot;js.build&quot;</span> <span class="na">default=</span><span class="s">&quot;build&quot;</span> <span class="na">basedir=</span><span class="s">&quot;.&quot;</span> <span class="na">xmlns:ac=</span><span class="s">&quot;antlib:net.sf.antcontrib&quot;</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!--入口文件模块所在目录--&gt;</span>
+    <span class="nt">&lt;dirname</span> <span class="na">property=</span><span class="s">&quot;current.dir&quot;</span> <span class="na">file=</span><span class="s">&quot;${ant.file.compressor.build}&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;assets.dir&quot;</span> <span class="na">location=</span><span class="s">&quot;${current.dir}/src/assets/js/&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;build.dir&quot;</span> <span class="na">location=</span><span class="s">&quot;${current.dir}/build-combo/&quot;</span><span class="nt">/&gt;</span>
+
+    <span class="c">&lt;!--项目文件编码--&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;charset&quot;</span> <span class="na">value=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">/&gt;</span>
+
+    <span class="c">&lt;!-- kissy tools 项目源码目录 --&gt;</span>
+    <span class="c">&lt;!-- 注意：请用 kissy tools 中的 ant 运行此 xml --&gt;</span>
+     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;ks.tools&quot;</span> <span class="na">value=</span><span class="s">&quot;${current.dir}/tools/kissy-tools&quot;</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;module.compiler&quot;</span> <span class="na">value=</span><span class="s">&quot;${ks.tools}\module-compiler\module-compiler.jar&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;yui.compiler&quot;</span> <span class="na">value=</span><span class="s">&quot;${ks.tools}\yuicompressor\yuicompressor.jar&quot;</span><span class="nt">/&gt;</span>
+
+    <span class="c">&lt;!-- js 构建--&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#39;jsrun&#39;</span> <span class="na">depends=</span><span class="s">&quot;combo&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/target&gt;</span>
+
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#39;prepare&#39;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;mkdir</span> <span class="na">dir=</span><span class="s">&quot;${build.dir}&quot;</span><span class="nt">&gt;&lt;/mkdir&gt;</span>
+        <span class="nt">&lt;delete&gt;</span>
+            <span class="nt">&lt;fileset</span> <span class="na">dir=</span><span class="s">&quot;${build.dir}&quot;</span> <span class="na">includes=</span><span class="s">&quot;**/*.js&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/delete&gt;</span>
+        <span class="nt">&lt;copy</span> <span class="na">encoding=</span><span class="s">&quot;${charset}&quot;</span> <span class="na">todir=</span><span class="s">&quot;${build.dir}&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;fileset</span> <span class="na">dir=</span><span class="s">&quot;${assets.dir}&quot;</span> <span class="na">includes=</span><span class="s">&quot;**/*&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/copy&gt;</span>
+    <span class="nt">&lt;/target&gt;</span>
+
+    <span class="c">&lt;!--js  combo 地址获取--&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#39;combo&#39;</span> <span class="na">depends=</span><span class="s">&quot;prepare&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;java</span> <span class="na">classname=</span><span class="s">&quot;com.taobao.f2e.ExtractDependency&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-baseUrls&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;${build.dir}&quot;</span><span class="nt">/&gt;</span>
+
+            <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-encodings&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;${charset}&quot;</span><span class="nt">/&gt;</span>
+
+            <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-outputEncoding&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">/&gt;</span>
+
+            <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-output&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;${build.dir}/deps.js&quot;</span><span class="nt">/&gt;</span>
+
+            <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;-fixModuleName&quot;</span><span class="nt">/&gt;</span>
+            <span class="c">&lt;!--自动 combo 需要补全文件名--&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+
+            <span class="nt">&lt;classpath&gt;</span>
+                <span class="nt">&lt;pathelement</span> <span class="na">path=</span><span class="s">&quot;${module.compiler}&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;pathelement</span> <span class="na">path=</span><span class="s">&quot;${java.class.path}&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/classpath&gt;</span>
+        <span class="nt">&lt;/java&gt;</span>
+    <span class="nt">&lt;/target&gt;</span>
+
+     <span class="c">&lt;!-- 用 YUICompressor 压缩 CSS,JS --&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;compress&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;apply</span> <span class="na">executable=</span><span class="s">&quot;java&quot;</span> <span class="na">verbose=</span><span class="s">&quot;true&quot;</span> <span class="na">dest=</span><span class="s">&quot;${build.dir}&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;fileset</span> <span class="na">dir=</span><span class="s">&quot;${build.dir}&quot;</span> <span class="na">includes=</span><span class="s">&quot;**/*.js&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">line=</span><span class="s">&quot;-jar&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">path=</span><span class="s">&quot;${yui.compiler}&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">line=</span><span class="s">&quot;--charset ${charset}&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;srcfile/&gt;</span>
+            <span class="nt">&lt;arg</span> <span class="na">line=</span><span class="s">&quot;-o&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;targetfile/&gt;</span>
+            <span class="nt">&lt;mapper</span> <span class="na">type=</span><span class="s">&quot;regexp&quot;</span> <span class="na">from=</span><span class="s">&quot;^(.*)\.(css|js)$&quot;</span> <span class="na">to=</span><span class="s">&quot;\1-min.\2&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/apply&gt;</span>
+    <span class="nt">&lt;/target&gt;</span>
+    <span class="c">&lt;!-- END OF 用YUICompressor 压缩 CSS --&gt;</span>
+
+    <span class="c">&lt;!-- 对 JS 文件 ASCII 化 --&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;native2ascii&quot;</span>  <span class="na">depends=</span><span class="s">&quot;compress&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;mkdir</span> <span class="na">dir=</span><span class="s">&quot;${build.dir}/tmp&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;copy</span> <span class="na">todir=</span><span class="s">&quot;${build.dir}/tmp&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;fileset</span> <span class="na">dir=</span><span class="s">&quot;${build.dir}&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/copy&gt;</span>
+        <span class="nt">&lt;native2ascii</span> <span class="na">encoding=</span><span class="s">&quot;${charset}&quot;</span>
+                      <span class="na">src=</span><span class="s">&quot;${build.dir}/tmp/&quot;</span>
+                      <span class="na">dest=</span><span class="s">&quot;${build.dir}&quot;</span>
+                      <span class="na">includes=</span><span class="s">&quot;**/*-min.js&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/native2ascii&gt;</span>
+        <span class="nt">&lt;delete</span> <span class="na">dir=</span><span class="s">&quot;${build.dir}/tmp&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/target&gt;</span>
+
+    <span class="c">&lt;!--项目(js,css)构建--&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;build&quot;</span> <span class="na">depends=</span><span class="s">&quot;jsrun,compress,native2ascii&quot;</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/project&gt;</span>
+</pre></div>
+</div>
+<p>第二步：选择打包的脚本xml</p>
+<img alt="http://img03.taobaocdn.com/tps/i3/T1Nt0OXppcXXaL7K.U-762-578.jpg" src="http://img03.taobaocdn.com/tps/i3/T1Nt0OXppcXXaL7K.U-762-578.jpg" />
+<p>第三步：配置打包的ant环境</p>
+<img alt="http://img03.taobaocdn.com/tps/i3/T1HtpMXAFiXXae06Tn-811-651.jpg" src="http://img03.taobaocdn.com/tps/i3/T1HtpMXAFiXXae06Tn-811-651.jpg" />
+<img alt="http://img01.taobaocdn.com/tps/i1/T1swNOXE0aXXXPaJZW-900-664.jpg" src="http://img01.taobaocdn.com/tps/i1/T1swNOXE0aXXXPaJZW-900-664.jpg" />
+<img alt="http://img04.taobaocdn.com/tps/i4/T1RvJOXz0bXXcRejYn-808-649.jpg" src="http://img04.taobaocdn.com/tps/i4/T1RvJOXz0bXXcRejYn-808-649.jpg" />
+</div>
+<div class="section" id="id9">
+<h4>打包后的目录如下<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<img alt="http://img01.taobaocdn.com/tps/i1/T12NXBXEBaXXbQbQ7o-317-517.jpg" src="http://img01.taobaocdn.com/tps/i1/T12NXBXEBaXXbQbQ7o-317-517.jpg" />
+<p>说明：其中deps.js是模块之间的依赖关系
+查看模块打包后的脚本</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;shop/mods/custom-banner&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Core</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span> <span class="nx">E</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Event</span><span class="p">,</span> <span class="nx">D</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">;</span>
+  <span class="kd">function</span> <span class="nx">TshopPbsmShopCustomBanner</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+    <span class="nx">self</span><span class="p">.</span><span class="nx">_mod</span> <span class="o">=</span> <span class="nx">context</span><span class="p">.</span><span class="nx">mod</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">self</span><span class="p">.</span><span class="nx">_mod</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span>
+    <span class="p">}</span>
+    <span class="nx">self</span><span class="p">.</span><span class="nx">_init</span><span class="p">()</span>
+  <span class="p">}</span>
+  <span class="nx">S</span><span class="p">.</span><span class="nx">augment</span><span class="p">(</span><span class="nx">TshopPbsmShopCustomBanner</span><span class="p">,</span> <span class="p">{</span><span class="nx">_init</span><span class="o">:</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;TshopPbsmShopCustomBanner init start&quot;</span><span class="p">)</span>
+  <span class="p">}});</span>
+  <span class="nx">TshopPbsmShopCustomBanner</span><span class="p">.</span><span class="nx">selector</span> <span class="o">=</span> <span class="s2">&quot;.tshop-pbsm-shop-banner&quot;</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">TshopPbsmShopCustomBanner</span>
+<span class="p">},</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;core&quot;</span><span class="p">]});</span>
+</pre></div>
+</div>
+<p>查看依赖关系</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/*Generated by KISSY Module Compiler*/</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s1">&#39;modules&#39;</span><span class="p">,</span> <span class="p">{</span>
+<span class="s1">&#39;shop/mods/item-cates&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;core&#39;</span><span class="p">]},</span>
+<span class="s1">&#39;shop/mods/header&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;core&#39;</span><span class="p">,</span><span class="s1">&#39;cookie&#39;</span><span class="p">,</span><span class="s1">&#39;suggest&#39;</span><span class="p">,</span><span class="s1">&#39;overlay&#39;</span><span class="p">,</span><span class="s1">&#39;shop/widget/compatible&#39;</span><span class="p">]},</span>
+<span class="s1">&#39;shop/mods/custom-banner&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;core&#39;</span><span class="p">]},</span>
+<span class="s1">&#39;shop/widget/compatible&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;core&#39;</span><span class="p">]},</span>
+<span class="s1">&#39;shop/mods/item-recommend&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;core&#39;</span><span class="p">,</span><span class="s1">&#39;shop/widget/compatible&#39;</span><span class="p">]},</span>
+<span class="s1">&#39;shop/mods/nav&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;core&#39;</span><span class="p">,</span><span class="s1">&#39;overlay&#39;</span><span class="p">,</span><span class="s1">&#39;shop/widget/compatible&#39;</span><span class="p">]}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>实际的脚本请求<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<img alt="http://img03.taobaocdn.com/tps/i3/T1vOxNXpBeXXc7ctbS-934-291.jpg" src="http://img03.taobaocdn.com/tps/i3/T1vOxNXpBeXXc7ctbS-934-291.jpg" />
+<p>从上图可以看出，页面脚本请求：
+- seed.js
+- switchable, overlay等组件combo在一起的url
+- init.js 页面初始化脚本
+- nav.js, header.js等模块脚本combo在一起的url</p>
+</div>
+</div>
+<div class="section" id="dpl">
+<h2>编写项目dpl<a class="headerlink" href="#dpl" title="Permalink to this headline">¶</a></h2>
+<p>项目dpl 有使用less(使用参考：<a class="reference external" href="http://www.lesscss.net/">http://www.lesscss.net/</a>)，其实还有sass可选(具体使用请参考：<a class="reference external" href="http://sass-lang.com/">http://sass-lang.com/</a>)
+在正式编码之前，我们常常需要抽象出一个项目页面中共同的视觉元素，如盒子。
+如宝贝分类和宝贝推荐模块的盒子颜色,如下图所示</p>
+<p>如mixins/default.less里面这段用less写的盒子模型到dpl</p>
+<div class="highlight-css"><pre>.skin-box-default(){
+    margin-bottom: 10px;
+    .clearfix;    /* 在模块最外层添加清除浮动的样式，避免ie6下装修时，模块高度发生改变，模块之间错位的问题发生 */
+    .hidden{
+        visibility: hidden;
+    }
+    .disappear{
+       display: none;
+    }
+    .skin-box-hd{
+        border-width: @hd-border-width;
+        border-color: @hd-border-color;
+        border-style: @hd-border-style;
+        background: @hd-background;
+        padding: @hd-paddding;
+        h3 span{
+           border-bottom: @title-border-width @title-border-style @title-border-color;
+           display: inline-block;
+
+           font-weight: @title-font-weight;
+           font-size: @title-font-size;
+           color: @title-font-color;
+        }
+    }
+    .skin-box-bd{
+        .clearfix;
+        border-color: @bd-border-color;
+        border-width: @bd-border-width;
+        border-style: @bd-border-style;
+
+        background: @bd-background;
+
+        color: @font-color;
+        a{
+           color: @font-color;
+        }
+    }
+}</pre>
+</div>
+<div class="section" id="less">
+<h3>使用less来打包各个模块的皮肤<a class="headerlink" href="#less" title="Permalink to this headline">¶</a></h3>
+<p>使用less的&#64;import把所有模块的皮肤打包到一起，形成一个完整的模板皮肤</p>
+<img alt="http://img04.taobaocdn.com/tps/i4/T1TbdOXENbXXaDgpvo-674-314.jpg" src="http://img04.taobaocdn.com/tps/i4/T1TbdOXENbXXaDgpvo-674-314.jpg" />
+</div>
+</div>
+<div class="section" id="demo">
+<h2>编写项目demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="html">
+<h3>编写模块html<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;J_TModule&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;skin-box tb-module tshop-pbsm tshop-pbsm-shop-item-recommend&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;skin-box-hd&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;hd-icon&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+            <span class="nt">&lt;h3&gt;</span>
+                <span class="nt">&lt;span&gt;</span>宝贝推荐 【950布局下一行显示4个-230】<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/h3&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;skin-box-act&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;more&quot;</span> <span class="na">href=</span><span class="s">&quot;http://shop51186914.daily.taobao.net/list.htm?search=y&amp;amp;orderType=coefp_desc&quot;</span><span class="nt">&gt;</span>更多<span class="ni">&amp;gt;</span><span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span>
+               <span class="na">value=</span><span class="s">&quot;http://rate.daily.taobao.net/batch_query_rate.htm?sellerId=45092523&amp;amp;itemIds=1500012736005,1500012553329&amp;amp;source=shop&quot;</span>
+               <span class="na">class=</span><span class="s">&quot;J_TItemRatesUrl&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;skin-box-bd&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;item4line1&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">&quot;item&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;dt</span> <span class="na">class=</span><span class="s">&quot;photo&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://img02.taobaocdn.com/bao/uploaded/i2/T1xga_XctoXXbWHc6a_120455.jpg&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;/a&gt;</span>
+                    <span class="nt">&lt;/dt&gt;</span>
+                    <span class="nt">&lt;dd</span> <span class="na">class=</span><span class="s">&quot;detail&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;item-name&quot;</span><span class="nt">&gt;</span>宝贝描述宝贝描述 宝贝描述宝贝描述 宝贝描述宝贝描述 宝贝描述宝贝描述 <span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;attribute&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;cprice-area&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;symbol&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;yen;</span><span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;c-price&quot;</span><span class="nt">&gt;</span>256.00<span class="nt">&lt;/span&gt;</span>
+                            <span class="nt">&lt;/div&gt;</span>
+                            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sprice-area&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;symbol&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;yen;</span><span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;s-price&quot;</span><span class="nt">&gt;</span>256.00<span class="nt">&lt;/span&gt;</span>
+                            <span class="nt">&lt;/div&gt;</span>
+                            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sale-area&quot;</span><span class="nt">&gt;</span>
+                                已售：<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sale-num&quot;</span><span class="nt">&gt;</span>207<span class="nt">&lt;/span&gt;</span>笔
+                            <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/dd&gt;</span>
+                    <span class="nt">&lt;dd</span> <span class="na">class=</span><span class="s">&quot;rates&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;h4&gt;</span>
+                                评论(<span class="nt">&lt;span&gt;</span>1566<span class="nt">&lt;/span&gt;</span>)
+                            <span class="nt">&lt;/h4&gt;</span>
+                            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>更多<span class="ni">&amp;gt;</span><span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;rate J_TRate&quot;</span><span class="nt">&gt;</span>
+                            一条评论，最多36个汉字，超出部分截断一条评论，最多36个汉字，超出部分截断
+                        <span class="nt">&lt;/p&gt;</span>
+                    <span class="nt">&lt;/dd&gt;</span>
+                <span class="nt">&lt;/dl&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="html-html">
+<h3>编写页面html，并调用模块的html<a class="headerlink" href="#html-html" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;gbk&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;keywords&quot;</span> <span class="na">content=</span><span class="s">&quot;淘宝, 店铺, 旺铺, 店铺名&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span> <span class="na">content=</span><span class="s">&quot;欢迎前来淘宝网某某旺铺，选购某某商品,想了解更多某某商品，请进入某某旺铺，众多商品任你选购&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;title&gt;</span>首页-c测试账号152店铺-test-网店/网络服务/软件- 淘宝网 <span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">g_hb_monitor_st</span> <span class="o">=</span> <span class="o">+</span><span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">g_config</span> <span class="o">=</span> <span class="p">{</span><span class="nx">appId</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">assetsHost</span><span class="o">:</span> <span class="s2">&quot;http://assets.daily.taobao.net&quot;</span><span class="p">,</span> <span class="nx">toolbar</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">pageType</span><span class="o">:</span> <span class="s2">&quot;wangpu&quot;</span><span class="p">};</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">shop_config</span> <span class="o">=</span> <span class="p">{};</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">shop_config</span><span class="p">.</span><span class="nx">mods</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="s2">&quot;custom-banner&quot;</span><span class="p">,</span> <span class="s2">&quot;nav&quot;</span><span class="p">,</span> <span class="s2">&quot;item-cates&quot;</span><span class="p">,</span> <span class="s2">&quot;item-recommend&quot;</span><span class="p">];</span>
+    <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;shortcut icon&quot;</span> <span class="na">href=</span><span class="s">&quot;http://www.taobao.com/favicon.ico&quot;</span> <span class="na">type=</span><span class="s">&quot;image/x-icon&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;http://a.tbcdn.cn/??p/global/1.0/global-min.css?t=20120528.css&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;http://assets.daily.taobao.net/apps/taesite/platinum/stylesheet/??view/layout-min.css&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;../../assets/css/skin/default.css&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;../../assets/css/skin/yellow.css&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;script  </span><span class="na">src=</span><span class="s">&quot;http://assets.daily.taobao.net/??s/kissy/1.3.0/seed-min.js,p/global/1.0/global-min.js?t=20121127.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">id=</span><span class="s">&quot;J_TSelectedMenuInfo&quot;</span> <span class="na">value=</span><span class="s">&#39;{&quot;selectedMenu&quot;:{&quot;pageId&quot;:&quot;1&quot;, &quot;catId&quot;: &quot;&quot; , &quot;linkId&quot;:&quot;&quot;}}&#39;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">value=</span><span class="s">&quot;21XUxjAl&quot;</span> <span class="na">name=</span><span class="s">&quot;tb_token&quot;</span> <span class="na">id=</span><span class="s">&quot;J_TokenField&quot;</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;page&quot;</span><span class="nt">&gt;</span>
+<span class="c">&lt;!-- 系统页头 --&gt;</span>
+<span class="cp">&lt;?@include &#39;../mods/header.php&#39;?&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;content&quot;</span> <span class="na">class=</span><span class="s">&quot;tb-shop&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;hd&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;layout grid-m0&quot;</span> <span class="na">data-id=</span><span class="s">&quot;5234984&quot;</span> <span class="na">data-prototypeid=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-main&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;main-wrap J_TRegion&quot;</span> <span class="na">data-modules=</span><span class="s">&quot;main&quot;</span> <span class="na">data-width=</span><span class="s">&quot;950&quot;</span><span class="nt">&gt;</span>
+                    <span class="c">&lt;!-- your mod html goes here --&gt;</span>
+                    <span class="cp">&lt;?@include &#39;../mods/custom-banner.php&#39;?&gt;</span>
+                    <span class="cp">&lt;?@include &#39;../mods/nav.php&#39;?&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;bd&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;layout grid-s5m0&quot;</span> <span class="na">data-id=</span><span class="s">&quot;5022284&quot;</span> <span class="na">data-prototypeid=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-main&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;main-wrap J_TRegion&quot;</span> <span class="na">data-modules=</span><span class="s">&quot;main&quot;</span> <span class="na">data-width=</span><span class="s">&quot;b750&quot;</span><span class="nt">&gt;</span>
+                    <span class="cp">&lt;?@include &#39;../mods/item-recommend.php&#39;?&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-sub J_TRegion&quot;</span> <span class="na">data-modules=</span><span class="s">&quot;sub&quot;</span> <span class="na">data-width=</span><span class="s">&quot;b190&quot;</span><span class="nt">&gt;</span>
+                <span class="cp">&lt;?@include &#39;../mods/item-cates.php&#39;?&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;ft&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;layout grid-m0&quot;</span> <span class="na">data-id=</span><span class="s">&quot;5234984&quot;</span> <span class="na">data-prototypeid=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-main&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;main-wrap J_TRegion&quot;</span> <span class="na">data-modules=</span><span class="s">&quot;main&quot;</span> <span class="na">data-width=</span><span class="s">&quot;950&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;../../../build-combo/shop/init.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="css">
+<h3>插入页面级的css<a class="headerlink" href="#css" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;http://a.tbcdn.cn/??p/global/1.0/global-min.css?t=20120528.css&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;http://assets.daily.taobao.net/apps/taesite/platinum/stylesheet/??view/layout-min.css&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;../../assets/css/skin/default.css&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;../../assets/css/skin/yellow.css&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="js">
+<h3>引入页面级的js<a class="headerlink" href="#js" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script  </span><span class="na">src=</span><span class="s">&quot;http://assets.daily.taobao.net/??s/kissy/1.3.0/seed-min.js,p/global/1.0/global-min.js?t=20121127.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;../../../build-combo/shop/init.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="readme">
+<h2>编写readme<a class="headerlink" href="#readme" title="Permalink to this headline">¶</a></h2>
+<img alt="http://img02.taobaocdn.com/tps/i2/T10ApMXrpfXXcXi3Te-670-459.jpg" src="http://img02.taobaocdn.com/tps/i2/T10ApMXrpfXXcXi3Te-670-459.jpg" />
+</div>
+</div>
+
+</div>
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../workflow/index.html" title="组件开发指南"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="../style-guide/kissy-source-style.html" title="KISSY 源码规范"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../index.html" accesskey="U">Tutorial</a> &#187; </li> 
+    </ul>
+</div>
+					<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+		
+    <div class="col-sub">
+
+<div class="s-box">
+    <div class="s-box-bd">
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo/index.html">Demos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html">快速上手</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kissy/index.html">使用介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../style-guide/index.html">最佳编码实践</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">项目简介</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">目录组织</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">编写项目组件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dpl">编写项目dpl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demo">编写项目demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#readme">编写readme</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../workflow/index.html">组件开发指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools/index.html">前端常用工具</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-note/index.html">KISSY 发布声明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../change-log/index.html">KISSY 升级指南</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</div>
+    </div>
+    <div class="col-extra">
+        
+	<div class="s-box">
+		<div class="s-box-hd">
+			<h3>本节提纲</h3>
+		</div>
+		<div class="s-box-bd">
+			<ul>
+<li><a class="reference internal" href="#">项目简介</a><ul>
+<li><a class="reference internal" href="#id4">目录组织</a></li>
+<li><a class="reference internal" href="#id5">编写项目组件</a><ul>
+<li><a class="reference internal" href="#id6">建立目录结构</a></li>
+<li><a class="reference internal" href="#id7">编写脚本</a></li>
+<li><a class="reference internal" href="#id8">打包</a><ul>
+<li><a class="reference internal" href="#ant">使用ant打包</a></li>
+<li><a class="reference internal" href="#id9">打包后的目录如下</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id10">实际的脚本请求</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dpl">编写项目dpl</a><ul>
+<li><a class="reference internal" href="#less">使用less来打包各个模块的皮肤</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#demo">编写项目demo</a><ul>
+<li><a class="reference internal" href="#html">编写模块html</a></li>
+<li><a class="reference internal" href="#html-html">编写页面html，并调用模块的html</a></li>
+<li><a class="reference internal" href="#css">插入页面级的css</a></li>
+<li><a class="reference internal" href="#js">引入页面级的js</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#readme">编写readme</a></li>
+</ul>
+</li>
+</ul>
+
+		</div>
+	</div>
+
+    </div>
+	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

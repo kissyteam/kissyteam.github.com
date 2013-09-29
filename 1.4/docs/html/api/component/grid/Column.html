@@ -1,0 +1,399 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="data-spm" content="1" data-spm-protocol="i" />
+
+<title>Column &mdash; KISSY v1.3 Documentation</title>
+
+<link rel="stylesheet" href="http://dev.kissyui.com/kissy/build/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="../../../_static/kissy.css"/>
+    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js,searchtools.js"></script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/1.4/api/" >English API Docs</a></li>
+        <li><a href="http://blog.kissyui.com/" target="_blank">Offical Blog</a></li>
+    </ul>
+<div id="searchbox" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+        <input type="text" name="q" size="28" class="ipt"/>
+        <input type="submit" value="Go" class="btn"/>
+        <input type="hidden" name="check_keywords" value="yes"/>
+        <input type="hidden" name="area" value="default"/>
+    </form>
+</div>
+
+</div>
+
+<div id="content">
+	<div  id="layout" class="layout grid-s6m0e7">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
+    </ul>
+</div>
+					<div class="body">
+  <div class="section" id="column">
+<h1>Column<a class="headerlink" href="#column" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">表格列.</div>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#grid.Column" title="grid.Column"><tt class="xref py py-class docutils literal"><span class="pre">Column</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="configs">
+<h2>Configs<a class="headerlink" href="#configs" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#grid.Column.config.dataIndex" title="grid.Column.config.dataIndex"><tt class="xref py py-data docutils literal"><span class="pre">dataIndex</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Column.config.hide" title="grid.Column.config.hide"><tt class="xref py py-data docutils literal"><span class="pre">hide</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Column.config.id" title="grid.Column.config.id"><tt class="xref py py-data docutils literal"><span class="pre">id</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Column.config.renderer" title="grid.Column.config.renderer"><tt class="xref py py-data docutils literal"><span class="pre">renderer</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Column.config.resizable" title="grid.Column.config.resizable"><tt class="xref py py-data docutils literal"><span class="pre">resizable</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Column.config.sortable" title="grid.Column.config.sortable"><tt class="xref py py-data docutils literal"><span class="pre">sortable</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Column.config.sortState" title="grid.Column.config.sortState"><tt class="xref py py-data docutils literal"><span class="pre">sortState</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Column.config.title" title="grid.Column.config.title"><tt class="xref py py-data docutils literal"><span class="pre">title</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#grid.Column.prototype.show" title="grid.Column.prototype.show"><tt class="xref py py-meth docutils literal"><span class="pre">show()</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Column.prototype.hide" title="grid.Column.prototype.hide"><tt class="xref py py-meth docutils literal"><span class="pre">hide()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#grid.Column.click" title="grid.Column.click"><tt class="xref py py-func docutils literal"><span class="pre">click()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="grid.Column">
+<em class="property">class </em><tt class="descclassname">grid.</tt><tt class="descname">Column</tt><a class="headerlink" href="#grid.Column" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>Column</strong> (config)</div>
+<div class="line">xclass: &#8216;grid-hd&#8217;</div>
+</div>
+<ul class="simple">
+<li>继承自 <a class="reference internal" href="../component/controller.html#component.Controller" title="component.Controller"><tt class="xref py py-class docutils literal"><span class="pre">Component.Controller</span></tt></a> , 包含其全部配置,属性,方法,事件.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 配置项.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>此类用于表格中，不能单独使用，所有的配置项可以当做属性使用</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">column</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;hide&#39;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="configs-detail">
+<h2>Configs Detail<a class="headerlink" href="#configs-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="grid.Column.config.dataIndex">
+<tt class="descclassname">Column.config.</tt><tt class="descname">dataIndex</tt><a class="headerlink" href="#grid.Column.config.dataIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 列对应的数据里的字段名，如： {a : &#8216;124&#8217;}中的‘a&#8217;</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="grid.Column.config.hide">
+<tt class="descclassname">Column.config.</tt><tt class="descname">hide</tt><a class="headerlink" href="#grid.Column.config.hide" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认：false，隐藏列</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="grid.Column.config.id">
+<tt class="descclassname">Column.config.</tt><tt class="descname">id</tt><a class="headerlink" href="#grid.Column.config.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 默认自动生成，列id ，用于唯一标示列。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="grid.Column.config.renderer">
+<tt class="descclassname">Column.config.</tt><tt class="descname">renderer</tt><a class="headerlink" href="#grid.Column.config.renderer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>{Function} - 用于格式化单元格上的数据,函数原型 function(value,record),</dt>
+<dd><ol class="first last arabic simple">
+<li>value 渲染单元格时的值</li>
+<li>record 单元格所在行显示的记录</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nx">title</span> <span class="o">:</span> <span class="s1">&#39;列一&#39;</span><span class="p">,</span>
+  <span class="nx">dataIndex</span> <span class="o">:</span> <span class="nx">a</span> <span class="p">,</span>
+  <span class="nx">renderer</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="nx">record</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">allChange</span><span class="p">){</span>
+            <span class="k">return</span> <span class="nx">value</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="grid.Column.config.resizable">
+<tt class="descclassname">Column.config.</tt><tt class="descname">resizable</tt><a class="headerlink" href="#grid.Column.config.resizable" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认：true，列是否可以改变宽度，主要使用允许拖拽列宽，或者列自适应时列自动压缩或者放大</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="grid.Column.config.sortable">
+<tt class="descclassname">Column.config.</tt><tt class="descname">sortable</tt><a class="headerlink" href="#grid.Column.config.sortable" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认：true ，列是否允许排序</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="grid.Column.config.sortState">
+<tt class="descclassname">Column.config.</tt><tt class="descname">sortState</tt><a class="headerlink" href="#grid.Column.config.sortState" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 默认： null,列的排序方向，包含2个值 &#8216;ASC&#8217;,&#8217;DESC&#8217;</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="grid.Column.config.title">
+<tt class="descclassname">Column.config.</tt><tt class="descname">title</tt><a class="headerlink" href="#grid.Column.config.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 默认：&amp;#160，列标题，可以使用html</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="grid.Column.prototype.show">
+<tt class="descclassname">Column.prototype.</tt><tt class="descname">show</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Column.prototype.show" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>show()</strong></div>
+<div class="line">显示列</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="grid.Column.prototype.hide">
+<tt class="descclassname">Column.prototype.</tt><tt class="descname">hide</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Column.prototype.hide" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>hide()</strong></div>
+<div class="line">隐藏列</div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="events-detail">
+<h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="grid.Column.click">
+<tt class="descclassname">Column.</tt><tt class="descname">click</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Column.click" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>click(e)</strong></div>
+<div class="line">当点击列头时发生</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>e.target</strong> (<em>Grid.Column</em>) &#8211; 触发的列</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+</div>
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
+    </ul>
+</div>
+					<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+		
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/kissy/index.html">lang</a></li>
+        <li><a href="../../seed/loader/index.html">loader</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../core/ajax/index.html">ajax</a></li>
+        <li><a href="../../core/anim/index.html">anim</a></li>
+        <li><a href="../../core/base/index.html">base</a></li>
+        <li><a href="../../core/cookie/index.html">cookie</a></li>
+        <li><a href="../../core/dom/index.html">dom</a></li>
+        <li><a href="../../core/event/index.html">event</a></li>
+        <li><a href="../../core/json/index.html">json</a></li>
+        <li><a href="../../core/node/index.html">node</a></li>
+        <li><a href="../../core/ua/index.html">ua</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../calendar/index.html">calendar</a></li>
+        <li><a href="../color/index.html">color</a></li>
+        <li><a href="../combobox/index.html">combobox</a></li>
+        <li><a href="../component/index.html">component</a></li>
+        <li><a href="../datalazyload/index.html">datalazyload</a></li>
+        <li><a href="../dd/index.html">dd</a></li>
+        <li><a href="../editor/index.html">editor</a></li>
+        <li><a href="../imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="../mvc/index.html">mvc</a></li>
+        <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../promise/index.html">promise</a></li>
+        <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="../rich-base/index.html">rich-base</a></li>
+        <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../stylesheet/index.html">stylesheet</a></li>
+        <li><a href="../swf/index.html">swf</a></li>
+        <li><a href="../switchable/index.html">switchable</a></li>
+        <li><a href="../tabs/index.html">tabs</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
+        <li><a href="../uri/index.html">uri</a></li>
+         <li><a href="../waterfall/index.html">waterfall</a></li>
+        <li><a href="../xtemplate/index.html">xtemplate</a></li>
+    </ul>
+</ul>
+        
+    </div>
+    
+	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

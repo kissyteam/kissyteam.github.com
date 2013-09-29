@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        button { margin:10px; }
+        div { color:blue; font-weight:bold; }
+        span { color:red; }
+    </style>
+
+    <script src="http://dev.kissyui.com/kissy/build/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+  <button id='getJSON'>get json from script</button>
+
+<script>
+    KISSY.use('node,io',function(S,Node,IO){
+        var $=Node.all;
+        $("#getJSON").on("click",function(){
+            
+            IO.getJSON("kissy.js",function(d){
+                alert("user : "+d.user+" \n email : "+d.email);                
+            });
+                                            
+        });
+    });
+</script>
+
+</body>
+</html>

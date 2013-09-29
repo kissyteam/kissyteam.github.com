@@ -1,0 +1,613 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="data-spm" content="1" data-spm-protocol="i" />
+
+<title>Grid &mdash; KISSY v1.3 Documentation</title>
+
+<link rel="stylesheet" href="http://dev.kissyui.com/kissy/build/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="../../../_static/kissy.css"/>
+    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js,searchtools.js"></script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/1.4/api/" >English API Docs</a></li>
+        <li><a href="http://blog.kissyui.com/" target="_blank">Offical Blog</a></li>
+    </ul>
+<div id="searchbox" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+        <input type="text" name="q" size="28" class="ipt"/>
+        <input type="submit" value="Go" class="btn"/>
+        <input type="hidden" name="check_keywords" value="yes"/>
+        <input type="hidden" name="area" value="default"/>
+    </form>
+</div>
+
+</div>
+
+<div id="content">
+	<div  id="layout" class="layout grid-s6m0e7">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
+    </ul>
+</div>
+					<div class="body">
+  <div class="section" id="grid">
+<h1>Grid<a class="headerlink" href="#grid" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">表格.</div>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#grid.Grid" title="grid.Grid"><tt class="xref py py-class docutils literal"><span class="pre">Grid</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="configs">
+<h2>Configs<a class="headerlink" href="#configs" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#grid.Grid.config.columns" title="grid.Grid.config.columns"><tt class="xref py py-data docutils literal"><span class="pre">columns</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Grid.config.forceFit" title="grid.Grid.config.forceFit"><tt class="xref py py-data docutils literal"><span class="pre">forceFit</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Grid.config.tableCls" title="grid.Grid.config.tableCls"><tt class="xref py py-data docutils literal"><span class="pre">tableCls</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Grid.config.multiSelect" title="grid.Grid.config.multiSelect"><tt class="xref py py-data docutils literal"><span class="pre">multiSelect</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Grid.config.store" title="grid.Grid.config.store"><tt class="xref py py-data docutils literal"><span class="pre">store</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Grid.config.loadMask" title="grid.Grid.config.loadMask"><tt class="xref py py-data docutils literal"><span class="pre">loadMask</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#grid.Grid.prototype.addColumn" title="grid.Grid.prototype.addColumn"><tt class="xref py py-meth docutils literal"><span class="pre">addColumn()</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Grid.prototype.removeColumn" title="grid.Grid.prototype.removeColumn"><tt class="xref py py-meth docutils literal"><span class="pre">removeColumn()</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Grid.prototype.setSelection" title="grid.Grid.prototype.setSelection"><tt class="xref py py-meth docutils literal"><span class="pre">setSelection()</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Grid.prototype.setAllSelection" title="grid.Grid.prototype.setAllSelection"><tt class="xref py py-meth docutils literal"><span class="pre">setAllSelection()</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Grid.prototype.clearSelection" title="grid.Grid.prototype.clearSelection"><tt class="xref py py-meth docutils literal"><span class="pre">clearSelection()</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Grid.prototype.showData" title="grid.Grid.prototype.showData"><tt class="xref py py-meth docutils literal"><span class="pre">showData()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#grid.Grid.aftershow" title="grid.Grid.aftershow"><tt class="xref py py-func docutils literal"><span class="pre">aftershow()</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Grid.cellclick" title="grid.Grid.cellclick"><tt class="xref py py-func docutils literal"><span class="pre">cellclick()</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Grid.rowclick" title="grid.Grid.rowclick"><tt class="xref py py-func docutils literal"><span class="pre">rowclick()</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Grid.rowcreated" title="grid.Grid.rowcreated"><tt class="xref py py-func docutils literal"><span class="pre">rowcreated()</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Grid.rowremoved" title="grid.Grid.rowremoved"><tt class="xref py py-func docutils literal"><span class="pre">rowremoved()</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Grid.rowselected" title="grid.Grid.rowselected"><tt class="xref py py-func docutils literal"><span class="pre">rowselected()</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Grid.rowunselected" title="grid.Grid.rowunselected"><tt class="xref py py-func docutils literal"><span class="pre">rowunselected()</span></tt></a></li>
+<li><a class="reference internal" href="#grid.Grid.scroll" title="grid.Grid.scroll"><tt class="xref py py-func docutils literal"><span class="pre">scroll()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="grid.Grid">
+<em class="property">class </em><tt class="descclassname">grid.</tt><tt class="descname">Grid</tt><a class="headerlink" href="#grid.Grid" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>Grid</strong> (config)</div>
+<div class="line">xclass: &#8216;grid&#8217;</div>
+</div>
+<ul class="simple">
+<li>继承自 <a class="reference internal" href="../component/controller.html#component.Controller" title="component.Controller"><tt class="xref py py-class docutils literal"><span class="pre">Component.Controller</span></tt></a> , 包含其全部配置,属性,方法,事件.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 配置项.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="configs-detail">
+<h2>Configs Detail<a class="headerlink" href="#configs-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="grid.Grid.config.columns">
+<tt class="descclassname">Grid.config.</tt><tt class="descname">columns</tt><a class="headerlink" href="#grid.Grid.config.columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Array} - 表格的列配置,具体列的配置信息请查看 <a class="reference internal" href="Column.html#grid.Column" title="grid.Column"><tt class="xref py py-class docutils literal"><span class="pre">Grid.Column</span></tt></a></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">Grid</span><span class="p">({</span><span class="nx">columns</span><span class="o">:</span><span class="p">[</span>
+    <span class="p">{</span><span class="nx">title</span> <span class="o">:</span> <span class="s1">&#39;列一&#39;</span><span class="p">,</span><span class="nx">dataIndex</span> <span class="o">:</span> <span class="s1">&#39;a&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">title</span> <span class="o">:</span> <span class="s1">&#39;列一&#39;</span><span class="p">,</span><span class="nx">dataIndex</span> <span class="o">:</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="nx">width</span> <span class="o">:</span> <span class="mi">150</span><span class="p">}</span>
+<span class="p">]});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="grid.Grid.config.forceFit">
+<tt class="descclassname">Grid.config.</tt><tt class="descname">forceFit</tt><a class="headerlink" href="#grid.Grid.config.forceFit" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认：false，强迫列自适应表格的宽度，当表格指定宽度&#8217;width&#8217;时，列的宽度与列配置项中指定的宽度&#8217;width&#8217;相等。如果指定了此配置项，那么各列会等比例放大或缩小，以适应表格的宽度。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="grid.Grid.config.tableCls">
+<tt class="descclassname">Grid.config.</tt><tt class="descname">tableCls</tt><a class="headerlink" href="#grid.Grid.config.tableCls" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 表格内部table 元素上应用的样式。由于表格支持设置宽高，会出现内部滚动条，则整个表格由2个table元素构成。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="grid.Grid.config.multiSelect">
+<tt class="descclassname">Grid.config.</tt><tt class="descname">multiSelect</tt><a class="headerlink" href="#grid.Grid.config.multiSelect" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认：false，表格是否支持多选</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="grid.Grid.config.store">
+<tt class="descclassname">Grid.config.</tt><tt class="descname">store</tt><a class="headerlink" href="#grid.Grid.config.store" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Grid.Store} - 表格的数据源，表格显示的数据缓冲在此对象中，所有对数据的访问都通过此对象，参看 <a class="reference internal" href="Store.html#grid.Store" title="grid.Store"><tt class="xref py py-class docutils literal"><span class="pre">Grid.Store</span></tt></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="grid.Grid.config.loadMask">
+<tt class="descclassname">Grid.config.</tt><tt class="descname">loadMask</tt><a class="headerlink" href="#grid.Grid.config.loadMask" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认：false，是否支持加载时的遮罩</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="grid.Grid.prototype.addColumn">
+<tt class="descclassname">Grid.prototype.</tt><tt class="descname">addColumn</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Grid.prototype.addColumn" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>addColumn(column)</strong></div>
+<div class="line">添加列</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>column</strong> (<em>Grid.Column|Object</em>) &#8211; 添加的列或者列的配置项，参看: class:<cite>Grid.Column &lt;grid.Column&gt;</cite></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">grid</span><span class="p">.</span><span class="nx">addColumn</span><span class="p">({</span><span class="nx">title</span> <span class="o">:</span> <span class="s1">&#39;列一&#39;</span><span class="p">,</span><span class="nx">dataIndex</span> <span class="o">:</span> <span class="s1">&#39;a&#39;</span><span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="grid.Grid.prototype.removeColumn">
+<tt class="descclassname">Grid.prototype.</tt><tt class="descname">removeColumn</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Grid.prototype.removeColumn" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>removeColumn(column)</strong></div>
+<div class="line">删除列</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>column</strong> (<em>Grid.Column|Number</em>) &#8211; 删除的列，或者是列的索引</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;columns&#39;</span><span class="p">),</span>
+    <span class="nx">delCol</span> <span class="o">=</span> <span class="nx">columns</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+
+<span class="nx">grid</span><span class="p">.</span><span class="nx">removeColumn</span><span class="p">(</span><span class="nx">delCol</span><span class="p">);</span>
+
+<span class="nx">grid</span><span class="p">.</span><span class="nx">removeColumn</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="grid.Grid.prototype.setSelection">
+<tt class="descclassname">Grid.prototype.</tt><tt class="descname">setSelection</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Grid.prototype.setSelection" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>setSelection(records)</strong></div>
+<div class="line">选中行</div>
+</div>
+<p>:param Object|Array records 选中行的记录信息，可以是一条记录，可以是多条记录。数据通过store获取，参看 <a class="reference internal" href="Store.html#grid.Store" title="grid.Store"><tt class="xref py py-class docutils literal"><span class="pre">Grid.Store</span></tt></a></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;store&#39;</span><span class="p">),</span>
+    <span class="nx">records</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nx">findAll</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="mi">123</span><span class="p">);</span><span class="c1">// 查找所有 obj.a == 123 的记录</span>
+<span class="nx">grid</span><span class="p">.</span><span class="nx">setSelection</span><span class="p">(</span><span class="nx">records</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;store&#39;</span><span class="p">),</span>
+    <span class="nx">record</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="mi">123</span><span class="p">);</span><span class="c1">// 查找第一条 obj.a == 123 的记录</span>
+<span class="nx">grid</span><span class="p">.</span><span class="nx">setSelection</span><span class="p">(</span><span class="nx">record</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="grid.Grid.prototype.setAllSelection">
+<tt class="descclassname">Grid.prototype.</tt><tt class="descname">setAllSelection</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Grid.prototype.setAllSelection" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>setAllSelection()</strong></div>
+<div class="line">选中所有行</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="grid.Grid.prototype.clearSelection">
+<tt class="descclassname">Grid.prototype.</tt><tt class="descname">clearSelection</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Grid.prototype.clearSelection" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>clearSelection()</strong></div>
+<div class="line">取消所有行的选中状态</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="grid.Grid.prototype.showData">
+<tt class="descclassname">Grid.prototype.</tt><tt class="descname">showData</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Grid.prototype.showData" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>showData(records)</strong></div>
+<div class="line">显示数据</div>
+</div>
+<p>:param Array records 要显示的数据，此方法不推荐使用。显示数据最好通过store来实现。</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/**显示本地数据*/</span>
+<span class="kd">var</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Store</span><span class="p">(),</span>
+    <span class="nx">data</span> <span class="o">=</span> <span class="p">[{</span><span class="nx">a</span> <span class="o">:</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="nx">b</span> <span class="o">:</span> <span class="mi">1</span><span class="p">},{</span><span class="nx">a</span> <span class="o">:</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="nx">b</span> <span class="o">:</span> <span class="mi">2</span><span class="p">}],</span>
+    <span class="nx">grid</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Grid</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="nx">columns</span><span class="o">:</span><span class="p">[...],</span>
+        <span class="nx">store</span> <span class="o">:</span> <span class="nx">store</span>
+    <span class="p">});</span>
+<span class="nx">grid</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+<span class="nx">store</span><span class="p">.</span><span class="nx">setResult</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+
+<span class="cm">/**显示本地数据*/</span>
+<span class="kd">var</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Store</span><span class="p">({</span><span class="nx">url</span> <span class="o">:</span> <span class="s1">&#39;data.json&#39;</span><span class="p">,</span><span class="nx">autoLoad</span> <span class="o">:</span> <span class="kc">true</span><span class="p">}),</span><span class="c1">//store 会自动在指定的url下加载数据，在表格渲染时显示数据。</span>
+    <span class="nx">grid</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Grid</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="nx">columns</span><span class="o">:</span><span class="p">[...],</span>
+        <span class="nx">store</span> <span class="o">:</span> <span class="nx">store</span>
+    <span class="p">});</span>
+<span class="nx">grid</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="events-detail">
+<h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="grid.Grid.aftershow">
+<tt class="descclassname">Grid.</tt><tt class="descname">aftershow</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Grid.aftershow" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>aftershow()</strong></div>
+<div class="line">当表格显示数据完成后触发，可以在此时给表格元素绑定事件、设置某些数据选中，等等。。</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="grid.Grid.cellclick">
+<tt class="descclassname">Grid.</tt><tt class="descname">cellclick</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Grid.cellclick" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>cellclick(e)</strong></div>
+<div class="line">当点击表格单元格时触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>e.record</strong> (<em>Object</em>) &#8211; 此单元格所在行展示的数据</li>
+<li><strong>e.field</strong> (<em>String</em>) &#8211; 此单元格所在列的字段参看 <a class="reference internal" href="Column.html#grid.Column" title="grid.Column"><tt class="xref py py-class docutils literal"><span class="pre">Grid.Column</span></tt></a> 中的dataIndex字段</li>
+<li><strong>e.row</strong> (<em>HTMLElement</em>) &#8211; 此单元格所在行的DOM</li>
+<li><strong>e.cell</strong> (<em>HTMLElement</em>) &#8211; 此单元格的DOM</li>
+<li><strong>e.domTarget</strong> (<em>HTMLElement</em>) &#8211; 点击事件的target</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="grid.Grid.rowclick">
+<tt class="descclassname">Grid.</tt><tt class="descname">rowclick</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Grid.rowclick" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>rowclick(e)</strong></div>
+<div class="line">点击行后触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>e.record</strong> (<em>Object</em>) &#8211; 点击行所展示的数据</li>
+<li><strong>e.row</strong> (<em>HTMLElement</em>) &#8211; 点击行的DOM</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="grid.Grid.rowcreated">
+<tt class="descclassname">Grid.</tt><tt class="descname">rowcreated</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Grid.rowcreated" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>rowcreated(e)</strong></div>
+<div class="line">行渲染后触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>e.record</strong> (<em>Object</em>) &#8211; 此行所展示的数据</li>
+<li><strong>e.row</strong> (<em>HTMLElement</em>) &#8211; 行的DOM</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="grid.Grid.rowremoved">
+<tt class="descclassname">Grid.</tt><tt class="descname">rowremoved</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Grid.rowremoved" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>rowremoved(e)</strong></div>
+<div class="line">行删除时触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>e.record</strong> (<em>Object</em>) &#8211; 此行所展示的数据</li>
+<li><strong>e.row</strong> (<em>HTMLElement</em>) &#8211; 行的DOM</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="grid.Grid.rowselected">
+<tt class="descclassname">Grid.</tt><tt class="descname">rowselected</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Grid.rowselected" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>rowcreated(e)</strong></div>
+<div class="line">行选中后触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>e.record</strong> (<em>Object</em>) &#8211; 此行所展示的数据</li>
+<li><strong>e.row</strong> (<em>HTMLElement</em>) &#8211; 行的DOM</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="grid.Grid.rowunselected">
+<tt class="descclassname">Grid.</tt><tt class="descname">rowunselected</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Grid.rowunselected" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>rowcreated(e)</strong></div>
+<div class="line">行取消选中后触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>e.record</strong> (<em>Object</em>) &#8211; 此行所展示的数据</li>
+<li><strong>e.row</strong> (<em>HTMLElement</em>) &#8211; 行的DOM</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="grid.Grid.scroll">
+<tt class="descclassname">Grid.</tt><tt class="descname">scroll</tt><big>(</big><big>)</big><a class="headerlink" href="#grid.Grid.scroll" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>scroll(e)</strong></div>
+<div class="line">当表格内部出现滚动条时触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>e.scrollLeft</strong> (<em>Object</em>) &#8211; 内部滚动条的 left</li>
+<li><strong>e.scrollTop</strong> (<em>HTMLElement</em>) &#8211; 内部滚动条的 top</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+</div>
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li> 
+    </ul>
+</div>
+					<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+		
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../seed/kissy/index.html">lang</a></li>
+        <li><a href="../../seed/loader/index.html">loader</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../core/ajax/index.html">ajax</a></li>
+        <li><a href="../../core/anim/index.html">anim</a></li>
+        <li><a href="../../core/base/index.html">base</a></li>
+        <li><a href="../../core/cookie/index.html">cookie</a></li>
+        <li><a href="../../core/dom/index.html">dom</a></li>
+        <li><a href="../../core/event/index.html">event</a></li>
+        <li><a href="../../core/json/index.html">json</a></li>
+        <li><a href="../../core/node/index.html">node</a></li>
+        <li><a href="../../core/ua/index.html">ua</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../calendar/index.html">calendar</a></li>
+        <li><a href="../color/index.html">color</a></li>
+        <li><a href="../combobox/index.html">combobox</a></li>
+        <li><a href="../component/index.html">component</a></li>
+        <li><a href="../datalazyload/index.html">datalazyload</a></li>
+        <li><a href="../dd/index.html">dd</a></li>
+        <li><a href="../editor/index.html">editor</a></li>
+        <li><a href="../imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="../mvc/index.html">mvc</a></li>
+        <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../promise/index.html">promise</a></li>
+        <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="../rich-base/index.html">rich-base</a></li>
+        <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../stylesheet/index.html">stylesheet</a></li>
+        <li><a href="../swf/index.html">swf</a></li>
+        <li><a href="../switchable/index.html">switchable</a></li>
+        <li><a href="../tabs/index.html">tabs</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
+        <li><a href="../uri/index.html">uri</a></li>
+         <li><a href="../waterfall/index.html">waterfall</a></li>
+        <li><a href="../xtemplate/index.html">xtemplate</a></li>
+    </ul>
+</ul>
+        
+    </div>
+    
+	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

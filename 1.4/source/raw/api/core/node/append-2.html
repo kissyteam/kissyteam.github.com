@@ -1,0 +1,19 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <style>
+      p { background:yellow; }
+    </style>
+     <script src="http://dev.kissyui.com/kissy/build/seed.js" data-config="{combine:true}"></script>
+    </head>
+    <body>
+      <p>I would like to say: </p>
+      <p>I also would like to say: </p>
+    <script>
+        KISSY.use("node",function(S,NodeList){
+            NodeList.all("p").append(document.createTextNode("Hello"));
+        });        
+    </script>
+    
+    </body>
+    </html>  

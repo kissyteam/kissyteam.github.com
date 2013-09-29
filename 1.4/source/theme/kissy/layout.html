@@ -1,0 +1,110 @@
+<!doctype html>
+{#
+kissy/layout.html
+~~~~~~~~~~~~~~~~~
+#}
+{%- set render_sidebar = (not embedded) and (not theme_nosidebar|tobool) and (sidebars != []) %}
+{%- set url_root = pathto('', 1) %}
+{%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
+{%- macro sidebar() %}
+{%- if render_sidebar %}
+    <div class="col-sub">
+        {%- if sidebars %}
+        {%- for sidebartemplate in sidebars %}
+        {%- include sidebartemplate %}
+        {%- endfor %}
+        {% else %}
+        {%- include "globaltoc.html" %}
+        {%- endif %}
+    </div>
+    {%- if sidebars %}
+    {% else %}
+    <div class="col-extra">
+        {% include "localtoc.html" %}
+    </div>
+    {%- endif %}
+{%- endif %}
+{%- endmacro %}
+<html>
+<head>
+<meta charset="{{ encoding }}"/>
+<meta name="data-spm" content="1" data-spm-protocol="i" />
+{{ metatags }}
+{%- if not embedded and docstitle %}
+{%- set titlesuffix = " &mdash; "|safe + docstitle|e %}
+{%- else %}
+{%- set titlesuffix = "" %}
+{%- endif %}
+{%- block htmltitle %}
+<title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+{%- endblock %}
+
+<link rel="stylesheet" href="http://dev.kissyui.com/kissy/build/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="{{ pathto('_static/kissy.css', 1) }}"/>
+    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '{{ url_root }}',
+        VERSION:     '{{ release|e }}',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
+        HAS_SOURCE: {{ has_source | lower }}
+    };
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js,searchtools.js"></script>
+    {%- if hasdoc('search') %}
+    <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
+    {%- endif %}
+{%- block extrahead %} {% endblock %}
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body>
+{%- block header %}
+{%- include "header.html" %}
+{% endblock %}
+
+{%- block content %}
+<div id="content">
+	<div  id="layout" class="layout grid-s6m0e7">
+		{%- block document %}
+			<div class="col-main">
+				<div class="main-wrap">
+                    {% include "related.html" %}
+					<div class="body">{% block body %} {% endblock %}</div>
+                    {% include "related.html" %}
+					{% include "comment.html" %}
+				</div>
+			</div>
+		{%- endblock %}
+		{{ sidebar() }}
+	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
+</div>
+{%- endblock %}
+
+{%- block footer %}
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+{%- endblock %}
+</body>
+</html>

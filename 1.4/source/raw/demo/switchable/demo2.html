@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Demo - 使用基本的 Switchable</title><script src="http://dev.kissyui.com/kissy/build/seed.js" data-config="{combine:true}"></script>
+<link rel="stylesheet" href="http://dev.kissyui.com/kissy/build/css/dpl/base.css" />
+<link rel="stylesheet" href="assets/demo2.css"/>
+</head>
+<body>
+     <div id="demo2" class="s-demo">
+            <ul class="ks-switchable-nav">
+                <li aria-labelledby='a_tip' title="标题的title">
+                    <span style="display:none" id="a_tip">标题 A，可左右键切换操作</span>
+                    <a href="http://www.taobao.com">标题 A</a></li>
+                <li><a href="http://www.taobao.com">标题 B</a></li>
+                <li>标题 C</li>
+                <li>标题 D</li>
+                <li>标题 E</li>
+            </ul>
+            <div class="ks-switchable-content">
+                <div style="display: none"><a href="#"> 内容 a</a></div>
+                <div style="display: none"><a href="#">内容 B</a></div>
+                <div style="display: none"><a href="#">内容 C</a></div>
+                <div style="display: none"><a href="#">内容 D</a></div>
+                <div style="display: none">
+                    <!-- 使用textarea实现延迟内容加载 -->
+                    <textarea class="ks-datalazyload-custom">
+                        <a href="#">我是延迟内容</a>
+                        <script>alert('我是延迟内容中的脚本，仅在第一次加载时执行。');</script>
+                    </textarea>
+                </div>
+            </div>
+     </div>
+    <script src="assets/demo2.js"></script>
+
+</body>
+</html>

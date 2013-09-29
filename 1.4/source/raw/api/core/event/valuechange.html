@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script src="http://dev.kissyui.com/kissy/build/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+        
+    <label>输入 something:<input id='in' /></label>
+    <div id='log' style='border:1px solid red;'></div>    
+   
+
+<script>       
+    KISSY.use("node",function(S,Node){ 
+        var $=Node.all;
+        $("#in").on("valuechange",function(e){
+            $("#log").html("old value : "+e.prevVal+"<br/>new value : "+e.newVal);
+        });
+    });
+</script>
+
+</body>
+</html>

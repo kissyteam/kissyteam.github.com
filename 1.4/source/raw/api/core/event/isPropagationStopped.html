@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <script src="http://dev.kissyui.com/kissy/build/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+
+<button>click me</button>
+<div id="stop-log"></div>
+
+<script>
+    KISSY.use('core', function (S) {
+        var $ = KISSY.Node.all;
+
+        function propStopped(e) {
+            var msg = "";
+            if (e.isPropagationStopped()) {
+                msg = "called"
+            } else {
+                msg = "not called";
+            }
+            $("#stop-log").append("<div>" + msg + "</div>");
+        }
+
+        $("button").on('click', function (event) {
+            propStopped(event);
+            event.stopPropagation();
+            propStopped(event);
+        });
+    });
+</script>
+
+</body>
+</html>

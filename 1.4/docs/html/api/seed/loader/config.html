@@ -1,0 +1,461 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="data-spm" content="1" data-spm-protocol="i" />
+
+<title>config &mdash; KISSY v1.3 Documentation</title>
+
+<link rel="stylesheet" href="http://dev.kissyui.com/kissy/build/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="../../../_static/kissy.css"/>
+    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js,searchtools.js"></script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://a.tbcdn.cn/s/kissy/logo.png" />
+
+    </a></h1>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/1.4/api/" >English API Docs</a></li>
+        <li><a href="http://blog.kissyui.com/" target="_blank">Offical Blog</a></li>
+    </ul>
+<div id="searchbox" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+        <input type="text" name="q" size="28" class="ipt"/>
+        <input type="submit" value="Go" class="btn"/>
+        <input type="hidden" name="check_keywords" value="yes"/>
+        <input type="hidden" name="area" value="default"/>
+    </form>
+</div>
+
+</div>
+
+<div id="content">
+	<div  id="layout" class="layout grid-s6m0e7">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="getScript.html" title="getScript"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="add.html" title="add"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Seed</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">loader</a> &#187; </li> 
+    </ul>
+</div>
+					<div class="body">
+  <div class="section" id="config">
+<h1>config<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="seed.KISSY.config">
+<tt class="descclassname">KISSY.</tt><tt class="descname">config</tt><big>(</big><big>)</big><a class="headerlink" href="#seed.KISSY.config" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">void <strong>KISSY.config</strong> (config)</div>
+<div class="line">设置或获取 KISSY 配置参数</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>config</strong> (<em>Object</em>) &#8211; KISSY 配置参数, 包括</li>
+<li><strong>debug</strong> (<em>Boolean</em>) &#8211; 是否开启调试模式</li>
+<li><strong>alias</strong> (<em>Object</em>) &#8211; 模块别名配置. 详见 <a class="reference internal" href="../../../tutorials/kissy/seed/loader/alias.html#loader-alias-tutorial"><em>别名介绍</em></a></li>
+<li><strong>group</strong> (<em>Object</em>) &#8211; 默认 false. 所有包的默认组配置. 详见 <a class="reference internal" href="../../../tutorials/kissy/seed/loader/group.html#loader-group-tutorial"><em>组介绍</em></a></li>
+<li><strong>base</strong> (<em>String</em>) &#8211; KISSY 框架所在的基地址</li>
+<li><strong>comboMaxUrlLength</strong> (<em>Number</em>) &#8211; Combo url 的最长长度，默认 1024</li>
+<li><strong>comboPrefix</strong> (<em>String</em>) &#8211; Combo 前缀，默认 &#8221;??&#8221;</li>
+<li><strong>comboSep</strong> (<em>String</em>) &#8211; Combo 分隔符，默认 &#8221;,&#8221;</li>
+<li><strong>tag</strong> (<em>String</em>) &#8211; KISSY 内置模块时间戳，默认 KISSY 当前 build 时间</li>
+<li><strong>combine</strong> (<em>Boolean</em>) &#8211; 是否开启自动 combo 模式，默认 false 不开启.
+自动 combo 模式要求 use 前配置好依赖关系，详见
+<a class="reference internal" href="../../../tutorials/kissy/seed/loader/index.html#loader-tutorial"><em>教程</em></a></li>
+<li><strong>config.packages</strong> (<em>Object</em>) &#8211; <p>以单个包名为键，单个包配置对象为值的键值对对象。单个包配置对象包括：</p>
+<blockquote>
+<div><dl class="attribute">
+<dt id="seed.package.name">
+<tt class="descclassname">package.</tt><tt class="descname">name</tt><a class="headerlink" href="#seed.package.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型字符串, 表示包名</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seed.package.group">
+<tt class="descclassname">package.</tt><tt class="descname">group</tt><a class="headerlink" href="#seed.package.group" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型字符串, 表示包所属的组名。详见 <a class="reference internal" href="../../../tutorials/kissy/seed/loader/group.html#loader-group-tutorial"><em>组介绍</em></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seed.package.debug">
+<tt class="descclassname">package.</tt><tt class="descname">debug</tt><a class="headerlink" href="#seed.package.debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型 Boolean, 包内的脚本请求是是否加 -min 后缀，默认和 KISSY.config(&#8220;debug&#8221;) 相同.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seed.package.tag">
+<tt class="descclassname">package.</tt><tt class="descname">tag</tt><a class="headerlink" href="#seed.package.tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型字符串, 最好为时间戳, 用于刷新客户端本包的模块文件缓存</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seed.package.combine">
+<tt class="descclassname">package.</tt><tt class="descname">combine</tt><a class="headerlink" href="#seed.package.combine" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型Boolean, 如果总和 combine 设置为 true，但是单个包 combine 设置为 false，则该包内文件不进行自动 combo</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seed.package.ignorePackageNameInUri">
+<tt class="descclassname">package.</tt><tt class="descname">ignorePackageNameInUri</tt><a class="headerlink" href="#seed.package.ignorePackageNameInUri" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型Boolean, 默认 false.
+是否在请求的模块路径中省去 package name.
+例如 <tt class="docutils literal"><span class="pre">use('xx/a')</span></tt> 配置 xx package 的 base 为 <tt class="docutils literal"><span class="pre">http://test.com/</span></tt> 则设置 ignorePackageNameInUri 后请求地址为：
+<tt class="docutils literal"><span class="pre">http://test.com/a.js</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seed.package.base">
+<tt class="descclassname">package.</tt><tt class="descname">base</tt><a class="headerlink" href="#seed.package.base" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>类型字符串, 表示包所在的 <tt class="docutils literal"><span class="pre">url</span></tt> 路径, 相对路径表示相对于当前页面路径, 如果需要相对于当前执行脚本路径, 则需要自己处理：</dt>
+<dd><div class="first last highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">scripts</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;script&quot;</span><span class="p">);</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">scripts</span><span class="p">[</span><span class="nx">scripts</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="nx">src</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seed.package.charset">
+<tt class="descclassname">package.</tt><tt class="descname">charset</tt><a class="headerlink" href="#seed.package.charset" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型字符串, 表示宝贝所有模块定义文件的编码格式, 默认 utf-8</p>
+</dd></dl>
+
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">KISSY 内置 gallery 包</p>
+</div>
+</li>
+<li><strong>config.modules</strong> (<em>Object</em>) &#8211; <p>以单个模块为键，单个模块配置对象为值的键值对对象。单个模块配置对象包括：</p>
+<dl class="attribute">
+<dt id="seed.module.requires">
+<tt class="descclassname">module.</tt><tt class="descname">requires</tt><a class="headerlink" href="#seed.module.requires" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型 String[] ， 该模块的依赖模块名数组。当设置 combine 为 true 时需要配置，否则不建议配置.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seed.module.tag">
+<tt class="descclassname">module.</tt><tt class="descname">tag</tt><a class="headerlink" href="#seed.module.tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>类型 String，单个模块的时间戳。仅在 combine 为 false 时生效。 combine:true 时取对应包的 tag.</p>
+</dd></dl>
+
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<tt class="descclassname">KISSY.</tt><tt class="descname">config</tt><big>(</big><big>)</big></dt>
+<dd><div class="line-block">
+<div class="line">void <strong>KISSY.config</strong> (name,[value])</div>
+<div class="line">设置或获取 KISSY 配置参数.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<em>String</em>) &#8211; 参数名称. 取值范围参见上面函数。</li>
+<li><strong>value</strong> &#8211; 参数值. 如果不设置则返回参数名称对应的参数值.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">如果设置了参数值无返回。否则返回参数名称对应的参数值.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>配置也可以通过配置到引用 seed.js 的脚本标签上. 例如</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;seed.js&#39;</span> <span class="na">data-config=</span><span class="s">&#39;{combine:true}&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>配置范例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="loader-config-all">
+<span id="id2"></span><h3>总配置范例概览<a class="headerlink" href="#loader-config-all" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+    <span class="c1">// 开启自动 combo 模式</span>
+    <span class="nx">combine</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+    <span class="c1">// kissy 库内置模块的时间戳</span>
+    <span class="nx">tag</span><span class="o">:</span><span class="s1">&#39;2012&#39;</span><span class="p">,</span>
+    <span class="c1">// kissy 的基准路径</span>
+    <span class="nx">base</span><span class="o">:</span><span class="s1">&#39;http://x.com/a&#39;</span><span class="p">,</span>
+    <span class="nx">packages</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">x</span><span class="o">:</span><span class="p">{</span>
+            <span class="c1">// x 包的基准路径</span>
+            <span class="nx">base</span><span class="o">:</span><span class="s1">&#39;http://x.com/biz/&#39;</span><span class="p">,</span>
+            <span class="c1">// x 包的时间戳</span>
+            <span class="nx">tag</span><span class="o">:</span><span class="s1">&#39;x&#39;</span><span class="p">,</span>
+            <span class="c1">// 开启 x 包 debug 模式</span>
+            <span class="nx">debug</span><span class="o">:</span><span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="nx">y</span><span class="o">:</span><span class="p">{</span>
+           <span class="c1">// y 包的基准路径</span>
+           <span class="nx">base</span><span class="o">:</span><span class="s1">&#39;http://x.com/biz/&#39;</span><span class="p">,</span>
+           <span class="c1">// y 包不开启自动 combo</span>
+           <span class="nx">combine</span><span class="o">:</span><span class="kc">false</span>
+           <span class="c1">// 不配置 tag，则取 kissy 内置模块的时间戳</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">modules</span><span class="o">:</span><span class="p">{</span>
+        <span class="s2">&quot;x/b1&quot;</span><span class="o">:</span><span class="p">{</span>
+            <span class="c1">// &quot;x/b1&quot; 模块的依赖信息</span>
+            <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;x/b2&quot;</span><span class="p">,</span><span class="s2">&quot;x/b3&quot;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;y/b2&quot;</span><span class="o">:</span><span class="p">{</span>
+            <span class="c1">// y/b2 模块单独的时间戳</span>
+            <span class="nx">tag</span><span class="o">:</span><span class="s1">&#39;234&#39;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="packages">
+<h3>packages 范例: 包配置<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+    <span class="nx">packages</span><span class="o">:</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;tc&quot;</span><span class="p">,</span> <span class="c1">// 包名</span>
+            <span class="nx">tag</span><span class="o">:</span><span class="s2">&quot;20110323&quot;</span><span class="p">,</span> <span class="c1">// 动态加载包内的模块js文件时,</span>
+                            <span class="c1">// 自动加上 ?t=20110323, 用于文件更新</span>
+            <span class="nx">path</span><span class="o">:</span><span class="s2">&quot;../&quot;</span><span class="p">,</span> <span class="c1">// 包对应路径, 相对路径指相对于当前页面路径</span>
+            <span class="nx">charset</span><span class="o">:</span><span class="s2">&quot;gbk&quot;</span> <span class="c1">// 包里模块文件编码格式</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>当要在包内添加模块时, 必须遵守一些约定：</p>
+<ol class="arabic">
+<li><p class="first">一个模块的文件必须放在以包名命名的目录中</p>
+</li>
+<li><p class="first">一个包下的所有目录的代码都应属于这个包，即包之间不能有重合目录。例如</p>
+<blockquote>
+<div><ul class="simple">
+<li>tc 的 path 为 <a class="reference external" href="http://x.com/y/">http://x.com/y/</a></li>
+<li>tm 的 path 为 <a class="reference external" href="http://x.com/">http://x.com/</a></li>
+</ul>
+<p>这样就不行，在 ie 下会有包名不确定问题.</p>
+</div></blockquote>
+</li>
+<li><p class="first">模块的名字必须取名从包目录开始到当前模块文件的文件路径名称, 例如 <tt class="docutils literal"><span class="pre">mod1.js</span></tt> 位于 <tt class="docutils literal"><span class="pre">tc/mods</span></tt> 下, 则 <tt class="docutils literal"><span class="pre">mod1.js</span></tt> 的模块取名：</p>
+</li>
+</ol>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;tc/mods/mod1&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){});</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">模块名也可以省略, 不过部署阶段需要使用 <a class="reference internal" href="../../../tutorials/tools/module-compiler/index.html#module-module-compiler" title="module-compiler"><tt class="xref py py-mod docutils literal"><span class="pre">KISSY</span> <span class="pre">Module</span> <span class="pre">Compiler</span></tt></a> .</p>
+</div>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+</div>
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="getScript.html" title="getScript"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="add.html" title="add"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.3 Documentation</a> &#187; </li>
+      <li><a href="../../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="../index.html" >Seed</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">loader</a> &#187; </li> 
+    </ul>
+</div>
+					<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+		
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h2 class="s-box-hd">Seed</h2>
+    <ul class="s-box-bd">
+        <li><a href="../kissy/index.html">lang</a></li>
+        <li><a href="index.html">loader</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box core-toctree">
+    <h2 class="s-box-hd">Core</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../core/ajax/index.html">ajax</a></li>
+        <li><a href="../../core/anim/index.html">anim</a></li>
+        <li><a href="../../core/base/index.html">base</a></li>
+        <li><a href="../../core/cookie/index.html">cookie</a></li>
+        <li><a href="../../core/dom/index.html">dom</a></li>
+        <li><a href="../../core/event/index.html">event</a></li>
+        <li><a href="../../core/json/index.html">json</a></li>
+        <li><a href="../../core/node/index.html">node</a></li>
+        <li><a href="../../core/ua/index.html">ua</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h2 class="s-box-hd">Component</h2>
+    <ul class="s-box-bd">
+        <li><a href="../../component/button/index.html">button</a></li>
+        <li><a href="../../component/calendar/index.html">calendar</a></li>
+        <li><a href="../../component/color/index.html">color</a></li>
+        <li><a href="../../component/combobox/index.html">combobox</a></li>
+        <li><a href="../../component/component/index.html">component</a></li>
+        <li><a href="../../component/datalazyload/index.html">datalazyload</a></li>
+        <li><a href="../../component/dd/index.html">dd</a></li>
+        <li><a href="../../component/editor/index.html">editor</a></li>
+        <li><a href="../../component/imagezoom/index.html">imagezoom</a></li>
+        <li><a href="../../component/menu/index.html">menu</a></li>
+        <li><a href="../../component/menubutton/index.html">menubutton</a></li>
+        <li><a href="../../component/mvc/index.html">mvc</a></li>
+        <li><a href="../../component/overlay/index.html">overlay</a></li>
+        <li><a href="../../component/promise/index.html">promise</a></li>
+        <li><a href="../../component/resizable/index.html">resizable</a></li>
+        <li><a href="../../component/rich-base/index.html">rich-base</a></li>
+        <li><a href="https://github.com/jquery/sizzle/wiki/Sizzle-Home">sizzle</a></li>
+        <li><a href="../../component/stylesheet/index.html">stylesheet</a></li>
+        <li><a href="../../component/swf/index.html">swf</a></li>
+        <li><a href="../../component/switchable/index.html">switchable</a></li>
+        <li><a href="../../component/tabs/index.html">tabs</a></li>
+        <li><a href="../../component/tree/index.html">tree</a></li>
+        <li><a href="../../component/uri/index.html">uri</a></li>
+         <li><a href="../../component/waterfall/index.html">waterfall</a></li>
+        <li><a href="../../component/xtemplate/index.html">xtemplate</a></li>
+    </ul>
+</ul>
+        
+    </div>
+    
+	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>div { width:50px; height:70px; float:left; margin:5px;
+        background:rgb(255,140,0); cursor:pointer; }  </style>
+  <script src="http://dev.kissyui.com/kissy/build/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+  <div></div>
+  <div></div>
+
+  <div></div>
+  <div></div>
+  <div></div>
+<script>
+    KISSY.use("node",function(S,Node){
+        var $=Node.all;
+        function handle(){
+            $(this).detach();
+            $(this).height(30)
+                 .css({cursor:"auto", backgroundColor:"green"});
+        }            
+        $("div").on('click', handle);
+    });    
+</script>
+
+</body>
+</html>
