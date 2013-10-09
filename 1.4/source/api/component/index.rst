@@ -14,6 +14,7 @@ Component
    date/index
    dd/index
    editor/index
+   filter-menu/index
    menu/index
    menubutton/index
    mvc/index
