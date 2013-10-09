@@ -8,6 +8,7 @@ Component
 
    button/index
    combobox/index
+   date/index
    dd/index
    editor/index
    menu/index

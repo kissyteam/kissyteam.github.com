@@ -11,6 +11,7 @@ Component
    color/index
    combobox/index
    component/index
+   date/index
    dd/index
    editor/index
    menu/index
