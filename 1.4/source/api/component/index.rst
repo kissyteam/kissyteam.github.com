@@ -23,6 +23,7 @@ Component
    resizable/index
    rich-base/index
    stylesheet/index
+   scroll-view/index
    swf/index
    tabs/index
    tree/index
