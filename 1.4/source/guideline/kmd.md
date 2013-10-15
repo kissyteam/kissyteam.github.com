@@ -120,6 +120,22 @@ KISSY 在诞生之初就确立了模块化的架构，以此抽象出现在的 K
 	// 获取已经注册模块的值
 	require('a'); // => {'foo':'bar'}
 
+`require`的典型用法是改造这种代码
+
+	// use 的模块太多，一不小心就和 function() 里的回调不对应了
+	use('a,b,c,d,e,f,g',function(S,A,B,C,D,E,F,G){
+		// Your code...
+	});
+
+KISSY 提供了`require`语法糖
+
+	use('a,b,c,d,e,f,g',function(S){
+		var A = require('a');
+		var B = require('b');
+		var C = require('c');
+		// Your code...
+	});
+
 ## use() `Function`
 
 异步调用模块，并在模块加载完成后运行沙箱逻辑。

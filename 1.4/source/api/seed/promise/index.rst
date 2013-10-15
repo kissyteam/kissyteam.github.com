@@ -1,7 +1,7 @@
 .. currentmodule:: seed
 
 
-Promise
+promise
 ===============================
 
   | :ref:`Demo <promise-demo>`

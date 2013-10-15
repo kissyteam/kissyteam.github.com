@@ -10,4 +10,5 @@ Demos
    :titlesonly:
 
    loader/index
-   kissy/index
+   lang/index
+   promise/index

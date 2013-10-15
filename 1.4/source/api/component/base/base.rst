@@ -237,3 +237,5 @@ Demo
             cls.reset();
             alert(cls.get('size'));
         });
+
+

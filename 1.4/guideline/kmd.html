@@ -40,8 +40,8 @@
       <li class="nav-sub"><a href="http://cyj.me/jquery-kissy-rosetta/">jQuery KISSY 对比手册</a></li>
       <li class="nav-sub"><a href="http://gallery.kissyui.com/guide">KISSY 组件开发规范</a></li>
       <li class="nav-sub nav-divider"><a href="history.html">历史版本</a></li>
-      <li><a href="">API Doc</a></li>
-      <li><a href="http://demo.kissyui.com">Demos</a></li>
+      <li><a href="../docs/html/api/">API Doc</a></li>
+      <li><a href="http://gallery.kissyui.com/kds/1.0/demo/index.html">Demos</a></li>
       <li class="nav-divider"><a href="http://gallery.kissyui.com">KISSY Gallery</a></li>
       <li><a href="tools.html">KISSY 项目构建工具</a></li>
       <li class="nav-sub"><a href="kmc.html">KS Module Compiler</a></li>
@@ -156,6 +156,18 @@ add(&#39;a&#39;,{
 
 // 获取已经注册模块的值
 require(&#39;a&#39;); // =&gt; {&#39;foo&#39;:&#39;bar&#39;}</code></pre>
+<p><code>require</code>的典型用法是改造这种代码</p>
+<pre><code>// use 的模块太多，一不小心就和 function() 里的回调不对应了
+use(&#39;a,b,c,d,e,f,g&#39;,function(S,A,B,C,D,E,F,G){
+    // Your code...
+});</code></pre>
+<p>KISSY 提供了<code>require</code>语法糖</p>
+<pre><code>use(&#39;a,b,c,d,e,f,g&#39;,function(S){
+    var A = require(&#39;a&#39;);
+    var B = require(&#39;b&#39;);
+    var C = require(&#39;c&#39;);
+    // Your code...
+});</code></pre>
 <h2>use() <code>Function</code></h2>
 <p>异步调用模块，并在模块加载完成后运行沙箱逻辑。</p>
 <h3>use(name,sandbox)</h3>

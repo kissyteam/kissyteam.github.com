@@ -40,8 +40,8 @@
       <li class="nav-sub"><a href="http://cyj.me/jquery-kissy-rosetta/">jQuery KISSY 对比手册</a></li>
       <li class="nav-sub"><a href="http://gallery.kissyui.com/guide">KISSY 组件开发规范</a></li>
       <li class="nav-sub nav-divider"><a href="history.html">历史版本</a></li>
-      <li><a href="">API Doc</a></li>
-      <li><a href="http://demo.kissyui.com">Demos</a></li>
+      <li><a href="../docs/html/api/">API Doc</a></li>
+      <li><a href="http://gallery.kissyui.com/kds/1.0/demo/index.html">Demos</a></li>
       <li class="nav-divider"><a href="http://gallery.kissyui.com">KISSY Gallery</a></li>
       <li><a href="tools.html">KISSY 项目构建工具</a></li>
       <li class="nav-sub"><a href="kmc.html">KS Module Compiler</a></li>
@@ -285,6 +285,20 @@ KISSY.add(&quot;tc/mods/mod1&quot;,function(){
 <p>阻塞加载 css 模块或 js 模块依赖的 css 模块, 和 KISSY.add 中的 require 配置一起使用.</p>
 <h4>parameter</h4>
 <p>modNames (String|String[]) – 以<code>,</code>分割的 js 模块或 css 模块名称集合字符串,例如 <code>KISSY.use(&quot;mod1,mod2/xx.css&quot;)</code>;</p>
+<h3>require <code>&lt;static&gt;</code></h3>
+<p>如果<code>use()</code>的模块过多，回调参数需要和模块列表一一对应，有没有更简单的办法？</p>
+<p>经常看到这种代码：</p>
+<pre><code>// use 的模块太多，一不小心就和 function() 里的回调不对应了
+KISSY.use(&#39;a,b,c,d,e,f,g&#39;,function(S,A,B,C,D,E,F,G){
+    // Your code...
+});</code></pre>
+<p>有没有办法不用去肉眼找模块和变量的对应关系？有方法，KISSY 1.4.0 提供了<code>require</code>语法糖</p>
+<pre><code>KISSY.use(&#39;a,b,c,d,e,f,g&#39;,function(S){
+    var A = S.require(&#39;a&#39;);
+    var B = S.require(&#39;b&#39;);
+    var C = S.require(&#39;c&#39;);
+    // Your code...
+});</code></pre>
 
 
 <div id="disqus_thread"></div>

@@ -40,8 +40,8 @@
       <li class="nav-sub"><a href="http://cyj.me/jquery-kissy-rosetta/">jQuery KISSY 对比手册</a></li>
       <li class="nav-sub"><a href="http://gallery.kissyui.com/guide">KISSY 组件开发规范</a></li>
       <li class="nav-sub nav-divider"><a href="history.html">历史版本</a></li>
-      <li><a href="">API Doc</a></li>
-      <li><a href="http://demo.kissyui.com">Demos</a></li>
+      <li><a href="../docs/html/api/">API Doc</a></li>
+      <li><a href="http://gallery.kissyui.com/kds/1.0/demo/index.html">Demos</a></li>
       <li class="nav-divider"><a href="http://gallery.kissyui.com">KISSY Gallery</a></li>
       <li><a href="tools.html">KISSY 项目构建工具</a></li>
       <li class="nav-sub"><a href="kmc.html">KS Module Compiler</a></li>
@@ -69,7 +69,7 @@
 <p>Grunt-kmc 依赖 kmc，<a href="https://github.com/daxingplay/ModuleCompiler/">kmc 使用指南</a>。</p>
 <p>环境依赖：Node，Grunt。</p>
 <h2>环境准备</h2>
-<p>Grunt-kmc 依赖 Grunt <code>~0.4.1</code>。如果你未曾安装grunt，<a href="http://gruntjs.com/getting-started">参照这里安装Grunt</a>，<a href="http://gruntjs.com/sample-gruntfile">学习如何写Gruntfile</a>。熟悉以上内容后，可以这样来安装grunt-kmc插件：</p>
+<p>Grunt-kmc 依赖 Grunt。<a href="http://gruntjs.com/getting-started">参照这里安装Grunt</a>，<a href="http://gruntjs.com/sample-gruntfile">学习如何写Gruntfile</a>。熟悉以上内容后，可以这样来安装grunt-kmc插件：</p>
 <pre><code>npm install grunt-kmc --save-dev</code></pre>
 <p>打开你创建的Gruntfile，并添加代码：</p>
 <pre><code>grunt.loadNpmTasks(&#39;grunt-kmc&#39;);</code></pre>
@@ -103,7 +103,7 @@
 <p>类型：<code>Boolean</code>，默认值：<code>false</code>，当指定一批文件为源文件时，对这些文件只生成模块依赖关系表，存放于<code>options.depFilePath</code>中</p>
 <hr>
 <h2>示例代码</h2>
-<h3>示例1</h3>
+<h3>示例1，单文件静态合并</h3>
 <p>入口为单个文件，将这个文件的依赖关系解析好后合并入另一个文件</p>
 <pre><code>grunt.initConfig({
     kmc: {
@@ -125,7 +125,7 @@
     }
 });</code></pre>
 <p>详细配置项请参照<a href="https://github.com/daxingplay/ModuleCompiler">kmc首页</a>。</p>
-<h3>示例2</h3>
+<h3>示例2，批量静态合并</h3>
 <p>入口为一批文件，每个文件都解析合并</p>
 <pre><code>grunt.initConfig({
     kmc: {
@@ -154,7 +154,7 @@
         }
     }
 });</code></pre>
-<h3>示例3</h3>
+<h3>示例3，批量静态合并2</h3>
 <p>入口为一批文件，每个文件都解析合并，包名从配置文件中读取</p>
 <pre><code>grunt.initConfig({
     // 读取`abc.json配置文件中的配置`
@@ -189,14 +189,14 @@
 <pre><code>{
     &quot;name&quot;: &quot;my-custom-package-name&quot;,
 }</code></pre>
-<h3>示例4</h3>
+<h3>示例4，针对一批文件生成依赖关系表</h3>
 <p>只生成模块依赖关系表，对源文件不做修改</p>
 <pre><code>grunt.initConfig({
     options: {
         packages: [
             {
                 name: &#39;h5-test&#39;,
-                path: &#39;../&#39;,// 可以省略
+                path: &#39;./src/&#39;, //指定package起始路径
                 charset:&#39;utf-8&#39;
             }
         ],
