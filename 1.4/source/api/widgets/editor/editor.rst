@@ -27,16 +27,17 @@ Configs
     * :data:`~Editor.config.customLink`
     * :data:`~Editor.config.attachForm`
     * :data:`~Editor.config.textarea`
-    * :data:`~rich-base.RichBase.config.plugins`
-    * :data:`~rich-base.RichBase.config.listeners`
+    * :data:`~base.Base.config.plugins`
+    * :data:`~base.Base.config.listeners`
     * :data:`~component.UIBase.config.srcNode`
     * :data:`~Editor.config.mode`
+    * :data:`~Editor.config.data`
 
 
 
 Attributes
 ----------------------------------------------------
-    
+
     * :attr:`~Editor.prototype.textarea`
     * :attr:`~Editor.prototype.iframe`
     * :attr:`~Editor.prototype.window`
@@ -70,7 +71,10 @@ Methods
     * :meth:`~Editor.prototype.insertHtml`
     * :meth:`~Editor.prototype.addButton`
     * :meth:`~Editor.prototype.addSelect`
-    
+    * :meth:`~Editor.prototype.getSelectedHtml`
+    * :meth:`~Editor.prototype.getData`
+    * :meth:`~Editor.prototype.setData`
+
 Events
 --------------------------------------------------------
 
@@ -105,11 +109,11 @@ Class Detail
 
     | **Editor** (config)
     | xclass: 'editor'
-    
+
     * 继承自 :class:`~component.Controller` , 包含其全部配置,属性,方法,事件.
-    
+
     :param Object config: 配置项.
-    
+
     .. note::
 
         从已有元素实例 Editor 对象时：
@@ -121,6 +125,10 @@ Class Detail
 
 Configs Detail
 ---------------------------------------------------
+
+.. data:: Editor.config.data
+
+    {String} - 初始化设置编辑器里的内容
 
 .. data:: Editor.config.mode
 
@@ -166,7 +174,7 @@ Attributes Detail
 .. attribute:: Editor.prototype.textarea
 
     {KISSY.Node} - 编辑器的 textarea.只读.
-        
+
 .. attribute:: Editor.prototype.iframe
 
     {KISSY.Node} - 编辑器的 iframe.只读.
@@ -391,6 +399,19 @@ Methods Detail
             }
         });
 
+.. method:: Editor.prototype.getSelectedHtml
+
+    | **getSelectedHtml()**
+    | 获取选中的html字符串
+
+    :return String: 要获取的html
+
+.. method:: Editor.prototype.getData
+
+    | **getData(format, mode)**
+    | 获得编辑器里面的内容
+
+    :param Boolean format: 是否格式化
 
 Events Detail
 ------------------------------------------------------

@@ -14,3 +14,11 @@ Editor
 
    editor
    plugin/index
+
+.. note::
+
+    删除 editor/full 模块
+
+.. note::
+
+    删除 multiple-upload 插件，请使用 http://gallery.kissyui.com/editorUploader/1.0/guide/index.html
