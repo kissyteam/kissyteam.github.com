@@ -169,7 +169,7 @@ Base.extend(Dog, Base, {
             message: &#39;Woof! I just barked!&#39;
         })
     }
-})
+});
 
 // 这时Dog类就具有了Base特性
 var dog = new Dog();
@@ -191,6 +191,12 @@ var Dog = Base.extend({
 },{/*ATTRS*/});
 
 var dog = new Dog();</code></pre>
+<p>调用父类构造器，通过内置的<code>callSuper</code>来实现，比如：</p>
+<pre><code>Base.extend(Dog, Base, {
+    bark: function(v) {
+        this.callSuper(v)
+    }
+});</code></pre>
 <h2>2，自定义事件 CustomEvent</h2>
 <p>继承自Base的对象可以分发自定义事件，即实例上有<code>fire()</code>方法。比如上一段代码，bark() 函数中触发了一个自定义事件<code>bark</code>，绑定这个事件即可收到这个事件。具体用法可参照<a href="event.html">Event自定义事件部分</a>。</p>
 <h2>3，插件机制：Plugin</h2>

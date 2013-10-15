@@ -7,26 +7,18 @@ Component
 .. toctree::
    :titlesonly:
 
-   button/index
+   anim/index
+   base/index
+   node/index
+   cookie/index
+   io/index
+   dom/index
+   event/index
+   json/index
    color/index
-   combobox/index
-   component/index
-   date/index
    dd/index
-   editor/index
-   filter-menu/index
-   menu/index
-   menubutton/index
    mvc/index
-   overlay/index
-   promise/index
-   resizable/index
-   rich-base/index
    stylesheet/index
-   scroll-view/index
-   swf/index
-   tabs/index
-   tree/index
-   uri/index
-   waterfall/index
    xtemplate/index
+   component/index
+

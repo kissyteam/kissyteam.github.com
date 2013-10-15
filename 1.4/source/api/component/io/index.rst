@@ -1,17 +1,21 @@
 .. module:: io
 
-ajax
+io
 ===============================================
 .. raw:: html
 
-    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.4.x/src/ajax' target='_blank'>view ajax source</a>
+    <a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.4.x/src/o' target='_blank'>view io source</a>
 
 .. code-block:: javascript
 
-    KISSY.use('ajax',function(S,IO){
+    KISSY.use('io',function(S,IO){
         // use IO
     });
 
+
+
+..note::
+io 组件在 1.3.x 及以前的版本被命名为ajax，1.4.x 及后续版本都更名为io
 
 
 Module

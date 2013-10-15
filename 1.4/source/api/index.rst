@@ -9,5 +9,5 @@ API Documentation
 
 
    seed/index
-   core/index
    component/index
+   widgets/index

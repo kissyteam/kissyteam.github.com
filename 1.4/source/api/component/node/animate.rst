@@ -44,18 +44,19 @@ Methods
         .. code-block:: javascript
 
             div.animate({
-                        left: {
-                            value: "100px",
-                            easing: function () {
-                                return 0.5;
-                            }
-                        },
-                        top: {
-                            value: "100px",
-                            easing: function () {
-                                return 0.2;
-                            }
-                        }
-                    }, {
-                        duration: 0.3
-                    });
+                left: {
+                    value: "100px",
+                    easing: function () {
+                        return 0.5;
+                    }
+                },
+                top: {
+                    value: "100px",
+                    easing: function () {
+                        return 0.2;
+                    }
+                }
+            }, {
+                duration: 0.3
+            });
+

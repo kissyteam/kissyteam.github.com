@@ -24,3 +24,4 @@ Methods
    getScript
    use
    importStyle
+   require

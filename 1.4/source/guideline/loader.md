@@ -251,3 +251,23 @@ callback为对象时
 #### parameter
 
 modNames (String|String[]) – 以` , `分割的 js 模块或 css 模块名称集合字符串,例如 `KISSY.use("mod1,mod2/xx.css")`;
+
+### require `<static>`
+
+如果`use()`的模块过多，回调参数需要和模块列表一一对应，有没有更简单的办法？
+
+经常看到这种代码：
+
+	// use 的模块太多，一不小心就和 function() 里的回调不对应了
+	KISSY.use('a,b,c,d,e,f,g',function(S,A,B,C,D,E,F,G){
+		// Your code...
+	});
+
+有没有办法不用去肉眼找模块和变量的对应关系？有方法，KISSY 1.4.0 提供了`require`语法糖
+
+	KISSY.use('a,b,c,d,e,f,g',function(S){
+		var A = S.require('a');
+		var B = S.require('b');
+		var C = S.require('c');
+		// Your code...
+	});
