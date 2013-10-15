@@ -19,7 +19,7 @@
 ### 模块名称变更
 
 - ajax 变更为 io
-- calendar 和 switchable 被移出，被替代为Gallery中的组件，[calendar-deprecated](http://gallery.kissyui.com/calendar-deprecated/1.0/guide/index.html)和[switchable](http://gallery.kissyui.com/switchable/1.3/guide/index.html)
+- calendar、datalazyload 和 switchable被移出，被替代为Gallery中的组件，[calendar-deprecated](http://gallery.kissyui.com/calendar-deprecated/1.0/guide/index.html)和[switchable](http://gallery.kissyui.com/switchable/1.3/guide/index.html)，[datalazyload](http://gallery.kissyui.com/datalazyload/1.0/guide/index.html)。
 
 -----------------------------------------
 
