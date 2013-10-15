@@ -76,7 +76,7 @@ Grunt-kmc 依赖 Grunt。[参照这里安装Grunt](http://gruntjs.com/getting-st
 						{
 							name: 'test',
 							path: 'assets/src',
-							charset: 'gbk'
+							charset: 'utf-8'
 						}
 					]
 				},
@@ -89,6 +89,24 @@ Grunt-kmc 依赖 Grunt。[参照这里安装Grunt](http://gruntjs.com/getting-st
 	});
 
 详细配置项请参照[kmc首页](https://github.com/daxingplay/ModuleCompiler)。
+
+如果输出`gbk`编码的文件，需要配置全局项
+
+	kmc: {
+		options: {
+			charset:'gbk',
+			packages: [
+				{
+					name: 'pkg-name',
+					path: '../',
+					charset:'gbk'
+				}
+			]
+		},
+	//...
+	grunt.file.defaultEncoding = 'gbk';
+
+
 
 ### 示例2，批量静态合并
 
