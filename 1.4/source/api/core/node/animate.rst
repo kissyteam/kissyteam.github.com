@@ -36,3 +36,26 @@ Methods
     .. note::
 
         回调 callback 在每个元素动画结束后都会回调,  this 值指向当前单个元素所属的动画对象.
+
+    .. note::
+
+        允许自定义机制
+
+        .. code-block:: javascript
+
+            div.animate({
+                        left: {
+                            value: "100px",
+                            easing: function () {
+                                return 0.5;
+                            }
+                        },
+                        top: {
+                            value: "100px",
+                            easing: function () {
+                                return 0.2;
+                            }
+                        }
+                    }, {
+                        duration: 0.3
+                    });
