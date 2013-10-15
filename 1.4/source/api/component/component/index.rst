@@ -15,7 +15,6 @@ Classes in Component
    controller
    UIBase
    extension/align
-   extension/box
    extension/position
    extension/shim
    plugin/drag

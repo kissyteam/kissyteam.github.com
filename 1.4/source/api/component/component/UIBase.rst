@@ -14,18 +14,18 @@ Class
 Configs
 ------------------------------------
 
-    * :data:`~rich-base.RichBase.config.listeners`
-    * :data:`~rich-base.RichBase.config.plugins`
+    * :data:`~base.Base.config.listeners`
+    * :data:`~base.Base.config.plugins`
     * :data:`~UIBase.config.srcNode`
-    
-    
+
+
 Methods
 -----------------------------------------------
 
-    * :meth:`~rich-base.RichBase.prototype.plug`
-    * :meth:`~rich-base.RichBase.prototype.unplug`
-    * :meth:`~UIBase.prototype.render`    
-    * :meth:`~rich-base.RichBase.prototype.destroy`
+    * :meth:`~base.Base.prototype.plug`
+    * :meth:`~base.Base.prototype.unplug`
+    * :meth:`~UIBase.prototype.render`
+    * :meth:`~base.Base.prototype.destroy`
 
 
 Events
@@ -39,7 +39,7 @@ Class Detail
 .. class:: UIBase
 
     | **UIBase** (config)
-    | 继承自 :class:`~rich-base.RichBase` ， 包含其所有配置，属性，方法
+    | 继承自 :class:`~base.Base` ， 包含其所有配置，属性，方法
 
     :param Object config: 配置项
 
@@ -69,4 +69,4 @@ Events Detail
     | **afterRenderUI** ()
     | 当组件被渲染 dom 时触发
 
-    
+
