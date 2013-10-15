@@ -1,7 +1,7 @@
-﻿.. _component:
+﻿.. _widgets:
 
 
-Component
+Widgets
 =============================
 
 .. toctree::
