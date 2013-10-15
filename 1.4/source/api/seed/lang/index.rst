@@ -1,9 +1,9 @@
 .. currentmodule:: seed
 
-.. _KISSY:
-
 lang
 ===============================
+
+lang 是一套underscore风格的工具集，提供一些常用的工具函数，lang 模块内嵌在 seed.js 内，无需额外引入，这些函数直接挂载在 KISSY 全局对象上。
 
 .. raw:: html
 

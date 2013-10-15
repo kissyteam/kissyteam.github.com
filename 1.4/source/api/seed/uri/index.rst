@@ -1,18 +1,19 @@
-.. currentmodule:: seed
+.. module:: uri
 
 
-promise
+uri
 ===============================
 
-  | :ref:`Demo <promise-demo>`
+|  uri
 
-Classes
+Classes in Uri
 -----------------------------------------------
+
+Uri 模块中包含两个类实现
+
 
 .. toctree::
    :titlesonly:
 
-   promise.rst
-   defer.rst
-
- 
+   uri
+   query

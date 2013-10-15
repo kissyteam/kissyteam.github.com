@@ -1,17 +1,18 @@
-.. module:: uri
+.. currentmodule:: seed
 
 
-Uri
+Promise
 ===============================
 
-|  Uri
+  | :ref:`Demo <promise-demo>`
 
-Classes in Uri
+Classes
 -----------------------------------------------
-
 
 .. toctree::
    :titlesonly:
 
-   uri
-   query
+   promise.rst
+   defer.rst
+
+ 
