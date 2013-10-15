@@ -15,5 +15,5 @@ datalazyload
 
 .. hint::
 
-    已经迁移至gallery  `gallery/datalazyload/<http://gallery.kissyui.com/datalazyload/1.0/guide/>`_
+    已经迁移至gallery  `gallery/datalazyload/ <http://gallery.kissyui.com/datalazyload/1.0/guide/>`_
 

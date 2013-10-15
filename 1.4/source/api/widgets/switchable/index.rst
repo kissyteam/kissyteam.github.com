@@ -9,7 +9,7 @@ Switchable
 
 .. note::
 
-    switchable 已经迁移至 Gallery `gallery/switchable/1.3/ <http://gallery.kissyui.com/switchable/1.3/guide/index.html>`
+    switchable 已经迁移至 Gallery `gallery/switchable/1.3/ <http://gallery.kissyui.com/switchable/1.3/guide/index.html>`_
 
 .. warning::
 
