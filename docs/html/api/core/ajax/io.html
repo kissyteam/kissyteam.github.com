@@ -363,7 +363,7 @@
 <dl class="data">
 <dt id="io.cfg.jsonp">
 <tt class="descclassname">cfg.</tt><tt class="descname">jsonp</tt><a class="headerlink" href="#io.cfg.jsonp" title="Permalink to this definition">¶</a></dt>
-<dd><p>{String} -  覆盖这次 jsonp 请求的 callback 函数名. 这个值可以取代请求 url 中 <tt class="docutils literal"><span class="pre">callback=?</span></tt> 的 callback.例如   {jsonp:&#8217;onJsonLoad&#8217;} 会导致 &#8216;onJsonLoad=?&#8217; 发送给服务器端.</p>
+<dd><p>{String} -  默认 <tt class="docutils literal"><span class="pre">callback</span></tt>. 覆盖这次 jsonp 请求的 callback 函数名. 这个值可以取代请求 url 中 <tt class="docutils literal"><span class="pre">callback=?</span></tt> 的 callback.例如   {jsonp:&#8217;onJsonLoad&#8217;} 会导致 &#8216;onJsonLoad=?&#8217; 发送给服务器端.</p>
 </dd></dl>
 
 <dl class="data">
@@ -402,6 +402,18 @@
 <dt id="io.cfg.timeout">
 <tt class="descclassname">cfg.</tt><tt class="descname">timeout</tt><a class="headerlink" href="#io.cfg.timeout" title="Permalink to this definition">¶</a></dt>
 <dd><p>{Number} -  对这次请求设个超时时间，单位秒. 当超时后会触发 <tt class="docutils literal"><span class="pre">error</span></tt> 以及 <tt class="docutils literal"><span class="pre">complete</span></tt> 回调 , 状态字符串为 &#8220;timeout&#8221;.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>当启用 timeout 时，后端要修改返回格式为:</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">$jsonpCallback</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$jsonpCallback</span><span class="p">({...});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p class="last"><tt class="docutils literal"><span class="pre">$jsonpCallback</span></tt> 为 io 传递给后端回调函数的名字</p>
+</div>
 </dd></dl>
 
 <dl class="data">

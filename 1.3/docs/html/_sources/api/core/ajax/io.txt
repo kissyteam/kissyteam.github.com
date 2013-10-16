@@ -185,6 +185,7 @@ Config Detail
 
         * textStatus 表示错误信息，包括 "timeout" , "error" , "abort" 等
         * io 表示这次请求代表的 io 实例.
+                
 
 .. data:: cfg.success
 
@@ -211,7 +212,7 @@ Config Detail
 
 .. data:: cfg.jsonp
 
-    {String} -  覆盖这次 jsonp 请求的 callback 函数名. 这个值可以取代请求 url 中 ``callback=?`` 的 callback.例如   {jsonp:'onJsonLoad'} 会导致 'onJsonLoad=?' 发送给服务器端.
+    {String} -  默认 ``callback``. 覆盖这次 jsonp 请求的 callback 函数名. 这个值可以取代请求 url 中 ``callback=?`` 的 callback.例如   {jsonp:'onJsonLoad'} 会导致 'onJsonLoad=?' 发送给服务器端.
 
 .. data:: cfg.jsonpCallback
 
@@ -239,6 +240,20 @@ Config Detail
 .. data:: cfg.timeout
 
     {Number} -  对这次请求设个超时时间，单位秒. 当超时后会触发 ``error`` 以及 ``complete`` 回调 , 状态字符串为 "timeout".
+    
+    .. note::
+        当启用 timeout 时，后端要修改返回格式为:
+        
+        
+            .. code-block:: javascript
+            
+                if(window.$jsonpCallback) {
+                    $jsonpCallback({...});
+                }
+                
+                
+        ``$jsonpCallback`` 为 io 传递给后端回调函数的名字
+        
 
 .. data:: cfg.type
 
