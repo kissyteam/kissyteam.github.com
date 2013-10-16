@@ -17,6 +17,10 @@ Editor
 
 .. note::
 
+    增加实例方法 getSelectedHtml，获取选中的 html 字符串
+
+.. note::
+
     删除 editor/full 模块
 
 .. note::

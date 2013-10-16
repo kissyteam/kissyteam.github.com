@@ -12,6 +12,10 @@ Editor
         // use Editor
     });
 
+.. note::
+
+    使用 getData/setData 设置编辑器对象的数据，使用 data 配置设置初始数据
+
 Class
 ---------------------------------
 
@@ -411,7 +415,16 @@ Methods Detail
     | **getData(format, mode)**
     | 获得编辑器里面的内容
 
-    :param Boolean format: 是否格式化
+    :param Boolean format: 是否格式化，内部使用
+    :param Object mode: 模式，内部使用
+    :return String: 编辑器里的html内容
+
+.. method:: Editor.prototype.setData
+
+    | **setData( data )**
+    | 设置编辑器里的内容
+
+    :param String data: 要设置的内容
 
 Events Detail
 ------------------------------------------------------

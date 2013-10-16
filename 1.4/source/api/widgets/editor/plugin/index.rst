@@ -34,7 +34,6 @@ Plugins
    justify-right
    link
    maximize
-   multiple-upload
    ordered-list
    page-break
    preview
