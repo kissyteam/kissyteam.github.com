@@ -240,6 +240,20 @@ Config Detail
 
     {Number} -  对这次请求设个超时时间，单位秒. 当超时后会触发 ``error`` 以及 ``complete`` 回调 , 状态字符串为 "timeout".
 
+    .. note::
+        当启用 timeout 时，后端要修改返回格式为:
+
+
+            .. code-block:: javascript
+
+                if(window.$jsonpCallback) {
+                    $jsonpCallback({...});
+                }
+
+
+        ``$jsonpCallback`` 为 io 传递给后端回调函数的名字
+
+
 .. data:: cfg.type
 
     {String} -  可取值 "get" 或者 "post".
