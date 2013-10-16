@@ -13,9 +13,12 @@ Classes in Component
    :titlesonly:
 
    controller
-   UIBase
+   process
+   container
+   manager
    extension/align
-   extension/position
+   extension/content-render
+   extension/delegate-children
    extension/shim
    plugin/drag
    plugin/resize

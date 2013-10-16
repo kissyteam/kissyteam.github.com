@@ -15,42 +15,45 @@ Class
 Configs
 -----------------------------------------------
 
-    * :data:`~Controller.config.children`
-    * :data:`~Controller.config.prefixCls`
-    * :data:`~Controller.config.parent`
-    * :data:`~Controller.config.disabled`
-    * :data:`~Controller.config.focused`
     * :data:`~Controller.config.content`
-    * :data:`~Controller.config.width`
-    * :data:`~Controller.config.height`
-    * :data:`~Controller.config.elCls`
-    * :data:`~Controller.config.elStyle`
+    * :data:`~Controller.config.disabled`
     * :data:`~Controller.config.elAttrs`
     * :data:`~Controller.config.elBefore`
+    * :data:`~Controller.config.elCls`
+    * :data:`~Controller.config.elStyle`
+    * :data:`~Controller.config.focused`
+    * :data:`~Controller.config.height`
+    * :data:`~Controller.config.parent`
+    * :data:`~Controller.config.prefixCls`
+    * :data:`~Controller.config.prefixXClass`
     * :data:`~Controller.config.render`
-    * :data:`~Controller.config.visible`
     * :data:`~Controller.config.srcNode`
+    * :data:`~Controller.config.visible`
+    * :data:`~Controller.config.width`
+    * :data:`~Controller.config.x`
+    * :data:`~Controller.config.y`
+    * :data:`~Controller.config.zIndex`
 
 
 Attributes
 ----------------------------------------------------
 
-    * :attr:`~Controller.prototype.highlighted`
-    * :attr:`~Controller.prototype.children`
-    * :attr:`~Controller.prototype.parent`
+    * :attr:`~Controller.prototype.active`
+    * :attr:`~Controller.prototype.content`
     * :attr:`~Controller.prototype.disabled`
+    * :attr:`~Controller.prototype.el`
     * :attr:`~Controller.prototype.focused`
-
-
+    * :attr:`~Controller.prototype.height`
+    * :attr:`~Controller.prototype.highlighted`
+    * :attr:`~Controller.prototype.isControl`
+    * :attr:`~Controller.prototype.parent`
+    * :attr:`~Controller.prototype.visible`
 
 Methods
 -----------------------------------------------
 
-    * :meth:`~Controller.prototype.addChild`
-    * :meth:`~Controller.prototype.removeChild`
-    * :meth:`~Controller.prototype.removeChildren`
-    * :meth:`~Controller.prototype.getChildAt`
-    * :meth:`~Controller.extend` <static>
+    * :meth:`~Controller.prototype.hide`
+    * :meth:`~Controller.prototype.show`
 
 
 Class Detail
@@ -60,8 +63,8 @@ Class Detail
 
     | **Controller** (config)
 
-    * 继承自 :class:`~component.UIBase` , 包含其全部配置,属性,方法,事件.
-    * 扩充自 :class:`~component.extension.Box` , 包含其全部配置,属性,方法,事件.
+    * 继承自 :class:`~base.Base` , 包含其全部配置,属性,方法,事件.
+    * 扩展自 :class:`~component.ComponentProcess`, 包含其全部配置，属性，方法，事件.
 
     :param Object config: 配置项，详细见下方 **Configs Detail** .
 
@@ -69,103 +72,163 @@ Class Detail
 Configs Detail
 -----------------------------------------------
 
-.. data:: Controller.config.children
+.. note::
 
-    {Array<Controller>} - 可选，Controller 类型组件的数组，作为当前组件的儿子组件.
+    content 和 srcNode 不能同时都设置
+
+.. data:: Controller.config.content
+
+    {String} - 可选, 设置内容 html.
+
+.. data:: Controller.config.disabled
+
+    {Boolean} - 可选，该组件是否初始禁用.
+
+.. data:: Controller.config.elAttrs
+
+    {Object} - 可选，附加给组件根节点的属性键值对
+
+.. data:: Controller.config.elBefore
+
+    {KISSY.Node} - 可选，组件根节点的渲染到该节点之前.
+
+.. data:: Controller.config.elCls
+
+    {String} - 可选，附加给组件根节点的样式类
+
+.. data:: Controller.config.elStyle
+
+    {Object} - 可选，附加给组件根节点的内联样式
+
+.. data:: Controller.config.focused
+
+    {Boolean} - 可选，该组件是否初始获得焦点.
+
+.. data:: Controller.config.height
+
+    {Number} - 可选，组件的高度，单位像素
+
+.. data:: Controller.config.parent
+
+    {Controller} - 可选，该组件的父组件.
 
 .. data:: Controller.config.prefixCls
 
     {String} - 可选，默认 "ks-" . 组件的 css 样式类前缀 . 例如假设组件为 menu ，则该组件内的样式类名为 {prefixCls}menu，默认为 "ks-menu".
                可用于实现自定义皮肤.
 
-.. data:: Controller.config.parent
+.. data:: Controller.config.prefixXClass
 
-    {Controller} - 可选，该组件的父组件.
+    {String} - 可选，组件 prefix 的超类。只在config中实用。当超类未被指定时，用这个做超类。
 
-.. data:: Controller.config.disabled
+.. data:: Controller.config.render
 
-    {Boolean} - 可选，该组件是否初始禁用.
+    {KISSY.Node} - 组件要应用的节点。默认 S.all("body")，组件根节点的渲染为该节点最后一个节点.
 
-.. data:: Controller.config.focused
+.. data:: Controller.config.srcNode
 
-    {Boolean} - 可选，该组件是否初始获得焦点.
+    {KISSY.Node} - 可选，组件从页面中已存在的该节点中渲染而来.
+
+    .. note::
+
+        srcNode 时设置其他属性不起作用，属性通通在 html 标签中指定，并且 html 标签必须包含完整结构，例如 content 节点必须存在
+
+.. data:: Controller.config.visible
+
+    {Boolean} - 默认 true ，是否显示
+
+    .. note::
+
+        只是为组件的根节点添加/删除 {prefix}{component}-hidden 形式的 css class，自行指定具体的 css 样式。
+
+.. data:: Controller.config.width
+
+    {Number} - 可选，组件的宽度，单位像素
+
+.. data:: Controller.config.x
+
+    {Number} - 横轴位置
+
+.. data:: Controller.config.y
+
+    {Nunmber} - 纵轴位置
+
+.. data:: Controller.config.zIndex
+
+    {Number} - z-index 值
 
 Attributes Detail
 -----------------------------------------------------
 
-.. attribute:: Controller.prototype.highlighted
+.. attribute:: Controller.prototype.active
 
-    {Boolean} - 该组件是否处于高亮状态
+    {Boolean} - 组件是否已经激活
 
-.. attribute:: Controller.prototype.children
+.. attribute:: Controller.prototype.content
 
-    {Array<Controller>} - 只读。该组件的子组件数组。请使用对应方法写.
-
-.. attribute:: Controller.prototype.parent
-
-    {Boolean} - 该组件的父组件
+    {String|KISSY.Node} - 设置的 content 属性
 
 .. attribute:: Controller.prototype.disabled
 
     {Boolean} - 该组件是否禁用状态.
 
+.. attribute:: Controller.prototype.el
+
+    {KISSY.Node} - 只读属性，该组件的根节点. 注意调用 render() 后才可以取得.
+
 .. attribute:: Controller.prototype.focused
 
     {Boolean} - 该组件是否获得焦点.
 
+.. attribute:: Controller.prototype.height
+
+    {Number|String} - 组件的高
+
+.. attribute:: Controller.prototype.highlighted
+
+    {Boolean} - 该组件是否处于高亮状态
+
+.. attribute:: Controller.prototype.isControl
+
+    {Boolean} - 标记当前实例是 Control 的实例
+
+.. attribute:: Controller.prototype.parent
+
+    {Boolean} - 只读属性，该组件的父组件
+
+.. attribute:: Controller.prototype.visible
+
+    {Boolean} - 该组件是否显示，同 config 中的 visible，只是添加/删除样式
+
+.. attribute:: Controller.prototype.width
+
+    {Number} - 组件的宽度，单位像素
+
+.. attribute:: Controller.prototype.x
+
+    {Number} - 横轴位置
+
+.. attribute:: Controller.prototype.y
+
+    {Nunmber} - 纵轴位置
+
+.. attribute:: Controller.prototype.zIndex
+
+    {Number} - z-index 值
 
 Methods Detail
 -----------------------------------------------
 
-.. method:: Controller.extend
+.. method:: Controller.prototype.hide
 
-    | **extend( [ extensions , ] methodDesc , staticAttributes , componentDesc )** <static>
+    | **hide()**
+    | 隐藏组件
 
-    从当前组件类上扩展出一个子类组件
+    :return Object: 自身
 
-    :param Function[] extensions: 扩展类数组
-    :param Object methodDesc: 方法集合键值对
-    :param Object staticAttributes: 放到新产生组件类上的静态属性集合键值对，其中 ``ATTRS`` 属性特殊对待.
-    :param Object componentDesc: 组件元信息.
-    :param String componentDesc.xclass: 组件 xclass 信息
-    :param Number componentDesc.priority: 组件 priority 信息
+.. method:: Controller.prototype.show
 
+    | **show()**
+    | 显示组件
 
-.. method:: Controller.prototype.addChild
-
-    | **addChild( child [ , index ] )**
-
-    给当前组件添加子组件到对应位置.
-
-    :param {Controller} child: 子组件实例
-    :param {Number} index: 插入到当前子组件列表 index 位置后
-
-
-.. method:: Controller.prototype.removeChild
-
-    | **removeChild( child [ , destroy ] )**
-
-    从当前组件中删除改子组件
-
-    :param {Controller} child: 子组件实例
-    :param {Boolean} destroy: 是否同时调用 child 的 :meth:`component.UIBase.destroy` 销毁该子组件实例.
-
-
-.. method:: Controller.prototype.removeChildren
-
-    | **removeChildren( [ destroy ] )**
-
-    删除该组件的所有子组件
-
-    :param {Boolean} destroy: 是否同时调用:meth:`component.UIBase.destroy` 销毁所有的子组件实例.
-
-
-.. method:: Controller.prototype.getChildAt
-
-    | **getChildAt( index )**
-
-    获得对应位置的子组件.
-
-    :param {Number} index: 位置下标
-    :returns: 对应子组件
-    :rtype: Controller
+    :return Object: 自身
