@@ -40,10 +40,8 @@ kissy/layout.html
 {%- endblock %}
 
 <link rel="stylesheet" href="http://dev.kissyui.com/kissy/build/css/dpl/base-min.css"/>
-<!--link rel="stylesheet" href="{{ pathto('_static/kissy.css', 1) }}"/-->
-    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
 <link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
-<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
 
 <script>
     var DOCUMENTATION_OPTIONS = {
@@ -75,47 +73,45 @@ kissy/layout.html
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Le styles -->
-	<link rel="stylesheet" href="{{ pathto('_static/skin/bootstrap.css', 1) }}"/>
+	<!--link rel="stylesheet" href="{{ pathto('_static/skin/bootstrap.css', 1) }}"/>
 	<link rel="stylesheet" href="{{ pathto('_static/skin/bootstrap-responsive.css', 1) }}"/>
-	<link rel="stylesheet" href="{{ pathto('_static/skin/docs.css', 1) }}"/>
 	<link rel="stylesheet" href="{{ pathto('_static/skin/prettify.css', 1) }}"/>
-	<link rel="stylesheet" href="{{ pathto('_static/skin/todc-bootstrap.css', 1) }}"/>
+	<link rel="stylesheet" href="{{ pathto('_static/skin/docs.css', 1) }}"/>
+	<link rel="stylesheet" href="{{ pathto('_static/skin/todc-bootstrap.css', 1) }}"/-->
+
+	<link rel="stylesheet" href="{{ pathto('_static/skin/kissy.css', 1) }}"/>
+	<link rel="stylesheet" href="{{ pathto('_static/skin/prettify.css', 1) }}"/>
+	<link rel="stylesheet" href="{{ pathto('_static/skin/forkit.css', 1) }}"/>
+	<link rel="stylesheet" href="{{ pathto('_static/skin/bootstrap.css', 1) }}"/>
+	<link href="http://fonts.googleapis.com/css?family=Droid+Sans|Lekton|Ubuntu+Mono:400,700" rel="stylesheet">
+	<script src="http://g.tbcdn.cn/trip/kissy/1.4.0/seed-min.js"></script>
 
 </head>
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
 {%- block header %}
-{%- include "header.html" %}
 {% endblock %}
 
-{%- block content %}
-<div class="container">
+	<nav id="sidebar">
+		<header>
+	  		<a href="{{ pathto('../../guideline/', 1) }}" >
+				<img src="http://gtms01.alicdn.com/tps/i1/T1MVbxFoRcXXchhRni-175-68.png" alt="" />
+			</a>
+		</header>
 
-<!-- Docs nav
-================================================== -->
-<div class="row">
-  <div class="span8" id="doc">
-	<!--content-->
-	{%- block document %}
-		{% include "related.html" %}
-		<div class="body">{% block body %} {% endblock %}</div>
-		{% include "comment.html" %}
-	{%- endblock %}
-  </div>
-
-	<div class="span2">
+	{%- block content %}
+		{{ sidebar() }}
 		{%- include "searchbox.html" %}
-		<div class="widget widget_text" id="text-4">
-			{{ sidebar() }}
-		</div>
+	{%- endblock %}
+	</nav>
+	<div id="content" class="body">
+		<article>
+			{%- block document %}
+				{% include "related.html" %}
+				{% block body %} {% endblock %}
+				{% include "comment.html" %}
+			{%- endblock %}
+		</article>
 	</div>
-</div>
-
-</div>
-
-
-<hr />
-
-{%- endblock %}
 
 {%- block footer %}
 <footer class="footer">
