@@ -14,6 +14,11 @@ event
         // use Event
     });
 
+.. note::
+
+    | support windows8 touch
+    | 增加 Event.global 全局事件源
+
 Module
 -----------------------------------------------
 
@@ -28,7 +33,7 @@ Methods
 
 
    on.rst
-   delegate.rst   
+   delegate.rst
    detach.rst
    undelegate.rst
    fire.rst

@@ -15,7 +15,7 @@ Methods
 
     | void **on** ( selector , eventType , fn [ , scope ] )
     | 为符合匹配的 dom 节点的相应事件添加事件处理器
-    
+
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
     :param string eventType: 包含一个或多个事件名称的字符串, 多个事件名以空格分开。
         事件可以通过加点来表示分组，例如 "click.one" , "click.two"
@@ -33,12 +33,29 @@ Methods
     当一个节点的某个事件出发时, 绑定该事件的所有处理器都会被调用.如果有多个事件处理器, 则他们的执行顺序和绑定的顺序保持一致, 当所有的事件处理器执行完毕后,
     事件才继续向上传播.
 
+.. note::
+
+    | 支持 Event.on(target,type,opts), opts 可以是对象描述，例如 opts.once/opts.filter
+    | 支持 Event.on(target,opts), opts 为事件与对象描述对
+
+    .. code-block:: javascript
+
+        Event.on(document.body,{
+            'click':{
+                fn:function(){
+                },
+                filter: '' // delegate,
+                once:true // 绑定一次
+            },
+            'mouseenter':function(){}
+        });
+
 
 .. function:: add
 
     | void **add** ( selector , eventType , fn , scope )
     | 为 :func:`~event.on` 的别名
-    
+
     .. note::
 
         不能在 ``object`` , ``embed`` , ``applet`` 元素上注册事件.

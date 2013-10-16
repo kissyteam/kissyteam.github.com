@@ -18,4 +18,3 @@ Classes in Menu
    MenuItem
    SubMenu
    PopupMenu
-   FilterMenu

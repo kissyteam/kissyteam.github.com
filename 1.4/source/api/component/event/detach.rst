@@ -17,7 +17,7 @@ Methods
 
     | void **detach** ( selector [ , eventType , fn , scope ] )
     | 从符合匹配的 dom 节点中移去相应事件的事件处理器
-    
+
     :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
     :param string eventType: 包含一个或多个事件名称的字符串, 多个事件名以空格分开，
      也可以包含事件分组，例如 "click.one" , ".two" 等
@@ -65,6 +65,24 @@ Methods
 
     虽然后面的两个 ``detach`` 参数从字面上来看完全一样, 但是由于是不同的对象, 所有仍然不会生效.
     如果需要解除特定的事件处理器, 我们需要同一个对象( 函数 )引用, 而不是恰好字面上相同的不同对象.
+
+.. note::
+
+    Event.detach 支持 deep ，递归移除子节点事件
+
+    .. code-block:: javascript
+
+        Event.detach(document.body,{
+            'click':{
+                deep:true
+            }
+        });
+        Event.detach(document.body,{
+            // 全部事件
+            '':{
+                deep:true
+            }
+        });
 
 .. function:: remove
 

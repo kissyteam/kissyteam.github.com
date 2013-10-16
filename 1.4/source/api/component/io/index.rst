@@ -16,6 +16,29 @@ io
 .. note::
     io 组件在 1.3.x 及以前的版本被命名为ajax，1.4.x 及后续版本都更名为io
 
+.. note::
+
+    | form 参数代表的 form 节点中如果有 input type='file' 的节点会自动启用 iframe-upload 模式，
+    | 否则收集 form 内 input 数据启用普通 xhr 模式.
+
+.. note::
+
+    form 参数用户文件上传时请设置 type:'post'.
+
+.. note::
+
+    iframe-upload 模式与 subDomain 模式需配置服务器 CORS 头，例如
+
+    .. code-block:: php
+
+      res.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+      res.set('Access-Control-Allow-Credentials', 'true');
+      res.set('Access-Control-Allow-Origin', 'http://*.taobao.com');
+      res.set('Access-Control-Allow-Headers', 'origin, x-requested-with, yiminghe, content-type, accept, *');
+
+.. note::
+
+    withCredentials 默认为 true
 
 Module
 -----------------------------------------------
