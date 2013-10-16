@@ -19,6 +19,10 @@ node
     你只需要把 ``KISSY.all`` 看做 ``jquery`` 中的 ``$`` 就可以了,
     链式操作你会喜欢的！
 
+.. note::
+
+  KISSY NodeList 对象支持 filter 方法，参数格式参见 :meth:`~dom.filter`
+
 Module
 -----------------------------------------------
 
@@ -29,30 +33,30 @@ Class
 -------------------------------------
 .. toctree::
    :titlesonly:
-   
+
    nodelist.rst
-   
+
 Static Methods
 --------------------------
 
 .. toctree::
    :titlesonly:
-   
+
    all.rst
-   one.rst   
-   
+   one.rst
+
 
 Member Methods
 -----------------------------------------------
 
 .. toctree::
    :titlesonly:
-  
+
    instance_all.rst
    instance_one.rst
    getDOMNodes.rst
    getDOMNode.rst
-   end.rst  
+   end.rst
    equals.rst
    add.rst
    item.rst
@@ -85,7 +89,7 @@ Member Methods
    slideDown.rst
    slideUp.rst
    slideToggle.rst
-   
+
 .. note::
 
         以下的这些方法,
@@ -115,7 +119,7 @@ Member Methods
 
 
 .. note::
-    ``Node`` 模块的 ``on`` 方法中的 ``this`` 关键字指向当前绑定事件的单个原生节点, 事件对象的 ``target`` 和 ``relatedTarget`` 也指向对应的原生节点, 
+    ``Node`` 模块的 ``on`` 方法中的 ``this`` 关键字指向当前绑定事件的单个原生节点, 事件对象的 ``target`` 和 ``relatedTarget`` 也指向对应的原生节点,
 
 .. code-block:: html
 
@@ -130,7 +134,7 @@ Member Methods
                             // 或者 document.documentElement
         });
     </script>
-    
+
 为了保持应用兼容，推荐的做法是，在回调函数开始包装 this （需要的话同样包装 event.target）
 
 .. code-block:: html

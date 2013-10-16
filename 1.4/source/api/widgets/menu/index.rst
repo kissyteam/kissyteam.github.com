@@ -6,10 +6,12 @@ Menu
 
 |  Menu
 
+.. note::
+
+    将 checkable 移动到 CheckMenuItem
 
 Classes in Menu
 -----------------------------------------------
-
 
 .. toctree::
    :titlesonly:
@@ -18,3 +20,4 @@ Classes in Menu
    MenuItem
    SubMenu
    PopupMenu
+   checkMenuItem

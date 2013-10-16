@@ -19,8 +19,13 @@ Class
 Configs
 -----------------------------------------------
 
+.. note::
+
+    去除配置 tabSelectedCls panelSelectedCls
+
     * :data:`~component.extension.Box.config.content`
     * :data:`~Tab.config.selected`
+    * :data:`~Tab.config.lazyRender`
 
 Attributes
 ------------------------------------------------
@@ -44,11 +49,13 @@ Class Detail
 Configs Detail
 -----------------------------------------------
 
-
 .. data:: Tab.config.selected
 
     {Boolean} - 是否选中
 
+.. data:: Tab.config.lazyRender
+
+    {Boolean} - 是否启用懒加载机制，默认 false
 
 Attributes Detail
 -----------------------------------------------------

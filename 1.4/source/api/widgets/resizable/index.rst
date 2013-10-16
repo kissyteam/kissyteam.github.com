@@ -13,6 +13,10 @@ Resizable
         // use Resizable
     });
 
+.. note::
+
+    增加保护比例功能
+
 Class
 ---------------------------------
 
@@ -28,7 +32,7 @@ Configs
     * :data:`~Resizable.config.maxWidth`
     * :data:`~Resizable.config.maxHeight`
     * :data:`~Resizable.config.handlers`
-
+    * :data:`~Resizable.config.preserveRatio`
 
 Methods
 -----------------------------------------------
@@ -51,7 +55,6 @@ Class Detail
     | **Resizable** (config)
 
     :param Object config: 配置项，详细见下方 **Configs Detail** .
-
 
 Configs Detail
 -----------------------------------------------
@@ -82,6 +85,9 @@ Configs Detail
 
     可取下列值: "b","t","r","l","tr","tl","br","bl"． 其中, t,b,l,r 分别表示 top,bottom,left,right, 加上组合共八种取值, 可在上, 下, 左, 右以及左上, 左下, 右上, 右下进行拖动.
 
+.. data:: Resizable.config.preserveRatio
+
+    {Boolean} - 是否在 resize 的过程中保持 width/height 比例
 
 Methods Detail
 -----------------------------------------------
@@ -90,8 +96,8 @@ Methods Detail
 
     | **destroy** ()
     | 销毁该组件, 取消元素上的缩放功能.
-    
-    
+
+
 .. note::
 
     拖放 handler 的样式需要调用者自己编写.

@@ -24,6 +24,7 @@ Widgets
    rich-base/index
    stylesheet/index
    scroll-view/index
+   splitbutton/index
    swf/index
    tabs/index
    tree/index
