@@ -1,18 +1,5 @@
 # KISSY Mobile 最佳实践
 
-## 去除不必要的模块加载
-
-Seed 种子文件体积（seed-min.js）：**15k**（gzip）。Mobile 中原生支持`querySelector`和`querySelectorAll`，在 Webkit 内核浏览器中只会载入包装器，即在移动终端会自行加载最小子集，比如这段代码：
-	
-	// 在 Mobile 中运行
-	KISSY.use('node');
-
-只会载入`node-min.js`：**2k**（gzip），即可在 Mobile 中拥有DOM操作的全部功能。
-
-![](http://gtms04.alicdn.com/tps/i4/T1khi2FfFdXXXKwN2U-393-61.png)
-
-> 最佳实践，在Mobile中要保留有用的模块，尽管KISSY会主动探测设备并选择性加载，但多余的手动引入模块还是会造成不必要的带宽浪费。
-
 ## 开启 Combo
 
 KISSY Loader 可以开启Combo功能，将多JS文件进行合并输出，以减少HTTP请求数，在移动终端中**更要如此**，开启方法参照[Loader](loader.html)。
