@@ -75,11 +75,11 @@ Configs Detail
 
 .. data:: Tabs.config.changeType
 
-    {String} - 枚举自 :attr:`~Tabs.changeType` .取值 click 或者 mouse
+    {String} - 枚举自 :attr:`~Tabs.ChangeType` .
 
 .. data:: Tabs.config.barOrientation
 
-    {String} - 枚举自 :attr:`~Tabs.Orientation` .取值 click 或者 mouse
+    {String} - 枚举自 :attr:`~Tabs.Orientation` .
 
 
 Methods Detail
@@ -212,5 +212,3 @@ Events Details
 
     :param EventObject e: 触发事件对象
     :param {Tabs.Tab} e.newVal: 新的 tab 实例
-
-
