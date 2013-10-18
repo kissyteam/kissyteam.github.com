@@ -36,6 +36,7 @@
       <li><a href="get-started.html"><img src="templates/assets/img/icon-getting-started.png">KISSY 1.4.x 教程大纲</a></li>
       <li class="nav-sub"><a href="module-map.html">核心模块列表</a></li>
       <li class="nav-sub"><a href="kmd.html">KISSY 模块规范 (KMD)</a></li>
+      <li class="nav-sub"><a href="config.html">模块自由定制工具</a></li>
       <li class="nav-sub"><a href="gbs.html">浏览器兼容基准(GBS)</a></li>
       <li class="nav-sub"><a href="http://cyj.me/jquery-kissy-rosetta/">jQuery KISSY 对比手册</a></li>
       <li class="nav-sub"><a href="http://gallery.kissyui.com/guide">KISSY 组件开发规范</a></li>
@@ -67,15 +68,6 @@
       
 
 	<h1>KISSY Mobile 最佳实践</h1>
-<h2>去除不必要的模块加载</h2>
-<p>Seed 种子文件体积（seed-min.js）：<strong>15k</strong>（gzip）。Mobile 中原生支持<code>querySelector</code>和<code>querySelectorAll</code>，在 Webkit 内核浏览器中只会载入包装器，即在移动终端会自行加载最小子集，比如这段代码：</p>
-<pre><code>// 在 Mobile 中运行
-KISSY.use(&#39;node&#39;);</code></pre>
-<p>只会载入<code>node-min.js</code>：<strong>2k</strong>（gzip），即可在 Mobile 中拥有DOM操作的全部功能。</p>
-<p><img src="http://gtms04.alicdn.com/tps/i4/T1khi2FfFdXXXKwN2U-393-61.png" alt=""></p>
-<blockquote>
-<p>最佳实践，在Mobile中要保留有用的模块，尽管KISSY会主动探测设备并选择性加载，但多余的手动引入模块还是会造成不必要的带宽浪费。</p>
-</blockquote>
 <h2>开启 Combo</h2>
 <p>KISSY Loader 可以开启Combo功能，将多JS文件进行合并输出，以减少HTTP请求数，在移动终端中<strong>更要如此</strong>，开启方法参照<a href="loader.html">Loader</a>。</p>
 <p>对于本地文件，使用<a href="kmc.html">KMC</a>进行静态合并。</p>
