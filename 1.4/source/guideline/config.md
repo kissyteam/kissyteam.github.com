@@ -7,6 +7,8 @@
 
 2，模块文件之间的依赖顺序无关
 
+3，组件模块对核心模块的依赖，如果没有手动定制进来，也会自动载入。
+
 
 <div class="panel panel-success">
 	<div class="panel-heading">
