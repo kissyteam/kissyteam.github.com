@@ -12,9 +12,15 @@
 
 ### 1.4.x 将不再提供`kissy.js`
 
-为了增强 KISSY 的模块架构和减轻体积，1.4.0 之后将不再提供粗粒度的`kissy.js`，因此`http://g.tbcdn.cn/kissy/k/1.4.0/kissy.js`不存在。KISSY 将只提供一种引用方式，即`seed.js`。
+为了增强 KISSY 的模块架构和减轻体积，1.4.0 之后将不再提供粗粒度的`kissy.js`，因此`http://g.tbcdn.cn/kissy/k/1.4.0/kissy.js`不存在。KISSY 将只提供`seed.js`。
 
 即，使用 1.4.x 的功能必须首先`use('mod-name')`再使用，注意之前比较滥用的`KISSY.ready()`，在 1.4.x 中不建议使用。使用模块请参照 [1.4.x 模块列表](module-map.html)。
+
+`kissy.js`中的模块被整理入`core`模块，将`kissy.js`替换为`seed.js`后，应当在代码中引用`core`：
+
+	KISSY.use('core',function(S){
+		// Your code
+	});
 
 ### 模块名称变更
 
