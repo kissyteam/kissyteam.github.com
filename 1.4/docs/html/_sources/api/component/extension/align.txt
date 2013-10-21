@@ -69,7 +69,7 @@ Configs Detail
 
         .. raw:: html
 
-            <img  src='/1.4/source/raw/api/component/overlay/align.png' />
+            <img  src='/1.4/source/raw/api/overlay/align.png' />
 
 
 Methods Detail
