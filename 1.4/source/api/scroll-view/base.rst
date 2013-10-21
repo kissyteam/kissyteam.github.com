@@ -20,15 +20,15 @@ Class
 Configs
 ------------------------------
 
-    * :data:`~component.extension.Box.config.srcNode`
-    * :data:`~component.extension.Box.config.width`
-    * :data:`~component.extension.Box.config.height`
-    * :data:`~component.extension.Box.config.content`
-    * :data:`~rich-base.RichBase.config.plugins`
-    * :data:`~component.extension.Box.prototype.contentEl`
-    * :data:`~component.extension.Box.config.elCls`
-    * :data:`snap`
-    * :data:`snapDuration`
+    * :data:`~component.Controller.config.srcNode`
+    * :data:`~component.Controller.config.width`
+    * :data:`~component.Controller.config.height`
+    * :data:`~component.Controller.config.content`
+    * :data:`~base.Base.config.plugins`
+    * :data:`~component.Controller.config.elCls`
+    * :data:`~Base.config.snap`
+    * :data:`~Base.config.snapDuration`
+    * :data:`~Base.config.snapEasing`
 
 Methods
 -------------------------------
@@ -54,19 +54,19 @@ Class Details
 Configs Details
 -------------------------------
 
-.. data:: snap
+.. data:: Base.config.snap
 
     | 传入元素的选择器，{String}
     | 用来指定是否在滚动是将元素“折断”，就是在滚动停在元素上时如何处理。
     | 默认为 false ，不做操作，就停在那里
     | 为 true 时，滚动到下一个同类元素的起点，停止。
 
-.. data:: snapDuration
+.. data:: Base.config.snapDuration
 
     | “折断”操作动画持续时间，当snap为true时有效。
     | {Number} - 默认 0.3
 
-.. data:: snapEasing
+.. data:: Base.config.snapEasing
 
     | “折断”操作动画的时间函数，{String}
     | 默认 easeOut

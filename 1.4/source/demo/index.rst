@@ -22,6 +22,7 @@ Demos
    menubutton/index
    overlay/index
    resizable/index
+   scroll-view/index
    tabs/index
    toolbar/demo
    tree/index
