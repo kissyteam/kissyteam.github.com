@@ -98,7 +98,7 @@ DOM 事件回调函数回传参数为e，被称为事件对象，这里的事件
 
 > KISSY 也对 mouseenter/mouseleave focusin/focusout 进行了兼容处理, 所有浏览器都可以使用这两个事件了.
 
-处理段落的单击与双击例子。注意坐标是相对于例子的 iframe 窗口的, 这里方便起见采用node。[参照Demo](http://docs.kissyui.com/source/raw/api/core/event/on_1.html)。
+处理段落的单击与双击例子。注意坐标是相对于例子的 iframe 窗口的, 这里方便起见采用node。[参照Demo](http://docs.kissyui.com/source/raw/api/event/on_1.html)。
 
 通过调用事件对象的halt()方法来阻止事件。 
 
@@ -148,7 +148,7 @@ DOM 事件回调函数回传参数为e，被称为事件对象，这里的事件
 
 虽然后面的两个 detach 参数从字面上来看完全一样, 但是由于是不同的对象, 所有仍然不会生效. 如果需要解除特定的事件处理器, 我们需要同一个对象( 函数 )引用, 而不是恰好字面上相同的不同对象.
 
-detach也可以用别名remove标识。[事件移除的Demo](http://docs.kissyui.com/source/raw/api/core/event/detach_1.html)。
+detach也可以用别名remove标识。[事件移除的Demo](http://docs.kissyui.com/source/raw/api/event/detach_1.html)。
 
 > 如果要解除特定的事件处理器 , detach 的参数必须和对应的 on 参数值相等( == )并且个数一致才能完成解除绑定的目标.
 
@@ -199,9 +199,9 @@ delegate 方法提供了解决方法, 如果这样调用：
 >
 > 同样可以对 mouseenter , mouseleave 进行委托.
 
-- [事件委托的Demo](http://docs.kissyui.com/source/raw/api/core/event/delegate.html)
-- [阻止事件冒泡](http://docs.kissyui.com/source/raw/api/core/event/delegate_2.html)
-- [委托 mouseenter/mouseleave](http://docs.kissyui.com/source/raw/api/core/event/delegate_mouse.html)
+- [事件委托的Demo](http://docs.kissyui.com/source/raw/api/event/delegate.html)
+- [阻止事件冒泡](http://docs.kissyui.com/source/raw/api/event/delegate_2.html)
+- [委托 mouseenter/mouseleave](http://docs.kissyui.com/source/raw/api/event/delegate_mouse.html)
 
 ### 解除事件委托
 
@@ -230,13 +230,13 @@ KISSY 对常见的DOM事件做了封装，包括原生浏览器不支持的事�
 
 原生只有 ie 支持 focusin 事件，而 kissy 对这一事件进行了 兼容性处理。但一个元素获得焦点或者其子孙元素获得焦点时， focusin 会在该元素上触发（没被子孙元素阻止）。这就是和 focus 事件的区别之处 : 你可以在父元素上监控子元素的 focus 事件，即 focusin 事件支持冒泡.
 
-这个事件常常和 focusout 一起使用. [Demo](http://docs.kissyui.com/source/raw/api/core/event/focusin.html)
+这个事件常常和 focusout 一起使用. [Demo](http://docs.kissyui.com/source/raw/api/event/focusin.html)
 
 #### fousout
 
 原生只有 ie 支持 focusout 事件，而 kissy 对这一事件进行了 兼容性处理 .但一个元素获得焦点或者其子孙元素获得焦点时， focusout 会在该元素上触发（没被子孙元素阻止）。这就是和 blur 事件的区别之处 : 你可以在父元素上监控子元素的 blur 事件，即 focusout 事件支持冒泡.
 
-[focusout事件的demo](http://docs.kissyui.com/source/raw/api/core/event/focusout.html).
+[focusout事件的demo](http://docs.kissyui.com/source/raw/api/event/focusout.html).
 
 #### hashchange
 
@@ -249,7 +249,7 @@ KISSY 对常见的DOM事件做了封装，包括原生浏览器不支持的事�
 		// location.hash -> 当前 hash 值
 	});
 
-[Demo](http://docs.kissyui.com/source/raw/api/core/event/hashchange.html)。
+[Demo](http://docs.kissyui.com/source/raw/api/event/hashchange.html)。
 
 ### valuechange
 
@@ -276,11 +276,11 @@ KISSY 对常见的DOM事件做了封装，包括原生浏览器不支持的事�
 		alert(e.newVal); // => 新值
 	});
 
-[Demo](http://docs.kissyui.com/source/raw/api/core/event/valuechange.html)
+[Demo](http://docs.kissyui.com/source/raw/api/event/valuechange.html)
 
 #### mousewheel
 
-对鼠标滚轮事件做了浏览器兼容性处理，[Demo](http://docs.kissyui.com/source/raw/api/core/event/mousewheel.html)
+对鼠标滚轮事件做了浏览器兼容性处理，[Demo](http://docs.kissyui.com/source/raw/api/event/mousewheel.html)
 
 #### mouseenter & mouseleave 
 
@@ -312,19 +312,19 @@ KISSY 对于移动设备做了统一的事件封装，这些事件包括：
 		alert(e.type + ' : fired');
 	});
 
-- [双击事件的Demo，在手机中打开此demo](http://docs.kissyui.com/source/raw/api/core/event/double-tap.html)
+- [双击事件的Demo，在手机中打开此demo](http://docs.kissyui.com/source/raw/api/event/double-tap.html)
 
 #### singleTap
 
-触屏单击事件，和双击互斥，当快速点击某个 dom 节点一次（短时间没有再次点击）后触发，[demo](http://docs.kissyui.com/source/raw/api/core/event/double-tap.html)
+触屏单击事件，和双击互斥，当快速点击某个 dom 节点一次（短时间没有再次点击）后触发，[demo](http://docs.kissyui.com/source/raw/api/event/double-tap.html)
 
 #### tap
 
-触屏单击，当点击某个 dom 节点后触发， 和 singleTap 的不同支持载入： 触发 doubleTap 就不会触发 singleTap， 而触发 doubleTap 前会触发 tap，[demo](http://docs.kissyui.com/source/raw/api/core/event/tap.html)。
+触屏单击，当点击某个 dom 节点后触发， 和 singleTap 的不同支持载入： 触发 doubleTap 就不会触发 singleTap， 而触发 doubleTap 前会触发 tap，[demo](http://docs.kissyui.com/source/raw/api/event/tap.html)。
 
 #### tapHold
 
-触屏长按，当常按某个 dom 节点超过 1s 后触发，[Demo](http://docs.kissyui.com/source/raw/api/core/event/tap-hold.html)
+触屏长按，当常按某个 dom 节点超过 1s 后触发，[Demo](http://docs.kissyui.com/source/raw/api/event/tap-hold.html)
 
 #### swipe
 
@@ -341,7 +341,7 @@ KISSY 对于移动设备做了统一的事件封装，这些事件包括：
 		}
 	});
 
-[在触屏设备中打开这个Demo](http://docs.kissyui.com/source/raw/api/core/event/swipe.html)
+[在触屏设备中打开这个Demo](http://docs.kissyui.com/source/raw/api/event/swipe.html)
 
 #### rotateStart
 
@@ -350,7 +350,7 @@ KISSY 对于移动设备做了统一的事件封装，这些事件包括：
 - angle：Number，开始时双指的角度
 - rotation：Number，固定为0
 
-[在触屏设备中打开demo](http://docs.kissyui.com/source/raw/api/core/event/rotate.html)
+[在触屏设备中打开demo](http://docs.kissyui.com/source/raw/api/event/rotate.html)
 
 #### rotate
 
@@ -372,7 +372,7 @@ demo参照上一个例子。
 - distance：Number，开始时双指的绝对距离
 - scale：Number，固定为1
 
-[在触屏设备中打开Demo](http://docs.kissyui.com/source/raw/api/core/event/pinch.html)
+[在触屏设备中打开Demo](http://docs.kissyui.com/source/raw/api/event/pinch.html)
 
 #### pinch
 
@@ -387,7 +387,7 @@ demo参照上一个例子。
 
 #### chake
 
-摇一摇事件，当用户摇动设备后触发，前后左右在一定连续时间内以一定幅度摇动设备，[Demo](http://docs.kissyui.com/source/raw/api/core/event/shake.html)
+摇一摇事件，当用户摇动设备后触发，前后左右在一定连续时间内以一定幅度摇动设备，[Demo](http://docs.kissyui.com/source/raw/api/event/shake.html)
 
 ### 移动终端事件和PC端的统一
 

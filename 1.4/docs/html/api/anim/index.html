@@ -1,0 +1,601 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="data-spm" content="1" data-spm-protocol="i" />
+
+<title>anim &mdash; KISSY v1.4.x</title>
+
+<link rel="stylesheet" href="http://dev.kissyui.com/kissy/build/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js,searchtools.js"></script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le styles -->
+	<!--link rel="stylesheet" href="../../_static/skin/bootstrap.css"/>
+	<link rel="stylesheet" href="../../_static/skin/bootstrap-responsive.css"/>
+	<link rel="stylesheet" href="../../_static/skin/prettify.css"/>
+	<link rel="stylesheet" href="../../_static/skin/docs.css"/>
+	<link rel="stylesheet" href="../../_static/skin/todc-bootstrap.css"/-->
+
+	<link rel="stylesheet" href="../../_static/skin/kissy.css"/>
+	<link rel="stylesheet" href="../../_static/skin/prettify.css"/>
+	<link rel="stylesheet" href="../../_static/skin/forkit.css"/>
+	<link rel="stylesheet" href="../../_static/skin/bootstrap.css"/>
+	<link href="http://fonts.googleapis.com/css?family=Droid+Sans|Lekton|Ubuntu+Mono:400,700" rel="stylesheet">
+	<script src="http://g.tbcdn.cn/trip/kissy/1.4.0/seed-min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+
+	<nav id="sidebar">
+		<header>
+	  		<a href="../../../../guideline/" >
+				<img src="http://gtms01.alicdn.com/tps/i1/T1MVbxFoRcXXchhRni-175-68.png" alt="" />
+			</a>
+		</header>
+		
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h4 class="s-box-hd">Seed</h4>
+    <ul class="s-box-bd">
+        <li><a href="../seed/loader/index.html">loader</a></li>
+        <li><a href="../seed/features/index.html">features</a></li>
+        <li><a href="../seed/lang/index.html">lang</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h4 class="s-box-hd">Core</h4>
+    <ul class="s-box-bd">
+        <li><a href="../path/index.html">path</a></li>
+        <li><a href="../ua/index.html">ua</a></li>
+        <li><a href="../promise/index.html">promise</a></li>
+        <li><a href="../uri/index.html">uri</a></li>
+        <li><a href="#">anim</a></li>
+        <li><a href="../base/index.html">base</a></li>
+        <li><a href="../node/index.html">node</a></li>
+        <li><a href="../cookie/index.html">cookie</a></li>
+        <li><a href="../io/index.html">io</a></li>
+        <li><a href="../dom/index.html">dom</a></li>
+        <li><a href="../event/index.html">event</a></li>
+        <li><a href="../json/index.html">json</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h4 class="s-box-hd">Infrastructure</h4>
+    <ul class="s-box-bd">
+        <li><a href="../mvc/index.html">mvc</a></li>
+        <li><a href="../xtemplate/index.html">xtemplate</a></li>
+        <li><a href="../component/index.html">component</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h4 class="s-box-hd">Components</h4>
+    <ul class="s-box-bd">
+        <li><a href="../swf/index.html">color</a></li>
+        <li><a href="../stylesheet/index.html">stylesheet</a></li>
+        <li><a href="../dd/index.html">dd</a></li>
+        <li><a href="../color/index.html">color</a></li>
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../combobox/index.html">combobox</a></li>
+        <li><a href="../editor/index.html">editor</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="../tabs/index.html">tabs</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
+        <li><a href="../swf/index.html">swf</a></li>
+        <li><a href="../scroll-view/index.html">scroll-view</a></li>
+        <li><a href="../date/index.html">date</a></li>
+        <li><a href="../split-button/index.html">split-button</a></li>
+        <li><a href="../toolbar/index.html">toolbar</a></li>
+	</ul>
+</ul>
+        
+    </div>
+    
+<div id="searchbox" class="searchbox">
+    <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" class="ipt"/>
+        <input type="submit" value="Search" class="btn"/>
+        <input type="hidden" name="check_keywords" value="yes"/>
+        <input type="hidden" name="area" value="default"/>
+    </form>
+</div>
+	</nav>
+	<div id="content" class="body">
+		<article>
+				
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../cookie/index.html" title="cookie"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="../event/shake.html" title="shake"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../index.html">KISSY v1.4.x</a> &#187; </li>
+      <li><a href="../index.html" accesskey="U">API Documentation</a> &#187; </li> 
+    </ul>
+</div>
+				
+  <span class="target" id="module-anim"></span><div class="section" id="anim">
+<h1>anim<a class="headerlink" href="#anim" title="Permalink to this headline">¶</a></h1>
+<a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.4.x/src/anim' target='_blank'>view anim source</a><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;anim&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Anim</span><span class="p">){</span>
+    <span class="c1">// use Anim</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#anim.Anim" title="anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#anim.Anim.prototype.isRunning" title="anim.Anim.prototype.isRunning"><tt class="xref py py-meth docutils literal"><span class="pre">isRunning()</span></tt></a></li>
+<li><a class="reference internal" href="#anim.Anim.prototype.isPaused" title="anim.Anim.prototype.isPaused"><tt class="xref py py-meth docutils literal"><span class="pre">isPaused()</span></tt></a></li>
+<li><a class="reference internal" href="#anim.Anim.prototype.run" title="anim.Anim.prototype.run"><tt class="xref py py-meth docutils literal"><span class="pre">run()</span></tt></a></li>
+<li><a class="reference internal" href="#anim.Anim.prototype.stop" title="anim.Anim.prototype.stop"><tt class="xref py py-meth docutils literal"><span class="pre">stop()</span></tt></a></li>
+<li><a class="reference internal" href="#anim.Anim.prototype.pause" title="anim.Anim.prototype.pause"><tt class="xref py py-meth docutils literal"><span class="pre">pause()</span></tt></a></li>
+<li><a class="reference internal" href="#anim.Anim.prototype.resume" title="anim.Anim.prototype.resume"><tt class="xref py py-meth docutils literal"><span class="pre">resume()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="static-methods">
+<h2>Static Methods<a class="headerlink" href="#static-methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#anim.Anim.isRunning" title="anim.Anim.isRunning"><tt class="xref py py-meth docutils literal"><span class="pre">Anim.isRunning()</span></tt></a></li>
+<li><a class="reference internal" href="#anim.Anim.isPaused" title="anim.Anim.isPaused"><tt class="xref py py-meth docutils literal"><span class="pre">Anim.isPaused()</span></tt></a></li>
+<li><a class="reference internal" href="#anim.Anim.stop" title="anim.Anim.stop"><tt class="xref py py-meth docutils literal"><span class="pre">Anim.stop()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#anim.Anim.Events.complete" title="anim.Anim.Events.complete"><tt class="xref py py-func docutils literal"><span class="pre">complete()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="anim.Anim">
+<em class="property">class </em><tt class="descclassname">anim.</tt><tt class="descname">Anim</tt><a class="headerlink" href="#anim.Anim" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>Anim</strong> (elem, props[, duration, easing, completeFn])</div>
+<div class="line">得到绑定于某个 dom 节点的动画实例</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>elem</strong> (<em>String|HTMLElement|KISSY.Node|window|普通的Object</em>) &#8211; 作用动画的元素节点或窗口（窗口时仅支持 scrollTop/Left）.</li>
+<li><strong>props</strong> (<em>Object</em>) &#8211; <p>动画结束的 dom 样式值, 例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">width</span><span class="o">:</span><span class="s2">&quot;100px&quot;</span><span class="p">,</span>
+    <span class="nx">height</span><span class="o">:</span><span class="s2">&quot;100px&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>表示节点将从当前宽高经过动画平滑变化到宽 100px 与高 100px.</p>
+<blockquote>
+<div>也可以设置 scrollLeft 或者 scrollTop, 这时会直接对元素的滚动属性产生动画.</div></blockquote>
+</li>
+<li><strong>duration</strong> (<em>Number</em>) &#8211; 默认为 1 , 动画持续时间, 以秒为单元.</li>
+<li><strong>easing</strong> (<em>String</em>) &#8211; 默认为 &#8216;easeNone&#8217; , 动画平滑函数, 可取值 &#8220;swing&#8221;, &#8220;easeNone&#8221;, &#8220;linear&#8221;, &#8220;easeIn&#8221;, &#8220;easeOut&#8221;, &#8220;easeBoth&#8221;,&#8221;easeInStrong&#8221;, &#8220;easeOutStrong&#8221;,&#8221;easeBothStrong&#8221;,&#8221;elasticIn&#8221;,&#8221;elasticOut&#8221;, &#8220;elasticBoth&#8221;,&#8221;backIn&#8221;,&#8221;backOut&#8221;,&#8221;backBoth&#8221;, &#8220;bounceIn&#8221;,&#8221;bounceOut&#8221;,&#8221;bounceBoth&#8221;, &#8220;cubic-bezier(p1x, p1y, p2x, p2y)&#8221;.
+效果预览, 可以参考 <a class="reference internal" href="../../demo/anim/easing.html#easing-visual"><em>easing 可视化</em></a> .</li>
+<li><strong>completeFn</strong> (<em>function</em>) &#8211; 动画到最后一帧后的回调函数.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><strong>Anim</strong> (elem, props[, config])</div>
+<div class="line">得到绑定于某个 dom 节点的动画实例</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>elem</strong> (<em>String|HTMLElement|KISSY.Node|window|普通的Object</em>) &#8211; 作用动画的元素节点.</li>
+<li><strong>props</strong> (<em>Object</em>) &#8211; 动画结束的 dom 样式值</li>
+<li><strong>config</strong> (<em>Number</em>) &#8211; <p>动画配置项，包含:</p>
+<dl class="attribute">
+<dt id="anim.Anim.config.duration">
+<tt class="descclassname">config.</tt><tt class="descname">duration</tt><a class="headerlink" href="#anim.Anim.config.duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>单位秒。默认 1 秒.动画持续时间</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anim.Anim.config.easing">
+<tt class="descclassname">config.</tt><tt class="descname">easing</tt><a class="headerlink" href="#anim.Anim.config.easing" title="Permalink to this definition">¶</a></dt>
+<dd><p>string|function。默认 &#8216;easeNone&#8217;. 动画平滑函数</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anim.Anim.config.queue">
+<tt class="descclassname">config.</tt><tt class="descname">queue</tt><a class="headerlink" href="#anim.Anim.config.queue" title="Permalink to this definition">¶</a></dt>
+<dd><p>String|false|undefined。所属队列名称. 默认undefined. 属于系统内置队列, 设置 false 则表示该动画不排队立即执行.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anim.Anim.config.complete">
+<tt class="descclassname">config.</tt><tt class="descname">complete</tt><a class="headerlink" href="#anim.Anim.config.complete" title="Permalink to this definition">¶</a></dt>
+<dd><p>function。 动画到最后一帧后的回调函数.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anim.Anim.config.useTransition">
+<tt class="descclassname">config.</tt><tt class="descname">useTransition</tt><a class="headerlink" href="#anim.Anim.config.useTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>boolean。 是否使用css3 transiton提升性能</p>
+</dd></dl>
+
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//对普通的Object使用Anim</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;anim&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Anim</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">new</span> <span class="nx">Anim</span><span class="p">({</span><span class="nx">a</span><span class="o">:</span><span class="mi">1</span><span class="p">},{</span><span class="nx">a</span><span class="o">:</span><span class="mi">2</span><span class="p">},{</span><span class="nx">frame</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">anim</span><span class="p">,</span><span class="nx">fx</span><span class="p">){</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fx</span><span class="p">)}}).</span><span class="nx">run</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="anim.Anim.prototype.isRunning">
+<tt class="descclassname">Anim.prototype.</tt><tt class="descname">isRunning</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.prototype.isRunning" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>isRunning</strong> ()</div>
+<div class="line">判断当前动画对象是否在执行动画过程.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anim.Anim.prototype.isPaused">
+<tt class="descclassname">Anim.prototype.</tt><tt class="descname">isPaused</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.prototype.isPaused" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>isPaused</strong> ()</div>
+<div class="line">判断当前动画对象是否被暂停.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anim.Anim.prototype.run">
+<tt class="descclassname">Anim.prototype.</tt><tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.prototype.run" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>run</strong> ()</div>
+<div class="line">在动画实例上调用, 开始当前动画实例的动画.</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="anim.Anim.prototype.stop">
+<tt class="descclassname">Anim.prototype.</tt><tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.prototype.stop" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>stop</strong> ([finish=false])</div>
+<div class="line">在动画实例上调用, 结束当前动画实例的动画.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>finish</strong> (<em>Boolean</em>) &#8211; false 时, 动画会在当前帧直接停止（不触发 complete 回调）.
+为 true 时, 动画停止时会立刻跳到最后一帧（触发 complete 回调）</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anim.Anim.prototype.pause">
+<tt class="descclassname">Anim.prototype.</tt><tt class="descname">pause</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.prototype.pause" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>pause</strong> ()</div>
+<div class="line">在动画实例上调用, 暂停当前动画实例的动画.</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="anim.Anim.prototype.resume">
+<tt class="descclassname">Anim.prototype.</tt><tt class="descname">resume</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.prototype.resume" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>resume</strong> ()</div>
+<div class="line">在动画实例上调用, 继续当前动画实例的动画.</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="anim.Anim.isRunning">
+<tt class="descclassname">Anim.</tt><tt class="descname">isRunning</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.isRunning" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">static <strong>Anim.isRunning</strong> (elem)</div>
+<div class="line"><a class="reference internal" href="#anim.Anim" title="anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt></a> 的静态方法, 用于判断 elem 上是否有动画对象在执行.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>elem</strong> (<em>HTMLElement|window</em>) &#8211; 作用动画的元素节点.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anim.Anim.isPaused">
+<tt class="descclassname">Anim.</tt><tt class="descname">isPaused</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.isPaused" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">static <strong>Anim.isPaused</strong> (elem)</div>
+<div class="line"><a class="reference internal" href="#anim.Anim" title="anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt></a> 的静态方法, 用于判断 elem 上是否有动画对象在暂停.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>elem</strong> (<em>HTMLElement|window</em>) &#8211; 作用动画的元素节点.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anim.Anim.stop">
+<tt class="descclassname">Anim.</tt><tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.stop" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">static <strong>Anim.stop</strong> (elem, end, clearQueue, queueName)</div>
+<div class="line"><a class="reference internal" href="#anim.Anim" title="anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt></a> 的静态方法, 停止某元素上的动画（集合）.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>elem</strong> (<em>HTMLElement|window</em>) &#8211; 作用动画的元素节点.</li>
+<li><strong>end</strong> (<em>Boolean</em>) &#8211; 此参数同实例方法 <a class="reference internal" href="#anim.Anim.stop" title="anim.Anim.stop"><tt class="xref py py-meth docutils literal"><span class="pre">stop()</span></tt></a> 中的 finish 参数.</li>
+<li><strong>clearQueue</strong> (<em>Boolean</em>) &#8211; 默认为 false, 是否清除动画队列中余下的动画.</li>
+<li><strong>queueName</strong> (<em>String</em>) &#8211; <p>队列名字.</p>
+<p>设置 queueName 后, 表示停止元素上指定队列中的所有动画:</p>
+<blockquote>
+<div><blockquote>
+<div><ul>
+<li>null 表示默认队列的动画</li>
+<li>false 表示不排队的动画</li>
+<li>string 类型表示指定名称的队列的动画</li>
+</ul>
+</div></blockquote>
+<p>不设置时, 表示停止所有队列中的所有动画;</p>
+</div></blockquote>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anim.Anim.pause">
+<tt class="descclassname">Anim.</tt><tt class="descname">pause</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.pause" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">static <strong>Anim.pause</strong> (elem, queueName)</div>
+<div class="line"><a class="reference internal" href="#anim.Anim" title="anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt></a> 的静态方法, 暂停某元素上的动画（集合）.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>elem</strong> (<em>HTMLElement|window</em>) &#8211; 作用动画的元素节点.</li>
+<li><strong>queueName</strong> (<em>String</em>) &#8211; <p>队列名字.</p>
+<p>设置 queueName 后, 表示停止元素上指定队列中的所有动画:</p>
+<blockquote>
+<div><blockquote>
+<div><ul>
+<li>null 表示默认队列的动画</li>
+<li>false 表示不排队的动画</li>
+<li>string 类型表示指定名称的队列的动画</li>
+</ul>
+</div></blockquote>
+<p>不设置时, 表示暂停所有队列中的所有动画;</p>
+</div></blockquote>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anim.Anim.resume">
+<tt class="descclassname">Anim.</tt><tt class="descname">resume</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.resume" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">static <strong>Anim.resume</strong> (elem, queueName)</div>
+<div class="line"><a class="reference internal" href="#anim.Anim" title="anim.Anim"><tt class="xref py py-class docutils literal"><span class="pre">Anim</span></tt></a> 的静态方法, 继续某元素上的动画（集合）.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>elem</strong> (<em>HTMLElement|window</em>) &#8211; 作用动画的元素节点.</li>
+<li><strong>queueName</strong> (<em>String</em>) &#8211; <p>队列名字.</p>
+<p>设置 queueName 后, 表示停止元素上指定队列中的所有动画:</p>
+<blockquote>
+<div><blockquote>
+<div><ul>
+<li>null 表示默认队列的动画</li>
+<li>false 表示不排队的动画</li>
+<li>string 类型表示指定名称的队列的动画</li>
+</ul>
+</div></blockquote>
+<p>不设置时, 表示继续所有队列中的所有动画;</p>
+</div></blockquote>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="events-detail">
+<h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="anim.Anim.Events.complete">
+<tt class="descclassname">Anim.Events.</tt><tt class="descname">complete</tt><big>(</big><big>)</big><a class="headerlink" href="#anim.Anim.Events.complete" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>complete</strong> ()</div>
+<div class="line">动画结束后, 触发该事件.</div>
+</div>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>支持跨浏览器的css transform</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">Anim</span><span class="p">(</span><span class="nx">t</span><span class="p">,{</span><span class="s1">&#39;transform&#39;</span><span class="o">:</span><span class="s1">&#39;rotate(39deg) skew(40deg)&#39;</span><span class="p">}).</span><span class="nx">run</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">队列的使用, 可以参考 <a class="reference external" href="../../../demo/anim/demo6.html">动画实例</a></p>
+</div>
+</div>
+</div>
+
+
+				<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+		</article>
+	</div>
+<footer class="footer">
+  <div class="container">
+	  <p>&copy; Copyright 2010~2112, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a></p>
+  </div>
+</footer>
+<p><a href="https://github.com/kissyteam/kissy" target="_blank" class="github-ribbon"><img style="z-index:9999999;position: absolute; top: 0; right: 0; border: 0;" src="../../_static/skin/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a></p>
+</body>
+<script>
+	// added by jayli
+	(function(){
+		$('table.docutils').addClass('table table-bordered');
+		$('.admonition.note').addClass('alert alert-info');
+		$('.admonition.hint').addClass('alert alert-success');
+		$('.admonition.warning').addClass('alert alert-warning');
+		$('.admonition.attention').addClass('alert alert-danger');
+	})();
+</script>
+</html>

@@ -49,7 +49,7 @@ XTemplate 可以放置于HTML、配置文件、程序代码中，核心机制就
 		alert(render);// => "this is o!"
 	});
 
-更多例子：[KISSY XTemplate Demos](http://docs.kissyui.com/docs/html/demo/component/xtemplate/index.html)
+更多例子：[KISSY XTemplate Demos](http://docs.kissyui.com/docs/html/demo/xtemplate/index.html)
 
 ----------------------------------
 

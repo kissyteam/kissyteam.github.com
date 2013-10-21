@@ -154,7 +154,7 @@ Overlay 由三个内部组件派生出来，Controller、Align、Position，Cont
 
 points 字符串数组元素的取值范围为 t,b,c 与 l,r,c 的两两组合, 分别表示 top,bottom,center 与 left,right,center 的两两组合, 可以表示 9 种取值范围，如图，第一个字符取值 t,b,c , 第二个字符取值 l,r,c. 
 
-![](http://docs.kissyui.com/1.3/source/raw/api/component/overlay/align.png)
+![](http://docs.kissyui.com/1.3/source/raw/api/overlay/align.png)
 
 #### effect
 

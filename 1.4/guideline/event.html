@@ -143,7 +143,7 @@ Event.on(&#39;#foo&#39;,&#39;mouseenter mouseleave&#39;, function(e) {
 <blockquote>
 <p>KISSY 也对 mouseenter/mouseleave focusin/focusout 进行了兼容处理, 所有浏览器都可以使用这两个事件了.</p>
 </blockquote>
-<p>处理段落的单击与双击例子。注意坐标是相对于例子的 iframe 窗口的, 这里方便起见采用node。<a href="http://docs.kissyui.com/source/raw/api/core/event/on_1.html">参照Demo</a>。</p>
+<p>处理段落的单击与双击例子。注意坐标是相对于例子的 iframe 窗口的, 这里方便起见采用node。<a href="http://docs.kissyui.com/source/raw/api/event/on_1.html">参照Demo</a>。</p>
 <p>通过调用事件对象的halt()方法来阻止事件。 </p>
 <pre><code>Event.on(&#39;a&#39;,&#39;click&#39;,function(e){
     // 等价于 e.preventDefault(); e.stopPropagation();
@@ -178,7 +178,7 @@ Event.detach(&#39;#foo&#39;,&#39;click&#39;, function() {
 
 Event.detach(&#39;#foo&#39;,&#39;click&#39;, handler,{x:1});</code></pre>
 <p>虽然后面的两个 detach 参数从字面上来看完全一样, 但是由于是不同的对象, 所有仍然不会生效. 如果需要解除特定的事件处理器, 我们需要同一个对象( 函数 )引用, 而不是恰好字面上相同的不同对象.</p>
-<p>detach也可以用别名remove标识。<a href="http://docs.kissyui.com/source/raw/api/core/event/detach_1.html">事件移除的Demo</a>。</p>
+<p>detach也可以用别名remove标识。<a href="http://docs.kissyui.com/source/raw/api/event/detach_1.html">事件移除的Demo</a>。</p>
 <blockquote>
 <p>如果要解除特定的事件处理器 , detach 的参数必须和对应的 on 参数值相等( == )并且个数一致才能完成解除绑定的目标.</p>
 </blockquote>
@@ -216,9 +216,9 @@ Event.undelegate(document,&#39;click&#39;,&#39;.clickme&#39;,d);</code></pre>
 <p>同样可以对 mouseenter , mouseleave 进行委托.</p>
 </blockquote>
 <ul>
-<li><a href="http://docs.kissyui.com/source/raw/api/core/event/delegate.html">事件委托的Demo</a></li>
-<li><a href="http://docs.kissyui.com/source/raw/api/core/event/delegate_2.html">阻止事件冒泡</a></li>
-<li><a href="http://docs.kissyui.com/source/raw/api/core/event/delegate_mouse.html">委托 mouseenter/mouseleave</a></li>
+<li><a href="http://docs.kissyui.com/source/raw/api/event/delegate.html">事件委托的Demo</a></li>
+<li><a href="http://docs.kissyui.com/source/raw/api/event/delegate_2.html">阻止事件冒泡</a></li>
+<li><a href="http://docs.kissyui.com/source/raw/api/event/delegate_mouse.html">委托 mouseenter/mouseleave</a></li>
 </ul>
 <h3>解除事件委托</h3>
 <p>为符合匹配的 dom 节点的相应事件去除事件处理器</p>
@@ -240,10 +240,10 @@ Event.undelegate(document,&#39;click&#39;,&#39;.clickme&#39;,d);</code></pre>
 </ul>
 <h4>focusin</h4>
 <p>原生只有 ie 支持 focusin 事件，而 kissy 对这一事件进行了 兼容性处理。但一个元素获得焦点或者其子孙元素获得焦点时， focusin 会在该元素上触发（没被子孙元素阻止）。这就是和 focus 事件的区别之处 : 你可以在父元素上监控子元素的 focus 事件，即 focusin 事件支持冒泡.</p>
-<p>这个事件常常和 focusout 一起使用. <a href="http://docs.kissyui.com/source/raw/api/core/event/focusin.html">Demo</a></p>
+<p>这个事件常常和 focusout 一起使用. <a href="http://docs.kissyui.com/source/raw/api/event/focusin.html">Demo</a></p>
 <h4>fousout</h4>
 <p>原生只有 ie 支持 focusout 事件，而 kissy 对这一事件进行了 兼容性处理 .但一个元素获得焦点或者其子孙元素获得焦点时， focusout 会在该元素上触发（没被子孙元素阻止）。这就是和 blur 事件的区别之处 : 你可以在父元素上监控子元素的 blur 事件，即 focusout 事件支持冒泡.</p>
-<p><a href="http://docs.kissyui.com/source/raw/api/core/event/focusout.html">focusout事件的demo</a>.</p>
+<p><a href="http://docs.kissyui.com/source/raw/api/event/focusout.html">focusout事件的demo</a>.</p>
 <h4>hashchange</h4>
 <p>目前除了 ie67 外都原生支持 hashchange 事件，kissy 对 ie67 也模拟兼容了该事件.当浏览器的 hash 值发生变化时会触发此事件，常常被用来实现单页面应用，因为当用户点击后退与前进进行浏览器导航时会引起 hash 变化.</p>
 <p>此事件只能在当前 window 上注册，注册到其他类型元素上无效！ <code>hash</code> 值推荐为 <code>!/xx/</code> 形式, 前面用 <code>!/</code> 后面用 <code>/</code> 包起来，否则 ie67 可能有诡异现象.</p>
@@ -251,7 +251,7 @@ Event.undelegate(document,&#39;click&#39;,&#39;.clickme&#39;,d);</code></pre>
 $(window).on(&quot;hashchange&quot;,function(){
     // location.hash -&gt; 当前 hash 值
 });</code></pre>
-<p><a href="http://docs.kissyui.com/source/raw/api/core/event/hashchange.html">Demo</a>。</p>
+<p><a href="http://docs.kissyui.com/source/raw/api/event/hashchange.html">Demo</a>。</p>
 <h3>valuechange</h3>
 <p>监控 input/textarea 的值变化，当值发生变化时在绑定元素上触发该事件。为什么不使用原生的 change keydown keyup</p>
 <ul>
@@ -273,9 +273,9 @@ $(window).on(&quot;hashchange&quot;,function(){
     alert(e.prevVal); // =&gt; 旧值
     alert(e.newVal); // =&gt; 新值
 });</code></pre>
-<p><a href="http://docs.kissyui.com/source/raw/api/core/event/valuechange.html">Demo</a></p>
+<p><a href="http://docs.kissyui.com/source/raw/api/event/valuechange.html">Demo</a></p>
 <h4>mousewheel</h4>
-<p>对鼠标滚轮事件做了浏览器兼容性处理，<a href="http://docs.kissyui.com/source/raw/api/core/event/mousewheel.html">Demo</a></p>
+<p>对鼠标滚轮事件做了浏览器兼容性处理，<a href="http://docs.kissyui.com/source/raw/api/event/mousewheel.html">Demo</a></p>
 <h4>mouseenter &amp; mouseleave</h4>
 <p>鼠标进入容器和移除容器的操作</p>
 <h3>移动设备事件支持</h3>
@@ -300,14 +300,14 @@ $(window).on(&quot;hashchange&quot;,function(){
     alert(e.type + &#39; : fired&#39;);
 });</code></pre>
 <ul>
-<li><a href="http://docs.kissyui.com/source/raw/api/core/event/double-tap.html">双击事件的Demo，在手机中打开此demo</a></li>
+<li><a href="http://docs.kissyui.com/source/raw/api/event/double-tap.html">双击事件的Demo，在手机中打开此demo</a></li>
 </ul>
 <h4>singleTap</h4>
-<p>触屏单击事件，和双击互斥，当快速点击某个 dom 节点一次（短时间没有再次点击）后触发，<a href="http://docs.kissyui.com/source/raw/api/core/event/double-tap.html">demo</a></p>
+<p>触屏单击事件，和双击互斥，当快速点击某个 dom 节点一次（短时间没有再次点击）后触发，<a href="http://docs.kissyui.com/source/raw/api/event/double-tap.html">demo</a></p>
 <h4>tap</h4>
-<p>触屏单击，当点击某个 dom 节点后触发， 和 singleTap 的不同支持载入： 触发 doubleTap 就不会触发 singleTap， 而触发 doubleTap 前会触发 tap，<a href="http://docs.kissyui.com/source/raw/api/core/event/tap.html">demo</a>。</p>
+<p>触屏单击，当点击某个 dom 节点后触发， 和 singleTap 的不同支持载入： 触发 doubleTap 就不会触发 singleTap， 而触发 doubleTap 前会触发 tap，<a href="http://docs.kissyui.com/source/raw/api/event/tap.html">demo</a>。</p>
 <h4>tapHold</h4>
-<p>触屏长按，当常按某个 dom 节点超过 1s 后触发，<a href="http://docs.kissyui.com/source/raw/api/core/event/tap-hold.html">Demo</a></p>
+<p>触屏长按，当常按某个 dom 节点超过 1s 后触发，<a href="http://docs.kissyui.com/source/raw/api/event/tap-hold.html">Demo</a></p>
 <h4>swipe</h4>
 <p>触屏上当快速划过某个元素时触发，事件对象会挂载这几个属性：</p>
 <ul>
@@ -320,14 +320,14 @@ $(window).on(&quot;hashchange&quot;,function(){
         e.preventDefault();
     }
 });</code></pre>
-<p><a href="http://docs.kissyui.com/source/raw/api/core/event/swipe.html">在触屏设备中打开这个Demo</a></p>
+<p><a href="http://docs.kissyui.com/source/raw/api/event/swipe.html">在触屏设备中打开这个Demo</a></p>
 <h4>rotateStart</h4>
 <p>触屏上开始用双指旋转某个 dom 元素时出现，事件对象上会挂载这两个属性</p>
 <ul>
 <li>angle：Number，开始时双指的角度</li>
 <li>rotation：Number，固定为0</li>
 </ul>
-<p><a href="http://docs.kissyui.com/source/raw/api/core/event/rotate.html">在触屏设备中打开demo</a></p>
+<p><a href="http://docs.kissyui.com/source/raw/api/event/rotate.html">在触屏设备中打开demo</a></p>
 <h4>rotate</h4>
 <p>触屏上用双指旋转某个 dom 元素时出现，事件对象挂载这两个属性</p>
 <ul>
@@ -343,7 +343,7 @@ $(window).on(&quot;hashchange&quot;,function(){
 <li>distance：Number，开始时双指的绝对距离</li>
 <li>scale：Number，固定为1</li>
 </ul>
-<p><a href="http://docs.kissyui.com/source/raw/api/core/event/pinch.html">在触屏设备中打开Demo</a></p>
+<p><a href="http://docs.kissyui.com/source/raw/api/event/pinch.html">在触屏设备中打开Demo</a></p>
 <h4>pinch</h4>
 <p>触屏上用双指调整某个 dom 元素大小时出现，事件对象包含：</p>
 <ul>
@@ -353,7 +353,7 @@ $(window).on(&quot;hashchange&quot;,function(){
 <h4>pinchEnd</h4>
 <p>触屏上用双指调整某个 dom 元素大小后触发</p>
 <h4>chake</h4>
-<p>摇一摇事件，当用户摇动设备后触发，前后左右在一定连续时间内以一定幅度摇动设备，<a href="http://docs.kissyui.com/source/raw/api/core/event/shake.html">Demo</a></p>
+<p>摇一摇事件，当用户摇动设备后触发，前后左右在一定连续时间内以一定幅度摇动设备，<a href="http://docs.kissyui.com/source/raw/api/event/shake.html">Demo</a></p>
 <h3>移动终端事件和PC端的统一</h3>
 <p>为了兼容移动与pc， kissy Event 提供手势事件的枚举：</p>
 <ul>

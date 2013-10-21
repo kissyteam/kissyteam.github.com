@@ -28,7 +28,7 @@
 	- [resizable](resizable.html)
 	- [calendar](calendar.html)
 	- [overlay](overlay.html)
-	- [editor](http://docs.kissyui.com/docs/html/api/component/editor/editor.html)
+	- [editor](http://docs.kissyui.com/docs/html/api/editor/editor.html)
 	- [Mobile 开发最佳实践](mobile.html)
 	- [在 Node 环境中运行 kissy](nodejs-kissy.html)
 - [项目构建工具](tools.html)

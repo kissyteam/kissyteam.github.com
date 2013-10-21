@@ -125,7 +125,7 @@ KISSY 支持标准的[ARIA](http://www.w3.org/TR/wai-aria/)。即 KISSY 可以�
 
 ### end()
 
-得到上一次 one() 和 all() 操作前的 NodeList 或者 Node 对象。引入该方法是为了更好的支持链式操作( chaining )，可以在一个语句内对不同层次得节点集合进行不同的操作.[demo](http://docs.kissyui.com/source/raw/api/core/node/end.html)。
+得到上一次 one() 和 all() 操作前的 NodeList 或者 Node 对象。引入该方法是为了更好的支持链式操作( chaining )，可以在一个语句内对不同层次得节点集合进行不同的操作.[demo](http://docs.kissyui.com/source/raw/api/node/end.html)。
 
 	S.one("body").all(".d1").css("color", "red");// => 返回节点.d1
 	S.one("body").all(".d1").css("color", "red").end();// => 返回节点 body
@@ -179,7 +179,7 @@ KISSY 支持标准的[ARIA](http://www.w3.org/TR/wai-aria/)。即 KISSY 可以�
 
 ### scrollTop()
 
-返回节点滚动条的垂直位置.[demo](http://docs.kissyui.com/source/raw/api/core/node/scrollTop-get.html)
+返回节点滚动条的垂直位置.[demo](http://docs.kissyui.com/source/raw/api/node/scrollTop-get.html)
 
 	var p = S.all("p:first").scrollTop();
 	alert(p);// 返回第一个p元素的滚动条高度
@@ -199,7 +199,7 @@ KISSY 支持标准的[ARIA](http://www.w3.org/TR/wai-aria/)。即 KISSY 可以�
 
 获得节点的计算高度或宽度，css('height') 和 height() 的区别在于 height() 返回不带单位的纯数值, 而 css('height') 则返回带单位的原始值(例如 40% ).
 
-![](http://docs.kissyui.com/source/raw/api/core/node/height.png)
+![](http://docs.kissyui.com/source/raw/api/node/height.png)
 
 该方法也可以用来得到 windw 和 document 的高度
 
@@ -214,8 +214,8 @@ KISSY 支持标准的[ARIA](http://www.w3.org/TR/wai-aria/)。即 KISSY 可以�
 	S.all('.filter').height('100px');// 设置一组元素的高度为100px
 	S.all('.filter').height('20em');// 设置一组元素的高度为20em
 
-- [得到各种各样高度的demo](http://docs.kissyui.com/source/raw/api/core/node/height-get.html)
-- [设置元素高度的demo](http://docs.kissyui.com/source/raw/api/core/node/height-set.html)
+- [得到各种各样高度的demo](http://docs.kissyui.com/source/raw/api/node/height-get.html)
+- [设置元素高度的demo](http://docs.kissyui.com/source/raw/api/node/height-set.html)
 
 附图：下图为浏览器常用尺寸的获取办法，这里是通过原生节点方式获取
 
@@ -267,9 +267,9 @@ KISSY 支持标准的[ARIA](http://www.w3.org/TR/wai-aria/)。即 KISSY 可以�
 
 如果当前节点列表只包括一个节点, 那么他将会被移到目标容器中(而不是克隆):
 
-- [在所有段落中添加一些 html 字符串demo](http://docs.kissyui.com/source/raw/api/core/node/append-1.html)
-- [给所有段落添加一个文本节点](http://docs.kissyui.com/source/raw/api/core/node/append-2.html)
-- [给所有段落添加一个 `NodeList` 对象](http://docs.kissyui.com/source/raw/api/core/node/append-3.html)
+- [在所有段落中添加一些 html 字符串demo](http://docs.kissyui.com/source/raw/api/node/append-1.html)
+- [给所有段落添加一个文本节点](http://docs.kissyui.com/source/raw/api/node/append-2.html)
+- [给所有段落添加一个 `NodeList` 对象](http://docs.kissyui.com/source/raw/api/node/append-3.html)
 
 ### appendTo()
 
@@ -285,7 +285,7 @@ KISSY 支持标准的[ARIA](http://www.w3.org/TR/wai-aria/)。即 KISSY 可以�
 
 如果容器列表只有一个节点, 那么当前节点列表会被移动到容器内(不是克隆):
 
-- [把多个 span 插入到已有元素](http://docs.kissyui.com/source/raw/api/core/node/appendTo.html)
+- [把多个 span 插入到已有元素](http://docs.kissyui.com/source/raw/api/node/appendTo.html)
 
 ### prepend()
 
@@ -307,13 +307,13 @@ KISSY 支持标准的[ARIA](http://www.w3.org/TR/wai-aria/)。即 KISSY 可以�
 
 如果目标节点只有一个, 那么当前节点就会移动到目标节点之前。
 
-- [把段落插入到 div 节点之前Demo](http://docs.kissyui.com/source/raw/api/core/node/insertBefore.html)
+- [把段落插入到 div 节点之前Demo](http://docs.kissyui.com/source/raw/api/node/insertBefore.html)
 
 ### before()
 
 和insertBefore()方法的功能一样, 只不过参数意义不同, insertBefore 表示当前节点列表被插入到参数目标节点之前, 而该方法则表示参数节点被插入到当前节点之前.
 
-- [Demo](http://docs.kissyui.com/source/raw/api/core/node/before.html)
+- [Demo](http://docs.kissyui.com/source/raw/api/node/before.html)
 
 ### insertAfter()
 
@@ -496,7 +496,7 @@ DOM 结构变为：
 	var elem=KISSY.one(".hello").attr("custom",{x:1});
 	elem.clone().attr("custom",{x:2});
 
-[克隆后保留原有事件逻辑Demo](http://docs.kissyui.com/source/raw/api/core/dom/clone.html)
+[克隆后保留原有事件逻辑Demo](http://docs.kissyui.com/source/raw/api/dom/clone.html)
 
 ### empty()
 
@@ -801,7 +801,7 @@ on 方法是给文档添加行为的主要方式. 所有的事件类型, 例如 
 
 ### fire()
 
-模拟事件发生。用 Event.on 绑定的事件处理器可以被用户触发的原生事件调用. 但是这些事件处理器也可以使用 fire 手动调用. 调用 fire() 和用户触发导致的处理器调用调用是一样的顺序.[参照这个demo](http://docs.kissyui.com/source/raw/api/core/event/fire.html)
+模拟事件发生。用 Event.on 绑定的事件处理器可以被用户触发的原生事件调用. 但是这些事件处理器也可以使用 fire 手动调用. 调用 fire() 和用户触发导致的处理器调用调用是一样的顺序.[参照这个demo](http://docs.kissyui.com/source/raw/api/event/fire.html)
 
 	node.on('click',function(){
 		// 其中this是原生节点

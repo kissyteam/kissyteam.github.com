@@ -13,7 +13,7 @@
 		var d = new Promise.Defer(); // 使用 Promise
 	});
 
-首先看这个[Demo](http://docs.kissyui.com/docs/html/demo/component/promise/index.html)。
+首先看这个[Demo](http://docs.kissyui.com/docs/html/demo/promise/index.html)。
 
 注意，Promise()不允许在外部被初始化。通过实例化`KISSY.Promise.Defer()`来使用Promise的功能。Promise 实例方法有：
 
@@ -34,7 +34,7 @@
 
 #### example
 
-参照首[Demo](http://docs.kissyui.com/docs/html/demo/component/promise/index.html)。 这里为链式调用写法。
+参照首[Demo](http://docs.kissyui.com/docs/html/demo/promise/index.html)。 这里为链式调用写法。
 
 	KISSY.use('node',function(S,Node){
 		K.all("button").on("click", function () {

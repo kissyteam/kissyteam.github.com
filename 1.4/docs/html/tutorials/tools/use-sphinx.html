@@ -1,0 +1,472 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="data-spm" content="1" data-spm-protocol="i" />
+
+<title>Sphinx 使用介绍 &mdash; KISSY v1.4.x</title>
+
+<link rel="stylesheet" href="http://dev.kissyui.com/kissy/build/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js,searchtools.js"></script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le styles -->
+	<!--link rel="stylesheet" href="../../_static/skin/bootstrap.css"/>
+	<link rel="stylesheet" href="../../_static/skin/bootstrap-responsive.css"/>
+	<link rel="stylesheet" href="../../_static/skin/prettify.css"/>
+	<link rel="stylesheet" href="../../_static/skin/docs.css"/>
+	<link rel="stylesheet" href="../../_static/skin/todc-bootstrap.css"/-->
+
+	<link rel="stylesheet" href="../../_static/skin/kissy.css"/>
+	<link rel="stylesheet" href="../../_static/skin/prettify.css"/>
+	<link rel="stylesheet" href="../../_static/skin/forkit.css"/>
+	<link rel="stylesheet" href="../../_static/skin/bootstrap.css"/>
+	<link href="http://fonts.googleapis.com/css?family=Droid+Sans|Lekton|Ubuntu+Mono:400,700" rel="stylesheet">
+	<script src="http://g.tbcdn.cn/trip/kissy/1.4.0/seed-min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+
+	<nav id="sidebar">
+		<header>
+	  		<a href="../../../../guideline/" >
+				<img src="http://gtms01.alicdn.com/tps/i1/T1MVbxFoRcXXchhRni-175-68.png" alt="" />
+			</a>
+		</header>
+		
+    <div class="col-sub">
+
+<div class="s-box">
+    <div class="s-box-bd">
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo/index.html">Demos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../kissy/index.html">KISSY Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../style-guide/index.html">最佳编码实践</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workflow/index.html">组件开发指南</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">前端常用工具</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="module-compiler/index.html">KISSY Module Compiler</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Sphinx 使用介绍</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</div>
+    </div>
+    <div class="col-extra">
+        
+	<div class="s-box">
+		<div class="s-box-hd">
+			<h3>本节提纲</h3>
+		</div>
+		<div class="s-box-bd">
+			<ul>
+<li><a class="reference internal" href="#">Sphinx 使用介绍</a><ul>
+<li><a class="reference internal" href="#sphinx-install">安装及使用 Sphinx</a></li>
+<li><a class="reference internal" href="#rest">reST 入门</a></li>
+</ul>
+</li>
+</ul>
+
+		</div>
+	</div>
+
+    </div>
+<div id="searchbox" class="searchbox">
+    <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" class="ipt"/>
+        <input type="submit" value="Search" class="btn"/>
+        <input type="hidden" name="check_keywords" value="yes"/>
+        <input type="hidden" name="area" value="default"/>
+    </form>
+</div>
+	</nav>
+	<div id="content" class="body">
+		<article>
+				
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="module-compiler/index.html" title="KISSY Module Compiler"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../index.html">KISSY v1.4.x</a> &#187; </li>
+      <li><a href="../index.html" >Tutorial</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">前端常用工具</a> &#187; </li> 
+    </ul>
+</div>
+				
+  <div class="section" id="sphinx">
+<span id="usesphinx"></span><h1>Sphinx 使用介绍<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sphinx-install">
+<span id="id1"></span><h2>安装及使用 Sphinx<a class="headerlink" href="#sphinx-install" title="Permalink to this headline">¶</a></h2>
+<p><strong>解决依赖关系</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Python 2.x (<a class="reference external" href="http://www.python.org/">http://www.python.org/</a>), 并将 Python 加入到 Path 中;</li>
+<li>Setup Tools: Python 的一个包安装/管理工具(<a class="reference external" href="http://pypi.python.org/pypi/setuptools">http://pypi.python.org/pypi/setuptools</a>, win 下有 exe, 直接安装即可);</li>
+</ul>
+</div></blockquote>
+<p><strong>安装 Sphinx</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>cmd 下运行: easy_install -U Sphinx;</li>
+</ul>
+</div></blockquote>
+<p><strong>安装 nodejs</strong></p>
+<p><strong>安装 nodejs 依赖</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>cmd 进入 kissyteam 目录下运行: node install</li>
+</ul>
+</div></blockquote>
+<p><strong>编译文档</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>cmd 进入 kissyteam 目录, 运行 make.bat , 在 docs 下生成 html;</li>
+<li>如果你想进一步了解如何创建 sphinx 工程, 见 <a class="reference external" href="http://code.google.com/p/pymotwcn/wiki/SphinxprojectHowto">http://code.google.com/p/pymotwcn/wiki/SphinxprojectHowto</a> ;</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="rest">
+<span id="rst-primer"></span><h2>reST 入门<a class="headerlink" href="#rest" title="Permalink to this headline">¶</a></h2>
+<p>reST 是一种简单的标记语言, 规则非常简单.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li>完整的官方文档 <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText User Documentation</a></li>
+<li>中文翻译版本: <a class="reference external" href="http://wstudio.web.fc2.com/others/restructuredtext.html">http://wstudio.web.fc2.com/others/restructuredtext.html</a></li>
+</ul>
+</div>
+<p><strong>段落</strong></p>
+<p>组织文档层次, 一般标题层次少于 4 级. 可以使用 :</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">#</span></tt> 部分</li>
+<li><tt class="docutils literal"><span class="pre">*</span></tt> 章节</li>
+<li><tt class="docutils literal"><span class="pre">=</span></tt>, 大节</li>
+<li><tt class="docutils literal"><span class="pre">-</span></tt>, 小节</li>
+<li><tt class="docutils literal"><span class="pre">^</span></tt>, 小小节</li>
+<li><tt class="docutils literal"><span class="pre">&quot;</span></tt>, 段落</li>
+</ul>
+</div></blockquote>
+<p>其实, 不同字符(#, =, &#8216; , `, ^, * )没有等级区别, 只是你在使用时, 需要统一一种等级标记即可.</p>
+<p><strong>行内标记</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>一个星号表示斜体: <tt class="docutils literal"><span class="pre">*text*</span></tt></li>
+<li>两个星号表示粗体: <tt class="docutils literal"><span class="pre">**text**</span></tt></li>
+<li>两个反斜号表示行内代码: <tt class="docutils literal"><span class="pre">``text``</span></tt></li>
+</ul>
+</div></blockquote>
+<p>使用上的限制:</p>
+<blockquote>
+<div><ul class="simple">
+<li>不能被嵌套,</li>
+<li>内容中不需要空白字符, 如: <tt class="docutils literal"><span class="pre">*</span> <span class="pre">text*</span></tt> , 这个是错误的写法,</li>
+<li>使用反斜杠进行转义: <tt class="docutils literal"><span class="pre">thisis\</span> <span class="pre">*one*\</span> <span class="pre">word</span></tt></li>
+</ul>
+</div></blockquote>
+<p><strong>无序/有序列表</strong></p>
+<div class="highlight-python"><pre>* This is a bulleted list.
+* It has two items, the second
+  item uses two lines.
+
+1. This is a numbered list.
+2. It has two items too.
+
+#. This is a numbered list.
+#. It has two items too.</pre>
+</div>
+<p><strong>嵌套列表</strong></p>
+<div class="highlight-python"><pre>* this is
+* a list
+
+  * with a nested list
+  * and some subitems
+
+* and here the parent list continues</pre>
+</div>
+<p><strong>定义列表</strong></p>
+<div class="highlight-python"><pre>term (up to a line of text)
+   Definition of the term, which must be indented
+
+   and can even consist of multiple paragraphs
+
+next term
+   Description.</pre>
+</div>
+<p><strong>注意</strong> 以上, 只能是单行文字, 计算源码中有换行符, 但生成出来仍然以单行形式, 如果需要保留换行符, 可使用</p>
+<div class="highlight-python"><pre>| These lines are
+| broken exactly like in
+| the source file.</pre>
+</div>
+<p><strong>嵌入源代码区块</strong></p>
+<p>最普通的, 可以使用  <tt class="docutils literal"><span class="pre">::</span></tt> 标记, 表示接下来的缩进段落是表示一段代码,</p>
+<div class="highlight-python"><pre>It is not processed in any way, except
+that the indentation is removed.
+
+It can span multiple lines.</pre>
+</div>
+<p>需要高亮的源代码</p>
+<ul>
+<li><p class="first">嵌入 HTML 源代码</p>
+<div class="highlight-python"><pre>.. raw:: html
+   :file: inclusion.html
+
+或者
+
+.. raw:: html
+
+    &lt;a href="/kissy/docs/"&gt;KISSY 文档&lt;/a&gt;</pre>
+</div>
+</li>
+<li><p class="first">嵌入 JS/CSS 等源代码, 及高亮显示( <a class="reference external" href="http://pygments.org/">http://pygments.org/</a> 上列出了支持的语言)</p>
+<div class="highlight-python"><pre>.. code-block:: js
+
+    alert('hi');</pre>
+</div>
+</li>
+</ul>
+<p><strong>表格</strong></p>
+<p>生成这样的表格</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="29%" />
+<col width="41%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">A</th>
+<th class="head">B</th>
+<th class="head">A and B</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>使用的语法是</p>
+<div class="highlight-python"><pre>=====  =====  =======
+  A      B    A and B
+=====  =====  =======
+False  False  False
+True   False  False
+False  True   False
+True   True   True
+=====  =====  =======</pre>
+</div>
+<p><strong>外部链接</strong></p>
+<p>使用 <tt class="docutils literal"><span class="pre">`链接</span>&nbsp; <span class="pre">&lt;http://example.com/&gt;`_</span></tt> 表示外部链接, 也可以使用</p>
+<div class="highlight-python"><pre>一段文字中包含 `一个链接`_.
+
+.. _另外一个链接: http://example.com/</pre>
+</div>
+<p><strong>内部链接</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>设定全局唯一的引用id, 如,  <tt class="docutils literal"><span class="pre">..</span> <span class="pre">_my-reference-label:</span></tt></li>
+<li>在其他页面就可以使用这个id来引用, 如, <tt class="docutils literal"><span class="pre">:ref:`提示文字</span> <span class="pre">&lt;my-reference-label&gt;`</span></tt></li>
+</ul>
+</div></blockquote>
+<p>例如</p>
+<div class="highlight-python"><pre>.. _my-reference-label:
+
+Section to cross-reference
+--------------------------
+
+This is the text of the section.
+
+It refers to the section itself, see :ref:`my-reference-label`.</pre>
+</div>
+<p><strong>特殊标记</strong></p>
+<ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">attention</span></tt>, <tt class="docutils literal"><span class="pre">caution</span></tt>, <tt class="docutils literal"><span class="pre">danger</span></tt>, <tt class="docutils literal"><span class="pre">error</span></tt>, <tt class="docutils literal"><span class="pre">hint</span></tt>, <tt class="docutils literal"><span class="pre">important</span></tt>, <tt class="docutils literal"><span class="pre">note</span></tt>, <tt class="docutils literal"><span class="pre">tip</span></tt>, <tt class="docutils literal"><span class="pre">warning</span></tt>, <tt class="docutils literal"><span class="pre">admonition</span></tt> (最常用 &#8220;note&#8221; 和 &#8220;warning&#8221;), 例如</p>
+<div class="highlight-python"><pre>.. attention::
+
+   Please attention</pre>
+</div>
+</li>
+</ul>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">这是一个说明框.</p>
+</div>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">这是一个说明框.</p>
+</div>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">这是一个说明框.</p>
+</div>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">这是一个说明框.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">这是一个说明框.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">这是一个说明框.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">这是一个说明框.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">这是一个说明框.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">这是一个说明框.</p>
+</div>
+<div class="admonition- admonition">
+<p class="first admonition-title">自定义说明框</p>
+<p class="last">这是一个说明框.</p>
+</div>
+<ul>
+<li><p class="first">插入图片</p>
+<div class="highlight-python"><pre>.. raw:: html
+
+    &lt;img  src='/1.4/source/raw/workflow/workflow.png' /&gt;</pre>
+</div>
+</li>
+</ul>
+<p><strong>注释</strong></p>
+<p>单行</p>
+<div class="highlight-python"><pre>.. 我是注释.</pre>
+</div>
+<p>多行</p>
+<div class="highlight-python"><pre>.. 我是注释
+   我是注释
+   我是注释</pre>
+</div>
+<p><strong>脚注</strong></p>
+<div class="highlight-python"><pre>Lorem ipsum [#f1]_ dolor sit amet ... [#f2]_
+
+.. rubric:: Footnotes
+
+.. [#f1] Text of the first footnote.
+.. [#f2] Text of the second footnote.</pre>
+</div>
+</div>
+</div>
+
+
+				<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+		</article>
+	</div>
+<footer class="footer">
+  <div class="container">
+	  <p>&copy; Copyright 2010~2112, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a></p>
+  </div>
+</footer>
+<p><a href="https://github.com/kissyteam/kissy" target="_blank" class="github-ribbon"><img style="z-index:9999999;position: absolute; top: 0; right: 0; border: 0;" src="../../_static/skin/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a></p>
+</body>
+<script>
+	// added by jayli
+	(function(){
+		$('table.docutils').addClass('table table-bordered');
+		$('.admonition.note').addClass('alert alert-info');
+		$('.admonition.hint').addClass('alert alert-success');
+		$('.admonition.warning').addClass('alert alert-warning');
+		$('.admonition.attention').addClass('alert alert-danger');
+	})();
+</script>
+</html>

@@ -1,24 +1,24 @@
-﻿.. _component:
+.. module:: component
 
 
 Component
-=============================
+===============================
+
+|  Component
+
+Classes in Component
+-----------------------------------------------
 
 .. toctree::
    :titlesonly:
 
-   anim/index
-   base/index
-   node/index
-   cookie/index
-   io/index
-   dom/index
-   event/index
-   json/index
-   color/index
-   dd/index
-   mvc/index
-   stylesheet/index
-   xtemplate/index
-   component/index
-
+   controller
+   process
+   container
+   manager
+   extension/align
+   extension/content-render
+   extension/delegate-children
+   extension/shim
+   plugin/drag
+   plugin/resize

@@ -106,7 +106,7 @@ KISSY.use('node',function (S,Node) {
 - elem：（String|HTMLElement|Node|window）用于作动画的DOM元素或者窗口，窗口仅支持scrollTop和scrollLeft
 - props：JSON 对象，表示动画终止时节点的样式，如果设置为scrollLeft或scrollTop，这时会对元素的滚动属性产生动画
 - duration：（Number），动画持续的秒数，默认为1
-- easing：（String）缓动效果，也称为“平滑函数”，效果可[参照这里](http://docs.kissyui.com/source/raw/demo/anim/easing.html)。取值包括：
+- easing：（String）缓动效果，也称为“平滑函数”，效果可[参照这里](http://docs.kissyui.com/1.4/source/raw/demo/anim/easing.html)。取值包括：
 	- easeNone
 	- easeIn
 	- easeOut
@@ -137,7 +137,7 @@ Anim 的第二种用法
 	- queue，（String|false|undefined）所属队列名称，默认undefined，属于系统内置队列, 设置 false 则表示该动画不排队立即执行.
 	- complete，（function）动画结束后的回调
 
-[动画队列的Demo](http://docs.kissyui.com/docs/html/demo/core/anim/demo6.html)
+[动画队列的Demo](http://docs.kissyui.com/1.4/docs/html/demo/anim/demo6.html)
 
 ## Anim 动画实例的方法
 
@@ -216,13 +216,13 @@ Anim动画实例上可调用这些方法
 
 ## Demos
 
-- [基本动画示例](http://docs.kissyui.com/docs/html/demo/core/anim/demo1.html)
-- [滚动属性动画实例](http://docs.kissyui.com/docs/html/demo/core/anim/demo2.html)
-- [节点实例动画操作](http://docs.kissyui.com/docs/html/demo/core/anim/demo3.html)
-- [窗口滚动示例](http://docs.kissyui.com/docs/html/demo/core/anim/demo4.html)
-- [节点上的 stop 示例](http://docs.kissyui.com/docs/html/demo/core/anim/demo5.html)
-- [动画队列支持](http://docs.kissyui.com/docs/html/demo/core/anim/demo6.html)
-- [easy可视化](http://docs.kissyui.com/docs/html/demo/core/anim/easing.html)
+- [基本动画示例](http://docs.kissyui.com/docs/html/demo/anim/demo1.html)
+- [滚动属性动画实例](http://docs.kissyui.com/docs/html/demo/anim/demo2.html)
+- [节点实例动画操作](http://docs.kissyui.com/docs/html/demo/anim/demo3.html)
+- [窗口滚动示例](http://docs.kissyui.com/docs/html/demo/anim/demo4.html)
+- [节点上的 stop 示例](http://docs.kissyui.com/docs/html/demo/anim/demo5.html)
+- [动画队列支持](http://docs.kissyui.com/docs/html/demo/anim/demo6.html)
+- [easy可视化](http://docs.kissyui.com/docs/html/demo/anim/easing.html)
 
 <style>
 #photo-list img  {

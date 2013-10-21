@@ -1,0 +1,275 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="data-spm" content="1" data-spm-protocol="i" />
+
+<title>importStyle 使用 &mdash; KISSY v1.4.x</title>
+
+<link rel="stylesheet" href="http://dev.kissyui.com/kissy/build/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js,searchtools.js"></script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le styles -->
+	<!--link rel="stylesheet" href="../../../../_static/skin/bootstrap.css"/>
+	<link rel="stylesheet" href="../../../../_static/skin/bootstrap-responsive.css"/>
+	<link rel="stylesheet" href="../../../../_static/skin/prettify.css"/>
+	<link rel="stylesheet" href="../../../../_static/skin/docs.css"/>
+	<link rel="stylesheet" href="../../../../_static/skin/todc-bootstrap.css"/-->
+
+	<link rel="stylesheet" href="../../../../_static/skin/kissy.css"/>
+	<link rel="stylesheet" href="../../../../_static/skin/prettify.css"/>
+	<link rel="stylesheet" href="../../../../_static/skin/forkit.css"/>
+	<link rel="stylesheet" href="../../../../_static/skin/bootstrap.css"/>
+	<link href="http://fonts.googleapis.com/css?family=Droid+Sans|Lekton|Ubuntu+Mono:400,700" rel="stylesheet">
+	<script src="http://g.tbcdn.cn/trip/kissy/1.4.0/seed-min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+
+	<nav id="sidebar">
+		<header>
+	  		<a href="../../../../../../guideline/" >
+				<img src="http://gtms01.alicdn.com/tps/i1/T1MVbxFoRcXXchhRni-175-68.png" alt="" />
+			</a>
+		</header>
+		
+    <div class="col-sub">
+
+<div class="s-box">
+    <div class="s-box-bd">
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/index.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../demo/index.html">Demos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">KISSY Modules</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">Seed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ua/index.html">UA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../base/index.html">base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../selector/impl.html">css3 selectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../swf/index.html">swf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../xtemplate/index.html">xtemplate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../style-guide/index.html">最佳编码实践</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../workflow/index.html">组件开发指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/index.html">前端常用工具</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</div>
+    </div>
+    <div class="col-extra">
+        
+	<div class="s-box">
+		<div class="s-box-hd">
+			<h3>本节提纲</h3>
+		</div>
+		<div class="s-box-bd">
+			<ul>
+<li><a class="reference internal" href="#">importStyle 使用</a><ul>
+<li><a class="reference internal" href="#refer">Refer</a></li>
+<li><a class="reference internal" href="#id2">概述</a></li>
+<li><a class="reference internal" href="#id3">先决条件</a></li>
+<li><a class="reference internal" href="#id4">使用指南</a></li>
+<li><a class="reference internal" href="#id5">附录</a></li>
+</ul>
+</li>
+</ul>
+
+		</div>
+	</div>
+
+    </div>
+<div id="searchbox" class="searchbox">
+    <form class="search" action="../../../../search.html" method="get">
+        <input type="text" name="q" class="ipt"/>
+        <input type="submit" value="Search" class="btn"/>
+        <input type="hidden" name="check_keywords" value="yes"/>
+        <input type="hidden" name="area" value="default"/>
+    </form>
+</div>
+	</nav>
+	<div id="content" class="body">
+		<article>
+				
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="group.html" title="组介绍 - combo 多个包"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="alias.html" title="KISSY Loader 的别名机制"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../../index.html">KISSY v1.4.x</a> &#187; </li>
+      <li><a href="../../../index.html" >Tutorial</a> &#187; </li>
+      <li><a href="../../index.html" >KISSY Modules</a> &#187; </li>
+      <li><a href="../index.html" >Seed</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Loader</a> &#187; </li> 
+    </ul>
+</div>
+				
+  <div class="section" id="importstyle">
+<span id="loader-import-style-tutorial"></span><h1>importStyle 使用<a class="headerlink" href="#importstyle" title="Permalink to this headline">¶</a></h1>
+<p>author: <a class="reference external" href="mailto:jide&#37;&#52;&#48;taobao&#46;com">基德</a></p>
+<div class="section" id="refer">
+<h2>Refer<a class="headerlink" href="#refer" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="../../../../api/seed/loader/importStyle.html#seed.KISSY.importStyle" title="seed.KISSY.importStyle"><tt class="xref py py-func docutils literal"><span class="pre">api</span></tt></a></div>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="../../../../demo/seed/loader/index.html#loader-demo"><em>demo</em></a></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>概述<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>ImportStyle是KISSY的模块样式引入工具。
+提供页面上使用的组件列表及组件的依赖关系，ImportStyle可以帮助你阻塞地加载所有依赖的样式。
+如果你的应用需要颗粒化地做按需加载，ImportStyle会是非常顺手的工具。</p>
+</div>
+<div class="section" id="id3">
+<h2>先决条件<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="first docutils">
+<dt>头部引入</dt>
+<dd><div class="first last highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;http://dev.kissyui.com/kissy/build/??seed-min.js,import-style-min.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p class="first">页面是基于 KISSY 模块规范开发的，如依赖css，需要显式在requires里声明</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>使用指南<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/*Generated by KISSY Module Compiler*/</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s1">&#39;modules&#39;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="s1">&#39;components/nav/index&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;components/nav/index.css&#39;</span><span class="p">]},</span>
+  <span class="s1">&#39;components/layout/index&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;components/layout/index.css&#39;</span><span class="p">]},</span>
+  <span class="s1">&#39;components/home/index&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;components/nav/index&#39;</span><span class="p">,</span><span class="s1">&#39;components/layout/index&#39;</span><span class="p">]}</span>
+<span class="p">});</span>
+
+<span class="cm">/*Autogeneration KISSY Packages Config*/</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+  <span class="s1">&#39;combine&#39;</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+  <span class="s1">&#39;packages&#39;</span><span class="o">:</span><span class="p">[{</span>
+    <span class="s1">&#39;name&#39;</span><span class="o">:</span><span class="s1">&#39;components&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;base&#39;</span><span class="o">:</span><span class="s1">&#39;http://assets.etao.net/apps/e/hotel/130716&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;debug&#39;</span><span class="o">:</span><span class="s1">&#39;true&#39;</span>
+  <span class="p">}]</span>
+<span class="p">});</span>
+
+<span class="cm">/*下面是要我们手工维护的模块列表*/</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">importStyle</span><span class="p">(</span><span class="s1">&#39;components/home/index&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>上面是一淘酒店项目中摘出的ImportStyle使用Demo，可以看出使用方式很简单——提供模块依赖信息、包配置，
+最后调用importStyle，传入模块列表即可</p>
+</div>
+<div class="section" id="id5">
+<h2>附录<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Module Compiler: <a class="reference external" href="http://docs.kissyui.com/docs/html/tutorials/tools/module-compiler/index.html">java版</a></li>
+<li>Module Compiler: <a class="reference external" href="https://github.com/daxingplay/ModuleCompiler">nodejs版</a></li>
+</ul>
+</div>
+</div>
+
+
+				<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+		</article>
+	</div>
+<footer class="footer">
+  <div class="container">
+	  <p>&copy; Copyright 2010~2112, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a></p>
+  </div>
+</footer>
+<p><a href="https://github.com/kissyteam/kissy" target="_blank" class="github-ribbon"><img style="z-index:9999999;position: absolute; top: 0; right: 0; border: 0;" src="../../../../_static/skin/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a></p>
+</body>
+<script>
+	// added by jayli
+	(function(){
+		$('table.docutils').addClass('table table-bordered');
+		$('.admonition.note').addClass('alert alert-info');
+		$('.admonition.hint').addClass('alert alert-success');
+		$('.admonition.warning').addClass('alert alert-warning');
+		$('.admonition.attention').addClass('alert alert-danger');
+	})();
+</script>
+</html>
