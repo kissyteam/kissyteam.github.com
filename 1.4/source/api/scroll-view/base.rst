@@ -20,15 +20,19 @@ Class
 Configs
 ------------------------------
 
-    * :data:`~component.Controller.config.srcNode`
-    * :data:`~component.Controller.config.width`
-    * :data:`~component.Controller.config.height`
-    * :data:`~component.Controller.config.content`
+    * :data:`~component.Control.config.srcNode`
+    * :data:`~component.Control.config.width`
+    * :data:`~component.Control.config.height`
+    * :data:`~component.Control.config.content`
     * :data:`~base.Base.config.plugins`
-    * :data:`~component.Controller.config.elCls`
-    * :data:`~Base.config.snap`
-    * :data:`~Base.config.snapDuration`
-    * :data:`~Base.config.snapEasing`
+    * :data:`~component.Control.config.elCls`
+    * :data:`snap`
+    * :data:`snapDuration`
+
+Attributes
+----------------------------------------------------
+
+    * :attr:`~component.extension.ContentRender.prototype.contentEl`
 
 Methods
 -------------------------------

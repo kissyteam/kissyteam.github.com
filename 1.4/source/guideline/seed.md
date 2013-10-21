@@ -1,6 +1,6 @@
 # Seed
 
-> Seed 模块是 KISSY 的核心。必须在所有使用 KISSY 的页面中引入，所有核心模块的依赖关系均在 Seed 中定义，基于它可以生长出你所需要的代码基础库，而无需手写`script`标签。注意：Seed 并不是一个“模块名”，但它包含这些核心模块：lang，uri，features，promise，path，loader，ua。模块名称均小写。
+> Seed 模块是 KISSY 的核心。必须在所有使用 KISSY 的页面中引入，所有核心模块的依赖关系均在 Seed 中定义，基于它可以生长出你所需要的代码基础库，而无需手写`script`标签。注意：Seed 并不是一个“模块名”，但它包含这些核心功能：lang，features，loader，ua。模块名称均小写。
 
 ## 载入 seed
 
@@ -147,15 +147,12 @@ KISSY.use() 的目的是运行模块并执行回调，载入外部文件只是�
 
 	KISSY.use('seed',function(){});
 
-应当这样使用Seed中注册的模块
+seed 中的功能可以通过 S 直接引用，例如
 
-	KISSY.use('lang,ua',function(S,Lang,UA){
-		// Your code...	
-	});
-
-### 使用Seed中模块的另外一种快捷调用方式
-
-seed.js 中注册的模块都会给全局KISSY对象挂载快捷调用的通道，比如`Lang.clone()`可以通过`KISSY.clone()`来调用。但这种做法仅限于KISSY核心模块，自定义模块建议严格按照KMD规范来传递参数。
+    KISSY.isArray([]);
+    KISSY.UA.ie;
+    
+但这种做法仅限于KISSY核心模块，自定义模块建议严格按照KMD规范来传递参数。
 
 ## 模块的一次性加载
 

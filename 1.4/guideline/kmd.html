@@ -36,7 +36,7 @@
       <li><a href="get-started.html"><img src="templates/assets/img/icon-getting-started.png">KISSY 1.4.x 教程大纲</a></li>
       <li class="nav-sub"><a href="module-map.html">核心模块列表</a></li>
       <li class="nav-sub"><a href="kmd.html">KISSY 模块规范 (KMD)</a></li>
-      <li class="nav-sub"><a href="config.html">模块自由定制工具</a></li>
+      <!-- <li class="nav-sub"><a href="config.html">模块自由定制工具</a></li> -->
       <li class="nav-sub"><a href="gbs.html">浏览器兼容基准(GBS)</a></li>
       <li class="nav-sub"><a href="http://cyj.me/jquery-kissy-rosetta/">jQuery KISSY 对比手册</a></li>
       <li class="nav-sub"><a href="http://gallery.kissyui.com/guide">KISSY 组件开发规范</a></li>
@@ -58,7 +58,7 @@
       <li class="nav-sub nav-divider"><a href="http://work.tmall.net/muidoc/build/">MUI</a></li>
       <li><a href="https://github.com/kissyteam/kissy/blob/master/CONTRIBUTING.md">为 KISSY Core 贡献代码</a></li>
       <li class="nav-sub"><a href="http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml">HTML/CSS编码规范</a></li>
-      <li class="nav-sub nav-divider"><a href="http://docs.kissyui.com/source/tutorials/style-guide/google/javascriptguide.xml">JavaScript 编码规范</a></li>
+      <li class="nav-sub nav-divider"><a href="http://docs.kissyui.com/docs/html/tutorials/style-guide/google-js-style.html">JavaScript 编码规范</a></li>
 	  <li><a href="upgrade.html"><img src="templates/assets/img/icon-documentation.png">1.3.x->1.4.0 升级指南</a></li>
 	  <li><a href="faq.html"><img src="templates/assets/img/icon-faqs.png">FAQ</a></li>
       <li><a href="https://github.com/kissyteam/kissy"><img src="templates/assets/img/icon-github.png">GitHub</a></li>
@@ -152,6 +152,7 @@ add(&#39;mod-b&#39;,function(S){
     // 逻辑段B
 });</code></pre>
 <h2>require() <code>Function</code></h2>
+<p><code>require</code>函数挂载在全局对象<code>KISSY</code>上，用来获取已加载的模块的值。</p>
 <h3>require(name)</h3>
 <p>获取已经注册的模块的返回值，这里注意，要保证所有依赖的模块都已经注册过，<code>require()</code>函数才会正确返回，如果有未注册的模块，<code>require()</code>不会计算依赖并动态加载。该函数只是针对已经注册过模块起作用，是一种快捷调用模块返回值的方法：</p>
 <pre><code>// 注册模块
@@ -168,13 +169,13 @@ use(&#39;a,b,c,d,e,f,g&#39;,function(S,A,B,C,D,E,F,G){
 });</code></pre>
 <p>KISSY 提供了<code>require</code>语法糖</p>
 <pre><code>use(&#39;a,b,c,d,e,f,g&#39;,function(S){
-    var A = require(&#39;a&#39;);
-    var B = require(&#39;b&#39;);
-    var C = require(&#39;c&#39;);
+    var A = S.require(&#39;a&#39;);
+    var B = S.require(&#39;b&#39;);
+    var C = S.require(&#39;c&#39;);
     // Your code...
 });</code></pre>
 <h2>use() <code>Function</code></h2>
-<p>异步调用模块，并在模块加载完成后运行沙箱逻辑。</p>
+<p><code>use</code>函数挂载在全局对象<code>KISSY</code>上，用来异步调用模块，并在模块加载完成后运行沙箱逻辑。</p>
 <h3>use(name,sandbox)</h3>
 <p><code>name</code>是一个字符串，表示要载入模块的名字（列表），如果有多个名字，则中间用逗号分隔，函数<code>sandbox</code>为加载并注册完成这些模块后的回调逻辑，带入第一个参数为<code>KISSY</code>全局对象，默认缩写为<code>S</code>，其他参数依次带入所载入的模块返回的对象。</p>
 <pre><code>use(&#39;mod-a, mod-b&#39;,function(S,ModA,ModB){
@@ -186,13 +187,14 @@ use(&#39;a,b,c,d,e,f,g&#39;,function(S,A,B,C,D,E,F,G){
 });</code></pre>
 <p>例子中的模块 A 和模块 B 在注册模块名时的书写方法请参照<code>add()</code>。</p>
 <h2>config() <code>Function</code></h2>
-<p>全局配置函数，用以读写全局配置项，包括注册<strong>包</strong>、预注册<strong>模块</strong>名称，模块文件的引用规则等等。</p>
+<p><code>config</code>函数挂载在全局对象<code>KISSY</code>上，用来读写全局配置项，包括注册<strong>包</strong>、预注册<strong>模块</strong>名称，模块文件的引用规则等等。</p>
 <h3>config(name,pkg)</h3>
 <p>写配置项，<code>name</code>表示配置项名称，<code>pkg</code>表示配置项的值，其中配置项包括：</p>
 <ul>
 <li>modules，JSON 对象，预注册的模块关系依赖</li>
 <li>combine，Boolean值，是否开启动态合并</li>
-<li>comboMaxFileNum，数字类型，最动态合并文件最大个数</li>
+<li>comboMaxFileNum，数字类型，动态合并文件最大个数，默认 40</li>
+<li>comboMaxUrlLength，数字类型，动态合并后产生的 url 最大长度，默认 2000</li>
 <li>packages，JSON 对象，包配置</li>
 <li>tag，字符串，异步加载文件时所带的时间戳</li>
 <li>debug，Boolean值，是否开启debug模式，不开启，将默认加载<code>&#39;-min&#39;</code>文件</li>
@@ -342,7 +344,7 @@ var combine = config(&#39;combine&#39;);</code></pre>
 
 
 	<div class="text-center">
-		©2013 - 2033 KISSY UI LIBRARY
+		©2010 - 2112 KISSY UI LIBRARY
 		<br /> <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=kissyteam&amp;repo=kissy&amp;type=watch&amp;count=true" width="100" height="20" title="Star on GitHub"></iframe> 
 	<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=kissyteam&amp;repo=kissy&amp;type=fork&amp;count=true" width="102" height="20" title="Fork on GitHub"></iframe>
 	</div>

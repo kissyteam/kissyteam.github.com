@@ -1,0 +1,293 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="data-spm" content="1" data-spm-protocol="i" />
+
+<title>使用 XTemplate &mdash; KISSY v1.4.x</title>
+
+<link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.3.2/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="../../../_static/kissy.css"/>
+    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js,searchtools.js"></script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</head>
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
+
+        <img src="http://gtms01.alicdn.com/tps/i1/T1MVbxFoRcXXchhRni-175-68.png" />
+
+    </a></h1>
+
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/1.4/api/" >English API Docs</a></li>
+        <li><a href="http://blog.kissyui.com/" target="_blank">Offical Blog</a></li>
+    </ul>
+<div id="searchbox" class="searchbox">
+    <form class="search" action="../../../search.html" method="get">
+        <input type="text" name="q" size="28" class="ipt"/>
+        <input type="submit" value="Go" class="btn"/>
+        <input type="hidden" name="check_keywords" value="yes"/>
+        <input type="hidden" name="area" value="default"/>
+    </form>
+</div>
+
+</div>
+
+<div id="content">
+	<div  id="layout" class="layout grid-s6m0e7">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="compile.html" title="使用 XTemplate 预编译机制"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="xtemplate"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.4.x</a> &#187; </li>
+      <li><a href="../../index.html" >Tutorial</a> &#187; </li>
+      <li><a href="../index.html" >KISSY Modules</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">xtemplate</a> &#187; </li> 
+    </ul>
+</div>
+					<div class="body">
+  <div class="section" id="xtemplate">
+<span id="xtemplate-tutorial"></span><h1>使用 XTemplate<a class="headerlink" href="#xtemplate" title="Permalink to this headline">¶</a></h1>
+<p>author: <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></p>
+<div class="section" id="refer">
+<h2>Refer<a class="headerlink" href="#refer" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../../../api/xtemplate/index.html#module-xtemplate" title="xtemplate"><tt class="xref py py-mod docutils literal"><span class="pre">API</span></tt></a></p>
+<p><a class="reference internal" href="../../../demo/xtemplate/index.html#xtemplate-demo"><em>Demo</em></a></p>
+</div>
+<div class="section" id="id2">
+<h2>构建模板<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>页面中的模板<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>可以将模版放入页面中 type 为 kissy/xtemplate 的 script 标签中， 例如</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&#39;kissy/xtemplate&#39;</span> <span class="na">id=</span><span class="s">&#39;tpl&#39;</span><span class="nt">&gt;</span>
+    <span class="nx">my</span> <span class="nx">first</span> <span class="nx">xtemplate</span><span class="o">:</span> <span class="p">{{</span><span class="nx">title</span><span class="p">}}</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>然后在 javascript 中取出模版字符串</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">tpl</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;#tpl&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="javascript">
+<h3>javascript 中的模板<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h3>
+<p>也可以直接在 javascript 中写入模版字符串， 例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span>  <span class="nx">tpl</span><span class="o">=</span><span class="s1">&#39;&lt;div&gt;{{title}}&lt;/div&gt;&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>单独的模板文件<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>将模板写入单独的模板文件，然后用 kissy-pie 等工具生成模版字符串模块，例如</p>
+<p>x-tpl.html:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div&gt;</span>
+    {{title}}
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</div>
+<p>运行工具后生成</p>
+<p>x.js:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;tests/x&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="s1">&#39;&lt;div&gt;.....&#39;</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>使用模版<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>注意 <a class="reference internal" href="../../../api/xtemplate/index.html#xtemplate.XTemplate" title="xtemplate.XTemplate"><tt class="xref py py-class docutils literal"><span class="pre">XTemplate</span></tt></a> 的第一个参数是模版字符串，那么当由第一步生成模板后，
+直接 new 并 render 即可。 例如</p>
+<p>字符串：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">XTemplate</span><span class="p">(</span><span class="s1">&#39;&lt;div&gt;{{title}}&lt;/div&gt;&#39;</span><span class="p">).</span><span class="nx">render</span><span class="p">({</span><span class="nx">title</span><span class="o">:</span><span class="s1">&#39;m&#39;</span><span class="p">})</span> <span class="c1">// =&gt; &lt;div&gt;m&lt;/div&gt;</span>
+</pre></div>
+</div>
+<p>或预先的模版文件：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;xtemplate,tests/x&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">XTemplate</span><span class="p">,</span><span class="nx">tpl</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">data</span><span class="o">=</span><span class="p">{</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;m&#39;</span>
+    <span class="p">};</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="k">new</span> <span class="nx">XTemplate</span><span class="p">(</span><span class="nx">tpl</span><span class="p">).</span><span class="nx">render</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span> <span class="c1">// =&gt; &#39;&lt;div&gt;m&lt;/div&gt;&#39;</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+</div>
+                    
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="compile.html" title="使用 XTemplate 预编译机制"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="xtemplate"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.4.x</a> &#187; </li>
+      <li><a href="../../index.html" >Tutorial</a> &#187; </li>
+      <li><a href="../index.html" >KISSY Modules</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">xtemplate</a> &#187; </li> 
+    </ul>
+</div>
+					<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+				</div>
+			</div>
+		
+    <div class="col-sub">
+
+<div class="s-box">
+    <div class="s-box-bd">
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../demo/index.html">Demos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">KISSY Modules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../seed/index.html">Seed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ua/index.html">UA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../base/index.html">base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../selector/impl.html">css3 selectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../swf/index.html">swf</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">xtemplate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../style-guide/index.html">最佳编码实践</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workflow/index.html">组件开发指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/index.html">前端常用工具</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</div>
+    </div>
+    <div class="col-extra">
+        
+	<div class="s-box">
+		<div class="s-box-hd">
+			<h3>本节提纲</h3>
+		</div>
+		<div class="s-box-bd">
+			<ul>
+<li><a class="reference internal" href="#">使用 XTemplate</a><ul>
+<li><a class="reference internal" href="#refer">Refer</a></li>
+<li><a class="reference internal" href="#id2">构建模板</a><ul>
+<li><a class="reference internal" href="#id3">页面中的模板</a></li>
+<li><a class="reference internal" href="#javascript">javascript 中的模板</a></li>
+<li><a class="reference internal" href="#id4">单独的模板文件</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id5">使用模版</a></li>
+</ul>
+</li>
+</ul>
+
+		</div>
+	</div>
+
+    </div>
+	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+</body>
+</html>

@@ -108,6 +108,8 @@ KISSY 在诞生之初就确立了模块化的架构，以此抽象出现在的 K
 
 ## require() `Function`
 
+`require`函数挂载在全局对象`KISSY`上，用来获取已加载的模块的值。
+
 ### require(name)
 
 获取已经注册的模块的返回值，这里注意，要保证所有依赖的模块都已经注册过，`require()`函数才会正确返回，如果有未注册的模块，`require()`不会计算依赖并动态加载。该函数只是针对已经注册过模块起作用，是一种快捷调用模块返回值的方法：
@@ -130,15 +132,15 @@ KISSY 在诞生之初就确立了模块化的架构，以此抽象出现在的 K
 KISSY 提供了`require`语法糖
 
 	use('a,b,c,d,e,f,g',function(S){
-		var A = require('a');
-		var B = require('b');
-		var C = require('c');
+		var A = S.require('a');
+		var B = S.require('b');
+		var C = S.require('c');
 		// Your code...
 	});
 
 ## use() `Function`
 
-异步调用模块，并在模块加载完成后运行沙箱逻辑。
+`use`函数挂载在全局对象`KISSY`上，用来异步调用模块，并在模块加载完成后运行沙箱逻辑。
 
 ### use(name,sandbox)
 
@@ -158,7 +160,7 @@ KISSY 提供了`require`语法糖
 
 ## config() `Function`
 
-全局配置函数，用以读写全局配置项，包括注册**包**、预注册**模块**名称，模块文件的引用规则等等。
+`config`函数挂载在全局对象`KISSY`上，用来读写全局配置项，包括注册**包**、预注册**模块**名称，模块文件的引用规则等等。
 
 ### config(name,pkg)
 
@@ -166,7 +168,8 @@ KISSY 提供了`require`语法糖
 
 - modules，JSON 对象，预注册的模块关系依赖
 - combine，Boolean值，是否开启动态合并
-- comboMaxFileNum，数字类型，最动态合并文件最大个数
+- comboMaxFileNum，数字类型，动态合并文件最大个数，默认 40
+- comboMaxUrlLength，数字类型，动态合并后产生的 url 最大长度，默认 2000
 - packages，JSON 对象，包配置
 - tag，字符串，异步加载文件时所带的时间戳
 - debug，Boolean值，是否开启debug模式，不开启，将默认加载`'-min'`文件
