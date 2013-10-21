@@ -5,8 +5,6 @@ Toolbar
 ===============================================
 
 | 好看好用的Toolbar菜单栏组件
-| `Demo <../../../raw/demo/toolbar/demo.html>`_
-
 
 .. code-block:: javascript
 
@@ -26,18 +24,18 @@ Class
 Configs
 -----------------------------------------------
 
-  * :data:`render`
-  * :data:`children`
+  * :data:`~component.Control.config.render`
+  * :data:`~component.Container.config.children`
   
 Methods
 -----------------------------------------------
 
-  * :meth:`render`
+  * :meth:`~component.Control.prototype.render`
 
 Events
 -----------------------------------------------
 
-  * :func:`click`
+  * :func:`~Toolbar.Events.click`
 
 Class Detail
 -----------------------------------------------
@@ -76,4 +74,16 @@ Configs Detail
 .. data:: xrender
 
     {Object} - 初始化的渲染方法类，包括渲染时的辅助操作，内部方法
+
+
+Events Details
+------------------------------------
+
+.. function:: Toolbar.Events.click
+
+    | **click** (e)
+    | 点击工具栏按钮时触发
+
+    :param EventObject e: 触发事件对象
+    :param {component.Control} e.target: 点击的按钮实例
 

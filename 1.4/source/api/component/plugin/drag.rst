@@ -26,11 +26,9 @@ Class Detail
 .. code-block:: javascript
 
     KISSY.use('overlay,component/plugin/drag',function(S,Overlay,Drag){
-
         new Overlay({
             plugins:[ new Drag({
                 handlers: ['.ks-stdmod-header']
             }) ]
         });
-
     });

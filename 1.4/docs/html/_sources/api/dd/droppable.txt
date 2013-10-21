@@ -40,7 +40,7 @@ Class Detail
 .. class:: Droppable
 
     | **Droppable** ( config )
-    | 继承自 :class:`~rich-base.RichBase` ，包含其所有配置，属性，方法.
+    | 继承自 :class:`~base.Base` ，包含其所有配置，属性，方法.
 
     :param Object config: 配置项, 详细见下方 **Configs Detail** .
 
@@ -56,7 +56,7 @@ Configs Detail
 
     {Object} - 可与拖动对象交互的节点. 例如： {'x':1,'y':1} 表示属于 x 和 y 组.
 
-.. data:: Draggable.config.disabled
+.. data:: Droppable.config.disabled
 
     {Boolean} - 默认 false。是否禁用改拖对象功能.
 

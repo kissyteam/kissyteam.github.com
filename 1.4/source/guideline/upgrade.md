@@ -24,8 +24,13 @@
 
 ### 模块名称变更
 
-- ajax 变更为 io
-- calendar、datalazyload 和 switchable被移出，被替代为Gallery中的组件，[calendar-deprecated](http://gallery.kissyui.com/calendar-deprecated/1.0/guide/index.html)和[switchable](http://gallery.kissyui.com/switchable/1.3/guide/index.html)，[datalazyload](http://gallery.kissyui.com/datalazyload/1.0/guide/index.html)。
+- ajax, io 为同一模块，推荐使用 io
+- calendar、datalazyload、switchable、imagezoom、waterfall 被移出，被替代为Gallery中的组件，
+[calendar-deprecated](http://gallery.kissyui.com/calendar-deprecated/1.0/guide/index.html)，
+[switchable](http://gallery.kissyui.com/switchable/1.3/guide/index.html)，
+[datalazyload](http://gallery.kissyui.com/datalazyload/1.0/guide/index.html)，
+[imagezoom](http://gallery.kissyui.com/imagezoom/1.0/guide/index.html)，
+[waterfall](http://gallery.kissyui.com/waterfall/1.0/guide/index.html)。
 
 -----------------------------------------
 
@@ -42,10 +47,4 @@
 1. xtemplate 进行了一系列功能增强，例如 [宏的支持](https://github.com/kissyteam/kissy/issues/449)，[根作用域的支持](https://github.com/kissyteam/kissy/issues/431)，[模块加载的支持](https://github.com/kissyteam/kissy/issues/389)
 1. tabs 支持[懒渲染](https://github.com/kissyteam/kissy/issues/335)
 1. resizable 支持[代理拖放](https://github.com/kissyteam/kissy/issues/223)
-1. [getScript ie9 bug fix](https://github.com/kissyteam/kissy/issues/325)
-1. [placeholder ie67 兼容](https://github.com/kissyteam/kissy/issues/350)
-1. [getScript ie6 bug fix](https://github.com/kissyteam/kissy/issues/351)
-1. [editor bug fix](https://github.com/kissyteam/kissy/issues/357)
-1. [param bug fix](https://github.com/kissyteam/kissy/issues/269)
 1. [css Selector性能优化](https://github.com/kissyteam/kissy/commit/4f731d1bd2e9cc83ce89fe69b62addd8128c80a7#src/dom/sub-modules/base/src/base/selector.js) 面向Mobile设备的选择器性能提速
-

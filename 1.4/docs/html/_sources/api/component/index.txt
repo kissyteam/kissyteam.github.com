@@ -1,4 +1,4 @@
-.. module:: component
+﻿.. module:: component
 
 
 Component
@@ -12,8 +12,7 @@ Classes in Component
 .. toctree::
    :titlesonly:
 
-   controller
-   process
+   control
    container
    manager
    extension/align

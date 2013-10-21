@@ -3,8 +3,6 @@
 Base
 ===============================
 
-| 整合了原来的rich-base
-
 Class
 -----------------------------------------------
 
@@ -13,6 +11,7 @@ Class
 Methods
 -----------------------------------------------
 
+    * :meth:`~Base.extend` <static>
     * :meth:`~Base.prototype.callSuper`
     * :meth:`~Base.prototype.plug`
     * :meth:`~Base.prototype.unplug`
@@ -24,7 +23,6 @@ Configs
 
     * :data:`~Base.config.plugins`
     * :data:`~Base.config.listeners`
-    * :data:`~Base.config.force`
 
 Class Detail
 ---------------------------------------------------
@@ -91,12 +89,21 @@ Config Details
 
         例如以下两个插件： :class:`component.plugin.Resize` 和 :class:`component.plugin.Drag` .
 
-    .. data:: Base.config.force
-
-        {Boolean} - 是否强制触发 change 事件
-
 Methods Details
 ---------------------------------------------------
+
+.. method:: Base.extend
+
+    | **extend( [ extensions , ] methodDesc , staticAttributes , desc )** <static>
+
+    从当前类上扩展出一个子类
+
+    :param Function[] extensions: 扩展类数组
+    :param Object methodDesc: 方法集合键值对
+    :param Object staticAttributes: 放到新产生组件类上的静态属性集合键值对，其中 ``ATTRS`` 属性特殊对待.
+    :param Object desc: 类元信息.
+    :param String desc.name: 类名
+
 
 .. method:: Base.prototype.callSuper
 
@@ -195,17 +202,10 @@ Demo
 
     .. code-block:: javascript
 
-        KISSY.ready(function(S) {
+        KISSY.use('base', function(S, Base) {
             // 自定义类
-            function myClass(config) {
-                myClass.superclass.constructor.call(this, config);
-            }
-
             // 继承 Base
-            S.extend(myClass, S.Base);
-
-            // 增加属性
-            myClass.ATTRS = {
+            var myClass = Base.extend({},{
                 size: {
                     value: 0,
                     setter: function(v) {
@@ -218,7 +218,7 @@ Demo
                         return v;
                     }
                 }
-            };
+            });
 
             var cls = new myClass();
 
@@ -237,5 +237,3 @@ Demo
             cls.reset();
             alert(cls.get('size'));
         });
-
-

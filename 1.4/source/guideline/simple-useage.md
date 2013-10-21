@@ -19,28 +19,28 @@
 
 **DOM操作**：获取一个className叫`continue`的`button`，并将它的内容改为"Hello Kissy"。
 
-	KISSY.use('node',function(S){
-		S.one('button.continue').html('Hello Kissy!');
+	KISSY.use('node',function(S,Node){
+		Node.one('button.continue').html('Hello Kissy!');
 	});
 
 **事件处理**：点击一个id为`click-me`的`button`，显示`#banner-msg`的内容。
 
-	KISSY.use('node',function(S){
-		S.one('#click-me').on('click',function(e){
-			S.one('#banner-msg').show();
+	KISSY.use('node',function(S,Node){
+		Node.one('#click-me').on('click',function(e){
+			Node.one('#banner-msg').show();
 		});
 	});
 
 **Ajax**：请求一个`api/getWeather`的接口，带入参数`zipcode`，将结果显示在`#weather-con`中。
 
-	KISSY.use('io,node',function(S){
-		S.io({
+	KISSY.use('io,node',function(S,io,Node){
+		io({
 			url:'/api/getWeather',
 			data:{
 				zipcode:10010
 			},
 			success:function(data){
-				S.one('#weather-con').html('<em>' + data + '</em> 摄氏度');
+				Node.one('#weather-con').html('<em>' + data + '</em> 摄氏度');
 			}
 		});
 	});

@@ -6,11 +6,13 @@
 <meta charset="utf-8"/>
 <meta name="data-spm" content="1" data-spm-protocol="i" />
 
-<title>hBase 概述 &mdash; KISSY v1.4.x</title>
+<title>Base 概述 &mdash; KISSY v1.4.x</title>
 
-<link rel="stylesheet" href="http://dev.kissyui.com/kissy/build/css/dpl/base-min.css"/>
-<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.3.2/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="../../../_static/kissy.css"/>
+    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
 <link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
 
 <script>
     var DOCUMENTATION_OPTIONS = {
@@ -35,107 +37,40 @@
     })();
 
 </script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Le styles -->
-	<!--link rel="stylesheet" href="../../../_static/skin/bootstrap.css"/>
-	<link rel="stylesheet" href="../../../_static/skin/bootstrap-responsive.css"/>
-	<link rel="stylesheet" href="../../../_static/skin/prettify.css"/>
-	<link rel="stylesheet" href="../../../_static/skin/docs.css"/>
-	<link rel="stylesheet" href="../../../_static/skin/todc-bootstrap.css"/-->
-
-	<link rel="stylesheet" href="../../../_static/skin/kissy.css"/>
-	<link rel="stylesheet" href="../../../_static/skin/prettify.css"/>
-	<link rel="stylesheet" href="../../../_static/skin/forkit.css"/>
-	<link rel="stylesheet" href="../../../_static/skin/bootstrap.css"/>
-	<link href="http://fonts.googleapis.com/css?family=Droid+Sans|Lekton|Ubuntu+Mono:400,700" rel="stylesheet">
-	<script src="http://g.tbcdn.cn/trip/kissy/1.4.0/seed-min.js"></script>
-
 </head>
-<body data-spy="scroll" data-target=".bs-docs-sidebar">
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
 
+        <img src="http://gtms01.alicdn.com/tps/i1/T1MVbxFoRcXXchhRni-175-68.png" />
 
-	<nav id="sidebar">
-		<header>
-	  		<a href="../../../../../guideline/" >
-				<img src="http://gtms01.alicdn.com/tps/i1/T1MVbxFoRcXXchhRni-175-68.png" alt="" />
-			</a>
-		</header>
-		
-    <div class="col-sub">
+    </a></h1>
 
-<div class="s-box">
-    <div class="s-box-bd">
-        <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">API Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../demo/index.html">Demos</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Tutorial</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html">KISSY Modules</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../seed/index.html">Seed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ua/index.html">UA</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="index.html">base</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../selector/impl.html">css3 selectors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../swf/index.html">swf</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../xtemplate/index.html">xtemplate</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../style-guide/index.html">最佳编码实践</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../workflow/index.html">组件开发指南</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tools/index.html">前端常用工具</a></li>
-</ul>
-</li>
-</ul>
-
-    </div>
-</div>
-    </div>
-    <div class="col-extra">
-        
-	<div class="s-box">
-		<div class="s-box-hd">
-			<h3>本节提纲</h3>
-		</div>
-		<div class="s-box-bd">
-			<ul>
-<li><a class="reference internal" href="#">hBase 概述</a><ul>
-<li><a class="reference internal" href="#id2">如何引用</a></li>
-<li><a class="reference internal" href="#base">继承Base</a><ul>
-<li><a class="reference internal" href="#id3">构造函数</a></li>
-<li><a class="reference internal" href="#id4">初始化函数和析构函数</a></li>
-<li><a class="reference internal" href="#attrs">ATTRS属性</a></li>
-<li><a class="reference internal" href="#attrsbindsync">ATTRS的bind和sync</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#plugins">Plugins</a><ul>
-<li><a class="reference internal" href="#id5">plugins</a></li>
-<li><a class="reference internal" href="#plug-plugin">plug(plugin)</a></li>
-<li><a class="reference internal" href="#unplug-plugin">unplug(plugin)</a></li>
-<li><a class="reference internal" href="#getplugin-id">getPlugin(id)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id6">扩展</a></li>
-<li><a class="reference internal" href="#listeners">listeners</a></li>
-<li><a class="reference internal" href="#id7">总结</a></li>
-</ul>
-</li>
-</ul>
-
-		</div>
-	</div>
-
-    </div>
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/1.4/api/" >English API Docs</a></li>
+        <li><a href="http://blog.kissyui.com/" target="_blank">Offical Blog</a></li>
+    </ul>
 <div id="searchbox" class="searchbox">
     <form class="search" action="../../../search.html" method="get">
-        <input type="text" name="q" class="ipt"/>
-        <input type="submit" value="Search" class="btn"/>
+        <input type="text" name="q" size="28" class="ipt"/>
+        <input type="submit" value="Go" class="btn"/>
         <input type="hidden" name="check_keywords" value="yes"/>
         <input type="hidden" name="area" value="default"/>
     </form>
 </div>
-	</nav>
-	<div id="content" class="body">
-		<article>
-				
+
+</div>
+
+<div id="content">
+	<div  id="layout" class="layout grid-s6m0e7">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -159,9 +94,9 @@
       <li><a href="index.html" accesskey="U">base</a> &#187; </li> 
     </ul>
 </div>
-				
-  <div class="section" id="hbase">
-<h1>hBase 概述<a class="headerlink" href="#hbase" title="Permalink to this headline">¶</a></h1>
+					<div class="body">
+  <div class="section" id="base">
+<h1>Base 概述<a class="headerlink" href="#base" title="Permalink to this headline">¶</a></h1>
 <p>author: <a class="reference external" href="mailto:zuomo&#37;&#52;&#48;taobao&#46;com">左莫</a></p>
 <p>Base是一个基础类，通过继承Base可以以一种统一的方式创建自己的具有新的属性、并可作为事件目的(Attribute，EventTarget的能力)的类。</p>
 <div class="section" id="id2">
@@ -185,8 +120,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="base">
-<h2>继承Base<a class="headerlink" href="#base" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>继承Base<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>下面的代码定义完，Chunk就和Base有了同样的功能</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;brix/core/chunk&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Base</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">Chunk</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({},{});</span>
@@ -197,15 +132,15 @@
 </pre></div>
 </div>
 <p>接下来会为大家介绍更多……</p>
-<div class="section" id="id3">
-<h3>构造函数<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>构造函数<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>我们上面定义的Chunk类并没有显示指定构造函数，Base内部会动态的构建一个function作为Chunk的构造函数，并且名字是&#8221;BaseDerived&#8221;,要显示的指定名称，只需要在在继承的最后一个参数写上名称即可</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">Chunk</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({},{},</span><span class="s1">&#39;Chunk&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h3>初始化函数和析构函数<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>初始化函数和析构函数<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>Base在初始化时会自动调用各级类的initializer函数，在析构时会自动调用destructor函数，所以有初始或者析构处理只需定义相应的函数就可以了，不用显式调用父类的函数。</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">Chunk</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
     <span class="nx">initializer</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -268,8 +203,8 @@
 <div class="section" id="plugins">
 <h2>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h2>
 <p>Plugins机制可以用来在类的实例（而不是类本身）上动态添加特性。Base提供了一个配置（plugins）和三个函数（plug、unplug和getPlugin）用来管理插件。</p>
-<div class="section" id="id5">
-<h3>plugins<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>plugins<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>plugins的类型是Array，在类实例化的时候实例化plugin，并调用plugin的pluginInitializer初始化函数。在销毁的时候调用pluginDestructor析构函数。</p>
 </div>
 <div class="section" id="plug-plugin">
@@ -292,8 +227,8 @@
 <p>通过类plugin定义的的p.get(&#8216;pluginId&#8217;) || p.pluginId来拿到plugin的实例。</p>
 </div>
 </div>
-<div class="section" id="id6">
-<h2>扩展<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h2>扩展<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p>Base的extend还提供了扩展功能，把一个主类与多个扩充类合并为一个新类。KISSY内部的很多组件都是基于这个完成的。</p>
 <p>给个Overlay示例代码吧,具体的Overlay的实现并不仅仅如此</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">Overlay</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">([</span>
@@ -329,14 +264,38 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id7">
-<h2>总结<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h2>总结<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p>Base为我们提供了如此多的特性，采用KISSY开发模块和组件的同学，果断的用Base吧。</p>
 </div>
 </div>
 
+</div>
+                    
 
-				<div id="disqus_thread"></div>
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="history.html" title="RichBase 的前世今生"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="base"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.4.x</a> &#187; </li>
+      <li><a href="../../index.html" >Tutorial</a> &#187; </li>
+      <li><a href="../index.html" >KISSY Modules</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">base</a> &#187; </li> 
+    </ul>
+</div>
+					<div id="disqus_thread"></div>
 <script>
     if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -372,23 +331,80 @@
         }
     </script>
 </div>-->
-		</article>
+				</div>
+			</div>
+		
+    <div class="col-sub">
+
+<div class="s-box">
+    <div class="s-box-bd">
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../demo/index.html">Demos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">KISSY Modules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../seed/index.html">Seed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ua/index.html">UA</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../selector/impl.html">css3 selectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../swf/index.html">swf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../xtemplate/index.html">xtemplate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../style-guide/index.html">最佳编码实践</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workflow/index.html">组件开发指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/index.html">前端常用工具</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</div>
+    </div>
+    <div class="col-extra">
+        
+	<div class="s-box">
+		<div class="s-box-hd">
+			<h3>本节提纲</h3>
+		</div>
+		<div class="s-box-bd">
+			<ul>
+<li><a class="reference internal" href="#">Base 概述</a><ul>
+<li><a class="reference internal" href="#id2">如何引用</a></li>
+<li><a class="reference internal" href="#id3">继承Base</a><ul>
+<li><a class="reference internal" href="#id4">构造函数</a></li>
+<li><a class="reference internal" href="#id5">初始化函数和析构函数</a></li>
+<li><a class="reference internal" href="#attrs">ATTRS属性</a></li>
+<li><a class="reference internal" href="#attrsbindsync">ATTRS的bind和sync</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#plugins">Plugins</a><ul>
+<li><a class="reference internal" href="#id6">plugins</a></li>
+<li><a class="reference internal" href="#plug-plugin">plug(plugin)</a></li>
+<li><a class="reference internal" href="#unplug-plugin">unplug(plugin)</a></li>
+<li><a class="reference internal" href="#getplugin-id">getPlugin(id)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id7">扩展</a></li>
+<li><a class="reference internal" href="#listeners">listeners</a></li>
+<li><a class="reference internal" href="#id8">总结</a></li>
+</ul>
+</li>
+</ul>
+
+		</div>
 	</div>
-<footer class="footer">
-  <div class="container">
-	  <p>&copy; Copyright 2010~2112, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a></p>
-  </div>
-</footer>
-<p><a href="https://github.com/kissyteam/kissy" target="_blank" class="github-ribbon"><img style="z-index:9999999;position: absolute; top: 0; right: 0; border: 0;" src="../../../_static/skin/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a></p>
+
+    </div>
+	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
 </body>
-<script>
-	// added by jayli
-	(function(){
-		$('table.docutils').addClass('table table-bordered');
-		$('.admonition.note').addClass('alert alert-info');
-		$('.admonition.hint').addClass('alert alert-success');
-		$('.admonition.warning').addClass('alert alert-warning');
-		$('.admonition.attention').addClass('alert alert-danger');
-	})();
-</script>
 </html>

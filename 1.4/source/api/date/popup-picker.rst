@@ -19,14 +19,14 @@ Class
 Configs
 -------------------------------
 
-    * :data:`~component.extension.Shim`
-    * :data:`~component.extension.Align`
+    * :data:`~component.extension.config.Shim`
+    * :data:`~component.extension.config.Align`
 
 Methods
 --------------------------------
 
-    * :func:`~component.extension.Box.prototype.show`
-    * :func:`~component.extension.Box.prototype.hide`
+    * :func:`~component.Control.prototype.show`
+    * :func:`~component.Control.prototype.hide`
 
 Events
 -------------------------------

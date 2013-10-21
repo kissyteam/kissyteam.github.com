@@ -21,10 +21,9 @@ Methods
     :returns: 符合选择器的第一个元素的高度值.
     :rtype: Number
     
-    .. note::
-
-        - 该方法获取的是元素的真实高度, 不包含 padding, border, margin. 且始终返回像素值
-        - 注意: 该方法与 :func:`innerHeight` 和 :func:`outerHeight` 的区别.
+        .. note::
+            - 该方法获取的是元素的真实高度, 不包含 padding, border, margin. 且始终返回像素值
+            - 注意: 该方法与 :func:`innerHeight` 和 :func:`outerHeight` 的区别.
 
     | void **height** ( selector, value )
     | 给符合选择器的所有元素设置高度值. 相当于 :func:`dom.css(selector,"height",value) <dom.css>`

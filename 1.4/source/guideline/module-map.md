@@ -72,6 +72,7 @@ KISSY 采用模块化设计，除了 Seed 集成的功能之外，所有模块�
 <script>
 
 var des = {
+    'rich-base':'base 的别名，1.4.x 推荐直接使用 base',
 	'i18n':'多语言插件，内置于Loader中，通过S.config("lang")查看当前库的语言，默认为zh-cn'	,
 	'core':'最常用的核心模块的别名，在1.3.x及以下版本中为组成kissy.js的模块，是这些模块的别名：dom,event,io,anim,base,node,json,ua,cookie',
 	'anim':'DOM 的动画模块，高级浏览器优先使用CSS3动画',
@@ -100,7 +101,7 @@ var des = {
 	'dom':'DOM 节点操作，是dom/basic的别名',
 	'dom/class-list':'类名选列表择器的实现',
 	'dom/ie':'降级到ie中时的一些降级处理方案',
-	'dom/selector':'CSS 3 选择器引擎，在高级浏览器中自动选择加载',
+	'dom/selector':'CSS 3 选择器引擎，在 ie6-8 等低级浏览器中自动选择加载',
 	'editor':'富文本编辑器组件',
 	'event':'Event 组件',
 	'event/custom':'自定义事件，用来被类扩充，被扩充的类具有自定义事件的机制',

@@ -4,10 +4,11 @@
 
 ## 1，复制 & 粘贴
 
-	<script src="http://g.tbcdn.cn/kissy/k/1.4.0/seed-min.js"></script>
+	<script src="http://g.tbcdn.cn/kissy/k/1.4.0/seed-min.js" data-config="{combine:true}"></script>
 
 种子文件是一个**非常小**的 JS 文件，通过他可以动态加载 KISSY 的模块文件，因为体积很小，推荐将种子文件至于`<head>`标签内。
-
+`data-config="{combine:true}"` 表示启用服务器 combo 机制，可用于减少网络请求数目。
+ 
 ## 2，开始使用 KISSY
 
 	// 创建一个 KISSY 沙箱
@@ -18,7 +19,7 @@
 
 页面生命周期内始终存在全局对象`KISSY`。KISSY 采用弱沙箱的设计，多个沙箱共享同一份 KISSY 对象，即沙箱A对KISSY的修改会影响到沙箱B，因此，不通过API就对KISSY作任何修改将会非常危险。回调函数传入的第一个参数永远是`KISSY`全局对象，紧跟着的参数将会传回模块对象。形如`use('a,b,c',function(S,A,B,C){})`。被依赖的模块实现会返回一个对象（或类），都可以通过这种方式带入当前沙箱中，KISSY 的沙箱之间通过这种方法相互传递信息，避免全局对象的污染。沙箱内定义的变量亦不会污染全局命名空间。
 
-创建 KISSY 沙箱时你需要指定要载入的模块，KISSY 的功能是模块化的，包括`node`，`event`，`ajax`（在1.4.x中被`io`取代）等。这个例子中载入了`node`模块，在沙箱中可以通过回调参数来使用`node`的 API。**特别的**，`node`模块中最常用的 API 被挂载在 KISSY 对象上，作为快捷调用方式。比如`S.all`和`S.one`。
+创建 KISSY 沙箱时你需要指定要载入的模块，KISSY 的功能是模块化的，包括`node`，`event`，`ajax`（在1.4.x推荐用`io`）等。这个例子中载入了`node`模块，在沙箱中可以通过回调参数来使用`node`的 API。**特别的**，`node`模块中最常用的 API 被挂载在 KISSY 对象上，作为快捷调用方式。比如`S.all == Node.all`和`S.one == Node.one`。
 
 KISSY 会自动计算模块依赖和模块去重，将所需模块的最小子集载入到页面中。一旦 node 模块加载完成，就会执行沙箱的回调逻辑。**注意**：沙箱回调为异步执行，不管是否已经预先载入了 node。所以两个并列的沙箱的执行时机是不确定的。开发者不应当去关心沙箱的先后顺序。
 
@@ -28,16 +29,16 @@ KISSY 会自动计算模块依赖和模块去重，将所需模块的最小子�
 
 node 模块对 DOM 节点底层 API 做了封装和扩展，你可以方便查找、创建、删除、修改元素。
 
-	KISSY.use('node', function (S) {
+	KISSY.use('node', function (S, Node) {
 		// 查找 DOM 节点.
-		var oneElementById     = S.one('#foo'),
-			oneElementByName   = S.one('body'),
-			allElementsByClass = S.all('.bar');
+		var oneElementById     = Node.one('#foo'),
+			oneElementByName   = Node.one('body'),
+			allElementsByClass = Node.all('.bar');
 
 		// 创建 DOM 节点.
-		var contentNode = S.Node('<div>'),
-			listNode    = S.Node('<ul>'),
-			footerNode  = S.Node('<footer>');
+		var contentNode = new Node('<div>'),
+			listNode    = new Node('<ul>'),
+			footerNode  = new Node('<footer>');
 
 		// 操作节点，支持链式调用
 		contentNode.html('Hello Kissy!')
@@ -46,18 +47,18 @@ node 模块对 DOM 节点底层 API 做了封装和扩展，你可以方便查�
 					.appendTo('body');
 
 		// 绑定事件
-		S.one('#close-button').on('click', function (e) {
+		Node.one('#close-button').on('click', function (e) {
 			contentNode.hide();
 		});
 	});
 
 ## 4，使用动画
 
-KISSY 提供 anim 模块，完成 DOM 元素的动画，模块将自动探测硬件对 CSS3 的支持，优先使用 CSS3 动画，但上层接口保持统一。
+KISSY 提供 anim 模块，完成 DOM 元素的动画。
 
 	KISSY.use("anim",function(S,Anim){
 		// 初始化动画实例
-		var anim = Anim('#anim-el',
+		var anim = new Anim('#anim-el',
 			// 动画目标样式
 			{
 				'background-color':'#fcc',
@@ -88,7 +89,7 @@ KISSY 提供 anim 模块，完成 DOM 元素的动画，模块将自动探测硬
 				user_name:10010
 			},
 			success:function(data){
-				S.one('#content').html(data);
+				Node.one('#content').html(data);
 			}
 		});
 	});
@@ -122,7 +123,7 @@ KISSY 提供 anim 模块，完成 DOM 元素的动画，模块将自动探测硬
 创建一个新模块：
 
 	KISSY.add(function(S, N, E, A, IO){
-		var $ = S.all;
+		var $ = N.all;
 		var opLotto = {
 			init: function(){
 				...
@@ -149,7 +150,7 @@ KISSY 提供 anim 模块，完成 DOM 元素的动画，模块将自动探测硬
 
 	KISSY.use('module/opLotto, node, event', function(S, OP, N, E){
 		S.ready(function(S){
-			var $ = S.all;
+			var $ = N.all;
 			OP.init();
 			...
 		});
@@ -159,7 +160,7 @@ KISSY 提供 anim 模块，完成 DOM 元素的动画，模块将自动探测硬
 
 ## 8，调用官方组件
 
-KISSY 内置了很多有用的组件比如 button，calendar，datalazyload等，这些组件的用法非常简单，比如要用到 button 组件，只需要：
+KISSY 内置了很多有用的组件比如 button，menu，date/picker 等，这些组件的用法非常简单，比如要用到 button 组件，只需要：
 
 	KISSY.use("button", function(S, Button) {
 		var btn = new Button({

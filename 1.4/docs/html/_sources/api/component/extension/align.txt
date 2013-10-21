@@ -5,19 +5,24 @@ Component.Extension.Align
 
 |  对齐。组件扩充类，仅用于 KISSY 内部组件继承，目前不建议外部使用，欢迎 review
 
+.. code-block:: javascript
 
+    KISSY.use('component/extension/align',function(S, Align){
+        // use Align
+    });
 
 Class
 ---------------------------------
 
     * :class:`~extension.Align`
-  
+
 
 Configs
 -----------------------------------------------
 
     * :data:`~extension.Align.config.align`
-    
+
+
 Methods
 -----------------------------------------------
 
@@ -30,7 +35,7 @@ Class Detail
 
 .. class:: extension.Align
 
-    | **Component.Extension.Align** (config)
+    | **Align** (config)
     
     :param Object config: 配置项，详细见下方 **Configs Detail** .
     
@@ -65,11 +70,12 @@ Configs Detail
         .. raw:: html
 
             <img  src='/1.4/source/raw/api/component/overlay/align.png' />
-    
+
+
 Methods Detail
 -----------------------------------------------    
 
-.. method:: extension.Align.prototype.align()
+.. method:: extension.Align.prototype.align
 
     | **align** ( node , points [ , offset , overflow ] )
     | 设置组件根节点对齐

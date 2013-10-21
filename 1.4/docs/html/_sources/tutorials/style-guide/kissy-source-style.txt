@@ -178,7 +178,7 @@ css 类名
         /**
          * @class Button
          */
-        var Button = Component.Controller.extend({
+        var Button = Component.Control.extend({
 
             /**
              * @public

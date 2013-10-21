@@ -50,7 +50,7 @@ KISSY 支持触屏设备的手势操作，手势操作在 ios 和 android 中表
 
 ## 一点历史
 
-KISSY 诞生于 2009 年 10 月 26 日，当初只是玉伯写的一个结构精巧的[编辑器组件](http://ued.taobao.com/blog/2009/10/kissy-editor/)。但随着淘宝网业务的增长，开始出现越来越多这种组件，包括 Switchable、Overlay、Calendar、Slide、Waterfall。自然的，游离于功能代码之外，基础的 DOM、Event、Anim 和 Ajax 被抽象出来，形成了 KISSY 首批宝贵的基础代码，此时 KISSY 为 1.1.0 版本。并且切合当时淘宝网的日常需求，制定当年的 [KISSY Road Map](http://ued.taobao.com/blog/2010/08/release-kissy-1-1-0/)。至此，KISSY 项目正式步入正轨，并形成了首届开发团队。
+KISSY 诞生于 2009 年 10 月 26 日，当初只是一个结构精巧的[编辑器组件](http://ued.taobao.com/blog/2009/10/kissy-editor/)。但随着淘宝网业务的增长，开始出现越来越多这种组件，包括 Switchable、Overlay、Calendar、Slide、Waterfall。自然的，游离于功能代码之外，基础的 DOM、Event、Anim 和 Ajax 被抽象出来，形成了 KISSY 首批宝贵的基础代码，此时 KISSY 为 1.1.0 版本。并且切合当时淘宝网的日常需求，制定当年的 [KISSY Road Map](http://ued.taobao.com/blog/2010/08/release-kissy-1-1-0/)。至此，KISSY 项目正式步入正轨，并形成了首届开发团队。
 
 有了团队的护航，KISSY 代码量激增，并很快[发布了 1.1.5 版本](http://ued.taobao.com/blog/2010/09/release-kissy-1-1-5/)。最大的改进在于从`core`中独立出了`seed`模块，并增加了`loader`。至此 KISSY 确立了其基本的模块化原则和方向。在当年，还不存在 AMD 和 CMD 规范，YUI3 的模块规范也步履蹒跚，在淘宝网业务激增的情况下，KISSY 开始探索实践适用于电商网站类高速迭代、快速变化、团队协作的模块规范。同时，KISSY 还与时俱进，[发布了 node 版本（nodejs-kissy）](http://ued.taobao.com/blog/2010/11/nodejs-kissy/)。
 

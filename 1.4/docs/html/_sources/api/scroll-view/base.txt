@@ -20,15 +20,19 @@ Class
 Configs
 ------------------------------
 
-    * :data:`~component.extension.Box.config.srcNode`
-    * :data:`~component.extension.Box.config.width`
-    * :data:`~component.extension.Box.config.height`
-    * :data:`~component.extension.Box.config.content`
-    * :data:`~rich-base.RichBase.config.plugins`
-    * :data:`~component.extension.Box.prototype.contentEl`
-    * :data:`~component.extension.Box.config.elCls`
+    * :data:`~component.Control.config.srcNode`
+    * :data:`~component.Control.config.width`
+    * :data:`~component.Control.config.height`
+    * :data:`~component.Control.config.content`
+    * :data:`~base.Base.config.plugins`
+    * :data:`~component.Control.config.elCls`
     * :data:`snap`
     * :data:`snapDuration`
+
+Attributes
+----------------------------------------------------
+
+    * :attr:`~component.extension.ContentRender.prototype.contentEl`
 
 Methods
 -------------------------------

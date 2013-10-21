@@ -19,9 +19,9 @@ Class
 Configs
 -----------------------------------------------
 
-  * :data:`~component.Controller.config.prefixCls`
-  * :data:`~component.UIBase.config.srcNode`
-  * :data:`~rich-base.RichBase.config.plugins`
+  * :data:`~component.Control.config.prefixCls`
+  * :data:`~component.Control.config.srcNode`
+  * :data:`~base.Base.config.plugins`
   * :data:`~component.extension.Box.config.width`
   * :data:`~component.extension.Box.config.height`
   * :data:`~component.extension.Box.config.elCls`
@@ -55,10 +55,10 @@ Attributes
 Methods
 -----------------------------------------------
 
-  * :meth:`~rich-base.RichBase.prototype.plug`
-  * :meth:`~rich-base.RichBase.prototype.unplug`
-  * :meth:`~component.UIBase.prototype.render`
-  * :meth:`~rich-base.RichBase.prototype.destroy`
+  * :meth:`~base.Base.prototype.plug`
+  * :meth:`~base.Base.prototype.unplug`
+  * :meth:`~component.Control.prototype.render`
+  * :meth:`~base.Base.prototype.destroy`
   * :meth:`~component.extension.Box.prototype.show`
   * :meth:`~component.extension.Box.prototype.hide`
   * :meth:`~component.extension.Align.prototype.center`
@@ -72,7 +72,7 @@ Events
   * :func:`~component.extension.Box.Events.hide`
   * :func:`~component.extension.Box.Events.show`
   * :func:`~component.extension.Box.Events.beforeVisibleChange`
-  * :func:`~component.UIBase.Events.afterRenderUI`
+  * :func:`~component.Control.Events.afterRenderUI`
 
 Class Detail
 -----------------------------------------------
@@ -84,7 +84,7 @@ Class Detail
 
     | 继承自
 
-    :class:`~component.Controller`
+    :class:`~component.Control`
 
     :class:`~component.extension.Align` ,
 

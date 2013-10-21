@@ -16,17 +16,10 @@ Class
 
     * :class:`DatePicker`
 
-Classes in DatePicker
---------------------------------
-
-    * :class:`YearPanel`
-    * :class:`MonthPanel`
-    * :class:`DecadePanel`
-
 Methods
 --------------------------------
 
-    * :func:`~component.UIBase.prototype.render`
+    * :func:`~component.ComponentProcess.prototype.render`
 
 Configs
 --------------------------------
@@ -34,7 +27,7 @@ Configs
     * :func:`disabledDate`
     * :data:`showWeekNumber`
     * :data:`showToday`
-    * :data:`~component.extension.Box.config.render`
+    * :data:`~component.Control.config.render`
 
 Events
 ---------------------------------
@@ -46,44 +39,14 @@ Class Details
 
 .. class:: DatePicker
 
-    | 扩展自 :class:`~component.Controller`, 包含其全部配置,属性,方法,事件.
+    | 扩展自 :class:`~component.Control`, 包含其全部配置,属性,方法,事件.
 
     | **DatePicker** (config)
 
     * 根据配置创建picker
 
     :param Object config: 配置信息
-
-.. class:: YearPanel
-
-    | 年份选择面板，扩展自 :class:`~component.Controller`, 包含其全部配置,属性,方法,事件.
-
-    | **YearPanel** (config)
-
-    * 根据配置创建面板
-
-    :param Object config: 配置信息
-
-.. class:: MonthPanel
-
-    | 月份选择面板，扩展自 :class:`~component.Controller`, 包含其全部配置,属性,方法,事件.
-
-    | **MonthPanel** (config)
-
-    * 根据配置创建面板
-
-    :param Object config: 配置信息
-
-.. class:: DecadePanel
-
-    | 年代选择面板，扩展自 :class:`~component.Controller`, 包含其全部配置,属性,方法,事件.
-
-    | **DecadePanel** (config)
-
-    * 根据配置创建面板
-
-    :param Object config: 配置信息
-
+    
 Configs Details
 -----------------------------------
 
@@ -95,9 +58,9 @@ Configs Details
 
     .. code-block:: javascript
 
-            disabledDate: function (current, value) {
-                return current.getMonth() < value.getMonth();
-            }
+        disabledDate: function (current, value) {
+            return current.getMonth() < value.getMonth();
+        }
 
 .. data:: showWeekNumber
 
@@ -122,16 +85,11 @@ Event Details
 
     .. code-block:: javascript
 
-            picker.on('select', function (e) {
-                var value = e.value;
-                if (value) {
-                    result.html(DateFormat.getDateInstance(DateFormat.Style.FULL).format(value));
-                } else {
-                    result.html('null');
-                }
-            });
-
-
-
-
-
+        picker.on('select', function (e) {
+            var value = e.value;
+            if (value) {
+                result.html(DateFormat.getDateInstance(DateFormat.Style.FULL).format(value));
+            } else {
+                result.html('null');
+            }
+        });

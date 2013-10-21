@@ -26,8 +26,8 @@ Configs
 Methods
 ---------------------------------
 
-    * :func:`~component.UIBase.prototype.render`
-    * :meth:`~component.Controller.prototype.addChild`
+    * :func:`~component.Control.prototype.render`
+    * :meth:`~component.Control.prototype.addChild`
     * :meth:`~FilterMenu.prototype.filterItems`
     * :meth:`~FilterMenu.prototype.reset`
 

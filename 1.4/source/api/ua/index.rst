@@ -9,9 +9,7 @@ ua
 
 .. code-block:: javascript
 
-    KISSY.use('ua',function(S,UA){
-        // use UA
-    });
+    KISSY.UA.xx
 
 
 Module

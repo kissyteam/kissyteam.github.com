@@ -20,7 +20,7 @@ Class
 Configs
 -----------------------------------------------
 
-  * :data:`~rich-base.RichBase.config.plugins`
+  * :data:`~base.Base.config.plugins`
   * :data:`~Draggable.config.node`
   * :data:`~Draggable.config.handlers`
   * :data:`~Draggable.config.bufferTime`
@@ -43,9 +43,9 @@ Attributes
 Methods
 -----------------------------------------------
 
-  * :meth:`~rich-base.RichBase.prototype.plug`
-  * :meth:`~rich-base.RichBase.prototype.unplug`
-  * :meth:`~rich-base.RichBase.prototype.destroy`
+  * :meth:`~base.Base.prototype.plug`
+  * :meth:`~base.Base.prototype.unplug`
+  * :meth:`~base.Base.prototype.destroy`
 
 Events
 -----------------------------------------------
@@ -66,7 +66,7 @@ Class Detail
 .. class:: Draggable
 
     | **Draggable** (config)
-    | 继承自 :class:`~rich-base.RichBase` ，包含其所有配置，属性，方法.
+    | 继承自 :class:`~base.Base` ，包含其所有配置，属性，方法.
 
     :param Object config: 实例化可拖放对象的配置项, 详细见下节.
 
@@ -79,9 +79,8 @@ Configs Detail
 
 .. data:: Draggable.config.groups
 
-    | {Object} - 可拖动对象在的组。（设置后只和本组的 droppable 对象交互），默认值为true, 可以和所有组的 droppable 都交互。
-    | 若不需要和任何droppable 交互，为了性能，请设置 groups 为 false.
-    例如： {'x':1,'y':1} 表示属于 x 和 y 组
+    {Object} - 可拖动对象在的组。（设置后只和本组的 droppable 对象交互），默认值为true, 可以和所有组的 droppable 都交互。
+    若不需要和任何droppable 交互，为了性能，请设置 groups 为 false. 例如： {'x':1,'y':1} 表示属于 x 和 y 组
 
 .. data:: Draggable.config.handlers
 

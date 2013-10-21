@@ -49,7 +49,7 @@ Class Detail
     | **Button** (config)
     | xclass: 'button'
     
-    * 继承自 :class:`~component.Controller` , 包含其全部配置,属性,方法,事件.
+    * 继承自 :class:`~component.Control` , 包含其全部配置,属性,方法,事件.
     
     :param Object config: 配置项，详细见下方 **Configs Detail** .
     

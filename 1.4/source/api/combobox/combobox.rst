@@ -21,7 +21,7 @@ Configs
 ------------------------------------------
 
     * :data:`~ComboBox.config.hasTrigger`
-    * :data:`~component.Controller.config.focused`
+    * :data:`~component.Control.config.focused`
     * :data:`~ComboBox.config.placeholder`
     * :data:`~ComboBox.config.menu`
     * :data:`~ComboBox.config.dataSource`
@@ -30,8 +30,8 @@ Configs
     * :data:`~ComboBox.config.matchElWidth`
     * :data:`~ComboBox.config.format`
     * :data:`~ComboBox.config.updateInputOnDownUp`
-    * :data:`~rich-base.RichBase.config.plugins`
-    * :data:`~component.UIBase.config.srcNode`
+    * :data:`~base.Base.config.plugins`
+    * :data:`~component.Control.config.srcNode`
 
 
 Attributes
@@ -44,7 +44,7 @@ Attributes
 Methods
 -----------------------------------------------
 
-    * :meth:`~component.Controller.extend` <static>
+    * :meth:`~component.Control.extend` <static>
     * :meth:`~ComboBox.prototype.sendRequest`
     
 Events
@@ -60,7 +60,7 @@ Class Detail
 
     | **ComboBox** (config)
     
-    * 继承自 :class:`~component.Controller` , 包含其全部配置,属性,方法,事件.
+    * 继承自 :class:`~component.Control` , 包含其全部配置,属性,方法,事件.
     
     :param Object config: 配置项.
     

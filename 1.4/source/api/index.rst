@@ -8,7 +8,9 @@ API Documentation
    :titlesonly:
 
 
-   seed/index
+   lang/index
+   loader/index
+   features/index
    dom/index
    event/index
    anim/index

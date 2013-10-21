@@ -25,7 +25,7 @@ Configs
 ------------------------------------------
 
     * :data:`~component.extension.Box.config.width`
-    * :data:`~component.Controller.config.focused`
+    * :data:`~component.Control.config.focused`
     * :data:`~component.extension.Box.config.height`
     * :data:`~Editor.config.customStyle`
     * :data:`~Editor.config.customLink`
@@ -33,7 +33,7 @@ Configs
     * :data:`~Editor.config.textarea`
     * :data:`~base.Base.config.plugins`
     * :data:`~base.Base.config.listeners`
-    * :data:`~component.UIBase.config.srcNode`
+    * :data:`~component.Control.config.srcNode`
     * :data:`~Editor.config.mode`
     * :data:`~Editor.config.data`
 
@@ -58,7 +58,7 @@ Attributes
 Methods
 -----------------------------------------------
 
-    * :meth:`~component.Controller.extend` <static>
+    * :meth:`~component.Control.extend` <static>
     * :meth:`~Editor.prototype.execCommand`
     * :meth:`~Editor.prototype.hasCommand`
     * :meth:`~Editor.prototype.queryCommandValue`
@@ -114,7 +114,7 @@ Class Detail
     | **Editor** (config)
     | xclass: 'editor'
 
-    * 继承自 :class:`~component.Controller` , 包含其全部配置,属性,方法,事件.
+    * 继承自 :class:`~component.Control` , 包含其全部配置,属性,方法,事件.
 
     :param Object config: 配置项.
 

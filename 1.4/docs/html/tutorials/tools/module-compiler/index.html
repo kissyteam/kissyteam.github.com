@@ -8,9 +8,11 @@
 
 <title>KISSY Module Compiler &mdash; KISSY v1.4.x</title>
 
-<link rel="stylesheet" href="http://dev.kissyui.com/kissy/build/css/dpl/base-min.css"/>
-<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.3.2/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="../../../_static/kissy.css"/>
+    <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
 <link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
 
 <script>
     var DOCUMENTATION_OPTIONS = {
@@ -35,121 +37,40 @@
     })();
 
 </script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Le styles -->
-	<!--link rel="stylesheet" href="../../../_static/skin/bootstrap.css"/>
-	<link rel="stylesheet" href="../../../_static/skin/bootstrap-responsive.css"/>
-	<link rel="stylesheet" href="../../../_static/skin/prettify.css"/>
-	<link rel="stylesheet" href="../../../_static/skin/docs.css"/>
-	<link rel="stylesheet" href="../../../_static/skin/todc-bootstrap.css"/-->
-
-	<link rel="stylesheet" href="../../../_static/skin/kissy.css"/>
-	<link rel="stylesheet" href="../../../_static/skin/prettify.css"/>
-	<link rel="stylesheet" href="../../../_static/skin/forkit.css"/>
-	<link rel="stylesheet" href="../../../_static/skin/bootstrap.css"/>
-	<link href="http://fonts.googleapis.com/css?family=Droid+Sans|Lekton|Ubuntu+Mono:400,700" rel="stylesheet">
-	<script src="http://g.tbcdn.cn/trip/kissy/1.4.0/seed-min.js"></script>
-
 </head>
-<body data-spy="scroll" data-target=".bs-docs-sidebar">
+<body><div id="header">
+    <h1 class="logo"><a alt="KISSY" href="http://docs.kissyui.com">
 
+        <img src="http://gtms01.alicdn.com/tps/i1/T1MVbxFoRcXXchhRni-175-68.png" />
 
-	<nav id="sidebar">
-		<header>
-	  		<a href="../../../../../guideline/" >
-				<img src="http://gtms01.alicdn.com/tps/i1/T1MVbxFoRcXXchhRni-175-68.png" alt="" />
-			</a>
-		</header>
-		
-    <div class="col-sub">
+    </a></h1>
 
-<div class="s-box">
-    <div class="s-box-bd">
-        <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">API Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../demo/index.html">Demos</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Tutorial</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../kissy/index.html">KISSY Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../style-guide/index.html">最佳编码实践</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../workflow/index.html">组件开发指南</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html">前端常用工具</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="">KISSY Module Compiler</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../use-sphinx.html">Sphinx 使用介绍</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-    </div>
-</div>
-    </div>
-    <div class="col-extra">
-        
-	<div class="s-box">
-		<div class="s-box-hd">
-			<h3>本节提纲</h3>
-		</div>
-		<div class="s-box-bd">
-			<ul>
-<li><a class="reference internal" href="#">KISSY Module Compiler</a><ul>
-<li><a class="reference internal" href="#id2">简介</a></li>
-<li><a class="reference internal" href="#id3">下载</a></li>
-<li><a class="reference internal" href="#id5">使用说明</a></li>
-<li><a class="reference internal" href="#id6">举例</a><ul>
-<li><a class="reference internal" href="#id7">下面介绍 KISSY Module Compiler 的两个用法：模块依赖自动合并与模块依赖自动抽取</a><ul>
-<li><a class="reference internal" href="#id8">1. 模块依赖自动合并</a><ul>
-<li><a class="reference internal" href="#id9">1.1 参数说明</a><ul>
-<li><a class="reference internal" href="#require">require</a></li>
-<li><a class="reference internal" href="#baseurls">baseUrls</a></li>
-<li><a class="reference internal" href="#encodings">encodings</a></li>
-<li><a class="reference internal" href="#outputencoding">outputEncoding</a></li>
-<li><a class="reference internal" href="#output">output</a></li>
-<li><a class="reference internal" href="#outputdependency">outputDependency</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id10">1.2 最终效果</a></li>
-<li><a class="reference internal" href="#id11">1.3 连接状况</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id12">2. 模块依赖自动抽取</a><ul>
-<li><a class="reference internal" href="#id13">2.1 参数说明</a><ul>
-<li><a class="reference internal" href="#id14">baseUrls</a></li>
-<li><a class="reference internal" href="#id15">encodings</a></li>
-<li><a class="reference internal" href="#id16">outputEncoding</a></li>
-<li><a class="reference internal" href="#id17">output</a></li>
-<li><a class="reference internal" href="#fixmodulename">fixModuleName</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id18">2.2 最终效果</a></li>
-<li><a class="reference internal" href="#id19">2.3 连接情况</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-		</div>
-	</div>
-
-    </div>
+    <ul class="navigation">
+        <li><a href="http://docs.kissyui.com">首页</a></li>
+        <li><a href="../../../../html/tutorials/index.html" >Tutorials</a></li>
+        <li><a href="../../../../html/api/index.html" >API</a></li>
+        <li><a href="../../../../html/demo/index.html" >DEMO</a></li>
+        <li><a href="https://groups.google.com/group/kissy-ui" >Google Group</a></li>
+        <li><a href="http://www.github.com/kissyteam" >Source Code</a></li>
+        <li><a href="http://docs.kissyui.com/1.4/api/" >English API Docs</a></li>
+        <li><a href="http://blog.kissyui.com/" target="_blank">Offical Blog</a></li>
+    </ul>
 <div id="searchbox" class="searchbox">
     <form class="search" action="../../../search.html" method="get">
-        <input type="text" name="q" class="ipt"/>
-        <input type="submit" value="Search" class="btn"/>
+        <input type="text" name="q" size="28" class="ipt"/>
+        <input type="submit" value="Go" class="btn"/>
         <input type="hidden" name="check_keywords" value="yes"/>
         <input type="hidden" name="area" value="default"/>
     </form>
 </div>
-	</nav>
-	<div id="content" class="body">
-		<article>
-				
+
+</div>
+
+<div id="content">
+	<div  id="layout" class="layout grid-s6m0e7">
+			<div class="col-main">
+				<div class="main-wrap">
+                    
 
 <div class='related'>
     <h3>Navigation</h3>
@@ -172,7 +93,7 @@
       <li><a href="../index.html" accesskey="U">前端常用工具</a> &#187; </li> 
     </ul>
 </div>
-				
+					<div class="body">
   <span class="target" id="module-module-compiler"></span><div class="section" id="kissy-module-compiler">
 <h1>KISSY Module Compiler<a class="headerlink" href="#kissy-module-compiler" title="Permalink to this headline">¶</a></h1>
 <p>author: <a class="reference external" href="mailto:yiminghe&#37;&#52;&#48;gmail&#46;com">承玉</a></p>
@@ -182,7 +103,7 @@
 <li>是一个自动模块依赖合并工具.</li>
 <li>是一个自动模块依赖抽取工具.</li>
 <li>是一个模块代码规范辅助工具, 可以辅助规范模块编写, 不仅仅只适用动态加载场景, 也可以用来提高开发阶段效率.</li>
-<li>是一个模块代码部署工具. 结合 <a class="reference internal" href="../../../api/seed/loader/index.html#loader"><em>KISSY Loader</em></a> , 用于模块代码部署阶段, 多个模块根据其依赖合并为一个文件, 减少 HTTP 链接数.</li>
+<li>是一个模块代码部署工具. 结合 <a class="reference internal" href="../../../api/loader/index.html#loader"><em>KISSY Loader</em></a> , 用于模块代码部署阶段, 多个模块根据其依赖合并为一个文件, 减少 HTTP 链接数.</li>
 </ul>
 </div>
 <div class="section" id="id3">
@@ -539,8 +460,31 @@
 </div>
 </div>
 
+</div>
+                    
 
-				<div id="disqus_thread"></div>
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../use-sphinx.html" title="Sphinx 使用介绍"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="../index.html" title="前端常用工具"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../../index.html">KISSY v1.4.x</a> &#187; </li>
+      <li><a href="../../index.html" >Tutorial</a> &#187; </li>
+      <li><a href="../index.html" accesskey="U">前端常用工具</a> &#187; </li> 
+    </ul>
+</div>
+					<div id="disqus_thread"></div>
 <script>
     if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -576,23 +520,94 @@
         }
     </script>
 </div>-->
-		</article>
+				</div>
+			</div>
+		
+    <div class="col-sub">
+
+<div class="s-box">
+    <div class="s-box-bd">
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../demo/index.html">Demos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../kissy/index.html">KISSY Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../style-guide/index.html">最佳编码实践</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workflow/index.html">组件开发指南</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">前端常用工具</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">KISSY Module Compiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../use-sphinx.html">Sphinx 使用介绍</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</div>
+    </div>
+    <div class="col-extra">
+        
+	<div class="s-box">
+		<div class="s-box-hd">
+			<h3>本节提纲</h3>
+		</div>
+		<div class="s-box-bd">
+			<ul>
+<li><a class="reference internal" href="#">KISSY Module Compiler</a><ul>
+<li><a class="reference internal" href="#id2">简介</a></li>
+<li><a class="reference internal" href="#id3">下载</a></li>
+<li><a class="reference internal" href="#id5">使用说明</a></li>
+<li><a class="reference internal" href="#id6">举例</a><ul>
+<li><a class="reference internal" href="#id7">下面介绍 KISSY Module Compiler 的两个用法：模块依赖自动合并与模块依赖自动抽取</a><ul>
+<li><a class="reference internal" href="#id8">1. 模块依赖自动合并</a><ul>
+<li><a class="reference internal" href="#id9">1.1 参数说明</a><ul>
+<li><a class="reference internal" href="#require">require</a></li>
+<li><a class="reference internal" href="#baseurls">baseUrls</a></li>
+<li><a class="reference internal" href="#encodings">encodings</a></li>
+<li><a class="reference internal" href="#outputencoding">outputEncoding</a></li>
+<li><a class="reference internal" href="#output">output</a></li>
+<li><a class="reference internal" href="#outputdependency">outputDependency</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id10">1.2 最终效果</a></li>
+<li><a class="reference internal" href="#id11">1.3 连接状况</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id12">2. 模块依赖自动抽取</a><ul>
+<li><a class="reference internal" href="#id13">2.1 参数说明</a><ul>
+<li><a class="reference internal" href="#id14">baseUrls</a></li>
+<li><a class="reference internal" href="#id15">encodings</a></li>
+<li><a class="reference internal" href="#id16">outputEncoding</a></li>
+<li><a class="reference internal" href="#id17">output</a></li>
+<li><a class="reference internal" href="#fixmodulename">fixModuleName</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id18">2.2 最终效果</a></li>
+<li><a class="reference internal" href="#id19">2.3 连接情况</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+		</div>
 	</div>
-<footer class="footer">
-  <div class="container">
-	  <p>&copy; Copyright 2010~2112, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a></p>
-  </div>
-</footer>
-<p><a href="https://github.com/kissyteam/kissy" target="_blank" class="github-ribbon"><img style="z-index:9999999;position: absolute; top: 0; right: 0; border: 0;" src="../../../_static/skin/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a></p>
+
+    </div>
+	</div>
+    <script>
+        if(!$.trim($(".col-extra").html())){
+            $("#layout").removeClass("grid-s6m0e7").addClass("grid-s6m0");
+        }
+    </script>
+</div>
+<div id="footer">
+    &copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
 </body>
-<script>
-	// added by jayli
-	(function(){
-		$('table.docutils').addClass('table table-bordered');
-		$('.admonition.note').addClass('alert alert-info');
-		$('.admonition.hint').addClass('alert alert-success');
-		$('.admonition.warning').addClass('alert alert-warning');
-		$('.admonition.attention').addClass('alert alert-danger');
-	})();
-</script>
 </html>

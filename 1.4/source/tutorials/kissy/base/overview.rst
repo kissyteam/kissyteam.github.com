@@ -1,5 +1,4 @@
-
-hBase 概述
+Base 概述
 ===========================
 
 author: `左莫 <zuomo@taobao.com>`_

@@ -18,7 +18,7 @@
 - [Mask 动画效果](http://docs.kissyui.com/1.3/source/raw/demo/overlay/mask-anim.html)
 - [Effect target 效果](http://docs.kissyui.com/1.3/source/raw/demo/overlay/effect-target.html)
 
-Overlay 由三个内部组件派生出来，Controller、Align、Position，Controller又包含另外两个基础组件UIBase和Box。因此Overlay的实例方法大都是组装来的。`Overlay`对象下挂接两个由他派生出的类：`Dialog`和`Popup`，这两个实现是最常用的。
+Overlay 由三个内部组件派生出来，Control、Align、Position，Controller又包含另外两个基础组件UIBase和Box。因此Overlay的实例方法大都是组装来的。`Overlay`对象下挂接两个由他派生出的类：`Dialog`和`Popup`，这两个实现是最常用的。
 
 ![](templates/assets/img/overlay.png)
 

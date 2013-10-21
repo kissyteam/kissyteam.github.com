@@ -36,7 +36,7 @@
       <li><a href="get-started.html"><img src="templates/assets/img/icon-getting-started.png">KISSY 1.4.x 教程大纲</a></li>
       <li class="nav-sub"><a href="module-map.html">核心模块列表</a></li>
       <li class="nav-sub"><a href="kmd.html">KISSY 模块规范 (KMD)</a></li>
-      <li class="nav-sub"><a href="config.html">模块自由定制工具</a></li>
+      <!-- <li class="nav-sub"><a href="config.html">模块自由定制工具</a></li> -->
       <li class="nav-sub"><a href="gbs.html">浏览器兼容基准(GBS)</a></li>
       <li class="nav-sub"><a href="http://cyj.me/jquery-kissy-rosetta/">jQuery KISSY 对比手册</a></li>
       <li class="nav-sub"><a href="http://gallery.kissyui.com/guide">KISSY 组件开发规范</a></li>
@@ -58,7 +58,7 @@
       <li class="nav-sub nav-divider"><a href="http://work.tmall.net/muidoc/build/">MUI</a></li>
       <li><a href="https://github.com/kissyteam/kissy/blob/master/CONTRIBUTING.md">为 KISSY Core 贡献代码</a></li>
       <li class="nav-sub"><a href="http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml">HTML/CSS编码规范</a></li>
-      <li class="nav-sub nav-divider"><a href="http://docs.kissyui.com/source/tutorials/style-guide/google/javascriptguide.xml">JavaScript 编码规范</a></li>
+      <li class="nav-sub nav-divider"><a href="http://docs.kissyui.com/docs/html/tutorials/style-guide/google-js-style.html">JavaScript 编码规范</a></li>
 	  <li><a href="upgrade.html"><img src="templates/assets/img/icon-documentation.png">1.3.x->1.4.0 升级指南</a></li>
 	  <li><a href="faq.html"><img src="templates/assets/img/icon-faqs.png">FAQ</a></li>
       <li><a href="https://github.com/kissyteam/kissy"><img src="templates/assets/img/icon-github.png">GitHub</a></li>
@@ -72,7 +72,7 @@
 
 	<h1>Seed</h1>
 <blockquote>
-<p>Seed 模块是 KISSY 的核心。必须在所有使用 KISSY 的页面中引入，所有核心模块的依赖关系均在 Seed 中定义，基于它可以生长出你所需要的代码基础库，而无需手写<code>script</code>标签。注意：Seed 并不是一个“模块名”，但它包含这些核心模块：lang，uri，features，promise，path，loader，ua。模块名称均小写。</p>
+<p>Seed 模块是 KISSY 的核心。必须在所有使用 KISSY 的页面中引入，所有核心模块的依赖关系均在 Seed 中定义，基于它可以生长出你所需要的代码基础库，而无需手写<code>script</code>标签。注意：Seed 并不是一个“模块名”，但它包含这些核心功能：lang，features，loader，ua。模块名称均小写。</p>
 </blockquote>
 <h2>载入 seed</h2>
 <pre><code>&lt;script src=&quot;http://g.tbcdn.cn/kissy/k/1.4.0/seed-min.js&quot;&gt;&lt;/script&gt;</code></pre>
@@ -189,12 +189,10 @@ KISSY.add(&#39;path/to/a&#39;,function(S){
 <h2>Seed 中的模块预设</h2>
 <p>以上为 KISSY 核心模块的实现机理。<code>seed.js</code> 类似上文提到的 <code>mods.js</code>，是一个注册模块的集合，<code>seed</code>并不表示任何一个模块名，因此这个用法是错误的：</p>
 <pre><code>KISSY.use(&#39;seed&#39;,function(){});</code></pre>
-<p>应当这样使用Seed中注册的模块</p>
-<pre><code>KISSY.use(&#39;lang,ua&#39;,function(S,Lang,UA){
-    // Your code...    
-});</code></pre>
-<h3>使用Seed中模块的另外一种快捷调用方式</h3>
-<p>seed.js 中注册的模块都会给全局KISSY对象挂载快捷调用的通道，比如<code>Lang.clone()</code>可以通过<code>KISSY.clone()</code>来调用。但这种做法仅限于KISSY核心模块，自定义模块建议严格按照KMD规范来传递参数。</p>
+<p>seed 中的功能可以通过 S 直接引用，例如</p>
+<pre><code>KISSY.isArray([]);
+KISSY.UA.ie;</code></pre>
+<p>但这种做法仅限于KISSY核心模块，自定义模块建议严格按照KMD规范来传递参数。</p>
 <h2>模块的一次性加载</h2>
 <p>由于KISSY设计是模块化的，模块之间的依赖关系通过use()和add()来处理，但模块依赖关系是记录在各自模块当中的，尽管程序运行逻辑上不会出错，但会造成串行加载。比如a模块依赖b，b依赖c，页面在加载完成b模块之前并不知道b依赖了别的什么模块，加载瀑布过程形如：</p>
 <p><img src="http://jayli.github.io/sandbox/assets/loading.png" alt=""></p>
@@ -281,7 +279,7 @@ KISSY.use(&#39;a&#39;,function(){
 
 
 	<div class="text-center">
-		©2013 - 2033 KISSY UI LIBRARY
+		©2010 - 2112 KISSY UI LIBRARY
 		<br /> <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=kissyteam&amp;repo=kissy&amp;type=watch&amp;count=true" width="100" height="20" title="Star on GitHub"></iframe> 
 	<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=kissyteam&amp;repo=kissy&amp;type=fork&amp;count=true" width="102" height="20" title="Fork on GitHub"></iframe>
 	</div>

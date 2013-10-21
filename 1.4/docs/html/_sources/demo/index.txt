@@ -7,7 +7,8 @@ Demos
 .. toctree::
    :titlesonly:
 
-   seed/index
+   lang/index
+   loader/index
    anim/index
    promise/index
    date/index
