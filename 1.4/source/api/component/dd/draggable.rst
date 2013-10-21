@@ -29,7 +29,7 @@ Configs
   * :data:`~Draggable.config.disabled`
   * :data:`~Draggable.config.move`
   * :data:`~Draggable.config.groups`
-  
+
 Attributes
 -----------------------------------------------
 
@@ -39,7 +39,7 @@ Attributes
   * :attr:`~Draggable.prototype.disabled`
   * :attr:`~Draggable.prototype.node`
   * :attr:`~Draggable.prototype.dragNode`
-  
+
 Methods
 -----------------------------------------------
 
@@ -64,10 +64,10 @@ Class Detail
 -----------------------------------------------
 
 .. class:: Draggable
-    
+
     | **Draggable** (config)
     | 继承自 :class:`~rich-base.RichBase` ，包含其所有配置，属性，方法.
-    
+
     :param Object config: 实例化可拖放对象的配置项, 详细见下节.
 
 Configs Detail
@@ -79,7 +79,8 @@ Configs Detail
 
 .. data:: Draggable.config.groups
 
-    {Object} - 可拖动对象在的组。（设置后只和本组的 droppable 对象交互），默认和所有组的 droppable 都交互。
+    | {Object} - 可拖动对象在的组。（设置后只和本组的 droppable 对象交互），默认值为true, 可以和所有组的 droppable 都交互。
+    | 若不需要和任何droppable 交互，为了性能，请设置 groups 为 false.
     例如： {'x':1,'y':1} 表示属于 x 和 y 组
 
 .. data:: Draggable.config.handlers
@@ -99,11 +100,11 @@ Configs Detail
 .. data:: Draggable.config.bufferTime
 
     {Number} - 默认同 :attr:`DDM.get("bufferTime") <dd.DDM.prototype.bufferTime>`
-    
+
 .. data:: Draggable.config.disabled
 
     {Boolean} - 默认 false。是否禁用改拖对象功能.
-    
+
 .. data:: Draggable.config.move
 
     {Boolean} - 默认 false。关联元素是否随鼠标移动。（例如：resize 功能完全不需要关联元素移动）
@@ -123,11 +124,11 @@ Attributes Detail
 .. attribute:: Draggable.POINT
 
     ``static``, {String} - 等于 "point"
-    
+
 .. attribute:: Draggable.INTERSECT
 
     ``static``, {String} - 等于 "intersect"
-    
+
 .. attribute:: Draggable.STRICT
 
     ``static``, {String} - 等于 "strict"
@@ -139,7 +140,7 @@ Attributes Detail
 .. attribute:: Draggable.prototype.node
 
     {KISSY.Node} - 只读。表示当前拖动的节点, 在应用 ``DD.Proxy`` 时表示代理节点.
-    
+
 .. attribute:: Draggable.prototype.dragNode
 
     {KISSY.Node} - 只读。表示配置项中 :attr:`node` 代表的节点.
@@ -152,16 +153,18 @@ Events Detail
 
     | **dragstart** ( ev )
     | 当可拖放对象开始被用户拖放时触发.
-    
+
     :param Object ev.drag: 自身, 当前拖放对象.
 
 .. function:: Draggable.Events.drag
 
     | **drag** ( ev )
     | 当可拖放对象拖放过程中触发.
-    
-    :param Number ev.left: 拖放节点应该设置的相对文档根节点的横坐标位置.
-    :param Number ev.top: 拖放节点应该设置的相对文档根节点的纵坐标位置.
+
+    .. note::
+
+        事件对象不再包括 left/top 属性
+
     :param Number ev.pageX: 当前鼠标的绝对横坐标.
     :param Number ev.pageY: 当前鼠标的绝对纵坐标.
     :param Object ev.drag: 自身, 当前拖放对象.
@@ -180,7 +183,7 @@ Events Detail
 
     :param Object ev.drag: 自身, 当前拖放对象.
     :param Object ev.drop: 当前交互的Droppable对象.
-    
+
 .. function:: Draggable.Events.dragover
 
     | **dragover** ( ev )
@@ -196,7 +199,7 @@ Events Detail
 
     :param Object ev.drag: 自身, 当前拖放对象.
     :param Object ev.drop: 当前交互的Droppable对象.
-    
+
 .. function:: Draggable.Events.dragdrophit
 
     | **dragdrophit** ( ev )
@@ -204,7 +207,7 @@ Events Detail
 
     :param Object ev.drag: 自身, 当前拖放对象.
     :param Object ev.drop: 当前交互的Droppable对象.
-    
+
 .. function:: Draggable.Events.dragdropmiss
 
     | **dragdropmiss** ( ev )
@@ -216,21 +219,21 @@ Events Detail
 
     ``Draggable`` 默认实例化后仅表示会根据鼠标拖放触发 :func:`~Draggable.Events.drag` 事件, 并不会导致节点移动，
     通过以下设置来使得节点跟随鼠标移动：
-    
-    ..    
+
+    ..
         1. 可监听 :func:`~Draggable.Events.drag` 事件, 根据事件对象参数的坐标设置拖放节点的具体位置.
-    
-        
+
+
         .. code-block:: javascript
-    
+
             new Draggable({node :"#d"}).on("drag",function(ev){
                 this.get("node").offset({left:ev.left,top:ev.top});
             });
-        
+
     设置 :data:`~Draggable.config.move` 为 true.
-    
+
     .. code-block:: javascript
-    
+
         new Draggable({
             node:"#d",
             move:true

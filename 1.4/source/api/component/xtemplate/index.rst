@@ -5,6 +5,7 @@ xtemplate
 ===============================
 
 | 富逻辑的 KISSY 模板引擎
+| 兼容 mustache
 | :ref:`demo<xtemplate_demo>`
 
 
@@ -30,8 +31,6 @@ Configs
 Methods
 --------------------------------------------------------
 
-    * :meth:`~XTemplate.prototype.removeSubTpl`
-    * :meth:`~XTemplate.prototype.addSubTpl`
     * :meth:`~XTemplate.prototype.addCommand`
     * :meth:`~XTemplate.prototype.removeCommand`
     * :meth:`~XTemplate.prototype.compile`
@@ -40,7 +39,6 @@ Methods
 Static Methods
 -------------------------------------------------
 
-    * :func:`~XTemplate.addSubTpl`
     * :func:`~XTemplate.addCommand`
 
 Class Detail
@@ -94,22 +92,9 @@ Configs Detail
 Methods Detail
 ----------------------------------------------------------------------------------------------------------
 
-.. method:: XTemplate.prototype.removeSubTpl
+.. note::
 
-    | **removeSubTpl** (subTplName)
-    | 删除指定的局部子模板
-
-    :param String subTplName: 子模板名称
-
-
-.. method:: XTemplate.prototype.addSubTpl
-
-    | **addSubTpl** (subTplName, def)
-    | 添加指定的局部子模板， 格式类似 :data:`~XTemplate.config.subTpls`
-
-    :param String subTplName: 子模板名称
-    :param String|Function def: 添加子模板定义
-
+    | 删除 XTemplate.addSubTpl/XTemplate.removeSubTpl 直接使用 KISSY.add 注册全局模板（模板即模块）
 
 .. method:: XTemplate.prototype.removeCommand
 
@@ -146,12 +131,6 @@ Methods Detail
 
 Static Methods Detail
 -----------------------------------------------
-
-.. function:: XTemplate.addSubTpl
-
-    | **addSubTpl( subTplName, def )**
-    | 添加全局子模板， 格式同 :meth:`~XTemplate.prototype.addSubTpl`
-
 
 .. function:: XTemplate.addCommand
 

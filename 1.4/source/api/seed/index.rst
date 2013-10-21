@@ -9,4 +9,10 @@ Seed
    :titlesonly:
 
    loader/index
-   kissy/index
+   uri/index
+   features/index
+   promise/index
+   path/index
+   lang/index
+   ua/index
+   
