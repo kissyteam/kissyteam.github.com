@@ -4,6 +4,7 @@ ScrollView.Plugin.ScrollBar
 ==============================
 
 | ScrollView的滚动条插件
+| 用来自定义滚动条
 
 Class
 -------------------------------

@@ -1,19 +1,21 @@
 .. currentmodule:: scroll-ivew
 
-ScrollView 基本使用示例
+ScrollView Drag Snap使用示例
 =============================
 
 Class
 -----------------------------------------------
 
-  * :class:`~scroll-view.Base`
+  * :class:`~scroll-view.Drag`
 
-ScrollView 基本使用示例
+ScrollView Drag Snap使用示例
 -----------------------------------------------
+
+    请在移动浏览器上查看 demo
 
 .. raw:: html
 
-    <iframe width="100%" height="400" class="iframe-demo" src="/1.4/source/raw/demo/scroll-view/demo1.html"></iframe>
+    <iframe width="100%" height="400" class="iframe-demo" src="/1.4/source/raw/demo/scroll-view/demo2.html"></iframe>
 
 .. code-block:: javascript
 
@@ -23,10 +25,11 @@ ScrollView 基本使用示例
             content += '<p>This is ' + i + ' block</p>';
         }
 
-        var scrollView = new ScrollView({
+        new ScrollView({
             width: 320,
             height: 219,
-            content: content,
+            snap:'p',
+            content: content
         }).render();
 
         S.all('#destroy').on('click', function () {

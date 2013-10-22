@@ -98,6 +98,10 @@ Methods Detail
 
             {Function} - 验证失败的回调，包括失败原因
 
+        .. attribute:: opts.force
+
+            {Function} - 是否强制触发 change 事件，默认值为 false，当值发生变化时才触发。
+
     :returns: 该次属性设置是否生效（是否通过了 validator 验证）
 
 
@@ -114,6 +118,10 @@ Methods Detail
         .. attribute:: opts.error
 
             {Function} - 验证失败的回调，包括失败原因
+
+        .. attribute:: opts.force
+
+            {Function} - 是否强制触发 change 事件，默认值为 false，当值发生变化时才触发。
 
     :returns: 该批属性设置是否全部生效（是否通过了 validator 验证）
 

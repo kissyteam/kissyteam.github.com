@@ -26,8 +26,8 @@ Configs
     * :data:`~component.Control.config.content`
     * :data:`~base.Base.config.plugins`
     * :data:`~component.Control.config.elCls`
-    * :data:`snap`
-    * :data:`snapDuration`
+    * :data:`~Base.config.snap`
+    * :data:`~Base.config.snapDuration`
 
 Attributes
 ----------------------------------------------------

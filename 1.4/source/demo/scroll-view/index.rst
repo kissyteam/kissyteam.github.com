@@ -18,5 +18,6 @@ Demos
        :titlesonly:
 
        base
-       drag
-       plugin
+       snap
+       plugin-scrollbar
+       plugin-pullToRefresh
