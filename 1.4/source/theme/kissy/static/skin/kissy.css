@@ -69,7 +69,7 @@ h2 {
 }
 
 #search {
-  font-family: 'Lekton', serif;
+  font-family: 'tahoma', serif;
   font-size: 13px;
   border-radius: 5px;
   -moz-border-radius: 5px;
@@ -93,7 +93,7 @@ nav {
   background-color:#EDEDED;
   text-align: center;
   padding: 0 0 14px 0;
-  font-family: 'Lekton', sans-serif;
+  font-family: 'tahoma', sans-serif;
 }
 
 nav header {
@@ -212,7 +212,7 @@ article blockquote {
 
 #content-subnav {
   text-align: center;
-  font-family: 'Lekton', sans-serif;
+  font-family: 'tahoma', sans-serif;
   margin: 0 0 20px 0;
 }
 
@@ -685,7 +685,20 @@ tt, code, kbd, samp {
 
 
 tt.descclassname, tt.descname {
-	color:#005580;
+    color: #9f2a2a;
+}
+tt.descclassname, tt.descname, tt.xref {
+    font-weight: bold;
+}
+tt.descclassname, em.property {
+    display: none;
+}
+dl.function dd>.line-block .line:first-child, dl.class dd>.line-block .line:first-child, dl.method dd>.line-block .line:first-child, dl.staticmethod dd>.line-block .line:first-child {
+    border-left: 3px solid #A4D3F2;
+    padding-left: 6px;
+}
+#content li {
+    list-style-image: url('bullet.gif');
 }
 
 nav .col-sub , nav .searchbox{
@@ -695,11 +708,9 @@ nav .col-sub {
 	width:100%;
 }
 nav {
-	font-family:'Lekton',sans-serif;
+	font-family:'tahoma',sans-serif;
 }
 
-article ul {
-}
 
 article em {
 	color:#C7254E;
@@ -738,3 +749,11 @@ blockquote {
  dt,dd {
 	line-height:23px !important;
  }
+
+
+/* iPhone 及以下 */
+@media only screen and (max-width: 767px) {
+	.github-ribbon {
+		display:none !important;
+	}
+}
