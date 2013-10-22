@@ -207,17 +207,6 @@
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<div class="last line-block">
-<div class="line">form 参数代表的 form 节点中如果有 input type=&#8217;file&#8217; 的节点会自动启用 iframe-upload 模式，</div>
-<div class="line">否则收集 form 内 input 数据启用普通 xhr 模式.</div>
-</div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">form 参数用户文件上传时请设置 type:&#8217;post&#8217;.</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
 <p>iframe-upload 模式与 subDomain 模式需配置服务器 CORS 头，例如</p>
 <div class="last highlight-php"><div class="highlight"><pre><span class="x">res.set(&#39;Access-Control-Allow-Methods&#39;, &#39;GET, POST, OPTIONS&#39;);</span>
 <span class="x">res.set(&#39;Access-Control-Allow-Credentials&#39;, &#39;true&#39;);</span>
@@ -228,7 +217,7 @@
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">withCredentials 默认为 true</p>
+<p class="last">跨域时，withCredentials 默认为 true</p>
 </div>
 <div class="section" id="module">
 <h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
