@@ -1,0 +1,387 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="data-spm" content="1" data-spm-protocol="i" />
+
+<title>KISSY 组件开发规范 &mdash; KISSY v1.4.x</title>
+
+<link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.3.2/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js,searchtools.js"></script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le styles -->
+	<!--link rel="stylesheet" href="../../_static/skin/bootstrap.css"/>
+	<link rel="stylesheet" href="../../_static/skin/bootstrap-responsive.css"/>
+	<link rel="stylesheet" href="../../_static/skin/prettify.css"/>
+	<link rel="stylesheet" href="../../_static/skin/docs.css"/>
+	<link rel="stylesheet" href="../../_static/skin/todc-bootstrap.css"/-->
+
+	<link rel="stylesheet" href="../../_static/skin/kissy.css"/>
+	<link rel="stylesheet" href="../../_static/skin/prettify.css"/>
+	<link rel="stylesheet" href="../../_static/skin/forkit.css"/>
+	<link rel="stylesheet" href="../../_static/skin/bootstrap.css"/>
+	<link href="http://fonts.googleapis.com/css?family=Droid+Sans|Lekton|Ubuntu+Mono:400,700" rel="stylesheet">
+	<script src="http://g.tbcdn.cn/trip/kissy/1.4.0/seed-min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+
+	<nav id="sidebar">
+		<header>
+	  		<a href="../../../../guideline/" >
+				<img src="http://gtms01.alicdn.com/tps/i1/T1MVbxFoRcXXchhRni-175-68.png" alt="" />
+			</a>
+		</header>
+		
+    <div class="col-sub">
+
+<div class="s-box">
+    <div class="s-box-bd">
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo/index.html">Demos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../kissy/index.html">KISSY Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../style-guide/index.html">最佳编码实践</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">组件开发指南</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dev-demo.html">如何开发 KISSY 组件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow-simple.html">KISSY 组件开发流程</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">KISSY 组件开发规范</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tools/index.html">前端常用工具</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</div>
+    </div>
+    <div class="col-extra">
+        
+	<div class="s-box">
+		<div class="s-box-hd">
+			<h3>本节提纲</h3>
+		</div>
+		<div class="s-box-bd">
+			<ul>
+<li><a class="reference internal" href="#">KISSY 组件开发规范</a><ul>
+<li><a class="reference internal" href="#id1">0, 概述</a></li>
+<li><a class="reference internal" href="#api">1, 确定 API</a></li>
+<li><a class="reference internal" href="#id2">2, 模块编写</a></li>
+<li><a class="reference internal" href="#demo">3, demo 编写</a></li>
+<li><a class="reference internal" href="#readme-txt">4, readme.txt 编写</a></li>
+<li><a class="reference internal" href="#id3">5, 文档编写</a></li>
+<li><a class="reference internal" href="#id6">6, 单元测试编写</a><ul>
+<li><a class="reference internal" href="#id7">6.1 测试准备页面</a></li>
+<li><a class="reference internal" href="#id8">6.2 测试用例脚本编写</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+		</div>
+	</div>
+
+    </div>
+<div id="searchbox" class="searchbox">
+    <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" size="28" class="ipt"/>
+        <input type="submit" value="Go" class="btn"/>
+        <input type="hidden" name="check_keywords" value="yes"/>
+        <input type="hidden" name="area" value="default"/>
+    </form>
+</div>
+	</nav>
+	<div id="content" class="body">
+		<article>
+				<style>
+	.api-header {
+
+		border-bottom:1px solid #AACCEE;
+		margin-left:0px !important;
+		margin-top:0px;
+		margin-bottom:6px;
+		height:25px;
+	}
+	.api-header li{
+		border-left:1px solid #ddd;
+		font-size:14px;
+		font-weight:bold;
+		padding:0 10px;
+		float:left;
+		list-style:none !important;
+	}
+	.api-header li.first{
+		border-left:0px;
+		padding-left:0px !important;
+	}
+</style>
+
+<ul class="api-header clearfix">
+	<li class="first">
+		<a href="../../../../guideline/" >
+			首页
+		</a>
+	</li>
+	<li><a href="../../../../docs/html/api/index.html">API Doc</a></li>
+	<li><a href="../../../../docs/html/demo/index.html">源码Demo</a></li>
+	<li><a href="https://groups.google.com/group/kissy-ui">Google Group</a></li>
+	<li style="float:right"><a href="http://docs.kissyui.com/1.4/api/">English API Docs</a></li>
+	<li style="float:right" class="first"><a href="http://blog.kissyui.com">KISSY Blog</a></li>
+</ul>
+				
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="../tools/index.html" title="前端常用工具"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="workflow-simple.html" title="KISSY 组件开发流程"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../index.html">KISSY v1.4.x</a> &#187; </li>
+      <li><a href="../index.html" >Tutorial</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">组件开发指南</a> &#187; </li> 
+    </ul>
+</div>
+				
+  <div class="section" id="kissy">
+<span id="workflow-dev-spec"></span><h1>KISSY 组件开发规范<a class="headerlink" href="#kissy" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">开始之前请先阅读 <a class="reference internal" href="workflow-simple.html#workflow-simple"><em>KISSY 组件开发流程</em></a>.</div>
+</div>
+<div class="section" id="id1">
+<h2>0, 概述<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>在组建开发的各个流程中, 需要注意的地方, 完整列举出来, 有以下:</p>
+<img  src='/1.4/source/raw/workflow/workflow.png' width='600' /><p>上图中讲述了在开发一个组建中, 最详细的步骤, 但千万别吓着了, 因为, 在实际过程中, 有些东西并不需要这么多(具体要看你写的组件的复杂程度), 可以精简为以下几点.</p>
+</div>
+<div class="section" id="api">
+<h2>1, 确定 API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<p>必须. 首先确定该组件需要公开的 API 接口包括属性名称, 函数名, 参数以及返回值, 可参考 YUI3 ,Jquery 等类库的同类组件, 尽量保持一致.
+比如 Overlay, 那么其公开接口肯定包含方法 <tt class="docutils literal"><span class="pre">show</span></tt> , <tt class="docutils literal"><span class="pre">hide</span></tt> 以及弹层内容 <tt class="docutils literal"><span class="pre">content</span></tt> 属性配置.</p>
+</div>
+<div class="section" id="id2">
+<h2>2, 模块编写<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>必须. 推荐的目录结构如下, 例如组件为 Overlay 弹层, 那么该组件的目录结构应为：</p>
+<img  src='/1.4/source/raw/styleguide/component-guide.png' /><p>目录中必须包含版本号子目录以及 index 模块, 模块名为 <tt class="docutils literal"><span class="pre">gallery/overlay/1.0/index</span></tt> ,用来指明该组件依赖的子模块, 子模块的名约定为 <tt class="docutils literal"><span class="pre">gallery/overlay/1.0/xx</span></tt> ,如果组件比较简单也可只有这一个源码文件. 例如 index.js</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;gallery/overlay/1.0/index&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">O</span><span class="p">){</span>
+
+    <span class="k">return</span> <span class="nx">O</span><span class="p">;</span>
+
+<span class="p">},{</span>
+    <span class="c1">// 其他模块如果被这里指定的模块所依赖则可以不指定，例如  position 依赖 base，则 base 这里可以不指定</span>
+    <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;./position&#39;</span><span class="p">]</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>子模块放在 <tt class="docutils literal"><span class="pre">src</span></tt> 模块名为目录名的文件夹内, 例如子模块 base.js 的编写：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;gallery/overlay/1.0/base&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
+    <span class="kd">function</span> <span class="nx">Overlay</span><span class="p">(){}</span>
+
+    <span class="c1">// functions</span>
+
+    <span class="k">return</span> <span class="nx">Overlay</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>子模块间也可有依赖关系, 例如子模块 position.js 需要对基本模块 base.js 进行增强 :</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;gallery/overlay/1.0/position&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
+
+    <span class="nx">Overlay</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">xx</span><span class="o">=</span><span class="kd">function</span><span class="p">(){};</span>
+
+    <span class="k">return</span> <span class="nx">Overlay</span><span class="p">;</span>
+
+<span class="p">},{</span>
+    <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;./base&#39;</span><span class="p">]</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="demo">
+<h2>3, demo 编写<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
+<p>必须. 写一个 <tt class="docutils literal"><span class="pre">demo.html</span></tt> 简单展示下这个组件怎么用, 静态载入组件的所有依赖js即可, 注意被依赖模块js要放在依赖js前面, 例如：</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>overlay demo<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;../../../kissy/build/seed.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;base.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;position.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;index.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
+            <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;gallery/overlay/1.0/index&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Overlay</span><span class="p">){</span>
+            <span class="p">});</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="readme-txt">
+<h2>4, readme.txt 编写<a class="headerlink" href="#readme-txt" title="Permalink to this headline">¶</a></h2>
+<p>可选. 随意写, 但推荐你参考 KISSY 的 <a class="reference external" href="https://github.com/kissyteam/kissy/blob/master/README.md">readme</a></p>
+</div>
+<div class="section" id="id3">
+<h2>5, 文档编写<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>可选. 在 <tt class="docutils literal"><span class="pre">docs</span></tt> 目录下编写组件文档, 后缀名为 <tt class="docutils literal"><span class="pre">rst</span></tt> , 可参照 <tt class="docutils literal"><span class="pre">KISSY</span> <span class="pre">Overlay</span></tt> 的文档 <a class="reference external" href="../api/overlay/">api</a> 以及
+<a class="reference external" href="../demo/overlay/">使用文档</a> , 详细格式可参见 <a class="reference external" href="../tools/use-sphinx.html">sphinx</a> .
+文档不做强求, 也可直接写纯文本格式, 在 demo.html 详细讲解即可.</p>
+</div>
+<div class="section" id="id6">
+<h2>6, 单元测试编写<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>可选. 在 <tt class="docutils literal"><span class="pre">tests</span></tt> 目录下编写单元测试代码, 单元测试包括两个部分, 测试准备页面以及单元测试用例脚本.</p>
+<div class="section" id="id7">
+<h3>6.1 测试准备页面<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>编写 test.html , 引入组件源码以及单元测试框架 jasmine (在 kissy/tools/ 下) , 例如：</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Overlay Test Runner<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;../../../tools/jasmine/jasmine.css&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;../../../kissy/tools/jasmine/jasmine.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;../../../kissy/tools/jasmine/jasmine-html.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;../../../kissy/tools/jasmine/event-simulate.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;../../../kissy/build/seed.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;base.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;position.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&#39;index.js&#39;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;overlay-spec.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
+            <span class="nx">jasmine</span><span class="p">.</span><span class="nx">getEnv</span><span class="p">().</span><span class="nx">addReporter</span><span class="p">(</span><span class="k">new</span> <span class="nx">jasmine</span><span class="p">.</span><span class="nx">TrivialReporter</span><span class="p">());</span>
+            <span class="nx">jasmine</span><span class="p">.</span><span class="nx">getEnv</span><span class="p">().</span><span class="nx">execute</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">parent</span> <span class="o">&amp;&amp;</span> <span class="nx">parent</span><span class="p">.</span><span class="nx">jasmine</span><span class="p">.</span><span class="nx">kissyNext</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">parent</span><span class="p">.</span><span class="nx">jasmine</span><span class="p">.</span><span class="nx">kissyNext</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">results</span><span class="p">().</span><span class="nx">failedCount</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>6.2 测试用例脚本编写<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>测试用例编写在脚本 <tt class="docutils literal"><span class="pre">overlay-spec.js</span></tt> 中, 详细可参考 <a class="reference external" href="https://github.com/pivotal/jasmine/wiki">jasmine wiki</a> , 这里简单举个例子：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// 测试用例脚本可以包含很多 suit</span>
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;开始一个 suit&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+
+    <span class="c1">// 一个 suit 包含很多 spec</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;开始一个 spec&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+
+        <span class="cm">/*</span>
+<span class="cm">            一个 spec 包含很多 expectation</span>
+<span class="cm">        */</span>
+        <span class="nx">expect</span><span class="p">(</span><span class="s2">&quot;xx&quot;</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="s2">&quot;xx&quot;</span><span class="p">);</span>
+        <span class="nx">expect</span><span class="p">(</span><span class="s2">&quot;yy&quot;</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="s2">&quot;yy&quot;</span><span class="p">);</span>
+
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>复杂点的例子可以看 <a class="reference external" href="https://github.com/kissyteam/kissy/blob/master/src/overlay/tests/overlay-spec.js">KISSY.Overlay Unit Test</a></p>
+</div>
+</div>
+</div>
+
+
+				<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+		</article>
+	</div>
+<footer class="footer">
+  <div class="container">
+	  <p>&copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a></p>
+  </div>
+</footer>
+<p><a href="https://github.com/kissyteam/kissy" target="_blank" class="github-ribbon"><img style="z-index:9999999;position: absolute; top: 0; right: 0; border: 0;" src="../../_static/skin/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a></p>
+</body>
+<script>
+	// added by jayli
+	(function(){
+		$('table.docutils').addClass('table table-bordered');
+		$('.admonition.note').addClass('alert alert-info');
+		$('.admonition.hint').addClass('alert alert-success');
+		$('.admonition.warning').addClass('alert alert-warning');
+		$('.admonition.attention').addClass('alert alert-danger');
+	})();
+</script>
+</html>

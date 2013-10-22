@@ -1,0 +1,707 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="data-spm" content="1" data-spm-protocol="i" />
+
+<title>mvc.Collection &mdash; KISSY v1.4.x</title>
+
+<link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.3.2/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js,searchtools.js"></script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le styles -->
+	<!--link rel="stylesheet" href="../../_static/skin/bootstrap.css"/>
+	<link rel="stylesheet" href="../../_static/skin/bootstrap-responsive.css"/>
+	<link rel="stylesheet" href="../../_static/skin/prettify.css"/>
+	<link rel="stylesheet" href="../../_static/skin/docs.css"/>
+	<link rel="stylesheet" href="../../_static/skin/todc-bootstrap.css"/-->
+
+	<link rel="stylesheet" href="../../_static/skin/kissy.css"/>
+	<link rel="stylesheet" href="../../_static/skin/prettify.css"/>
+	<link rel="stylesheet" href="../../_static/skin/forkit.css"/>
+	<link rel="stylesheet" href="../../_static/skin/bootstrap.css"/>
+	<link href="http://fonts.googleapis.com/css?family=Droid+Sans|Lekton|Ubuntu+Mono:400,700" rel="stylesheet">
+	<script src="http://g.tbcdn.cn/trip/kissy/1.4.0/seed-min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+
+	<nav id="sidebar">
+		<header>
+	  		<a href="../../../../guideline/" >
+				<img src="http://gtms01.alicdn.com/tps/i1/T1MVbxFoRcXXchhRni-175-68.png" alt="" />
+			</a>
+		</header>
+		
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h4 class="s-box-hd">Seed</h4>
+    <ul class="s-box-bd">
+        <li><a href="../loader/index.html">loader</a></li>
+        <li><a href="../features/index.html">features</a></li>
+        <li><a href="../lang/index.html">lang</a></li>
+        <li><a href="../ua/index.html">ua</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h4 class="s-box-hd">Core</h4>
+    <ul class="s-box-bd">
+        <li><a href="../path/index.html">path</a></li>
+        <li><a href="../promise/index.html">promise</a></li>
+        <li><a href="../uri/index.html">uri</a></li>
+        <li><a href="../anim/index.html">anim</a></li>
+        <li><a href="../base/index.html">base</a></li>
+        <li><a href="../node/index.html">node</a></li>
+        <li><a href="../cookie/index.html">cookie</a></li>
+        <li><a href="../io/index.html">io</a></li>
+        <li><a href="../dom/index.html">dom</a></li>
+        <li><a href="../event/index.html">event</a></li>
+        <li><a href="../json/index.html">json</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h4 class="s-box-hd">Infrastructure</h4>
+    <ul class="s-box-bd">
+        <li><a href="index.html">mvc</a></li>
+        <li><a href="../xtemplate/index.html">xtemplate</a></li>
+        <li><a href="../component/index.html">component</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h4 class="s-box-hd">Components</h4>
+    <ul class="s-box-bd">
+        <li><a href="../swf/index.html">color</a></li>
+        <li><a href="../stylesheet/index.html">stylesheet</a></li>
+        <li><a href="../dd/index.html">dd</a></li>
+        <li><a href="../color/index.html">color</a></li>
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../combobox/index.html">combobox</a></li>
+        <li><a href="../editor/index.html">editor</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="../tabs/index.html">tabs</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
+        <li><a href="../swf/index.html">swf</a></li>
+        <li><a href="../scroll-view/index.html">scroll-view</a></li>
+        <li><a href="../date/index.html">date</a></li>
+        <li><a href="../split-button/index.html">split-button</a></li>
+        <li><a href="../toolbar/index.html">toolbar</a></li>
+	</ul>
+</ul>
+        
+    </div>
+    
+<div id="searchbox" class="searchbox">
+    <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" size="28" class="ipt"/>
+        <input type="submit" value="Go" class="btn"/>
+        <input type="hidden" name="check_keywords" value="yes"/>
+        <input type="hidden" name="area" value="default"/>
+    </form>
+</div>
+	</nav>
+	<div id="content" class="body">
+		<article>
+				<style>
+	.api-header {
+
+		border-bottom:1px solid #AACCEE;
+		margin-left:0px !important;
+		margin-top:0px;
+		margin-bottom:6px;
+		height:25px;
+	}
+	.api-header li{
+		border-left:1px solid #ddd;
+		font-size:14px;
+		font-weight:bold;
+		padding:0 10px;
+		float:left;
+		list-style:none !important;
+	}
+	.api-header li.first{
+		border-left:0px;
+		padding-left:0px !important;
+	}
+</style>
+
+<ul class="api-header clearfix">
+	<li class="first">
+		<a href="../../../../guideline/" >
+			首页
+		</a>
+	</li>
+	<li><a href="../../../../docs/html/api/index.html">API Doc</a></li>
+	<li><a href="../../../../docs/html/demo/index.html">源码Demo</a></li>
+	<li><a href="https://groups.google.com/group/kissy-ui">Google Group</a></li>
+	<li style="float:right"><a href="http://docs.kissyui.com/1.4/api/">English API Docs</a></li>
+	<li style="float:right" class="first"><a href="http://blog.kissyui.com">KISSY Blog</a></li>
+</ul>
+				
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="View.html" title="mvc.View"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="Model.html" title="mvc.Model"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../index.html">KISSY v1.4.x</a> &#187; </li>
+      <li><a href="../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">mvc</a> &#187; </li> 
+    </ul>
+</div>
+				
+  <div class="section" id="mvc-collection">
+<h1>mvc.Collection<a class="headerlink" href="#mvc-collection" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">集合类.</div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;mvc&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">mvc</span><span class="p">){</span>
+    <span class="c1">// use mvc.Collection</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#mvc.Collection" title="mvc.Collection"><tt class="xref py py-class docutils literal"><span class="pre">Collection</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="configs">
+<h2>Configs<a class="headerlink" href="#configs" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#mvc.Collection.config.model" title="mvc.Collection.config.model"><tt class="xref py py-data docutils literal"><span class="pre">model</span></tt></a></li>
+<li><a class="reference internal" href="#mvc.Collection.config.models" title="mvc.Collection.config.models"><tt class="xref py py-data docutils literal"><span class="pre">models</span></tt></a></li>
+<li><a class="reference internal" href="#mvc.Collection.config.url" title="mvc.Collection.config.url"><tt class="xref py py-data docutils literal"><span class="pre">url</span></tt></a></li>
+<li><a class="reference internal" href="#mvc.Collection.config.comparator" title="mvc.Collection.config.comparator"><tt class="xref py py-data docutils literal"><span class="pre">comparator</span></tt></a></li>
+<li><a class="reference internal" href="#mvc.Collection.config.sync" title="mvc.Collection.config.sync"><tt class="xref py py-data docutils literal"><span class="pre">sync</span></tt></a></li>
+<li><a class="reference internal" href="#mvc.Collection.config.parse" title="mvc.Collection.config.parse"><tt class="xref py py-data docutils literal"><span class="pre">parse</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#mvc.Collection.prototype.models" title="mvc.Collection.prototype.models"><tt class="xref py py-attr docutils literal"><span class="pre">models</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#mvc.Collection.prototype.sort" title="mvc.Collection.prototype.sort"><tt class="xref py py-meth docutils literal"><span class="pre">sort()</span></tt></a></li>
+<li><a class="reference internal" href="#mvc.Collection.prototype.toJSON" title="mvc.Collection.prototype.toJSON"><tt class="xref py py-meth docutils literal"><span class="pre">toJSON()</span></tt></a></li>
+<li><a class="reference internal" href="#mvc.Collection.Events.add" title="mvc.Collection.Events.add"><tt class="xref py py-meth docutils literal"><span class="pre">add()</span></tt></a></li>
+<li><a class="reference internal" href="#mvc.Collection.Events.remove" title="mvc.Collection.Events.remove"><tt class="xref py py-meth docutils literal"><span class="pre">remove()</span></tt></a></li>
+<li><a class="reference internal" href="#mvc.Collection.prototype.at" title="mvc.Collection.prototype.at"><tt class="xref py py-meth docutils literal"><span class="pre">at()</span></tt></a></li>
+<li><a class="reference internal" href="#mvc.Collection.prototype.load" title="mvc.Collection.prototype.load"><tt class="xref py py-meth docutils literal"><span class="pre">load()</span></tt></a></li>
+<li><a class="reference internal" href="#mvc.Collection.prototype.create" title="mvc.Collection.prototype.create"><tt class="xref py py-meth docutils literal"><span class="pre">create()</span></tt></a></li>
+<li><a class="reference internal" href="#mvc.Collection.prototype.getById" title="mvc.Collection.prototype.getById"><tt class="xref py py-meth docutils literal"><span class="pre">getById()</span></tt></a></li>
+<li><a class="reference internal" href="#mvc.Collection.prototype.getByCid" title="mvc.Collection.prototype.getByCid"><tt class="xref py py-meth docutils literal"><span class="pre">getByCid()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#mvc.Collection.Events.add" title="mvc.Collection.Events.add"><tt class="xref py py-func docutils literal"><span class="pre">add()</span></tt></a></li>
+<li><a class="reference internal" href="#mvc.Collection.Events.remove" title="mvc.Collection.Events.remove"><tt class="xref py py-func docutils literal"><span class="pre">remove()</span></tt></a></li>
+<li><a class="reference internal" href="#mvc.Collection.Events.afterModelsChange" title="mvc.Collection.Events.afterModelsChange"><tt class="xref py py-func docutils literal"><span class="pre">afterModelsChange()</span></tt></a></li>
+<li><tt class="xref py py-func docutils literal"><span class="pre">*Change()</span></tt></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mvc.Collection">
+<em class="property">class </em><tt class="descclassname">mvc.</tt><tt class="descname">Collection</tt><a class="headerlink" href="#mvc.Collection" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>Collection</strong> (config)</div>
+</div>
+<ul class="simple">
+<li>继承自 <a class="reference internal" href="../base/base.html#base.Base" title="base.Base"><tt class="xref py py-class docutils literal"><span class="pre">Base</span></tt></a> , 包含其全部配置,属性,方法,事件.</li>
+<li>集合代表 <a class="reference internal" href="Model.html#mvc.Model" title="mvc.Model"><tt class="xref py py-class docutils literal"><span class="pre">Model</span></tt></a> 的集合，并具备自动和服务器同步的一些功能</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 配置项.详细见下方 <strong>Configs Detail</strong> .</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="configs-detail">
+<h2>Configs Detail<a class="headerlink" href="#configs-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="mvc.Collection.config.model">
+<tt class="descclassname">Collection.config.</tt><tt class="descname">model</tt><a class="headerlink" href="#mvc.Collection.config.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Model} - 可选，默认 <a class="reference internal" href="Model.html#mvc.Model" title="mvc.Model"><tt class="xref py py-class docutils literal"><span class="pre">Model</span></tt></a> . 自定义模型的构造器</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="mvc.Collection.config.models">
+<tt class="descclassname">Collection.config.</tt><tt class="descname">models</tt><a class="headerlink" href="#mvc.Collection.config.models" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Array} - 可选，模型对象的数组</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="mvc.Collection.config.url">
+<tt class="descclassname">Collection.config.</tt><tt class="descname">url</tt><a class="headerlink" href="#mvc.Collection.config.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>{function} - 可选，调用该函数从而得到集合中所有模型对象的根地址</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mvc.Collection.config.comparator">
+<tt class="descclassname">Collection.config.</tt><tt class="descname">comparator</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Collection.config.comparator" title="Permalink to this definition">¶</a></dt>
+<dd><p>{funciton} - 可选，用于集合中模型对象排序以及插入时的比较函数</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>model</strong> (<em>Model</em>) &#8211; 模型对象</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">可以用来比较大小的一个数值</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Number</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="mvc.Collection.config.sync">
+<tt class="descclassname">Collection.config.</tt><tt class="descname">sync</tt><a class="headerlink" href="#mvc.Collection.config.sync" title="Permalink to this definition">¶</a></dt>
+<dd><p>{function} - 可选，默认调用 <a class="reference internal" href="sync.html#mvc.mvc.sync" title="mvc.mvc.sync"><tt class="xref py py-func docutils literal"><span class="pre">mvc.sync()</span></tt></a> 。集合同步数据时调用的方法</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mvc.Collection.config.parse">
+<tt class="descclassname">Collection.config.</tt><tt class="descname">parse</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Collection.config.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>{function} - 可选，默认为对等函数。设置如何从服务器返回结果得到集合对象json数据数组</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>resp</strong> (<em>*</em>) &#8211; 服务器返回对象</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">集合对象的 json 数据数组</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="attributes-detail">
+<h2>Attributes Detail<a class="headerlink" href="#attributes-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="attribute">
+<dt id="mvc.Collection.prototype.models">
+<tt class="descclassname">Collection.prototype.</tt><tt class="descname">models</tt><a class="headerlink" href="#mvc.Collection.prototype.models" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Array&lt;Model&gt;} - 模型对象列表</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="mvc.Collection.prototype.sort">
+<tt class="descclassname">Collection.prototype.</tt><tt class="descname">sort</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Collection.prototype.sort" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>sort ( )</strong></div>
+<div class="line">对模型对象数组进行排序</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="mvc.Collection.Events.add">
+<tt class="descclassname">Collection.Events.</tt><tt class="descname">add</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Collection.Events.add" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>add ( model [ ,opts ] )</strong></div>
+<div class="line">将json数据或模型插入到集合对象</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>model</strong> (<em>Object|Model|Array</em>) &#8211; 模型对象(数组)或json数据</li>
+<li><strong>opts</strong> (<em>Object</em>) &#8211; <p>控制选项，包括</p>
+<dl class="attribute">
+<dt id="mvc.Collection.Events.Model.prototype.add.opts.silent">
+<tt class="descclassname">Model.prototype.add.opts.</tt><tt class="descname">silent</tt><a class="headerlink" href="#mvc.Collection.Events.Model.prototype.add.opts.silent" title="Permalink to this definition">¶</a></dt>
+<dd><p>{boolean} - 默认 false。是否不触发 add 事件</p>
+</dd></dl>
+
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mvc.Collection.Events.remove">
+<tt class="descclassname">Collection.Events.</tt><tt class="descname">remove</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Collection.Events.remove" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>remove ( model [ ,opts ] )</strong></div>
+<div class="line">将json数据或模型从集合对象中删除</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>model</strong> (<em>Object|Model|Array</em>) &#8211; 模型对象(数组)或json数据</li>
+<li><strong>opts</strong> (<em>Object</em>) &#8211; <p>控制选项，包括</p>
+<dl class="attribute">
+<dt>
+<tt class="descclassname">Model.prototype.add.opts.</tt><tt class="descname">silent</tt></dt>
+<dd><p>{boolean} - 默认 false。是否不触发 remove 事件</p>
+</dd></dl>
+
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mvc.Collection.prototype.at">
+<tt class="descclassname">Collection.prototype.</tt><tt class="descname">at</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Collection.prototype.at" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>at ( index )</strong></div>
+<div class="line">获取集合中下标为 index 的模型对象</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> (<em>number</em>) &#8211; 模型对象下标</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mvc.Collection.prototype.load">
+<tt class="descclassname">Collection.prototype.</tt><tt class="descname">load</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Collection.prototype.load" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>load ( [opts] )</strong></div>
+<div class="line">从服务器载入数据设置集合数据</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>opts</strong> (<em>Object</em>) &#8211; <p>加载的一些选项，包括</p>
+<dl class="attribute">
+<dt id="mvc.Collection.prototype.Model.prototype.load.opts.silent">
+<tt class="descclassname">Model.prototype.load.opts.</tt><tt class="descname">silent</tt><a class="headerlink" href="#mvc.Collection.prototype.Model.prototype.load.opts.silent" title="Permalink to this definition">¶</a></dt>
+<dd><p>{boolean} - 默认 false。是否触发 afterModelsChange 事件</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mvc.Collection.prototype.Model.prototype.load.opts.success">
+<tt class="descclassname">Model.prototype.load.opts.</tt><tt class="descname">success</tt><a class="headerlink" href="#mvc.Collection.prototype.Model.prototype.load.opts.success" title="Permalink to this definition">¶</a></dt>
+<dd><p>{function} - 加载成功的回调</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mvc.Collection.prototype.Model.prototype.load.opts.error">
+<tt class="descclassname">Model.prototype.load.opts.</tt><tt class="descname">error</tt><a class="headerlink" href="#mvc.Collection.prototype.Model.prototype.load.opts.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>{function} - 加载失败的回调</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mvc.Collection.prototype.Model.prototype.load.opts.complete">
+<tt class="descclassname">Model.prototype.load.opts.</tt><tt class="descname">complete</tt><a class="headerlink" href="#mvc.Collection.prototype.Model.prototype.load.opts.complete" title="Permalink to this definition">¶</a></dt>
+<dd><p>{function} - 加载结束的回调（无论成功或失败）</p>
+</dd></dl>
+
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mvc.Collection.prototype.create">
+<tt class="descclassname">Collection.prototype.</tt><tt class="descname">create</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Collection.prototype.create" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>create ( json [ ,opts ] )</strong></div>
+<div class="line">根据 json 数据新建一个模型对象添加到集合中并和服务器端进行同步</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>opts</strong> (<em>Object</em>) &#8211; <p>添加的一些选项，包括</p>
+<dl class="attribute">
+<dt id="mvc.Collection.prototype.Model.prototype.create.opts.silent">
+<tt class="descclassname">Model.prototype.create.opts.</tt><tt class="descname">silent</tt><a class="headerlink" href="#mvc.Collection.prototype.Model.prototype.create.opts.silent" title="Permalink to this definition">¶</a></dt>
+<dd><p>{boolean} - 默认 false. 是否在集合对象触发 add 事件</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mvc.Collection.prototype.Model.prototype.create.opts.success">
+<tt class="descclassname">Model.prototype.create.opts.</tt><tt class="descname">success</tt><a class="headerlink" href="#mvc.Collection.prototype.Model.prototype.create.opts.success" title="Permalink to this definition">¶</a></dt>
+<dd><p>{function} - 添加成功的回调</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mvc.Collection.prototype.Model.prototype.create.opts.error">
+<tt class="descclassname">Model.prototype.create.opts.</tt><tt class="descname">error</tt><a class="headerlink" href="#mvc.Collection.prototype.Model.prototype.create.opts.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>{function} - 添加失败的回调</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mvc.Collection.prototype.Model.prototype.create.opts.complete">
+<tt class="descclassname">Model.prototype.create.opts.</tt><tt class="descname">complete</tt><a class="headerlink" href="#mvc.Collection.prototype.Model.prototype.create.opts.complete" title="Permalink to this definition">¶</a></dt>
+<dd><p>{function} - 添加结束的回调（无论成功或失败）</p>
+</dd></dl>
+
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mvc.Collection.prototype.toJSON">
+<tt class="descclassname">Collection.prototype.</tt><tt class="descname">toJSON</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Collection.prototype.toJSON" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>toJSON ( )</strong></div>
+<div class="line">返回集合对象当前包含的数据对象数组</div>
+</div>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">rtype:</th><td class="field-body">Array&lt;Object&gt;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="mvc.Collection.prototype.getById">
+<tt class="descclassname">Collection.prototype.</tt><tt class="descname">getById</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Collection.prototype.getById" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>getById ( id )</strong></div>
+<div class="line">返回集合对象中指定服务器端唯一标志的模型对象</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>*</em>) &#8211; 服务器端唯一标识</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mvc.Collection.prototype.getByCid">
+<tt class="descclassname">Collection.prototype.</tt><tt class="descname">getByCid</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Collection.prototype.getByCid" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>getByCid ( id )</strong></div>
+<div class="line">返回集合对象中指定客户端唯一标志的模型对象</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>*</em>) &#8211; 客户端唯一标识</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="events-detail">
+<h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<tt class="descclassname">Collection.Events.</tt><tt class="descname">add</tt><big>(</big><big>)</big></dt>
+<dd><div class="line-block">
+<div class="line"><strong>add</strong> (e)</div>
+<div class="line">当一个模型对象新加入时触发的事件</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>e.model</strong> (<em>*</em>) &#8211; 新加入的模型对象</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<tt class="descclassname">Collection.Events.</tt><tt class="descname">remove</tt><big>(</big><big>)</big></dt>
+<dd><div class="line-block">
+<div class="line"><strong>add</strong> (e)</div>
+<div class="line">当一个模型对象从集合中删除时触发的事件</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>e.model</strong> (<em>*</em>) &#8211; 删除的模型对象</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="mvc.Collection.Events.afterModelsChange">
+<tt class="descclassname">Collection.Events.</tt><tt class="descname">afterModelsChange</tt><big>(</big><big>)</big><a class="headerlink" href="#mvc.Collection.Events.afterModelsChange" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>add</strong> ()</div>
+<div class="line">当集合整体设置 models （模型对象数组）后出发</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Collection.Events.*Change">
+<tt class="descclassname">Collection.Events.</tt><tt class="descname">*Change</tt><big>(</big><big>)</big><a class="headerlink" href="#Collection.Events.*Change" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>*Change</strong> (e)</div>
+<div class="line">当集合整体设置 models （模型对象数组）后或集合内模型发生改变时触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>e.target</strong> (<em>{Model|Collection}</em>) &#8211; 触发来源，为集合自身或是集合中的某个模型对象</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+				<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+		</article>
+	</div>
+<footer class="footer">
+  <div class="container">
+	  <p>&copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a></p>
+  </div>
+</footer>
+<p><a href="https://github.com/kissyteam/kissy" target="_blank" class="github-ribbon"><img style="z-index:9999999;position: absolute; top: 0; right: 0; border: 0;" src="../../_static/skin/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a></p>
+</body>
+<script>
+	// added by jayli
+	(function(){
+		$('table.docutils').addClass('table table-bordered');
+		$('.admonition.note').addClass('alert alert-info');
+		$('.admonition.hint').addClass('alert alert-success');
+		$('.admonition.warning').addClass('alert alert-warning');
+		$('.admonition.attention').addClass('alert alert-danger');
+	})();
+</script>
+</html>
