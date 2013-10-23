@@ -17,8 +17,8 @@ Class
 Configs
 ---------------------------------
 
-    * :data:`~component.extension.Box.config.render`
-    * :data:`~component.extension.Box.config.width`
+    * :data:`~component.Control.config.render`
+    * :data:`~component.Control.config.width`
     * :data:`allowMultiple`
     * :data:`placeholder`
     * :data:`filterStr`
@@ -27,7 +27,7 @@ Methods
 ---------------------------------
 
     * :func:`~component.Control.prototype.render`
-    * :meth:`~component.Control.prototype.addChild`
+    * :meth:`~component.Container.prototype.addChild`
     * :meth:`~FilterMenu.prototype.filterItems`
     * :meth:`~FilterMenu.prototype.reset`
 

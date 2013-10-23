@@ -22,36 +22,36 @@ Configs
   * :data:`~component.Control.config.prefixCls`
   * :data:`~component.Control.config.srcNode`
   * :data:`~base.Base.config.plugins`
-  * :data:`~component.extension.Box.config.width`
-  * :data:`~component.extension.Box.config.height`
-  * :data:`~component.extension.Box.config.elCls`
-  * :data:`~component.extension.Box.config.content`
-  * :data:`~component.extension.Position.config.zIndex`
-  * :data:`~component.extension.Position.config.x`
-  * :data:`~component.extension.Position.config.y`
-  * :data:`~component.extension.Position.config.xy`
+  * :data:`~component.Control.config.width`
+  * :data:`~component.Control.config.height`
+  * :data:`~component.Control.config.elCls`
+  * :data:`~component.Control.config.content`
+  * :data:`~component.Control.config.zIndex`
+  * :data:`~component.Control.config.x`
+  * :data:`~component.Control.config.y`
+  * :data:`~component.Control.config.xy`
   * :data:`~component.extension.Align.config.align`
   * :data:`~overlay.Overlay.config.effect`
   * :data:`~overlay.Overlay.config.closable`
   * :data:`~overlay.Overlay.config.closeAction`
-  * :data:`~component.extension.Box.config.elBefore`
-  * :data:`~component.extension.Box.config.render`
+  * :data:`~component.Control.config.elBefore`
+  * :data:`~component.Control.config.render`
   * :data:`~overlay.Overlay.config.mask`
-  
-  
+
+
 Attributes
 -----------------------------------------------
 
-  * :attr:`~component.extension.Position.prototype.x`
-  * :attr:`~component.extension.Position.prototype.y`
-  * :attr:`~component.extension.Position.prototype.xy`
+  * :attr:`~component.Control.prototype.x`
+  * :attr:`~component.Control.prototype.y`
+  * :attr:`~component.Control.prototype.xy`
   * :attr:`~component.extension.Align.prototype.align`
   * :attr:`~Overlay.prototype.closable`
-  * :attr:`~component.extension.Box.prototype.visible`
-  * :attr:`~component.extension.Box.prototype.el`
-  * :attr:`~component.extension.Box.prototype.contentEl`
+  * :attr:`~component.Control.prototype.visible`
+  * :attr:`~component.Control.prototype.el`
+  * :attr:`~component.extension.ContentRender.prototype.contentEl`
   * :attr:`~Overlay.prototype.maskNode`
-  
+
 Methods
 -----------------------------------------------
 
@@ -59,19 +59,19 @@ Methods
   * :meth:`~base.Base.prototype.unplug`
   * :meth:`~component.Control.prototype.render`
   * :meth:`~base.Base.prototype.destroy`
-  * :meth:`~component.extension.Box.prototype.show`
-  * :meth:`~component.extension.Box.prototype.hide`
+  * :meth:`~component.Control.prototype.show`
+  * :meth:`~component.Control.prototype.hide`
   * :meth:`~component.extension.Align.prototype.center`
-  * :meth:`~component.extension.Position.prototype.move`
+  * :meth:`~component.Control.prototype.move`
   * :meth:`~Overlay.prototype.loading`
   * :meth:`~Overlay.prototype.unloading`
 
 Events
 -----------------------------------------------
 
-  * :func:`~component.extension.Box.Events.hide`
-  * :func:`~component.extension.Box.Events.show`
-  * :func:`~component.extension.Box.Events.beforeVisibleChange`
+  * :func:`~component.Control.Events.hide`
+  * :func:`~component.Control.Events.show`
+  * :func:`~component.Control.Events.beforeVisibleChange`
   * :func:`~component.Control.Events.afterRenderUI`
 
 Class Detail

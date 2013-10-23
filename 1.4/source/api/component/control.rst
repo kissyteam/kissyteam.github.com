@@ -32,6 +32,7 @@ Configs
     * :data:`~Control.config.width`
     * :data:`~Control.config.x`
     * :data:`~Control.config.y`
+    * :data:`~Control.config.xy`
     * :data:`~Control.config.zIndex`
 
 
@@ -50,6 +51,11 @@ Attributes
     * :attr:`~Control.prototype.visible`
     * :attr:`~Control.prototype.created`
     * :attr:`~Control.prototype.rendered`
+    * :attr:`~Control.prototype.x`
+    * :attr:`~Control.prototype.y`
+    * :attr:`~Control.prototype.xy`
+    * :attr:`~Control.prototype.zIndex`
+    * :attr:`~Control.prototype.width`
 
 Methods
 -----------------------------------------------
@@ -60,7 +66,9 @@ Methods
     * :meth:`~Control.prototype.create`
     * :meth:`~Control.prototype.render`
     * :meth:`~Control.prototype.sync`
-
+    * :meth:`~Control.prototype.move`
+    * :meth:`~Control.prototype.blur`
+    * :meth:`~Control.prototype.focus`
 
 Events
 -----------------------------------------------
@@ -73,6 +81,9 @@ Events
     * :func:`~Control.Events.beforeCreateDom`
     * :func:`~Control.Events.beforeRenderUI`
     * :func:`~Control.Events.beforeSyncUI`
+    * :func:`~Control.Events.hide`
+    * :func:`~Control.Events.show`
+    * :func:`~Control.Events.beforeVisibleChange`
 
 
 Class Detail
@@ -83,7 +94,6 @@ Class Detail
     | **Control** (config)
 
     * 继承自 :class:`~base.Base` , 包含其全部配置,属性,方法,事件.
-    * 扩展自 :class:`~component.ComponentProcess`, 包含其全部配置，属性，方法，事件.
 
     :param Object config: 配置项，详细见下方 **Configs Detail** .
 
@@ -170,7 +180,11 @@ Configs Detail
 
 .. data:: Control.config.y
 
-    {Nunmber} - 纵轴位置
+    {Number} - 纵轴位置
+
+.. data:: Control.config.xy
+
+    {Number[]} - 横纵坐标
 
 .. data:: Control.config.zIndex
 
@@ -239,6 +253,10 @@ Attributes Detail
 
     {Nunmber} - 纵轴位置
 
+.. attribute:: Control.prototype.xy
+
+    {Nunmber} - 纵轴位置
+
 .. attribute:: Control.prototype.zIndex
 
     {Number} - z-index 值
@@ -255,11 +273,11 @@ Methods Detail
     :param Function[] extensions: 扩展类数组
     :param Object methodDesc: 方法集合键值对
     :param Object staticAttributes: 放到新产生组件类上的静态属性集合键值对，其中 ``ATTRS`` 属性特殊对待.
-    :param Object desc: 组件元信息 
+    :param Object desc: 组件元信息
     :param String desc.xclass: 组件的 xclass
     :param String desc.name: 组件的名称，不写则等于 xclass
-    
-    
+
+
 .. method:: Control.prototype.create
 
     | **create()**
@@ -297,6 +315,25 @@ Methods Detail
 
     :return Object: 自身
 
+.. method:: Control.prototype.move
+
+    | **move(x, y)**
+    | 移动到(x,y)
+
+    :param Number x: 横轴位置
+    :param Number y: 纵轴位置
+
+    :return Object: 自身
+
+.. method:: Control.prototype.blur
+
+    | **blur()**
+    | 使组件失去焦点
+
+.. method:: Control.prototype.focus
+
+    | **focus()**
+    | 使组件获得焦点
 
 Events Details
 ------------------------------------------------
@@ -356,3 +393,18 @@ Events Details
     | 在同步组件内部状态前触发
 
     :params Object: KISSY CustomEvent 对象
+
+.. function:: Control.Events.hide
+
+    | **hide(e)**
+    | 在组件 show 的时候触发
+
+.. function:: Control.Events.show
+
+    | **show(e)**
+    | 在组件 hide 的时候触发
+
+.. function:: Control.Events.beforeVisibleChange
+
+    | **beforeVisibleChange(e)**
+    | 在组件 visible 属性发生变化时触发

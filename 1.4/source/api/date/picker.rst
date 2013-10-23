@@ -19,7 +19,7 @@ Class
 Methods
 --------------------------------
 
-    * :func:`~component.ComponentProcess.prototype.render`
+    * :func:`~component.Control.prototype.render`
 
 Configs
 --------------------------------
@@ -46,7 +46,7 @@ Class Details
     * 根据配置创建picker
 
     :param Object config: 配置信息
-    
+
 Configs Details
 -----------------------------------
 

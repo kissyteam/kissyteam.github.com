@@ -23,14 +23,14 @@ Configs
 
     去除配置 tabSelectedCls panelSelectedCls
 
-    * :data:`~component.extension.Box.config.content`
+    * :data:`~component.Control.config.content`
     * :data:`~Tab.config.selected`
     * :data:`~Tab.config.lazyRender`
 
 Attributes
 ------------------------------------------------
 
-    * :attr:`~component.extension.Box.prototype.content`
+    * :attr:`~component.Control.prototype.content`
     * :data:`~Tab.prototype.selected`
 
 Class Detail
