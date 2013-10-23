@@ -1,0 +1,935 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="data-spm" content="1" data-spm-protocol="i" />
+
+<title>Component.Control &mdash; KISSY v1.4 Documentation</title>
+
+<link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.3.2/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<!--<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>-->
+
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js,searchtools.js"></script> 
+<script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le styles -->
+	<!--link rel="stylesheet" href="../../_static/skin/bootstrap.css"/>
+	<link rel="stylesheet" href="../../_static/skin/bootstrap-responsive.css"/>
+	<link rel="stylesheet" href="../../_static/skin/prettify.css"/>
+	<link rel="stylesheet" href="../../_static/skin/docs.css"/>
+	<link rel="stylesheet" href="../../_static/skin/todc-bootstrap.css"/-->
+
+	<link rel="stylesheet" href="../../_static/skin/kissy.css"/>
+	<link rel="stylesheet" href="../../_static/skin/prettify.css"/>
+	<link rel="stylesheet" href="../../_static/skin/forkit.css"/>
+	<link rel="stylesheet" href="../../_static/skin/bootstrap.css"/>
+	<link href="http://fonts.googleapis.com/css?family=Droid+Sans|Lekton|Ubuntu+Mono:400,700" rel="stylesheet">
+	<script src="http://dev.kissyui.com/kissy/build/seed-min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+
+	<nav id="sidebar">
+		<header>
+	  		<a href="../../../../guideline/" >
+				<img src="http://gtms01.alicdn.com/tps/i1/T1MVbxFoRcXXchhRni-175-68.png" alt="" />
+			</a>
+		</header>
+		
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h4 class="s-box-hd">Seed</h4>
+    <ul class="s-box-bd">
+        <li><a href="../features/index.html">features</a></li>
+        <li><a href="../lang/index.html">lang</a></li>
+        <li><a href="../loader/index.html">loader</a></li>
+        <li><a href="../ua/index.html">ua</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h4 class="s-box-hd">Core</h4>
+    <ul class="s-box-bd">
+        <li><a href="../anim/index.html">anim</a></li>
+        <li><a href="../base/index.html">base</a></li>
+        <li><a href="../cookie/index.html">cookie</a></li>
+        <li><a href="../dom/index.html">dom</a></li>
+        <li><a href="../event/index.html">event</a></li>
+        <li><a href="../io/index.html">io</a></li>
+        <li><a href="../json/index.html">json</a></li>
+        <li><a href="../node/index.html">node</a></li>
+        <li><a href="../path/index.html">path</a></li>
+        <li><a href="../promise/index.html">promise</a></li>
+        <li><a href="../uri/index.html">uri</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h4 class="s-box-hd">Infrastructure</h4>
+    <ul class="s-box-bd">
+        <li><a href="index.html">component</a></li>
+        <li><a href="../mvc/index.html">mvc</a></li>
+        <li><a href="../xtemplate/index.html">xtemplate</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h4 class="s-box-hd">Components</h4>
+    <ul class="s-box-bd">
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../color/index.html">color</a></li>
+        <li><a href="../combobox/index.html">combobox</a></li>
+        <li><a href="../date/index.html">date</a></li>
+        <li><a href="../dd/index.html">dd</a></li>
+        <li><a href="../editor/index.html">editor</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="../scroll-view/index.html">scroll-view</a></li>
+        <li><a href="../split-button/index.html">split-button</a></li>
+        <li><a href="../stylesheet/index.html">stylesheet</a></li>
+        <li><a href="../swf/index.html">swf</a></li>
+        <li><a href="../tabs/index.html">tabs</a></li>
+        <li><a href="../toolbar/index.html">toolbar</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
+	</ul>
+</ul>
+        
+    </div>
+    
+<div id="searchbox" class="searchbox">
+    <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" size="28" class="ipt"/>
+        <input type="submit" value="Go" class="btn"/>
+        <input type="hidden" name="check_keywords" value="yes"/>
+        <input type="hidden" name="area" value="default"/>
+    </form>
+</div>
+	</nav>
+	<div id="content" class="body">
+		<article>
+				<style>
+	.api-header {
+
+		border-bottom:1px solid #AACCEE;
+		margin-left:0px !important;
+		margin-top:0px;
+		margin-bottom:6px;
+		height:25px;
+	}
+	.api-header li{
+		border-left:1px solid #ddd;
+		font-size:14px;
+		font-weight:bold;
+		padding:0 10px;
+		float:left;
+		list-style:none !important;
+	}
+	.api-header li.first{
+		border-left:0px;
+		padding-left:0px !important;
+	}
+</style>
+
+<ul class="api-header clearfix">
+	<li class="first">
+		<a href="/" >
+			首页
+		</a>
+	</li>
+	<li>
+		<a href="../../../../guideline/" >
+			Guideline
+		</a>
+	</li>
+	<li><a href="../../../../docs/html/api/index.html">API</a></li>
+	<li><a href="../../../../docs/html/demo/index.html">Demo</a></li>
+	<li><a href="../../../../docs/html/tutorials/index.html">Tutorials</a></li>
+	<li><a href="https://groups.google.com/group/kissy-ui">Google Group</a></li>
+	<li style="float:right"><a href="http://docs.kissyui.com/1.4/api/">English API Docs</a></li>
+	<li style="float:right" class="first"><a href="http://blog.kissyui.com">KISSY Blog</a></li>
+</ul>
+				
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="container.html" title="Component.Container"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="Component"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../index.html">KISSY v1.4 Documentation</a> &#187; </li>
+      <li><a href="../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">Component</a> &#187; </li> 
+    </ul>
+</div>
+				
+  <div class="section" id="component-control">
+<h1>Component.Control<a class="headerlink" href="#component-control" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">合并了原来的 box</div>
+<div class="line">组件基类.仅用于 KISSY 内部组件继承，目前不建议外部使用，欢迎 review</div>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#component.Control" title="component.Control"><tt class="xref py py-class docutils literal"><span class="pre">Control</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="configs">
+<h2>Configs<a class="headerlink" href="#configs" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#component.Control.config.content" title="component.Control.config.content"><tt class="xref py py-data docutils literal"><span class="pre">content</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.config.disabled" title="component.Control.config.disabled"><tt class="xref py py-data docutils literal"><span class="pre">disabled</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.config.elAttrs" title="component.Control.config.elAttrs"><tt class="xref py py-data docutils literal"><span class="pre">elAttrs</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.config.elBefore" title="component.Control.config.elBefore"><tt class="xref py py-data docutils literal"><span class="pre">elBefore</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.config.elCls" title="component.Control.config.elCls"><tt class="xref py py-data docutils literal"><span class="pre">elCls</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.config.elStyle" title="component.Control.config.elStyle"><tt class="xref py py-data docutils literal"><span class="pre">elStyle</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.config.focused" title="component.Control.config.focused"><tt class="xref py py-data docutils literal"><span class="pre">focused</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.config.height" title="component.Control.config.height"><tt class="xref py py-data docutils literal"><span class="pre">height</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.config.parent" title="component.Control.config.parent"><tt class="xref py py-data docutils literal"><span class="pre">parent</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.config.prefixCls" title="component.Control.config.prefixCls"><tt class="xref py py-data docutils literal"><span class="pre">prefixCls</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.config.prefixXClass" title="component.Control.config.prefixXClass"><tt class="xref py py-data docutils literal"><span class="pre">prefixXClass</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.config.render" title="component.Control.config.render"><tt class="xref py py-data docutils literal"><span class="pre">render</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.config.srcNode" title="component.Control.config.srcNode"><tt class="xref py py-data docutils literal"><span class="pre">srcNode</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.config.visible" title="component.Control.config.visible"><tt class="xref py py-data docutils literal"><span class="pre">visible</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.config.width" title="component.Control.config.width"><tt class="xref py py-data docutils literal"><span class="pre">width</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.config.x" title="component.Control.config.x"><tt class="xref py py-data docutils literal"><span class="pre">x</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.config.y" title="component.Control.config.y"><tt class="xref py py-data docutils literal"><span class="pre">y</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.config.xy" title="component.Control.config.xy"><tt class="xref py py-data docutils literal"><span class="pre">xy</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.config.zIndex" title="component.Control.config.zIndex"><tt class="xref py py-data docutils literal"><span class="pre">zIndex</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#component.Control.prototype.active" title="component.Control.prototype.active"><tt class="xref py py-attr docutils literal"><span class="pre">active</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.content" title="component.Control.prototype.content"><tt class="xref py py-attr docutils literal"><span class="pre">content</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.disabled" title="component.Control.prototype.disabled"><tt class="xref py py-attr docutils literal"><span class="pre">disabled</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.el" title="component.Control.prototype.el"><tt class="xref py py-attr docutils literal"><span class="pre">el</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.focused" title="component.Control.prototype.focused"><tt class="xref py py-attr docutils literal"><span class="pre">focused</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.height" title="component.Control.prototype.height"><tt class="xref py py-attr docutils literal"><span class="pre">height</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.highlighted" title="component.Control.prototype.highlighted"><tt class="xref py py-attr docutils literal"><span class="pre">highlighted</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.isControl" title="component.Control.prototype.isControl"><tt class="xref py py-attr docutils literal"><span class="pre">isControl</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.parent" title="component.Control.prototype.parent"><tt class="xref py py-attr docutils literal"><span class="pre">parent</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.visible" title="component.Control.prototype.visible"><tt class="xref py py-attr docutils literal"><span class="pre">visible</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.created" title="component.Control.prototype.created"><tt class="xref py py-attr docutils literal"><span class="pre">created</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.rendered" title="component.Control.prototype.rendered"><tt class="xref py py-attr docutils literal"><span class="pre">rendered</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.x" title="component.Control.prototype.x"><tt class="xref py py-attr docutils literal"><span class="pre">x</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.y" title="component.Control.prototype.y"><tt class="xref py py-attr docutils literal"><span class="pre">y</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.xy" title="component.Control.prototype.xy"><tt class="xref py py-attr docutils literal"><span class="pre">xy</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.zIndex" title="component.Control.prototype.zIndex"><tt class="xref py py-attr docutils literal"><span class="pre">zIndex</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.width" title="component.Control.prototype.width"><tt class="xref py py-attr docutils literal"><span class="pre">width</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#component.Control.extend" title="component.Control.extend"><tt class="xref py py-meth docutils literal"><span class="pre">extend()</span></tt></a> &lt;static&gt;</li>
+<li><a class="reference internal" href="#component.Control.prototype.hide" title="component.Control.prototype.hide"><tt class="xref py py-meth docutils literal"><span class="pre">hide()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.show" title="component.Control.prototype.show"><tt class="xref py py-meth docutils literal"><span class="pre">show()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.create" title="component.Control.prototype.create"><tt class="xref py py-meth docutils literal"><span class="pre">create()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.render" title="component.Control.prototype.render"><tt class="xref py py-meth docutils literal"><span class="pre">render()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.sync" title="component.Control.prototype.sync"><tt class="xref py py-meth docutils literal"><span class="pre">sync()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.move" title="component.Control.prototype.move"><tt class="xref py py-meth docutils literal"><span class="pre">move()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.blur" title="component.Control.prototype.blur"><tt class="xref py py-meth docutils literal"><span class="pre">blur()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.prototype.focus" title="component.Control.prototype.focus"><tt class="xref py py-meth docutils literal"><span class="pre">focus()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#component.Control.Events.afterBindUI" title="component.Control.Events.afterBindUI"><tt class="xref py py-func docutils literal"><span class="pre">afterBindUI()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.Events.afterCreateDom" title="component.Control.Events.afterCreateDom"><tt class="xref py py-func docutils literal"><span class="pre">afterCreateDom()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.Events.afterRenderUI" title="component.Control.Events.afterRenderUI"><tt class="xref py py-func docutils literal"><span class="pre">afterRenderUI()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.Events.afterSyncUI" title="component.Control.Events.afterSyncUI"><tt class="xref py py-func docutils literal"><span class="pre">afterSyncUI()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.Events.beforeBindUI" title="component.Control.Events.beforeBindUI"><tt class="xref py py-func docutils literal"><span class="pre">beforeBindUI()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.Events.beforeCreateDom" title="component.Control.Events.beforeCreateDom"><tt class="xref py py-func docutils literal"><span class="pre">beforeCreateDom()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.Events.beforeRenderUI" title="component.Control.Events.beforeRenderUI"><tt class="xref py py-func docutils literal"><span class="pre">beforeRenderUI()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.Events.beforeSyncUI" title="component.Control.Events.beforeSyncUI"><tt class="xref py py-func docutils literal"><span class="pre">beforeSyncUI()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.Events.hide" title="component.Control.Events.hide"><tt class="xref py py-func docutils literal"><span class="pre">hide()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.Events.show" title="component.Control.Events.show"><tt class="xref py py-func docutils literal"><span class="pre">show()</span></tt></a></li>
+<li><a class="reference internal" href="#component.Control.Events.beforeVisibleChange" title="component.Control.Events.beforeVisibleChange"><tt class="xref py py-func docutils literal"><span class="pre">beforeVisibleChange()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="component.Control">
+<em class="property">class </em><tt class="descclassname">component.</tt><tt class="descname">Control</tt><a class="headerlink" href="#component.Control" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>Control</strong> (config)</div>
+</div>
+<ul class="simple">
+<li>继承自 <a class="reference internal" href="../base/base.html#base.Base" title="base.Base"><tt class="xref py py-class docutils literal"><span class="pre">Base</span></tt></a> , 包含其全部配置,属性,方法,事件.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 配置项，详细见下方 <strong>Configs Detail</strong> .</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="configs-detail">
+<h2>Configs Detail<a class="headerlink" href="#configs-detail" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">content 和 srcNode 不能同时都设置</p>
+</div>
+<dl class="data">
+<dt id="component.Control.config.content">
+<tt class="descclassname">Control.config.</tt><tt class="descname">content</tt><a class="headerlink" href="#component.Control.config.content" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 可选, 设置内容 html.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Control.config.disabled">
+<tt class="descclassname">Control.config.</tt><tt class="descname">disabled</tt><a class="headerlink" href="#component.Control.config.disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 可选，该组件是否初始禁用.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Control.config.elAttrs">
+<tt class="descclassname">Control.config.</tt><tt class="descname">elAttrs</tt><a class="headerlink" href="#component.Control.config.elAttrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object} - 可选，附加给组件根节点的属性键值对</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Control.config.elBefore">
+<tt class="descclassname">Control.config.</tt><tt class="descname">elBefore</tt><a class="headerlink" href="#component.Control.config.elBefore" title="Permalink to this definition">¶</a></dt>
+<dd><p>{KISSY.Node} - 可选，组件根节点的渲染到该节点之前.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Control.config.elCls">
+<tt class="descclassname">Control.config.</tt><tt class="descname">elCls</tt><a class="headerlink" href="#component.Control.config.elCls" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 可选，附加给组件根节点的样式类</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Control.config.elStyle">
+<tt class="descclassname">Control.config.</tt><tt class="descname">elStyle</tt><a class="headerlink" href="#component.Control.config.elStyle" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object} - 可选，附加给组件根节点的内联样式</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Control.config.focused">
+<tt class="descclassname">Control.config.</tt><tt class="descname">focused</tt><a class="headerlink" href="#component.Control.config.focused" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 可选，该组件是否初始获得焦点.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Control.config.height">
+<tt class="descclassname">Control.config.</tt><tt class="descname">height</tt><a class="headerlink" href="#component.Control.config.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 可选，组件的高度，单位像素</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Control.config.parent">
+<tt class="descclassname">Control.config.</tt><tt class="descname">parent</tt><a class="headerlink" href="#component.Control.config.parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Control} - 可选，该组件的父组件.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Control.config.prefixCls">
+<tt class="descclassname">Control.config.</tt><tt class="descname">prefixCls</tt><a class="headerlink" href="#component.Control.config.prefixCls" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>{String} - 可选，默认 &#8220;ks-&#8221; . 组件的 css 样式类前缀 . 例如假设组件为 menu ，则该组件内的样式类名为 {prefixCls}menu，默认为 &#8220;ks-menu&#8221;.</dt>
+<dd>可用于实现自定义皮肤.</dd>
+</dl>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Control.config.prefixXClass">
+<tt class="descclassname">Control.config.</tt><tt class="descname">prefixXClass</tt><a class="headerlink" href="#component.Control.config.prefixXClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 可选，组件 prefix 的超类。只在config中实用。当超类未被指定时，用这个做超类。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Control.config.render">
+<tt class="descclassname">Control.config.</tt><tt class="descname">render</tt><a class="headerlink" href="#component.Control.config.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>{KISSY.Node} - 组件要应用的节点。默认 S.all(&#8220;body&#8221;)，组件根节点的渲染为该节点最后一个节点.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Control.config.srcNode">
+<tt class="descclassname">Control.config.</tt><tt class="descname">srcNode</tt><a class="headerlink" href="#component.Control.config.srcNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>{KISSY.Node} - 可选，组件从页面中已存在的该节点中渲染而来.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">srcNode 时设置其他属性不起作用，属性通通在 html 标签中指定，并且 html 标签必须包含完整结构，例如 content 节点必须存在</p>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Control.config.visible">
+<tt class="descclassname">Control.config.</tt><tt class="descname">visible</tt><a class="headerlink" href="#component.Control.config.visible" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认 true ，是否显示</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">只是为组件的根节点添加/删除 {prefix}{component}-hidden 形式的 css class，自行指定具体的 css 样式。</p>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Control.config.width">
+<tt class="descclassname">Control.config.</tt><tt class="descname">width</tt><a class="headerlink" href="#component.Control.config.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 可选，组件的宽度，单位像素</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Control.config.x">
+<tt class="descclassname">Control.config.</tt><tt class="descname">x</tt><a class="headerlink" href="#component.Control.config.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 横轴位置</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Control.config.y">
+<tt class="descclassname">Control.config.</tt><tt class="descname">y</tt><a class="headerlink" href="#component.Control.config.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 纵轴位置</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Control.config.xy">
+<tt class="descclassname">Control.config.</tt><tt class="descname">xy</tt><a class="headerlink" href="#component.Control.config.xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number[]} - 横纵坐标</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="component.Control.config.zIndex">
+<tt class="descclassname">Control.config.</tt><tt class="descname">zIndex</tt><a class="headerlink" href="#component.Control.config.zIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - z-index 值</p>
+</dd></dl>
+
+</div>
+<div class="section" id="attributes-detail">
+<h2>Attributes Detail<a class="headerlink" href="#attributes-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="attribute">
+<dt id="component.Control.prototype.created">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">created</tt><a class="headerlink" href="#component.Control.prototype.created" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 只读属性，组件结构是否已经创建</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.Control.prototype.rendered">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">rendered</tt><a class="headerlink" href="#component.Control.prototype.rendered" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 只读属性，组件是否已经渲染</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.Control.prototype.active">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">active</tt><a class="headerlink" href="#component.Control.prototype.active" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 组件是否已经激活</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.Control.prototype.content">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">content</tt><a class="headerlink" href="#component.Control.prototype.content" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String|KISSY.Node} - 设置的 content 属性</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.Control.prototype.disabled">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">disabled</tt><a class="headerlink" href="#component.Control.prototype.disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 该组件是否禁用状态.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.Control.prototype.el">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">el</tt><a class="headerlink" href="#component.Control.prototype.el" title="Permalink to this definition">¶</a></dt>
+<dd><p>{KISSY.Node} - 只读属性，该组件的根节点. 注意调用 render() 后才可以取得.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.Control.prototype.focused">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">focused</tt><a class="headerlink" href="#component.Control.prototype.focused" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 该组件是否获得焦点.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.Control.prototype.height">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">height</tt><a class="headerlink" href="#component.Control.prototype.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number|String} - 组件的高</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.Control.prototype.highlighted">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">highlighted</tt><a class="headerlink" href="#component.Control.prototype.highlighted" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 该组件是否处于高亮状态</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.Control.prototype.isControl">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">isControl</tt><a class="headerlink" href="#component.Control.prototype.isControl" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 标记当前实例是 Control 的实例</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.Control.prototype.parent">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">parent</tt><a class="headerlink" href="#component.Control.prototype.parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 只读属性，该组件的父组件</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.Control.prototype.visible">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">visible</tt><a class="headerlink" href="#component.Control.prototype.visible" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 该组件是否显示，同 config 中的 visible，只是添加/删除样式</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.Control.prototype.width">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">width</tt><a class="headerlink" href="#component.Control.prototype.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 组件的宽度，单位像素</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.Control.prototype.x">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">x</tt><a class="headerlink" href="#component.Control.prototype.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 横轴位置</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.Control.prototype.y">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">y</tt><a class="headerlink" href="#component.Control.prototype.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Nunmber} - 纵轴位置</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.Control.prototype.xy">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">xy</tt><a class="headerlink" href="#component.Control.prototype.xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Nunmber} - 纵轴位置</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="component.Control.prototype.zIndex">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">zIndex</tt><a class="headerlink" href="#component.Control.prototype.zIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - z-index 值</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="component.Control.extend">
+<tt class="descclassname">Control.</tt><tt class="descname">extend</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.extend" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>extend( [ extensions , ] methodDesc , staticAttributes , desc )</strong> &lt;static&gt;</div>
+</div>
+<p>从当前组件类上扩展出一个子类组件</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>extensions</strong> (<em>Function[]</em>) &#8211; 扩展类数组</li>
+<li><strong>methodDesc</strong> (<em>Object</em>) &#8211; 方法集合键值对</li>
+<li><strong>staticAttributes</strong> (<em>Object</em>) &#8211; 放到新产生组件类上的静态属性集合键值对，其中 <tt class="docutils literal"><span class="pre">ATTRS</span></tt> 属性特殊对待.</li>
+<li><strong>desc</strong> (<em>Object</em>) &#8211; 组件元信息</li>
+<li><strong>desc.xclass</strong> (<em>String</em>) &#8211; 组件的 xclass</li>
+<li><strong>desc.name</strong> (<em>String</em>) &#8211; 组件的名称，不写则等于 xclass</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="component.Control.prototype.create">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">create</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.prototype.create" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>create()</strong></div>
+<div class="line">创建当前组件的DOM结构，control将会代理给render.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return Object:</th><td class="field-body">自身</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="component.Control.prototype.render">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">render</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.prototype.render" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>render()</strong></div>
+<div class="line">把当前组件的DOM结构放入 DOM 文档中，并绑定事件，同步属性。</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return Object:</th><td class="field-body">自身</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="component.Control.prototype.sync">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">sync</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.prototype.sync" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>sync()</strong></div>
+<div class="line">同步属性值</div>
+</div>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">组件基类增加 sync 函数，调用后可调用父类、扩展类、插件对应的 syncUI 方法。</p>
+</div>
+<dl class="method">
+<dt id="component.Control.prototype.hide">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">hide</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.prototype.hide" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>hide()</strong></div>
+<div class="line">隐藏组件</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return Object:</th><td class="field-body">自身</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="component.Control.prototype.show">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">show</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.prototype.show" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>show()</strong></div>
+<div class="line">显示组件</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return Object:</th><td class="field-body">自身</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="component.Control.prototype.move">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">move</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.prototype.move" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>move(x, y)</strong></div>
+<div class="line">移动到(x,y)</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> (<em>Number</em>) &#8211; 横轴位置</li>
+<li><strong>y</strong> (<em>Number</em>) &#8211; 纵轴位置</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return Object:</th><td class="field-body"><p class="first last">自身</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="component.Control.prototype.blur">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">blur</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.prototype.blur" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>blur()</strong></div>
+<div class="line">使组件失去焦点</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="component.Control.prototype.focus">
+<tt class="descclassname">Control.prototype.</tt><tt class="descname">focus</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.prototype.focus" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>focus()</strong></div>
+<div class="line">使组件获得焦点</div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="events-details">
+<h2>Events Details<a class="headerlink" href="#events-details" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="component.Control.Events.afterBindUI">
+<tt class="descclassname">Control.Events.</tt><tt class="descname">afterBindUI</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.Events.afterBindUI" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>afterBindUI(e)</strong></div>
+<div class="line">当组件内部事件绑定完之后触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Params Object:</th><td class="field-body">KISSY CustomEvent 对象</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="component.Control.Events.afterCreateDom">
+<tt class="descclassname">Control.Events.</tt><tt class="descname">afterCreateDom</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.Events.afterCreateDom" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>afterCreateDom(e)</strong></div>
+<div class="line">当组件根节点创建的时候触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Params Object:</th><td class="field-body">KISSY CustomEvent 对象</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="component.Control.Events.afterRenderUI">
+<tt class="descclassname">Control.Events.</tt><tt class="descname">afterRenderUI</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.Events.afterRenderUI" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>afterRenderUI(e)</strong></div>
+<div class="line">当组件根节点渲染到 DOM 文档后触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Params Object:</th><td class="field-body">KISSY CustomEvent 对象</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="component.Control.Events.afterSyncUI">
+<tt class="descclassname">Control.Events.</tt><tt class="descname">afterSyncUI</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.Events.afterSyncUI" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>afterSyncUI(e)</strong></div>
+<div class="line">当组件内部的状态同步完之后触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Params Object:</th><td class="field-body">KISSY CustomEvent 对象</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="component.Control.Events.beforeBindUI">
+<tt class="descclassname">Control.Events.</tt><tt class="descname">beforeBindUI</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.Events.beforeBindUI" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>beforeBindUI(e)</strong></div>
+<div class="line">在组件内部事件绑定前触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Params Object:</th><td class="field-body">KISSY CustomEvent 对象</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="component.Control.Events.beforeCreateDom">
+<tt class="descclassname">Control.Events.</tt><tt class="descname">beforeCreateDom</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.Events.beforeCreateDom" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>beforeCreateDom(e)</strong></div>
+<div class="line">在组件根节点创建前触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Params Object:</th><td class="field-body">KISSY CustomEvent 对象</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="component.Control.Events.beforeRenderUI">
+<tt class="descclassname">Control.Events.</tt><tt class="descname">beforeRenderUI</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.Events.beforeRenderUI" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>beforeRenderUI(e)</strong></div>
+<div class="line">在组件根节点渲染之前触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Params Object:</th><td class="field-body">KISSY CustomEvent 对象</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="component.Control.Events.beforeSyncUI">
+<tt class="descclassname">Control.Events.</tt><tt class="descname">beforeSyncUI</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.Events.beforeSyncUI" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>beforeSyncUI(e)</strong></div>
+<div class="line">在同步组件内部状态前触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Params Object:</th><td class="field-body">KISSY CustomEvent 对象</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="component.Control.Events.hide">
+<tt class="descclassname">Control.Events.</tt><tt class="descname">hide</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.Events.hide" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>hide(e)</strong></div>
+<div class="line">在组件 show 的时候触发</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="component.Control.Events.show">
+<tt class="descclassname">Control.Events.</tt><tt class="descname">show</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.Events.show" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>show(e)</strong></div>
+<div class="line">在组件 hide 的时候触发</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="component.Control.Events.beforeVisibleChange">
+<tt class="descclassname">Control.Events.</tt><tt class="descname">beforeVisibleChange</tt><big>(</big><big>)</big><a class="headerlink" href="#component.Control.Events.beforeVisibleChange" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>beforeVisibleChange(e)</strong></div>
+<div class="line">在组件 visible 属性发生变化时触发</div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+				<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+		</article>
+	</div>
+<footer class="footer">
+  <div class="container">
+	  <p>&copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a></p>
+  </div>
+</footer>
+<p><a href="https://github.com/kissyteam/kissy" target="_blank" class="github-ribbon"><img style="z-index:9999999;position: absolute; top: 0; right: 0; border: 0;" src="../../_static/skin/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a></p>
+</body>
+<script>
+	// added by jayli
+	(function(){
+		$('table.docutils').addClass('table table-bordered');
+		$('.admonition.note').addClass('alert alert-info');
+		$('.admonition.hint').addClass('alert alert-success');
+		$('.admonition.warning').addClass('alert alert-warning');
+		$('.admonition.attention').addClass('alert alert-danger');
+	})();
+</script>
+</html>
