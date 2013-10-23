@@ -4,6 +4,7 @@ Split Button
 ===============================
 
 | 按钮和菜单按钮的组合
+| 构建支持下拉菜单的按钮组
 
 Class
 -------------------------------
@@ -46,12 +47,12 @@ Configs Details
 .. data:: SplitButton.config.alignWithEl
 
     {Boolean} - 是否将菜单按钮和按钮对齐，默认 true
-    
+
 
 .. data:: SplitButton.config.menuButton
 
     {KISSY.MenuButton} - 菜单按钮组件
-    
+
 
 .. data:: SplitButton.config.button
 
@@ -63,7 +64,7 @@ Attributes Details
 .. attribute:: SplitButton.prototype.menuButton
 
     {KISSY.MenuButton} - 菜单按钮组件
-    
+
 
 .. attribute:: SplitButton.prototype.button
 

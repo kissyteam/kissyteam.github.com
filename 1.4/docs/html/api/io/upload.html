@@ -50,7 +50,7 @@
 	<link rel="stylesheet" href="../../_static/skin/forkit.css"/>
 	<link rel="stylesheet" href="../../_static/skin/bootstrap.css"/>
 	<link href="http://fonts.googleapis.com/css?family=Droid+Sans|Lekton|Ubuntu+Mono:400,700" rel="stylesheet">
-	<script src="http://g.tbcdn.cn/trip/kissy/1.4.0/seed-min.js"></script>
+	<script src="http://dev.kissyui.com/kissy/build/seed-min.js"></script>
 
 </head>
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
@@ -218,9 +218,27 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>url</strong> (<em>string</em>) &#8211; 请求地址</li>
 <li><strong>form</strong> (<em>HTMLElement|string</em>) &#8211; 表单元素，格式参见 <a class="reference internal" href="../dom/selector.html#dom-selector"><em>KISSY selector</em></a> .</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">form 参数代表的 form 节点中如果有 input type=&#8217;file&#8217; 的节点会自动启用 iframe-upload 模式，否则收集 form 内 input 数据启用普通 xhr 模式.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">form 参数用户文件上传时请设置 type:&#8217;post&#8217;.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>data</strong> (<em>Object|string</em>) &#8211; 请求附带的参数，参见 <a class="reference internal" href="io.html#io.cfg.data" title="io.cfg.data"><tt class="xref py py-data docutils literal"><span class="pre">data</span></tt></a> .</li>
 <li><strong>callback</strong> (<em>function</em>) &#8211; 请求成功后的回调，参见 <a class="reference internal" href="io.html#io.cfg.success" title="io.cfg.success"><tt class="xref py py-data docutils literal"><span class="pre">success</span></tt></a> .</li>
 <li><strong>dataType</strong> (<em>string</em>) &#8211; 传到回调函数作为参数的数据类型，参见 <a class="reference internal" href="io.html#io.cfg.dataType" title="io.cfg.dataType"><tt class="xref py py-data docutils literal"><span class="pre">dataType</span></tt></a></li>

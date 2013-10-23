@@ -3,8 +3,6 @@
 upload
 =================================
 
-
-
 Module
 -----------------------------------------------
 
@@ -17,19 +15,28 @@ Method
 
     | XHR **upload** ( url , form , [ data , callback , dataType ] )
     | 发送 jsonp 请求，将返回 json 信息作为第一个参数调用 callback 回调.
-    
+
     :param string url: 请求地址
     :param HTMLElement|string form: 表单元素，格式参见 :ref:`KISSY selector <dom-selector>` .
+
+    .. note::
+
+        form 参数代表的 form 节点中如果有 input type='file' 的节点会自动启用 iframe-upload 模式，否则收集 form 内 input 数据启用普通 xhr 模式.
+
+    .. note::
+
+        form 参数用户文件上传时请设置 type:'post'.
+
     :param Object|string data: 请求附带的参数，参见 :data:`~io.cfg.data` .
     :param function callback: 请求成功后的回调，参见 :data:`~io.cfg.success` .
     :param string dataType: 传到回调函数作为参数的数据类型，参见 :data:`~io.cfg.dataType`
     :returns: 代表本次请求的 xhrObj
     :rtype: :class:`~io.XhrObj`
-    
-    
+
+
     | XHR **upload** ( url , form,[ callback , dataType ] )
     | data 可忽略，同上个函数描述.
-    
+
 
     实际上该函数是 :class:`~io.IO` 的 shortcut
 
@@ -51,7 +58,7 @@ Method
             });
         };
 
-    
+
 Demo
 ------------------------------------
 

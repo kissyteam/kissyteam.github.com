@@ -26,8 +26,8 @@ Configs
     * :data:`~component.Control.config.content`
     * :data:`~base.Base.config.plugins`
     * :data:`~component.Control.config.elCls`
-    * :data:`snap`
-    * :data:`snapDuration`
+    * :data:`~Base.config.snap`
+    * :data:`~Base.config.snapDuration`
 
 Attributes
 ----------------------------------------------------
@@ -58,19 +58,19 @@ Class Details
 Configs Details
 -------------------------------
 
-.. data:: snap
+.. data:: Base.config.snap
 
     | 传入元素的选择器，{String}
     | 用来指定是否在滚动是将元素“折断”，就是在滚动停在元素上时如何处理。
     | 默认为 false ，不做操作，就停在那里
     | 为 true 时，滚动到下一个同类元素的起点，停止。
 
-.. data:: snapDuration
+.. data:: Base.config.snapDuration
 
     | “折断”操作动画持续时间，当snap为true时有效。
     | {Number} - 默认 0.3
 
-.. data:: snapEasing
+.. data:: Base.config.snapEasing
 
     | “折断”操作动画的时间函数，{String}
     | 默认 easeOut

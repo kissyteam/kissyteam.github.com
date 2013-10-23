@@ -89,6 +89,11 @@ Configs Detail
 .. data:: placeholder
 
     {String} - 默认为 http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif, 如果懒加载图像没有设置 src 则作为图像的占位图.
+    
+.. note::
+    
+    推荐设置为 http://a.tbcdn.cn/s.gif or http://g.tbcdn.cn/s.gif or https://s.tbcdn.cn/s.gif. <img> 标签也要设置这个空白图片，防止 ie 出现叉符号.
+
 
 .. data:: execScript
 

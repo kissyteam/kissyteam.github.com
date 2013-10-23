@@ -65,8 +65,8 @@ Class Detail
             也可以设置 scrollLeft 或者 scrollTop, 这时会直接对元素的滚动属性产生动画.
 
     :param Number duration: 默认为 1 , 动画持续时间, 以秒为单元.
-    :param String easing: 默认为 'easeNone' , 动画平滑函数, 可取值 "swing", "easeNone", "linear", "easeIn", "easeOut", "easeBoth","easeInStrong", "easeOutStrong","easeBothStrong","elasticIn","elasticOut", "elasticBoth","backIn","backOut","backBoth", "bounceIn","bounceOut","bounceBoth", "cubic-bezier(p1x, p1y, p2x, p2y)".
-                        效果预览, 可以参考 :ref:`easing 可视化 <easing_visual>` .
+    :param String easing: 默认为 'easeNone' , 动画平滑函数, 可取值 "swing", "easeNone", "linear", "easeIn", "easeOut", "easeBoth","easeInStrong", "easeOutStrong","easeBothStrong","elasticIn","elasticOut", "elasticBoth","backIn","backOut","backBoth", "bounceIn","bounceOut","bounceBoth", "cubic-bezier(p1x, p1y, p2x, p2y)（所有取值必须在[0,1]之间）".
+                        效果预览, 可以参考 :ref:`easing 可视化 <easing_visual>`，:ref:`cubic-bezier 可视化 <cubic_bezier_visual>`.
     :param function completeFn: 动画到最后一帧后的回调函数.
 
 
@@ -95,14 +95,39 @@ Class Detail
 
             .. attribute:: config.useTransition
 
-                boolean。 是否使用css3 transiton提升性能
+                boolean。 是否使用css3 transition提升性能, 默认 false
+
+                .. note::
+
+                    | 在 useTransition 为 true 的时候，easing 的值必须是 w3c 规定的时间函数名称。
+                    | 具体为： ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier(<number>, <number>, <number>, <number>)
+                    | 详见 `use transition动画实例 <../../demo/anim/demo8.html>`_
+
+.. note::
+
+    支持对除dom元素以外的普通对象使用动画，将变化的每一帧插值作为作为参考，进行操作。
+
+    详见 `自定义属性动画实例 <../../demo/anim/demo7.html>`_
+
+.. note::
+
+    **支持跨浏览器的css transform**
+
+    详见 `跨浏览器 transform 实例 <../../demo/anim/demo9.html>`_
 
     .. code-block:: javascript
 
-        //对普通的Object使用Anim
-        KISSY.use('anim',function(S,Anim) {
-            new Anim({a:1},{a:2},{frame:function(anim,fx){console.log(fx)}}).run();
-        });
+        new Anim(t,{'transform':'rotate(39deg) skew(40deg)'}).run();
+
+.. note::
+
+    增加动画自定义功能。
+
+    详见 `自定义动画机制实例 <../../demo/anim/demo10.html>`_
+
+.. note::
+
+    队列的使用, 可以参考 `动画实例 <../../demo/anim/demo6.html>`_
 
 Methods Detail
 -----------------------------------------------
@@ -235,15 +260,3 @@ Events Detail
 
     | **complete** ()
     | 动画结束后, 触发该事件.
-
-.. note::
-
-    **支持跨浏览器的css transform**
-
-    .. code-block:: javascript
-
-        new Anim(t,{'transform':'rotate(39deg) skew(40deg)'}).run();
-
-.. note::
-
-    队列的使用, 可以参考 `动画实例 <../../../demo/anim/demo6.html>`_

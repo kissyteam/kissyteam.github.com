@@ -18,15 +18,6 @@ io
 
 .. note::
 
-    | form 参数代表的 form 节点中如果有 input type='file' 的节点会自动启用 iframe-upload 模式，
-    | 否则收集 form 内 input 数据启用普通 xhr 模式.
-
-.. note::
-
-    form 参数用户文件上传时请设置 type:'post'.
-
-.. note::
-
     iframe-upload 模式与 subDomain 模式需配置服务器 CORS 头，例如
 
     .. code-block:: php
@@ -38,7 +29,7 @@ io
 
 .. note::
 
-    withCredentials 默认为 true
+    跨域时，withCredentials 默认为 true
 
 Module
 -----------------------------------------------
