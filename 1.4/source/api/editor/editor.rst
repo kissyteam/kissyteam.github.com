@@ -24,9 +24,9 @@ Class
 Configs
 ------------------------------------------
 
-    * :data:`~component.extension.Box.config.width`
+    * :data:`~component.Control.config.width`
     * :data:`~component.Control.config.focused`
-    * :data:`~component.extension.Box.config.height`
+    * :data:`~component.Control.config.height`
     * :data:`~Editor.config.customStyle`
     * :data:`~Editor.config.customLink`
     * :data:`~Editor.config.attachForm`

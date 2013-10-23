@@ -30,18 +30,17 @@ Class Detail
 
     | **PopupMenu** (config)
     | xclass: 'popupmenu'
-    
+
     * 继承自 :class:`~menu.Menu` , 包含其全部配置,属性,方法,事件.
-    * 扩充自 :class:`~component.extension.Position`, 包含其全部配置,属性,方法,事件.
     * 扩充自 :class:`~component.extension.Align`, 包含其全部配置,属性,方法,事件.
-    
+
     :param Object config: 配置项，详细见下方 **Configs Detail** .
-    
+
     .. note::
 
         从已有元素实例 PopupMenu 对象时 , 元素节点标明类名 ``{prefixCls}popupmenu`` .
         ``prefixCls`` 为配置的类名前缀，默认为 ``ks-`` .
-        
+
 
 
 .. note::

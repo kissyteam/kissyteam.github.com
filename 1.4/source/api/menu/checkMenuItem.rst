@@ -23,7 +23,7 @@ Class Detail
     | **CheckMenuItem** ( config )
     | checkable 菜单项
 
-    * 扩展自 :class:`~menu.MenuItem`, 包含其全部方法，配置，属性和事件
+    * 扩展自 :class:`~menu.Item`, 包含其全部方法，配置，属性和事件
 
     :param Object config: 配置信息
 

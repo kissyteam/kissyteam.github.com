@@ -14,5 +14,7 @@ Demos
     .. toctree::
        :titlesonly:
 
+       new
        srcNode
+       lazyRender
 

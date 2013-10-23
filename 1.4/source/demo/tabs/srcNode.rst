@@ -7,7 +7,18 @@
 srcNode 初始化
 --------------------------------------------------
 
-    .. raw:: html
+.. raw:: html
 
-        <iframe width="100%" height="700" class="iframe-demo"
-        src="../../../../../1.3/dpl/complexui/tabs.html"></iframe>
+    <iframe width="100%" height="1000" class="iframe-demo" src="/1.4/source/raw/demo/tabs/demo2.html"></iframe>
+
+.. code-block:: javascript
+
+    KISSY.use("tabs", function (S, Tabs) {
+
+        S.all(".ks-tabs").each(function (n) {
+            new Tabs({
+                srcNode: n
+            }).render();
+        });
+
+    });

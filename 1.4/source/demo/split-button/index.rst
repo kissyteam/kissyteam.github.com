@@ -17,7 +17,7 @@ Split Button 的基本使用
 
     .. raw:: html
 
-        <iframe width="100%" height="800" class="iframe-demo" src="/1.4/source/raw/demo/split-button/demo1.html"></iframe>
+        <iframe width="100%" height="850" class="iframe-demo" src="/1.4/source/raw/demo/split-button/demo1.html"></iframe>
 
 
     **初始化按钮**

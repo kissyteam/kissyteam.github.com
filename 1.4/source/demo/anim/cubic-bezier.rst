@@ -15,5 +15,5 @@ cubic-bezier 可视化
 
     .. raw:: html
 
-        <iframe width="100%" height="800" class="iframe-demo" src="/1.4/source/raw/demo/anim/cubic-bezier.html"></iframe>
+        <iframe width="100%" height="1300" class="iframe-demo" src="/1.4/source/raw/demo/anim/cubic-bezier.html"></iframe>
 

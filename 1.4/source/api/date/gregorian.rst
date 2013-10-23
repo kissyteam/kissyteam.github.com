@@ -56,7 +56,7 @@ Methods
     * :meth:`~GregorianCalendar.prototype.getHourOfDay`
     * :meth:`~GregorianCalendar.prototype.getMinutes`
     * :meth:`~GregorianCalendar.prototype.getSeconds`
-    * :meth:`~GregorianCalendar.prototype.getMilliSeconds`
+    * :meth:`~GregorianCalendar.prototype.getMilliseconds`
     * :meth:`~GregorianCalendar.prototype.getWeekOfYear`
     * :meth:`~GregorianCalendar.prototype.getWeekOfMonth`
     * :meth:`~GregorianCalendar.prototype.getDayOfYear`
@@ -70,7 +70,7 @@ Methods
     * :meth:`~GregorianCalendar.prototype.setHourOfDay`
     * :meth:`~GregorianCalendar.prototype.setMinutes`
     * :meth:`~GregorianCalendar.prototype.setSeconds`
-    * :meth:`~GregorianCalendar.prototype.setMilliSeconds`
+    * :meth:`~GregorianCalendar.prototype.setMilliseconds`
     * :meth:`~GregorianCalendar.prototype.setWeekOfYear`
     * :meth:`~GregorianCalendar.prototype.setWeekOfMonth`
     * :meth:`~GregorianCalendar.prototype.setDayOfYear`
@@ -84,7 +84,7 @@ Methods
     * :meth:`~GregorianCalendar.prototype.addHourOfDay`
     * :meth:`~GregorianCalendar.prototype.addMinutes`
     * :meth:`~GregorianCalendar.prototype.addSeconds`
-    * :meth:`~GregorianCalendar.prototype.addMilliSeconds`
+    * :meth:`~GregorianCalendar.prototype.addMilliseconds`
     * :meth:`~GregorianCalendar.prototype.addWeekOfYear`
     * :meth:`~GregorianCalendar.prototype.addWeekOfMonth`
     * :meth:`~GregorianCalendar.prototype.addDayOfYear`
@@ -98,7 +98,7 @@ Methods
     * :meth:`~GregorianCalendar.prototype.rollHourOfDay`
     * :meth:`~GregorianCalendar.prototype.rollMinutes`
     * :meth:`~GregorianCalendar.prototype.rollSeconds`
-    * :meth:`~GregorianCalendar.prototype.rollMilliSeconds`
+    * :meth:`~GregorianCalendar.prototype.rollMilliseconds`
     * :meth:`~GregorianCalendar.prototype.rollWeekOfYear`
     * :meth:`~GregorianCalendar.prototype.rollWeekOfMonth`
     * :meth:`~GregorianCalendar.prototype.rollDayOfYear`
@@ -298,7 +298,7 @@ Methods Detail
 
     :returns: {Number} 当前的秒值
 
-.. method:: GregorianCalendar.prototype.getMilliSeconds
+.. method:: GregorianCalendar.prototype.getMilliseconds
 
     | **()**
     | 获得当前的毫秒位的值，**不是整体时间的毫秒值**
@@ -390,7 +390,7 @@ Methods Detail
 
     :param {Number} v: 要设置的值
 
-.. method:: GregorianCalendar.prototype.setMilliSeconds
+.. method:: GregorianCalendar.prototype.setMilliseconds
 
     | **setMilliSeconds(v)**
     | 设置毫秒位的值
@@ -482,7 +482,7 @@ Methods Detail
 
     :param {Number} v: 要增加的值
 
-.. method:: GregorianCalendar.prototype.addMilliSeconds
+.. method:: GregorianCalendar.prototype.addMilliseconds
 
     | **addMilliSeconds(v)**
     | 增加毫秒位的值
@@ -574,7 +574,7 @@ Methods Detail
 
     :param {Number} v: 要增加的值
 
-.. method:: GregorianCalendar.prototype.rollMilliSecond
+.. method:: GregorianCalendar.prototype.rollMilliseconds
 
     | **rollMilliSeconds(v)**
     | 增加毫秒位的值

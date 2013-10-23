@@ -19,8 +19,8 @@ Class
 Configs
 -------------------------------
 
-    * :data:`~component.extension.config.Shim`
-    * :data:`~component.extension.config.Align`
+    * :data:`~component.extension.Shim.config.shim`
+    * :data:`~component.extension.Align.config.align`
 
 Methods
 --------------------------------

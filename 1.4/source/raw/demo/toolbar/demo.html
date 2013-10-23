@@ -7,120 +7,16 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
 <title>Toolbar 测试</title>
-<link href="http://dev.kissyui.com/kissy/build/css/dpl/base.css" rel="stylesheet"/>
-<link href="http://dev.kissyui.com/kissy/build/button/assets/dpl.css" rel="stylesheet"/>
-<link href="http://dev.kissyui.com/kissy/build/menubutton/assets/dpl.css" rel="stylesheet"/>
-<link href="http://dev.kissyui.com/kissy/build/menu/assets/dpl.css" rel="stylesheet"/>
-<link href="http://dev.kissyui.com/kissy/build/toolbar/assets/dpl.css" rel="stylesheet"/>
+<link href="http://dev.kissyui.com/kissy/build/??css/dpl/base.css,button/assets/dpl.css,menubutton/assets/dpl.css,menu/assets/dpl.css,toolbar/assets/dpl.css" rel="stylesheet"/>
 </head>
-<body style="width: 800px;margin: 10px auto;">
+<body style="width: 100%;margin: 10px auto;">
 <div>
-    <h1>
-        Toolbar For KISSY
-    </h1>
 
-    <div style="height: 80px"></div>
-
-
-    <div id="container">
+    <div id="container" style="margin: 100px 0;">
 
     </div>
 </div>
 <script src="http://dev.kissyui.com/kissy/build/seed.js" data-config="{combine:true}"></script>
-<script>
-    KISSY.use("toolbar,button,menubutton", function (S, Toolbar) {
-
-        var t = new Toolbar({
-            render:"#container",
-            children:[
-                {
-                    content:"menu-button",
-                    collapseOnClick:true,
-                    xclass:'menu-button',
-                    menu:{
-                        children:[
-                            {
-                                content:'item1',
-                                xclass:'submenu',
-                                menu:{
-                                    children:[
-                                        {
-                                            content:'item1-1'
-                                        },
-                                        {
-                                            content:'item1-2'
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                content:'item2'
-                            }
-                        ]
-                    }
-                },
-                {
-                    content:"menu-button3",
-                    //collapseOnClick:true,
-                    xclass:'menu-button',
-                    menu:{
-                        children:[
-                            {
-                                content:'item3',
-                                xclass:'submenu',
-                                menu:{
-                                    children:[
-                                        {
-                                            content:'item3-1'
-                                        },
-                                        {
-                                            content:'item3-2'
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                content:'item4'
-                            }
-                        ]
-                    }
-                },
-//                {
-//                    xclass:'separator'
-//                },
-                {
-                    content:'button',
-                    checkable:true
-                },
-                {
-                    content:"menu-button2",
-                    xclass:'menu-button',
-                    collapseOnClick:true,
-                    menu:{
-                        children:[
-                            {
-                                content:'item2-1'
-                            },
-                            {
-                                content:'item2-2'
-                            }
-                        ]
-                    }
-                }
-            ]
-        }).render();
-
-        window.ksToolBar=t;
-
-        t.on("click", function (e) {
-            S.log("click : " + e.target.get("content"));
-        });
-
-
-        setInterval(function(){
-            S.log(t.get('highlightedItem'));
-        },2000);
-    });
-</script>
+<script src="./demo.js"></script>
 </body>
 </html>
