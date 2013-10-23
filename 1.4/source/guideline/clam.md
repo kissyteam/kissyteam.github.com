@@ -1,6 +1,6 @@
 正在跳转...
 <script>
-window.location.href="https://npmjs.org/package/generator-clam";
+window.location.href="https://github.com/jayli/generator-clam/blob/master/README.md";
 </script>
 
 # KISSY 项目构建工具，Generator-clam

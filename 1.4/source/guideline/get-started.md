@@ -26,12 +26,13 @@
 	- [Base](base.html)，包括Attr、自定义事件、插件机制
 	- [xtemplate](xtemplate.html)
 	- [resizable](resizable.html)
-	- [calendar](calendar.html)
+	- <del>[calendar](calendar.html)</del>
 	- [overlay](overlay.html)
-	- [editor](http://docs.kissyui.com/docs/html/api/editor/editor.html)
+	- [editor](http://docs.kissyui.com/1.4/docs/html/api/editor/editor.html)
 	- [Mobile 开发最佳实践](mobile.html)
 	- [在 Node 环境中运行 kissy](nodejs-kissy.html)
 - [项目构建工具](tools.html)
+	- [自定义模块工具（beta）](config.html)
 	- [KISSY 模块依赖抽取工具 KMC（Kissy Module Complier）](kmc.html)
 	- [ABC](http://abc.f2e.taobao.net/)
 	- [Clam](clam.html)

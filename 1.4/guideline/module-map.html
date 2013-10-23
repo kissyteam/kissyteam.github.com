@@ -75,10 +75,18 @@
 <h2>KISSY 架构</h2>
 <p>KISSY 采用模块化设计，除了 Seed 集成的功能之外，所有模块均需要手动按需载入。KISSY 核心模块结构如下图，Seed 是最重要模块的集合，包含最基础的面向对象和语言基础。</p>
 <p><img src="http://gtms02.alicdn.com/tps/i2/T15qaHFbVXXXX0nDjy-500-718.png" alt=""></p>
+<p>从模块作用和外观上划分：</p>
 <ul>
 <li><strong>Seed</strong>：KISSY 种子文件，包含基础的面向对象支持、模块加载器、Lang 增强、UA，所有 KISSY 应用必须载入种子文件。种子不包含 DOM、Node 等常用功能，需要开发者按需引入。</li>
 <li><strong>Components</strong>：颗粒化的功能单元，是比较常用的模块，二八原则中的那20%，这些是官方提供的可靠的模块。</li>
 <li><strong>Widgets</strong>：组件，分为官方提供和非官方提供。非官方组件由第三方开发，存储于 Gallery 内，官方组件和 Components 组件一样，直接<code>KISSY.use(&#39;modName&#39;)</code>来载入。</li>
+</ul>
+<p>从模块功能上划分：</p>
+<ul>
+<li>Seed：种子所包含的最小集合</li>
+<li>Core：核心模块</li>
+<li>Infrastructure：代码基础设施</li>
+<li>Components：其他模块单元</li>
 </ul>
 <blockquote>
 <p>从 KISSY 1.4.0 开始，将不再提供<code>kissy.js</code>，只提供<code>seed.js</code>，目的是强制用户按需加载，避免无用组件的载入，尽可能的减少请求的体积。因此，开发者需要熟练掌握核心组件的使用，尤其是图中加粗的部分。</p>
