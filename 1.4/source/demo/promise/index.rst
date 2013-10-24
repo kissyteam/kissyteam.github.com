@@ -87,3 +87,14 @@ resolve 和 then 没有顺序依赖
 
 .. literalinclude:: /raw/demo/promise/assets/nest.js
        :language: javascript
+
+Promise Done 的使用示例
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+    <iframe width="100%" height="50" class="iframe-demo"
+    src="/1.4/source/raw/demo/promise/index.html?type=done"></iframe>
+
+.. literalinclude:: /raw/demo/promise/assets/done.js
+       :language: javascript

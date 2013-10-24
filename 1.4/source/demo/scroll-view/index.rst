@@ -19,5 +19,6 @@ Demos
 
        base
        snap
+       slide
        plugin-scrollbar
        plugin-pullToRefresh

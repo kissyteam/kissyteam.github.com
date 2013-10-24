@@ -11,18 +11,13 @@ Class
 
     * :class:`SplitButton`
 
+Demos
+-----------------------------------------------
 
-Split Button 的基本使用
---------------------------------------------------
+    .. toctree::
+       :titlesonly:
 
-    .. raw:: html
-
-        <iframe width="100%" height="850" class="iframe-demo" src="/1.4/source/raw/demo/split-button/demo1.html"></iframe>
-
-
-    **初始化按钮**
-
-    .. literalinclude:: /raw/demo/split-button/assets/demo1.js
-           :language: javascript
+       base
+       advanced
 
 
