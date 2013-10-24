@@ -129,16 +129,16 @@
 			首页
 		</a>
 	</li>
+	<li><a href="../../../../docs/html/api/index.html">API</a></li>
+	<li><a href="../../../../docs/html/demo/index.html">Demo</a></li>
 	<li>
-		<a href="../../../../docs/html/guideline/" >
+		<a href="../../../../docs/html/guideline/get-started.html" >
 			Guideline
 		</a>
 	</li>
-	<li><a href="../../../../docs/html/api/index.html">API</a></li>
-	<li><a href="../../../../docs/html/demo/index.html">Demo</a></li>
 	<li><a href="../../../../docs/html/tutorials/index.html">Tutorials</a></li>
 	<li><a href="https://groups.google.com/group/kissy-ui">Google Group</a></li>
-	<li style="float:right"><a href="http://docs.kissyui.com/1.4/api/">English API Docs</a></li>
+	<li style="float:right"><a href="/1.4/api/">English API Docs</a></li>
 	<li style="float:right" class="first"><a href="http://blog.kissyui.com">KISSY Blog</a></li>
 </ul>
 				
@@ -174,6 +174,68 @@
 <li><a class="reference internal" href="../../api/xtemplate/index.html#xtemplate.XTemplate" title="xtemplate.XTemplate"><tt class="xref py py-class docutils literal"><span class="pre">XTemplate</span></tt></a></li>
 </ul>
 </div></blockquote>
+</div>
+<div class="section" id="id1">
+<h2>xtemplate 宏命令使用示例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<script src='/1.4/source/raw/demo/xtemplate/assets/support-macro.js'></script>
+
+<p>
+    <button onclick='supportMacro();'>测试变量替换</button>
+</p><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;xtemplate&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">XTemplate</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="nb">window</span><span class="p">.</span><span class="nx">supportMacro</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">tpl</span> <span class="o">=</span> <span class="s1">&#39;{{#macro &quot;test&quot; &quot;t&quot;}}{{t}}{{/macro}}call {{macro &quot;test&quot; arg}}&#39;</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">render</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XTemplate</span><span class="p">(</span><span class="nx">tpl</span><span class="p">).</span><span class="nx">render</span><span class="p">({</span>
+            <span class="nx">arg</span><span class="o">:</span> <span class="s1">&#39;macro&#39;</span>
+        <span class="p">});</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="nx">render</span><span class="p">);</span>
+    <span class="p">};</span>
+
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>xtemplate 使用父模板的宏命令<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<script src='/1.4/source/raw/demo/xtemplate/assets/support-macro-parent.js'></script>
+
+<p>
+    <button onclick='supportMacro();'>测试变量替换</button>
+</p><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;xtemplate&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">XTemplate</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="nb">window</span><span class="p">.</span><span class="nx">supportMacro</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">tpl</span> <span class="o">=</span> <span class="s1">&#39;{{#macro &quot;test&quot; &quot;t&quot;}}{{t}}2{{/macro}}{{include &quot;macro/x2&quot;}}&#39;</span><span class="p">;</span>
+        <span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;macro/x2&#39;</span><span class="p">,</span> <span class="s1">&#39;call {{macro &quot;test&quot; arg}}&#39;</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">render</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XTemplate</span><span class="p">(</span><span class="nx">tpl</span><span class="p">).</span><span class="nx">render</span><span class="p">({</span>
+            <span class="nx">arg</span><span class="o">:</span> <span class="s1">&#39;macro&#39;</span>
+        <span class="p">});</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="nx">render</span><span class="p">);</span>
+    <span class="p">};</span>
+
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>xtemplate 使用子模板的宏命令<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<script src='/1.4/source/raw/demo/xtemplate/assets/support-macro-sub.js'></script>
+
+<p>
+    <button onclick='supportMacro();'>测试变量替换</button>
+</p><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;xtemplate&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">XTemplate</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="nb">window</span><span class="p">.</span><span class="nx">supportMacro</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">tpl</span> <span class="o">=</span> <span class="s1">&#39;{{include &quot;macro/x&quot;}}call {{macro &quot;test&quot; arg}}&#39;</span><span class="p">;</span>
+        <span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;macro/x&#39;</span><span class="p">,</span> <span class="s1">&#39;{{#macro &quot;test&quot; &quot;t&quot;}}{{t}}{{/macro}}&#39;</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">render</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XTemplate</span><span class="p">(</span><span class="nx">tpl</span><span class="p">).</span><span class="nx">render</span><span class="p">({</span>
+            <span class="nx">arg</span><span class="o">:</span> <span class="s1">&#39;macro&#39;</span>
+        <span class="p">});</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="nx">render</span><span class="p">);</span>
+    <span class="p">};</span>
+
+<span class="p">});</span>
+</pre></div>
+</div>
 </div>
 </div>
 
