@@ -23,7 +23,6 @@ Class
 Configs
 ------------------------------------------------
 
-    * :data:`~XTemplate.config.subTpls`
     * :data:`~XTemplate.config.commands`
     * :data:`~XTemplate.config.name`
     * :data:`~XTemplate.config.cache`
@@ -53,20 +52,6 @@ Class Detail
 
 Configs Detail
 ------------------------------------------------------
-
-.. data:: XTemplate.config.subTpls
-
-    {Object} - 局部自定义子模板的键值对，例如
-
-    .. code-block:: javascript
-
-        {
-            'sub1':'{{title}}',
-            'sub2':function( scopes ){
-                return scopes[0].title2;
-            }
-        }
-
 
 .. data:: XTemplate.config.commands
 

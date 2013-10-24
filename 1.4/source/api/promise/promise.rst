@@ -19,6 +19,7 @@ Class
 Methods
 -----------------------------------------------
 
+  * :meth:`~Promise.prototype.done`
   * :meth:`~Promise.prototype.then`
   * :meth:`~Promise.prototype.fail`
   * :meth:`~Promise.prototype.fin`
@@ -39,6 +40,18 @@ Class Detail
 
 Methods Detail
 -----------------------------------------------
+
+.. method:: Promise.prototype.done
+
+    | void **done** (fulfilled, rejected)
+    | 当前 promise 实例已完成时注册一个 callback, 如果 promise fail, 则这下一个事件循环中抛出错误。
+
+    :param Function fulfilled: 该 promise 成功时的回调，参数为 defer resolve 时的 value.
+    :param Function rejected: 该 promise 失败时的回调，参数为 defer reject 时的 reason.
+
+    .. note::
+
+        详细使用见: :ref:`Demo <promise-demo>`
 
 .. method:: Promise.prototype.then
 

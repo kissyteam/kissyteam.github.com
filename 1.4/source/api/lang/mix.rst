@@ -12,17 +12,17 @@ Methods
 
     | Object **KISSY.mix** (receiver , supplier [ , overwrite = true , whitelist , deep ])
     | 将 supplier 对象的成员复制到 receiver 对象上.
-    
+
     :param object receiver: 属性接受者对象.
     :param object supplier: 属性来源对象.
     :param boolean overwrite: 是否覆盖接受者同名属性.
     :param Array<string> whitelist: 属性来源对象的属性白名单, 仅在名单中的属性进行复制.
-    
+
     :param boolean deep:  是否进行深度 mix (deep copy)
     :returns: receiver 属性接受者对象.
     :rtype: object
-    
-    
+
+
     .. note::
 
         ``receiver`` 会被改变，如果想要保留原始的 ``receiver`` ，可以使用 :func:`KISSY.merge`
@@ -36,13 +36,39 @@ Methods
     如果设置了参数 ``deep = true`` ，那么会对数组和简单对象( :func:`KISSY.isPlainObject` )递归合并.
 
     ``supplier undefined`` 的属性值不会被复制，不过对象从原型继承下来下的值则会被复制.
-    
-    
+
+
 
     .. note::
 
         该方法仅适用于 javascript 对象，不要再浏览器对象上调用，例如 node.style
 
+    .. note::
+
+        mix 支持函数作为白名单参数
+
+        .. code-block:: javascript
+
+            var a = {},
+            b = {
+                b1: 1,
+                b2: {
+                    b2: 22
+                }
+            };
+
+            S.mix(a, b, {
+                deep: true,
+                whitelist: function (name, v) {
+                    if (name == 'b1') {
+                        return v;
+                    }
+                    if (this.b1 && name == 'b2') {
+                        return v;
+                    }
+                    return undefined;
+                }
+            });
 
 
     **简单 mix**
