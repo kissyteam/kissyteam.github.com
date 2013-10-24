@@ -11,5 +11,5 @@ Classes in ScrollView.Plugin
 .. toctree::
     :titlesonly:
 
-    scrollbar
-    pull-to-refresh
+    plugin/scrollbar
+    plugin/pull-to-refresh

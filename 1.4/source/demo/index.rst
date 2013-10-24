@@ -10,6 +10,7 @@ Demos
    lang/index
    loader/index
    anim/index
+   base/index
    promise/index
    date/index
    mvc/index
@@ -22,9 +23,13 @@ Demos
    menu/index
    menubutton/index
    overlay/index
+   path/index
    resizable/index
    scroll-view/index
    split-button/index
+   stylesheet/index
+   swf/index
    tabs/index
    toolbar/index
    tree/index
+   uri/index
