@@ -11,7 +11,7 @@ module.exports = function (grunt) {
         // 对页面进行清理
         clean: {
             doc: {
-                src: '1.4/guideline/'
+                src: '1.4/docs/html/guideline/'
 			}
         },
 
@@ -23,7 +23,7 @@ module.exports = function (grunt) {
 						expand:true,
 						cwd:'1.4/source/guideline/',
 						src: ['**/*','!**/*.md','!**/*.markdown'], 
-						dest: '1.4/guideline/', 
+						dest: '1.4/docs/html/guideline', 
 						filter: 'isFile'
 					}
 				]
@@ -40,7 +40,7 @@ module.exports = function (grunt) {
 				files: [
 					{
 						expand: true, 
-						cwd:'1.4/guideline/',
+						cwd:'1.4/docs/html/guideline',
 						src: ['**/*.html']
 					}
 				]
@@ -53,7 +53,7 @@ module.exports = function (grunt) {
 						expand: true,
 						cwd:'1.4/source/guideline/api/',
 						src: '**/*.md',
-						dest: '1.4/guideline/api/', 
+						dest: '1.4/docs/html/guideline',
 						ext: '.html'
 					}
 				],
@@ -72,7 +72,7 @@ module.exports = function (grunt) {
 						expand: true,
 						cwd:'1.4/source/guideline/',
 						src: ['**/*.md','!api/**/*'],
-						dest:'1.4/guideline/',
+						dest:'1.4/docs/html/guideline',
 						ext: '.html'
 					}
 				],

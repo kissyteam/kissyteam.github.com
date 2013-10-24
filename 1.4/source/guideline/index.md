@@ -43,7 +43,7 @@ KISSY<span class="badge">1.4.0</span> 是一款跨终端、模块化、高性能
 	<div style="max-width: 400px; margin: 0 auto">
 		<a class="btn btn-primary btn-lg btn-block" href="get-started.html">KISSY 教程大纲</a>
 		<a class="btn btn-info btn-lg btn-block" href="../docs/html/api/" style="color:white">API 参考手册</a>
-		<a class="btn btn-success btn-lg btn-block" href="http://g.tbcdn.cn/kissy/k/1.4.0/seed.js">KISSY 种子文件</a>
+		<a class="btn btn-success btn-lg btn-block" href="http://g.tbcdn.cn/kissy/k/1.4.0/seed.js" style="color:white">KISSY 种子文件</a>
 	</div>
 </div>
 
