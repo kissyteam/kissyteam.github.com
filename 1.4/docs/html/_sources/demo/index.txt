@@ -26,5 +26,5 @@ Demos
    scroll-view/index
    split-button/index
    tabs/index
-   toolbar/demo
+   toolbar/index
    tree/index

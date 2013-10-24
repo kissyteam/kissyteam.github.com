@@ -42,3 +42,9 @@ Methods
     如果模块名以 ``/`` 结尾, 则自动加后缀 index , 例如
     ``use("mods/m1/")`` 相当于 ``use("mods/m1/index")`` ,
     即自动加载 ``m1`` 目录下的 ``index.js``
+
+.. note::
+
+    包以包名中的 '/' 来区分从属关系。
+    例如 c/base 是包 c 下的base
+    而 cbase 则不是 c 下的模块

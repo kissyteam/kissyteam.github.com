@@ -211,6 +211,32 @@
 <p class="first admonition-title">Note</p>
 <p class="last">该方法仅适用于 javascript 对象，不要再浏览器对象上调用，例如 node.style</p>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>mix 支持函数作为白名单参数</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{},</span>
+<span class="nx">b</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">b1</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">b2</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">b2</span><span class="o">:</span> <span class="mi">22</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">S</span><span class="p">.</span><span class="nx">mix</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">deep</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">whitelist</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="s1">&#39;b1&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">v</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">b1</span> <span class="o">&amp;&amp;</span> <span class="nx">name</span> <span class="o">==</span> <span class="s1">&#39;b2&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">v</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">undefined</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
 <p><strong>简单 mix</strong></p>
 <blockquote>
 <div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">S</span> <span class="o">=</span> <span class="nx">KISSY</span><span class="p">,</span>

@@ -3,6 +3,12 @@
 config
 ==============================================
 
+.. note::
+
+    Package配置参数增加group，支持根据group，combo多个Package。
+
+        不同charset分别combo
+        容错：如果发现某Package无法combo，则对其单独combo
 
 Methods
 -----------------------------------------------

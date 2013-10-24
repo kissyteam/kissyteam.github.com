@@ -181,6 +181,7 @@
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
+<li><a class="reference internal" href="#seed.Promise.prototype.done" title="seed.Promise.prototype.done"><tt class="xref py py-meth docutils literal"><span class="pre">done()</span></tt></a></li>
 <li><a class="reference internal" href="#seed.Promise.prototype.then" title="seed.Promise.prototype.then"><tt class="xref py py-meth docutils literal"><span class="pre">then()</span></tt></a></li>
 <li><a class="reference internal" href="#seed.Promise.prototype.fail" title="seed.Promise.prototype.fail"><tt class="xref py py-meth docutils literal"><span class="pre">fail()</span></tt></a></li>
 <li><a class="reference internal" href="#seed.Promise.prototype.fin" title="seed.Promise.prototype.fin"><tt class="xref py py-meth docutils literal"><span class="pre">fin()</span></tt></a></li>
@@ -207,6 +208,31 @@
 </div>
 <div class="section" id="methods-detail">
 <h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="seed.Promise.prototype.done">
+<tt class="descclassname">Promise.prototype.</tt><tt class="descname">done</tt><big>(</big><big>)</big><a class="headerlink" href="#seed.Promise.prototype.done" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">void <strong>done</strong> (fulfilled, rejected)</div>
+<div class="line">当前 promise 实例已完成时注册一个 callback, 如果 promise fail, 则这下一个事件循环中抛出错误。</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fulfilled</strong> (<em>Function</em>) &#8211; 该 promise 成功时的回调，参数为 defer resolve 时的 value.</li>
+<li><strong>rejected</strong> (<em>Function</em>) &#8211; 该 promise 失败时的回调，参数为 defer reject 时的 reason.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">详细使用见: <a class="reference internal" href="../../demo/promise/index.html#promise-demo"><em>Demo</em></a></p>
+</div>
+</dd></dl>
+
 <dl class="method">
 <dt id="seed.Promise.prototype.then">
 <tt class="descclassname">Promise.prototype.</tt><tt class="descname">then</tt><big>(</big><big>)</big><a class="headerlink" href="#seed.Promise.prototype.then" title="Permalink to this definition">¶</a></dt>

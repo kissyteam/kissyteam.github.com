@@ -297,6 +297,25 @@ src="/1.4/source/raw/demo/promise/index.html?type=nest"></iframe><div class="hig
 </pre></div>
 </div>
 </div>
+<div class="section" id="promise-done">
+<h3>Promise Done 的使用示例<a class="headerlink" href="#promise-done" title="Permalink to this headline">¶</a></h3>
+<iframe width="100%" height="50" class="iframe-demo"
+src="/1.4/source/raw/demo/promise/index.html?type=done"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;promise,node&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Promise</span><span class="p">,</span> <span class="nx">Node</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">Defer</span><span class="p">();</span>
+        <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="nx">d</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="s2">&quot;reject&quot;</span><span class="p">)},</span> <span class="mi">1000</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">promise</span><span class="p">;</span>
+        <span class="nx">promise</span><span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">);</span>
+        <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">){</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span> <span class="c1">//如何不做回调去处理错误，会抛出异常，在控制台中输出。</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
