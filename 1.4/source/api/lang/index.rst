@@ -25,6 +25,7 @@ lang 是一套underscore风格的工具集，提供一些常用的工具函数�
    extend
    filter
    fromUnicode
+   getLogger
    globalEval
    guid
    inArray
