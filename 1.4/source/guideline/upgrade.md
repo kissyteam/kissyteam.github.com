@@ -25,6 +25,7 @@
 ### 模块名称变更
 
 - ajax, io 为同一模块，推荐使用 io
+- sizzle 被移除，不用再加载
 - calendar、datalazyload、switchable、imagezoom、waterfall 被移出，被替代为Gallery中的组件，
 [calendar-deprecated](http://gallery.kissyui.com/calendar-deprecated/1.0/guide/index.html)，
 [switchable](http://gallery.kissyui.com/switchable/1.3/guide/index.html)，
