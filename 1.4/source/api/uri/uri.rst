@@ -17,7 +17,7 @@ Class
 
   * :class:`Uri`
 
-  
+
 Methods
 -----------------------------------------------
 
@@ -46,12 +46,12 @@ Class Detail
 -----------------------------------------------
 
 .. class:: Uri
-    
+
     | **Uri** (uriStr)
-    
+
     :param String uriStr: uri 字符串
 
-    
+
 Methods Detail
 -----------------------------------------------
 
@@ -214,7 +214,7 @@ Methods Detail
 .. method:: Uri.prototype.setPath
 
     | **setPath** (path)
-    | 获取当前 uri 实例的路径
+    | 设置当前 uri 实例的路径
 
     :param {String} path:
     :returns: {String}
@@ -278,7 +278,7 @@ Methods Detail
 .. method:: Uri.prototype.setFragment
 
     | **setFragment** (hash)
-    | 获取当前 uri 实例的 hash
+    | 设置当前 uri 实例的 hash
 
     :param {String} hash:
     :returns: {String}

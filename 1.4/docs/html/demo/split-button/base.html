@@ -194,43 +194,6 @@
             <span class="p">}</span>
         <span class="p">}).</span><span class="nx">render</span><span class="p">();</span>
     <span class="p">});</span>
-
-    <span class="k">new</span> <span class="nx">SplitButton</span><span class="p">({</span>
-        <span class="nx">render</span><span class="o">:</span> <span class="s2">&quot;#para2&quot;</span><span class="p">,</span>
-        <span class="nx">button</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">xclass</span><span class="o">:</span> <span class="s1">&#39;button&#39;</span><span class="p">,</span>
-            <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;action&#39;</span>
-        <span class="p">},</span>
-        <span class="nx">alignWithEl</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">menuButton</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">xclass</span><span class="o">:</span> <span class="s1">&#39;menu-button&#39;</span><span class="p">,</span>
-            <span class="nx">matchElWidth</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="nx">collapseOnClick</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nx">menu</span><span class="o">:</span> <span class="p">{</span>
-                <span class="nx">xclass</span><span class="o">:</span> <span class="s1">&#39;popupmenu&#39;</span><span class="p">,</span>
-
-                <span class="nx">children</span><span class="o">:</span> <span class="p">[</span>
-                    <span class="p">{</span>
-                        <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;some action&#39;</span>
-                    <span class="p">},</span>
-                    <span class="p">{</span>
-                        <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;more action&#39;</span>
-                    <span class="p">}</span>
-                <span class="p">]</span>
-            <span class="p">},</span>
-            <span class="nx">listeners</span><span class="o">:</span> <span class="p">{</span>
-                <span class="s1">&#39;click&#39;</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;parent&#39;</span><span class="p">).</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">)</span>
-                            <span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">));</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">},</span>
-        <span class="nx">listeners</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s1">&#39;click&#39;</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;click: &#39;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">));</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}).</span><span class="nx">render</span><span class="p">();</span>
 <span class="p">});</span>
 </pre></div>
 </div>

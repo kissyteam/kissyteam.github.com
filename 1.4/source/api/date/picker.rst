@@ -24,10 +24,13 @@ Methods
 Configs
 --------------------------------
 
-    * :func:`disabledDate`
+    * :data:`disabledDate`
     * :data:`showWeekNumber`
     * :data:`showToday`
     * :data:`~component.Control.config.render`
+    * :data:`dateRender`
+    * :data:`locale`
+    * :data:`showClear`
 
 Events
 ---------------------------------
@@ -50,7 +53,7 @@ Class Details
 Configs Details
 -----------------------------------
 
-.. method:: disabledDate
+.. data:: disabledDate
 
     | 一个过滤函数，用于判断日期是否可用
 
@@ -73,6 +76,22 @@ Configs Details
     | 是否显示今天
 
     | 显示为true，反之为false
+
+.. data:: dateRender
+
+    {Function} - 指定每个日期单元的渲染方式。
+
+    函数接受两个参数
+    :param GregorianCalendar current: 当前的日期值
+    :param GregorianCalendar value: 初始化 picker 是设置的值，默认为当前时间
+
+.. data:: locale
+
+    {Object} - locale 信息
+
+.. data:: showClear
+
+    {Boolean} - 是否显示清除按钮，默认 true
 
 Event Details
 -----------------------------------

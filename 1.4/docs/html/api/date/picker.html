@@ -195,10 +195,13 @@
 <h2>Configs<a class="headerlink" href="#configs" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#date.disabledDate" title="date.disabledDate"><tt class="xref py py-func docutils literal"><span class="pre">disabledDate()</span></tt></a></li>
+<li><a class="reference internal" href="#date.disabledDate" title="date.disabledDate"><tt class="xref py py-data docutils literal"><span class="pre">disabledDate</span></tt></a></li>
 <li><a class="reference internal" href="#date.showWeekNumber" title="date.showWeekNumber"><tt class="xref py py-data docutils literal"><span class="pre">showWeekNumber</span></tt></a></li>
 <li><a class="reference internal" href="#date.showToday" title="date.showToday"><tt class="xref py py-data docutils literal"><span class="pre">showToday</span></tt></a></li>
 <li><a class="reference internal" href="../component/control.html#component.Control.config.render" title="component.Control.config.render"><tt class="xref py py-data docutils literal"><span class="pre">render</span></tt></a></li>
+<li><a class="reference internal" href="#date.dateRender" title="date.dateRender"><tt class="xref py py-data docutils literal"><span class="pre">dateRender</span></tt></a></li>
+<li><a class="reference internal" href="#date.locale" title="date.locale"><tt class="xref py py-data docutils literal"><span class="pre">locale</span></tt></a></li>
+<li><a class="reference internal" href="#date.showClear" title="date.showClear"><tt class="xref py py-data docutils literal"><span class="pre">showClear</span></tt></a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -237,9 +240,9 @@
 </div>
 <div class="section" id="configs-details">
 <h2>Configs Details<a class="headerlink" href="#configs-details" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="data">
 <dt id="date.disabledDate">
-<tt class="descclassname">date.</tt><tt class="descname">disabledDate</tt><big>(</big><big>)</big><a class="headerlink" href="#date.disabledDate" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">date.</tt><tt class="descname">disabledDate</tt><a class="headerlink" href="#date.disabledDate" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line">一个过滤函数，用于判断日期是否可用</div>
 </div>
@@ -273,6 +276,27 @@
 <div class="line-block">
 <div class="line">显示为true，反之为false</div>
 </div>
+</dd></dl>
+
+<dl class="data">
+<dt id="date.dateRender">
+<tt class="descclassname">date.</tt><tt class="descname">dateRender</tt><a class="headerlink" href="#date.dateRender" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Function} - 指定每个日期单元的渲染方式。</p>
+<p>函数接受两个参数
+:param GregorianCalendar current: 当前的日期值
+:param GregorianCalendar value: 初始化 picker 是设置的值，默认为当前时间</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="date.locale">
+<tt class="descclassname">date.</tt><tt class="descname">locale</tt><a class="headerlink" href="#date.locale" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object} - locale 信息</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="date.showClear">
+<tt class="descclassname">date.</tt><tt class="descname">showClear</tt><a class="headerlink" href="#date.showClear" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 是否显示清除按钮，默认 true</p>
 </dd></dl>
 
 </div>
