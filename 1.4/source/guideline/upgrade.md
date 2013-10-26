@@ -33,6 +33,36 @@
 [imagezoom](http://gallery.kissyui.com/imagezoom/1.0/guide/index.html)，
 [waterfall](http://gallery.kissyui.com/waterfall/1.0/guide/index.html)。
 
+对于用到这些模块（基于 kissy 1.3.0）的页面升级到`1.4.0`后，需要在全局自行添加映射（KISSY 1.4.0 不提供）：
+
+	<script>
+	KISSY.config({
+		modules: {
+			'sizzle':{
+				alias: ['node']
+			},
+			'ajax':{
+				alias: ['io']
+			},
+			'calendar':{
+				alias: ['gallery/calendar-deprecated/1.0/']
+			},
+			'datalazyload':{
+				alias: ['gallery/datalazyload/1.0/']
+			},
+			'switchable':{
+				alias: ['gallery/switchable/1.3/']
+			},
+			'imagezoom':{
+				alias: ['gallery/imagezoom/1.0/']
+			},
+			'waterfall':{
+				alias: ['gallery/waterfall/1.0/']
+			}
+		}
+	});
+	</script>
+
 -----------------------------------------
 
 ## 1.4.0 Changelog
