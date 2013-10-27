@@ -20,7 +20,7 @@ Demos
 
 .. raw:: html
 
-    <iframe width="100%" height="50" class="iframe-demo"
+    <iframe width="100%" height="100" class="iframe-demo"
     src="/1.4/source/raw/demo/promise/index.html?type=chain"></iframe>
 
 .. literalinclude:: /raw/demo/promise/assets/chain.js
@@ -32,7 +32,7 @@ resolve 和 then 没有顺序依赖
 
 .. raw:: html
 
-    <iframe width="100%" height="50" class="iframe-demo"
+    <iframe width="100%" height="100" class="iframe-demo"
      src="/1.4/source/raw/demo/promise/index.html?type=chain-order"></iframe>
 
 .. literalinclude:: /raw/demo/promise/assets/chain-order.js
@@ -44,7 +44,7 @@ resolve 和 then 没有顺序依赖
 
 .. raw:: html
 
-    <iframe width="100%" height="50" class="iframe-demo"
+    <iframe width="100%" height="100" class="iframe-demo"
     src="/1.4/source/raw/demo/promise/index.html?type=error-propagate"></iframe>
 
 .. literalinclude:: /raw/demo/promise/assets/error-propagate.js
@@ -56,7 +56,7 @@ resolve 和 then 没有顺序依赖
 
 .. raw:: html
 
-    <iframe width="100%" height="50" class="iframe-demo"
+    <iframe width="100%" height="100" class="iframe-demo"
     src="/1.4/source/raw/demo/promise/index.html?type=error-recovery"></iframe>
 
 .. literalinclude:: /raw/demo/promise/assets/error-recovery.js
@@ -69,7 +69,7 @@ resolve 和 then 没有顺序依赖
 
 .. raw:: html
 
-    <iframe width="100%" height="50" class="iframe-demo"
+    <iframe width="100%" height="100" class="iframe-demo"
     src="/1.4/source/raw/demo/promise/index.html?type=error-throw"></iframe>
 
 .. literalinclude:: /raw/demo/promise/assets/error-throw.js
@@ -82,7 +82,7 @@ resolve 和 then 没有顺序依赖
 
 .. raw:: html
 
-    <iframe width="100%" height="50" class="iframe-demo"
+    <iframe width="100%" height="100" class="iframe-demo"
     src="/1.4/source/raw/demo/promise/index.html?type=nest"></iframe>
 
 .. literalinclude:: /raw/demo/promise/assets/nest.js
@@ -93,7 +93,7 @@ Promise Done 的使用示例
 
 .. raw:: html
 
-    <iframe width="100%" height="50" class="iframe-demo"
+    <iframe width="100%" height="100" class="iframe-demo"
     src="/1.4/source/raw/demo/promise/index.html?type=done"></iframe>
 
 .. literalinclude:: /raw/demo/promise/assets/done.js
