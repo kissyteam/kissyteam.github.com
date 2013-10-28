@@ -9,7 +9,7 @@ KISSY.ready(function (S) {
             render:'#container',
             listeners:{
                 click:function () {
-                    S.log(this.get("content"));
+                    alert(this.get("content"));
                 }
             }
         }).render();

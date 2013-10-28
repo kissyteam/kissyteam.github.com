@@ -17,7 +17,7 @@ KISSY.use('node, event, date/gregorian', function(S, Node, Event, GregorianCalen
     Event.delegate('#gets', 'click', 'button', function(event) {
         var func = $(event.currentTarget).val();
         var value = gregorianCalendar[func]();
-        alert(value);
+        alert(func + ': ' + value);
     });
 
     $("#addYear").on('click', function() {

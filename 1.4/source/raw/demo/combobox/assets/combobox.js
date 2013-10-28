@@ -35,7 +35,7 @@ KISSY.use("combobox", function (S, ComboBox) {
 
         basicComboBox.on("click", function (e) {
             var item = e.target;
-            S.log(item.get("value") + "\n" + item.get("content") +
+            alert(item.get("value") + "\n" + item.get("content") +
                 "\n" + item.get("textContent"));
         });
     })();
