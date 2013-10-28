@@ -11,6 +11,7 @@ Demos
    loader/index
    anim/index
    base/index
+   color/index
    promise/index
    date/index
    mvc/index

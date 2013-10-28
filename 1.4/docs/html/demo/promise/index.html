@@ -158,7 +158,7 @@
       <a href="../date/index.html" title="Date 使用示例"
          accesskey="N">next</a> | </li>
     <li class="right" >
-      <a href="../base/index.html" title="Base 使用示例"
+      <a href="../color/index.html" title="Color 使用示例"
          accesskey="P">previous</a> | </li>
     <li><a href="../../index.html">KISSY v1.4 Documentation</a> &#187; </li>
       <li><a href="../index.html" accesskey="U">Demos</a> &#187; </li> 
@@ -178,7 +178,7 @@
 <h2>Demos<a class="headerlink" href="#demos" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
 <h3>链式传递的效果<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<iframe width="100%" height="50" class="iframe-demo"
+<iframe width="100%" height="100" class="iframe-demo"
 src="/1.4/source/raw/demo/promise/index.html?type=chain"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;promise,node&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Promise</span><span class="p">){</span>
     <span class="nx">KISSY</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">Defer</span><span class="p">();</span>
@@ -196,7 +196,7 @@ src="/1.4/source/raw/demo/promise/index.html?type=chain"></iframe><div class="hi
 </div>
 <div class="section" id="resolve-then">
 <h3>resolve 和 then 没有顺序依赖<a class="headerlink" href="#resolve-then" title="Permalink to this headline">¶</a></h3>
-<iframe width="100%" height="50" class="iframe-demo"
+<iframe width="100%" height="100" class="iframe-demo"
  src="/1.4/source/raw/demo/promise/index.html?type=chain-order"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;promise,node&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Promise</span><span class="p">){</span>
 <span class="nx">KISSY</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">Defer</span><span class="p">();</span>
@@ -214,7 +214,7 @@ src="/1.4/source/raw/demo/promise/index.html?type=chain"></iframe><div class="hi
 </div>
 <div class="section" id="id2">
 <h3>错误可以被传递<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<iframe width="100%" height="50" class="iframe-demo"
+<iframe width="100%" height="100" class="iframe-demo"
 src="/1.4/source/raw/demo/promise/index.html?type=error-propagate"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;promise,node&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Promise</span><span class="p">){</span>
 <span class="nx">KISSY</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">Defer</span><span class="p">();</span>
@@ -234,7 +234,7 @@ src="/1.4/source/raw/demo/promise/index.html?type=error-propagate"></iframe><div
 </div>
 <div class="section" id="promise-promise">
 <h3>前一个 promise 如果处理了错误并返回会影响下一个 promise 的成功回调<a class="headerlink" href="#promise-promise" title="Permalink to this headline">¶</a></h3>
-<iframe width="100%" height="50" class="iframe-demo"
+<iframe width="100%" height="100" class="iframe-demo"
 src="/1.4/source/raw/demo/promise/index.html?type=error-recovery"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;promise,node&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Promise</span><span class="p">){</span>
 <span class="nx">KISSY</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">Defer</span><span class="p">();</span>
@@ -256,7 +256,7 @@ src="/1.4/source/raw/demo/promise/index.html?type=error-recovery"></iframe><div 
 </div>
 <div class="section" id="id3">
 <h3>前一个 promise 的成功或失败回调如果抛出异常则影响下一个 promise 的失败回调<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<iframe width="100%" height="50" class="iframe-demo"
+<iframe width="100%" height="100" class="iframe-demo"
 src="/1.4/source/raw/demo/promise/index.html?type=error-throw"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;promise,node&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Promise</span><span class="p">){</span>
 <span class="nx">KISSY</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">Defer</span><span class="p">();</span>
@@ -278,7 +278,7 @@ src="/1.4/source/raw/demo/promise/index.html?type=error-throw"></iframe><div cla
 </div>
 <div class="section" id="id4">
 <h3>成功回调可以返回新的 promise 进行嵌套处理<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<iframe width="100%" height="50" class="iframe-demo"
+<iframe width="100%" height="100" class="iframe-demo"
 src="/1.4/source/raw/demo/promise/index.html?type=nest"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;promise,node&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Promise</span><span class="p">){</span>
 <span class="nx">KISSY</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">Defer</span><span class="p">();</span>
@@ -300,7 +300,7 @@ src="/1.4/source/raw/demo/promise/index.html?type=nest"></iframe><div class="hig
 </div>
 <div class="section" id="promise-done">
 <h3>Promise Done 的使用示例<a class="headerlink" href="#promise-done" title="Permalink to this headline">¶</a></h3>
-<iframe width="100%" height="50" class="iframe-demo"
+<iframe width="100%" height="100" class="iframe-demo"
 src="/1.4/source/raw/demo/promise/index.html?type=done"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;promise,node&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Promise</span><span class="p">,</span> <span class="nx">Node</span><span class="p">){</span>
     <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
