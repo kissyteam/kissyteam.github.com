@@ -308,7 +308,7 @@ src="/1.4/source/raw/demo/promise/index.html?type=done"></iframe><div class="hig
         <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="nx">d</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="s2">&quot;reject&quot;</span><span class="p">)},</span> <span class="mi">1000</span><span class="p">);</span>
         <span class="kd">var</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">promise</span><span class="p">;</span>
         <span class="nx">promise</span><span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">);</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">);</span>
         <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">){</span>
             <span class="nx">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span> <span class="c1">//如何不做回调去处理错误，会抛出异常，在控制台中输出。</span>
         <span class="p">});</span>
