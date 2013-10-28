@@ -10,7 +10,6 @@ Loader 使用示例
    :titlesonly:
 
    simple
-   simple-native
    combo
    combo-common
    combo-require
