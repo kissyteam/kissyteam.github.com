@@ -24,6 +24,7 @@ Methods
 .. note::
 
     可以在配置中设置logger的级别，以及是否显示。
+    当一个 logger 同时被设置 includes 和 excludes 的时候，includes 优先
 
     .. code-block:: javascript
 

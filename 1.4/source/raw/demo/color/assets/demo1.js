@@ -4,7 +4,7 @@ KISSY.use('node, event, color, gallery/pageNotification/1.0/index', function(S, 
 
     var pn = new PageNotification({
         "closeButton": true,
-        "positionClass": "page-notification-top-full-width",
+        "positionClass": "page-notification-top-right",
         "onclick": null,
         "showDuration": "300",
         "hideDuration": "1000",

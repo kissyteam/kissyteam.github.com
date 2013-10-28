@@ -35,7 +35,7 @@ KISSY.use("ua,event,node,overlay,button,component/plugin/drag", function (S, UA,
     }
 
     function center() {
-        S.log("ie center");
+        alert("ie center");
         if (dialog.get("visible")) {
             dialog.center();
         }

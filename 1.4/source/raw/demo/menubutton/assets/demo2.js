@@ -18,7 +18,7 @@ KISSY.use("menubutton", function (S, MenuButton) {
             }
         });
         select.on("click", function (e) {
-            S.log('当前值为: ' + select.get("value"));
+            alert('当前值为: ' + select.get("value"));
         });
     })();
 
@@ -41,7 +41,7 @@ KISSY.use("menubutton", function (S, MenuButton) {
             }
         });
         select.on("click", function (e) {
-            S.log('当前值为: ' + select.get("value"));
+            alert('当前值为: ' + select.get("value"));
         });
     })();
 });

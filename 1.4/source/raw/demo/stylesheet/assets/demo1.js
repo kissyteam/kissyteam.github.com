@@ -32,11 +32,11 @@ KISSY.use("stylesheet,core", function (S, StyleSheet) {
     });
 
     $("#c5").on("click", function () {
-        S.log(styleSheet1.get());
+        alert(styleSheet1.get());
     });
 
     $("#c6").on("click", function () {
-        S.log(styleSheet2.get());
+        alert(styleSheet2.get());
     });
 
     $("#c7").on("click", function () {

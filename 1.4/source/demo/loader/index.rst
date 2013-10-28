@@ -13,3 +13,4 @@ Loader 使用示例
    combo
    combo-common
    combo-require
+   development-mode

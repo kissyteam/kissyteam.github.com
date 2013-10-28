@@ -4,7 +4,7 @@ KISSY.use("tabs", function (S, Tabs) {
         render: "#tabs",
         listeners:{
             afterSelectedTabChange:function(e){
-                S.log('1 changed to: '+ e.newVal.get('content'))
+                alert('1 changed to: '+ e.newVal.get('content'))
             }
         },
         items: [
@@ -26,7 +26,7 @@ KISSY.use("tabs", function (S, Tabs) {
         changeType: 'mouse',
         listeners:{
             afterSelectedTabChange:function(e){
-                S.log('2 changed to: '+ e.newVal.get('content'))
+                alert('2 changed to: '+ e.newVal.get('content'))
             }
         },
         items: [

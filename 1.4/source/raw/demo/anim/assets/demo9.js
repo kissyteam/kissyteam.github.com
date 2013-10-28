@@ -3,7 +3,7 @@ KISSY.use('core', function (S) {
     $('#basic').delegate('mouseenter', '.square', function (e) {
         var currentTarget = $(e.currentTarget);
         if (!currentTarget.isRunning()) {
-            S.log('run:' + currentTarget.html())
+            alert('run:' + currentTarget.html())
             currentTarget.animate({
                 transform: currentTarget.attr('data-trans')
             }, {
