@@ -28,6 +28,8 @@ kissy/layout.html
 <html>
 <head>
 <meta charset="{{ encoding }}"/>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <meta name="data-spm" content="1" data-spm-protocol="i" />
 {{ metatags }}
 {%- if not embedded and docstitle %}
@@ -67,7 +69,6 @@ kissy/layout.html
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
 </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="{{ pathto('_static/kissy.css', 1) }}"/>
 	<link rel="stylesheet" href="{{ pathto('_static/prettify.css', 1) }}"/>
 	<link rel="stylesheet" href="{{ pathto('_static/forkit.css', 1) }}"/>
@@ -82,7 +83,7 @@ kissy/layout.html
 
 	<nav id="sidebar">
 		<header>
-	  		<a href="{{ pathto('../../guideline/', 1) }}" >
+			<a href="{{ pathto('../../docs/html/guideline/', 1) }}" >
 				<img src="http://gtms01.alicdn.com/tps/i1/T1MVbxFoRcXXchhRni-175-68.png" alt="" />
 			</a>
 		</header>

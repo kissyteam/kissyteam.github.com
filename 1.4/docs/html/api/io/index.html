@@ -1,0 +1,377 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="data-spm" content="1" data-spm-protocol="i" />
+
+<title>io &mdash; KISSY v1.4 Documentation</title>
+
+<link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.3.2/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js,searchtools.js"></script> 
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+	<link rel="stylesheet" href="../../_static/kissy.css"/>
+	<link rel="stylesheet" href="../../_static/prettify.css"/>
+	<link rel="stylesheet" href="../../_static/forkit.css"/>
+	<link rel="stylesheet" href="../../_static/bootstrap.css"/>
+	<link href="http://fonts.googleapis.com/css?family=Droid+Sans|Lekton|Ubuntu+Mono:400,700" rel="stylesheet">
+	<script src="http://dev.kissyui.com/kissy/build/seed-min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+
+	<nav id="sidebar">
+		<header>
+			<a href="../../../../docs/html/guideline/" >
+				<img src="http://gtms01.alicdn.com/tps/i1/T1MVbxFoRcXXchhRni-175-68.png" alt="" />
+			</a>
+		</header>
+		
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h4 class="s-box-hd">Seed</h4>
+    <ul class="s-box-bd">
+        <li><a href="../features/index.html">features</a></li>
+        <li><a href="../lang/index.html">lang</a></li>
+        <li><a href="../loader/index.html">loader</a></li>
+        <li><a href="../ua/index.html">ua</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h4 class="s-box-hd">Core</h4>
+    <ul class="s-box-bd">
+        <li><a href="../anim/index.html">anim</a></li>
+        <li><a href="../base/index.html">base</a></li>
+        <li><a href="../cookie/index.html">cookie</a></li>
+        <li><a href="../dom/index.html">dom</a></li>
+        <li><a href="../event/index.html">event</a></li>
+        <li><a href="#">io</a></li>
+        <li><a href="../json/index.html">json</a></li>
+        <li><a href="../node/index.html">node</a></li>
+        <li><a href="../path/index.html">path</a></li>
+        <li><a href="../promise/index.html">promise</a></li>
+        <li><a href="../uri/index.html">uri</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h4 class="s-box-hd">Infrastructure</h4>
+    <ul class="s-box-bd">
+        <li><a href="../component/index.html">component</a></li>
+        <li><a href="../mvc/index.html">mvc</a></li>
+        <li><a href="../xtemplate/index.html">xtemplate</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h4 class="s-box-hd">Components</h4>
+    <ul class="s-box-bd">
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../color/index.html">color</a></li>
+        <li><a href="../combobox/index.html">combobox</a></li>
+        <li><a href="../date/index.html">date</a></li>
+        <li><a href="../dd/index.html">dd</a></li>
+        <li><a href="../editor/index.html">editor</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="../scroll-view/index.html">scroll-view</a></li>
+        <li><a href="../split-button/index.html">split-button</a></li>
+        <li><a href="../stylesheet/index.html">stylesheet</a></li>
+        <li><a href="../swf/index.html">swf</a></li>
+        <li><a href="../tabs/index.html">tabs</a></li>
+        <li><a href="../toolbar/index.html">toolbar</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
+	</ul>
+</ul>
+        
+    </div>
+    
+<div id="searchbox" class="searchbox">
+    <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" size="28" class="ipt"/>
+        <input type="submit" value="Go" class="btn"/>
+        <input type="hidden" name="check_keywords" value="yes"/>
+        <input type="hidden" name="area" value="default"/>
+    </form>
+</div>
+	</nav>
+	<div id="content" class="body">
+		<article>
+				<ul class="api-header clearfix">
+	<li class="first">
+		<a href="/" >
+			首页
+		</a>
+	</li>
+	<li><a href="../../../../docs/html/api/index.html">API</a></li>
+	<li><a href="../../../../docs/html/demo/index.html">Demo</a></li>
+	<li>
+		<a href="../../../../docs/html/guideline/get-started.html" >
+			Guideline
+		</a>
+	</li>
+	<li><a href="../../../../docs/html/tutorials/index.html">Tutorials</a></li>
+	<li><a href="https://groups.google.com/group/kissy-ui">Google Group</a></li>
+	<li style="float:right"><a href="/1.4/api/">English API Docs</a></li>
+	<li style="float:right" class="first"><a href="http://blog.kissyui.com">KISSY Blog</a></li>
+</ul>
+				
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="setupConfig.html" title="setupConfig"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="../cookie/index.html" title="cookie"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../index.html">KISSY v1.4 Documentation</a> &#187; </li>
+      <li><a href="../index.html" accesskey="U">API Documentation</a> &#187; </li> 
+    </ul>
+</div>
+				
+  <span class="target" id="module-io"></span><div class="section" id="io">
+<h1>io<a class="headerlink" href="#io" title="Permalink to this headline">¶</a></h1>
+<a class='source-button' href='https://github.com/kissyteam/kissy/tree/1.4.x/src/o' target='_blank'>view io source</a><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;io&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">IO</span><span class="p">){</span>
+    <span class="c1">// use IO</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">io 组件在 1.3.x 及以前的版本被命名为ajax，1.4.x 及后续版本都更名为io</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>iframe-upload 模式与 subDomain 模式需配置服务器 CORS 头，例如</p>
+<div class="last highlight-php"><div class="highlight"><pre><span class="x">res.set(&#39;Access-Control-Allow-Methods&#39;, &#39;GET, POST, OPTIONS&#39;);</span>
+<span class="x">res.set(&#39;Access-Control-Allow-Credentials&#39;, &#39;true&#39;);</span>
+<span class="x">res.set(&#39;Access-Control-Allow-Origin&#39;, &#39;http://*.taobao.com&#39;);</span>
+<span class="x">res.set(&#39;Access-Control-Allow-Headers&#39;, &#39;origin, x-requested-with, yiminghe, content-type, accept, *&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">跨域时，withCredentials 默认为 true</p>
+</div>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#module-io" title="io"><tt class="xref py py-mod docutils literal"><span class="pre">io</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="setupConfig.html">setupConfig</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get.html">get</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="post.html">post</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getJSON.html">getJSON</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jsonp.html">jsonp</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="upload.html">upload</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="serialize.html">serialize</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="io.html">IO</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<p>所有 io 请求都会在 io 模块上触发事件，可通过 <tt class="docutils literal"><span class="pre">IO.on</span></tt> 来捕获所有的 io 请求，例如</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">indicator</span><span class="o">=</span><span class="nx">KISSY</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#indicator&quot;</span><span class="p">),</span>
+<span class="nx">num</span><span class="p">;</span>
+
+<span class="c1">//发送前显示 loading 状态</span>
+<span class="nx">IO</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;send&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">num</span><span class="o">++</span><span class="p">;</span>
+    <span class="nx">indicator</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="c1">//发送后隐藏 loading 状态</span>
+<span class="nx">IO</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;complete&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">num</span><span class="o">--</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">num</span><span class="p">)</span>
+        <span class="nx">indicator</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="function">
+<dt id="io.io.Events.start">
+<tt class="descclassname">io.Events.</tt><tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#io.io.Events.start" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>start</strong> ()</div>
+<div class="line">当配置初始化后，获取传输对象前触发。事件对象包括一下属性</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>start.event.ajaxConfig</strong> (<em>Object</em>) &#8211; 当前的配置项</li>
+<li><strong>start.event.io</strong> (<em>Object</em>) &#8211; 当前的请求关联的 <a class="reference internal" href="io.html#io.IO" title="io.IO"><tt class="xref py py-class docutils literal"><span class="pre">IO</span></tt></a> 对象</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="io.io.Events.send">
+<tt class="descclassname">io.Events.</tt><tt class="descname">send</tt><big>(</big><big>)</big><a class="headerlink" href="#io.io.Events.send" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>send</strong> ()</div>
+<div class="line">请求发送前触发。可用于 loading indicator 显示时机。事件对象同 <tt class="docutils literal"><span class="pre">start</span></tt> 事件.</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="io.io.Events.success">
+<tt class="descclassname">io.Events.</tt><tt class="descname">success</tt><big>(</big><big>)</big><a class="headerlink" href="#io.io.Events.success" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>success</strong> ()</div>
+<div class="line">服务器返回成功后触发.事件对象同 <tt class="docutils literal"><span class="pre">start</span></tt> 事件.</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="io.io.Events.error">
+<tt class="descclassname">io.Events.</tt><tt class="descname">error</tt><big>(</big><big>)</big><a class="headerlink" href="#io.io.Events.error" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>error</strong> ()</div>
+<div class="line">服务器返回失败后触发.事件对象同 <tt class="docutils literal"><span class="pre">start</span></tt> 事件.</div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="io.io.Events.complete">
+<tt class="descclassname">io.Events.</tt><tt class="descname">complete</tt><big>(</big><big>)</big><a class="headerlink" href="#io.io.Events.complete" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>complete</strong> ()</div>
+<div class="line">服务器返回（无论成功或失败）后触发.事件对象同 <tt class="docutils literal"><span class="pre">start</span></tt> 事件.</div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+				<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+		</article>
+	</div>
+<footer class="footer">
+	  <p>&copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a></p>
+</footer></body>
+<script>
+	// added by jayli
+	(function(){
+		$('table.docutils').addClass('table table-bordered');
+		$('.admonition.note').addClass('alert alert-info');
+		$('.admonition.hint').addClass('alert alert-success');
+		$('.admonition.warning').addClass('alert alert-warning');
+		$('.admonition.attention').addClass('alert alert-danger');
+	})();
+</script>
+</html>

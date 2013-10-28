@@ -1,0 +1,519 @@
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="data-spm" content="1" data-spm-protocol="i" />
+
+<title>ComboBox &mdash; KISSY v1.4 Documentation</title>
+
+<link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.3.2/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
+<link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
+<script>
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+    };
+</script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/??jquery.js,underscore.js,doctools.js,searchtools.js"></script> 
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31470541-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+	<link rel="stylesheet" href="../../_static/kissy.css"/>
+	<link rel="stylesheet" href="../../_static/prettify.css"/>
+	<link rel="stylesheet" href="../../_static/forkit.css"/>
+	<link rel="stylesheet" href="../../_static/bootstrap.css"/>
+	<link href="http://fonts.googleapis.com/css?family=Droid+Sans|Lekton|Ubuntu+Mono:400,700" rel="stylesheet">
+	<script src="http://dev.kissyui.com/kissy/build/seed-min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+
+	<nav id="sidebar">
+		<header>
+			<a href="../../../../docs/html/guideline/" >
+				<img src="http://gtms01.alicdn.com/tps/i1/T1MVbxFoRcXXchhRni-175-68.png" alt="" />
+			</a>
+		</header>
+		
+    <div class="col-sub"><ul class="s-box api-toctree">
+    <h4 class="s-box-hd">Seed</h4>
+    <ul class="s-box-bd">
+        <li><a href="../features/index.html">features</a></li>
+        <li><a href="../lang/index.html">lang</a></li>
+        <li><a href="../loader/index.html">loader</a></li>
+        <li><a href="../ua/index.html">ua</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h4 class="s-box-hd">Core</h4>
+    <ul class="s-box-bd">
+        <li><a href="../anim/index.html">anim</a></li>
+        <li><a href="../base/index.html">base</a></li>
+        <li><a href="../cookie/index.html">cookie</a></li>
+        <li><a href="../dom/index.html">dom</a></li>
+        <li><a href="../event/index.html">event</a></li>
+        <li><a href="../io/index.html">io</a></li>
+        <li><a href="../json/index.html">json</a></li>
+        <li><a href="../node/index.html">node</a></li>
+        <li><a href="../path/index.html">path</a></li>
+        <li><a href="../promise/index.html">promise</a></li>
+        <li><a href="../uri/index.html">uri</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h4 class="s-box-hd">Infrastructure</h4>
+    <ul class="s-box-bd">
+        <li><a href="../component/index.html">component</a></li>
+        <li><a href="../mvc/index.html">mvc</a></li>
+        <li><a href="../xtemplate/index.html">xtemplate</a></li>
+    </ul>
+</ul>
+
+<ul class="s-box component-toctree">
+    <h4 class="s-box-hd">Components</h4>
+    <ul class="s-box-bd">
+        <li><a href="../button/index.html">button</a></li>
+        <li><a href="../color/index.html">color</a></li>
+        <li><a href="index.html">combobox</a></li>
+        <li><a href="../date/index.html">date</a></li>
+        <li><a href="../dd/index.html">dd</a></li>
+        <li><a href="../editor/index.html">editor</a></li>
+        <li><a href="../menu/index.html">menu</a></li>
+        <li><a href="../menubutton/index.html">menubutton</a></li>
+        <li><a href="../overlay/index.html">overlay</a></li>
+        <li><a href="../resizable/index.html">resizable</a></li>
+        <li><a href="../scroll-view/index.html">scroll-view</a></li>
+        <li><a href="../split-button/index.html">split-button</a></li>
+        <li><a href="../stylesheet/index.html">stylesheet</a></li>
+        <li><a href="../swf/index.html">swf</a></li>
+        <li><a href="../tabs/index.html">tabs</a></li>
+        <li><a href="../toolbar/index.html">toolbar</a></li>
+        <li><a href="../tree/index.html">tree</a></li>
+	</ul>
+</ul>
+        
+    </div>
+    
+<div id="searchbox" class="searchbox">
+    <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" size="28" class="ipt"/>
+        <input type="submit" value="Go" class="btn"/>
+        <input type="hidden" name="check_keywords" value="yes"/>
+        <input type="hidden" name="area" value="default"/>
+    </form>
+</div>
+	</nav>
+	<div id="content" class="body">
+		<article>
+				<ul class="api-header clearfix">
+	<li class="first">
+		<a href="/" >
+			首页
+		</a>
+	</li>
+	<li><a href="../../../../docs/html/api/index.html">API</a></li>
+	<li><a href="../../../../docs/html/demo/index.html">Demo</a></li>
+	<li>
+		<a href="../../../../docs/html/guideline/get-started.html" >
+			Guideline
+		</a>
+	</li>
+	<li><a href="../../../../docs/html/tutorials/index.html">Tutorials</a></li>
+	<li><a href="https://groups.google.com/group/kissy-ui">Google Group</a></li>
+	<li style="float:right"><a href="/1.4/api/">English API Docs</a></li>
+	<li style="float:right" class="first"><a href="http://blog.kissyui.com">KISSY Blog</a></li>
+</ul>
+				
+
+<div class='related'>
+    <h3>Navigation</h3>
+    
+    <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../../genindex.html" title="General Index"
+         accesskey="I">index</a></li>
+    <li class="right" >
+      <a href="../../py-modindex.html" title="Python Module Index"
+         >modules</a> | </li>
+    <li class="right" >
+      <a href="multi-value-combobox.html" title="MultiValueComboBox"
+         accesskey="N">next</a> | </li>
+    <li class="right" >
+      <a href="index.html" title="ComboBox"
+         accesskey="P">previous</a> | </li>
+    <li><a href="../../index.html">KISSY v1.4 Documentation</a> &#187; </li>
+      <li><a href="../index.html" >API Documentation</a> &#187; </li>
+      <li><a href="index.html" accesskey="U">ComboBox</a> &#187; </li> 
+    </ul>
+</div>
+				
+  <div class="section" id="combobox">
+<h1>ComboBox<a class="headerlink" href="#combobox" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line-block">
+<div class="line">复合输入框.</div>
+</div>
+<div class="line"><a class="reference internal" href="../../demo/combobox/index.html#combobox-demo"><em>Demo</em></a></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;combobox&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">ComboBox</span><span class="p">){</span>
+    <span class="c1">// use ComboBox</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#combobox.ComboBox" title="combobox.ComboBox"><tt class="xref py py-class docutils literal"><span class="pre">ComboBox</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="configs">
+<h2>Configs<a class="headerlink" href="#configs" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#combobox.ComboBox.config.hasTrigger" title="combobox.ComboBox.config.hasTrigger"><tt class="xref py py-data docutils literal"><span class="pre">hasTrigger</span></tt></a></li>
+<li><a class="reference internal" href="../component/control.html#component.Control.config.focused" title="component.Control.config.focused"><tt class="xref py py-data docutils literal"><span class="pre">focused</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.ComboBox.config.placeholder" title="combobox.ComboBox.config.placeholder"><tt class="xref py py-data docutils literal"><span class="pre">placeholder</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.ComboBox.config.menu" title="combobox.ComboBox.config.menu"><tt class="xref py py-data docutils literal"><span class="pre">menu</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.ComboBox.config.dataSource" title="combobox.ComboBox.config.dataSource"><tt class="xref py py-data docutils literal"><span class="pre">dataSource</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.ComboBox.config.maxItemCount" title="combobox.ComboBox.config.maxItemCount"><tt class="xref py py-data docutils literal"><span class="pre">maxItemCount</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.ComboBox.config.autoHighlightFirst" title="combobox.ComboBox.config.autoHighlightFirst"><tt class="xref py py-data docutils literal"><span class="pre">autoHighlightFirst</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.ComboBox.config.matchElWidth" title="combobox.ComboBox.config.matchElWidth"><tt class="xref py py-data docutils literal"><span class="pre">matchElWidth</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.ComboBox.config.format" title="combobox.ComboBox.config.format"><tt class="xref py py-data docutils literal"><span class="pre">format</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.ComboBox.config.updateInputOnDownUp" title="combobox.ComboBox.config.updateInputOnDownUp"><tt class="xref py py-data docutils literal"><span class="pre">updateInputOnDownUp</span></tt></a></li>
+<li><a class="reference internal" href="../base/base.html#base.Base.config.plugins" title="base.Base.config.plugins"><tt class="xref py py-data docutils literal"><span class="pre">plugins</span></tt></a></li>
+<li><a class="reference internal" href="../component/control.html#component.Control.config.srcNode" title="component.Control.config.srcNode"><tt class="xref py py-data docutils literal"><span class="pre">srcNode</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#combobox.ComboBox.prototype.input" title="combobox.ComboBox.prototype.input"><tt class="xref py py-attr docutils literal"><span class="pre">input</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.ComboBox.prototype.menu" title="combobox.ComboBox.prototype.menu"><tt class="xref py py-attr docutils literal"><span class="pre">menu</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.ComboBox.prototype.collapsed" title="combobox.ComboBox.prototype.collapsed"><tt class="xref py py-attr docutils literal"><span class="pre">collapsed</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="../component/control.html#component.Control.extend" title="component.Control.extend"><tt class="xref py py-meth docutils literal"><span class="pre">extend()</span></tt></a> &lt;static&gt;</li>
+<li><a class="reference internal" href="#combobox.ComboBox.prototype.sendRequest" title="combobox.ComboBox.prototype.sendRequest"><tt class="xref py py-meth docutils literal"><span class="pre">sendRequest()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#combobox.ComboBox.Events.afterCollapsedChange" title="combobox.ComboBox.Events.afterCollapsedChange"><tt class="xref py py-func docutils literal"><span class="pre">afterCollapsedChange()</span></tt></a></li>
+<li><a class="reference internal" href="#combobox.ComboBox.Events.click" title="combobox.ComboBox.Events.click"><tt class="xref py py-func docutils literal"><span class="pre">click()</span></tt></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="class-detail">
+<h2>Class Detail<a class="headerlink" href="#class-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="combobox.ComboBox">
+<em class="property">class </em><tt class="descclassname">combobox.</tt><tt class="descname">ComboBox</tt><a class="headerlink" href="#combobox.ComboBox" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>ComboBox</strong> (config)</div>
+</div>
+<ul class="simple">
+<li>继承自 <a class="reference internal" href="../component/control.html#component.Control" title="component.Control"><tt class="xref py py-class docutils literal"><span class="pre">Control</span></tt></a> , 包含其全部配置,属性,方法,事件.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<em>Object</em>) &#8211; 配置项.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>从已有元素实例 ComboBox 对象时：</p>
+<ol class="arabic simple">
+<li>元素节点标明类名 <tt class="docutils literal"><span class="pre">{prefixCls}combobox</span></tt> .</li>
+<li>html 符合一定规范，例如</li>
+</ol>
+<div class="last highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ks-combobox&quot;</span> <span class="na">id=</span><span class="s">&quot;combobox&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ks-combobox-input-wrap&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">style=</span><span class="s">&quot;width:100%;height:100%;&quot;</span> <span class="na">aria-haspopup=</span><span class="s">&quot;true&quot;</span>
+               <span class="na">aria-combobox=</span><span class="s">&quot;list&quot;</span> <span class="na">role=</span><span class="s">&quot;combobox&quot;</span> <span class="na">combobox=</span><span class="s">&quot;off&quot;</span>
+               <span class="na">class=</span><span class="s">&quot;ks-combobox-input&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span>
+               <span class="na">id=</span><span class="s">&quot;inp&quot;</span>
+                <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>使用前请加上初始样式</p>
+<div class="last highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+    <span class="nc">.ks-popupmenu</span> <span class="p">{</span>
+        <span class="k">position</span><span class="o">:</span><span class="k">absolute</span><span class="p">;</span>
+        <span class="k">left</span><span class="o">:-</span><span class="m">9999px</span><span class="p">;</span>
+        <span class="k">top</span><span class="o">:-</span><span class="m">9999px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="configs-detail">
+<h2>Configs Detail<a class="headerlink" href="#configs-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="combobox.ComboBox.config.hasTrigger">
+<tt class="descclassname">ComboBox.config.</tt><tt class="descname">hasTrigger</tt><a class="headerlink" href="#combobox.ComboBox.config.hasTrigger" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认 true. 是否显示下拉按钮.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="combobox.ComboBox.config.placeholder">
+<tt class="descclassname">ComboBox.config.</tt><tt class="descname">placeholder</tt><a class="headerlink" href="#combobox.ComboBox.config.placeholder" title="Permalink to this definition">¶</a></dt>
+<dd><p>{String} - 默认无. 输入框的提示信息.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="combobox.ComboBox.config.autoHighlightFirst">
+<tt class="descclassname">ComboBox.config.</tt><tt class="descname">autoHighlightFirst</tt><a class="headerlink" href="#combobox.ComboBox.config.autoHighlightFirst" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认 false. 是否默认选中下拉提示第一项</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="combobox.ComboBox.config.menu">
+<tt class="descclassname">ComboBox.config.</tt><tt class="descname">menu</tt><a class="headerlink" href="#combobox.ComboBox.config.menu" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object|Menu.PopupMenu} - 可选. xclass 形式的配置，例如指定特定的 align:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">xclass</span><span class="o">:</span><span class="s1">&#39;popupmenu&#39;</span><span class="p">,</span>
+    <span class="nx">align</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">points</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;tl&#39;</span><span class="p">,</span><span class="s1">&#39;bl&#39;</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="combobox.ComboBox.config.dataSource">
+<tt class="descclassname">ComboBox.config.</tt><tt class="descname">dataSource</tt><a class="headerlink" href="#combobox.ComboBox.config.dataSource" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>{ComboBox.LocalDataSource|ComboBox.RemoteDataSource} - 数据源配置</dt>
+<dd>例如静态数据源的配置:</dd>
+</dl>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">ComboBox</span><span class="p">.</span><span class="nx">LocalDataSource</span><span class="p">({</span>
+    <span class="nx">data</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span><span class="s2">&quot;123&quot;</span><span class="p">]</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="combobox.ComboBox.config.maxItemCount">
+<tt class="descclassname">ComboBox.config.</tt><tt class="descname">maxItemCount</tt><a class="headerlink" href="#combobox.ComboBox.config.maxItemCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Number} - 最多可显示的下拉菜单个数</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="combobox.ComboBox.config.matchElWidth">
+<tt class="descclassname">ComboBox.config.</tt><tt class="descname">matchElWidth</tt><a class="headerlink" href="#combobox.ComboBox.config.matchElWidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 是否下拉菜单和自动补全框宽度一致。默认 true.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="combobox.ComboBox.config.format">
+<tt class="descclassname">ComboBox.config.</tt><tt class="descname">format</tt><a class="headerlink" href="#combobox.ComboBox.config.format" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Function} - 可选。自定义下拉菜单属性的函数，传入参数 query(自动补全框当前值) , data(匹配数据数组)。
+返回对象数组，其中对象的 content 属性表示菜单项显示内容，textContent 表示放入到自动补全框的内容，disabled 表示当前项是否被禁用.</p>
+<p>例如高亮的处理:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">format</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="nx">data</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">ret</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">ret</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="nx">content</span><span class="o">:</span><span class="p">(</span><span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+                        <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">escapeRegExp</span><span class="p">(</span><span class="nx">query</span><span class="p">),</span> <span class="s2">&quot;g&quot;</span><span class="p">),</span>
+                        <span class="s2">&quot;&lt;b&gt;$&amp;&lt;/b&gt;&quot;</span><span class="p">)</span>
+            <span class="p">};</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">ret</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="combobox.ComboBox.config.updateInputOnDownUp">
+<tt class="descclassname">ComboBox.config.</tt><tt class="descname">updateInputOnDownUp</tt><a class="headerlink" href="#combobox.ComboBox.config.updateInputOnDownUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 默认 true. 上下键是否导致高亮项填充入自动补全框.</p>
+</dd></dl>
+
+<dl class="data">
+<dt>
+<tt class="descclassname">ComboBox.config.</tt><tt class="descname">autoHighlightFirst</tt></dt>
+<dd><p>{String} - 默认 false. 是否当自动补全菜单出现时高亮第一项.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="attributes-detail">
+<h2>Attributes Detail<a class="headerlink" href="#attributes-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="attribute">
+<dt id="combobox.ComboBox.prototype.input">
+<tt class="descclassname">ComboBox.prototype.</tt><tt class="descname">input</tt><a class="headerlink" href="#combobox.ComboBox.prototype.input" title="Permalink to this definition">¶</a></dt>
+<dd><p>{KISSY.Node} - 关联的复合输入框.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="combobox.ComboBox.prototype.menu">
+<tt class="descclassname">ComboBox.prototype.</tt><tt class="descname">menu</tt><a class="headerlink" href="#combobox.ComboBox.prototype.menu" title="Permalink to this definition">¶</a></dt>
+<dd><p>{ComboBox.Menu|Object} - 自动补全菜单的配置（在显示后转换为实例）或实例.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="combobox.ComboBox.prototype.collapsed">
+<tt class="descclassname">ComboBox.prototype.</tt><tt class="descname">collapsed</tt><a class="headerlink" href="#combobox.ComboBox.prototype.collapsed" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Boolean} - 自动补全菜单是否已经收起.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods-detail">
+<h2>Methods Detail<a class="headerlink" href="#methods-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="combobox.ComboBox.prototype.sendRequest">
+<tt class="descclassname">ComboBox.prototype.</tt><tt class="descname">sendRequest</tt><big>(</big><big>)</big><a class="headerlink" href="#combobox.ComboBox.prototype.sendRequest" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>sendRequest( value )</strong></div>
+<div class="line">根据 value 自动补全并显示下拉菜单.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>String</em>) &#8211; 自动补全的值</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="events-detail">
+<h2>Events Detail<a class="headerlink" href="#events-detail" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="combobox.ComboBox.Events.click">
+<tt class="descclassname">ComboBox.Events.</tt><tt class="descname">click</tt><big>(</big><big>)</big><a class="headerlink" href="#combobox.ComboBox.Events.click" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>click(e)</strong></div>
+<div class="line">当用户选择自动补全下拉框内的项时触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>e.target</strong> (<em>{MenuItem}</em>) &#8211; 选择的下拉菜单项</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="combobox.ComboBox.Events.afterCollapsedChange">
+<tt class="descclassname">ComboBox.Events.</tt><tt class="descname">afterCollapsedChange</tt><big>(</big><big>)</big><a class="headerlink" href="#combobox.ComboBox.Events.afterCollapsedChange" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>afterCollapsedChange(e)</strong></div>
+<div class="line">当下拉菜单显示或收起时触发</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>e.newVal</strong> (<em>{Boolean}</em>) &#8211; 当前下拉菜单是否是收起状态</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+				<div id="disqus_thread"></div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<!--<div id="google-search-box">
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            document.write('<script src="http://www.google.com/jsapi" type="text/javascript"><'+'/script>');
+        }
+    </script>
+    <script>
+        if(window.location.hostname.indexOf("kissyui.com")!=-1){
+            google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl('012347804910294994683:n4uzb24gqdm');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                customSearchControl.draw('cse');
+            }, true);
+        }
+    </script>
+</div>-->
+		</article>
+	</div>
+<footer class="footer">
+	  <p>&copy; Copyright 2010~2012, KISSY Team. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a></p>
+</footer></body>
+<script>
+	// added by jayli
+	(function(){
+		$('table.docutils').addClass('table table-bordered');
+		$('.admonition.note').addClass('alert alert-info');
+		$('.admonition.hint').addClass('alert alert-success');
+		$('.admonition.warning').addClass('alert alert-warning');
+		$('.admonition.attention').addClass('alert alert-danger');
+	})();
+</script>
+</html>
