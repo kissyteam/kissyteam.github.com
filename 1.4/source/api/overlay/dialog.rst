@@ -24,6 +24,7 @@ Configs
 
   * :data:`~Dialog.config.headerContent`
   * :data:`~Dialog.config.bodyContent`
+  * :data:`~Dialog.config.escapeToClose`
   * :data:`~Dialog.config.footerContent`
   
 Attributes
@@ -113,6 +114,10 @@ Configs Detail
 .. data:: Dialog.config.headerContent
 
     {String} - 组件的标题 html.
+    
+.. data:: Dialog.config.escapeToClose
+
+    {String} - 默认 true. escape 键是否触发 close 动作.
 
 .. data:: Dialog.config.bodyContent
 
