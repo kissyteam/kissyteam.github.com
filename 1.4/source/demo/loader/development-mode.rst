@@ -1,6 +1,6 @@
 .. currentmodule:: seed
 
-development-mode 使用内置模块
+development-mode 使用示例
 ===============================
 
 

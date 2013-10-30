@@ -4,32 +4,58 @@
 		<meta charset="utf-8"/>
 		<title>KISSY Decorated Simple Tree</title>
 		<link href="http://dev.kissyui.com/kissy/build/css/dpl/base.css" rel="stylesheet"/>
-		<link href="assets/dpl.css" rel="stylesheet"/>
+		<link href="http://dev.kissyui.com/kissy/build/tree/assets/dpl.css" rel="stylesheet"/>
         <script src="http://dev.kissyui.com/kissy/build/seed.js" data-config="{combine:true}"></script>
 	</head>
 	<body>
 		<div id="treeContainer" style="width: 200px;">
 			<!-- 装饰树直接通过DOM中已有的结构生成一棵树 -->
-			<div id='root' class="ks-tree-root">
-				<span class="ks-tree-node-content">淘宝网</span>
-				<div class="ks-tree-children">
-					<div class="ks-tree-node">
-						<span class="ks-tree-node-content">收藏夹</span>
-						<div class="ks-tree-children">
-							<div class="ks-tree-node">
-								<span class="ks-tree-node-content">收藏的宝贝</span>
-							</div>
-							<!-- 标记为强制 folder 样式 -->
-							<div class="ks-tree-node ks-tree-node-folder">
-								<span class="ks-tree-node-content">收藏的店铺</span>
-							</div>
-						</div>
-					</div>
-					<div class="ks-tree-node">
-						<span class="ks-tree-node-content">我要买</span>
-					</div>
-				</div>
-			</div>
+			<div id='root' class="ks-tree">
+            <div class="ks-tree-node-row ks-tree-row">
+                <div class="ks-tree-node-expand-icon ks-tree-expand-icon"></div>
+                <div class="ks-tree-node-icon ks-tree-icon"></div>
+                <span class="ks-tree-node-content ks-tree-content">淘宝网</span>
+            </div>
+            <div class="ks-tree-node-children ks-tree-children" >
+                <div class="ks-tree-node">
+                    <div class="ks-tree-node-row">
+                        <div class="ks-tree-node-expand-icon"></div>
+                        <div class="ks-tree-node-icon"></div>
+                        <span class="ks-tree-node-content">收藏夹</span>
+                    </div>
+                    <div class="ks-tree-node-children">
+                        <div class="ks-tree-node">
+                            <div class="ks-tree-node-row">
+                                <div class="ks-tree-node-expand-icon"></div>
+
+                                <div class="ks-tree-node-icon"></div>
+                                <span class="ks-tree-node-content">收藏的宝贝</span>
+                            </div>
+                            <div class="ks-tree-node-children"></div>
+                        </div>
+
+                        <div class="ks-tree-node ks-tree-node-folder">
+                            <div class="ks-tree-node-row">
+                                <div class="ks-tree-node-expand-icon"></div>
+
+                                <div class="ks-tree-node-icon"></div>
+                                <span class="ks-tree-node-content">收藏的店铺</span>
+                            </div>
+                            <div class="ks-tree-node-children"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ks-tree-node">
+                    <div class="ks-tree-node-row">
+                        <div class="ks-tree-node-expand-icon"></div>
+
+                        <div class="ks-tree-node-icon"></div>
+                        <span class="ks-tree-node-content">我要买</span>
+                    </div>
+                    <div class="ks-tree-node-children"></div>
+                </div>
+            </div>
+        </div>
 		</div>
 		<script>
 		KISSY.use('json, gallery/pageNotification/1.0/index', function(S, JSON, PN) {
