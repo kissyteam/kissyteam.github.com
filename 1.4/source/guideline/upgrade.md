@@ -22,6 +22,10 @@
 		// Your code
 	});
 
+### Base 的初始化函数的执行
+
+`1.4.0` 中 Base 的实例会自动执行构造函数`initializer`，所以 `1.3.x` 中手动执行的这个函数需要改名或者删除。
+
 ### 模块名称变更
 
 - ajax, io 为同一模块，推荐使用 io
@@ -32,6 +36,7 @@
 [datalazyload](http://gallery.kissyui.com/datalazyload/1.0/guide/index.html)，
 [imagezoom](http://gallery.kissyui.com/imagezoom/1.0/guide/index.html)，
 [waterfall](http://gallery.kissyui.com/waterfall/1.0/guide/index.html)。
+
 
 对于用到这些模块（基于 kissy 1.3.0）的页面升级到`1.4.0`后，需要在全局自行添加映射（KISSY 1.4.0 不提供）：
 
