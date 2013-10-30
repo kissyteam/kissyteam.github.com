@@ -65,7 +65,9 @@
     1. 实现 [promise api](https://github.com/kissyteam/kissy/issues/496)，废弃事件通知。
     1. 支持使用 [transition](https://github.com/kissyteam/kissy/issues/285) 动画。
     1. 对 [transform](https://github.com/kissyteam/kissy/issues/402) 做了兼容处理。
-1. base 与 rich-base 合并，并支持 [callSuper](https://github.com/kissyteam/kissy/issues/447) 调用，形成完善的 KISSY 类系统，以后请使用 Base.extend 而不是 S.extend(Base)。
+1. base 与 rich-base 合并，并支持 [callSuper](https://github.com/kissyteam/kissy/issues/447) 调用，形成完善的 KISSY 类系统.
+    1. 请使用 Base.extend 而不是 S.extend(Base)。
+    2. 如果为了兼容，使用 S.extend，其中请不要包含函数名 initializer 和 destructor。
 1. [date](https://github.com/kissyteam/kissy/issues/164) 系列工具类实现，并支持 en/zh 两种语言以及序列化和 parse 功能。
 1. 在 date 以及 KISSY 组件架构的基础上实现 [date/picker](https://github.com/kissyteam/kissy/issues/162)。
 1. [dom](https://github.com/kissyteam/kissy/issues/282) 。
