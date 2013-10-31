@@ -26,7 +26,6 @@
 	- [Base](base.html)，包括Attr、自定义事件、插件机制
 	- [xtemplate](xtemplate.html)
 	- [resizable](resizable.html)
-	- <del>[calendar](calendar.html)</del>
 	- [overlay](overlay.html)
 	- [editor](http://docs.kissyui.com/1.4/docs/html/api/editor/editor.html)
 	- [Mobile 开发最佳实践](mobile.html)

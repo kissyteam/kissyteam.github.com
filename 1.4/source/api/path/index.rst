@@ -3,15 +3,7 @@
 path
 ===============================
 
-当前浏览器地址的有关信息
-
-可以直接通过KISSY.Path调用：
-
-.. code-block:: javascript
-
-	KISSY.Path.do_sth();
-
-也可以通过沙箱来调用
+地址操作工具类
 
 .. code-block:: javascript
 
