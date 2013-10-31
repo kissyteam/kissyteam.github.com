@@ -78,6 +78,22 @@
 <h3>1.4.x 将不再提供<code>kissy.js</code></h3>
 <p>为了增强 KISSY 的模块架构和减轻体积，1.4.0 之后将不再提供粗粒度的<code>kissy.js</code>，因此<code>http://g.tbcdn.cn/kissy/k/1.4.0/kissy.js</code>不存在。KISSY 将只提供<code>seed.js</code>。</p>
 <p>即，使用 1.4.x 的功能必须首先<code>use(&#39;mod-name&#39;)</code>再使用，注意之前比较滥用的<code>KISSY.ready()</code>，在 1.4.x 中不建议使用。使用模块请参照 <a href="module-map.html">1.4.x 模块列表</a>。</p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<code>kissy.js</code>中的模块被整理入<code>core</code>模块，将<code>kissy.js</code>替换为<code>seed.js</code>后，应当在代码中引用<code>core</code>：</p>
+<pre><code>KISSY.use(&#39;core&#39;,function(S){
+    // Your code
+});</code></pre>
+<h3>Base 的初始化函数的执行</h3>
+<p><code>1.4.0</code> 中 Base 的实例会自动执行构造函数<code>initializer</code>，所以 <code>1.3.x</code> 中手动执行的这个函数需要改名或者删除。</p>
+<p>=======</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>685a36057bf42dbf551f832fe2eb160c76c6a149</p>
 <h3>模块名称变更</h3>
 <ul>
 <li>不推荐使用 core，推荐依赖对应模块。</li>
@@ -90,6 +106,13 @@
 <a href="http://gallery.kissyui.com/imagezoom/1.0/guide/index.html">imagezoom</a>，
 <a href="http://gallery.kissyui.com/waterfall/1.0/guide/index.html">waterfall</a>。</li>
 </ul>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <p>对于用到这些模块（基于 kissy 1.3.0）的页面升级到<code>1.4.0</code>后，需要在全局自行添加映射（KISSY 1.4.0 不提供）：</p>
 <pre><code>KISSY.config({
     modules: {
@@ -113,6 +136,9 @@
         },
         &#39;waterfall&#39;:{
             alias: [&#39;gallery/waterfall/1.0/&#39;]
+        },
+        &#39;flash&#39;:{
+            alias: [&#39;gallery/flash/1.0/&#39;]
         }
     }
 });</code></pre>
