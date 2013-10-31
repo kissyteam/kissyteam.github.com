@@ -59,7 +59,7 @@
 
 ## 1.4.0 Changelog
 
-1. loader 在 [1.3.1](https://github.com/kissyteam/kissy/issues/269) 支持跨包 combo, error 回调，超时回调，importStyle 后，1.4 更添加了[全球化支持](https://github.com/kissyteam/kissy/issues/429)。
+1. loader 在 [1.3.1](https://github.com/kissyteam/kissy/issues/269) 支持跨包 combo, error 回调，超时回调，importStyle 后，1.4 添加了[全球化支持](https://github.com/kissyteam/kissy/issues/429)。以及允许 combo 模式具名含数据和非 combo 模式匿名模块的混合加载。
 1. lang 支持 [KISSY.setImmediate](https://github.com/kissyteam/kissy/issues/498) 实现跨浏览器的快速异步执行代码。
 1. anim 
     1. 实现 [promise api](https://github.com/kissyteam/kissy/issues/496)，废弃事件通知。
