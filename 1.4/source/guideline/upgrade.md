@@ -21,11 +21,12 @@
 - 不推荐使用 core，推荐依赖对应模块。
 - ajax, io 为同一模块，推荐使用 io。
 - sizzle 被移除，不用再加载。
-- calendar、datalazyload、switchable、imagezoom、waterfall 被移出，被替代为Gallery中的组件，
+- calendar、datalazyload、switchable、imagezoom、waterfall、flash 被移出，被替代为Gallery中的组件，
 [calendar-deprecated](http://gallery.kissyui.com/calendar-deprecated/1.0/guide/index.html)，
 [switchable](http://gallery.kissyui.com/switchable/1.3/guide/index.html)，
 [datalazyload](http://gallery.kissyui.com/datalazyload/1.0/guide/index.html)，
 [imagezoom](http://gallery.kissyui.com/imagezoom/1.0/guide/index.html)，
+[flash](http://a.tbcdn.cn/s/kissy/gallery/flash/1.0/index.js)，
 [waterfall](http://gallery.kissyui.com/waterfall/1.0/guide/index.html)。
 
 
