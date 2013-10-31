@@ -55,13 +55,16 @@
 				alias: ['gallery/datalazyload/1.0/']
 			},
 			'switchable':{
-				alias: ['gallery/switchable/1.3/']
+				alias: ['gallery/switchable/1.3.1/']
 			},
 			'imagezoom':{
 				alias: ['gallery/imagezoom/1.0/']
 			},
 			'waterfall':{
 				alias: ['gallery/waterfall/1.0/']
+			},
+			'flash':{
+				alias: ['gallery/flash/1.0/']
 			}
 		}
 	});
