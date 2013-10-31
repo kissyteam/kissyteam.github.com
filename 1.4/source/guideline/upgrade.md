@@ -16,19 +16,7 @@
 
 即，使用 1.4.x 的功能必须首先`use('mod-name')`再使用，注意之前比较滥用的`KISSY.ready()`，在 1.4.x 中不建议使用。使用模块请参照 [1.4.x 模块列表](module-map.html)。
 
-<<<<<<< HEAD
-`kissy.js`中的模块被整理入`core`模块，将`kissy.js`替换为`seed.js`后，应当在代码中引用`core`：
 
-	KISSY.use('core',function(S){
-		// Your code
-	});
-
-### Base 的初始化函数的执行
-
-`1.4.0` 中 Base 的实例会自动执行构造函数`initializer`，所以 `1.3.x` 中手动执行的这个函数需要改名或者删除。
-
-=======
->>>>>>> 685a36057bf42dbf551f832fe2eb160c76c6a149
 ### 模块名称变更
 - 不推荐使用 core，推荐依赖对应模块。
 - ajax, io 为同一模块，推荐使用 io。

@@ -294,33 +294,39 @@
 <dl class="data">
 <dt id="event.Event.Gesture.start">
 <tt class="descclassname">Event.Gesture.</tt><tt class="descname">start</tt><a class="headerlink" href="#event.Event.Gesture.start" title="Permalink to this definition">¶</a></dt>
-<dd><p>手势开始事件 <tt class="docutils literal"><span class="pre">Event.Gesture.start</span></tt> ，pc 上为 <tt class="docutils literal"><span class="pre">'mousedown'</span></tt> , 触屏为 <tt class="docutils literal"><span class="pre">'touchstart'</span></tt></p>
+<dd><p>手势开始事件</p>
 </dd></dl>
 
 <dl class="data">
 <dt id="event.Event.Gesture.move">
 <tt class="descclassname">Event.Gesture.</tt><tt class="descname">move</tt><a class="headerlink" href="#event.Event.Gesture.move" title="Permalink to this definition">¶</a></dt>
-<dd><p>手势进行事件 <tt class="docutils literal"><span class="pre">Event.Gesture.move</span></tt> ，pc 上为 <tt class="docutils literal"><span class="pre">'mousemove'</span></tt> , 触屏为 <tt class="docutils literal"><span class="pre">'touchmove'</span></tt></p>
+<dd><p>手势进行事件</p>
 </dd></dl>
 
 <dl class="data">
 <dt id="event.Event.Gesture.end">
 <tt class="descclassname">Event.Gesture.</tt><tt class="descname">end</tt><a class="headerlink" href="#event.Event.Gesture.end" title="Permalink to this definition">¶</a></dt>
-<dd><p>手势结束事件 <tt class="docutils literal"><span class="pre">Event.Gesture.end</span></tt> ，pc 上为 <tt class="docutils literal"><span class="pre">'mouseup'</span></tt> , 触屏为 <tt class="docutils literal"><span class="pre">'touchend'</span></tt></p>
+<dd><p>手势结束事件</p>
 </dd></dl>
 
 <dl class="data">
 <dt id="event.Event.Gesture.tap">
 <tt class="descclassname">Event.Gesture.</tt><tt class="descname">tap</tt><a class="headerlink" href="#event.Event.Gesture.tap" title="Permalink to this definition">¶</a></dt>
-<dd><p>手势结束事件 <tt class="docutils literal"><span class="pre">Event.Gesture.tap</span></tt> ，pc 上为 <tt class="docutils literal"><span class="pre">'click'</span></tt> , 触屏为 <tt class="docutils literal"><span class="pre">'tap'</span></tt></p>
+<dd><p>单击事件</p>
 </dd></dl>
 
 <dl class="data">
 <dt id="event.Event.Gesture.doubleTap">
 <tt class="descclassname">Event.Gesture.</tt><tt class="descname">doubleTap</tt><a class="headerlink" href="#event.Event.Gesture.doubleTap" title="Permalink to this definition">¶</a></dt>
-<dd><p>手势结束事件 <tt class="docutils literal"><span class="pre">Event.Gesture.doubleTap</span></tt> ，pc 上为 <tt class="docutils literal"><span class="pre">'dblclick'</span></tt> , 触屏为 <tt class="docutils literal"><span class="pre">'doubleTap'</span></tt></p>
+<dd><p>双击事件</p>
 </dd></dl>
 
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>手势进行事件在支持触屏的设备和只支持鼠标的设备表现不同。</p>
+<p>触屏设备中（pad,ie10,ie11）只有在手势开始事件触发后才会开始手势进行事件。</p>
+<p class="last">而支持鼠标的设备（chrome pc，ie&lt;19）则鼠标移动就会开始手势进行事件。</p>
+</div>
 </div>
 </div>
 
