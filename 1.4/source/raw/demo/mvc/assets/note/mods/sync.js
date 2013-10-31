@@ -24,7 +24,7 @@ KISSY.add(function(S, mvc) {
      */
     sync = mvc.sync = function(self, method, options) {
         options = options || {};
-        S.log(method);
+        alert(method);
         // 模拟异步请求
         setTimeout(function() {
             var index;

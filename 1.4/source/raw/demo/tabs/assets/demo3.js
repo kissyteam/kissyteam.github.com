@@ -17,7 +17,7 @@ KISSY.use("tabs", function (S, Tabs) {
         listeners: {
             afterRenderUI: function (e) {
                 if (e.target.isTabsPanel) {
-                    S.log(e.target.get('content'));
+                    alert(e.target.get('content'));
                 }
             }
         }

@@ -55,10 +55,10 @@
     <div class="col-sub"><ul class="s-box api-toctree">
     <h4 class="s-box-hd">Seed</h4>
     <ul class="s-box-bd">
-        <li><a href="../features/index.html">features</a></li>
+        <!--<li><a href="../features/index.html">features</a></li>-->
         <li><a href="../lang/index.html">lang</a></li>
         <li><a href="../loader/index.html">loader</a></li>
-        <li><a href="../ua/index.html">ua</a></li>
+        <!--<li><a href="../ua/index.html">ua</a></li>-->
     </ul>
 </ul>
 
@@ -67,12 +67,12 @@
     <ul class="s-box-bd">
         <li><a href="../anim/index.html">anim</a></li>
         <li><a href="../base/index.html">base</a></li>
-        <li><a href="../cookie/index.html">cookie</a></li>
-        <li><a href="../dom/index.html">dom</a></li>
-        <li><a href="../event/index.html">event</a></li>
-        <li><a href="../io/index.html">io</a></li>
-        <li><a href="../json/index.html">json</a></li>
-        <li><a href="../node/index.html">node</a></li>
+        <!--<li><a href="../cookie/index.html">cookie</a></li>-->
+        <!--<li><a href="../dom/index.html">dom</a></li>-->
+        <!--<li><a href="../event/index.html">event</a></li>-->
+        <!--<li><a href="../io/index.html">io</a></li>-->
+        <!--<li><a href="../json/index.html">json</a></li>-->
+        <!--<li><a href="../node/index.html">node</a></li>-->
         <li><a href="../path/index.html">path</a></li>
         <li><a href="../promise/index.html">promise</a></li>
         <li><a href="../uri/index.html">uri</a></li>
@@ -82,7 +82,7 @@
 <ul class="s-box component-toctree">
     <h4 class="s-box-hd">Infrastructure</h4>
     <ul class="s-box-bd">
-        <li><a href="../component/index.html">component</a></li>
+        <!--<li><a href="../component/index.html">component</a></li>-->
         <li><a href="../mvc/index.html">mvc</a></li>
         <li><a href="index.html">xtemplate</a></li>
     </ul>
@@ -178,13 +178,32 @@
 </div>
 <div class="section" id="id1">
 <h2>xtemplate 模块使用示例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<iframe width="100%" height="50" class="iframe-demo" src="/1.4/source/raw/demo/xtemplate/module.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s1">&#39;packages&#39;</span><span class="p">,</span> <span class="p">{</span>
+<iframe width="100%" height="100" class="iframe-demo" src="/1.4/source/raw/demo/xtemplate/module.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s1">&#39;packages&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">xModule</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">base</span><span class="o">:</span> <span class="s1">&#39;./assets/&#39;</span>
     <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;xtemplate&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">XTemplate</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;xtemplate, json, gallery/pageNotification/1.0/index&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">XTemplate</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">,</span> <span class="nx">PN</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">pn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PN</span><span class="p">({</span>
+        <span class="s2">&quot;closeButton&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s2">&quot;positionClass&quot;</span><span class="o">:</span> <span class="s2">&quot;page-notification-top-right&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;onclick&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">&quot;showDuration&quot;</span><span class="o">:</span> <span class="s2">&quot;300&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;hideDuration&quot;</span><span class="o">:</span> <span class="s2">&quot;1000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;timeOut&quot;</span><span class="o">:</span> <span class="s2">&quot;5000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;extendedTimeOut&quot;</span><span class="o">:</span> <span class="s2">&quot;1000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;showEasing&quot;</span><span class="o">:</span> <span class="s2">&quot;swing&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;hideEasing&quot;</span><span class="o">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;showMethod&quot;</span><span class="o">:</span> <span class="s2">&quot;fadeIn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;hideMethod&quot;</span><span class="o">:</span> <span class="s2">&quot;fadeOut&quot;</span>
+    <span class="p">});</span>
+
+    <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+        <span class="nx">args</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">isObject</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="o">?</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="o">:</span> <span class="nx">args</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+        <span class="nx">pn</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
+    <span class="p">};</span>
 
     <span class="nb">window</span><span class="p">.</span><span class="nx">supportModule</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;xModule&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">myX</span><span class="p">){</span>

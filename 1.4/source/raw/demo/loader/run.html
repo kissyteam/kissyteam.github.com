@@ -1,0 +1,18 @@
+<script src="http://dev.kissyui.com/kissy/build/seed.js" data-config="{combine:true}"></script>
+<script>
+    KISSY.config({
+        'packages': {
+            biz: {
+                base: './assets/',
+                combine: false
+            }
+        }
+    });
+    KISSY.use('biz/page/run,' +
+        // simple css module
+            'biz/z.css', function (S, run) {
+        S.ready(function () {
+            S.all('body').text(run);
+        });
+    });
+</script>

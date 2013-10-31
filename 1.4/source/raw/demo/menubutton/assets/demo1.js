@@ -20,9 +20,9 @@ KISSY.use("menubutton,menu", function(S, MenuButton, Menu) {
     menu.on('click', function(e) {
         var m = e.target;
         if (m.get("checked")) {
-            S.log('选中:'+m.get('content'));
+            alert('选中:'+m.get('content'));
         } else {
-            S.log('未选中:'+m.get('content'));
+            alert('未选中:'+m.get('content'));
         }
     });
 

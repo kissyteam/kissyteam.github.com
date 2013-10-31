@@ -10,7 +10,9 @@ Loader 使用示例
    :titlesonly:
 
    simple
-   simple-native
    combo
    combo-common
    combo-require
+   development-mode
+   concat-for-production
+   combo-for-production

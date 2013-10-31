@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
   <meta charset="utf-8">
-  <title>KISSY - 全终端适配的 JS 类库</title>
+  <title>KISSY - 跨终端的 JS 类库</title>
   <meta name="viewport" content="width=device-width">
   <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Lekton|Ubuntu+Mono:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="templates/assets/bootstrap.css">
@@ -81,16 +81,27 @@
 <h3>1.4.x 将不再提供<code>kissy.js</code></h3>
 <p>为了增强 KISSY 的模块架构和减轻体积，1.4.0 之后将不再提供粗粒度的<code>kissy.js</code>，因此<code>http://g.tbcdn.cn/kissy/k/1.4.0/kissy.js</code>不存在。KISSY 将只提供<code>seed.js</code>。</p>
 <p>即，使用 1.4.x 的功能必须首先<code>use(&#39;mod-name&#39;)</code>再使用，注意之前比较滥用的<code>KISSY.ready()</code>，在 1.4.x 中不建议使用。使用模块请参照 <a href="module-map.html">1.4.x 模块列表</a>。</p>
-<p><code>kissy.js</code>中的模块被整理入<code>core</code>模块，将<code>kissy.js</code>替换为<code>seed.js</code>后，应当在代码中引用<code>core</code>：</p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<code>kissy.js</code>中的模块被整理入<code>core</code>模块，将<code>kissy.js</code>替换为<code>seed.js</code>后，应当在代码中引用<code>core</code>：</p>
 <pre><code>KISSY.use(&#39;core&#39;,function(S){
     // Your code
 });</code></pre>
 <h3>Base 的初始化函数的执行</h3>
 <p><code>1.4.0</code> 中 Base 的实例会自动执行构造函数<code>initializer</code>，所以 <code>1.3.x</code> 中手动执行的这个函数需要改名或者删除。</p>
+<p>=======</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>685a36057bf42dbf551f832fe2eb160c76c6a149</p>
 <h3>模块名称变更</h3>
 <ul>
-<li>ajax, io 为同一模块，推荐使用 io</li>
-<li>sizzle 被移除，不用再加载</li>
+<li>不推荐使用 core，推荐依赖对应模块。</li>
+<li>ajax, io 为同一模块，推荐使用 io。</li>
+<li>sizzle 被移除，不用再加载。</li>
 <li>calendar、datalazyload、switchable、imagezoom、waterfall 被移出，被替代为Gallery中的组件，
 <a href="http://gallery.kissyui.com/calendar-deprecated/1.0/guide/index.html">calendar-deprecated</a>，
 <a href="http://gallery.kissyui.com/switchable/1.3/guide/index.html">switchable</a>，
@@ -98,6 +109,13 @@
 <a href="http://gallery.kissyui.com/imagezoom/1.0/guide/index.html">imagezoom</a>，
 <a href="http://gallery.kissyui.com/waterfall/1.0/guide/index.html">waterfall</a>。</li>
 </ul>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <p>对于用到这些模块（基于 kissy 1.3.0）的页面升级到<code>1.4.0</code>后，需要在全局自行添加映射（KISSY 1.4.0 不提供）：</p>
 <pre><code>KISSY.config({
     modules: {
@@ -130,18 +148,51 @@
 <hr>
 <h2>1.4.0 Changelog</h2>
 <ol>
-<li>loader 在 <a href="https://github.com/kissyteam/kissy/issues/269">1.3.1</a> 支持跨包 combo, error 回调，超时回调，importStyle 后，1.4 更添加了<a href="https://github.com/kissyteam/kissy/issues/429">全球化支持</a>.</li>
-<li>anim 支持使用 <a href="https://github.com/kissyteam/kissy/issues/285">transition</a> 动画，并且对 <a href="https://github.com/kissyteam/kissy/issues/402">transform</a> 做了兼容处理</li>
-<li><a href="https://github.com/kissyteam/kissy/issues/282">dom</a> 支持 classList , 自主实现兼容 css3 的选择器引擎，并针对常用的选择器做<a href="https://github.com/kissyteam/kissy/pull/406">特殊优化</a>，通过透明的按需加载来实现全平台 css3 选择器兼容</li>
-<li><a href="https://github.com/kissyteam/kissy/issues/363">touch 手势</a> 对于 win8 的支持</li>
-<li>Base 与 RichBase 合并，并支持 <a href="https://github.com/kissyteam/kissy/issues/447">callSuper</a> 调用，形成完善的 KISSY 类系统。</li>
+<li>loader 在 <a href="https://github.com/kissyteam/kissy/issues/269">1.3.1</a> 支持跨包 combo, error 回调，超时回调，importStyle 后，1.4 更添加了<a href="https://github.com/kissyteam/kissy/issues/429">全球化支持</a>。</li>
+<li>lang 支持 <a href="https://github.com/kissyteam/kissy/issues/498">KISSY.setImmediate</a> 实现跨浏览器的快速异步执行代码。</li>
+<li>anim <ol>
+<li>实现 <a href="https://github.com/kissyteam/kissy/issues/496">promise api</a>，废弃事件通知。</li>
+<li>支持使用 <a href="https://github.com/kissyteam/kissy/issues/285">transition</a> 动画。</li>
+<li>对 <a href="https://github.com/kissyteam/kissy/issues/402">transform</a> 做了兼容处理。</li>
+</ol>
+</li>
+<li>base 与 rich-base 合并，并支持 <a href="https://github.com/kissyteam/kissy/issues/447">callSuper</a> 调用，形成完善的 KISSY 类系统.<ol>
+<li>请使用 Base.extend 而不是 S.extend(Base)。</li>
+<li>如果为了兼容，使用 S.extend，其中请不要包含函数名 initializer 和 destructor。</li>
+</ol>
+</li>
 <li><a href="https://github.com/kissyteam/kissy/issues/164">date</a> 系列工具类实现，并支持 en/zh 两种语言以及序列化和 parse 功能。</li>
-<li>在 date 以及 KISSY 组件架构的基础上实现 <a href="https://github.com/kissyteam/kissy/issues/162">date/picker</a></li>
-<li>在 KISSY 组件架构的基础上实现 <a href="https://github.com/kissyteam/kissy/issues/222">scroll-view</a>，可模拟触屏以及普通滚动条</li>
-<li>xtemplate 进行了一系列功能增强，例如 <a href="https://github.com/kissyteam/kissy/issues/449">宏的支持</a>，<a href="https://github.com/kissyteam/kissy/issues/431">根作用域的支持</a>，<a href="https://github.com/kissyteam/kissy/issues/389">模块加载的支持</a></li>
-<li>tabs 支持<a href="https://github.com/kissyteam/kissy/issues/335">懒渲染</a></li>
-<li>resizable 支持<a href="https://github.com/kissyteam/kissy/issues/223">代理拖放</a></li>
-<li><a href="https://github.com/kissyteam/kissy/commit/4f731d1bd2e9cc83ce89fe69b62addd8128c80a7#src/dom/sub-modules/base/src/base/selector.js">css Selector性能优化</a> 面向Mobile设备的选择器性能提速</li>
+<li>在 date 以及 KISSY 组件架构的基础上实现 <a href="https://github.com/kissyteam/kissy/issues/162">date/picker</a>。</li>
+<li><a href="https://github.com/kissyteam/kissy/issues/282">dom</a> 。<ol>
+<li>支持 classList 以及 <a href="https://github.com/kissyteam/kissy/issues/402">transform</a>。</li>
+<li>自主实现 ie6-8 下的兼容 css3 的选择器引擎，并针对常用的选择器做<a href="https://github.com/kissyteam/kissy/pull/406">特殊优化</a>，通过透明的按需加载来实现全平台 css3 选择器兼容。</li>
+</ol>
+</li>
+<li><a href="https://github.com/kissyteam/kissy/issues/363">touch 手势</a> 对于 windows phone/win8 ie 的支持。</li>
+<li>node 支持 <a href="https://github.com/kissyteam/kissy/issues/367">filter</a> 方法。</li>
+<li>filter-menu 模块从 menu 模块中分离。</li>
+<li>overlay <ol>
+<li>show/hide 方法不会设置行内样式，只会添加对应的 class。</li>
+<li>srcNode 初始化是 html 结构必须包含 content 节点。</li>
+<li>content/bodyContent 只允许字符串类型。</li>
+<li>修改 close 按钮样式名。</li>
+</ol>
+</li>
+<li>promise 模块从 seed 中分离，并支持 <a href="https://github.com/kissyteam/kissy/issues/311">done</a> 和 <a href="https://github.com/kissyteam/kissy/issues/480">progress</a> api。</li>
+<li><a href="https://github.com/kissyteam/kissy/issues/223">resizable</a>。<ol>
+<li>支持 preserveRatio。</li>
+<li>支持代理。</li>
+</ol>
+</li>
+<li>tabs 支持<a href="https://github.com/kissyteam/kissy/issues/335">懒渲染</a>。</li>
+<li>在 KISSY 组件架构的基础上实现 <a href="https://github.com/kissyteam/kissy/issues/222">scroll-view</a>，可模拟触屏以及普通滚动条。</li>
+<li>xtemplate     <ol>
+<li><a href="https://github.com/kissyteam/kissy/issues/449">宏的支持</a>。</li>
+<li><a href="https://github.com/kissyteam/kissy/issues/431">根作用域的支持</a>。</li>
+<li><a href="https://github.com/kissyteam/kissy/issues/389">模块加载的支持</a>。</li>
+<li>优化产生代码，完善 kissy-xtemplate 命令离线编译代码。</li>
+</ol>
+</li>
 </ol>
 
 

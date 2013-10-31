@@ -1,6 +1,6 @@
 KISSY.use("menu", function (S, Menu) {
     var prefixCls = "my-";
-    
+
     var menu = new Menu.PopupMenu({
         prefixCls: prefixCls,
         // 接受键盘事件
@@ -32,7 +32,7 @@ KISSY.use("menu", function (S, Menu) {
     menu.addChild(b);
 
     menu.on("click", function(e) {
-        S.log(e.target);
+        alert(e.target);
         alert("点击了" + e.target.get('content'));
     });
 

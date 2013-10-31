@@ -11,7 +11,7 @@ KISSY.use('dom', function (S, DOM) {
     }, 0);
     b.onclick = function () {
         t.focus();
-        S.log(DOM.prop(t, "selectionStart") + " - " + DOM.prop(t, "selectionEnd"));
+        alert(DOM.prop(t, "selectionStart") + " - " + DOM.prop(t, "selectionEnd"));
     };
     s.onclick = function () {
         t.focus();

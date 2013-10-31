@@ -9,7 +9,7 @@ KISSY.use('core', function (S) {
                 easing: 'easeOut',
                 value: 500,
                 frame: function (anim,fx) {
-                    S.log(fx);
+                    alert(fx);
                 }
             },
             backgroundPosition: {
@@ -27,7 +27,7 @@ KISSY.use('core', function (S) {
             duration: 5,
             easing: 'easeIn',
             complete: function () {
-                S.log('ok: ' + (S.now() - start));
+                alert('ok: ' + (S.now() - start));
             }
         })
     });

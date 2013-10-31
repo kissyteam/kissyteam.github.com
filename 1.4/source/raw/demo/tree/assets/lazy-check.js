@@ -44,6 +44,8 @@ KISSY.use("tree", function (S, Tree) {
     }
 
     var CheckNode = Tree.CheckNode;
+    
+    var CheckState=CheckNode.CheckState;
 
     var tree = new Tree.CheckTree({
         content:"淘宝网",
@@ -58,7 +60,7 @@ KISSY.use("tree", function (S, Tree) {
             var c = getNode(data, node.get("content")).children;
             S.each(c, function (v) {
                 node.addChild(new CheckNode({
-                    checkState:node.get("checkState") == CheckNode.CHECK ? CheckNode.CHECK : CheckNode.EMPTY,
+                    checkState:node.get("checkState") == CheckState.CHECK ? CheckState.CHECK : CheckState.EMPTY,
                     isLeaf:!(v.children && v.children.length),
                     content:v.content
                 }));

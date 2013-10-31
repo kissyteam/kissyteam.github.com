@@ -55,10 +55,10 @@
     <div class="col-sub"><ul class="s-box api-toctree">
     <h4 class="s-box-hd">Seed</h4>
     <ul class="s-box-bd">
-        <li><a href="../features/index.html">features</a></li>
+        <!--<li><a href="../features/index.html">features</a></li>-->
         <li><a href="../lang/index.html">lang</a></li>
         <li><a href="../loader/index.html">loader</a></li>
-        <li><a href="../ua/index.html">ua</a></li>
+        <!--<li><a href="../ua/index.html">ua</a></li>-->
     </ul>
 </ul>
 
@@ -67,12 +67,12 @@
     <ul class="s-box-bd">
         <li><a href="../anim/index.html">anim</a></li>
         <li><a href="../base/index.html">base</a></li>
-        <li><a href="../cookie/index.html">cookie</a></li>
-        <li><a href="../dom/index.html">dom</a></li>
-        <li><a href="../event/index.html">event</a></li>
-        <li><a href="../io/index.html">io</a></li>
-        <li><a href="../json/index.html">json</a></li>
-        <li><a href="../node/index.html">node</a></li>
+        <!--<li><a href="../cookie/index.html">cookie</a></li>-->
+        <!--<li><a href="../dom/index.html">dom</a></li>-->
+        <!--<li><a href="../event/index.html">event</a></li>-->
+        <!--<li><a href="../io/index.html">io</a></li>-->
+        <!--<li><a href="../json/index.html">json</a></li>-->
+        <!--<li><a href="../node/index.html">node</a></li>-->
         <li><a href="../path/index.html">path</a></li>
         <li><a href="../promise/index.html">promise</a></li>
         <li><a href="../uri/index.html">uri</a></li>
@@ -82,7 +82,7 @@
 <ul class="s-box component-toctree">
     <h4 class="s-box-hd">Infrastructure</h4>
     <ul class="s-box-bd">
-        <li><a href="../component/index.html">component</a></li>
+        <!--<li><a href="../component/index.html">component</a></li>-->
         <li><a href="../mvc/index.html">mvc</a></li>
         <li><a href="index.html">xtemplate</a></li>
     </ul>
@@ -182,7 +182,29 @@
 <h2>Demos<a class="headerlink" href="#demos" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
 <h3>支持简单的变量替换<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>代码:</p>
+<script>
+KISSY.use('json, gallery/pageNotification/1.0/index', function(S, JSON, PN) {
+    var pn = new PN({
+        "closeButton": true,
+        "positionClass": "page-notification-top-right",
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    });
+
+    window.alert = function() {
+        var args = arguments[0];
+        args = S.isObject(args) ? JSON.stringify(args) : args.toString();
+        pn.success(args);
+    };
+});
+</script><p>代码:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;xtemplate&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">XTemplate</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="nb">window</span><span class="p">.</span><span class="nx">supportVariable</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>

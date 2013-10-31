@@ -55,10 +55,10 @@
     <div class="col-sub"><ul class="s-box api-toctree">
     <h4 class="s-box-hd">Seed</h4>
     <ul class="s-box-bd">
-        <li><a href="../features/index.html">features</a></li>
+        <!--<li><a href="../features/index.html">features</a></li>-->
         <li><a href="#">lang</a></li>
         <li><a href="../loader/index.html">loader</a></li>
-        <li><a href="../ua/index.html">ua</a></li>
+        <!--<li><a href="../ua/index.html">ua</a></li>-->
     </ul>
 </ul>
 
@@ -67,12 +67,12 @@
     <ul class="s-box-bd">
         <li><a href="../anim/index.html">anim</a></li>
         <li><a href="../base/index.html">base</a></li>
-        <li><a href="../cookie/index.html">cookie</a></li>
-        <li><a href="../dom/index.html">dom</a></li>
-        <li><a href="../event/index.html">event</a></li>
-        <li><a href="../io/index.html">io</a></li>
-        <li><a href="../json/index.html">json</a></li>
-        <li><a href="../node/index.html">node</a></li>
+        <!--<li><a href="../cookie/index.html">cookie</a></li>-->
+        <!--<li><a href="../dom/index.html">dom</a></li>-->
+        <!--<li><a href="../event/index.html">event</a></li>-->
+        <!--<li><a href="../io/index.html">io</a></li>-->
+        <!--<li><a href="../json/index.html">json</a></li>-->
+        <!--<li><a href="../node/index.html">node</a></li>-->
         <li><a href="../path/index.html">path</a></li>
         <li><a href="../promise/index.html">promise</a></li>
         <li><a href="../uri/index.html">uri</a></li>
@@ -82,7 +82,7 @@
 <ul class="s-box component-toctree">
     <h4 class="s-box-hd">Infrastructure</h4>
     <ul class="s-box-bd">
-        <li><a href="../component/index.html">component</a></li>
+        <!--<li><a href="../component/index.html">component</a></li>-->
         <li><a href="../mvc/index.html">mvc</a></li>
         <li><a href="../xtemplate/index.html">xtemplate</a></li>
     </ul>
@@ -155,7 +155,7 @@
       <a href="../../py-modindex.html" title="Python Module Index"
          >modules</a> | </li>
     <li class="right" >
-      <a href="../loader/index.html" title="Loader 使用示例"
+      <a href="base.html" title="KISSY 使用示例"
          accesskey="N">next</a> | </li>
     <li class="right" >
       <a href="../index.html" title="Demos"
@@ -166,56 +166,13 @@
 </div>
 				
   <div class="section" id="kissy">
-<span id="seed-lang"></span><h1>KISSY 使用示例<a class="headerlink" href="#kissy" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><iframe class="iframe-demo" width="100%" height="235" src="/1.4/source/raw/api/seed/lang/demo.html"></iframe><div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;t1&quot;</span><span class="nt">&gt;</span>
-    选择某个类型做测试：
-            <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;J_input&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;option</span> <span class="na">selected</span><span class="nt">&gt;</span> <span class="nt">&lt;/option&gt;</span>
-                    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;{}&quot;</span><span class="nt">&gt;</span>EmptyObject -&gt; {}<span class="nt">&lt;/option&gt;</span>
-                    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;function(){return 1+2;}&quot;</span><span class="nt">&gt;</span>Function -&gt; function(){return 1+2;}<span class="nt">&lt;/option&gt;</span>
-                    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;null&quot;</span><span class="nt">&gt;</span>Null<span class="nt">&lt;/option&gt;</span>
-                    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;123&quot;</span><span class="nt">&gt;</span>Number -&gt; 123<span class="nt">&lt;/option&gt;</span>
-                    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;new Object()&quot;</span><span class="nt">&gt;</span>Object -&gt; new Object()<span class="nt">&lt;/option&gt;</span>
-                    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot; { x:1, y:2, radius:2 }&quot;</span><span class="nt">&gt;</span>PlainObject -&gt;  { x:1, y:2, radius:2 }<span class="nt">&lt;/option&gt;</span>
-                    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;/^[0-9]+/g&quot;</span><span class="nt">&gt;</span>RegExp -&gt; /^[0-9]+/g<span class="nt">&lt;/option&gt;</span>
-                    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;new String(&#39;abc&#39;)&quot;</span><span class="nt">&gt;</span>String -&gt; new String(&#39;abc&#39;)<span class="nt">&lt;/option&gt;</span>
-                    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Undefined<span class="nt">&lt;/option&gt;</span>
-                    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;[1,2,3]&quot;</span><span class="nt">&gt;</span>Array -&gt; [1,2,3]<span class="nt">&lt;/option&gt;</span>
-                    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Boolean -&gt; true<span class="nt">&lt;/option&gt;</span>
-                    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;new Date()&quot;</span><span class="nt">&gt;</span>Date -&gt; new Date()<span class="nt">&lt;/option&gt;</span>
-            <span class="nt">&lt;/select&gt;</span>
-            <span class="nt">&lt;ul&gt;</span>
-                    <span class="nt">&lt;li&gt;&lt;button&gt;</span>isEmptyObject<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
-                    <span class="nt">&lt;li&gt;&lt;button&gt;</span>isFunction<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
-                    <span class="nt">&lt;li&gt;&lt;button&gt;</span>isNull<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
-                    <span class="nt">&lt;li&gt;&lt;button&gt;</span>isNumber<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
-                    <span class="nt">&lt;li&gt;&lt;button&gt;</span>isObject<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
-                    <span class="nt">&lt;li&gt;&lt;button&gt;</span>isPlainObject<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
-                    <span class="nt">&lt;li&gt;&lt;button&gt;</span>isRegExp<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
-                    <span class="nt">&lt;li&gt;&lt;button&gt;</span>isString<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
-                    <span class="nt">&lt;li&gt;&lt;button&gt;</span>isUndefined<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
-                    <span class="nt">&lt;li&gt;&lt;button&gt;</span>isArray<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
-                    <span class="nt">&lt;li&gt;&lt;button&gt;</span>isBoolean<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
-                    <span class="nt">&lt;li&gt;&lt;button&gt;</span>isDate<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
-            <span class="nt">&lt;/ul&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;J_rst&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-
-    <span class="nt">&lt;script&gt;</span>
-    <span class="nx">KISSY</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
-            <span class="kd">var</span> <span class="nx">DOM</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">DOM</span><span class="p">,</span><span class="nx">Event</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Event</span><span class="p">;</span>
-            <span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">,</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
-                    <span class="kd">var</span> <span class="nx">v</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="s2">&quot;#J_input&quot;</span><span class="p">);</span>
-                    <span class="kd">var</span> <span class="nx">fc</span> <span class="o">=</span> <span class="s1">&#39;KISSY.&#39;</span><span class="o">+</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;(&#39;</span><span class="o">+</span><span class="nx">v</span><span class="o">+</span><span class="s1">&#39;);&#39;</span><span class="p">;</span>
-                    <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">DOM</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; -&gt; &#39;</span><span class="o">+</span><span class="nb">eval</span><span class="p">(</span><span class="nx">fc</span><span class="p">);</span>
-                    <span class="nx">DOM</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s1">&#39;#J_rst&#39;</span><span class="p">,</span><span class="nx">result</span><span class="p">);</span>
-            <span class="p">});</span>
-    <span class="p">});</span>
-    <span class="nt">&lt;/script&gt;</span>
-</pre></div>
+<span id="loader-demo"></span><h1>KISSY 使用示例<a class="headerlink" href="#kissy" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="base.html">KISSY 使用示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getlogger.html">getLogger 使用示例</a></li>
+</ul>
 </div>
-</div></blockquote>
 </div>
 
 

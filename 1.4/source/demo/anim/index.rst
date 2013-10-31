@@ -28,5 +28,6 @@ Demos
        demo8
        demo9
        demo10
+       demo11
        easing
        cubic-bezier

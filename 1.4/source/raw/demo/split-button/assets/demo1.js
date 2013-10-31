@@ -5,7 +5,7 @@ KISSY.use('split-button', function (S, SplitButton) {
             srcNode: n,
             listeners: {
                 'click': function (e) {
-                    S.log('click: ' + e.target.get('content'));
+                    alert('click: ' + e.target.get('content'));
                 }
             }
         }).render();
