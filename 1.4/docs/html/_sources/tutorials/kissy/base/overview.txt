@@ -15,7 +15,7 @@ html代码：
 
 .. code-block:: html
 
-    <script src="http://dev.kissyui.com/kissy/build/seed-min.js"></script>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.0/seed-min.js"></script>
 
 
 .. code-block:: javascript

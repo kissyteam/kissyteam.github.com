@@ -7,7 +7,7 @@ xtemplate 使用示例
 
     .. raw:: html
 
-        <script src='http://dev.kissyui.com/kissy/build/seed.js'></script>
+        <script src='http://g.tbcdn.cn/kissy/k/1.4.0/seed.js' data-config="{combine:true}"></script>
 
 
 Class
