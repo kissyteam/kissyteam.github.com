@@ -1,4 +1,4 @@
-# KISSY 教程大纲
+# KISSY 指导手册
 
 ---------------------------------------
 
@@ -48,7 +48,6 @@
 - [如何为 KISSY Core 贡献代码](https://github.com/kissyteam/kissy/blob/master/CONTRIBUTING.md)
 - [1.3.x -> 1.4.0 升级指南](upgrade.html)
 - [FAQ](faq.html)
-- [KISSY 核心小组](core-team.html)
 
 
 -----------------------------------------------

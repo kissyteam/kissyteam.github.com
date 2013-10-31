@@ -1,12 +1,3 @@
-
-
-<!--div class="text-center" id="show-off"-->
-<!--首焦图片-->
-<!--/div-->
-<!--div class="text-center">
-	<img src="templates/assets/img/new-logo.png" width=200  />
-</div-->
-
 <p></p>
 
 # What is KISSY ?
@@ -19,21 +10,21 @@ KISSY is a powerfull javascript framework for building cross end web application
 <div class="row-fluid">
 	<div class="col-md-3 text-center">
 		<h2>跨终端</h2>
-			<img src="templates/assets/img/icon1.png" />
+			<img src="/1.4/source/guideline/templates/assets/img/icon1.png" />
 	</div>
 	<div class="col-md-3 text-center">
 		<h2>模块化</h2>
-			<img src="templates/assets/img/icon3.png" />
+			<img src="/1.4/source/guideline/templates/assets/img/icon3.png" />
 	
 	</div>
 	<div class="col-md-3 text-center">
 		<h2>高性能</h2>
-			<img src="templates/assets/img/icon4.png" />
+			<img src="/1.4/source/guideline/templates/assets/img/icon4.png" />
 	
 	</div>
 	<div class="col-md-3 text-center">
 		<h2>使用简单</h2>
-			<img src="templates/assets/img/icon2.png" />
+			<img src="/1.4/source/guideline/templates/assets/img/icon2.png" />
 	
 	</div>
 </div>
@@ -44,11 +35,21 @@ KISSY is a powerfull javascript framework for building cross end web application
 
 <div class="jumbotron row-fluid text-center">
 	<div style="max-width: 400px; margin: 0 auto">
-		<a class="btn btn-primary btn-lg btn-block" href="get-started.html">KISSY 教程大纲</a>
-		<a class="btn btn-info btn-lg btn-block" href="../docs/html/api/" style="color:white">API 参考手册</a>
-		<a class="btn btn-success btn-lg btn-block" href="http://g.tbcdn.cn/kissy/k/1.4.0/seed.js" style="color:white">KISSY 种子文件</a>
+		<a class="btn btn-primary btn-lg btn-block" href="/1.4/docs/html/guideline/get-started.html">指引手册</a>
+		<a class="btn btn-primary btn-lg btn-block" href="/1.4/docs/html/tutorials/">教程</a>
+		<a class="btn btn-info btn-lg btn-block" href="/1.4/docs/html/api/" style="color:white">API 参考手册</a>
+		<a class="btn btn-info btn-lg btn-block" href="/1.4/docs/html/demo/" style="color:white">DEMO 示例</a>
 	</div>
 </div>
+
+
+# 使用 KISSY 1.4
+
+1. 下载 [KISSY 1.4.0](https://github.com/kissyteam/kissy/archive/v1.4.0.zip)
+2. 通过 cdn 使用 ``<script src="http://g.tbcdn.cn/kissy/k/1.4.0/seed-min.js?t=20131032" data-config="{combine:true}"></script>`` 
+3. npm 安装 KISSY: ``npm install kissy``
+4. bower 安装 KISSY: ``bower install kissy``    
+
 
 # KISSY 的一些组件
 
@@ -61,7 +62,7 @@ KISSY is a powerfull javascript framework for building cross end web application
 
 <div class="row-fluid index-box">
 	<div class="col-md-4">
-		<img src="templates/assets/img/widget1.png" class="img-rounded img-responsive">
+		<img src="/1.4/docs/html/guideline/templates/assets/img/widget1.png" class="img-rounded img-responsive">
 		<div class="caption text-center">
 			<h2><a href="http://gallery.kissyui.com/waterfallx/1.0/guide/index.html">Waterfall</a></h2>
 		</div>
@@ -69,7 +70,7 @@ KISSY is a powerfull javascript framework for building cross end web application
 	<div class="col-md-4">
 		<img src="http://gtms04.alicdn.com/tps/i4/T109qzFXdbXXX_yTTS-300-185.png" class="img-rounded img-responsive">
 		<div class="caption text-center">
-			<h2><a href="resizable.html">Resizeable</a></h2>
+			<h2><a href="/1.4/docs/html/guideline/resizable.html">Resizeable</a></h2>
 		</div>
 	</div>
 	<div class="col-md-4">
@@ -99,5 +100,7 @@ KISSY is a powerfull javascript framework for building cross end web application
 		</div>
 	</div>
 </div>
+ 
+
 
 <p>&nbsp;</p>

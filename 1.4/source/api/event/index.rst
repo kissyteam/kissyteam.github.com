@@ -92,20 +92,29 @@ Methods
 
 .. data:: Event.Gesture.start
 
-    手势开始事件 ``Event.Gesture.start`` ，pc 上为 ``'mousedown'`` , 触屏为 ``'touchstart'``
-
+    手势开始事件   
+    
 .. data:: Event.Gesture.move
 
-    手势进行事件 ``Event.Gesture.move`` ，pc 上为 ``'mousemove'`` , 触屏为 ``'touchmove'``
+    手势进行事件
 
 .. data:: Event.Gesture.end
 
-    手势结束事件 ``Event.Gesture.end`` ，pc 上为 ``'mouseup'`` , 触屏为 ``'touchend'``
+    手势结束事件
 
 .. data:: Event.Gesture.tap
 
-    手势结束事件 ``Event.Gesture.tap`` ，pc 上为 ``'click'`` , 触屏为 ``'tap'``
+    单击事件
 
 .. data:: Event.Gesture.doubleTap
 
-    手势结束事件 ``Event.Gesture.doubleTap`` ，pc 上为 ``'dblclick'`` , 触屏为 ``'doubleTap'``
+    双击事件
+    
+
+.. note::
+
+    手势进行事件在支持触屏的设备和只支持鼠标的设备表现不同。
+    
+    触屏设备中（pad,ie10,ie11）只有在手势开始事件触发后才会开始手势进行事件。
+    
+    而支持鼠标的设备（chrome pc，ie<19）则鼠标移动就会开始手势进行事件。

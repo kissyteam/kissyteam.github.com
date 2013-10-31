@@ -92,6 +92,13 @@ module.exports = function (grunt) {
                 files: [ './**/*.md' ,'./**/*.js','./**/*.css','./**/*.jst','./**/*.html'],
                 tasks: [ 'clean:doc', 'copy','markdown' ]
             }
+        },
+        
+        rename: {
+            moveThis: {
+                src: '1.4/docs/html/guideline/index.html',
+                dest: 'index.html'
+            }
         }
 
 		// 合并文件
@@ -114,11 +121,12 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-markdown');
     grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-replace');
+	grunt.loadNpmTasks('grunt-rename');
 
 	grunt.registerTask('listen', 'clam watch ...', function() {
 		task.run('watch');
 	});
 
-	grunt.registerTask('default', ['clean:doc', 'copy', 'markdown']);
+	grunt.registerTask('default', ['clean:doc', 'copy', 'markdown','rename']);
 
 };
