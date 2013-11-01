@@ -6,7 +6,7 @@ KISSY Modules
 .. toctree::
     :maxdepth: 3
 
-    seed/index
+    loader/index
     ua/index
     base/index
     selector/impl
