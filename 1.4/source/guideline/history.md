@@ -13,10 +13,8 @@
 - [KISSY 1.3.0 Released](http://ued.taobao.com/blog/2012/12/kissy-1-3-0-released/)
     - [Gallery Changelog](http://ued.taobao.com/blog/2013/06/kissy-gallery/)
 - [KISSY 1.3.1 is Released](https://github.com/kissyteam/kissy/releases/tag/v1.3.1)
-
+- [KISSY 1.3.2 is Released](http://blog.kissyui.com/2013/09/27/kissy-1-3-2-released/)
+- [KISSY 1.4.0 is Released](http://blog.kissyui.com/2013/10/31/kissy-1-4-0-released/)
 ---------------------------------------
 
-<div class="text-center">
-	<img src="http://img04.taobaocdn.com/tps/i4/T18wsJXblbXXXZBpUs-640-626.jpg" alt="" />
-</div>
 
