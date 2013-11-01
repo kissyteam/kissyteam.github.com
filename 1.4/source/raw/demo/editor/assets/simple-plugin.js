@@ -38,10 +38,9 @@
         };
 
     }, {
-        requires: ['editor/plugin/button/']
+        requires: ['editor/plugin/button']
     });
     KISSY.use("editor", function (S, Editor) {
-
         KISSY.use("my/plugin", function (S, P) {
             var cfg = {
                 // 是否初始聚焦
@@ -65,6 +64,5 @@
             ];
             new Editor(cfg).render();
         });
-
     });
 })();
