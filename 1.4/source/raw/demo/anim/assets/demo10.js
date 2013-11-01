@@ -3,13 +3,14 @@ KISSY.use('core', function (S) {
         this.disabled = true;
         var start = S.now();
         var t = S.all('#t');
+        alert("\u4E2D\u95F4\u8FC7\u7A0B\u53C2\u6570\u8BE6\u89C1 console");
         t.animate({
             height:190,
             left: {
                 easing: 'easeOut',
                 value: 500,
                 frame: function (anim,fx) {
-                    alert(fx);
+                    console.log(fx.pos);
                 }
             },
             backgroundPosition: {
