@@ -72,7 +72,7 @@ KISSY is a powerfull javascript framework for building cross end web application
 	<div class="col-md-4">
 		<img src="http://gtms04.alicdn.com/tps/i4/T109qzFXdbXXX_yTTS-300-185.png" class="img-rounded img-responsive">
 		<div class="caption text-center">
-			<h2><a href="/1.4/docs/html/guideline/resizable.html">Resizeable</a></h2>
+			<h2><a href="/1.4/docs/html/demo/resizable/">Resizeable</a></h2>
 		</div>
 	</div>
 	<div class="col-md-4">
@@ -86,7 +86,7 @@ KISSY is a powerfull javascript framework for building cross end web application
 	<div class="col-md-4">
 		<img src="http://gtms02.alicdn.com/tps/i2/T1fn1AFnpbXXX_yTTS-300-185.png" class="img-rounded img-responsive">
 		<div class="caption text-center">
-			<h2><a href="http://docs.kissyui.com/docs/html/api/editor/editor.html">Editor</a></h2>
+			<h2><a href="http://docs.kissyui.com/1.4/docs/html/demo/editor/">Editor</a></h2>
 		</div>
 	</div>
 	<div class="col-md-4">
@@ -98,7 +98,7 @@ KISSY is a powerfull javascript framework for building cross end web application
 	<div class="col-md-4">
 		<img src="http://gtms04.alicdn.com/tps/i4/T1tG5zFlleXXX_yTTS-300-185.png" class="img-rounded img-responsive">
 		<div class="caption text-center">
-			<h2><a href="http://gallery.kissyui.com/kcharts/1.1/guide/index.html">KChart</a></h2>
+			<h2><a href="http://gallery.kissyui.com/kcharts/1.2/guide/index.html">KChart</a></h2>
 		</div>
 	</div>
 </div>
