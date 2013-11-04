@@ -60,6 +60,10 @@ Grunt-kmc 依赖 Grunt。[参照这里安装Grunt](http://gruntjs.com/getting-st
 
 类型：`Boolean`，默认值：`false`，当指定一批文件为源文件时，对这些文件只生成模块依赖关系表，存放于`options.depFilePath`中
 
+### options.fixModuleName
+
+类型：`Boolean`，默认值：`false`，只补全模块名
+
 ----------------------------------
 
 ## 示例代码
@@ -197,6 +201,7 @@ Grunt-kmc 依赖 Grunt。[参照这里安装Grunt](http://gruntjs.com/getting-st
 			// 生成模块依赖关系表
 			depFilePath:'build/mods.js',
 			comboOnly:true,
+			fixModuleName:true,
 			comboMap:true
 		},
 		main: {
@@ -208,12 +213,6 @@ Grunt-kmc 依赖 Grunt。[参照这里安装Grunt](http://gruntjs.com/getting-st
 			]
 		}
 	});
-
-仅这样做通常是不够的，源文件需要手动补全模块名，比如
-
-	KISSY.add('h5-test/abc/index',function(S){});
-
-另外此功能还需配合[Copy插件](http://npmjs.org/grunt-contrib-copy)一起完成。
 
 ## 应用
 
