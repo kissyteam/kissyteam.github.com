@@ -1,50 +1,55 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8"/>
-<title>Demo - 简单菜单按钮</title>
-<link href="http://g.tbcdn.cn/kissy/k/1.4.0/css/dpl/base.css" rel="stylesheet"/>
+    <meta charset="utf-8"/>
+    <title>Demo - 简单菜单按钮</title>
+    <link href="http://g.tbcdn.cn/kissy/k/1.4.0/css/dpl/base.css" rel="stylesheet"/>
 
-<link href="../button/assets/custombutton.css" rel="stylesheet"/>
-<link href="assets/menubutton.css" rel="stylesheet"/>
-<link href="../menu/assets/menu.css" rel="stylesheet"/>
-<link href="../menu/assets/menuitem.css" rel="stylesheet"/>
-<script src="http://g.tbcdn.cn/kissy/k/1.4.0/seed.js?t=20131105-2" data-config="{combine:true}"></script>
+    <link href="../button/assets/custombutton.css" rel="stylesheet"/>
+    <link href="assets/menubutton.css" rel="stylesheet"/>
+    <link href="../menu/assets/menu.css" rel="stylesheet"/>
+    <link href="../menu/assets/menuitem.css" rel="stylesheet"/>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.0/seed.js?t=20131105-2" data-config="{combine:true}"></script>
 </head>
 <body>
-<div class="ks-button" id="exist">
-    <div class="ks-menu-button-content ks-inline-block">我的淘宝</div>
+<div class="ks-menu-button" id="exist" tabindex="0">
+    <div class="ks-menu-button-content">我的淘宝</div>
+    <div class="ks-menu-button-dropdown ks-button-dropdown">
+        <div class="ks-menu-button-dropdown-inner ks-button-dropdown-inner">
+        </div>
+    </div>
     <div class="ks-menu ks-popupmenu">
-        <div class="ks-menuitem ks-menuitem-checkable">已买到的宝贝</div>
-
-        <div class="ks-menuitem ks-menuitem-checkable">已卖出的宝贝</div>
+        <div class="ks-popupmenu-content">
+            <div class="ks-menuitem ks-menuitem-checkable">已买到的宝贝</div>
+            <div class="ks-menuitem ks-menuitem-checkable">已卖出的宝贝</div>
+        </div>
     </div>
 </div>
 
 <script>
-KISSY.use('json, gallery/pageNotification/1.0/index', function(S, JSON, PN) {
-    var pn = new PN({
-        "closeButton": true,
-        "positionClass": "page-notification-top-right",
-        "onclick": null,
-        "showDuration": "300",
-        "hideDuration": "1000",
-        "timeOut": "5000",
-        "extendedTimeOut": "1000",
-        "showEasing": "swing",
-        "hideEasing": "linear",
-        "showMethod": "fadeIn",
-        "hideMethod": "fadeOut"
+    KISSY.use('json, gallery/pageNotification/1.0/index', function (S, JSON, PN) {
+        var pn = new PN({
+            "closeButton": true,
+            "positionClass": "page-notification-top-right",
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        });
+
+        window.alert = function () {
+            var args = arguments[0];
+            args = S.isObject(args) ? JSON.stringify(args) : args.toString();
+            pn.success(args);
+        };
+
+        KISSY.getScript('assets/demo1.js');
     });
-
-    window.alert = function() {
-        var args = arguments[0];
-        args = S.isObject(args) ? JSON.stringify(args) : args.toString();
-        pn.success(args);
-    };
-
-    KISSY.getScript('assets/demo1.js');
-});
 </script>
 </body>
 </html>
