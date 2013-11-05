@@ -1,6 +1,5 @@
 //最简单好用的！
-var node = document.createElement("div");
-node.innerHTML = '<div class="loading" style="width:600px;height:200px;"> '
+var node = '<div class="loading" style="width:600px;height:200px;"> '
     + '<div class="mask"></div> '
     + '<i class="icon" style="position: absolute;left:200px;top:100px;">加载中，请稍候…</i> '
     + '</div>';

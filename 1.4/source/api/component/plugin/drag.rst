@@ -28,7 +28,7 @@ Class Detail
     KISSY.use('overlay,component/plugin/drag',function(S,Overlay,Drag){
         new Overlay({
             plugins:[ new Drag({
-                handlers: ['.ks-stdmod-header']
+                handlers: ['.ks-overlay-header']
             }) ]
         });
     });

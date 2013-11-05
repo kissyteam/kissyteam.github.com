@@ -208,12 +208,13 @@
 <span class="nt">&lt;/style&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node,overlay,button&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">,</span> <span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;node,overlay,button&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">O</span><span class="p">,</span> <span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">dialog</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">O</span><span class="p">.</span><span class="nx">Dialog</span><span class="p">({</span>
         <span class="nx">width</span><span class="o">:</span> <span class="mi">400</span><span class="p">,</span>
         <span class="nx">headerContent</span><span class="o">:</span> <span class="s1">&#39;收藏&#39;</span><span class="p">,</span>
+        <span class="nx">closable</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
         <span class="nx">bodyContent</span><span class="o">:</span> <span class="s1">&#39;&lt;iframe scrolling=&quot;no&quot; height=&quot;200&quot; width=&quot;398&quot; frameborder=&quot;0&quot; name=&quot;popupIframe&quot; src=&quot;http://favorite.taobao.com/popup/add_collection.htm?id=10166801469&amp;amp;itemtype=1&amp;amp;scjjc=1&amp;amp;_tb_token_=3b38ed73a7775&amp;amp;t=1305543755536&quot;&gt;&lt;/iframe&gt;&#39;</span><span class="p">,</span>
-        <span class="nx">mask</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="c1">//mask: true,</span>
         <span class="nx">align</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">points</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">]</span>
         <span class="p">}</span>
@@ -221,23 +222,22 @@
 
     <span class="kd">var</span> <span class="nx">show</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">B</span><span class="p">({</span>
         <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;收藏&quot;</span><span class="p">,</span>
-
         <span class="nx">render</span><span class="o">:</span> <span class="s2">&quot;#button-wrap&quot;</span>
     <span class="p">});</span>
     <span class="nx">show</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
-    <span class="nx">show</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">show</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="nx">dialog</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
     <span class="p">});</span>
 
     <span class="kd">var</span> <span class="nx">dis</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">B</span><span class="p">({</span>
         <span class="nx">content</span><span class="o">:</span> <span class="s2">&quot;销毁&quot;</span><span class="p">,</span>
-
         <span class="nx">render</span><span class="o">:</span> <span class="s2">&quot;#button-wrap&quot;</span>
     <span class="p">});</span>
     <span class="nx">dis</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
-    <span class="nx">dis</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">dis</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="nx">dialog</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
-        <span class="nx">Node</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s1">&#39;#btn4&#39;</span><span class="p">).</span><span class="nx">detach</span><span class="p">();</span>
+        <span class="nx">show</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+        <span class="nx">dis</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
     <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>

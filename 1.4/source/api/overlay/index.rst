@@ -9,7 +9,7 @@ Overlay
 
     | content/bodyContent/ 等属性值只允许字符串类型
     | ks-contentbox 样式名更改为 ks-overlay-content ks-dialog-content
-    | 去除样式 ks-ext-position，ks-ext-close 为 ks-dialog-close
+    | 去除样式 ks-ext-position，ks-ext-close 为 ks-overlay-close ks-dialog-close
 
 Classes in Overlay
 -----------------------------------------------

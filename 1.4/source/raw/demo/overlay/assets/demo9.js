@@ -5,11 +5,12 @@ KISSY.use("ua,event,node,overlay,button,component/plugin/drag", function (S, UA,
         elStyle: {
             position: UA.ie == 6 ? "absolute" : "fixed"
         },
-        bodyContent: '<img '
+        content: '<img '
             + 'width="424" '
             + 'height="282" '
             + 'src="http://img02.taobaocdn.com/tps/i2/T10J9bXnlgXXXXXXXX-424-282.jpg?noq=y" />',
-        mask: true,
+        closable: 1,
+        mask:true,
         align: {
             points: ['cc', 'cc']
         },

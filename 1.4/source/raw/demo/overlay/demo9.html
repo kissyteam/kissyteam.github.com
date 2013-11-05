@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>Dialog - fixed 居中</title><script src="http://g.tbcdn.cn/kissy/k/1.4.0/seed.js" data-config="{combine:true}"></script>
+<title>Dialog - fixed 居中</title><script src="http://g.tbcdn.cn/kissy/k/1.4.0/seed.js?t=20131105-2" data-config="{combine:true}"></script>
 <link href="http://g.tbcdn.cn/kissy/k/1.4.0/css/dpl/base.css" rel="stylesheet"/>
 <link rel="stylesheet" href="assets/cool.css"/>
 
@@ -15,6 +15,7 @@
         position:absolute;
         left:-9999px;
         top:-9999px;
+        z-index: 100;
     }
 
     .ks-overlay-hidden {
@@ -33,15 +34,16 @@
         display: block;
     }
 
-    .my .ks-stdmod-header, .my .ks-stdmod-footer {
+    .my .ks-overlay-header, .my .ks-overlay-footer {
         display: none;
     }
 
-    .my .ks-stdmod-body {
+    .my .ks-overlay-body {
         line-height: 0;
     }
 </style>
 <div id="button-wrap"></div>
+<div style="height: 1000px"></div>
 <script>
 KISSY.use('json, gallery/pageNotification/1.0/index', function(S, JSON, PN) {
     var pn = new PN({

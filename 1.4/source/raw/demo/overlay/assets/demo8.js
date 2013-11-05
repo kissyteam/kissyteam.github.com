@@ -25,7 +25,7 @@ KISSY.use("node,overlay,component/plugin/resize," +
     var dialog = new O.Dialog({
         width: 400,
         bodyStyle: {
-            height: 100
+            height: '100px'
         },
         mask: false,
         align: {
@@ -35,7 +35,7 @@ KISSY.use("node,overlay,component/plugin/resize," +
 
         plugins: [
             new DragPlugin({
-                handlers: ['.ks-stdmod-header'],
+                handlers: ['.ks-overlay-header'],
                 plugins: [new ConstrainPlugin({
                     constrain: '#c1' // 设置限制在哪个容器中
                 })]
