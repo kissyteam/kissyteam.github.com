@@ -61,7 +61,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../demo/index.html">Demos</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Tutorials</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">KISSY Modules</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../seed/index.html">Seed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../loader/index.html">Loader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ua/index.html">UA</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">base</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../selector/impl.html">css3 selectors</a></li>
@@ -90,10 +90,11 @@
 <li><a class="reference internal" href="#">Base 概述</a><ul>
 <li><a class="reference internal" href="#id2">如何引用</a></li>
 <li><a class="reference internal" href="#id3">继承Base</a><ul>
-<li><a class="reference internal" href="#id4">构造函数</a></li>
+<li><a class="reference internal" href="#id4">构造函数名</a></li>
 <li><a class="reference internal" href="#id5">初始化函数和析构函数</a></li>
 <li><a class="reference internal" href="#attrs">ATTRS属性</a></li>
 <li><a class="reference internal" href="#attrsbindsync">ATTRS的bind和sync</a></li>
+<li><a class="reference internal" href="#callsuper">callSuper</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#plugins">Plugins</a><ul>
@@ -206,15 +207,19 @@
 </div>
 <p>接下来会为大家介绍更多……</p>
 <div class="section" id="id4">
-<h3>构造函数<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<p>我们上面定义的Chunk类并没有显示指定构造函数，Base内部会动态的构建一个function作为Chunk的构造函数，并且名字是&#8221;BaseDerived&#8221;,要显示的指定名称，只需要在在继承的最后一个参数写上名称即可</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">Chunk</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({},{},</span><span class="s1">&#39;Chunk&#39;</span><span class="p">);</span>
+<h3>构造函数名<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>我们上面定义的 Chunk 类并没有显示指定构造函数，Base内部会动态的构建一个 function 作为 Chunk 的构造函数，
+并且名字是&#8221;BaseDerived&#8221;,要显示的指定名称，只需要指定静态属性 name 值即可</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">Chunk</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({},{</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Chunk&#39;</span>
+<span class="p">});</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id5">
 <h3>初始化函数和析构函数<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>Base在初始化时会自动调用各级类的initializer函数，在析构时会自动调用destructor函数，所以有初始或者析构处理只需定义相应的函数就可以了，不用显式调用父类的函数。</p>
+<p>Base在初始化时会自动调用各级类的initializer函数，在析构时会自动调用destructor函数，
+所有初始或者析构处理只需定义相应的函数就可以了，不用显式调用父类的函数。</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">Chunk</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
     <span class="nx">initializer</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
@@ -271,6 +276,28 @@
 </pre></div>
 </div>
 <p>上面的实例化和设置属性值，都会同步调用到类中定义的_onSetAttr函数。具体的调用可查看Base源码中的bindInternal和syncInternal函数。</p>
+</div>
+<div class="section" id="callsuper">
+<h3>callSuper<a class="headerlink" href="#callsuper" title="Permalink to this headline">¶</a></h3>
+<p>在子类方法内部可以通过 callSuper 来调用父类同名函数，例如：</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">Parent</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+     <span class="nx">go</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">){</span>
+        <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;call parent go &#39;</span> <span class="o">+</span><span class="nx">i</span><span class="p">);</span>
+     <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">Child</span> <span class="o">=</span> <span class="nx">Parent</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+    <span class="nx">go</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">callSuper</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+        <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;cal child go &#39;</span><span class="o">+</span> <span class="nx">i</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// call parent go 1</span>
+<span class="c1">// call child go 1</span>
+<span class="k">new</span> <span class="nx">Child</span><span class="p">().</span><span class="nx">go</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="plugins">
