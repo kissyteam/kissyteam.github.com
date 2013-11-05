@@ -62,7 +62,7 @@ KISSY 提供 anim 模块，完成 DOM 元素的动画。
 			// 动画目标样式
 			{
 				'background-color':'#fcc',
-				'border-wdith':'5px'
+				'border-width':'5px'
 			},
 			// 动画时长，秒
 			5,
