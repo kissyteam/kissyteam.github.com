@@ -18,7 +18,7 @@ Methods
     | void **unwrap** ( selector )
     | 移除符合 selector 的节点的父节点
     
-    :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
+    :param string|HTMLCollection|Array<HTMLElement> selector: 字符串表示 `css3 选择器 <http://www.w3.org/TR/css3-selectors/>`_
 
 .. code-block:: html
 

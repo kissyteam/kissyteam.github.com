@@ -17,7 +17,7 @@ Methods
     | Array<HTMLElement> **filter** ( selector , filter [,context=document] )
     | 获取符合选择器以及过滤参数的所有元素.
     
-    :param string selector: 选择器字符串, 格式参见 :ref:`KISSY selector <dom-selector>`
+    :param string selector: 字符串表示 `css3 选择器 <http://www.w3.org/TR/css3-selectors/>`_
     :param string|function filter: 过滤选择器或函数
     
        * 类型 string 时, 格式为 tag.cls , 其他格式需要引入模块 ``sizzle`` .

@@ -302,7 +302,7 @@ Config Detail
 
 .. data:: cfg.form
 
-    {String} -  选择器字符串 :ref:`KISSY selector <dom-selector>`
+    {String} -  字符串表示 `css3 选择器 <http://www.w3.org/TR/css3-selectors/>`_
 
     * 如果 form 的 enctype 为 `"multipart/form-data`` 则会采用 `iframe <http://www.webtoolkit.info/ajax-file-upload.html>`_ 的方式进行无刷新文件上传，
     * 否则将 form 内的输入域和值序列化后通过 xhr 发送到服务器.

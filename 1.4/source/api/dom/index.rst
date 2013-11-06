@@ -26,7 +26,6 @@ Methods
 .. toctree::
    :titlesonly:
 
-   selector
    query
    get
    filter

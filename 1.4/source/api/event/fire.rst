@@ -18,7 +18,7 @@ Methods
     | Boolean **fire** ( selector , eventType [ , domEvent ] )
     | 执行符合匹配的 dom 节点的相应事件的事件处理器（并冒泡）和默认行为.
     
-    :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
+    :param string|HTMLCollection|Array<HTMLElement> selector: 字符串表示 `css3 选择器 <http://www.w3.org/TR/css3-selectors/>`_
     :param string eventType: 包含一个或多个事件名称的字符串, 多个事件名以空格分开
     :param object domEvent: 模拟原生事件的一些属性值信息
     :returns: 如果其中一个事件处理器返回 false , 则返回 false, 否则返回最后一个事件处理器的返回值

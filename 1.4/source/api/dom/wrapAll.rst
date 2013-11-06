@@ -18,7 +18,7 @@ Methods
     | void **wrapAll** ( selector,wrapperNode )
     | 用 wrapperNode 包装所有符合 selector 的节点
     
-    :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
+    :param string|HTMLCollection|Array<HTMLElement> selector: 字符串表示 `css3 选择器 <http://www.w3.org/TR/css3-selectors/>`_
     :param HTMLElement wrapperNode: 包装节点
 
 .. code-block:: html

@@ -17,7 +17,7 @@ Method
     | 发送 jsonp 请求，将返回 json 信息作为第一个参数调用 callback 回调.
 
     :param string url: 请求地址
-    :param HTMLElement|string form: 表单元素，格式参见 :ref:`KISSY selector <dom-selector>` .
+    :param HTMLElement|string form: 表单元素，字符串表示 `css3 选择器 <http://www.w3.org/TR/css3-selectors/>`_
 
     .. note::
 

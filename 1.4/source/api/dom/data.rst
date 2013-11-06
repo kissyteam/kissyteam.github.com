@@ -18,7 +18,7 @@ Methods
     | String|undefined **data** ( selector [ , name ] )
     | 获取符合选择器的第一个元素的扩展属性(expando).
     
-    :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
+    :param string|HTMLCollection|Array<HTMLElement> selector: 字符串表示 `css3 选择器 <http://www.w3.org/TR/css3-selectors/>`_
     :param string name: 扩展属性名称
     :returns:   * 对应扩展属性名的属性值, 如果不存在返回 ``undefined``
                 * 如不指定扩展属性名, 则取得所有扩展属性键值对象 , 如果当前还没设置过扩展属性, 则返回空对象, 可以直接在该空对象上设置
@@ -26,14 +26,14 @@ Methods
     | void **data** ( selector, name, data )
     | 给符合选择器的所有元素的扩展属性(expando).设置扩展属性 name 为 data.
     
-    :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
+    :param string|HTMLCollection|Array<HTMLElement> selector: 字符串表示 `css3 选择器 <http://www.w3.org/TR/css3-selectors/>`_
     :param string name: 扩展属性名称
     :param value: 扩展属性值     
 
     | void **data** ( selector, kv )
     | 给符合选择器的所有元素设置扩展属性(expando).
     
-    :param string|HTMLCollection|Array<HTMLElement> selector: 字符串格式参见 :ref:`KISSY selector <dom-selector>`
+    :param string|HTMLCollection|Array<HTMLElement> selector: 字符串表示 `css3 选择器 <http://www.w3.org/TR/css3-selectors/>`_
     :param object kv: 扩展属性名与扩展属性值的键值对
 
     .. note::
