@@ -2,7 +2,7 @@ KISSY.use('node, uri', function(S, Node, Uri) {
 
     var $ = Node.all;
 
-    var query = new Uri.Query('year=2013&month=10');
+    var query = new Uri.Query('year=2012&year=2013&month=10');
 
     $('#year').on('click', function() {
         alert(query.get('year'));
@@ -22,7 +22,7 @@ KISSY.use('node, uri', function(S, Node, Uri) {
     });
 
     $('#string').on('click', function() {
-        alert("false: " + query.toString(true));
-        alert("true: " + query.toString(false));
+        alert("false: " + query.toString(false));
+        alert("true: " + query.toString(true));
     });
 });

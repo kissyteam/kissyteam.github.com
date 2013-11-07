@@ -176,7 +176,7 @@
 
     <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
 
-    <span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Uri</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s1">&#39;year=2013&amp;month=10&#39;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Uri</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s1">&#39;year=2012&amp;year=2013&amp;month=10&#39;</span><span class="p">);</span>
 
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#year&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">alert</span><span class="p">(</span><span class="nx">query</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">));</span>
@@ -196,8 +196,8 @@
     <span class="p">});</span>
 
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#string&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;false: &quot;</span> <span class="o">+</span> <span class="nx">query</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;true: &quot;</span> <span class="o">+</span> <span class="nx">query</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;false: &quot;</span> <span class="o">+</span> <span class="nx">query</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;true: &quot;</span> <span class="o">+</span> <span class="nx">query</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span>
     <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>

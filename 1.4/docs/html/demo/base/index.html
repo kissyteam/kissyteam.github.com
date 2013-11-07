@@ -171,58 +171,302 @@
 <div class="section" id="id1">
 <h2>Base 使用示例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><iframe width="100%" height="200" class="iframe-demo" src="/1.4/source/raw/demo/base/index.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;base, event&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Base</span><span class="p">,</span> <span class="nx">Event</span><span class="p">)</span> <span class="p">{</span>
+<div><iframe width="100%" height="250" class="iframe-demo" src="/1.4/source/raw/demo/base/base.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">Level</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">PRIMARY</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">INTERMEDIATE</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">ADVANCED</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nx">SPECIAL</span><span class="o">:</span> <span class="mi">3</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">Gender</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">MALE</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">FEMALE</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">};</span>
+
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;base, node, event&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Base</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">Event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
     <span class="c1">// 自定义类</span>
     <span class="c1">// 继承 Base</span>
-    <span class="kd">var</span> <span class="nx">myClass</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({},{</span>
-        <span class="nx">size</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">value</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-            <span class="nx">setter</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">isString</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">v</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;inch&#39;</span><span class="p">)</span><span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="k">return</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">Person</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="nx">sayHi</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hi, &quot;</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot;! Nice to meet you!&quot;</span><span class="p">);</span>
+            <span class="c1">//触发自定义事件</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">fire</span><span class="p">(</span><span class="s1">&#39;say&#39;</span><span class="p">);</span>
+        <span class="p">},</span>
+
+        <span class="nx">tellName</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;My name is &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">fire</span><span class="p">(</span><span class="s1">&#39;say&#39;</span><span class="p">);</span>
+        <span class="p">},</span>
+
+        <span class="nx">tellAge</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;I&#39;m &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; years old.&quot;</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">fire</span><span class="p">(</span><span class="s1">&#39;say&#39;</span><span class="p">);</span>
+        <span class="p">},</span>
+
+        <span class="nx">introduce</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">extra</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hello everyone, my name is &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, and I&#39;m &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; years old.&quot;</span> <span class="o">+</span> <span class="nx">extra</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">fire</span><span class="p">(</span><span class="s1">&#39;say&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">},{</span>
+        <span class="nx">ATTRS</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">name</span><span class="o">:</span> <span class="p">{</span>
+                <span class="c1">//设置默认值</span>
+                <span class="nx">value</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+
+                <span class="cm">/*</span>
+<span class="cm">                验证name是否正确，返回值不为true则无法设置。</span>
+<span class="cm">                 */</span>
+                <span class="nx">validator</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="nx">S</span><span class="p">.</span><span class="nx">isString</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">||</span> <span class="nx">value</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="s2">&quot;Please set correct name!&quot;</span><span class="p">;</span>
+                    <span class="p">}</span>
                 <span class="p">}</span>
-                <span class="k">return</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span>
+
             <span class="p">},</span>
-            <span class="nx">getter</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="nx">v</span><span class="p">;</span>
+            <span class="nx">age</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="nx">validator</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">value</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">S</span><span class="p">.</span><span class="nx">isNumber</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">!=</span> <span class="kc">NaN</span> <span class="o">||</span> <span class="p">(</span><span class="nx">value</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">))</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="s2">&quot;Please set correct age!&quot;</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nx">gender</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">value</span><span class="o">:</span> <span class="nx">Gender</span><span class="p">.</span><span class="nx">MALE</span><span class="p">,</span>
+                <span class="cm">/*</span>
+<span class="cm">                指定setter和getter方法的操作</span>
+<span class="cm">                 */</span>
+                <span class="nx">setter</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span> <span class="nx">S</span><span class="p">.</span><span class="nx">isString</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="nx">Gender</span><span class="p">[</span><span class="nx">value</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()];</span>
+                    <span class="p">}</span>
+                    <span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
+                <span class="p">},</span>
+                <span class="nx">getter</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="nx">S</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">Gender</span><span class="p">)[</span><span class="nx">value</span><span class="p">];</span>
+                <span class="p">},</span>
+
+                <span class="nx">validator</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">isString</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="nx">value</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="k">in</span> <span class="nx">Gender</span><span class="p">);</span>
+                    <span class="kd">var</span> <span class="nx">num</span> <span class="o">=</span> <span class="nx">value</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">||</span> <span class="nx">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">;</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nx">str</span> <span class="o">||</span> <span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="s2">&quot;Gender must be Female or Male!&quot;</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">});</span>
 
-    <span class="kd">var</span> <span class="nx">cls</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">myClass</span><span class="p">();</span>
-
-    <span class="c1">// 绑定事件</span>
-    <span class="nx">cls</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;afterSizeChange&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;change &#39;</span><span class="o">+</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">attrName</span> <span class="o">+</span> <span class="s1">&#39;: &#39;</span><span class="o">+</span><span class="nx">ev</span><span class="p">.</span><span class="nx">prevVal</span><span class="o">+</span><span class="s1">&#39; --&gt; &#39;</span><span class="o">+</span><span class="nx">ev</span><span class="p">.</span><span class="nx">newVal</span><span class="p">);</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">person</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">({</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Andy&quot;</span><span class="p">,</span>
+        <span class="nx">age</span><span class="o">:</span> <span class="mi">18</span><span class="p">,</span>
+        <span class="nx">gender</span><span class="o">:</span> <span class="s2">&quot;female&quot;</span>
     <span class="p">});</span>
 
-    <span class="nx">cls</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;beforeSizeChange&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">newVal</span> <span class="o">==</span> <span class="mi">30</span> <span class="p">){</span>
-            <span class="nx">ev</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;No change&#39;</span><span class="p">);</span>
+    <span class="cm">/*</span>
+<span class="cm">    阻止改变性别</span>
+<span class="cm">     */</span>
+    <span class="nx">person</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;beforeGenderChange&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">ev</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Gender can&#39;t change!&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="cm">/*</span>
+<span class="cm">    任何属性变化时，给出提醒</span>
+<span class="cm">     */</span>
+    <span class="nx">person</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;*Change&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Change &#39;</span> <span class="o">+</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">attrName</span> <span class="o">+</span> <span class="s1">&#39;: &#39;</span> <span class="o">+</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">prevVal</span> <span class="o">+</span> <span class="s1">&#39; --&gt; &#39;</span> <span class="o">+</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">newVal</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="cm">/*</span>
+<span class="cm">    继承Person</span>
+<span class="cm">     */</span>
+    <span class="kd">var</span> <span class="nx">Student</span> <span class="o">=</span> <span class="nx">Person</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="nx">introduce</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="c1">//调用父类方法</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">callSuper</span><span class="p">(</span><span class="s2">&quot;I&#39;m a student of &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;school&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.My hometown is &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;from&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">);</span>
+        <span class="p">},</span>
+
+        <span class="nx">addScore</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">subject</span><span class="p">,</span> <span class="nx">score</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//error异常收集</span>
+            <span class="c1">//设置子属性</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;score.&#39;</span> <span class="o">+</span> <span class="nx">subject</span><span class="p">,</span> <span class="nx">score</span><span class="p">,</span> <span class="p">{</span>
+                <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="p">},</span>
+
+        <span class="cm">/*</span>
+<span class="cm">        bind属性变化的方法</span>
+<span class="cm">         */</span>
+        <span class="nx">_onSetScore</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">S</span><span class="p">.</span><span class="nx">isEmptyObject</span><span class="p">(</span><span class="nx">value</span><span class="p">))</span> <span class="p">{</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Score change&#39;</span><span class="p">);</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;score&#39;</span><span class="p">));</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">ATTRS</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">school</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">value</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+            <span class="p">},</span>
+
+            <span class="nx">from</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">value</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+            <span class="p">},</span>
+
+            <span class="nx">score</span><span class="o">:</span> <span class="p">{</span>
+                <span class="c1">//验证支持对子属性的验证</span>
+                <span class="nx">validator</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="p">(</span><span class="nx">value</span><span class="p">.</span><span class="nx">math</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span><span class="p">.</span><span class="nx">math</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">});</span>
 
-    <span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;#set&#39;</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// 设置属性</span>
-        <span class="nx">cls</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">Teacher</span> <span class="o">=</span> <span class="nx">Person</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="nx">introduce</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">callSuper</span><span class="p">(</span><span class="s2">&quot;I&#39;m a &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;level&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;teacher, and I teach &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;teach&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">);</span>
+        <span class="p">},</span>
+
+        <span class="nx">upLevel</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;level&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">{</span>
+                <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">alert</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="p">},</span>
+
+        <span class="nx">downLevel</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;level&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="p">{</span>
+                <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">alert</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">ATTRS</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">teach</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">value</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+            <span class="p">},</span>
+
+            <span class="nx">level</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">value</span><span class="o">:</span> <span class="nx">Level</span><span class="p">.</span><span class="nx">PRIMARY</span><span class="p">,</span>
+                <span class="nx">setter</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span> <span class="nx">S</span><span class="p">.</span><span class="nx">isString</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="nx">Level</span><span class="p">[</span><span class="nx">value</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()];</span>
+                    <span class="p">}</span>
+                    <span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
     <span class="p">});</span>
 
-    <span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;#sett&#39;</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// 设置属性</span>
-        <span class="nx">cls</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">student</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Student</span><span class="p">({</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Jim&quot;</span><span class="p">,</span>
+        <span class="nx">age</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="nx">school</span><span class="o">:</span> <span class="s1">&#39;MIT&#39;</span><span class="p">,</span>
+        <span class="nx">from</span><span class="o">:</span> <span class="s1">&#39;China&#39;</span>
     <span class="p">});</span>
 
-    <span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;#get&#39;</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// 获取属性</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="nx">cls</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">));</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">teacher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Teacher</span><span class="p">({</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;David&quot;</span><span class="p">,</span>
+        <span class="nx">age</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="nx">gender</span><span class="o">:</span> <span class="nx">Gender</span><span class="p">.</span><span class="nx">MALE</span><span class="p">,</span>
+        <span class="nx">teach</span><span class="o">:</span> <span class="s2">&quot;Math&quot;</span><span class="p">,</span>
+        <span class="nx">level</span><span class="o">:</span> <span class="nx">Level</span><span class="p">[</span><span class="s2">&quot;INTERMEDIATE&quot;</span><span class="p">]</span>
     <span class="p">});</span>
 
-    <span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;#reset&#39;</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// 重置</span>
-        <span class="nx">cls</span><span class="p">.</span><span class="nx">reset</span><span class="p">();</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="nx">cls</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">));</span>
+    <span class="nx">teacher</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;beforeLevelChange&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">ev</span><span class="p">.</span><span class="nx">newVal</span> <span class="o">&gt;</span> <span class="nx">Level</span><span class="p">.</span><span class="nx">SPECIAL</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">ev</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;This teacher is already highest level!&quot;</span><span class="p">);</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">ev</span><span class="p">.</span><span class="nx">newVal</span> <span class="o">&lt;</span> <span class="nx">Level</span><span class="p">.</span><span class="nx">PRIMARY</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">ev</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;This teacher is already lowest level!&quot;</span><span class="p">);</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
     <span class="p">});</span>
+
+    <span class="c1">//在level变化后的事件</span>
+    <span class="nx">teacher</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;afterLevelChange&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">ev</span><span class="p">.</span><span class="nx">prevVal</span> <span class="o">&lt;</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">newVal</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Congratulation!&quot;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;I&#39;m sorry to hear that!&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="c1">//自定义事件</span>
+    <span class="nx">person</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;say&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;everyone hear!&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="nx">Event</span><span class="p">.</span><span class="nx">delegate</span><span class="p">(</span><span class="s2">&quot;#common&quot;</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="s1">&#39;button&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">),</span>
+            <span class="nx">id</span> <span class="o">=</span> <span class="nx">target</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">),</span>
+            <span class="nx">type</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#J_input&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">type</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">switch</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">case</span> <span class="s1">&#39;introduce&#39;</span><span class="o">:</span>
+                <span class="nb">window</span><span class="p">[</span><span class="nx">type</span><span class="p">].</span><span class="nx">introduce</span><span class="p">();</span>
+                <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="s1">&#39;setName&#39;</span><span class="o">:</span>
+                <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#Name&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+                <span class="nb">window</span><span class="p">[</span><span class="nx">type</span><span class="p">].</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="p">{</span>
+                    <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">alert</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">});</span>
+                <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="s1">&#39;setAge&#39;</span><span class="o">:</span>
+                <span class="kd">var</span> <span class="nx">age</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#Age&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+                <span class="nb">window</span><span class="p">[</span><span class="nx">type</span><span class="p">].</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="p">{</span>
+                    <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">alert</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">});</span>
+                <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="s1">&#39;changeGender&#39;</span><span class="o">:</span>
+                <span class="kd">var</span> <span class="nx">gender</span> <span class="o">=</span> <span class="nx">Gender</span><span class="p">[</span><span class="nb">window</span><span class="p">[</span><span class="nx">type</span><span class="p">].</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;gender&#39;</span><span class="p">)];</span>
+
+                <span class="nx">gender</span> <span class="o">=</span> <span class="nx">gender</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="nx">gender</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">Gender</span><span class="p">)[</span><span class="nx">gender</span><span class="p">];</span>
+
+                <span class="nb">window</span><span class="p">[</span><span class="nx">type</span><span class="p">].</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="nx">Gender</span><span class="p">[</span><span class="nx">gender</span><span class="p">],</span> <span class="p">{</span>
+                    <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">alert</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">});</span>
+                <span class="k">break</span><span class="p">;</span>
+                <span class="k">default</span><span class="o">:</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#addScore&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">subject</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#subject&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+        <span class="kd">var</span> <span class="nx">score</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#score&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">subject</span> <span class="o">&amp;&amp;</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">score</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nx">student</span><span class="p">.</span><span class="nx">addScore</span><span class="p">(</span><span class="nx">subject</span><span class="p">,</span> <span class="nx">score</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#upLevel&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">teacher</span><span class="p">.</span><span class="nx">upLevel</span><span class="p">();</span>
+    <span class="p">});</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#downLevel&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">teacher</span><span class="p">.</span><span class="nx">downLevel</span><span class="p">();</span>
+    <span class="p">});</span>
+
 <span class="p">});</span>
 </pre></div>
 </div>
