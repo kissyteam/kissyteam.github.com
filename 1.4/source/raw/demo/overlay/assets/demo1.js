@@ -1,4 +1,4 @@
-KISSY.use('node,overlay,button', function(S, Node, O, Button) {
+KISSY.use('node, overlay, button', function(S, Node, O, Button) {
     //通过dom元素新建立popup
     window.popup = new O.Popup({
         srcNode:'#dpop',
