@@ -1,6 +1,7 @@
 KISSY.config('packages', {
     xModule: {
-        base: './assets/'
+        base: './assets/',
+        ignorePackageNameInUri:1
     }
 });
 
@@ -26,7 +27,7 @@ KISSY.use('xtemplate, json, gallery/pageNotification/1.0/index', function (S, XT
     };
 
     window.supportModule = function () {
-        KISSY.use('xModule',function(S, myX){
+        KISSY.use('xModule/x-m',function(S, myX){
             var tpl = new XTemplate(myX);
             alert(tpl.render({info:"(test module function)"}));
         });

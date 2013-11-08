@@ -20,10 +20,10 @@ xtemplate 模块使用示例
 
 X模块代码
 
-.. literalinclude:: /raw/demo/xtemplate/assets/xModule.js
+.. literalinclude:: /raw/demo/xtemplate/assets/x-m.js
     :language: javascript
 
 Y模块代码
 
-.. literalinclude:: /raw/demo/xtemplate/assets/yModule.js
+.. literalinclude:: /raw/demo/xtemplate/assets/y-m.js
     :language: javascript

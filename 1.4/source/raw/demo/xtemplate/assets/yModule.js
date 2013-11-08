@@ -1,1 +1,0 @@
-KISSY.add('yModule', "This is module Y.Info {{info}}");
