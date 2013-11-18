@@ -26,7 +26,7 @@ Methods
 
     :param Object group: 默认 false. 所有包的默认组配置. 详见 :ref:`组介绍 <loader_group_tutorial>`
 
-    :param String base: KISSY 框架所在的基地址
+    :param String base: KISSY 框架所在的基地址.
 
     :param Number comboMaxUrlLength: Combo url 的最长长度，默认 1024
 
@@ -67,16 +67,11 @@ Methods
 
                 .. attribute:: package.base
 
-                    类型字符串, 表示包所在的 ``url`` 路径, 相对路径表示相对于当前页面路径, 如果需要相对于当前执行脚本路径, 则需要自己处理：
-                        .. code-block:: javascript
-
-                            var scripts=document.getElementsByTagName("script");
-                            alert(scripts[scripts.length-1].src);
+                    类型字符串, 表示包所在的 ``url`` 路径, 相对路径表示相对于当前页面路径.
 
                 .. attribute:: package.path
 
                     deprecated. 作用同 base 配置.
-                
 
                 .. attribute:: package.charset
 
