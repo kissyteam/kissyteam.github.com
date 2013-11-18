@@ -40,11 +40,7 @@ Methods
         自动 combo 模式要求 use 前配置好依赖关系，详见
         :ref:`教程 <loader_tutorial>`
 
-    :param Object config.packages: 以单个包名为键，单个包配置对象为值的键值对对象。单个包配置对象包括：
-
-                .. attribute:: package.name
-
-                    类型字符串, 表示包名
+    :param Object config.packages: 以包名为键，包配置对象为值的键值对对象。包配置对象包括：
 
                 .. attribute:: package.group
 
@@ -69,7 +65,6 @@ Methods
                     例如 ``use('xx/a')`` 配置 xx package 的 base 为 ``http://test.com/`` 则设置 ignorePackageNameInUri 后请求地址为：
                     ``http://test.com/a.js``
 
-
                 .. attribute:: package.base
 
                     类型字符串, 表示包所在的 ``url`` 路径, 相对路径表示相对于当前页面路径, 如果需要相对于当前执行脚本路径, 则需要自己处理：
@@ -77,6 +72,11 @@ Methods
 
                             var scripts=document.getElementsByTagName("script");
                             alert(scripts[scripts.length-1].src);
+
+                .. attribute:: package.path
+
+                    deprecated. 作用同 base 配置.
+                
 
                 .. attribute:: package.charset
 
@@ -167,15 +167,15 @@ packages 范例: 包配置
     .. code-block:: javascript
 
         KISSY.config({
-            packages:[
-                {
-                    name:"tc", // 包名
+            packages:{
+                // 包名
+                "tc": {
                     tag:"20110323", // 动态加载包内的模块js文件时,
                                     // 自动加上 ?t=20110323, 用于文件更新
-                    path:"../", // 包对应路径, 相对路径指相对于当前页面路径
+                    base:"../", // 包对应路径, 相对路径指相对于当前页面路径
                     charset:"gbk" // 包里模块文件编码格式
                 }
-            ]
+            }
         });
 
     当要在包内添加模块时, 必须遵守一些约定：

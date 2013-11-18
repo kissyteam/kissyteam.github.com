@@ -101,12 +101,12 @@ Methods
 .. code-block:: javascript
 
     KISSY.config({
-        packages:[
-            {
-                name:"1.2", //包名
-                path:"http://xx.com/"
+        packages:{
+            //包名
+            "1.2":{
+                base: "http://xx.com/"
             }
-        ]
+        }
     });
 
 
@@ -116,13 +116,13 @@ Methods
 .. code-block:: javascript
 
     KISSY.config({
-        packages:[
-            {
-                name:"1.2", //包名
+        packages:{
+        //包名
+            "1.2":{
                 tag:"20110323",
-                path:"http://xx.com/"
+                base:"http://xx.com/"
             }
-        ]
+        }
     });
 
 那么下载动态加载的 js 文件路径后面会自动加上： ``?t=20110323``

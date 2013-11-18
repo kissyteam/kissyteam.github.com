@@ -21,9 +21,8 @@ Refer
 
 .. code-block:: javascript
 
-    {
-        name: "pkg-a",
-        path: "http://example.com/pkg-a",
+    "pkg-a": {
+        base: "http://example.com/pkg-a",
         group: "group1",
         combine: true,
         tag: "20120222"
@@ -34,9 +33,8 @@ Refer
 
 .. code-block:: javascript
 
-    {
-        name: "pkg-b",
-        path: "http://example.com/pkg-b",
+    "pkg-b": {
+        base: "http://example.com/pkg-b",
         group: "group1",
         combine: true,
         tag: "20130303"
@@ -47,9 +45,8 @@ Refer
 
 .. code-block:: javascript
 
-    {
-        name: "pkg-c",
-        path: "http://example.com/pkg-c",
+    "pkg-c": {
+        base: "http://example.com/pkg-c",
         combine: true,
         tag: "20111111"
     }
@@ -74,9 +71,8 @@ Refer
 
 .. code-block:: javascript
 
-    {
-        name: "pkg-a",
-        path: "http://example.com/pkg-a",
+    "pkg-a": {
+        base: "http://example.com/pkg-a",
         group: "group2",
         combine: true,
         tag: "20120222"
@@ -87,9 +83,8 @@ Refer
 
 .. code-block:: javascript
 
-    {
-        name: "test",
-        path: "http://g.tbcdn.cn",
+    "test": {
+        base: "http://g.tbcdn.cn",
         group: "group2",
         combine: true,
         tag: "20130303"
@@ -110,9 +105,8 @@ combo后的URL如下：
 
 .. code-block:: javascript
 
-    {
-        name: "pkg-a",
-        path: "http://example.com/pkg-a",
+    "pkg-a": {
+        base: "http://example.com/pkg-a",
         charset: "utf-8",
         group: "my",
         combine: true
@@ -123,9 +117,8 @@ combo后的URL如下：
 
 .. code-block:: javascript
 
-    {
-        name: "pkg-b",
-        path: "http://example.com/pkg-b",
+    "pkg-b": {
+        base: "http://example.com/pkg-b",
         charset: "gbk",
         group: "my",
         combine: true

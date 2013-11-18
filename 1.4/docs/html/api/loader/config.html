@@ -203,15 +203,9 @@
 <li><strong>combine</strong> (<em>Boolean</em>) &#8211; 是否开启自动 combo 模式，默认 false 不开启.
 自动 combo 模式要求 use 前配置好依赖关系，详见
 <a class="reference internal" href="../../tutorials/kissy/loader/index.html#loader-tutorial"><em>教程</em></a></li>
-<li><strong>config.packages</strong> (<em>Object</em>) &#8211; <p>以单个包名为键，单个包配置对象为值的键值对对象。单个包配置对象包括：</p>
+<li><strong>config.packages</strong> (<em>Object</em>) &#8211; <p>以包名为键，包配置对象为值的键值对对象。包配置对象包括：</p>
 <blockquote>
 <div><dl class="attribute">
-<dt id="seed.package.name">
-<tt class="descclassname">package.</tt><tt class="descname">name</tt><a class="headerlink" href="#seed.package.name" title="Permalink to this definition">¶</a></dt>
-<dd><p>类型字符串, 表示包名</p>
-</dd></dl>
-
-<dl class="attribute">
 <dt id="seed.package.group">
 <tt class="descclassname">package.</tt><tt class="descname">group</tt><a class="headerlink" href="#seed.package.group" title="Permalink to this definition">¶</a></dt>
 <dd><p>类型字符串, 表示包所属的组名。详见 <a class="reference internal" href="../../tutorials/kissy/loader/group.html#loader-group-tutorial"><em>组介绍</em></a></p>
@@ -255,6 +249,12 @@
 </div>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seed.package.path">
+<tt class="descclassname">package.</tt><tt class="descname">path</tt><a class="headerlink" href="#seed.package.path" title="Permalink to this definition">¶</a></dt>
+<dd><p>deprecated. 作用同 base 配置.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -367,15 +367,15 @@
 <h3>packages 范例: 包配置<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-    <span class="nx">packages</span><span class="o">:</span><span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;tc&quot;</span><span class="p">,</span> <span class="c1">// 包名</span>
+    <span class="nx">packages</span><span class="o">:</span><span class="p">{</span>
+        <span class="c1">// 包名</span>
+        <span class="s2">&quot;tc&quot;</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">tag</span><span class="o">:</span><span class="s2">&quot;20110323&quot;</span><span class="p">,</span> <span class="c1">// 动态加载包内的模块js文件时,</span>
                             <span class="c1">// 自动加上 ?t=20110323, 用于文件更新</span>
-            <span class="nx">path</span><span class="o">:</span><span class="s2">&quot;../&quot;</span><span class="p">,</span> <span class="c1">// 包对应路径, 相对路径指相对于当前页面路径</span>
+            <span class="nx">base</span><span class="o">:</span><span class="s2">&quot;../&quot;</span><span class="p">,</span> <span class="c1">// 包对应路径, 相对路径指相对于当前页面路径</span>
             <span class="nx">charset</span><span class="o">:</span><span class="s2">&quot;gbk&quot;</span> <span class="c1">// 包里模块文件编码格式</span>
         <span class="p">}</span>
-    <span class="p">]</span>
+    <span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
 </div>

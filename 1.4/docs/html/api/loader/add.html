@@ -256,24 +256,24 @@
 并且1.2 loader新增的约定加载也不能配置具体模块文件路径, 因此
 1.2 loader 提供了在包级别添加时间戳的机制</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-    <span class="nx">packages</span><span class="o">:</span><span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;1.2&quot;</span><span class="p">,</span> <span class="c1">//包名</span>
-            <span class="nx">path</span><span class="o">:</span><span class="s2">&quot;http://xx.com/&quot;</span>
+    <span class="nx">packages</span><span class="o">:</span><span class="p">{</span>
+        <span class="c1">//包名</span>
+        <span class="s2">&quot;1.2&quot;</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">base</span><span class="o">:</span> <span class="s2">&quot;http://xx.com/&quot;</span>
         <span class="p">}</span>
-    <span class="p">]</span>
+    <span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 <p>当更改包内模块后, 只需修改tag属性.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-    <span class="nx">packages</span><span class="o">:</span><span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;1.2&quot;</span><span class="p">,</span> <span class="c1">//包名</span>
+    <span class="nx">packages</span><span class="o">:</span><span class="p">{</span>
+    <span class="c1">//包名</span>
+        <span class="s2">&quot;1.2&quot;</span><span class="o">:</span><span class="p">{</span>
             <span class="nx">tag</span><span class="o">:</span><span class="s2">&quot;20110323&quot;</span><span class="p">,</span>
-            <span class="nx">path</span><span class="o">:</span><span class="s2">&quot;http://xx.com/&quot;</span>
+            <span class="nx">base</span><span class="o">:</span><span class="s2">&quot;http://xx.com/&quot;</span>
         <span class="p">}</span>
-    <span class="p">]</span>
+    <span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
 </div>

@@ -184,14 +184,13 @@ KISSY.use(&#39;node&#39;,function(S,Node){
 }, {requires: [&#39;node&#39;, &#39;event&#39;, &#39;anim&#39;, &#39;ajax&#39;]});</code></pre>
 <p>模块其实就是一个对象，模块名可以忽略，我们会返回这个对象以便在使用模块时方便调用，最后是依赖配置。Demo中我们把这个模块保存为 <code>opLotto.js</code>。同时，我们需要指定这个模块所属的包：</p>
 <pre><code>KISSY.config({
-    packages: [
-        {
-            name: &quot;module&quot;,
+    packages: {
+        &quot;module&quot;:{
             tag: &quot;20130618&quot;,
-            path: &quot;./&quot;, 
+            base: &quot;./&quot;,
             charset: &quot;gbk&quot;
         }
-    ]
+    }
 });</code></pre>
 <p>这样来调用模块逻辑：</p>
 <pre><code>KISSY.use(&#39;module/opLotto, node, event&#39;, function(S, OP, N, E){

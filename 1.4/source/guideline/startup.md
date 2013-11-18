@@ -136,14 +136,13 @@ KISSY 提供 anim 模块，完成 DOM 元素的动画。
 模块其实就是一个对象，模块名可以忽略，我们会返回这个对象以便在使用模块时方便调用，最后是依赖配置。Demo中我们把这个模块保存为 `opLotto.js`。同时，我们需要指定这个模块所属的包：
 
 	KISSY.config({
-		packages: [
-			{
-				name: "module",
+		packages: {
+			"module":{
 				tag: "20130618",
-				path: "./", 
+				base: "./",
 				charset: "gbk"
 			}
-		]
+		}
 	});
 
 这样来调用模块逻辑：

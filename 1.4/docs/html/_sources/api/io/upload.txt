@@ -19,6 +19,7 @@ Method
     :param string url: 请求地址
     :param HTMLElement|string form: 表单元素，字符串表示 `css3 选择器 <http://www.w3.org/TR/css3-selectors/>`_
 
+
     .. note::
 
         form 参数代表的 form 节点中如果有 input type='file' 的节点会自动启用 iframe-upload 模式，否则收集 form 内 input 数据启用普通 xhr 模式.

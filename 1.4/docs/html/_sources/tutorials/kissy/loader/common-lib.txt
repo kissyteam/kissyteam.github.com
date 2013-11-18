@@ -57,10 +57,10 @@ Refer
 .. code-block:: javascript
 
     KISSY.config({
-        packages:[{
-            name: "common-lib",
-            path: '/assets/'
-        }]
+        packages:{
+        "common-lib": {
+            base: '/assets/'
+        }}
     });
 
 
@@ -100,11 +100,11 @@ Refer
 
     S.getScript("timestamp.js?t="+S.now(),function(){
         KISSY.config({
-            packages:[{
-                name: "common-lib",
-                path: '/assets/',
+            packages:{
+            "common-lib": {
+                base: '/assets/',
                 tag: window.COMMON_LIB_STAMP
-            }]
+            }}
         });
     });
 
@@ -120,11 +120,11 @@ Refer
 
     S.getScript("timestamp.js?t="+S.now(),function(){
             KISSY.config({
-                packages:[{
-                    name: "common-lib",
-                    path: '/assets/',
+                packages:{
+                "common-lib": {
+                    base: '/assets/',
                     tag: window.COMMON_LIB_STAMP
-                }]
+                }}
             });
             commonDefer.resolve(S);
         });
@@ -147,11 +147,11 @@ Refer
 
         S.getScript("timestamp.js?t="+S.now(),function(){
                 KISSY.config({
-                    packages:[{
-                        name: "common-lib",
-                        path: '/assets/',
+                    packages:{
+                    "common-lib": {
+                        base: '/assets/',
                         tag: window.COMMON_LIB_STAMP
-                    }]
+                    }}
                 });
                 commonReady=1;
                 S.each(queue,function(q){q(S);})
@@ -204,11 +204,11 @@ Refer
 
     S.getScript("timestamp.js?t="+S.now(),function(){
             KISSY.config({
-                packages:[{
-                    name: "common-lib",
-                    path: '/assets/',
+                packages:{
+                "common-lib": {
+                    base: '/assets/',
                     tag: window.COMMON_LIB_STAMP
-                }]
+                }}
             });
             num++;
             if(num==2)commonDefer.resolve(S);

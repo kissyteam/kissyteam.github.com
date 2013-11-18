@@ -204,15 +204,15 @@ KISSY.add(&quot;tc/mods/mod1&quot;,function(){
 });</code></pre>
 <p>packages 范例: 包配置</p>
 <pre><code>KISSY.config({
-    packages:[
-        {
-            name:&quot;tc&quot;, // 包名
+    packages:{
+        // 包名
+        &quot;tc&quot;: {
             tag:&quot;20110323&quot;, // 动态加载包内的模块js文件时,
                             // 自动加上 ?t=20110323, 用于文件更新
-            path:&quot;../&quot;, // 包对应路径, 相对路径指相对于当前页面路径
+            base:&quot;../&quot;, // 包对应路径, 相对路径指相对于当前页面路径
             charset:&quot;gbk&quot; // 包里模块文件编码格式
         }
-    ]
+    }
 });</code></pre>
 <p>当要在包内添加模块时, 必须遵守一些约定：</p>
 <ul>

@@ -193,10 +193,10 @@
 <h2>包配置<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>根据目录结构，在 config.js 中配置包：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-    <span class="nx">packages</span><span class="o">:</span><span class="p">[{</span>
-        <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;common-lib&quot;</span><span class="p">,</span>
-        <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/assets/&#39;</span>
-    <span class="p">}]</span>
+    <span class="nx">packages</span><span class="o">:</span><span class="p">{</span>
+    <span class="s2">&quot;common-lib&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">base</span><span class="o">:</span> <span class="s1">&#39;/assets/&#39;</span>
+    <span class="p">}}</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -214,11 +214,11 @@
 <p>在 config.js 中通过 getScript + 随机时间戳来每次获取该值的最新值，并设置给对应的包</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">S</span><span class="p">.</span><span class="nx">getScript</span><span class="p">(</span><span class="s2">&quot;timestamp.js?t=&quot;</span><span class="o">+</span><span class="nx">S</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span><span class="kd">function</span><span class="p">(){</span>
     <span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-        <span class="nx">packages</span><span class="o">:</span><span class="p">[{</span>
-            <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;common-lib&quot;</span><span class="p">,</span>
-            <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/assets/&#39;</span><span class="p">,</span>
+        <span class="nx">packages</span><span class="o">:</span><span class="p">{</span>
+        <span class="s2">&quot;common-lib&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">base</span><span class="o">:</span> <span class="s1">&#39;/assets/&#39;</span><span class="p">,</span>
             <span class="nx">tag</span><span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">COMMON_LIB_STAMP</span>
-        <span class="p">}]</span>
+        <span class="p">}}</span>
     <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
@@ -228,11 +228,11 @@
 
 <span class="nx">S</span><span class="p">.</span><span class="nx">getScript</span><span class="p">(</span><span class="s2">&quot;timestamp.js?t=&quot;</span><span class="o">+</span><span class="nx">S</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span><span class="kd">function</span><span class="p">(){</span>
         <span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-            <span class="nx">packages</span><span class="o">:</span><span class="p">[{</span>
-                <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;common-lib&quot;</span><span class="p">,</span>
-                <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/assets/&#39;</span><span class="p">,</span>
+            <span class="nx">packages</span><span class="o">:</span><span class="p">{</span>
+            <span class="s2">&quot;common-lib&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">base</span><span class="o">:</span> <span class="s1">&#39;/assets/&#39;</span><span class="p">,</span>
                 <span class="nx">tag</span><span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">COMMON_LIB_STAMP</span>
-            <span class="p">}]</span>
+            <span class="p">}}</span>
         <span class="p">});</span>
         <span class="nx">commonDefer</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">S</span><span class="p">);</span>
     <span class="p">});</span>
@@ -253,11 +253,11 @@
 
 <span class="nx">S</span><span class="p">.</span><span class="nx">getScript</span><span class="p">(</span><span class="s2">&quot;timestamp.js?t=&quot;</span><span class="o">+</span><span class="nx">S</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span><span class="kd">function</span><span class="p">(){</span>
         <span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-            <span class="nx">packages</span><span class="o">:</span><span class="p">[{</span>
-                <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;common-lib&quot;</span><span class="p">,</span>
-                <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/assets/&#39;</span><span class="p">,</span>
+            <span class="nx">packages</span><span class="o">:</span><span class="p">{</span>
+            <span class="s2">&quot;common-lib&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">base</span><span class="o">:</span> <span class="s1">&#39;/assets/&#39;</span><span class="p">,</span>
                 <span class="nx">tag</span><span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">COMMON_LIB_STAMP</span>
-            <span class="p">}]</span>
+            <span class="p">}}</span>
         <span class="p">});</span>
         <span class="nx">commonReady</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
         <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">queue</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">q</span><span class="p">){</span><span class="nx">q</span><span class="p">(</span><span class="nx">S</span><span class="p">);})</span>
@@ -292,11 +292,11 @@
 
 <span class="nx">S</span><span class="p">.</span><span class="nx">getScript</span><span class="p">(</span><span class="s2">&quot;timestamp.js?t=&quot;</span><span class="o">+</span><span class="nx">S</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span><span class="kd">function</span><span class="p">(){</span>
         <span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-            <span class="nx">packages</span><span class="o">:</span><span class="p">[{</span>
-                <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;common-lib&quot;</span><span class="p">,</span>
-                <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/assets/&#39;</span><span class="p">,</span>
+            <span class="nx">packages</span><span class="o">:</span><span class="p">{</span>
+            <span class="s2">&quot;common-lib&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">base</span><span class="o">:</span> <span class="s1">&#39;/assets/&#39;</span><span class="p">,</span>
                 <span class="nx">tag</span><span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">COMMON_LIB_STAMP</span>
-            <span class="p">}]</span>
+            <span class="p">}}</span>
         <span class="p">});</span>
         <span class="nx">num</span><span class="o">++</span><span class="p">;</span>
         <span class="k">if</span><span class="p">(</span><span class="nx">num</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span><span class="nx">commonDefer</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">S</span><span class="p">);</span>
