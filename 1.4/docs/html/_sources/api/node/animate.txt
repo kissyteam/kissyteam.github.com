@@ -13,7 +13,7 @@ Methods
 
 .. method:: NodeList.animate
 
-    | NodeList **animate** ( props[, duration=1, easing='easeNone', callback, nativeSupport=true] )
+    | NodeList **animate** ( props[, duration=1, easing='easeNone', callback] )
     | 在当前节点列表上开始动画.
 
     :rtype: NodeList
