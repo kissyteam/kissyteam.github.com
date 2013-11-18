@@ -26,7 +26,7 @@ x.xtpl.html:
         {{title}}
     </div>
 
-运行命令： ``kissy-xtemplate -n tests -p ./ -w`` 后生成模板函数.
+运行命令： ``kissy-xtemplate -p ./ -w`` 后生成模板函数.
 (-w 表示监控包目录内的 tpl 文件变化, -n 表示包名, -p 表示对应包所在的目录)
 
 
@@ -34,7 +34,7 @@ x.js:
 
 .. code-block:: javascript
 
-    KISSY.add('tests/x',function(){
+    KISSY.add(function(){
         return function(){
           // ...
         };
