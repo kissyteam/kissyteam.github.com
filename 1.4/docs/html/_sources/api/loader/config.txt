@@ -71,7 +71,9 @@ Methods
 
                 .. attribute:: package.path
 
-                    deprecated. 作用同 base 配置.
+                    .. deprecated:: 1.4
+
+                        作用同 base 配置.
 
                 .. attribute:: package.charset
 
