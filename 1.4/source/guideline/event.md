@@ -49,7 +49,7 @@ Node 模块的 on 方法中的 this 关键字指向当前绑定事件的单个�
 		});
 	</script>
 
-为了保持应用兼容，推荐的做法是，在回调函数开始包装 this （需要的话同样包装 event.target）
+需要的话可以在开始包装 this （需要的话同样包装 event.target）
 
 	<div id='d1' class='d'></div>
 	<div id='d2' class='d'></div>
@@ -65,22 +65,22 @@ Node 模块的 on 方法中的 this 关键字指向当前绑定事件的单个�
 
 on()函数支持事件分组，比如这段代码：
 
-	Event.on('#foo','click.one',function(){
+	Event.on(foo,'click.one',function(){
 		alert('clicked : '+this.id);
 	});
 
-	Event.on('#foo','click.two',function(){
+	Event.on(foo,'click.two',function(){
 		alert('clicked 2 : '+this.id);
 	});
 
-	Event.remove('#foo','.two');
+	Event.remove(foo,'.two');
 
 给`#foo`绑定了两次事件，但每次事件都有一个标识，这时可以清除其中一个标识。
 
 ### 绑定多个事件
 
 	// 绑定了两个事件
-	Event.on('#foo','mouseenter mouseleave', function(e) {
+	Event.on(foo,'mouseenter mouseleave', function(e) {
 		DOM.toggleClass(this,"enter");
 	});
 
@@ -90,7 +90,7 @@ on()函数支持事件分组，比如这段代码：
 
 DOM 事件回调函数回传参数为e，被称为事件对象，这里的事件对象是浏览器原生的对象。
 
-	Event.on('#foo','mouseup mousedown', function(event) {
+	Event.on(foo,'mouseup mousedown', function(event) {
 		console.log(event.type +" occured");
 	});
 
@@ -98,18 +98,18 @@ DOM 事件回调函数回传参数为e，被称为事件对象，这里的事件
 
 > KISSY 也对 mouseenter/mouseleave focusin/focusout 进行了兼容处理, 所有浏览器都可以使用这两个事件了.
 
-处理段落的单击与双击例子。注意坐标是相对于例子的 iframe 窗口的, 这里方便起见采用node。[参照Demo](http://docs.kissyui.com/source/raw/api/event/on_1.html)。
+处理段落的单击与双击例子。注意坐标是相对于例子的 iframe 窗口的, 这里方便起见采用node。[参照Demo](http://docs.kissyui.com/1.4/source/raw/api/event/on_1.html)。
 
 通过调用事件对象的halt()方法来阻止事件。 
 
-	Event.on('a','click',function(e){
+	Event.on(a,'click',function(e){
 		// 等价于 e.preventDefault(); e.stopPropagation();
 		e.halt();
 	});
 
-如果要抓取事件发生时对应的节点，需要通过`e.target`获取，注意，这里的targe是原生节点，若有必要，需要转换为Node节点，比如
+如果要抓取事件发生时对应的节点，需要通过`e.target`获取，注意，这里的target是原生节点，若有必要，需要转换为Node节点，比如
 
-	Event.on('a','click',function(e){
+	Event.on(a,'click',function(e){
 		var node = S.one(e.target);
 		alert(node.html());
 	});
@@ -118,19 +118,19 @@ DOM 事件回调函数回传参数为e，被称为事件对象，这里的事件
 
 从符合匹配的 dom 节点中移去相应事件的事件处理器，用 on 绑定的事件处理器可以用 detach 解除绑定. 最简单的情况 detach(elem) 解除该元素上的所有绑定.
 
-	Event.detach('#foo');
+	Event.detach(foo);
 
 上面的代码解除了 foo 元素上所有事件的事件处理器, 我们也可以解除某一个事件的全部事件处理器:
 
-	Event.detach('#foo','click');
+	Event.detach(foo,'click');
 
 当时如果程序对同一事件指定了不同的事件处理器, 这时就需要后面两个参数了
 
 	var handler = function() {
 		alert('The quick brown fox jumps over the lazy dog.');
 	};
-	Event.on('#foo','click', handler);
-	Event.detach('#foo','click', handler);
+	Event.on(foo,'click', handler);
+	Event.detach(foo,'click', handler);
 
 通过指定第三个参数, 我们可以保证该事件的其他事件处理器不受影响, 注意下面的代码则不会生效：
 
@@ -138,17 +138,17 @@ DOM 事件回调函数回传参数为e，被称为事件对象，这里的事件
 		alert('The quick brown fox jumps over the lazy dog.');
 	};
 	var obj={x:1};
-	Event.on('#foo','click', handler,obj);
+	Event.on(foo,'click', handler,obj);
 
-	Event.detach('#foo','click', function() {
+	Event.detach(foo,'click', function() {
 		alert('The quick brown fox jumps over the lazy dog.');
 	},obj);
 
-	Event.detach('#foo','click', handler,{x:1});
+	Event.detach(foo,'click', handler,{x:1});
 
 虽然后面的两个 detach 参数从字面上来看完全一样, 但是由于是不同的对象, 所有仍然不会生效. 如果需要解除特定的事件处理器, 我们需要同一个对象( 函数 )引用, 而不是恰好字面上相同的不同对象.
 
-detach也可以用别名remove标识。[事件移除的Demo](http://docs.kissyui.com/source/raw/api/event/detach_1.html)。
+detach也可以用别名remove标识。[事件移除的Demo](http://docs.kissyui.com/1.4/source/raw/api/event/detach_1.html)。
 
 > 如果要解除特定的事件处理器 , detach 的参数必须和对应的 on 参数值相等( == )并且个数一致才能完成解除绑定的目标.
 
@@ -166,7 +166,8 @@ detach也可以用别名remove标识。[事件移除的Demo](http://docs.kissyui
 
 绑定一个 click 事件的事件触发器：
 
-	Event.on('.clickme','click', function() {
+    var clickme=Dom.get('.clickme');
+	Event.on(clickme,'click', function() {
 		// Your code..
 	});
 
@@ -199,9 +200,9 @@ delegate 方法提供了解决方法, 如果这样调用：
 >
 > 同样可以对 mouseenter , mouseleave 进行委托.
 
-- [事件委托的Demo](http://docs.kissyui.com/source/raw/api/event/delegate.html)
-- [阻止事件冒泡](http://docs.kissyui.com/source/raw/api/event/delegate_2.html)
-- [委托 mouseenter/mouseleave](http://docs.kissyui.com/source/raw/api/event/delegate_mouse.html)
+- [事件委托的Demo](http://docs.kissyui.com/1.4/source/raw/api/event/delegate.html)
+- [阻止事件冒泡](http://docs.kissyui.com/1.4/source/raw/api/event/delegate_2.html)
+- [委托 mouseenter/mouseleave](http://docs.kissyui.com/1.4/source/raw/api/event/delegate_mouse.html)
 
 ### 解除事件委托
 
@@ -230,13 +231,13 @@ KISSY 对常见的DOM事件做了封装，包括原生浏览器不支持的事�
 
 原生只有 ie 支持 focusin 事件，而 kissy 对这一事件进行了 兼容性处理。但一个元素获得焦点或者其子孙元素获得焦点时， focusin 会在该元素上触发（没被子孙元素阻止）。这就是和 focus 事件的区别之处 : 你可以在父元素上监控子元素的 focus 事件，即 focusin 事件支持冒泡.
 
-这个事件常常和 focusout 一起使用. [Demo](http://docs.kissyui.com/source/raw/api/event/focusin.html)
+这个事件常常和 focusout 一起使用. [Demo](http://docs.kissyui.com/1.4/source/raw/api/event/focusin.html)
 
 #### fousout
 
 原生只有 ie 支持 focusout 事件，而 kissy 对这一事件进行了 兼容性处理 .但一个元素获得焦点或者其子孙元素获得焦点时， focusout 会在该元素上触发（没被子孙元素阻止）。这就是和 blur 事件的区别之处 : 你可以在父元素上监控子元素的 blur 事件，即 focusout 事件支持冒泡.
 
-[focusout事件的demo](http://docs.kissyui.com/source/raw/api/event/focusout.html).
+[focusout事件的demo](http://docs.kissyui.com/1.4/source/raw/api/event/focusout.html).
 
 #### hashchange
 
@@ -249,7 +250,7 @@ KISSY 对常见的DOM事件做了封装，包括原生浏览器不支持的事�
 		// location.hash -> 当前 hash 值
 	});
 
-[Demo](http://docs.kissyui.com/source/raw/api/event/hashchange.html)。
+[Demo](http://docs.kissyui.com/1.4/source/raw/api/event/hashchange.html)。
 
 ### valuechange
 
@@ -276,11 +277,11 @@ KISSY 对常见的DOM事件做了封装，包括原生浏览器不支持的事�
 		alert(e.newVal); // => 新值
 	});
 
-[Demo](http://docs.kissyui.com/source/raw/api/event/valuechange.html)
+[Demo](http://docs.kissyui.com/1.4/source/raw/api/event/valuechange.html)
 
 #### mousewheel
 
-对鼠标滚轮事件做了浏览器兼容性处理，[Demo](http://docs.kissyui.com/source/raw/api/event/mousewheel.html)
+对鼠标滚轮事件做了浏览器兼容性处理，[Demo](http://docs.kissyui.com/1.4/source/raw/api/event/mousewheel.html)
 
 #### mouseenter & mouseleave 
 
@@ -312,19 +313,19 @@ KISSY 对于移动设备做了统一的事件封装，这些事件包括：
 		alert(e.type + ' : fired');
 	});
 
-- [双击事件的Demo，在手机中打开此demo](http://docs.kissyui.com/source/raw/api/event/double-tap.html)
+- [双击事件的Demo，在手机中打开此demo](http://docs.kissyui.com/1.4/source/raw/api/event/double-tap.html)
 
 #### singleTap
 
-触屏单击事件，和双击互斥，当快速点击某个 dom 节点一次（短时间没有再次点击）后触发，[demo](http://docs.kissyui.com/source/raw/api/event/double-tap.html)
+触屏单击事件，和双击互斥，当快速点击某个 dom 节点一次（短时间没有再次点击）后触发，[demo](http://docs.kissyui.com/1.4/source/raw/api/event/double-tap.html)
 
 #### tap
 
-触屏单击，当点击某个 dom 节点后触发， 和 singleTap 的不同支持载入： 触发 doubleTap 就不会触发 singleTap， 而触发 doubleTap 前会触发 tap，[demo](http://docs.kissyui.com/source/raw/api/event/tap.html)。
+触屏单击，当点击某个 dom 节点后触发， 和 singleTap 的不同支持载入： 触发 doubleTap 就不会触发 singleTap， 而触发 doubleTap 前会触发 tap，[demo](http://docs.kissyui.com/1.4/source/raw/api/event/tap.html)。
 
 #### tapHold
 
-触屏长按，当常按某个 dom 节点超过 1s 后触发，[Demo](http://docs.kissyui.com/source/raw/api/event/tap-hold.html)
+触屏长按，当常按某个 dom 节点超过 1s 后触发，[Demo](http://docs.kissyui.com/1.4/source/raw/api/event/tap-hold.html)
 
 #### swipe
 
@@ -341,7 +342,7 @@ KISSY 对于移动设备做了统一的事件封装，这些事件包括：
 		}
 	});
 
-[在触屏设备中打开这个Demo](http://docs.kissyui.com/source/raw/api/event/swipe.html)
+[在触屏设备中打开这个Demo](http://docs.kissyui.com/1.4/source/raw/api/event/swipe.html)
 
 #### rotateStart
 
@@ -350,7 +351,7 @@ KISSY 对于移动设备做了统一的事件封装，这些事件包括：
 - angle：Number，开始时双指的角度
 - rotation：Number，固定为0
 
-[在触屏设备中打开demo](http://docs.kissyui.com/source/raw/api/event/rotate.html)
+[在触屏设备中打开demo](http://docs.kissyui.com/1.4/source/raw/api/event/rotate.html)
 
 #### rotate
 
@@ -372,7 +373,7 @@ demo参照上一个例子。
 - distance：Number，开始时双指的绝对距离
 - scale：Number，固定为1
 
-[在触屏设备中打开Demo](http://docs.kissyui.com/source/raw/api/event/pinch.html)
+[在触屏设备中打开Demo](http://docs.kissyui.com/1.4/source/raw/api/event/pinch.html)
 
 #### pinch
 
@@ -385,19 +386,19 @@ demo参照上一个例子。
 
 触屏上用双指调整某个 dom 元素大小后触发
 
-#### chake
+#### shake
 
-摇一摇事件，当用户摇动设备后触发，前后左右在一定连续时间内以一定幅度摇动设备，[Demo](http://docs.kissyui.com/source/raw/api/event/shake.html)
+摇一摇事件，当用户摇动设备后触发，前后左右在一定连续时间内以一定幅度摇动设备，[Demo](http://docs.kissyui.com/1.4/source/raw/api/event/shake.html)
 
 ### 移动终端事件和PC端的统一
 
 为了兼容移动与pc， kissy Event 提供手势事件的枚举：
 
-- start：手势开始事件 Event.Gesture.start ，pc 上为 'mousedown' , 触屏为 'touchstart'
-- move：手势进行事件 Event.Gesture.move ，pc 上为 'mousemove' , 触屏为 'touchmove'
-- end：手势结束事件 Event.Gesture.end ，pc 上为 'mouseup' , 触屏为 'touchend'
-- tap：手势结束事件 Event.Gesture.tap ，pc 上为 'click' , 触屏为 'tap'
-- doubleTap：手势结束事件 Event.Gesture.doubleTap ，pc 上为 'dblclick' , 触屏为 'doubleTap'
+- start：手势开始事件 Event.Gesture.start ，可认为 pc 上为 'mousedown' , 触屏为 'touchstart'
+- move：手势进行事件 Event.Gesture.move ，可认为 pc 上为 'mousemove' , 触屏为 'touchmove'
+- end：手势结束事件 Event.Gesture.end ，可认为 pc 上为 'mouseup' , 触屏为 'touchend'
+- tap：手势结束事件 Event.Gesture.tap ，可认为 pc 上为 'click' , 触屏为 'tap'
+- doubleTap：手势结束事件 Event.Gesture.doubleTap ，可认为 pc 上为 'dblclick' , 触屏为 'doubleTap'
 
 ------------------------------
 
@@ -445,48 +446,3 @@ demo参照上一个例子。
 
 
 这是一个很纯粹的自定义事件（Base组件内置自定义事件机制），它有事件名称“afterOneSecond”，有事件的触发条件`self.fire('afterOneSecond')`，有事件的绑定，`k.on('afterOneSecond')`。这样这个事件就能顺利的发生，并被成功监听。在代码组织层面，一般`Klass`类中实现了事件命名、定义和实现，属于内聚的功能实现。而绑定事件时可以是Klass这段代码的用户，他不会去关心事件的具体实现，只要关心Klass"暴露了什么事件可以让我绑定"就可以了，这就是KISSY中使用自定义事件的用法。你可以通过Base来创建自定义事件。
-
-**如何开发DOM自定义事件**
-
-我们来实现一个DOM节点的[鼠标三击事件](http://www.taobao.com/go/act/kissy/trippleclick.php)。首先，先来看下扩展Node事件的基本代码框架：
-
-	// 模块名称为自定义
-	KISSY.add('my-custom-event',function(S,DomEvent,undefined){
-
-		var Special = DomEvent.Special;// 这个对象用来被扩展，存放自定义Dom事件
-		// 自定义事件名称
-		Special['trippleClick'] = {
-			setup:function(){
-				// 得到当前节点原生节点
-				var node = this.ownerDocument || this;
-
-				// 绑定事件时执行这里的代码
-			},
-			tearDown:function(){
-				var node = this.ownerDocument || this;
-
-				// 解除绑定时执行这里的代码
-			}
-		};
-		
-	},{
-		// 引用event/dom/base
-		requires:['event/dom/base']		
-	});
-
-这样扩展了事件，如何使用？
-
-	// 要引用上面样例中的自定义模块
-	KISSY.use('node,my-custom-event',function(S,Node){
-		// 这样绑定事件就可以了
-		S.one('button').on('trippleClick',function(e){
-			// 事件回调
-		});	
-	});
-
-要注意，`event/dom/base/`是dom事件相关，其中的`ownerDocument`都是裸节点，在使用的时候需要额外手动引入`node`模块，如果不引入node模块，可以用原生DOM节点绑定事件一样来使用自定义事件。
-
-
-
-
-
