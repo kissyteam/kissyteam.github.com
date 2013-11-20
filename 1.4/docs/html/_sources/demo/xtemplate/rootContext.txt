@@ -13,6 +13,7 @@ xtemplate 顶层作用域使用示例
 
 .. raw:: html
 
+    <script src='/1.4/source/raw/demo/xtemplate/assets/support-root-context.js'></script>
     <script>
     KISSY.use('json, gallery/pageNotification/1.0/index', function(S, JSON, PN) {
         var pn = new PN({
@@ -34,8 +35,6 @@ xtemplate 顶层作用域使用示例
             args = S.isObject(args) ? JSON.stringify(args) : args.toString();
             pn.success(args);
         };
-
-        KISSY.getScript('assets/support-root-context.js');
     });
     </script>
 

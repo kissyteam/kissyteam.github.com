@@ -180,6 +180,7 @@
 </div>
 <div class="section" id="id1">
 <h2>xtemplate 顶层作用域使用示例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<script src='/1.4/source/raw/demo/xtemplate/assets/support-root-context.js'></script>
 <script>
 KISSY.use('json, gallery/pageNotification/1.0/index', function(S, JSON, PN) {
     var pn = new PN({
@@ -201,8 +202,6 @@ KISSY.use('json, gallery/pageNotification/1.0/index', function(S, JSON, PN) {
         args = S.isObject(args) ? JSON.stringify(args) : args.toString();
         pn.success(args);
     };
-
-    KISSY.getScript('assets/support-root-context.js');
 });
 </script>
 
