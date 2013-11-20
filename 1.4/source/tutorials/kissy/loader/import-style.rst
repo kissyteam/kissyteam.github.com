@@ -61,5 +61,5 @@ ImportStyle是KISSY的模块样式引入工具。
 
 附录
 ```````````````````````````````````````````````````
-* Module Compiler: `java版 <http://docs.kissyui.com/docs/html/tutorials/tools/module-compiler/index.html>`_
+* Module Compiler: `java版 <http://docs.kissyui.com/1.4/docs/html/tutorials/tools/module-compiler/index.html>`_
 * Module Compiler: `nodejs版 <https://github.com/daxingplay/ModuleCompiler>`_

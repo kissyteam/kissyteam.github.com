@@ -4,13 +4,13 @@
 特别是 [Martin Fowler](http://martinfowler.com/) 的突出贡献。
 而在前端领域尚较少涉及，而如果在前端开发中合理使用 DSL 同样也可以有效得**减少代码数量，提高可读性**，常见的一个应用场景即前端模板的构建。
 本质上说模板也是一个微型语言，因此可以从DSL的角度着手，使用工具快速构建一个适合于特定前端框架的模板引擎。
-本文将以 [KISSY XTemplate](http://docs.kissyui.com/docs/html/demo/xtemplate/index.html)
+本文将以 [KISSY XTemplate](http://docs.kissyui.com/1.4/docs/html/demo/xtemplate/index.html)
 为例介绍如何构建前端的 DSL。
 
 注：
 本文持续更新地址：
 [xtemplate at github](https://github.com/kissyteam/kissy/blob/master/src/xtemplate/impl.md).
-[xtemplate at docs.kissyui.com](http://docs.kissyui.com/docs/html/tutorials/kissy/component/xtemplate/impl.html).
+[xtemplate at docs.kissyui.com](http://docs.kissyui.com/1.4/docs/html/tutorials/kissy/component/xtemplate/impl.html).
 
 
 
@@ -238,11 +238,11 @@ xtemplate 通过 **kissy-xtemplate** 命令支持将模板代码离线编译为�
 
 ## xtemplate 文档
 
-[api](http://docs.kissyui.com/docs/html/api/xtemplate/index.html)
+[api](http://docs.kissyui.com/1.4/docs/html/api/xtemplate/index.html)
 
-[demo](http://docs.kissyui.com/docs/html/demo/xtemplate/index.html)
+[demo](http://docs.kissyui.com/1.4/docs/html/demo/xtemplate/index.html)
 
-[tutorial](http://docs.kissyui.com/docs/html/tutorials/kissy/component/xtemplate/index.html)
+[tutorial](http://docs.kissyui.com/1.4/docs/html/tutorials/kissy/component/xtemplate/index.html)
 
 
 ## 推荐书籍

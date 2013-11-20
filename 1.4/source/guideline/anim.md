@@ -216,13 +216,13 @@ Anim动画实例上可调用这些方法
 
 ## Demos
 
-- [基本动画示例](http://docs.kissyui.com/docs/html/demo/anim/demo1.html)
-- [滚动属性动画实例](http://docs.kissyui.com/docs/html/demo/anim/demo2.html)
-- [节点实例动画操作](http://docs.kissyui.com/docs/html/demo/anim/demo3.html)
-- [窗口滚动示例](http://docs.kissyui.com/docs/html/demo/anim/demo4.html)
-- [节点上的 stop 示例](http://docs.kissyui.com/docs/html/demo/anim/demo5.html)
-- [动画队列支持](http://docs.kissyui.com/docs/html/demo/anim/demo6.html)
-- [easy可视化](http://docs.kissyui.com/docs/html/demo/anim/easing.html)
+- [基本动画示例](http://docs.kissyui.com/1.4/docs/html/demo/anim/demo1.html)
+- [滚动属性动画实例](http://docs.kissyui.com/1.4/docs/html/demo/anim/demo2.html)
+- [节点实例动画操作](http://docs.kissyui.com/1.4/docs/html/demo/anim/demo3.html)
+- [窗口滚动示例](http://docs.kissyui.com/1.4/docs/html/demo/anim/demo4.html)
+- [节点上的 stop 示例](http://docs.kissyui.com/1.4/docs/html/demo/anim/demo5.html)
+- [动画队列支持](http://docs.kissyui.com/1.4/docs/html/demo/anim/demo6.html)
+- [easy可视化](http://docs.kissyui.com/1.4/docs/html/demo/anim/easing.html)
 
 <style>
 #photo-list img  {

@@ -94,7 +94,7 @@ Base在初始化时会自动调用各级类的initializer函数，在析构时�
 ATTRS属性
 ````````````````````````````````````````
 
-可以用关联矩阵(associative array)的方式定义类的属性和配置参数,具体请查看“[Base ATTRS](http://docs.kissyui.com/docs/html/api/base/base.html)”
+可以用关联矩阵(associative array)的方式定义类的属性和配置参数,具体请查看“[Base ATTRS](http://docs.kissyui.com/1.4/docs/html/api/base/base.html)”
 
 
 .. code-block:: javascript

@@ -213,11 +213,11 @@ S.mix
 
 在此例中，我们实现了一个单体，它有 get、set 方法，同时持有 data 数据。
 
-除了这种简单的混入之外，\ `S.mix <http://docs.kissyui.com/docs/html/api/seed/kissy/mix.html>`__
+除了这种简单的混入之外，\ `S.mix <http://docs.kissyui.com/1.4/docs/html/api/seed/kissy/mix.html>`__
 还支持额外的参数，本文不着重讨论，按下不表。
 
 此外，用于方便处理默认与自定义配置项合并的方法，还有
-`S.merge <http://docs.kissyui.com/docs/html/api/seed/kissy/merge.html>`__\ 。
+`S.merge <http://docs.kissyui.com/1.4/docs/html/api/seed/kissy/merge.html>`__\ 。
 它不会影响第一个参数，会返回一个新的对象。
 
 S.augment
@@ -251,7 +251,7 @@ S.augment 其实就是混入，只不过混入的对象是第一个参数的 pro
     dog.shave()
     cat.shave()
 
-同样的，\ `S.augment <http://docs.kissyui.com/docs/html/api/seed/kissy/augment.html>`__
+同样的，\ `S.augment <http://docs.kissyui.com/1.4/docs/html/api/seed/kissy/augment.html>`__
 所支持的用法比这里的示例要强大很多，此处不深入。
 
 S.extend
@@ -275,7 +275,7 @@ superclass.constructor。
     })
 
 详细用法请看 `S.extend
-的官方文档 <http://docs.kissyui.com/docs/html/api/seed/kissy/extend.html>`__\ 。
+的官方文档 <http://docs.kissyui.com/1.4/docs/html/api/seed/kissy/extend.html>`__\ 。
 
 注意 Dog 的构造函数体内，通过 Dog 类上的 superclass
 属性，子类不再需要显式写明父类的名称， 只需要直接调

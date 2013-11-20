@@ -34,7 +34,7 @@ Node API 是基于DOM Api 实现的，定义了一系列的语法糖，让用户
 
 ## 操作内容
 
-KISSY Node 节点支持链式调用。[使用范例](http://docs.kissyui.com/docs/html/tutorials/quickstart/node.html)。
+KISSY Node 节点支持链式调用。[使用范例](http://docs.kissyui.com/1.4/docs/html/tutorials/quickstart/node.html)。
 
 	S.one('#test')
 		.parent('.fathor')

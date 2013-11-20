@@ -1,6 +1,7 @@
 # xtemplate
 
-XTemplate 是富逻辑的 KISSY 模板引擎，和[Mustache](http://mustache.github.io/)以及[juicer](http://juicer.name/)类似，Xtemplate 面向更复杂的业务逻辑场景，同时保持高性能和丰富的配置方法，是易学易懂的模板语言。
+XTemplate 是富逻辑的 KISSY 模板引擎，和[Mustache](http://mustache.github.io/)以及[juicer](http://juicer.name/)类似，Xtemplate 面向更复杂的业务逻辑场景，
+同时保持高性能和丰富的配置方法，是易学易懂的模板语言。
 
 一个典型的XTemplate模板实例：
 
@@ -27,7 +28,8 @@ XTemplate 是富逻辑的 KISSY 模板引擎，和[Mustache](http://mustache.git
 
 	Hello Kissy You have just won $10000! 1-0/2 2-1/2 
 
-XTemplate 可以放置于HTML、配置文件、程序代码中，核心机制就是把模板中的标签替换为JSON对象给定的值，并同时具有一定的模板语言逻辑。模板中除了提供最简单的变量替换，还提供if、else和foreach等常见功能。所谓标签，指的是双花括号包含的一个标记，`{{name}}`就是一个标签，`{{#name}}`也是一个标签。XTemplate模板语言是抽象的，可以有多种编程语言的实现，KISSY 的`xtemplate`模块实现了 XTemplate 标记语言。
+XTemplate 可以放置于HTML、配置文件、程序代码中，核心机制就是把模板中的标签替换为JSON对象给定的值，并同时具有一定的模板语言逻辑。
+模板中除了提供最简单的变量替换，还提供if、else和foreach等常见功能。所谓标签，指的是双花括号包含的一个标记，`{{name}}`就是一个标签，`{{#name}}`也是一个标签。XTemplate模板语言是抽象的，可以有多种编程语言的实现，KISSY 的`xtemplate`模块实现了 XTemplate 标记语言。
 
 这样来引入xtemplate模块：
 
@@ -49,7 +51,16 @@ XTemplate 可以放置于HTML、配置文件、程序代码中，核心机制就
 		alert(render);// => "this is o!"
 	});
 
-更多例子：[KISSY XTemplate Demos](http://docs.kissyui.com/docs/html/demo/xtemplate/index.html)
+你也可以直接离线编译 xtemplate 为 kissy 模块，那么线上直接引入 xtemplate/runtime 即可，还省去了在线编译的时间，提高运行效率。
+
+    KISSY.use('xtemplate/runtime,tpls/x',funciton(S, XTemplate,x){
+        var data={z:1};
+        new XTemplate(x).render(data);
+    });
+    
+详见：[xtemplate 离线编译](http://docs.kissyui.com/1.4/docs/html/tutorials/kissy/xtemplate/compile.html)
+    
+更多例子：[KISSY XTemplate Demos](http://docs.kissyui.com/1.4/docs/html/demo/xtemplate/index.html)
 
 ----------------------------------
 
@@ -430,7 +441,8 @@ XTemplate 支持对 [mustache](http://mustache.github.io/) 形式的数组的兼
 
 ## KISSY XTemplate 附加功能
 
-以上语法可以在不同语言中实现，在 JavaScript 环境中得益于 JS 语言的动态性，KISSY 为 XTemplate 提供了更多的浏览器端的渲染策略和工具。这些功能只在 JavaScript 的实现中可用，如果你的模板可同时被JavaScript渲染也会被其他语言渲染（比如在后台被Java渲染），请尽可能避免这种用法。
+以上语法可以在不同语言中实现，在 JavaScript 环境中得益于 JS 语言的动态性，KISSY 为 XTemplate 提供了更多的浏览器端的渲染策略和工具。这些功能只在 JavaScript 的实现中可用，
+如果你的模板可同时被JavaScript渲染也会被其他语言渲染（比如在后台被Java渲染），请尽可能避免这种用法。
 
 ### 函数模板
 

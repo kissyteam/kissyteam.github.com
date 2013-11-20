@@ -8,13 +8,13 @@
 同样也可以有效得\ **减少代码数量，提高可读性**\ ，常见的一个应用场景即前端模板的构建。
 本质上说模板也是一个微型语言，因此可以从DSL的角度着手，使用工具快速构建一个适合于特定前端框架的模板引擎。
 本文将以 `KISSY
-XTemplate <http://docs.kissyui.com/docs/html/demo/xtemplate/index.html>`__
+XTemplate <http://docs.kissyui.com/1.4/docs/html/demo/xtemplate/index.html>`__
 为例介绍如何构建前端的 DSL。
 
 注： 本文持续更新地址： `xtemplate at
 github <https://github.com/kissyteam/kissy/blob/master/src/xtemplate/impl.md>`__.
 `xtemplate at
-docs.kissyui.com <http://docs.kissyui.com/docs/html/tutorials/kissy/component/xtemplate/impl.html>`__.
+docs.kissyui.com <http://docs.kissyui.com/1.4/docs/html/tutorials/kissy/component/xtemplate/impl.html>`__.
 
 首先 npm 安装 kissy
 -------------------
@@ -302,11 +302,11 @@ xtemplate 模块需要拆分
 xtemplate 文档
 --------------
 
-`api <http://docs.kissyui.com/docs/html/api/xtemplate/index.html>`__
+`api <http://docs.kissyui.com/1.4/docs/html/api/xtemplate/index.html>`__
 
-`demo <http://docs.kissyui.com/docs/html/demo/xtemplate/index.html>`__
+`demo <http://docs.kissyui.com/1.4/docs/html/demo/xtemplate/index.html>`__
 
-`tutorial <http://docs.kissyui.com/docs/html/tutorials/kissy/component/xtemplate/index.html>`__
+`tutorial <http://docs.kissyui.com/1.4/docs/html/tutorials/kissy/component/xtemplate/index.html>`__
 
 推荐书籍
 --------
