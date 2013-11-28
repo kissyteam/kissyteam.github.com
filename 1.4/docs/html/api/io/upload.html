@@ -269,14 +269,14 @@
 <span class="nt">&lt;body&gt;</span>
   <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&#39;up&#39;</span><span class="nt">&gt;</span>upload to doUpload.html<span class="nt">&lt;/button&gt;</span>
   <span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">&#39;post&#39;</span> <span class="na">enctype=</span><span class="s">&#39;multipart/form-data&#39;</span> <span class="na">id=</span><span class="s">&#39;f&#39;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&#39;user&#39;</span> <span class="na">value=</span><span class="s">&#39;chengyu&#39;</span> <span class="na">readonly</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&#39;user&#39;</span> <span class="na">value=</span><span class="s">&#39;yiminghe&#39;</span><span class="nt">/&gt;</span>
   <span class="nt">&lt;/form&gt;</span>
 
 <span class="nt">&lt;script&gt;</span>
     <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;node,io&#39;</span><span class="p">,</span><span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">Node</span><span class="p">,</span><span class="nx">IO</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">$</span><span class="o">=</span><span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
         <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#up&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-            <span class="nx">IO</span><span class="p">.</span><span class="nx">upload</span><span class="p">(</span><span class="s2">&quot;doUpload.html&quot;</span><span class="p">,</span><span class="s2">&quot;#f&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
+            <span class="nx">IO</span><span class="p">.</span><span class="nx">upload</span><span class="p">(</span><span class="s2">&quot;doUpload.php&quot;</span><span class="p">,</span><span class="s2">&quot;#f&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
                 <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;user : &quot;</span><span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">user</span><span class="o">+</span><span class="s2">&quot; \n email : &quot;</span><span class="o">+</span><span class="nx">d</span><span class="p">.</span><span class="nx">email</span><span class="p">);</span>                
             <span class="p">},</span><span class="s2">&quot;json&quot;</span><span class="p">);</span>                                            
         <span class="p">});</span>
