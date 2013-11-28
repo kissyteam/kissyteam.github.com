@@ -12,14 +12,14 @@
 <body>
   <button id='up'>upload to doUpload.html</button>
   <form method='post' enctype='multipart/form-data' id='f'>
-        <input name='user' value='chengyu' readonly />
+        <input name='user' value='yiminghe'/>
   </form>
 
 <script>
     KISSY.use('node,io',function (S,Node,IO) {
         var $=Node.all;
         $("#up").on("click",function(){
-            IO.upload("doUpload.html","#f",function(d){
+            IO.upload("doUpload.php","#f",function(d){
                 alert("user : "+d.user+" \n email : "+d.email);                
             },"json");                                            
         });

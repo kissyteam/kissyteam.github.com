@@ -34,7 +34,7 @@ KISSY.use("anim,node,button", function(S, Anim, Node, Button) {
     back.on('click', function(e) {
         go.set("disabled", true);
         back.set("disabled", true);
-        $(".block").animate({left: (parseInt($(".block").css("left")) - 100) + 'px'}, 2, undefined, function() {
+        $(".block").animate({left: Math.max(parseInt($(".block").css("left")) - 100,0) + 'px'}, 2, undefined, function() {
             go.set("disabled", false);
             back.set("disabled", false);
         });
