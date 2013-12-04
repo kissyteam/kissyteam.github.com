@@ -106,13 +106,13 @@
         &#39;foo&#39;:&#39;bar&#39;
     };
 });</code></pre>
-<p><code>factory</code>为对象或者字符串是，只表示该模块的内容就是此对象或字符串：</p>
+<p><code>factory</code>为对象或者字符串时，只表示该模块的内容就是此对象或字符串：</p>
 <pre><code>add(&#39;module-name&#39;,&#39;I am a template, My Name is {{module-name}}&#39;);
 add(&#39;module-name&#39;,{
     &#39;foo&#39;:&#39;bar&#39;    
 });</code></pre>
 <h3>add(name,factory,deps)</h3>
-<p>当给<code>add</code>函数传入最后一个参数<code>deps</code>，这时<code>deps</code>表示该模块的依赖，其中<code>requries</code>属性是一个数组，数组元素可以是其他模块的名字<code>name</code>，也可以是指向模块的路径，<code>factory</code>如果是函数，则函数中的回传参数除第一个<code>S</code>（全局对象 KISSY）外依次对应每个模块的返回值：</p>
+<p>当给<code>add</code>函数传入最后一个参数<code>deps</code>，这时<code>deps</code>表示该模块的依赖，其中<code>requires</code>属性是一个数组，数组元素可以是其他模块的名字<code>name</code>，也可以是指向模块的路径，<code>factory</code>如果是函数，则函数中的回传参数除第一个<code>S</code>（全局对象 KISSY）外依次对应每个模块的返回值：</p>
 <pre><code>add(&#39;module-name&#39;,function(S,A,B,C){
     // 模块代码    
     return sth;

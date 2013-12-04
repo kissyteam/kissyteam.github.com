@@ -50,7 +50,7 @@ KISSY 在诞生之初就确立了模块化的架构，以此抽象出现在的 K
 		};
 	});
 
-`factory`为对象或者字符串是，只表示该模块的内容就是此对象或字符串：
+`factory`为对象或者字符串时，只表示该模块的内容就是此对象或字符串：
 
 	add('module-name','I am a template, My Name is {{module-name}}');
 	add('module-name',{
@@ -59,7 +59,7 @@ KISSY 在诞生之初就确立了模块化的架构，以此抽象出现在的 K
 
 ### add(name,factory,deps)
 
-当给`add`函数传入最后一个参数`deps`，这时`deps`表示该模块的依赖，其中`requries`属性是一个数组，数组元素可以是其他模块的名字`name`，也可以是指向模块的路径，`factory`如果是函数，则函数中的回传参数除第一个`S`（全局对象 KISSY）外依次对应每个模块的返回值：
+当给`add`函数传入最后一个参数`deps`，这时`deps`表示该模块的依赖，其中`requires`属性是一个数组，数组元素可以是其他模块的名字`name`，也可以是指向模块的路径，`factory`如果是函数，则函数中的回传参数除第一个`S`（全局对象 KISSY）外依次对应每个模块的返回值：
 
 	add('module-name',function(S,A,B,C){
 		// 模块代码	
