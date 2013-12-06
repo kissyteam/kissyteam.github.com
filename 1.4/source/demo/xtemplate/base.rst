@@ -10,6 +10,10 @@ xtemplate 使用示例
         <script src='http://g.tbcdn.cn/kissy/k/1.4.0/seed.js' data-config="{combine:true}"></script>
 
 
+    .. note::
+
+        推荐使用 :ref:`离线编译 <xtemplate_compile>` 。
+
 Class
 -----------------------------------------------
 
@@ -63,24 +67,6 @@ Demos
         <button onclick='supportVariable();'>测试变量替换</button>
     </p>
 
-
-支持函数作为模板
-`````````````````````````````````````
-
-代码:
-
-.. literalinclude:: /raw/demo/xtemplate/assets/fn-tpl.js
-    :language: javascript
-
-演示：
-
-.. raw:: html
-
-    <script src='/1.4/source/raw/demo/xtemplate/assets/fn-tpl.js'></script>
-
-    <p>
-        <button onclick='fnTpl();'>测试函数模板</button>
-    </p>
 
 
 支持 if 语句
@@ -360,43 +346,6 @@ Demos
         <button onclick='endsWithCommand();'>测试局部后缀名判断命令扩展</button>
     </p>
 
-支持字符串作为全局子模板
-````````````````````````````````````````````
-
-代码:
-
-.. literalinclude:: /raw/demo/xtemplate/assets/support-string-sub-tpl.js
-    :language: javascript
-
-演示：
-
-.. raw:: html
-
-    <script src='/1.4/source/raw/demo/xtemplate/assets/support-string-sub-tpl.js'></script>
-
-    <p>
-        <button onclick='supportStringSubTpl();'>测试字符串作为全局子模板</button>
-    </p>
-
-
-支持函数作为全局子模板
-````````````````````````````````````````````
-
-代码:
-
-.. literalinclude:: /raw/demo/xtemplate/assets/support-fn-sub-tpl.js
-    :language: javascript
-
-演示：
-
-.. raw:: html
-
-    <script src='/1.4/source/raw/demo/xtemplate/assets/support-fn-sub-tpl.js'></script>
-
-    <p>
-        <button onclick='supportFnSubTpl();'>测试函数作为全局子模板</button>
-    </p>
-
 
 支持字符串作为局部子模板
 ````````````````````````````````````````````
@@ -415,26 +364,6 @@ Demos
     <p>
         <button onclick='supportStringLocalSubTpl();'>测试字符串作为局部子模板</button>
     </p>
-
-
-支持函数作为局部子模板
-````````````````````````````````````````````
-
-代码:
-
-.. literalinclude:: /raw/demo/xtemplate/assets/support-fn-local-sub-tpl.js
-    :language: javascript
-
-演示：
-
-.. raw:: html
-
-    <script src='/1.4/source/raw/demo/xtemplate/assets/support-fn-local-sub-tpl.js'></script>
-
-    <p>
-        <button onclick='supportFnLocalSubTpl();'>测试函数作为局部子模板</button>
-    </p>
-
 
 
 支持简单表达式作为变量
