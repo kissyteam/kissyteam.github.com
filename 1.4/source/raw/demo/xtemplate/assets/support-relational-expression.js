@@ -1,20 +1,20 @@
 KISSY.use('xtemplate', function (S, XTemplate) {
 
     window.supportRelationalExpression = function () {
-        var tpl = '{{#if n > n2+4/2}}' +
+        var tpl = '{{#if n>n2+4/2}}' +
             '{{n+1}}' +
             '{{else}}' +
             '{{n2+1}}' +
             '{{/if}}';
 
-        var tpl3 = '{{#if n === n2+4/2}}' +
+        var tpl3 = '{{#if n===n2+4/2}}' +
             '{{n+1}}' +
             '{{else}}' +
             '{{n2+1}}' +
             '{{/if}}';
 
 
-        var tpl4 = '{{#if n !== n2+4/2}}' +
+        var tpl4 = '{{#if n!==n2+4/2}}' +
             '{{n+1}}' +
             '{{else}}' +
             '{{n2+1}}' +

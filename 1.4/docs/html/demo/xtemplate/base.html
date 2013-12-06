@@ -10,7 +10,7 @@
 
 <title>xtemplate 使用示例 &mdash; KISSY v1.4 Documentation</title>
 
-<link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.4.0/css/dpl/base-min.css"/>
+<link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.4.1/css/dpl/base-min.css"/>
 <link rel="stylesheet" href="http://a.tbcdn.cn/s/kissy/gallery/sphinx/1.1.3/pygments.css" type="text/css" />
 <link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico" type="image/x-icon" />
 <script>
@@ -39,7 +39,7 @@
 	<link rel="stylesheet" href="../../_static/forkit.css"/>
 	<link rel="stylesheet" href="../../_static/bootstrap.css"/>
 	<link href="http://fonts.googleapis.com/css?family=Droid+Sans|Lekton|Ubuntu+Mono:400,700" rel="stylesheet">
-	<script src="http://g.tbcdn.cn/kissy/k/1.4.0/seed-min.js"></script>
+	<script src="http://g.tbcdn.cn/kissy/k/1.4.1/seed.js"></script>
 
 </head>
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
@@ -171,7 +171,7 @@
   <div class="section" id="xtemplate">
 <span id="xtemplate-demo"></span><h1>xtemplate 使用示例<a class="headerlink" href="#xtemplate" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><script src='http://g.tbcdn.cn/kissy/k/1.4.0/seed.js' data-config="{combine:true}"></script><div class="admonition note">
+<div><script src='http://g.tbcdn.cn/kissy/k/1.4.1/seed.js' data-config="{combine:true}"></script><div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">推荐使用 <a class="reference internal" href="../../tutorials/kissy/xtemplate/compile.html#xtemplate-compile"><em>离线编译</em></a> 。</p>
 </div>
@@ -684,37 +684,7 @@ KISSY.use('json, gallery/pageNotification/1.0/index', function(S, JSON, PN) {
     <button onclick='endsWithCommand();'>测试局部后缀名判断命令扩展</button>
 </p></div>
 <div class="section" id="id12">
-<h3>支持字符串作为局部子模板<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
-<p>代码:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;xtemplate&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">XTemplate</span><span class="p">)</span> <span class="p">{</span>
-
-    <span class="nb">window</span><span class="p">.</span><span class="nx">supportStringLocalSubTpl</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">tpl</span> <span class="o">=</span> <span class="s1">&#39;{{include &quot;sub-tpl-3&quot;}}&#39;</span><span class="p">;</span>
-
-        <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;1&#39;</span>
-        <span class="p">};</span>
-
-        <span class="kd">var</span> <span class="nx">render</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XTemplate</span><span class="p">(</span><span class="nx">tpl</span><span class="p">,</span> <span class="p">{</span>
-            <span class="nx">subTpls</span><span class="o">:</span> <span class="p">{</span>
-                <span class="s1">&#39;sub-tpl-3&#39;</span><span class="o">:</span> <span class="s1">&#39;{{title}}&#39;</span>
-            <span class="p">}</span>
-        <span class="p">}).</span><span class="nx">render</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-
-        <span class="nx">alert</span><span class="p">(</span><span class="nx">render</span><span class="p">);</span>
-    <span class="p">};</span>
-
-<span class="p">});</span>
-</pre></div>
-</div>
-<p>演示：</p>
-<script src='/1.4/source/raw/demo/xtemplate/assets/support-string-local-sub-tpl.js'></script>
-
-<p>
-    <button onclick='supportStringLocalSubTpl();'>测试字符串作为局部子模板</button>
-</p></div>
-<div class="section" id="id13">
-<h3>支持简单表达式作为变量<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<h3>支持简单表达式作为变量<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p>目前支持 <tt class="docutils literal"><span class="pre">+</span></tt> <tt class="docutils literal"><span class="pre">-</span></tt> <tt class="docutils literal"><span class="pre">*</span></tt> <tt class="docutils literal"><span class="pre">/</span></tt> <tt class="docutils literal"><span class="pre">%</span></tt></p>
 <p>代码:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;xtemplate&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">XTemplate</span><span class="p">)</span> <span class="p">{</span>
@@ -740,27 +710,27 @@ KISSY.use('json, gallery/pageNotification/1.0/index', function(S, JSON, PN) {
 <p>
     <button onclick='supportExpressionVariable();'>测试简单表达式作为变量</button>
 </p></div>
-<div class="section" id="id14">
-<h3>支持关系表达式<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h3>支持关系表达式<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <p>目前支持 <tt class="docutils literal"><span class="pre">===</span></tt> <tt class="docutils literal"><span class="pre">!==</span></tt> <tt class="docutils literal"><span class="pre">&gt;</span></tt> <tt class="docutils literal"><span class="pre">&gt;=</span></tt> <tt class="docutils literal"><span class="pre">&lt;</span></tt> <tt class="docutils literal"><span class="pre">&lt;=</span></tt></p>
 <p>代码:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;xtemplate&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">XTemplate</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="nb">window</span><span class="p">.</span><span class="nx">supportRelationalExpression</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">tpl</span> <span class="o">=</span> <span class="s1">&#39;{{#if n &gt; n2+4/2}}&#39;</span> <span class="o">+</span>
+        <span class="kd">var</span> <span class="nx">tpl</span> <span class="o">=</span> <span class="s1">&#39;{{#if n&gt;n2+4/2}}&#39;</span> <span class="o">+</span>
             <span class="s1">&#39;{{n+1}}&#39;</span> <span class="o">+</span>
             <span class="s1">&#39;{{else}}&#39;</span> <span class="o">+</span>
             <span class="s1">&#39;{{n2+1}}&#39;</span> <span class="o">+</span>
             <span class="s1">&#39;{{/if}}&#39;</span><span class="p">;</span>
 
-        <span class="kd">var</span> <span class="nx">tpl3</span> <span class="o">=</span> <span class="s1">&#39;{{#if n === n2+4/2}}&#39;</span> <span class="o">+</span>
+        <span class="kd">var</span> <span class="nx">tpl3</span> <span class="o">=</span> <span class="s1">&#39;{{#if n===n2+4/2}}&#39;</span> <span class="o">+</span>
             <span class="s1">&#39;{{n+1}}&#39;</span> <span class="o">+</span>
             <span class="s1">&#39;{{else}}&#39;</span> <span class="o">+</span>
             <span class="s1">&#39;{{n2+1}}&#39;</span> <span class="o">+</span>
             <span class="s1">&#39;{{/if}}&#39;</span><span class="p">;</span>
 
 
-        <span class="kd">var</span> <span class="nx">tpl4</span> <span class="o">=</span> <span class="s1">&#39;{{#if n !== n2+4/2}}&#39;</span> <span class="o">+</span>
+        <span class="kd">var</span> <span class="nx">tpl4</span> <span class="o">=</span> <span class="s1">&#39;{{#if n!==n2+4/2}}&#39;</span> <span class="o">+</span>
             <span class="s1">&#39;{{n+1}}&#39;</span> <span class="o">+</span>
             <span class="s1">&#39;{{else}}&#39;</span> <span class="o">+</span>
             <span class="s1">&#39;{{n2+1}}&#39;</span> <span class="o">+</span>
@@ -797,14 +767,14 @@ KISSY.use('json, gallery/pageNotification/1.0/index', function(S, JSON, PN) {
 <p>
     <button onclick='supportRelationalExpression();'>测试关系表达式</button>
 </p></div>
-<div class="section" id="id15">
-<h3>支持 each 中的关系表达式<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h3>支持 each 中的关系表达式<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <p>代码:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;xtemplate&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">XTemplate</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="nb">window</span><span class="p">.</span><span class="nx">supportRelationalExpressionEach</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">tpl</span> <span class="o">=</span> <span class="s1">&#39;{{#each data}}&#39;</span> <span class="o">+</span>
-            <span class="s1">&#39;{{#if this &gt; ../limit+1}}&#39;</span> <span class="o">+</span>
+            <span class="s1">&#39;{{#if this&gt;../limit+1}}&#39;</span> <span class="o">+</span>
             <span class="s1">&#39;{{this+1}}-{{xindex+1}}-{{xcount}}|&#39;</span> <span class="o">+</span>
             <span class="s1">&#39;{{/if}}&#39;</span> <span class="o">+</span>
             <span class="s1">&#39;{{/each}}&#39;</span> <span class="o">+</span>
@@ -829,14 +799,14 @@ KISSY.use('json, gallery/pageNotification/1.0/index', function(S, JSON, PN) {
 <p>
     <button onclick='supportRelationalExpressionEach();'>测试 each 中的关系表达式</button>
 </p></div>
-<div class="section" id="id16">
-<h3>支持 with 中的关系表达式<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id15">
+<h3>支持 with 中的关系表达式<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <p>代码:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;xtemplate&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">XTemplate</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="nb">window</span><span class="p">.</span><span class="nx">supportRelationalExpressionWith</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">tpl</span> <span class="o">=</span> <span class="s1">&#39;{{#with data}}&#39;</span> <span class="o">+</span>
-            <span class="s1">&#39;{{#if n &gt; ../limit/5}}&#39;</span> <span class="o">+</span>
+            <span class="s1">&#39;{{#if n&gt;../limit/5}}&#39;</span> <span class="o">+</span>
             <span class="s1">&#39;{{n+1}}&#39;</span> <span class="o">+</span>
             <span class="s1">&#39;{{/if}}&#39;</span> <span class="o">+</span>
             <span class="s1">&#39;{{/with}}&#39;</span> <span class="o">+</span>
@@ -955,8 +925,8 @@ KISSY.use('json, gallery/pageNotification/1.0/index', function(S, JSON, PN) {
 <p>
     <button onclick='supportMustacheArray();'>测试 mustache 形式的 array</button>
 </p></div>
-<div class="section" id="id17">
-<h3>支持未闭合标签报错<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id16">
+<h3>支持未闭合标签报错<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <p>代码:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;xtemplate&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">XTemplate</span><span class="p">)</span> <span class="p">{</span>
 
@@ -986,8 +956,8 @@ KISSY.use('json, gallery/pageNotification/1.0/index', function(S, JSON, PN) {
 <p>
     <button onclick='supportDetectUnclosed();'>测试未闭合标签报错</button>
 </p></div>
-<div class="section" id="id18">
-<h3>支持不存在属性警告<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id17">
+<h3>支持不存在属性警告<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <p>代码:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;xtemplate&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">XTemplate</span><span class="p">)</span> <span class="p">{</span>
 
@@ -1017,8 +987,8 @@ KISSY.use('json, gallery/pageNotification/1.0/index', function(S, JSON, PN) {
     <strong>打开控制台</strong><br/>
     <button onclick='supportWarnAboutMissing();'>测试未闭合标签报错</button>
 </p></div>
-<div class="section" id="id19">
-<h3>支持标签不匹配报错<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id18">
+<h3>支持标签不匹配报错<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <p>代码:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;xtemplate&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">XTemplate</span><span class="p">)</span> <span class="p">{</span>
 

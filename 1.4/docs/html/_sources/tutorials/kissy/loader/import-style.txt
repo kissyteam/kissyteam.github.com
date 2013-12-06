@@ -26,7 +26,7 @@ ImportStyle是KISSY的模块样式引入工具。
 * 头部引入
     .. code-block:: html
 
-        <script src='http://g.tbcdn.cn/kissy/k/1.4.0/??seed-min.js,import-style-min.js'></script>
+        <script src='http://g.tbcdn.cn/kissy/k/1.4.1/??seed-min.js,import-style-min.js'></script>
 
 * 页面是基于 KISSY 模块规范开发的，如依赖css，需要显式在requires里声明
 

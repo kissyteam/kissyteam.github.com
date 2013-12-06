@@ -8,7 +8,7 @@
     <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Lekton|Ubuntu+Mono:400,700" rel="stylesheet">
     <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/??bootstrap.css,normalize.css,kissy.css,prettify.css,forkit.css">
     <script src="/1.4/source/guideline/templates/assets/??jquery.min.js,script.js"></script>
-    <script src="http://g.tbcdn.cn/kissy/k/1.4.0/seed-min.js" type="text/javascript" data-config="{combine:true}"></script>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.1/seed.js" type="text/javascript" data-config="{combine:true}"></script>
     <script src="/1.4/source/guideline/api/assets/highlight.pack.js"></script>
     <link href="/1.4/source/guideline/api/assets/tomorrow-night-bright.css" rel=stylesheet />
     <link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico">
@@ -90,7 +90,7 @@ var bodyNode = S.one(document.body);</code></pre>
 <p><code>one()</code>方法类似于jquery的$，通过传入选择器或者Dom实例来获取目标（包装后）的Node节点。如果传入一个css选择器，<code>one()</code>函数将返回第一个匹配的节点。如果要获得节点列表，需要使用<code>all()</code>方法。</p>
 <blockquote>
 <p>注意：KISSY 在选择器上的实现是渐进增强的，在高级浏览器中优先使用<code>querySelector</code>和<code>getElementsByClassName</code>等原生函数，在低版本的IE中降级使用<code>selector/ie</code>的js实现。对于异类的CSS3特有的选择器，在低版本IE中用sizzle实现。这样做主要是为了精简选择器的实现代码，降低 KISSY 核心代码体积。</p>
-<p>KISSY 会根据浏览器平台加载正确的代码，用户不用关心平台，KISSY 一定会调用最合适、性能最优的选择器实现。在1.4.0中，不需要用户手动引用<code>sizzle</code>模块了，KISSY 会自行判断加载。</p>
+<p>KISSY 会根据浏览器平台加载正确的代码，用户不用关心平台，KISSY 一定会调用最合适、性能最优的选择器实现。在1.4.1中，不需要用户手动引用<code>sizzle</code>模块了，KISSY 会自行判断加载。</p>
 </blockquote>
 <h2>操作内容</h2>
 <p>KISSY Node 节点支持链式调用。<a href="http://docs.kissyui.com/1.4/docs/html/tutorials/quickstart/node.html">使用范例</a>。</p>

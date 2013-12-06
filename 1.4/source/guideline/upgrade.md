@@ -6,13 +6,13 @@
 
 1.4.x 的引用地址域名由之前的`a.tbcdn.cn`改为`g.tbcdn.cn`：
 
-	http://g.tbcdn.cn/kissy/k/1.4.0/seed-min.js
+	http://g.tbcdn.cn/kissy/k/1.4.1/seed.js
 
 > 注意：`http://g.tbcdn.cn/`对应到`http://a.tbcdn.cn/g/`下的文件，比如，`http://g.tbcdn.cn/abc.js`和`http://a.tbcdn.cn/g/abc.js`实际是一个文件。
 
 ### 1.4.x 将不再提供`kissy.js`
 
-为了增强 KISSY 的模块架构和减轻体积，1.4.0 之后将不再提供粗粒度的`kissy.js`，因此`http://g.tbcdn.cn/kissy/k/1.4.0/kissy.js`不存在。KISSY 将只提供`seed.js`。
+为了增强 KISSY 的模块架构和减轻体积，1.4.0 之后将不再提供粗粒度的`kissy.js`，因此`http://g.tbcdn.cn/kissy/k/1.4.1/kissy.js`不存在。KISSY 将只提供`seed.js`。
 
 即，使用 1.4.x 的功能必须首先`use('mod-name')`再使用，注意之前比较滥用的`KISSY.ready()`，在 1.4.x 中不建议使用。使用模块请参照 [1.4.x 模块列表](module-map.html)。
 
@@ -36,9 +36,6 @@
 		modules: {
 			'sizzle':{
 				alias: ['node']
-			},
-			'ajax':{
-				alias: ['io']
 			},
 			'calendar':{
 				alias: ['gallery/calendar-deprecated/1.0/']

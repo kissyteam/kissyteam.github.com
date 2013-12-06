@@ -2,7 +2,7 @@ KISSY.use('xtemplate', function (S, XTemplate) {
 
     window.supportRelationalExpressionWith = function () {
         var tpl = '{{#with data}}' +
-            '{{#if n > ../limit/5}}' +
+            '{{#if n>../limit/5}}' +
             '{{n+1}}' +
             '{{/if}}' +
             '{{/with}}' +

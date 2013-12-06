@@ -2,7 +2,7 @@ KISSY.use('xtemplate', function (S, XTemplate) {
 
     window.supportRelationalExpressionEach = function () {
         var tpl = '{{#each data}}' +
-            '{{#if this > ../limit+1}}' +
+            '{{#if this>../limit+1}}' +
             '{{this+1}}-{{xindex+1}}-{{xcount}}|' +
             '{{/if}}' +
             '{{/each}}' +

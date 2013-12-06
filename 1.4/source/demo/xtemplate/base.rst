@@ -7,7 +7,7 @@ xtemplate 使用示例
 
     .. raw:: html
 
-        <script src='http://g.tbcdn.cn/kissy/k/1.4.0/seed.js' data-config="{combine:true}"></script>
+        <script src='http://g.tbcdn.cn/kissy/k/1.4.1/seed.js' data-config="{combine:true}"></script>
 
 
     .. note::
@@ -344,25 +344,6 @@ Demos
 
     <p>
         <button onclick='endsWithCommand();'>测试局部后缀名判断命令扩展</button>
-    </p>
-
-
-支持字符串作为局部子模板
-````````````````````````````````````````````
-
-代码:
-
-.. literalinclude:: /raw/demo/xtemplate/assets/support-string-local-sub-tpl.js
-    :language: javascript
-
-演示：
-
-.. raw:: html
-
-    <script src='/1.4/source/raw/demo/xtemplate/assets/support-string-local-sub-tpl.js'></script>
-
-    <p>
-        <button onclick='supportStringLocalSubTpl();'>测试字符串作为局部子模板</button>
     </p>
 
 

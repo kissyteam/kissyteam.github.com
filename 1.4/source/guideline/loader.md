@@ -263,7 +263,7 @@ modNames (String|String[]) – 以` , `分割的 js 模块或 css 模块名称�
 		// Your code...
 	});
 
-有没有办法不用去肉眼找模块和变量的对应关系？有方法，KISSY 1.4.0 提供了`require`语法糖
+有没有办法不用去肉眼找模块和变量的对应关系？有方法，KISSY 1.4.1 提供了`require`语法糖
 
 	KISSY.use('a,b,c,d,e,f,g',function(S){
 		var A = S.require('a');

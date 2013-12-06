@@ -47,8 +47,3 @@ Methods
             // Your code...
         });
 
-
-    .. note::
-        在 1.4.0 及后续版本，推荐使用require来引用已经注册的模块
-
-
