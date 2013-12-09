@@ -60,8 +60,8 @@ Configs Detail
     .. code-block:: javascript
 
         {
-            'cmd1':function( scopes,option ){
-                return scopes[0].title2+option.params[0];
+            'toLowerCase':function( scopes,option ){
+                return option.params[0].toLowerCase();
             }
         }
 

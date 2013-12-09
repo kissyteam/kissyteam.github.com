@@ -444,37 +444,6 @@ XTemplate 支持对 [mustache](http://mustache.github.io/) 形式的数组的兼
 以上语法可以在不同语言中实现，在 JavaScript 环境中得益于 JS 语言的动态性，KISSY 为 XTemplate 提供了更多的浏览器端的渲染策略和工具。这些功能只在 JavaScript 的实现中可用，
 如果你的模板可同时被JavaScript渲染也会被其他语言渲染（比如在后台被Java渲染），请尽可能避免这种用法。
 
-### 函数模板
-
-支持 JavaScript 函数作为模板，XTemplate模板为：
-
-	var tpl = function (scopes) {
-		return 'this is ' + scopes[0].title + '!';
-	};
-
-对应的JSON如下
-
-	var data = {
-		title:'kissy'
-	};
-
-拼装结果为：
-
-	this is kissy!
-
-完整的代码为：
-
-	var tpl = function (scopes) {
-		return 'this is ' + scopes[0].title + '!';
-	};
-
-	var data = {
-		title: 'kissy'
-	};
-
-	var render = new XTemplate(tpl).render(data);
-
-	alert(render);// => this is kissy!
 
 ### 全局行内单个标签扩展
 
