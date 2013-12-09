@@ -1,16 +1,13 @@
 # KISSY 浏览器测试基准
 
+## 浏览器支持列表
+
 KISSY 被设计为运行于绝大多数浏览器、设备环境。这些硬件环境包括：
 
-![](http://gtms01.alicdn.com/tps/i1/T1vNSDFmhXXXbBMKPF-610-248.png)
+* chrome/firefox/opera/safari 最新版本以及次新版本
+* mobile safari/mobile chrome/mobile ie 最新版本以及次新版本
+* ie6+
 
-### 说明
-
-- 匕首标识（†）是指当前最新正式版（非Beta版）
-- 测试基准无优先级，为统一标准
-- NodeJS 版本实现和 PC 端在 DOM 部分有偏差。
-
--------------------------------------
 
 ## 如何定义“通过测试“?
 
