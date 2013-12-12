@@ -72,7 +72,7 @@ Refer
 combo
 ----------------------------------
 
-通过使用 :mod:`module-compiler` 可以抽取出依赖关系：
+通过使用 `KISSY Module Compiler <https://github.com/daxingplay/grunt-kmc>`_ 可以抽取出依赖关系：
 
 .. code-block:: javascript
 

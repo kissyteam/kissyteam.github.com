@@ -89,14 +89,14 @@ h3 {
 </ul>
 </li>
 </ul>
-<p>KISSY 添加模块/逻辑片段的函数，config为配置对象，包括<code>config.requries</code>，给出当前模块的依赖模块。模块返回一个对象，通过引用它的时候来调用到。</p>
+<p>KISSY 添加模块/逻辑片段的函数，config为配置对象，包括<code>config.requires</code>，给出当前模块的依赖模块。模块返回一个对象，通过引用它的时候来调用到。</p>
 <p>当模块名称 name 为<a href="#config">包内模块</a>时, 则requires的模块名称可使用相对路径来引用包内其他模块，比如<code>package/a</code>来引用<code>package/a.js</code>，也可以用<code>./a</code>来引用<code>package/a.js</code></p>
 <pre><code>// package/a.js
 KISSY.add(&#39;package/a&#39;,function(S){
     return ObjA;
 },{
     // 当前逻辑依赖一个包内的文件b，一个全局模块node，一个同目录下的css文件
-    requries:[&#39;package/b&#39;,&#39;node&#39;,&#39;./mod.css&#39;]    
+    requires:[&#39;package/b&#39;,&#39;node&#39;,&#39;./mod.css&#39;]
 });</code></pre>
 <p>使用该模块</p>
 <pre><code>KISSY.use(&#39;package/a&#39;,function(S,ObjA){
@@ -107,14 +107,14 @@ KISSY.add(&#39;package/a&#39;,function(S){
 KISSY.add(function(S){
     return ObjA;
 },{
-    requries:[&#39;./b&#39;,&#39;./mod.css&#39;]    
+    requires:[&#39;./b&#39;,&#39;./mod.css&#39;]
 });</code></pre>
 <p><code>add()</code>中的函数回调可以调用它依赖的模块所返回的对象</p>
 <pre><code>// package/a.js
 KISSY.add(function(S,Node,ObjB){
     // 使用 Node 和 ObjB
 },{
-    requries:[&#39;node&#39;,&#39;./b&#39;]    
+    requires:[&#39;node&#39;,&#39;./b&#39;]
 });</code></pre>
 <p>当模块名称 name 为包内模块&lt; 参见 下文包配置 &gt;时, 则requires的模块名称可使用相对路径 refer 包内其他模块</p>
 <pre><code>// tc/mods/mod1 依赖于 tc/mods/mod2
@@ -148,7 +148,7 @@ KISSY.add(&quot;tc/mods/mod1&quot;,function(){
 <p><strong>modules</strong>：</p>
 <p>以单个模块为键，单个模块配置对象为值的键值对对象。单个模块配置对象包括：</p>
 <ul>
-<li>requries，字符串组成的数组<code>String[]</code>，该模块的依赖模块名数组。当设置 combine 为 true 时需要配置，否则不建议配置.</li>
+<li>requires，字符串组成的数组<code>String[]</code>，该模块的依赖模块名数组。当设置 combine 为 true 时需要配置，否则不建议配置.</li>
 <li>tag，类型 String，单个模块的时间戳。仅在 combine 为 false 时生效。 combine:true 时取对应包的 tag.</li>
 </ul>
 <p><strong>packages</strong>：</p>

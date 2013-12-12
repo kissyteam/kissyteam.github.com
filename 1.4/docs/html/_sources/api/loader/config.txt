@@ -196,4 +196,4 @@ packages 范例: 包配置
 
     .. note::
 
-        模块名也可以省略, 不过部署阶段需要使用 :mod:`KISSY Module Compiler <module-compiler>` .
+        模块名也可以省略, 不过部署阶段需要使用 `KISSY Module Compiler <https://github.com/daxingplay/grunt-kmc>`_ .

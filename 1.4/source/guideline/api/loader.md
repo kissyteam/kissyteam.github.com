@@ -13,7 +13,7 @@
 - config (object) – 模块的一些格外属性, 是JSON对象，包含属性：
 	- requires (Array<String>) – 模块的一些依赖项, 如果需要载入 css 则, 数组项为 `.css` 结尾名字
 
-KISSY 添加模块/逻辑片段的函数，config为配置对象，包括`config.requries`，给出当前模块的依赖模块。模块返回一个对象，通过引用它的时候来调用到。
+KISSY 添加模块/逻辑片段的函数，config为配置对象，包括`config.requires`，给出当前模块的依赖模块。模块返回一个对象，通过引用它的时候来调用到。
 
 当模块名称 name 为[包内模块](#config)时, 则requires的模块名称可使用相对路径来引用包内其他模块，比如`package/a`来引用`package/a.js`，也可以用`./a`来引用`package/a.js`
 
@@ -22,7 +22,7 @@ KISSY 添加模块/逻辑片段的函数，config为配置对象，包括`config
 		return ObjA;
 	},{
 		// 当前逻辑依赖一个包内的文件b，一个全局模块node，一个同目录下的css文件
-		requries:['package/b','node','./mod.css']	
+		requires:['package/b','node','./mod.css']
 	});
 
 使用该模块
@@ -37,7 +37,7 @@ KISSY 添加模块/逻辑片段的函数，config为配置对象，包括`config
 	KISSY.add(function(S){
 		return ObjA;
 	},{
-		requries:['./b','./mod.css']	
+		requires:['./b','./mod.css']
 	});
 
 
@@ -47,7 +47,7 @@ KISSY 添加模块/逻辑片段的函数，config为配置对象，包括`config
 	KISSY.add(function(S,Node,ObjB){
 		// 使用 Node 和 ObjB
 	},{
-		requries:['node','./b']	
+		requires:['node','./b']
 	});
 
 当模块名称 name 为包内模块< 参见 下文包配置 >时, 则requires的模块名称可使用相对路径 refer 包内其他模块
@@ -85,7 +85,7 @@ KISSY 添加模块/逻辑片段的函数，config为配置对象，包括`config
 
 以单个模块为键，单个模块配置对象为值的键值对对象。单个模块配置对象包括：
 
-- requries，字符串组成的数组`String[]`，该模块的依赖模块名数组。当设置 combine 为 true 时需要配置，否则不建议配置.
+- requires，字符串组成的数组`String[]`，该模块的依赖模块名数组。当设置 combine 为 true 时需要配置，否则不建议配置.
 - tag，类型 String，单个模块的时间戳。仅在 combine 为 false 时生效。 combine:true 时取对应包的 tag.
 
 **packages**：

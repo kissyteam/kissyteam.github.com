@@ -242,7 +242,7 @@ KISSY 提供了`require`语法糖
 			requires:['mod-b','mod-c']
 		},
 		'mod-b':{
-			requries:['mod-d','mod-e']
+			requires:['mod-d','mod-e']
 		}
 	});
 

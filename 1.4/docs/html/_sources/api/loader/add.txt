@@ -20,7 +20,7 @@ Methods
 
     .. note::
 
-        模块名 ``name`` 也可以省略, 不过部署阶段需要使用 :mod:`KISSY Module Compiler <module-compiler>` .
+        模块名 ``name`` 也可以省略, 不过部署阶段需要使用 `KISSY Module Compiler <https://github.com/daxingplay/grunt-kmc>`_ .
 
 
     范例: 添加模块

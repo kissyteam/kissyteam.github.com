@@ -454,14 +454,14 @@
 <div class="container">
 	<h3>S.add()</h3>
 <p><code>add(name,fn[,config]) ⇒ void</code></p>
-<p>KISSY 添加模块/逻辑片段的函数，config为配置对象，包括<code>config.requries</code>，给出当前模块的依赖模块。模块返回一个对象，通过引用它的时候来调用到。</p>
+<p>KISSY 添加模块/逻辑片段的函数，config为配置对象，包括<code>config.requires</code>，给出当前模块的依赖模块。模块返回一个对象，通过引用它的时候来调用到。</p>
 <p>当模块名称 name 为<a href="#loader_config">包内模块</a>时, 则requires的模块名称可使用相对路径来引用包内其他模块，比如<code>package/a</code>来引用<code>package/a.js</code>，也可以用<code>./a</code>来引用<code>package/a.js</code></p>
 <pre><code>// package/a.js
 KISSY.add(&#39;package/a&#39;,function(S){
     return ObjA;
 },{
     // 当前逻辑依赖一个包内的文件b，一个全局模块node，一个同目录下的css文件
-    requries:[&#39;package/b&#39;,&#39;node&#39;,&#39;./mod.css&#39;]    
+    requires:[&#39;package/b&#39;,&#39;node&#39;,&#39;./mod.css&#39;]
 });</code></pre>
 <p>使用该模块</p>
 <pre><code>KISSY.use(&#39;package/a&#39;,function(S,ObjA){
@@ -472,14 +472,14 @@ KISSY.add(&#39;package/a&#39;,function(S){
 KISSY.add(function(S){
     return ObjA;
 },{
-    requries:[&#39;./b&#39;,&#39;./mod.css&#39;]    
+    requires:[&#39;./b&#39;,&#39;./mod.css&#39;]
 });</code></pre>
 <p><code>add()</code>中的函数回调可以调用它依赖的模块所返回的对象</p>
 <pre><code>// package/a.js
 KISSY.add(function(S,Node,ObjB){
     // 使用 Node 和 ObjB
 },{
-    requries:[&#39;node&#39;,&#39;./b&#39;]    
+    requires:[&#39;node&#39;,&#39;./b&#39;]
 });</code></pre>
 <blockquote>
 <p><em>Changed in version 1.3+</em>: KISSY.add 表示模块定义, fn 并不会执行, 只有在 use 时才执行, 懒加载原则.</p>
