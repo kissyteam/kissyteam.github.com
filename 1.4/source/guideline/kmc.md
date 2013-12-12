@@ -1,5 +1,9 @@
 # Kissy Module Compiler（Grunt-KMC）
 
+<script>
+location.href = 'https://github.com/daxingplay/grunt-kmc/blob/master/README.md';
+</script>
+
 Grunt-kmc 依赖 kmc，[kmc 使用指南](https://github.com/daxingplay/ModuleCompiler/)。
 
 环境依赖：Node，Grunt。
