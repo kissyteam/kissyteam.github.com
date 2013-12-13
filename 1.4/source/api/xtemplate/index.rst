@@ -15,6 +15,11 @@ xtemplate
         // use XTemplate
     });
 
+    // 参数只能是离线编译过的模板
+    KISSY.use('xtemplate/runtime',function(S,XTemplate){
+        // use XTemplate
+    });
+
 Class
 ---------------------------------
 
