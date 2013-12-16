@@ -1,26 +1,26 @@
 <!doctype html>
 <html>
 <head>
-<script src="http://g.tbcdn.cn/kissy/k/1.4.1/seed.js?t=20131209" data-config="{combine:true}"></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js'></script>
-<style>
-    body {
-        background: #000;
-    }
+    <meta charset="utf-8"/>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.1/seed.js?t=20131209" data-config="{combine:true}"></script>
+    <style>
+        body {
+            background: #000;
+        }
 
-    h1, h2, a {
-        color: white;
-    }
+        h1, h2, a {
+            color: white;
+        }
 
-    #wrap {
-        width: 600px;
-        margin: 0 auto;
-    }
+        #wrap {
+            width: 600px;
+            margin: 0 auto;
+        }
 
-    .container {
-        border: 1px solid #555;
-    }
-</style>
+        .container {
+            border: 1px solid #555;
+        }
+    </style>
 </head>
 <body>
 
@@ -31,7 +31,7 @@
 </div>
 
 <script>
-    KISSY.use('core',function (S) {
+    KISSY.use('core,gallery/raphael/1.0/', function (S, _, Raphael) {
         var $ = S.all;
         var easings = [
             [
@@ -62,8 +62,10 @@
             ]
         ];
 
-        var steps = 20, steps2 = 300, width = 600, height = 600,
-
+        var steps = 20,
+                steps2 = 300,
+                width = 600,
+                height = 600,
                 gap = [0, 0, 100, 250, 0];
 
         var easingFns = S.Anim.Easing;
@@ -73,8 +75,8 @@
             var container = $("<div class='container'></div>").appendTo("#wrap");
             var h2 = $("<h2></h2>").appendTo(container);
             var div = $("<div></div>").appendTo(container).css({
-                width:width,
-                height:height + gap[i] * 2
+                width: width,
+                height: height + gap[i] * 2
             });
 
             drawEasing(div[0], width, height, single, gap[i]);
@@ -96,7 +98,7 @@
             }
 
             paper.path(pathGrid).attr({
-                stroke:'#555'
+                stroke: '#555'
             });
 
             var stepX2 = w / steps2;
@@ -114,8 +116,8 @@
                 var color = nextColour(),
                         path = "";
                 easingHtml.push(S.substitute("<span style='color:{color}'>{easing}</span>", {
-                    color:Raphael.getRGB(color).hex,
-                    easing:easings[j]
+                    color: Raphael.getRGB(color).hex,
+                    easing: easings[j]
                 }));
                 for (i = 0; i < steps2; i++) {
                     var sx = (stepX2 * i);
@@ -127,7 +129,7 @@
                             "l" + "-1,0" + "l" + "0,-1z";
                 }
                 paper.path(path).attr({
-                    stroke:color
+                    stroke: color
                 });
             }
 
