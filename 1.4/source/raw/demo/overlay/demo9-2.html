@@ -12,6 +12,7 @@
 
     .ks-overlay {
         position: absolute;
+        position: fixed;
         left: -9999px;
         top: -9999px;
         z-index: 100;
@@ -45,9 +46,6 @@
         var dialog = new O.Dialog({
             width: 860,
             elCls: 'my',
-            elStyle: {
-                position: UA.ie == 6 ? "absolute" : "fixed"
-            },
             bodyContent: '<img '
                     + 'width="860" '
                     + 'height="282" '

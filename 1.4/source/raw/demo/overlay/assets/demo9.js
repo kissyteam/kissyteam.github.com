@@ -2,9 +2,6 @@ KISSY.use("ua,event,node,overlay,button,component/plugin/drag", function (S, UA,
     var dialog = new O({
         width: 424,
         elCls: 'my',
-        elStyle: {
-            position: UA.ie == 6 ? "absolute" : "fixed"
-        },
         content: '<img '
             + 'width="424" '
             + 'height="282" '

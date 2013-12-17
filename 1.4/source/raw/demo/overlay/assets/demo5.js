@@ -9,10 +9,6 @@ KISSY.use('ua,event,node,overlay,button', function(S, UA, Event, Node, O, B) {
         content: node,
         width: 600,
         height: 200,
-        elStyle:{
-            position:UA.ie == 6 ? "absolute" : "fixed",
-            background:"transparent"
-        },
         align: {
             points: ['cc', 'cc']
         },
