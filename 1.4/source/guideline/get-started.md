@@ -43,7 +43,7 @@
 - [历史版本](history.html)
 - KISSY 核心代码规范
 	- [HTML/CSS 编码规范](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
-	- [JavaScript 编码规范](http://docs.kissyui.com/source/tutorials/style-guide/google/javascriptguide.xml)
+	- [JavaScript 编码规范](http://docs.kissyui.com/1.4/source/tutorials/style-guide/google/javascriptguide.xml)
 - [如何为 KISSY Core 贡献代码](https://github.com/kissyteam/kissy/blob/master/CONTRIBUTING.md)
 - [1.3.x -> 1.4.0 升级指南](upgrade.html)
 - [FAQ](faq.html)

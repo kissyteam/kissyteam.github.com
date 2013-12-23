@@ -1,4 +1,4 @@
-KISSY.use("anim,node,button", function(S, Anim, Node, Button) {
+KISSY.use("anim,node,button", function (S, Anim, Node, Button) {
     var anim_show = S.one("#anim_show"),
         anim_slide = S.one("#anim_slide"),
         anim_fade = S.one("#anim_fade");
@@ -8,7 +8,7 @@ KISSY.use("anim,node,button", function(S, Anim, Node, Button) {
         render: "#demo_show"
     });
     demo_show.render();
-    demo_show.on("click", function() {
+    demo_show.on("click", function () {
         anim_show.toggle(1);
     });
 
@@ -17,11 +17,12 @@ KISSY.use("anim,node,button", function(S, Anim, Node, Button) {
         render: "#demo_slide"
     });
     demo_slide.render();
-    demo_slide.on("click", function() {
-        if (anim_slide.css("display") === "none")
+    demo_slide.on("click", function () {
+        if (anim_slide.css("display") === "none") {
             anim_slide.slideDown();
-        else
+        } else {
             anim_slide.slideUp();
+        }
     });
 
     var demo_fade = new Button({
@@ -29,7 +30,7 @@ KISSY.use("anim,node,button", function(S, Anim, Node, Button) {
         render: "#demo_fade"
     });
     demo_fade.render();
-    demo_fade.on("click", function() {
+    demo_fade.on("click", function () {
         if (anim_fade.css("display") === "none")
             anim_fade.fadeIn();
         else

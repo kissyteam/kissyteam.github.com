@@ -100,7 +100,7 @@ mix 默认不是递归进行的. 如果其中一个属性为对象或者数组�
 
 supplier undefined 的属性值不会被复制，不过对象从原型继承下来下的值则会被复制.	
 
-> 该方法仅适用于 javascript 对象，不要再浏览器对象上调用，例如 node.style
+> 该方法仅适用于 javascript 对象，不要在浏览器对象上调用，例如 node.style
 
 简单 mix
 

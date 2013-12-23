@@ -93,7 +93,7 @@ var bodyNode = S.one(document.body);</code></pre>
 <p>KISSY 会根据浏览器平台加载正确的代码，用户不用关心平台，KISSY 一定会调用最合适、性能最优的选择器实现。在1.4.1中，不需要用户手动引用<code>sizzle</code>模块了，KISSY 会自行判断加载。</p>
 </blockquote>
 <h2>操作内容</h2>
-<p>KISSY Node 节点支持链式调用。<a href="http://docs.kissyui.com/1.4/docs/html/tutorials/quickstart/node.html">使用范例</a>。</p>
+<p>KISSY Node 节点支持链式调用。<a href="http://demo.kissyui.com/tutorial/">使用范例</a>。</p>
 <pre><code>S.one(&#39;#test&#39;)
     .parent(&#39;.fathor&#39;)
     .next()
@@ -114,7 +114,7 @@ imgNode.next().html(&#39;hello world&#39;);// 设置imgNode下一个兄弟节点
     e.halt();
     alert(&#39;event: &#39; + e.type + &#39; target: &#39; + e.target.tagName); 
 });</code></pre>
-<p>回调传回一个门面对象<code>e</code>，e是原生事件对象，是非封装后的，这时<code>e.target</code>是裸的节点。除了preventDefault()和stopPropagation()之外，e还包含halt()方法，停止事件加阻止默认行为。</p>
+<p>回调传回一个门面对象<code>e</code>，注意 e 不是原生事件对象，是封装后的，这时<code>e.target</code>是裸的节点。除了preventDefault()和stopPropagation()之外，e还包含halt()方法，停止事件加阻止默认行为。</p>
 <h2>Node 方法</h2>
 <p>Node 实例实现了一些快捷方法，用来方便用户更快捷的操作DOM节点。比如append、next、appendTo、addClass等等。</p>
 <h2>NodeList  集合</h2>
@@ -157,7 +157,8 @@ node.all(&#39;.children&#39;); // 得到当前节点下的匹配选择器的节�
 <pre><code>node.getDOMNode();// 得到一个原生节点
 node.getDOMNodes();// 得到一个原生节点组成的数组</code></pre>
 <h3>end()</h3>
-<p>得到上一次 one() 和 all() 操作前的 NodeList 或者 Node 对象。引入该方法是为了更好的支持链式操作( chaining )，可以在一个语句内对不同层次得节点集合进行不同的操作.<a href="http://docs.kissyui.com/source/raw/api/node/end.html">demo</a>。</p>
+<p>得到上一次 one() 和 all() 操作前的 NodeList 或者 Node 对象。引入该方法是为了更好的支持链式操作( chaining )，可以在一个语句内对不同层次得节点集合进行不同的操作.
+<a href="http://docs.kissyui.com/1.4/source/raw/api/node/end.html">demo</a>。</p>
 <pre><code>S.one(&quot;body&quot;).all(&quot;.d1&quot;).css(&quot;color&quot;, &quot;red&quot;);// =&gt; 返回节点.d1
 S.one(&quot;body&quot;).all(&quot;.d1&quot;).css(&quot;color&quot;, &quot;red&quot;).end();// =&gt; 返回节点 body
 S.one(&quot;body&quot;).all(&quot;.d1&quot;).css(&quot;color&quot;, &quot;red&quot;)
@@ -196,7 +197,7 @@ S.one(&quot;body&quot;).all(&quot;.d1&quot;).css(&quot;color&quot;, &quot;red&qu
 var subs = as.slice(1,3); // =&gt; subs != as
 subs.length // =&gt; 2，subs 为被截取之后的节点 </code></pre>
 <h3>scrollTop()</h3>
-<p>返回节点滚动条的垂直位置.<a href="http://docs.kissyui.com/source/raw/api/node/scrollTop-get.html">demo</a></p>
+<p>返回节点滚动条的垂直位置.<a href="http://docs.kissyui.com/1.4/source/raw/api/node/scrollTop-get.html">demo</a></p>
 <pre><code>var p = S.all(&quot;p:first&quot;).scrollTop();
 alert(p);// 返回第一个p元素的滚动条高度</code></pre>
 <p>设置当前节点的滚动条的高度</p>
@@ -207,7 +208,7 @@ KISSY.DOM.scrollTop();// 这两者完全一致</code></pre>
 <h3>scrollLeft()，用法同scrollTop()</h3>
 <h3>height() 和 width()</h3>
 <p>获得节点的计算高度或宽度，css(&#39;height&#39;) 和 height() 的区别在于 height() 返回不带单位的纯数值, 而 css(&#39;height&#39;) 则返回带单位的原始值(例如 40% ).</p>
-<p><img src="http://docs.kissyui.com/source/raw/api/node/height.png" alt=""></p>
+<p><img src="http://docs.kissyui.com/1.4/source/raw/api/node/height.png" alt=""></p>
 <p>该方法也可以用来得到 windw 和 document 的高度</p>
 <pre><code>S.all(window).height(); // 得到浏览器可以区域的高度, 相当于 DOM.viewportHeight()
 S.all(document).height(); //得到 html 文档的高度, 相当于 DOM.docHeight()</code></pre>
@@ -219,8 +220,8 @@ S.all(document).height(); //得到 html 文档的高度, 相当于 DOM.docHeight
 S.all(&#39;.filter&#39;).height(&#39;100px&#39;);// 设置一组元素的高度为100px
 S.all(&#39;.filter&#39;).height(&#39;20em&#39;);// 设置一组元素的高度为20em</code></pre>
 <ul>
-<li><a href="http://docs.kissyui.com/source/raw/api/node/height-get.html">得到各种各样高度的demo</a></li>
-<li><a href="http://docs.kissyui.com/source/raw/api/node/height-set.html">设置元素高度的demo</a></li>
+<li><a href="http://docs.kissyui.com/1.4/source/raw/api/node/height-get.html">得到各种各样高度的demo</a></li>
+<li><a href="http://docs.kissyui.com/1.4/source/raw/api/node/height-set.html">设置元素高度的demo</a></li>
 </ul>
 <p>附图：下图为浏览器常用尺寸的获取办法，这里是通过原生节点方式获取</p>
 <p><img src="http://gtms01.alicdn.com/tps/i1/T1mB1SFhlXXXcmL1nK-609-602.gif" alt=""></p>
@@ -257,9 +258,9 @@ KISSY.use(&quot;node&quot;,function(S,Node){
 <pre><code>S.all(&#39;.container&#39;).append(S.all(&#39;h2&#39;));</code></pre>
 <p>如果当前节点列表只包括一个节点, 那么他将会被移到目标容器中(而不是克隆):</p>
 <ul>
-<li><a href="http://docs.kissyui.com/source/raw/api/node/append-1.html">在所有段落中添加一些 html 字符串demo</a></li>
-<li><a href="http://docs.kissyui.com/source/raw/api/node/append-2.html">给所有段落添加一个文本节点</a></li>
-<li><a href="http://docs.kissyui.com/source/raw/api/node/append-3.html">给所有段落添加一个 <code>NodeList</code> 对象</a></li>
+<li><a href="http://docs.kissyui.com/1.4/source/raw/api/node/append-1.html">在所有段落中添加一些 html 字符串demo</a></li>
+<li><a href="http://docs.kissyui.com/1.4/source/raw/api/node/append-2.html">给所有段落添加一个文本节点</a></li>
+<li><a href="http://docs.kissyui.com/1.4/source/raw/api/node/append-3.html">给所有段落添加一个 <code>NodeList</code> 对象</a></li>
 </ul>
 <h3>appendTo()</h3>
 <p>将当前节点列表中的每个元素插入到容器列表的每个元素的最后一个子节点后面.</p>
@@ -269,7 +270,7 @@ KISSY.use(&quot;node&quot;,function(S,Node){
 <pre><code>S.all(&#39;h2&#39;).appendTo(S.all(&#39;.container&#39;));</code></pre>
 <p>如果容器列表只有一个节点, 那么当前节点列表会被移动到容器内(不是克隆):</p>
 <ul>
-<li><a href="http://docs.kissyui.com/source/raw/api/node/appendTo.html">把多个 span 插入到已有元素</a></li>
+<li><a href="http://docs.kissyui.com/1.4/source/raw/api/node/appendTo.html">把多个 span 插入到已有元素</a></li>
 </ul>
 <h3>prepend()</h3>
 <p>用法同append()，prepend()表示插入到最前</p>
@@ -282,12 +283,12 @@ KISSY.use(&quot;node&quot;,function(S,Node){
 <pre><code>S.all(&#39;h2&#39;).insertBefore(S.all(&#39;.container&#39;));</code></pre>
 <p>如果目标节点只有一个, 那么当前节点就会移动到目标节点之前。</p>
 <ul>
-<li><a href="http://docs.kissyui.com/source/raw/api/node/insertBefore.html">把段落插入到 div 节点之前Demo</a></li>
+<li><a href="http://docs.kissyui.com/1.4/source/raw/api/node/insertBefore.html">把段落插入到 div 节点之前Demo</a></li>
 </ul>
 <h3>before()</h3>
 <p>和insertBefore()方法的功能一样, 只不过参数意义不同, insertBefore 表示当前节点列表被插入到参数目标节点之前, 而该方法则表示参数节点被插入到当前节点之前.</p>
 <ul>
-<li><a href="http://docs.kissyui.com/source/raw/api/node/before.html">Demo</a></li>
+<li><a href="http://docs.kissyui.com/1.4/source/raw/api/node/before.html">Demo</a></li>
 </ul>
 <h3>insertAfter()</h3>
 <p>用法类似于insertBefore()</p>
@@ -404,7 +405,7 @@ console.log(els.test(&#39;.container&#39;));//a标签是否都包含class名cont
 <p>源元素的对象以及数组类型的 data 属性只是引用被复制到 clone 后的元素，他们的值则会在源元素以及克隆元素间共享，如果想进行 deep copy，请手动进行</p>
 <pre><code>var elem=KISSY.one(&quot;.hello&quot;).attr(&quot;custom&quot;,{x:1});
 elem.clone().attr(&quot;custom&quot;,{x:2});</code></pre>
-<p><a href="http://docs.kissyui.com/source/raw/api/dom/clone.html">克隆后保留原有事件逻辑Demo</a></p>
+<p><a href="http://docs.kissyui.com/1.4/source/raw/api/dom/clone.html">克隆后保留原有事件逻辑Demo</a></p>
 <h3>empty()</h3>
 <p>清除节点的所有子孙节点以及子孙节点上的事件.</p>
 <h3>replaceWith()</h3>
@@ -447,7 +448,7 @@ console.log(c.prop(&#39;nodeName&#39;).toLowerCase());// =&gt; input
 c.prop(&quot;disabled&quot;, false); // ok
 c.prop(&quot;checked&quot;, true); // ok
 c.val(&quot;someValue&quot;); // ok</code></pre>
-<p><a href="http://docs.kissyui.com/source/raw/demo/dom/selection-start.html">Demo:selectionStart/End 兼容</a></p>
+<p><a href="http://docs.kissyui.com/1.4/source/raw/demo/dom/selection-start.html">Demo:selectionStart/End 兼容</a></p>
 <h3>hasProp()</h3>
 <p>判断节点是否原生具有某个属性</p>
 <p>当你使用该方法时, 请先考虑下是否是自定义 property , 如果是自定义 property 推荐采用 data() 系列方法. 如果是 DOM property , 一般直接判断 prop() 返回值即可</p>
@@ -601,7 +602,7 @@ console.log(S.one(&#39;button&#39;).data(&#39;data-x&#39;));</code></pre>
 <h3>detach()</h3>
 <p>接触绑定事件，用法参照<a href="event.html">Event</a></p>
 <h3>fire()</h3>
-<p>模拟事件发生。用 Event.on 绑定的事件处理器可以被用户触发的原生事件调用. 但是这些事件处理器也可以使用 fire 手动调用. 调用 fire() 和用户触发导致的处理器调用调用是一样的顺序.<a href="http://docs.kissyui.com/source/raw/api/event/fire.html">参照这个demo</a></p>
+<p>模拟事件发生。用 Event.on 绑定的事件处理器可以被用户触发的原生事件调用. 但是这些事件处理器也可以使用 fire 手动调用. 调用 fire() 和用户触发导致的处理器调用调用是一样的顺序.<a href="http://docs.kissyui.com/1.4/source/raw/api/event/fire.html">参照这个demo</a></p>
 <pre><code>node.on(&#39;click&#39;,function(){
     // 其中this是原生节点
     alert(this.text());

@@ -73,7 +73,8 @@ KISSY.use('node',function (S,Node) {
 
 ## 实例化动画的传参
 
-刨除直接通过node.animate()创建的动画之外，通过Anim可以生成一个`动画实例`。动画实例是用来描述动画的一些基本属性，比如，从`什么状态`动画到`什么状态`，动画时间，缓动效果，暂停和继续动画等。通过`Anim`这样实例化一个动画实例（[参照Demo](http://docs.kissyui.com/source/raw/demo/anim/demo1.html)）：
+刨除直接通过node.animate()创建的动画之外，通过Anim可以生成一个`动画实例`。动画实例是用来描述动画的一些基本属性，比如，从`什么状态`动画到`什么状态`，动画时间，缓动效果，暂停和继续动画等。
+通过`Anim`这样实例化一个动画实例（[参照Demo](http://docs.kissyui.com/1.4/source/raw/demo/anim/demo1.html)）：
 
 	KISSY.use("anim",function(S,Anim){
 		// 初始化动画实例
@@ -231,7 +232,7 @@ padding: 4px;
 margin: 8px;
 }
 .loading {
-background: transparent url(http://docs.kissyui.com/source/_static/loading.gif) no-repeat;
+background: transparent url(http://docs.kissyui.com/1.4/source/_static/loading.gif) no-repeat;
 width: 100px;
 height: 100px;
 margin: 20px;

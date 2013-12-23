@@ -515,7 +515,7 @@ data 可忽略，同上个函数描述。相当于这样调用IO：
 
 #### example
 
-查看[demo](http://docs.kissyui.com/source/raw/api/ajax/getJSON.html) :从 test.js 中加载 json 数据并访问
+查看[demo](http://docs.kissyui.com/1.4/source/raw/api/ajax/getJSON.html) :从 test.js 中加载 json 数据并访问
 
 ### jsonp() `<static>`
 
@@ -553,7 +553,7 @@ data 可忽略，同上个函数描述，具体实现为：
 
 #### example
 
-从 flickr 中动态获取图片信息：[demo](http://docs.kissyui.com/source/raw/api/ajax/jsonp.html)
+从 flickr 中动态获取图片信息：[demo](http://docs.kissyui.com/1.4/source/raw/api/ajax/jsonp.html)
 
 ### upload() `<static>`
 
@@ -597,7 +597,7 @@ data 可忽略，同上个函数描述，具体实现为：
 
 #### example
 
-向 doUpload.html 上传文件并读取 json 响应：[Demo](http://docs.kissyui.com/source/raw/api/ajax/upload.html)
+向 doUpload.html 上传文件并读取 json 响应：[Demo](http://docs.kissyui.com/1.4/source/raw/api/ajax/upload.html)
 
 > 使用自定义按钮模拟 file input 时，注意请将 file input 设置透明覆盖在自定义按钮上面。
 
@@ -693,7 +693,7 @@ padding: 4px;
 margin: 8px;
 }
 .loading {
-background: transparent url(http://docs.kissyui.com/source/_static/loading.gif) no-repeat;
+background: transparent url(http://docs.kissyui.com/1.4/source/_static/loading.gif) no-repeat;
 width: 100px;
 height: 100px;
 margin: 20px;
