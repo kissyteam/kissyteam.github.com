@@ -181,7 +181,7 @@
 <div class="section" id="id2">
 <h2>节点实例动画操作<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><iframe width="100%" height="560" class="iframe-demo" src="/1.4/source/raw/demo/anim/demo3.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;anim,node,button&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Anim</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">Button</span><span class="p">)</span> <span class="p">{</span>
+<div><iframe width="100%" height="560" class="iframe-demo" src="/1.4/source/raw/demo/anim/demo3.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;anim,node,button&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Anim</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">Button</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">anim_show</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#anim_show&quot;</span><span class="p">),</span>
         <span class="nx">anim_slide</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#anim_slide&quot;</span><span class="p">),</span>
         <span class="nx">anim_fade</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#anim_fade&quot;</span><span class="p">);</span>
@@ -191,7 +191,7 @@
         <span class="nx">render</span><span class="o">:</span> <span class="s2">&quot;#demo_show&quot;</span>
     <span class="p">});</span>
     <span class="nx">demo_show</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
-    <span class="nx">demo_show</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">demo_show</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="nx">anim_show</span><span class="p">.</span><span class="nx">toggle</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
     <span class="p">});</span>
 
@@ -200,11 +200,12 @@
         <span class="nx">render</span><span class="o">:</span> <span class="s2">&quot;#demo_slide&quot;</span>
     <span class="p">});</span>
     <span class="nx">demo_slide</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
-    <span class="nx">demo_slide</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">anim_slide</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;display&quot;</span><span class="p">)</span> <span class="o">===</span> <span class="s2">&quot;none&quot;</span><span class="p">)</span>
+    <span class="nx">demo_slide</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">anim_slide</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;display&quot;</span><span class="p">)</span> <span class="o">===</span> <span class="s2">&quot;none&quot;</span><span class="p">)</span> <span class="p">{</span>
             <span class="nx">anim_slide</span><span class="p">.</span><span class="nx">slideDown</span><span class="p">();</span>
-        <span class="k">else</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
             <span class="nx">anim_slide</span><span class="p">.</span><span class="nx">slideUp</span><span class="p">();</span>
+        <span class="p">}</span>
     <span class="p">});</span>
 
     <span class="kd">var</span> <span class="nx">demo_fade</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Button</span><span class="p">({</span>
@@ -212,7 +213,7 @@
         <span class="nx">render</span><span class="o">:</span> <span class="s2">&quot;#demo_fade&quot;</span>
     <span class="p">});</span>
     <span class="nx">demo_fade</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
-    <span class="nx">demo_fade</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">demo_fade</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">anim_fade</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;display&quot;</span><span class="p">)</span> <span class="o">===</span> <span class="s2">&quot;none&quot;</span><span class="p">)</span>
             <span class="nx">anim_fade</span><span class="p">.</span><span class="nx">fadeIn</span><span class="p">();</span>
         <span class="k">else</span>
