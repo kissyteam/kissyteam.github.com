@@ -59,6 +59,9 @@
 	});
 
 -----------------------------------------
+## 1.4.1 Changelog
+
+[KISSY 1.4.1 Changelog](https://github.com/kissyteam/kissy/releases/tag/v1.4.1)
 
 ## 1.4.0 Changelog
 
