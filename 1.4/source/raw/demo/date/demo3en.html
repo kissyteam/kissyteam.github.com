@@ -3,18 +3,15 @@
     <head>
         <meta charset="utf-8" />
         <title>Demo - DatePicker 英文模式使用示例</title>
-        <script src="http://g.tbcdn.cn/kissy/k/1.4.1/seed.js?t=20131223" data-config="{combine:true}"></script>
-        <link rel="stylesheet" href="./assets/picker.css">
-        <link rel="stylesheet" href="./assets/decade-panel.css">
-        <link rel="stylesheet" href="./assets/month-panel.css">
-        <link rel="stylesheet" href="./assets/year-panel.css">
+        <script src="http://g.tbcdn.cn/kissy/k/1.4.1/seed-min.js?20140106" data-config="{combine:true}"></script>
+        <link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.4.1/css/dpl/base.css">
     </head>
     <body>
         <div id="holder"></div>
         <div id="result"></div>
         <script>
         KISSY.config('lang', 'en-us');
-        KISSY.use('node, date/picker, date/format', function(S, Node, DatePicker, DateFormat) {
+        KISSY.use('node, date/picker, date/format, date/format,date/picker/assets/dpl.css', function(S, Node, DatePicker, DateFormat) {
             var result = Node.all("#result");
             var picker = new DatePicker({
                 disableDate: function(current, value) {

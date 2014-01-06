@@ -3,17 +3,14 @@
     <head>
         <meta charset="utf-8" />
         <title>Demo - PopupDatePicker 使用示例</title>
-        <script src="http://g.tbcdn.cn/kissy/k/1.4.1/seed.js?t=20131223" data-config="{combine:true}"></script>
-        <link rel="stylesheet" href="./assets/picker.css">
-        <link rel="stylesheet" href="./assets/decade-panel.css">
-        <link rel="stylesheet" href="./assets/month-panel.css">
-        <link rel="stylesheet" href="./assets/year-panel.css">
+        <script src="http://g.tbcdn.cn/kissy/k/1.4.1/seed-min.js?20140106" data-config="{combine:true}"></script>
+        <link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.4.1/css/dpl/base.css">
     </head>
     <body>
         <input type="text" id="date">
         <button id="popup">选择日期</button>
         <script>
-        KISSY.use('node, date/popup-picker, date/format', function(S, Node, PopupDatePicker, DateFormat) {
+        KISSY.use('node, date/popup-picker, date/format,date/picker/assets/dpl.css', function(S, Node, PopupDatePicker, DateFormat) {
             var input = Node.all('#date');
             var dateFormat = DateFormat.getDateInstance(DateFormat.Style.FULL);
             var picker = null;
