@@ -19,4 +19,4 @@ Methods
     
     .. note::
 
-        只有在 debug 模式下, 才会输出调试信息. debug 模式的说明请参考 :attr:`~KISSY.Config`
+        只有在 debug 模式下并且载入 seed.js, 才会输出调试信息. debug 模式的说明请参考 :attr:`~KISSY.Config`
