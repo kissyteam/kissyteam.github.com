@@ -37,7 +37,7 @@ Methods
     **默认选项机制**
 
 
-    简单情况下 merge 方法常用来合并配置信息. 推荐使用 ``Base`` 处理属性配置.
+    简单情况下 merge 方法常用来合并配置信息. 推荐使用 :mod:`base` 处理属性配置.
 
         .. code-block:: javascript
 
