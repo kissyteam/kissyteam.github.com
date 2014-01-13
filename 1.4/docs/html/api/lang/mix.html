@@ -276,19 +276,6 @@
 </pre></div>
 </div>
 </div></blockquote>
-<p><strong>默认选项机制</strong></p>
-<p>常用于组件配置，不过推荐用 <a class="reference internal" href="../base/index.html#module-base" title="base"><tt class="xref py py-mod docutils literal"><span class="pre">base</span></tt></a> 替代</p>
-<blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">defaults</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">validate</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">limit</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;foo&quot;</span> <span class="p">};</span>
-<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">validate</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;bar&quot;</span> <span class="p">};</span>
-
-<span class="cm">/* merge defaults and options, without modifying defaults */</span>
-<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">merge</span><span class="p">(</span><span class="nx">defaults</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
-
-<span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">settings</span><span class="p">);</span> <span class="c1">// =&gt; { validate: true, limit: 5, name: bar }</span>
-</pre></div>
-</div>
-</div></blockquote>
 <p>该方法在 KISSY 里具有非常重要的地位.
 JavaScript 是一门动态语言, 利用 mixin 特性, 可以很方便的实现特性的静态复制和动态修改.</p>
 </dd></dl>
