@@ -109,22 +109,6 @@ Methods
             S.log(object1); // => { apple: 0, banana: { weight: 52, price: 200 }, cherry: 97, durian: 100 }
 
 
-    **默认选项机制**
-
-
-    常用于组件配置，不过推荐用 :mod:`base` 替代
-
-        .. code-block:: javascript
-
-            var defaults = { validate: false, limit: 5, name: "foo" };
-            var options = { validate: true, name: "bar" };
-
-            /* merge defaults and options, without modifying defaults */
-            var settings = S.merge(defaults, options);
-
-            S.log(settings); // => { validate: true, limit: 5, name: bar }
-
-
 
 
     该方法在 KISSY 里具有非常重要的地位.
