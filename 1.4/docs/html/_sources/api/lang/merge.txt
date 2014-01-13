@@ -32,4 +32,19 @@ Methods
         S.log(o.b); // => 'b2'
         S.log(o.c); // => 'c'
     
+
+
+    **默认选项机制**
+
+
     简单情况下 merge 方法常用来合并配置信息. 推荐使用 ``Base`` 处理属性配置.
+
+        .. code-block:: javascript
+
+            var defaults = { validate: false, limit: 5, name: "foo" };
+            var options = { validate: true, name: "bar" };
+
+            /* merge defaults and options, without modifying defaults */
+            var settings = S.merge(defaults, options);
+
+            S.log(settings); // => { validate: true, limit: 5, name: bar }
