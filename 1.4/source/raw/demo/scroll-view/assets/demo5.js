@@ -1,12 +1,10 @@
 KISSY.config('packages', {
     slide: {
+        debug:1,
         base: './assets/'
-    },
-    'image-zoomer': {
-        base: 'http://dev.kissyui.com/kissy/src/scroll-view/sub-modules/plugin/scrollbar/demo/'
     }
 });
-KISSY.use('node,slide,image-zoomer', function (S, Node, Slide, imageZoomer) {
+KISSY.use('node,slide,gallery/image-gesture-zoom/1.1/', function (S, Node, Slide, imageZoomer) {
     var $ = Node.all;
     var slide = new Slide({
         srcNode: '#demo2',

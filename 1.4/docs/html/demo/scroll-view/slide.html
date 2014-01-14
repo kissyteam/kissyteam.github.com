@@ -182,13 +182,11 @@
 <h2>ScrollView 应用示例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <iframe width="100%" height="800" class="iframe-demo" src="/1.4/source/raw/demo/scroll-view/demo5.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s1">&#39;packages&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">slide</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">debug</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
         <span class="nx">base</span><span class="o">:</span> <span class="s1">&#39;./assets/&#39;</span>
-    <span class="p">},</span>
-    <span class="s1">&#39;image-zoomer&#39;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">base</span><span class="o">:</span> <span class="s1">&#39;http://dev.kissyui.com/kissy/src/scroll-view/sub-modules/plugin/scrollbar/demo/&#39;</span>
     <span class="p">}</span>
 <span class="p">});</span>
-<span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;node,slide,image-zoomer&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">Slide</span><span class="p">,</span> <span class="nx">imageZoomer</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;node,slide,gallery/image-gesture-zoom/1.1/&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">Slide</span><span class="p">,</span> <span class="nx">imageZoomer</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">slide</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Slide</span><span class="p">({</span>
         <span class="nx">srcNode</span><span class="o">:</span> <span class="s1">&#39;#demo2&#39;</span><span class="p">,</span>
