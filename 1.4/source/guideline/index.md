@@ -36,12 +36,10 @@ KISSY is a powerfull javascript framework for building cross end web application
 # 学习 KISSY，从这里开始
 
 <div class="jumbotron row-fluid text-center">
-	<div style="max-width: 400px; margin: 0 auto">
-		<a class="btn btn-primary btn-lg btn-block" href="/1.4/docs/html/guideline/get-started.html">指引手册</a>
-		<a class="btn btn-primary btn-lg btn-block" href="/1.4/docs/html/tutorials/">教程</a>
-		<a class="btn btn-info btn-lg btn-block" href="/1.4/docs/html/api/" style="color:white">API 参考手册</a>
-		<a class="btn btn-info btn-lg btn-block" href="/1.4/docs/html/demo/" style="color:white">DEMO 示例</a>
-	</div>
+        <a class="btn btn-primary btn-lg btn-block" href="/1.4/docs/html/guideline/get-started.html">指引手册</a>
+        <a class="btn btn-primary btn-lg btn-block" href="/1.4/docs/html/tutorials/">教程</a>
+        <a class="btn btn-info btn-lg btn-block" href="/1.4/docs/html/api/" style="color:white">API 参考手册</a>
+        <a class="btn btn-info btn-lg btn-block" href="/1.4/docs/html/demo/" style="color:white">DEMO 示例</a>
 </div>
 
 
@@ -53,56 +51,69 @@ KISSY is a powerfull javascript framework for building cross end web application
 4. bower 安装 KISSY: ``bower install kissy``    
 
 
-# KISSY 的一些组件
+<h1 class="gallery-coms-title">
+    kissy gallery最新发布组件
+    <a href="http://gallery.kissyui.com/coms">全部组件</a>
+</h1>
 
 <style>
 .img-rounded{
-	box-shadow:0 0 8px -3px black;
+    box-shadow:0 0 8px -3px black;
 }
 
+.com-desc{
+    height:70px;
+    line-height: 24px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.gallery-coms-title{
+    margin-top:20px;
+    position: relative;
+}
+.gallery-coms-title a{
+    position: absolute;
+    right: 0;
+    top: 4px;
+    font-size:16px;
+}
+.com{
+    border-bottom: 1px solid #999;
+    margin: 10px 0;
+}
+.jumbotron a{
+    width: 150px;
+    float: left;
+    maring-top: 5px;
+}
 </style>
 
-<div class="row-fluid index-box">
-	<div class="col-md-4">
-		<img src="/1.4/docs/html/guideline/templates/assets/img/widget1.png" class="img-rounded img-responsive">
-		<div class="caption text-center">
-			<h2><a href="http://gallery.kissyui.com/waterfallx/1.0/guide/index.html">Waterfall</a></h2>
-		</div>
-	</div>
-	<div class="col-md-4">
-		<img src="http://gtms04.alicdn.com/tps/i4/T109qzFXdbXXX_yTTS-300-185.png" class="img-rounded img-responsive">
-		<div class="caption text-center">
-			<h2><a href="/1.4/docs/html/demo/resizable/">Resizeable</a></h2>
-		</div>
-	</div>
-	<div class="col-md-4">
-		<img src="http://gtms01.alicdn.com/tps/i1/T1YhiwFjFgXXX_yTTS-300-185.png" class="img-rounded img-responsive">
-		<div class="caption text-center">
-			<h2><a href="http://gallery.kissyui.com/autocomplete/1.2/guide/index.html">Autocomplete</a></h2>
-		</div>
-	</div>
+<div id="J_Coms">
+
 </div>
-<div class="row-fluid index-box">
-	<div class="col-md-4">
-		<img src="http://gtms02.alicdn.com/tps/i2/T1fn1AFnpbXXX_yTTS-300-185.png" class="img-rounded img-responsive">
-		<div class="caption text-center">
-			<h2><a href="http://docs.kissyui.com/1.4/docs/html/demo/editor/">Editor</a></h2>
-		</div>
-	</div>
-	<div class="col-md-4">
-		<img src="http://gtms03.alicdn.com/tps/i3/T1SJqBFX4bXXcKO_TS-300-186.png" class="img-rounded img-responsive">
-		<div class="caption text-center">
-			<h2><a href="http://gallery.kissyui.com/calendar/1.2/guide/index.html">Calendar</a></h2>
-		</div>
-	</div>
-	<div class="col-md-4">
-		<img src="http://gtms04.alicdn.com/tps/i4/T1tG5zFlleXXX_yTTS-300-185.png" class="img-rounded img-responsive">
-		<div class="caption text-center">
-			<h2><a href="http://charts.kissyui.com/">KChart</a></h2>
-		</div>
-	</div>
-</div>
+<script type="text/xtemplate" class="J_ComsTpl">
+    <div class="row-fluid index-box">
+        {{#each result}}
+            <div class="col-md-4 com">
+                <h2><a href="http://gallery.kissyui.com/{{name}}/{{version}}/guide/index.html">{{name}}</a></h2>
+                <p class="com-author">by {{author.name}}</p>
+                <p class="com-desc">{{desc}}</p>
+            </div>
+        {{/each}}
+    </div>
+</script>
  
-
-
 <p>&nbsp;</p>
+
+<script>
+    //gallery组件列表
+    (function(){
+        S.use('node,io,xtemplate',function(S,Node,io,XTemplate){
+            io.jsonp('http://gallery.kissyui.com/api/coms?len=12',function(data){
+                var tpl = Node.all('.J_ComsTpl').html();
+                var html = new XTemplate(tpl).render(data);
+                $('#J_Coms').html(html);
+            })
+        })
+    })();
+</script>
