@@ -101,7 +101,7 @@ KISSY is a powerfull javascript framework for building cross end web application
             <div class="col-md-4 com">
                 <h2><a href="http://gallery.kissyui.com/{{name}}/{{version}}/guide/index.html">{{name}}</a></h2>
                 <p class="com-author">by {{author.name}}</p>
-                <p class="com-desc">{{desc}}</p>
+                <p class="com-desc">{{#if desc!==""}}{{desc}}{{else}}{{description}}{{/if}}</p>
             </div>
         {{/each}}
     </div>
