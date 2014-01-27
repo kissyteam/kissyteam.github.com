@@ -299,7 +299,6 @@ li {
     color: #999;
 }
 
-
 .search-menuitem-active,
 .search-menuitem-hover {
     background-color: #39F;
@@ -508,6 +507,7 @@ li {
     width: 16%;
     height: 18px;
 }
+
 .search-combobox .search-combobox-placeholder {
     font-size: 16px;
     line-height: 33px;
@@ -606,7 +606,7 @@ li {
 
             var basicComboBox = new ComboBox({
                 prefixCls: 'search-',
-                placeholder:'点我搜索',
+                placeholder: '点我搜索',
                 srcNode: S.one("#combobox"),
                 // width: 500,
                 dataSource: new ComboBox.RemoteDataSource({
@@ -614,6 +614,7 @@ li {
                         url: 'http://suggest.taobao.com/sug',
                         dataType: 'jsonp',
                         data: {
+                            k: 1,
                             code: "utf-8"
                         }
                     },
