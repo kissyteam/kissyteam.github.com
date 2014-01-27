@@ -81,10 +81,14 @@ KISSY is a powerfull javascript framework for building cross end web application
     border-bottom: 1px solid #999;
     margin: 10px 0;
 }
+.jumbotron{
+    height:150px;
+}
 .jumbotron a{
     width: 150px;
     float: left;
-    maring-top: 5px;
+    margin-top: 5px;
+    margin-left: 10px;
 }
 </style>
 
@@ -108,7 +112,7 @@ KISSY is a powerfull javascript framework for building cross end web application
 <script>
     //gallery组件列表
     (function(){
-        S.use('node,io,xtemplate',function(S,Node,io,XTemplate){
+        KISSY.use('node,io,xtemplate',function(S,Node,io,XTemplate){
             io.jsonp('http://gallery.kissyui.com/api/coms?len=12',function(data){
                 var tpl = Node.all('.J_ComsTpl').html();
                 var html = new XTemplate(tpl).render(data);
