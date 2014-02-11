@@ -34,7 +34,10 @@ Methods
 
     :param String comboSep: Combo 分隔符，默认 ","
 
-    :param String tag: KISSY 内置模块时间戳，默认 KISSY 当前 build 时间
+    :param String tag: KISSY 内置模块请求的时间戳.
+        也可以通过引入 seed 的 url 后加 **?t=** 设置，例如
+        **http://g.tbcdn.cn/kissy/k/1.4.1/seed-min.js?t=20140211**
+
 
     :param Boolean combine: 是否开启自动 combo 模式，默认 false 不开启.
         自动 combo 模式要求 use 前配置好依赖关系，详见
