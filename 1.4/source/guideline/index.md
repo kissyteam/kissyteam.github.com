@@ -50,6 +50,11 @@ KISSY is a powerfull javascript framework for building cross end web application
 3. npm 安装 KISSY: ``npm install kissy``
 4. bower 安装 KISSY: ``bower install kissy``    
 
+<h1 class="gallery-coms-title">
+    kissy优秀组件推荐
+</h1>
+
+<div id="J_ComsRecommend"></div>
 
 <h1 class="gallery-coms-title">
     kissy gallery最新发布组件
@@ -57,40 +62,83 @@ KISSY is a powerfull javascript framework for building cross end web application
 </h1>
 
 <style>
-.img-rounded{
-    box-shadow:0 0 8px -3px black;
-}
+    .img-rounded{
+        box-shadow:0 0 8px -3px black;
+    }
 
-.com-desc{
-    height:70px;
-    line-height: 24px;
-    overflow: hidden;
-    margin-bottom: 10px;
-}
-.gallery-coms-title{
-    margin-top:20px;
-    position: relative;
-}
-.gallery-coms-title a{
-    position: absolute;
-    right: 0;
-    top: 4px;
-    font-size:16px;
-}
-.com{
-    border-bottom: 1px solid #999;
-    margin: 10px 0;
-}
-.jumbotron{
-    height:150px;
-}
-.jumbotron a{
-    width: 150px;
-    float: left;
-    margin-top: 5px;
-    margin-left: 10px;
-}
+    .com-desc{
+        height:70px;
+        line-height: 24px;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    .gallery-coms-title{
+        margin-top:40px;
+        position: relative;
+    }
+    .gallery-coms-title a{
+        position: absolute;
+        right: 0;
+        top: 4px;
+        font-size:16px;
+    }
+    .com{
+        margin-top: 15px;
+        padding-right: 0;
+    }
+    .com-box{
+        background-color: #fff;
+        padding: 20px;
+        border: 4px solid #fff;
+        -webkit-transition: border 0.3s;
+        transition: border 0.3s;
+    }
+    .recommend-box{
+        padding:0;
+    }
+    .recommend-box h2{
+        padding: 10px;
+        margin: 0;
+    }
+    .recommend-box p{
+        padding: 0 10px;
+        margin-bottom: 20px;
+    }
+    #J_ComsRecommend{
+        height: 600px;
+    }
+    .recommend-box img{
+        width: 210px;
+        height: 200px;
+    }
+    .com a{
+        color: #30abd5;
+    }
+    .com a .com-box h2{
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .com a .com-box p{
+        color:#666;
+    }
+    .com a:hover{
+        color:#333;
+        text-decoration: none;
+    }
+    .com-box:hover{
+        border-color: #30abd5;
+    }
+    .jumbotron{
+        height:150px;
+    }
+    .jumbotron a{
+        width: 150px;
+        float: left;
+        margin-top: 5px;
+        margin-left: 10px;
+    }
 </style>
+
 
 <div id="J_Coms">
 
@@ -98,11 +146,30 @@ KISSY is a powerfull javascript framework for building cross end web application
 <script type="text/xtemplate" class="J_ComsTpl">
     <div class="row-fluid index-box">
         {{#each result}}
-            <div class="col-md-4 com">
-                <h2><a href="http://gallery.kissyui.com/{{name}}/{{version}}/guide/index.html">{{name}}</a></h2>
-                <p class="com-author">by {{author.name}}</p>
-                <p class="com-desc">{{#if desc!==""}}{{desc}}{{else}}{{description}}{{/if}}</p>
-            </div>
+        <div class="col-md-4 com">
+            <a href="http://gallery.kissyui.com/{{name}}/{{version}}/guide/index.html">
+                <div class="com-box">
+                    <h2>{{name}}</h2>
+                    <p class="com-author">by {{author.name}}</p>
+                    <p class="com-desc">{{#if desc!==""}}{{desc}}{{else}}{{description}}{{/if}}</p>
+                </div>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+</script>
+<script type="text/xtemplate" class="J_ComsRecommendTpl">
+    <div class="row-fluid index-box">
+        {{#each data}}
+        <div class="col-md-4 com">
+            <a href="{{url}}" title="{{title}}">
+                <div class="com-box recommend-box">
+                    <img src="{{image}}" />
+                    <h2>{{title}}</h2>
+                    <p>{{desc}}</p>
+                </div>
+            </a>
+        </div>
         {{/each}}
     </div>
 </script>
@@ -117,6 +184,12 @@ KISSY is a powerfull javascript framework for building cross end web application
                 var tpl = Node.all('.J_ComsTpl').html();
                 var html = new XTemplate(tpl).render(data);
                 $('#J_Coms').html(html);
+            })
+
+            io.jsonp('http://gallery.kissyui.com/api/index-ad?len=6',function(data){
+                var tpl = Node.all('.J_ComsRecommendTpl').html();
+                var html = new XTemplate(tpl).render(data);
+                $('#J_ComsRecommend').html(html);
             })
         })
     })();
