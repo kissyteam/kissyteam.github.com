@@ -4,19 +4,19 @@
 
 ## Demos
 
-- [从Markup中构建](http://docs.kissyui.com/1.3/source/raw/demo/overlay/demo1.html)
-- [新建markup](http://docs.kissyui.com/1.3/source/raw/demo/overlay/demo2.html)
-- [多个触发元素公用一个 Overlay](http://docs.kissyui.com/1.3/source/raw/demo/overlay/demo3.html)
-- [demo3 的另一种实现方式（不推荐）](http://docs.kissyui.com/1.3/source/raw/demo/overlay/demo4.html)
-- [异步加载弹出层内容](http://docs.kissyui.com/1.3/source/raw/demo/overlay/demo5.html)
-- [对话框 新建 + Mask + aria](http://docs.kissyui.com/1.3/source/raw/demo/overlay/demo6.html)
-- [对话框 从 Markup 中构建](http://docs.kissyui.com/1.3/source/raw/demo/overlay/demo7.html)
-- [对话框 限制 + 可缩放](http://docs.kissyui.com/1.3/source/raw/demo/overlay/demo8.html)
-- [对话框 fixed 居中](http://docs.kissyui.com/1.3/source/raw/demo/overlay/demo9.html)
-- [对话框运动到某个位置](http://docs.kissyui.com/1.3/source/raw/demo/overlay/demo10.html) 
-- [代理加窗口自动滚动](http://docs.kissyui.com/1.3/source/raw/demo/overlay/proxy-scroll.html)
-- [Mask 动画效果](http://docs.kissyui.com/1.3/source/raw/demo/overlay/mask-anim.html)
-- [Effect target 效果](http://docs.kissyui.com/1.3/source/raw/demo/overlay/effect-target.html)
+- [从Markup中构建](http://docs.kissyui.com/1.4/source/raw/demo/overlay/demo1.html)
+- [新建markup](http://docs.kissyui.com/1.4/source/raw/demo/overlay/demo2.html)
+- [多个触发元素公用一个 Overlay](http://docs.kissyui.com/1.4/source/raw/demo/overlay/demo3.html)
+- [demo3 的另一种实现方式（不推荐）](http://docs.kissyui.com/1.4/source/raw/demo/overlay/demo4.html)
+- [异步加载弹出层内容](http://docs.kissyui.com/1.4/source/raw/demo/overlay/demo5.html)
+- [对话框 新建 + Mask + aria](http://docs.kissyui.com/1.4/source/raw/demo/overlay/demo6.html)
+- [对话框 从 Markup 中构建](http://docs.kissyui.com/1.4/source/raw/demo/overlay/demo7.html)
+- [对话框 限制 + 可缩放](http://docs.kissyui.com/1.4/source/raw/demo/overlay/demo8.html)
+- [对话框 fixed 居中](http://docs.kissyui.com/1.4/source/raw/demo/overlay/demo9.html)
+- [对话框运动到某个位置](http://docs.kissyui.com/1.4/source/raw/demo/overlay/demo10.html)
+- [代理加窗口自动滚动](http://docs.kissyui.com/1.4/source/raw/demo/overlay/proxy-scroll.html)
+- [Mask 动画效果](http://docs.kissyui.com/1.4/source/raw/demo/overlay/mask-anim.html)
+- [Effect target 效果](http://docs.kissyui.com/1.4/source/raw/demo/overlay/effect-target.html)
 
 Overlay 由三个内部组件派生出来，Control、Align、Position，Controller又包含另外两个基础组件UIBase和Box。因此Overlay的实例方法大都是组装来的。`Overlay`对象下挂接两个由他派生出的类：`Dialog`和`Popup`，这两个实现是最常用的。
 
@@ -30,7 +30,7 @@ Overlay 由三个内部组件派生出来，Control、Align、Position，Control
 
 ## 一个简单的调用
 
-[初始化一个Popup](http://docs.kissyui.com/1.3/source/raw/demo/overlay/demo1.html)
+[初始化一个Popup](http://docs.kissyui.com/1.4/source/raw/demo/overlay/demo1.html)
 
 	KISSY.use('overlay',function(S,Overlay){
 		//通过dom元素新建立popup
@@ -154,7 +154,7 @@ Overlay 由三个内部组件派生出来，Control、Align、Position，Control
 
 points 字符串数组元素的取值范围为 t,b,c 与 l,r,c 的两两组合, 分别表示 top,bottom,center 与 left,right,center 的两两组合, 可以表示 9 种取值范围，如图，第一个字符取值 t,b,c , 第二个字符取值 l,r,c. 
 
-![](http://docs.kissyui.com/1.3/source/raw/api/overlay/align.png)
+![](http://docs.kissyui.com/1.4/source/raw/api/overlay/align.png)
 
 #### effect
 

@@ -1,6 +1,6 @@
 # resizable
 
-缩放功能插件，[Demo](http://docs.kissyui.com/1.3/source/raw/demo/resizable/demo1.html)
+缩放功能插件，[Demo](http://docs.kissyui.com/1.4/source/raw/demo/resizable/demo1.html)
 
 调用：
 

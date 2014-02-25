@@ -8,7 +8,7 @@ KISSY 内置日历组件，如无必要，推荐使用`gallery/calendar/1.1/`日
 		// use Calendar
 	});	
 
-[查看日历Demo](http://docs.kissyui.com/1.3/source/raw/demo/calendar/demo1.html)。
+[查看日历Demo](http://docs.kissyui.com/1.4/source/raw/demo/calendar/demo1.html)。
 
 ### 初始化参数说明：
 
