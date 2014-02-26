@@ -176,22 +176,22 @@
 <dt id="seed.KISSY.augment">
 <tt class="descclassname">KISSY.</tt><tt class="descname">augment</tt><big>(</big><big>)</big><a class="headerlink" href="#seed.KISSY.augment" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line">Function <strong>KISSY.augment</strong> ( r, s1 [, s2 , ...], ov = true, wl )</div>
-<div class="line">将 s1,s2.... 的 prototype 属性的成员复制到 r.prototype 上.</div>
+<div class="line">Function <strong>KISSY.augment</strong> ( Class, object1 [, object1 , ...], overwrite = true, whitelist )</div>
+<div class="line">将 object1,object2.... 自身或其 prototype 属性的成员复制到 Class.prototype 上.</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>r</strong> (<em>function</em>) &#8211; 将要扩充的函数</li>
-<li><strong>...s1</strong> (<em>function|object</em>) &#8211; 扩充来源函数或对象. 非函数对象时复制的就是 s 的成员.</li>
-<li><strong>ov</strong> (<em>boolean</em>) &#8211; 是否覆盖 r.prototype 同名属性.</li>
+<li><strong>Class</strong> (<em>function</em>) &#8211; 将要扩充的类</li>
+<li><strong>...object1</strong> (<em>function|object</em>) &#8211; 扩充来源函数或对象. 非函数对象时复制的就是 object1 自身.</li>
+<li><strong>overwrite</strong> (<em>boolean</em>) &#8211; 是否覆盖 Class.prototype 同名属性.</li>
 <li><strong>whitelist</strong> (<em>Array&lt;string&gt;</em>) &#8211; 属性来源对象的属性白名单, 仅在名单中的属性进行复制.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">r</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Class</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">function</p>
@@ -215,10 +215,7 @@
 <span class="k">new</span> <span class="nx">Pig</span><span class="p">(</span><span class="s1">&#39;Mary&#39;</span><span class="p">).</span><span class="nx">shout</span><span class="p">();</span> <span class="c1">// =&gt; I am Pig Mary.</span>
 </pre></div>
 </div>
-<p>augment 方法在 KISSY 里非常基础非常重要.
-传统 OO 语言里, 可以通过继承或接口来实现共性方法.
-在 JavaScript 里, 通过 mixin 特性, 一切变得更简单.
-augment 是动态语言 mixin 特性的体现, 灵活运用, 能让代码非常优雅简洁.</p>
+<p>augment 是动态语言 mixin 特性的体现, 灵活运用, 能让代码非常优雅简洁.</p>
 </dd></dl>
 
 </div>

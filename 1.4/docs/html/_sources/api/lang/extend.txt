@@ -11,14 +11,14 @@ Methods
 
 .. function:: KISSY.extend
 
-    | Function **KISSY.extend** (r,s[,px,sx])
-    | 让函数对象 r 继承函数对象 s
+    | Function **KISSY.extend** (SubClass,ParentClass[,prototypeMembers,staticMembers])
+    | 让子类 SubClass 继承父类 ParentClass
     
-    :param function r: receiver,将要继承的子类函数
-    :param function|object s: supplier,继承自的父类函数
-    :param object px: prototype members, 需要添加/覆盖的原型成员
-    :param object sx: static members, 需要添加/覆盖的静态成员.
-    :returns: r
+    :param function SubClass: 将要继承的子类函数
+    :param function|object ParentClass: 继承自的父类函数
+    :param object prototypeMembers: 需要添加/覆盖的原型成员
+    :param object staticMembers: 需要添加/覆盖的静态成员.
+    :returns: SubClass
     :rtype: function
     
     例如：
@@ -41,9 +41,7 @@ Methods
         });
 
         new Chicken('kissy').fly();
-    
-    extend 方法是 KISSY 里类继承的实现方式. 书写 JavaScript 代码时, 请忘记传统 OO 里的继承体系.
-    还 JavaScript 本色, 给代码一身轻松.
+
 
     .. note::
 
