@@ -206,14 +206,14 @@
 <em class="property">class </em><tt class="descclassname">date.</tt><tt class="descname">DateTimeFormat</tt><a class="headerlink" href="#date.DateTimeFormat" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line"><strong>DateTimeFormat</strong> (pattern, locale, timeZoneOffset)</div>
-<div class="line">根据传入参数，创建对应的DateTimeFormat对象</div>
+<div class="line">根据传入参数，创建对应的 DateTimeFormat 对象</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>pattern</strong> (<em>String</em>) &#8211; 时间模式</li>
+<li><strong>pattern</strong> (<em>String</em>) &#8211; 时间模式（具体写法参见下面的表格）</li>
 <li><strong>locale</strong> (<em>Object</em>) &#8211; 时区</li>
 <li><strong>timeZoneOffset</strong> (<em>Number</em>) &#8211; 时区时间偏移</li>
 </ul>
@@ -294,7 +294,7 @@
 <tt class="descclassname">DateTimeFormat.</tt><tt class="descname">getInstance</tt><big>(</big><big>)</big><a class="headerlink" href="#date.DateTimeFormat.getInstance" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line">String <strong>getInstance</strong> (locale, timeZoneOffset)</div>
-<div class="line">获取当前日期和时间在给定区域和时差下的默认格式化的DateTimeFormat对象。</div>
+<div class="line">获取当前日期和时间在给定区域和时差下的默认格式化的 DateTimeFormat 对象。</div>
 <div class="line">相当于</div>
 </div>
 <div class="highlight-js"><div class="highlight"><pre><span class="nx">getDateTimeInstance</span><span class="p">(</span><span class="nx">DateTimeStyle</span><span class="p">.</span><span class="nx">SHORT</span><span class="p">,</span> <span class="nx">DateTimeStyle</span><span class="p">.</span><span class="nx">SHORT</span><span class="p">,</span> <span class="nx">locale</span><span class="p">,</span> <span class="nx">timeZoneOffset</span><span class="p">)</span>
@@ -322,7 +322,7 @@
 <tt class="descclassname">DateTimeFormat.</tt><tt class="descname">getDateInstance</tt><big>(</big><big>)</big><a class="headerlink" href="#date.DateTimeFormat.getDateInstance" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line">String <strong>getDateInstance</strong> (dateStyle, locale, timeZoneOffset)</div>
-<div class="line">获取当前日期在给定区域和时差及格式下的DateTimeFormat对象。</div>
+<div class="line">获取当前日期在给定区域和时差及格式下的 DateTimeFormat 对象。</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -332,7 +332,7 @@
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dateStyle</strong> (<em>{String}</em>) &#8211; 日期格式（具体写法参见下面的表格）</li>
+<li><strong>dateStyle</strong> (<em>{String}</em>) &#8211; 日期格式，枚举型 DateTimeFormat.Style</li>
 <li><strong>locale</strong> (<em>{Object}</em>) &#8211; 区域信息</li>
 <li><strong>timeZoneOffset</strong> (<em>{Number}</em>) &#8211; 时差偏移</li>
 </ul>
@@ -357,8 +357,8 @@
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dateStyle</strong> (<em>{String}</em>) &#8211; 日期格式（具体写法参见下面的表格）</li>
-<li><strong>timeStyle</strong> (<em>{String}</em>) &#8211; 时间格式（具体写法参见下面的表格）</li>
+<li><strong>dateStyle</strong> (<em>{String}</em>) &#8211; 日期格式，枚举型 DateTimeFormat.Style</li>
+<li><strong>timeStyle</strong> (<em>{String}</em>) &#8211; 时间格式，枚举型 DateTimeFormat.Style</li>
 <li><strong>locale</strong> (<em>{Object}</em>) &#8211; 区域信息</li>
 <li><strong>timeZoneOffset</strong> (<em>{Number}</em>) &#8211; 时差偏移</li>
 </ul>
@@ -383,7 +383,7 @@
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>timeStyle</strong> (<em>{String}</em>) &#8211; 时间格式（具体写法参见下面的表格）</li>
+<li><strong>timeStyle</strong> (<em>{String}</em>) &#8211; 时间格式，枚举型 DateTimeFormat.Style</li>
 <li><strong>locale</strong> (<em>{Object}</em>) &#8211; 区域信息</li>
 <li><strong>timeZoneOffset</strong> (<em>{Number}</em>) &#8211; 时差偏移</li>
 </ul>

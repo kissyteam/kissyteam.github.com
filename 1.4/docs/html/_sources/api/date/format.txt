@@ -31,9 +31,9 @@ Class Detail
 .. class:: DateTimeFormat
 
     | **DateTimeFormat** (pattern, locale, timeZoneOffset)
-    | 根据传入参数，创建对应的DateTimeFormat对象
+    | 根据传入参数，创建对应的 DateTimeFormat 对象
 
-    :param String pattern: 时间模式
+    :param String pattern: 时间模式（具体写法参见下面的表格）
     :param Object locale: 时区
     :param Number timeZoneOffset: 时区时间偏移
 
@@ -84,7 +84,7 @@ Methods Detail
 .. method:: DateTimeFormat.getInstance
 
     | String **getInstance** (locale, timeZoneOffset)
-    | 获取当前日期和时间在给定区域和时差下的默认格式化的DateTimeFormat对象。
+    | 获取当前日期和时间在给定区域和时差下的默认格式化的 DateTimeFormat 对象。
     | 相当于
 
     .. code-block:: js
@@ -99,11 +99,11 @@ Methods Detail
 .. method:: DateTimeFormat.getDateInstance
 
     | String **getDateInstance** (dateStyle, locale, timeZoneOffset)
-    | 获取当前日期在给定区域和时差及格式下的DateTimeFormat对象。
+    | 获取当前日期在给定区域和时差及格式下的 DateTimeFormat 对象。
 
     :returns: {String}
 
-    :param {String} dateStyle: 日期格式（具体写法参见下面的表格）
+    :param {String} dateStyle: 日期格式，枚举型 DateTimeFormat.Style
     :param {Object} locale: 区域信息
     :param {Number} timeZoneOffset: 时差偏移
 
@@ -114,8 +114,8 @@ Methods Detail
 
     :returns: {String}
 
-    :param {String} dateStyle: 日期格式（具体写法参见下面的表格）
-    :param {String} timeStyle: 时间格式（具体写法参见下面的表格）
+    :param {String} dateStyle: 日期格式，枚举型 DateTimeFormat.Style
+    :param {String} timeStyle: 时间格式，枚举型 DateTimeFormat.Style
     :param {Object} locale: 区域信息
     :param {Number} timeZoneOffset: 时差偏移
 
@@ -126,7 +126,7 @@ Methods Detail
 
     :returns: {String}
 
-    :param {String} timeStyle: 时间格式（具体写法参见下面的表格）
+    :param {String} timeStyle: 时间格式，枚举型 DateTimeFormat.Style
     :param {Object} locale: 区域信息
     :param {Number} timeZoneOffset: 时差偏移
 
