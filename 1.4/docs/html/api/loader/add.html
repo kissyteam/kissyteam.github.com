@@ -216,26 +216,29 @@
 </pre></div>
 </div>
 <p>如果依赖的模块 <tt class="docutils literal"><span class="pre">depMod1</span></tt> 以及 <tt class="docutils literal"><span class="pre">depMod2</span></tt> 的定义函数有返回值, 例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;depMod1&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// depMod11.js</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
     <span class="kd">function</span> <span class="nx">Mod</span><span class="p">(){}</span>
     <span class="k">return</span> <span class="nx">Mod</span><span class="p">;</span>
 <span class="p">});</span>
 
-<span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;depMod2&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+<span class="c1">// depMod2.js</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
     <span class="kd">function</span> <span class="nx">Mod</span><span class="p">(){}</span>
     <span class="k">return</span> <span class="nx">Mod</span><span class="p">;</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 <p>那么该返回值会作为参数传入依赖 depMod1 以及 depMod2 的模块的定义函数, 例如</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;custommode&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DepMod1</span><span class="p">,</span><span class="nx">DepMod2</span><span class="p">){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">DepMod1</span><span class="p">,</span><span class="nx">DepMod2</span><span class="p">){</span>
     <span class="c1">//use DepMod1 to refer depmod1&#39;s return value</span>
 <span class="p">},{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;depmod1&quot;</span><span class="p">,</span><span class="s2">&quot;depmod2&quot;</span><span class="p">]});</span>
 </pre></div>
 </div>
 <p>当模块名称 name 为包内模块&lt; 参见 <a class="reference internal" href="config.html#seed.KISSY.config" title="seed.KISSY.config"><tt class="xref py py-func docutils literal"><span class="pre">下文包配置</span></tt></a> &gt;时, 则requires的模块名称可使用相对路径 refer 包内其他模块</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// tc/mods/mod1 依赖于 tc/mods/mod2</span>
-<span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;tc/mods/mod1&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){},{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;./mod2&#39;</span><span class="p">]});</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// tc/mods/mod1.js</span>
+<span class="c1">// 依赖于 tc/mods/mod2</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(){},{</span><span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;./mod2&#39;</span><span class="p">]});</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -244,6 +247,17 @@
 </div>
 </dd></dl>
 
+<div class="section" id="commonjs">
+<h3>commonjs 格式<a class="headerlink" href="#commonjs" title="Permalink to this headline">¶</a></h3>
+<p>也可以选择 commonjs 的模块书写方式，例如</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// a/b.js</span>
+<span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">require</span><span class="p">,</span><span class="nx">exports</span><span class="p">,</span><span class="nx">module</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;a/c&#39;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">c</span><span class="p">;</span> <span class="c1">// or module.exports=c;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="id1">
 <h2>压缩模块<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>

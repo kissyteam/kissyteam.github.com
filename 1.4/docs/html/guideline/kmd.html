@@ -150,6 +150,13 @@ add(&#39;mod-a&#39;,function(S){
 add(&#39;mod-b&#39;,function(S){
     // 逻辑段B
 });</code></pre>
+<h3>add(factory)</h3>
+<p>也可以选择 commonjs 的模块书写方式，这种写法仅限于一个 JS 文件包含一个<code>add()</code>（这时文件名可以用作模块名），例如</p>
+<pre><code>// a/b.js
+KISSY.add(function(S,require,exports,module){
+    var c = require(&#39;a/c&#39;);
+    return c; // 或者 module.exports=c;
+});</code></pre>
 <h2>require() <code>Function</code></h2>
 <p><code>require</code>函数挂载在全局对象<code>KISSY</code>上，用来获取已加载的模块的值。</p>
 <h3>require(name)</h3>

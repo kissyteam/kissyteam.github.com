@@ -64,6 +64,18 @@ KISSY 添加模块/逻辑片段的函数，config为配置对象，包括`config
 
 > *Changed in version 1.3+*: KISSY.add 表示模块定义, fn 并不会执行, 只有在 use 时才执行, 懒加载原则.
 
+
+### add(factory)
+
+也可以选择 commonjs 的模块书写方式，这种写法仅限于一个 JS 文件包含一个`add()`（这时文件名可以用作模块名），例如
+
+    // a/b.js
+    KISSY.add(function(S,require,exports,module){
+        var c = require('a/c');
+        return c; // 或者 module.exports=c;
+    });
+
+
 ### config()  `<static>`
 
 * `config(config) ⇒ void`

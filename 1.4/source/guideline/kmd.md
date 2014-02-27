@@ -106,6 +106,18 @@ KISSY 在诞生之初就确立了模块化的架构，以此抽象出现在的 K
 		// 逻辑段B
 	});
 
+
+### add(factory)
+
+也可以选择 commonjs 的模块书写方式，这种写法仅限于一个 JS 文件包含一个`add()`（这时文件名可以用作模块名），例如
+
+    // a/b.js
+    KISSY.add(function(S,require,exports,module){
+        var c = require('a/c');
+        return c; // 或者 module.exports=c;
+    });
+
+
 ## require() `Function`
 
 `require`函数挂载在全局对象`KISSY`上，用来获取已加载的模块的值。

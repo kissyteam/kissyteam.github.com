@@ -124,6 +124,13 @@ KISSY.add(&quot;tc/mods/mod1&quot;,function(){
 <blockquote>
 <p><em>Changed in version 1.3+</em>: KISSY.add 表示模块定义, fn 并不会执行, 只有在 use 时才执行, 懒加载原则.</p>
 </blockquote>
+<h3>add(factory)</h3>
+<p>也可以选择 commonjs 的模块书写方式，这种写法仅限于一个 JS 文件包含一个<code>add()</code>（这时文件名可以用作模块名），例如</p>
+<pre><code>// a/b.js
+KISSY.add(function(S,require,exports,module){
+    var c = require(&#39;a/c&#39;);
+    return c; // 或者 module.exports=c;
+});</code></pre>
 <h3>config()  <code>&lt;static&gt;</code></h3>
 <ul>
 <li><code>config(config) ⇒ void</code></li>

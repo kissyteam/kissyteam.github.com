@@ -51,12 +51,14 @@ Methods
 
     .. code-block:: javascript
 
-        KISSY.add("depMod1",function(){
+        // depMod11.js
+        KISSY.add(function(){
             function Mod(){}
             return Mod;
         });
 
-        KISSY.add("depMod2",function(){
+        // depMod2.js
+        KISSY.add(function(){
             function Mod(){}
             return Mod;
         });
@@ -66,7 +68,7 @@ Methods
 
     .. code-block:: javascript
 
-        KISSY.add("custommode",function(S,DepMod1,DepMod2){
+        KISSY.add(function(S,DepMod1,DepMod2){
             //use DepMod1 to refer depmod1's return value
         },{requires:["depmod1","depmod2"]});
 
@@ -75,12 +77,27 @@ Methods
 
     .. code-block:: javascript
 
-        // tc/mods/mod1 依赖于 tc/mods/mod2
-        KISSY.add("tc/mods/mod1",function(){},{requires:['./mod2']});
+        // tc/mods/mod1.js
+        // 依赖于 tc/mods/mod2
+        KISSY.add(function(){},{requires:['./mod2']});
 
 
     .. note::
         KISSY.add 表示模块定义, fn 并不会执行, 只有在 use 时才执行, 懒加载原则.
+
+
+commonjs 格式
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+也可以选择 commonjs 的模块书写方式，例如
+
+.. code-block:: javascript
+
+    // a/b.js
+    KISSY.add(function(S,require,exports,module){
+        var c = require('a/c');
+        return c; // or module.exports=c;
+    });
 
 
 压缩模块
