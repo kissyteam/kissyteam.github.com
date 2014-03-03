@@ -70,8 +70,7 @@
       
 
 	<h1>xtemplate</h1>
-<p>XTemplate 是富逻辑的 KISSY 模板引擎，和<a href="http://mustache.github.io/">Mustache</a>以及<a href="http://juicer.name/">juicer</a>类似，Xtemplate 面向更复杂的业务逻辑场景，
-同时保持高性能和丰富的配置方法，是易学易懂的模板语言。</p>
+<p>XTemplate 是富逻辑的 KISSY 模板引擎，面向复杂的业务逻辑场景，同时保持高性能和丰富的配置方法，是易学易懂的模板语言。</p>
 <p>一个典型的XTemplate模板实例：</p>
 <pre><code>Hello {{name}}
 You have just won ${{value}}!
@@ -110,7 +109,7 @@ You have just won ${{value}}!
     alert(render);// =&gt; &quot;this is o!&quot;
 });</code></pre>
 <p>你也可以直接离线编译 xtemplate 为 kissy 模块，那么线上直接引入 xtemplate/runtime 即可，还省去了在线编译的时间，提高运行效率。</p>
-<pre><code>KISSY.use(&#39;xtemplate/runtime,tpls/x&#39;,funciton(S, XTemplate,x){
+<pre><code>KISSY.use(&#39;xtemplate/runtime,tpls/x&#39;,function(S, XTemplate,x){
     var data={z:1};
     new XTemplate(x).render(data);
 });</code></pre>
@@ -272,7 +271,7 @@ yiminghe-1/2</code></pre>
 <pre><code>7</code></pre>
 <h3>关系表达式</h3>
 <p>目前支持目前支持 <code>===</code> <code>!==</code> <code>&gt;</code> <code>&gt;=</code> <code>&lt;</code> <code>&lt;=</code>，比如这段模板：</p>
-<pre><code>{{#if n &gt; n2+4/2}}
+<pre><code>{{#if n&gt;n2+4/2}}
     {{n+1}}
 {{else}}
     {{n2+1}}
@@ -287,7 +286,7 @@ yiminghe-1/2</code></pre>
 <h3>each 循环中的关系表达式</h3>
 <p>直接看例子，看这段模板：</p>
 <pre><code>{{#each data}}
-    {{#if this &gt; ../limit+1}}
+    {{#if this&gt;../limit+1}}
         {{this+1}}-{{xindex+1}}-{{xcount}}
     {{/if}}
 {{/each}}</code></pre>
@@ -302,7 +301,7 @@ yiminghe-1/2</code></pre>
 <h3>with 中的关系表达式</h3>
 <p>直接看例子，看这段模板：</p>
 <pre><code>{{#with data}}
-    {{#if n &gt; ../limit/5}}
+    {{#if n&gt;../limit/5}}
         {{n+1}}
     {{/if}}
 {{/with}}</code></pre>

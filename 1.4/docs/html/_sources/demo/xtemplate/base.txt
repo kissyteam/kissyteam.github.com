@@ -7,7 +7,7 @@ xtemplate 使用示例
 
     .. raw:: html
 
-        <script src='http://g.tbcdn.cn/kissy/k/1.4.1/seed.js' data-config="{combine:true}"></script>
+        <script src='http://g.tbcdn.cn/kissy/k/1.4.2/seed.js' data-config="{combine:true}"></script>
 
 
     .. note::

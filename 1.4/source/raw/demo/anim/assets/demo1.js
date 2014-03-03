@@ -5,7 +5,7 @@ KISSY.use("anim,node,button",function(S,Anim,Node,Button){
             {
                 'background-color':'#fcc',
                 //'border': '5px dashed #999',
-                'border-wdith':'5px',
+                'border-width':'5px',
                 'border-color':"#999999",
                 'border-style':"dashed",
                 'width': '100px',

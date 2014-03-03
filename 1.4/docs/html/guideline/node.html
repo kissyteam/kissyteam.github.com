@@ -93,7 +93,7 @@ var bodyNode = S.one(document.body);</code></pre>
 <p>KISSY 会根据浏览器平台加载正确的代码，用户不用关心平台，KISSY 一定会调用最合适、性能最优的选择器实现。在1.4.1中，不需要用户手动引用<code>sizzle</code>模块了，KISSY 会自行判断加载。</p>
 </blockquote>
 <h2>操作内容</h2>
-<p>KISSY Node 节点支持链式调用。<a href="http://demo.kissyui.com/tutorial/">使用范例</a>。</p>
+<p>KISSY Node 节点支持链式调用:</p>
 <pre><code>S.one(&#39;#test&#39;)
     .parent(&#39;.fathor&#39;)
     .next()
@@ -548,7 +548,7 @@ S.one(&#39;button&#39;).attr(&#39;data-x&#39;,&#39;asd&#39;);
 console.log(S.one(&#39;button&#39;).data(&#39;data-x&#39;));</code></pre>
 <p>但这样可以：</p>
 <pre><code>// 给dom元素写了一个扩展属性expando
-S.one(&#39;button&#39;).attr(&#39;data-x&#39;,&#39;asd&#39;);
+S.one(&#39;button&#39;).data(&#39;data-x&#39;,&#39;asd&#39;);
 // 通过data 是可以读出来的，但无法通过浏览器工具查看到button上有这个属性data-x
 console.log(S.one(&#39;button&#39;).data(&#39;data-x&#39;));</code></pre>
 <h3>removeData()</h3>

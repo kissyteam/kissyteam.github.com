@@ -4,7 +4,7 @@
 
 ## 载入 seed
 
-	<script src="http://g.tbcdn.cn/kissy/k/1.4.1/seed.js"></script>
+	<script src="http://g.tbcdn.cn/kissy/k/1.4.2/seed.js"></script>
 
 Seed 是一段很小的脚本，包含模块加载器，用来加载其他核心模块。Seed 会引入全局对象`KISSY`。加载外部模块：
 

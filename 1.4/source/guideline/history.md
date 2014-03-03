@@ -15,7 +15,7 @@
 - [KISSY 1.3.1 is Released](https://github.com/kissyteam/kissy/releases/tag/v1.3.1)
 - [KISSY 1.3.2 is Released](http://blog.kissyui.com/2013/09/27/kissy-1-3-2-released/)
 - [KISSY 1.4.0 is Released](http://blog.kissyui.com/2013/10/31/kissy-1-4-0-released/)
-- [KISSY 1.4.1 is Released](http://blog.kissyui.com/2013/12/06/kissy-1-4-1-released/)
+- [KISSY 1.4.2 is Released](http://blog.kissyui.com/2013/12/06/kissy-1-4-1-released/)
 ---------------------------------------
 
 

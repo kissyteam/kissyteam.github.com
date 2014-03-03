@@ -82,7 +82,7 @@ KISSY.use('node',function (S,Node) {
 			// 动画目标样式
 			{
 				'background-color':'#fcc',
-				'border-wdith':'5px'
+				'border-width':'5px'
 			},
 			// 动画时长，秒
 			5,

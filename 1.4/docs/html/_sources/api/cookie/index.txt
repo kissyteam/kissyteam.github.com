@@ -24,7 +24,7 @@ Methods
 
 .. function:: get
 
-    | Object **parse** ( name )
+    | Object **get** ( name )
     | 获取cookie值
     
     :param String name: cookie的名称
@@ -34,7 +34,7 @@ Methods
 
 .. function:: remove
 
-    | String **stringify** ( name, domain, path, secure )
+    | String **remove** ( name, domain, path, secure )
     | 置空cookie值，并立刻过期
     
     :param String name,: cookie的名称

@@ -86,7 +86,7 @@ Configs Detail
     
 .. function:: Collection.config.comparator
 
-    {funciton} - 可选，用于集合中模型对象排序以及插入时的比较函数        
+    {function} - 可选，用于集合中模型对象排序以及插入时的比较函数
     
     :param Model model: 模型对象
     :returns: 可以用来比较大小的一个数值

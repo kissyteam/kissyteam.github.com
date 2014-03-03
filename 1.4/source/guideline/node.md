@@ -34,7 +34,7 @@ Node API 是基于DOM Api 实现的，定义了一系列的语法糖，让用户
 
 ## 操作内容
 
-KISSY Node 节点支持链式调用。[使用范例](http://demo.kissyui.com/tutorial/)。
+KISSY Node 节点支持链式调用:
 
 	S.one('#test')
 		.parent('.fathor')
@@ -723,7 +723,7 @@ className的替换
 但这样可以：
 
 	// 给dom元素写了一个扩展属性expando
-	S.one('button').attr('data-x','asd');
+	S.one('button').data('data-x','asd');
 	// 通过data 是可以读出来的，但无法通过浏览器工具查看到button上有这个属性data-x
 	console.log(S.one('button').data('data-x'));
 
