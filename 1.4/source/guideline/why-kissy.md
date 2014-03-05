@@ -68,3 +68,6 @@ KISSY 诞生于 2009 年 10 月 26 日，当初只是一个结构精巧的[编�
 
 同时，随着移动终端的兴起，KISSY 1.4.0 也在面向多终端兼容和性能上做了大量的优化，尤其是 CSS3 选择器速度超越 zeptojs。在跨终端特性上主动探测，保持最简单的使用方法，同时兼顾性能最优。所以，KISSY 没有专门的 Mobile 版本，KISSY 本身就高效的适配 Mobile。至此，KISSY 在跨终端、模块化和易用性方面都在努力做到极致。这就是你现在看到的 KISSY：**Keep it Simple & Stupid! Yeah!**
 
+## KISSY MINI
+
+[KISSY MINI](http://m.kissyui.com) 是 KISSY 核心小组针对无线H5页面秒出的需求开发的新的核心库。API 是KISSY的子集，同时保持非常小的体积，`mini.js`只有8k，加入`loader`后的体积也只有13k左右。KISSY MINI 作为全新的面向移动端的类库，除了体积小巧，在CSS选择器性能优化上也有大量实践，是zeptojs的极佳替代方案。

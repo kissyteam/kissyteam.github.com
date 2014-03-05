@@ -69,11 +69,11 @@
     <article>
       
 
-	<h1>overlay</h1>
+	<h1 id="overlay">overlay</h1>
 <blockquote>
 <p>悬浮的对话框是KISSY核心组件中完整的利用了KISSY的面向对象的组件，是典型的组件拼装模式，继承和派生的用法非常值得学习和借鉴。</p>
 </blockquote>
-<h2>Demos</h2>
+<h2 id="demos">Demos</h2>
 <ul>
 <li><a href="http://docs.kissyui.com/1.4/source/raw/demo/overlay/demo1.html">从Markup中构建</a></li>
 <li><a href="http://docs.kissyui.com/1.4/source/raw/demo/overlay/demo2.html">新建markup</a></li>
@@ -95,7 +95,7 @@
 <pre><code>KISSY.use(&#39;overlay&#39;,function(S,Overlay){
     // use Overlay
 });</code></pre>
-<h2>一个简单的调用</h2>
+<h2 id="-">一个简单的调用</h2>
 <p><a href="http://docs.kissyui.com/1.4/source/raw/demo/overlay/demo1.html">初始化一个Popup</a></p>
 <pre><code>KISSY.use(&#39;overlay&#39;,function(S,Overlay){
     //通过dom元素新建立popup
@@ -145,32 +145,32 @@
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 <hr>
-<h2>Overlay/Dialog/Popup API</h2>
-<h3>配置参数</h3>
+<h2 id="overlay-dialog-popup-api">Overlay/Dialog/Popup API</h2>
+<h3 id="-">配置参数</h3>
 <p><code>new Overlay(config)</code></p>
-<h4>prefixCls</h4>
+<h4 id="prefixcls">prefixCls</h4>
 <p>继承自Controller，组件css样式的前缀，默认 “ks-” . 例如假设组件为 menu ，则该组件内的样式类名为 {prefixCls}menu，默认为 “ks-menu”.可用于实现自定义皮肤.</p>
-<h4>srcNode</h4>
+<h4 id="srcnode">srcNode</h4>
 <p>继承自UIBase，当前组件在 dom 树中已经存在的节点.</p>
-<h4>plugins</h4>
+<h4 id="plugins">plugins</h4>
 <p>数组，给出插件，插件格式参照<a href="base.html">Base</a>。</p>
-<h4>width</h4>
+<h4 id="width">width</h4>
 <p>继承自Box，组件的宽度，单位为像素</p>
-<h4>height</h4>
+<h4 id="height">height</h4>
 <p>继承自Box，组件的高度，单位为像素</p>
-<h4>elCls</h4>
+<h4 id="elcls">elCls</h4>
 <p>继承自Box，附加给根节点的样式类</p>
-<h4>content</h4>
+<h4 id="content">content</h4>
 <p>继承自Box，设置内容html</p>
-<h4>zIndex</h4>
+<h4 id="zindex">zIndex</h4>
 <p>继承自Position，Number类型，组件根节点的z-index值，默认为9999</p>
-<h4>x</h4>
+<h4 id="x">x</h4>
 <p>继承自Position，Number类型， 组件根节点相对于文档根节点的 x 坐标.</p>
-<h4>y</h4>
+<h4 id="y">y</h4>
 <p>继承自Position，Number类型， 组件根节点相对于文档根节点的 y 坐标.</p>
-<h4>xy</h4>
+<h4 id="xy">xy</h4>
 <p>继承自Position，数组，相当于将数组第一个元素设置为 x 的值, 将数组的第二个元素设置为 y 的值.</p>
-<h4>align</h4>
+<h4 id="align">align</h4>
 <p>继承自Align，JSON对象，组件节点对齐的相关配置, 例如：</p>
 <pre><code>{
     node: null,         // 类型选择器字符串, 对齐参考元素, falsy 值为可视区域
@@ -184,7 +184,7 @@
 }</code></pre>
 <p>points 字符串数组元素的取值范围为 t,b,c 与 l,r,c 的两两组合, 分别表示 top,bottom,center 与 left,right,center 的两两组合, 可以表示 9 种取值范围，如图，第一个字符取值 t,b,c , 第二个字符取值 l,r,c. </p>
 <p><img src="http://docs.kissyui.com/1.4/source/raw/api/overlay/align.png" alt=""></p>
-<h4>effect</h4>
+<h4 id="effect">effect</h4>
 <p>JSON对象，显示隐藏效果，属性包括</p>
 <ul>
 <li>target，KISSY Node或者字符串，动画参考元素</li>
@@ -199,106 +199,106 @@
     easing:&#39;&#39;,        // {String} - 可选, 同 KISSY.Anim 的 easing 参数配置.
     duration:3        // {Number} - 可选, 动画持续时间, 以秒为单位.
 }</code></pre>
-<h4>closeable</h4>
+<h4 id="closeable">closeable</h4>
 <p>Boolean类型，对话框右上角是否包括关闭按钮</p>
-<h4>closeAction</h4>
+<h4 id="closeaction">closeAction</h4>
 <p>字符串，点击关闭按钮的动作。默认 “hide” 隐藏，也可设置 “destroy” 销毁该组件.</p>
-<h4>elBefore</h4>
+<h4 id="elbefore">elBefore</h4>
 <p>Node节点类型，组件根节点的渲染到该节点之前.</p>
-<h4>render</h4>
+<h4 id="render">render</h4>
 <p>Node节点类型， 默认 S.all(“body”)，组件根节点的渲染为该节点最后一个节点.</p>
-<h4>mask</h4>
+<h4 id="mask">mask</h4>
 <p>Boolean或JSON对象，组件显示时是否使用遮罩层盖住页面其他元素，如果为JSON对象，属性包括：</p>
 <ul>
 <li>closeOnClick，Boolean值，点击遮罩层是否关闭 overlay。</li>
 <li>effect，字符串类型，遮罩层显示隐藏效果. (取值 ‘fade’,’slide’)</li>
 <li>duration，Number类型，效果持续时间. 单位秒</li>
 </ul>
-<h4>headerContent <code>Dialog</code>专有属性</h4>
+<h4 id="headercontent-dialog-">headerContent <code>Dialog</code>专有属性</h4>
 <p>组件的标题 html.</p>
-<h4>bodyContent <code>Dialog</code>专有属性</h4>
+<h4 id="bodycontent-dialog-">bodyContent <code>Dialog</code>专有属性</h4>
 <p>组件的正文 html.</p>
-<h4>footerContent <code>Dialog</code>专有属性</h4>
+<h4 id="footercontent-dialog-">footerContent <code>Dialog</code>专有属性</h4>
 <p>组件的底部 html.</p>
-<h4>trigger  <code>Popup</code>专有属性</h4>
+<h4 id="trigger-popup-">trigger  <code>Popup</code>专有属性</h4>
 <p>触点集合，可以是选择器、字符串，原生节点，Nodelist等</p>
-<h4>triggerType  <code>Popup</code>专有属性</h4>
+<h4 id="triggertype-popup-">triggerType  <code>Popup</code>专有属性</h4>
 <p>默认为 ‘click’, 触发类型, 可选 ‘click’, ‘mouse’.</p>
-<h4>mouseDelay  <code>Popup</code>专有属性</h4>
+<h4 id="mousedelay-popup-">mouseDelay  <code>Popup</code>专有属性</h4>
 <p>单位秒. 可选, triggerType 为 mouse 时, Popup 显示的延迟时间, 默认为 0.1.</p>
-<h4>toggle  <code>Popup</code>专有属性</h4>
+<h4 id="toggle-popup-">toggle  <code>Popup</code>专有属性</h4>
 <p>triggerType 为 click 时, Popup 是否有toggle功能，默认为false，不开启</p>
 <hr>
-<h3>实例属性</h3>
-<h4>x</h4>
+<h3 id="-">实例属性</h3>
+<h4 id="x">x</h4>
 <p>x 坐标</p>
-<h4>y</h4>
+<h4 id="y">y</h4>
 <p>y 坐标</p>
-<h4>xy</h4>
+<h4 id="xy">xy</h4>
 <p>xy坐标数组</p>
-<h4>align</h4>
+<h4 id="align">align</h4>
 <p>对其方式，数组类型</p>
-<h4>closable</h4>
+<h4 id="closable">closable</h4>
 <p>布尔类型，右上角是否有关闭按钮</p>
-<h4>visible</h4>
+<h4 id="visible">visible</h4>
 <p>布尔类型，是否处于显示状态</p>
-<h4>el</h4>
+<h4 id="el">el</h4>
 <p>Node节点类型，该组件的根节点. 注意调用 render() 后才可以取得.</p>
-<h4>contentEl</h4>
+<h4 id="contentel">contentEl</h4>
 <p>Node节点类型，该组件的内容所在节点，一般和 el 相同，注意调用 render() 后才可以取得.</p>
-<h4>maskNode</h4>
+<h4 id="masknode">maskNode</h4>
 <p>Node节点类型，遮罩层节点</p>
-<h4>header <code>Dialog</code>专有</h4>
+<h4 id="header-dialog-">header <code>Dialog</code>专有</h4>
 <p>头部内容html</p>
-<h4>body <code>Dialog</code>专有</h4>
+<h4 id="body-dialog-">body <code>Dialog</code>专有</h4>
 <p>正文html</p>
-<h4>headerContent <code>Dialog</code>专有</h4>
+<h4 id="headercontent-dialog-">headerContent <code>Dialog</code>专有</h4>
 <p>组件的头部标题html</p>
-<h4>bodyContent <code>Dialog</code>专有</h4>
+<h4 id="bodycontent-dialog-">bodyContent <code>Dialog</code>专有</h4>
 <p>组件的正文html</p>
-<h4>footerContent <code>Dialog</code>专有</h4>
+<h4 id="footercontent-dialog-">footerContent <code>Dialog</code>专有</h4>
 <p>尾部html</p>
-<h4>currentTrigger <code>Popup</code>专有</h4>
+<h4 id="currenttrigger-popup-">currentTrigger <code>Popup</code>专有</h4>
 <p>当前的 trigger 节点</p>
 <hr>
-<h3>实例方法</h3>
+<h3 id="-">实例方法</h3>
 <p>Dialog和Popup中都包含同样的实例方法</p>
-<h4>plugin(plugin)</h4>
+<h4 id="plugin-plugin-">plugin(plugin)</h4>
 <p>继承自Base，安装指定插件，参数<code>plugin</code>为Function或者Object，是插件构造器或者插件对象，返回自身,具体参照<a href="base.html">Base</a></p>
-<h4>unplugin(plugin)</h4>
+<h4 id="unplugin-plugin-">unplugin(plugin)</h4>
 <p>继承自Base，卸载插件，参数为字符串或对象，是指定插件的id或者插件对象。返回自身。具体参照<a href="base.html">Base</a></p>
-<h4>render()</h4>
+<h4 id="render-">render()</h4>
 <p>继承自UIBase，将组件渲染到dom树中</p>
-<h4>destroy()</h4>
+<h4 id="destroy-">destroy()</h4>
 <p>继承自Base，销毁组件</p>
-<h4>show()</h4>
+<h4 id="show-">show()</h4>
 <p>继承自Box，渲染该组件并显示出来.</p>
-<h4>hide()</h4>
+<h4 id="hide-">hide()</h4>
 <p>继承自Box，隐藏该组件并显示出来.</p>
-<h4>center()</h4>
+<h4 id="center-">center()</h4>
 <p>继承自Align，将节点置于屏幕的中央。</p>
-<h4>move(x,y)</h4>
+<h4 id="move-x-y-">move(x,y)</h4>
 <p>继承自Position，将组件置于相对于文档左上角的坐标偏移量的位置。</p>
-<h4>loading()</h4>
+<h4 id="loading-">loading()</h4>
 <p>显示菊花</p>
-<h4>unloading()</h4>
+<h4 id="unloading-">unloading()</h4>
 <p>隐藏菊花</p>
 <hr>
-<h3>实例事件</h3>
-<h4>hide</h4>
+<h3 id="-">实例事件</h3>
+<h4 id="hide">hide</h4>
 <p>继承自UIBase，当组件隐藏时触发</p>
-<h4>show</h4>
+<h4 id="show">show</h4>
 <p>继承自UIBase，当组件显示时触发</p>
-<h4>beforeVisibleChange</h4>
+<h4 id="beforevisiblechange">beforeVisibleChange</h4>
 <p>继承自UIBase，当组件隐藏或显示前触发，事件对象上挂两个属性：</p>
 <ul>
 <li>ev.newVal (Boolean) – 将要隐藏时为 false, 将要显示时为 true</li>
 <li>ev.prevVal (Boolean) – 当前悬浮层显示与否</li>
 </ul>
 <p>返回 false 时, 则会阻止将要进行的显示或隐藏动作.</p>
-<h4>afterRenderUI</h4>
+<h4 id="afterrenderui">afterRenderUI</h4>
 <p>继承自UIBase，当组件被渲染 dom 时触发</p>
-<h4>afterCurrentTriggerChange <code>Popup</code>专有</h4>
+<h4 id="aftercurrenttriggerchange-popup-">afterCurrentTriggerChange <code>Popup</code>专有</h4>
 <p>当 currentTrigger 改变后触发，事件对象挂载属性</p>
 <ul>
 <li>e.newVal ({KISSY.Node}) – 新的 trigger 元素</li>

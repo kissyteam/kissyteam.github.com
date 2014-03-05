@@ -69,12 +69,12 @@
     <article>
       
 
-	<h1>在Node环境中运行kissy</h1>
+	<h1 id="-node-kissy">在Node环境中运行kissy</h1>
 <p>KISSY 可以运行在 Node 环境中，由于KISSY下辖多数模块都依赖于DOM，只有seed、oo、base、xtemplate等组件可以完整运行于 Node，因此要获得Dom支持需要载入node模块<code>jsdom</code>，jsdom 可以在服务器端生成一套完整的浏览器宿主环境。</p>
-<h2>在 node 环境中安装 kissy</h2>
+<h2 id="-node-kissy">在 node 环境中安装 kissy</h2>
 <p>这里使用了<a href="https://github.com/tmpvar/jsdom">JSDom</a> 来生成服务端的浏览器宿主环境，KISSY 可以和任何合法的 DOM 树结构一起工作。</p>
 <pre><code>npm install kissy jsdom</code></pre>
-<h2>创建页面 DOM 骨架</h2>
+<h2 id="-dom-">创建页面 DOM 骨架</h2>
 <p>JSDom 有非常多有用的特性，并且是高可配置的。下面的代码用JSDom创建了一个简单的浏览器页面环境，最重要的，创建了document 和window。</p>
 <pre><code>var jsdom = require(&#39;jsdom&#39;);
 
@@ -96,7 +96,7 @@ var dom = jsdom.defaultLevel;
 var document = 
     jsdom.jsdom(&quot;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;Hello kissy!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;),
 window = document.createWindow();</code></pre>
-<h2>将 KISSY 运行起来</h2>
+<h2 id="-kissy-">将 KISSY 运行起来</h2>
 <pre><code>var KISSY = require(&#39;kissy&#39;);
 
 KISSY.use(&#39;node&#39;,function(S){
@@ -104,7 +104,7 @@ KISSY.use(&#39;node&#39;,function(S){
 });</code></pre>
 <p>结果输出：</p>
 <pre><code>&lt;h1&gt;Hello kissy!&lt;/h1&gt;</code></pre>
-<h2>执行 Dom 操作</h2>
+<h2 id="-dom-">执行 Dom 操作</h2>
 <p>我们增加一点代码，初始化一个Button组件：</p>
 <pre><code>// 引用node和button
 KISSY.use(&#39;node,button&#39;,function(S,N,Button){
@@ -133,7 +133,7 @@ KISSY.use(&#39;node,button&#39;,function(S,N,Button){
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 <p>这就是我们想要的结果，KISSY 已经成功的渲染了一个button组件</p>
-<h2>使用add()和use()进行代码管理</h2>
+<h2 id="-add-use-">使用add()和use()进行代码管理</h2>
 <p>NodeJS 遵循 <a href="http://www.commonjs.org">CommonJS</a> 规范，文件本身就是一个封闭的上下文。而 KISSY 遵循 <a href="kmd.html">KMD</a> 规范。通过固定的模块书写格式来约定模块上下文，除了包装格式不同外，对于模块的定义是完全一致的。因此，在Node环境中也可以使用use()和add()来管理代码。使用方式请参照<a href="kmd.html">KMD规范</a>。</p>
 <pre><code>var KISSY = require(&#39;kissy&#39;);
 
@@ -149,7 +149,7 @@ KISSY.use(&#39;a&#39;,function(S,A){
     // Your code...    
 });</code></pre>
 <p>在服务器端模块的载入都是阻塞式的，因此无需预定义Modules列表，即不用预先<code>KISSY.config(&#39;modules&#39;,{})</code>来定义模块依赖。</p>
-<h2>FAQ</h2>
+<h2 id="faq">FAQ</h2>
 <p>1，执行<code>eval()</code>时如果带有对KISSY的引用，会报错<code>KISSY is not defined</code>。比如在引用XTemplate的时候，要这样来获得KISSY全局对象</p>
 <pre><code>global.KISSY=require(&#39;kissy&#39;);</code></pre>
 
