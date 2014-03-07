@@ -70,7 +70,7 @@
     <article>
       
 
-	<h1 id="xtemplate">xtemplate</h1>
+	<h1>xtemplate</h1>
 <p>XTemplate 是富逻辑的 KISSY 模板引擎，面向复杂的业务逻辑场景，同时保持高性能和丰富的配置方法，是易学易懂的模板语言。</p>
 <p>一个典型的XTemplate模板实例：</p>
 <pre><code>Hello {{name}}
@@ -117,8 +117,8 @@ You have just won ${{value}}!
 <p>详见：<a href="http://docs.kissyui.com/1.4/docs/html/tutorials/kissy/xtemplate/compile.html">xtemplate 离线编译</a></p>
 <p>更多例子：<a href="http://docs.kissyui.com/1.4/docs/html/demo/xtemplate/index.html">KISSY XTemplate Demos</a></p>
 <hr>
-<h2 id="kissy-xtemplate-">KISSY XTemplate 语法</h2>
-<h3 id="-key-"><code>{{key}}</code>变量替换</h3>
+<h2>KISSY XTemplate 语法</h2>
+<h3><code>{{key}}</code>变量替换</h3>
 <p>使用<code>{{key}}</code>输出变量值，<code>key</code>表示要替换的JSON中的key，替换为JSON中key对应的value。比如XTemplate：</p>
 <pre><code>this is {{title}}!</code></pre>
 <p>要填充的JSON对象：</p>
@@ -127,7 +127,7 @@ You have just won ${{value}}!
 }</code></pre>
 <p>拼装结果为：</p>
 <pre><code>this is Kissy!</code></pre>
-<h3 id="-if-condition-"><code>{{if condition}}</code>条件语句</h3>
+<h3><code>{{if condition}}</code>条件语句</h3>
 <p>使用<code>{{if condition}}</code>来实现条件判断，<code>condition</code>表示要判断的值，判断是否存在、为空、是否为falsy。比如模板为：</p>
 <pre><code>{{#if title}}
     has title
@@ -147,7 +147,7 @@ You have just won ${{value}}!
 not has title2 </code></pre>
 <p>其中<code>{{#if}}</code>和<code>{{@if}}</code>完全等价，在某些环境中（比如velocity）里<code>#</code>有特殊语义，这时可以用<code>@</code>作为<code>if</code>前缀。</p>
 <p>此外，<code>title</code>的取值不为这些值时被认为是真值：<code>0</code>，<code>null</code>，<code>&#39;&#39;</code>，<code>false</code>，<code>NaN</code>，<code>undefined</code>。当取值为空数组<code>[]</code>或空对象&#39;{}&#39;时，则认为是真值。</p>
-<h3 id="-if-condition-"><code>{{^if condition}}</code>条件非语句</h3>
+<h3><code>{{^if condition}}</code>条件非语句</h3>
 <p>使用<code>{{^if condition}}</code>来实现条件非，如果<code>condition</code>值为空或者假值（<code>0</code>， <code>null</code>， <code>&#39;&#39;</code>， <code>false</code>， <code>NaN</code>， <code>undefined</code>），则此语句为 true。如果<code>condition</code>有值且是真值，语句为 false。比如这段 XTemplate 模板：</p>
 <pre><code>{{^if title}}
     do not has title
@@ -165,8 +165,8 @@ not has title2 </code></pre>
 <p>填充结果为：</p>
 <pre><code>do not has title 
 do not has title2 </code></pre>
-<h3 id="-each-"><code>{{#each}}</code>循环语句</h3>
-<h4 id="-">循环对象数组</h4>
+<h3><code>{{#each}}</code>循环语句</h3>
+<h4>循环对象数组</h4>
 <p>使用<code>{{#each data}}</code>表示循环，<code>data</code>表示循环的对象，数组类型，每个item为一个对象，比如这段 XTemplate：</p>
 <pre><code>{{#each data}}
     {{name}}-{{xindex}}/{{xcount}}
@@ -182,7 +182,7 @@ do not has title2 </code></pre>
 <pre><code>1-0/2
 2-1/2</code></pre>
 <p>这时循环内的<code>{{xindex}}</code>表示循环的索引值，<code>{{xcount}}</code>表示循环的总次数，<code>{{name}}</code>是数组中每个对象的属性<code>name</code>，替换为属性的值</p>
-<h4 id="-">循环单数组</h4>
+<h4>循环单数组</h4>
 <p>循环的<code>data</code>为数组类型，每个item为一个值，而非对象，比如这段XTemplate：</p>
 <pre><code>{{#each data}}
     {{this}}-{{xindex}}/{{xcount}}
@@ -195,7 +195,7 @@ do not has title2 </code></pre>
 <pre><code>jayli-0/2
 yiminghe-1/2</code></pre>
 <p>其中循环内的<code>{{this}}</code>表示当前循环的item值，<code>{{xindex}}</code>和<code>{{xcount}}</code>含义同上</p>
-<h4 id="each-">each中数据层次相对位置的访问</h4>
+<h4>each中数据层次相对位置的访问</h4>
 <p>循环体内可以获取JSON对象上的其他属性，同过相对位置写法获得，比如这段XTemplate：</p>
 <pre><code>{{#each data}}
     {{this}}-{{../total}}
@@ -209,7 +209,7 @@ yiminghe-1/2</code></pre>
 <pre><code>1-3
 2-3</code></pre>
 <p>其中，<code>{{../total}}</code>表示从循环体内跳出到<code>data</code>属性所在的层级，去查找<code>data</code>属性的兄弟属性<code>total</code>的值。同样，<code>{{#each}}</code>可以被<code>{{@each}}</code>代替。</p>
-<h3 id="-with-"><code>{{#with}}</code>语句</h3>
+<h3><code>{{#with}}</code>语句</h3>
 <p>类似 JavaScript 中的<code>with</code>语法，with 语句是为逐级的对象访问提供命名空间式的速写方式。我们在 XTemplate 中增加了类似的功能。比如<code>{{#with data}}...{{/with}}</code>,中间可以直接调用对象<code>data</code>里的属性，输出对应的值。</p>
 <p>比如这段 XTemplate</p>
 <pre><code>{{#with data}}
@@ -225,7 +225,7 @@ yiminghe-1/2</code></pre>
 <p>填充结果为：</p>
 <pre><code>jayli-2</code></pre>
 <p>其中<code>{{#with}}</code>可以用<code>{{@with}}</code>代替</p>
-<h4 id="-with-">支持 with 中数据层次间的相对位置访问</h4>
+<h4>支持 with 中数据层次间的相对位置访问</h4>
 <p>同<code>{{#each}}</code>一样，with 语句中也可以用相对路径写法来访问对象其他层级的属性，比如这段模板：</p>
 <pre><code>{{#with data}}
     {{#with p}}
@@ -245,16 +245,16 @@ yiminghe-1/2</code></pre>
 }</code></pre>
 <p>填充结果为：</p>
 <pre><code>h-2-2-1</code></pre>
-<h3 id="-comment-"><code>{{!comment}}</code> 注释</h3>
+<h3><code>{{!comment}}</code> 注释</h3>
 <p>XTemplate的注释写法为<code>{{!comment}}</code>，其中comment为注释内容，注释将会被忽略。</p>
-<h3 id="-prop-"><code>\\{{prop}}</code> 标签的转义</h3>
+<h3><code>\\{{prop}}</code> 标签的转义</h3>
 <p>如果想直接输出<code>{{prop}}</code>的内容，而不想被解析为标签，则用转义写法<code>\\{{prop}}</code>，比如模板：</p>
 <pre><code>output \\{{name}} as {{name}}</code></pre>
 <p>要填充的JSON为：</p>
 <pre><code>{name:&#39;jay&#39;}</code></pre>
 <p>输出结果为：</p>
 <pre><code>output {{name}} as jay</code></pre>
-<h3 id="-prop-html-"><code>{{{prop}}}</code> html 标签转义</h3>
+<h3><code>{{{prop}}}</code> html 标签转义</h3>
 <p>如果输出的内容中包含字符<code>&lt;</code>和<code>&gt;</code>，在普通标签<code>{{prpp}}</code>中会被转义为<code>&amp;lt;</code>和<code>&amp;gt;</code>，如果不想被转义，需使用<code>{{{prop}}}</code>，比如这段模板：</p>
 <pre><code>my {{title}} is {{{title}}}</code></pre>
 <p>要填充的JSON为：</p>
@@ -263,14 +263,14 @@ yiminghe-1/2</code></pre>
 }</code></pre>
 <p>输出结果为：</p>
 <pre><code>my &amp;lt;a&amp;gt; is &lt;a&gt;</code></pre>
-<h3 id="-">用表达式作为变量</h3>
+<h3>用表达式作为变量</h3>
 <p>目前支持的表达式为<code>+</code>，<code>-</code>，<code>*</code>，<code>/</code>，<code>%</code>。比如这段模板：</p>
 <pre><code>{{n+3*4/2}}</code></pre>
 <p>填充JSON为</p>
 <pre><code>{n:1}</code></pre>
 <p>输出结果为：</p>
 <pre><code>7</code></pre>
-<h3 id="-">关系表达式</h3>
+<h3>关系表达式</h3>
 <p>目前支持目前支持 <code>===</code> <code>!==</code> <code>&gt;</code> <code>&gt;=</code> <code>&lt;</code> <code>&lt;=</code>，比如这段模板：</p>
 <pre><code>{{#if n&gt;n2+4/2}}
     {{n+1}}
@@ -284,7 +284,7 @@ yiminghe-1/2</code></pre>
 }</code></pre>
 <p>输出结果为：</p>
 <pre><code>6</code></pre>
-<h3 id="each-">each 循环中的关系表达式</h3>
+<h3>each 循环中的关系表达式</h3>
 <p>直接看例子，看这段模板：</p>
 <pre><code>{{#each data}}
     {{#if this&gt;../limit+1}}
@@ -299,7 +299,7 @@ yiminghe-1/2</code></pre>
 <p>填充结果：</p>
 <pre><code>13-3-6
 20-5-6</code></pre>
-<h3 id="with-">with 中的关系表达式</h3>
+<h3>with 中的关系表达式</h3>
 <p>直接看例子，看这段模板：</p>
 <pre><code>{{#with data}}
     {{#if n&gt;../limit/5}}
@@ -315,7 +315,7 @@ yiminghe-1/2</code></pre>
 }</code></pre>
 <p>输出结果为：</p>
 <pre><code>6</code></pre>
-<h3 id="-set-"><code>{{set}}</code>设置变量</h3>
+<h3><code>{{set}}</code>设置变量</h3>
 <p>通过<code>{{set expression}}</code>来设置变量的值，可以设置多个，赋值表达式之间用空格分隔，比如这段模板：</p>
 <pre><code>{{#each data}}
     {{set n2=this*2 n3=this*3}}
@@ -328,7 +328,7 @@ yiminghe-1/2</code></pre>
 <p>结果为：</p>
 <pre><code>2-3
 4-6</code></pre>
-<h3 id="-mustache-">对 mustache 对象的兼容</h3>
+<h3>对 mustache 对象的兼容</h3>
 <p>XTemplate 支持对 <a href="http://mustache.github.io/">mustache</a> 形式的对象的兼容，比如这段模板：</p>
 <pre><code>{{#data}}{{name}}-{{age}}{{/data}}</code></pre>
 <p>填充JSON为：</p>
@@ -340,7 +340,7 @@ yiminghe-1/2</code></pre>
 }</code></pre>
 <p>输出结果为</p>
 <pre><code>h-2</code></pre>
-<h3 id="-mustache-">对 mustache 数组的兼容</h3>
+<h3>对 mustache 数组的兼容</h3>
 <p>XTemplate 支持对 <a href="http://mustache.github.io/">mustache</a> 形式的数组的兼容，比如这段模板：</p>
 <pre><code>{{#data}}
     {{name}}-{{xindex}}/{{xcount}}
@@ -356,10 +356,10 @@ yiminghe-1/2</code></pre>
 <pre><code>1-0/2
 2-1/2</code></pre>
 <hr>
-<h2 id="kissy-xtemplate-">KISSY XTemplate 附加功能</h2>
+<h2>KISSY XTemplate 附加功能</h2>
 <p>以上语法可以在不同语言中实现，在 JavaScript 环境中得益于 JS 语言的动态性，KISSY 为 XTemplate 提供了更多的浏览器端的渲染策略和工具。这些功能只在 JavaScript 的实现中可用，
 如果你的模板可同时被JavaScript渲染也会被其他语言渲染（比如在后台被Java渲染），请尽可能避免这种用法。</p>
-<h3 id="-">全局行内单个标签扩展</h3>
+<h3>全局行内单个标签扩展</h3>
 <p>如果我想扩展 XTemplate 中的标签个数，需要自定义扩展标签，使用<code>XTemplate.addCommand()</code>实现全局行内命令扩展，比如这样一段扩展（自定义一个单个标签，无配对出现）：</p>
 <pre><code>XTemplate.addCommand(&#39;global&#39;, function (scopes, option) {
     return &#39;global-&#39; + option.params[0];
@@ -368,7 +368,7 @@ yiminghe-1/2</code></pre>
 <pre><code>my {{global title}}</code></pre>
 <p>如果JSON为<code>{title:&#39;1&#39;}</code>，那么渲染结果为：</p>
 <pre><code>my global-1</code></pre>
-<h3 id="-">全局块状标签扩展</h3>
+<h3>全局块状标签扩展</h3>
 <p>除了扩展单个标签，还可以扩展块状标签，例子：</p>
 <pre><code> XTemplate.addCommand(&#39;global&#39;, function (scopes, option) {
     return &#39;global-&#39; + option.fn(scopes);
@@ -379,9 +379,9 @@ yiminghe-1/2</code></pre>
 {{/global}}</code></pre>
 <p>如果JSON对象为<code>{title:1}</code>，渲染结果为：</p>
 <pre><code>global-1</code></pre>
-<h3 id="-">删除全局标签的定义</h3>
+<h3>删除全局标签的定义</h3>
 <p>用<code>removeCommand()</code>方法来删除自定义的全局标签，调用格式为：<code>XTemplate.removeCommand(commandName,fn)</code>。</p>
-<h3 id="-">局部行内标签扩展</h3>
+<h3>局部行内标签扩展</h3>
 <p>如果要把标签扩展不做成全局，可以临时定义针对一段模板的标签扩展，做法是在<code>XTemplage()</code>函数中传入第二个配置参数：</p>
 <pre><code>var render = new XTemplate(tpl, {
     commands: {
@@ -390,7 +390,7 @@ yiminghe-1/2</code></pre>
         }
     }
 }).render(data);</code></pre>
-<h3 id="-">局部块状标签扩展</h3>
+<h3>局部块状标签扩展</h3>
 <p>类似行内标签扩展，块状标签扩展需要用<code>option.fn(scopes)</code>来激活，参照上文，做法是：</p>
 <pre><code>var render = new XTemplate(tpl, {
     commands: {
@@ -399,7 +399,7 @@ yiminghe-1/2</code></pre>
         }
     }
 }).render(data);</code></pre>
-<h3 id="-">局部后缀名判断标签扩展</h3>
+<h3>局部后缀名判断标签扩展</h3>
 <p>参照标签的扩展规则，再来看一个更复杂的例子，我们可以自定义条件判断的规则：</p>
 <pre><code>var render = new XTemplate(tpl, {
     commands: {

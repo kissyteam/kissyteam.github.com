@@ -24,3 +24,15 @@ Classes in Scroll View
     base
     drag
     plugin
+
+
+
+.. note::
+
+    桌面 safari 字体拉长解决方案：在载入 seed 后立即执行：
+
+    .. code-block:: javascript
+
+         if(KISSY.UA.safari && !KISSY.UA.mobile && KISSY.Features) {
+            KISSY.Features.isTransform3dSupported=function(){return false}
+         }

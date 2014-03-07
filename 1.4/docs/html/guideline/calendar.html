@@ -70,14 +70,14 @@
     <article>
       
 
-	<h1 id="calendar">calendar</h1>
+	<h1>calendar</h1>
 <p>KISSY 内置日历组件，如无必要，推荐使用<code>gallery/calendar/1.1/</code>日历组件。Gallery <a href="http://gallery.kissyui.com/calendar/1.2/guide/index.html">日历组件</a>。</p>
 <p>该组件是由拔赤设计实现，交互清爽、功能实用。支持基本的日期选择、时间选择、嵌入/弹出、范围选择、日期格式化输出等常用功能, 能够满足多数的应用场景, 非常方便用户调用。基本用法：</p>
 <pre><code>KISSY.use(&#39;calendar&#39;,function(S,Calendar){
     // use Calendar
 });    </code></pre>
 <p><a href="http://docs.kissyui.com/1.4/source/raw/demo/calendar/demo1.html">查看日历Demo</a>。</p>
-<h3 id="-">初始化参数说明：</h3>
+<h3>初始化参数说明：</h3>
 <pre><code>new Calendar(trigger,config);</code></pre>
 <ul>
 <li>trigger (String|HTMLDOMNode|Node) – 配置项, 触点/容器id </li>
@@ -103,26 +103,26 @@
 </ul>
 </li>
 </ul>
-<h3 id="-">日历实例方法</h3>
-<h4 id="toggle-">toggle()</h4>
+<h3>日历实例方法</h3>
+<h4>toggle()</h4>
 <p>切换日历的状态, 从显示到隐藏和从隐藏到显示</p>
-<h4 id="render-config-">render (config)</h4>
+<h4>render (config)</h4>
 <p>通过render可以带入如上任意参数并重新渲染日历，参数为JSON对象，和初始化的<code>config</code>参数用法一样，比如</p>
 <pre><code>KISSY.use(&#39;calendar&#39;,function(S,Calendar) {
     c = new Calendar(&#39;#J_WithTime&#39;);
     c.render({maxDate:new Date()});
 });</code></pre>
-<h4 id="destroy-">destroy()</h4>
+<h4>destroy()</h4>
 <p>销毁日历</p>
-<h4 id="hide-">hide()</h4>
+<h4>hide()</h4>
 <p>如果日历是弹出形式, 隐藏日历</p>
-<h4 id="show-">show()</h4>
+<h4>show()</h4>
 <p>显示日历</p>
 <hr>
-<h3 id="-">日历实例的事件</h3>
-<h4 id="select">select</h4>
+<h3>日历实例的事件</h3>
+<h4>select</h4>
 <p>选中一个日期事件,通过e.date来获得选中的日期,如果开启notLimited参数，则e.date=null</p>
-<h4 id="monthchange">monthChange</h4>
+<h4>monthChange</h4>
 <p>切换月份事件,通过e.date来获取切换到的日期, 通过e.date.getMonth() + 1 来获得切换至的月份，用法：</p>
 <pre><code>KISSY.use(&#39;calendar&#39;,function(S,Calendar) {
     //月份切换事件
@@ -130,7 +130,7 @@
         alert(&#39;切换事件,月份切换到&#39;+(e.date.getMonth()+1));
     });
 });</code></pre>
-<h4 id="rangeselect">rangeSelect</h4>
+<h4>rangeSelect</h4>
 <p>范围选择事件,通过e.start和e.end来获得开始和结束日期，用法：</p>
 <pre><code>KISSY.use(&#39;calendar&#39;,function(S,Calendar) {
     //选择范围,并绑定范围回调
@@ -141,7 +141,7 @@
         alert(e.start+&#39; &#39;+e.end);
     });
 });</code></pre>
-<h4 id="multiselect">multiSelect</h4>
+<h4>multiSelect</h4>
 <p>多选触发的事件，通过e.multi来获取选中的日期数组，用法：</p>
 <pre><code>KISSY.use(&#39;calendar&#39;,function(S,Calendar) {
     new Calendar(&#39;#J_Popup23&#39;, {
@@ -154,10 +154,10 @@
             alert(e.multi);
     });
 });</code></pre>
-<h4 id="timeselect">timeSelect</h4>
+<h4>timeSelect</h4>
 <p>确定选中时间事件,通过e.date来获得日期时间</p>
-<h2 id="faq">FAQ</h2>
-<h3 id="1-">1，如何在初始化时设置时分秒？</h3>
+<h2>FAQ</h2>
+<h3>1，如何在初始化时设置时分秒？</h3>
 <pre><code>var c = new Calendar(&#39;#J_crontab&#39;);
 var ca = c.ca[0];
 if(ca){

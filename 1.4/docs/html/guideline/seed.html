@@ -70,11 +70,11 @@
     <article>
       
 
-	<h1 id="seed">Seed</h1>
+	<h1>Seed</h1>
 <blockquote>
 <p>Seed 模块是 KISSY 的核心。必须在所有使用 KISSY 的页面中引入，所有核心模块的依赖关系均在 Seed 中定义，基于它可以生长出你所需要的代码基础库，而无需手写<code>script</code>标签。注意：Seed 并不是一个“模块名”，但它包含这些核心功能：lang，features，loader，ua。模块名称均小写。</p>
 </blockquote>
-<h2 id="-seed">载入 seed</h2>
+<h2>载入 seed</h2>
 <pre><code>&lt;script src=&quot;http://g.tbcdn.cn/kissy/k/1.4.2/seed.js&quot;&gt;&lt;/script&gt;</code></pre>
 <p>Seed 是一段很小的脚本，包含模块加载器，用来加载其他核心模块。Seed 会引入全局对象<code>KISSY</code>。加载外部模块：</p>
 <pre><code>KISSY.use(&#39;node&#39;,function(S,Node){
@@ -86,14 +86,14 @@
 <li>注册<code>node</code>模块</li>
 </ol>
 <p>这是<code>use()</code>函数的两个基本功能，这两个基本功能通过<code>模块名称</code>统一起来，让他们看其来是一个操作，但不要忘记，实际上有这两层含义。</p>
-<h2 id="-">模块</h2>
+<h2>模块</h2>
 <p>根据上文，模块名有两个层面的含义</p>
 <ol>
 <li>指示文件所在的地址</li>
 <li>指示模块的具体内容</li>
 </ol>
 <p>KISSY 要求所有满足 KMD 规范的模块，首先具备<code>属性2</code>，其次具备<code>属性1</code>。即<code>use()</code>首先要执行已经注册的模块，如果没有注册，则先尝试去模块名所指示的位置加载模块文件，再执行注册和运行。因此，只有被KISSY.add包装起来的代码，才是正确的 KISSY 模块。</p>
-<h3 id="-1-">场景1：运行已经注册的模块</h3>
+<h3>场景1：运行已经注册的模块</h3>
 <pre><code>// index.html
 // 同一个文件中执行add和use
 
@@ -105,7 +105,7 @@ KISSY.add(&#39;a&#39;,function(S){
 KISSY.use(&#39;a&#39;,function(S,A){
     // Your Code
 });</code></pre>
-<h3 id="-2-">场景2：运行外部文件注册的模块</h3>
+<h3>场景2：运行外部文件注册的模块</h3>
 <pre><code>// index.html
 // 这里的use()会先载入&#39;path/to/a.js&#39;(及其依赖)，因为这时模块&#39;path/to/a&#39;没有被注册过
 KISSY.use(&#39;path/to/a&#39;,function(S,A){
@@ -118,7 +118,7 @@ KISSY.use(&#39;path/to/a&#39;,function(S,A){
 KISSY.add(&#39;path/to/a&#39;,function(S){
     return {};    
 });</code></pre>
-<h3 id="-3-">场景3：注册模块族</h3>
+<h3>场景3：注册模块族</h3>
 <p>可否将很多模块的注册抽离入一个文件？当然可以，比如这个例子，mods.js 包含了很多个模块的注册，预先载入页面后，KISSY 注册了mods.js里的这些模块，这时通过use()调用时，只是运行注册的模块，而不会造成额外的http请求</p>
 <pre><code>// index.html
 &lt;script src=&quot;mods.js&quot;&gt;&lt;/script&gt;
@@ -133,7 +133,7 @@ KISSY.add(&#39;a&#39;,function(){});
 KISSY.add(&#39;b&#39;,function(){});
 KISSY.add(&#39;c&#39;,function(){});</code></pre>
 <p>总之，KISSY.use() 函数的执行，会首先查找模块是否已经注册，若注册过，则直接执行模块逻辑，若没有注册过，则先加载模块名对应的模块文件，再注册并执行。KISSY Seed中包含的模块即可以通过这种方式直接调用，而不会造成额外的http请求。</p>
-<h3 id="-4-">场景4：运行一个没有被注册过的模块（报错）</h3>
+<h3>场景4：运行一个没有被注册过的模块（报错）</h3>
 <p>KISSY.use() 的目的是运行模块并执行回调，载入外部文件只是其附加功能。因此不能使用KISSY.use()来载入任意外部文件。比如：</p>
 <pre><code>// index.html
 // 运行出错，因为&#39;path/to/jquery&#39;没有被注册
@@ -155,7 +155,7 @@ KISSY.add(&#39;path/to/jquery&#39;,fucntion(S)){
     return jQuery;
 });</code></pre>
 <hr>
-<h2 id="-">模块别名</h2>
+<h2>模块别名</h2>
 <p>上文提到，模块名称用一个路径来表示，那么类似<code>node</code>这种核心模块，如何对应到具体的文件路径呢？通过 alias 来实现。比如映射之前代码为：</p>
 <pre><code>// index.html
 KISSY.use(&#39;path/to/a&#39;,function(S,A){
@@ -186,14 +186,14 @@ KISSY.add(&#39;path/to/a&#39;,function(S){
     return {};
 });</code></pre>
 <hr>
-<h2 id="seed-">Seed 中的模块预设</h2>
+<h2>Seed 中的模块预设</h2>
 <p>以上为 KISSY 核心模块的实现机理。<code>seed.js</code> 类似上文提到的 <code>mods.js</code>，是一个注册模块的集合，<code>seed</code>并不表示任何一个模块名，因此这个用法是错误的：</p>
 <pre><code>KISSY.use(&#39;seed&#39;,function(){});</code></pre>
 <p>seed 中的功能可以通过 S 直接引用，例如</p>
 <pre><code>KISSY.isArray([]);
 KISSY.UA.ie;</code></pre>
 <p>但这种做法仅限于KISSY核心模块，自定义模块建议严格按照KMD规范来传递参数。</p>
-<h2 id="-">模块的一次性加载</h2>
+<h2>模块的一次性加载</h2>
 <p>由于KISSY设计是模块化的，模块之间的依赖关系通过use()和add()来处理，但模块依赖关系是记录在各自模块当中的，尽管程序运行逻辑上不会出错，但会造成串行加载。比如a模块依赖b，b依赖c，页面在加载完成b模块之前并不知道b依赖了别的什么模块，加载瀑布过程形如：</p>
 <p><img src="http://jayli.github.io/sandbox/assets/loading.png" alt=""></p>
 <p>为了避免速度很慢的串行加载，我们预先将模块依赖置于全局，页面在载入a模块时就知道a总共依赖了b和c，且b依赖c。这时KISSY会处理好a、b、c的执行顺序并一并合并载入。这样HTTP请求数就降低为1个。通常在开发阶段我们不需要载入全局的依赖表，在发布上线时，通过<a href="kmc.html">kmc</a>工具解析生成模块依赖关系表，至于全局即可。定义模块依赖关系的写法如下：</p>
@@ -212,11 +212,11 @@ KISSY.UA.ie;</code></pre>
 <p>Yahoo CDN则这样写：</p>
 <pre><code>http://cdn/combo?a.js&amp;b.js&amp;c.js</code></pre>
 <p>拼装合并脚本的模式默认采用淘宝CDN支持的形式，如果需要其他配置，请参照<a href="loader.html">loader</a></p>
-<h2 id="-">模块的去重</h2>
+<h2>模块的去重</h2>
 <p>如果已经载入过了某个模块，再次<code>use()</code>的时候会不会重新加载一次？不会！此外，如果在开始加载时遇到重复依赖的问题，KISSY Loader也会将重复去掉，只加载最小的集合。比如这样的依赖关系：</p>
 <p><img src="http://gtms03.alicdn.com/tps/i3/T1r5aRFkJXXXbNU1_F-580-280.png" alt=""></p>
 <p>其中，init.js和calculate.js两个文件都依赖了stdout.js，这时只会加载stdout.js一次。</p>
-<h2 id="debug-">Debug模式</h2>
+<h2>Debug模式</h2>
 <p>如果启用了debug模式，则默认载入对应模块的源文件，否则载入<code>-min</code>的文件</p>
 <pre><code>KISSY.config(&#39;debug&#39;,true);
 

@@ -75,11 +75,11 @@ h3 {
     color:blue;
 }
 </style></p>
-<h1 id="promise">Promise</h1>
+<h1>Promise</h1>
 <p>“Promises” （有时也称之为deferred）代表着在javascript程序里一种巧妙的编程范式，它代表了一种可能会长时间运行而且不一定必须完整的操作的结果。这种模式不会阻塞和等待长时间的操作完成，而是返回一个代表了承诺的（promised）结果的对象。因此它的核心就是一个promise，代表一个任务结果，这个任务有可能完成有可能没完成。Promise模式唯一需要的一个接口是调用then方法，它可以用来注册当promise完成或者失败时调用的回调函数阅读，详情请<a href="http://wiki.commonjs.org/wiki/Promises/A">CommonJS Promises/A proposal</a> 。</p>
-<h2 id="promise-">Promise 作了什么事情</h2>
+<h2>Promise 作了什么事情</h2>
 <p>Promise 适用于有异步逻辑的场景</p>
-<h3 id="-">代码第一形态</h3>
+<h3>代码第一形态</h3>
 <p>实现一个单体，可以传入回调参数，在某个事件发生时触发这个回调，通常我们这样做：</p>
 <pre><code>var A = {
     a:1,
@@ -98,7 +98,7 @@ A.init();</code></pre>
 <li>complete 回调有可能不是在初始化的时候绑定，我们允许在任意位置指定他的回调</li>
 <li>如果指定多个回调时，这些回调之间的先后顺序如何控制</li>
 </ol>
-<h3 id="-">代码第二形态</h3>
+<h3>代码第二形态</h3>
 <p>这个单体暴露事件，由开发者去绑定事件，事件可以任意绑定</p>
 <pre><code>// 让 A 可暴露自定义事件
 var AFactory = new Function;
@@ -124,7 +124,7 @@ A.run();</code></pre>
 
 A.run();</code></pre>
 <p>这是一种最常见的简写</p>
-<h3 id="-">代码第三形态</h3>
+<h3>代码第三形态</h3>
 <p>异步操作过程可能耗时很久，但通过写状态可以处理外接逻辑的触发时机先后顺序。这样，回调逻辑从“当xx时触发yy回调”，变为“当xx状态改变为yy时，触发zz回调”。即回调在等待状态改变，这种很语义话的表达方式被抽象出来，即形成了Promise的雏形：</p>
 <pre><code>A.run().then(function(){
     // 回调1    
@@ -135,7 +135,7 @@ A.run();</code></pre>
 <pre><code>var A = {};/* A 的定义 */
 var p1 = new Promise(A);
 p1.when(/*条件*/).then(/*行为*/);</code></pre>
-<h2 id="kissy-promise-">KISSY Promise 的用法</h2>
+<h2>KISSY Promise 的用法</h2>
 <p>可以直接通过KISSY.Promise调用：</p>
 <pre><code>var d = new KISSY.Promise.Defer();
 d.do_somethine();// d 执行相关的方法</code></pre>
@@ -144,19 +144,19 @@ d.do_somethine();// d 执行相关的方法</code></pre>
     var d = new Promise.Defer(); // 使用 Promise
 });</code></pre>
 <p>首先看这个<a href="http://docs.kissyui.com/1.4/docs/html/demo/promise/index.html">Demo</a>。</p>
-<h2 id="apis">APIs</h2>
+<h2>APIs</h2>
 <p>注意，Promise()不允许在外部被初始化。通过实例化<code>KISSY.Promise.Defer()</code>来使用Promise的功能。Promise 实例方法有：</p>
-<h3 id="then-promise-">then()  <code>&lt;Promise 实例方法&gt;</code></h3>
+<h3>then()  <code>&lt;Promise 实例方法&gt;</code></h3>
 <p><code>then ( fulfilled [, rejected] ) =&gt; void</code></p>
 <p>监听当前实例的成功和失败并返回新的 promise 实例</p>
-<h4 id="parameter">parameter</h4>
+<h4>parameter</h4>
 <ul>
 <li>fulfilled (Function) – 该 promise 成功时的回调，参数为 defer resolve 时的 value.</li>
 <li>rejected (Function) – 该 promise 失败时的回调，参数为 defer reject 时的 reason.</li>
 </ul>
-<h4 id="return">return</h4>
+<h4>return</h4>
 <p>一个新的 promise（Promise类型）. 当前 promise 成功时新的 promise 也成功. 当前 promise 失败时新的 promise 也失败.</p>
-<h4 id="example">example</h4>
+<h4>example</h4>
 <p>参照首<a href="http://docs.kissyui.com/1.4/docs/html/demo/promise/index.html">Demo</a>。 这里为链式调用写法。</p>
 <pre><code>KISSY.use(&#39;node&#39;,function(S,Node){
     K.all(&quot;button&quot;).on(&quot;click&quot;, function () {
@@ -171,48 +171,48 @@ d.do_somethine();// d 执行相关的方法</code></pre>
         d.resolve(1); // 该位置也可以放在 then 前面
     });
 });</code></pre>
-<h3 id="fail-promise-">fail()  <code>&lt;Promise 实例方法&gt;</code></h3>
+<h3>fail()  <code>&lt;Promise 实例方法&gt;</code></h3>
 <p><code>fail ( rejected ) =&gt; void</code></p>
 <p>监听当前实例的失败并返回新的 promise 实例.相当于调用 <code>this.then(null,rejected)</code>;</p>
-<h4 id="parameter">parameter</h4>
+<h4>parameter</h4>
 <p>rejected (Function) – 该 promise 失败时的回调，参数为 defer reject 时的 reason.</p>
-<h4 id="return">return</h4>
+<h4>return</h4>
 <p>一个新的 promise(（Promise类型）. 当前 promise 成功时新的 promise 也成功. 当前 promise 失败时新的 promise 也失败.</p>
-<h3 id="fin-promise-">fin()  <code>&lt;Promise 实例方法&gt;</code></h3>
+<h3>fin()  <code>&lt;Promise 实例方法&gt;</code></h3>
 <p><code>fin ( callback ) =&gt; void</code></p>
 <p>监听当前实例的成功和失败并返回新的 promise 实例</p>
-<h4 id="parameter">parameter</h4>
+<h4>parameter</h4>
 <p>callback (Function) – 该 promise 成功或失败时的回调， 成功时参数为 defer resolve 时的 value 和 true. 失败时参数为 defer reject 时的 reason 和 false.</p>
-<h4 id="return">return</h4>
+<h4>return</h4>
 <p>一个新的 promise. 当前 promise 成功时新的 promise 也成功. 当前 promise 失败时新的 promise 也失败.</p>
-<h3 id="isresolved-promise-">isResolved()  <code>&lt;Promise 实例方法&gt;</code></h3>
+<h3>isResolved()  <code>&lt;Promise 实例方法&gt;</code></h3>
 <p><code>isResolved () =&gt; Boolean</code></p>
 <p>返回当前 promise 是否成功了</p>
-<h3 id="isresolved-static-">isResolved() <code>&lt;static&gt;</code></h3>
+<h3>isResolved() <code>&lt;static&gt;</code></h3>
 <p><code>isResolved () =&gt; Boolean</code></p>
 <p>全局静态方法，作用同上</p>
 <pre><code>KISSY.Promise.isResolved(promise)</code></pre>
-<h3 id="isrejected-promise-">isRejected()  <code>&lt;Promise 实例方法&gt;</code></h3>
+<h3>isRejected()  <code>&lt;Promise 实例方法&gt;</code></h3>
 <p><code>isRejected () =&gt; Boolean</code></p>
 <p>返回当前 promise 是否失败了</p>
-<h3 id="isrejected-static-">isRejected() <code>&lt;static&gt;</code></h3>
+<h3>isRejected() <code>&lt;static&gt;</code></h3>
 <p><code>isRejected () =&gt; Boolean</code></p>
 <p>全局静态方法，作用同上</p>
 <pre><code>KISSY.Promise.isRejected(promise)</code></pre>
-<h3 id="ispromise-static-">isPromise() <code>&lt;static&gt;</code></h3>
+<h3>isPromise() <code>&lt;static&gt;</code></h3>
 <p><code>isPromise() =&gt; Boolean</code></p>
 <p>全局静态方法，判断一个对象是否是Promise实例</p>
 <pre><code>KISSY.Promise.isPromise(promise)</code></pre>
-<h3 id="when-static-">when() <code>&lt;static&gt;</code></h3>
+<h3>when() <code>&lt;static&gt;</code></h3>
 <p><code>when(obj, fulfilled, rejected) =&gt; Promise</code></p>
 <p>返回一个新的 promise。如果 obj 为 promise 类型，相当于 <code>obj.then(fulfilled, rejected)</code></p>
 <p>否则直接调用 <code>fulfilled(obj)</code>，并返回一个成功的 promise</p>
-<h4 id="parameter">parameter</h4>
+<h4>parameter</h4>
 <p>obj – 监听的对象.</p>
-<h3 id="all-static-">all() <code>&lt;static&gt;</code></h3>
+<h3>all() <code>&lt;static&gt;</code></h3>
 <p><code>all(objects) =&gt; Promise</code></p>
 <p>返回一个新的 promise.当 objects 全部成功后新的 promise 成功，否以第一个 promise 的失败值为失败</p>
-<h4 id="parameter">parameter</h4>
+<h4>parameter</h4>
 <p>objects – promise或普通对象数组</p>
 
 
