@@ -50,7 +50,13 @@ KISSY is a powerfull javascript framework for building cross end web application
 1. 下载 [KISSY 1.4.2](https://github.com/kissyteam/kissy/archive/v1.4.1.zip)
 2. 通过 cdn 使用 `http://g.tbcdn.cn/kissy/k/1.4.2/seed-min.js`
 3. npm 安装 KISSY: ``npm install kissy``
-4. bower 安装 KISSY: ``bower install kissy``    
+4. bower 安装 KISSY: ``bower install kissy``
+
+<div class="search-combobox" id="combobox">
+    <div class="search-combobox-input-wrap">
+        <input id="q" name="q" accesskey="s" placeholder="搜索 kissy gallery 组件" class="search-combobox-input" autocomplete="off">
+    </div>
+</div>
 
 <h1 class="gallery-coms-title">
     kissy优秀组件推荐
@@ -139,6 +145,45 @@ KISSY is a powerfull javascript framework for building cross end web application
         margin-top: 5px;
         margin-left: 10px;
     }
+
+    .search-combobox-input-wrap {
+        vertical-align: middle;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .search-combobox-input {
+        font-size: 12px;
+        width: 100%;
+        margin: 20px 0;
+        vertical-align: middle;
+        background-color: #fff;
+        border: 0;
+        color: #000;
+        border:1px solid #ccc;
+        padding: 10px;
+    }
+
+    .search-combobox-input {
+        overflow-y: visible;
+        font-size: 100%;
+    }
+    .search-popupmenu{
+        border: 1px solid #ccc;
+        background-color: #fff;
+    }
+    .search-menuitem{
+        padding: 10px;
+    }
+    .search-menuitem a{
+        color: #666;
+    }
+    .search-menuitem a:hover{
+        color: #0066bb;
+    }
+    .search-popupmenu-hidden{
+        visibility: hidden;
+    }
 </style>
 
 
@@ -181,7 +226,7 @@ KISSY is a powerfull javascript framework for building cross end web application
 <script>
     //gallery组件列表
     (function(){
-        KISSY.use('node,io,xtemplate',function(S,Node,io,XTemplate){
+        KISSY.use('node,io,xtemplate,combobox',function(S,Node,io,XTemplate,ComboBox){
             io.jsonp('http://gallery.kissyui.com/api/coms?len=12',function(data){
                 var tpl = Node.all('.J_ComsTpl').html();
                 var html = new XTemplate(tpl).render(data);
@@ -193,6 +238,48 @@ KISSY is a powerfull javascript framework for building cross end web application
                 var html = new XTemplate(tpl).render(data);
                 $('#J_ComsRecommend').html(html);
             })
+
+            var tmpl = "<a href='http://gallery.kissyui.com/{name}/{version}/guide/index.html'><div class='item-wrapper'>" +
+                    "{name}" +
+                    "<span> by {userName}</span>" +
+                    "</div></a>";
+
+            var comboBox = new ComboBox({
+                prefixCls: 'search-',
+                placeholder: '点我搜索',
+                srcNode: S.one("#combobox"),
+                dataSource: new ComboBox.RemoteDataSource({
+                    xhrCfg: {
+                        url: 'http://http://gallery.kissyui.com//api/search',
+                        dataType: 'jsonp',
+                        data: {
+                            k: 1,
+                            code: "utf-8"
+                        }
+                    },
+                    paramName: "name",
+                    parse: function (query, results) {
+                        // 返回结果对象数组
+                        return results.result;
+                    },
+                    cache: true
+                }),
+                format: function (query, results) {
+                    var ret = [];
+                    S.each(results, function (r) {
+                        r.userName = r.author.name;
+                        var item = {
+                            // 点击菜单项后要放入 input 中的内容
+                            textContent: r.name,
+                            // 菜单项的
+                            content: S.substitute(tmpl, r)
+                        };
+                        ret.push(item);
+                    });
+                    return ret;
+                }
+            });
+            comboBox.render();
         })
     })();
 </script>

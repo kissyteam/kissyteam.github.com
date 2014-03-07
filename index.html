@@ -72,7 +72,7 @@
 
 	<p></p>
 
-<h1>What is KISSY ?</h1>
+<h1 id="what-is-kissy-">What is KISSY ?</h1>
 <p>KISSY <a href="https://travis-ci.org/kissyteam/kissy" target="_blank">
                         <img src="https://secure.travis-ci.org/kissyteam/kissy.png?branch=master"/>
                     </a> 是一款跨终端、模块化、高性能、使用简单的 JavaScript 框架。除了完备的工具集合如 DOM、Event、Ajax、Anim 等，它还提供了经典的面向对象、动态加载、性能优化解决方案。作为一款全终端支持的 JavaScript 框架，KISSY 为移动终端做了大量适配和优化，让你的程序在全终端均能流畅运行。</p>
@@ -102,7 +102,7 @@
 
 <p>&nbsp;</p>
 
-<h1>学习 KISSY，从这里开始</h1>
+<h1 id="-kissy-">学习 KISSY，从这里开始</h1>
 <div class="jumbotron row-fluid text-center">
         <a class="btn btn-primary btn-lg btn-block" href="/1.4/docs/html/guideline/get-started.html">指引手册</a>
         <a class="btn btn-primary btn-lg btn-block" href="/1.4/docs/html/tutorials/">教程</a>
@@ -111,13 +111,19 @@
 </div>
 
 
-<h1>使用 KISSY 1.4</h1>
+<h1 id="-kissy-1-4">使用 KISSY 1.4</h1>
 <ol>
 <li>下载 <a href="https://github.com/kissyteam/kissy/archive/v1.4.1.zip">KISSY 1.4.2</a></li>
 <li>通过 cdn 使用 <code>http://g.tbcdn.cn/kissy/k/1.4.2/seed-min.js</code></li>
 <li>npm 安装 KISSY: <code>npm install kissy</code></li>
-<li>bower 安装 KISSY: <code>bower install kissy</code>    </li>
+<li>bower 安装 KISSY: <code>bower install kissy</code></li>
 </ol>
+<div class="search-combobox" id="combobox">
+    <div class="search-combobox-input-wrap">
+        <input id="q" name="q" accesskey="s" placeholder="搜索 kissy gallery 组件" class="search-combobox-input" autocomplete="off">
+    </div>
+</div>
+
 <h1 class="gallery-coms-title">
     kissy优秀组件推荐
 </h1>
@@ -205,6 +211,45 @@
         margin-top: 5px;
         margin-left: 10px;
     }
+
+    .search-combobox-input-wrap {
+        vertical-align: middle;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .search-combobox-input {
+        font-size: 12px;
+        width: 100%;
+        margin: 20px 0;
+        vertical-align: middle;
+        background-color: #fff;
+        border: 0;
+        color: #000;
+        border:1px solid #ccc;
+        padding: 10px;
+    }
+
+    .search-combobox-input {
+        overflow-y: visible;
+        font-size: 100%;
+    }
+    .search-popupmenu{
+        border: 1px solid #ccc;
+        background-color: #fff;
+    }
+    .search-menuitem{
+        padding: 10px;
+    }
+    .search-menuitem a{
+        color: #666;
+    }
+    .search-menuitem a:hover{
+        color: #0066bb;
+    }
+    .search-popupmenu-hidden{
+        visibility: hidden;
+    }
 </style>
 
 
@@ -247,7 +292,7 @@
 <script>
     //gallery组件列表
     (function(){
-        KISSY.use('node,io,xtemplate',function(S,Node,io,XTemplate){
+        KISSY.use('node,io,xtemplate,combobox',function(S,Node,io,XTemplate,ComboBox){
             io.jsonp('http://gallery.kissyui.com/api/coms?len=12',function(data){
                 var tpl = Node.all('.J_ComsTpl').html();
                 var html = new XTemplate(tpl).render(data);
@@ -259,6 +304,48 @@
                 var html = new XTemplate(tpl).render(data);
                 $('#J_ComsRecommend').html(html);
             })
+
+            var tmpl = "<a href='http://gallery.kissyui.com/{name}/{version}/guide/index.html'><div class='item-wrapper'>" +
+                    "{name}" +
+                    "<span> by {userName}</span>" +
+                    "</div></a>";
+
+            var comboBox = new ComboBox({
+                prefixCls: 'search-',
+                placeholder: '点我搜索',
+                srcNode: S.one("#combobox"),
+                dataSource: new ComboBox.RemoteDataSource({
+                    xhrCfg: {
+                        url: 'http://http://gallery.kissyui.com//api/search',
+                        dataType: 'jsonp',
+                        data: {
+                            k: 1,
+                            code: "utf-8"
+                        }
+                    },
+                    paramName: "name",
+                    parse: function (query, results) {
+                        // 返回结果对象数组
+                        return results.result;
+                    },
+                    cache: true
+                }),
+                format: function (query, results) {
+                    var ret = [];
+                    S.each(results, function (r) {
+                        r.userName = r.author.name;
+                        var item = {
+                            // 点击菜单项后要放入 input 中的内容
+                            textContent: r.name,
+                            // 菜单项的
+                            content: S.substitute(tmpl, r)
+                        };
+                        ret.push(item);
+                    });
+                    return ret;
+                }
+            });
+            comboBox.render();
         })
     })();
 </script>
