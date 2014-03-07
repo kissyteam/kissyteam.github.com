@@ -1,7 +1,7 @@
 KISSY.use('xtemplate', function (S, XTemplate) {
 
     window.supportDetectUnMatch = function () {
-        var tpl = '{{#if n === n1}}\n' +
+        var tpl = '{{#if n===n1}}\n' +
             'n eq n1\n' +
             '{{/with}}';
 
