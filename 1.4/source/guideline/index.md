@@ -7,6 +7,8 @@ KISSY <a href="https://travis-ci.org/kissyteam/kissy" target="_blank">
                     </a> 是一款跨终端、模块化、高性能、使用简单的 JavaScript 框架。除了完备的工具集合如 DOM、Event、Ajax、Anim 等，它还提供了经典的面向对象、动态加载、性能优化解决方案。作为一款全终端支持的 JavaScript 框架，KISSY 为移动终端做了大量适配和优化，让你的程序在全终端均能流畅运行。
 
 
+我们同时提供了只用于移动端的瘦身版本 [KISSY MINI](http://m.kissyui.com)。
+
 KISSY is a powerfull javascript framework for building cross end web application such as desktop, mobile and pad.
 
 <div class="row-fluid">
