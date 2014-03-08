@@ -250,7 +250,7 @@ KISSY is a powerfull javascript framework for building cross end web application
                 srcNode: S.one("#combobox"),
                 dataSource: new ComboBox.RemoteDataSource({
                     xhrCfg: {
-                        url: 'http://http://gallery.kissyui.com//api/search',
+                        url: 'http://gallery.kissyui.com/api/search',
                         dataType: 'jsonp',
                         data: {
                             k: 1,
