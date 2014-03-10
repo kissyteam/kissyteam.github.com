@@ -7,7 +7,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
     <script src="http://g.tbcdn.cn/kissy/k/1.4.2/seed-min.js" data-config="{combine:true}"></script>
-    <script src="../../../log.js"></script>
 </head>
 <body>
 
@@ -23,10 +22,10 @@
 <script>
     KISSY.use('event', function (S, Event) {
         Event.on('#t', "swipe", function (e) {
-            log(e.type + ' : fired');
-            log(e.direction);
-            log(e.distance);
-            log(e.duration);
+            S.log(e.type + ' : fired');
+            S.log(e.direction);
+            S.log(e.distance);
+            S.log(e.duration);
         });
         // for chrome
         Event.on('#t', "swiping", function (e) {
