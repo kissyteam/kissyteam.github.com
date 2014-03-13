@@ -188,31 +188,6 @@
 </tbody>
 </table>
 <p>范例: require 是一个语法糖，提供了快捷引用已经注册的模块。</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;yourmod&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
-        <span class="kd">var</span> <span class="nx">Mod1</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;depMod1&#39;</span><span class="p">);</span>
-        <span class="kd">var</span> <span class="nx">Mod2</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;depMod2&#39;</span><span class="p">);</span>
-    <span class="p">},{</span>
-        <span class="nx">requires</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;depMod1&#39;</span><span class="p">,</span><span class="s1">&#39;depMod2&#39;</span><span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">);</span>
-</pre></div>
-</div>
-<p>这种代码亦可以作改造：</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// use 的模块太多，一不小心就和 function() 里的回调不对应了</span>
-<span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;a,b,c,d,e,f,g&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span><span class="nx">A</span><span class="p">,</span><span class="nx">B</span><span class="p">,</span><span class="nx">C</span><span class="p">,</span><span class="nx">D</span><span class="p">,</span><span class="nx">E</span><span class="p">,</span><span class="nx">F</span><span class="p">,</span><span class="nx">G</span><span class="p">){</span>
-    <span class="c1">// Your code...</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-<p>这种方法让你不用去肉眼找模块和变量的对应关系</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;a,b,c,d,e,f,g&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">){</span>
-    <span class="kd">var</span> <span class="nx">A</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">B</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">C</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">);</span>
-    <span class="c1">// Your code...</span>
-<span class="p">});</span>
-</pre></div>
-</div>
 </dd></dl>
 
 </div>

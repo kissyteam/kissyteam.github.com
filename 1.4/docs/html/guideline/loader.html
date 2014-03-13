@@ -297,18 +297,18 @@ KISSY.add(function(S,require,exports,module){
 <p>阻塞加载 css 模块或 js 模块依赖的 css 模块, 和 KISSY.add 中的 require 配置一起使用.</p>
 <h4>parameter</h4>
 <p>modNames (String|String[]) – 以<code>,</code>分割的 js 模块或 css 模块名称集合字符串,例如 <code>KISSY.use(&quot;mod1,mod2/xx.css&quot;)</code>;</p>
-<h3>require <code>&lt;static&gt;</code></h3>
-<p>如果<code>use()</code>的模块过多，回调参数需要和模块列表一一对应，有没有更简单的办法？</p>
+<h2>require</h2>
+<p>如果<code>requires</code>的模块过多，回调参数需要和模块列表一一对应，有没有更简单的办法？</p>
 <p>经常看到这种代码：</p>
-<pre><code>// use 的模块太多，一不小心就和 function() 里的回调不对应了
-KISSY.use(&#39;a,b,c,d,e,f,g&#39;,function(S,A,B,C,D,E,F,G){
+<pre><code>// requires 的模块太多，一不小心就和 function() 里的回调不对应了
+KISSY.add(function(S,A,B,C,D,E,F,G){
     // Your code...
-});</code></pre>
-<p>有没有办法不用去肉眼找模块和变量的对应关系？有方法，KISSY 1.4.2 提供了<code>require</code>语法糖</p>
-<pre><code>KISSY.use(&#39;a,b,c,d,e,f,g&#39;,function(S){
-    var A = S.require(&#39;a&#39;);
-    var B = S.require(&#39;b&#39;);
-    var C = S.require(&#39;c&#39;);
+},{requires:[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;,&#39;e&#39;,&#39;f&#39;,&#39;g&#39;]});</code></pre>
+<p>有没有办法不用去肉眼找模块和变量的对应关系？有方法，KISSY 1.4.1 提供了<code>require</code></p>
+<pre><code>KISSY.add(function(S, require){
+    var A = require(&#39;a&#39;);
+    var B = require(&#39;b&#39;);
+    var C = require(&#39;c&#39;);
     // Your code...
 });</code></pre>
 

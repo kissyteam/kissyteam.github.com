@@ -264,22 +264,22 @@ callback为对象时
 
 modNames (String|String[]) – 以` , `分割的 js 模块或 css 模块名称集合字符串,例如 `KISSY.use("mod1,mod2/xx.css")`;
 
-### require `<static>`
+## require
 
-如果`use()`的模块过多，回调参数需要和模块列表一一对应，有没有更简单的办法？
+如果`requires`的模块过多，回调参数需要和模块列表一一对应，有没有更简单的办法？
 
 经常看到这种代码：
 
-	// use 的模块太多，一不小心就和 function() 里的回调不对应了
-	KISSY.use('a,b,c,d,e,f,g',function(S,A,B,C,D,E,F,G){
+	// requires 的模块太多，一不小心就和 function() 里的回调不对应了
+	KISSY.add(function(S,A,B,C,D,E,F,G){
 		// Your code...
-	});
+	},{requires:['a','b','c','d','e','f','g']});
 
-有没有办法不用去肉眼找模块和变量的对应关系？有方法，KISSY 1.4.2 提供了`require`语法糖
+有没有办法不用去肉眼找模块和变量的对应关系？有方法，KISSY 1.4.1 提供了`require`
 
-	KISSY.use('a,b,c,d,e,f,g',function(S){
-		var A = S.require('a');
-		var B = S.require('b');
-		var C = S.require('c');
+	KISSY.add(function(S, require){
+		var A = require('a');
+		var B = require('b');
+		var C = require('c');
 		// Your code...
 	});

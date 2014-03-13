@@ -118,6 +118,22 @@ KISSY 在诞生之初就确立了模块化的架构，以此抽象出现在的 K
     });
 
 
+`require`的典型用法是改造这种代码
+
+	// requires 的模块太多，一不小心就和 function() 里的回调不对应了
+	KISSY.add(function(S,A,B,C,D,E,F,G){
+		// Your code...
+	},{requires:['a','b','c','d','e','f','g']});
+
+有没有办法不用去肉眼找模块和变量的对应关系？有方法，KISSY 1.4.1 提供了`require`
+
+	KISSY.add(function(S, require){
+		var A = require('a');
+		var B = require('b');
+		var C = require('c');
+		// Your code...
+	});
+
 ## require() `Function`
 
 `require`函数挂载在全局对象`KISSY`上，用来获取已加载的模块的值。
@@ -127,28 +143,12 @@ KISSY 在诞生之初就确立了模块化的架构，以此抽象出现在的 K
 获取已经注册的模块的返回值，这里注意，要保证所有依赖的模块都已经注册过，`require()`函数才会正确返回，如果有未注册的模块，`require()`不会计算依赖并动态加载。该函数只是针对已经注册过模块起作用，是一种快捷调用模块返回值的方法：
 
 	// 注册模块
-	add('a',{
+	S.add('a',{
 		'foo':'bar'	
 	});
 	
 	// 获取已经注册模块的值
-	require('a'); // => {'foo':'bar'}
-
-`require`的典型用法是改造这种代码
-
-	// use 的模块太多，一不小心就和 function() 里的回调不对应了
-	use('a,b,c,d,e,f,g',function(S,A,B,C,D,E,F,G){
-		// Your code...
-	});
-
-KISSY 提供了`require`语法糖
-
-	use('a,b,c,d,e,f,g',function(S){
-		var A = S.require('a');
-		var B = S.require('b');
-		var C = S.require('c');
-		// Your code...
-	});
+	S.require('a'); // => {'foo':'bar'}
 
 ## use() `Function`
 

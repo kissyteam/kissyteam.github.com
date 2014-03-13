@@ -158,29 +158,29 @@ KISSY.add(function(S,require,exports,module){
     var c = require(&#39;a/c&#39;);
     return c; // 或者 module.exports=c;
 });</code></pre>
+<p><code>require</code>的典型用法是改造这种代码</p>
+<pre><code>// requires 的模块太多，一不小心就和 function() 里的回调不对应了
+KISSY.add(function(S,A,B,C,D,E,F,G){
+    // Your code...
+},{requires:[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;,&#39;e&#39;,&#39;f&#39;,&#39;g&#39;]});</code></pre>
+<p>有没有办法不用去肉眼找模块和变量的对应关系？有方法，KISSY 1.4.1 提供了<code>require</code></p>
+<pre><code>KISSY.add(function(S, require){
+    var A = require(&#39;a&#39;);
+    var B = require(&#39;b&#39;);
+    var C = require(&#39;c&#39;);
+    // Your code...
+});</code></pre>
 <h2>require() <code>Function</code></h2>
 <p><code>require</code>函数挂载在全局对象<code>KISSY</code>上，用来获取已加载的模块的值。</p>
 <h3>require(name)</h3>
 <p>获取已经注册的模块的返回值，这里注意，要保证所有依赖的模块都已经注册过，<code>require()</code>函数才会正确返回，如果有未注册的模块，<code>require()</code>不会计算依赖并动态加载。该函数只是针对已经注册过模块起作用，是一种快捷调用模块返回值的方法：</p>
 <pre><code>// 注册模块
-add(&#39;a&#39;,{
+S.add(&#39;a&#39;,{
     &#39;foo&#39;:&#39;bar&#39;    
 });
 
 // 获取已经注册模块的值
-require(&#39;a&#39;); // =&gt; {&#39;foo&#39;:&#39;bar&#39;}</code></pre>
-<p><code>require</code>的典型用法是改造这种代码</p>
-<pre><code>// use 的模块太多，一不小心就和 function() 里的回调不对应了
-use(&#39;a,b,c,d,e,f,g&#39;,function(S,A,B,C,D,E,F,G){
-    // Your code...
-});</code></pre>
-<p>KISSY 提供了<code>require</code>语法糖</p>
-<pre><code>use(&#39;a,b,c,d,e,f,g&#39;,function(S){
-    var A = S.require(&#39;a&#39;);
-    var B = S.require(&#39;b&#39;);
-    var C = S.require(&#39;c&#39;);
-    // Your code...
-});</code></pre>
+S.require(&#39;a&#39;); // =&gt; {&#39;foo&#39;:&#39;bar&#39;}</code></pre>
 <h2>use() <code>Function</code></h2>
 <p><code>use</code>函数挂载在全局对象<code>KISSY</code>上，用来异步调用模块，并在模块加载完成后运行沙箱逻辑。</p>
 <h3>use(name,sandbox)</h3>

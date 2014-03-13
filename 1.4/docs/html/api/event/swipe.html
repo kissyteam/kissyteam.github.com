@@ -206,7 +206,6 @@
     <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;apple-mobile-web-app-capable&quot;</span> <span class="na">content=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;apple-touch-fullscreen&quot;</span> <span class="na">content=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://g.tbcdn.cn/kissy/k/1.4.2/seed-min.js&quot;</span> <span class="na">data-config=</span><span class="s">&quot;{combine:true}&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;../../../log.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
 
@@ -222,10 +221,10 @@
 <span class="nt">&lt;script&gt;</span>
     <span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;event&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Event</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;#t&#39;</span><span class="p">,</span> <span class="s2">&quot;swipe&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">type</span> <span class="o">+</span> <span class="s1">&#39; : fired&#39;</span><span class="p">);</span>
-            <span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">direction</span><span class="p">);</span>
-            <span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">distance</span><span class="p">);</span>
-            <span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">duration</span><span class="p">);</span>
+            <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">type</span> <span class="o">+</span> <span class="s1">&#39; : fired&#39;</span><span class="p">);</span>
+            <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">direction</span><span class="p">);</span>
+            <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">distance</span><span class="p">);</span>
+            <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">duration</span><span class="p">);</span>
         <span class="p">});</span>
         <span class="c1">// for chrome</span>
         <span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;#t&#39;</span><span class="p">,</span> <span class="s2">&quot;swiping&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
