@@ -27,9 +27,6 @@ io
       res.set('Access-Control-Allow-Origin', 'http://*.taobao.com');
       res.set('Access-Control-Allow-Headers', 'origin, x-requested-with, yiminghe, content-type, accept, *');
 
-.. note::
-
-    跨域时，withCredentials 默认为 true
 
 Module
 -----------------------------------------------
