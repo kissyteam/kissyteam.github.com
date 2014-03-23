@@ -107,6 +107,7 @@ KISSY is a powerful javascript framework for building cross end web application 
     .recommend-box h2{
         padding: 10px;
         margin: 0;
+        height: 40px;
     }
     .recommend-box p{
         padding: 0 10px;
