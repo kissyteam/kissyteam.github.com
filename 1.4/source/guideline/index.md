@@ -58,10 +58,6 @@ KISSY is a powerful javascript framework for building cross end web application 
     </div>
 </div>
 
-<h1 class="gallery-coms-title">
-    kissy优秀组件推荐
-</h1>
-
 <div id="J_ComsRecommend"></div>
 
 <h1 class="gallery-coms-title">
@@ -100,6 +96,10 @@ KISSY is a powerful javascript framework for building cross end web application 
         border: 4px solid #fff;
         -webkit-transition: border 0.3s;
         transition: border 0.3s;
+    }
+    .com-box h2{
+        height: 20px;
+        overflow: hidden;
     }
     .recommend-box{
         padding:0;
@@ -171,6 +171,8 @@ KISSY is a powerful javascript framework for building cross end web application 
     .search-popupmenu{
         border: 1px solid #ccc;
         background-color: #fff;
+        height: 200px;
+        overflow-y: scroll;
     }
     .search-menuitem{
         padding: 10px;
