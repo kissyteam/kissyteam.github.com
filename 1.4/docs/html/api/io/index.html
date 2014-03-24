@@ -180,11 +180,12 @@
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>iframe-upload 模式与 subDomain 模式需配置服务器 CORS 头，例如</p>
-<div class="last highlight-php"><div class="highlight"><pre><span class="x">res.set(&#39;Access-Control-Allow-Methods&#39;, &#39;GET, POST, OPTIONS&#39;);</span>
-<span class="x">res.set(&#39;Access-Control-Allow-Credentials&#39;, &#39;true&#39;);</span>
-<span class="x">res.set(&#39;Access-Control-Allow-Origin&#39;, &#39;http://*.taobao.com&#39;);</span>
-<span class="x">res.set(&#39;Access-Control-Allow-Headers&#39;, &#39;origin, x-requested-with, yiminghe, content-type, accept, *&#39;);</span>
+<p>iframe-upload 模式与 subDomain 模式需配置服务器 CORS 头，
+例如 item.taobao.com 要发请求给 www.taobao.com, www.taobao.com 需要设置返回头</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">res</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;Access-Control-Allow-Methods&#39;</span><span class="p">,</span> <span class="s1">&#39;GET, POST, OPTIONS&#39;</span><span class="p">);</span>
+<span class="nx">res</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;Access-Control-Allow-Credentials&#39;</span><span class="p">,</span> <span class="s1">&#39;true&#39;</span><span class="p">);</span>
+<span class="nx">res</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">,</span> <span class="s1">&#39;http://item.taobao.com&#39;</span><span class="p">);</span>
+<span class="nx">res</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;Access-Control-Allow-Headers&#39;</span><span class="p">,</span> <span class="s1">&#39;origin, x-requested-with, content-type, accept, *&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
