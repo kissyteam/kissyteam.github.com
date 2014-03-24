@@ -19,13 +19,16 @@ io
 .. note::
 
     iframe-upload 模式与 subDomain 模式需配置服务器 CORS 头，
-    例如 item.taobao.com 要发请求给 www.taobao.com, www.taobao.com 需要设置返回头
+    例如 xx.taobao.com 要发请求给 www.taobao.com, www.taobao.com 需要设置返回头
 
     .. code-block:: javascript
 
       res.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
       res.set('Access-Control-Allow-Credentials', 'true');
-      res.set('Access-Control-Allow-Origin', 'http://item.taobao.com');
+      var origin = req.get('origin');
+      if(origin.match(/taobao\.com$/)){
+        res.set('Access-Control-Allow-Origin', origin);
+      }
       res.set('Access-Control-Allow-Headers', 'origin, x-requested-with, content-type, accept, *');
 
 
