@@ -209,3 +209,22 @@ Methods Detail
 
     | **unloading** ()
     | 隐藏生成的加载层
+
+
+.. note::
+
+    KISSY 1.4 srcNode 初始化组件时必须要求内容节点必须包含类名 ks-overlay-content (这里 ks- 为 prefixCls)，例如
+
+    .. code-block:: html
+
+        <div class="ks-overlay" id='t'>
+            <div class="ks-overlay-content">
+
+            </div>
+        </div>
+
+        <script>
+            new Overlay({
+                srcNode:'#t'
+            });
+        </script>

@@ -125,3 +125,22 @@ Events Detail
     | 当 currentTrigger 改变后触发
 
     :param {KISSY.Node} e.newVal: 新的 trigger 元素
+
+
+.. note::
+
+    KISSY 1.4 srcNode 初始化组件时必须要求内容节点必须包含类名 ks-popup-content (这里 ks- 为 prefixCls)，例如
+
+    .. code-block:: html
+
+        <div class="ks-popup" id='t'>
+            <div class="ks-popup-content">
+
+            </div>
+        </div>
+
+        <script>
+            new Overlay.Popup({
+                srcNode:'#t'
+            });
+        </script>

@@ -166,3 +166,22 @@ Attributes Detail
 .. data:: Dialog.prototype.footerContent
 
     {String} - 可读写. 组件的底部 html.
+
+
+.. note::
+
+    KISSY 1.4 srcNode 初始化组件时必须要求内容节点必须包含类名 ks-dialog-content (这里 ks- 为 prefixCls)，例如
+
+    .. code-block:: html
+
+        <div class="ks-dialog" id='t'>
+            <div class="ks-dialog-content">
+
+            </div>
+        </div>
+
+        <script>
+            new Overlay.Dialog({
+                srcNode:'#t'
+            });
+        </script>
