@@ -171,54 +171,7 @@
   <div class="section" id="kissy">
 <span id="seed-lang"></span><h1>KISSY 使用示例<a class="headerlink" href="#kissy" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><iframe class="iframe-demo" width="100%" height="235" src="/1.4/source/raw/api/seed/lang/demo.html"></iframe><div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;node, event&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Node</span><span class="p">,</span> <span class="nx">Event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">Node</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
-    <span class="kd">var</span> <span class="nx">logger</span> <span class="o">=</span> <span class="p">[</span><span class="nx">S</span><span class="p">.</span><span class="nx">getLogger</span><span class="p">(</span><span class="s1">&#39;kissy:&#39;</span><span class="p">)];</span>
-
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#warn&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">logger</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">item</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s1">&#39;This is Warn&#39;</span><span class="p">);</span>
-        <span class="p">});</span>
-    <span class="p">});</span>
-
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#info&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">logger</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">item</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">&#39;This is Info&#39;</span><span class="p">);</span>
-        <span class="p">});</span>
-    <span class="p">});</span>
-
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#debug&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">logger</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">item</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;This is Debug&#39;</span><span class="p">);</span>
-        <span class="p">});</span>
-    <span class="p">});</span>
-
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#error&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">logger</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">item</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;This is Error&#39;</span><span class="p">);</span>
-        <span class="p">});</span>
-    <span class="p">});</span>
-
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#set&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="nx">S</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="s1">&#39;logger&#39;</span><span class="p">,</span> <span class="p">{</span>
-            <span class="nx">excludes</span><span class="o">:</span> <span class="p">[</span>
-                <span class="p">{</span>
-                    <span class="nx">logger</span><span class="o">:</span> <span class="sr">/^xx\//</span><span class="p">,</span>
-                    <span class="nx">maxLevel</span><span class="o">:</span> <span class="s1">&#39;info&#39;</span>
-                <span class="p">}</span>
-            <span class="p">]</span>
-        <span class="p">});</span>
-
-        <span class="nx">logger</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">getLogger</span><span class="p">(</span><span class="s1">&#39;xx:&#39;</span><span class="p">));</span>
-        <span class="nx">logger</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">getLogger</span><span class="p">(</span><span class="s1">&#39;yy:&#39;</span><span class="p">));</span>
-        <span class="nx">logger</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">getLogger</span><span class="p">(</span><span class="s1">&#39;zz:&#39;</span><span class="p">));</span>
-        <span class="nx">logger</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">S</span><span class="p">.</span><span class="nx">getLogger</span><span class="p">(</span><span class="s1">&#39;xx/y:&#39;</span><span class="p">));</span>
-    <span class="p">});</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-</div></blockquote>
+<div><iframe class="iframe-demo" width="100%" height="235" src="/1.4/source/raw/api/seed/lang/demo.html"></iframe></div></blockquote>
 </div>
 
 
