@@ -49,7 +49,7 @@ Methods Detail
 
     | void **resolve** ( value )
     | 使得内部的 promise 成功，并设置成功值为 value，
-    | 如果 value 也是 promise，只有等 value 成功后改 defer 内部的 promise 才算成功
+    | 如果 value 也是 promise，只有等 value 成功后该 defer 内部的 promise 才算成功
 
     :param value: 任意值（ 包括 promise ）.
 
