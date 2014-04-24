@@ -6,9 +6,6 @@ KISSY <a href="https://travis-ci.org/kissyteam/kissy" target="_blank">
                         <img src="https://secure.travis-ci.org/kissyteam/kissy.png?branch=master"/>
                     </a> 是一款跨终端、模块化、高性能、使用简单的 JavaScript 框架。除了完备的工具集合如 DOM、Event、Ajax、Anim 等，它还提供了经典的面向对象、动态加载、性能优化解决方案。作为一款全终端支持的 JavaScript 框架，KISSY 为移动终端做了大量适配和优化，让你的程序在全终端均能流畅运行。
 
-
-我们同时提供了只用于移动端的瘦身版本 [KISSY MINI](http://m.kissyui.com)。
-
 KISSY is a powerful javascript framework for building cross end web application such as desktop, mobile and pad.
 
 <div class="row-fluid">
@@ -51,6 +48,13 @@ KISSY is a powerful javascript framework for building cross end web application 
 2. 通过 cdn 使用 `http://g.tbcdn.cn/kissy/k/1.4.2/seed-min.js` 或  `https://s.tbcdn.cn/g/kissy/k/1.4.2/seed-min.js`
 3. npm 安装 KISSY: ``npm install kissy``
 4. bower 安装 KISSY: ``bower install kissy``
+
+
+# 参与 KISSY
+
+1. 通过 [任务面板](https://waffle.io/kissyteam/kissy) 了解 KISSY 将要做或正在做的事情.
+2. 通过 [issues](https://github.com/kissyteam/kissy/issues) 来提供反馈.
+3. 通过 [github](https://github.com/kissyteam/kissy/blob/master/CONTRIBUTING.md) 来给 KISSY 贡献代码.
 
 <div class="search-combobox" id="combobox">
     <div class="search-combobox-input-wrap">
