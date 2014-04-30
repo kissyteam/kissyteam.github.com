@@ -430,7 +430,7 @@
 <dl class="data">
 <dt id="io.cfg.headers">
 <tt class="descclassname">cfg.</tt><tt class="descname">headers</tt><a class="headerlink" href="#io.cfg.headers" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Object} -  设置这次请求 xhr 的请求头.</p>
+<dd><p>{Object} -  设置这次请求 xhr 的请求头. 特别在不希望跨域发 options 请求时需要设置 X-Requested-With 为 false ，详见 <a class="reference internal" href="index.html#io-xdr-server"><em>跨域设置注意</em></a></p>
 </dd></dl>
 
 <dl class="data">
@@ -513,7 +513,7 @@
 <dl class="data">
 <dt id="io.cfg.xdr">
 <tt class="descclassname">cfg.</tt><tt class="descname">xdr</tt><a class="headerlink" href="#io.cfg.xdr" title="Permalink to this definition">¶</a></dt>
-<dd><p>{Object} - 设置跨域的具体方式和细节，包括以下配置</p>
+<dd><p>{Object} - 设置跨域的具体方式和细节，包括以下配置，（注意同时需要配置服务器返回头，详见 <a class="reference internal" href="index.html#io-xdr-server"><em>跨域设置注意</em></a>）</p>
 <dl class="attribute">
 <dt id="io.cfg.xdr.src">
 <tt class="descclassname">cfg.xdr.</tt><tt class="descname">src</tt><a class="headerlink" href="#io.cfg.xdr.src" title="Permalink to this definition">¶</a></dt>

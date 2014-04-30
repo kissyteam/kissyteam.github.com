@@ -207,7 +207,7 @@ Config Detail
 
 .. data:: cfg.headers
 
-    {Object} -  设置这次请求 xhr 的请求头.
+    {Object} -  设置这次请求 xhr 的请求头. 特别在不希望跨域发 options 请求时需要设置 X-Requested-With 为 false ，详见 :ref:`跨域设置注意 <io_xdr_server>`
 
 .. data:: cfg.jsonp
 
@@ -275,7 +275,7 @@ Config Detail
 
 .. data:: cfg.xdr
 
-    {Object} - 设置跨域的具体方式和细节，包括以下配置
+    {Object} - 设置跨域的具体方式和细节，包括以下配置，（注意同时需要配置服务器返回头，详见 :ref:`跨域设置注意 <io_xdr_server>`）
     
     .. attribute:: cfg.xdr.src
     

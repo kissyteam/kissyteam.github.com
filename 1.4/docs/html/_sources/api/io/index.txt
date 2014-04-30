@@ -16,6 +16,11 @@ io
 .. note::
     io 组件在 1.3.x 及以前的版本被命名为ajax，1.4.x 及后续版本都更名为io
 
+
+
+.. _io_xdr_server:
+
+
 .. note::
 
     iframe-upload 模式与 subDomain 模式需配置服务器 CORS 头，
@@ -26,10 +31,23 @@ io
       res.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
       res.set('Access-Control-Allow-Credentials', 'true');
       var origin = req.get('origin');
-      if(origin.match(/taobao\.com$/)){
+      if(origin.match(/taobao\.com(:\d+)?$/)||origin.match(/taobao\.net(:\d+)?$/)){
         res.set('Access-Control-Allow-Origin', origin);
       }
       res.set('Access-Control-Allow-Headers', 'origin, x-requested-with, content-type, accept, *');
+
+
+    同时如果希望不发送 option 请求，还需要设置
+
+    .. code-block:: javascript
+
+        IO({
+            headers: {
+                'X-Requested-With': false
+            }
+        });
+
+    详细请看： `CROS MDC <https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS?>`_
 
 
 Module
