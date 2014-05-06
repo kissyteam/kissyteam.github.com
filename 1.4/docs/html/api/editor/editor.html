@@ -221,8 +221,6 @@
 <li><a class="reference internal" href="#editor.Editor.prototype.toolBarEl" title="editor.Editor.prototype.toolBarEl"><tt class="xref py py-attr docutils literal"><span class="pre">toolBarEl</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.prototype.statusBarEl" title="editor.Editor.prototype.statusBarEl"><tt class="xref py py-attr docutils literal"><span class="pre">statusBarEl</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.prototype.mode" title="editor.Editor.prototype.mode"><tt class="xref py py-attr docutils literal"><span class="pre">mode</span></tt></a></li>
-<li><a class="reference internal" href="#editor.Editor.prototype.data" title="editor.Editor.prototype.data"><tt class="xref py py-attr docutils literal"><span class="pre">data</span></tt></a></li>
-<li><a class="reference internal" href="#editor.Editor.prototype.formatData" title="editor.Editor.prototype.formatData"><tt class="xref py py-attr docutils literal"><span class="pre">formatData</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.SOURCE_MODE" title="editor.Editor.SOURCE_MODE"><tt class="xref py py-attr docutils literal"><span class="pre">SOURCE_MODE</span></tt></a> &lt;static&gt;</li>
 <li><a class="reference internal" href="#editor.Editor.WYSIWYG_MODE" title="editor.Editor.WYSIWYG_MODE"><tt class="xref py py-attr docutils literal"><span class="pre">WYSIWYG_MODE</span></tt></a> &lt;static&gt;</li>
 </ul>
@@ -251,6 +249,7 @@
 <li><a class="reference internal" href="#editor.Editor.prototype.addSelect" title="editor.Editor.prototype.addSelect"><tt class="xref py py-meth docutils literal"><span class="pre">addSelect()</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.prototype.getSelectedHtml" title="editor.Editor.prototype.getSelectedHtml"><tt class="xref py py-meth docutils literal"><span class="pre">getSelectedHtml()</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.prototype.getData" title="editor.Editor.prototype.getData"><tt class="xref py py-meth docutils literal"><span class="pre">getData()</span></tt></a></li>
+<li><a class="reference internal" href="#editor.Editor.prototype.getFormatData" title="editor.Editor.prototype.getFormatData"><tt class="xref py py-meth docutils literal"><span class="pre">getFormatData()</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.prototype.setData" title="editor.Editor.prototype.setData"><tt class="xref py py-meth docutils literal"><span class="pre">setData()</span></tt></a></li>
 </ul>
 </div></blockquote>
@@ -432,12 +431,6 @@
 <dt id="editor.Editor.prototype.data">
 <tt class="descclassname">Editor.prototype.</tt><tt class="descname">data</tt><a class="headerlink" href="#editor.Editor.prototype.data" title="Permalink to this definition">¶</a></dt>
 <dd><p>{KISSY.Node} - 编辑器 body 下的 html 内容.可读写.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="editor.Editor.prototype.formatData">
-<tt class="descclassname">Editor.prototype.</tt><tt class="descname">formatData</tt><a class="headerlink" href="#editor.Editor.prototype.formatData" title="Permalink to this definition">¶</a></dt>
-<dd><p>{KISSY.Node} - 编辑器 body 下的格式化后的 html 内容.可读写.</p>
 </dd></dl>
 
 </div>
@@ -785,21 +778,31 @@
 <dt id="editor.Editor.prototype.getData">
 <tt class="descclassname">Editor.prototype.</tt><tt class="descname">getData</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.prototype.getData" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
-<div class="line"><strong>getData(format, mode)</strong></div>
+<div class="line"><strong>getData()</strong></div>
 <div class="line">获得编辑器里面的内容</div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>format</strong> (<em>Boolean</em>) &#8211; 是否格式化，内部使用</li>
-<li><strong>mode</strong> (<em>Object</em>) &#8211; 模式，内部使用</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name">Return String:</th><td class="field-body">编辑器里的html内容</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return String:</th><td class="field-body"><p class="first last">编辑器里的html内容</p>
-</td>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="editor.Editor.prototype.getFormatData">
+<tt class="descclassname">Editor.prototype.</tt><tt class="descname">getFormatData</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.prototype.getFormatData" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><strong>getFormatData()</strong></div>
+<div class="line">获得编辑器里面格式化后的内容</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return String:</th><td class="field-body">编辑器里格式化后的 html</td>
 </tr>
 </tbody>
 </table>

@@ -50,8 +50,6 @@ Attributes
     * :attr:`~Editor.prototype.toolBarEl`
     * :attr:`~Editor.prototype.statusBarEl`
     * :attr:`~Editor.prototype.mode`
-    * :attr:`~Editor.prototype.data`
-    * :attr:`~Editor.prototype.formatData`
     * :attr:`~Editor.SOURCE_MODE` <static>
     * :attr:`~Editor.WYSIWYG_MODE` <static>
 
@@ -77,6 +75,7 @@ Methods
     * :meth:`~Editor.prototype.addSelect`
     * :meth:`~Editor.prototype.getSelectedHtml`
     * :meth:`~Editor.prototype.getData`
+    * :meth:`~Editor.prototype.getFormatData`
     * :meth:`~Editor.prototype.setData`
 
 Events
@@ -211,11 +210,6 @@ Attributes Detail
 
     {KISSY.Node} - 编辑器 body 下的 html 内容.可读写.
 
-.. attribute:: Editor.prototype.formatData
-
-    {KISSY.Node} - 编辑器 body 下的格式化后的 html 内容.可读写.
-
-
 Methods Detail
 -----------------------------------------------
 
@@ -345,8 +339,6 @@ Methods Detail
                 editor.insertHtml('<span>haha</span>');
             },50);
 
-
-
 .. method:: Editor.prototype.sync
 
     | **sync()**
@@ -412,12 +404,17 @@ Methods Detail
 
 .. method:: Editor.prototype.getData
 
-    | **getData(format, mode)**
+    | **getData()**
     | 获得编辑器里面的内容
 
-    :param Boolean format: 是否格式化，内部使用
-    :param Object mode: 模式，内部使用
     :return String: 编辑器里的html内容
+
+.. method:: Editor.prototype.getFormatData
+
+    | **getFormatData()**
+    | 获得编辑器里面格式化后的内容
+
+    :return String: 编辑器里格式化后的 html
 
 .. method:: Editor.prototype.setData
 
