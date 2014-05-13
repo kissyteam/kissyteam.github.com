@@ -28,7 +28,9 @@ Methods
 
     :param String base: KISSY 框架所在的基地址.
 
-    :param Number comboMaxUrlLength: Combo url 的最长长度，默认 1024
+    :param Number comboMaxUrlLength: Combo url 的最长长度，默认 2000
+
+    :param Number comboMaxFileNum: combo file 的最大个数，默认 40
 
     :param String comboPrefix: Combo 前缀，默认 "??"
 
