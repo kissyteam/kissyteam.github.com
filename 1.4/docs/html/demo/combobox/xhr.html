@@ -194,49 +194,100 @@
 <span class="nt">&lt;/style&gt;</span>
 </pre></div>
 </div>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;combobox&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">ComboBox</span><span class="p">)</span> <span class="p">{</span>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;event,combobox&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Event</span><span class="p">,</span> <span class="nx">ComboBox</span><span class="p">,</span> <span class="nx">SearchMenuItem</span><span class="p">)</span> <span class="p">{</span>
 
-    <span class="kd">var</span> <span class="nx">tmpl</span> <span class="o">=</span> <span class="s2">&quot;&lt;div class=&#39;item-wrapper&#39;&gt;&quot;</span> <span class="o">+</span>
-        <span class="s2">&quot;&lt;span class=&#39;item-text&#39;&gt;{text}&lt;/span&gt;&quot;</span> <span class="o">+</span>
-        <span class="s2">&quot;&lt;span class=&#39;item-count&#39;&gt;约{count}个宝贝&lt;/span&gt;&quot;</span> <span class="o">+</span>
-        <span class="s2">&quot;&lt;/div&gt;&quot;</span>
+    <span class="cm">/*</span>
+<span class="cm">     remote dataSource</span>
+<span class="cm">     */</span>
+    <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 
-    <span class="kd">var</span> <span class="nx">basicComboBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ComboBox</span><span class="p">({</span>
-        <span class="nx">render</span><span class="o">:</span><span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#container&quot;</span><span class="p">),</span>
-        <span class="nx">hasTrigger</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
-        <span class="nx">width</span><span class="o">:</span><span class="mi">500</span><span class="p">,</span>
-        <span class="nx">dataSource</span><span class="o">:</span><span class="k">new</span> <span class="nx">ComboBox</span><span class="p">.</span><span class="nx">RemoteDataSource</span><span class="p">({</span>
-            <span class="nx">xhrCfg</span><span class="o">:</span><span class="p">{</span>
-                <span class="nx">url</span><span class="o">:</span><span class="s1">&#39;http://suggest.taobao.com/sug&#39;</span><span class="p">,</span>
-                <span class="nx">dataType</span><span class="o">:</span><span class="s1">&#39;jsonp&#39;</span><span class="p">,</span>
-                <span class="nx">data</span><span class="o">:</span><span class="p">{</span>
-                    <span class="nx">code</span><span class="o">:</span><span class="s2">&quot;utf-8&quot;</span>
-                <span class="p">}</span>
-            <span class="p">},</span>
-            <span class="nx">paramName</span><span class="o">:</span><span class="s2">&quot;q&quot;</span><span class="p">,</span>
-            <span class="nx">parse</span><span class="o">:</span><span class="kd">function</span> <span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
-                <span class="c1">// 返回结果对象数组</span>
-                <span class="k">return</span> <span class="nx">results</span><span class="p">.</span><span class="nx">result</span><span class="p">;</span>
-            <span class="p">},</span>
-            <span class="nx">cache</span><span class="o">:</span><span class="kc">true</span>
-        <span class="p">}),</span>
-        <span class="nx">format</span><span class="o">:</span><span class="kd">function</span> <span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kd">var</span> <span class="nx">ret</span> <span class="o">=</span> <span class="p">[];</span>
-            <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">results</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">ret</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
-                    <span class="c1">// 点击菜单项后要放入 input 中的内容</span>
-                    <span class="nx">textContent</span><span class="o">:</span><span class="nx">r</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-                    <span class="c1">// 菜单项的</span>
-                    <span class="nx">content</span><span class="o">:</span><span class="nx">S</span><span class="p">.</span><span class="nx">substitute</span><span class="p">(</span><span class="nx">tmpl</span><span class="p">,</span> <span class="p">{</span>
-                        <span class="nx">text</span><span class="o">:</span><span class="nx">r</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-                        <span class="nx">count</span><span class="o">:</span><span class="nx">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-                    <span class="p">})</span>
+        <span class="kd">var</span> <span class="nx">tmpl</span> <span class="o">=</span> <span class="s2">&quot;&lt;div class=&#39;item-wrapper&#39;&gt;&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;&lt;span class=&#39;item-text&#39;&gt;{text}&lt;/span&gt;&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;&lt;span class=&#39;item-count&#39;&gt;约{count}个宝贝&lt;/span&gt;&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;&lt;/div&gt;&quot;</span><span class="p">;</span>
+
+        <span class="kd">var</span> <span class="nx">basicComboBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ComboBox</span><span class="p">({</span>
+            <span class="nx">prefixCls</span><span class="o">:</span> <span class="s1">&#39;search-&#39;</span><span class="p">,</span>
+            <span class="nx">placeholder</span><span class="o">:</span> <span class="s1">&#39;点我搜索&#39;</span><span class="p">,</span>
+            <span class="nx">srcNode</span><span class="o">:</span> <span class="nx">S</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;#combobox&quot;</span><span class="p">),</span>
+            <span class="c1">// width: 500,</span>
+            <span class="nx">dataSource</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ComboBox</span><span class="p">.</span><span class="nx">RemoteDataSource</span><span class="p">({</span>
+                <span class="nx">xhrCfg</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://suggest.taobao.com/sug&#39;</span><span class="p">,</span>
+                    <span class="nx">dataType</span><span class="o">:</span> <span class="s1">&#39;jsonp&#39;</span><span class="p">,</span>
+                    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">k</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="nx">code</span><span class="o">:</span> <span class="s2">&quot;utf-8&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="nx">paramName</span><span class="o">:</span> <span class="s2">&quot;q&quot;</span><span class="p">,</span>
+                <span class="nx">parse</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">// 返回结果对象数组</span>
+                    <span class="k">return</span> <span class="nx">results</span><span class="p">.</span><span class="nx">result</span><span class="p">;</span>
+                <span class="p">},</span>
+                <span class="nx">cache</span><span class="o">:</span> <span class="kc">true</span>
+            <span class="p">}),</span>
+            <span class="nx">format</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">ret</span> <span class="o">=</span> <span class="p">[];</span>
+                <span class="nx">S</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">results</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="c1">// 点击菜单项后要放入 input 中的内容</span>
+                        <span class="nx">textContent</span><span class="o">:</span> <span class="nx">r</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                        <span class="c1">// 菜单项的</span>
+                        <span class="nx">content</span><span class="o">:</span> <span class="nx">S</span><span class="p">.</span><span class="nx">substitute</span><span class="p">(</span><span class="nx">tmpl</span><span class="p">,</span> <span class="p">{</span>
+                            <span class="nx">text</span><span class="o">:</span> <span class="nx">r</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                            <span class="nx">count</span><span class="o">:</span> <span class="nx">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                        <span class="p">})</span>
+                    <span class="p">};</span>
+                    <span class="nx">ret</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
                 <span class="p">});</span>
-            <span class="p">});</span>
-            <span class="k">return</span> <span class="nx">ret</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">});</span>
-    <span class="nx">basicComboBox</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+                <span class="k">return</span> <span class="nx">ret</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+        <span class="nx">basicComboBox</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+
+        <span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="s1">&#39;&lt;div class=&quot;item-wrapper tdg-box&quot;&gt;&#39;</span> <span class="o">+</span>
+            <span class="s1">&#39;&lt;form method=&quot;get&quot; action=&quot;http://s.taobao.com/search&quot; class=&quot;clearfix&quot;&gt;&#39;</span> <span class="o">+</span>
+            <span class="s1">&#39;&lt;input type=&quot;hidden&quot; class=&quot;tdg-query&quot; name=&quot;q&quot; value=&quot;gs&quot;&gt;&#39;</span> <span class="o">+</span>
+            <span class="s1">&#39;&lt;input type=&quot;hidden&quot; value=&quot;tdg1&quot; name=&quot;from&quot;&gt;&lt;h5&gt;同店购：&lt;/h5&gt;&#39;</span> <span class="o">+</span>
+            <span class="s1">&#39;&lt;input type=&quot;text&quot; value=&quot;gs&quot; class=&quot;tdg-input&quot; tabindex=&quot;0&quot;&#39;</span> <span class="o">+</span>
+            <span class="s1">&#39; placeholder=&quot;第一件宝贝&quot;&gt;&lt;em&gt;+&lt;/em&gt;&#39;</span> <span class="o">+</span>
+            <span class="s1">&#39;&lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;tdg-input&quot; &#39;</span> <span class="o">+</span>
+            <span class="s1">&#39;tabindex=&quot;1&quot; placeholder=&quot;另一宝贝&quot;&gt;&lt;em&gt;+&lt;/em&gt;&#39;</span> <span class="o">+</span>
+            <span class="s1">&#39;&lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;tdg-input&quot; tabindex=&quot;2&quot;&#39;</span> <span class="o">+</span>
+            <span class="s1">&#39; placeholder=&quot;另一宝贝&quot;&gt;&#39;</span> <span class="o">+</span>
+            <span class="s1">&#39;&lt;button class=&quot;tdg-btn&quot; type=&quot;submit&quot; &#39;</span> <span class="o">+</span>
+            <span class="s1">&#39;tabindex=&quot;3&quot;&gt;搜索&lt;/button&gt;&lt;/form&gt;&lt;/div&gt;&#39;</span><span class="p">;</span>
+
+        <span class="nx">basicComboBox</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;afterCollapsedChange&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">e</span><span class="p">.</span><span class="nx">newVal</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">menu</span> <span class="o">=</span> <span class="nx">self</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;menu&#39;</span><span class="p">);</span>
+                <span class="kd">var</span> <span class="nx">menuEl</span> <span class="o">=</span> <span class="nx">menu</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;el&#39;</span><span class="p">),</span> <span class="nx">footer</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">footer</span> <span class="o">=</span> <span class="nx">menuEl</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;.search-combobox-menu-footer&quot;</span><span class="p">)))</span> <span class="p">{</span>
+                    <span class="nx">footer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">S</span><span class="p">.</span><span class="nx">Node</span><span class="p">(</span><span class="s2">&quot;&lt;div class=&#39;search-combobox-menu-footer&#39;&gt;&lt;/div&gt;&quot;</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">menuEl</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">footer</span><span class="p">.</span><span class="nx">children</span><span class="p">().</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">footer</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">html</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="nx">footer</span><span class="p">.</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;.tdg-input&quot;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="nx">basicComboBox</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">())</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+
+        <span class="nx">basicComboBox</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;afterRenderData&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;afterRenderData&#39;</span><span class="p">);</span>
+        <span class="p">});</span>
+
+        <span class="nx">basicComboBox</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">S</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;search: &#39;</span> <span class="o">+</span> <span class="nx">basicComboBox</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">));</span>
+            <span class="c1">//S.all(&#39;#search&#39;)[0].click();</span>
+        <span class="p">});</span>
+
+        <span class="nx">S</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;#search&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="c1">//location.hash = &#39;#!q=&#39; + basicComboBox.get(&#39;input&#39;).val();</span>
+        <span class="p">});</span>
+    <span class="p">})();</span>
 <span class="p">});</span>
 </pre></div>
 </div>
