@@ -87,11 +87,13 @@ Configs Detail
 
 .. data:: SWF.config.attrs
 
-    {Object} - 将要加到 flash 节点的属性键值对
+    {Object} - 将要加到 flash 节点的属性键值对. 某些时候或许你需要 `考虑设置 id <https://drupal.org/node/1128310>`_
+
 
 .. data:: SWF.config.document
 
     {HTMLDocument} - 可选。插入 swf 所属的文档，默认当前文档
+
 
 .. data:: SWF.config.elBefore
 
