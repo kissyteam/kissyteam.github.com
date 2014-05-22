@@ -15,7 +15,7 @@ html代码：
 
 .. code-block:: html
 
-    <script src="http://g.tbcdn.cn/kissy/k/1.4.2/seed.js"></script>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.3/seed.js"></script>
 
 
 .. code-block:: javascript

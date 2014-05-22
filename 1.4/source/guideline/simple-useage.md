@@ -5,10 +5,10 @@
 
 首先，我们来运行一些最简单的例子帮你了解 KISSY<span class="badge">Examples</span>：
 
-**种子**：获取最新的 KISSY 1.4.2 [种子文件地址](http://g.tbcdn.cn/kissy/k/1.4.2/seed.js)
+**种子**：获取最新的 KISSY 1.4.3 [种子文件地址](http://g.tbcdn.cn/kissy/k/1.4.3/seed.js)
 
 <div class="alert alert-info">
-	<div style="font-size:20px;">http://g.tbcdn.cn/kissy/k/1.4.2/seed.js</div>
+	<div style="font-size:20px;">http://g.tbcdn.cn/kissy/k/1.4.3/seed.js</div>
 </div>
 
 **启动**：Hello World!
