@@ -46,7 +46,7 @@ x.js:
 
     kissy-xtemplate 安装步鄹：
 
-    #. npm install -g kissy@1.4.3
+    #. npm install -g kissy@1.4.3-1
 
 使用
 ``````````````````````````````
