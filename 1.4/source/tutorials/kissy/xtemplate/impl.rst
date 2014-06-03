@@ -21,17 +21,8 @@ docs.kissyui.com <http://docs.kissyui.com/1.4/docs/html/tutorials/kissy/componen
 
 ::
 
-     npm install -g kissy
+     npm install -g kissy@1.4.3
 
-通常测试版不会发送到 npm，这时推荐下载指定的 git
-版本到本地目录安装，例如下载
-`主干 <https://github.com/kissyteam/kissy/archive/master.zip>`__ 到
-d:/code
-
-::
-
-    cd d:/code
-    npm link
 
 xtemplate 示例代码
 ------------------
