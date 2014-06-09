@@ -78,6 +78,6 @@ Methods Detail
     
     :param HTMLElement|KISSY.Node element: ``<select>`` 元素
     :param Object cfg: 配置对象，作用于 :class:`Select`
-    :param Object cfg.menuCfg: 下拉菜单配置对象，参照 :class:`~menu.Menu`
+    :param Object cfg.menu: 下拉菜单配置对象，参照 :class:`~menu.Menu`
     :returns: KISSY Select 对象
     :rtype: Select

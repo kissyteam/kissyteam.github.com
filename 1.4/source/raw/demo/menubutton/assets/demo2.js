@@ -6,7 +6,7 @@ KISSY.use("menubutton", function (S, MenuButton) {
             prefixCls:"c2c-",
             // 设置对齐方式, 与普通的 Align 大体一致
             // 该配置同菜单配置项
-            menuCfg:{
+            menu:{
                 align:{
                     offset:[0, -1]
                 },
@@ -28,7 +28,7 @@ KISSY.use("menubutton", function (S, MenuButton) {
             //defaultCaption:"请选择",
             prefixCls:"pix-",
             width:285,
-            menuCfg:{
+            menu:{
                 align:{
                     points:['tl', 'tl'],
                     offset:[0, -1]
