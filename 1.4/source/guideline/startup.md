@@ -2,7 +2,7 @@
 
 ## 1，复制 & 粘贴
 
-	<script src="http://g.tbcdn.cn/kissy/k/1.4.3/seed.js" data-config="{combine:true}"></script>
+	<script src="http://g.tbcdn.cn/kissy/k/1.4.4/seed.js" data-config="{combine:true}"></script>
 
 种子文件是一个**非常小**的 JS 文件，通过他可以动态加载 KISSY 的模块文件，因为体积很小，推荐将种子文件至于`<head>`标签内。
 `data-config="{combine:true}"` 表示启用服务器 combo 机制，可用于减少网络请求数目。
@@ -77,7 +77,7 @@ KISSY 提供 anim 模块，完成 DOM 元素的动画。
 
 ## 5，通过 Ajax 装载内容
 
-在 1.4.3 中，Ajax 功能被命名为 io 模块，使用方法：
+在 1.4.4 中，Ajax 功能被命名为 io 模块，使用方法：
 
 	KISSY.use('io,node',function(S,IO,Node){
 		// 获取content.html的内容，替换到#content元素内
@@ -201,7 +201,7 @@ gallery 鼓励分享，任何人都可以为 gallery 提交自己的组件。在
 
 Combo 后的链接为：
 
-	http://g.tbcdn.cn/kissy/k/1.4.3/??node-min.js,dom/base-min.js,event/dom/base-min.js,event/base-min.js,event/dom/shake-min.js,event/dom/focusin-min.js,anim-min.js,anim/base-min.js,event/custom-min.js,anim/timer-min.js,event-min.js,anim/transition-min.js
+	http://g.tbcdn.cn/kissy/k/1.4.4/??node-min.js,dom/base-min.js,event/dom/base-min.js,event/base-min.js,event/dom/shake-min.js,event/dom/focusin-min.js,anim-min.js,anim/base-min.js,event/custom-min.js,anim/timer-min.js,event-min.js,anim/transition-min.js
 
 
 

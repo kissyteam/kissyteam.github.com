@@ -21,7 +21,7 @@ docs.kissyui.com <http://docs.kissyui.com/1.4/docs/html/tutorials/kissy/componen
 
 ::
 
-     npm install -g kissy@1.4.3-1
+     npm install -g kissy@1.4.4-1
 
 
 xtemplate 示例代码
