@@ -3,33 +3,37 @@
 
 //4
 //0,1,2,3
-var getRandom = function(a){
-	return Math.floor(parseInt((Math.random() * 10) % 10) * a / 10);
+var getRandom = function (a) {
+    return Math.floor(parseInt((Math.random() * 10) % 10) * a / 10);
 };
 
-(function() {
-$( document ).ready( function() {
-	$('#show-off').html('<img src="templates/assets/img/show-off-'+getRandom(4)+'.png" />');
+(function () {
+    if (location.hostname === 'kissyteam.github.io') {
+        location.hostname = 'docs.kissyui.com';
+    }
 
-  //
-  $( window ).bind( 'load resize', setMenuBackgroundHeight );
+    $(document).ready(function () {
+        $('#show-off').html('<img src="templates/assets/img/show-off-' + getRandom(4) + '.png" />');
 
-  // setMenuBackgroundHeight();
+        //
+        $(window).bind('load resize', setMenuBackgroundHeight);
 
-});
+        // setMenuBackgroundHeight();
+
+    });
 
 
-var setMenuBackgroundHeight = function() {
-  var d = $( '#content').height();
-  var w = $( window ).width();
+    var setMenuBackgroundHeight = function () {
+        var d = $('#content').height();
+        var w = $(window).width();
 
-  if( w > 760 ) {
-    $( '#sidebar' ).css( { "min-height": (d - 40) } );
-  } else {
-    $( '#sidebar' ).css( { "min-height": (100) } );
-  }
+        if (w > 760) {
+            $('#sidebar').css({ "min-height": (d - 40) });
+        } else {
+            $('#sidebar').css({ "min-height": (100) });
+        }
 
-};
+    };
 
 })();
 
