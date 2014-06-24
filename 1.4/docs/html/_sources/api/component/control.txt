@@ -397,12 +397,12 @@ Events Details
 .. function:: Control.Events.hide
 
     | **hide(e)**
-    | 在组件 show 的时候触发
+    | 在组件隐藏的时候触发
 
 .. function:: Control.Events.show
 
     | **show(e)**
-    | 在组件 hide 的时候触发
+    | 在组件显示的时候触发
 
 .. function:: Control.Events.beforeVisibleChange
 
