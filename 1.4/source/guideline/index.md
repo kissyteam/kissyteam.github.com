@@ -1,4 +1,8 @@
-<p></p>
+<script>
+    if (location.hostname === 'kissyteam.github.io') {
+        location.hostname = 'docs.kissyui.com';
+    }
+</script>
 
 # What is KISSY ?
 
