@@ -86,7 +86,7 @@ Promise 适用于有异步逻辑的场景
 可以直接通过KISSY.Promise调用：
 
 	var d = new KISSY.Promise.Defer();
-	d.do_somethine();// d 执行相关的方法
+	d.do_something();// d 执行相关的方法
 
 也可以通过沙箱来调用
 

@@ -224,7 +224,7 @@ packages 范例: 包配置
 
 `use (modNames[,callback]) ⇒  void`
 
-载入并运行模块,和`add`一起使用，详细用法参照[KISSY 模块规范](../kmd.html)，`callback`类型可以是function也可以是object。参数说明：
+载入并运行模块,和`add`一起使用，详细用法参照[KISSY 模块规范](kmd.html)，`callback`类型可以是function也可以是object。参数说明：
 
 #### parameters
 

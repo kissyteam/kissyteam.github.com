@@ -174,7 +174,7 @@ JSON对象，显示隐藏效果，属性包括
 		duration:3        // {Number} - 可选, 动画持续时间, 以秒为单位.
 	}
 
-#### closeable
+#### closable
 
 Boolean类型，对话框右上角是否包括关闭按钮
 

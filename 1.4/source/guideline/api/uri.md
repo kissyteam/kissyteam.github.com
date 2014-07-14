@@ -5,7 +5,7 @@
 可以直接通过KISSY.Uri调用：
 
 	var uri = new KISSY.Uri('http://url');
-	uri.do_somethine();// uri 执行相关的方法
+	uri.do_something();// uri 执行相关的方法
 
 也可以通过沙箱来调用
 

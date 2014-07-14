@@ -749,7 +749,7 @@ supplier undefined 的属性值不会被复制，不过对象从原型继承下�
 	S.namespace('app.Shop'); // 创建 KISSY.app.Shop 对象
 	S.namespace("TC.mods",true); //创建 window.TC.mods 对象
 
-namespace 方法提供了最基本的命名空间管理. 但对于模块的命名空间推荐采用 kissy 1.4的 loader 机制，详情参阅[KISSY模块规范](../kmd.html).
+namespace 方法提供了最基本的命名空间管理. 但对于模块的命名空间推荐采用 kissy 1.4的 loader 机制，详情参阅[KISSY模块规范](kmd.html).
 
 ### now()  `<static>`
 
