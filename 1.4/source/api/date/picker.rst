@@ -57,7 +57,7 @@ Configs Details
 
     | 一个过滤函数，用于判断日期是否可用
 
-    | 可用返回true，反之返回false
+    | 可用返回 false，反之返回 true
 
     .. code-block:: javascript
 

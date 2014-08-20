@@ -101,8 +101,7 @@ Methods Details
     :param Function[] extensions: 扩展类数组
     :param Object methodDesc: 方法集合键值对
     :param Object staticAttributes: 放到新产生组件类上的静态属性集合键值对，其中 ``ATTRS`` 属性特殊对待.
-    :param Object desc: 类元信息.
-    :param String desc.name: 类名
+    :param String staticAttributes.name: 类名
 
 
 .. method:: Base.prototype.callSuper

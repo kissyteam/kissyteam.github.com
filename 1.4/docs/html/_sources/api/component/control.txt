@@ -273,9 +273,8 @@ Methods Detail
     :param Function[] extensions: 扩展类数组
     :param Object methodDesc: 方法集合键值对
     :param Object staticAttributes: 放到新产生组件类上的静态属性集合键值对，其中 ``ATTRS`` 属性特殊对待.
-    :param Object desc: 组件元信息
-    :param String desc.xclass: 组件的 xclass
-    :param String desc.name: 组件的名称，不写则等于 xclass
+    :param String staticAttributes.xclass: 组件的 xclass
+    :param String staticAttributes.name: 组件的名称，不写则等于 xclass
 
 
 .. method:: Control.prototype.create
