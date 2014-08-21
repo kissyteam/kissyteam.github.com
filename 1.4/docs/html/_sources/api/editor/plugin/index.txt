@@ -16,6 +16,7 @@ Plugins
 
    back-color
    bold
+   button
    checkbox-source-area
    draft
    drag-upload

@@ -69,7 +69,7 @@
     <article>
       
 
-	<h1>anim</h1>
+	<h1 id="anim">anim</h1>
 <p>KISSY 动画，这样来载入anim模块：</p>
 <pre><code>KISSY.use(&#39;anim&#39;,function(S,Anim){
     // use Anim
@@ -135,7 +135,7 @@ KISSY.use('node',function (S,Node) {
  });
 </script>
 
-<h2>实例化动画的传参</h2>
+<h2 id="-">实例化动画的传参</h2>
 <p>刨除直接通过node.animate()创建的动画之外，通过Anim可以生成一个<code>动画实例</code>。动画实例是用来描述动画的一些基本属性，比如，从<code>什么状态</code>动画到<code>什么状态</code>，动画时间，缓动效果，暂停和继续动画等。
 通过<code>Anim</code>这样实例化一个动画实例（<a href="http://docs.kissyui.com/1.4/source/raw/demo/anim/demo1.html">参照Demo</a>）：</p>
 <pre><code>KISSY.use(&quot;anim&quot;,function(S,Anim){
@@ -200,30 +200,30 @@ KISSY.use('node',function (S,Node) {
 </li>
 </ul>
 <p><a href="http://docs.kissyui.com/1.4/docs/html/demo/anim/demo6.html">动画队列的Demo</a></p>
-<h2>Anim 动画实例的方法</h2>
+<h2 id="anim-">Anim 动画实例的方法</h2>
 <p>Anim动画实例上可调用这些方法</p>
-<h4>isRunning()</h4>
+<h4 id="isrunning-">isRunning()</h4>
 <p>判断当前动画对象是否在执行动画过程中</p>
-<h4>isPaused()</h4>
+<h4 id="ispaused-">isPaused()</h4>
 <p>判断当前动画是否被停止</p>
-<h4>run()</h4>
+<h4 id="run-">run()</h4>
 <p>开始当前动画</p>
-<h4>stop()</h4>
+<h4 id="stop-">stop()</h4>
 <p>结束当前动画</p>
 <pre><code>// 终止当前动画，动画会在当前帧直接停止（不触发 complete 回调）. 
 anim.stop(false);//默认为false
 // 为 true 时, 动画停止时会立刻跳到最后一帧（触发 complete 回调）
 anim.stop(true);</code></pre>
-<h4>pause()</h4>
+<h4 id="pause-">pause()</h4>
 <p>在动画实例上调用, 暂停当前动画实例的动画.</p>
-<h4>resume()</h4>
+<h4 id="resume-">resume()</h4>
 <p>继续当前动画实例的动画.</p>
-<h4>静态方法 isRunning(elem)</h4>
+<h4 id="-isrunning-elem-">静态方法 isRunning(elem)</h4>
 <p>判断elem上是否有动画对象在执行</p>
 <pre><code>Anim.isRunning(elem);</code></pre>
-<h4>静态方法 isPaused()</h4>
+<h4 id="-ispaused-">静态方法 isPaused()</h4>
 <p>用于判断 elem 上是否有动画对象在暂停，用法同上</p>
-<h4>静态方法 stop()</h4>
+<h4 id="-stop-">静态方法 stop()</h4>
 <p>停止某元素上的动画（集合）.调用方法。</p>
 <p><code>Anim.stop (elem, end, clearQueue, queueName)</code></p>
 <ul>
@@ -237,16 +237,16 @@ anim.stop(true);</code></pre>
 </ul>
 </li>
 </ul>
-<h4>静态方法 pause()</h4>
+<h4 id="-pause-">静态方法 pause()</h4>
 <p>暂停某元素上的动画（集合）.调用方法，其中queueName参数含义同上</p>
 <p><code>Anim.pause (elem, queueName)</code></p>
-<h4>静态方法 resume()</h4>
+<h4 id="-resume-">静态方法 resume()</h4>
 <p>继续某元素上的动画，调用方法，其中queueName含义同上</p>
 <p><code>Anim.resume (elem, queueName)</code></p>
-<h2>动画实例的事件</h2>
-<h4>complete 事件</h4>
+<h2 id="-">动画实例的事件</h2>
+<h4 id="complete-">complete 事件</h4>
 <p>动画结束后会触发<code>complete</code>事件</p>
-<h2>Demos</h2>
+<h2 id="demos">Demos</h2>
 <ul>
 <li><a href="http://docs.kissyui.com/1.4/docs/html/demo/anim/demo1.html">基本动画示例</a></li>
 <li><a href="http://docs.kissyui.com/1.4/docs/html/demo/anim/demo2.html">滚动属性动画实例</a></li>

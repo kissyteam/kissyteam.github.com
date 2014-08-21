@@ -30,7 +30,7 @@ Configs
     * :data:`~Editor.config.customStyle`
     * :data:`~Editor.config.customLink`
     * :data:`~Editor.config.attachForm`
-    * :data:`~Editor.config.textarea`
+    * :data:`~Editor.config.textareaAttrs`
     * :data:`~base.Base.config.plugins`
     * :data:`~base.Base.config.listeners`
     * :data:`~component.Control.config.srcNode`
@@ -71,7 +71,6 @@ Methods
     * :meth:`~Editor.prototype.docReady`
     * :meth:`~Editor.prototype.insertElement`
     * :meth:`~Editor.prototype.insertHtml`
-    * :meth:`~Editor.prototype.addButton`
     * :meth:`~Editor.prototype.addSelect`
     * :meth:`~Editor.prototype.getSelectedHtml`
     * :meth:`~Editor.prototype.getData`
@@ -141,16 +140,18 @@ Configs Detail
 
     {String[]} - 自定义样式表 url 数组.
 
-.. data:: Editor.config.textarea
+.. data:: Editor.config.textareaAttrs
 
-    {String} - optional. 自定义产生 textarea 节点的 html.
+    {Object} - optional. 自定义 textarea 节点的属性
 
     例如可以指定全新产生 editor 所属 textarea 的 name 值
 
     .. code-block:: javascript
 
         new Editor({
-            textarea: '<textarea name="custom"></textarea>'
+            textareaAttrs: {
+                name : 'MyTextarea'
+            }
         });
 
 .. data:: Editor.config.attachForm
@@ -344,26 +345,6 @@ Methods Detail
     | **sync()**
     | 同步编辑器内容到对应的 textarea
 
-.. method:: Editor.prototype.addButton
-
-    | **addButton(id, cfg)**
-    | 为编辑器工具栏增加一个按钮. 一般用于插件编写.
-
-    :param String id: 按钮 id
-    :param Object cfg: button 配置，详见 :class:`~button.Button`
-
-    例如:
-
-    .. code-block:: javascript
-
-        editor.addButton("plugin2", {
-            content:'<div style="margin: 2px;border: 1px solid red;padding: 1px;">p2</div>',
-            listeners:{
-                click:function () {
-                    alert('i am running')
-                }
-            }
-        });
 
 .. method:: Editor.prototype.addSelect
 

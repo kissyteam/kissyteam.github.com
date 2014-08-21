@@ -195,31 +195,34 @@ Base 的富集，直接从 Base 继承。但在我们挖 RichBase
 里要做面向对象编程，我们需要把数据和方法写成这个样子：</p>
 <div class="section" id="id2">
 <h3>原型<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<div class="code javascript highlight-python"><pre>function Pet(attrs) {
+<div class="code javascript highlight-python"><div class="highlight"><pre>function Pet(attrs) {
     this.name = attrs.name
     this.age = attrs.age
     this.gender = attrs.gender
 }
 
 Pet.prototype.greeting = function() {
-    console.log('Hi there. I am ' + this.name + '.')
-}</pre>
+    console.log(&#39;Hi there. I am &#39; + this.name + &#39;.&#39;)
+}
+</pre></div>
 </div>
 <p>然后在实例化时，我们这么用：</p>
-<div class="code javascript highlight-python"><pre>var pet = new Pet({ name: 'Ghibli', age: 28, gender: 'male' })
+<div class="code javascript highlight-python"><div class="highlight"><pre>var pet = new Pet({ name: &#39;Ghibli&#39;, age: 28, gender: &#39;male&#39; })
 
-pet.greeting()      // ==&gt; Hi there. I am Ghibli.</pre>
+pet.greeting()      // ==&gt; Hi there. I am Ghibli.
+</pre></div>
 </div>
 <p>将类方法定义在原型上，可以节省内存空间，不需要所有实例上都重新定义方法，以上定义方式，和如下写法，
 自然是不同的：</p>
-<div class="code javascript highlight-python"><pre>function Pet(attrs) {
+<div class="code javascript highlight-python"><div class="highlight"><pre>function Pet(attrs) {
     var pet = {}
     pet.name = attrs.name
     pet.age = attrs.age
     pet.gender = attrs.gender
     pet.greeting = function() { ... }
     return pet
-}</pre>
+}
+</pre></div>
 </div>
 <p>这种写法，唯一的好处是可以不用写 <tt class="docutils literal"><span class="pre">new</span></tt>，然而每个实例都有自己的
 <tt class="docutils literal"><span class="pre">.greeting()</span></tt> 方法，当实例变多时， 是极大的内存浪费。</p>
@@ -241,7 +244,7 @@ greeting 方法，因为此方法是定义 在 Pet
 <p>别闹了。此即所谓原型链。</p>
 <p>现在假设我们现在要从 Pet 派生出子类 Dog，然而 JavaScript 木有提供
 extends 之类的语法，而按照 原型链设计，我们需要做的事情如下：</p>
-<div class="code javascript highlight-python"><pre>function Dog(attrs) {
+<div class="code javascript highlight-python"><div class="highlight"><pre>function Dog(attrs) {
     Pet.call(this, attrs)
     this.breed = attrs.breed
 }
@@ -250,19 +253,21 @@ extends 之类的语法，而按照 原型链设计，我们需要做的事情�
 Dog.prototype = new Pet()
 
 Dog.prototype.bark = function() {
-    console.log('Woof! Woof!')
-}</pre>
+    console.log(&#39;Woof! Woof!&#39;)
+}
+</pre></div>
 </div>
 <p>这样，Dog 能够继承到 Pet 的方法，也能够继续扩展自己的。</p>
-<div class="code javascript highlight-python"><pre>var dog = new Dog({
-    name: 'Klinsmann',
+<div class="code javascript highlight-python"><div class="highlight"><pre>var dog = new Dog({
+    name: &#39;Klinsmann&#39;,
     age: 49,
-    gender: 'male',
-    breed: 'Golden Retriever'
+    gender: &#39;male&#39;,
+    breed: &#39;Golden Retriever&#39;
 })
 
 dog.greeting()      // ==&gt; Hi there. I am Klinsmann.
-dog.bark()          // ==&gt; Woof! Woof!</pre>
+dog.bark()          // ==&gt; Woof! Woof!
+</pre></div>
 </div>
 <p>这样的继承实现有许多问题：</p>
 <ul class="simple">
@@ -270,17 +275,18 @@ dog.bark()          // ==&gt; Woof! Woof!</pre>
 <li>父类构造器有副作用时，需要一个临时函数做原型链中转</li>
 </ul>
 <p>第一个问题，暂时按下不表。第二个问题，意思是这样的：</p>
-<div class="code javascript highlight-python"><pre>function Dummy() {}
+<div class="code javascript highlight-python"><div class="highlight"><pre>function Dummy() {}
 
 Dummy.prototype = Pet.prototype
-Dog.prototype = new Dummy()</pre>
+Dog.prototype = new Dummy()
+</pre></div>
 </div>
 <p>为何不直接 <tt class="docutils literal"><span class="pre">Dog.prototype</span> <span class="pre">=</span> <span class="pre">Pet.prototype</span></tt>？ 因为这样的话
 <tt class="docutils literal"><span class="pre">Dog.prototype.bark</span> <span class="pre">=</span> <span class="pre">function()</span> <span class="pre">{}</span></tt> 也会跑到 <tt class="docutils literal"><span class="pre">Pet.prototype</span></tt> 上去，
 并不是所有宠物都会吠的哇。</p>
 <p>不管这么样，这种继承方式当真是不直观，所以 Node.js 的官方 API 里，直接在
 util 模块中提供了 inherits 方法：</p>
-<div class="code javascript highlight-python"><pre>var util = require('util')
+<div class="code javascript highlight-python"><div class="highlight"><pre>var util = require(&#39;util&#39;)
 
 // 仍然需要在子类中调用父类的构造函数
 function Dog(attrs) {
@@ -288,20 +294,22 @@ function Dog(attrs) {
 }
 
 // 使用 util.inherits 处理原型链
-util.inherits(Dog, Pet)</pre>
+util.inherits(Dog, Pet)
+</pre></div>
 </div>
 <p>于是，inherit 关键字，算是实现了。</p>
 </div>
 <div class="section" id="id4">
 <h3>如何声明私有属性？<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>在上述例子中，pet 或者 dog 的属性全部都是外部可以直接访问的，例如：</p>
-<div class="code javascript highlight-python"><pre>var dog = new Dog({ name: 'Christiano' })
+<div class="code javascript highlight-python"><div class="highlight"><pre>var dog = new Dog({ name: &#39;Christiano&#39; })
 
-dog.name = 'Ronaldo'</pre>
+dog.name = &#39;Ronaldo&#39;
+</pre></div>
 </div>
 <p>假如我们需要进行变量验证，使用类似 Java Bean 中 getter、setter
 这种写法，以确保获取与设置变量 的正确性：</p>
-<div class="code javascript highlight-python"><pre>Dog.prototype.getAge = function() {
+<div class="code javascript highlight-python"><div class="highlight"><pre>Dog.prototype.getAge = function() {
     return this.age
 }
 
@@ -319,7 +327,8 @@ dog.setAge(-1)      // 哪有 -1 岁的？这不科学
 dog.getAge()        // ==&gt; 10
 
 // 但是挡不住这一招必杀
-dog.age = NaN       // 囧</pre>
+dog.age = NaN       // 囧
+</pre></div>
 </div>
 <p>在编程范式一书中，谈论了许多对象继承、接口约束、私有变量保护之类的事情，感兴趣的同学可以找来看，
 本文不往下讨论。</p>
@@ -338,7 +347,7 @@ dog.age = NaN       // 囧</pre>
 <div class="section" id="s-mix">
 <h3>S.mix<a class="headerlink" href="#s-mix" title="Permalink to this headline">¶</a></h3>
 <p>当我们需要往对象上混入（mix）属性或者方法时，可以使用 S.mix：</p>
-<div class="code javascript highlight-python"><pre>var Singleton = {
+<div class="code javascript highlight-python"><div class="highlight"><pre>var Singleton = {
     data: { ... }
 }
 
@@ -347,11 +356,12 @@ S.mix(Singleton, {
         return this.data[prop]
     },
     set: function(prop, value) {
-        if (typeof value !== 'undefined') {
+        if (typeof value !== &#39;undefined&#39;) {
             this.data[prop] = value
         }
     }
-})</pre>
+})
+</pre></div>
 </div>
 <p>在此例中，我们实现了一个单体，它有 get、set 方法，同时持有 data 数据。</p>
 <p>除了这种简单的混入之外，<a class="reference external" href="http://docs.kissyui.com/1.4/docs/html/api/seed/kissy/mix.html">S.mix</a>
@@ -364,7 +374,7 @@ S.mix(Singleton, {
 <h3>S.augment<a class="headerlink" href="#s-augment" title="Permalink to this headline">¶</a></h3>
 <p>S.augment 其实就是混入，只不过混入的对象是第一个参数的 prototype
 属性，它的用法如下：</p>
-<div class="code javascript highlight-python"><pre>var Furry = {
+<div class="code javascript highlight-python"><div class="highlight"><pre>var Furry = {
     shave: function() {
         this.shaved = true
     }
@@ -385,7 +395,8 @@ var dog = new Dog()
 var cat = new Cat()
 
 dog.shave()
-cat.shave()</pre>
+cat.shave()
+</pre></div>
 </div>
 <p>同样的，<a class="reference external" href="http://docs.kissyui.com/1.4/docs/html/api/seed/kissy/augment.html">S.augment</a>
 所支持的用法比这里的示例要强大很多，此处不深入。</p>
@@ -395,16 +406,17 @@ cat.shave()</pre>
 <p>S.extend 像 Node.js 里的 util.inherits，就是用于声明两个类的继承关系，与
 util.inherits 相比，它更为贴心，还会维护 superclass 和
 superclass.constructor。</p>
-<div class="code javascript highlight-python"><pre>function Dog(attrs) {
+<div class="code javascript highlight-python"><div class="highlight"><pre>function Dog(attrs) {
     Dog.superclass.constructor.call(this, attrs)
 }
 
 S.extend(Dog, Pet, {
     greeting: function() {
         Dog.superclass.greeting.call(this)
-        console.log('Woof!')
+        console.log(&#39;Woof!&#39;)
     }
-})</pre>
+})
+</pre></div>
 </div>
 <p>详细用法请看 <a class="reference external" href="http://docs.kissyui.com/1.4/docs/html/api/seed/kissy/extend.html">S.extend
 的官方文档</a>。</p>
@@ -436,33 +448,35 @@ S.extend，我们可以很方便地继承；那么 KISSY 对属性 getter、sett
 <p>眼尖的同学们，看到 get() 和 set() 了不？</p>
 <p>通过 get() 与 set() 这一层包装，Base 允许类在定义自己时，配置
 getter、setter 方法：</p>
-<div class="code javascript highlight-python"><pre>function Dog(attrs) {
+<div class="code javascript highlight-python"><div class="highlight"><pre>function Dog(attrs) {
     Dog.superclass.call(this, attrs)
 }
 
 Dog.ATTRS = {
     breed: {
-        value: '中华田园犬',
+        value: &#39;中华田园犬&#39;,
         getter: function(value) {
-            return value + '，汪星人'
+            return value + &#39;，汪星人&#39;
         },
         setter: function(value) {
-            if (S.inArray(['金毛猎犬', '拉布拉多', '萨摩', '中华田园犬'], value)) {
+            if (S.inArray([&#39;金毛猎犬&#39;, &#39;拉布拉多&#39;, &#39;萨摩&#39;, &#39;中华田园犬&#39;], value)) {
                 return value
             }
         }
     }
-}</pre>
+}
+</pre></div>
 </div>
 <p>在此，我们定义了 Dog 的属性
 breed，即狗狗的种类，默认值是“中华田园犬”，同时，在设置种类时，
 我们限制种类只能是金毛猎犬、拉布拉多、萨摩、或者中华田园犬。而在获取种类时，我们恶意卖萌，给返回值加上
 汪星人后缀。</p>
-<div class="code javascript highlight-python"><pre>var dog = new Dog()
+<div class="code javascript highlight-python"><div class="highlight"><pre>var dog = new Dog()
 
-dog.get('breed')                // ==&gt; 中华田园犬，汪星人
-dog.set('breed', '金毛猎犬')
-dog.get('breed')                // ==&gt; 金毛猎犬，汪星人</pre>
+dog.get(&#39;breed&#39;)                // ==&gt; 中华田园犬，汪星人
+dog.set(&#39;breed&#39;, &#39;金毛猎犬&#39;)
+dog.get(&#39;breed&#39;)                // ==&gt; 金毛猎犬，汪星人
+</pre></div>
 </div>
 </div>
 <div class="section" id="id5">
@@ -478,9 +492,10 @@ dog.get('breed')                // ==&gt; 金毛猎犬，汪星人</pre>
 <li>beforeBreedChange</li>
 <li>afterBreedChange</li>
 </ul>
-<div class="code javascript highlight-python"><pre>dog.on('afterBreedChange', function(e) {
-    console.log('我要从' + e.prevVal + '变成' + e.newVal + '啦！')
-})</pre>
+<div class="code javascript highlight-python"><div class="highlight"><pre>dog.on(&#39;afterBreedChange&#39;, function(e) {
+    console.log(&#39;我要从&#39; + e.prevVal + &#39;变成&#39; + e.newVal + &#39;啦！&#39;)
+})
+</pre></div>
 </div>
 </div>
 <div class="section" id="id6">
@@ -490,27 +505,29 @@ dog.get('breed')                // ==&gt; 金毛猎犬，汪星人</pre>
 Base、Attribute、EventTarget
 之前，这是个危险的想法，所以对于普通模块开发者，我的建议 是直接从 Base
 继承：</p>
-<div class="code javascript highlight-python"><pre>function Dog(attrs) {
+<div class="code javascript highlight-python"><div class="highlight"><pre>function Dog(attrs) {
     Dog.superclass.call(this, attrs)
 }
 
-S.extend(Dog, Base)</pre>
+S.extend(Dog, Base)
+</pre></div>
 </div>
 <p>从 Base 继承，我们就有了封装属性、自定义事件的能力。在从 Base
 继承的模块中，我们还可以向外部抛出 自定义事件：</p>
-<div class="code javascript highlight-python"><pre>S.extend(Dog, Base, {
+<div class="code javascript highlight-python"><div class="highlight"><pre>S.extend(Dog, Base, {
     bark: function() {
-        this.fire('bark', {
-            message: 'Woof! I just barked!'
+        this.fire(&#39;bark&#39;, {
+            message: &#39;Woof! I just barked!&#39;
         })
     }
 })
 
 var dog = new Dog()
 
-dog.on('bark', function(e) {
-    console.log(e.message)      // ==&gt; 'Woof! I just barked!'
-})</pre>
+dog.on(&#39;bark&#39;, function(e) {
+    console.log(e.message)      // ==&gt; &#39;Woof! I just barked!&#39;
+})
+</pre></div>
 </div>
 </div>
 </div>
@@ -528,30 +545,32 @@ dog.on('bark', function(e) {
 <div class="section" id="id8">
 <h3>简单示例<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>于是有了 RichBase，先来看写法：</p>
-<div class="code javascript highlight-python"><pre>var Student = RichBase.extend({
+<div class="code javascript highlight-python"><div class="highlight"><pre>var Student = RichBase.extend({
     learn: function(lesson) {
-        console.log('Yeah, yeah. I am learning ' + lesson + '...')
+        console.log(&#39;Yeah, yeah. I am learning &#39; + lesson + &#39;...&#39;)
     }
 }, {
     ATTRS: {
-        college: { value: '' }
+        college: { value: &#39;&#39; }
     }
-}, 'Student')</pre>
+}, &#39;Student&#39;)
+</pre></div>
 </div>
 <p>咦，怎么和 Base 一个样？跟底下这写法有啥区别？</p>
-<div class="code javascript highlight-python"><pre>function Student() {
+<div class="code javascript highlight-python"><div class="highlight"><pre>function Student() {
     Student.superclass.constructor.apply(this, arguments)
 }
 
 S.extend(Student, Base, {
     learn: function(lesson) {
-        console.log('lesson ' + lesson + ' learned the hard way.')
+        console.log(&#39;lesson &#39; + lesson + &#39; learned the hard way.&#39;)
     }
 }, {
     ATTRS: {
-        college: { value: '' }
+        college: { value: &#39;&#39; }
     }
-})</pre>
+})
+</pre></div>
 </div>
 <p>答案是如果你的类就如 Student 这么简单，那就仍然用 Base
 即可，这两种定义方式没有本质区别。 对于简单用法，<tt class="docutils literal"><span class="pre">RichBase.extend</span></tt>
@@ -571,14 +590,16 @@ S.extend(Student, Base, {
 <p>constructor 用于替换 RichBase 默认自动生成的构造函数，当调用
 <tt class="docutils literal"><span class="pre">RichBase.extend</span></tt> 而没指定 constructor 时，RichBase
 将创建一个匿名函数：</p>
-<div class="code javascript highlight-python"><pre>function () {
+<div class="code javascript highlight-python"><div class="highlight"><pre>function () {
     C.superclass.constructor.apply(this, arguments)
-}</pre>
+}
+</pre></div>
 </div>
 <p>如果指定了构造函数名，而且在 KISSY 开发模式下，则会 eval 如下匿名函数：</p>
-<div class="code javascript highlight-python"><pre>"function " + CamelCase(name) + "{\n" +
-    "C.superclass.constructor.apply(this, arguments)\n" +
-"}"</pre>
+<div class="code javascript highlight-python"><div class="highlight"><pre>&quot;function &quot; + CamelCase(name) + &quot;{\n&quot; +
+    &quot;C.superclass.constructor.apply(this, arguments)\n&quot; +
+&quot;}&quot;
+</pre></div>
 </div>
 <p>所以，如果你要干预默认的构造函数行为，记得加上
 <tt class="docutils literal"><span class="pre">.superclass.constructor.apply(this,</span> <span class="pre">arguments)</span></tt>。</p>
@@ -588,16 +609,17 @@ initializer 方法以便重载，
 <p>然后是析构函数，或者说销毁函数，当调用 <tt class="docutils literal"><span class="pre">.destroy()</span></tt>
 方法时，将执行类定义时声明的 desctructor 方法，整个 <tt class="docutils literal"><span class="pre">.destroy()</span></tt>
 逻辑如下：</p>
-<div class="code javascript highlight-python"><pre>destroy: function() {
+<div class="code javascript highlight-python"><div class="highlight"><pre>destroy: function() {
     var self = this;
-    if (!self.get('destroyed')) {
-        self.callPluginsMethod("destructor");
+    if (!self.get(&#39;destroyed&#39;)) {
+        self.callPluginsMethod(&quot;destructor&quot;);
         destroyHierarchy(self);
-        self.set('destroyed', true);
-        self.fire('destroy');
+        self.set(&#39;destroyed&#39;, true);
+        self.fire(&#39;destroy&#39;);
         self.detach();
     }
-}</pre>
+}
+</pre></div>
 </div>
 <p>会先调用插件上的 destructor，然后自身按依赖层级调
 destructor，然后解除自身绑定的所有事件， 再将 <tt class="docutils literal"><span class="pre">destroyed</span></tt> 属性设为
@@ -606,19 +628,19 @@ destructor，然后解除自身绑定的所有事件， 再将 <tt class="docuti
 </div>
 <div class="section" id="id10">
 <h3>复杂例子<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
-<div class="code javascript highlight-python"><pre>// Extensions definition
+<div class="code javascript highlight-python"><div class="highlight"><pre>// Extensions definition
 function Man() {
 }
 Man.ATTRS={
   sexualOrientation: {
-      value: 'female',
+      value: &#39;female&#39;,
       setter: function(value) {
-          return value === 'male' ? value : 'female'
+          return value === &#39;male&#39; ? value : &#39;female&#39;
       }
   },
   homosexual: {
       getter: function() {
-          return this.get('sexualOrientation') === 'male'
+          return this.get(&#39;sexualOrientation&#39;) === &#39;male&#39;
       }
   }
 };
@@ -627,12 +649,12 @@ function Italian() {
 }
 
 Italian.ATTRS={
-  city: { value: 'Florence' }
+  city: { value: &#39;Florence&#39; }
 };
 
 S.augment(Italian, {
     greeting: function() {
-        console.log('Ciao, mangiato!')
+        console.log(&#39;Ciao, mangiato!&#39;)
     }
 })
 
@@ -670,32 +692,33 @@ var ItalianRenaissanceMan = RichBase.extend([Man, Italian], {
     greeting: function() {
         // 注意，这行不通，ItalianRenaissanceMan.superclass 在此处指向的是 RichBase
         // ItalianRenaissanceMan.superclass.greeting.call(this)
-        console.log('I have no idea why I am so versatile!')
+        console.log(&#39;I have no idea why I am so versatile!&#39;)
     }
 }, {
     ATTRS: {
-        fullname: { value: '' }
+        fullname: { value: &#39;&#39; }
     }
-}, 'ItalianRenaissanceMan')
+}, &#39;ItalianRenaissanceMan&#39;)
 
 // 达芬奇
 var leonardo = new ItalianRenaissanceMan({
-    fullname: 'Leonardo di ser Piero da Vinci'
+    fullname: &#39;Leonardo di ser Piero da Vinci&#39;
 })
 
 leonardo.plug(
-    new Painter({ paints: ['Mona Lisa', 'The Last Supper'] })
+    new Painter({ paints: [&#39;Mona Lisa&#39;, &#39;The Last Supper&#39;] })
 )
 
 // 米开朗基罗
 var michelangelo = new ItalianRenaissanceMan({
-    fullname: 'Michelangelo di Lodovico Buonarroti Simoni'
+    fullname: &#39;Michelangelo di Lodovico Buonarroti Simoni&#39;
 })
 
 michelangelo.plug([
-    new Painter({ paints: ['Ceiling of Sistine Chapel'] }),
-    new Sculptor({ sculpts: ['Pieta', 'David'] })
-])</pre>
+    new Painter({ paints: [&#39;Ceiling of Sistine Chapel&#39;] }),
+    new Sculptor({ sculpts: [&#39;Pieta&#39;, &#39;David&#39;] })
+])
+</pre></div>
 </div>
 <p>这是个比较详细的例子，展示了 RichBase 为应对 Base
 的不足，所提供的几大特性：</p>
@@ -727,70 +750,77 @@ man，意大利文艺复兴男的意思。定义方法很简单，用 RichBase �
 Italian 即可。</p>
 <p>extensions 这个参数是可以省略的，如果你只是想用 RichBase
 定义一个类的话，可以这么写：</p>
-<div class="code javascript highlight-python"><pre>var MyClass = RichBase.exnted(
+<div class="code javascript highlight-python"><div class="highlight"><pre>var MyClass = RichBase.exnted(
     { ...methods... },
     { ...static methods... },
-    'MyClass'
-)</pre>
+    &#39;MyClass&#39;
+)
+</pre></div>
 </div>
 </div>
 <div class="section" id="id12">
 <h3>插件<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p>每个文艺复兴男的技能点都加得不一样，为了简单写，达芬奇是个画家：</p>
-<div class="code javascript highlight-python"><pre>leonardo.plug(
-    new Painter({ paints: ['Mona Lisa', 'The Last Supper'] })
-)</pre>
+<div class="code javascript highlight-python"><div class="highlight"><pre>leonardo.plug(
+    new Painter({ paints: [&#39;Mona Lisa&#39;, &#39;The Last Supper&#39;] })
+)
+</pre></div>
 </div>
 <p>米开朗基罗是个画家、雕塑家：</p>
-<div class="code javascript highlight-python"><pre>michelangelo.plug(
-    new Painter({ paints: ['Ceiling of Sistine Chapel'] })
+<div class="code javascript highlight-python"><div class="highlight"><pre>michelangelo.plug(
+    new Painter({ paints: [&#39;Ceiling of Sistine Chapel&#39;] })
 )
 michelangelo.plug(
-    new Sculptor({ sculpts: ['Pieta', 'David'] })
-)</pre>
+    new Sculptor({ sculpts: [&#39;Pieta&#39;, &#39;David&#39;] })
+)
+</pre></div>
 </div>
 <p>其实达芬奇也是雕塑家，只是他的雕塑作品没有画作那么有名。他曾经有过一个巨型战马雕塑的设计，后来因为金主
 变故而流产，还因此被米开朗基罗嘲讽了很多次。</p>
 <p>言归正传，还可以在实例化的时候传入 plugs 属性：</p>
-<div class="code javascript highlight-python"><pre>var leonardo = new ItalianRenaissanceMan({
+<div class="code javascript highlight-python"><div class="highlight"><pre>var leonardo = new ItalianRenaissanceMan({
     plugs: [ ... ]
-})</pre>
+})
+</pre></div>
 </div>
 </div>
 <div class="section" id="listeners">
 <h3>listeners<a class="headerlink" href="#listeners" title="Permalink to this headline">¶</a></h3>
 <p>在实例化 RichBase 子类时，还可以传入 listeners
 属性，在其中定义事件监听：</p>
-<div class="code javascript highlight-python"><pre>var leonardo = new ItalianRenaissanceMan({
+<div class="code javascript highlight-python"><div class="highlight"><pre>var leonardo = new ItalianRenaissanceMan({
     listeners: {
-        'paint': function() {
-            console.log('I am painting something awesome. It is gonna be legendary!')
+        &#39;paint&#39;: function() {
+            console.log(&#39;I am painting something awesome. It is gonna be legendary!&#39;)
         }
     }
-})</pre>
+})
+</pre></div>
 </div>
 <p>RichBase
 将在实例化的时候帮你绑定，所以通过参数传入的事件监听，会在你自己拿到实例再绑定的事件监听
 之前：</p>
-<div class="code javascript highlight-python"><pre>leonardo.on('paint', function() {
-    console.log('Dude, too late. The paint is finished already.')
+<div class="code javascript highlight-python"><div class="highlight"><pre>leonardo.on(&#39;paint&#39;, function() {
+    console.log(&#39;Dude, too late. The paint is finished already.&#39;)
 })
 
-// 当 leonardo.fire('paint') 事件时，将在 console 中先后输出：
+// 当 leonardo.fire(&#39;paint&#39;) 事件时，将在 console 中先后输出：
 //
 //     I am painting something awesome. It is gonna be legendary!
-//     Dude, too late. The paint is finished already.</pre>
+//     Dude, too late. The paint is finished already.
+</pre></div>
 </div>
 </div>
 <div class="section" id="onset">
 <h3>_onSet*<a class="headerlink" href="#onset" title="Permalink to this headline">¶</a></h3>
 <p>在定义类的时候，还可以给 RichBase.extend 传 <tt class="docutils literal"><span class="pre">_onSet*</span></tt>
 方法，使得在外部绑定的 <tt class="docutils literal"><span class="pre">after*Change</span></tt> 之前，类本身可以先行处理：</p>
-<div class="code javascript highlight-python"><pre>var Man = RichBase.extend({
+<div class="code javascript highlight-python"><div class="highlight"><pre>var Man = RichBase.extend({
     _onSetSexualOrientation: function(nextValue,e) {
-        console.log('was: ' + e.prevValue + '; now: ' + nextValue)
+        console.log(&#39;was: &#39; + e.prevValue + &#39;; now: &#39; + nextValue)
     }
-})</pre>
+})
+</pre></div>
 </div>
 <p>当属性值发生变更时，顺序依次是：</p>
 <ol class="arabic simple">

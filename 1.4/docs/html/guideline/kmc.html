@@ -69,19 +69,19 @@
     <article>
       
 
-	<h1>Kissy Module Compiler（Grunt-KMC）</h1>
+	<h1 id="kissy-module-compiler-grunt-kmc-">Kissy Module Compiler（Grunt-KMC）</h1>
 <script>
 location.href = 'https://github.com/daxingplay/grunt-kmc/blob/master/README.md';
 </script>
 
 <p>Grunt-kmc 依赖 kmc，<a href="https://github.com/daxingplay/ModuleCompiler/">kmc 使用指南</a>。</p>
 <p>环境依赖：Node，Grunt。</p>
-<h2>环境准备</h2>
+<h2 id="-">环境准备</h2>
 <p>Grunt-kmc 依赖 Grunt。<a href="http://gruntjs.com/getting-started">参照这里安装Grunt</a>，<a href="http://gruntjs.com/sample-gruntfile">学习如何写Gruntfile</a>。熟悉以上内容后，可以这样来安装grunt-kmc插件：</p>
 <pre><code>npm install grunt-kmc --save-dev</code></pre>
 <p>打开你创建的Gruntfile，并添加代码：</p>
 <pre><code>grunt.loadNpmTasks(&#39;grunt-kmc&#39;);</code></pre>
-<h2><code>KMC</code>任务配置</h2>
+<h2 id="-kmc-"><code>KMC</code>任务配置</h2>
 <p>在项目的Gruntfile文件中，在<code>grunt.initConfig()</code>函数参数的JSON对象中，添加一段名为<code>kmc</code>的段落。</p>
 <pre><code>grunt.initConfig({
     kmc: {
@@ -94,26 +94,26 @@ location.href = 'https://github.com/daxingplay/grunt-kmc/blob/master/README.md';
         }
     }
 })</code></pre>
-<h2>配置项</h2>
-<h3>options.packages</h3>
+<h2 id="-">配置项</h2>
+<h3 id="options-packages">options.packages</h3>
 <p>类型：<code>Array</code>，默认值：<code>[]</code>，KISSY 包配置。</p>
-<h3>options.charset</h3>
+<h3 id="options-charset">options.charset</h3>
 <p>类型：<code>String</code>，默认值：<code>utf-8</code>，</p>
-<h3>options.comboOnly</h3>
+<h3 id="options-comboonly">options.comboOnly</h3>
 <p>类型：<code>Boolean</code>，默认值：<code>false</code>，当指定某个文件为入口进行解析时，只生成这个文件的依赖Map，不作静态合并</p>
-<h3>options.depFilePath</h3>
+<h3 id="options-depfilepath">options.depFilePath</h3>
 <p>类型：<code>String</code>，默认值：<code>&quot;&quot;</code>，依赖关系表存放的文件路径</p>
-<h3>options.depFileCharset</h3>
+<h3 id="options-depfilecharset">options.depFileCharset</h3>
 <p>类型：<code>String</code>，默认值：和options.charset 保持一致，依赖关系表存放的文件的编码类型</p>
-<h3>options.traverse</h3>
+<h3 id="options-traverse">options.traverse</h3>
 <p>类型：<code>Boolean</code>，默认值：<code>false</code>，当指定模个文件为入口文件时，遍历子目录进行构建</p>
-<h3>options.comboMap</h3>
+<h3 id="options-combomap">options.comboMap</h3>
 <p>类型：<code>Boolean</code>，默认值：<code>false</code>，当指定一批文件为源文件时，对这些文件只生成模块依赖关系表，存放于<code>options.depFilePath</code>中</p>
-<h3>options.fixModuleName</h3>
+<h3 id="options-fixmodulename">options.fixModuleName</h3>
 <p>类型：<code>Boolean</code>，默认值：<code>false</code>，只补全模块名</p>
 <hr>
-<h2>示例代码</h2>
-<h3>示例1，单文件静态合并</h3>
+<h2 id="-">示例代码</h2>
+<h3 id="-1-">示例1，单文件静态合并</h3>
 <p>入口为单个文件，将这个文件的依赖关系解析好后合并入另一个文件</p>
 <pre><code>grunt.initConfig({
     kmc: {
@@ -149,7 +149,7 @@ location.href = 'https://github.com/daxingplay/grunt-kmc/blob/master/README.md';
     },
 //...
 grunt.file.defaultEncoding = &#39;gbk&#39;;</code></pre>
-<h3>示例2，批量静态合并</h3>
+<h3 id="-2-">示例2，批量静态合并</h3>
 <p>入口为一批文件，每个文件都解析合并</p>
 <pre><code>grunt.initConfig({
     kmc: {
@@ -178,7 +178,7 @@ grunt.file.defaultEncoding = &#39;gbk&#39;;</code></pre>
         }
     }
 });</code></pre>
-<h3>示例3，批量静态合并2</h3>
+<h3 id="-3-2">示例3，批量静态合并2</h3>
 <p>入口为一批文件，每个文件都解析合并，包名从配置文件中读取</p>
 <pre><code>grunt.initConfig({
     // 读取`abc.json配置文件中的配置`
@@ -213,7 +213,7 @@ grunt.file.defaultEncoding = &#39;gbk&#39;;</code></pre>
 <pre><code>{
     &quot;name&quot;: &quot;my-custom-package-name&quot;,
 }</code></pre>
-<h3>示例4，针对一批文件生成依赖关系表</h3>
+<h3 id="-4-">示例4，针对一批文件生成依赖关系表</h3>
 <p>只生成模块依赖关系表，对源文件不做修改</p>
 <pre><code>grunt.initConfig({
     options: {
@@ -239,7 +239,7 @@ grunt.file.defaultEncoding = &#39;gbk&#39;;</code></pre>
         ]
     }
 });</code></pre>
-<h2>应用</h2>
+<h2 id="-">应用</h2>
 <p><a href="clam.html">Clam</a>工具和<a href="http://abc.f2e.taobao.net/">ABC</a>依赖kmc。</p>
 
 
