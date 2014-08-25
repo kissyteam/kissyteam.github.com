@@ -199,7 +199,7 @@
 <li><a class="reference internal" href="#editor.Editor.config.customStyle" title="editor.Editor.config.customStyle"><tt class="xref py py-data docutils literal"><span class="pre">customStyle</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.config.customLink" title="editor.Editor.config.customLink"><tt class="xref py py-data docutils literal"><span class="pre">customLink</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.config.attachForm" title="editor.Editor.config.attachForm"><tt class="xref py py-data docutils literal"><span class="pre">attachForm</span></tt></a></li>
-<li><a class="reference internal" href="#editor.Editor.config.textarea" title="editor.Editor.config.textarea"><tt class="xref py py-data docutils literal"><span class="pre">textarea</span></tt></a></li>
+<li><a class="reference internal" href="#editor.Editor.config.textareaAttrs" title="editor.Editor.config.textareaAttrs"><tt class="xref py py-data docutils literal"><span class="pre">textareaAttrs</span></tt></a></li>
 <li><a class="reference internal" href="../base/base.html#base.Base.config.plugins" title="base.Base.config.plugins"><tt class="xref py py-data docutils literal"><span class="pre">plugins</span></tt></a></li>
 <li><a class="reference internal" href="../base/base.html#base.Base.config.listeners" title="base.Base.config.listeners"><tt class="xref py py-data docutils literal"><span class="pre">listeners</span></tt></a></li>
 <li><a class="reference internal" href="../component/control.html#component.Control.config.srcNode" title="component.Control.config.srcNode"><tt class="xref py py-data docutils literal"><span class="pre">srcNode</span></tt></a></li>
@@ -244,7 +244,6 @@
 <li><a class="reference internal" href="#editor.Editor.prototype.docReady" title="editor.Editor.prototype.docReady"><tt class="xref py py-meth docutils literal"><span class="pre">docReady()</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.prototype.insertElement" title="editor.Editor.prototype.insertElement"><tt class="xref py py-meth docutils literal"><span class="pre">insertElement()</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.prototype.insertHtml" title="editor.Editor.prototype.insertHtml"><tt class="xref py py-meth docutils literal"><span class="pre">insertHtml()</span></tt></a></li>
-<li><a class="reference internal" href="#editor.Editor.prototype.addButton" title="editor.Editor.prototype.addButton"><tt class="xref py py-meth docutils literal"><span class="pre">addButton()</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.prototype.addSelect" title="editor.Editor.prototype.addSelect"><tt class="xref py py-meth docutils literal"><span class="pre">addSelect()</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.prototype.getSelectedHtml" title="editor.Editor.prototype.getSelectedHtml"><tt class="xref py py-meth docutils literal"><span class="pre">getSelectedHtml()</span></tt></a></li>
 <li><a class="reference internal" href="#editor.Editor.prototype.getData" title="editor.Editor.prototype.getData"><tt class="xref py py-meth docutils literal"><span class="pre">getData()</span></tt></a></li>
@@ -339,12 +338,14 @@
 </dd></dl>
 
 <dl class="data">
-<dt id="editor.Editor.config.textarea">
-<tt class="descclassname">Editor.config.</tt><tt class="descname">textarea</tt><a class="headerlink" href="#editor.Editor.config.textarea" title="Permalink to this definition">¶</a></dt>
-<dd><p>{String} - optional. 自定义产生 textarea 节点的 html.</p>
+<dt id="editor.Editor.config.textareaAttrs">
+<tt class="descclassname">Editor.config.</tt><tt class="descname">textareaAttrs</tt><a class="headerlink" href="#editor.Editor.config.textareaAttrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Object} - optional. 自定义 textarea 节点的属性</p>
 <p>例如可以指定全新产生 editor 所属 textarea 的 name 值</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="k">new</span> <span class="nx">Editor</span><span class="p">({</span>
-    <span class="nx">textarea</span><span class="o">:</span> <span class="s1">&#39;&lt;textarea name=&quot;custom&quot;&gt;&lt;/textarea&gt;&#39;</span>
+    <span class="nx">textareaAttrs</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">name</span> <span class="o">:</span> <span class="s1">&#39;MyTextarea&#39;</span>
+    <span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -680,38 +681,6 @@
 <dd><div class="line-block">
 <div class="line"><strong>sync()</strong></div>
 <div class="line">同步编辑器内容到对应的 textarea</div>
-</div>
-</dd></dl>
-
-<dl class="method">
-<dt id="editor.Editor.prototype.addButton">
-<tt class="descclassname">Editor.prototype.</tt><tt class="descname">addButton</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.Editor.prototype.addButton" title="Permalink to this definition">¶</a></dt>
-<dd><div class="line-block">
-<div class="line"><strong>addButton(id, cfg)</strong></div>
-<div class="line">为编辑器工具栏增加一个按钮. 一般用于插件编写.</div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>id</strong> (<em>String</em>) &#8211; 按钮 id</li>
-<li><strong>cfg</strong> (<em>Object</em>) &#8211; button 配置，详见 <a class="reference internal" href="../button/button.html#button.Button" title="button.Button"><tt class="xref py py-class docutils literal"><span class="pre">Button</span></tt></a></li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<p>例如:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">addButton</span><span class="p">(</span><span class="s2">&quot;plugin2&quot;</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">content</span><span class="o">:</span><span class="s1">&#39;&lt;div style=&quot;margin: 2px;border: 1px solid red;padding: 1px;&quot;&gt;p2&lt;/div&gt;&#39;</span><span class="p">,</span>
-    <span class="nx">listeners</span><span class="o">:</span><span class="p">{</span>
-        <span class="nx">click</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;i am running&#39;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">});</span>
-</pre></div>
 </div>
 </dd></dl>
 
