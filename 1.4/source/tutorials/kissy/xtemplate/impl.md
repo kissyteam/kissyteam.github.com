@@ -16,7 +16,7 @@
 
 ## 首先 npm 安装 kissy
 
-     npm install -g kissy@1.4.4-1
+     npm install -g kissy@1.4.7-1
 
 
 ## xtemplate 示例代码

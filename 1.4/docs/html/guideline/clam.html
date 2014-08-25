@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/??bootstrap.css,normalize.css,kissy.css,prettify.css,forkit.css">
     <script src="/1.4/source/guideline/templates/assets/??jquery.min.js,script.js"></script>
-    <script src="http://g.tbcdn.cn/kissy/k/1.4.4/seed.js" type="text/javascript" data-config="{combine:true}"></script>
+    <script src="//g.alicdn.com/kissy/k/1.4.7/seed.js" type="text/javascript" data-config="{combine:true}"></script>
     <script src="/1.4/source/guideline/api/assets/highlight.pack.js"></script>
     <link href="/1.4/source/guideline/api/assets/tomorrow-night-bright.css" rel=stylesheet />
     <link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico">
@@ -111,7 +111,7 @@ window.location.href="https://github.com/jayli/generator-clam/blob/master/README
 </ul>
 <h3>本地调试</h3>
 <p>本地调试调用了<a href="https://npmjs.org/flex-combo">flex-combo</a>，访问绝对路径时和本地目录有一个映射关系，比如绝对地址映射到项目的<code>src</code>目录：</p>
-<pre><code>http://g.tbcdn.cn/group/project/ =&gt; ./src/</code></pre>
+<pre><code>//g.alicdn.com/group/project/ =&gt; ./src/</code></pre>
 <p>启动本地服务：</p>
 <pre><code>grunt server</code></pre>
 <h3>grunt 构建配置项</h3>
@@ -151,13 +151,13 @@ Running &quot;server&quot; task
 
 Running &quot;flexcombo:main&quot; (flexcombo) task
 
-Preview: http://g.tbcdn.cn/trip/h5-test/
+Preview: //g.alicdn.com/trip/h5-test/
 
 Flex Combo Server running at http://127.0.0.1:80</code></pre>
 <p>访问demo时应当带上<code>?ks-debug</code>，上线后的项目引用<code>config.js</code>的绝对地址即可。</p>
 <p>如果想测试build完成后的代码，可以在本地创建软连接，映射线上版本号，通过<code>grunt server</code>启动服务来测试：</p>
 <pre><code>ln -s build src/0.1.8</code></pre>
-<p>访问<code>http://g.tbcdn.cn/group/project/0.1.8/.../demo.html</code></p>
+<p>访问<code>//g.alicdn.com/group/project/0.1.8/.../demo.html</code></p>
 <blockquote>
 <p>这里的SSI兼容apache，但这个Server还是功能很弱，且不支持脚本，我们如果您有服务端脚本需求，建议您使用更成熟的<a href="http://wiki.ued.taobao.net/doku.php?id=ued.bj:f2e:tbcdn">apache+php来作为本地demo服务</a>，Clam只作为构建工具使用。</p>
 </blockquote>
@@ -165,7 +165,7 @@ Flex Combo Server running at http://127.0.0.1:80</code></pre>
 <p>为了限制在daily分支上发布，我们将grunt构建也加了限制，非daily分支上禁止构建，不建议将此限制去掉，只有build目录中的文件会被发布，所发布的项目中build目录中的文件地址为如下两种，前缀自选</p>
 <pre><code>http://a.tbcdn.cn/g/group-name/project-name/x.y.z/mods.js</code></pre>
 <p>对应到 g.tbcdn.cn 的地址：</p>
-<pre><code>http://g.tbcdn.cn/group-name/project-name/x.y.z/mods.js</code></pre>
+<pre><code>//g.alicdn.com/group-name/project-name/x.y.z/mods.js</code></pre>
 <p>代码发布命令：</p>
 <p><strong>预发</strong></p>
 <pre><code>grunt prepub</code></pre>

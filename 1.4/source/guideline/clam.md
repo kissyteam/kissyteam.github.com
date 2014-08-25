@@ -52,7 +52,7 @@ window.location.href="https://github.com/jayli/generator-clam/blob/master/README
 
 本地调试调用了[flex-combo](https://npmjs.org/flex-combo)，访问绝对路径时和本地目录有一个映射关系，比如绝对地址映射到项目的`src`目录：
 
-	http://g.tbcdn.cn/group/project/ => ./src/
+	//g.alicdn.com/group/project/ => ./src/
 
 启动本地服务：
 
@@ -107,7 +107,7 @@ Grunt中模板中提供`grunt server`方法，开启本地服务，默认开启�
 
 	Running "flexcombo:main" (flexcombo) task
 
-	Preview: http://g.tbcdn.cn/trip/h5-test/
+	Preview: //g.alicdn.com/trip/h5-test/
 
 	Flex Combo Server running at http://127.0.0.1:80
 
@@ -117,7 +117,7 @@ Grunt中模板中提供`grunt server`方法，开启本地服务，默认开启�
 
 	ln -s build src/0.1.8
 
-访问`http://g.tbcdn.cn/group/project/0.1.8/.../demo.html`
+访问`//g.alicdn.com/group/project/0.1.8/.../demo.html`
 
 > 这里的SSI兼容apache，但这个Server还是功能很弱，且不支持脚本，我们如果您有服务端脚本需求，建议您使用更成熟的[apache+php来作为本地demo服务](http://wiki.ued.taobao.net/doku.php?id=ued.bj:f2e:tbcdn)，Clam只作为构建工具使用。
 
@@ -129,7 +129,7 @@ Grunt中模板中提供`grunt server`方法，开启本地服务，默认开启�
 
 对应到 g.tbcdn.cn 的地址：
 
-	http://g.tbcdn.cn/group-name/project-name/x.y.z/mods.js
+	//g.alicdn.com/group-name/project-name/x.y.z/mods.js
 
 代码发布命令：
 
