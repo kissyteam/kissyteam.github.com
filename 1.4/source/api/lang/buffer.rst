@@ -25,6 +25,7 @@ Methods
 
         - 此方法为了避免在 ms 段时间内, 执行 fn 多次. 常用于 ``resize`` , ``scroll`` , ``mousemove`` 等连续性事件中;
         - 当 ms 设置为 -1, 表示立即执行 fn, 即和直接调用 fn 一样;
+        - 调用返回函数的 stop 停止最后一次的 buffer 效果
 
     例如
 
@@ -32,3 +33,8 @@ Methods
 
         self.__onResize = S.buffer(doResize, 100, this);
         $(window).on("resize", self.__onResize);
+
+        setTimeout(function(){
+            $(window).detach("resize", self.__onResize);
+            self.__onResize.stop();
+        }, 1000);

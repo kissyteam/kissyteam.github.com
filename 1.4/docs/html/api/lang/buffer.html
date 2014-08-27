@@ -202,11 +202,17 @@
 <ul class="last simple">
 <li>此方法为了避免在 ms 段时间内, 执行 fn 多次. 常用于 <tt class="docutils literal"><span class="pre">resize</span></tt> , <tt class="docutils literal"><span class="pre">scroll</span></tt> , <tt class="docutils literal"><span class="pre">mousemove</span></tt> 等连续性事件中;</li>
 <li>当 ms 设置为 -1, 表示立即执行 fn, 即和直接调用 fn 一样;</li>
+<li>调用返回函数的 stop 停止最后一次的 buffer 效果</li>
 </ul>
 </div>
 <p>例如</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">self</span><span class="p">.</span><span class="nx">__onResize</span> <span class="o">=</span> <span class="nx">S</span><span class="p">.</span><span class="nx">buffer</span><span class="p">(</span><span class="nx">doResize</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;resize&quot;</span><span class="p">,</span> <span class="nx">self</span><span class="p">.</span><span class="nx">__onResize</span><span class="p">);</span>
+
+<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">detach</span><span class="p">(</span><span class="s2">&quot;resize&quot;</span><span class="p">,</span> <span class="nx">self</span><span class="p">.</span><span class="nx">__onResize</span><span class="p">);</span>
+    <span class="nx">self</span><span class="p">.</span><span class="nx">__onResize</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span>
+<span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
