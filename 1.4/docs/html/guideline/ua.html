@@ -75,7 +75,7 @@ h3 {
 }
 </style>
 
-<h1>UA</h1>
+<h1 id="ua">UA</h1>
 <blockquote>
 <p>判断浏览器类型、版本、外壳等信息，引入种子文件后，通过<code>KISSY.UA</code>来访问<code>UserAgent</code>相关属性</p>
 </blockquote>
@@ -101,45 +101,45 @@ h3 {
     alert(UA); // UA可以使用了
 });</code></pre>
 <hr>
-<h3>trident  <code>&lt;static&gt;</code></h3>
+<h3 id="trident-static-">trident  <code>&lt;static&gt;</code></h3>
 <p>{Number} - trident 的版本号。IE 浏览器 8 系列以下都无法准确探测 Trident 内核的版本号。</p>
-<h3>webkit  <code>&lt;static&gt;</code></h3>
+<h3 id="webkit-static-">webkit  <code>&lt;static&gt;</code></h3>
 <p>{Number} - webkit 的版本号。</p>
-<h3>gecko  <code>&lt;static&gt;</code></h3>
+<h3 id="gecko-static-">gecko  <code>&lt;static&gt;</code></h3>
 <p>{Number} - gecko 的版本号。</p>
-<h3>presto  <code>&lt;static&gt;</code></h3>
+<h3 id="presto-static-">presto  <code>&lt;static&gt;</code></h3>
 <p>{Number} - presto 的版本号。</p>
-<h3>chrome  <code>&lt;static&gt;</code></h3>
+<h3 id="chrome-static-">chrome  <code>&lt;static&gt;</code></h3>
 <p>{Number} - chrome 的版本号。</p>
-<h3>safari  <code>&lt;static&gt;</code></h3>
+<h3 id="safari-static-">safari  <code>&lt;static&gt;</code></h3>
 <p>{Number} - safari 的版本号。</p>
-<h3>firefox  <code>&lt;static&gt;</code></h3>
+<h3 id="firefox-static-">firefox  <code>&lt;static&gt;</code></h3>
 <p>{Number} - firefox 的版本号。</p>
-<h3>ie  <code>&lt;static&gt;</code></h3>
+<h3 id="ie-static-">ie  <code>&lt;static&gt;</code></h3>
 <p>{Number} - ie 的版本号。</p>
-<h3>opera  <code>&lt;static&gt;</code></h3>
+<h3 id="opera-static-">opera  <code>&lt;static&gt;</code></h3>
 <p>{Number} - opera 的版本号。</p>
-<h3>mobile  <code>&lt;static&gt;</code></h3>
+<h3 id="mobile-static-">mobile  <code>&lt;static&gt;</code></h3>
 <p>{String} - mobile 的标志符。 若无法探测或非移动设备浏览器，将返回空字符串。</p>
-<h3>core  <code>&lt;static&gt;</code></h3>
+<h3 id="core-static-">core  <code>&lt;static&gt;</code></h3>
 <p>{String} - core 的标志符。此标识符表示浏览器的内核标识。若浏览器内核不是 trident, webkit, gecko, presto 将返回空字符串。</p>
-<h3>shell  <code>&lt;static&gt;</code></h3>
+<h3 id="shell-static-">shell  <code>&lt;static&gt;</code></h3>
 <p>{String} - shell 的标志符。此标识符表示用户所用浏览器的外壳标识。</p>
-<h3>os  <code>&lt;static&gt;</code></h3>
+<h3 id="os-static-">os  <code>&lt;static&gt;</code></h3>
 <p>{String} - 操作系统标志符。例如 windows android ios linux</p>
-<h3>ipad  <code>&lt;static&gt;</code></h3>
+<h3 id="ipad-static-">ipad  <code>&lt;static&gt;</code></h3>
 <p>{Number} - ipad ios 版本号。例如 5.0</p>
-<h3>iphone  <code>&lt;static&gt;</code></h3>
+<h3 id="iphone-static-">iphone  <code>&lt;static&gt;</code></h3>
 <p>{Number} - iphone ios 版本号。例如 5.0</p>
-<h3>ipod  <code>&lt;static&gt;</code></h3>
+<h3 id="ipod-static-">ipod  <code>&lt;static&gt;</code></h3>
 <p>{Number} - ipod ios 版本号。例如 5.0</p>
-<h3>ios  <code>&lt;static&gt;</code></h3>
+<h3 id="ios-static-">ios  <code>&lt;static&gt;</code></h3>
 <p>{Number} - ios 版本号。例如 5.0</p>
-<h3>android  <code>&lt;static&gt;</code></h3>
+<h3 id="android-static-">android  <code>&lt;static&gt;</code></h3>
 <p>{Number} - android 版本号。例如 5.0</p>
 <hr>
-<h2>examples</h2>
-<h3>判断浏览器类型</h3>
+<h2 id="examples">examples</h2>
+<h3 id="-">判断浏览器类型</h3>
 <pre><code>KISSY.use(&#39;ua&#39;,function(S,UA){
     if(UA.chrome &gt; 0){
         alert(&#39;Your browser is chrome&#39;);
@@ -155,7 +155,7 @@ h3 {
         alert(&#39;Your browser is unknown&#39;);
     }
 });</code></pre>
-<h2>判断操作系统类型</h2>
+<h2 id="-">判断操作系统类型</h2>
 <pre><code>KISSY.use(&#39;ua&#39;,function(S,UA){
     if(UA.os == &#39;windows&#39;){
         alert(&#39;Your os is Windows&#39;);
@@ -174,7 +174,7 @@ h3 {
         alert(&#39;Your os is Android&#39;);
     }
 });</code></pre>
-<h3>判断mobile类型</h3>
+<h3 id="-mobile-">判断mobile类型</h3>
 <pre><code>KISSY.use(&#39;ua&#39;,function(S,UA){
     if(UA.mobile == &#39;apple&#39;){
         alert(&#39;Your device is Apple&#39;);
@@ -186,7 +186,7 @@ h3 {
         alert(&#39;Your browser is opera mobile&#39;);
     }
 }); </code></pre>
-<h3>判断浏览器外壳</h3>
+<h3 id="-">判断浏览器外壳</h3>
 <pre><code>KISSY.use(&#39;ua&#39;,function(S,UA){
     if(UA.shell == &#39;chrome&#39;){
         alert(&#39;Your browser is chrome and the version is&#39; + UA[UA.shell]);

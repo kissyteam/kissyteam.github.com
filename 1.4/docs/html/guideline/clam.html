@@ -74,12 +74,12 @@
 window.location.href="https://github.com/jayli/generator-clam/blob/master/README.md";
 </script>
 
-<h1>KISSY 项目构建工具，Generator-clam</h1>
+<h1 id="kissy-generator-clam">KISSY 项目构建工具，Generator-clam</h1>
 <p></p>
 
 <p><img src="http://img04.taobaocdn.com/tps/i4/T1C5hpXwXeXXbkQf6j-210-45.jpg" alt=""></p>
 <p>环境依赖：Node、Npm，<a href="https://speakerdeck.com/lijing00333/generator-clam">工具原理介绍PPT</a>。视频演示：<a href="http://ascii.io/a/4384">http://ascii.io/a/4384</a>。</p>
-<h2>安装 &amp; 基本命令</h2>
+<h2 id="-">安装 &amp; 基本命令</h2>
 <p>首先安装<a href="http://gruntjs.com">grunt</a> 和 <a href="http://yeoman.io/">yeoman</a>：</p>
 <pre><code>npm install yo grunt-cli -g</code></pre>
 <p> 安装Generator-Clam：</p>
@@ -97,7 +97,7 @@ window.location.href="https://github.com/jayli/generator-clam/blob/master/README
 <li><code>yo clam:page</code>:生成一个Page</li>
 </ul>
 <hr>
-<h2>Grunt 内嵌命令</h2>
+<h2 id="grunt-">Grunt 内嵌命令</h2>
 <p>初始化完成的项目包含Gruntfile.js模板，可以辅助你完成：</p>
 <ul>
 <li><code>grunt</code>: 执行构建</li>
@@ -109,12 +109,12 @@ window.location.href="https://github.com/jayli/generator-clam/blob/master/README
 <li><code>grunt server</code>:开启本地调试模式</li>
 <li><code>grunt build</code>:构建包含SSI的html，合并页面中的css和js</li>
 </ul>
-<h3>本地调试</h3>
+<h3 id="-">本地调试</h3>
 <p>本地调试调用了<a href="https://npmjs.org/flex-combo">flex-combo</a>，访问绝对路径时和本地目录有一个映射关系，比如绝对地址映射到项目的<code>src</code>目录：</p>
 <pre><code>//g.alicdn.com/group/project/ =&gt; ./src/</code></pre>
 <p>启动本地服务：</p>
 <pre><code>grunt server</code></pre>
-<h3>grunt 构建配置项</h3>
+<h3 id="grunt-">grunt 构建配置项</h3>
 <p><code>Gruntfile.js</code>是Grunt脚本规则文件，此外项目基本参数存放在<code>abc.json</code>中，生成好的<code>abc.json</code>格式如下：</p>
 <pre><code>{
     &quot;name&quot;: &quot;h5-test&quot;,
@@ -137,14 +137,14 @@ window.location.href="https://github.com/jayli/generator-clam/blob/master/README
 <blockquote>
 <p>ps:grunt构建任务依赖<code>grunt-mytps</code>子任务，该子任务（上传本地图片到CDN并替换地址）依赖python，并需要安装<a href="https://github.com/sodabiscuit/tpsmate">tpsmate</a>。</p>
 </blockquote>
-<h3>使用 Generator-Clam 应对这三种基本场景</h3>
+<h3 id="-generator-clam-">使用 Generator-Clam 应对这三种基本场景</h3>
 <p>1，创建新项目</p>
 <p><code>yo clam</code>构建新项目时会生成Gruntfile.js。之后你只需特别关注Gruntfile.js即可。</p>
 <p>2，接手项目</p>
 <p>如果你要接手一个项目，代码检出后即可进行调试；在运行<code>grunt</code>命令之前需要运行<code>npm install</code>。 </p>
 <p>3，标准格式的KISSY组件</p>
 <p><a href="http://gallery.kissyui.com">KISSY标准组件</a>的构建使用<code>yo kissy-gallery x.y</code>，已经被映射为<code>yo clam:widget</code>，KISSY标准组件是可以直接构建为可发布到淘宝CDN的代码，并提交至<code>kissy gallery</code>中。因此，你的项目中所有widgets都应当和KISSY标准组件格式保持一致，方便被其他项目使用。</p>
-<h3>Demo的运行</h3>
+<h3 id="demo-">Demo的运行</h3>
 <p>Grunt中模板中提供<code>grunt server</code>方法，开启本地服务，默认开启在80端口，在<code>abc.json</code>中修改端口配置。<code>grunt server</code>封装了<code>flexcombo</code>，提供一种最基本的服务：即线上CDN环境映射到本地目录，直接访问屏幕提示给出的URL即可（g.tbcdn.cn host指向本地）</p>
 <pre><code>[bachi@yahoo ~/temp/h5-test]&gt; sudo grunt server
 Running &quot;server&quot; task
@@ -161,7 +161,7 @@ Flex Combo Server running at http://127.0.0.1:80</code></pre>
 <blockquote>
 <p>这里的SSI兼容apache，但这个Server还是功能很弱，且不支持脚本，我们如果您有服务端脚本需求，建议您使用更成熟的<a href="http://wiki.ued.taobao.net/doku.php?id=ued.bj:f2e:tbcdn">apache+php来作为本地demo服务</a>，Clam只作为构建工具使用。</p>
 </blockquote>
-<h3>预发和发布</h3>
+<h3 id="-">预发和发布</h3>
 <p>为了限制在daily分支上发布，我们将grunt构建也加了限制，非daily分支上禁止构建，不建议将此限制去掉，只有build目录中的文件会被发布，所发布的项目中build目录中的文件地址为如下两种，前缀自选</p>
 <pre><code>http://a.tbcdn.cn/g/group-name/project-name/x.y.z/mods.js</code></pre>
 <p>对应到 g.tbcdn.cn 的地址：</p>
@@ -172,8 +172,8 @@ Flex Combo Server running at http://127.0.0.1:80</code></pre>
 <p><strong>发布</strong></p>
 <pre><code>grunt publish</code></pre>
 <hr>
-<h2>再多了解一点<code>Generator-Clam</code></h2>
-<h3>CLAM 工具族</h3>
+<h2 id="-generator-clam-">再多了解一点<code>Generator-Clam</code></h2>
+<h3 id="clam-">CLAM 工具族</h3>
 <p><code>Clam</code>是 <a href="http://weibo.com/u/1846621405">陶清</a> 对于前端模块化开的实践和落地项目，它是一个工具，旨在建立标准的模块开发流程，提高代码共享和项目构建效率，同时提供一个本地轻服务，让我们“可以坐在美丽的沙滩上写代码”。</p>
 <p><code>Clam</code>之后有两个衍生版本，<code>Clam-tools</code>和<code>Generator-Clam</code>。</p>
 <p>1，<a href="http://gitlab.alibaba-inc.com/clam/tree/master">Clam</a></p>
@@ -191,7 +191,7 @@ Flex Combo Server running at http://127.0.0.1:80</code></pre>
 <p>代码单元有自身属性，自身属性只是为了区分其适用范围和生命周期，为了保持约定简单，代码单元在层级上不再做规定，所有模块单元都相互平行，代码之间的依赖和相互引用，取决于你对业务的拆解，不是脚手架的职责。</p>
 <p>最重要的，互联网项目的需求是涌现式的，项目的前端架构和设计是在开发中不断调整修改而来，而非开始就设计完成不再动了，这也是代码组织结构尽可能保持和业务弱相关的原因。</p>
 <p>最最重要的，组件级（widget）代码从开始就保持标准规范（Kissy Gallery），抽离出项目更方便，这在无常的Web项目中是唯一的促成积累、沉淀代码的方法。</p>
-<h3>项目目录结构约定</h3>
+<h3 id="-">项目目录结构约定</h3>
 <p><code>yo clam</code>可以引导你创建三种格式的目录结构，</p>
 <p>第一种，<code>src</code>目录和<code>build</code>目录平行，<code>src</code>目录中直接承载代码单元</p>
 <pre><code>./
@@ -263,7 +263,7 @@ Flex Combo Server running at http://127.0.0.1:80</code></pre>
     │   └── spec/
     └── Gruntfile.js</code></pre>
 <p>以上三种目录结构中，widget均和KissyGallery标准组件保持一致。</p>
-<h2>Q &amp; A</h2>
+<h2 id="q-a">Q &amp; A</h2>
 <p>1，&#39;yo clam&#39;安装node模块的时候报错？</p>
 <pre><code>npm ERR! Error: EACCES, mkdir &#39;/usr/local/lib/node_modules/grunt-xx&#39;</code></pre>
 <ul>
@@ -314,7 +314,7 @@ KISSY.add(&#39;grp/header/index&#39;,function(S){
     &#39;g.tbcdn.cn&#39;:&#39;155.238.23.250&#39;,
     &#39;your.host.name&#39;:&#39;155.238.23.250&#39;//ip地址配置到对应的cdn地址
 }</code></pre>
-<h2>TODO</h2>
+<h2 id="todo">TODO</h2>
 <ul>
 <li>JSON接口模拟和映射</li>
 <li>png 图片的压缩和优化</li>

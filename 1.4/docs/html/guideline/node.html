@@ -69,9 +69,9 @@
     <article>
       
 
-	<h1>node</h1>
+	<h1 id="node">node</h1>
 <p>Node 模块提供了对DOM节点的最高层的封装，可以创建、操作、遍历、查找Dom节点。封装后的Node节点在各个浏览器端均具有一致的API，这些API甚至在NodeList类型上也是可以用的。同时，Node还提供了对CSS、动画、事件的基本的封装。可以让你方便的操作DOM节点。</p>
-<h2>载入Node模块</h2>
+<h2 id="-node-">载入Node模块</h2>
 <p>载入KISSY种子文件后，这样载入Node模块</p>
 <pre><code>// 载入 Node 模块
 KISSY.use(&#39;node&#39;,function(S,Node){
@@ -79,9 +79,9 @@ KISSY.use(&#39;node&#39;,function(S,Node){
     // Your Code here...
 });</code></pre>
 <p>从这里了解<a href="loader.html">use()</a>方法。</p>
-<h2>使用Node</h2>
+<h2 id="-node">使用Node</h2>
 <p>Node API 是基于DOM Api 实现的，定义了一系列的语法糖，让用户更舒服的使用Node api，写的代码更加优雅。如果你对标准jQuery DOM API很了解，那么你对Node API也会非常熟悉。</p>
-<h2>查找节点</h2>
+<h2 id="-">查找节点</h2>
 <pre><code>// 使用 S.one( [css selector string] )
 var node = S.one(&#39;#main&#39;);
 
@@ -92,7 +92,7 @@ var bodyNode = S.one(document.body);</code></pre>
 <p>注意：KISSY 在选择器上的实现是渐进增强的，在高级浏览器中优先使用<code>querySelector</code>和<code>getElementsByClassName</code>等原生函数，在低版本的IE中降级使用<code>selector/ie</code>的js实现。对于异类的CSS3特有的选择器，在低版本IE中用sizzle实现。这样做主要是为了精简选择器的实现代码，降低 KISSY 核心代码体积。</p>
 <p>KISSY 会根据浏览器平台加载正确的代码，用户不用关心平台，KISSY 一定会调用最合适、性能最优的选择器实现。在1.4.1中，不需要用户手动引用<code>sizzle</code>模块了，KISSY 会自行判断加载。</p>
 </blockquote>
-<h2>操作内容</h2>
+<h2 id="-">操作内容</h2>
 <p>KISSY Node 节点支持链式调用:</p>
 <pre><code>S.one(&#39;#test&#39;)
     .parent(&#39;.fathor&#39;)
@@ -102,22 +102,22 @@ var bodyNode = S.one(document.body);</code></pre>
 <p>这种风格和jQuery保持一致。创建节点：</p>
 <pre><code>S.Node(&#39;&lt;div&gt;hello kissy&lt;/div&gt;&#39;).appendTo(&#39;body&#39;);</code></pre>
 <p>这里的例子涉及查找子节点、父节点，找兄弟节点，修改内容，绑定事件，创建节点。</p>
-<h2>访问 Node 节点的属性</h2>
+<h2 id="-node-">访问 Node 节点的属性</h2>
 <pre><code>var imgNode = S.one(&#39;#preview&#39;);
 var bigSrc = imgNode.attr(&#39;src&#39;);//得到imgNode的src属性
 
 imgNode.attr(&#39;src&#39;, &#39;new.png&#39;);// 设置src属性为一个新的值
 imgNode.next().html(&#39;hello world&#39;);// 设置imgNode下一个兄弟节点的innerHTML</code></pre>
 <p>Node 实例通过<code>attr</code>方法来读写常见的属性。一些className和innerHTML相关的常用操作，被封装为addClass、replaceClass或者html方法。更多用法请参照下文API部分。</p>
-<h2>Node 事件操作</h2>
+<h2 id="node-">Node 事件操作</h2>
 <pre><code>S.one(&#39;#demo&#39;).on(&#39;click&#39;, function(e) {
     e.halt();
     alert(&#39;event: &#39; + e.type + &#39; target: &#39; + e.target.tagName); 
 });</code></pre>
 <p>回调传回一个门面对象<code>e</code>，注意 e 不是原生事件对象，是封装后的，这时<code>e.target</code>是裸的节点。除了preventDefault()和stopPropagation()之外，e还包含halt()方法，停止事件加阻止默认行为。</p>
-<h2>Node 方法</h2>
+<h2 id="node-">Node 方法</h2>
 <p>Node 实例实现了一些快捷方法，用来方便用户更快捷的操作DOM节点。比如append、next、appendTo、addClass等等。</p>
-<h2>NodeList  集合</h2>
+<h2 id="nodelist-">NodeList  集合</h2>
 <pre><code>var doneTasks = S.all(&#39;#tasklist .completed&#39;);
 
 // 针对所有的节点进行操作
@@ -138,7 +138,7 @@ doneTasks.each(function (taskNode,k) {
 <li><a href="http://www.w3.org/TR/css3-selectors/">CSS 3 选择器</a></li>
 <li><a href="http://www.w3.org/TR/selectors-API/">选择器 API</a></li>
 </ul>
-<h2>无障碍支持</h2>
+<h2 id="-">无障碍支持</h2>
 <p>KISSY 支持标准的<a href="http://www.w3.org/TR/wai-aria/">ARIA</a>。即 KISSY 可以完整的支持无障碍特性。比如对<a href="http://www.w3.org/TR/wai-aria/#roles">roles</a>和<a href="http://www.w3.org/TR/wai-aria/#supportedState">state</a>的支持。这些特性可以和读屏软件很好的兼容，在增强html标签语义化的同时，让盲人用户使用页面更加顺畅。</p>
 <pre><code>// 写一个属性
 var node = S.one(&#39;#toolbar&#39;).attr(&#39;role&#39;, &#39;toolbar&#39;);
@@ -147,16 +147,16 @@ node.attr({
     role: &#39;menu&#39;, &#39;aria-hidden&#39;: true 
 });</code></pre>
 <hr>
-<h1>Node或NodeList 的实例方法</h1>
-<h3>all()，one()</h3>
+<h1 id="node-nodelist-">Node或NodeList 的实例方法</h1>
+<h3 id="all-one-">all()，one()</h3>
 <pre><code>S.one(&#39;.filter&#39;); // 从document根节点开始查找一个节点
 S.all(&#39;.filter&#39;); // 从document根节点开始查找一批节点
 node.one(&#39;.child&#39;); // 得到当前节点下的匹配选择器的一个节点
 node.all(&#39;.children&#39;); // 得到当前节点下的匹配选择器的节点列表</code></pre>
-<h3>getDOMNode()，getDOMNodes()</h3>
+<h3 id="getdomnode-getdomnodes-">getDOMNode()，getDOMNodes()</h3>
 <pre><code>node.getDOMNode();// 得到一个原生节点
 node.getDOMNodes();// 得到一个原生节点组成的数组</code></pre>
-<h3>end()</h3>
+<h3 id="end-">end()</h3>
 <p>得到上一次 one() 和 all() 操作前的 NodeList 或者 Node 对象。引入该方法是为了更好的支持链式操作( chaining )，可以在一个语句内对不同层次得节点集合进行不同的操作.
 <a href="http://docs.kissyui.com/1.4/source/raw/api/node/end.html">demo</a>。</p>
 <pre><code>S.one(&quot;body&quot;).all(&quot;.d1&quot;).css(&quot;color&quot;, &quot;red&quot;);// =&gt; 返回节点.d1
@@ -164,14 +164,14 @@ S.one(&quot;body&quot;).all(&quot;.d1&quot;).css(&quot;color&quot;, &quot;red&qu
 S.one(&quot;body&quot;).all(&quot;.d1&quot;).css(&quot;color&quot;, &quot;red&quot;)
     .end()
     .all(&#39;.d2&#39;);// =&gt; 返回节点 .d2 </code></pre>
-<h3>equals()</h3>
+<h3 id="equals-">equals()</h3>
 <p>判断节点是否相等</p>
 <pre><code>&lt;div class=&#39;a b&#39; id=&#39;a&#39;&gt;&lt;/div&gt;
 &lt;div class=&#39;a b&#39; id=&#39;b&#39;&gt;&lt;/div&gt;
 &lt;script&gt;
     KISSY.all(&quot;.a&quot;).equals(KISSY.all(&quot;.b&quot;)) // =&gt; true
 &lt;/script&gt;</code></pre>
-<h3>add()</h3>
+<h3 id="add-">add()</h3>
 <p>将多个Nodelist/Node对象合并为一个集合返回，原有对象不会变化，参数和all保持一致</p>
 <pre><code>&lt;p&gt;1&lt;/p&gt;&lt;div&gt;2&lt;/div&gt;
 &lt;script&gt;
@@ -179,7 +179,7 @@ S.one(&quot;body&quot;).all(&quot;.d1&quot;).css(&quot;color&quot;, &quot;red&qu
     var all= pdiv.add(&quot;div&quot;);  //  pdiv 不会变化
     all.css(&quot;color&quot;,&quot;red&quot;); // =&gt; 1,2 都为红字
 &lt;/script&gt;</code></pre>
-<h3>item()</h3>
+<h3 id="item-">item()</h3>
 <p>返回NodeList的某个下标表示的节点，得到的是封装后的Node节点，而非原生节点，得到原生节点直接用数组下标获取<code>S.all(&#39;.a&#39;)[0]</code></p>
 <pre><code>&lt;div class=&#39;a&#39; id=&#39;a&#39;&gt;&lt;/div&gt;
 &lt;div class=&#39;a&#39; id=&#39;b&#39;&gt;&lt;/div&gt;
@@ -191,12 +191,12 @@ S.one(&quot;body&quot;).all(&quot;.d1&quot;).css(&quot;color&quot;, &quot;red&qu
     // 取第二个节点
     S.all(&quot;.a&quot;).item(2)  // =&gt; null
 &lt;/script&gt;</code></pre>
-<h3>slice()</h3>
+<h3 id="slice-">slice()</h3>
 <p>获取包含当前节点列表选定范围内原生节点的新 NodeList 对象</p>
 <pre><code>var as = S.all(&quot;.a&quot;);
 var subs = as.slice(1,3); // =&gt; subs != as
 subs.length // =&gt; 2，subs 为被截取之后的节点 </code></pre>
-<h3>scrollTop()</h3>
+<h3 id="scrolltop-">scrollTop()</h3>
 <p>返回节点滚动条的垂直位置.<a href="http://docs.kissyui.com/1.4/source/raw/api/node/scrollTop-get.html">demo</a></p>
 <pre><code>var p = S.all(&quot;p:first&quot;).scrollTop();
 alert(p);// 返回第一个p元素的滚动条高度</code></pre>
@@ -205,8 +205,8 @@ alert(p);// 返回第一个p元素的滚动条高度</code></pre>
 <p>一般这样获取页面的滚动条高度</p>
 <pre><code>KISSY.one(document).scrollTop();
 KISSY.DOM.scrollTop();// 这两者完全一致</code></pre>
-<h3>scrollLeft()，用法同scrollTop()</h3>
-<h3>height() 和 width()</h3>
+<h3 id="scrollleft-scrolltop-">scrollLeft()，用法同scrollTop()</h3>
+<h3 id="height-width-">height() 和 width()</h3>
 <p>获得节点的计算高度或宽度，css(&#39;height&#39;) 和 height() 的区别在于 height() 返回不带单位的纯数值, 而 css(&#39;height&#39;) 则返回带单位的原始值(例如 40% ).</p>
 <p><img src="http://docs.kissyui.com/1.4/source/raw/api/node/height.png" alt=""></p>
 <p>该方法也可以用来得到 windw 和 document 的高度</p>
@@ -225,12 +225,12 @@ S.all(&#39;.filter&#39;).height(&#39;20em&#39;);// 设置一组元素的高度�
 </ul>
 <p>附图：下图为浏览器常用尺寸的获取办法，这里是通过原生节点方式获取</p>
 <p><img src="http://gtms01.alicdn.com/tps/i1/T1mB1SFhlXXXcmL1nK-609-602.gif" alt=""></p>
-<h3>addStyleSheet()</h3>
+<h3 id="addstylesheet-">addStyleSheet()</h3>
 <p>添加样式表</p>
 <pre><code>node.addStyleSheet(&#39;xx {_width:xx;}&#39;);// 可以写css hack</code></pre>
 <p>另外一种加样式的方法：</p>
 <pre><code>var styleEl = S.all(&quot;&lt;style&gt;p {color:red}&lt;/style&gt;&quot;).appendTo(&quot;head&quot;);</code></pre>
-<h3>append()</h3>
+<h3 id="append-">append()</h3>
 <p>将参数内容插入到当前节点列表中的每个元素的末尾.</p>
 <pre><code>&lt;h2&gt;Greetings&lt;/h2&gt;
 &lt;div class=&quot;container&quot;&gt;
@@ -262,7 +262,7 @@ KISSY.use(&quot;node&quot;,function(S,Node){
 <li><a href="http://docs.kissyui.com/1.4/source/raw/api/node/append-2.html">给所有段落添加一个文本节点</a></li>
 <li><a href="http://docs.kissyui.com/1.4/source/raw/api/node/append-3.html">给所有段落添加一个 <code>NodeList</code> 对象</a></li>
 </ul>
-<h3>appendTo()</h3>
+<h3 id="appendto-">appendTo()</h3>
 <p>将当前节点列表中的每个元素插入到容器列表的每个元素的最后一个子节点后面.</p>
 <p>我们可以创建元素后立即插入到多个已有元素:</p>
 <pre><code>S.all(&#39;&lt;p&gt;Test&lt;/p&gt;&#39;).appendTo(&#39;.inner&#39;);</code></pre>
@@ -272,11 +272,11 @@ KISSY.use(&quot;node&quot;,function(S,Node){
 <ul>
 <li><a href="http://docs.kissyui.com/1.4/source/raw/api/node/appendTo.html">把多个 span 插入到已有元素</a></li>
 </ul>
-<h3>prepend()</h3>
+<h3 id="prepend-">prepend()</h3>
 <p>用法同append()，prepend()表示插入到最前</p>
-<h3>prependTo()</h3>
+<h3 id="prependto-">prependTo()</h3>
 <p>用法同prependTo()，prependTo()表示插入到最前</p>
-<h3>insertBefore()</h3>
+<h3 id="insertbefore-">insertBefore()</h3>
 <p>在某个节点之前插入节点</p>
 <pre><code>S.all(&#39;&lt;p&gt;Test&lt;/p&gt;&#39;).insertBefore(&#39;.inner&#39;);</code></pre>
 <p>也可以操作现有元素</p>
@@ -285,16 +285,16 @@ KISSY.use(&quot;node&quot;,function(S,Node){
 <ul>
 <li><a href="http://docs.kissyui.com/1.4/source/raw/api/node/insertBefore.html">把段落插入到 div 节点之前Demo</a></li>
 </ul>
-<h3>before()</h3>
+<h3 id="before-">before()</h3>
 <p>和insertBefore()方法的功能一样, 只不过参数意义不同, insertBefore 表示当前节点列表被插入到参数目标节点之前, 而该方法则表示参数节点被插入到当前节点之前.</p>
 <ul>
 <li><a href="http://docs.kissyui.com/1.4/source/raw/api/node/before.html">Demo</a></li>
 </ul>
-<h3>insertAfter()</h3>
+<h3 id="insertafter-">insertAfter()</h3>
 <p>用法类似于insertBefore()</p>
-<h3>after()</h3>
+<h3 id="after-">after()</h3>
 <p>用法类似于before()</p>
-<h3>animate()</h3>
+<h3 id="animate-">animate()</h3>
 <p>对当前节点(列表)上做动画，返回一个NodeList实例。</p>
 <pre><code>var node=KISSY.all(&quot;.foo&quot;);
 node.animate({
@@ -311,61 +311,61 @@ node.animate({
     new KISSY.Anim(n,...).run();
 });</code></pre>
 <p>参数请参照<a href="anim.html">Anim</a>。</p>
-<h3>stop()</h3>
+<h3 id="stop-">stop()</h3>
 <p>停止当前动画，同<code>Anim.stop()</code>。</p>
-<h3>pause()</h3>
+<h3 id="pause-">pause()</h3>
 <p>停止当前节点列表的动画，同<code>Anim.pause()</code></p>
-<h3>resume()</h3>
+<h3 id="resume-">resume()</h3>
 <p>继续当前节点的动画，含义同<code>Anim.resume()</code></p>
-<h3>isRunning()</h3>
+<h3 id="isrunning-">isRunning()</h3>
 <p>判断当前节点是否在做动画的过程中</p>
-<h3>isPaused()</h3>
+<h3 id="ispaused-">isPaused()</h3>
 <p>判断当前节点是否已经暂停动画</p>
-<h3>show()</h3>
+<h3 id="show-">show()</h3>
 <p>显示当前节点</p>
 <pre><code>node.show();// 直接显示
 node.show(0.5,function(){
     // 0.5 秒后执行这里的回调    
 });</code></pre>
-<h3>hide()</h3>
+<h3 id="hide-">hide()</h3>
 <p>隐藏节点</p>
 <pre><code>node.hide();// 直接隐藏
 node.hide(0.5,function(){
     // 0.5 秒后执行这里的回调    
 });</code></pre>
-<h3>toggle()</h3>
+<h3 id="toggle-">toggle()</h3>
 <p>更改节点的隐藏和显示状态</p>
 <pre><code>node.toggle();// 直接切换显示状态
 node.toggle(0.5,function(){
     // 0.5 秒后执行这里的回调    
 });</code></pre>
-<h3>fadeIn()</h3>
+<h3 id="fadein-">fadeIn()</h3>
 <p>当前节点以渐隐效果显示</p>
 <pre><code>node.fadeIn(1,function(){
     // 1 秒后执行回调    
 },easeIng);
 // easyIng 取值请参照Anim</code></pre>
-<h3>fadeOut()</h3>
+<h3 id="fadeout-">fadeOut()</h3>
 <p>当前节点渐隐效果消逝，用法同fadeIn()</p>
-<h3>fadeToggle()</h3>
+<h3 id="fadetoggle-">fadeToggle()</h3>
 <p>当前节点渐隐效果切换显示状态</p>
-<h3>slideDown()</h3>
+<h3 id="slidedown-">slideDown()</h3>
 <p>当前节点从上到下滑动显示，参数同fadeIn()</p>
-<h3>slideUp()</h3>
+<h3 id="slideup-">slideUp()</h3>
 <p>当前节点从下到上活动显示，参数同fadeIn()</p>
-<h3>slideToggle()</h3>
+<h3 id="slidetoggle-">slideToggle()</h3>
 <p>当前节点上下滑动切换显示状态，参数同fadeIn()</p>
-<h3>filter()</h3>
+<h3 id="filter-">filter()</h3>
 <p>对于NOdeList过滤出符合条件的节点，返回NodeList</p>
 <pre><code>KISSY.use(&#39;node&#39;,function(S,Node)){
     var els = S.all(&#39;a&#39;).filter(&#39;.container&#39;);
     // 过滤出className为container的a标签
 });</code></pre>
-<h3>test()</h3>
+<h3 id="test-">test()</h3>
 <p>根据选择器获取的所有元素是否都符合过滤条件</p>
 <pre><code>var els = S.all(&#39;a&#39;);
 console.log(els.test(&#39;.container&#39;));//a标签是否都包含class名container</code></pre>
-<h3>clone()</h3>
+<h3 id="clone-">clone()</h3>
 <p>节点的深度克隆，用法：<code>node.clone(deep,withDataAndEvent,deepWithDataAndEvent)</code></p>
 <p>参数默认值：</p>
 <ul>
@@ -406,25 +406,25 @@ console.log(els.test(&#39;.container&#39;));//a标签是否都包含class名cont
 <pre><code>var elem=KISSY.one(&quot;.hello&quot;).attr(&quot;custom&quot;,{x:1});
 elem.clone().attr(&quot;custom&quot;,{x:2});</code></pre>
 <p><a href="http://docs.kissyui.com/1.4/source/raw/api/dom/clone.html">克隆后保留原有事件逻辑Demo</a></p>
-<h3>empty()</h3>
+<h3 id="empty-">empty()</h3>
 <p>清除节点的所有子孙节点以及子孙节点上的事件.</p>
-<h3>replaceWith()</h3>
+<h3 id="replacewith-">replaceWith()</h3>
 <p>将 node 节点（数组）替换为新的节点（数组） newNode</p>
-<h3>hasClass()</h3>
+<h3 id="hasclass-">hasClass()</h3>
 <p>判断当前节点是否包含某个className</p>
-<h3>addClass()</h3>
+<h3 id="addclass-">addClass()</h3>
 <p>给当前节点增加一个className</p>
-<h3>removeClass()</h3>
+<h3 id="removeclass-">removeClass()</h3>
 <p>从当前节点删除一个className</p>
-<h3>replaceClass()</h3>
+<h3 id="replaceclass-">replaceClass()</h3>
 <p>className的替换</p>
 <pre><code>// 将.container的className类名更改为other-class
 S.one(&#39;.container&#39;).replaceClass(&#39;container&#39;,&#39;other-class&#39;);</code></pre>
-<h3>toggleClass()</h3>
+<h3 id="toggleclass-">toggleClass()</h3>
 <p>如果存在某个classname，则移除，否则就添加上</p>
-<h3>removeAttr()</h3>
+<h3 id="removeattr-">removeAttr()</h3>
 <p>移除节点的属性</p>
-<h3>attr()</h3>
+<h3 id="attr-">attr()</h3>
 <p>读写dom节点的属性</p>
 <pre><code>// 批量设置属性
 node.attr({
@@ -432,9 +432,9 @@ node.attr({
 });
 node.attr(&#39;id&#39;,&#39;myId&#39;);// 设置单个属性
 node.attr(&#39;id&#39;);//=&gt;得到id的值</code></pre>
-<h3>hasAttr()</h3>
+<h3 id="hasattr-">hasAttr()</h3>
 <p>判断节点是否包含某个属性</p>
-<h3>prop()</h3>
+<h3 id="prop-">prop()</h3>
 <p>读写dom节点的属性值，和attr的不同在于，prop()读写的是dom节点自身具有的属性，而attr()的范围更大，但相比于prop()在某些场景下不够精确。比如，我可以通过attr来设置一个自定义属性，prop则不行：</p>
 <pre><code>node.attr(&#39;data-my-key&#39;,&#39;my-value&#39;);// 有效
 node.prop(&#39;data-my-key&#39;,&#39;my-value&#39;);// 无效</code></pre>
@@ -449,16 +449,16 @@ c.prop(&quot;disabled&quot;, false); // ok
 c.prop(&quot;checked&quot;, true); // ok
 c.val(&quot;someValue&quot;); // ok</code></pre>
 <p><a href="http://docs.kissyui.com/1.4/source/raw/demo/dom/selection-start.html">Demo:selectionStart/End 兼容</a></p>
-<h3>hasProp()</h3>
+<h3 id="hasprop-">hasProp()</h3>
 <p>判断节点是否原生具有某个属性</p>
 <p>当你使用该方法时, 请先考虑下是否是自定义 property , 如果是自定义 property 推荐采用 data() 系列方法. 如果是 DOM property , 一般直接判断 prop() 返回值即可</p>
-<h3>val()</h3>
+<h3 id="val-">val()</h3>
 <p>读写元素的value值</p>
 <pre><code>node.val(); // 读
 node.val(&#39;test&#39;);// 写</code></pre>
-<h3>text()</h3>
+<h3 id="text-">text()</h3>
 <p>读写元素的文本值</p>
-<h3>css()</h3>
+<h3 id="css-">css()</h3>
 <p>读写dom节点的样式</p>
 <pre><code>// 写单个样式
 node.css(&#39;position&#39;,&#39;absolute&#39;);
@@ -466,7 +466,7 @@ node.css(&#39;position&#39;,&#39;absolute&#39;);
 node.css({position: &#39;absolute&#39;, top: &#39;10px&#39;, left: &#39;10px&#39;});
 // 读样式
 node.css(&#39;position&#39;);</code></pre>
-<h3>offset()</h3>
+<h3 id="offset-">offset()</h3>
 <p>读写元素的位置</p>
 <pre><code>// 读位置
 var a = node.offset();
@@ -482,13 +482,13 @@ node.offset({
     &#39;top&#39;:100,
     &#39;left&#39;:20
 });</code></pre>
-<h3>scrollIntoView()</h3>
+<h3 id="scrollintoview-">scrollIntoView()</h3>
 <p>将节点显示在视口范围内</p>
 <pre><code>node.scrollIntoView();// 将node显示在视口范围内
 node.scrollIntoView(true);// 强制上端和左端与窗口上端和左端对齐
 //第二个参数：是否允许容器左右滚动以保证元素显示在其可视区域.
 node.scrollIntoView(true,true);</code></pre>
-<h3>parent()</h3>
+<h3 id="parent-">parent()</h3>
 <p>查找祖先节点</p>
 <pre><code>node.parent();//返回父元素
 node.parent(&#39;.container&#39;);//返回满足选择器格式的父级元素，会一直向上找，直到document
@@ -498,46 +498,46 @@ node.parent(function(p){
     // 注意：这里p是原生节点
     return p.className == &#39;myclass&#39;;
 });</code></pre>
-<h3>index()</h3>
+<h3 id="index-">index()</h3>
 <p>查找当前节点在众兄弟节点的索引位置</p>
 <pre><code>node.index();// =&gt; 返回本节点在兄弟节点中的索引位置
 node.index(&#39;selector&#39;);// =&gt; 返回node在匹配选择器节点中的位置</code></pre>
-<h3>next()</h3>
+<h3 id="next-">next()</h3>
 <p>找到下一个同级节点，如果没有下一个同级节点，则返回null</p>
 <pre><code>node.next();//下一个兄弟节点，若无，返回null
 node.next(&#39;.class&#39;);//返回下一个符合选择器的兄弟节点</code></pre>
-<h3>prev()</h3>
+<h3 id="prev-">prev()</h3>
 <p>返回上一个同级兄弟节点，如果没有，返回null，用法参照next()</p>
-<h3>first()</h3>
+<h3 id="first-">first()</h3>
 <p>返回node的第一个子节点</p>
 <pre><code>node.first();//返回node第一个子节点
 nodelist.first();//返回nodelist里第一个node的第一个子节点</code></pre>
-<h3>last()</h3>
+<h3 id="last-">last()</h3>
 <p>返回node最后一个子节点，用法同first()</p>
-<h3>siblings()</h3>
+<h3 id="siblings-">siblings()</h3>
 <p>获得node节点的兄弟节点</p>
 <pre><code>node.siblings();//返回node所有兄弟节点
 node.siblings(&#39;.filter&#39;);//获得符合‘.filter’的兄弟节点</code></pre>
-<h3>children()</h3>
+<h3 id="children-">children()</h3>
 <p>返回node的所有子节点</p>
 <pre><code>node.children();//返回所有子节点
 node.children(&#39;.filter&#39;);返回符合选择器的所有子节点</code></pre>
 <p>注意这里的子节点不包含文本节点</p>
-<h3>contains()</h3>
+<h3 id="contains-">contains()</h3>
 <p>判断node节点是否包含另外一个节点，参数可以是textNode。</p>
 <pre><code>node.contains(&#39;.selector&#39;);// 是否包含选择器匹配的（第一个）节点
 node.contains(otherNode);//传入node参数
 node.contains([node1,node2]);//传入数组
 node.contains(domNode);//传入裸的节点亦可
 node.contains(nodeList);//这时会判断nodeList的第一个元素是否和node具有包含关系</code></pre>
-<h3>html()</h3>
+<h3 id="html-">html()</h3>
 <p>读写元素的innerHTML属性</p>
 <pre><code>node.html();//返回innerHTML
 node.html(&#39;abc&#39;);//设置node的innerHTML
 node.html(&#39;abc&lt;script&gt;alert(22);&lt;/script&gt;&#39;,true);// 执行innerHTML中的脚本</code></pre>
-<h3>remove()</h3>
+<h3 id="remove-">remove()</h3>
 <p>从DOM树中删除当前节点</p>
-<h3>data()</h3>
+<h3 id="data-">data()</h3>
 <p>读写DOM元素的扩展属性(expando)，embed, object, applet 这三个标签不能设置 expando。该函数并不能读取 data-xx 伪属性。</p>
 <pre><code>node.data(&#39;data-size&#39;,&#39;100&#39;);// data-size 的 expando , 值为 100;
 node.data(&#39;data-size&#39;);//100</code></pre>
@@ -551,13 +551,13 @@ console.log(S.one(&#39;button&#39;).data(&#39;data-x&#39;));</code></pre>
 S.one(&#39;button&#39;).data(&#39;data-x&#39;,&#39;asd&#39;);
 // 通过data 是可以读出来的，但无法通过浏览器工具查看到button上有这个属性data-x
 console.log(S.one(&#39;button&#39;).data(&#39;data-x&#39;));</code></pre>
-<h3>removeData()</h3>
+<h3 id="removedata-">removeData()</h3>
 <p>删除某个扩展属性</p>
-<h3>hasData()</h3>
+<h3 id="hasdata-">hasData()</h3>
 <p>判断是否具有某个属性，hasData() 可以判断一个元素是否经过 data() 设置过扩展属性，而如果直接调用 data( selector ) 那么当元素没有设置过扩展属性时，会在元素上关联一个空存储对象，并返回它.</p>
-<h3>unselectable()</h3>
+<h3 id="unselectable-">unselectable()</h3>
 <p>让node节点变为不可选择的节点。在 ie 下会引发该元素鼠标点击获取不到焦点, 在 firefox 下要得到同样的效果则需要阻止 mousedown 事件.</p>
-<h3>innerWidth()</h3>
+<h3 id="innerwidth-">innerWidth()</h3>
 <p>获取node的innerWidth，包含padding</p>
 <pre><code>&lt;div style=&quot;width: 100px;&quot;&gt;
     &lt;div id=&quot;test&quot; style=&quot;width: 80%; height: 20px; padding: 10px;&quot;&gt;&lt;/div&gt;
@@ -569,9 +569,9 @@ console.log(S.one(&#39;button&#39;).data(&#39;data-x&#39;));</code></pre>
     DOM.innerWidth(elem); // 返回 100
     DOM.innerHeight(elem); // 返回 40
 &lt;/script&gt;</code></pre>
-<h3>innerHeight()</h3>
+<h3 id="innerheight-">innerHeight()</h3>
 <p>获取node的innerHeight，用法同innerWidth</p>
-<h3>outerWidth()</h3>
+<h3 id="outerwidth-">outerWidth()</h3>
 <p>返回node的outerWidth，注意: 该值除了包含元素本身宽度和 padding 外, 还包含 border或margin .</p>
 <pre><code>&lt;div style=&quot;width: 100px;&quot;&gt;
     &lt;div id=&quot;test&quot; style=&quot;width: 80%; 
@@ -589,9 +589,9 @@ console.log(S.one(&#39;button&#39;).data(&#39;data-x&#39;));</code></pre>
     DOM.outerWidth(elem, true); // 返回 116
     DOM.outerHeight(elem, true); // 返回 56
 &lt;/script&gt;</code></pre>
-<h3>outerHeight()</h3>
+<h3 id="outerheight-">outerHeight()</h3>
 <p>返回node的outerHeight，用法同上</p>
-<h3>on()</h3>
+<h3 id="on-">on()</h3>
 <p>on 方法是给文档添加行为的主要方式. 所有的事件类型, 例如 focus , mouseover , resize 都是有效的事件类型。window 的 beforeunload 和 error 事件使用了不标准的方式, 该方法不支持, 请直接在 window 对象上注册事件处理器.</p>
 <p>当一个节点的某个事件出发时, 绑定该事件的所有处理器都会被调用.如果有多个事件处理器, 则他们的执行顺序和绑定的顺序保持一致, 当所有的事件处理器执行完毕后, 事件才继续向上传播.</p>
 <pre><code>S.one(&#39;#foo&#39;).on(&#39;click&#39;,function(){
@@ -599,9 +599,9 @@ console.log(S.one(&#39;button&#39;).data(&#39;data-x&#39;));</code></pre>
     alert(&#39;clicked : &#39;+this.id);
 });</code></pre>
 <p>上面的代码作用是：为 id 为 foo 的元素绑定 click 事件.当用户在该元素内部点击时, 则 alert 会弹出来.</p>
-<h3>detach()</h3>
+<h3 id="detach-">detach()</h3>
 <p>接触绑定事件，用法参照<a href="event.html">Event</a></p>
-<h3>fire()</h3>
+<h3 id="fire-">fire()</h3>
 <p>模拟事件发生。用 Event.on 绑定的事件处理器可以被用户触发的原生事件调用. 但是这些事件处理器也可以使用 fire 手动调用. 调用 fire() 和用户触发导致的处理器调用调用是一样的顺序.<a href="http://docs.kissyui.com/1.4/source/raw/api/event/fire.html">参照这个demo</a></p>
 <pre><code>node.on(&#39;click&#39;,function(){
     // 其中this是原生节点
