@@ -116,7 +116,8 @@
 <div class="section" id="id3">
 <h2>目录结构<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>举例：目前存在 comment 模块需要在多个应用间共享使用.那么代码可以放置在以下目录结构</p>
-<div class="highlight-javascript"><pre>/assets/common-lib/comment/1.0/index.js</pre>
+<div class="highlight-javascript"><div class="highlight"><pre>/assets/common-lib/comment/1.0/index.js
+</pre></div>
 </div>
 <p>其中</p>
 <ol class="arabic simple">
@@ -124,7 +125,8 @@
 <li>1.0 表示版本号，大的升级可以直接替换改文件夹，小的升级可直接覆盖</li>
 </ol>
 <p>同时 common-lib 本身也有自己的一个 js 处理一些全局事情：</p>
-<div class="highlight-javascript"><pre>/assets/common-lib/config.js</pre>
+<div class="highlight-javascript"><div class="highlight"><pre>/assets/common-lib/config.js
+</pre></div>
 </div>
 </div>
 <div class="section" id="id4">
@@ -142,7 +144,8 @@
 <div class="section" id="id5">
 <h2>时间戳配置<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>由于存在小升级更新问题，如果组件升级后需要调用者下次调用时立即更新就需要一个时间戳机制，我们可以利用另一个随时更新的 js 来控制时间戳：</p>
-<div class="highlight-javascript"><pre>/assets/common-lib/timestamp.js</pre>
+<div class="highlight-javascript"><div class="highlight"><pre>/assets/common-lib/timestamp.js
+</pre></div>
 </div>
 <p>其中只有一个全局变量定义：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nb">window</span><span class="p">.</span><span class="nx">COMMON_LIB_STAMP</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
@@ -253,7 +256,8 @@
 </pre></div>
 </div>
 <p>最终会产生自动 combo 的请求：</p>
-<div class="highlight-javascript"><pre>/assets/common-lib/??comment/common/1.0/index,comment/1.0/index</pre>
+<div class="highlight-javascript"><div class="highlight"><pre>/assets/common-lib/??comment/common/1.0/index,comment/1.0/index
+</pre></div>
 </div>
 </div>
 </div>

@@ -255,8 +255,9 @@ KISSY 1.3 的模块化机制与目前的 AMD 规范比较类似，并根据淘�
 </pre></div>
 </div>
 <p>最后修改 index.html 引用 seed-min.js，打开网络面板后会发现现在只产生两个链接请求:</p>
-<div class="highlight-python"><pre>http://a.tbcdn.cn/s/kissy/??dom/base,json/native.js
-http://localhost/myapp/main-min.js</pre>
+<div class="highlight-python"><div class="highlight"><pre>http://a.tbcdn.cn/s/kissy/??dom/base,json/native.js
+http://localhost/myapp/main-min.js
+</pre></div>
 </div>
 <p>注：在 ie&lt;9 等非标准浏览器下第一个链接地址会加上 dom/ie json/json2 等脚本地址</p>
 </div>
@@ -292,8 +293,9 @@ http://localhost/myapp/main-min.js</pre>
 </pre></div>
 </div>
 <p>访问 index.html，打开网络面板会发现同样只产生两个链接请求:</p>
-<div class="highlight-python"><pre>http://a.tbcdn.cn/s/kissy/??dom/base,json/native.js
-http://localhost/myapp/??a.js,main.js</pre>
+<div class="highlight-python"><div class="highlight"><pre>http://a.tbcdn.cn/s/kissy/??dom/base,json/native.js
+http://localhost/myapp/??a.js,main.js
+</pre></div>
 </div>
 </div>
 </div>
@@ -484,8 +486,9 @@ KISSY 采用的单元测试框架为 jasmine ，测试代码举例如下：</p>
 </pre></div>
 </div>
 <p>在线上会发出两个 combo 请求：一个为店铺页面需要的应用模块集，一个为 KISSY 自己的模块集，例如:</p>
-<div class="highlight-python"><pre>http://g.tbcdn.cn/kissy/k/1.3.2/??dom/base.js,event/base.js,overlay.js...
-http://a.tbcdn.cn/p/shop/??search.js,category.js...</pre>
+<div class="highlight-python"><div class="highlight"><pre>http://g.tbcdn.cn/kissy/k/1.3.2/??dom/base.js,event/base.js,overlay.js...
+http://a.tbcdn.cn/p/shop/??search.js,category.js...
+</pre></div>
 </div>
 </div>
 <div class="section" id="id17">
@@ -497,9 +500,10 @@ http://a.tbcdn.cn/p/shop/??search.js,category.js...</pre>
 进而 KISSY 会对过长的 combo url 拆分成多个短的 url，反而适得其反。
 因此这里会把宝贝详情页自身的模块打包合并，将自己模块的主模块和依赖模块都合并到主模块中去，
 最终线上会发出三个请求，其中两个为 combo 请求，一个为非 combo 请求，例如:</p>
-<div class="highlight-python"><pre>http://g.tbcdn.cn/kissy/k/1.3.2/??dom/base.js,event/base.js,overlay.js...
+<div class="highlight-python"><div class="highlight"><pre>http://g.tbcdn.cn/kissy/k/1.3.2/??dom/base.js,event/base.js,overlay.js...
 http://a.tbcdn.cn/p/shop/??search.js,category.js...
-http://a.tbcdn.cn/p/detail/main.js</pre>
+http://a.tbcdn.cn/p/detail/main.js
+</pre></div>
 </div>
 </div>
 </div>

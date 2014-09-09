@@ -26,7 +26,7 @@ JSONP 是最常用的跨域请求方式. 关于跨域可参见 [2]_ .
                 margin: 8px;
             }
             .loading {
-                background: transparent url(/1.3/source/_static/loading.gif) no-repeat;
+                background: transparent url(http://img03.taobaocdn.com/tps/i3/T1b1m3XkVpXXXXXXXX-32-32.gif) no-repeat;
                 width: 100px;
                 height: 100px;
                 margin: 20px;
@@ -37,7 +37,7 @@ JSONP 是最常用的跨域请求方式. 关于跨域可参见 [2]_ .
 
         <script>
             KISSY.use('node,ajax',function (S,Node,IO) {
-                var API = 'http://api.flickr.com/services/rest/',
+                var API = 'https://api.flickr.com/services/rest/',
                     params = {
                         'method': 'flickr.favorites.getPublicList',
                         'api_key': '5d93c2e473e39e9307e86d4a01381266',
@@ -53,25 +53,27 @@ JSONP 是最常用的跨域请求方式. 关于跨域可参见 [2]_ .
                     Node.one('#fetch-btn')[0].disabled=true;
 
                     new IO({
-                        url: API,
-                        data: params,
-                        dataType:'jsonp',
-                        'jsonp':'jsoncallback',
-                        success:function(data){
-                            var html = 'Fetch photo failed, pls try again!';
-                            if (data.stat === 'ok') {
-                                html = '';
-                                S.each(data.photos.photo, function(item, i){
-                                    html += '<img src="http://farm' + item.farm + '.static.flickr.com/'
-                                            + item.server + '/' + item.id + '_' + item.secret + '_t.jpg" />';
-                                });
-                            }
+                         url: API,
+                         data: params,
+                         dataType:'jsonp',
+                         'jsonp':'jsoncallback',
+                         timeout : 5,
+                         success:function(data){
+                             var html = 'Fetch photo failed, pls try again!';
+                             if (data.stat === 'ok') {
+                                 html = '';
+                                 S.each(data.photos.photo, function(item, i){
+                                     html += '<img src="http://farm' + item.farm + '.static.flickr.com/'
+                                             + item.server + '/' + item.id + '_' + item.secret + '_t.jpg" />';
+                                 });
+                             }
+                             photoList.removeClass('loading').html(html);
+                         },
+                         error : function(){
+                            var html = 'Fetch photo failed. Maybe you just can not reach flickr.com,check your network and try again!';
                             photoList.removeClass('loading').html(html);
-                        },
-                        complete:function(){
-                            Node.one('#fetch-btn')[0].disabled=false;
-                        }
-                    });
+                         }
+                     });
                 });
             });
         </script>
@@ -99,25 +101,27 @@ JSONP 是最常用的跨域请求方式. 关于跨域可参见 [2]_ .
                     Node.one('#fetch-btn')[0].disabled=true;
 
                     new IO({
-                        url: API,
-                        data: params,
-                        dataType:'jsonp',
-                        'jsonp':'jsoncallback',
-                        success:function(data){
-                            var html = 'Fetch photo failed, pls try again!';
-                            if (data.stat === 'ok') {
-                                html = '';
-                                S.each(data.photos.photo, function(item, i){
-                                    html += '<img src="http://farm' + item.farm + '.static.flickr.com/'
-                                            + item.server + '/' + item.id + '_' + item.secret + '_t.jpg" />';
-                                });
-                            }
+                         url: API,
+                         data: params,
+                         dataType:'jsonp',
+                         'jsonp':'jsoncallback',
+                         timeout : 5,
+                         success:function(data){
+                             var html = 'Fetch photo failed, pls try again!';
+                             if (data.stat === 'ok') {
+                                 html = '';
+                                 S.each(data.photos.photo, function(item, i){
+                                     html += '<img src="http://farm' + item.farm + '.static.flickr.com/'
+                                             + item.server + '/' + item.id + '_' + item.secret + '_t.jpg" />';
+                                 });
+                             }
+                             photoList.removeClass('loading').html(html);
+                         },
+                         error : function(){
+                            var html = 'Fetch photo failed. Maybe you just can not reach flickr.com,check your network and try again!';
                             photoList.removeClass('loading').html(html);
-                        },
-                        complete:function(){
-                            Node.one('#fetch-btn')[0].disabled=false;
-                        }
-                    });
+                         }
+                     });
                 });
             });
 
