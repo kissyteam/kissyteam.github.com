@@ -69,7 +69,7 @@
     <article>
       
 
-	<h1 id="kissy-">KISSY 中的面向对象</h1>
+	<h1>KISSY 中的面向对象</h1>
 <p>JavaScript 语言自成体系，自有一套代码重用的模式，这些常见的代码重用模式可以在《Javascript 设计模式》、《JavaScript 编程模式》中找到理论基础。KISSY 即是实践了这些典型的代码重用模式，并作为 KISSY 代码库的面向对象的核心，向高层代码提供语言的完备性支撑。</p>
 <p>这些理论基础大都来自<a href="https://speakerdeck.com/lijing00333/javascript-patterns">&quot;javascript 编程模式&quot;</a>一书：</p>
 <p><img src="http://gtms01.alicdn.com/tps/i1/T1mumMFdBdXXXMOITY-406-251.png" alt=""></p>
@@ -82,7 +82,7 @@
 </li>
 <li>最佳实践：KISSY 对于面向UI、模块生命周期的封装，包括组件模式、插件模式等</li>
 </ul>
-<h2 id="-">概要</h2>
+<h2>概要</h2>
 <p>JavaScript 语言没有原生类的概念，对象之间共享方法的关键渠道是通过原型。而具备某一类原型方法的&#39;模板对象&#39;，通常被称作基类，子类除了调用基类的构造器（手动调用）外，最重要的就是要拥有基类的行为能力（继承基类原型上的方法）。这个过程中涉及到五种典型的行为：</p>
 <ul>
 <li>混合 mix</li>
@@ -149,7 +149,7 @@
 
 <p>以 kissy 的 API 为例，merge 和 augment 都是基于 mix 方法，本质上利用了 JS 的动态特性，在运行时为对象增减成员；</p>
 <p>extend 方法的实现比较典型，总体思路是子构造器的原型对象指向父构造器的一个实例，具体有一些细节问题要处理。类继承体系中继承的是对象的模板（即类），JS 没有对于对象的更高一层的抽象数据结构，即使有 constructor 这种东西，它本身也只是 function 对象而已。</p>
-<h3 id="mix">mix</h3>
+<h3>mix</h3>
 <p><code>mix (receiver , supplier [ , overwrite = true , whitelist , deep ]) =&gt; Object</code></p>
 <p>将 supplier 对象的成员复制到 receiver 对象上。参数：</p>
 <ul>
@@ -196,7 +196,7 @@ S.log(object1); // =&gt; { apple: 0, banana: { weight: 52, price: 200 }, cherry:
 <p>虽然 Yahoo 将这种方式学院式地命名为“augmentObject”并且声称使用它的合适场合是在“扩充一个‘静态类’”时。所谓“静态类”这种说法，只能说是中静态类语言的遗毒太深，什么概念都要一一映射至其上。事实上，“静态类”对应 JS 中的概念是“非构造器对象”，比如字面量对象。而之所以 Yahoo 强调“静态类”，那是因为“静态类”和构造器之间间有一个显区别，前者没有 prototype 属性。</p>
 <p>补充一点，“静态类”也可以是构造器，只不过它的 prototype 没有多大意义（比如指向 {}）。</p>
 <p>事实上，这个方法是 augment 和 merge 的基础。可以看到，JS 中直接对对象进行各种操作其实非常方便，类什么的都是浮云。</p>
-<h3 id="merge">merge</h3>
+<h3>merge</h3>
 <p><code>merge (s1,s2[,...]) =&gt; Object</code></p>
 <p>将多个对象的成员合并到一个新对象上. 参数中, 后面的对象成员会覆盖前面的。如果用mix混合对象时，receiver 会被改变，如果想要保留原始的 receiver ，可以使用 KISSY.merge()</p>
 <pre><code>var object=S.merge(object1,object2);</code></pre>
@@ -211,7 +211,7 @@ S.log(o.a); // =&gt; &#39;a&#39;
 S.log(o.b); // =&gt; &#39;b2&#39;
 S.log(o.c); // =&gt; &#39;c&#39;</code></pre>
 <p>简单情况下 merge 方法常用来合并配置信息. 推荐使用 Base 处理属性配置.</p>
-<h3 id="extend">extend</h3>
+<h3>extend</h3>
 <p><code>extend (r,s[,px,sx]) =&gt; Function</code></p>
 <p>让函数对象 r 继承函数对象 s，参数</p>
 <ul>
@@ -240,7 +240,7 @@ new Chicken(&#39;kissy&#39;).fly();</code></pre>
 <p>S.extend 像 Node.js 里的 util.inherits，就是用于声明两个类的继承关系，与 util.inherits 相比，它更为贴心，还会维护 superclass 和 superclass.constructor。</p>
 <p>注意构造函数体内，通过 Chicken 类上的 superclass 属性，子类不再需要显式写明父类的名称， 只需要直接调 <code>SubClass.superclass.constructor.call(this, attrs)</code> 即可。</p>
 <p>而在方法内，也可以通过 SubClass.superclass 拿到父类上的方法，类似其他编程语言中的 super 之类。</p>
-<h3 id="augment">augment</h3>
+<h3>augment</h3>
 <p><code>augment(r, s1 [, s2 , ...], ov = true, wl) =&gt; Function</code></p>
 <p>将 s1,s2.... 的 <code>prototype</code> 属性的成员复制到 <code>r.prototype</code> 上。这时被复制的成员来自于一个Fucntion对象，这个对象一般被称为掺元类（mixin class）。比如 KISSY 里的 CustemEvent 就是一个掺元类。掺元类只是被扩充用的。参数说明：</p>
 <ul>
@@ -264,7 +264,7 @@ new Dog(&#39;Jack&#39;).shout(); // =&gt; I am Dog Jack.
 new Pig(&#39;Mary&#39;).shout(); // =&gt; I am Pig Mary.</code></pre>
 <p>augment 方法在 KISSY 里非常基础非常重要. 传统 OO 语言里, 可以通过继承或接口来实现共性方法. 在 JavaScript 里, 通过 mixin 特性, 一切变得更简单. augment 是动态语言 mixin 特性的体现, 灵活运用, 能让代码非常优雅简洁.</p>
 <p>YUI 中的叫法很长，augmentProto 只扩充 prototype 中的属性，因此扩充的对象必须是“类”。扩充者和被扩充者之间没有半分钱关系，降低了 extend 体系中的复杂耦合，这和“组合优于继承”的 OO 原则是一致的。</p>
-<h3 id="clone">clone</h3>
+<h3>clone</h3>
 <p>对象的值的拷贝，绕过引用的拷贝。</p>
 <p>参照 <a href="lang.html#clone">lang</a>。</p>
 <hr>

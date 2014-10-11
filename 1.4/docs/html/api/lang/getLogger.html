@@ -199,7 +199,7 @@
 <p class="first admonition-title">Note</p>
 <p>可以在配置中设置logger的级别，以及是否显示。
 当一个 logger 同时被设置 includes 和 excludes 的时候，includes 优先</p>
-<div class="last highlight-javascript"><div class="highlight"><pre>S.config(&#39;logger&#39;, {
+<div class="last highlight-javascript"><pre>S.config('logger', {
     includes: [
         {
             logger: /^xx\//
@@ -208,11 +208,10 @@
     excludes: [
         {
             logger: /^xx\//， //以xx/开头的不显示
-            maxLevel: &#39;info&#39; //不显示 info 及 info 以下的 log
+            maxLevel: 'info' //不显示 info 及 info 以下的 log
         }
     ]
-});
-</pre></div>
+});</pre>
 </div>
 </div>
 </div>

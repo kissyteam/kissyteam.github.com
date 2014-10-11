@@ -75,7 +75,7 @@ h3 {
 }
 </style>
 
-<h1 id="uri">Uri</h1>
+<h1>Uri</h1>
 <p>uri 解析模块，用于处理URL。可以直接通过KISSY.Uri调用：</p>
 <pre><code>var uri = new KISSY.Uri(&#39;http://url&#39;);
 uri.do_something();// uri 执行相关的方法</code></pre>
@@ -83,66 +83,66 @@ uri.do_something();// uri 执行相关的方法</code></pre>
 <pre><code>KISSY.use(&#39;uri&#39;,function(S,Uri){
     // 使用 Uri
 });</code></pre>
-<h3 id="clone-">clone()，克隆一个实例</h3>
+<h3>clone()，克隆一个实例</h3>
 <p><code>clone() =&gt; Uri</code>:：返回一个当前 uri 实例的克隆对象</p>
 <pre><code>var one = new Uri(&#39;http://www.g.cn/x&#39;);
 var two = one.clone() // 克隆一个新的Uri实例</code></pre>
-<h3 id="resolve-">resolve()</h3>
+<h3>resolve()</h3>
 <p><code>resolve (other) =&gt; Uri</code>：合并解析出一个完整的URL，返回新的 uri 实例</p>
 <pre><code>var one = new Uri(&#39;http://www.g.cn/x&#39;);
 one.resolve(&#39;foo&#39;).toString() // =&gt; http://www.g.cn/foo
 one.resolve(new Uri(&#39;?foo&#39;)).toString() // =&gt; http://www.g.cn/x?foo</code></pre>
-<h3 id="getscheme-">getScheme() 得到协议部分</h3>
+<h3>getScheme() 得到协议部分</h3>
 <p>用法：<code>getScheme () =&gt; String</code></p>
 <pre><code>new Uri(&#39;http://www.g.cn/x&#39;).getScheme() // =&gt; http</code></pre>
-<h3 id="setscheme-">setScheme() 设置协议部分</h3>
+<h3>setScheme() 设置协议部分</h3>
 <p>设置 uri 实例的 scheme 部分</p>
 <pre><code>new Uri(&#39;http://www.g.cn/x&#39;).setScheme(&#39;ftp&#39;).getScheme() // =&gt; ftp</code></pre>
-<h3 id="gethostname-hostname">getHostname()  得到hostname</h3>
+<h3>getHostname()  得到hostname</h3>
 <pre><code>new Uri(&#39;http://www.g.cn:8888/x&#39;).getHostname() // =&gt; www.g.cn</code></pre>
-<h3 id="sethostname-hostname">setHostname()  设置hostname</h3>
+<h3>setHostname()  设置hostname</h3>
 <pre><code>new Uri(&#39;http://www.g.cn:8888/x&#39;).setHostname(&#39;www.google.com&#39;).toString()
 // =&gt; http://www.google.com:8888/x</code></pre>
-<h3 id="getuserinfo-">getUserInfo()  得到用户信息</h3>
+<h3>getUserInfo()  得到用户信息</h3>
 <p>获取当前 uri 实例的 user info</p>
 <pre><code>new Uri(&#39;http://my:pass@www.g.cn:8888/x&#39;).getUserInfo() // =&gt; &#39;my:pass&#39;</code></pre>
-<h3 id="setuserinfo-">setUserInfo()  设置用户信息</h3>
+<h3>setUserInfo()  设置用户信息</h3>
 <p>设置当前 uri 实例的 user info</p>
 <pre><code>new Uri(&#39;http://my:pass@www.g.cn:8888/x&#39;).setUserInfo(&#39;m:p&#39;).getUserInfo()
 // =&gt; &#39;m:p&#39;</code></pre>
-<h3 id="getport-uri-">getPort() 获取当前 uri 实例的端口值</h3>
+<h3>getPort() 获取当前 uri 实例的端口值</h3>
 <pre><code>new Uri(&#39;http://my:pass@www.g.cn:8888/x&#39;).getPort()
 // =&gt; &#39;8888&#39;</code></pre>
-<h3 id="setport-uri-">setPort()  设置当前 uri 实例的端口值</h3>
+<h3>setPort()  设置当前 uri 实例的端口值</h3>
 <pre><code>new Uri(&#39;http://my:pass@www.g.cn:8888/x&#39;).setPort(&#39;88&#39;).toString()
 // =&gt; http://my:pass@www.g.cn:88/x</code></pre>
-<h3 id="getpath-uri-">getPath()  获取当前 uri 实例的路径</h3>
+<h3>getPath()  获取当前 uri 实例的路径</h3>
 <pre><code>new Uri(&#39;http://www.g.cn/x&#39;).getPath()
 // =&gt; /x</code></pre>
-<h3 id="setpath-uri-">setPath() 设置当前 uri 实例的路径</h3>
+<h3>setPath() 设置当前 uri 实例的路径</h3>
 <pre><code>new Uri(&#39;http://www.g.cn/x&#39;).setPath(&#39;/y&#39;).toString()
 // =&gt; http://www.g.cn/y</code></pre>
-<h3 id="getquery-uri-">getQuery() 获取当前 uri 实例的查询参数实例</h3>
+<h3>getQuery() 获取当前 uri 实例的查询参数实例</h3>
 <pre><code>new Uri(&#39;http://www.g.cn/x?x=1&#39;).getQuery().get(&#39;x&#39;)
 // =&gt; 1</code></pre>
-<h3 id="setquery-uri-">setQuery()  设置当前 uri 实例的查询参数</h3>
+<h3>setQuery()  设置当前 uri 实例的查询参数</h3>
 <p>参数：query ({String|Uri.Query}) –     字符串或者Uri.Query实例</p>
 <pre><code>new Uri(&#39;http://www.g.cn/x?x=1&#39;).setQuery(&#39;y=1&#39;).toString();
 // =&gt; http://www.g.cn/x?y=1
 
 new Uri(&#39;http://www.g.cn/x?x=1&#39;).setQuery(new Uri.Query(&#39;y=1&#39;)).toString();
 // =&gt; http://www.g.cn/x?y=1</code></pre>
-<h3 id="getfragment-uri-hash">getFragment() 获取当前 uri 实例的 hash</h3>
+<h3>getFragment() 获取当前 uri 实例的 hash</h3>
 <pre><code>new Uri(&#39;http://www.g.cn/x?x=1#y=2&#39;).getFragment() // =&gt; y=2</code></pre>
-<h3 id="setfragment-uri-hash">setFragment() 设置当前 uri 实例的 hash</h3>
+<h3>setFragment() 设置当前 uri 实例的 hash</h3>
 <p>参数：hash ({String}) –  hash值</p>
 <pre><code>new Uri(&#39;http://www.g.cn/x?x=1#y=2&#39;).setFragment(&#39;x=3&#39;).toString()
 // =&gt; http://www.g.cn/x?x=1#x=3</code></pre>
-<h3 id="issameoriginas-">isSameOriginAs()  验证同源</h3>
+<h3>isSameOriginAs()  验证同源</h3>
 <p>验证当前 uri 实例和 other 是否是同源关系(hostname port scheme 相同)</p>
 <pre><code>new Uri(&#39;http://www.g.cn/x?x=1#y=2&#39;)
 .isSameOriginAs(new Uri(&#39;http://www.g.cn:88/x?x=1#y=2&#39;)) // =&gt; false</code></pre>
-<h3 id="tostring-uri-hash">toString()  序列化当前 uri 实例的 hash</h3>
+<h3>toString()  序列化当前 uri 实例的 hash</h3>
 <p>参数：arr ({Boolean}) – 同 param() 同名参数</p>
 <pre><code>new Uri(&#39;http://www.g.cn/x?x=1&amp;x=2&#39;).toString(false)
 // =&gt; &#39;http://www.g.cn/x?x=1&amp;x=2&#39;
