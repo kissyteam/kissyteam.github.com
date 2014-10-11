@@ -111,15 +111,16 @@
 <blockquote>
 <div><iframe width="100%" height="700" class="iframe-demo" src="/1.3/source/raw/demo/waterfall/demo2.html"></iframe><p>大体类似于前一个例子. 但需要添加:</p>
 <p><strong>模板代码</strong></p>
-<div class="highlight-html"><pre>&lt;script type="tpl" id="tpl"&gt;
-    &lt;div class="pin ks-waterfall" data-id="{id}"&gt;
-        &lt;a href="#" class="image"&gt;
-            &lt;img height="{height}" style='height:{height}px' alt="{title}"
-            src="http://farm{farm}.static.flickr.com/{server}/{id}_{secret}_m.jpg" /&gt;
+<div class="highlight-html"><div class="highlight"><pre>&lt;script type=&quot;tpl&quot; id=&quot;tpl&quot;&gt;
+    &lt;div class=&quot;pin ks-waterfall&quot; data-id=&quot;{id}&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;image&quot;&gt;
+            &lt;img height=&quot;{height}&quot; style=&#39;height:{height}px&#39; alt=&quot;{title}&quot;
+            src=&quot;http://farm{farm}.static.flickr.com/{server}/{id}_{secret}_m.jpg&quot; /&gt;
         &lt;/a&gt;
-        &lt;p class="description"&gt;{title}&lt;/p&gt;
+        &lt;p class=&quot;description&quot;&gt;{title}&lt;/p&gt;
     &lt;/div&gt;
-&lt;/script&gt;</pre>
+&lt;/script&gt;
+</pre></div>
 </div>
 <p><strong>使用脚本生成瀑布</strong></p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">KISSY</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;waterfall,ajax,node,button&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">S</span><span class="p">,</span> <span class="nx">Waterfall</span><span class="p">,</span> <span class="nx">IO</span><span class="p">,</span>  <span class="nx">Node</span><span class="p">,</span> <span class="nx">Button</span><span class="p">)</span> <span class="p">{</span>

@@ -11,7 +11,7 @@
 <div class="demo"><button id="fetch-btn" autocomplete="off" type="button" class="btn btn-default">Fetch Photo</button><div id="photo-list"></div></div>
 <script>
 	 KISSY.use('node,io',function (S,Node,IO) {
-		 var API = 'http://api.flickr.com/services/rest/',
+		 var API = 'https://api.flickr.com/services/rest/',
 			 params = {
 				 'method': 'flickr.favorites.getPublicList',
 				 'api_key': '5d93c2e473e39e9307e86d4a01381266',
@@ -30,6 +30,7 @@
 				 data: params,
 				 dataType:'jsonp',
 				 'jsonp':'jsoncallback',
+				 timeout : 5,
 				 success:function(data){
 					 var html = 'Fetch photo failed, pls try again!';
 					 if (data.stat === 'ok') {
@@ -41,8 +42,9 @@
 					 }
 					 photoList.removeClass('loading').html(html);
 				 },
-				 complete:function(){
-					 Node.one('#fetch-btn')[0].disabled=false;
+				 error : function(){
+				 	var html = 'Fetch photo failed. Maybe you just can not reach flickr.com,check your network and try again!';
+				 	photoList.removeClass('loading').html(html);
 				 }
 			 });
 		 });
@@ -693,7 +695,7 @@ padding: 4px;
 margin: 8px;
 }
 .loading {
-background: transparent url(http://docs.kissyui.com/1.4/source/_static/loading.gif) no-repeat;
+background: transparent url(http://img03.taobaocdn.com/tps/i3/T1b1m3XkVpXXXXXXXX-32-32.gif) no-repeat;
 width: 100px;
 height: 100px;
 margin: 20px;
