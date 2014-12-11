@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>仿淘宝首页顶部导航菜单</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+<style type="text/css">
+    #container{
+        height: 35px;
+        padding: 0 30px;
+        background: #f5f5f5;
+    }
+    a{
+        font-size: 12px;
+        color: #6c6c6c;
+    }
+    .tb-nav-menu{
+        width: 260px;
+        background: #f5f5f5;
+        color: #3c3c3c;
+    }
+    .tb-nav-menuitem{
+        width : 80px;
+        height: 35px;
+        padding-left: 5px;
+        line-height: 35px;
+        text-align: left;
+        float: left;
+    }
+    .tb-nav-menuitem-hover{
+        background: #fff;
+        cursor: pointer;;
+    }
+    .tb-nav-menuitem-hover a{
+        color: #f40;
+    }
+    .tb-nav-submenu{
+        position: relative;
+        z-index: 9999;
+    }
+    .tb-nav-menu .tb-nav-submenu .tb-nav-submenu-arrow {
+        position: absolute;
+        top: 46%;
+        top: 40%\9;
+        width: 0;
+        height: 0;
+        border-width: 4px 4px 0 4px;
+        border-style: solid dashed dashed dashed;
+        border-color: #666 transparent transparent transparent;
+        font-size: 0;
+        line-height: 0;
+        -webkit-transform-style: preserve-3d;
+        -webkit-transition: -webkit-transform 0.2s ease-in;
+        -moz-transition: -moz-transform 0.2s ease-in;
+        -o-transition: -o-transform 0.2s ease-in;
+        transition: transform 0.2s ease-in;
+    }
+    .tb-nav-menu .tb-nav-submenu-hover .tb-nav-submenu-arrow {
+        -moz-transform: rotate(180deg);
+        -moz-transform-origin: 50% 30%;
+        -webkit-transform: rotate(180deg);
+        -webkit-transform-origin: 50% 30%;
+        -o-transform: rotate(180deg);
+        -o-transform-origin: 50% 50%;
+        transform: rotate(180deg);
+        transform-origin: 50% 30%;
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation = 2);
+    }
+    .tb-nav-submenu.mytb .tb-nav-submenu-arrow{
+        right: 17px;
+    }
+    .tb-nav-submenu.favorite .tb-nav-submenu-arrow{
+        right: 29px;
+    }
+    .tb-nav-popupmenu{
+        width: 85px;
+        padding: 5px 0;
+        position: absolute;
+        background: #fff;
+        border: 1px solid #f5f5f5;
+        border-top: 0;
+        font-size: 12px;
+    }
+    .tb-nav-popupmenu .tb-nav-menuitem-hover{
+        background: #f5f5f5;
+    }
+    .tb-nav-popupmenu-hidden{
+        visibility: hidden;
+    }
+    .tb-nav-popupmenu .tb-nav-menuitem{
+        height: 28px;
+        line-height: 28px;
+    }
+    .tb-nav-popupmenu a{
+        color: #6c6c6c;
+    }
+</style>
+</head>
+<body>
+<h1>仿淘宝首页顶部导航菜单</h1>
+<div id="container" style="margin-left:50px;">
+    
+</div>
+<script type="text/javascript">
+    require(['menu'], function(Menu){
+        var tbNavMenu = new Menu({
+            prefixCls : 'tb-nav-',
+            render : '#container',
+            children : [
+                {
+                    xclass : 'submenu',
+                    prefixCls : 'tb-nav-',
+                    elCls : 'mytb',
+                    content : '<a href="#">我的淘宝</a>',
+                    menu : {
+                        xclass : 'popupmenu',
+                        autoHideOnMouseLeave : true,
+                        align : {
+                            points : ['bl','tl']
+                        },
+                        prefixCls : 'tb-nav-',
+                        children : [
+                            {
+                                xclass : 'menuitem',
+                                prefixCls : 'tb-nav-',
+                                content : '<a href="#">已买到的宝贝</a>'
+                            },
+                            {
+                                xclass : 'menuitem',
+                                prefixCls : 'tb-nav-',
+                                content : '<a href="#">我的足迹</a>'
+                            },
+                            {
+                                xclass : 'menuitem',
+                                prefixCls : 'tb-nav-',
+                                content : '<a href="#">我的上新</a>'
+                            },
+                            {
+                                xclass : 'menuitem',
+                                prefixCls : 'tb-nav-',
+                                content : '<a href="#">爱逛街</a>'
+                            },
+                            {
+                                xclass : 'menuitem',
+                                prefixCls : 'tb-nav-',
+                                content : '<a href="#">淘宝达人</a>'
+                            },
+                            {
+                                xclass : 'menuitem',
+                                prefixCls : 'tb-nav-',
+                                content : '<a href="#">新欢</a>'
+                            },
+                        ]
+                    }
+                },
+                {
+                    xclass : 'submenu',
+                    prefixCls : 'tb-nav-',
+                    elCls : 'favorite',
+                    content : '<a href="#">收藏夹</a>',
+                    menu : {
+                        xclass : 'popupmenu',
+                        autoHideOnMouseLeave : true,
+                        align : {
+                            points : ['bl','tl']
+                        },
+                        prefixCls : 'tb-nav-',
+                        children : [
+                            {
+                                xclass : 'menuitem',
+                                prefixCls : 'tb-nav-',
+                                content : '<a href="#">收藏的宝贝</a>'
+                            },
+                            {
+                                xclass : 'menuitem',
+                                prefixCls : 'tb-nav-',
+                                content : '<a href="#">收藏的店铺</a>'
+                            },
+                        ]
+                    }
+                },
+                {
+                    xclass : 'menuitem',
+                    prefixCls : 'tb-nav-',
+                    content : '<a href="#">商品分类</a>'
+                }
+            ]
+        });
+
+        tbNavMenu.render();
+    })
+</script>
+</body>
+</html> 

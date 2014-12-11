@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scale=no">
+	<title>Guides - KISSY v5.0 Documentation</title>
+	<link rel="shortcut icon" href="/5.0/assets/img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/github.css"/>
+	<script type="text/javascript" src="http://g.tbcdn.cn/kissy/edge/2014.07.16/seed.js" data-config="{combine:true}"></script>
+	<link rel="stylesheet" href="/5.0/assets/css/component.css">
+</head>
+<body>
+	<div class="header">
+		<div class="inner">
+	<div class="toolbar">
+		<a href="/5.0">
+			<img class="mini-logo" src="/5.0/assets/img/mini-logo.png">
+		</a>
+		<ul class="nav clearfix">
+			<li class="docs">
+				<span>
+					Docs
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/guides/">Guides</a></li>
+					<li><a href="/5.0/api">Api Docs</a></li>
+					<li><a href="/5.0/demos">Demos</a></li>
+				</ul>
+			</li>
+			<li class="more">
+				<span>
+					More
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/more/faq.html">FAQ</a></li>
+					<li><a href="http://gallery.kissyui.com/">Gallery</a></li>
+					<li><a href="http://blog.kissyui.com/">KISSY Blog</a></li>
+					<li><a href="https://github.com/daxingplay/kmc">KMC</a></li>
+					<li><a href="https://github.com/minghe/generator-bee/wiki/generator-bee%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">Generator</a></li>
+				</ul>
+			</li>
+			<li class="split"></li>
+			<li class="nav-other"><a href="/5.0/quick-start.html">Quick Start</a></li>
+			<li class="nav-other"><a href="https://github.com/kissyteam/kissy">Contribute</a></li>
+			<li class="nav-other"><a target="_blank" href="/5.0/kissyup-middle.html">KISSY UP</a></li>
+		</ul>
+	</div>
+	<div class="search">
+		<script>
+			(function() {
+			var cx = '003618533255763067140:5nkycw1pbey';
+			var gcse = document.createElement('script');
+			gcse.type = 'text/javascript';
+			gcse.async = true;
+			gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+			    '//www.google.com/cse/cse.js?cx=' + cx;
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(gcse, s);
+			})();
+		</script>
+		<gcse:search></gcse:search>
+	</div>
+</div>
+	</div>
+	<div class="main">
+		<div class="demo">
+			<div class="logo-on-top clearfix">
+				<img src="/5.0/assets/img/logo-on-top.png">
+			</div>
+			<div class="inner clearfix">
+				<div id="sidebar">
+					<a class="link-apidocs btn btn-primary" href="../../api/modules/menubutton.html">API Docs</a>
+					<div class="panel panel-primary ajax-load hide">
+						<div class="panel-heading">
+							<h3 class="panel-title">Features</h3>
+						</div>
+						<div class="panel-body">
+							
+						</div>
+					</div>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Demos</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../demos/menubutton/cascaded-select.html">级联菜单</a></p><p><a href="../../demos/menubutton/emulate-selectbox.html">模拟 selectbox</a></p><p><a href="../../demos/menubutton/index.html">简单菜单按钮/从已有元素生成</a></p><p><a href="../../demos/menubutton/multi-select.html">多选菜单using menubutton</a></p>
+						</div>
+					</div>
+				</div>
+				<div id="main-content">
+					<p></p>
+<h1 id="模拟 selectbox">模拟 selectbox</h1><p><div class="ks-tabs ks-tabs-top" style="height:500px;">
+    <div class="ks-tabs-bar">
+        <div class="ks-tabs-tab ks-button">Source</div>
+        <div class="ks-tabs-tab ks-button ks-tabs-tab-selected">Output</div>
+        <div class="ks-tabs-tab ks-button">QRCode</div>
+    </div>
+    <div class="ks-tabs-body" style="overflow:hidden;">
+        <div class="ks-tabs-panel">
+            <div class="editor">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&#x2F;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+&lt;title&gt;模拟 selectbox&lt;&#x2F;title&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text&#x2F;css&quot; href=&quot;&#x2F;&#x2F;g.alicdn.com&#x2F;kissy&#x2F;k&#x2F;5.0.1&#x2F;css&#x2F;base.css&quot;&gt;
+&lt;style type=&quot;text&#x2F;css&quot;&gt;
+.c2c-button {
+display: inline-block;
+*display: inline;
+*zoom: 1;
+margin: 2px;
+border: 0;
+padding: 0;
+text-decoration: none;
+list-style: none;
+vertical-align: middle;
+cursor: default;
+outline: none;
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+background-color: #FFF;
+border-style: solid;
+border-color: #8ab6dd;
+white-space: nowrap;
+border-width: 1px;
+border-radius: 2px;
+}
+
+&#x2F;* State: disabled. *&#x2F;
+.c2c-button-disabled {
+    background-image: none !important;
+    opacity: 0.3;
+    filter: alpha(opacity = 30);
+}
+
+.c2c-menu-button {
+    position: relative;
+    line-height: 20px;
+    padding-right: 20px;
+}
+
+.c2c-button-disabled {
+    border-color: #999 !important;
+}
+
+&#x2F;* State: hover. *&#x2F;
+.c2c-button-hover,
+.c2c-button-focused,
+.c2c-menu-buttonmenu-button-open {
+    border-color: #ffad33 !important; &#x2F;* Hover border wins. *&#x2F;
+}
+
+::root .c2c-menu-button-content,
+::root .c2c-menu-button-dropdown {
+    &#x2F;* Required to make pseudo-rounded corners work on Safari. *&#x2F;
+    line-height: normal;
+}
+
+&#x2F;* State: disabled. *&#x2F;
+.c2c-menu-button-disabled {
+    background-image: none !important;
+    opacity: 0.3;
+    filter: alpha(opacity = 30);
+}
+
+.c2c-menu-button-disabled,
+.c2c-menu-button-disabled .c2c-menu-button-content,
+.c2c-menu-button-disabled .c2c-menu-button-dropdown {
+    border-color: #999 !important;
+}
+
+&#x2F;* Pre-IE7 IE hack; ignored by IE7 and all non-IE browsers. *&#x2F;
+* html .c2c-menu-button-disabled {
+    margin: 2px 1px !important;
+    padding: 0 1px !important;
+}
+
+&#x2F;* IE7-only hack; ignored by all other browsers. *&#x2F;
+*:first-child+html .c2c-menu-button-disabled {
+    margin: 2px 1px !important;
+    padding: 0 1px !important;
+}
+
+&#x2F;* State: hover. *&#x2F;
+.c2c-menu-button-hover {
+    border-color: #9cf #69e #69e #7af !important; &#x2F;* Hover border wins. *&#x2F;
+}
+
+&#x2F;* State: focused. *&#x2F;
+.c2c-menu-button-focused {
+    border-color: orange;
+}
+
+&#x2F;* Caption style. *&#x2F;
+.c2c-menu-button-content {
+    padding: 0 4px 0 0;
+    vertical-align: top;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+&#x2F;* Dropdown arrow style. *&#x2F;
+.c2c-menu-button-dropdown {
+    height: 20px;
+    width: 20px;
+    &#x2F;* Client apps may override the URL at which they serve the sprite. *&#x2F;
+    background: url(http:&#x2F;&#x2F;img01.taobaocdn.com&#x2F;tps&#x2F;i1&#x2F;T1xqXwXmRuXXXXXXXX-22-44.png) no-repeat -1px -1px;
+    vertical-align: top;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.c2c-button-hover .c2c-menu-button-dropdown,
+.c2c-button-focused .c2c-menu-button-dropdown,
+.c2c-menu-buttonmenu-button-open .c2c-menu-button-dropdown {
+    background-position: -1px -23px;
+}
+
+.c2c-menu-buttonmenu-button-open .c2c-menu-button-dropdown,
+.c2c-button-hover .c2c-menu-button-dropdown {
+    border-color: #ffad33;
+}
+
+&#x2F;* menu arrow icon end *&#x2F;
+&#x2F;* menu begin *&#x2F;
+.c2c-popupmenu {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+
+.c2c-popupmenu-hidden{
+    visibility: hidden;
+}
+
+.c2c-menu {
+    background: #fff;
+    border: 1px solid #ffad33;
+    cursor: default;
+    margin: 0;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    padding: 4px 0;
+    position: absolute;
+    z-index: 20000; &#x2F;* Arbitrary, but some apps depend on it... *&#x2F;
+}
+
+&#x2F;* menu end *&#x2F;
+&#x2F;* menu item begin *&#x2F;
+&#x2F;* State: resting. *&#x2F;
+.c2c-menuitem {
+    list-style: none;
+    margin: 0;
+    &#x2F;* 28px on the left for icon or checkbox; 7em on the right for shortcut. *&#x2F;
+    padding: 4px;
+    white-space: nowrap;
+}
+
+&#x2F;* If a menu doesn&#x27;t have checkable items or items with icons, remove padding. *&#x2F;
+.c2c-menu-nocheckbox .c2c-menuitem,
+.c2c-menu-noicon .c2c-menuitem {
+    padding-left: 12px;
+}
+
+&#x2F;*
+ * If a menu doesn&#x27;t have items with shortcuts, leave just enough room for
+ * submenu arrows, if they are rendered.
+ *&#x2F;
+.c2c-menu-noaccel .c2c-menuitem {
+    padding-right: 20px;
+}
+
+.c2c-menuitem-content {
+    font: normal 13px Arial, sans-serif;
+}
+
+&#x2F;* State: disabled. *&#x2F;
+.c2c-menuitem-disabled .c2c-menuitem-accel,
+.c2c-menuitem-disabled .c2c-menuitem-content {
+}
+
+.c2c-menuitem-disabled .c2c-menuitem-icon {
+    opacity: 0.3;
+    -moz-opacity: 0.3;
+    filter: alpha(opacity = 30);
+}
+
+&#x2F;* State: hover. *&#x2F;
+.c2c-menuitem-active,
+.c2c-menuitem-hover {
+    background-color: #ffefd6;
+    &#x2F;* Use an explicit top and bottom border so that the selection is visible
+* in high contrast mode. *&#x2F;
+    border: 1px solid #ffe0b2;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    margin: 0 3px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+&#x2F;* State: selected&#x2F;checked. *&#x2F;
+.c2c-menuitem-checkbox,
+.c2c-menuitem-icon {
+    background-repeat: no-repeat;
+    height: 16px;
+    left: 6px;
+    position: absolute;
+    right: auto;
+    vertical-align: middle;
+    width: 16px;
+}
+
+&#x2F;* Keyboard shortcut (&quot;accelerator&quot;) style. *&#x2F;
+.c2c-menuitem-accel {
+    &#x2F;* Keyboard shortcuts are untranslated; always left-to-right. *&#x2F;
+    &#x2F;* @noflip *&#x2F;
+    direction: ltr;
+    left: auto;
+    padding: 0 6px;
+    position: absolute;
+    right: 0;
+    text-align: right;
+}
+
+.c2c-menuitem-content {
+    display: inline;
+}
+&#x2F;* menu item end *&#x2F;
+
+
+&#x2F;** pix theme *&#x2F;
+.pix-select {
+    height:28px;
+    background: #fff;
+    overflow: hidden;
+    width:280px;
+    zoom:1;
+}
+
+.pix-menu-button-content {
+    float: left;
+    width:248px;
+    height:26px;
+    line-height:26px;
+    border: 1px solid #BFBFBF;
+    border-right: none;
+    font-size: 12px;
+    padding-left:10px;
+}
+
+.pix-menu-button-dropdown {
+    float: left;
+    background:url(http:&#x2F;&#x2F;img03.taobaocdn.com&#x2F;tps&#x2F;i3&#x2F;T1gJJgXdRBXXaCwpjX.png) no-repeat;
+    width:19px;
+    height:26px;
+    border: 1px solid #A0A0A0;
+}
+
+.pix-popupmenu {
+    position: absolute;
+    width: 280px;
+    overflow: hidden;
+    border: 1px solid #BFBFBF;
+}
+
+.pix-popupmenu-hidden {
+    visibility: hidden;
+}
+
+.pix-popupmenu .pix-option {
+    height: 34px;
+    line-height: 34px;
+    font-size: 12px;
+    padding-left:10px;
+    background: #fff;
+}
+
+.pix-popupmenu .pix-option-hover {
+    background: #F2F2F2;
+}
+&lt;&#x2F;style&gt;
+&lt;script src=&quot;&#x2F;&#x2F;g.alicdn.com&#x2F;kissy&#x2F;k&#x2F;5.0.1&#x2F;seed-debug.js&quot; data-config=&quot;{combine:true}&quot;&gt;&lt;&#x2F;script&gt;
+&lt;&#x2F;head&gt;
+&lt;body&gt;
+&lt;h1&gt;模拟 selectbox&lt;&#x2F;h1&gt;
+&lt;p&gt;调用 MenuButton.Select.decorate 接口替换已有的 select 元素，点击菜单项触发click事件弹出相应的value值&lt;&#x2F;p&gt;
+&lt;div id=&quot;container&quot; style=&quot;margin-left:50px;&quot;&gt;
+   &lt;p&gt;c2c 主题样式:&lt;&#x2F;p&gt;
+   &lt;div&gt;
+        &lt;select name=&quot;decorateSelect&quot; id=&quot;decorateSelect&quot;&gt;
+            &lt;option value=&quot;-1&quot;&gt;请选择&lt;&#x2F;option&gt;
+            &lt;option value=&quot;1&quot;&gt;北京&lt;&#x2F;option&gt;
+            &lt;option value=&quot;2&quot;&gt;上海&lt;&#x2F;option&gt;
+            &lt;option value=&quot;3&quot;&gt;天津&lt;&#x2F;option&gt;
+            &lt;option value=&quot;4&quot;&gt;南京&lt;&#x2F;option&gt;
+            &lt;option value=&quot;5&quot;&gt;杭州&lt;&#x2F;option&gt;
+            &lt;option value=&quot;6&quot;&gt;其他&lt;&#x2F;option&gt;
+        &lt;&#x2F;select&gt;
+    &lt;&#x2F;div&gt;
+    &lt;p&gt;pix 主题样式:&lt;&#x2F;p&gt;
+    &lt;div&gt;
+        &lt;select name=&quot;decorateSelect2&quot; id=&quot;decorateSelect2&quot;&gt;
+            &lt;option value=&quot;-1&quot;&gt;请选择&lt;&#x2F;option&gt;
+            &lt;option value=&quot;1&quot;&gt;北京&lt;&#x2F;option&gt;
+            &lt;option value=&quot;2&quot;&gt;上海&lt;&#x2F;option&gt;
+            &lt;option value=&quot;3&quot;&gt;天津&lt;&#x2F;option&gt;
+            &lt;option value=&quot;4&quot;&gt;南京&lt;&#x2F;option&gt;
+            &lt;option value=&quot;5&quot;&gt;杭州&lt;&#x2F;option&gt;
+            &lt;option value=&quot;6&quot;&gt;其他&lt;&#x2F;option&gt;
+        &lt;&#x2F;select&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+&lt;script type=&quot;text&#x2F;javascript&quot;&gt;
+    require([&#x27;menu&#x27;, &#x27;menubutton&#x27;], function(Menu, MenuButton){
+        (function(){
+            &#x2F;&#x2F; 调用 MenuButton.Select.decorate 接口替换已有的 select 元素
+            var select = MenuButton.Select.decorate(&#x27;#decorateSelect&#x27;, {
+                width:80,
+                prefixCls:&quot;c2c-&quot;,
+                &#x2F;&#x2F; 设置对齐方式, 与普通的 Align 大体一致
+                &#x2F;&#x2F; 该配置同菜单配置项
+                menu:{
+                    align:{
+                        points : [&#x27;bl&#x27;, &#x27;tl&#x27;],  &#x2F;&#x2F;默认就是这个配置，可写可不写，或根据需要进行自定义定位
+                        offset:[0, -1]
+                    },
+                    height:150,
+                    elStyle:{
+                        overflow:&quot;auto&quot;,
+                        overflowX:&quot;hidden&quot;
+                    }
+                }
+            });
+            select.on(&quot;click&quot;, function (e) {
+                alert(&#x27;当前值为: &#x27; + select.get(&quot;value&quot;));
+            });
+        })();
+
+        (function(){
+            &#x2F;&#x2F; 调用 MenuButton.Select.decorate 接口替换已有的 select 元素
+            var select = MenuButton.Select.decorate(&#x27;#decorateSelect2&#x27;, {
+                prefixCls:&quot;pix-&quot;,
+                &#x2F;&#x2F; 设置对齐方式, 与普通的 Align 大体一致
+                &#x2F;&#x2F; 该配置同菜单配置项
+                menu:{
+                    align:{
+                        points : [&#x27;bl&#x27;, &#x27;tl&#x27;],  &#x2F;&#x2F;默认就是这个配置，可写可不写，或根据需要进行自定义定位
+                        offset:[0, -1]
+                    },
+                    height:150,
+                    elStyle:{
+                        overflow:&quot;auto&quot;,
+                        overflowX:&quot;hidden&quot;
+                    }
+                }
+            });
+            select.on(&quot;click&quot;, function (e) {
+                alert(&#x27;当前值为: &#x27; + select.get(&quot;value&quot;));
+            });
+        })();
+    });
+&lt;&#x2F;script&gt;
+&lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt; </div>
+        </div>
+        <div class="ks-tabs-panel ks-tabs-panel-selected">
+            <iframe class="output" frameborder="1">
+            	
+            </iframe>
+        </div>
+        <div class="ks-tabs-panel qrcode-wrap">
+            <div class="qrcode"></div>
+            <div class="content">
+                <p class="title">查看移动端演示</p>
+                <p class="qrcode-addr" qrcodeaddr="http://docs.kissyui.com/5.0/demos/menubutton/cited-by-md/emulate-selectbox.html" ="text">
+                    示例地址：
+                    <a href="http://docs.kissyui.com/5.0/demos/menubutton/cited-by-md/emulate-selectbox.html" target="_blank">http://docs.kissyui.com/5.0/demos/menubutton/cited-by-md/emulate-selectbox.html</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div></p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="wrap-disqus">
+    <div class="top-repeat"></div>
+	<div id="disqus_thread"></div>
+</div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<div class="other-page">
+    <div class="wrap">
+        <div class="content">
+            <div class="wrap-content">
+                <p>@2010 - 2112 KISSY UI LIBARAY</p>
+                <div class="github-msg">
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=fork&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	</div>
+	<script type="text/javascript" src="/5.0/assets/js/ace-editor/ace.js"></script>
+	<script type="text/javascript" src="/5.0/assets/js/qrcodejs/qrcode.min.js"></script>
+	<script type="text/javascript" src="/5.0/assets/js/ajax-load.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

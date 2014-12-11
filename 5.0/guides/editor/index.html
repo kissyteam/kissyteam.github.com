@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scale=no">
+	<title>Guides - KISSY v5.0 Documentation</title>
+	<link rel="shortcut icon" href="/5.0/assets/img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/github.css"/>
+	<script type="text/javascript" src="http://g.tbcdn.cn/kissy/edge/2014.09.05/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="inner">
+	<div class="toolbar">
+		<a href="/5.0">
+			<img class="mini-logo" src="/5.0/assets/img/mini-logo.png">
+		</a>
+		<ul class="nav clearfix">
+			<li class="docs">
+				<span>
+					Docs
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/guides/">Guides</a></li>
+					<li><a href="/5.0/api">Api Docs</a></li>
+					<li><a href="/5.0/demos">Demos</a></li>
+				</ul>
+			</li>
+			<li class="more">
+				<span>
+					More
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/more/faq.html">FAQ</a></li>
+					<li><a href="http://gallery.kissyui.com/">Gallery</a></li>
+					<li><a href="http://blog.kissyui.com/">KISSY Blog</a></li>
+					<li><a href="https://github.com/daxingplay/kmc">KMC</a></li>
+					<li><a href="https://github.com/minghe/generator-bee/wiki/generator-bee%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">Generator</a></li>
+				</ul>
+			</li>
+			<li class="split"></li>
+			<li class="nav-other"><a href="/5.0/quick-start.html">Quick Start</a></li>
+			<li class="nav-other"><a href="https://github.com/kissyteam/kissy">Contribute</a></li>
+			<li class="nav-other"><a target="_blank" href="/5.0/kissyup-middle.html">KISSY UP</a></li>
+		</ul>
+	</div>
+	<div class="search">
+		<script>
+			(function() {
+			var cx = '003618533255763067140:5nkycw1pbey';
+			var gcse = document.createElement('script');
+			gcse.type = 'text/javascript';
+			gcse.async = true;
+			gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+			    '//www.google.com/cse/cse.js?cx=' + cx;
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(gcse, s);
+			})();
+		</script>
+		<gcse:search></gcse:search>
+	</div>
+</div>
+	</div>
+	<div class="main">
+		<div class="guide">
+			<div class="logo-on-top clearfix">
+				<img src="/5.0/assets/img/logo-on-top.png">
+			</div>
+			<div class="inner clearfix">
+				<div id="sidebar">
+					<a class="link-apidocs btn btn-primary" href="../../api/classes/Editor.html">API Docs</a>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">Outline</h3>
+						</div>
+						<div class="panel-body">
+							<ul class="outline">
+								<li class="level2"><a href="#引用方法">引用方法</a></li><li class="level2"><a href="#一个简单的调用">一个简单的调用</a></li><li class="level2"><a href="#主要配置参数（更多配置参数请看其api文档）">主要配置参数（更多配置参数请看其api文档）</a></li><li class="level2"><a href="#主要方法：（更多方法请看其api文档）">主要方法：（更多方法请看其api文档）</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Features</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../guides/editor/index.html">Editor基本介绍</a></p>
+						</div>
+					</div>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Demos</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../demos/editor/from-textarea.html">从已有的textarea创建editor</a></p><p><a href="../../demos/editor/index.html">简单使用Editor</a></p><p><a href="../../demos/editor/write-plugin.html">编写Editor插件</a></p>
+						</div>
+					</div>
+				</div>
+				<div id="main-content">
+					<p></p>
+<h1 id="Editor基本介绍">Editor基本介绍</h1><p>Editor 继承自内部组件 Control，包含其全部配置,属性,方法,事件。在<a href="http://gallery.kissyui.com/">gallery</a>上拥有多种插件适合在不同场景下使用，如 kg/editor-plugins/1.1.3/font-size,kg/editor-plugins/1.1.3/image 等。更多插件及用法请看 <a href="http://gallery.kissyui.com/editor-plugins/doc/guide/index.html">editor-plugins文档</a>.</p>
+<p>注：KISSY提供了参考样式：基础样式： <code>//g.alicdn.com/kissy/k/5.0.1/css/base.css</code>，
+插件样式：<code>http://g.tbcdn.cn/kg/editor-plugins/1.1.3/assets/editor.css</code>。在使用editor前引入，用户也可以根据需要自定义样式。</p>
+<h2 id="引用方法">引用方法</h2><pre><code><span class="hljs-built_in">require</span>([<span class="hljs-string">'editor'</span>],<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(Editor)</span></span>{
+    <span class="hljs-comment">//use editor</span>
+})
+</code></pre><h2 id="一个简单的调用">一个简单的调用</h2><pre><code><span class="hljs-comment">//先配置editor-plugins的包地址</span>
+<span class="hljs-built_in">require</span>.config({
+    packages: [
+        {
+            name: <span class="hljs-string">'kg/editor-plugins/1.1.3'</span>,  <span class="hljs-comment">//1.1.3是editor-plugins当前版本号，请选择相应的版本号使用</span>
+            base : <span class="hljs-string">'http://g.tbcdn.cn/kg/editor-plugins/1.1.3'</span>
+        }
+    ]
+})
+<span class="hljs-built_in">require</span>([<span class="hljs-string">'editor'</span>, <span class="hljs-string">'kg/editor-plugins/1.1.3/font-size'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(Editor, FontSize)</span></span>{
+    <span class="hljs-keyword">var</span> myEditor = <span class="hljs-keyword">new</span> Editor({
+        width : <span class="hljs-string">'80%'</span>,
+        height : <span class="hljs-string">'500px'</span>,
+        focused : <span class="hljs-literal">true</span>,
+        plugins : [ FontSize ]
+    });
+
+    myEditor.render();
+})
+</code></pre><h2 id="主要配置参数（更多配置参数请看其api文档）">主要配置参数（更多配置参数请看其api文档）</h2><h4 id="data">data</h4><p>{String} 初始化设置编辑器里的内容</p>
+<h4 id="mode">mode</h4><p>编辑器模式.取值 Editor.SOURCE_MODE 或 Editor.WYSIWYG_MODE</p>
+<h4 id="customLink">customLink</h4><p>String[] 自定义样式表 url 数组</p>
+<h4 id="textarea">textarea</h4><p>{String} - optional. 自定义产生 textarea 节点的 html.</p>
+<p>例如可以指定全新产生 editor 所属 textarea 的 name 值</p>
+<pre><code><span class="hljs-tag">new</span> <span class="hljs-tag">Editor</span>(<span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">textarea</span>:<span class="hljs-value"> <span class="hljs-string">'&lt;textarea name="custom"&gt;&lt;/textarea&gt;'</span>
+</span></span></span>});
+</code></pre><h4 id="attachForm">attachForm</h4><p>{Boolean} - 默认 false. 是否监控编辑器输入框所在的 form 提交。 （ form 提交前自动将编辑内容同步到对应 textarea 中 ）</p>
+<h4 id="customStyle">customStyle</h4><p>{String} - 自定义样式字符串.</p>
+<h2 id="主要方法：（更多方法请看其api文档）">主要方法：（更多方法请看其api文档）</h2><h4 id="execCommand(commandName, arg1, arg2, ...)">execCommand(commandName, arg1, arg2, ...)</h4><ul>
+<li>commandName (String) 命令名称，由各个插件提供</li>
+<li>arg* 对应命令所需要的参数</li>
+</ul>
+<p>调用编辑器的响应命令功能，例如：</p>
+<pre><code><span class="hljs-attribute">editor</span>.<span class="hljs-function">execCommand</span>(<span class="hljs-string">"fontSize"</span>,<span class="hljs-string">"10px"</span>); <span class="hljs-comment">//=&gt; 设置选区文字大小为10px.</span>
+<span class="hljs-attribute">editor</span>.<span class="hljs-function">execCommand</span>(<span class="hljs-string">"fontSize"</span>,<span class="hljs-string">"10px"</span>); <span class="hljs-comment">//=&gt; 取消设置选区文字大小为10px.</span>
+<span class="hljs-attribute">editor</span>.<span class="hljs-function">queryCommandValue</span>(<span class="hljs-string">"fontSize"</span>); <span class="hljs-comment">//=&gt; 返回 10px</span>
+</code></pre><h4 id="hasCommand(commandName)">hasCommand(commandName)</h4><ul>
+<li>commandName (String) 命令名称，由各个插件提供</li>
+</ul>
+<p>编辑器是否存在该命令</p>
+<h4 id="queryCommandValue(commandName)">queryCommandValue(commandName)</h4><ul>
+<li>commandName (String) – 命令名称，由各个插件提供</li>
+</ul>
+<p>查询该命令对应的当前编辑值</p>
+<h4 id="sync()">sync()</h4><p>同步编辑器内容到对应的 textarea</p>
+<h4 id="focus()">focus()</h4><p>使得编辑器获得焦点</p>
+<h4 id="blur()">blur()</h4><p>使得编辑器失去焦点</p>
+<h4 id="docReady(fn)">docReady(fn)</h4><ul>
+<li>fn (Function) 编辑器文档 ready 后触发</li>
+</ul>
+<p>注册函数到编辑器文档 ready 队列（编辑器文档 ready 后触发）。
+该函数在编辑器生存周期内可能会运行多次（每次切换源码模式再切换回可视化模式都会因为编辑器文档重建而触发）</p>
+<h4 id="insertElement(element)">insertElement(element)</h4><ul>
+<li>element (KISSY.Node) 待插入的元素节点。（需从编辑器文档中创建）</li>
+</ul>
+<p>往编辑器中插入元素
+如果要兼容 firefox 浏览器，需要调用 focus 后延迟 50ms 调用该函数：</p>
+<pre><code>editor.focus();
+setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    editor.insertElement(<span class="hljs-keyword">new</span> KISSY.Node(<span class="hljs-string">'&lt;span&gt;haha&lt;/span&gt;'</span>),
+    <span class="hljs-literal">null</span>,editor.<span class="hljs-keyword">get</span>(<span class="hljs-string">'document'</span>)[<span class="hljs-number">0</span>]);
+},<span class="hljs-number">50</span>);
+</code></pre><h4 id="getData()">getData()</h4><p>获得编辑器里面的内容</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="wrap-disqus">
+    <div class="top-repeat"></div>
+	<div id="disqus_thread"></div>
+</div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<div class="other-page">
+    <div class="wrap">
+        <div class="content">
+            <div class="wrap-content">
+                <p>@2010 - 2112 KISSY UI LIBARAY</p>
+                <div class="github-msg">
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=fork&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	</div>
+</body>
+</html>

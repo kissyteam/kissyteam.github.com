@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <style>
+        body{
+            background: #fff;
+        }
+        button {
+            margin: 10px;
+        }
+
+        div {
+            color: blue;
+            font-weight: bold;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+
+    <script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<div class='out' id='i4' style='width:300px;height:300px;border:1px solid green;'>
+    i4
+    <div class='inner' id='i3' style='width:200px;height:200px;border:1px solid red;margin:50px;'>
+        #i3.inner
+        <div class='inner' id='i1' style='width:100px;height:100px;border:1px solid black;margin:50px;'>
+            #i1.inner : try mouse
+        </div>
+    </div>
+</div>
+<hr/>
+<div id='log'></div>
+<script>
+    require(['node'], function (Node) {
+        var $ = Node.all;
+        $('#i4').delegate('mouseenter mouseleave click', '.inner', function (e) {
+            $('#log').prepend(e.type + " : " + e.currentTarget.id + "<br/>");
+        });
+    });
+</script>
+
+</body>
+</html>

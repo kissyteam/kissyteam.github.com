@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>kissy anim demo</title>
+    <style type="text/css">
+    	body{
+	        background: #fff;
+	    }
+    </style>
+</head>
+<body>
+<button id="start">start</button>
+<button id="stop">stop</button>
+<canvas id="Canvas" style="border:1px solid #ccc;" width="200" height="200"></canvas>
+
+<script charset="utf-8" src="//g.alicdn.com/kissy/k/5.0.1/seed.js"></script>
+<script type="text/javascript">
+	require(['anim/timer','node'], function (TimerAnim, $) {
+	    var ctx = document.getElementById('Canvas').getContext('2d');
+
+	    function circle(cx, cy, r, opt) {
+	        ctx.beginPath();
+	        for (var x in opt) {
+	            ctx[x] = opt[x];
+	        }
+	        ctx.arc(cx, cy, r, 0, 2 * Math.PI, true);
+	        ctx.fill();
+	        ctx.closePath();
+	    }
+
+	    circle(100, 100, 5, {
+	        fillStyle: "#999"
+	    });
+
+	    var o = {r: 1};
+	    var anim = new TimerAnim(o, {
+	        r: 100
+	    }, {
+	        duration: 3,
+	        frame: function (anim, fx) {
+	            circle(100, 100, fx.val);
+	        }
+	    });
+	    
+	    $('#start').on('click', function () {
+	        anim.run();
+	    });
+	    $('#stop').on('click', function () {
+	        anim.stop();
+	    });
+	});
+
+</script>
+</body>
+</html>
+
+

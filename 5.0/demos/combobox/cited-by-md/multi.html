@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>gmail多选模式</title>
+	<style type="text/css">
+	body{
+		background: #fff;
+	}
+	</style>
+	<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/combobox/assets/dpl-debug.css">
+	<script type="text/javascript" src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"></script>
+	<style type="text/css">
+		.ks-popupmenu {
+		    background: #fff;
+		    border-color: #999;
+		    border-style: solid;
+		    border-width: 1px;
+		    cursor: default;
+		    margin: 0;
+		    outline: none;
+		    padding: 4px 0;
+		    position: absolute;
+		    z-index: 99999;
+		    left:-9999px;
+		    top:-9999px;
+		}
+
+		.ks-popupmenu-shown{
+		    visibility: visible;
+		}
+
+		.ks-popupmenu-hidden{
+		    visibility: hidden;
+		}
+
+		.ks-menuitem {
+		    color: #404040;
+		    list-style: none;
+		    margin: 0;
+		    font-size: 12px;
+		    line-height: 18px;
+		    padding: 1px 0 2px;
+		    white-space: nowrap;
+		}
+
+		.ks-menuitem-disabled .ks-menuitem-content {
+		    color: #ccc !important;
+		}
+
+		.ks-menuitem-highlight,
+		.ks-menuitem-hover {
+		    background-color: #39F;
+		    color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap" style="width:90%;margin:0 auto;">
+		<h1>gmail多选模式</h1>
+		<p>输入 a/b/c/d/2  观察结果</p>
+		<div id="container">
+			
+		</div>
+	</div>
+	<script type="text/javascript">
+		require(['combobox','combobox/multi-word','util','node'], function(ComboBox, MultiValueComboBox, Util, $){
+			var data = [
+				'"a123456" <a123456@gmail.com>',
+		        '"b12345" <b12345@gmail.com>',
+		        '"c3464356" <c3464356@gmail.com',
+		        '"d23434" <d23434@gmail.com>'
+			];
+
+			var multiComboBox = new MultiValueComboBox({
+				render : '#container',
+				width:500,
+		        separator:',',
+		        hasTrigger:false,
+		        input : $('<textarea class="ks-combobox-input" style="width:100%;height:18px;"></textarea>'),
+		        updateInputOnDownUp:false,
+		        dataSource : new ComboBox.LocalDataSource({
+		        	data : data,
+		        	parse : function(query, data){  //过滤数据，决定哪些数据能够返回给format处理
+		        		var ret = [];
+		        		Util.each(data, function (d) {
+		                    if(d.replace(/@gmail\.com/, "").indexOf(query) != -1) {
+		                        ret.push(d);
+		                    }
+		                });
+		                return ret;
+		        	}
+		        }),
+		        format : function(query, data){
+		        	var ret = [];
+		            for(var i = 0; i < data.length; i++) {
+		                var v = data[i] + "";
+		                if (query) {
+		                    ret[i] = {
+		                        content:Util.escapeHTML(v)
+		                            .replace(new RegExp(Util.escapeRegExp(query), "g"),
+		                            "<b>$&</b>")
+		                    };
+		                } else {
+		                    ret[i] = {
+		                        content:Util.escapeHTML(v)
+		                    };
+		                }
+		            }
+		            return ret;
+		        }
+			});
+			multiComboBox.render();
+		})
+	</script>
+</body>
+</html>

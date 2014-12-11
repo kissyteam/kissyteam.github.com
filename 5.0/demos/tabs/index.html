@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scale=no">
+	<title>Guides - KISSY v5.0 Documentation</title>
+	<link rel="shortcut icon" href="/5.0/assets/img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/github.css"/>
+	<script type="text/javascript" src="http://g.tbcdn.cn/kissy/edge/2014.07.16/seed.js" data-config="{combine:true}"></script>
+	<link rel="stylesheet" href="/5.0/assets/css/component.css">
+</head>
+<body>
+	<div class="header">
+		<div class="inner">
+	<div class="toolbar">
+		<a href="/5.0">
+			<img class="mini-logo" src="/5.0/assets/img/mini-logo.png">
+		</a>
+		<ul class="nav clearfix">
+			<li class="docs">
+				<span>
+					Docs
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/guides/">Guides</a></li>
+					<li><a href="/5.0/api">Api Docs</a></li>
+					<li><a href="/5.0/demos">Demos</a></li>
+				</ul>
+			</li>
+			<li class="more">
+				<span>
+					More
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/more/faq.html">FAQ</a></li>
+					<li><a href="http://gallery.kissyui.com/">Gallery</a></li>
+					<li><a href="http://blog.kissyui.com/">KISSY Blog</a></li>
+					<li><a href="https://github.com/daxingplay/kmc">KMC</a></li>
+					<li><a href="https://github.com/minghe/generator-bee/wiki/generator-bee%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">Generator</a></li>
+				</ul>
+			</li>
+			<li class="split"></li>
+			<li class="nav-other"><a href="/5.0/quick-start.html">Quick Start</a></li>
+			<li class="nav-other"><a href="https://github.com/kissyteam/kissy">Contribute</a></li>
+			<li class="nav-other"><a target="_blank" href="/5.0/kissyup-middle.html">KISSY UP</a></li>
+		</ul>
+	</div>
+	<div class="search">
+		<script>
+			(function() {
+			var cx = '003618533255763067140:5nkycw1pbey';
+			var gcse = document.createElement('script');
+			gcse.type = 'text/javascript';
+			gcse.async = true;
+			gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+			    '//www.google.com/cse/cse.js?cx=' + cx;
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(gcse, s);
+			})();
+		</script>
+		<gcse:search></gcse:search>
+	</div>
+</div>
+	</div>
+	<div class="main">
+		<div class="demo">
+			<div class="logo-on-top clearfix">
+				<img src="/5.0/assets/img/logo-on-top.png">
+			</div>
+			<div class="inner clearfix">
+				<div id="sidebar">
+					<a class="link-apidocs btn btn-primary" href="../../api/classes/Tabs.html">API Docs</a>
+					<div class="panel panel-primary ajax-load hide">
+						<div class="panel-heading">
+							<h3 class="panel-title">Features</h3>
+						</div>
+						<div class="panel-body">
+							
+						</div>
+					</div>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Demos</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../demos/tabs/add-remove.html">增加/删除tab</a></p><p><a href="../../demos/tabs/created-by-markup.html">从已有html生成tabs</a></p><p><a href="../../demos/tabs/index.html">简单使用tabs</a></p><p><a href="../../demos/tabs/orientation.html">改变tabs-bar的位置</a></p><p><a href="../../demos/tabs/tabs-hover.html">鼠标hover切换tab</a></p>
+						</div>
+					</div>
+				</div>
+				<div id="main-content">
+					<p></p>
+<h1 id="简单使用tabs">简单使用tabs</h1><p><div class="ks-tabs ks-tabs-top" style="height:600px;">
+    <div class="ks-tabs-bar">
+        <div class="ks-tabs-tab ks-button">Source</div>
+        <div class="ks-tabs-tab ks-button ks-tabs-tab-selected">Output</div>
+        <div class="ks-tabs-tab ks-button">QRCode</div>
+    </div>
+    <div class="ks-tabs-body" style="overflow:hidden;">
+        <div class="ks-tabs-panel">
+            <div class="editor">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&#x2F;&gt;
+ &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no&quot;&gt;
+&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;
+&lt;meta name=&quot;apple-touch-fullscreen&quot; content=&quot;yes&quot;&gt;
+&lt;title&gt;简单使用tabs&lt;&#x2F;title&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text&#x2F;css&quot; href=&quot;&#x2F;&#x2F;g.alicdn.com&#x2F;kissy&#x2F;k&#x2F;5.0.1&#x2F;css&#x2F;base.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text&#x2F;css&quot; href=&quot;&#x2F;&#x2F;g.alicdn.com&#x2F;kissy&#x2F;k&#x2F;5.0.1&#x2F;tabs&#x2F;assets&#x2F;dpl.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text&#x2F;css&quot; href=&quot;&#x2F;&#x2F;g.alicdn.com&#x2F;kissy&#x2F;k&#x2F;5.0.1&#x2F;button&#x2F;assets&#x2F;dpl.css&quot;&gt;
+&lt;script type=&quot;text&#x2F;javascript&quot; src=&quot;&#x2F;&#x2F;g.alicdn.com&#x2F;kissy&#x2F;k&#x2F;5.0.1&#x2F;seed-debug.js&quot;  data-config=&quot;{combine:true}&quot;&gt;&lt;&#x2F;script&gt;
+&lt;&#x2F;head&gt;
+&lt;body&gt;
+&lt;div style=&quot;width:90%;margin:0 auto;&quot;&gt;
+    &lt;h1&gt;全新生成节点&lt;&#x2F;h1&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+&lt;script type=&quot;text&#x2F;javascript&quot;&gt;
+	require([&#x27;tabs&#x27;], function(Tabs){
+        var myTabs = new Tabs({
+            render : &#x27;#container&#x27;,
+            width : &#x27;60%&#x27;,
+            items : [
+                {
+                    title : &#x27;title of tab-1&#x27;,
+                    content : &#x27;tab-1 content&#x27;
+                },
+                {
+                    title : &#x27;title of tab-2&#x27;,
+                    content : &#x27;tab-2 content&#x27;,
+                    selected : true   &#x2F;&#x2F;默认选中这个tab
+                },
+                {
+                    title : &#x27;title of tab-3&#x27;,
+                    content : &#x27;tab-3 content&#x27;,
+                    closable : true    &#x2F;&#x2F;显示关闭按钮，点击删除tab
+                }
+            ]
+        }).render();
+    });
+&lt;&#x2F;script&gt;
+&lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;</div>
+        </div>
+        <div class="ks-tabs-panel ks-tabs-panel-selected">
+            <iframe class="output" frameborder="1">
+            	
+            </iframe>
+        </div>
+        <div class="ks-tabs-panel qrcode-wrap">
+            <div class="qrcode"></div>
+            <div class="content">
+                <p class="title">查看移动端演示</p>
+                <p class="qrcode-addr" qrcodeaddr="http://docs.kissyui.com/5.0/demos/tabs/cited-by-md/baseuse.html" ="text">
+                    示例地址：
+                    <a href="http://docs.kissyui.com/5.0/demos/tabs/cited-by-md/baseuse.html" target="_blank">http://docs.kissyui.com/5.0/demos/tabs/cited-by-md/baseuse.html</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div></p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="wrap-disqus">
+    <div class="top-repeat"></div>
+	<div id="disqus_thread"></div>
+</div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<div class="other-page">
+    <div class="wrap">
+        <div class="content">
+            <div class="wrap-content">
+                <p>@2010 - 2112 KISSY UI LIBARAY</p>
+                <div class="github-msg">
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=fork&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	</div>
+	<script type="text/javascript" src="/5.0/assets/js/ace-editor/ace.js"></script>
+	<script type="text/javascript" src="/5.0/assets/js/qrcodejs/qrcode.min.js"></script>
+	<script type="text/javascript" src="/5.0/assets/js/ajax-load.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

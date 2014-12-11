@@ -1,0 +1,100 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>GregorianCalendarFormat的示例</title>
+<style type="text/css">
+    body{
+        background: #fff;
+    }
+</style>
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+</head>
+
+<body>
+   <p>说明：要注意区分 GregorianCalendarFormat（时间格式化类） 和 GregorianCalendar（时间类），GregorianCalendarFormat就是设定一些规则来确定GregorianCalendar的输出字符串形式，例如是这种日期时间完整格式(2014年8月14日 星期四 下午07时34分25秒 GMT+0800)或者日期时间中长度格式(2014-8-14 19:34:25)</p>
+   <p>不同的GregorianCalendarFormat对象使得GregorianCalendar输出的日期时间形式不同，如下：</p>
+
+   <p>
+       <span>当前时间：</span> <span id="str" style="color:#5c5;"></span>
+   </p>
+   
+
+   <p>下面不同按钮调用不同的GregorianCalendarFormat对象来格式化GregorianCalendar对象：</p>
+    <div id="buttons">
+        <button value="dtf_FULL">日期时间完整格式</button>
+        <button value="dtf_LONG">日期时间长格式</button>
+        <button value="dtf_MEDIUM">日期时间中长度格式</button>
+        <button value="dtf_SHORT">日期时间短长度格式</button>
+        <br/>
+        <button value="tf_FULL">只格式化时间完整格式</button>
+        <button value="df_MEDIUM">只格式化日期中长度格式</button>
+        <button value="instance">格式化日期时间(instance)</button>
+    </div>
+    <p>
+        <span>根据当前时间格式字符串来解析出时间对象，需要使用相应的时间格式化对象才能解析，且需当前时间字符串有相应的数据才能拿到，例如“2014-8-14”这个解析后再"getHourOfDay"就会出错，故下面的按钮在某些时间格式下会出错：</span> <button id="parse">解析</button>
+    </p>
+    <p>解析得到时间对象后可用下面的方法拿到时间对象的相应数据：</p>
+    <div id="gets">
+        <button disabled="disabled" value="getYear">getYear</button>
+        <button disabled="disabled" value="getMonth">getMonth</button>
+        <button disabled="disabled" value="getDayOfMonth">getDayOfMonth</button>
+        <button disabled="disabled" value="getHourOfDay">getHourOfDay</button>
+        <br/>
+        <button disabled="disabled" value="getMinutes">getMinutes</button>
+        <button disabled="disabled" value="getSeconds">getSeconds</button>
+        <button disabled="disabled" value="getMilliseconds">getMilliseconds</button>
+        <button disabled="disabled" value="getWeekOfYear">getWeekOfYear</button>
+        <br/>
+        <button disabled="disabled" value="getWeekOfMonth">getWeekOfMonth</button>
+        <button disabled="disabled" value="getDayOfYear">getDayOfYear</button>
+        <button disabled="disabled" value="getDayOfWeek">getDayOfWeek</button>
+        <button disabled="disabled" value="getDayOfWeekInMonth">getDayOfWeekInMonth</button>
+    </div>
+
+    <script type="text/javascript">
+    require(['node', 'event-dom', 'gregorian-calendar', 'gregorian-calendar-format'], function(Node, DomEvent, GregorianCalendar, GregorianCalendarFormat) {
+            var $ = Node.all;
+            var Style = GregorianCalendarFormat.Style;
+            var currentStyle = "dtf_FULL";
+            //获得时间对象
+            var dategregorian_ins = new GregorianCalendar();
+            var calendar;
+            //给时间对象设定当前时间
+            dategregorian_ins.setTime(+new Date());  //注意dategregorian_ins.setTime的参数一定要是Number类型
+
+            var formatInstanceStyle = {
+                dtf_FULL: GregorianCalendarFormat.getDateTimeInstance(Style.FULL, Style.FULL), //日期时间完整格式
+                dtf_LONG: GregorianCalendarFormat.getDateTimeInstance(Style.LONG, Style.LONG), //日期时间长格式
+                dtf_MEDIUM: GregorianCalendarFormat.getDateTimeInstance(Style.MEDIUM, Style.MEDIUM), //日期时间中长度格式
+                dtf_SHORT: GregorianCalendarFormat.getDateTimeInstance(Style.SHORT, Style.SHORT), //日期时间短长度格式
+                tf_FULL: GregorianCalendarFormat.getTimeInstance(Style.FULL), //只格式化时间
+                df_MEDIUM: GregorianCalendarFormat.getDateInstance(Style.MEDIUM), //只格式化日期
+                instance: GregorianCalendarFormat.getInstance() //相当于GregorianCalendarFormat.getDateTimeInstance(Style.SHORT, Style.SHORT);
+            };
+            //format方法用法
+            $("#str").text(formatInstanceStyle["dtf_FULL"].format(dategregorian_ins));
+
+            DomEvent.delegate("#buttons", 'click', 'button', function(event) {
+                currentStyle = $(event.currentTarget).val();
+                var str = formatInstanceStyle[currentStyle].format(dategregorian_ins);
+                $("#str").text(str);
+            });
+
+            //parse方法用法
+            $("#parse").on('click', function(event) {
+                var str = $("#str").text();
+                calendar = formatInstanceStyle[currentStyle].parse(str); //需用对应的格式去解析
+                $("#gets button").removeAttr('disabled');
+            });
+
+            DomEvent.delegate('#gets', 'click', 'button', function(event) {
+                var func = $(event.currentTarget).val();
+                var value = calendar[func]();
+                alert(value);
+            });
+        });
+    </script>
+</body>
+</html>

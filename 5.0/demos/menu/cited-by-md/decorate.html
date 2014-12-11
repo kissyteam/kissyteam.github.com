@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>从已有元素生成菜单</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/menu/assets/dpl.css">
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<h1>从已有元素生成菜单</h1>
+<p>已有元素的html结构必须符合Menu的规范结构</p>
+<div id="container" style="margin-left:50px;">
+    <div id="menuTest" class="ks-menu" tabindex="0" style="width:150px;">
+        <div class="ks-menuitem">菜单1</div>
+        <div class="ks-submenu ks-menuitem">
+            <span class="ks-submenu-content ks-menu-content">菜单2</span>
+            <span class="ks-submenu-arrow">►</span>
+            <div class="ks-popupmenu ks-menu">
+                <div class="ks-popupmenu-content">
+                    <div class="ks-menuitem">子菜单1</div>
+                    <div class="ks-menuitem">子菜单2</div>
+                </div>
+            </div>
+        </div>
+        <div class="ks-menuitem">菜单3</div>
+    </div>
+</div>
+<script type="text/javascript">
+    require(['menu', 'separator'], function(Menu, Separator){
+        var myMenu = new Menu({
+            srcNode : '#menuTest'
+        });
+
+        myMenu.render();
+    });
+</script>
+</body>
+</html> 

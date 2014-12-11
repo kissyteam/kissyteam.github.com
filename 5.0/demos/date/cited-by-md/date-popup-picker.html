@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>DatePicker.Popup 使用示例</title>
+<link rel="stylesheet" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"></script>
+</head>
+
+<body>
+<h3>DatePicker.Popup 使用示例</h3>
+<p>
+    DatePicker.Popup 是一个悬浮式的日历控件，如需使用嵌入式的日历控件请使用 DatePicker。
+</p>
+<input type="text" id="date">
+<button id="popup">选择日期</button>
+    <script type="text/javascript">
+        require(['node', 'date-picker', 'gregorian-calendar-format','date-picker/assets/dpl.css'], function(Node, DatePicker, GregorianCalendarFormat) {
+            var input = Node.all('#date');
+            var dateFormat = GregorianCalendarFormat.getDateInstance(GregorianCalendarFormat.Style.FULL);
+            var picker = null;
+
+            Node.all('#popup').on('click', showPicker);
+            function showPicker(e) {
+                e.preventDefault();
+                if (!picker) {
+                    picker = createPicker();
+                }
+
+                if (input.val()) {
+                    var val;
+                    try {
+                        val = dateFormat.parse(input.val());
+                        picker.set('value', val);
+                    } catch(err) {}
+                }
+
+                picker.set('align', {
+                    node: input,
+                    points: ['bl', 'tl']
+                });
+
+                picker.show();
+                picker.focus();
+            }
+
+            function createPicker() {
+                picker = new DatePicker.Popup({
+                    shim:true
+                });
+
+                picker.on('blur', function () {
+                    picker.hide();
+                });
+
+                picker.on('select', function (e) {
+                    if (e.value) {
+                        input.val(dateFormat.format(e.value));
+                    } else {
+                        input.val('');
+                    }
+                    input[0].focus();
+                });
+                return picker;
+            }
+
+            input.on('keydown', function (e) {
+                if (e.keyCode == Node.KeyCode.DOWN) {
+                    showPicker(e);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

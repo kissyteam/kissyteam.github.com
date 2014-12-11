@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>更小的内容提示tooltip</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/button/assets/dpl.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/overlay/assets/dpl.css">
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<div class="container">
+    <h1>更小的内容提示tooltip</h1>
+    <p>鼠标移动下面文字上，tooltip渐变出现</p>
+    <a id="tip" href="#">hover for tip</a>
+</div>
+<script type="x-template" id="tipTpl">
+    <div class="ks-popup-arrow"></div>
+    <div class="ks-tooltip-inner">first tooltip</div>  <!-- 已定义好的tooltip的样式-->
+</script>
+<script type="text/javascript">
+    require("overlay,button,node", function (Overlay, Button,$) {
+        var d = new Overlay.Popup({
+            trigger: "#tip",
+            elCls: "ks-popup-top",
+            triggerType: "mouse",
+            content: $("#tipTpl").html(),  //overlay样式中已有.ks-tooltip-inner样式，区别于.ks-popup-inner样式，这个更小一点
+            effect: {
+                effect: "fade",
+                duration: 0.3
+            },
+            align: {
+                node: '#tip',
+                points: ['tc', 'bc']
+            }
+        });
+
+    });
+</script>
+</body>
+</html> 

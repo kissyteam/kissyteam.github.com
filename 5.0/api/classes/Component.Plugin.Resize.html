@@ -1,0 +1,4186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Component.Plugin.Resize - API Documentation — KISSY v5.0 Documentation</title>
+    <link rel="stylesheet" href="/5.0/assets/css/base.css">
+    <link rel="stylesheet" href="/5.0/assets/css/main.css">
+    <link rel="stylesheet" href="/5.0/assets/css/component.css">
+    <link rel="stylesheet" href="../assets/css/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="/5.0/assets/img/favicon.ico">
+    <script src="http://g.tbcdn.cn/kissy/edge/2014.07.16/seed.js" type="text/javascript" data-config="{combine:true}"></script>
+    <script src="../assets/js/component.js"></script>
+</head>
+<body class="yui3-skin-sam">
+    <div class="header">
+            <div class="inner">
+            <div class="toolbar">
+                <a href="/5.0">
+                    <img class="mini-logo" src="/5.0/assets/img/mini-logo.png">
+                </a>
+                <ul class="nav clearfix">
+                    <li class="docs">
+                        <span>
+                            Docs
+                            <b class="caret"></b>
+                        </span>
+                        <ul>
+                            <li><a href="/5.0/guides/">Guides</a></li>
+                            <li><a href="/5.0/api">Api Docs</a></li>
+                            <li><a href="/5.0/demos">Demos</a></li>
+                        </ul>
+                    </li>
+                    <li class="more">
+                        <span>
+                            More
+                            <b class="caret"></b>
+                        </span>
+                        <ul>
+                            <li><a href="/5.0/more/faq.html">FAQ</a></li>
+                            <li><a href="http://gallery.kissyui.com/">Gallery</a></li>
+                            <li><a href="http://blog.kissyui.com/">KISSY Blog</a></li>
+                            <li><a href="https://github.com/daxingplay/grunt-kmc/blob/master/README.md">KMC</a></li>
+                        </ul>
+                    </li>
+                    <li class="split"></li>
+                    <li class="nav-other"><a href="/5.0/quick-start.html">Quick Start</a></li>
+                    <li class="nav-other"><a href="https://github.com/kissyteam/kissy/blob/master/CONTRIBUTING.md">Contribute</a></li>
+                    <li class="nav-other"><a href="#">KISSY UP</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <script>
+                    (function() {
+                    var cx = '003618533255763067140:5nkycw1pbey';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                        '//www.google.com/cse/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                    })();
+                </script>
+                <gcse:search></gcse:search>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div id="api-doc">
+            <div class="logo-on-top clearfix">
+                <img src="/5.0/assets/img/logo-on-top.png">
+            </div> 
+            <div class="yui3-g inner">
+                <div class="yui3-u-1-4">
+                    <div id="docs-sidebar" class="sidebar">
+                        <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview ks-tabs ks-tabs-top ks-filter-menu">
+        <ul class="ks-tabs-bar">
+            <li class="tab-class ks-tabs-tab ks-button ks-tabs-tab-selected">Classes</li>
+            <li class="tab-module ks-tabs-tab ks-button">Modules</li>
+        </ul>
+        <div id="api-tabview-filter" class="ks-filter-menu-input-wrap">
+            <input type="search" class="ks-filter-menu-input" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel" class="ks-tabs-body ks-filter-menu-content">
+            <ul id="api-classes" class="apis classes ks-tabs-panel ks-tabs-panel-selected">
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Anim href="/5.0/api/classes/Anim.html">Anim</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Attribute href="/5.0/api/classes/Attribute.html">Attribute</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Base href="/5.0/api/classes/Base.html">Base</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Button href="/5.0/api/classes/Button.html">Button</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Color href="/5.0/api/classes/Color.html">Color</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ComboBox href="/5.0/api/classes/ComboBox.html">ComboBox</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ComboBox.LocalDataSource href="/5.0/api/classes/ComboBox.LocalDataSource.html">ComboBox.LocalDataSource</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ComboBox.RemoteDataSource href="/5.0/api/classes/ComboBox.RemoteDataSource.html">ComboBox.RemoteDataSource</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ComboBoxMultiWord href="/5.0/api/classes/ComboBoxMultiWord.html">ComboBoxMultiWord</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Container href="/5.0/api/classes/Component.Container.html">Component.Container</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Control href="/5.0/api/classes/Component.Control.html">Component.Control</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Extension.Align href="/5.0/api/classes/Component.Extension.Align.html">Component.Extension.Align</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Extension.ContentBox href="/5.0/api/classes/Component.Extension.ContentBox.html">Component.Extension.ContentBox</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Extension.DelegateChildren href="/5.0/api/classes/Component.Extension.DelegateChildren.html">Component.Extension.DelegateChildren</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Extension.Shim href="/5.0/api/classes/Component.Extension.Shim.html">Component.Extension.Shim</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Plugin.Drag href="/5.0/api/classes/Component.Plugin.Drag.html">Component.Plugin.Drag</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Plugin.Resize href="/5.0/api/classes/Component.Plugin.Resize.html">Component.Plugin.Resize</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Cookie href="/5.0/api/classes/Cookie.html">Cookie</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=CustomEvent.Target href="/5.0/api/classes/CustomEvent.Target.html">CustomEvent.Target</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DatePicker href="/5.0/api/classes/DatePicker.html">DatePicker</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DatePicker.Popup href="/5.0/api/classes/DatePicker.Popup.html">DatePicker.Popup</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.DDM href="/5.0/api/classes/DD.DDM.html">DD.DDM</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.Draggable href="/5.0/api/classes/DD.Draggable.html">DD.Draggable</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.DraggableDelegate href="/5.0/api/classes/DD.DraggableDelegate.html">DD.DraggableDelegate</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.Droppable href="/5.0/api/classes/DD.Droppable.html">DD.Droppable</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.DroppableDelegate href="/5.0/api/classes/DD.DroppableDelegate.html">DD.DroppableDelegate</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.Plugin.Constrain href="/5.0/api/classes/DD.Plugin.Constrain.html">DD.Plugin.Constrain</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.Plugin.Proxy href="/5.0/api/classes/DD.Plugin.Proxy.html">DD.Plugin.Proxy</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.Plugin.Scroll href="/5.0/api/classes/DD.Plugin.Scroll.html">DD.Plugin.Scroll</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Dom href="/5.0/api/classes/Dom.html">Dom</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DomEvent href="/5.0/api/classes/DomEvent.html">DomEvent</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Editor href="/5.0/api/classes/Editor.html">Editor</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Feature href="/5.0/api/classes/Feature.html">Feature</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=FilterMenu href="/5.0/api/classes/FilterMenu.html">FilterMenu</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GestureBasic href="/5.0/api/classes/GestureBasic.html">GestureBasic</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GestureEdgePan href="/5.0/api/classes/GestureEdgePan.html">GestureEdgePan</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GesturePan href="/5.0/api/classes/GesturePan.html">GesturePan</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GesturePinch href="/5.0/api/classes/GesturePinch.html">GesturePinch</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GestureRotate href="/5.0/api/classes/GestureRotate.html">GestureRotate</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GestureShake href="/5.0/api/classes/GestureShake.html">GestureShake</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GestureSwipe href="/5.0/api/classes/GestureSwipe.html">GestureSwipe</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GestureTap href="/5.0/api/classes/GestureTap.html">GestureTap</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GregorianCalendar href="/5.0/api/classes/GregorianCalendar.html">GregorianCalendar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GregorianCalendarFormat href="/5.0/api/classes/GregorianCalendarFormat.html">GregorianCalendarFormat</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=IO href="/5.0/api/classes/IO.html">IO</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Json href="/5.0/api/classes/Json.html">Json</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=LoggerManager href="/5.0/api/classes/LoggerManager.html">LoggerManager</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Menu href="/5.0/api/classes/Menu.html">Menu</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Menu.CheckItem href="/5.0/api/classes/Menu.CheckItem.html">Menu.CheckItem</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Menu.Item href="/5.0/api/classes/Menu.Item.html">Menu.Item</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Menu.PopupMenu href="/5.0/api/classes/Menu.PopupMenu.html">Menu.PopupMenu</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Menu.RadioItem href="/5.0/api/classes/Menu.RadioItem.html">Menu.RadioItem</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Menu.SubMenu href="/5.0/api/classes/Menu.SubMenu.html">Menu.SubMenu</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=MenuButton href="/5.0/api/classes/MenuButton.html">MenuButton</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=MenuButton.Option href="/5.0/api/classes/MenuButton.Option.html">MenuButton.Option</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=MenuButton.Select href="/5.0/api/classes/MenuButton.Select.html">MenuButton.Select</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Modulex href="/5.0/api/classes/Modulex.html">Modulex</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=NavigationView href="/5.0/api/classes/NavigationView.html">NavigationView</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=NavigationViewBar href="/5.0/api/classes/NavigationViewBar.html">NavigationViewBar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Node href="/5.0/api/classes/Node.html">Node</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Overlay href="/5.0/api/classes/Overlay.html">Overlay</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Overlay.Dialog href="/5.0/api/classes/Overlay.Dialog.html">Overlay.Dialog</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Overlay.Popup href="/5.0/api/classes/Overlay.Popup.html">Overlay.Popup</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Path href="/5.0/api/classes/Path.html">Path</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Promise href="/5.0/api/classes/Promise.html">Promise</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Promise.Defer href="/5.0/api/classes/Promise.Defer.html">Promise.Defer</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Querystring href="/5.0/api/classes/Querystring.html">Querystring</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Resizable href="/5.0/api/classes/Resizable.html">Resizable</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Resizable.Plugin.Proxy href="/5.0/api/classes/Resizable.Plugin.Proxy.html">Resizable.Plugin.Proxy</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Router href="/5.0/api/classes/Router.html">Router</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ScrollView href="/5.0/api/classes/ScrollView.html">ScrollView</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ScrollView.Plugin.PullToRefresh href="/5.0/api/classes/ScrollView.Plugin.PullToRefresh.html">ScrollView.Plugin.PullToRefresh</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ScrollView.Plugin.ScrollBar href="/5.0/api/classes/ScrollView.Plugin.ScrollBar.html">ScrollView.Plugin.ScrollBar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=SplitButton href="/5.0/api/classes/SplitButton.html">SplitButton</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=StyleSheet href="/5.0/api/classes/StyleSheet.html">StyleSheet</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=SWF href="/5.0/api/classes/SWF.html">SWF</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Tabs href="/5.0/api/classes/Tabs.html">Tabs</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Toolbar href="/5.0/api/classes/Toolbar.html">Toolbar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Tree href="/5.0/api/classes/Tree.html">Tree</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Tree.CheckNode href="/5.0/api/classes/Tree.CheckNode.html">Tree.CheckNode</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Tree.CheckTree href="/5.0/api/classes/Tree.CheckTree.html">Tree.CheckTree</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Tree.Manager href="/5.0/api/classes/Tree.Manager.html">Tree.Manager</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Tree.Node href="/5.0/api/classes/Tree.Node.html">Tree.Node</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=UA href="/5.0/api/classes/UA.html">UA</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Url href="/5.0/api/classes/Url.html">Url</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Util href="/5.0/api/classes/Util.html">Util</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules ks-tabs-panel">
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=anim href="/5.0/api/modules/anim.html">anim</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=attribute href="/5.0/api/modules/attribute.html">attribute</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=base href="/5.0/api/modules/base.html">base</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=button href="/5.0/api/modules/button.html">button</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=color href="/5.0/api/modules/color.html">color</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=combobox href="/5.0/api/modules/combobox.html">combobox</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=combobox/multi-word href="/5.0/api/modules/combobox_multi-word.html">combobox/multi-word</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/container href="/5.0/api/modules/component_container.html">component/container</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/control href="/5.0/api/modules/component_control.html">component/control</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/extension/align href="/5.0/api/modules/component_extension_align.html">component/extension/align</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/extension/content-box href="/5.0/api/modules/component_extension_content-box.html">component/extension/content-box</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/extension/delegate-children href="/5.0/api/modules/component_extension_delegate-children.html">component/extension/delegate-children</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/extension/shim href="/5.0/api/modules/component_extension_shim.html">component/extension/shim</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/plugin/drag href="/5.0/api/modules/component_plugin_drag.html">component/plugin/drag</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/plugin/resize href="/5.0/api/modules/component_plugin_resize.html">component/plugin/resize</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=cookie href="/5.0/api/modules/cookie.html">cookie</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=date-picker href="/5.0/api/modules/date-picker.html">date-picker</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=dd href="/5.0/api/modules/dd.html">dd</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=dd/plugin/constrain href="/5.0/api/modules/dd_plugin_constrain.html">dd/plugin/constrain</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=dd/plugin/proxy href="/5.0/api/modules/dd_plugin_proxy.html">dd/plugin/proxy</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=dd/plugin/scroll href="/5.0/api/modules/dd_plugin_scroll.html">dd/plugin/scroll</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=dom href="/5.0/api/modules/dom.html">dom</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=editor href="/5.0/api/modules/editor.html">editor</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-custom href="/5.0/api/modules/event-custom.html">event-custom</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom href="/5.0/api/modules/event-dom.html">event-dom</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/basic href="/5.0/api/modules/event-dom_gesture_basic.html">event-dom/gesture/basic</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/edge-pan href="/5.0/api/modules/event-dom_gesture_edge-pan.html">event-dom/gesture/edge-pan</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/pan href="/5.0/api/modules/event-dom_gesture_pan.html">event-dom/gesture/pan</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/pinch href="/5.0/api/modules/event-dom_gesture_pinch.html">event-dom/gesture/pinch</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/rotate href="/5.0/api/modules/event-dom_gesture_rotate.html">event-dom/gesture/rotate</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/shake href="/5.0/api/modules/event-dom_gesture_shake.html">event-dom/gesture/shake</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/swipe href="/5.0/api/modules/event-dom_gesture_swipe.html">event-dom/gesture/swipe</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/tap href="/5.0/api/modules/event-dom_gesture_tap.html">event-dom/gesture/tap</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=feature href="/5.0/api/modules/feature.html">feature</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=filter-menu href="/5.0/api/modules/filter-menu.html">filter-menu</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=gregorian-calendar href="/5.0/api/modules/gregorian-calendar.html">gregorian-calendar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=gregorian-calendar-format href="/5.0/api/modules/gregorian-calendar-format.html">gregorian-calendar-format</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=io href="/5.0/api/modules/io.html">io</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=json href="/5.0/api/modules/json.html">json</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=logger-manager href="/5.0/api/modules/logger-manager.html">logger-manager</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=menu href="/5.0/api/modules/menu.html">menu</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=menubutton href="/5.0/api/modules/menubutton.html">menubutton</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=modulex href="/5.0/api/modules/modulex.html">modulex</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=navigation-view href="/5.0/api/modules/navigation-view.html">navigation-view</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=navigation-view/bar href="/5.0/api/modules/navigation-view_bar.html">navigation-view/bar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=node href="/5.0/api/modules/node.html">node</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=overlay href="/5.0/api/modules/overlay.html">overlay</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=path href="/5.0/api/modules/path.html">path</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=promise href="/5.0/api/modules/promise.html">promise</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=querystring href="/5.0/api/modules/querystring.html">querystring</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=resizable href="/5.0/api/modules/resizable.html">resizable</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=resizable/plugin/proxy href="/5.0/api/modules/resizable_plugin_proxy.html">resizable/plugin/proxy</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=router href="/5.0/api/modules/router.html">router</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=scroll-view href="/5.0/api/modules/scroll-view.html">scroll-view</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=scroll-view/plugin/pull-to-refresh href="/5.0/api/modules/scroll-view_plugin_pull-to-refresh.html">scroll-view/plugin/pull-to-refresh</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=scroll-view/plugin/scrollbar href="/5.0/api/modules/scroll-view_plugin_scrollbar.html">scroll-view/plugin/scrollbar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=split-button href="/5.0/api/modules/split-button.html">split-button</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=stylesheet href="/5.0/api/modules/stylesheet.html">stylesheet</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=swf href="/5.0/api/modules/swf.html">swf</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=tabs href="/5.0/api/modules/tabs.html">tabs</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=toolbar href="/5.0/api/modules/toolbar.html">toolbar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=tree href="/5.0/api/modules/tree.html">tree</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ua href="/5.0/api/modules/ua.html">ua</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=url href="/5.0/api/modules/url.html">url</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=util href="/5.0/api/modules/util.html">util</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+                    </div>
+                </div>
+                <div class="yui3-u-3-4">
+                        <div id="api-options">
+        Show:
+        <label for="api-show-inherited" optionvalue="inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" optionvalue="protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" optionvalue="private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" optionvalue="deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+                    <div class="apidocs">
+                        <div id="docs-main">
+                            <div class="content">
+                                <h1>Component.Plugin.Resize Class</h1>
+<div class="box meta">
+    
+
+    
+        <div class="extends">
+            Extends <a href="../classes/Resizable.html" class="crosslink">Resizable</a>
+        </div>
+    
+
+    
+        
+            Module: <a href="../modules/component_plugin_resize.html">component/plugin/resize</a>
+        
+    
+
+    
+</div>
+
+
+
+<div class="box intro">
+    <p>组件伸缩插件。钩子handlers的样式根据需要自行编写，例如下面例子的样式。</p>
+
+</div>
+
+
+    <div class="constructor">
+        <h2>Constructor</h2>
+        <div id="method_Component.Plugin.Resize" class="method item">
+    <h3 class="name"><code>Component.Plugin.Resize</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>//component/plugin/resize 插件需要应用的样式
+.ks-overlay .ks-resizable-handler {
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+}
+
+.ks-overlay .ks-resizable-handler-b {
+    height: 6px;
+    width: 100%; 
+    bottom: 0;
+    left: 0;
+    cursor: n-resize;
+}
+
+.ks-overlay .ks-resizable-handler-t {
+    height: 6px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    cursor: n-resize;
+}
+
+.ks-overlay .ks-resizable-handler-l {
+    height: 100%;
+    -height: expression(this.parentNode.offsetHeight);
+    width: 6px; 
+    top: 0;
+    left: 0;
+    cursor: e-resize;
+}
+
+.ks-overlay .ks-resizable-handler-r {
+    height: 100%;
+    -height: expression(this.parentNode.offsetHeight); 
+    width: 6px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: e-resize;
+}
+
+.ks-overlay .ks-resizable-handler-bl {
+    height: 6px;
+    width: 6px; 
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    cursor: sw-resize;
+}
+
+.ks-overlay .ks-resizable-handler-br {
+    height: 6px;
+    width: 6px;
+    z-index: 1; 
+    bottom: 0;
+    right: 0;
+    cursor: se-resize;
+}
+
+.ks-overlay .ks-resizable-handler-tl {
+    height: 6px;
+    width: 6px;
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    cursor: nw-resize;
+}
+
+.ks-overlay .ks-resizable-handler-tr {
+    height: 6px;
+    width: 6px;
+    z-index: 1; 
+    top: 0;
+    right: 0;
+    cursor: ne-resize;
+}
+
+
+require([&#39;overlay&#39;,&#39;component/plugin/resize&#39;],function(Overlay,Resize){
+    new Overlay({
+        plugins:[
+            new Resize({
+                minWidth:100,
+                maxWidth:200,
+                handlers:[&#39;l&#39;,&#39;r&#39;]
+            })
+        ]
+    });
+});</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+    </div>
+
+
+<div id="classdocs" class="ks-tabs ks-tabs-top">
+    <ul class="ks-tabs-bar showmsgdetail">
+        <li class="ks-tabs-tab ks-button ks-tabs-tab-selected index">Index</li>
+
+        
+            <li class="ks-tabs-tab ks-button methods">Methods</li>
+        
+        
+        
+            <li class="ks-tabs-tab ks-button attrs">Attributes</li>
+        
+        
+            <li class="ks-tabs-tab ks-button events">Events</li>
+        
+    </ul>
+
+    <div class="ks-tabs-body">
+        <div id="index" class="ks-tabs-panel ks-tabs-panel-selected index">
+            <h2 class="off-left">Item Index</h2>
+
+            
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods extends">
+                        
+                            <li class="index-item method inherited" inwhichtab="methods">
+                                <a href="#method_addAttr">addAttr</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited" inwhichtab="methods">
+                                <a href="#method_addAttrs">addAttrs</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited" inwhichtab="methods">
+                                <a href="#method_addTarget">addTarget</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited" inwhichtab="methods">
+                                <a href="#method_callSuper">callSuper</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited inherited" inwhichtab="methods">
+                                <a href="#method_destroy">destroy</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited" inwhichtab="methods">
+                                <a href="#method_detach">detach</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited" inwhichtab="methods">
+                                <a href="#method_extend">extend</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited" inwhichtab="methods">
+                                <a href="#method_fire">fire</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited" inwhichtab="methods">
+                                <a href="#method_get">get</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited" inwhichtab="methods">
+                                <a href="#method_getAttrVals">getAttrVals</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited" inwhichtab="methods">
+                                <a href="#method_getPlugin">getPlugin</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited" inwhichtab="methods">
+                                <a href="#method_hasAttr">hasAttr</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited" inwhichtab="methods">
+                                <a href="#method_on">on</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited" inwhichtab="methods">
+                                <a href="#method_plug">plug</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited" inwhichtab="methods">
+                                <a href="#method_publish">publish</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited" inwhichtab="methods">
+                                <a href="#method_removeAttr">removeAttr</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited" inwhichtab="methods">
+                                <a href="#method_removeTarget">removeTarget</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited inherited" inwhichtab="methods">
+                                <a href="#method_reset">reset</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited" inwhichtab="methods">
+                                <a href="#method_set">set</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited" inwhichtab="methods">
+                                <a href="#method_unplug">unplug</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+
+            
+                <div class="index-section attrs">
+                    <h3>Attributes</h3>
+
+                    <ul class="index-list attrs extends">
+                        
+                            <li class="index-item attr inherited" inwhichtab="attrs">
+                                <a href="#attr_handlers">handlers</a>
+                            </li>
+                        
+                            <li class="index-item attr inherited" inwhichtab="attrs">
+                                <a href="#attr_listeners">listeners</a>
+                            </li>
+                        
+                            <li class="index-item attr inherited" inwhichtab="attrs">
+                                <a href="#attr_maxHeight">maxHeight</a>
+                            </li>
+                        
+                            <li class="index-item attr inherited" inwhichtab="attrs">
+                                <a href="#attr_maxWidth">maxWidth</a>
+                            </li>
+                        
+                            <li class="index-item attr inherited" inwhichtab="attrs">
+                                <a href="#attr_minHeight">minHeight</a>
+                            </li>
+                        
+                            <li class="index-item attr inherited" inwhichtab="attrs">
+                                <a href="#attr_minWidth">minWidth</a>
+                            </li>
+                        
+                            <li class="index-item attr inherited" inwhichtab="attrs">
+                                <a href="#attr_node">node</a>
+                            </li>
+                        
+                            <li class="index-item attr inherited" inwhichtab="attrs">
+                                <a href="#attr_plugins">plugins</a>
+                            </li>
+                        
+                            <li class="index-item attr inherited" inwhichtab="attrs">
+                                <a href="#attr_preserveRatio">preserveRatio</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+                <div class="index-section events">
+                    <h3>Events</h3>
+
+                    <ul class="index-list events extends">
+                        
+                            <li class="index-item event inherited" inwhichtab="events">
+                                <a href="#event_*Change">*Change</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item event inherited" inwhichtab="events">
+                                <a href="#event_afterAttrNameChange">afterAttrNameChange</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item event inherited" inwhichtab="events">
+                                <a href="#event_beforeAttrNameChange">beforeAttrNameChange</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item event inherited" inwhichtab="events">
+                                <a href="#event_resize">resize</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item event inherited" inwhichtab="events">
+                                <a href="#event_resizeEnd">resizeEnd</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item event inherited" inwhichtab="events">
+                                <a href="#event_resizeStart">resizeStart</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+        </div>
+
+        
+            <div id="methods" class="ks-tabs-panel">
+                <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method_addAttr" class="method item inherited">
+    <h3 class="name"><code>addAttr</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>name</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>attrConfig</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Attribute.html#method_addAttr">Attribute</a>
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>给宿主对象增加一个属性</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">name</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>属性名</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">attrConfig</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>属性配置信息, 支持下面的配置项:</p>
+
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">value</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a> | <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                                
+
+                                <div class="param-description">
+                                    <p>属性默认值。注意默认值请不要设置为复杂对象（通过自定义构造器 new 出来的），复杂对象可设置 valueFn 返回.如果配置项中没有设置 value, 会调用 valueFn 函数获取默认值并赋给 value</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">valueFn</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+                                
+
+                                <div class="param-description">
+                                    <p>提供属性默认值的函数，传入对象内部对应的属性值和属性名，取该函数的返回值作为最终值给用户</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">setter</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+                                
+
+                                <div class="param-description">
+                                    <p>写属性时的处理函数，传入从 set() 参数得到的属性值和属性名，如果返回非 undefined 则作为新的属性设置值</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">getter</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+                                
+
+                                <div class="param-description">
+                                    <p>读属性时的处理函数</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">validator</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+                                
+
+                                <div class="param-description">
+                                    <p>写属性时的验证函数，传入从 set() 参数得到的属性值和属性名，返回 false 则不改变该属性值</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_addAttrs" class="method item inherited">
+    <h3 class="name"><code>addAttrs</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>attrConfigs</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>values</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Attribute.html#method_addAttrs">Attribute</a>
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>批量添加属性</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">attrConfigs</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>属性名/配置信息对</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">values</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>属性名/值对, 批量设置当前对象的属性值</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_addTarget" class="method item inherited">
+    <h3 class="name"><code>addTarget</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>target</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/CustomEvent.Target.html#method_addTarget">CustomEvent.Target</a>
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>添加冒泡事件源对象</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">target</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>事件往上冒泡的事件源</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>require([&#39;util&#39;, &#39;event/custom&#39;], function(Util, CustomEvent) {
+    function Custom(id){
+        this.id = id;
+        this.publish(&quot;run&quot;,{
+            bubbles:1
+        });
+    }
+
+    Util.augment(Custom, CustomEvent.Target);
+
+    var c1 = new Custom(&quot;c1&quot;);
+
+    var c2 = new Custom(&quot;c1&quot;);
+
+    c1.addTarget(c2);
+
+    c2.on(&quot;run&quot;,function(e){
+        S.log(e.target.id +&quot; fires event run&quot;); // =&gt; c1 fires event run
+    });
+
+    c1.fire(&quot;run&quot;);
+});</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_callSuper" class="method item inherited">
+    <h3 class="name"><code>callSuper</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Base.html#method_callSuper">Base</a>
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>调用父类的对应方法，如果没有，则返回undefined</p>
+
+    </div>
+
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>require([&#39;base&#39;], function(Base) {
+    var A = Base.extend({
+        m: function (value) {
+            return &#39;am:&#39; + value;
+        },
+        m2: function (value) {
+            return &#39;am2:&#39; + value;
+        }
+    });
+
+    var B = A.extend({
+        m: function(value) {
+            return &#39;bm:(&#39; + this.callSuper(value) + &#39;)&#39;;
+        },
+        m2: function(value) {
+            return &#39;bm2(&#39; + this.callSuper.apply(this, arguments) + &#39;)&#39;;
+        }
+    });
+
+    var b = new B();
+    console.log(b.m(1));
+    console.log(b.m2(2));
+});</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_destroy" class="method item inherited">
+    <h3 class="name"><code>destroy</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            <p>Inherited from
+            <a href="../classes/Base.html#method_destroy">
+                Base
+            </a>
+            
+            but overwritten by this Class
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>销毁该组件, 取消元素上的缩放功能.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_detach" class="method item inherited">
+    <h3 class="name"><code>detach</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>eventType</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>fn</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[scope]</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/CustomEvent.Target.html#method_detach">CustomEvent.Target</a>
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>解除绑定的事件处理器</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">eventType</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a> | <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">fn</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>当事件触发时的回调函数</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[scope]</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>回调函数的 this 值. 如果不指定默认为绑定事件的当前元素</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_extend" class="method item inherited">
+    <h3 class="name"><code>extend</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code class="optional">[extensions]</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>methodDesc</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>staticAttributes</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>desc</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Base.html#method_extend">Base</a>
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>从当前类上扩展出一个子类</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[extensions]</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function[]</a></span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>扩展类数组</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">methodDesc</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>方法集合键值对</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">staticAttributes</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>放到新产生组件类上的静态属性集合键值对，其中 ATTRS 属性特殊对待</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">desc</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>类元信息</p>
+
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">name</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                                
+
+                                <div class="param-description">
+                                    <p>类名</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_fire" class="method item inherited">
+    <h3 class="name"><code>fire</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>type</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>eventData</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/CustomEvent.Target.html#method_fire">CustomEvent.Target</a>
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>触发绑定 type 类型的事件处理器, 并给触发的事件处理器的事件对象参数中混入数据 eventData</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">type</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>要触发的自定义事件名称</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">eventData</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>要混入触发事件对象的数据对象</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>:
+                    
+                    <p>如果其中一个事件处理器返回 false , 则返回 false, 否则返回最后一个事件处理器的返回值</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_get" class="method item inherited">
+    <h3 class="name"><code>get</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>name</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Attribute.html#method_get">Attribute</a>
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>获取属性 name 的值</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">name</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>属性名.也可以为 “x.y” 形式. 此时要求 x 属性为包含 y 属性的普通 Object.当没有设置属性值时, 会取该属性的默认值</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_getAttrVals" class="method item inherited">
+    <h3 class="name"><code>getAttrVals</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Attribute.html#method_getAttrVals">Attribute</a>
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>获取目前实例的所有属性键值对集合</p>
+
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                    
+                    <p>属性键值对集合</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getPlugin" class="method item inherited">
+    <h3 class="name"><code>getPlugin</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>id</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Base.html#method_getPlugin">Base</a>
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>根据指定的 id 获取对应的plugin实例</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">id</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>plugin实例的id</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                    <p>对应的plugin实例</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>dialog.getPlugin(&#39;component/plugin/drag&#39;)
+   .getPlugin(&#39;dd/plugin/constrain&#39;)
+   .set(&#39;constrain&#39;, false);</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_hasAttr" class="method item inherited">
+    <h3 class="name"><code>hasAttr</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>name</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Attribute.html#method_hasAttr">Attribute</a>
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>判断是否有名为 name 的属性</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">name</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>属性名</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>:
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_on" class="method item inherited">
+    <h3 class="name"><code>on</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>eventType</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>fn</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[scope]</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/CustomEvent.Target.html#method_on">CustomEvent.Target</a>
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>为相应事件添加事件处理器</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">eventType</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a> | <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <ul>
+<li>当为String时 包含一个或多个事件名称的字符串, 多个事件名以空格分开。 事件可以通过加点来表示分组，例如 &quot;click.one&quot; , &quot;click.two&quot;</li>
+<li>当为Object时，类似这样：<pre><code>{
+  &#39;click&#39;:{
+      fn:function(){
+      },
+      filter: &#39;&#39; // delegate,
+      once:true // 绑定一次
+  },
+  &#39;mouseenter&#39;:function(){}
+}</code></pre>
+</li>
+</ul>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">fn</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>当事件触发时的回调函数</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[scope]</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>回调函数的 this 值. 如果不指定默认为绑定事件的当前元素</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_plug" class="method item inherited">
+    <h3 class="name"><code>plug</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>plugin</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Base.html#method_plug">Base</a>
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>安装指定插件</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">plugin</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a> | <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>指定的插件构造器或者插件对象</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                    <p>自身</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>require([&#39;overlay&#39;, &#39;component/plugin/resize&#39;],function(Overlay,Resize){
+    new Overlay({
+        content:&#39;test&#39;
+    }).plug(new Resize({
+        handlers:[&#39;t&#39;,&#39;t&#39;]
+    }));
+});</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_publish" class="method item inherited">
+    <h3 class="name"><code>publish</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>type</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cfg</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/CustomEvent.Target.html#method_publish">CustomEvent.Target</a>
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>配置自定义事件的一些特有信息</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">type</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>要触发的自定义事件名称</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cfg</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>事件的具体配置对象</p>
+
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[bubbles=true]</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>类型 boolean. 是否支持冒泡。 默认 true</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[defaultFn]</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_removeAttr" class="method item inherited">
+    <h3 class="name"><code>removeAttr</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>name</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Attribute.html#method_removeAttr">Attribute</a>
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>删除名为 name 的属性</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">name</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>属性名</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_removeTarget" class="method item inherited">
+    <h3 class="name"><code>removeTarget</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>target</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/CustomEvent.Target.html#method_removeTarget">CustomEvent.Target</a>
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>删除冒泡事件源对象</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">target</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>事件往上冒泡的事件源</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_reset" class="method item inherited">
+    <h3 class="name"><code>reset</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>name</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>opts</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            <p>Inherited from
+            <a href="../classes/Attribute.html#method_reset">
+                Attribute
+            </a>
+            
+            but overwritten by this Class
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>重置属性 name 为初始值. (调用一次 set() )</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">name</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>属性</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">opts</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>控制对象，包括以下控制选项</p>
+
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">silent=false</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                                
+
+                                <div class="param-description">
+                                    <p>默认 false , 是否触发 change 系列事件</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_set" class="method item inherited">
+    <h3 class="name"><code>set</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>name</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>value</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>opts</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Attribute.html#method_set">Attribute</a>
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>设置属性 name 的值为 value</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">name</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>属性名.也可以为 “x.y” 形式，此时要求 x 属性为包含 y 属性的普通 Object，这时会设置 x 属性值的 y 属性.但只会触发 x 的相关 change 事件</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">value</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>属性的值</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">opts</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>控制对象，包括以下控制选项</p>
+
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">silent=false</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                                
+
+                                <div class="param-description">
+                                    <p>默认 false , 是否触发 change 系列事件</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">error</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+                                
+
+                                <div class="param-description">
+                                    <p>验证失败的回调，包括失败原因</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">force</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+                                
+
+                                <div class="param-description">
+                                    <p>是否强制触发 change 事件，默认值为 false，当值发生变化时才触发</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>:
+                    
+                    <p>该次属性设置是否生效（是否通过了 validator 验证）</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_unplug" class="method item inherited">
+    <h3 class="name"><code>unplug</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>plugin</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Base.html#method_unplug">Base</a>
+            
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>卸载指定插件</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">plugin</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a> | <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>指定的插件构造器或者插件对象</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                    <p>自身</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>require([&#39;overlay&#39;,&#39;component/plugin/resize&#39;],function(Overlay,Resize){
+    var o= new Overlay({
+        content:&#39;test&#39;
+    }).plug(new Resize({
+        handlers:[&#39;t&#39;,&#39;t&#39;]
+    }));
+
+    o.unplug(&#39;component/plugin/resize&#39;); // 卸载 resize 插件
+});</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+            </div>
+        
+
+        
+
+        
+            <div id="attrs" class="ks-tabs-panel">
+                <h2 class="off-left">Attributes</h2>
+
+                
+                    <div id="attr_handlers" class="attr item inherited">
+    <a name="config_handlers"></a> 
+    <h3 class="name"><code>handlers</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String[]</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Resizable.html#attr_handlers">Resizable</a>
+            
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>默认为 [], 表示可拖动元素的哪些位置来进行缩放.
+可取下列值: “b”,”t”,”r”,”l”,”tr”,”tl”,”br”,”bl”． 其中, t,b,l,r 分别表示 top,bottom,left,right, 加上组合共八种取值, 可在上, 下, 左, 右以及左上, 左下, 右上, 右下进行拖动.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> []</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="attr_listeners" class="attr item inherited">
+    <a name="config_listeners"></a> 
+    <h3 class="name"><code>listeners</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Base.html#attr_listeners">Base</a>
+            
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>配置组件的事件绑定,例如:</p>
+<pre class="code prettyprint"><code>{
+    listeners:{
+        customEvent:function(e){
+            alert(e.type); // =&gt; &quot;customEvent&quot;
+        }
+    }
+}
+
+or
+
+{
+    listeners:{
+        customEvent:{
+            fn:function(e){
+                // e.type // =&gt; customEvent
+                // this.xx =&gt; 1
+            },
+            context:{xx:1}
+        }
+    }
+}</code></pre>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="attr_maxHeight" class="attr item inherited">
+    <a name="config_maxHeight"></a> 
+    <h3 class="name"><code>maxHeight</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Resizable.html#attr_maxHeight">Resizable</a>
+            
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>默认为0, 表示拖动缩放的最大高度</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="attr_maxWidth" class="attr item inherited">
+    <a name="config_maxWidth"></a> 
+    <h3 class="name"><code>maxWidth</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Resizable.html#attr_maxWidth">Resizable</a>
+            
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>默认为0, 表示拖动缩放的最大宽度</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="attr_minHeight" class="attr item inherited">
+    <a name="config_minHeight"></a> 
+    <h3 class="name"><code>minHeight</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Resizable.html#attr_minHeight">Resizable</a>
+            
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>默认为0, 表示拖动缩放的最小高度</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="attr_minWidth" class="attr item inherited">
+    <a name="config_minWidth"></a> 
+    <h3 class="name"><code>minWidth</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Resizable.html#attr_minWidth">Resizable</a>
+            
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>默认为0, 表示拖动缩放的最小宽度</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="attr_node" class="attr item inherited">
+    <a name="config_node"></a> 
+    <h3 class="name"><code>node</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a> | <a href="https://developer.mozilla.org/en/Document_Object_Model_(DOM)/HTMLElement" class="crosslink external" target="_blank">HTMLElement</a> | KISSY.Node</span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Resizable.html#attr_node">Resizable</a>
+            
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>将要进行缩放的节点</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="attr_plugins" class="attr item inherited">
+    <a name="config_plugins"></a> 
+    <h3 class="name"><code>plugins</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function[]</a> | <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object[]</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Base.html#attr_plugins">Base</a>
+            
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>插件构造器数组或插件对象数组. 例如</p>
+<pre class="code prettyprint"><code>{
+    plugins: [ Plugin1,Plugin2 ]
+}
+
+// or
+
+{
+    plugins: [new Plugin1(cfg),new Plugin2(cfg)]
+}</code></pre>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="attr_preserveRatio" class="attr item inherited">
+    <a name="config_preserveRatio"></a> 
+    <h3 class="name"><code>preserveRatio</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Resizable.html#attr_preserveRatio">Resizable</a>
+            
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>是否在 resize 的过程中保持 width/height 比例</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+            <div id="events" class="ks-tabs-panel">
+                <h2 class="off-left">Events</h2>
+
+                
+                    <div id="event_*Change" class="events item inherited">
+    <h3 class="name"><code>*Change</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Attribute.html#event_*Change">Attribute</a>
+            
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>每调用 <a href="/5.0/api/classes/Attribute.html#method_set">set()</a> 一次后就触发一次该事件</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Event Payload:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">e</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>回调函数传入的对象</p>
+
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">newVal</code>
+                                    <span class="type"></span>
+                                
+
+                                <div class="param-description">
+                                    <p>本次 set 导致的属性当前值集合</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">prevVal</code>
+                                    <span class="type"></span>
+                                
+
+                                <div class="param-description">
+                                    <p>本次 set 导致的属性在 set 前的值集合</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">attrName</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                                
+
+                                <div class="param-description">
+                                    <p>本次 set 导致改变的属性名集合</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">subAttrName</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                                
+
+                                <div class="param-description">
+                                    <p>本次 set 导致的属性全名集合</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_afterAttrNameChange" class="events item inherited">
+    <h3 class="name"><code>afterAttrNameChange</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Attribute.html#event_afterAttrNameChange">Attribute</a>
+            
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>名为 “attrName” 的属性, 在改变它的值之后触发该事件</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Event Payload:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">e</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>回调函数传入的对象</p>
+
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">newVal</code>
+                                    <span class="type"></span>
+                                
+
+                                <div class="param-description">
+                                    <p>当前的属性值</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">prevVal</code>
+                                    <span class="type"></span>
+                                
+
+                                <div class="param-description">
+                                    <p>当前改变前的属性值</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">attrName</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                                
+
+                                <div class="param-description">
+                                    <p>当前的属性名，例如 “x”</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">subAttrName</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                                
+
+                                <div class="param-description">
+                                    <p>当前的完整属性名，例如 “x.y”</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_beforeAttrNameChange" class="events item inherited">
+    <h3 class="name"><code>beforeAttrNameChange</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Attribute.html#event_beforeAttrNameChange">Attribute</a>
+            
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>名为 “attrName” 的属性, 在改变它的值之前触发该事件</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Event Payload:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">e</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>回调函数传入的对象</p>
+
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">newVal</code>
+                                    <span class="type"></span>
+                                
+
+                                <div class="param-description">
+                                    <p>将要改变到的属性值</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">prevVal</code>
+                                    <span class="type"></span>
+                                
+
+                                <div class="param-description">
+                                    <p>当前的属性值</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">attrName</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                                
+
+                                <div class="param-description">
+                                    <p>当前的属性名，例如 “x”</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">subAttrName</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                                
+
+                                <div class="param-description">
+                                    <p>当前的完整属性名，例如 “x.y”</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_resize" class="events item inherited">
+    <h3 class="name"><code>resize</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Resizable.html#event_resize">Resizable</a>
+            
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>拖放中触发</p>
+
+    </div>
+
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_resizeEnd" class="events item inherited">
+    <h3 class="name"><code>resizeEnd</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Resizable.html#event_resizeEnd">Resizable</a>
+            
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>结束拖放后触发</p>
+
+    </div>
+
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_resizeStart" class="events item inherited">
+    <h3 class="name"><code>resizeStart</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Resizable.html#event_resizeStart">Resizable</a>
+            
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>开始拖放后触发</p>
+
+    </div>
+
+    
+
+
+    
+</div>
+
+                
+            </div>
+        
+    </div>
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div tag="apidocs-end" style="display:none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="wrap-disqus">
+            <div id="disqus_thread"></div>
+        </div>
+        <script>
+            if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+            // The following are highly recommended additional parameters. Remove the slashes in front to use.
+             //var disqus_identifier = '/anim';
+             //var disqus_url = window.location;
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+            }
+        </script>
+        <div class="other-page">
+            <div class="wrap">
+                <div class="content">
+                    <div class="wrap-content">
+                        <p>@2010 - 2112 KISSY UI LIBARAY</p>
+                        <div class="github-msg">
+                            <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=watch&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                            <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=fork&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

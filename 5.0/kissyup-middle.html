@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>KISSY UP</title>
+        <style>
+            img.hide{
+                display:none;
+            }
+            .banner{
+                width:600px;
+                display:block;
+                margin:0 auto;
+                margin-top:50px;
+            }
+        </style>
+        <script type="text/javascript" src="http://g.alicdn.com/kissy/k/5.0.0/seed.js" data-config="{combine:true}"></script>
+        <script>
+            require(['io','node'], function(IO,$){
+                setTimeout(function(){
+                    new IO({
+                        dataType : "jsonp",
+                        url : "http://www.taobao.com/go/act/other/mtbbug.php",
+                        success: function(resp){
+                            if(resp.aliIntranet === "ali_intranet"){
+                                location.href = "http://10.125.51.131/";
+                            }else{
+                                stop();
+                            }
+                        },
+                        error: stop
+                    });
+
+                    function stop(){
+                        $("#banner").css('display', 'block');
+                        $(document.body).css('background', '#1386be');
+                    }
+                },0);
+                
+            });
+        </script>
+    </head>
+    <body>
+        <img class="banner hide" id="banner" src="http://gtms03.alicdn.com/tps/i3/TB147tkGFXXXXcSXpXXV_UN8VXX-1093-647.png" />
+    </body>
+</html>

@@ -1,0 +1,76 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Demo - 节点上的 stop 示例</title>
+<link href="//g.alicdn.com/kissy/k/5.0.1/css/base.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="./assets/custombutton.css">
+<style>
+	body{
+        background: #fff;
+    }
+div.block {
+    position: absolute;
+    background-color: #abc;
+    left: 0;
+    top:0;
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+}
+</style>
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<div style="position:relative;height:72px;">
+    <div class="block"></div>
+</div>
+<script type="text/javascript">
+	require("node,button", function(Node, Button) {
+	    var $ = Node.all;
+
+	    var go = new Button({
+	        content: "GO!"
+	    }), stop = new Button({
+	        content: "STOP!"
+	    }), back = new Button({
+	        content: "BACK!"
+	    });
+	    go.render();
+	    stop.render();
+	    back.render();
+
+	    /* Start animation */
+	    go.on("click", function(e) {
+	        go.set("disabled", true);
+	        back.set("disabled", true);
+	        $(".block").animate({left: (parseInt($(".block").css("left")) + 100) + 'px'}, 2, undefined, function() {
+	            go.set("disabled", false);
+	            back.set("disabled", false);
+	        });
+	        e.halt();
+	    });
+
+	    /* Stop animation when button is clicked */
+	    stop.on('click', function() {
+	        go.set("disabled", false);
+	        back.set("disabled", false);
+	        $(".block").stop();
+	    });
+
+	    /* Start animation in the opposite direction */
+	    back.on('click', function(e) {
+	        go.set("disabled", true);
+	        back.set("disabled", true);
+	        $(".block").animate({left: Math.max(parseInt($(".block").css("left")) - 100,0) + 'px'}, 2, undefined, function() {
+	            go.set("disabled", false);
+	            back.set("disabled", false);
+	        });
+	        e.halt();
+	    });
+	});
+
+</script>
+</body>
+</html>

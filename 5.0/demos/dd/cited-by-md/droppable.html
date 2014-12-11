@@ -1,0 +1,171 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Draggable 简单使用示例</title>
+<link rel="stylesheet" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="assets/box.css">
+<style type="text/css">
+.container {
+    height: 270px;
+    padding: 10px;
+    position: relative;
+}
+
+.component {
+    margin: 10px 10px;
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    overflow: hidden;
+    line-height:20px;
+}
+
+.cheader {
+    cursor: move;
+    border: 1px solid black;
+    height: 20px;
+    line-height: 20px;
+}
+
+#drop, #drop3 {
+    height: 100px;
+    line-height: 30px;
+  
+}
+
+.box .ks-dd{
+    background:white;
+    opacity:1;
+    *filter:alpha(opacity=100);
+}
+.box .ks-dd-drag-over {
+    background: #a52a2a;
+}
+
+.box .ks-dd-drop-over {
+    background: #fa8072;
+    opacity:0.6;
+    *filter:alpha(opacity=60);
+}
+
+#container3 .component .cheader {
+    cursor: move;
+}
+</style>
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"></script>
+</head>
+
+<body>
+<h3>Droppable 简单使用示例</h3>
+<p>
+    注意区分Draggable配置项 mode 的三种模式：<br>
+    intersect :区域相交就算enter <br>
+    strict : drag 区域完全在 drop 区域内才算 <br>
+    point : 鼠标在移动中进入 drop 区域内 默认 point
+</p>
+<div id="container" class="container">
+    <div class="box component" id="intersect">
+        <s class="box-tp"><b></b></s>
+        <div class="box-hd">
+            <h3>Drag</h3>
+        </div>
+        <div class="box-bd">
+            intersect drag
+        </div>
+        <s class="box-bt"><b></b></s>
+    </div>
+    
+    <div class="box component" id="strict">
+        <s class="box-tp"><b></b></s>
+        <div class="box-hd">
+            <h3>Drag</h3>
+        </div>
+        <div class="box-bd">
+            strict drag
+        </div>
+        <s class="box-bt"><b></b></s>
+    </div>
+    
+    <div class="box component" id="point">
+        <s class="box-tp"><b></b></s>
+        <div class="box-hd">
+            <h3>Drag</h3>
+        </div>
+        <div class="box-bd">
+            point drag
+        </div>
+        <s class="box-bt"><b></b></s>
+    </div>
+   
+    
+    <div class="box" >
+        <s class="box-tp"><b></b></s>
+        <div id="drop" class="box-bd ks-dd">
+            drop zone
+        </div>
+        <s class="box-bt"><b></b></s>
+    </div>
+    
+</div>
+    <script type="text/javascript">
+        require(['node', 'dd'], function (Node, DD) {
+            var DDM = DD.DDM,
+                Draggable = DD.Draggable,
+                Droppable = DD.Droppable,
+                DropMode=Draggable.DropMode;
+            var p;
+
+            /**
+             * 集中监听所有
+             */
+            DDM.on("dragstart", function(ev) {
+                var c = ev.drag;
+                p = c.get("dragNode").css("position");
+            });
+            DDM.on("dragend", function(ev) {
+                var c = ev.drag;
+                c.get("dragNode").css("position", p);
+            });
+
+            /**
+             * 简单拖放
+             */
+            c1 = new Draggable({
+                node:"#intersect",
+                //模式,
+                // intersect :区域相交就算enter
+                // strict : drag 区域完全在 drop 区域内才算
+                // point : 鼠标在移动中进入 drop 区域内
+                //默认 point
+                mode:DropMode.INTERSECT,
+                move:true
+            });
+            new Draggable({
+                node:"#strict",
+                mode:DropMode.STRICT,
+                move:true
+            });
+            new Draggable({
+                node:"#point",
+                move:true
+            });
+
+
+            var drop = new Droppable({
+                node:"#drop"
+            });
+            function onhit(ev) {
+                ev.drag.get("node").css("margin", "5px 10px");
+                ev.drag.get("node").appendTo(ev.drop.get("node"));
+                ev.drag.destroy();
+            }
+            drop.on("drophit",onhit);
+
+        });
+    </script>
+</body>
+</html>

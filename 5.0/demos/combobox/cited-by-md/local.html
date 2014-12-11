@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>使用本地数据自动补全</title>
+	<style type="text/css">
+	body{
+		background: #fff;
+	}
+	</style>
+	<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/combobox/assets/dpl-debug.css">
+	<script type="text/javascript" src="//g.alicdn.com/kissy/k/5.0.1/seed.js"></script>
+	<style type="text/css">
+		.ks-popupmenu {
+		    background: #fff;
+		    border-color: #999;
+		    border-style: solid;
+		    border-width: 1px;
+		    cursor: default;
+		    margin: 0;
+		    outline: none;
+		    padding: 4px 0;
+		    position: absolute;
+		    z-index: 99999;
+		    left:-9999px;
+		    top:-9999px;
+		}
+
+		.ks-popupmenu-shown{
+		    visibility: visible;
+		}
+
+		.ks-popupmenu-hidden{
+		    visibility: hidden;
+		}
+
+		.ks-menuitem {
+		    color: #404040;
+		    list-style: none;
+		    margin: 0;
+		    font-size: 12px;
+		    line-height: 18px;
+		    padding: 1px 0 2px;
+		    white-space: nowrap;
+		}
+
+		.ks-menuitem-disabled .ks-menuitem-content {
+		    color: #ccc !important;
+		}
+
+		.ks-menuitem-highlight,
+		.ks-menuitem-hover {
+		    background-color: #39F;
+		    color: white;
+		}
+
+		.ks-combobox {
+		    border: 1px solid #B5B6B5;
+		    background-color: #fff;
+		    display: inline-block;
+		    /*clear float*/
+		    overflow: hidden;
+		    zoom: 1;
+		    *display: inline;
+		    font-size: 12px;
+		}
+		.ks-combobox-trigger{
+			height: 21px;
+		}
+		.ks-combobox-clear-inner{
+			height: 19px;
+			background-position: -48px -93px;
+		}
+		strong{
+			font-weight: bold;
+			color: red;
+		}
+		.ks-menuitem-disabled {
+		    color: #808080;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap" style="width:90%;margin:0 auto;">
+		<h1>使用本地数据自动补全</h1>
+		<p>从已有节点渲染(已有节点的html结构需要符合如这个示例的规范结构)：</p>
+		<div id="container1">
+			<p>输入 a/b/c/d/2  观察结果</p>
+			<div class="ks-combobox" id="combobox">
+				<div class="ks-combobox-invalid-el" style="display: none;">
+				    <div class="ks-combobox-invalid-inner"></div>
+				</div>
+				<div class="ks-combobox-trigger">
+				    <div class="ks-combobox-trigger-inner">▼</div>
+				</div>
+				<div class="ks-combobox-input-wrap">
+				    <input  class="ks-combobox-input" value="" tabindex="0">
+				    <div class="ks-combobox-clear" unselectable="on" style="display:none" onmousedown="return false;">
+				    	<div class="ks-combobox-clear-inner">clear</div>
+				    </div>
+				</div>
+			</div>
+		</div>
+		<p>全新产生新节点：</p>
+		<div id="container2">
+			
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+	require(['combobox'], function(ComboBox){
+		var localData = ['a1234', 'b2345', 'c3456', 'd4567'],
+			localDataSource = new ComboBox.LocalDataSource({
+				data : localData
+			});
+		var basicComboBox1 = new ComboBox({
+			srcNode : '#combobox',
+			dataSource : localDataSource,
+			maxItemCount : 4,
+			format : function(query, data){
+				var ret = [];
+				for(var i = 0; i < data.length; i++){
+					ret[i] = {
+						content:(data[i] + "")
+                            .replace(query, '<strong>' + query + '</strong>'),
+                        disabled:(i % 2 ? true : false)
+					}
+				}
+				return ret;
+			}
+		});
+
+		basicComboBox1.render();
+
+		var basicComboBox2 = new ComboBox({
+			render : '#container2',
+			dataSource : localDataSource,
+			maxItemCount : 4,
+			format : function(query, data){
+				var ret = [];
+				for(var i = 0; i < data.length; i++){
+					ret[i] = {
+						content:(data[i] + "")
+                            .replace(query, '<strong>' + query + '</strong>'),
+                        disabled:(i % 2 ? true : false)
+					}
+				}
+				return ret;
+			}
+		});
+		basicComboBox2.render();
+	})
+	</script>
+</body>
+</html>

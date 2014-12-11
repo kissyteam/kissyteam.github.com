@@ -1,0 +1,57 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>DatePicker-限定选择时间</title>
+<link rel="stylesheet" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"></script>
+<style type="text/css">
+    .ks-date-picker-disabled-cell .ks-date-picker-date{  /*不能被选择的日期样式*/
+        color: #bfbfbf;  
+    }
+</style>
+
+</head>
+<body>
+<h3>DatePicker-限定选择时间</h3>
+<p>
+    DatePicker 是一个嵌入式的日历控件，如需使用悬浮式的日历控件请使用 DatePicker.Popup。
+</p>
+<p>这个例子使用 disabledDate 这个配置来限定能被选择的日期，只能选择当前日期所在月份的前后三天</p>
+<div id="holder"></div>
+<div id="result"></div>
+    <script type="text/javascript">
+        // require.config('lang', 'en-us');  //如果配置语言为英文，日历组件会自动显示为英文
+        require(['node', 'date-picker', 'gregorian-calendar', 'gregorian-calendar-format', 'date-picker/assets/dpl.css'], function(Node, DatePicker, GregorianCalendar, GregorianCalendarFormat) {
+            var result = Node.all("#result");
+
+            var gregorian = new GregorianCalendar();
+            gregorian.setTime(+new Date());  //当前时间的GregorianCalendar对象
+
+            var picker = new DatePicker({
+                render: "#holder",
+                showWeekNumber : false,
+                showClear : false,  // showClear 和 showToday 一定要一起配置成相同的才生效
+                showToday : false,
+                disabledDate : function(current, value){  //返回true说明该日期不可选，具体api意义请看API文档
+                    var dateCanNotBeSelected = true;
+                    if(current.getMonth() === gregorian.getMonth() && gregorian.getDayOfMonth() + 3 >= current.getDayOfMonth() && gregorian.getDayOfMonth() - 3 <= current.getDayOfMonth()){
+                        dateCanNotBeSelected = false;
+                    }
+                    return dateCanNotBeSelected;
+                }
+            }).render();
+
+            picker.on('select', function(e) {
+                var value = e.value;
+                if (value) {
+                    result.html(GregorianCalendarFormat.getDateInstance(GregorianCalendarFormat.Style.FULL).format(value));
+                } else {
+                    result.html(null);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

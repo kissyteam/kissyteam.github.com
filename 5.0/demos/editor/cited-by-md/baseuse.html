@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>简单使用Editor</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="http://g.tbcdn.cn/kg/editor-plugins/1.1.2/assets/editor.css"> <!--引入editor的插件样式-->
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+<script type="text/javascript" src="http://g.tbcdn.cn/kg/editor-plugins/1.1.3/mods.js"></script>  <!-- 引入插件模块依赖表避免模块串行加载，优化性能-->
+</head>
+<body>
+<h1>简单使用Editor</h1>
+<div id="container">
+    
+</div>
+<script type="text/javascript">
+    require.config({
+        packages : [
+            {
+                name : 'kg',   //1.1.3是当前editor-plugins的版本号，使用时请选择对应的版本号
+                base : 'http://g.tbcdn.cn/kg/'
+            }
+        ]
+    });
+    require(['editor','kg/editor-plugins/1.1.3/source-area','kg/editor-plugins/1.1.3/font-size','kg/editor-plugins/1.1.3/code'], function(Editor, SourceArea, FontSize, Code){
+        var myEditor = new Editor({
+            render : '#container',
+            focused : true,
+            textareaAttrs : {
+                name : 'my-textarea'
+            },
+            attachForm: true,
+            plugins : [
+                SourceArea, FontSize, Code
+            ]
+        });
+
+        myEditor.render();
+    })
+</script>
+</body>
+</html> 

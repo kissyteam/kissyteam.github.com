@@ -1,0 +1,152 @@
+
+<html>
+<head>
+	<title></title>
+	<script src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"></script>
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	.content {
+		width: 500px;
+		height: 500px;
+		margin: 60px auto 0;
+		position: relative;
+	}
+	.img {
+		height: 500px;
+		position: relative;
+	}
+	.img:after {
+		content: '';
+		display: block;
+		visibility: hidden;
+		height: 0;
+		clear: both;
+	}
+	ul {
+		list-style: none;
+	}
+	ul li {
+		display: inline-block;
+		width: 100px;
+		height: 100px;
+		position: absolute;
+	}
+	ul li.list1 {
+		top: -50px;
+		left: 200px;
+	}
+	ul li.list2 {
+		top: 8px;
+		left: 39px;
+	}
+	ul li.list9 {
+		top: 8px;
+		left: 361px;
+	}
+	ul li.list3 {
+		top: 157px;
+		left: -46px;
+	}
+	ul li.list8 {
+		top: 157px;
+		left: 446px;
+	}
+	ul li.list4 {
+		top: 325px;
+		left: -17px;
+	}
+	ul li.list7 {
+		top: 325px;
+		left: 417px;
+	}
+	ul li.list5 {
+		top: 435px;
+		left: 114px;
+	}
+	ul li.list6 {
+		top: 435px;
+		left: 286px;
+	}
+	ul li img {
+		width: 100px;
+		height: 100px;
+		border-radius: 50px;
+		opacity: 0.2;
+	}
+	ul li.active img {
+		opacity: 1;
+	}
+	button {
+		position: absolute;
+		top: 330px;
+		left: 200px;
+		width: 100px;
+		height: 50px;
+		text-align: center;
+		margin: 50px auto;
+	}
+	.detail {
+		position: absolute;
+		display: none;
+		top: 80px;
+		left: 158px;
+		width: 183px;
+		height: 275px;
+		box-shadow: 0 0 5px #ccc;
+	}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<div class="img">
+			<ul class="img-list">
+				<li class="list1 active"><img src="./assets/1.png" /></li>
+				<li class="list2"><img src="./assets/2.png" /></li>
+				<li class="list3"><img src="./assets/3.png" /></li>
+				<li class="list4"><img src="./assets/4.png" /></li>
+				<li class="list5"><img src="./assets/5.png" /></li>
+				<li class="list6"><img src="./assets/6.png" /></li>
+				<li class="list7"><img src="./assets/7.png" /></li>
+				<li class="list8"><img src="./assets/8.png" /></li>
+				<li class="list9"><img src="./assets/9.png" /></li>
+			</ul>
+		</div>
+		<button class="start">start</button>
+		<div class="detail">
+		</div>
+	</div>
+	<script>
+	require.config({
+	    packages: [
+	        {
+	            name: "modulePkgName",
+	            tag: "20140918",
+	            path: "./assets", 
+	            charset: "gbk"
+	        }
+	    ]
+	});
+
+	require(['modulePkgName/opLotto', 'node'], function(OP, $){
+			OP.init();
+
+			$('.start').on('click', function(ev){
+				var self = this;
+				if($(self).hasClass('start')){
+					$(self).replaceClass('start', 'pause').html('pause');
+					$('.detail').fadeOut();
+					OP.start();
+				}
+				else{
+					$(self).replaceClass('pause', 'start').html('start');
+					OP.pause();
+				}
+			})
+	})
+
+	</script>
+</body>
+</html>

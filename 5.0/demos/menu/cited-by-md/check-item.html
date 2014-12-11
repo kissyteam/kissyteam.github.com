@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>多选菜单项</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/menu/assets/dpl.css">
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<h1>多选菜单项</h1>
+<p>所有class为CheckItem的多选菜单项，可以选中多个，区别于RadioItem</p>
+<div id="container" style="margin-left:50px;">
+    
+</div>
+<script type="text/javascript">
+    require(['menu', 'separator'], function(Menu, Separator){
+        new Menu({
+            render:"#container",
+            width : 150,
+            children:[
+                {
+                    xclass:'check-menuitem',
+                    content:"checkable menuitem"
+                },
+                {
+                    xclass:'separator'
+                },
+                {
+                    xclass:'submenu',
+                    content:'submenu',
+                    menu : new Menu.PopupMenu({
+                        autoHideOnMouseLeave:true,
+                        width : 150,
+                        children:[
+                            {
+                                xclass:'check-menuitem',
+                                content:"checkable menuitem1"
+                            },
+                            {
+                                xclass:'check-menuitem',
+                                content:"checkable menuitem2"
+                            }
+                        ]
+                    })
+                }
+            ]
+        }).render();
+    });
+</script>
+</body>
+</html> 

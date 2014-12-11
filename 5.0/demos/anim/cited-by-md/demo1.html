@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Demo - 节点实例动画操作</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="./assets/custombutton.css">
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+<style type="text/css">
+	body{
+        background: #fff;
+    }
+    .box {
+        width: 160px;
+        height: 160px;
+        background: #AABBCC;
+    }
+</style>
+</head>
+
+<body>
+<div class="box" id="anim_toggle">
+    toggle 动画
+</div>
+<div id="demo_toggle"></div>
+
+<div class="box" id="anim_slide">
+    slideUp/slideDown 动画
+</div>
+
+<div id="demo_slide"></div>
+
+<div class="box"  id="anim_fade">
+    fadeIn/fadeOut 动画
+</div>
+
+<div id="demo_fade"></div>
+
+<script type="text/javascript">
+	require(['node','button'], function(Node, Button){
+		var anim_toggle = Node.one("#anim_toggle"),
+	    anim_slide = Node.one("#anim_slide"),
+	    anim_fade = Node.one("#anim_fade");
+
+	    var demo_toggle = new Button({
+	        content: "toggle",
+	        render: "#demo_toggle"
+	    });
+	    demo_toggle.render();
+	    demo_toggle.on("click", function () {
+	        anim_toggle.toggle(1);
+	    });
+
+	    var demo_slide = new Button({
+	        content: "slideDown/slideUp",
+	        render: "#demo_slide"
+	    });
+	    demo_slide.render();
+	    demo_slide.on("click", function () {
+	        if (anim_slide.css("display") === "none") {
+	            anim_slide.slideDown();
+	        } else {
+	            anim_slide.slideUp();
+	        }
+	    });
+
+	    var demo_fade = new Button({
+	        content: "fadeIn/fadeOut",
+	        render: "#demo_fade"
+	    });
+	    demo_fade.render();
+	    demo_fade.on("click", function () {
+	        if (anim_fade.css("display") === "none")
+	            anim_fade.fadeIn();
+	        else
+	            anim_fade.fadeOut();
+	    });
+	})
+</script>
+</body>
+</html>

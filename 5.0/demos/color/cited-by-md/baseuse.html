@@ -1,0 +1,114 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Demo - color 的基本使用</title>
+<style type="text/css">
+    body{
+        background: #fff;
+    }
+</style>
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+</head>
+
+<body>
+    Alpha值：
+    <input type="text" id="a">
+    Red值：
+    <input type="text" id="r"> <br/>
+    Green值：
+    <input type="text" id="g">
+    Blue值：
+    <input type="text" id="b">
+    <br/>
+    <button id="new">生成color实例</button>
+    <button id="toHSL">toHSL</button>
+    <button id="toHSLA">toHSLA</button>
+    <button id="toRGB">toRGB</button>
+    <button id="toRGBA">toRGBA</button>
+    <button id="toHex">toHex</button>
+    <button id="setHSV">setHSV</button>
+    <button id="setHSL">setHSL</button>
+    <br/>
+    <button id="fromHSL">fromHSL</button>
+    <button id="fromHSV">fromHSV</button>
+    <br/>
+    颜色字符串：
+    <input type="text" id="str">
+    <button id="parse">Parse</button>
+<script type="text/javascript">
+    require(['node', 'color'], function(Node, Color) {
+        var $ = Node.all;
+        var color;
+
+        $('#new').on('click', function(event) {
+            var a = $("#a").val() || 0;
+            var r = $("#r").val() || 0;
+            var g = $("#g").val() || 0;
+            var b = $("#b").val() || 0;
+
+            color = new Color({a:a, r:r, g:g, b:b});
+        });
+
+        $('#toHSL').on('click', function(event) {
+            var hsl = color.toHSL();
+            console.log(hsl);
+        });
+
+        $('#toHSLA').on('click', function(event) {
+            var hsl = color.toHSLA();
+            console.log(hsl);
+        });
+
+        $('#toRGB').on('click', function(event) {
+            var hsl = color.toRGB();
+            console.log(hsl);
+        });
+
+        $('#toRGBA').on('click', function(event) {
+            var hsl = color.toRGBA();
+            console.log(hsl);
+        });
+
+        $('#toHex').on('click', function(event) {
+            var hsl = color.toHex();
+            console.log(hsl);
+        });
+
+        $('#setHSL').on('click', function(event) {
+            var color_1 = new Color();
+            var hsl = color.getHSL();
+            color_1.setHSL(hsl);
+
+            console.log(color_1.toHSL());
+        });
+
+        $('#setHSV').on('click', function(event) {
+            var color_1 = new Color();
+            var hsv = color.getHSV();
+            color_1.setHSV(hsv);
+            hsv = color_1.getHSV();
+            console.log('{h:' + hsv.h + ',s:' + hsv.s + ',v:' + hsv.v + '}');
+        });
+
+        $('#parse').on('click', function(event) {
+            var color_1 = Color.parse($("#str").val());
+            console.log(color_1.toRGBA());
+        });
+
+        $('#fromHSL').on('click', function(event) {
+            var color_1 = Color.fromHSL(color.getHSL());
+            console.log(color_1.toHSL());
+        });
+
+        $('#fromHSV').on('click', function(event) {
+            var color_1 = Color.fromHSV(color.getHSV());
+            console.log(color_1.toHex());
+        });
+
+    });
+
+</script>
+</body>
+</html>

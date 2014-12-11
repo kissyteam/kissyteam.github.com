@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="//g.alicdn.com/kissy/k/5.0.1/seed.js"></script>
+</head>
+<body>
+
+<style>
+    body{
+        background: #fff;
+    }
+    #t {
+        width: 100px;
+        height: 30px;
+        border: 5px solid blue;
+    }
+</style>
+
+<h1>Anim promise</h1>
+<p>过程数据请打开控制台查看</p>
+
+<div id="t"></div>
+
+<script>
+require(['anim'], function (Anim) {
+    var anim = new Anim('#t',
+        {
+            width: 300
+        },{
+            duration: 1,
+            complete: function () {
+                console.log(this);
+            }
+    }).run().then(function () {
+                console.log('then');
+                console.log(anim);
+            });
+});
+</script>
+</body>

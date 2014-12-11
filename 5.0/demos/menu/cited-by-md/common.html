@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>普通菜单</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/menu/assets/dpl.css">
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<h1>普通菜单</h1>
+<p>动态增加菜单项，不直接使用JSON方式配置生成</p>
+<div id="container" style="margin-left:50px;">
+    
+</div>
+<script type="text/javascript">
+    require(['menu', 'separator'], function(Menu, Separator){
+        var myMenu = new Menu({
+            render : '#container',
+            width : 150
+        });
+
+        var item1 = new Menu.Item({
+            content : 'item1'
+        });
+        var item2 = new Menu.Item({
+            content : 'item2'
+        });
+        var item3 = new Menu.Item({
+            content : 'item3'
+        });
+        var item4 = new Menu.Item({
+            content : 'item4'
+        });
+
+        var popupMenu = new Menu.PopupMenu({
+            autoHideOnMouseLeave:true
+        });
+        popupMenu.addChild(item3);
+        popupMenu.addChild(item4);
+        var subMenu = new Menu.SubMenu({
+            content : 'submenu',
+            menu : popupMenu
+        });
+
+        myMenu.addChild(item1);
+        myMenu.addChild(item2);
+        myMenu.addChild(subMenu);
+        myMenu.render();
+    });
+</script>
+</body>
+</html> 

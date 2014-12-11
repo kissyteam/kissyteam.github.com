@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<title>简单使用tabs</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/tabs/assets/dpl.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/button/assets/dpl.css">
+<script type="text/javascript" src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"  data-config="{combine:true}"></script>
+</head>
+<body>
+<div style="width:90%;margin:0 auto;">
+    <h1>全新生成节点</h1>
+    <div id="container">
+        
+    </div>
+</div>
+
+<script type="text/javascript">
+	require(['tabs'], function(Tabs){
+        var myTabs = new Tabs({
+            render : '#container',
+            width : '60%',
+            items : [
+                {
+                    title : 'title of tab-1',
+                    content : 'tab-1 content'
+                },
+                {
+                    title : 'title of tab-2',
+                    content : 'tab-2 content',
+                    selected : true   //默认选中这个tab
+                },
+                {
+                    title : 'title of tab-3',
+                    content : 'tab-3 content',
+                    closable : true    //显示关闭按钮，点击删除tab
+                }
+            ]
+        }).render();
+    });
+</script>
+</body>
+</html>

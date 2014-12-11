@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<title>懒加载树</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/button/assets/dpl.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/tree/assets/dpl.css">
+<script type="text/javascript" src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"></script>
+</head>
+<body>
+<div style="width:90%;margin:0 auto;">
+  <h1>懒加载树</h1>
+  <p>首次渲染时只渲染根节点，点击展开时再去“加载”数据并渲染子树</p>
+  <div id="treeContainer" style="width: 200px;margin: 20px 0;">
+       
+  </div>
+</div>
+
+<script type="text/javascript">
+require(['tree', 'node', 'util'], function (Tree, $, util) {
+    var data = {  //在这个示例使用的是模拟的本地数据，当树结构比较大的时候可以用ajax去服务器拉取数据“懒加载”
+        content: "淘宝网",
+        children: [
+            {
+                content: "收藏夹",
+                children: [
+                    {
+                        content: "收藏的宝贝"
+                    },
+                    {
+                        content: "收藏的店铺"
+                    }
+                ]
+            },
+            {
+                content: "我的淘宝",
+                children: [
+                    {
+                        content: "已买到的宝贝"
+                    },
+                    {
+                        content: "已卖出的宝贝"
+                    }
+                ]
+            }
+        ]
+    };
+
+    function getNode(node, content) {  
+        if (node.content == content) {
+            return node;
+        }
+        var c = node.children || [];
+        for (var i = 0; i < c.length; i++) {
+            var t = getNode(c[i], content);
+            if (t) {
+                return t;
+            }
+        }
+        return null;
+    }
+
+    var tree = new Tree({
+        content: "淘宝网",
+        isLeaf: false,
+        // showRootNode:false,
+        render: "#treeContainer"
+    });
+    tree.on("expand", function (e) {   //点击展开再去把子树节点加载渲染
+        var node = e.target;
+        if (!node.get('children').length) {
+            var c = getNode(data, node.get("content")).children;
+            util.each(c, function (v) {
+                node.addChild(new Tree.Node({
+                    isLeaf: !(v.children && v.children.length),
+                    content: v.content
+                }));
+            });
+        }
+    });
+    tree.render();
+});
+</script>
+</body>
+</html>

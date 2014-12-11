@@ -1,0 +1,39 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <style type="text/css">
+    body{
+      background: #fff;
+    }
+    </style>
+    <script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+
+<h1>open in ios safari to test tap event</h1>
+
+<div id='t' tabindex='0'
+     style='border:1px solid green;
+     width:100px;height:100px;margin:10px'>
+    tap me
+</div>
+
+<script>
+
+    require(['event-dom', 'event-dom/gesture/tap'], function (DomEvent, GestureTap) {
+
+        DomEvent.on('#t', GestureTap.TAP, function (e) {
+            alert(e.type + ' : fired');
+        });
+
+    });
+
+</script>
+</body>
+</html>

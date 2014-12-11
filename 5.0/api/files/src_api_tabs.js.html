@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/api/tabs.js - API Documentation — KISSY v5.0 Documentation</title>
+    <link rel="stylesheet" href="/5.0/assets/css/base.css">
+    <link rel="stylesheet" href="/5.0/assets/css/main.css">
+    <link rel="stylesheet" href="/5.0/assets/css/component.css">
+    <link rel="stylesheet" href="../assets/css/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="/5.0/assets/img/favicon.ico">
+    <script src="http://g.tbcdn.cn/kissy/edge/2014.07.16/seed.js" type="text/javascript" data-config="{combine:true}"></script>
+    <script src="../assets/js/component.js"></script>
+</head>
+<body class="yui3-skin-sam">
+    <div class="header">
+            <div class="inner">
+            <div class="toolbar">
+                <a href="/5.0">
+                    <img class="mini-logo" src="/5.0/assets/img/mini-logo.png">
+                </a>
+                <ul class="nav clearfix">
+                    <li class="docs">
+                        <span>
+                            Docs
+                            <b class="caret"></b>
+                        </span>
+                        <ul>
+                            <li><a href="/5.0/guides/">Guides</a></li>
+                            <li><a href="/5.0/api">Api Docs</a></li>
+                            <li><a href="/5.0/demos">Demos</a></li>
+                        </ul>
+                    </li>
+                    <li class="more">
+                        <span>
+                            More
+                            <b class="caret"></b>
+                        </span>
+                        <ul>
+                            <li><a href="/5.0/more/faq.html">FAQ</a></li>
+                            <li><a href="http://gallery.kissyui.com/">Gallery</a></li>
+                            <li><a href="http://blog.kissyui.com/">KISSY Blog</a></li>
+                            <li><a href="https://github.com/daxingplay/grunt-kmc/blob/master/README.md">KMC</a></li>
+                        </ul>
+                    </li>
+                    <li class="split"></li>
+                    <li class="nav-other"><a href="/5.0/quick-start.html">Quick Start</a></li>
+                    <li class="nav-other"><a href="https://github.com/kissyteam/kissy/blob/master/CONTRIBUTING.md">Contribute</a></li>
+                    <li class="nav-other"><a href="#">KISSY UP</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <script>
+                    (function() {
+                    var cx = '003618533255763067140:5nkycw1pbey';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                        '//www.google.com/cse/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                    })();
+                </script>
+                <gcse:search></gcse:search>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div id="api-doc">
+            <div class="logo-on-top clearfix">
+                <img src="/5.0/assets/img/logo-on-top.png">
+            </div> 
+            <div class="yui3-g inner">
+                <div class="yui3-u-1-4">
+                    <div id="docs-sidebar" class="sidebar">
+                        <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview ks-tabs ks-tabs-top ks-filter-menu">
+        <ul class="ks-tabs-bar">
+            <li class="tab-class ks-tabs-tab ks-button ks-tabs-tab-selected">Classes</li>
+            <li class="tab-module ks-tabs-tab ks-button">Modules</li>
+        </ul>
+        <div id="api-tabview-filter" class="ks-filter-menu-input-wrap">
+            <input type="search" class="ks-filter-menu-input" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel" class="ks-tabs-body ks-filter-menu-content">
+            <ul id="api-classes" class="apis classes ks-tabs-panel ks-tabs-panel-selected">
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Anim href="/5.0/api/classes/Anim.html">Anim</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Attribute href="/5.0/api/classes/Attribute.html">Attribute</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Base href="/5.0/api/classes/Base.html">Base</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Button href="/5.0/api/classes/Button.html">Button</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Color href="/5.0/api/classes/Color.html">Color</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ComboBox href="/5.0/api/classes/ComboBox.html">ComboBox</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ComboBox.LocalDataSource href="/5.0/api/classes/ComboBox.LocalDataSource.html">ComboBox.LocalDataSource</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ComboBox.RemoteDataSource href="/5.0/api/classes/ComboBox.RemoteDataSource.html">ComboBox.RemoteDataSource</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ComboBoxMultiWord href="/5.0/api/classes/ComboBoxMultiWord.html">ComboBoxMultiWord</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Container href="/5.0/api/classes/Component.Container.html">Component.Container</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Control href="/5.0/api/classes/Component.Control.html">Component.Control</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Extension.Align href="/5.0/api/classes/Component.Extension.Align.html">Component.Extension.Align</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Extension.ContentBox href="/5.0/api/classes/Component.Extension.ContentBox.html">Component.Extension.ContentBox</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Extension.DelegateChildren href="/5.0/api/classes/Component.Extension.DelegateChildren.html">Component.Extension.DelegateChildren</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Extension.Shim href="/5.0/api/classes/Component.Extension.Shim.html">Component.Extension.Shim</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Plugin.Drag href="/5.0/api/classes/Component.Plugin.Drag.html">Component.Plugin.Drag</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Plugin.Resize href="/5.0/api/classes/Component.Plugin.Resize.html">Component.Plugin.Resize</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Cookie href="/5.0/api/classes/Cookie.html">Cookie</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=CustomEvent.Target href="/5.0/api/classes/CustomEvent.Target.html">CustomEvent.Target</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DatePicker href="/5.0/api/classes/DatePicker.html">DatePicker</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DatePicker.Popup href="/5.0/api/classes/DatePicker.Popup.html">DatePicker.Popup</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.DDM href="/5.0/api/classes/DD.DDM.html">DD.DDM</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.Draggable href="/5.0/api/classes/DD.Draggable.html">DD.Draggable</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.DraggableDelegate href="/5.0/api/classes/DD.DraggableDelegate.html">DD.DraggableDelegate</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.Droppable href="/5.0/api/classes/DD.Droppable.html">DD.Droppable</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.DroppableDelegate href="/5.0/api/classes/DD.DroppableDelegate.html">DD.DroppableDelegate</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.Plugin.Constrain href="/5.0/api/classes/DD.Plugin.Constrain.html">DD.Plugin.Constrain</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.Plugin.Proxy href="/5.0/api/classes/DD.Plugin.Proxy.html">DD.Plugin.Proxy</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.Plugin.Scroll href="/5.0/api/classes/DD.Plugin.Scroll.html">DD.Plugin.Scroll</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Dom href="/5.0/api/classes/Dom.html">Dom</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DomEvent href="/5.0/api/classes/DomEvent.html">DomEvent</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Editor href="/5.0/api/classes/Editor.html">Editor</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Feature href="/5.0/api/classes/Feature.html">Feature</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=FilterMenu href="/5.0/api/classes/FilterMenu.html">FilterMenu</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GestureBasic href="/5.0/api/classes/GestureBasic.html">GestureBasic</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GestureEdgePan href="/5.0/api/classes/GestureEdgePan.html">GestureEdgePan</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GesturePan href="/5.0/api/classes/GesturePan.html">GesturePan</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GesturePinch href="/5.0/api/classes/GesturePinch.html">GesturePinch</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GestureRotate href="/5.0/api/classes/GestureRotate.html">GestureRotate</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GestureShake href="/5.0/api/classes/GestureShake.html">GestureShake</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GestureSwipe href="/5.0/api/classes/GestureSwipe.html">GestureSwipe</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GestureTap href="/5.0/api/classes/GestureTap.html">GestureTap</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GregorianCalendar href="/5.0/api/classes/GregorianCalendar.html">GregorianCalendar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GregorianCalendarFormat href="/5.0/api/classes/GregorianCalendarFormat.html">GregorianCalendarFormat</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=IO href="/5.0/api/classes/IO.html">IO</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Json href="/5.0/api/classes/Json.html">Json</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=LoggerManager href="/5.0/api/classes/LoggerManager.html">LoggerManager</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Menu href="/5.0/api/classes/Menu.html">Menu</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Menu.CheckItem href="/5.0/api/classes/Menu.CheckItem.html">Menu.CheckItem</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Menu.Item href="/5.0/api/classes/Menu.Item.html">Menu.Item</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Menu.PopupMenu href="/5.0/api/classes/Menu.PopupMenu.html">Menu.PopupMenu</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Menu.RadioItem href="/5.0/api/classes/Menu.RadioItem.html">Menu.RadioItem</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Menu.SubMenu href="/5.0/api/classes/Menu.SubMenu.html">Menu.SubMenu</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=MenuButton href="/5.0/api/classes/MenuButton.html">MenuButton</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=MenuButton.Option href="/5.0/api/classes/MenuButton.Option.html">MenuButton.Option</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=MenuButton.Select href="/5.0/api/classes/MenuButton.Select.html">MenuButton.Select</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Modulex href="/5.0/api/classes/Modulex.html">Modulex</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=NavigationView href="/5.0/api/classes/NavigationView.html">NavigationView</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=NavigationViewBar href="/5.0/api/classes/NavigationViewBar.html">NavigationViewBar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Node href="/5.0/api/classes/Node.html">Node</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Overlay href="/5.0/api/classes/Overlay.html">Overlay</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Overlay.Dialog href="/5.0/api/classes/Overlay.Dialog.html">Overlay.Dialog</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Overlay.Popup href="/5.0/api/classes/Overlay.Popup.html">Overlay.Popup</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Path href="/5.0/api/classes/Path.html">Path</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Promise href="/5.0/api/classes/Promise.html">Promise</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Promise.Defer href="/5.0/api/classes/Promise.Defer.html">Promise.Defer</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Querystring href="/5.0/api/classes/Querystring.html">Querystring</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Resizable href="/5.0/api/classes/Resizable.html">Resizable</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Resizable.Plugin.Proxy href="/5.0/api/classes/Resizable.Plugin.Proxy.html">Resizable.Plugin.Proxy</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Router href="/5.0/api/classes/Router.html">Router</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ScrollView href="/5.0/api/classes/ScrollView.html">ScrollView</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ScrollView.Plugin.PullToRefresh href="/5.0/api/classes/ScrollView.Plugin.PullToRefresh.html">ScrollView.Plugin.PullToRefresh</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ScrollView.Plugin.ScrollBar href="/5.0/api/classes/ScrollView.Plugin.ScrollBar.html">ScrollView.Plugin.ScrollBar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=SplitButton href="/5.0/api/classes/SplitButton.html">SplitButton</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=StyleSheet href="/5.0/api/classes/StyleSheet.html">StyleSheet</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=SWF href="/5.0/api/classes/SWF.html">SWF</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Tabs href="/5.0/api/classes/Tabs.html">Tabs</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Toolbar href="/5.0/api/classes/Toolbar.html">Toolbar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Tree href="/5.0/api/classes/Tree.html">Tree</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Tree.CheckNode href="/5.0/api/classes/Tree.CheckNode.html">Tree.CheckNode</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Tree.CheckTree href="/5.0/api/classes/Tree.CheckTree.html">Tree.CheckTree</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Tree.Manager href="/5.0/api/classes/Tree.Manager.html">Tree.Manager</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Tree.Node href="/5.0/api/classes/Tree.Node.html">Tree.Node</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=UA href="/5.0/api/classes/UA.html">UA</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Url href="/5.0/api/classes/Url.html">Url</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Util href="/5.0/api/classes/Util.html">Util</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules ks-tabs-panel">
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=anim href="/5.0/api/modules/anim.html">anim</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=attribute href="/5.0/api/modules/attribute.html">attribute</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=base href="/5.0/api/modules/base.html">base</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=button href="/5.0/api/modules/button.html">button</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=color href="/5.0/api/modules/color.html">color</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=combobox href="/5.0/api/modules/combobox.html">combobox</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=combobox/multi-word href="/5.0/api/modules/combobox_multi-word.html">combobox/multi-word</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/container href="/5.0/api/modules/component_container.html">component/container</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/control href="/5.0/api/modules/component_control.html">component/control</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/extension/align href="/5.0/api/modules/component_extension_align.html">component/extension/align</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/extension/content-box href="/5.0/api/modules/component_extension_content-box.html">component/extension/content-box</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/extension/delegate-children href="/5.0/api/modules/component_extension_delegate-children.html">component/extension/delegate-children</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/extension/shim href="/5.0/api/modules/component_extension_shim.html">component/extension/shim</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/plugin/drag href="/5.0/api/modules/component_plugin_drag.html">component/plugin/drag</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/plugin/resize href="/5.0/api/modules/component_plugin_resize.html">component/plugin/resize</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=cookie href="/5.0/api/modules/cookie.html">cookie</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=date-picker href="/5.0/api/modules/date-picker.html">date-picker</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=dd href="/5.0/api/modules/dd.html">dd</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=dd/plugin/constrain href="/5.0/api/modules/dd_plugin_constrain.html">dd/plugin/constrain</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=dd/plugin/proxy href="/5.0/api/modules/dd_plugin_proxy.html">dd/plugin/proxy</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=dd/plugin/scroll href="/5.0/api/modules/dd_plugin_scroll.html">dd/plugin/scroll</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=dom href="/5.0/api/modules/dom.html">dom</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=editor href="/5.0/api/modules/editor.html">editor</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-custom href="/5.0/api/modules/event-custom.html">event-custom</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom href="/5.0/api/modules/event-dom.html">event-dom</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/basic href="/5.0/api/modules/event-dom_gesture_basic.html">event-dom/gesture/basic</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/edge-pan href="/5.0/api/modules/event-dom_gesture_edge-pan.html">event-dom/gesture/edge-pan</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/pan href="/5.0/api/modules/event-dom_gesture_pan.html">event-dom/gesture/pan</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/pinch href="/5.0/api/modules/event-dom_gesture_pinch.html">event-dom/gesture/pinch</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/rotate href="/5.0/api/modules/event-dom_gesture_rotate.html">event-dom/gesture/rotate</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/shake href="/5.0/api/modules/event-dom_gesture_shake.html">event-dom/gesture/shake</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/swipe href="/5.0/api/modules/event-dom_gesture_swipe.html">event-dom/gesture/swipe</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/tap href="/5.0/api/modules/event-dom_gesture_tap.html">event-dom/gesture/tap</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=feature href="/5.0/api/modules/feature.html">feature</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=filter-menu href="/5.0/api/modules/filter-menu.html">filter-menu</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=gregorian-calendar href="/5.0/api/modules/gregorian-calendar.html">gregorian-calendar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=gregorian-calendar-format href="/5.0/api/modules/gregorian-calendar-format.html">gregorian-calendar-format</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=io href="/5.0/api/modules/io.html">io</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=json href="/5.0/api/modules/json.html">json</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=logger-manager href="/5.0/api/modules/logger-manager.html">logger-manager</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=menu href="/5.0/api/modules/menu.html">menu</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=menubutton href="/5.0/api/modules/menubutton.html">menubutton</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=modulex href="/5.0/api/modules/modulex.html">modulex</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=navigation-view href="/5.0/api/modules/navigation-view.html">navigation-view</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=navigation-view/bar href="/5.0/api/modules/navigation-view_bar.html">navigation-view/bar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=node href="/5.0/api/modules/node.html">node</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=overlay href="/5.0/api/modules/overlay.html">overlay</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=path href="/5.0/api/modules/path.html">path</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=promise href="/5.0/api/modules/promise.html">promise</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=querystring href="/5.0/api/modules/querystring.html">querystring</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=resizable href="/5.0/api/modules/resizable.html">resizable</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=resizable/plugin/proxy href="/5.0/api/modules/resizable_plugin_proxy.html">resizable/plugin/proxy</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=router href="/5.0/api/modules/router.html">router</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=scroll-view href="/5.0/api/modules/scroll-view.html">scroll-view</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=scroll-view/plugin/pull-to-refresh href="/5.0/api/modules/scroll-view_plugin_pull-to-refresh.html">scroll-view/plugin/pull-to-refresh</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=scroll-view/plugin/scrollbar href="/5.0/api/modules/scroll-view_plugin_scrollbar.html">scroll-view/plugin/scrollbar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=split-button href="/5.0/api/modules/split-button.html">split-button</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=stylesheet href="/5.0/api/modules/stylesheet.html">stylesheet</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=swf href="/5.0/api/modules/swf.html">swf</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=tabs href="/5.0/api/modules/tabs.html">tabs</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=toolbar href="/5.0/api/modules/toolbar.html">toolbar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=tree href="/5.0/api/modules/tree.html">tree</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ua href="/5.0/api/modules/ua.html">ua</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=url href="/5.0/api/modules/url.html">url</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=util href="/5.0/api/modules/util.html">util</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+                    </div>
+                </div>
+                <div class="yui3-u-3-4">
+                        <div id="api-options">
+        Show:
+        <label for="api-show-inherited" optionvalue="inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" optionvalue="protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" optionvalue="private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" optionvalue="deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+                    <div class="apidocs">
+                        <div id="docs-main">
+                            <div class="content">
+                                <h1 class="file-heading">File: src/api/tabs.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+@module tabs
+*/
+
+/**
+选项卡组件
+@class Tabs
+@constructor
+@extends Component.Container
+@param config {Object}
+@example
+	require([&#x27;tabs&#x27;], function(Tabs){
+        var myTabs = new Tabs({
+            render : &#x27;#container&#x27;,
+            width : &#x27;60%&#x27;,
+            items : [
+                {
+                    title : &#x27;title of tab-1&#x27;,
+                    content : &#x27;tab-1 content&#x27;
+                },
+                {
+                    title : &#x27;title of tab-2&#x27;,
+                    content : &#x27;tab-2 content&#x27;,
+                    selected : true   //默认选中这个tab
+                },
+                {
+                    title : &#x27;title of tab-3&#x27;,
+                    content : &#x27;tab-3 content&#x27;,
+                    closable : true    //显示关闭按钮，点击删除tab
+                }
+            ]
+        }).render();
+    });
+*/
+
+/**
+添加一个 tab 和 panel
+@method addItem
+@param item {Object}
+@param item.title {String} tab 标题
+@param item.content {String} panel 内容
+@param item.selected {Boolean} 是否选中
+@param item.closable {Boolean} 是否出现关闭按钮用于删除tab项
+@param index {Number} 要在什么位置添加tab 和 panel
+*/
+
+/**
+移除指定位置的 item
+@method removeItemAt
+@param index {Number} item 下标
+@param destroy {Boolean} 是否销毁节点
+*/
+
+/**
+移除 tab 所在位置的 item
+@method removeItemByTab
+@param tab {Tabs.tab} tab 实例
+@param destroy {Boolean} 是否销毁节点
+*/
+
+/**
+移除 panel 所在位置的 item
+@method removeItemByPanel
+@param panel {Tans.Panel}  panel 实例
+@param destroy {Boolean} 是否销毁节点
+*/
+
+/**
+得到选中的 tab 实例
+@method getSelectedTab
+@return {Tabs.Tab}
+*/
+
+/**
+得到选中的 panel 实例
+@method getSelectedPanel
+@return {Tabs.Panel}
+*/
+
+/**
+得到所有 tab 实例数组
+@method getTabs
+@return {Array} tab的实例组成的数组
+*/
+
+/**
+得到所有 panel 实例数组
+@method getPanels
+@return {Array&lt;Tabs.Panel&gt;}
+*/
+
+/**
+设置某个 tab 实例为选中
+@method setSelectedTab
+@param tab {Tabs.Tab}
+*/
+
+/**
+设置某个 panel 实例为选中
+@method setSelectedPanel
+@param panel {Tans.Panel}
+*/
+
+/**
+选中 tab 改变前触发
+@event beforeSelectedTabChange
+@param ev {Object}
+@param ev.newVal {Tabs.Tab} 新的 tab 实例
+*/
+
+/**
+选中 tab 改变后触发
+@event afterSelectedTabChange
+@param ev {Object}
+@param ev.newVal {Tabs.Tab} 新的 tab 实例
+*/
+
+/**
+tab对象数组，可用于快速构建 tabs。单个对象包括 title:&#x27;&#x27;, content:&#x27;&#x27;, selected:false, closable:false
+@attribute items {Array} 
+@example
+	items : [
+		{
+			title : &#x27;title of test&#x27;,
+			content : &#x27;test&#x27;,
+			selected : true,  //初始是否被选中
+			closable : true   //是否出现关闭按钮用于删除tab
+		}
+	]
+*/
+
+/**
+可取值&#x27;mouse&#x27;和&#x27;click&#x27;，表示怎样触发Tabs的切换
+@attribute changeType {String} 
+*/
+
+/**
+表示Tabs菜单相对Tabs内容的位置，可取值&#x27;top&#x27;/&#x27;right&#x27;/&#x27;bottom&#x27;/&#x27;left&#x27;，默认为&#x27;top&#x27;
+@attribute barOrientation {String} 
+@default &quot;top&quot;
+*/
+
+/**
+是否延时渲染
+@attribute lazyRender {Boolean}
+*/
+
+/**
+枚举值&quot;bottom&quot;.表示Tabs菜单相对Tabs内容的位置
+@attribute Orientation.BOTTOM
+@static
+*/
+
+/**
+枚举值&quot;top&quot;.表示Tabs菜单相对Tabs内容的位置
+@attribute Orientation.TOP
+@static
+*/
+
+/**
+枚举值&quot;left&quot;.表示Tabs菜单相对Tabs内容的位置
+@attribute Orientation.LEFT
+@static
+*/
+
+/**
+枚举值&quot;right&quot;.表示Tabs菜单相对Tabs内容的位置
+@attribute Orientation.RIGHT
+@static
+*/
+
+
+
+
+    </pre>
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div tag="apidocs-end" style="display:none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="wrap-disqus">
+            <div id="disqus_thread"></div>
+        </div>
+        <script>
+            if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+            // The following are highly recommended additional parameters. Remove the slashes in front to use.
+             //var disqus_identifier = '/anim';
+             //var disqus_url = window.location;
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+            }
+        </script>
+        <div class="other-page">
+            <div class="wrap">
+                <div class="content">
+                    <div class="wrap-content">
+                        <p>@2010 - 2112 KISSY UI LIBARAY</p>
+                        <div class="github-msg">
+                            <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=watch&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                            <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=fork&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

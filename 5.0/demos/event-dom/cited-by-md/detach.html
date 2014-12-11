@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <style>
+        button {
+            margin: 5px;
+        }
+
+        button#theone {
+            color: red;
+            background: yellow;
+        }
+    </style>
+    <script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<button id="theone">Does nothing...</button>
+<button id="bind">Bind Click</button>
+<button id="unbind">Unbind Click</button>
+<div style="display:none;">Click!</div>
+<script>
+    require(['node'], function (Node) {
+        var $ = Node.all;
+
+        function aClick() {
+            $("div").show().fadeOut();
+        }
+
+        $("#bind").on('click', function () {
+            // could use .bind('click', aClick) instead but for variety...
+            $("#theone").on('click', aClick)
+                    .text("Can Click!");
+        });
+        $("#unbind").on('click', function () {
+            $("#theone").detach('click', aClick)
+                    .text("Does nothing...");
+        });
+    });
+</script>
+
+</body>
+</html>

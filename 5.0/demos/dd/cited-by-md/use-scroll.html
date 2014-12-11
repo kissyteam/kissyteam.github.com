@@ -1,0 +1,194 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <title>随拖动自动滚动容器</title>
+    <style>
+        body{
+            background: #fff;
+        }
+        .ks-dd-proxy {
+            position: absolute;
+            left: -9999px;
+            top: -9999px;
+        }
+
+        .ks-dd-proxy {
+            opacity: 0.5;
+        }
+
+        #container {
+            position: relative;
+            overflow: hidden;
+            width: 400px;
+            height: 400px;
+        }
+
+        #component {
+            position: absolute;
+            left: 40px;
+            top: 40px;
+            width: 100px;
+            height: 100px;
+            background: green;
+            -ms-touch-action: none;
+            -ms-user-select: none;
+        }
+        .pad {
+            width: 1000px;
+            height: 100px;
+            margin: 40px;
+            border: 1px solid purple;
+        }
+        .top {
+            height: 20px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgb(214, 207, 207);
+            color: white;
+            text-align: center;
+        }
+
+        .bottom {
+            height: 20px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: rgb(214, 207, 207);
+            color: white;
+            text-align: center;
+        }
+
+        .left {
+            height: 100%;
+            *height: expression(this.parentNode.offsetHeight);
+            width: 20px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: rgb(214, 207, 207);
+            color: white;
+            text-align: center;
+        }
+
+        .right {
+            height: 100%;
+            *height: expression(this.parentNode.offsetHeight);
+            width: 20px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: rgb(214, 207, 207);
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>随拖动自动滚动容器</h1>
+<p>使用 dd/plugin/scroll 插件让容器随拖动自动滚动</p>
+<div style="position:relative;width:400px;margin-top:50px;margin-left:50px;">
+    <div class="top">
+        拖动绿色块时 鼠标在此时 容器向上滚动
+    </div>
+    <div class="bottom">
+        拖动绿色块时 鼠标在此时 容器向下滚动
+    </div>
+    <div class="left">
+        拖动绿色块时 鼠标在此时 容器向左滚动
+    </div>
+    <div class="right">
+        拖动绿色块时 鼠标在此时 容器向右滚动
+    </div>
+    <div id="container">
+        <br><br><br><br><br><br><br><br><br><br>
+        <div class="pad">
+            1.hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!
+        </div>
+        <div class="pad">
+            2.hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!
+        </div>
+        <div class="pad">
+            3.hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!
+        </div>
+        <div class="pad">
+            4.hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!
+        </div>
+        <div class="pad">
+            5.hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!
+        </div>
+        <div class="pad">
+            6.hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!
+        </div>
+        <div class="pad">
+            7.hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!
+        </div>
+        <div class="pad">
+            8.hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!
+        </div>
+        <div class="pad">
+            9.hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!
+        </div>
+        <div class="pad">
+            0.hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!
+        </div>
+        <div class="pad">
+            11.hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!
+        </div>
+        <div class="pad">
+            12.hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!
+        </div>
+        <div class="pad">
+            13.hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!
+        </div>
+        <div class="pad">
+            14.hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!
+        </div>
+        <div class="pad">
+            15.hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!
+        </div>
+        <div class="pad">
+            16.hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!hello,kissy5.0 go ahead!
+        </div>
+
+
+        <div id="component">
+
+        </div>
+
+    </div>
+</div>
+
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"></script>
+<script>
+    require(['dd','dd/plugin/scroll'], function (DD, Scroll) {
+        var Draggable = DD.Draggable;
+
+        (function () {
+            var drag = new Draggable({
+                node: '#component',
+                move: 1,
+                groups: false
+            });
+
+            drag.plug(new Scroll({
+                // container 容器自动滚动
+                node: "#container",
+                //滚动速度
+                rate: [10, 10],
+                //容器边缘高宽度
+                diff: [20, 20]
+            }));
+        })();
+    });
+</script>
+</body>
+</html>

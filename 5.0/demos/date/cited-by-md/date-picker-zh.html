@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>DatePicker 简单使用示例</title>
+<style type="text/css">
+    body{
+        background: #fff;
+    }
+</style>
+<link rel="stylesheet" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed.js"></script>
+</head>
+
+<body>
+<h3>DatePicker 简单使用示例</h3>
+<p>
+    DatePicker 本身是一个嵌入式的日历控件，如需使用悬浮式的日历控件请使用 DatePicker.Popup 。
+</p>
+<div id="holder"></div>
+<div id="result"></div>
+    <script type="text/javascript">
+        // require.config('lang', 'en-us');  //如果配置语言为英文，日历组件会自动显示为英文
+        require(['node', 'date-picker', 'gregorian-calendar-format','date-picker/assets/dpl.css'], function(Node, DatePicker, gregorianCalendarFormat) {
+            var result = Node.all("#result");
+            var picker = new DatePicker({
+                render: "#holder",
+                showClear : true,  // showClear 和 showToday 一定要一起配置成相同的才生效
+                showToday : true
+            }).render();
+
+            picker.on('select', function(e) {
+                var value = e.value;
+                if (value) {
+                    result.html(gregorianCalendarFormat.getDateInstance(gregorianCalendarFormat.Style.FULL).format(value));
+                } else {
+                    result.html('no date is selected...');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

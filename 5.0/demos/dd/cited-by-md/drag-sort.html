@@ -1,0 +1,184 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>拖动排序</title>
+<link rel="stylesheet" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="assets/box.css">
+<style type="text/css">
+.container {
+    border: 1px solid #366EBE;
+    height: 200px;
+    padding: 10px;
+    position: relative;
+    overflow: auto;
+}
+
+.component {
+    margin: 10px 10px;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    overflow: hidden;
+}
+
+.cheader {
+    cursor: move;
+    border: 1px solid black;
+    height: 20px;
+    line-height: 20px;
+}
+
+.component .cheader {
+    cursor: move;
+}
+
+.ks-dd-dragging {
+    border: 2px #4886DE dashed;
+}
+
+.ks-dd-dragging * {  /*设置正被拖动的元素隐藏*/
+    visibility: hidden;
+}
+</style>
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"></script>
+</head>
+
+<body>
+<h3>拖动排序示例</h3>
+<button id="add">增加拖动块</button>
+<br/><br/>
+
+<script type="x-template" id="newTpl">
+    <div class="box component">
+        <s class="box-tp"><b></b></s>
+
+        <div class="box-hd cheader">
+            <h3>拖动头</h3>
+        </div>
+        <div class="box-bd">drag proxy {id}
+        </div>
+        <s class="box-bt"><b></b></s>
+    </div>
+</script>
+
+<div id="container2" class="container">
+
+
+    <div class="box component">
+        <s class="box-tp"><b></b></s>
+
+        <div class="box-hd cheader">
+            <h3>拖动头</h3>
+        </div>
+        <div class="box-bd">
+            drag proxy 1
+        </div>
+        <s class="box-bt"><b></b></s>
+    </div>
+    <div class="box component">
+        <s class="box-tp"><b></b></s>
+
+        <div class="box-hd cheader">
+            <h3>拖动头</h3>
+        </div>
+        <div class="box-bd">
+            drag proxy 2
+        </div>
+        <s class="box-bt"><b></b></s>
+    </div>
+    <div class="box component">
+        <s class="box-tp"><b></b></s>
+
+        <div class="box-hd cheader">
+            <h3>拖动头</h3>
+        </div>
+        <div class="box-bd">
+            drag proxy 3
+        </div>
+        <s class="box-bt"><b></b></s>
+    </div>
+</div>
+<script type="text/javascript">
+    require(['util', 'node', 'dd', 'dd/plugin/proxy'], function (Util, Node, DD, Proxy) {
+        var DDM = DD.DDM,
+            DraggableDelegate = DD.DraggableDelegate,
+            DroppableDelegate = DD.DroppableDelegate,
+            Draggable = DD.Draggable,
+            Droppable = DD.Droppable;
+        /**
+         * 拖放排序
+         */
+         var dragDelegate = new DraggableDelegate({
+                container: "#container2",
+                handlers: ['.cheader'],
+                selector: '.component',
+                move: true,
+                plugins: [
+                    new Proxy({
+                        /**
+                         * 如何产生替代节点
+                         * @param drag 当前拖动对象
+                         */
+                        node: function (drag) {
+                            var n = Node.one(drag.get("dragNode")[0].cloneNode());
+                            n.removeAttr('id');
+                            n.css({
+                                border : '2px #4886DE dashed',
+                                opacity : '0.8'
+                            });
+                            return n;  //返回的元素就是跟着鼠标移动的元素
+                        },
+                        // 主体位置不跟随 proxy
+                        moveOnEnd: false,
+                        // 每次 proxy 都重新生成
+                        destroyOnEnd: true
+                    })
+                ]
+            });
+
+            var dropDelegate = new DroppableDelegate({
+                container: "#container2",
+                selector: '.component'
+            });
+
+            //dragover事件：当前 Draggable 对象在一个 Droppable 实例上移动时触发, 可简单理解成 mouseover.
+            dragDelegate.on("dragover", function (ev) {
+                var drag = ev.drag;
+                var drop = ev.drop;
+                var dragNode = drag.get("dragNode"),
+                    dropNode = drop.get("node");
+                var middleDropX = dropNode.offset().left + dropNode.width()/2;
+                if (ev.pageX > middleDropX) {
+                    var next = dropNode.next();
+                    if (next && next[0] == dragNode[0]) {
+
+                    } else {
+                        dragNode.insertAfter(dropNode);
+                    }
+                } else {
+                    var prev = dropNode.prev();
+                    if (prev && prev[0] == dragNode[0]) {
+                    } else {
+                        dragNode.insertBefore(dropNode);
+                    }
+                }
+            });
+
+            var container = Node.one("#container2");
+            var id = 4;
+            container.unselectable();
+
+            var newTpl= Node.one('#newTpl').html();
+            Node.one("#add").on("click", function () {
+                new Node(Util.substitute(newTpl,{
+                    id:(id++)
+                })).appendTo(container).unselectable();
+            });
+    });
+</script>
+</body>
+</html>

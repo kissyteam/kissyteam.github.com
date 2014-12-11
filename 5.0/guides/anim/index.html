@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scale=no">
+	<title>Guides - KISSY v5.0 Documentation</title>
+	<link rel="shortcut icon" href="/5.0/assets/img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/github.css"/>
+	<script type="text/javascript" src="http://g.tbcdn.cn/kissy/edge/2014.09.05/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="inner">
+	<div class="toolbar">
+		<a href="/5.0">
+			<img class="mini-logo" src="/5.0/assets/img/mini-logo.png">
+		</a>
+		<ul class="nav clearfix">
+			<li class="docs">
+				<span>
+					Docs
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/guides/">Guides</a></li>
+					<li><a href="/5.0/api">Api Docs</a></li>
+					<li><a href="/5.0/demos">Demos</a></li>
+				</ul>
+			</li>
+			<li class="more">
+				<span>
+					More
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/more/faq.html">FAQ</a></li>
+					<li><a href="http://gallery.kissyui.com/">Gallery</a></li>
+					<li><a href="http://blog.kissyui.com/">KISSY Blog</a></li>
+					<li><a href="https://github.com/daxingplay/kmc">KMC</a></li>
+					<li><a href="https://github.com/minghe/generator-bee/wiki/generator-bee%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">Generator</a></li>
+				</ul>
+			</li>
+			<li class="split"></li>
+			<li class="nav-other"><a href="/5.0/quick-start.html">Quick Start</a></li>
+			<li class="nav-other"><a href="https://github.com/kissyteam/kissy">Contribute</a></li>
+			<li class="nav-other"><a target="_blank" href="/5.0/kissyup-middle.html">KISSY UP</a></li>
+		</ul>
+	</div>
+	<div class="search">
+		<script>
+			(function() {
+			var cx = '003618533255763067140:5nkycw1pbey';
+			var gcse = document.createElement('script');
+			gcse.type = 'text/javascript';
+			gcse.async = true;
+			gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+			    '//www.google.com/cse/cse.js?cx=' + cx;
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(gcse, s);
+			})();
+		</script>
+		<gcse:search></gcse:search>
+	</div>
+</div>
+	</div>
+	<div class="main">
+		<div class="guide">
+			<div class="logo-on-top clearfix">
+				<img src="/5.0/assets/img/logo-on-top.png">
+			</div>
+			<div class="inner clearfix">
+				<div id="sidebar">
+					<a class="link-apidocs btn btn-primary" href="../../api/classes/Anim.html">API Docs</a>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">Outline</h3>
+						</div>
+						<div class="panel-body">
+							<ul class="outline">
+								<li class="level2"><a href="#实例化动画的传参">实例化动画的传参</a></li><li class="level2"><a href="#Anim 动画实例的方法">Anim 动画实例的方法</a></li><li class="level3"><a href="#isRunning()">isRunning()</a></li><li class="level3"><a href="#isPaused()">isPaused()</a></li><li class="level3"><a href="#run()">run()</a></li><li class="level3"><a href="#stop()">stop()</a></li><li class="level3"><a href="#pause()">pause()</a></li><li class="level3"><a href="#resume()">resume()</a></li><li class="level2"><a href="#Anim 的静态方法">Anim 的静态方法</a></li><li class="level3"><a href="#静态方法 isRunning(elem)">静态方法 isRunning(elem)</a></li><li class="level3"><a href="#静态方法 isPaused()">静态方法 isPaused()</a></li><li class="level3"><a href="#静态方法 stop()">静态方法 stop()</a></li><li class="level3"><a href="#静态方法 pause()">静态方法 pause()</a></li><li class="level3"><a href="#静态方法 resume()">静态方法 resume()</a></li><li class="level2"><a href="#动画实例的事件">动画实例的事件</a></li><li class="level3"><a href="#complete 事件">complete 事件</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Features</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../guides/anim/index.html">Anim基本介绍</a></p>
+						</div>
+					</div>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Demos</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../demos/anim/anim-promise.html">Anim 使用 Promise API 示例</a></p><p><a href="../../demos/anim/anim-queue.html">动画队列示例</a></p><p><a href="../../demos/anim/custom.html">自定义动画</a></p><p><a href="../../demos/anim/index.html">anim的基本使用</a></p><p><a href="../../demos/anim/node.html">节点上的动画</a></p><p><a href="../../demos/anim/scroll.html">滚动示例</a></p><p><a href="../../demos/anim/timeline.html">动画曲线可视化</a></p><p><a href="../../demos/anim/tranform.html">跨浏览器transform</a></p>
+						</div>
+					</div>
+				</div>
+				<div id="main-content">
+					<p></p>
+<h1 id="Anim基本介绍">Anim基本介绍</h1><p>KISSY 动画，这样来载入anim模块：</p>
+<pre><code><span class="hljs-built_in">require</span>([<span class="hljs-string">'anim'</span>],<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(Anim)</span></span>{
+    <span class="hljs-comment">// use Anim</span>
+});
+</code></pre><p>注：KISSY 会自动判断浏览器是否支持 <code>css3 transition</code> ，如果支持则载入的 <code>anim</code> 模块其实是 <code>anim/transition</code> 模块（KISSY在seed.js里面做了alias），否则载入 <code>anim/timer</code> 模块， node 模块依赖的 anim 也是同样道理。此外，<em>自定义动画</em>等不能用 <code>css3 transition</code> 来实现的动画需要保证使用 <code>anim/timer</code> 模块来实现。</p>
+<p>由于<code>node</code>模块依赖<code>anim</code>，通常我们使用node时，使用node.animate()方法即可对某个已知节点作动画。即</p>
+<pre><code><span class="hljs-keyword">require</span>([<span class="hljs-string">'node'</span>, <span class="hljs-string">'anim'</span>],<span class="hljs-keyword">function</span>($, Anim){
+    $(<span class="hljs-string">".foo"</span>).each(<span class="hljs-keyword">function</span>(n){
+        new Anim(n,<span class="hljs-keyword">...</span>).run();
+    })
+})
+</code></pre><p>等价于
+    require([&#39;node&#39;], function($){
+        $(&quot;.foo&quot;).animate({
+            width:100,
+            height:300
+        }, {
+            duration: 2000,
+            easing:&#39;easeBoth&#39; ,
+            complete: function () {}
+        });
+    })</p>
+<p>此外，node节点还挂载一些常用的做动画的函数，比如fadeIn、fadeOut、slideUp、slideDown等(<a href="/5.0/guides/node/index.html">具体请参照Node</a>)</p>
+<h2 id="实例化动画的传参">实例化动画的传参</h2><p>刨除直接通过node.animate()创建的动画之外，通过Anim可以生成一个<code>动画实例</code>。动画实例是用来描述动画的一些基本属性，比如，从<code>什么状态</code>动画到<code>什么状态</code>，动画时间，缓动效果，暂停和继续动画等。
+通过<code>Anim</code>这样实例化一个动画实例（<a href="/5.0/demos/anim/index.html">参照Demo</a>）：</p>
+<pre><code><span class="hljs-built_in">require</span>([<span class="hljs-string">"anim"</span>],<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(Anim)</span></span>{
+    <span class="hljs-comment">// 初始化动画实例</span>
+    <span class="hljs-keyword">var</span> anim = Anim(<span class="hljs-string">'#anim-el'</span>,
+        <span class="hljs-comment">// 动画目标样式</span>
+        {
+            <span class="hljs-string">'background-color'</span>:<span class="hljs-string">'#fcc'</span>,
+            <span class="hljs-string">'border-width'</span>:<span class="hljs-string">'5px'</span>
+        },
+        {
+            duration : <span class="hljs-number">5</span>,  <span class="hljs-comment">// 动画时长，秒</span>
+            easing : <span class="hljs-string">"bounceOut"</span>,   <span class="hljs-comment">// 动画特效</span>
+            complete : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{  <span class="hljs-comment">// 动画结束的回调</span>
+                alert(<span class="hljs-string">'动画结束'</span>);
+            }
+        });
+
+    <span class="hljs-comment">// 开始执行动画</span>
+    anim.run();
+});
+</code></pre><p>第一种传参格式</p>
+<p><code>Anim (elem, props[, duration, easing, completeFn])</code></p>
+<p>各参数含义：</p>
+<ul>
+<li>elem：（String|HTMLElement|Node|window）用于作动画的DOM元素或者窗口，窗口仅支持scrollTop和scrollLeft</li>
+<li>props：JSON 对象，表示动画终止时节点的样式，如果设置为scrollLeft或scrollTop，这时会对元素的滚动属性产生动画</li>
+<li>duration：（Number），动画持续的秒数，默认为1</li>
+<li>easing：（String）缓动效果，也称为“平滑函数”，效果可<a href="/5.0/demos/anim/cited-by-md/easing.html">参照这里</a>。取值包括：<ul>
+<li>easeNone</li>
+<li>easeIn</li>
+<li>easeOut</li>
+<li>easeBoth</li>
+<li>easeInStrong</li>
+<li>easeOutStrong</li>
+<li>easeBothStrong</li>
+<li>elasticIn</li>
+<li>elasticOut</li>
+<li>elasticBoth</li>
+<li>backIn</li>
+<li>backOut</li>
+<li>backBoth</li>
+<li>bounceIn</li>
+<li>bounceOut</li>
+<li>bounceBoth</li>
+</ul>
+</li>
+<li>completeFn：（function），动画结束时的回调</li>
+</ul>
+<p>Anim 的第二种传参格式，建议使用这种</p>
+<p><code>Anim (elem, props[, config])</code></p>
+<ul>
+<li>elem (String|HTMLElement|KISSY.Node|window) – 作用动画的元素节点.</li>
+<li>props (Object) – 动画结束的 dom 样式值</li>
+<li>config (Number) – JSON 对象，动画配置，包括<ul>
+<li>duration，动画持续事件，Number，单位为秒，默认为1</li>
+<li>easing，（string|function），默认easeNone，动画平滑函数</li>
+<li>queue，（String|false|undefined）所属队列名称，默认undefined，属于系统内置队列, 设置 false 则表示该动画不排队立即执行.</li>
+<li>complete，（function）动画结束后的回调</li>
+</ul>
+</li>
+</ul>
+<h2 id="Anim 动画实例的方法">Anim 动画实例的方法</h2><p>Anim动画实例上可调用这些方法</p>
+<h3 id="isRunning()">isRunning()</h3><p>判断当前动画对象是否在执行动画过程中</p>
+<h3 id="isPaused()">isPaused()</h3><p>判断当前动画是否被停止</p>
+<h3 id="run()">run()</h3><p>开始当前动画</p>
+<h3 id="stop()">stop()</h3><p>结束当前动画</p>
+<pre><code>// 终止当前动画，动画会在当前帧直接停止（不触发 complete 回调）. 
+anim.<span class="hljs-literal">stop</span>(<span class="hljs-keyword">false</span>);//默认为<span class="hljs-keyword">false</span>
+// 为 <span class="hljs-keyword">true</span> 时, 动画停止时会立刻跳到最后一帧（触发 complete 回调）
+anim.<span class="hljs-literal">stop</span>(<span class="hljs-keyword">true</span>);
+</code></pre><h3 id="pause()">pause()</h3><p>在动画实例上调用, 暂停当前动画实例的动画.</p>
+<h3 id="resume()">resume()</h3><p>继续当前动画实例的动画.</p>
+<h2 id="Anim 的静态方法">Anim 的静态方法</h2><h3 id="静态方法 isRunning(elem)">静态方法 isRunning(elem)</h3><p>判断elem上是否有动画对象在执行</p>
+<pre><code><span class="hljs-attribute">Anim</span>.<span class="hljs-function">isRunning</span>(elem);
+</code></pre><h3 id="静态方法 isPaused()">静态方法 isPaused()</h3><p>用于判断 elem 上是否有动画对象在暂停，用法同上</p>
+<h3 id="静态方法 stop()">静态方法 stop()</h3><p>停止某元素上的动画（集合）.调用方法。</p>
+<p><code>Anim.stop (elem, end, clearQueue, queueName)</code></p>
+<ul>
+<li>elem (HTMLElement|window) – 作用动画的元素节点.</li>
+<li>end (Boolean) – 此参数同实例方法 stop() 中的 finish 参数.</li>
+<li>clearQueue (Boolean) – 默认为 false, 是否清除动画队列中余下的动画.</li>
+<li>queueName (String) – 队列名字，不设置此值，表示停止所有队列中的所有动画，设置 queueName 后, 表示停止元素上指定队列中的所有动画，取值包括：<ul>
+<li>null，表示默认队列的动画</li>
+<li>false 表示不排队的动画</li>
+<li>string 类型表示指定名称的队列的动画</li>
+</ul>
+</li>
+</ul>
+<h3 id="静态方法 pause()">静态方法 pause()</h3><p>暂停某元素上的动画（集合）.调用方法，其中queueName参数含义同上</p>
+<p><code>Anim.pause (elem, queueName)</code></p>
+<h3 id="静态方法 resume()">静态方法 resume()</h3><p>继续某元素上的动画，调用方法，其中queueName含义同上</p>
+<p><code>Anim.resume (elem, queueName)</code></p>
+<h2 id="动画实例的事件">动画实例的事件</h2><h3 id="complete 事件">complete 事件</h3><p>动画结束后会触发<code>complete</code>事件</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="wrap-disqus">
+    <div class="top-repeat"></div>
+	<div id="disqus_thread"></div>
+</div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<div class="other-page">
+    <div class="wrap">
+        <div class="content">
+            <div class="wrap-content">
+                <p>@2010 - 2112 KISSY UI LIBARAY</p>
+                <div class="github-msg">
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=fork&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	</div>
+</body>
+</html>

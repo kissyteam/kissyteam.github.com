@@ -1,0 +1,36 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>promise-影响回调</title>
+<link rel="stylesheet" type="text/css" href="assets/bootstrap.css">
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed.js"></script>
+</head>
+<body>
+<h4>前一个 promise 如果处理了错误并返回会影响下一个 promise 的成功回调</h4>
+<p>查看代码，点击下面按钮观察结果</p>
+<button id="demo5" class="btn btn-default btn-sm">点我执行</button>
+
+<script type="text/javascript">
+    require(['node', 'promise'], function(Node, Promise){
+        var $ = Node.all;
+
+        $('#demo5').on('click', function(){
+            var d = new Promise.Defer();
+            d.reject("wrong");
+            var promise = d.promise;
+            promise.then(function (v) {
+                return v + 1;
+            },function (reason) {
+                return 2;
+            }).then(function (v) {
+                alert(v); // => 2
+            }, function (reason) {
+                alert(reason); // 不执行
+            });
+        });
+    })
+</script>
+</body>
+</html>

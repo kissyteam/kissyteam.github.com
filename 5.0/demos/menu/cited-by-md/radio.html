@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>单选菜单</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/menu/assets/dpl.css">
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<h1>单选菜单</h1>
+<p>所有同类的Menu.RadioItem单选菜单项，只能选择一个，区别于Menu.CheckItem多选菜单项</p>
+<div id="container" style="margin-left:50px;">
+    
+</div>
+<script type="text/javascript">
+    require(['menu', 'separator'], function(Menu, Separator){
+        var myMenu = new Menu({
+            render : '#container',
+            width : 150,
+            children : [
+                new Menu.RadioItem({  //通过构造器来生成 Menu.RadioItem 单选节点
+                    content : 'item1'
+                }),
+                {
+                    xclass : 'radio-menuitem',  //通过xclass来生成 Menu.RadioItem 单选节点
+                    content : 'item2'
+                },
+                {
+                    xclass:'separator'    //分隔符
+                },
+                {
+                    xclass : 'submenu',
+                    content : 'submenu',
+                    menu : new Menu.PopupMenu({
+                        autoHideOnMouseLeave:true,
+                        width : 150,
+                        children : [
+                            {
+                                xclass : 'radio-menuitem',
+                                content : 'item1InSubMenu'
+                            },
+                            {
+                                xclass : 'radio-menuitem',
+                                content : 'item2InSubMenu'
+                            }
+                        ]
+                    })
+                }
+            ]
+        });
+
+        myMenu.render();
+    });
+</script>
+</body>
+</html> 

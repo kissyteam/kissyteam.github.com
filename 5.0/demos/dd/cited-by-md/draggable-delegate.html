@@ -1,0 +1,140 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Draggable 简单使用示例</title>
+<link rel="stylesheet" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="assets/box.css">
+<style type="text/css">
+.container {
+    height: 380px;
+    padding: 10px;
+    position: relative;
+}
+
+.component {
+    margin: 10px 10px;
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    overflow: hidden;
+    line-height:20px;
+}
+
+.cheader {
+    cursor: move;
+    border: 1px solid black;
+    height: 20px;
+    line-height: 20px;
+}
+
+#drop, #drop3 {
+    height: 100px;
+    line-height: 30px;
+  
+}
+
+.box .ks-dd{
+    background:white;
+}
+.box .ks-dd-drag-over {
+    background: #FD9F99;
+}
+
+.box .ks-dd-drop-over {
+    background: #FD9F99;
+}
+
+#container3 .component .cheader {
+    cursor: move;
+}
+
+#add_delegate{
+    margin:5px 5px 10px 20px;
+}
+</style>
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"></script>
+</head>
+
+<body>
+<h1>委托一个容器内指定规则的元素能被拖动</h1>
+<button id="add_delegate">新增能被拖动元素</button>
+<div id="container3" class="container">
+    <div class="box component">
+        <s class="box-tp"><b></b></s>
+        <div class="box-hd cheader">
+            <h3>拖动头</h3>
+        </div>
+        <div class="box-bd">
+            delegate drag 1
+        </div>
+        <s class="box-bt"><b></b></s>
+    </div>
+    <div class="box" >
+        <s class="box-tp"><b></b></s>
+        <div id="drop" class="box-bd ks-dd">
+            drop zone
+        </div>
+        <s class="box-bt"><b></b></s>
+    </div>
+</div>
+<script type="text/javascript">
+    require(['node', 'dd'], function (Node, DD) {
+        var $ = Node.all;
+        var DDM = DD.DDM,
+            DraggableDelegate = DD.DraggableDelegate,
+            Droppable = DD.Droppable;
+
+        var p;
+        /**
+         * 集中监听所有
+         */
+        DDM.on("dragstart", function(ev) {
+
+            var c = ev.drag;
+            p = c.get("dragNode").css("position");
+        });
+
+        DDM.on("dragend", function(ev) {
+            var c = ev.drag;
+            // 恢复原有定位
+            c.get("dragNode").css("position", p);
+        });
+
+        $("#container3").unselectable();
+        var delegate = new DraggableDelegate({
+            container:"#container3",
+            handlers:['.cheader'],
+            selector:'.component',
+            move:true
+        });
+
+        var drop = new Droppable({
+            node:"#drop"
+        });
+
+        var c = 1;
+
+        $("#add_delegate").on("click", function() {
+            new Node('<div class="box component"><s class="box-tp"><b></b></s><div class="box-hd cheader">'
+                    + '<h3>拖动头</h3></div><div class="box-bd">delegate drag '+(++c)
+                    + '</div><s class="box-bt"><b></b></s></div>')
+                    .prependTo("#container3");
+        });
+
+
+
+        function onhit(ev) {
+            ev.drag.get("dragNode").css("margin", "5px 10px");
+            ev.drag.get("dragNode").appendTo(ev.drop.get("node"));
+        }
+
+        drop.on("drophit",onhit);
+
+    });
+</script>
+</body>
+</html>

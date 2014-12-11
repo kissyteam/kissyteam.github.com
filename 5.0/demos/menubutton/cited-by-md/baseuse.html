@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>简单菜单按钮/从已有元素生成</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/button/assets/dpl.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/menubutton/assets/dpl.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/menu/assets/dpl.css">
+<style type="text/css">
+    .ks-button-focused{
+        border-color:orange;
+    }
+</style>
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<h1>简单菜单按钮/从已有元素生成</h1>
+<div style="margin : 0 auto; width : 80%; border:1px solid red; overflow : auto; height:400px;">
+    <div>
+        <h1>菜单按钮说明</h1>
+        <h2>设计说明</h2>
+        <ol>
+            <li>支持键盘，鼠标互操作</li>
+            <li>符合 wai-aria 规范</li>
+            <li>构建组件层次</li>
+        </ol>
+
+        <h2>使用说明</h2>
+        <ol>
+            <li>
+                tab 移动焦点到按钮：按钮周边粉框
+            </li>
+            <li>
+                按钮获得焦点时点击上或下键，弹出菜单
+                <ol>
+                    <li>或点击按钮弹出菜单</li>
+                </ol>
+            </li>
+
+
+            <li>
+                菜单弹出后，上下键选择菜单项
+                <ol>
+                    <li>或通过鼠标掠过</li>
+                </ol>
+            </li>
+
+            <li>
+                带有子菜单的菜单项通过右键激活子菜单，左键收缩子菜单
+                <ol>
+                    <li>或通过鼠标掠过，自动弹出子菜单</li>
+                </ol>
+            </li>
+
+            <li>
+                菜单项弹出后，按下 enter 或 space 则选中当前高亮菜单项
+                <ol>
+                    <li>或通过鼠标点击选中任意菜单项</li>
+                </ol>
+            </li>
+
+            <li>
+                esc 隐藏下拉菜单（焦点仍然在按钮上）
+                <ol>
+                    <li>或通过鼠标点击文档空白区域（按钮失去焦点）</li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+</div>
+<div style="margin : 0 auto; width : 80%;">
+    <h1>示例：</h1>
+    <p>应用button相应的class可以使用button定义好的样式，更多样式请看button示例</p>
+</div>
+<div id="container"  style="margin : 0 auto; width : 80%;">
+    <p>全新生成节点:</p>
+</div>
+<div id="container2"  style="margin : 0 auto; width : 80%;">
+    <p>从已有元素生成（html结构必须符合规范和相应的class）:</p>
+    <div class="ks-menu-button ks-button ks-button-success" id="exist" tabindex="0">
+        <div class="ks-menu-button-content">我的淘宝</div>
+        <div class="ks-menu-button-dropdown ks-button-dropdown">
+            <div class="ks-menu-button-dropdown-inner ks-button-dropdown-inner">
+            </div>
+        </div>
+        <div class="ks-menu ks-popupmenu">
+            <div class="ks-popupmenu-content">
+                <div class="ks-menuitem ks-menuitem-checkable">已买到的宝贝</div>
+                <div class="ks-menuitem ks-menuitem-checkable">已卖出的宝贝</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    require(['menu', 'menubutton'], function(Menu, MenuButton){
+        var myMenuButton1 = new MenuButton({  //全新生成节点
+            content : '我的淘宝',
+            render : '#container',
+            matchElWidth : false,
+            elCls : 'ks-button-info ks-button-large',   //可以加上button相应的class来应用button样式，更多样式请看button的示例
+            menu : {
+                xclass : 'popupmenu',
+                children : [
+                    {
+                        xclass : 'menuitem',   //通过xclass来生成menuitem
+                        content : '已买到的宝贝'
+                    },
+                    new Menu.Item({            //通过构造器来生成menuitem
+                        content : '已卖出的宝贝'
+                    })
+                ],
+                listeners : {
+                    click : function(ev){
+                        S.log(ev.target.get('content'));
+                    }
+                }
+            }
+        });
+        myMenuButton1.render();
+
+        var myMenuButton2 = new MenuButton({  //从已有元素生成
+            srcNode : '#exist',
+            matchElWidth : false,
+            listeners : {
+                click : function(ev){
+                    S.log(ev.target.get('content'));
+                }
+            }
+        });
+        myMenuButton2.render();
+    });
+</script>
+</body>
+</html> 

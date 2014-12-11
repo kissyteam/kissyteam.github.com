@@ -1,0 +1,130 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>GregorianCalendar示例</title>
+<style type="text/css">
+    body{
+        background: #fff;
+    }
+</style>
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+   <h3>GregorianCalendar使用示例</h3>
+    <input type="text" id="year" value="0">年
+    <input type="text" id="month" value="0">月
+    <input type="text" id="day" value="0">日
+    <br/>
+    <input type="text" id="hour" value="0">时
+    <input type="text" id="minute" value="0">分
+    <input type="text" id="second" value="0">秒
+    <input type="text" id="millisecond" value="0">毫秒
+    <br/>
+    <p>初始化GregorianCalendar，并将它设为当前时间(会自动更新上面的输入框)：
+    <button id="setNow">设为当前时间</button>
+    </p>
+    <p>也可以手动修改上面输入框，设置修改后的时间（需要填写完整）：
+    <button id="set">根据输入框信息设置时间</button>
+    </p>
+    <p>
+        设置完时间后可获得以下时间信息：
+        <div id="gets">
+            <button disabled="disabled" value="getTime">getTime</button>
+            <button disabled="disabled" value="getYear">getYear</button>
+            <button disabled="disabled" value="getMonth">getMonth</button>
+            <button disabled="disabled" value="getDayOfMonth">getDayOfMonth</button>
+            <button disabled="disabled" value="getHourOfDay">getHourOfDay</button>
+            <br/>
+            <button disabled="disabled" value="getMinutes">getMinutes</button>
+            <button disabled="disabled" value="getSeconds">getSeconds</button>
+            <button disabled="disabled" value="getMilliseconds">getMilliseconds</button>
+            <button disabled="disabled" value="getWeekOfYear">getWeekOfYear</button>
+            <br/>
+            <button disabled="disabled" value="getWeekOfMonth">getWeekOfMonth</button>
+            <button disabled="disabled" value="getDayOfYear">getDayOfYear</button>
+            <button disabled="disabled" value="getDayOfWeek">getDayOfWeek</button>
+            <button disabled="disabled" value="getDayOfWeekInMonth">getDayOfWeekInMonth</button>
+        </div>
+    </p>
+    <p>
+        操作GregorianCalendar对象：
+        <button id="addYear" disabled="disabled">增加一年</button>
+    </p>
+    <p>
+        操作GregorianCalendar对象：
+        <button id="addMonth" disabled="disabled">增加10个月</button>
+    </p>
+    <p>
+        操作GregorianCalendar对象：
+        <button id="rollMonth" disabled="disabled">roll 13个月</button>
+    </p>
+    <script type="text/javascript">
+        require(['node', 'gregorian-calendar'], function(Node, GregorianCalendar){
+            var $ = Node.all;
+
+            var gregorian = new GregorianCalendar();
+            $('#setNow').on('click', function(event){  //设置为当前时间
+                gregorian.setTime(+new Date());  //注意setTime的参数需要是 Number 类型
+                $("input#year").val(gregorian.getYear());
+                $("input#month").val(gregorian.getMonth() + 1);  //getMonth得到的月份是从 0 开始计算的，和 new Date().getMonth() 一致
+                $("input#day").val(gregorian.getDayOfMonth());
+                $("input#hour").val(gregorian.getHourOfDay());
+                $("input#minute").val(gregorian.getMinutes());
+                $("input#second").val(gregorian.getSeconds());
+                $("input#millisecond").val(gregorian.getMilliseconds());
+
+                $("button").removeAttr('disabled');
+            });
+
+            $('#set').on('click', function(event){   //根据输入框信息设置时间
+                gregorian.setYear(parseInt($("#year").val()));
+                gregorian.setMonth(parseInt($("#month").val())-1); //月份内部表示为0-11
+                gregorian.setDayOfMonth(parseInt($("#day").val()));
+                gregorian.setHourOfDay(parseInt($("#hour").val()));
+                gregorian.setMinutes(parseInt($("#minute").val()));
+                gregorian.setSeconds(parseInt($("#second").val()));
+                gregorian.setMilliseconds(parseInt($("#millisecond").val()));
+
+                //更新输入框信息
+                $("input#year").val(gregorian.getYear());
+                $("input#month").val(gregorian.getMonth() + 1);  //getMonth得到的月份是从 0 开始计算的，和 new Date().getMonth() 一致
+                $("input#day").val(gregorian.getDayOfMonth());
+                $("input#hour").val(gregorian.getHourOfDay());
+                $("input#minute").val(gregorian.getMinutes());
+                $("input#second").val(gregorian.getSeconds());
+                $("input#millisecond").val(gregorian.getMilliseconds());
+
+                $("button").removeAttr('disabled');
+            });
+
+            //获得时间信息
+            $('#gets').delegate('click', 'button', function(event){
+                var func = $(event.currentTarget).val();
+                var value = func === 'getMonth' ? gregorian[func]() + 1 : gregorian[func]();   //getMonth得到的月份是从0开始算的
+                alert(func + ': ' + value);
+            })
+
+            //增加一年
+            $('#addYear').on('click', function(event){
+                gregorian.addYear(1);
+                $("input#year").val(gregorian.getYear());
+            });
+
+            $("#addMonth").on('click', function() {
+                gregorian.addMonth(10);
+                $("input#year").val(gregorian.getYear());
+                $("input#month").val(gregorian.getMonth());
+            });
+
+            $("#rollMonth").on('click', function() {
+                gregorian.rollMonth(13);
+                $("input#year").val(gregorian.getYear());
+                $("input#month").val(gregorian.getMonth());
+            });
+
+        })
+    </script>
+</body>
+</html>

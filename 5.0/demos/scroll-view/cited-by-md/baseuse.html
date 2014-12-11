@@ -1,0 +1,63 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<title>简单使用ScrollView</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/scroll-view/assets/dpl.css">
+<script type="text/javascript" src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"  data-config="{combine:true}"></script>
+<style type="text/css">
+    body{
+        margin: 0;
+        padding: 0;
+        background: #fff;
+    }
+    #wrap{
+        width: 100%;
+    }
+    .ks-scroll-view {
+        border: 1px solid red;
+        margin: 0 auto;
+    }
+    .ks-scroll-view p {
+        height: 90px;
+        border: 1px solid green;
+        margin: 0;
+        text-align: center;
+        line-height: 90px;
+    }
+    h1 {
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<div id="wrap">
+    <h1>简单使用ScrollView</h1>
+    <p>用移动浏览器打开查看demo或用PC上的chrome开发人员工具Emulation来模拟查看</p>
+    <div id="scroll-view-contaienr">
+        
+    </div>
+</div>
+
+<script type="text/javascript">
+	require(['scroll-view'], function(ScrollView){
+        var content = '';
+        for (var i = 0; i < 10; i++) {
+            content += '<p>This is ' + i + ' block</p>';
+        }
+        var myScrollView = new ScrollView({
+            width : 318,
+            height : 300,
+            render : '#scroll-view-contaienr',
+            content : content
+        });
+        myScrollView.render();
+    })
+
+</script>
+</body>
+</html>

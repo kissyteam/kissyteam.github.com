@@ -1,0 +1,61 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Demo - 基本动画示例</title>
+<style>
+    body{
+        background: #fff;
+    }
+    #test1 {
+        width: 10px;
+        height: 20px;
+        position: absolute;
+        top: 20px;
+        left: 120px;
+        text-align: center;
+        color: #999;
+    }
+</style>
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<button id="run">开始动画</button>
+<div id="test1" >^o^</div>
+
+<script>
+    require(['anim','node'],function(Anim,$){
+         var anim = Anim(
+            '#test1',
+            {
+                'background-color':'#fcc',
+                'border-width':'5px',
+                'border-color':"#999999",
+                'border-style':"dashed",
+                'width': '100px',
+                'height': '50px',
+                'left': '200px',
+                'top': '285px',
+                'opacity': '.5',
+                'font-size': '48px',
+                'padding': '30px 0',
+                'color': '#FF3333',
+                'position' : 'absolute'
+            },
+            {
+                duration : 3,
+                easing : "ease-out",
+                complete : function(){
+                    alert("动画结束");
+                }
+            });
+
+        $("#run").on("click", function() {
+            anim.run();
+        });
+    });
+</script>
+</body>
+</html> 

@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <title>横向滚动-图片Gallery</title>
+    <link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/scroll-view/assets/dpl.css">
+    <script type="text/javascript" src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"  data-config="{combine:true}"></script>
+    <style>
+        body{
+            background: #fff;
+        }
+        body, ul, li {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+        #header{
+            width: 100%;
+            height: 45px;
+            text-align: center;
+            line-height: 45px;
+            background: #00A0E9;
+            font-size: 20px;
+            color: #eee;
+        }
+        .pic-viewer {
+            position: absolute;
+            width: 320px;
+            height: 568px;
+        }
+        #pic img{
+            width: 320px;
+            height: 460px;
+            margin: 0;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div id="header">横向滚动-图片Gallery</div>
+<script>
+    require(['scroll-view'], function(ScrollView){
+
+        var str = '<div id="pic" style="width:1280px;height:550px;">'
+                + '<img src="http://gd2.alicdn.com/bao/uploaded/i2/TB15MxhGXXXXXa_XpXXXXXXXXXX_!!0-item_pic.jpg_400x400.jpg_.webp">'
+                + '<img src="http://img02.taobaocdn.com/bao/uploaded/i2/101208715/TB2bLc4aXXXXXbZXXXXXXXXXXXX_!!101208715.jpg_400x400.jpg">'
+                + '<img src="http://img01.taobaocdn.com/bao/uploaded/i1/101208715/TB2O2UVXVXXXXX.XXXXXXXXXXXX_!!101208715.jpg_400x400.jpg">'
+                + '<img src="http://img03.taobaocdn.com/bao/uploaded/i3/101208715/TB2lEXjapXXXXbAXXXXXXXXXXXX_!!101208715.jpg_400x400.jpg">'
+                + '</div>';
+
+        var picGalleryScrollView = new ScrollView({
+            content : str,
+            snap : 'img',
+            elCls : 'pic-viewer'
+        }).render();
+    })
+</script>
+</body>

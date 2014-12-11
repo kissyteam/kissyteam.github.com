@@ -1,0 +1,73 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Draggable 简单使用示例</title>
+<link rel="stylesheet" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"></script>
+</head>
+
+<body>
+<h1>利用 Constrain 插件限制拖动区域</h1>
+<div id="constrainContainer"
+     style="width: 300px;height: 300px;border: 1px solid red;position: relative;">
+
+    <div style="width: 100px;height: 100px;
+    border: 1px solid green;
+    position: absolute;left:10px;top:10px;"
+         id="d">
+
+    </div>
+
+</div>
+<button id="cd">contrain to div</button>
+<button id="cw">constrain to window</button>
+<button id="cn">no constrain</button>
+    <script type="text/javascript">
+        require(['dd', 'node', 'dd/plugin/constrain'], function (DD, Node,Constrain) {
+            var $ = Node.all;
+
+            var constrain=new Constrain({
+                constrain: "#constrainContainer"
+            });
+
+            var drag = new DD.Draggable({
+                node: "#d",
+                move: 1,
+                plugins:[
+                    constrain
+                ]
+            });
+
+            $("#cd").on("click", function () {
+                $("#d").css({
+                    left: "10px",
+                    top: "10px"
+                });
+                constrain.set("constrain", "#constrainContainer");
+                drag.unplug(constrain);
+                drag.plug(constrain);
+            });
+
+            $("#cw").on("click", function () {
+                $("#d").css({
+                    left: "10px",
+                    top: "10px"
+                });
+                constrain.set("constrain", true);
+                // drag.unplug(constrain);
+                // drag.plug(constrain);
+            });
+
+            $("#cn").on("click", function () {
+                $("#d").css({
+                    left: "10px",
+                    top: "10px"
+                });
+                drag.unplug(constrain);
+            });
+        });
+    </script>
+</body>
+</html>

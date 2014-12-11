@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scale=no">
+	<title>Guides - KISSY v5.0 Documentation</title>
+	<link rel="shortcut icon" href="/5.0/assets/img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/github.css"/>
+	<script type="text/javascript" src="http://g.tbcdn.cn/kissy/edge/2014.07.16/seed.js" data-config="{combine:true}"></script>
+	<link rel="stylesheet" href="/5.0/assets/css/component.css">
+</head>
+<body>
+	<div class="header">
+		<div class="inner">
+	<div class="toolbar">
+		<a href="/5.0">
+			<img class="mini-logo" src="/5.0/assets/img/mini-logo.png">
+		</a>
+		<ul class="nav clearfix">
+			<li class="docs">
+				<span>
+					Docs
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/guides/">Guides</a></li>
+					<li><a href="/5.0/api">Api Docs</a></li>
+					<li><a href="/5.0/demos">Demos</a></li>
+				</ul>
+			</li>
+			<li class="more">
+				<span>
+					More
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/more/faq.html">FAQ</a></li>
+					<li><a href="http://gallery.kissyui.com/">Gallery</a></li>
+					<li><a href="http://blog.kissyui.com/">KISSY Blog</a></li>
+					<li><a href="https://github.com/daxingplay/kmc">KMC</a></li>
+					<li><a href="https://github.com/minghe/generator-bee/wiki/generator-bee%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">Generator</a></li>
+				</ul>
+			</li>
+			<li class="split"></li>
+			<li class="nav-other"><a href="/5.0/quick-start.html">Quick Start</a></li>
+			<li class="nav-other"><a href="https://github.com/kissyteam/kissy">Contribute</a></li>
+			<li class="nav-other"><a target="_blank" href="/5.0/kissyup-middle.html">KISSY UP</a></li>
+		</ul>
+	</div>
+	<div class="search">
+		<script>
+			(function() {
+			var cx = '003618533255763067140:5nkycw1pbey';
+			var gcse = document.createElement('script');
+			gcse.type = 'text/javascript';
+			gcse.async = true;
+			gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+			    '//www.google.com/cse/cse.js?cx=' + cx;
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(gcse, s);
+			})();
+		</script>
+		<gcse:search></gcse:search>
+	</div>
+</div>
+	</div>
+	<div class="main">
+		<div class="demo">
+			<div class="logo-on-top clearfix">
+				<img src="/5.0/assets/img/logo-on-top.png">
+			</div>
+			<div class="inner clearfix">
+				<div id="sidebar">
+					<a class="link-apidocs btn btn-primary" href="../../api/classes/Anim.html">API Docs</a>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Features</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../guides/anim/index.html">Anim基本介绍</a></p>
+						</div>
+					</div>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Demos</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../demos/anim/anim-promise.html">Anim 使用 Promise API 示例</a></p><p><a href="../../demos/anim/anim-queue.html">动画队列示例</a></p><p><a href="../../demos/anim/custom.html">自定义动画</a></p><p><a href="../../demos/anim/index.html">anim的基本使用</a></p><p><a href="../../demos/anim/node.html">节点上的动画</a></p><p><a href="../../demos/anim/scroll.html">滚动示例</a></p><p><a href="../../demos/anim/timeline.html">动画曲线可视化</a></p><p><a href="../../demos/anim/tranform.html">跨浏览器transform</a></p>
+						</div>
+					</div>
+				</div>
+				<div id="main-content">
+					<p></p>
+<h1 id="跨浏览器transform">跨浏览器transform</h1><p><code>anim</code>模块支持跨浏览器的<code>transform</code>动画，包括IE8等浏览器</p>
+<h2 id="transform示例一">transform示例一</h2><p><div class="ks-tabs ks-tabs-top" style="height:800px;">
+    <div class="ks-tabs-bar">
+        <div class="ks-tabs-tab ks-button">Source</div>
+        <div class="ks-tabs-tab ks-button ks-tabs-tab-selected">Output</div>
+        <div class="ks-tabs-tab ks-button">QRCode</div>
+    </div>
+    <div class="ks-tabs-body" style="overflow:hidden;">
+        <div class="ks-tabs-panel">
+            <div class="editor">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&#x2F;&gt;
+&lt;title&gt;transform&lt;&#x2F;title&gt;
+&lt;script charset=&quot;utf-8&quot; src=&quot;&#x2F;&#x2F;g.alicdn.com&#x2F;kissy&#x2F;k&#x2F;5.0.1&#x2F;seed.js&quot;&gt;&lt;&#x2F;script&gt;
+&lt;style&gt;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+    &#x2F;* HTML5 display-role reset for older browsers *&#x2F;
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    background: #fff;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: &#x27;&#x27;;
+    content: none;
+}
+
+ins {
+    text-decoration: none;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.prettyprint {
+    font-family: monospace;
+    font-size: 11px;
+}
+
+.str {
+    color: #BFAC00;
+}
+
+.kwd, .typ {
+    color: #BF5600;
+}
+
+.com {
+    color: #111;
+}
+
+.lit {
+    color: #26BF00;
+}
+
+.pun, .opn, .clo {
+    color: #999;
+}
+
+.pln {
+    color: #DDD;
+}
+
+.tag {
+    color: #008;
+}
+
+.atn {
+    color: #606;
+}
+
+.atv {
+    color: #080;
+}
+
+.dec {
+    color: #606;
+}
+
+    &#x2F;* Specify class=linenums on a pre to get line numbering *&#x2F;
+ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+    &#x2F;* IE indents via margin-left *&#x2F;
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L5,
+li.L6,
+li.L7,
+li.L8 {
+    list-style-type: none
+}
+
+    &#x2F;* Alternate shading for lines *&#x2F;
+li.L1,
+li.L3,
+li.L5,
+li.L7,
+li.L9 {
+    background: #eee
+}
+
+    &#x2F;*------------------------------------*\
+      MAIN
+    \*------------------------------------*&#x2F;
+
+body {
+    background: #333;
+    width: 1000px;
+    margin: 0 auto;
+    color: #FFF;
+    overflow-x: hidden;
+    font-family: Arial, &quot;Liberation Sans&quot;, sans;
+}
+
+header h1 {
+    font-family: &#x27;Josefin Slab&#x27;, arial, serif;
+    font-size: 6em;
+    color: #BBB;
+    text-shadow: 1px 0px #FFF;
+    margin: 30px 0 5px;
+}
+
+section, footer {
+    clear: both;
+}
+
+h2 {
+    font-family: &#x27;Josefin Slab&#x27;, arial, serif;
+    font-size: 2em;
+    padding: 2em 0 .3em;
+}
+
+footer a {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+footer {
+    font-size: .8em;
+    text-align: right;
+    margin: 4em 0 2em;
+}
+
+#basic li {
+    display: inline-block;
+    width: 250px;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+.fright {
+    float: right;
+}
+
+.fleft {
+    float: left;
+}
+
+.color1 {
+    background: #bf0000;
+    color: #bf0000;
+}
+
+.color2 {
+    background: #bf5600;
+    color: #bf5600;
+}
+
+.color3 {
+    background: #bfac00;
+    color: #bfac00;
+}
+
+.color4 {
+    background: #7cbf00;
+    color: #7cbf00;
+}
+
+.color5 {
+    background: #26bf00;
+    color: #26bf00;
+}
+
+.color6 {
+    background: #00bf2f;
+    color: #00bf2f;
+}
+
+.color7 {
+    background: #00bf85;
+    color: #00bf85;
+}
+
+.color8 {
+    background: #00a2bf;
+    color: #00a2bf;
+}
+
+.color9 {
+    background: #004cbf;
+    color: #004cbf;
+}
+
+.color10 {
+    background: #0900bf;
+    color: #0900bf;
+}
+
+.color11 {
+    background: #5f00bf;
+    color: #5f00bf;
+}
+
+.color12 {
+    background: #b500bf;
+    color: #b500bf;
+}
+&lt;&#x2F;style&gt;
+&lt;&#x2F;head&gt;
+
+&lt;body&gt;
+
+&lt;section id=&quot;basic&quot; style=&quot;position: relative;height: 400px&quot;&gt;
+    &lt;h2&gt;Basic usage&lt;&#x2F;h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;pre class=&quot;brush: js;&quot;&gt;KISSY.all(elem).animate({
+  transform: &#x27;translateX(50px)&#x27;
+});&lt;&#x2F;pre&gt;
+        &lt;li&gt;&lt;pre class=&quot;brush: js;&quot;&gt;KISSY.all(elem).animate({
+  transform: &#x27;rotate(135deg)&#x27;
+});&lt;&#x2F;pre&gt;
+        &lt;li&gt;&lt;pre class=&quot;brush: js;&quot;&gt;KISSY.all(elem).animate({
+  transform: &#x27;scale(2,.5)&#x27;
+});&lt;&#x2F;pre&gt;
+        &lt;li&gt;&lt;pre class=&quot;brush: js;&quot;&gt;KISSY.all(elem).animate({
+  transform: &#x27;skewX(35deg) skewY(15deg)&#x27;
+});&lt;&#x2F;pre&gt;
+    &lt;&#x2F;ul&gt;
+    &lt;div style=&quot;position: relative;padding: 40px 0;height: 300px&quot;&gt;
+        &lt;div id=&quot;basic1&quot; class=&quot;square color1&quot; style=&quot;position: absolute; margin-left: 0;&quot;
+             data-trans=&quot;translateX(50px)&quot;&gt;&lt;&#x2F;div&gt;
+        &lt;div id=&quot;basic2&quot; class=&quot;square color2&quot;
+             style=&quot;left: 150px&quot;
+             data-trans=&quot;rotate(135deg)&quot;&gt;&lt;&#x2F;div&gt;
+        &lt;div id=&quot;basic3&quot; class=&quot;square color3&quot;
+             style=&quot;left: 300px&quot;
+             data-trans=&quot;scale(2,.5)&quot;&gt;&lt;&#x2F;div&gt;
+        &lt;div id=&quot;basic4&quot; class=&quot;square color4&quot;
+             style=&quot;left: 450px&quot;
+             data-trans=&quot;skewX(35deg) skewY(15deg)&quot;&gt;&lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+
+&lt;&#x2F;section&gt;
+
+&lt;section&gt;
+    &lt;h2&gt;Advanced usage&lt;&#x2F;h2&gt;
+
+    &lt;div id=&quot;advanced&quot; style=&quot;height: 150px; position: relative;&quot;&gt;
+        &lt;div id=&quot;basic5&quot;
+             style=&quot;left:200px&quot;
+             class=&quot;square cover color5&quot;&gt;&lt;&#x2F;div&gt;
+        &lt;div id=&quot;basic6&quot;
+             style=&quot;left:220px&quot;
+             class=&quot;square cover color6&quot;&gt;&lt;&#x2F;div&gt;
+        &lt;div id=&quot;basic7&quot;
+             style=&quot;left:240px;z-index: 2&quot;
+             class=&quot;square cover color7&quot;&gt;&lt;&#x2F;div&gt;
+        &lt;div id=&quot;basic8&quot;
+             style=&quot;left:260px&quot;
+             class=&quot;square cover color8&quot;&gt;&lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+&lt;script&gt;
+require([&#x27;node&#x27;], function (Node) {
+    var $ = Node.all;
+    $(&#x27;.square&#x27;).on(&#x27;mouseenter&#x27;,function(e){
+        var currentTarget = $(e.currentTarget);
+        if (!currentTarget.isRunning()) {
+            currentTarget.animate({
+                transform: currentTarget.attr(&#x27;data-trans&#x27;)
+            }, {
+                &#x2F;&#x2F;useTransition:1,
+                duration: 0.4
+            });
+            currentTarget.animate({
+                x: 1
+            }, {
+                &#x2F;&#x2F;useTransition:1,
+                delay: 2,
+                duration: 0.1,
+                complete: function () {
+                    currentTarget.css(&#x27;opacity&#x27;, .5)
+                }
+            }).animate({
+                transform: &#x27;&#x27;
+            }, {
+                &#x2F;&#x2F;useTransition:1,
+                duration: 0.4,
+                complete: function () {
+                    currentTarget.css(&#x27;opacity&#x27;, 1)
+                }
+            });
+        }
+    })
+    var transforms = [
+                &#x27;scale(.66) skewY(-45deg)&#x27;,
+                &#x27;translate(20px) scale(.66) skewY(-45deg)&#x27;,
+                &#x27;translate(150px,50px) scale(1.5,1)&#x27;,
+                &#x27;translate(280px) scale(.66) skewY(45deg)&#x27;,
+                &#x27;translate(300px) scale(.66) skewY(45deg)&#x27;
+            ],
+            $squares = $(&#x27;#advanced .square&#x27;).each(function (v, i) {
+                $(v).css({ transform: transforms[i] });
+            });
+
+    $(&#x27;#advanced&#x27;).on(&#x27;mouseenter&#x27;,function () {
+        $squares.each(function (v, i) {
+            v.stop();
+            v.animate({ transform: transforms[i + 1] }, {
+                duration: 0.4
+            }); 
+
+        });
+    }).on(&#x27;mouseleave&#x27;, function () {
+        $squares.each(function (v, i) {
+            v.stop();
+            v.animate({ transform: transforms[i] }, {
+                duration: 0.4
+            });
+        });
+    });
+});
+&lt;&#x2F;script&gt;
+&lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;
+</div>
+        </div>
+        <div class="ks-tabs-panel ks-tabs-panel-selected">
+            <iframe class="output" frameborder="1">
+            	
+            </iframe>
+        </div>
+        <div class="ks-tabs-panel qrcode-wrap">
+            <div class="qrcode"></div>
+            <div class="content">
+                <p class="title">查看移动端演示</p>
+                <p class="qrcode-addr" qrcodeaddr="http://docs.kissyui.com/5.0/demos/anim/cited-by-md/transform.html" ="text">
+                    示例地址：
+                    <a href="http://docs.kissyui.com/5.0/demos/anim/cited-by-md/transform.html" target="_blank">http://docs.kissyui.com/5.0/demos/anim/cited-by-md/transform.html</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div></p>
+<h2 id="transform示例二">transform示例二</h2><p><div class="ks-tabs ks-tabs-top" style="height:400px;">
+    <div class="ks-tabs-bar">
+        <div class="ks-tabs-tab ks-button">Source</div>
+        <div class="ks-tabs-tab ks-button ks-tabs-tab-selected">Output</div>
+        <div class="ks-tabs-tab ks-button">QRCode</div>
+    </div>
+    <div class="ks-tabs-body" style="overflow:hidden;">
+        <div class="ks-tabs-panel">
+            <div class="editor">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&#x2F;&gt;
+    &lt;style&gt;
+        body {
+            background-color: #fff;
+            overflow: hidden;
+        }
+
+        .t {
+            border: 1px solid transparent;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            &#x2F;*
+            ie
+            margin: 100px;
+            *&#x2F;
+        }
+
+        #t2 {
+            top: 200px;
+            left: 500px;
+        }
+
+        .t {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    &lt;&#x2F;style&gt;
+&lt;&#x2F;head&gt;
+&lt;body&gt;
+&lt;h1 style=&quot;color:white;text-align: center&quot;&gt;360&lt;&#x2F;h1&gt;
+
+&lt;button id=&quot;run&quot;&gt;run&lt;&#x2F;button&gt;
+&lt;div id=&quot;t&quot; class=&quot;t&quot;&gt;
+&lt;&#x2F;div&gt;
+
+&lt;div id=&quot;t2&quot; class=&quot;t&quot;&gt;
+&lt;&#x2F;div&gt;
+&lt;script src=&quot;&#x2F;&#x2F;g.alicdn.com&#x2F;kissy&#x2F;k&#x2F;5.0.1&#x2F;seed.js&quot;&gt;&lt;&#x2F;script&gt;
+&lt;script&gt;
+    require([&#x27;dom&#x27;,&#x27;anim&#x27;,&#x27;node&#x27;], function (Dom, Anim, Node) {
+        var t = Dom.get(&#x27;#t&#x27;);
+        var t2 = Dom.get(&#x27;#t2&#x27;);
+        Dom.css(t, &#x27;transform-origin&#x27;, &#x27;0px 0px&#x27;);
+        var run = false;
+        Node.all(&#x27;#run&#x27;).on(&#x27;click&#x27;, function () {
+            if (run) {
+                return;
+            }
+            run = true;
+            new Anim(t, {
+                transform: &#x27;rotate(360deg)&#x27;
+            }, {
+                duration: 1,
+                complete: function () {
+                    Dom.css(t, &#x27;transform&#x27;, &#x27;&#x27;);
+                    run = false;
+                }
+            }).run();
+
+            var a2 = new Anim(t2, {
+                transform: &#x27;rotate(360deg)&#x27;
+            }, {
+                duration: 1,
+                complete: function () {
+                    Dom.css(t2, &#x27;transform&#x27;, &#x27;&#x27;);
+                    S.log(&#x27;done2&#x27;);
+                }
+            });
+            a2.run();
+        });
+
+    });
+&lt;&#x2F;script&gt;
+&lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;</div>
+        </div>
+        <div class="ks-tabs-panel ks-tabs-panel-selected">
+            <iframe class="output" frameborder="1">
+            	
+            </iframe>
+        </div>
+        <div class="ks-tabs-panel qrcode-wrap">
+            <div class="qrcode"></div>
+            <div class="content">
+                <p class="title">查看移动端演示</p>
+                <p class="qrcode-addr" qrcodeaddr="http://docs.kissyui.com/5.0/demos/anim/cited-by-md/transform_2.html" ="text">
+                    示例地址：
+                    <a href="http://docs.kissyui.com/5.0/demos/anim/cited-by-md/transform_2.html" target="_blank">http://docs.kissyui.com/5.0/demos/anim/cited-by-md/transform_2.html</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div></p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="wrap-disqus">
+    <div class="top-repeat"></div>
+	<div id="disqus_thread"></div>
+</div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<div class="other-page">
+    <div class="wrap">
+        <div class="content">
+            <div class="wrap-content">
+                <p>@2010 - 2112 KISSY UI LIBARAY</p>
+                <div class="github-msg">
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=fork&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	</div>
+	<script type="text/javascript" src="/5.0/assets/js/ace-editor/ace.js"></script>
+	<script type="text/javascript" src="/5.0/assets/js/qrcodejs/qrcode.min.js"></script>
+	<script type="text/javascript" src="/5.0/assets/js/ajax-load.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>split button demo</title>
+	<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+	<!-- <link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/button/assets/dpl.css"> -->
+	<link rel="stylesheet" type="text/css" href="assets/custombutton.css">
+	<link rel="stylesheet" type="text/css" href="assets/menubutton.css">
+	<link rel="stylesheet" type="text/css" href="assets/menu.css">
+	<link rel="stylesheet" type="text/css" href="assets/menuitem.css">
+	<style type="text/css">
+		h1 {
+        font-size: 2em;
+        margin: 10px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        margin: 10px;
+        text-align: center;
+    }
+
+    #wrap {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .empty-button .ks-menu-button-content {
+        overflow: hidden;
+        padding: 0;
+        font-size: 0;
+        height: 18px;
+        margin-right: 10px;
+    }
+	</style>
+	<script type="text/javascript" src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"></script>
+</head>
+<body>
+<div id="wrap" style="margin-left:50px;">
+	<h1>split button demo</h1>
+	<h3>和MenuButton一起使用组成split button，事件处理信息打开控制台查看。</h3>
+	<div id="container">
+
+    </div>
+</div>
+<script type="text/javascript">
+	 require(['menubutton','button','menu','node'], function (MenuButton, Button, Menu,$) {
+        var b = new Button({
+            id:'button-test1',
+            content:"已买到的宝贝",
+            elCls:'ks-button-collapse-right',
+            render:'#container',
+            listeners:{
+                click:function () {
+                    S.log(this.get("content"));
+                }
+            }
+        }).render();
+
+        new MenuButton({
+            content:"",
+            render:'#container',
+            matchElWidth:false,
+            collapseOnClick:true,
+            elCls:'ks-button-collapse-left empty-button',
+            menu:{
+                children:[
+                    {
+                        content:"已买到的宝贝"
+                    },
+                    {
+                        content:"已卖出的宝贝"
+                    }
+                ]
+            },
+            listeners:{
+                click:function (e) {
+                    b.set("content", e.target.get("content"));
+                }
+            }
+        }).render();
+    });
+</script>
+</body>
+</html>

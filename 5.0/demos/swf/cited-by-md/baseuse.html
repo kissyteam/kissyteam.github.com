@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<title>动态插入swf基本示例</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/button/assets/dpl.css">
+<script type="text/javascript" src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"  data-config="{combine:true}"></script>
+<style type="text/css">
+    body{
+        background: #fff;
+    }
+</style>
+</head>
+<body>
+<div id="container" style="width:90%;margin:0 auto;">
+    
+</div>
+
+<script type="text/javascript">
+	require(['swf'], function(SWF){
+        var tbSwf = new SWF({
+            src : 'http://gtms03.alicdn.com/tps/i3/T1HSjCFiXbXXXtxVjX.swf',
+            attrs : {
+                width : 400,
+                height : 300
+            },
+            params:{
+                flashVars:{
+                    x:1
+                }
+            },
+            render:'#container'
+        })
+    })
+</script>
+</body>
+</html>

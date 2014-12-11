@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>KISSY - A Powerful JavaScript Framework</title>
+	<link rel="shortcut icon" href="/5.0/assets/img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/github.css"/>
+	<script type="text/javascript" src="http://g.tbcdn.cn/kissy/edge/2014.09.05/seed.js" data-config="{combine:true}"></script>
+	
+</head>
+<body>
+	<div class="header">
+		<div class="inner">
+	<div class="toolbar">
+		<a href="/5.0">
+			<img class="mini-logo" src="/5.0/assets/img/mini-logo.png">
+		</a>
+		<ul class="nav clearfix">
+			<li class="docs">
+				<span>
+					Docs
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/guides/">Guides</a></li>
+					<li><a href="/5.0/api">Api Docs</a></li>
+					<li><a href="/5.0/demos">Demos</a></li>
+				</ul>
+			</li>
+			<li class="more">
+				<span>
+					More
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/more/faq.html">FAQ</a></li>
+					<li><a href="http://gallery.kissyui.com/">Gallery</a></li>
+					<li><a href="http://blog.kissyui.com/">KISSY Blog</a></li>
+					<li><a href="https://github.com/daxingplay/kmc">KMC</a></li>
+					<li><a href="https://github.com/minghe/generator-bee/wiki/generator-bee%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">Generator</a></li>
+				</ul>
+			</li>
+			<li class="split"></li>
+			<li class="nav-other"><a href="/5.0/quick-start.html">Quick Start</a></li>
+			<li class="nav-other"><a href="https://github.com/kissyteam/kissy">Contribute</a></li>
+			<li class="nav-other"><a target="_blank" href="/5.0/kissyup-middle.html">KISSY UP</a></li>
+		</ul>
+	</div>
+	<div class="search">
+		<script>
+			(function() {
+			var cx = '003618533255763067140:5nkycw1pbey';
+			var gcse = document.createElement('script');
+			gcse.type = 'text/javascript';
+			gcse.async = true;
+			gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+			    '//www.google.com/cse/cse.js?cx=' + cx;
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(gcse, s);
+			})();
+		</script>
+		<gcse:search></gcse:search>
+	</div>
+</div>
+	</div>
+	<div class="main">
+		
+		
+			<div class="quick-start">
+				<div class="logo-on-top clearfix">
+					<img src="assets/img/logo-on-top.png">
+				</div> 
+				<div class="inner">
+					<h1 id="快速开始">快速开始</h1><h2 id="1，引入种子文件">1，引入种子文件</h2><pre><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"//g.alicdn.com/kissy/k/5.0.1/seed.js"</span> <span class="hljs-attribute">data-config</span>=<span class="hljs-value">"{combine:true}"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre><p>种子文件是一个<strong>非常小</strong>的 JS 文件，通过他可以动态加载 KISSY 的模块文件，因为体积很小，推荐将种子文件至于<code>&lt;head&gt;</code>标签内。
+<code>data-config=&quot;{combine:true}&quot;</code> 表示启用服务器 combo 机制，可用于减少网络请求数目。</p>
+<h2 id="2，开始使用">2，开始使用</h2><pre><code><span class="hljs-comment">// 使用模块</span>
+<span class="hljs-built_in">require</span>([<span class="hljs-string">'dom'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(Dom)</span></span>{
+    <span class="hljs-comment">//装载了 dom 模块，并处于可用状态，可以通过 Dom 调用这个模块提供的api</span>
+    <span class="hljs-comment">//Your Code here...</span>
+});
+</code></pre><p>注：如果你是KISSY的老用户，曾经使用过 KISSY@1.4.x 或 KISSY@1.3.x ，注意在 KISSY@5.0 版本中是没有 KISSY 这个全局变量的了，具体api的用法还请查看本5.0文档系统。</p>
+<h2 id="3，DOM 操作：查找/操作/绑定事件">3，DOM 操作：查找/操作/绑定事件</h2><p>node 模块对 dom 模块做了封装和扩展，你可以方便查找、创建、删除、修改元素，绑定事件等。node 模块依赖 dom , util, event-dom , anim 模块，并对这些模块进行了封装和拓展。模块的接口用法绝大部分都兼容了jQuery的用法，可直接当做jQuery使用，具体每个api用法请查看api文档。示例如下：</p>
+<pre><code><span class="hljs-built_in">require</span>([<span class="hljs-string">'node'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($)</span> </span>{
+    <span class="hljs-comment">// 查找 DOM 节点.</span>
+    <span class="hljs-keyword">var</span> oneElementById     = $(<span class="hljs-string">'#foo'</span>),
+        oneElementByName   = $(<span class="hljs-string">'body'</span>),
+        allElementsByClass = $(<span class="hljs-string">'.bar'</span>);
+
+    <span class="hljs-comment">// 创建 DOM 节点.</span>
+    <span class="hljs-keyword">var</span> contentNode$ = $(<span class="hljs-string">'&lt;div&gt;'</span>),
+        listNode    = $(<span class="hljs-string">'&lt;ul&gt;'</span>),
+        footerNode  = $(<span class="hljs-string">'&lt;footer&gt;'</span>);
+
+    <span class="hljs-comment">// 操作节点，支持链式调用</span>
+    contentNode$.html(<span class="hljs-string">'Hello Kissy!'</span>)
+                .append(<span class="hljs-string">'&lt;p&gt;touch me&lt;/p&gt;'</span>)
+                .addClass(<span class="hljs-string">'highlight'</span>)
+                .appendTo(<span class="hljs-string">'body'</span>);
+
+    <span class="hljs-comment">// 绑定事件</span>
+    $(<span class="hljs-string">'#close-button'</span>).on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(e)</span> </span>{
+        contentNode$.hide();
+    });
+});
+</code></pre><h2 id="4，使用动画">4，使用动画</h2><p>KISSY 提供 anim 模块，完成 DOM 元素的动画。</p>
+<pre><code><span class="hljs-built_in">require</span>([<span class="hljs-string">"anim"</span>],<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(Anim)</span></span>{
+    <span class="hljs-comment">// 初始化动画实例</span>
+    <span class="hljs-keyword">var</span> animIns = <span class="hljs-keyword">new</span> Anim(<span class="hljs-string">'#anim-el'</span>,
+        <span class="hljs-comment">// 动画目标样式</span>
+        {
+            <span class="hljs-string">'background-color'</span>:<span class="hljs-string">'#fcc'</span>,
+            <span class="hljs-string">'border-width'</span>:<span class="hljs-string">'5px'</span>
+        },
+        {
+            duration : <span class="hljs-number">5</span>,            <span class="hljs-comment">// 动画时长，秒</span>
+            easing : <span class="hljs-string">'bounceOut'</span>,     <span class="hljs-comment">// 动画特效</span>
+            complete : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{   <span class="hljs-comment">// 动画结束的回调</span>
+                alert(<span class="hljs-string">'动画结束'</span>);
+            }
+        });
+
+    <span class="hljs-comment">// 开始执行动画</span>
+    animIns.run();
+});
+</code></pre><h2 id="5，通过 IO 装载内容">5，通过 IO 装载内容</h2><p>使用方法：</p>
+<pre><code><span class="hljs-built_in">require</span>([<span class="hljs-string">'io'</span>, <span class="hljs-string">'node'</span>],<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(IO, $)</span></span>{
+    <span class="hljs-comment">// 获取content.html的内容，替换到#content元素内</span>
+    IO({
+        url:<span class="hljs-string">'content.html'</span>,
+        data:{
+            user_name:<span class="hljs-number">10010</span>
+        },
+        success:<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span></span>{
+            $(<span class="hljs-string">'#content'</span>).html(data);
+        }
+    });
+});
+</code></pre><h2 id="6，自定义模块">6，自定义模块</h2><p>创建一个新模块：</p>
+<pre><code>//kmd规范，类似amd
+define(<span class="hljs-keyword">function</span>($, E, A, IO){
+    var opLotto = {
+        init: <span class="hljs-keyword">function</span>(){
+            <span class="hljs-keyword">...</span>
+        },
+        <span class="hljs-keyword">...</span>
+    }
+    <span class="hljs-keyword">return</span> opLotto;
+}, {requires: [<span class="hljs-string">'node'</span>, <span class="hljs-string">'event-dom'</span>, <span class="hljs-string">'anim'</span>, <span class="hljs-string">'io'</span>]});
+
+//或者用cmd规范
+define(<span class="hljs-keyword">function</span>(<span class="hljs-keyword">require</span>, exports, module){
+    var $ = <span class="hljs-keyword">require</span>(<span class="hljs-string">'node'</span>),
+        E = <span class="hljs-keyword">require</span>(<span class="hljs-string">'event-dom'</span>),
+        A = <span class="hljs-keyword">require</span>(<span class="hljs-string">'anim'</span>),
+        IO = <span class="hljs-keyword">require</span>(<span class="hljs-string">'io'</span>);
+
+    var opLotto = {
+        init: <span class="hljs-keyword">function</span>(){
+            <span class="hljs-keyword">...</span>
+        },
+        <span class="hljs-keyword">...</span>
+    }
+    <span class="hljs-keyword">return</span> opLotto;
+})
+</code></pre><p>模块其实就是一个对象，模块名可以忽略，我们会返回这个对象以便在使用模块时方便调用，最后是依赖配置。下面将介绍的Demo中我们把这个模块保存为 <code>opLotto.js</code>。同时，我们需要指定这个模块所属的包：</p>
+<pre><code><span class="hljs-tag">require</span><span class="hljs-class">.config</span>({
+    <span class="hljs-tag">packages</span>: {
+        "<span class="hljs-attribute">modulePkgName</span>":{
+            <span class="hljs-attribute">tag</span>: <span class="hljs-string">"20140918"</span>,
+            <span class="hljs-attribute">base</span>: <span class="hljs-string">"./"</span>,
+            <span class="hljs-attribute">charset</span>: <span class="hljs-string">"gbk"</span>
+        }
+    }
+});
+</code></pre><p>这样来调用模块逻辑：</p>
+<pre><code><span class="hljs-keyword">require</span>([<span class="hljs-string">'modulePkgName/opLotto'</span>, <span class="hljs-string">'node'</span>, <span class="hljs-string">'event-dom'</span>], <span class="hljs-keyword">function</span>(OP, $, E){
+    OP.init();
+    //<span class="hljs-keyword">...</span>
+});
+</code></pre><blockquote>
+<p>包配置相关信息请移步<a href="http://docs.kissyui.com/5.0/guides/modulex/index.html">modulex</a></p>
+</blockquote>
+<h2 id="7，调用官方组件">7，调用官方组件</h2><p>KISSY 内置了很多有用的组件比如 button，menu，date/picker 等，这些组件的用法非常简单，比如要用到 button 组件，只需要：</p>
+<pre><code><span class="hljs-built_in">require</span>([<span class="hljs-string">"button"</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(Button)</span> </span>{
+    <span class="hljs-keyword">var</span> btn = <span class="hljs-keyword">new</span> Button({
+        content: <span class="hljs-string">"我是按钮1"</span>,
+        render: <span class="hljs-string">"#button_container"</span>,
+        tooltip: <span class="hljs-string">"hover时显示"</span>
+    });
+    btn.render();
+})
+</code></pre><h2 id="8，调用 Gallery 中的组件">8，调用 Gallery 中的组件</h2><p><a href="http://gallery.kissyui.com/">gallery</a> 是社区贡献的组件集合，汇集了各种各样的功能，比如 kcharts，imgcrop，waterfallx，slide，uploader。</p>
+<p>gallery 鼓励分享，任何人都可以为 gallery 提交自己的组件。使用 gallery 组件非常方便：</p>
+<pre><code><span class="hljs-keyword">require</span>([<span class="hljs-string">'kg/space/2.0.0/index'</span>], <span class="hljs-keyword">function</span> (Space) {
+    var space = new Space({
+        //<span class="hljs-keyword">...</span>
+    });
+});
+</code></pre><h2 id="9，开启模块的Combo">9，开启模块的Combo</h2><p>由于 KISSY 的模块非常颗粒化，会不会页面中载入的 JavaScript 文件过多，导致 HTTP 请求数太多呢？有两种方法来减少请求数：</p>
+<ul>
+<li>CDN 动态合并（Combo）</li>
+<li>静态编译，本地合并，使用工具 <a href="https://github.com/daxingplay/grunt-kmc/blob/master/README.md">KISSY Module Compiler</a></li>
+</ul>
+<p>动态合并，比如<code>require([&#39;overlay&#39;], function(Overlay){  })</code>会带来26个请求。</p>
+<p>要想开启动态Combo，在全局配置中增加一项 <code>combine : true</code> 开启动态合并：</p>
+<pre><code><span class="hljs-tag">require</span><span class="hljs-class">.config</span>(<span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">combine </span>:<span class="hljs-value"> true
+</span></span></span>});
+</code></pre><p>或者这样开启：</p>
+<pre><code><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"//g.alicdn.com/kissy/edge/2014.09.05/seed.js"</span> <span class="hljs-attribute">data-config</span>=<span class="hljs-value">"{combine:true}"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre><p>页面额外请求数变为3个了。</p>
+<h2 id="10，一个典型入门例子">10，一个典型入门例子</h2><div id="quickstart-demo">
+    <iframe src="/5.0/demos/anim/cited-by-md/quickstart.html" width="100%" height="650px"></iframe>
+</div>
+
+<p>这个 demo 包括了 KISSY 的大部分基本用法，下面会逐步讲解：</p>
+<h3 id="操作元素">操作元素</h3><p>引入 node 模块，把该模块接口当做 jQuery 来使用即可。</p>
+<pre><code><span class="hljs-comment">//Line 126: 获取图片列表元素</span>
+<span class="hljs-keyword">var</span> imgList = $(<span class="hljs-string">'.img-list'</span>).all(<span class="hljs-string">'li'</span>);
+<span class="hljs-comment">//Line 132: 所有图片元素移除'active'类名</span>
+<span class="hljs-keyword">this</span>.imgList.removeClass(<span class="hljs-string">'active'</span>);
+
+<span class="hljs-comment">//Line 133: 给第next个图片元素添加'active'类名</span>
+<span class="hljs-keyword">this</span>.imgList.item(next).addClass(<span class="hljs-string">'active'</span>);
+</code></pre><p>链式操作：</p>
+<pre><code>//Line <span class="hljs-number">151</span>
+var cloneItem = selectedItem.one(<span class="hljs-string">'img'</span>)
+    .clone()                    //复制选中的元素
+    .appendTo(<span class="hljs-string">'.content'</span>)       //添加到容器最后
+    .css({
+        <span class="hljs-string">'width'</span>: <span class="hljs-string">'100px'</span>,
+        <span class="hljs-string">'height'</span>: <span class="hljs-string">'100px'</span>})     //设置样式
+    .animate({
+        <span class="hljs-string">'top'</span>: <span class="hljs-number">100</span>
+    }, <span class="hljs-number">0.2</span>, <span class="hljs-string">'easeOut'</span>)          //添加一个动画
+    .animate({
+        <span class="hljs-string">'top'</span>: <span class="hljs-number">200</span>
+        <span class="hljs-string">'left'</span>: <span class="hljs-number">200</span>
+    }, <span class="hljs-number">1</span>, <span class="hljs-string">'bounceOut'</span>, <span class="hljs-keyword">function</span>(){
+        <span class="hljs-keyword">...</span>
+    })   
+</code></pre><h3 id="绑定事件">绑定事件</h3><p>KISSY 中的事件绑定非常简单，通过一个 on 操作就能完成事件绑定</p>
+<pre><code><span class="hljs-comment">//Line 178</span>
+$(<span class="hljs-string">'button'</span>).on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(ev)</span></span>{
+    <span class="hljs-comment">//do something</span>
+})
+</code></pre><h3 id="Ajax">Ajax</h3><p>KISSY 中对 Ajax 操作进行了一些封装，比如要发起一个 GET 请求</p>
+<pre><code><span class="hljs-comment">//Line 170</span>
+IO.<span class="hljs-keyword">get</span>(<span class="hljs-string">'/5.0/demos/anim/cited-by-md/quickstartdata.json'</span>, {<span class="hljs-string">'index'</span>: index}, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span></span>{
+    <span class="hljs-keyword">var</span> url = data[index].url;
+    $(<span class="hljs-string">'.detail'</span>).html(<span class="hljs-string">'&lt;img src="'</span> + url + <span class="hljs-string">'" /&gt;'</span>).fadeIn(<span class="hljs-number">0.5</span>);
+}, <span class="hljs-string">'json'</span>);
+</code></pre><p>上述参数分别代表请求地址，发送数据，回调函数，返回数据格式</p>
+<h2 id="11， 例子重写">11， 例子重写</h2><div id="quickstart-demo-2">
+    <iframe src="/5.0/demos/anim/cited-by-md/quickstart_2.html" width="100%" height="650px"></iframe>
+</div>
+
+<p>这个 demo 的逻辑部分都和之前的相同，不同的是我们将它改造成了一个独立的模块</p>
+<h3 id="新建模块">新建模块</h3><pre><code>define(<span class="hljs-keyword">function</span>($, IO){
+    var opLotto = {
+        init: <span class="hljs-keyword">function</span>(){
+            <span class="hljs-keyword">...</span>
+        },
+        <span class="hljs-keyword">...</span>
+    }
+    <span class="hljs-keyword">return</span> opLotto;
+}, {requires: [<span class="hljs-string">'node'</span>, <span class="hljs-string">'io'</span>]});
+</code></pre><p>模块其实就是一个对象，模块名可以忽略，我们会返回这个对象以便在使用模块时方便调用</p>
+<h3 id="依赖配置">依赖配置</h3><p>我们把这个模块保存为 opLotto.js，放在同目录的 modulePkgName 文件夹下</p>
+<p>在加载模块前，我们需要在主页面中对 KISSY 进行一下包配置</p>
+<pre><code><span class="hljs-tag">require</span><span class="hljs-class">.config</span>(<span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">packages</span>:<span class="hljs-value"> [
+        {
+            name: <span class="hljs-string">"modulePkgName"</span>,
+            tag: <span class="hljs-string">"20140918"</span>,
+            path: <span class="hljs-string">"./"</span>, 
+            charset: <span class="hljs-string">"gbk"</span>
+        </span></span></span>}
+    ]
+});
+</code></pre><p>在这段代码中我们指定了包的路径，包名，时间戳和编码</p>
+<h3 id="使用模块">使用模块</h3><pre><code><span class="hljs-built_in">require</span>(<span class="hljs-string">'modulePkgName/opLotto, node'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(OP, $)</span></span>{
+    OP.init();
+})
+</code></pre>
+				</div>
+			</div>
+		
+		
+		
+	</div>
+	<div class="footer">
+		
+			<div class="wrap-disqus">
+    <div class="top-repeat"></div>
+	<div id="disqus_thread"></div>
+</div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<div class="other-page">
+    <div class="wrap">
+        <div class="content">
+            <div class="wrap-content">
+                <p>@2010 - 2112 KISSY UI LIBARAY</p>
+                <div class="github-msg">
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=fork&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+		
+	</div>
+</body>
+</html>

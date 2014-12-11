@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>自定义自动补全标识符</title>
+	<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+	<link rel="stylesheet" type="text/css" href="assets/menu.css">
+	<link rel="stylesheet" type="text/css" href="assets/menuitem.css">
+	<link rel="stylesheet" type="text/css" href="assets/submenu.css">
+	<link rel="stylesheet" type="text/css" href="assets/filtermenu.css">
+	<style>
+        body{
+            background: #fff;
+        }
+        .hasChildren .ks-menuitem-content {
+            background: url("http://a.tbcdn.cn/apps/sell/1.0/img/ic_bg.png") no-repeat scroll 500px 500px transparent;
+            background-position: 100% -78px;
+        }
+
+        .ks-menuitem-selected {
+            background-color: #D6EDF4;
+            color: #1B4D91;
+        }
+
+        .ks-menuitem-hit {
+            font-weight: bold;
+            color: red;
+        }
+
+        .ks-menuitem {
+            padding-right: 10px;
+        }
+    </style>
+	<script type="text/javascript" src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"></script>
+</head>
+<body>
+	<div class="wrap" style="width:90%;margin:0 auto;">
+		<h1>自定义自动补全标识符</h1>
+		<h3>操作指南</h3>
+		<ol>
+		    <li>可在输入框输入中文过滤</li>
+		    <li>上下键过滤项间导航</li>
+		    <li>输入字后，再输入 ；或 ; 根据当前高亮项进行自动补全</li>
+		    <li>点击item可触发click事件</li>
+		</ol>
+
+		<h3>从已知元素生成，html结构需要符合规范结构</h3>
+
+		<div id="filterMenuExist"
+		     class="ks-filter-menu ks-menu" style="width: 500px">
+		    <div class='ks-filter-menu-input-wrap'>
+		        <div class="ks-filter-menu-placeholder">请输入</div>
+		        <input autocomplete="off" class="ks-filter-menu-input"/>
+		    </div>
+		    <div class="ks-filter-menu-content" style="height: 200px;overflow: auto;">
+		        <div class="ks-menuitem-selectable ks-menuitem">女鞋1</div>
+		        <div class="ks-menuitem-selectable ks-menuitem">家居服务2</div>
+		        <div class="ks-menuitem-selectable ks-menuitem">手机3</div>
+		        <div class="ks-menuitem-selectable ks-menuitem">女鞋4</div>
+		        <div class="ks-menuitem-selectable ks-menuitem">家居服务5</div>
+		        <div class="ks-menuitem-selectable ks-menuitem">手机6</div>
+		        <div class="ks-menuitem-selectable ks-menuitem">女鞋7</div>
+		        <div class="ks-menuitem-selectable ks-menuitem">家居服务8</div>
+		        <div class="ks-menuitem-selectable ks-menuitem">手机9</div>
+		        <div class="ks-menuitem-selectable ks-menuitem">女鞋10</div>
+		        <div class="ks-menuitem-selectable ks-menuitem">家居服务11</div>
+		        <div class="ks-menuitem-selectable ks-menuitem">手机12</div>
+		    </div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+	require(['util','filter-menu'], function(Util, FilterMenu){
+		/**
+         *  从 html 生成
+         */
+        var filterMenu = new FilterMenu({
+            srcNode: '#filterMenuExist',
+            width: 200,
+           	allowMultiple : true
+        });
+
+        filterMenu.filterItems = function(str){
+        	var self = this, prefixCls = self.get('prefixCls'), _placeholderEl = self.get('placeholderEl'), filterInput = self.get('filterInput');    // 有过滤条件提示隐藏,否则提示显示
+            // 有过滤条件提示隐藏,否则提示显示
+            _placeholderEl[str ? 'hide' : 'show']();
+            if (self.get('allowMultiple')) {
+                var enteredItems = [], lastWord;    // \uff1b => ；   全角分号unicode编码
+                var match = str.match(/(.+)[;\uff1b]\s*([^\uff1b;]*)/);    
+                var items = [];
+                if (match) {
+                    items = match[1].split(/[;\uff1b]/);
+                }    
+                // 如果可以补全,那么补全最后一项为第一个高亮项
+                if (str[str.length-1] == ';' || str[str.length-1] == '；') {
+                    enteredItems = [];
+                    if (match) {
+                        enteredItems = items;    
+                        lastWord = items[items.length - 1];
+                        var item = self.get('highlightedItem'), content = item && item.get('content');    // 有高亮而且最后一项不为空补全
+                        // 有高亮而且最后一项不为空补全
+                        if (content && content.indexOf(lastWord) > -1 && lastWord) {
+                            enteredItems[enteredItems.length - 1] = content;
+                        }
+                        filterInput.val(enteredItems.join(';') + ';');
+                    }
+                    str = '';
+                } else {
+                    // 需要菜单过滤的过滤词,在最后一个 ; 后面
+                    if (match) {
+                        str = match[2] || '';
+                    }
+                    enteredItems = items;
+                }
+                var oldEnteredItems = self.get('enteredItems');    // 发生变化,长度变化和内容变化等同
+                if (oldEnteredItems.length !== enteredItems.length) {
+                    self.set('enteredItems', enteredItems);
+                }
+            }
+            var children = self.get('children'), strExp = str && new RegExp(Util.escapeRegExp(str), 'ig'); 
+            // 过滤所有子组件
+            Util.each(children, function (c) {
+                var content = c.get('content');
+                if (!str) {
+                    // 没有过滤条件
+                    // 恢复原有内容
+                    // 显示出来
+                    c.get('el').html(content);
+                    c.set('visible', true);
+                } else {
+                    if (content.indexOf(str) > -1) {
+                        // 如果符合过滤项
+                        // 显示
+                        c.set('visible', true);    // 匹配子串着重 input-wrap
+                        // 匹配子串着重 input-wrap
+                        c.get('el').html(content.replace(strExp, function (m) {
+                            return '<span class="' + prefixCls + 'menuitem-hit">' + m + '<' + '/span>';
+                        }));
+                    } else {
+                        // 不符合
+                        // 隐藏
+                        c.set('visible', false);
+                    }
+                }
+            });
+        }
+
+        filterMenu.render();
+
+        var selected = null;
+
+        filterMenu.on("click", function (e) {
+            if (selected != e.target) {
+                selected && selected.set("selected", false);
+                selected = e.target;
+                alert("selected : " + selected.get("content"));
+            }
+        });
+	})
+	</script>
+</body>
+</html>

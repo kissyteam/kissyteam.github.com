@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/api/util.js - API Documentation — KISSY v5.0 Documentation</title>
+    <link rel="stylesheet" href="/5.0/assets/css/base.css">
+    <link rel="stylesheet" href="/5.0/assets/css/main.css">
+    <link rel="stylesheet" href="/5.0/assets/css/component.css">
+    <link rel="stylesheet" href="../assets/css/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="/5.0/assets/img/favicon.ico">
+    <script src="http://g.tbcdn.cn/kissy/edge/2014.07.16/seed.js" type="text/javascript" data-config="{combine:true}"></script>
+    <script src="../assets/js/component.js"></script>
+</head>
+<body class="yui3-skin-sam">
+    <div class="header">
+            <div class="inner">
+            <div class="toolbar">
+                <a href="/5.0">
+                    <img class="mini-logo" src="/5.0/assets/img/mini-logo.png">
+                </a>
+                <ul class="nav clearfix">
+                    <li class="docs">
+                        <span>
+                            Docs
+                            <b class="caret"></b>
+                        </span>
+                        <ul>
+                            <li><a href="/5.0/guides/">Guides</a></li>
+                            <li><a href="/5.0/api">Api Docs</a></li>
+                            <li><a href="/5.0/demos">Demos</a></li>
+                        </ul>
+                    </li>
+                    <li class="more">
+                        <span>
+                            More
+                            <b class="caret"></b>
+                        </span>
+                        <ul>
+                            <li><a href="/5.0/more/faq.html">FAQ</a></li>
+                            <li><a href="http://gallery.kissyui.com/">Gallery</a></li>
+                            <li><a href="http://blog.kissyui.com/">KISSY Blog</a></li>
+                            <li><a href="https://github.com/daxingplay/grunt-kmc/blob/master/README.md">KMC</a></li>
+                        </ul>
+                    </li>
+                    <li class="split"></li>
+                    <li class="nav-other"><a href="/5.0/quick-start.html">Quick Start</a></li>
+                    <li class="nav-other"><a href="https://github.com/kissyteam/kissy/blob/master/CONTRIBUTING.md">Contribute</a></li>
+                    <li class="nav-other"><a href="#">KISSY UP</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <script>
+                    (function() {
+                    var cx = '003618533255763067140:5nkycw1pbey';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                        '//www.google.com/cse/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                    })();
+                </script>
+                <gcse:search></gcse:search>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div id="api-doc">
+            <div class="logo-on-top clearfix">
+                <img src="/5.0/assets/img/logo-on-top.png">
+            </div> 
+            <div class="yui3-g inner">
+                <div class="yui3-u-1-4">
+                    <div id="docs-sidebar" class="sidebar">
+                        <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview ks-tabs ks-tabs-top ks-filter-menu">
+        <ul class="ks-tabs-bar">
+            <li class="tab-class ks-tabs-tab ks-button ks-tabs-tab-selected">Classes</li>
+            <li class="tab-module ks-tabs-tab ks-button">Modules</li>
+        </ul>
+        <div id="api-tabview-filter" class="ks-filter-menu-input-wrap">
+            <input type="search" class="ks-filter-menu-input" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel" class="ks-tabs-body ks-filter-menu-content">
+            <ul id="api-classes" class="apis classes ks-tabs-panel ks-tabs-panel-selected">
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Anim href="/5.0/api/classes/Anim.html">Anim</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Attribute href="/5.0/api/classes/Attribute.html">Attribute</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Base href="/5.0/api/classes/Base.html">Base</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Button href="/5.0/api/classes/Button.html">Button</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Color href="/5.0/api/classes/Color.html">Color</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ComboBox href="/5.0/api/classes/ComboBox.html">ComboBox</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ComboBox.LocalDataSource href="/5.0/api/classes/ComboBox.LocalDataSource.html">ComboBox.LocalDataSource</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ComboBox.RemoteDataSource href="/5.0/api/classes/ComboBox.RemoteDataSource.html">ComboBox.RemoteDataSource</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ComboBoxMultiWord href="/5.0/api/classes/ComboBoxMultiWord.html">ComboBoxMultiWord</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Container href="/5.0/api/classes/Component.Container.html">Component.Container</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Control href="/5.0/api/classes/Component.Control.html">Component.Control</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Extension.Align href="/5.0/api/classes/Component.Extension.Align.html">Component.Extension.Align</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Extension.ContentBox href="/5.0/api/classes/Component.Extension.ContentBox.html">Component.Extension.ContentBox</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Extension.DelegateChildren href="/5.0/api/classes/Component.Extension.DelegateChildren.html">Component.Extension.DelegateChildren</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Extension.Shim href="/5.0/api/classes/Component.Extension.Shim.html">Component.Extension.Shim</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Plugin.Drag href="/5.0/api/classes/Component.Plugin.Drag.html">Component.Plugin.Drag</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Component.Plugin.Resize href="/5.0/api/classes/Component.Plugin.Resize.html">Component.Plugin.Resize</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Cookie href="/5.0/api/classes/Cookie.html">Cookie</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=CustomEvent.Target href="/5.0/api/classes/CustomEvent.Target.html">CustomEvent.Target</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DatePicker href="/5.0/api/classes/DatePicker.html">DatePicker</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DatePicker.Popup href="/5.0/api/classes/DatePicker.Popup.html">DatePicker.Popup</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.DDM href="/5.0/api/classes/DD.DDM.html">DD.DDM</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.Draggable href="/5.0/api/classes/DD.Draggable.html">DD.Draggable</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.DraggableDelegate href="/5.0/api/classes/DD.DraggableDelegate.html">DD.DraggableDelegate</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.Droppable href="/5.0/api/classes/DD.Droppable.html">DD.Droppable</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.DroppableDelegate href="/5.0/api/classes/DD.DroppableDelegate.html">DD.DroppableDelegate</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.Plugin.Constrain href="/5.0/api/classes/DD.Plugin.Constrain.html">DD.Plugin.Constrain</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.Plugin.Proxy href="/5.0/api/classes/DD.Plugin.Proxy.html">DD.Plugin.Proxy</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DD.Plugin.Scroll href="/5.0/api/classes/DD.Plugin.Scroll.html">DD.Plugin.Scroll</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Dom href="/5.0/api/classes/Dom.html">Dom</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=DomEvent href="/5.0/api/classes/DomEvent.html">DomEvent</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Editor href="/5.0/api/classes/Editor.html">Editor</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Feature href="/5.0/api/classes/Feature.html">Feature</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=FilterMenu href="/5.0/api/classes/FilterMenu.html">FilterMenu</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GestureBasic href="/5.0/api/classes/GestureBasic.html">GestureBasic</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GestureEdgePan href="/5.0/api/classes/GestureEdgePan.html">GestureEdgePan</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GesturePan href="/5.0/api/classes/GesturePan.html">GesturePan</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GesturePinch href="/5.0/api/classes/GesturePinch.html">GesturePinch</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GestureRotate href="/5.0/api/classes/GestureRotate.html">GestureRotate</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GestureShake href="/5.0/api/classes/GestureShake.html">GestureShake</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GestureSwipe href="/5.0/api/classes/GestureSwipe.html">GestureSwipe</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GestureTap href="/5.0/api/classes/GestureTap.html">GestureTap</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GregorianCalendar href="/5.0/api/classes/GregorianCalendar.html">GregorianCalendar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=GregorianCalendarFormat href="/5.0/api/classes/GregorianCalendarFormat.html">GregorianCalendarFormat</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=IO href="/5.0/api/classes/IO.html">IO</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Json href="/5.0/api/classes/Json.html">Json</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=LoggerManager href="/5.0/api/classes/LoggerManager.html">LoggerManager</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Menu href="/5.0/api/classes/Menu.html">Menu</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Menu.CheckItem href="/5.0/api/classes/Menu.CheckItem.html">Menu.CheckItem</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Menu.Item href="/5.0/api/classes/Menu.Item.html">Menu.Item</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Menu.PopupMenu href="/5.0/api/classes/Menu.PopupMenu.html">Menu.PopupMenu</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Menu.RadioItem href="/5.0/api/classes/Menu.RadioItem.html">Menu.RadioItem</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Menu.SubMenu href="/5.0/api/classes/Menu.SubMenu.html">Menu.SubMenu</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=MenuButton href="/5.0/api/classes/MenuButton.html">MenuButton</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=MenuButton.Option href="/5.0/api/classes/MenuButton.Option.html">MenuButton.Option</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=MenuButton.Select href="/5.0/api/classes/MenuButton.Select.html">MenuButton.Select</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Modulex href="/5.0/api/classes/Modulex.html">Modulex</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=NavigationView href="/5.0/api/classes/NavigationView.html">NavigationView</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=NavigationViewBar href="/5.0/api/classes/NavigationViewBar.html">NavigationViewBar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Node href="/5.0/api/classes/Node.html">Node</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Overlay href="/5.0/api/classes/Overlay.html">Overlay</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Overlay.Dialog href="/5.0/api/classes/Overlay.Dialog.html">Overlay.Dialog</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Overlay.Popup href="/5.0/api/classes/Overlay.Popup.html">Overlay.Popup</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Path href="/5.0/api/classes/Path.html">Path</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Promise href="/5.0/api/classes/Promise.html">Promise</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Promise.Defer href="/5.0/api/classes/Promise.Defer.html">Promise.Defer</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Querystring href="/5.0/api/classes/Querystring.html">Querystring</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Resizable href="/5.0/api/classes/Resizable.html">Resizable</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Resizable.Plugin.Proxy href="/5.0/api/classes/Resizable.Plugin.Proxy.html">Resizable.Plugin.Proxy</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Router href="/5.0/api/classes/Router.html">Router</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ScrollView href="/5.0/api/classes/ScrollView.html">ScrollView</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ScrollView.Plugin.PullToRefresh href="/5.0/api/classes/ScrollView.Plugin.PullToRefresh.html">ScrollView.Plugin.PullToRefresh</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ScrollView.Plugin.ScrollBar href="/5.0/api/classes/ScrollView.Plugin.ScrollBar.html">ScrollView.Plugin.ScrollBar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=SplitButton href="/5.0/api/classes/SplitButton.html">SplitButton</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=StyleSheet href="/5.0/api/classes/StyleSheet.html">StyleSheet</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=SWF href="/5.0/api/classes/SWF.html">SWF</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Tabs href="/5.0/api/classes/Tabs.html">Tabs</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Toolbar href="/5.0/api/classes/Toolbar.html">Toolbar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Tree href="/5.0/api/classes/Tree.html">Tree</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Tree.CheckNode href="/5.0/api/classes/Tree.CheckNode.html">Tree.CheckNode</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Tree.CheckTree href="/5.0/api/classes/Tree.CheckTree.html">Tree.CheckTree</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Tree.Manager href="/5.0/api/classes/Tree.Manager.html">Tree.Manager</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Tree.Node href="/5.0/api/classes/Tree.Node.html">Tree.Node</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=UA href="/5.0/api/classes/UA.html">UA</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Url href="/5.0/api/classes/Url.html">Url</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=Util href="/5.0/api/classes/Util.html">Util</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules ks-tabs-panel">
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=anim href="/5.0/api/modules/anim.html">anim</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=attribute href="/5.0/api/modules/attribute.html">attribute</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=base href="/5.0/api/modules/base.html">base</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=button href="/5.0/api/modules/button.html">button</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=color href="/5.0/api/modules/color.html">color</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=combobox href="/5.0/api/modules/combobox.html">combobox</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=combobox/multi-word href="/5.0/api/modules/combobox_multi-word.html">combobox/multi-word</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/container href="/5.0/api/modules/component_container.html">component/container</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/control href="/5.0/api/modules/component_control.html">component/control</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/extension/align href="/5.0/api/modules/component_extension_align.html">component/extension/align</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/extension/content-box href="/5.0/api/modules/component_extension_content-box.html">component/extension/content-box</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/extension/delegate-children href="/5.0/api/modules/component_extension_delegate-children.html">component/extension/delegate-children</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/extension/shim href="/5.0/api/modules/component_extension_shim.html">component/extension/shim</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/plugin/drag href="/5.0/api/modules/component_plugin_drag.html">component/plugin/drag</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=component/plugin/resize href="/5.0/api/modules/component_plugin_resize.html">component/plugin/resize</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=cookie href="/5.0/api/modules/cookie.html">cookie</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=date-picker href="/5.0/api/modules/date-picker.html">date-picker</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=dd href="/5.0/api/modules/dd.html">dd</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=dd/plugin/constrain href="/5.0/api/modules/dd_plugin_constrain.html">dd/plugin/constrain</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=dd/plugin/proxy href="/5.0/api/modules/dd_plugin_proxy.html">dd/plugin/proxy</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=dd/plugin/scroll href="/5.0/api/modules/dd_plugin_scroll.html">dd/plugin/scroll</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=dom href="/5.0/api/modules/dom.html">dom</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=editor href="/5.0/api/modules/editor.html">editor</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-custom href="/5.0/api/modules/event-custom.html">event-custom</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom href="/5.0/api/modules/event-dom.html">event-dom</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/basic href="/5.0/api/modules/event-dom_gesture_basic.html">event-dom/gesture/basic</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/edge-pan href="/5.0/api/modules/event-dom_gesture_edge-pan.html">event-dom/gesture/edge-pan</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/pan href="/5.0/api/modules/event-dom_gesture_pan.html">event-dom/gesture/pan</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/pinch href="/5.0/api/modules/event-dom_gesture_pinch.html">event-dom/gesture/pinch</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/rotate href="/5.0/api/modules/event-dom_gesture_rotate.html">event-dom/gesture/rotate</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/shake href="/5.0/api/modules/event-dom_gesture_shake.html">event-dom/gesture/shake</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/swipe href="/5.0/api/modules/event-dom_gesture_swipe.html">event-dom/gesture/swipe</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=event-dom/gesture/tap href="/5.0/api/modules/event-dom_gesture_tap.html">event-dom/gesture/tap</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=feature href="/5.0/api/modules/feature.html">feature</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=filter-menu href="/5.0/api/modules/filter-menu.html">filter-menu</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=gregorian-calendar href="/5.0/api/modules/gregorian-calendar.html">gregorian-calendar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=gregorian-calendar-format href="/5.0/api/modules/gregorian-calendar-format.html">gregorian-calendar-format</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=io href="/5.0/api/modules/io.html">io</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=json href="/5.0/api/modules/json.html">json</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=logger-manager href="/5.0/api/modules/logger-manager.html">logger-manager</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=menu href="/5.0/api/modules/menu.html">menu</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=menubutton href="/5.0/api/modules/menubutton.html">menubutton</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=modulex href="/5.0/api/modules/modulex.html">modulex</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=navigation-view href="/5.0/api/modules/navigation-view.html">navigation-view</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=navigation-view/bar href="/5.0/api/modules/navigation-view_bar.html">navigation-view/bar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=node href="/5.0/api/modules/node.html">node</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=overlay href="/5.0/api/modules/overlay.html">overlay</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=path href="/5.0/api/modules/path.html">path</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=promise href="/5.0/api/modules/promise.html">promise</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=querystring href="/5.0/api/modules/querystring.html">querystring</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=resizable href="/5.0/api/modules/resizable.html">resizable</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=resizable/plugin/proxy href="/5.0/api/modules/resizable_plugin_proxy.html">resizable/plugin/proxy</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=router href="/5.0/api/modules/router.html">router</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=scroll-view href="/5.0/api/modules/scroll-view.html">scroll-view</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=scroll-view/plugin/pull-to-refresh href="/5.0/api/modules/scroll-view_plugin_pull-to-refresh.html">scroll-view/plugin/pull-to-refresh</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=scroll-view/plugin/scrollbar href="/5.0/api/modules/scroll-view_plugin_scrollbar.html">scroll-view/plugin/scrollbar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=split-button href="/5.0/api/modules/split-button.html">split-button</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=stylesheet href="/5.0/api/modules/stylesheet.html">stylesheet</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=swf href="/5.0/api/modules/swf.html">swf</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=tabs href="/5.0/api/modules/tabs.html">tabs</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=toolbar href="/5.0/api/modules/toolbar.html">toolbar</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=tree href="/5.0/api/modules/tree.html">tree</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=ua href="/5.0/api/modules/ua.html">ua</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=url href="/5.0/api/modules/url.html">url</a></li>
+            
+                <li><a class="ks-menuitem-selectable ks-menuitem" content=util href="/5.0/api/modules/util.html">util</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+                    </div>
+                </div>
+                <div class="yui3-u-3-4">
+                        <div id="api-options">
+        Show:
+        <label for="api-show-inherited" optionvalue="inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" optionvalue="protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" optionvalue="private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" optionvalue="deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+                    <div class="apidocs">
+                        <div id="docs-main">
+                            <div class="content">
+                                <h1 class="file-heading">File: src/api/util.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+* util模块，包含类Util
+* @module util
+*/
+
+/**
+* 是underscore风格的工具集，提供一些常用的工具函数
+* @class Util
+* @static
+*/
+
+/**
+* 将source自身或其prototype属性的成员复制到targetClass.prototype上
+* @method augment
+* @static
+* @param targetClass {Function} 将要扩充的类
+* @param source {Function|Object} 扩充来源函数或对象. 非函数对象时复制的就是 source 自身
+* @param [overite=true] {Boolean} 是否覆盖 Class.prototype 同名属性
+* @param [whitelist] {Array} 属性来源对象的属性白名单, 仅在名单中的属性进行复制
+* @return {Class} 扩充后的类
+*/
+
+/**
+* 在页面id元素生效时立刻执行回调函数fn
+* @method available
+* @static
+* @param id {String} 页面元素id
+* @param fn {Function} 回调函数，在id元素可用时立刻执行
+*/
+
+/**
+* 创建一个新函数，该函数可以在固定的上下文以及传递部分固定参数放在用户参数前面给原函数并执行
+* @method bind
+* @static
+* @param fn {Function} 需要固定上下文以及固定部分参数的函数
+* @param context {Object}  执行fn时的this值. 如果新函数用于构造器则该参数无用
+* @param [args] {Any} 需要给新函数固定的部分参数
+* @return {Function} 符合需求的新函数
+* @example ### 改变运行上下文
+* bind 最简单的用法是生成一个新的函数，无论它如何调用，都运行在一个固定的 this 值中.入门者常犯的错误时从一个对象获得一个方法引用， 然后在后面的调用中期望这个方法的this就是原来的对象(eg.g 把这个方法用在某个回调中). 如果没有特例，那么这个原始对象就丢失了. 但是如果从原方法中得到一个绑定原始对象的函数，这个问题就解决了！
+*   &#x60;&#x60;&#x60;
+*   var x = 9;
+	var module = {
+		x: 81,
+		getX: function() { return this.x; }
+	};
+
+	module.getX(); // 81
+
+	var getX = module.getX;
+	getX(); // 9, because in this case, &quot;this&quot; refers to the global object
+
+	// create a new function with &#x27;this&#x27; bound to module
+	var boundGetX = Util.bind(getX,module);
+	boundGetX(); // 81
+*   &#x60;&#x60;&#x60;
+* ### Currying
+* bind 的下一个简单用法是产生一个具备默认参数的函数. 这些参数跟在 context 后面，无论何时调用绑定函数， 当绑定函数调用目标函数时会把它们放在参数列表开头，然后才是传递给绑定函数的用户参数
+*   &#x60;&#x60;&#x60;
+*   function list() {
+		return Array.prototype.slice.call(arguments);
+	}
+
+	var list1 = list(1, 2, 3); // [1, 2, 3]
+
+	//  Create a function with a preset leading argument
+	var leadingZeroList = Util.bind(list,undefined, 37);
+
+	var list2 = leadingZeroList(); // [37]
+	var list3 = leadingZeroList(1, 2, 3); // [37, 1, 2, 3]
+*   &#x60;&#x60;&#x60;
+*/
+
+/**
+* 将fn缓存一段时间后再回调执行
+* __Note:__
+*
+* - 此方法为了避免在 ms 段时间内, 执行 fn 多次. 常用于 resize , scroll , mousemove 等连续性事件中;
+* - 当 ms 设置为 -1, 表示立即执行 fn, 即和直接调用 fn 一样;
+* @method buffer
+* @static
+* @param fn {Function} 要缓存的函数
+* @param ms=150 {Number} 要缓存多长时间后执行，默认是150ms
+* @param context {Object} 函数fn执行时的上下文环境，默认是this
+* @return {Function} 返回缓存后的函数对象
+* @example
+*   &#x60;&#x60;&#x60;
+*   self.__onResize = Util.buffer(doResize, 100, this);
+*   $(window).on(&quot;resize&quot;, self.__onResize);
+*   &#x60;&#x60;&#x60;
+*/
+
+/**
+* 创建一个普通对象或数组的深拷贝, 并且返回
+* @method clone
+* @static
+* @param o {Object} 待拷贝的对象或数组
+* @param [filter] {Function} 过滤函数，返回false则不拷贝该元素。传入参数为：
+* - 待克隆值为数组, 参数同 [Util.filter()](/5.0/api/classes/Util.html#method_filter) , 上下文对象为全局 window
+* - 待克隆值为普通对象, 参数为对象的每个键对应的值, 每个键, 当前对象.(PS:上下文对象为当前对象)
+* @return {Object} 拷贝后的新对象
+* @example
+*   &#x60;&#x60;&#x60;
+*   var a={x:{y:{z:1}}}
+*   var b=Util.clone(a); // =&gt; b={x:y:{z:1}} , b!==a
+*   var c=Util.clone(a,function(v,k){if(k==&quot;z&quot;) return false;}) // =&gt; c={x:{y:{}}}
+*   &#x60;&#x60;&#x60;
+*/
+
+/**
+* 遍历数组中的每一项, 执行指定方法.
+* @method each
+* @static
+* @param o {Object} 需要遍历的对象或数组
+* @param fn {Function} 执行时，接受三个参数：
+* - 当 o 为数组时, 参数为当前数组单项值, 当前 index, 数组 o
+* - 当 o 为对象时, 参数为当前值 (value), 当前键 (key), 对象 o
+* @param [context=window] {Object} fn的上下文对象
+* @example
+*   &#x60;&#x60;&#x60;
+var arr = [1, 2, 3, 4, 5],
+obj = {
+    &#x27;hi&#x27;: &#x27;kissy&#x27;,
+    &#x27;bye&#x27;: &#x27;world&#x27;
+},
+sum = 0;
+
+Util.each(arr, function(item) {
+    sum += item;
+});
+Util.log(sum); // =&gt; 15
+
+
+Util.each(obj, function(v,k) {
+    Util.log([v,k]);
+});
+*   &#x60;&#x60;&#x60;
+*/
+
+/**
+* 判断str是否已suffix结尾
+* @method endsWith
+* @static
+* @param str {String} 查找的字符串
+* @param suffix {String} 后缀字符创
+* @return {Boolean} str是否以suffix结尾
+*/
+
+/**
+* 抛出错误异常
+* __Note__
+*
+* - 只有在 debug 模式下并且载入 seed.js, 才会抛出异常. debug 模式的说明请参考 Config
+* @method error
+* @static
+* @param msg {String} 异常信息
+*/
+
+/**
+* 将字符串经过 html 转义得到适合在页面中显示的内容, 例如替换 &lt; 为 &amp;lt;
+* __Note__
+*
+* - 此函数只会对以下符号进行 escape：&#x60;&amp; &gt; &lt; &#x60; / &quot; &#x27;&#x60;
+* @method escapeHTML
+* @param str {String} 要显示在页面中的真实内容
+* @return {String} 经过 html 转义后的字符串
+*/
+
+/**
+* 让子类 SubClass 继承父类 ParentClass
+* @method extend
+* @static
+* @param subClass {Function} 将要继承的子类函数
+* @param parentClass {Function} 继承自的父类函数
+* @param [prototypeMembers] {Object} 需要添加/覆盖的原型成员
+* @param [staticMembers] {Object} 需要添加/覆盖的静态成员
+* @return subClass {Function} 需要的子类函数
+* @example
+*   &#x60;&#x60;&#x60;
+function Bird(name) { this.name = name; }
+Bird.prototype.fly = function() { alert(this.name + &#x27; is flying now!&#x27;); };
+
+function Chicken(name) {
+    Chicken.superclass.constructor.call(this, name);
+}
+Util.extend(Chicken, Bird,{
+    fly:function(){
+        Chicken.superclass.fly.call(this)
+        alert(&quot;it&#x27;s my turn&quot;);
+    }
+});
+
+new Chicken(&#x27;kissy&#x27;).fly();
+*   &#x60;&#x60;&#x60;
+*/
+
+/**
+* 遍历数组, 过滤出符合条件的数组项
+* @method filter
+* @static
+* @param arr {Array} 需要遍历的数组
+* @param fn {Function} 过滤函数. 执行时, 接收 3 个参数：当前项、当前 index, 数组.
+* @param [context=window] fn 执行的上下文对象
+* @return {Array} 返回符合过滤函数的新数组
+* @example
+*   &#x60;&#x60;&#x60;
+var arr = [1, 2, 3, 4, 5];
+
+var ret = Util.filter(arr, function(item) {
+    return item % 2 === 0;
+});
+Util.log(ret); // =&gt; [2, 4]
+*   &#x60;&#x60;&#x60;
+*/
+
+/**
+* 在全局作用域下执行代码字符串, 避免 eval 的作用域链
+* @method globalEval
+* @static
+* @param code {String} 代码字符串
+*/
+
+/**
+* 返回全局唯一 id
+* @method guid
+* @static
+* @param prefix {String} 唯一 id 前缀
+* @return {String} 全局唯一 id
+*/
+
+/**
+* 判断元素 elem 是否在数组 arr 中
+* @method inArray
+* @static
+* @param elem {Any} 任意对象
+* @param arr {Array} 数组
+* @return {Boolean} 元素 elem 是否在数组 arr 中
+*/
+
+/**
+* 返回元素 elem 在数组 arr 中的序号
+* @method indexOf
+* @static
+* @param elem {Any} 任意对象
+* @param arr {Array} 数组
+* @return {Number} 元素 elem 在数组 arr 中的序号
+*/
+
+/**
+* 判断是否数组
+* @method isArray
+* @static
+* @param o {Any} 判断参数
+* @return {Boolean} 是否是数组
+*/
+
+/**
+* 判断是否布尔值
+* @method isBoolean
+* @static
+* @param o {Any} 判断参数
+* @return {Boolean} 是否是布尔值
+*/
+
+/**
+* 判断是否日期
+* @method isDate
+* @static
+* @param o {Any} 判断参数
+* @return {Boolean} 是否是日期
+*/
+
+/**
+* 判断是否空对象(没有任何可遍历的属性)
+* @method isEmptyObject
+* @static
+* @param o {Any} 判断参数
+* @return {Boolean}
+*/
+
+/**
+* 判断是否函数
+* @method isFunction
+* @static
+* @param o {Any} 判断参数
+* @return {Boolean}
+*/
+
+/**
+* 判断是否有效数值
+* @method isNumber
+* @static
+* @param o {Any} 判断参数
+* @return {Boolean}
+*/
+
+/**
+* 判断是否为对象
+* @method isObject
+* @static
+* @param o {Any} 判断参数
+* @return {Boolean}
+*/
+
+/**
+* 判断是否是普通对象, 通过 {} 或 new FunctionClass/Object() 创建的, 不包括内置对象以及宿主对象.
+* @method isPlainObject
+* @static
+* @param o {Any} 判断参数
+* @return {Boolean}
+*/
+
+/**
+* 判断是否正则表达式
+* @method isRegExp
+* @static
+* @param o {Any} 判断参数
+* @return {Boolean}
+*/
+
+/**
+* 判断是否字符串
+* @method isString
+* @static
+* @param o {Any} 判断参数
+* @return {Boolean}
+*/
+
+/**
+* 判断参数是否为浏览器 window
+* @method isWindow
+* @static
+* @param o {Any} 判断参数
+* @return {Boolean}
+*/
+
+/**
+* 将对象的所有属性名作为数组返回
+* @method keys
+* @static
+* @param o {Object} 需要遍历的对象
+* @return {Array} 返回的数组
+*/
+
+/**
+* 返回元素 elem 在数组 arr 中最后出现的序号
+* @method lastIndexOf
+* @static
+* @param elem {Any} 任意对象
+* @param arr {Array} 数组
+* @return {Number}
+*/
+
+/**
+* 延迟执行指定函数 fn
+* @method later
+* @static
+* @param fn {Function} 延迟执行的函数
+* @param when {Number} 延迟时间，单位是ms
+* @param [periodic=false] {Boolean} 是否周期执行
+* @param [o] {Object} fn的上下文对象
+* @param [data] {Object|Array} 传递的参数. 可以为单个对象, 最后会转换成数组, 依次传递给执行函数.
+* @return {Object} timer 对象.包含属性：
+* - &#x60;interval&#x60; 是否周期执行
+* - &#x60;cancel&#x60; 取消定时器
+* @example
+*   &#x60;&#x60;&#x60;
+
+Util.later(function(data) {
+    S.log(data);
+}, 0, false, null, &#x27;I am later data.&#x27;);
+*   &#x60;&#x60;&#x60;
+*/
+
+/**
+* 输出调试信息
+* @method log
+* @static
+* @param msg {String} 调试信息
+* @param cat=&quot;log&quot; {String}  调试信息类别. 可以取 info, warn, error, dir, time 等 console 对象的方法名, 默认为 log.
+* @param src {String} 调试代码所在的源信息
+* __Note__
+* 只有在 debug 模式下并且载入 seed.js, 才会输出调试信息. debug 模式的说明请参考 Config
+*/
+
+/**
+* 将对象 o 转换为数组.
+* @method makeArray
+* @static
+* @param o {Object} arguments, NodeList 等 array-like 对象或单个对象
+* @return o {Array} 转换后的数组
+*/
+
+/**
+* 创建一个新数组, 数组结果是在对每个原数组元素调用指定函数的返回值.
+* @method map
+* @static
+* @param arr {Array} 需要遍历的数组
+* @param fn {Function} 能够根据原数组当前元素返回新数组元素的函数
+* @param [context=window] 执行 fn 时的 this 值
+* @return {Array} 返回符合根据指定函数调用得到新数组
+*/
+
+/**
+* 将多个对象的成员合并到一个新对象上. 参数中, 后面的对象成员会覆盖前面的.
+* @method merge
+* @static
+* @param s1 {Object} 属性源
+* @param [...] 属性源
+* @return {Object} 合并属性后的新对象
+* @example
+*   &#x60;&#x60;&#x60;
+var a = { a: &#x27;a&#x27; },
+b = { b: &#x27;b&#x27; },
+c = { b: &#x27;b2&#x27;, c: &#x27;c&#x27; };
+
+var o = Util.merge(a, b, c);
+Util.log(o.a); // =&gt; &#x27;a&#x27;
+Util.log(o.b); // =&gt; &#x27;b2&#x27;
+Util.log(o.c); // =&gt; &#x27;c&#x27;
+*   &#x60;&#x60;&#x60;
+*/
+
+/**
+* 将 supplier 对象的成员复制到 receiver 对象上.
+* @method mix
+* @static
+* @param receiver {Object} 属性接受者对象
+* @param supplier {Object} 属性来源对象
+* @param [overwrite=true] 是否覆盖接受者同名属性
+* @param whitelist {Array&lt;String&gt;} 属性来源对象的属性白名单, 仅在名单中的属性进行复制
+* @param deep {Boolean} 是否进行深度 mix (deep copy)
+* @return {Object} receiver 属性接受者对象
+* __Note__
+* receiver 会被改变，如果想要保留原始的 receiver ，可以使用 Util.merge()
+* &#x60;var object=S.merge(object1,object2);&#x60;
+*
+* S.mix 默认不是递归进行的. 如果其中一个属性为对象或者数组，那么他将会被接下来对象的同名属性对应的值所代替，即值不会被合并。 如果设置了参数 deep = true ，那么会对数组和简单对象( &#x60;Util.isPlainObject()&#x60; )递归合并
+* supplier undefined 的属性值不会被复制，不过对象从原型继承下来下的值则会被复制
+* 该方法仅适用于 javascript 对象，不要再浏览器对象上调用，例如 node.style
+*
+* mix 支持函数作为白名单参数
+*   &#x60;&#x60;&#x60;
+var a = {},
+b = {
+    b1: 1,
+    b2: {
+        b2: 22
+    }
+};
+
+Util.mix(a, b, {
+    deep: true,
+    whitelist: function (name, v) {
+        if (name == &#x27;b1&#x27;) {
+            return v;
+        }
+        if (this.b1 &amp;&amp; name == &#x27;b2&#x27;) {
+            return v;
+        }
+        return undefined;
+    }
+});
+*   &#x60;&#x60;&#x60;
+* @example
+* 简单 mix:
+*
+*   &#x60;&#x60;&#x60;
+var r = { a: &#x27;a&#x27;, b: &#x27;b&#x27; };
+
+Util.mix(r, { c: &#x27;c&#x27; });
+Util.log(r.c); // =&gt; &#x27;c&#x27;
+
+Util.mix(r, { a: &#x27;a2&#x27; }, false);
+Util.log(r.a); // =&gt; &#x27;a&#x27;
+
+Util.mix(r, { e: &#x27;e&#x27;, f: &#x27;f&#x27; }, true, [&#x27;f&#x27;]);
+Util.log(r.e); // =&gt; undefined
+Util.log(r.f); // =&gt; &#x27;f&#x27;
+*   &#x60;&#x60;&#x60;
+*
+* 深度 mix:
+*   &#x60;&#x60;&#x60;
+var object1 = {
+  apple: 0,
+  banana: {weight: 52, price: 100},
+  cherry: 97
+};
+var object2 = {
+  banana: {price: 200},
+  durian: 100
+};
+
+//merge object2 into object1, recursively 
+Util.mix(object1,object2,undefined,undefined,true);
+
+Util.log(object1); // =&gt; { apple: 0, banana: { weight: 52, price: 200 }, cherry: 97, durian: 100 }
+*   &#x60;&#x60;&#x60;
+* 该方法在 KISSY 里具有非常重要的地位. JavaScript 是一门动态语言, 利用 mixin 特性, 可以很方便的实现特性的静态复制和动态修改.
+*/
+
+/**
+* 根据参数创建命名空间对象
+* @method namespace
+* @static 
+* @param n1 {String}  命名空间字符串, 如 &quot;fp.search&quot; 或 &quot;fp.ad&quot;
+* @param [global=false] 是否第一个点之前的字符串作为全局变量, 默认 false
+* @return {Object} 最后创建的命名空间对象
+*/
+
+/**
+* 返回 new Date().getTime()
+* @method date
+* @static 
+* @return {Number}
+*/
+
+/**
+* 将对象 o 转换为参数字符串, 用于发送 http 请求
+* @method param
+* @static 
+* @param o {Object} 参数键值对对象
+* @param [seq=&quot;&amp;&quot;] {String} 参数间分隔符, 默认 &amp;
+* @param [eq=&quot;=&quot;] {String} 参数与参数值间的分隔符, 默认 =
+* @param [arr=true] {Boolean} 参数值为数组时, 参数键是否加 [] 即 %5B%5D , 默认 true
+* return {String} 可用于发送请求的参数字符串
+* @example
+* &#x60;&#x60;&#x60;
+
+Util.param({ foo: 1, bar: 2 }); // =&gt; foo=1&amp;bar=2
+Util.param({ foo: 1, bar: [2, 3] }); // =&gt; foo=1&amp;bar%5B%5D=2&amp;bar%5B%5D=3
+Util.param({ foo: 1, bar: [2, 3] },&#x27;&amp;&#x27;,&#x27;=&#x27;,false); // =&gt; foo=1&amp;bar=2&amp;bar=3
+Util.param({ foo: &#x27;&#x27;, bar: 2 }); // =&gt; foo=&amp;bar=2
+Util.param({ foo: undefined, bar: 2 }); // =&gt; foo&amp;bar=2
+*   &#x60;&#x60;&#x60;
+*/
+
+/**
+* 将字符串转化为 xml 文档
+* @method parseXML
+* @static 
+* @param str {String} 有效的 xml 文档字符串
+* return {XML} xml 文档
+* @example
+*   &#x60;&#x60;&#x60;
+var xml = &quot;&lt;rss version=&#x27;2.0&#x27;&gt;&lt;channel&gt;&lt;title&gt;RSS Title&lt;/title&gt;&lt;/channel&gt;&lt;/rss&gt;&quot;;
+var xmlDoc=Node.all(Util.parseXML(xml));
+alert(xmlDoc.one(&quot;title&quot;).text()); // =&gt; RSS Title
+*   &#x60;&#x60;&#x60;
+*/
+
+/**
+* 在 DOM 加载完毕时执行回调函数fn
+* @method ready
+* @static 
+* @param fn {Function} 回调函数
+*/
+
+/**
+* 从左向右对每个数组元素调用给定函数，并把返回值累积起来
+* @method reduce
+* @static 
+* @param arr {Array} 需要遍历的数组
+* @param fn {Function} 在每个数组元素上执行的函数
+* @param initialValue {Object}  初次执行 fn 时的第一个参数值，如果不指定则为第一个元素值，后续从第二个元素开始遍历
+* @return 累计值
+* __Note__
+* reduce 对数组中的每个元素执行 fn 函数，该 fn 接受四个参数：initialValue (或者上次调用 fn 的返回值)， 数组的当前元素，数组的当前位置以及用于遍历的数组.
+* 调用 reduce 类似于：&#x60;Util.reduce([],function(previousValue, currentValue, index, array){});&#x60;
+* 当第一次调用 fn 时 :
+  - 如果调用 reduce 时没有设定 initialValue，previousValue 和 currentValue 是数组的前两个值.
+  - 如果调用 reduce 时设定了 initialValue，那么 previousValue 和 initialValue 相等 ，而 currentValue 则和数组的第一个元素相等.
+* @example
+*   &#x60;&#x60;&#x60;
+Util.reduce([0,1,2,3,4],function(previousValue, currentValue, index, array){
+  return previousValue + currentValue;
+});
+
+// First call
+previousValue = 0, currentValue = 1, index = 1
+
+// Second call
+previousValue = 1, currentValue = 2, index = 2
+
+// Third call
+previousValue = 3, currentValue = 3, index = 3
+
+// Fourth call
+previousValue = 6, currentValue = 4, index = 4
+
+// array is always the object [0,1,2,3,4] upon which reduce was called
+
+// Return Value: 10
+*   &#x60;&#x60;&#x60;
+*
+*   &#x60;&#x60;&#x60;
+Util.reduce([0,1,2,3,4],function(previousValue, currentValue, index, array){
+  return previousValue + currentValue;
+}, 10);
+
+// First call
+previousValue = 10, currentValue = 0, index = 0
+
+// Second call
+previousValue = 10, currentValue = 1, index = 1
+
+// Third call
+previousValue = 11, currentValue = 2, index = 2
+
+// Fourth call
+previousValue = 13, currentValue = 3, index = 3
+
+// Fifth call
+previousValue = 16, currentValue = 4, index = 4
+
+// array is always the object [0,1,2,3,4] upon which reduce was called
+
+// Return Value: 20
+*   &#x60;&#x60;&#x60;
+*
+* ### 得到数组的值总和
+* &#x60;var total = Util.reduce([0, 1, 2, 3],function(a, b){ return a + b; }); // total == 6&#x60;
+*
+* ### 嵌套数组平坦化
+*   &#x60;&#x60;&#x60;
+var flattened = Util.reduce([[0,1], [2,3], [4,5]],function(a,b) {
+  return a.concat(b);
+});
+// flattened is [0, 1, 2, 3, 4, 5]
+*   &#x60;&#x60;&#x60;
+*/
+
+/**
+* 判断 str 是否以 prefix 开头
+* @method startsWith
+* @static 
+* @param str {String} 查找字符串
+* @param prefix {String} 前缀字符串
+* @return {Boolean} str 是否以 prefix 开头
+*/
+
+/**
+* 将字符串中的占位符替换为对应的键值
+* @method substitute
+* @static 
+* @param str {String}  包含数据占位符的模板字符串, 占位符用 {} 包起来
+* @param o {Object} 数据
+* @return {String} 将模板和数据结合起来的最终字符串
+* @example
+*   &#x60;&#x60;&#x60;
+var str = &#x27;{name} is {prop_1} and {prop_2}.&#x27;,
+obj = {name: &#x27;Jack Bauer&#x27;, prop_1: &#x27;our lord&#x27;, prop_2: &#x27;savior&#x27;};
+
+Util.substitute(str, obj); // =&gt; &#x27;Jack Bauer is our lord and savior.&#x27;
+*   &#x60;&#x60;&#x60;
+*/
+
+/**
+* ms 时间内只执行 fn 一次, 即使这段时间内 fn 被调用多次.
+* @method throttle
+* @static
+* @param fn {Function} 要缓存的函数
+* @param ms {Number} 要缓存多长时间后执行, 默认是 150 ms;
+* @param context {Object} 函数 fn 要执行时的上下文环境, 默认是 this
+* @return {Function} 返回缓存后的函数对象
+* __Note__
+* - 当 ms 设置为 -1, 表示立即执行 fn, 即和直接调用 fn 一样;
+* - throttle 和 buffer 的区别在于, 前者表示间隔内的函数触发被忽略, 后者表示间隔内的触发被放到下个间隔触发
+* @example
+*   &#x60;&#x60;&#x60;
+ function sayHi() {
+    alert(&#x27;hi&#x27;);
+ }
+
+say = Util.throttle(sayHi, 300, this);
+say();              // 忽略
+Util.later(say, 200);  // 忽略
+Util.later(say, 350);  // 超过300ms后, 终于执行
+*   &#x60;&#x60;&#x60;
+*/
+
+/**
+* 去除字符串两端的空白字符
+* @method trim
+* @static
+* @param str {String} 原始字符串
+* @return {String} 去除空白后新的字符串
+*/
+
+/**
+* 将字符串中的 html 实体字符替换成对应字符
+* @method unEscapeHTML
+* @static
+* @param str {String} 包含 html 实体字符的字符串
+* @return {String} 替换实体字符后的字符串
+* @example
+* &#x60;Util.unEscapeHTML(&quot;&amp;lt;a&amp;gt;x&amp;lt;/a&amp;gt;&quot;); // =&gt;  &quot;&lt;a&gt;x&lt;/a&gt;&quot;&#x60;
+* __Note__
+* 该函数只会 unescape 以下字符序列（正则式
+* &#x60;&amp;amp; &amp;lt; &amp;gt; &amp;#x60; &amp;#x2F; &amp;quot; &amp;#x27; &amp;#\d{1,5}&#x60;
+*/
+
+/**
+* 返回一个新数组, 仅包含 arr 去重后的值
+* @method unique
+* @static
+* @param arr {Array}  包含重复元素的数组
+* @param keepLast {Boolean} 遇到重复值是保留第一次出现还是保留最后一次出现的元素
+* @return {Array} 包含 arr 去重后的数组
+*/
+
+/**
+* 将参数字符串 str 还原为对象
+* @method unparam
+* @static
+* @param str {String} 参数字符串
+* @param [seq=&quot;&amp;&quot;] {String} 参数间分隔符, 默认 &amp;
+* @param [eq=&quot;=&quot;] {String}  参数与参数值间的分割符, 默认 =
+* @return {Object} 参数的对象表示
+* @example
+*   &#x60;&#x60;&#x60;
+
+Util.unparam(&#x27;foo=1&amp;bar=2&#x27;); // =&gt; { foo: 1, bar: 2 }
+Util.unparam(&#x27;foo=%81%47&#x27;); // gbk 编码 =&gt; { foo: &quot;%81%47&quot; } 而不是 {foo: &quot;丢&quot;}
+Util.unparam(&#x27;foo=1&amp;bar=2&amp;bar=3&#x27;); // =&gt; { foo: 1, bar: [2, 3] }
+Util.unparam(&#x27;foo=1&amp;bar%5B%5D=2&amp;bar%5B%5D=3&#x27;); // =&gt; { foo: 1, bar: [2, 3] }
+*   &#x60;&#x60;&#x60;
+*/
+ 
+    </pre>
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div tag="apidocs-end" style="display:none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="wrap-disqus">
+            <div id="disqus_thread"></div>
+        </div>
+        <script>
+            if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+            // The following are highly recommended additional parameters. Remove the slashes in front to use.
+             //var disqus_identifier = '/anim';
+             //var disqus_url = window.location;
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+            }
+        </script>
+        <div class="other-page">
+            <div class="wrap">
+                <div class="content">
+                    <div class="wrap-content">
+                        <p>@2010 - 2112 KISSY UI LIBARAY</p>
+                        <div class="github-msg">
+                            <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=watch&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                            <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=fork&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

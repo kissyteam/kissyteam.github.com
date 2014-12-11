@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <style>
+        .info {
+            color: red;
+        }
+    </style>
+    <script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<form id='f'>
+
+    <div>
+        <label>姓名：<input/><span class='info'> i lose focus</span></label>
+    </div>
+
+    <div>
+        <label>密码：<input/><span class='info'>i lose focus</span></label>
+    </div>
+
+</form>
+<script>
+    require(['node'], function (Node) {
+        var $ = Node.all;
+
+        $("#f").on("focusout", function (e) {
+            var t = $(e.target);
+            t.next(".info").html("i lost focus");
+        });
+
+        $("#f").on("focusin", function (e) {
+            var t = $(e.target);
+            t.next(".info").html("i get focus");
+        });
+    });
+</script>
+
+</body>
+</html>

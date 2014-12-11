@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>多选菜单using menubutton</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/button/assets/dpl.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/menubutton/assets/dpl.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/menu/assets/dpl.css">
+<style type="text/css">
+    .ks-button-focused{
+        border-color:orange;
+    }
+</style>
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<h1>多选菜单using menubutton</h1>
+<div id="container" style="margin-left:50px;">
+    
+</div>
+
+<script type="text/javascript">
+    require(['menu', 'menubutton'], function(Menu, MenuButton){
+        var myMenuButton = new MenuButton({
+            render : '#container',
+            content : '多选菜单',
+            matchElWidth : false,
+            menu : {
+                xclass : 'popupmenu',
+                children : [
+                    {
+                        xclass : 'check-menuitem',
+                        content : 'item1'
+                    },
+                    {
+                        xclass : 'check-menuitem',
+                        content : 'item2'
+                    },
+                    {
+                        xclass : 'submenu',
+                        content : 'IamSubmenu',
+                        menu : {
+                            xclass : 'popupmenu',
+                            children : [
+                                {
+                                    xclass : 'check-menuitem',
+                                    content : 'item3'
+                                },
+                                {
+                                    xclass : 'check-menuitem',
+                                    content : 'item4'
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        });
+        myMenuButton.render();
+    });
+</script>
+</body>
+</html> 

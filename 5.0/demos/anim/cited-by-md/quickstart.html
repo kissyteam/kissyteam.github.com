@@ -1,0 +1,198 @@
+
+<html>
+<head>
+	<title></title>
+	<script src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"></script>
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	.content {
+		width: 500px;
+		height: 500px;
+		margin: 60px auto 0;
+		position: relative;
+	}
+	.img {
+		height: 500px;
+		position: relative;
+	}
+	.img:after {
+		content: '';
+		display: block;
+		visibility: hidden;
+		height: 0;
+		clear: both;
+	}
+	ul {
+		list-style: none;
+	}
+	ul li {
+		display: inline-block;
+		width: 100px;
+		height: 100px;
+		position: absolute;
+	}
+	ul li.list1 {
+		top: -50px;
+		left: 200px;
+	}
+	ul li.list2 {
+		top: 8px;
+		left: 39px;
+	}
+	ul li.list9 {
+		top: 8px;
+		left: 361px;
+	}
+	ul li.list3 {
+		top: 157px;
+		left: -46px;
+	}
+	ul li.list8 {
+		top: 157px;
+		left: 446px;
+	}
+	ul li.list4 {
+		top: 325px;
+		left: -17px;
+	}
+	ul li.list7 {
+		top: 325px;
+		left: 417px;
+	}
+	ul li.list5 {
+		top: 435px;
+		left: 114px;
+	}
+	ul li.list6 {
+		top: 435px;
+		left: 286px;
+	}
+	ul li img {
+		width: 100px;
+		height: 100px;
+		border-radius: 50px;
+		opacity: 0.2;
+	}
+	ul li.active img {
+		opacity: 1;
+	}
+	button {
+		position: absolute;
+		top: 330px;
+		left: 200px;
+		width: 100px;
+		height: 50px;
+		text-align: center;
+		margin: 50px auto;
+	}
+	.detail {
+		position: absolute;
+		display: none;
+		top: 80px;
+		left: 158px;
+		width: 183px;
+		height: 275px;
+		box-shadow: 0 0 5px #ccc;
+	}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<div class="img">
+			<ul class="img-list">
+				<li class="list1 active"><img src="./assets/1.png" /></li>
+				<li class="list2"><img src="./assets/2.png" /></li>
+				<li class="list3"><img src="./assets/3.png" /></li>
+				<li class="list4"><img src="./assets/4.png" /></li>
+				<li class="list5"><img src="./assets/5.png" /></li>
+				<li class="list6"><img src="./assets/6.png" /></li>
+				<li class="list7"><img src="./assets/7.png" /></li>
+				<li class="list8"><img src="./assets/8.png" /></li>
+				<li class="list9"><img src="./assets/9.png" /></li>
+			</ul>
+		</div>
+		<button class="start">start</button>
+		<div class="detail">
+		</div>
+	</div>
+	<script>
+	require(['node','io'],function($, IO){
+		var opLotto = {
+			init: function(){
+				this.imgList = $('.img-list').all('li');
+				this.length = this.imgList.length;
+				this.startIndex = 0;
+			},
+			_run: function(index){
+				var next = index + 1 === this.length ? 0 : index + 1;
+				this.imgList.removeClass('active');
+				this.imgList.item(next).addClass('active');
+				this.startIndex = next;
+			},
+			start: function(){
+				var self = this;
+				self.timer = setInterval(function(){
+					self._run(self.startIndex);
+				}, 50);
+			},
+			pause: function(){
+				this.timer && clearInterval(this.timer);
+				this._animate(this.startIndex);
+			},
+			_animate: function(index) {
+				var self = this;
+				var selectedItem = self.imgList.item(index);
+				var offsetTop = selectedItem.css('top');
+				var offsetLeft = selectedItem.css('left');
+				var cloneItem = selectedItem.one('img').clone().appendTo('.content').css({
+					'width': '100px',
+					'height': '100px',
+					'position': 'absolute',
+					'top': offsetTop,
+					'left': offsetLeft,
+					'border-radius': '50px'
+				}).animate({
+					'top': parseInt(offsetTop, 10) - 50
+				},{
+					duration : 0.2
+				}).animate({
+					'top': 200,
+					'left': 200,
+					'opacity': 0
+				},{
+					duration : 1,
+					complete : function(){
+						cloneItem.remove();
+						self._print(index);
+					}
+				});
+			},
+			_print: function(index){
+				IO.get('./assets/quickstartdata.json', {'index': index}, function(data){
+					var url = data[index].url;
+					$('.detail').html('<img src="' + url + '" />').fadeIn(0.5);
+				}, 'json')
+			}
+		}
+
+		opLotto.init();
+
+		$('button').on('click', function(ev){
+			var self = this;
+			if($(self).hasClass('start')){
+				$(self).replaceClass('start', 'pause').html('pause');
+				$('.detail').fadeOut();
+				opLotto.start();
+			}
+			else{
+				$(self).replaceClass('pause', 'start').html('start');
+				opLotto.pause();
+			}
+		})	
+	})
+	</script>
+</body>
+</html>

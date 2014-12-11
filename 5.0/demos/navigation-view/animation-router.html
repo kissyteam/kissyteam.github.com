@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scale=no">
+	<title>Guides - KISSY v5.0 Documentation</title>
+	<link rel="shortcut icon" href="/5.0/assets/img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/github.css"/>
+	<script type="text/javascript" src="http://g.tbcdn.cn/kissy/edge/2014.07.16/seed.js" data-config="{combine:true}"></script>
+	<link rel="stylesheet" href="/5.0/assets/css/component.css">
+</head>
+<body>
+	<div class="header">
+		<div class="inner">
+	<div class="toolbar">
+		<a href="/5.0">
+			<img class="mini-logo" src="/5.0/assets/img/mini-logo.png">
+		</a>
+		<ul class="nav clearfix">
+			<li class="docs">
+				<span>
+					Docs
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/guides/">Guides</a></li>
+					<li><a href="/5.0/api">Api Docs</a></li>
+					<li><a href="/5.0/demos">Demos</a></li>
+				</ul>
+			</li>
+			<li class="more">
+				<span>
+					More
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/more/faq.html">FAQ</a></li>
+					<li><a href="http://gallery.kissyui.com/">Gallery</a></li>
+					<li><a href="http://blog.kissyui.com/">KISSY Blog</a></li>
+					<li><a href="https://github.com/daxingplay/kmc">KMC</a></li>
+					<li><a href="https://github.com/minghe/generator-bee/wiki/generator-bee%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">Generator</a></li>
+				</ul>
+			</li>
+			<li class="split"></li>
+			<li class="nav-other"><a href="/5.0/quick-start.html">Quick Start</a></li>
+			<li class="nav-other"><a href="https://github.com/kissyteam/kissy">Contribute</a></li>
+			<li class="nav-other"><a target="_blank" href="/5.0/kissyup-middle.html">KISSY UP</a></li>
+		</ul>
+	</div>
+	<div class="search">
+		<script>
+			(function() {
+			var cx = '003618533255763067140:5nkycw1pbey';
+			var gcse = document.createElement('script');
+			gcse.type = 'text/javascript';
+			gcse.async = true;
+			gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+			    '//www.google.com/cse/cse.js?cx=' + cx;
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(gcse, s);
+			})();
+		</script>
+		<gcse:search></gcse:search>
+	</div>
+</div>
+	</div>
+	<div class="main">
+		<div class="demo">
+			<div class="logo-on-top clearfix">
+				<img src="/5.0/assets/img/logo-on-top.png">
+			</div>
+			<div class="inner clearfix">
+				<div id="sidebar">
+					<a class="link-apidocs btn btn-primary" href="../../api/classes/NavigationView.html">API Docs</a>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Features</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../guides/navigation-view/index.html">NavigationView的基本介绍</a></p>
+						</div>
+					</div>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Demos</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../demos/navigation-view/animation-router.html">结合使用 Router 展示视图动画效果</a></p><p><a href="../../demos/navigation-view/index.html">简单使用 NavigationView</a></p><p><a href="../../demos/navigation-view/infinite.html">无尽的视图示例</a></p><p><a href="../../demos/navigation-view/on-left-side.html">左边栏视图</a></p><p><a href="../../demos/navigation-view/view-with-loading.html">带loading中间态的视图</a></p>
+						</div>
+					</div>
+				</div>
+				<div id="main-content">
+					<p></p>
+<h1 id="结合使用 Router 展示视图动画效果">结合使用 Router 展示视图动画效果</h1><p>这个demo结合使用 router 模块来展示视图切换的动画效果。demo中定义了两个视图类：TBIndexView 和 TBAnimView ，其中 TBAnimView 拓展自 PageView。</p>
+<p>请在移动浏览器或打开chrome开发人员工具模拟移动浏览器查看demo。
+<div class="ks-tabs ks-tabs-top" style="height:800px;">
+    <div class="ks-tabs-bar">
+        <div class="ks-tabs-tab ks-button">Source</div>
+        <div class="ks-tabs-tab ks-button ks-tabs-tab-selected">Output</div>
+        <div class="ks-tabs-tab ks-button">QRCode</div>
+    </div>
+    <div class="ks-tabs-body" style="overflow:hidden;">
+        <div class="ks-tabs-panel">
+            <div class="editor">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no&quot;&gt;
+    &lt;link href=&quot;&#x2F;&#x2F;g.alicdn.com&#x2F;kissy&#x2F;k&#x2F;5.0.1&#x2F;css&#x2F;base.css&quot; rel=&quot;stylesheet&quot;&#x2F;&gt;
+    &lt;link href=&quot;&#x2F;&#x2F;g.alicdn.com&#x2F;kissy&#x2F;k&#x2F;5.0.1&#x2F;navigation-view&#x2F;assets&#x2F;dpl.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;link href=&quot;&#x2F;&#x2F;g.alicdn.com&#x2F;kissy&#x2F;k&#x2F;5.0.1&#x2F;scroll-view&#x2F;assets&#x2F;dpl.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;script src=&quot;&#x2F;&#x2F;g.alicdn.com&#x2F;kissy&#x2F;k&#x2F;5.0.1&#x2F;seed-debug.js&quot;&gt;&lt;&#x2F;script&gt;
+    &lt;style&gt;
+        body,html {
+            height: 100%;
+        }
+        .ks-navigation-bar {
+            position: fixed;
+            height: 47px;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 10;
+        }
+        .ks-navigation-view-content {
+            margin-top: 47px;
+        }
+        ul, li {
+            margin: 0;
+            padding: 0;
+        }
+        .nav {
+            color: #000;
+            background: white;
+            border: 1px solid #aaa;
+            padding-left: 0;
+        }
+        .nav &gt; li {
+            text-indent: 0;
+            font-size: 1.5em;
+            margin: 0;
+            display: block;
+            position: relative;
+            list-style-type: none;
+            vertical-align: middle;
+            box-sizing: border-box;
+            padding: .5em .7em;
+            padding-left: 1em;
+            line-height: 1.6em;
+            overflow: hidden;
+            color: #000;
+            border: 0;
+            background: transparent;
+            border-radius: 0;
+            border-top: 1px solid rgba(180, 180, 180, 0.5);
+        }
+        .nav &gt; li:first-child {
+            border-top: 0;
+        }
+        .nav a {
+            line-height: inherit;
+            text-decoration: none;
+            margin: -0.5em -0.7em;
+            margin-left: -1em;
+            padding-left: 1em;
+            color: #000;
+            display: block;
+            position: relative;
+            list-style-type: none;
+            vertical-align: middle;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: .5em .7em;
+        }
+        .nav a:after {
+            -webkit-text-fill-color: #fff;
+            -webkit-transform: rotate(45deg);
+            vertical-align: middle;
+            margin-left: -0.2rem;
+            border-style: solid;
+            border-color: #777;
+            content: &quot;\a0&quot;;
+            display: block;
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            margin-top: -0.32rem;
+            color: #999ea9;
+            width: .66rem;
+            height: .64rem;
+            border-width: 0;
+            -webkit-box-shadow: inset -0.2rem .2rem 0 #999ea9;
+            box-shadow: inset -0.2rem .2rem 0;
+        }
+        .nav .list-item-active a {
+            background: #d9d9d9;
+        }
+        .ks-navigation-view-content {
+            background: #eeeeee;
+        }
+        .anim-title {
+            text-align: center;
+            font-size: 18px;
+            line-height: 24px;
+            color: #444;
+            text-shadow: rgba(255, 255, 255, 0.3) 0 1px 0;
+            padding: 10px;
+            width: 75%;
+            margin: 0 auto;
+        }
+        .anim-content {
+            text-align: center;
+            font-size: 18px;
+            line-height: 24px;
+            color: #444;
+            text-shadow: rgba(255, 255, 255, 0.3) 0 1px 0;
+            padding: 10px;
+            width: 75%;
+            margin: 0 auto;
+        }
+
+        &#x2F;**加上下面代码定义相关类隐藏后的样式*&#x2F;
+        .ks-navigation-view-content &gt; .ks-navigation-view-loading.ks-navigation-view-loading-hidden, .ks-navigation-view-content &gt; div.ks-page-view-hidden {
+            display: none;
+        }
+    &lt;&#x2F;style&gt;
+&lt;&#x2F;head&gt;
+&lt;body&gt;
+&lt;script type=&quot;text&#x2F;javascript&quot;&gt;
+if (location.href.indexOf(&#x27;useHashChange&#x27;) !== -1) {
+    history.pushState = null;
+}
+
+define(&#x27;page-view&#x27;, [&#x27;scroll-view&#x27;, &#x27;scroll-view&#x2F;plugin&#x2F;scrollbar&#x27;], function(require,exports,module){
+    var ScrollView = require(&#x27;scroll-view&#x27;);
+    var ScrollBar = require(&#x27;scroll-view&#x2F;plugin&#x2F;scrollbar&#x27;);
+    module.exports = ScrollView.extend({
+            onScroll: function (fn) {
+                this.__fn = function (e) {
+                    fn(e.newVal);
+                };
+                this.on(&#x27;afterScrollTopChange&#x27;, this.__fn);
+            },
+            getContentEl: function () {
+                return this.get(&#x27;contentEl&#x27;);
+            },
+            unScroll: function () {
+                this.detach(&#x27;afterScrollTopChange&#x27;, this.__fn);
+            }
+        }, {
+            ATTRS: {
+                plugins: {
+                    valueFn: function () {
+                        return [ScrollBar];
+                    }
+                }
+            }
+        });
+});
+
+require([&#x27;util&#x27;, &#x27;navigation-view&#x27;, &#x27;navigation-view&#x2F;bar&#x27;, &#x27;node&#x27;, &#x27;event-dom&#x2F;gesture&#x2F;tap&#x27;, &#x27;event-dom&#x2F;gesture&#x2F;basic&#x27;, &#x27;router&#x27;, &#x27;promise&#x27;, &#x27;page-view&#x27;], function (util,NavigationView, Bar, $, TapGesture, BasicGesture, router, Promise, PageView) {
+    var S = modulex;
+        var tap = TapGesture.TAP;
+        var win = $(window);
+        var anims = [
+            {
+                content: &#x27;default-anim&#x27;
+            },
+            {
+                content: &#x27;none-anim&#x27;,
+                value: &#x27;none&#x27;
+
+            },
+            {
+                content: &#x27;slide-left-anim&#x27;,
+                value: [&#x27;slide-left&#x27;, &#x27;slide-right&#x27;]
+
+            },
+            {
+                content: &#x27;slide-top-anim&#x27;,
+                value: [&#x27;slide-top&#x27;, &#x27;slide-bottom&#x27;]
+
+            },
+            {
+                content: &#x27;slide-bottom-anim&#x27;,
+                value: [&#x27;slide-bottom&#x27;, &#x27;slide-top&#x27;]
+            },
+            {
+                content: &#x27;fade-anim&#x27;,
+                value: &#x27;fade&#x27;
+            },
+            {
+                content: &#x27;pop-anim&#x27;,
+                value: &#x27;pop&#x27;
+            },
+            {
+                content: &#x27;flip-left-anim&#x27;,
+                value: [&#x27;flip-left&#x27;, &#x27;flip-right&#x27;]
+            },
+            {
+                content: &#x27;flip-right-anim&#x27;,
+                value: [&#x27;flip-right&#x27;, &#x27;flip-left&#x27;]
+            },
+            {
+                content: &#x27;swap-left-anim&#x27;,
+                value: [&#x27;swap-left&#x27;, &#x27;swap-right&#x27;]
+            },
+            {
+                content: &#x27;swap-right-anim&#x27;,
+                value: [&#x27;swap-right&#x27;, &#x27;swap-left&#x27;]
+            },
+            {
+                content: &#x27;cube-left-anim&#x27;,
+                value: [&#x27;swap-left&#x27;, &#x27;swap-right&#x27;]
+            },
+            {
+                content: &#x27;cube-right-anim&#x27;,
+                value: [ &#x27;swap-right&#x27;, &#x27;swap-left&#x27;]
+            },
+            {
+                content: &#x27;flow-left-anim&#x27;,
+                value: [&#x27;flow-left&#x27;, &#x27;flow-right&#x27;]
+
+            },
+            {
+                content: &#x27;flow-right-anim&#x27;,
+                value: [&#x27;flow-right&#x27;, &#x27;flow-left&#x27;]
+            },
+            {
+                content: &#x27;turn-anim&#x27;,
+                value: &#x27;turn&#x27;
+            }
+        ];
+
+        var menuContent = &#x27;&lt;ul class=&quot;nav&quot;&gt;&#x27;;
+
+        util.each(anims, function (anim) {
+            menuContent += &#x27;&lt;li class=&quot;list-item&quot;&gt;&lt;a tabindex=&quot;0&quot;&gt;&#x27; + anim.content + &#x27;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;&#x27;;
+        });
+
+        var getAnimValue = function (content) {
+            for (var i = 0; i &lt; anims.length; i++) {
+                if (anims[i].content === content) {
+                    return anims[i].value;
+                }
+            }
+            return null;
+        };
+
+       var TBIndexView = PageView.extend({
+            enter: function (cfg) {
+                &#x2F;&#x2F; console.log(&#x27;enter index &#x27; + (cfg.fromCache ? &#x27;from cache!&#x27; : &#x27;&#x27;));
+                win.on(&#x27;resize&#x27;, this.sync, this);
+                this.sync();
+            },
+
+            leave: function () {
+                console.log(&#x27;leave index&#x27;);
+                win.detach(&#x27;resize&#x27;, this.sync, this);
+            },
+
+            bindUI: function () {
+                this.$el.delegate(tap, &#x27;.list-item&#x27;, this.onMenuItemClick, this);
+                this.$el.delegate(BasicGesture.START, &#x27;.list-item&#x27;, function (e) {
+                    e.currentTarget.classList.add(&#x27;list-item-active&#x27;);
+                });
+                this.$el.delegate(BasicGesture.END, &#x27;.list-item&#x27;, function (e) {
+                    e.currentTarget.classList.remove(&#x27;list-item-active&#x27;);
+                });
+
+                this.onScroll(function (top) {
+                    &#x2F;&#x2F; console.log(top);
+                });
+            },
+
+            onMenuItemClick: function (e) {
+                router.navigate(&#x27;&#x2F;&#x27; + util.trim(e.currentTarget.innerText));
+
+            }
+        }, {
+            xclass: &#x27;tb-index-view&#x27;,
+            ATTRS: {
+                content: {
+                    value: menuContent
+                },
+                title: {
+                    value: &#x27;navigation-view&#x27;
+                }
+            }
+        });
+
+        var tpl = &#x27;&lt;h2 class=&quot;anim-title&quot;&gt;{title}&lt;&#x2F;h2&gt;&#x27; +
+            &#x27;&lt;p class=&quot;anim-content&quot;&gt;Sed ut perspiciatis unde omnis iste natus error &#x27; +
+            &#x27;sit voluptatem accusantium doloremque laudantium, &#x27; +
+            &#x27;totam rem aperiam, eaque ipsa quae ab illo inventore &#x27; +
+            &#x27;veritatis et quasi architecto beatae vitae dicta sunt &#x27; +
+            &#x27;explicabo. Nemo enim ipsam voluptatem quia voluptas sit &#x27; +
+            &#x27;aspernatur aut odit aut fugit, sed quia consequuntur magni &#x27; +
+            &#x27;dolores eos qui ratione voluptatem sequi nesciunt. Neque porro &#x27; +
+            &#x27;quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, &#x27; +
+            &#x27;adipisci velit, sed quia non numquam eius modi tempora incidunt ut &#x27; +
+            &#x27;labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima &#x27; +
+            &#x27;veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, &#x27; +
+            &#x27;nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum &#x27; +
+            &#x27;iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae &#x27; +
+            &#x27;consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?&lt;&#x2F;p&gt;&#x27;;
+
+        tpl += tpl;
+        tpl += tpl;
+        tpl += tpl;
+
+        var TBAnimView = PageView.extend({
+            enter: function (cfg) {
+                console.log(&#x27;enter detail &#x27; + (cfg.fromCache ? &#x27;from cache!&#x27; : &#x27;&#x27;));
+                win.on(&#x27;resize&#x27;, this.sync, this);
+                this.sync();
+            },
+
+            leave: function () {
+                console.log(&#x27;leave detail&#x27;);
+                win.detach(&#x27;resize&#x27;, this.sync, this);
+            },
+
+            createDom: function () {
+                this.getContentEl().html(util.substitute(tpl, {
+                    title: this.get(&#x27;viewId&#x27;)
+                }));
+            },
+
+            retIndex: function () {
+                router.navigate(&#x27;&#x2F;&#x27;);
+            },
+
+            bindUI: function () {
+                this.getContentEl().delegate(&#x27;click&#x27;, &#x27;.retIndex&#x27;, this.retIndex, this);
+            }
+        }, {
+            xclass: &#x27;tb-anim-view&#x27;
+        });
+
+        var navigationView = new NavigationView({
+            loadingHtml: &#x27;&lt;div class=&quot;ks-navigation-view-loading-outer&quot;&gt;&#x27; +
+                &#x27;&lt;div class=&quot;ks-navigation-view-loading-inner&quot;&gt;&lt;&#x2F;div&gt;&#x27; +
+                &#x27;&lt;&#x2F;div&gt;&#x27;,
+            render: &#x27;body&#x27;
+        }).render();
+
+        var bar = new Bar({
+            navigationView: navigationView,
+            elBefore: navigationView.get(&#x27;contentEl&#x27;)
+        }).render();
+
+        router.get(&#x27;&#x2F;&#x27;, function (request) {
+            if (!request.backward) {
+                navigationView.push({
+                    xclass: &#x27;tb-index-view&#x27;
+                });
+            }
+        });
+
+        router.get(&#x27;&#x2F;:anim&#x27;, function (request) {
+            if (!request.backward) {
+                var animation = getAnimValue(request.params.anim);
+                if (animation) {
+                    navigationView.replace({
+                        animation: animation
+                    });
+                }
+                navigationView.push({
+                    xclass: &#x27;tb-anim-view&#x27;,
+                    title: request.params.anim,
+                    viewId: request.params.anim,
+                    animation: animation
+                });
+            }
+        });
+
+        router.config({
+            urlRoot: location.pathname,
+            useHash: !window.useNativeHistory,
+            triggerRoute: true
+        });
+
+        router.start();
+    });
+&lt;&#x2F;script&gt;
+&lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;</div>
+        </div>
+        <div class="ks-tabs-panel ks-tabs-panel-selected">
+            <iframe class="output" frameborder="1">
+            	
+            </iframe>
+        </div>
+        <div class="ks-tabs-panel qrcode-wrap">
+            <div class="qrcode"></div>
+            <div class="content">
+                <p class="title">查看移动端演示</p>
+                <p class="qrcode-addr" qrcodeaddr="http://docs.kissyui.com/5.0/demos/navigation-view/cited-by-md/animation-router.html" ="text">
+                    示例地址：
+                    <a href="http://docs.kissyui.com/5.0/demos/navigation-view/cited-by-md/animation-router.html" target="_blank">http://docs.kissyui.com/5.0/demos/navigation-view/cited-by-md/animation-router.html</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div></p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="wrap-disqus">
+    <div class="top-repeat"></div>
+	<div id="disqus_thread"></div>
+</div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<div class="other-page">
+    <div class="wrap">
+        <div class="content">
+            <div class="wrap-content">
+                <p>@2010 - 2112 KISSY UI LIBARAY</p>
+                <div class="github-msg">
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=fork&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	</div>
+	<script type="text/javascript" src="/5.0/assets/js/ace-editor/ace.js"></script>
+	<script type="text/javascript" src="/5.0/assets/js/qrcodejs/qrcode.min.js"></script>
+	<script type="text/javascript" src="/5.0/assets/js/ajax-load.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

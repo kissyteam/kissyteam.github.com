@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>仿淘宝搜索框</title>
+	<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/combobox/assets/dpl-debug.css">
+	<style type="text/css">
+	body{
+		background: #fff;
+	}
+	</style>
+	<script type="text/javascript" src="//g.alicdn.com/kissy/k/5.0.1/seed.js"></script>
+	<style type="text/css">
+		body {
+		    font: 12px/1.5 tahoma, arial;
+		}
+		.search-panel button{
+		    background: url(http://gtms04.alicdn.com/tps/i4/TB1FEpXGXXXXXa4XXXXyTkXLpXX-500-444.png) no-repeat;
+		}
+
+		.search {
+		    width: 666px;
+		    float: left;
+		    height: 113px
+		}
+		.search-panel {
+		    position: relative;
+		    zoom: 1;
+		    float: left;
+		    width: 603px
+		}
+		.search-panel-fields {
+		    width: 470px;
+		    height: 40px;
+		    float: left;
+		    position: relative;
+		    zoom: 1;
+		    background: #f50;
+		    border-radius: 0 0 0 3px
+		}
+		.search-panel-fields input {
+		    font-size: 14px;
+		    position: absolute;
+		    left: 3px;
+		    top: 3px;
+		    width: 457px;
+		    height: 24px;
+		    line-height: 18px;
+		    padding: 5px;
+		    background: #fff;
+		    vertical-align: middle;
+		    border: 0;
+		    border-radius: 3px 0 0 0
+		}
+		.search-panel button {
+		    float: left;
+		    width: 100px;
+		    height: 40px;
+		    cursor: pointer;
+		    border: 0;
+		    font-size: 18px;
+		    color: #fff;
+		    background-color: #f50;
+		    background-position: -250px 0;
+		    text-indent: -999em
+		}
+		.search-panel button:hover {
+		    background-position: -400px 0;
+		}
+		.search-menu {
+		    background: #fff;
+		    border-color: #999;
+		    border-style: solid;
+		    border-width: 1px;
+		    cursor: default;
+		    margin: 0;
+		    outline: none;
+		    position: absolute;
+		    z-index: 99999;
+		    left: -9999px;
+		    top: -9999px;
+		}
+		.search-popupmenu-hidden {
+		    visibility: hidden;
+		}
+		.search-menuitem {
+		    color: #333;
+		    list-style: none;
+		    margin: 0;
+		    font-size: 12px;
+		    line-height: 22px;
+		    white-space: nowrap;
+		    height: 24px;
+		}
+		.search-menuitem-disabled .search-menuitem-content {
+		    color: #ccc !important;
+		}
+		.search-combobox {
+		    font-size: 12px;
+		}
+		.search-combobox-input-wrap {
+		    vertical-align: middle;
+		    position: relative;
+		    overflow: hidden;
+		    height: 40px;
+		}
+
+		.search-combobox-input {
+		    font-size: 12px;
+		    line-height: 18px;
+		    width: 100%;
+		    line-height: 18px;
+		    vertical-align: middle;
+		    overflow-y: visible;
+		    background-color: #fff;
+		    border: 0;
+		    color: #000;
+		    outline: 0;
+		}
+		.search-menuitem-disabled {
+		    color: #808080;
+		}
+		.search-menuitem .item-text {
+		    float: left;
+		    padding-left: 5px;
+		    color: #000;
+			font-weight: bold;
+			font-size: 13px;
+		}
+		.search-menuitem-active,
+		.search-menuitem-hover {
+		    background-color: #eee;
+		    color: #333;
+		    cursor: pointer;
+		}
+		.search-combobox .search-combobox-placeholder {
+		    font-size: 14px;
+		    font-weight: normal;
+		    line-height: 40px;
+		    padding-left: 10px;
+		    height: 40px;
+		    position: absolute;
+		    z-index: 1;
+		    width: 100%;
+		    color: #bbb
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap" style="width:90%;margin:0 auto;">
+		<h1>仿淘宝搜索框</h1>
+		<p>利用ComboBox.RemoteDataSource获取远程数据来自动补全</p>
+		<div class="search" id="J_Search" role="search">
+			<div class="search-panel ks-switchable-content">
+		        <form target="_top" action="http://s.taobao.com/search" name="search" id="J_TSearchForm">
+		            <div class="search-panel-fields">
+		                <div class="search-combobox" id="combobox">
+		                    <div class="search-combobox-input-wrap">
+		                        <input id="q" name="q" accesskey="s"
+		                               class="search-combobox-input"
+		                               autofocus="true" autocomplete="off"
+		                               x-webkit-speech=""
+		                               x-webkit-grammar="builtin:translate">
+		                        <label for="q"
+		                               class="search-combobox-placeholder">
+		                            输入喜欢的宝贝来搜索吧
+		                        </label>
+		                    </div>
+		                </div>
+		            </div>
+		            <button type="submit" id="search">搜 索</button>
+		            <input type="hidden" name="commend" value="all">
+		            <input type="hidden" name="ssid" value="s5-e" autocomplete="off">
+		            <input type="hidden" name="search_type" value="mall" autocomplete="off">
+		            <input type="hidden" name="sourceId" value="tb.index">
+		            <input type="hidden" name="spm" value="1.1000386.5803581.d4908513">
+		        </form>
+		    </div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	require(['combobox'], function(ComboBox){
+		var combobox = new ComboBox({
+			srcNode : '#combobox',
+			placeholder : 'input..',
+			prefixCls : 'search-',
+			dataSource : new ComboBox.RemoteDataSource({  //从淘宝获取数据
+				xhrCfg: {
+                    url: 'http://suggest.taobao.com/sug',
+                    dataType: 'jsonp',
+                    data: {
+                        k: 1,
+                        code: "utf-8"
+                    }
+                },
+                paramName: "q",
+                parse: function (query, results) {
+                    // 返回结果对象数组
+                    return results.result;
+                },
+                cache: true
+			}),
+			format : function(query, data){  //自定义下拉菜单属性
+				var ret = [];
+				for(var i = 0; i < data.length; i++){
+					ret[i] = {
+						content : data[i][0].replace(query, '<span class="item-text">' + query + '</span>'),
+						textContent : data[i][0]
+					};
+				}
+				return ret;
+			}
+		});
+		combobox.render();
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scale=no">
+	<title>Guides - KISSY v5.0 Documentation</title>
+	<link rel="shortcut icon" href="/5.0/assets/img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/github.css"/>
+	<script type="text/javascript" src="http://g.tbcdn.cn/kissy/edge/2014.07.16/seed.js" data-config="{combine:true}"></script>
+	<link rel="stylesheet" href="/5.0/assets/css/component.css">
+</head>
+<body>
+	<div class="header">
+		<div class="inner">
+	<div class="toolbar">
+		<a href="/5.0">
+			<img class="mini-logo" src="/5.0/assets/img/mini-logo.png">
+		</a>
+		<ul class="nav clearfix">
+			<li class="docs">
+				<span>
+					Docs
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/guides/">Guides</a></li>
+					<li><a href="/5.0/api">Api Docs</a></li>
+					<li><a href="/5.0/demos">Demos</a></li>
+				</ul>
+			</li>
+			<li class="more">
+				<span>
+					More
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/more/faq.html">FAQ</a></li>
+					<li><a href="http://gallery.kissyui.com/">Gallery</a></li>
+					<li><a href="http://blog.kissyui.com/">KISSY Blog</a></li>
+					<li><a href="https://github.com/daxingplay/kmc">KMC</a></li>
+					<li><a href="https://github.com/minghe/generator-bee/wiki/generator-bee%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">Generator</a></li>
+				</ul>
+			</li>
+			<li class="split"></li>
+			<li class="nav-other"><a href="/5.0/quick-start.html">Quick Start</a></li>
+			<li class="nav-other"><a href="https://github.com/kissyteam/kissy">Contribute</a></li>
+			<li class="nav-other"><a target="_blank" href="/5.0/kissyup-middle.html">KISSY UP</a></li>
+		</ul>
+	</div>
+	<div class="search">
+		<script>
+			(function() {
+			var cx = '003618533255763067140:5nkycw1pbey';
+			var gcse = document.createElement('script');
+			gcse.type = 'text/javascript';
+			gcse.async = true;
+			gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+			    '//www.google.com/cse/cse.js?cx=' + cx;
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(gcse, s);
+			})();
+		</script>
+		<gcse:search></gcse:search>
+	</div>
+</div>
+	</div>
+	<div class="main">
+		<div class="demo">
+			<div class="logo-on-top clearfix">
+				<img src="/5.0/assets/img/logo-on-top.png">
+			</div>
+			<div class="inner clearfix">
+				<div id="sidebar">
+					<a class="link-apidocs btn btn-primary" href="../../api/classes/GregorianCalendarFormat.html">API Docs</a>
+					<div class="panel panel-primary ajax-load hide">
+						<div class="panel-heading">
+							<h3 class="panel-title">Features</h3>
+						</div>
+						<div class="panel-body">
+							
+						</div>
+					</div>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Demos</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../demos/date/date-picker.html">DatePicker 使用示例</a></p><p><a href="../../demos/date/gregorian-calendar.html">GregorianGalendar使用示例</a></p><p><a href="../../demos/date/index.html">GregorianCalendarFormat的使用示例</a></p><p><a href="../../demos/date/limit-selected-date.html">DatePicker限定选择日期</a></p><p><a href="../../demos/date/popup-date-picker.html">DatePicker.Popup 使用示例</a></p>
+						</div>
+					</div>
+				</div>
+				<div id="main-content">
+					<p></p>
+<h1 id="GregorianCalendarFormat的使用示例">GregorianCalendarFormat的使用示例</h1><p><div class="ks-tabs ks-tabs-top" style="height:800px;">
+    <div class="ks-tabs-bar">
+        <div class="ks-tabs-tab ks-button">Source</div>
+        <div class="ks-tabs-tab ks-button ks-tabs-tab-selected">Output</div>
+        <div class="ks-tabs-tab ks-button">QRCode</div>
+    </div>
+    <div class="ks-tabs-body" style="overflow:hidden;">
+        <div class="ks-tabs-panel">
+            <div class="editor">
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&#x2F;&gt;
+&lt;title&gt;GregorianCalendarFormat的示例&lt;&#x2F;title&gt;
+&lt;style type=&quot;text&#x2F;css&quot;&gt;
+    body{
+        background: #fff;
+    }
+&lt;&#x2F;style&gt;
+&lt;script src=&quot;&#x2F;&#x2F;g.alicdn.com&#x2F;kissy&#x2F;k&#x2F;5.0.1&#x2F;seed.js&quot; data-config=&quot;{combine:true}&quot;&gt;&lt;&#x2F;script&gt;
+&lt;&#x2F;head&gt;
+
+&lt;body&gt;
+   &lt;p&gt;说明：要注意区分 GregorianCalendarFormat（时间格式化类） 和 GregorianCalendar（时间类），GregorianCalendarFormat就是设定一些规则来确定GregorianCalendar的输出字符串形式，例如是这种日期时间完整格式(2014年8月14日 星期四 下午07时34分25秒 GMT+0800)或者日期时间中长度格式(2014-8-14 19:34:25)&lt;&#x2F;p&gt;
+   &lt;p&gt;不同的GregorianCalendarFormat对象使得GregorianCalendar输出的日期时间形式不同，如下：&lt;&#x2F;p&gt;
+
+   &lt;p&gt;
+       &lt;span&gt;当前时间：&lt;&#x2F;span&gt; &lt;span id=&quot;str&quot; style=&quot;color:#5c5;&quot;&gt;&lt;&#x2F;span&gt;
+   &lt;&#x2F;p&gt;
+   
+
+   &lt;p&gt;下面不同按钮调用不同的GregorianCalendarFormat对象来格式化GregorianCalendar对象：&lt;&#x2F;p&gt;
+    &lt;div id=&quot;buttons&quot;&gt;
+        &lt;button value=&quot;dtf_FULL&quot;&gt;日期时间完整格式&lt;&#x2F;button&gt;
+        &lt;button value=&quot;dtf_LONG&quot;&gt;日期时间长格式&lt;&#x2F;button&gt;
+        &lt;button value=&quot;dtf_MEDIUM&quot;&gt;日期时间中长度格式&lt;&#x2F;button&gt;
+        &lt;button value=&quot;dtf_SHORT&quot;&gt;日期时间短长度格式&lt;&#x2F;button&gt;
+        &lt;br&#x2F;&gt;
+        &lt;button value=&quot;tf_FULL&quot;&gt;只格式化时间完整格式&lt;&#x2F;button&gt;
+        &lt;button value=&quot;df_MEDIUM&quot;&gt;只格式化日期中长度格式&lt;&#x2F;button&gt;
+        &lt;button value=&quot;instance&quot;&gt;格式化日期时间(instance)&lt;&#x2F;button&gt;
+    &lt;&#x2F;div&gt;
+    &lt;p&gt;
+        &lt;span&gt;根据当前时间格式字符串来解析出时间对象，需要使用相应的时间格式化对象才能解析，且需当前时间字符串有相应的数据才能拿到，例如“2014-8-14”这个解析后再&quot;getHourOfDay&quot;就会出错，故下面的按钮在某些时间格式下会出错：&lt;&#x2F;span&gt; &lt;button id=&quot;parse&quot;&gt;解析&lt;&#x2F;button&gt;
+    &lt;&#x2F;p&gt;
+    &lt;p&gt;解析得到时间对象后可用下面的方法拿到时间对象的相应数据：&lt;&#x2F;p&gt;
+    &lt;div id=&quot;gets&quot;&gt;
+        &lt;button disabled=&quot;disabled&quot; value=&quot;getYear&quot;&gt;getYear&lt;&#x2F;button&gt;
+        &lt;button disabled=&quot;disabled&quot; value=&quot;getMonth&quot;&gt;getMonth&lt;&#x2F;button&gt;
+        &lt;button disabled=&quot;disabled&quot; value=&quot;getDayOfMonth&quot;&gt;getDayOfMonth&lt;&#x2F;button&gt;
+        &lt;button disabled=&quot;disabled&quot; value=&quot;getHourOfDay&quot;&gt;getHourOfDay&lt;&#x2F;button&gt;
+        &lt;br&#x2F;&gt;
+        &lt;button disabled=&quot;disabled&quot; value=&quot;getMinutes&quot;&gt;getMinutes&lt;&#x2F;button&gt;
+        &lt;button disabled=&quot;disabled&quot; value=&quot;getSeconds&quot;&gt;getSeconds&lt;&#x2F;button&gt;
+        &lt;button disabled=&quot;disabled&quot; value=&quot;getMilliseconds&quot;&gt;getMilliseconds&lt;&#x2F;button&gt;
+        &lt;button disabled=&quot;disabled&quot; value=&quot;getWeekOfYear&quot;&gt;getWeekOfYear&lt;&#x2F;button&gt;
+        &lt;br&#x2F;&gt;
+        &lt;button disabled=&quot;disabled&quot; value=&quot;getWeekOfMonth&quot;&gt;getWeekOfMonth&lt;&#x2F;button&gt;
+        &lt;button disabled=&quot;disabled&quot; value=&quot;getDayOfYear&quot;&gt;getDayOfYear&lt;&#x2F;button&gt;
+        &lt;button disabled=&quot;disabled&quot; value=&quot;getDayOfWeek&quot;&gt;getDayOfWeek&lt;&#x2F;button&gt;
+        &lt;button disabled=&quot;disabled&quot; value=&quot;getDayOfWeekInMonth&quot;&gt;getDayOfWeekInMonth&lt;&#x2F;button&gt;
+    &lt;&#x2F;div&gt;
+
+    &lt;script type=&quot;text&#x2F;javascript&quot;&gt;
+    require([&#x27;node&#x27;, &#x27;event-dom&#x27;, &#x27;gregorian-calendar&#x27;, &#x27;gregorian-calendar-format&#x27;], function(Node, DomEvent, GregorianCalendar, GregorianCalendarFormat) {
+            var $ = Node.all;
+            var Style = GregorianCalendarFormat.Style;
+            var currentStyle = &quot;dtf_FULL&quot;;
+            &#x2F;&#x2F;获得时间对象
+            var dategregorian_ins = new GregorianCalendar();
+            var calendar;
+            &#x2F;&#x2F;给时间对象设定当前时间
+            dategregorian_ins.setTime(+new Date());  &#x2F;&#x2F;注意dategregorian_ins.setTime的参数一定要是Number类型
+
+            var formatInstanceStyle = {
+                dtf_FULL: GregorianCalendarFormat.getDateTimeInstance(Style.FULL, Style.FULL), &#x2F;&#x2F;日期时间完整格式
+                dtf_LONG: GregorianCalendarFormat.getDateTimeInstance(Style.LONG, Style.LONG), &#x2F;&#x2F;日期时间长格式
+                dtf_MEDIUM: GregorianCalendarFormat.getDateTimeInstance(Style.MEDIUM, Style.MEDIUM), &#x2F;&#x2F;日期时间中长度格式
+                dtf_SHORT: GregorianCalendarFormat.getDateTimeInstance(Style.SHORT, Style.SHORT), &#x2F;&#x2F;日期时间短长度格式
+                tf_FULL: GregorianCalendarFormat.getTimeInstance(Style.FULL), &#x2F;&#x2F;只格式化时间
+                df_MEDIUM: GregorianCalendarFormat.getDateInstance(Style.MEDIUM), &#x2F;&#x2F;只格式化日期
+                instance: GregorianCalendarFormat.getInstance() &#x2F;&#x2F;相当于GregorianCalendarFormat.getDateTimeInstance(Style.SHORT, Style.SHORT);
+            };
+            &#x2F;&#x2F;format方法用法
+            $(&quot;#str&quot;).text(formatInstanceStyle[&quot;dtf_FULL&quot;].format(dategregorian_ins));
+
+            DomEvent.delegate(&quot;#buttons&quot;, &#x27;click&#x27;, &#x27;button&#x27;, function(event) {
+                currentStyle = $(event.currentTarget).val();
+                var str = formatInstanceStyle[currentStyle].format(dategregorian_ins);
+                $(&quot;#str&quot;).text(str);
+            });
+
+            &#x2F;&#x2F;parse方法用法
+            $(&quot;#parse&quot;).on(&#x27;click&#x27;, function(event) {
+                var str = $(&quot;#str&quot;).text();
+                calendar = formatInstanceStyle[currentStyle].parse(str); &#x2F;&#x2F;需用对应的格式去解析
+                $(&quot;#gets button&quot;).removeAttr(&#x27;disabled&#x27;);
+            });
+
+            DomEvent.delegate(&#x27;#gets&#x27;, &#x27;click&#x27;, &#x27;button&#x27;, function(event) {
+                var func = $(event.currentTarget).val();
+                var value = calendar[func]();
+                alert(value);
+            });
+        });
+    &lt;&#x2F;script&gt;
+&lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;</div>
+        </div>
+        <div class="ks-tabs-panel ks-tabs-panel-selected">
+            <iframe class="output" frameborder="1">
+            	
+            </iframe>
+        </div>
+        <div class="ks-tabs-panel qrcode-wrap">
+            <div class="qrcode"></div>
+            <div class="content">
+                <p class="title">查看移动端演示</p>
+                <p class="qrcode-addr" qrcodeaddr="http://docs.kissyui.com/5.0/demos/date/cited-by-md/gregorian-calendar-format.html" ="text">
+                    示例地址：
+                    <a href="http://docs.kissyui.com/5.0/demos/date/cited-by-md/gregorian-calendar-format.html" target="_blank">http://docs.kissyui.com/5.0/demos/date/cited-by-md/gregorian-calendar-format.html</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div></p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="wrap-disqus">
+    <div class="top-repeat"></div>
+	<div id="disqus_thread"></div>
+</div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<div class="other-page">
+    <div class="wrap">
+        <div class="content">
+            <div class="wrap-content">
+                <p>@2010 - 2112 KISSY UI LIBARAY</p>
+                <div class="github-msg">
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=fork&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	</div>
+	<script type="text/javascript" src="/5.0/assets/js/ace-editor/ace.js"></script>
+	<script type="text/javascript" src="/5.0/assets/js/qrcodejs/qrcode.min.js"></script>
+	<script type="text/javascript" src="/5.0/assets/js/ajax-load.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

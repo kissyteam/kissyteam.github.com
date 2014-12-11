@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>对话框-拖动、伸缩、限制</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/button/assets/dpl.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/overlay/assets/dpl.css">
+<style type="text/css">
+.ks-dialog, .ks-overlay {
+position: absolute; /*防止移位带来的闪烁*/
+left: -9999px;
+top: -9999px;
+outline: none;
+overflow: hidden;
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/** component/plugin/resize 插件需要应用的样式 */
+.ks-overlay .ks-resizable-handler {
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+}
+
+.ks-overlay .ks-resizable-handler-b {
+    height: 6px;
+    width: 100%; /*background-color: yellow;*/
+    /*-6px ie6 cross iframe shim*/
+    bottom: 0;
+    left: 0;
+    cursor: n-resize;
+}
+
+.ks-overlay .ks-resizable-handler-t {
+    height: 6px;
+    width: 100%; /*background-color: yellow;*/
+    top: 0;
+    left: 0;
+    cursor: n-resize;
+}
+
+.ks-overlay .ks-resizable-handler-l {
+    height: 100%;
+    -height: expression(this.parentNode.offsetHeight);
+    width: 6px; /*background-color: yellow;*/
+    top: 0;
+    left: 0;
+    cursor: e-resize;
+}
+
+.ks-overlay .ks-resizable-handler-r {
+    height: 100%;
+    -height: expression(this.parentNode.offsetHeight); /*background-color: yellow;*/
+    width: 6px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: e-resize;
+}
+
+.ks-overlay .ks-resizable-handler-bl {
+    height: 6px;
+    width: 6px; /*background-color: green;*/
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    cursor: sw-resize;
+}
+
+.ks-overlay .ks-resizable-handler-br {
+    height: 6px;
+    width: 6px;
+    z-index: 1; /*background-color: green;*/
+    bottom: 0;
+    right: 0;
+    cursor: se-resize;
+}
+
+.ks-overlay .ks-resizable-handler-tl {
+    height: 6px;
+    width: 6px;
+    z-index: 1; /*background-color: green;*/
+    top: 0;
+    left: 0;
+    cursor: nw-resize;
+}
+
+.ks-overlay .ks-resizable-handler-tr {
+    height: 6px;
+    width: 6px;
+    z-index: 1; /*background-color: green;*/
+    top: 0;
+    right: 0;
+    cursor: ne-resize;
+}
+</style>
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<div class="container">
+    <h1>对话框-拖动、伸缩、限制</h1>
+    <p>这个例子展示利用 component/plugin/resize , component/plugin/drag , dd/plugin/constrain这些常用插件来实现可拖动、伸缩和限制的对话框。开始对话框被限制在下面的红色框容器内，点击“释放对话框”按钮使之释放，点击“限制对话框”使之再次被限制在红色框容器内。</p>
+    <div class="ks-button ks-button-primary" id="open">弹出对话框</div>
+    <div class="ks-button ks-button-primary" id="free">释放对话框</div>
+    <div class="ks-button ks-button-primary" id="constrain">限制对话框</div>
+    <div id="dialog-container" style="width:500px;height:500px;border:1px red solid; margin-top:20px;">
+        
+    </div>
+</div>
+<script type="text/javascript">
+    require(['overlay', 'button', 'component/plugin/resize', 'component/plugin/drag', 'dd/plugin/constrain'], function(Overlay, Button, Resize, Drag, Constrain){
+        var modalDialog = new Overlay.Dialog({
+            headerContent : '我是头部',
+            width : 300,
+            mask : false,
+            bodyContent : '<div>我是主体</div>',
+            align : {  //定位对话框
+                node : '#dialog-container',
+                points : ['cc', 'cc']  //在可视区域正中央
+            },
+            plugins : [
+                new Drag({  //拖动
+                    handlers : ['.ks-overlay-header'],
+                    plugins : [
+                        new Constrain({  //限制可拖动区域
+                            constrain : '#dialog-container'
+                        })
+                    ]
+                }),
+                new Resize({
+                    // 可缩放大小, 并设置最小宽度/最小高度/缩放位置
+                    maxWidth: 400,
+                    maxHeight: 400,
+                    handlers: ["b", "t", "r", "l", "tr", "tl", "br", "bl"]
+                })
+            ]
+        });
+
+        modalDialog.on("afterRenderUI", function () {
+                new Button({
+                    content: "关闭",
+                    elCls: "ks-button-primary",
+                    listeners: {
+                        click: function () {
+                            modalDialog.hide();
+                        }
+                    },
+                    render: modalDialog.get("footer")
+                }).render();
+                new Button({
+                    content: "保存",
+                    elCls : 'ks-button-success',
+                    render: modalDialog.get("footer")
+                }).render();
+            });
+
+        new Button({
+            srcNode : '#open',
+            listeners : {
+                click : function(ev){
+                    modalDialog.show();
+                }
+            }
+        }).render();
+
+        new Button({   //释放对话框按钮
+            srcNode : '#free',
+            listeners : {
+                click : function(ev){
+                    modalDialog.getPlugin('component/plugin/drag')
+                               .getPlugin('dd/plugin/constrain')
+                               .set('constrain',false);
+                }
+            }
+        }).render();
+
+        new Button({   //限制对话框按钮
+            srcNode : '#constrain',
+            listeners : {
+                click : function(ev){
+                    modalDialog.getPlugin('component/plugin/drag')
+                               .getPlugin('dd/plugin/constrain')
+                               .set('constrain','#dialog-container');
+                }
+            }
+        }).render();
+    });
+</script>
+</body>
+</html> 

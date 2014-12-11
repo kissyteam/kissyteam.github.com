@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        button { margin:10px; }
+        div { color:blue; font-weight:bold; }
+        span { color:red; }
+    </style>
+
+    <script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+  <button id='getJSON'>get json from script</button>
+
+<script>
+    require(['node','io'],function(Node,IO){
+        var $=Node.all;
+        $("#getJSON").on("click",function(){
+            
+            IO.getJSON("/5.0/demos/io/cited-by-md/kissy.js",function(d){
+                alert("user : "+d.user+" \n email : "+d.email);                
+            });
+                                            
+        });
+    });
+</script>
+
+</body>
+</html>

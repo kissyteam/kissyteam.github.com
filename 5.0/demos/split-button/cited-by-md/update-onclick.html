@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<title>点击更新按钮内容/改变菜单默认位置</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/button/assets/dpl.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/menubutton/assets/dpl.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/split-button/assets/dpl.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/menu/assets/dpl.css">
+<script type="text/javascript" src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"  data-config="{combine:true}"></script>
+</head>
+<body>
+<div style="width:90%;margin:0 auto;">
+    <h1>点击更新按钮内容/改变菜单默认位置</h1>
+    <div id="button-container1">
+        
+    </div>
+</div>
+
+<script type="text/javascript">
+	require(['split-button'], function(SplitButton){
+        var splitButton1 = new SplitButton({
+            render : '#button-container1',
+            alignWithEl : false,    //使下拉菜单不对齐button左侧
+            button : {  
+                xclass : 'button',
+                content : 'Button'
+            },
+            menuButton : {  
+                xclass : 'menu-button',
+                matchElWidth : false,
+                collapseOnClick : true,  //点击下拉菜单项自动收起下拉菜单
+                menu : {
+                    xclass : 'popupmenu',
+                    children : [
+                        {
+                            xclass : 'menuitem',
+                            content : 'content1'
+                        },
+                        {
+                            xclass : 'menuitem',
+                            content : 'content2'
+                        }
+                    ]
+                },
+                listeners : {
+                    click : function(ev){   //监听点击事件并更新SplitButton的按钮内容
+                        this.get('parent').get('button')
+                            .set('content', ev.target.get('content'));
+                    }
+                }
+            }
+        });
+        splitButton1.render();
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<title>从已有html生成tabs</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/tabs/assets/dpl.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/button/assets/dpl.css">
+<script type="text/javascript" src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"  data-config="{combine:true}"></script>
+</head>
+<body>
+<div style="width:90%;margin:0 auto;">
+    <h1>从已有html生成tabs</h1>
+    <div id="container">
+        <div class="ks-tabs ks-tabs-top" id="tabs">
+            <div class="ks-tabs-bar">
+                <div class="ks-tabs-tab ks-button ks-tabs-tab-selected ks-tabs-tab-closable">
+                    <div class="ks-tabs-tab-content">tab-1</div>
+                    <span class="ks-tabs-tab-close"></span>
+                </div>
+                <div class="ks-tabs-tab ks-button">
+                    <div class="ks-tabs-tab-content">tab-2</div>
+                </div>
+            </div>
+            <div class="ks-tabs-body">
+                <div class="ks-tabs-panel ks-tabs-panel-selected">
+                    <p>tab-1 content</p>
+                </div>
+                <div class="ks-tabs-panel">
+                    <p>tab-2 content</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+	require(['tabs'], function(Tabs){
+        var myTabs = new Tabs({
+            srcNode : '#tabs',
+        }).render();
+    });
+</script>
+</body>
+</html>

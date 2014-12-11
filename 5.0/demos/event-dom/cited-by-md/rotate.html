@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <style type="text/css">
+    body{
+        background: #fff;
+    }
+    </style>
+    <script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+
+<h1>open in ios safari test rotate event</h1>
+
+<div id='t' tabindex='0'
+     style='border:1px solid green;
+     width:200px;height:200px;margin:10px'>
+    rotate me
+</div>
+
+<script>
+
+    require(['event-dom', 'event-dom/gesture/rotate'], function (DomEvent, GestureRotate) {
+        var t = document.getElementById('t');
+        var o;
+        DomEvent.on('#t', GestureRotate.ROTATE_START, function (e) {
+            o = 0;
+            if (t.style.WebkitTransform) {
+                o = parseInt(t.style.WebkitTransform.replace(/rotate\(/, ''));
+            }
+        });
+        DomEvent.on('#t', GestureRotate.ROTATE, function (e) {
+            t.style.WebkitTransform = 'rotate(' + (o + parseInt(e.rotation))%360 + 'deg)';
+        });
+
+
+    });
+
+</script>
+</body>
+</html>

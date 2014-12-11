@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scale=no">
+	<title>Guides - KISSY v5.0 Documentation</title>
+	<link rel="shortcut icon" href="/5.0/assets/img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/github.css"/>
+	<script type="text/javascript" src="http://g.tbcdn.cn/kissy/edge/2014.09.05/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="inner">
+	<div class="toolbar">
+		<a href="/5.0">
+			<img class="mini-logo" src="/5.0/assets/img/mini-logo.png">
+		</a>
+		<ul class="nav clearfix">
+			<li class="docs">
+				<span>
+					Docs
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/guides/">Guides</a></li>
+					<li><a href="/5.0/api">Api Docs</a></li>
+					<li><a href="/5.0/demos">Demos</a></li>
+				</ul>
+			</li>
+			<li class="more">
+				<span>
+					More
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/more/faq.html">FAQ</a></li>
+					<li><a href="http://gallery.kissyui.com/">Gallery</a></li>
+					<li><a href="http://blog.kissyui.com/">KISSY Blog</a></li>
+					<li><a href="https://github.com/daxingplay/kmc">KMC</a></li>
+					<li><a href="https://github.com/minghe/generator-bee/wiki/generator-bee%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">Generator</a></li>
+				</ul>
+			</li>
+			<li class="split"></li>
+			<li class="nav-other"><a href="/5.0/quick-start.html">Quick Start</a></li>
+			<li class="nav-other"><a href="https://github.com/kissyteam/kissy">Contribute</a></li>
+			<li class="nav-other"><a target="_blank" href="/5.0/kissyup-middle.html">KISSY UP</a></li>
+		</ul>
+	</div>
+	<div class="search">
+		<script>
+			(function() {
+			var cx = '003618533255763067140:5nkycw1pbey';
+			var gcse = document.createElement('script');
+			gcse.type = 'text/javascript';
+			gcse.async = true;
+			gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+			    '//www.google.com/cse/cse.js?cx=' + cx;
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(gcse, s);
+			})();
+		</script>
+		<gcse:search></gcse:search>
+	</div>
+</div>
+	</div>
+	<div class="main">
+		<div class="guide">
+			<div class="logo-on-top clearfix">
+				<img src="/5.0/assets/img/logo-on-top.png">
+			</div>
+			<div class="inner clearfix">
+				<div id="sidebar">
+					<a class="link-apidocs btn btn-primary" href="../../api/classes/Base.html">API Docs</a>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">Outline</h3>
+						</div>
+						<div class="panel-body">
+							<ul class="outline">
+								<li class="level2"><a href="#概要">概要</a></li><li class="level3"><a href="#mix">mix</a></li><li class="level3"><a href="#merge">merge</a></li><li class="level3"><a href="#extend">extend</a></li><li class="level3"><a href="#augment">augment</a></li><li class="level3"><a href="#clone">clone</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Features</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../guides/base/index.html">Base基本介绍</a></p><p><a href="../../guides/base/oo.html">KISSY中的面向对象</a></p>
+						</div>
+					</div>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Demos</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../demos/base/index.html">Base基本使用示例</a></p>
+						</div>
+					</div>
+				</div>
+				<div id="main-content">
+					<p></p>
+<h1 id="KISSY中的面向对象">KISSY中的面向对象</h1><p>JavaScript 语言自成体系，自有一套代码重用的模式，这些常见的代码重用模式可以在《Javascript 设计模式》、《JavaScript 编程模式》中找到理论基础。KISSY 即是实践了这些典型的代码重用模式，并作为 KISSY 代码库的面向对象的核心，向高层代码提供语言的完备性支撑。</p>
+<p>这些理论基础大都来自<a href="https://speakerdeck.com/lijing00333/javascript-patterns">&quot;javascript 编程模式&quot;</a>一书：</p>
+<p><img src="http://gtms01.alicdn.com/tps/i1/T1mumMFdBdXXXMOITY-406-251.png" alt=""></p>
+<p>KISSY 中面向对象的范畴包含两个方面，本篇讲解第一方面</p>
+<ul>
+<li>语言层面：JS 语言特有的编程模式<ul>
+<li>面向对象相关的模式</li>
+<li>JS 语言增强的工具函数</li>
+</ul>
+</li>
+<li>最佳实践：KISSY 对于面向UI、模块生命周期的封装，包括组件模式、插件模式等</li>
+</ul>
+<h2 id="概要">概要</h2><p>JavaScript 语言没有原生类的概念，对象之间共享方法的关键渠道是通过原型。而具备某一类原型方法的&#39;模板对象&#39;，通常被称作基类，子类除了调用基类的构造器（手动调用）外，最重要的就是要拥有基类的行为能力（继承基类原型上的方法）。这个过程中涉及到五种典型的行为：</p>
+<ul>
+<li>混合 mix</li>
+<li>克隆 clone</li>
+<li>扩充 augment</li>
+<li>继承 extend</li>
+<li>合并 merge</li>
+</ul>
+<p>以 kissy 的 API 为例，merge 和 augment 都是基于 mix 方法，本质上利用了 JS 的动态特性，在运行时为对象增减成员；</p>
+<p>extend 方法的实现比较典型，总体思路是子构造器的原型对象指向父构造器的一个实例，具体有一些细节问题要处理。类继承体系中继承的是对象的模板（即类），JS 没有对于对象的更高一层的抽象数据结构，即使有 constructor 这种东西，它本身也只是 function 对象而已。</p>
+<h3 id="mix">mix</h3><p><code>mix (receiver , supplier [ , overwrite = true , whitelist , deep ]) =&gt; Object</code></p>
+<p>将 supplier 对象的成员复制到 receiver 对象上。参数：</p>
+<ul>
+<li>receiver (object) – 属性接受者对象.</li>
+<li>supplier (object) – 属性来源对象.</li>
+<li>overwrite (boolean) – 是否覆盖接受者同名属性.</li>
+<li>whitelist (Array<string>) – 属性来源对象的属性白名单, 仅在名单中的属性进行复制.</li>
+<li>deep (boolean) – 是否进行深度 mix (deep copy)</li>
+</ul>
+<p>mix 默认不是递归进行的. 如果其中一个属性为对象或者数组，那么他将会被接下来对象的同名属性对应的值所代替，即值不会被合并。 如果设置了参数 deep = true ，那么会对数组和简单对象<code>KISSY.isPlainObject()</code>递归合并.</p>
+<p>supplier undefined 的属性值不会被复制，不过对象从原型继承下来下的值则会被复制.    </p>
+<blockquote>
+<p>该方法仅适用于 javascript 对象，不要在浏览器对象上调用，例如 node.style</p>
+</blockquote>
+<p>简单 mix</p>
+<pre><code><span class="hljs-built_in">require</span>([<span class="hljs-string">'util'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(Util)</span></span>{
+    <span class="hljs-keyword">var</span> r = { a: <span class="hljs-string">'a'</span>, b: <span class="hljs-string">'b'</span> };
+    Util.mix(r, { c: <span class="hljs-string">'c'</span> });
+    <span class="hljs-built_in">console</span>.log(r.c); <span class="hljs-comment">// =&gt; 'c'</span>
+
+    Util.mix(r, { a: <span class="hljs-string">'a2'</span> }, <span class="hljs-literal">false</span>);
+    <span class="hljs-built_in">console</span>.log(r.a); <span class="hljs-comment">// =&gt; 'a'</span>
+
+    Util.mix(r, { e: <span class="hljs-string">'e'</span>, f: <span class="hljs-string">'f'</span> }, <span class="hljs-literal">true</span>, [<span class="hljs-string">'f'</span>]);
+    <span class="hljs-built_in">console</span>.log(r.e); <span class="hljs-comment">// =&gt; undefined</span>
+    <span class="hljs-built_in">console</span>.log(r.f); <span class="hljs-comment">// =&gt; 'f'</span>
+})
+</code></pre><p>深度mix</p>
+<pre><code><span class="hljs-keyword">var</span> object1 = {
+  apple: <span class="hljs-number">0</span>,
+  banana: {weight: <span class="hljs-number">52</span>, price: <span class="hljs-number">100</span>},
+  cherry: <span class="hljs-number">97</span>
+};
+<span class="hljs-keyword">var</span> object2 = {
+  banana: {price: <span class="hljs-number">200</span>},
+  durian: <span class="hljs-number">100</span>
+};
+
+<span class="hljs-comment">/* merge object2 into object1, recursively */</span>
+Util.mix(object1,object2,<span class="hljs-literal">undefined</span>,<span class="hljs-literal">undefined</span>,<span class="hljs-literal">true</span>);
+
+<span class="hljs-built_in">console</span>.log(object1); <span class="hljs-comment">// =&gt; { apple: 0, banana: { weight: 52, price: 200 }, cherry: 97, durian: 100 }</span>
+</code></pre><p>mix是最自然也是最简单的为 JS 对象添加特性的方式，具体实现就是将一个对象的（所有或指定）属性指向给另一个对象，在静态语言中是无能为力的。</p>
+<p>虽然 Yahoo 将这种方式学院式地命名为“augmentObject”并且声称使用它的合适场合是在“扩充一个‘静态类’”时。所谓“静态类”这种说法，只能说是中静态类语言的遗毒太深，什么概念都要一一映射至其上。事实上，“静态类”对应 JS 中的概念是“非构造器对象”，比如字面量对象。而之所以 Yahoo 强调“静态类”，那是因为“静态类”和构造器之间间有一个显区别，前者没有 prototype 属性。</p>
+<p>补充一点，“静态类”也可以是构造器，只不过它的 prototype 没有多大意义（比如指向 {}）。</p>
+<p>事实上，这个方法是 augment 和 merge 的基础。可以看到，JS 中直接对对象进行各种操作其实非常方便，类什么的都是浮云。</p>
+<h3 id="merge">merge</h3><p><code>merge (s1,s2[,...]) =&gt; Object</code></p>
+<p>将多个对象的成员合并到一个新对象上. 参数中, 后面的对象成员会覆盖前面的。如果用mix混合对象时，receiver 会被改变，如果想要保留原始的 receiver ，可以使用 KISSY.merge()</p>
+<pre><code><span class="hljs-keyword">var</span> <span class="hljs-class"><span class="hljs-keyword">object</span><span class="hljs-title">=Util</span>.<span class="hljs-title">merge</span>(</span>object1,object2);
+</code></pre><p>简单例子：</p>
+<pre><code><span class="hljs-keyword">var</span> a = { a: <span class="hljs-string">'a'</span> },
+b = { b: <span class="hljs-string">'b'</span> },
+c = { b: <span class="hljs-string">'b2'</span>, c: <span class="hljs-string">'c'</span> };
+
+<span class="hljs-keyword">var</span> o = Util.merge(a, b, c);
+<span class="hljs-built_in">console</span>.log(o.a); <span class="hljs-comment">// =&gt; 'a'</span>
+<span class="hljs-built_in">console</span>.log(o.b); <span class="hljs-comment">// =&gt; 'b2'</span>
+<span class="hljs-built_in">console</span>.log(o.c); <span class="hljs-comment">// =&gt; 'c'</span>
+</code></pre><p>简单情况下 merge 方法常用来合并配置信息. 推荐使用 Base 处理属性配置.</p>
+<h3 id="extend">extend</h3><p><code>extend (r,s[,px,sx]) =&gt; Function</code></p>
+<p>让函数对象 r 继承函数对象 s，参数</p>
+<ul>
+<li>r (function) – receiver,将要继承的子类函数</li>
+<li>s (function|object) – supplier,继承自的父类函数</li>
+<li>px (object) – prototype members, 需要添加/覆盖的原型成员</li>
+<li><p>sx (object) – static members, 需要添加/覆盖的静态成员.</p>
+<p>  function Bird(name) { this.name = name; }
+  Bird.prototype.fly = function() { alert(this.name + &#39; is flying now!&#39;); };</p>
+<p>  function Chicken(name) {</p>
+<pre><code>  Chicken.superclass.constructor.<span class="hljs-keyword">call</span>(<span class="hljs-keyword">this</span>, name);
+</code></pre><p>  }
+  Util.extend(Chicken, Bird,{</p>
+<pre><code>  fly:<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+      Chicken.superclass.fly.call(<span class="hljs-keyword">this</span>)
+      alert(<span class="hljs-string">"it's my turn"</span>);
+  }
+</code></pre><p>  });</p>
+<p>  new Chicken(&#39;kissy&#39;).fly();</p>
+</li>
+</ul>
+<p>extend 方法是 KISSY 里类继承的实现方式. 书写 JavaScript 代码时, 请忘记传统 OO 里的继承体系。子类方法中可通过 superclass 来访问父类函数的原型, 进而调用父类方法.</p>
+<p>Util.extend 像 Node.js 里的 util.inherits，就是用于声明两个类的继承关系，与 util.inherits 相比，它更为贴心，还会维护 superclass 和 superclass.constructor。</p>
+<p>注意构造函数体内，通过 Chicken 类上的 superclass 属性，子类不再需要显式写明父类的名称， 只需要直接调 <code>SubClass.superclass.constructor.call(this, attrs)</code> 即可。</p>
+<p>而在方法内，也可以通过 SubClass.superclass 拿到父类上的方法，类似其他编程语言中的 super 之类。</p>
+<h3 id="augment">augment</h3><p><code>augment(r, s1 [, s2 , ...], ov = true, wl) =&gt; Function</code></p>
+<p>将 s1,s2.... 的 <code>prototype</code> 属性的成员复制到 <code>r.prototype</code> 上。这时被复制的成员来自于一个Fucntion对象，这个对象一般被称为掺元类（mixin class）。比如 KISSY 里的 CustemEvent 就是一个掺元类。掺元类只是被扩充用的。参数说明：</p>
+<ul>
+<li>r (function) – 将要扩充的函数</li>
+<li><code>...s1</code> (function|object) – 扩充来源函数或对象. 非函数对象时复制的就是 s 的成员.</li>
+<li>ov (boolean) – 是否覆盖 r.prototype 同名属性.</li>
+<li>whitelist (Array<string>) – 属性来源对象的属性白名单, 仅在名单中的属性进行复制.</li>
+</ul>
+<pre><code><span class="hljs-keyword">var</span> Shoutable = {
+    shout: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{ alert(<span class="hljs-string">'I am '</span> + <span class="hljs-keyword">this</span>.name + <span class="hljs-string">'.'</span>); }
+};
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Dog</span><span class="hljs-params">(name)</span> </span>{ <span class="hljs-keyword">this</span>.name = <span class="hljs-string">'Dog '</span> + name; }
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Pig</span><span class="hljs-params">(name)</span> </span>{ <span class="hljs-keyword">this</span>.name = <span class="hljs-string">'Pig '</span> + name; }
+
+Util.augment(Dog, Utilhoutable);
+Util.augment(Pig, Shoutable);
+
+<span class="hljs-keyword">new</span> Dog(<span class="hljs-string">'Jack'</span>).shout(); <span class="hljs-comment">// =&gt; I am Dog Jack.</span>
+<span class="hljs-keyword">new</span> Pig(<span class="hljs-string">'Mary'</span>).shout(); <span class="hljs-comment">// =&gt; I am Pig Mary.</span>
+</code></pre><p>augment 方法在 KISSY 里非常基础非常重要. 传统 OO 语言里, 可以通过继承或接口来实现共性方法. 在 JavaScript 里, 通过 mixin 特性, 一切变得更简单. augment 是动态语言 mixin 特性的体现, 灵活运用, 能让代码非常优雅简洁.</p>
+<h3 id="clone">clone</h3><p>对象的值的拷贝，绕过引用的拷贝。</p>
+<hr>
+<p>有了 Util.augment，我们可以很方便得扩展类的原型；有了 Util.extend，我们可以很方便地继承；那么 KISSY 对属性 getter、setter 有什么好的解决方案么？答案自然是 Base。</p>
+<p>顾名思义，Base 是个基础类；而这个类，也是通过 Util.augment 等搞定的。在<a href="./index.html">Base</a>小节讲解。</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="wrap-disqus">
+    <div class="top-repeat"></div>
+	<div id="disqus_thread"></div>
+</div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<div class="other-page">
+    <div class="wrap">
+        <div class="content">
+            <div class="wrap-content">
+                <p>@2010 - 2112 KISSY UI LIBARAY</p>
+                <div class="github-msg">
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=fork&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<title>using xclass生成树节点</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/button/assets/dpl.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/tree/assets/dpl.css">
+<script type="text/javascript" src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"></script>
+</head>
+<body>
+<div style="width:90%;margin:0 auto;">
+    <h1>using xclass生成树节点</h1>
+    <p>下面示例为了演示，部分子树节点使用xclass : check-tree-node 生成多选树结构，部分使用xclass : tree-node 来生成普通树结构。</p>
+    <a href="javascript:void(0)" id="expandAll" class="ks-button">展开全部</a>&nbsp;
+    <a href="javascript:void(0)" id="collapseAll" class="ks-button">关闭全部</a>
+    <a href="javascript:void(0)" id='remove' class="ks-button">remove first child</a>
+    <div id="treeContainer" style="width: 200px;margin: 20px 0;">
+       
+    </div>
+</div>
+
+<script type="text/javascript">
+    require(['tree', 'node'], function(Tree, $){
+        var tree = new Tree({
+            content: "淘宝网",
+            expanded: true,
+            children: [
+                {
+                    xclass : 'check-tree-node',
+                    content: "收藏夹",
+                    children: [
+                        {
+                            content: "收藏的宝贝"
+                        },
+                        {
+                            content: "收藏的店铺"
+                        }
+                    ]
+                },
+                {
+                    content: '我要买'
+                },
+                {
+                    xclass : 'tree-node',
+                    content: '我的淘宝',
+                    children: [
+                        {
+                            content: "已买到的宝贝"
+                        },
+                        {
+                            content: "已买到的宝贝"
+                        }
+                    ]
+                }
+            ],
+            // showRootNode:false,
+            render: "#treeContainer"
+        });
+
+        tree.render();
+
+        tree.on("expand", function (e) {
+            console.log("expand : " + e.target.get("content"));
+            console.log("expandIconEl");
+            console.log(e.target.get("expandIconEl"));
+            console.log("iconEl");
+            console.log(e.target.get("iconEl"));
+        });
+
+        tree.on("collapse", function (e) {
+            console.log("collapse : " + e.target.get("content"));
+        });
+
+        tree.on("click", function (e) {
+            console.log("action : " + e.target.get("content"));
+        });
+
+        $("#expandAll").on("click", function () {
+            tree.expandAll();
+        });
+
+        $("#collapseAll").on("click", function () {
+            tree.collapseAll();
+        });
+        $("#remove").on("click", function () {
+            tree.removeChild(tree.getChildAt(0))
+        });
+    });
+</script>
+</body>
+</html>

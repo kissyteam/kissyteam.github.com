@@ -1,0 +1,361 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>KISSY Base DEMO</title>
+        <style type="text/css">
+        body{
+            background: #fff;
+        }
+        </style>
+        <script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script> </head>
+    <body>
+        <h3>下面例子共用三个类 Person/Student/Teacher ，其中 Student 和 Teacher 都是继承自 Person ，演示结果请打开控制台查看，具体细节查看demo代码。</h3>
+        <label for="J_input">先选择角色再操作：</label>
+        <select id="J_input">
+            <option selected> </option>
+            <option value="person">Person</option>
+            <option value="teacher">Teacher</option>
+            <option value="student">Student</option>
+        </select>
+        <p>Common Operation:</p>
+        <div id="common">
+            <button id="introduce">自我介绍</button>
+            <br/>
+            <label>请输入名字（名字不能为空）：</label>
+            <input type="text" id="Name">
+            <button id="setName">SetName</button>
+            <br/>
+            
+            <label for="Age">请输入年龄（必须是数字）：</label>
+            <input type="text" id="Age">
+            <button id="setAge">SetAge</button>
+            <br/>
+            <label for="changeGender">当尝试改变性别时阻止发生：</label>
+            <button id="changeGender">改变性别</button>
+        </div>
+
+        <p>Student Operation:</p>
+        <label for="subject">科目：</label><input type="text" id="subject">
+        <label for="socre">分数：</label><input type="text" id="score">
+        <button id="addScore">addScore</button>
+
+        <p>Teacher Opeartion:</p>
+        <button id="upLevel">upLevel</button>
+        <button id="downLevel">downLevel</button>
+
+        <script>
+        require(['base', 'node', 'util'], function(Base, Node, Util) {
+            var Level = {
+                PRIMARY: 0,
+                INTERMEDIATE: 1,
+                ADVANCED: 2,
+                SPECIAL: 3
+            };
+
+            var Gender = {
+                MALE: 0,
+                FEMALE: 1
+            };
+
+
+            var $ = Node.all;
+            // 自定义类
+            // 继承 Base
+            var Person = Base.extend({
+                sayHi: function(name) {
+                    console.log("Hi, " + name + "! Nice to meet you!");
+                    //触发自定义事件
+                    this.fire('say');
+                },
+
+                tellName: function() {
+                    console.log("My name is " + this.get('name') + ".");
+                    this.fire('say');
+                },
+
+                tellAge: function() {
+                    console.log("I'm " + this.get('age') + " years old.");
+                    this.fire('say');
+                },
+
+                introduce: function(extra) {
+                    extra = extra || 'I am a person on earth'
+                    console.log("Hello everyone, my name is " + this.get('name') + ", and I'm " + this.get('age') + " years old." + extra);
+                    this.fire('say');
+                }
+            },{
+                ATTRS: {
+                    name: {
+                        //设置默认值
+                        value: "",
+
+                        /*
+                        验证name是否正确，返回值不为true则无法设置。
+                         */
+                        validator: function(value) {
+                            if ( !Util.isString(value) || value == "") {
+                                return "Please set correct name!";
+                            }
+                        }
+
+                    },
+                    age: {
+                        value: 1,
+                        validator: function(value) {
+                            value = parseInt(value);
+                            if (!Util.isNumber(value) || Number.isNaN(value) || (value < 1 && value > 100)) {
+                                return "Please set correct age!";
+                            }
+                        }
+                    },
+                    gender: {
+                        value: Gender.MALE,
+                        /*
+                        指定setter和getter方法的操作
+                         */
+                        setter: function(value) {
+                            if ( Util.isString(value) ) {
+                                return Gender[value.toUpperCase()];
+                            }
+                            return value;
+                        },
+                        getter: function(value) {
+                            return Util.keys(Gender)[value];
+                        },
+
+                        validator: function(value) {
+                            var str = Util.isString(value) && !(value.toUpperCase() in Gender);
+                            var num = value > 1 || value < 0;
+                            if (str || num) {
+                                return "Gender must be Female or Male!";
+                            }
+                        }
+                    }
+                }
+            });
+
+            window.person = new Person({
+                name: "Andy",
+                age: 18,
+                gender: "female"
+            });
+
+            /*
+            阻止改变性别
+             */
+            person.on('beforeGenderChange', function(ev) {
+                ev.preventDefault();
+                console.log("Gender can't change!");
+            });
+
+            /*
+            任何属性变化时，给出提醒
+             */
+            person.on('*Change', function(ev) {
+                console.log('Change ' + ev.attrName + ': ' + ev.prevVal + ' --> ' + ev.newVal);
+            });
+
+            /*
+            继承Person
+             */
+            var Student = Person.extend({
+                introduce: function() {
+                    //调用父类方法
+                    this.callSuper("I'm a student of " + this.get('school') + ".My hometown is " + this.get('from') + ".");
+                },
+
+                addScore: function(subject, score) {
+                    //error异常收集
+                    //设置子属性
+                    this.set('score.' + subject, score, {
+                        error: function(e) {
+                            console.log(e);
+                        }
+                    });
+                },
+
+                /*
+                bind属性变化的方法
+                 */
+                _onSetScore: function(value, ev) {
+                    if (!Util.isEmptyObject(value)) {
+                        console.log('Score change');
+                        console.log(this.get('score'));
+                    }
+                }
+            }, {
+                ATTRS: {
+                    school: {
+                        value: ""
+                    },
+
+                    from: {
+                        value: ""
+                    },
+
+                    score: {
+                        //验证支持对子属性的验证
+                        validator: function(value) {
+                            return (value.math >= 0 && value.math <= 100);
+                        }
+                    }
+                }
+            });
+
+            var Teacher = Person.extend({
+                introduce: function() {
+                    this.callSuper("I'm a " + this.get('level') + "teacher, and I teach " + this.get('teach') + ".");
+                },
+
+                upLevel: function() {
+                    this.set('level', this.get('level') + 1, {
+                        error: function(e) {
+                            console.log(e);
+                        }
+                    });
+                },
+
+                downLevel: function() {
+                    this.set('level', this.get('level') - 1, {
+                        error: function(e) {
+                            console.log(e);
+                        }
+                    });
+                }
+            }, {
+                ATTRS: {
+                    teach: {
+                        value: ""
+                    },
+
+                    level: {
+                        value: Level.PRIMARY,
+                        setter: function(value) {
+                            if ( Util.isString(value) ) {
+                                return Level[value.toUpperCase()];
+                            }
+                            return value;
+                        }
+                    }
+                }
+            });
+
+            window.student = new Student({
+                name: "Jim",
+                age: 20,
+                school: 'MIT',
+                from: 'China'
+            });
+            /*
+            阻止改变性别
+             */
+            student.on('beforeGenderChange', function(ev) {
+                ev.preventDefault();
+                console.log("Gender can't change!");
+            });
+
+            window.teacher = new Teacher({
+                name: "David",
+                age: 50,
+                gender: Gender.MALE,
+                teach: "Math",
+                level: Level["INTERMEDIATE"]
+            });
+            /*
+            阻止改变性别
+             */
+            teacher.on('beforeGenderChange', function(ev) {
+                ev.preventDefault();
+                console.log("Gender can't change!");
+            });
+            teacher.on('beforeLevelChange', function(ev) {
+                if (ev.newVal > Level.SPECIAL) {
+                    ev.preventDefault();
+                    console.log("This teacher is already highest level!");
+                    return;
+                } else if (ev.newVal < Level.PRIMARY) {
+                    ev.preventDefault();
+                    console.log("This teacher is already lowest level!");
+                    return;
+                }
+            });
+
+            //在level变化后的事件
+            teacher.on('afterLevelChange', function(ev) {
+                if (ev.prevVal < ev.newVal) {
+                    console.log("Congratulation!");
+                } else {
+                    console.log("I'm sorry to hear that!");
+                }
+            });
+
+            //自定义事件
+            person.on('say', function(ev) {
+                console.log("everyone hear!");
+            });
+
+            $("#common").delegate('click', 'button', function(event) {
+                var target = $(event.currentTarget),
+                    id = target.attr("id"),
+                    type = $("#J_input").val();
+
+                if (type != "") {
+                    switch(id) {
+                        case 'introduce':
+                        window[type].introduce();
+                        break;
+                        case 'setName':
+                        var name = $("#Name").val();
+                        window[type].set('name', name, {
+                            error: function(e) {
+                                console.log(e);
+                            }
+                        });
+                        break;
+                        case 'setAge':
+                        var age = $("#Age").val();
+                        window[type].set('age', age, {
+                            error: function(e) {
+                                console.log(e);
+                            }
+                        });
+                        break;
+                        case 'changeGender':
+                        var gender = Gender[window[type].get('gender')];
+
+                        gender = gender == 0 ? 1 : 0;
+                        gender = Util.keys(Gender)[gender];
+
+                        window[type].set('gender', Gender[gender], {
+                            error: function(e) {
+                                console.log(e);
+                            }
+                        });
+                        break;
+                        default:
+                        break;
+                    }
+                }
+            });
+
+            $("#addScore").on('click', function(event) {
+                var subject = $("#subject").val();
+                var score = $("#score").val();
+
+                if (subject && parseInt(score)) {
+                    student.addScore(subject, score);
+                }
+            });
+
+            $("#upLevel").on('click', function(event) {
+                teacher.upLevel();
+            });
+
+            $("#downLevel").on('click', function(event) {
+                teacher.downLevel();
+            });
+        });
+        </script>
+    </body>
+</html>

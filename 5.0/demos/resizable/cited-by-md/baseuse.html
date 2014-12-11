@@ -1,0 +1,134 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>简单使用Resizable</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/button/assets/dpl.css">
+<script type="text/javascript" src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"  data-config="{combine:true}"></script>
+<style type="text/css">
+/** 钩子handlers的样式*/
+.ks-resizable-handler {
+position: absolute;
+overflow: hidden;
+font-size: 0;
+line-height: 0;
+z-index: 1;
+}
+.ks-resizable-handler-t,.ks-resizable-handler-b,  .ks-resizable-handler-r, .ks-resizable-handler-l {
+    opacity: 0.6;
+    filter: alpha(opacity = 60);
+    background-color: #F19EC2;
+}
+.ks-resizable-handler-t,.ks-resizable-handler-b {
+    left: 0;
+    height: 5px;
+    width: 100%;
+    cursor: n-resize;
+}
+.ks-resizable-handler-b {
+    bottom: 0;
+}
+
+.ks-resizable-handler-t {
+    top: 0;
+}
+.ks-resizable-handler-r, .ks-resizable-handler-l {
+    top: 0;
+    height: 100%;
+    -height: expression(this.parentNode.offsetHeight);
+    width: 5px;
+    cursor: e-resize;
+}
+.ks-resizable-handler-l {
+    left: 0;
+}
+
+.ks-resizable-handler-r {
+    right: 0;
+}
+
+.ks-resizable-handler-bl, .ks-resizable-handler-br, .ks-resizable-handler-tl, .ks-resizable-handler-tr {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border: 1px solid #535353;
+    background-color: #E4007F;
+    z-index: 2;
+}
+.ks-resizable-handler-bl {
+    left: -3px;
+    bottom: -3px;
+    cursor: sw-resize;
+}
+
+.ks-resizable-handler-br {
+    right: -3px;
+    bottom: -3px;
+    cursor: nw-resize;
+}
+
+.ks-resizable-handler-tl {
+    left: -3px;
+    top: -3px;
+    cursor: nw-resize;
+}
+
+.ks-resizable-handler-tr {
+    right: -3px;
+    top: -3px;
+    cursor: sw-resize;
+}
+
+.select-box {
+    position: relative;
+    width: 300px;
+    height: 150px;
+    margin-top: 20px;
+    background: white;
+    cursor: auto;
+}
+
+.select-box .content {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    filter: alpha(opacity = 80);
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>简单使用Resizable</h1>
+    <p>点击“销毁”按钮将销毁resizable功能，元素不能再伸缩。钩子handlers的样式根据需要自行编写，可仿造这个例子的样式改造。</p>
+    <div id="destroy" class="ks-button ks-button-default">销毁</div>
+    <div id="something-can-resize" class="select-box">
+        <div class="content">
+            <img src="http://gju3.alicdn.com/bao/uploaded/i2/10000050991219761/TB2F_MZaXXXXXX_XpXXXXXXXXXX_!!0-0-juitemmedia.jpg_460x460Q90.jpg" />
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+	require(['node', 'resizable'], function($, Resizable) {
+	    var r = new Resizable({
+	        node:"#something-can-resize",
+	        // 指定可拖动的位置
+	        handlers:["b","t","r","l","tr","tl","br","bl"],
+
+	        // 可选, 设置最小/最大 宽高
+	        minHeight:100,
+	        minWidth:100,
+	        maxHeight:300,
+	        maxWidth:400
+	    });
+	    $("#destroy").on("click", function() {
+	        r.destroy();
+	    });
+	});
+
+</script>
+</body>
+</html>

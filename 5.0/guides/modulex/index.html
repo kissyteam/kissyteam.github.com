@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scale=no">
+	<title>Guides - KISSY v5.0 Documentation</title>
+	<link rel="shortcut icon" href="/5.0/assets/img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/github.css"/>
+	<script type="text/javascript" src="http://g.tbcdn.cn/kissy/edge/2014.09.05/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="inner">
+	<div class="toolbar">
+		<a href="/5.0">
+			<img class="mini-logo" src="/5.0/assets/img/mini-logo.png">
+		</a>
+		<ul class="nav clearfix">
+			<li class="docs">
+				<span>
+					Docs
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/guides/">Guides</a></li>
+					<li><a href="/5.0/api">Api Docs</a></li>
+					<li><a href="/5.0/demos">Demos</a></li>
+				</ul>
+			</li>
+			<li class="more">
+				<span>
+					More
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/more/faq.html">FAQ</a></li>
+					<li><a href="http://gallery.kissyui.com/">Gallery</a></li>
+					<li><a href="http://blog.kissyui.com/">KISSY Blog</a></li>
+					<li><a href="https://github.com/daxingplay/kmc">KMC</a></li>
+					<li><a href="https://github.com/minghe/generator-bee/wiki/generator-bee%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">Generator</a></li>
+				</ul>
+			</li>
+			<li class="split"></li>
+			<li class="nav-other"><a href="/5.0/quick-start.html">Quick Start</a></li>
+			<li class="nav-other"><a href="https://github.com/kissyteam/kissy">Contribute</a></li>
+			<li class="nav-other"><a target="_blank" href="/5.0/kissyup-middle.html">KISSY UP</a></li>
+		</ul>
+	</div>
+	<div class="search">
+		<script>
+			(function() {
+			var cx = '003618533255763067140:5nkycw1pbey';
+			var gcse = document.createElement('script');
+			gcse.type = 'text/javascript';
+			gcse.async = true;
+			gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+			    '//www.google.com/cse/cse.js?cx=' + cx;
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(gcse, s);
+			})();
+		</script>
+		<gcse:search></gcse:search>
+	</div>
+</div>
+	</div>
+	<div class="main">
+		<div class="guide">
+			<div class="logo-on-top clearfix">
+				<img src="/5.0/assets/img/logo-on-top.png">
+			</div>
+			<div class="inner clearfix">
+				<div id="sidebar">
+					<a class="link-apidocs btn btn-primary" href="../../api/modules/modulex.html">API Docs</a>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">Outline</h3>
+						</div>
+						<div class="panel-body">
+							<ul class="outline">
+								<li class="level2"><a href="#使用方法">使用方法</a></li><li class="level3"><a href="#注册模块">注册模块</a></li><li class="level3"><a href="#<code>define</code>"><code>define</code></a></li><li class="level3"><a href="#<code>define([name], [deps], factory)</code>"><code>define([name], [deps], factory)</code></a></li><li class="level3"><a href="#<code>define([name], factory, [deps])</code>"><code>define([name], factory, [deps])</code></a></li><li class="level3"><a href="#引用模块">引用模块</a></li><li class="level3"><a href="#<code>require(name, callback)</code>"><code>require(name, callback)</code></a></li><li class="level3"><a href="#在define中异步引用模块">在define中异步引用模块</a></li><li class="level3"><a href="#让出define/require控制权">让出define/require控制权</a></li><li class="level3"><a href="#<code>modulex.noConflict</code>"><code>modulex.noConflict</code></a></li><li class="level3"><a href="#配置">配置</a></li><li class="level3"><a href="#<code>require.config(cfg)</code>"><code>require.config(cfg)</code></a></li><li class="level3"><a href="#<code>require.config(name, value)</code>"><code>require.config(name, value)</code></a></li><li class="level3"><a href="#<code>modulex.getScript(url, config)</code>"><code>modulex.getScript(url, config)</code></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Features</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../guides/modulex/import-style.html">importStyle的使用</a></p><p><a href="../../guides/modulex/index.html">modulex 基本介绍</a></p>
+						</div>
+					</div>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Demos</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../demos/modulex/index.html">modulex简单使用</a></p>
+						</div>
+					</div>
+				</div>
+				<div id="main-content">
+					<p></p>
+<h1 id="modulex 基本介绍">modulex 基本介绍</h1><p>modulex 是新一代的模块加载器，可单独使用。实际上，KISSY的种子文件 seed.js 是由 modulex + feature + ua + meta 四个部分组成的。如果选择使用KISSY，引入了seed.js则不再需要额外引入modulex。seed.js是KISSY的种子文件，引用它则可以方便使用KISSY提供的各种模块，如 anim , dom , event-dom 等。而 modulex 是一个模块加载器，如果你只是需要模块加载功能，也可以直接单独使用 modulex。更多信息可以查看 <a href="https://github.com/kissyteam/modulex">modulex on github</a>。modulex 始终作为一个全局对象存在页面的生命周期。</p>
+<h2 id="使用方法">使用方法</h2><h3 id="注册模块">注册模块</h3><h3 id="<code>define</code>"><code>define</code></h3><p>define 函数可用 cmd 规范或 kmd(kissy module defination) 规范来使用，kmd是类似amd的一种模块定义规范。如下：</p>
+<h4 id="cmd规范写法">cmd规范写法</h4><h3 id="<code>define([name], [deps], factory)</code>"><code>define([name], [deps], factory)</code></h3><ul>
+<li>name {String} 模块名称，可选</li>
+<li>deps {Array} 模块依赖，可选</li>
+<li>factory {Function|Object|String} 模块的主内容/逻辑。当为函数时，有三个参数 require,exports,module 。函数返回值就是注册的模块接口。</li>
+</ul>
+<p>示例1：</p>
+<pre><code>define(<span class="hljs-string">'learnkissy'</span>, [<span class="hljs-string">'node'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(require, exports, module)</span></span>{
+    <span class="hljs-keyword">var</span> $ = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node'</span>);
+
+    <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Hi, KISSY'</span>);
+    }
+});
+</code></pre><p>示例2：</p>
+<p>开发阶段不写上模块名称name和模块依赖deps，在发布到线上前在使用 <a href="https://github.com/daxingplay/kmc">Kissy Mobule Compiler</a>  来生成模块名称和提取模块依赖。</p>
+<pre><code>define(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(require, exports, module)</span></span>{
+    <span class="hljs-keyword">var</span> $ = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node'</span>);
+
+    <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Hi, KISSY'</span>);
+    }
+});
+</code></pre><h4 id="kmd规范写法，类似amd">kmd规范写法，类似amd</h4><h3 id="<code>define([name], factory, [deps])</code>"><code>define([name], factory, [deps])</code></h3><ul>
+<li>name {String} 模块名称，可选</li>
+<li>factory {Function|Object|String} 模块的主内容/逻辑。当为函数时，参数依次是模块依赖对象配置的模块接口。函数返回值就是注册的模块接口。</li>
+<li>deps {Object} 模块依赖对象配置</li>
+</ul>
+<p>示例1：</p>
+<pre><code>define(<span class="hljs-string">'learnkissy'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($, Cookie)</span></span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Hi, KISSY'</span>);
+    }
+},{
+    requires : [<span class="hljs-string">'node'</span>, <span class="hljs-string">'cookie'</span>]
+});
+</code></pre><h3 id="引用模块">引用模块</h3><h3 id="<code>require(name, callback)</code>"><code>require(name, callback)</code></h3><ul>
+<li>name {Array} 要引用的模块名称数组</li>
+<li>callback {Function} 成功加载所有模块后的回调函数，回调函数的参数依次是引用的模块的接口</li>
+</ul>
+<p>示例：</p>
+<pre><code><span class="hljs-built_in">require</span>([<span class="hljs-string">'dom'</span>, <span class="hljs-string">'anim'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(Dom, Anim)</span>)</span>{
+    <span class="hljs-comment">//use Dom , Anim</span>
+}
+</code></pre><h3 id="在define中异步引用模块">在define中异步引用模块</h3><p>示例：</p>
+<pre><code>define(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(require, exports, module)</span></span>{
+    exports.onClick = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">var</span> modsArr = [<span class="hljs-string">'mod/a'</span>, <span class="hljs-string">'mod/b'</span>];
+        <span class="hljs-built_in">require</span>(modsArr, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(A, B)</span></span>{
+            <span class="hljs-comment">//when mod/a , mod/b loaded...</span>
+            <span class="hljs-comment">//your code here</span>
+        });
+    }
+});
+</code></pre><h3 id="让出define/require控制权">让出define/require控制权</h3><h3 id="<code>modulex.noConflict</code>"><code>modulex.noConflict</code></h3><p>引入 modulex 后（或引入KISSY种子文件seed.js），默认define/require 关键词是modulex使用，若需要让出它们的控制权给例如 requirejs , seajs 等类库使用，可调用 modulex.noConflict() 方法。</p>
+<h3 id="配置">配置</h3><h3 id="<code>require.config(cfg)</code>"><code>require.config(cfg)</code></h3><ul>
+<li>cfg {Object} 配置对象<ul>
+<li>[filter] {String} 文件名后缀</li>
+<li>[group] {String} 所有包的默认组配置，group的介绍详见下面的Note:group介绍</li>
+<li>[base] {String} 整个类库所在的基地址</li>
+<li>[comboMaxUrlLength=1024] {Number} Combo url 的最长长度，默认 1024</li>
+<li>[comboPrefix=&quot;??&quot;] {String} Combo 前缀，默认 ”??”</li>
+<li>[comboSep=&quot;,&quot;] {String} Combo 分隔符，默认 ”,”</li>
+<li>[tag] {String}  KISSY 内置模块请求的时间戳</li>
+<li>[combine=false] {Boolean} 是否开启自动 combo 模式，默认 false 不开启. 自动 combo 模式要求 use 前配置好依赖关系</li>
+<li>[packages] {Object} 以包名为键，包配置对象为值的键值对对象。有如下配置：<ul>
+<li>group {String} 表示包所属的组名</li>
+<li>debug B{oolean} 包内的脚本请求是是否加 -min 后缀，默认和 KISSY.config(“debug”) 相同</li>
+<li>tag {String}, 最好为时间戳, 用于刷新客户端本包的模块文件缓存</li>
+<li>filter {String} 文件名后缀</li>
+<li>combine {Boolean}, 如果总和 combine 设置为 true，但是单个包 combine 设置为 false，则该包内文件不进行自动 combo</li>
+<li>base {String}, 表示包所在的 url 路径, 相对路径表示相对于当前页面路径.</li>
+<li>path 作用同 base 配置</li>
+<li>charset {String}, 表示宝贝所有模块定义文件的编码格式, 默认 utf-8</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[modules] {Object} 以单个模块为键，单个模块配置对象为值的键值对对象。有如下配置：<ul>
+<li>requires {Array} 该模块的依赖模块名数组。当设置 combine 为 true 时需要配置，否则不建议配置.</li>
+<li>alias {String|Array} 该模块的别名。为数组时，则会将数组中的模块合并返回</li>
+<li>tag {String} 单个模块的时间戳。仅在 combine 为 false 时生效。 combine:true 时取对应包的 tag.</li>
+</ul>
+</li>
+</ul>
+<p>总配置范例概览：</p>
+<pre><code><span class="hljs-tag">require</span><span class="hljs-class">.config</span>({
+    <span class="hljs-comment">// 开启自动 combo 模式</span>
+    <span class="hljs-attribute">combine</span>:true,
+    <span class="hljs-comment">// kissy 库内置模块的时间戳</span>
+    <span class="hljs-attribute">tag</span>:<span class="hljs-string">'2014'</span>,
+    <span class="hljs-comment">// 整个类库的基准路径</span>
+    <span class="hljs-attribute">base</span>:<span class="hljs-string">'http://x.com/a'</span>,
+    <span class="hljs-attribute">packages</span>:{
+     <span class="hljs-attribute">x</span>:{
+         <span class="hljs-comment">// x 包的基准路径</span>
+         <span class="hljs-attribute">base</span>:<span class="hljs-string">'http://x.com/biz/'</span>,
+         <span class="hljs-comment">// x 包的时间戳</span>
+         <span class="hljs-attribute">tag</span>:<span class="hljs-string">'x'</span>,
+         <span class="hljs-comment">// 加载的文件后面添加-debug。如 a.js -&gt; a-debug.js</span>
+         <span class="hljs-attribute">filter </span>: <span class="hljs-string">'debug'</span>
+     },
+     <span class="hljs-attribute">y</span>:{
+        <span class="hljs-comment">// y 包的基准路径</span>
+        <span class="hljs-attribute">base</span>:<span class="hljs-string">'http://x.com/biz/'</span>,
+        <span class="hljs-comment">// y 包不开启自动 combo</span>
+        <span class="hljs-attribute">combine</span>:false
+        <span class="hljs-comment">// 不配置 tag，则取 kissy 内置模块的时间戳</span>
+     }
+    },
+    <span class="hljs-attribute">modules</span>:{
+     "<span class="hljs-attribute">x</span>/b1":{
+         <span class="hljs-comment">// "x/b1" 模块的依赖信息</span>
+         <span class="hljs-attribute">requires</span>:[<span class="hljs-string">"x/b2"</span>,<span class="hljs-string">"x/b3"</span>]
+     },
+     <span class="hljs-string">"y/b2"</span>:{
+         <span class="hljs-comment">// y/b2 模块单独的时间戳</span>
+         <span class="hljs-attribute">tag</span>:<span class="hljs-string">'234'</span>
+     }
+    }
+});
+</code></pre><p>packages包配置示例：</p>
+<pre><code><span class="hljs-tag">require</span><span class="hljs-class">.config</span>({
+    <span class="hljs-tag">packages</span>:{
+        <span class="hljs-comment">// 包名</span>
+        "<span class="hljs-attribute">tc</span>": {
+            <span class="hljs-attribute">tag</span>:<span class="hljs-string">"20141015"</span>, <span class="hljs-comment">// 动态加载包内的模块js文件时,</span>
+                         <span class="hljs-comment">// 自动加上 ?t=20141015, 用于文件更新</span>
+            <span class="hljs-attribute">base</span>:<span class="hljs-string">"../"</span>, <span class="hljs-comment">// 包的路径, 相对路径指相对于当前页面路径</span>
+            <span class="hljs-attribute">charset</span>:<span class="hljs-string">"gbk"</span> <span class="hljs-comment">// 包里模块文件编码格式</span>
+        }
+    }
+});
+</code></pre><p>group组介绍示例1：</p>
+<p>简单使用(如果想将多个包combo到一起，需要通过配置参数group来实现。例如，对于以下包进行combo：)</p>
+<pre><code><span class="hljs-tag">require</span><span class="hljs-class">.config</span>({
+    <span class="hljs-tag">packages</span>:{
+      "<span class="hljs-attribute">pkg-a</span>": {
+          <span class="hljs-attribute">base</span>: <span class="hljs-string">"http://example.com/pkg-a"</span>,
+          <span class="hljs-attribute">group</span>: <span class="hljs-string">"group1"</span>,
+          <span class="hljs-attribute">combine</span>: true,
+          <span class="hljs-attribute">tag</span>: <span class="hljs-string">"20120222"</span>
+      },
+      <span class="hljs-string">"pkg-b"</span>: {
+          <span class="hljs-attribute">base</span>: <span class="hljs-string">"http://example.com/pkg-b"</span>,
+          <span class="hljs-attribute">group</span>: <span class="hljs-string">"group1"</span>,
+          <span class="hljs-attribute">combine</span>: true,
+          <span class="hljs-attribute">tag</span>: <span class="hljs-string">"20130303"</span>
+      },
+      <span class="hljs-string">"pkg-c"</span>: {
+          <span class="hljs-attribute">base</span>: <span class="hljs-string">"http://example.com/pkg-c"</span>,
+          <span class="hljs-attribute">combine</span>: true,
+          <span class="hljs-attribute">tag</span>: <span class="hljs-string">"20111111"</span>
+      }
+    }
+})
+</code></pre><p>由于pkg-a和pkg-b的group设置为”group1”，则KISSY会对这两个包的模块进行combo。而pkg-c则单独combo。产生URL如下：</p>
+<pre><code>http://example.com/??pkg-a/mod1.js,pkg-a/mod2.js,pkg-b/mod1.js,<span class="hljs-keyword">...</span>?t=-<span class="hljs-number">389697156.</span>js
+http://example.com/pkg-c/??mod1.js,<span class="hljs-keyword">...</span>?t=<span class="hljs-number">20111111.</span>js
+</code></pre><p>其中，时间戳?t=-389697156.js是根据pkg-a和pkg-b的时间戳tag来计算的。如果修改了其中一个包的时间戳，则combo后的时间戳也会变化。</p>
+<p>配置模块依赖示例：</p>
+<p>预注册模块：由于浏览器端加载脚本都是异步，因此如果模块之间有依赖，主逻辑只能在加载 A 模块后才知道并加载 A 的依赖。因此加载过程为串行。为了降低串行的性能损耗，config()可以预先注册模块的依赖关系，一次性加载模块和与之关联的依赖，比如
+    // 预注册模块依赖
+    require.config({
+        modules : {
+            &#39;mod-a&#39;:{
+                requires:[&#39;mod-b&#39;,&#39;mod-c&#39;]
+            },
+            &#39;mod-b&#39;:{
+                requires:[&#39;mod-d&#39;,&#39;mod-e&#39;]
+            }
+        }
+    });</p>
+<pre><code><span class="hljs-comment">// 引用模块时，在配置了 combine:true 后，将会合并载入模块及其依赖</span>
+<span class="hljs-built_in">require</span>([<span class="hljs-string">'mod-a'</span>, <span class="hljs-string">'mod-b'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(ModA,ModB)</span></span>{
+    <span class="hljs-comment">// 沙箱逻辑    </span>
+});
+</code></pre><p>配置模块别名示例：</p>
+<pre><code><span class="hljs-comment">// 定义模块的别名</span>
+<span class="hljs-tag">require</span><span class="hljs-class">.config</span>({
+    <span class="hljs-tag">modules</span> : {
+        '<span class="hljs-attribute">mod-a</span>':{
+            <span class="hljs-attribute">alias</span>:[<span class="hljs-string">'mod-b/1.2'</span>] <span class="hljs-comment">// 数组长度为1</span>
+        }
+    }
+});
+
+<span class="hljs-comment">// 正常使用模块</span>
+<span class="hljs-tag">require</span>([<span class="hljs-string">'mod-a'</span>],<span class="hljs-function">function</span>(ModA){ });
+</code></pre><h3 id="<code>require.config(name, value)</code>"><code>require.config(name, value)</code></h3><p>设置或获取 KISSY 配置参数</p>
+<ul>
+<li>name {String} 参数名称. 取值范围参见上面函数</li>
+<li>value {Object} 参数值. 如果不设置则返回参数名称对应的参数值</li>
+</ul>
+<h3 id="<code>modulex.getScript(url, config)</code>"><code>modulex.getScript(url, config)</code></h3><p>动态加载目标地址的资源文件，返回创建的 link 节点或 script 节点</p>
+<ul>
+<li>url {String} js/css 的资源地址</li>
+<li>cofnig {Object} 配置对象<ul>
+<li>charset {String} 资源文件的字符编码</li>
+<li>success {Function} 资源加载成功后回调函数</li>
+<li>error {Function} 超时或发生错误时回调函数. 当资源文件为 css 文件时不支持</li>
+<li>timeout {Number} 单位为秒, 默认无限大. 超时后触发 error 回调. 当资源文件为 css 文件是不支持</li>
+</ul>
+</li>
+</ul>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="wrap-disqus">
+    <div class="top-repeat"></div>
+	<div id="disqus_thread"></div>
+</div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<div class="other-page">
+    <div class="wrap">
+        <div class="content">
+            <div class="wrap-content">
+                <p>@2010 - 2112 KISSY UI LIBARAY</p>
+                <div class="github-msg">
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=fork&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	</div>
+</body>
+</html>

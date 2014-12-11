@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<title>虾米音乐播放器</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/button/assets/dpl.css">
+<script type="text/javascript" src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"  data-config="{combine:true}"></script>
+</head>
+<body>
+<div id="container" style="width:90%;margin:0 auto;">
+    <h1>虾米音乐播放器</h1>
+    <p>通过callSWF调用swf的方法，控制播放暂停</p>
+    <div id="wrap">
+        
+    </div>
+    <button id="play" class="ks-button">播放</button>
+    <button id="pause" class="ks-button">暂停</button>
+</div>
+<script type="text/javascript">
+	require(['node','swf'], function($, SWF){
+        var xiaMiPlayer = new SWF({
+            src: 'http://img.xiami.com/res/player/widget/singlePlayer.swf?t=20140331120514',
+            attrs: {
+                width: 300,
+                height: 35
+            },
+            params: {
+                allowfullscreen: true,
+                allowscriptaccess: 'always',
+                allownetworking: 'all',
+                wmode: 'transparent',
+                flashVars: {
+                    autoplay: 'y',
+                    loop: 1,
+                    dataUrl: 'http://www.xiami.com/widget/xml-single/uid/0/sid/1773110382'
+                }
+            },
+            render: '#wrap'
+        });
+        xiaMiPlayer.callSWF('musicPause');
+        
+        $('#play').on('click', function(){
+            xiaMiPlayer.callSWF('musicPlay');
+        });
+        $('#pause').on('click', function(){
+            xiaMiPlayer.callSWF('musicPause');
+        });
+    })
+</script>
+</body>
+</html>

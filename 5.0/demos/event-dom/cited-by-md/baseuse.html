@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>event-dom模块的基本示例</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	body{
+		background: #fff;
+	}
+	</style>
+	<script type="text/javascript" src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{ combine : true }"></script>
+</head>
+<body>
+	<button id="shout2">shout2</button>
+	<script type="text/javascript">
+	require(['event-dom'],function(DomEvent){
+		DomEvent.on('#shout2', 'click', function(ev){
+			alert('shout2');
+		})
+	})
+	</script>
+</body>
+</html>

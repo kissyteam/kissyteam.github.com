@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>右键菜单</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/menu/assets/dpl.css">
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<h1>右键菜单</h1>
+<p>右键点击红色框区域会出现菜单，点击菜单项会触发click事件</p>
+<div id="context" style="border: 1px solid red;
+width: 300px;height: 300px;
+margin:50px auto;">
+    在此区域点右键
+</div>
+<script type="text/javascript">
+    require(['menu', 'separator', 'node'], function (Menu, Separator, $) {
+        var context = $("#context");
+        var sb = new Menu.PopupMenu({
+            autoHideOnMouseLeave : true
+        });
+        sb.addChild(new Menu.Item({
+            content:"submenuitem1"
+        }));
+        sb.addChild(new Menu.Item({
+            content:"submenuitem2"
+        }));
+        sb.addChild(new Separator());
+
+        var sb2 = new Menu.PopupMenu({
+            autoHideOnMouseLeave : true,
+            children:[
+                new Menu.Item({
+                    content:"submenuitem141"
+                })
+            ]
+        });
+        sb2.addChild(new Menu.Item({
+            content:"submenuitem22"
+        }));
+        var b2 = new Menu.SubMenu({
+            content:"sub-sub-menu",
+            menu:sb2
+        });
+        sb.addChild(b2);
+
+        var b = new Menu.SubMenu({
+            content:"submenu",
+            menu:sb
+        });
+
+        var menu = new Menu.PopupMenu({
+            // 接受键盘事件
+            focusable:1,
+            children:[b, new Menu.Item({
+                content:"alone"
+            })]
+        });
+
+        menu.on("click", function (e) {
+            context.html(e.target.get("content") + " clicked");
+        });
+
+        context.on('contextmenu', function (e) {
+            e.halt();
+            menu.render();
+            menu.move(e.pageX, e.pageY);
+            menu.show();
+            // 接受键盘事件
+            menu.set('focused', true);
+        });
+    });
+</script>
+</body>
+</html> 

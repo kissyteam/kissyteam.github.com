@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>内容提示框popup</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/button/assets/dpl.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/overlay/assets/dpl.css">
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<div class="container">
+    <h1>内容提示框popup</h1>
+    <p>鼠标移动下面按钮上，内容提示框渐变出现</p>
+    <div class="ks-button ks-button-info" id="popup">hover for popup</div>
+</div>
+<script type="x-template" id="popupTpl">
+    <div class="ks-popup-arrow"></div>
+    <div class="ks-popup-inner"> <!-- 已定义好的内容提示框的样式-->
+        <h3 class="ks-popup-title">This is Title</h3>
+
+        <div class="ks-popup-inner-content">
+            <p>This is content...</p>
+        </div>
+    </div>
+</script>
+<script type="text/javascript">
+    require(['overlay', 'button', 'node'], function(Overlay, Button, $){
+        var myPopup = new Overlay.Popup({
+            width : 200,
+            trigger : '#popup',
+            triggerType : 'mouse',
+            content : $('#popupTpl').html(),
+            elCls: "ks-popup-right",  //添加内容提示框在右侧时的箭头图标样式
+            effect : {
+                effect : 'fade',
+                duration : 0.3
+            },
+            align: {
+                node: '#popup',  //相对按钮#popup定位
+                points: ['cr', 'cl']
+            }
+        });
+    });
+</script>
+</body>
+</html> 

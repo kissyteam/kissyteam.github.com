@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>mask动画示例</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/button/assets/dpl.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/overlay/assets/dpl.css">
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<div class="container">
+    <h1>mask动画示例</h1>
+    <p>对话框遮罩将渐变出现，点击遮罩关闭弹出框</p>
+    <div class="ks-button ks-button-primary" id="open">弹出对话框</div>
+</div>
+<script type="text/javascript">
+    require(['overlay', 'button'], function(Overlay, Button){
+        var modalDialog = new Overlay.Dialog({
+            headerContent : '我是头部',
+            width : 500,
+            mask : true,
+            bodyContent : '<div>我是主体</div>',
+            align : {  //定位对话框
+                points : ['cc', 'cc']  //在可视区域正中央
+            },
+            mask : {  //配置mask动画
+                closeOnClick : true,  //点击遮罩关闭弹出框(具体隐藏或销毁依赖 closeAction 配置)
+                effect : 'fade',  //可取值'fade','slide'
+                duration : 0.5
+            }
+        });
+
+        modalDialog.on("afterRenderUI", function () {
+                new Button({
+                    content: "关闭",
+                    elCls: "ks-button-primary",
+                    listeners: {
+                        click: function () {
+                            modalDialog.hide();
+                        }
+                    },
+                    render: modalDialog.get("footer")
+                }).render();
+                new Button({
+                    content: "保存",
+                    elCls : 'ks-button-success',
+                    render: modalDialog.get("footer")
+                }).render();
+            });
+
+        new Button({
+            srcNode : '#open',
+            listeners : {
+                click : function(ev){
+                    modalDialog.show();
+                }
+            }
+        }).render();
+    });
+</script>
+</body>
+</html> 

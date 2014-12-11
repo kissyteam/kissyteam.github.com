@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<title>简单分离式下拉按钮/从已有元素生成</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/button/assets/dpl.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/menubutton/assets/dpl.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/split-button/assets/dpl.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/menu/assets/dpl.css">
+<script type="text/javascript" src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"  data-config="{combine:true}"></script>
+</head>
+<body>
+<div style="width:90%;margin:0 auto;">
+    <h1>简单分离式下拉按钮/从已有元素生成</h1>
+    <h3>split-button 内部实现其实是利用 button 和 menubutton 两个组件组合使用而成，split-button左边是button组件内容，右边是设置content为空的menubutton。</h3>
+    <p>全新节点生成，并使用button组件提供的样式：</p>
+    <div id="button-container1">
+        
+    </div>
+    <p>从已有元素生成（html结构和class需符合示例规范）：</p>
+    <div id="button-container2">
+        <div id="split-button2" class="ks-split-button">
+            <div class="ks-button ks-split-button-left"
+                 tabindex="0">Action
+            </div>
+            <div class="ks-menu-button ks-button ks-split-button-right"
+                 tabindex="0">
+                <div class="ks-menu-button-content"></div>
+                <div class="ks-menu-button-dropdown">
+                    <div class="ks-menu-button-dropdown-inner"></div>
+                </div>
+                <div class="ks-popupmenu ks-menu">
+                    <div class="ks-popupmenu-content">
+                        <div class="ks-menuitem">Action</div>
+                        <div class="ks-menuitem">Another</div>
+                        <div class="ks-menuitem">else</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+	require(['split-button'], function(SplitButton){
+        var splitButton1 = new SplitButton({
+            render : '#button-container1',
+            button : {  //设置splitButton 的内容
+                xclass : 'button',
+                elCls : 'ks-button-info ks-button-large',  //使用 button 组件提供的按钮样式
+                content : 'Button'
+            },
+            menuButton : {  //设置 splitButton 的下拉内容
+                xclass : 'menu-button',
+                elCls : 'ks-button-info ks-button-large',  //menubutton的样式设置和button的样式需一直，否则样式会不一致
+                menu : {
+                    xclass : 'popupmenu',
+                    children : [
+                        {
+                            xclass : 'menuitem',
+                            content : 'content1'
+                        },
+                        {
+                            xclass : 'menuitem',
+                            content : 'content2'
+                        }
+                    ]
+                }
+            }
+        });
+        splitButton1.render();
+
+        var splitButton2 = new SplitButton({
+            srcNode : '#split-button2'
+        }).render();
+    });
+
+</script>
+</body>
+</html>

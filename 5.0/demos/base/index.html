@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scale=no">
+	<title>Guides - KISSY v5.0 Documentation</title>
+	<link rel="shortcut icon" href="/5.0/assets/img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/github.css"/>
+	<script type="text/javascript" src="http://g.tbcdn.cn/kissy/edge/2014.07.16/seed.js" data-config="{combine:true}"></script>
+	<link rel="stylesheet" href="/5.0/assets/css/component.css">
+</head>
+<body>
+	<div class="header">
+		<div class="inner">
+	<div class="toolbar">
+		<a href="/5.0">
+			<img class="mini-logo" src="/5.0/assets/img/mini-logo.png">
+		</a>
+		<ul class="nav clearfix">
+			<li class="docs">
+				<span>
+					Docs
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/guides/">Guides</a></li>
+					<li><a href="/5.0/api">Api Docs</a></li>
+					<li><a href="/5.0/demos">Demos</a></li>
+				</ul>
+			</li>
+			<li class="more">
+				<span>
+					More
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/more/faq.html">FAQ</a></li>
+					<li><a href="http://gallery.kissyui.com/">Gallery</a></li>
+					<li><a href="http://blog.kissyui.com/">KISSY Blog</a></li>
+					<li><a href="https://github.com/daxingplay/kmc">KMC</a></li>
+					<li><a href="https://github.com/minghe/generator-bee/wiki/generator-bee%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">Generator</a></li>
+				</ul>
+			</li>
+			<li class="split"></li>
+			<li class="nav-other"><a href="/5.0/quick-start.html">Quick Start</a></li>
+			<li class="nav-other"><a href="https://github.com/kissyteam/kissy">Contribute</a></li>
+			<li class="nav-other"><a target="_blank" href="/5.0/kissyup-middle.html">KISSY UP</a></li>
+		</ul>
+	</div>
+	<div class="search">
+		<script>
+			(function() {
+			var cx = '003618533255763067140:5nkycw1pbey';
+			var gcse = document.createElement('script');
+			gcse.type = 'text/javascript';
+			gcse.async = true;
+			gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+			    '//www.google.com/cse/cse.js?cx=' + cx;
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(gcse, s);
+			})();
+		</script>
+		<gcse:search></gcse:search>
+	</div>
+</div>
+	</div>
+	<div class="main">
+		<div class="demo">
+			<div class="logo-on-top clearfix">
+				<img src="/5.0/assets/img/logo-on-top.png">
+			</div>
+			<div class="inner clearfix">
+				<div id="sidebar">
+					<a class="link-apidocs btn btn-primary" href="../../api/classes/Base.html">API Docs</a>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Features</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../guides/base/index.html">Base基本介绍</a></p><p><a href="../../guides/base/oo.html">KISSY中的面向对象</a></p>
+						</div>
+					</div>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Demos</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../demos/base/index.html">Base基本使用示例</a></p>
+						</div>
+					</div>
+				</div>
+				<div id="main-content">
+					<p></p>
+<h1 id="Base基本使用示例">Base基本使用示例</h1><p><div class="ks-tabs ks-tabs-top" style="height:600px;">
+    <div class="ks-tabs-bar">
+        <div class="ks-tabs-tab ks-button">Source</div>
+        <div class="ks-tabs-tab ks-button ks-tabs-tab-selected">Output</div>
+        <div class="ks-tabs-tab ks-button">QRCode</div>
+    </div>
+    <div class="ks-tabs-body" style="overflow:hidden;">
+        <div class="ks-tabs-panel">
+            <div class="editor">&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&#x2F;&gt;
+        &lt;title&gt;KISSY Base DEMO&lt;&#x2F;title&gt;
+        &lt;style type=&quot;text&#x2F;css&quot;&gt;
+        body{
+            background: #fff;
+        }
+        &lt;&#x2F;style&gt;
+        &lt;script src=&quot;&#x2F;&#x2F;g.alicdn.com&#x2F;kissy&#x2F;k&#x2F;5.0.1&#x2F;seed.js&quot; data-config=&quot;{combine:true}&quot;&gt;&lt;&#x2F;script&gt; &lt;&#x2F;head&gt;
+    &lt;body&gt;
+        &lt;h3&gt;下面例子共用三个类 Person&#x2F;Student&#x2F;Teacher ，其中 Student 和 Teacher 都是继承自 Person ，演示结果请打开控制台查看，具体细节查看demo代码。&lt;&#x2F;h3&gt;
+        &lt;label for=&quot;J_input&quot;&gt;先选择角色再操作：&lt;&#x2F;label&gt;
+        &lt;select id=&quot;J_input&quot;&gt;
+            &lt;option selected&gt; &lt;&#x2F;option&gt;
+            &lt;option value=&quot;person&quot;&gt;Person&lt;&#x2F;option&gt;
+            &lt;option value=&quot;teacher&quot;&gt;Teacher&lt;&#x2F;option&gt;
+            &lt;option value=&quot;student&quot;&gt;Student&lt;&#x2F;option&gt;
+        &lt;&#x2F;select&gt;
+        &lt;p&gt;Common Operation:&lt;&#x2F;p&gt;
+        &lt;div id=&quot;common&quot;&gt;
+            &lt;button id=&quot;introduce&quot;&gt;自我介绍&lt;&#x2F;button&gt;
+            &lt;br&#x2F;&gt;
+            &lt;label&gt;请输入名字（名字不能为空）：&lt;&#x2F;label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;Name&quot;&gt;
+            &lt;button id=&quot;setName&quot;&gt;SetName&lt;&#x2F;button&gt;
+            &lt;br&#x2F;&gt;
+            
+            &lt;label for=&quot;Age&quot;&gt;请输入年龄（必须是数字）：&lt;&#x2F;label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;Age&quot;&gt;
+            &lt;button id=&quot;setAge&quot;&gt;SetAge&lt;&#x2F;button&gt;
+            &lt;br&#x2F;&gt;
+            &lt;label for=&quot;changeGender&quot;&gt;当尝试改变性别时阻止发生：&lt;&#x2F;label&gt;
+            &lt;button id=&quot;changeGender&quot;&gt;改变性别&lt;&#x2F;button&gt;
+        &lt;&#x2F;div&gt;
+
+        &lt;p&gt;Student Operation:&lt;&#x2F;p&gt;
+        &lt;label for=&quot;subject&quot;&gt;科目：&lt;&#x2F;label&gt;&lt;input type=&quot;text&quot; id=&quot;subject&quot;&gt;
+        &lt;label for=&quot;socre&quot;&gt;分数：&lt;&#x2F;label&gt;&lt;input type=&quot;text&quot; id=&quot;score&quot;&gt;
+        &lt;button id=&quot;addScore&quot;&gt;addScore&lt;&#x2F;button&gt;
+
+        &lt;p&gt;Teacher Opeartion:&lt;&#x2F;p&gt;
+        &lt;button id=&quot;upLevel&quot;&gt;upLevel&lt;&#x2F;button&gt;
+        &lt;button id=&quot;downLevel&quot;&gt;downLevel&lt;&#x2F;button&gt;
+
+        &lt;script&gt;
+        require([&#x27;base&#x27;, &#x27;node&#x27;, &#x27;util&#x27;], function(Base, Node, Util) {
+            var Level = {
+                PRIMARY: 0,
+                INTERMEDIATE: 1,
+                ADVANCED: 2,
+                SPECIAL: 3
+            };
+
+            var Gender = {
+                MALE: 0,
+                FEMALE: 1
+            };
+
+
+            var $ = Node.all;
+            &#x2F;&#x2F; 自定义类
+            &#x2F;&#x2F; 继承 Base
+            var Person = Base.extend({
+                sayHi: function(name) {
+                    console.log(&quot;Hi, &quot; + name + &quot;! Nice to meet you!&quot;);
+                    &#x2F;&#x2F;触发自定义事件
+                    this.fire(&#x27;say&#x27;);
+                },
+
+                tellName: function() {
+                    console.log(&quot;My name is &quot; + this.get(&#x27;name&#x27;) + &quot;.&quot;);
+                    this.fire(&#x27;say&#x27;);
+                },
+
+                tellAge: function() {
+                    console.log(&quot;I&#x27;m &quot; + this.get(&#x27;age&#x27;) + &quot; years old.&quot;);
+                    this.fire(&#x27;say&#x27;);
+                },
+
+                introduce: function(extra) {
+                    extra = extra || &#x27;I am a person on earth&#x27;
+                    console.log(&quot;Hello everyone, my name is &quot; + this.get(&#x27;name&#x27;) + &quot;, and I&#x27;m &quot; + this.get(&#x27;age&#x27;) + &quot; years old.&quot; + extra);
+                    this.fire(&#x27;say&#x27;);
+                }
+            },{
+                ATTRS: {
+                    name: {
+                        &#x2F;&#x2F;设置默认值
+                        value: &quot;&quot;,
+
+                        &#x2F;*
+                        验证name是否正确，返回值不为true则无法设置。
+                         *&#x2F;
+                        validator: function(value) {
+                            if ( !Util.isString(value) || value == &quot;&quot;) {
+                                return &quot;Please set correct name!&quot;;
+                            }
+                        }
+
+                    },
+                    age: {
+                        value: 1,
+                        validator: function(value) {
+                            value = parseInt(value);
+                            if (!Util.isNumber(value) || Number.isNaN(value) || (value &lt; 1 &amp;&amp; value &gt; 100)) {
+                                return &quot;Please set correct age!&quot;;
+                            }
+                        }
+                    },
+                    gender: {
+                        value: Gender.MALE,
+                        &#x2F;*
+                        指定setter和getter方法的操作
+                         *&#x2F;
+                        setter: function(value) {
+                            if ( Util.isString(value) ) {
+                                return Gender[value.toUpperCase()];
+                            }
+                            return value;
+                        },
+                        getter: function(value) {
+                            return Util.keys(Gender)[value];
+                        },
+
+                        validator: function(value) {
+                            var str = Util.isString(value) &amp;&amp; !(value.toUpperCase() in Gender);
+                            var num = value &gt; 1 || value &lt; 0;
+                            if (str || num) {
+                                return &quot;Gender must be Female or Male!&quot;;
+                            }
+                        }
+                    }
+                }
+            });
+
+            window.person = new Person({
+                name: &quot;Andy&quot;,
+                age: 18,
+                gender: &quot;female&quot;
+            });
+
+            &#x2F;*
+            阻止改变性别
+             *&#x2F;
+            person.on(&#x27;beforeGenderChange&#x27;, function(ev) {
+                ev.preventDefault();
+                console.log(&quot;Gender can&#x27;t change!&quot;);
+            });
+
+            &#x2F;*
+            任何属性变化时，给出提醒
+             *&#x2F;
+            person.on(&#x27;*Change&#x27;, function(ev) {
+                console.log(&#x27;Change &#x27; + ev.attrName + &#x27;: &#x27; + ev.prevVal + &#x27; --&gt; &#x27; + ev.newVal);
+            });
+
+            &#x2F;*
+            继承Person
+             *&#x2F;
+            var Student = Person.extend({
+                introduce: function() {
+                    &#x2F;&#x2F;调用父类方法
+                    this.callSuper(&quot;I&#x27;m a student of &quot; + this.get(&#x27;school&#x27;) + &quot;.My hometown is &quot; + this.get(&#x27;from&#x27;) + &quot;.&quot;);
+                },
+
+                addScore: function(subject, score) {
+                    &#x2F;&#x2F;error异常收集
+                    &#x2F;&#x2F;设置子属性
+                    this.set(&#x27;score.&#x27; + subject, score, {
+                        error: function(e) {
+                            console.log(e);
+                        }
+                    });
+                },
+
+                &#x2F;*
+                bind属性变化的方法
+                 *&#x2F;
+                _onSetScore: function(value, ev) {
+                    if (!Util.isEmptyObject(value)) {
+                        console.log(&#x27;Score change&#x27;);
+                        console.log(this.get(&#x27;score&#x27;));
+                    }
+                }
+            }, {
+                ATTRS: {
+                    school: {
+                        value: &quot;&quot;
+                    },
+
+                    from: {
+                        value: &quot;&quot;
+                    },
+
+                    score: {
+                        &#x2F;&#x2F;验证支持对子属性的验证
+                        validator: function(value) {
+                            return (value.math &gt;= 0 &amp;&amp; value.math &lt;= 100);
+                        }
+                    }
+                }
+            });
+
+            var Teacher = Person.extend({
+                introduce: function() {
+                    this.callSuper(&quot;I&#x27;m a &quot; + this.get(&#x27;level&#x27;) + &quot;teacher, and I teach &quot; + this.get(&#x27;teach&#x27;) + &quot;.&quot;);
+                },
+
+                upLevel: function() {
+                    this.set(&#x27;level&#x27;, this.get(&#x27;level&#x27;) + 1, {
+                        error: function(e) {
+                            console.log(e);
+                        }
+                    });
+                },
+
+                downLevel: function() {
+                    this.set(&#x27;level&#x27;, this.get(&#x27;level&#x27;) - 1, {
+                        error: function(e) {
+                            console.log(e);
+                        }
+                    });
+                }
+            }, {
+                ATTRS: {
+                    teach: {
+                        value: &quot;&quot;
+                    },
+
+                    level: {
+                        value: Level.PRIMARY,
+                        setter: function(value) {
+                            if ( Util.isString(value) ) {
+                                return Level[value.toUpperCase()];
+                            }
+                            return value;
+                        }
+                    }
+                }
+            });
+
+            window.student = new Student({
+                name: &quot;Jim&quot;,
+                age: 20,
+                school: &#x27;MIT&#x27;,
+                from: &#x27;China&#x27;
+            });
+            &#x2F;*
+            阻止改变性别
+             *&#x2F;
+            student.on(&#x27;beforeGenderChange&#x27;, function(ev) {
+                ev.preventDefault();
+                console.log(&quot;Gender can&#x27;t change!&quot;);
+            });
+
+            window.teacher = new Teacher({
+                name: &quot;David&quot;,
+                age: 50,
+                gender: Gender.MALE,
+                teach: &quot;Math&quot;,
+                level: Level[&quot;INTERMEDIATE&quot;]
+            });
+            &#x2F;*
+            阻止改变性别
+             *&#x2F;
+            teacher.on(&#x27;beforeGenderChange&#x27;, function(ev) {
+                ev.preventDefault();
+                console.log(&quot;Gender can&#x27;t change!&quot;);
+            });
+            teacher.on(&#x27;beforeLevelChange&#x27;, function(ev) {
+                if (ev.newVal &gt; Level.SPECIAL) {
+                    ev.preventDefault();
+                    console.log(&quot;This teacher is already highest level!&quot;);
+                    return;
+                } else if (ev.newVal &lt; Level.PRIMARY) {
+                    ev.preventDefault();
+                    console.log(&quot;This teacher is already lowest level!&quot;);
+                    return;
+                }
+            });
+
+            &#x2F;&#x2F;在level变化后的事件
+            teacher.on(&#x27;afterLevelChange&#x27;, function(ev) {
+                if (ev.prevVal &lt; ev.newVal) {
+                    console.log(&quot;Congratulation!&quot;);
+                } else {
+                    console.log(&quot;I&#x27;m sorry to hear that!&quot;);
+                }
+            });
+
+            &#x2F;&#x2F;自定义事件
+            person.on(&#x27;say&#x27;, function(ev) {
+                console.log(&quot;everyone hear!&quot;);
+            });
+
+            $(&quot;#common&quot;).delegate(&#x27;click&#x27;, &#x27;button&#x27;, function(event) {
+                var target = $(event.currentTarget),
+                    id = target.attr(&quot;id&quot;),
+                    type = $(&quot;#J_input&quot;).val();
+
+                if (type != &quot;&quot;) {
+                    switch(id) {
+                        case &#x27;introduce&#x27;:
+                        window[type].introduce();
+                        break;
+                        case &#x27;setName&#x27;:
+                        var name = $(&quot;#Name&quot;).val();
+                        window[type].set(&#x27;name&#x27;, name, {
+                            error: function(e) {
+                                console.log(e);
+                            }
+                        });
+                        break;
+                        case &#x27;setAge&#x27;:
+                        var age = $(&quot;#Age&quot;).val();
+                        window[type].set(&#x27;age&#x27;, age, {
+                            error: function(e) {
+                                console.log(e);
+                            }
+                        });
+                        break;
+                        case &#x27;changeGender&#x27;:
+                        var gender = Gender[window[type].get(&#x27;gender&#x27;)];
+
+                        gender = gender == 0 ? 1 : 0;
+                        gender = Util.keys(Gender)[gender];
+
+                        window[type].set(&#x27;gender&#x27;, Gender[gender], {
+                            error: function(e) {
+                                console.log(e);
+                            }
+                        });
+                        break;
+                        default:
+                        break;
+                    }
+                }
+            });
+
+            $(&quot;#addScore&quot;).on(&#x27;click&#x27;, function(event) {
+                var subject = $(&quot;#subject&quot;).val();
+                var score = $(&quot;#score&quot;).val();
+
+                if (subject &amp;&amp; parseInt(score)) {
+                    student.addScore(subject, score);
+                }
+            });
+
+            $(&quot;#upLevel&quot;).on(&#x27;click&#x27;, function(event) {
+                teacher.upLevel();
+            });
+
+            $(&quot;#downLevel&quot;).on(&#x27;click&#x27;, function(event) {
+                teacher.downLevel();
+            });
+        });
+        &lt;&#x2F;script&gt;
+    &lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;</div>
+        </div>
+        <div class="ks-tabs-panel ks-tabs-panel-selected">
+            <iframe class="output" frameborder="1">
+            	
+            </iframe>
+        </div>
+        <div class="ks-tabs-panel qrcode-wrap">
+            <div class="qrcode"></div>
+            <div class="content">
+                <p class="title">查看移动端演示</p>
+                <p class="qrcode-addr" qrcodeaddr="http://docs.kissyui.com/5.0/demos/base/cited-by-md/baseuse.html" ="text">
+                    示例地址：
+                    <a href="http://docs.kissyui.com/5.0/demos/base/cited-by-md/baseuse.html" target="_blank">http://docs.kissyui.com/5.0/demos/base/cited-by-md/baseuse.html</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div></p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="wrap-disqus">
+    <div class="top-repeat"></div>
+	<div id="disqus_thread"></div>
+</div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<div class="other-page">
+    <div class="wrap">
+        <div class="content">
+            <div class="wrap-content">
+                <p>@2010 - 2112 KISSY UI LIBARAY</p>
+                <div class="github-msg">
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=fork&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	</div>
+	<script type="text/javascript" src="/5.0/assets/js/ace-editor/ace.js"></script>
+	<script type="text/javascript" src="/5.0/assets/js/qrcodejs/qrcode.min.js"></script>
+	<script type="text/javascript" src="/5.0/assets/js/ajax-load.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

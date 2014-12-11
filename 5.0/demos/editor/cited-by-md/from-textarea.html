@@ -1,0 +1,43 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>从已有的textarea创建editor</title>
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+<link rel="stylesheet" type="text/css" href="http://g.tbcdn.cn/kg/editor-plugins/1.1.2/assets/editor.css"> <!--引入editor的插件样式-->
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:false}"></script>
+<script type="text/javascript" src="http://g.tbcdn.cn/kg/editor-plugins/1.1.3/mods.js"></script>  <!-- 引入插件模块依赖表避免模块串行加载，优化性能-->
+</head>
+<body>
+<h1>从已有的textarea创建editor</h1>
+<div id="container">
+    <textarea id="ks-editor-textarea" style="width:600px;height: 400px;">
+        我是已有textarea里面的值。
+    </textarea>
+</div>
+<script type="text/javascript">
+    require.config({
+        packages : [
+            {
+                name : 'kg',   //1.1.3是当前editor-plugins的版本号，使用时请选择对应的版本号
+                base : 'http://g.tbcdn.cn/kg/'
+            }
+        ]
+    });
+    require(['editor','kg/editor-plugins/1.1.3/source-area','kg/editor-plugins/1.1.3/font-size','kg/editor-plugins/1.1.3/code'], function(Editor, SourceArea, FontSize, Code){
+        var cfg = {
+            focused : true,
+            plugins : [
+                SourceArea, FontSize, Code
+            ]
+        };
+        
+        var myEditor = Editor.decorate('#ks-editor-textarea', cfg);
+
+        myEditor.render();
+    })
+</script>
+</body>
+</html> 

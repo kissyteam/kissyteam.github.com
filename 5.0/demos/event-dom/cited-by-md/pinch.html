@@ -1,0 +1,52 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <style type="text/css">
+    body{
+        background: #fff;
+    }
+    </style>
+    <script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<h1>open in ios safari test pinch event</h1>
+
+<div id='t' tabindex='0'
+     style='border:1px solid green;
+     width:200px;height:200px;margin:100px'>
+    pinch me
+</div>
+<script>
+
+    require(['event-dom', 'event-dom/gesture/pinch'], function (DomEvent, GesturePinch) {
+
+        DomEvent.on('#t',"pinch pinchStart pinchEnd", function (e) {
+            console.log(e.type + ' : ' + e.scale);
+        });
+
+        var o;
+
+        var t = document.getElementById('t');
+
+        DomEvent.on('#t', 'pinchStart', function () {
+            o = 1;
+            if (t.style.webkitTransform) {
+                o = parseFloat(t.style.webkitTransform.replace(/scale\(/, ''));
+            }
+        });
+
+        DomEvent.on('#t', 'pinch', function (e) {
+            t.style.webkitTransform = 'scale(' + (o * e.scale) + ')';
+        });
+
+    });
+
+</script>
+</body>
+</html>

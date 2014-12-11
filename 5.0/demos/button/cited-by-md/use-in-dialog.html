@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>简单使用Button</title>
+	<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+	<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/button/assets/dpl.css">
+	<style type="text/css">
+		.alert-box {
+	        border: 1px solid gray;
+	        background: white;
+	        text-align: center;
+	    }
+	    .alert-box .ks-overlay-header {
+	        display: none;
+	    }
+	    .alert-box .ks-overlay-body{
+	        padding: 20px 0;
+	    }
+	    .alert-box .ks-overlay-footer {
+	        padding: 6px 0;
+	        background: #ddd;
+	    }
+	    .ks-overlay-hidden {
+	        visibility: hidden;
+	    }
+	</style>
+	<script type="text/javascript" src="//g.alicdn.com/kissy/k/5.0.1/seed.js"></script>
+</head>
+<body>
+<h1>在对话框中使用Button</h1>
+<p>点击按钮调用 dialog.hide() 将对话框隐藏</p>
+	<script type="text/javascript">
+	require(['overlay','button'], function(Overlay, Button){
+		var dialog = new Overlay.Dialog({
+			bodyContent : '我是对话框',
+			elCls: 'alert-box',
+			width : '300px',
+			closable : false,
+			mask : true
+		});
+		dialog.show();
+		dialog.center();
+
+		var button = new Button({
+			content : 'OK',
+			elCls : 'ks-button-success',
+			render: dialog.get('footer'),
+			tooltip : '点我关闭',
+			listeners : {
+				'click' : function(ev){
+					dialog.hide();
+				}
+			}
+		});
+		button.render();	
+	})
+	</script>
+</body>
+</html>

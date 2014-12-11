@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <style>
+        body{
+            background: #fff;
+        }
+        button {
+            margin: 10px;
+        }
+
+        div {
+            color: blue;
+            font-weight: bold;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+
+    <script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<div class='out' id='i4'>
+    <div class='inner' id='i3'>
+        <div class='inner' id='i1'>
+            <button id='click_button'>click me</button>
+        </div>
+    </div>
+</div>
+<div id='log'></div>
+<script>
+    require(['node'], function (Node) {
+        var $ = Node.all;
+
+        $('#i4').delegate('click', '.inner', function (e) {
+            var target = e.target, currentTarget = e.currentTarget;
+            $('#log').prepend("<div style='margin:5px;'>invoked : <br/> this.id=" + this.id + "<br/>event.target.id=" +
+                    target.id + "<br>event.currentTarget.id=" + currentTarget.id + "</div>");
+        });
+    });
+</script>
+
+</body>
+</html>

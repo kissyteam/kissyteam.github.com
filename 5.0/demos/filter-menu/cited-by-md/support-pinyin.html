@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>自定义过滤策略（拼音支持）</title>
+	<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/css/base.css">
+	<link rel="stylesheet" type="text/css" href="//g.alicdn.com/kissy/k/5.0.1/button/assets/dpl.css">
+	<link rel="stylesheet" type="text/css" href="assets/menu.css">
+	<link rel="stylesheet" type="text/css" href="assets/menuitem.css">
+	<link rel="stylesheet" type="text/css" href="assets/submenu.css">
+	<link rel="stylesheet" type="text/css" href="assets/filtermenu.css">
+	<style>
+        body{
+            background: #fff;
+        }
+        .hasChildren .ks-menuitem-content {
+            background: url("http://a.tbcdn.cn/apps/sell/1.0/img/ic_bg.png") no-repeat scroll 500px 500px transparent;
+            background-position: 100% -78px;
+        }
+
+        .ks-menuitem-selected {
+            background-color: #D6EDF4;
+            color: #1B4D91;
+        }
+
+        .ks-menuitem-hit {
+            font-weight: bold;
+            color: red;
+        }
+
+        .ks-menuitem {
+            padding-right: 10px;
+        }
+    </style>
+	<script type="text/javascript" src="//g.alicdn.com/kissy/k/5.0.1/seed-debug.js"></script>
+</head>
+<body>
+	<div class="wrap" style="width:90%;margin:0 auto;">
+		<h1>自定义过滤策略（拼音支持）</h1>
+		<h3>操作指南</h3>
+		<ol>
+		    <li>可在输入框输入中文或简拼过滤</li>
+		    <li>上下键过滤项间导航</li>
+		    <li>点击item或按下回车按钮可触发click事件</li>
+            <li>点击 reset 按钮重置用户输入</li>
+		</ol>
+		<div id="container">
+			
+		</div>
+		<div class="ks-button ks-button-info" id="reset" style="margin-top:10px;">reset</div>
+	</div>
+	
+	<script type="text/javascript">
+	require(['util','menu','filter-menu','node'], function(util, Menu, FilterMenu, $){
+		var m1 = new Menu.Item({
+            selectable: true,
+            content: "女鞋",
+            pinyin: "nx"
+        });
+        var m4 = new Menu.Item({
+
+            selectable: true,
+            content: "女装女服",
+            pinyin: "nznf"
+        });
+        var m2 = new Menu.Item({
+
+            selectable: true, content: "家居服务",
+            elCls: "hasChildren",
+            pinyin: "jjfw"
+        });
+        var m3 = new Menu.Item({
+
+            selectable: true,
+            content: "手机",
+            elCls: "hasChildren",
+            pinyin: "sj"
+        });
+        var filterMenu = new FilterMenu({
+            render: "#container",
+            width: 500,
+            placeholder: "请输入中文或简拼"
+        });
+        filterMenu.addChild(m1);
+        filterMenu.addChild(m2);
+        filterMenu.addChild(m3);
+        filterMenu.addChild(m4);
+        filterMenu.render();
+        var selected = null;
+
+        var origFilterItems = filterMenu.filterItems;
+
+        /**
+         * 自定义过滤策略，不自定义则是简单的内容 indexOf 查找
+         * @param str
+         */
+        filterMenu.filterItems = function (str) {
+            var self = this,
+                _labelEl = self.get("placeholderEl"),
+                filterInput = self.get("filterInput");
+
+            // 有过滤条件提示隐藏，否则提示显示
+            _labelEl[str ? 'hide' : 'show']();
+            var children = self.get('children');
+            // 拼音
+            if (new RegExp('^[a-z\s]+', 'i').test(str)) {
+                // 过滤所有子组件
+                util.each(children, function (c) {
+                    var pinyin = c.get("pinyin"),
+                        content = c.get("content");
+                    var index;
+                    if ((index = pinyin.indexOf(str)) > -1) {
+                        // 如果符合过滤项
+                        // 显示
+                        c.show();
+                        content = content.substring(0, index) +
+                                "<span class='" + "ks-menuitem-hit" + "'>" +
+                                content.substring(index, index + str.length)
+                                + "<" + "/span>"
+                                + content.substring(index + str.length, content.length);
+
+                        // 匹配子串着重 wrap
+                        c.get('el').html(content);
+                    } else {
+                        c.hide();
+                    }
+                });
+            } else {
+                origFilterItems.call(this, str);
+            }
+        };
+
+        filterMenu.on("click", function (e) {
+            if (selected != e.target) {
+                selected && selected.set("selected", false);
+                selected = e.target;
+                alert("selected : " + selected.get("content"));
+            }
+        });
+        
+        $("#reset").on("click", function () {
+            filterMenu.reset();
+        });
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>简单配置包使用</title>
+<script src="//g.alicdn.com/kissy/k/5.0.1/seed.js"></script>
+<style type="text/css">
+    body{
+        background: #fff;
+    }
+</style>
+</head>
+<body>
+<p>
+    本示例，在包 my 下定义了两个模块 mod 和 dep ，其中 mod 模块依赖 dep 模块。下面配置包并引用 my 包下的模块 mod ，请将这个demo在新窗口打开，并打开控制台观察网络请求和log信息。
+</p>
+
+<button id='k12'>启动主模块</button>
+
+<script>
+require.config({
+    packages: {
+        "my":{
+            combine:false,
+            tag: "20141014",//时间戳, 添加在动态脚本路径后面, 用于更新包内模块代码
+            base: "/5.0/demos/modulex/cited-by-md/", //包对应路径, 相对路径指相对于当前页面路径
+            charset: "utf-8", //包里模块文件编码格式
+        }
+    }
+});
+require(['node'], function ($) {
+    $("#k12").on("click", function () {
+        require("my/mod", function (Mod) {
+            alert(Mod);
+        });
+    });
+});
+</script>
+
+</body>
+</html>

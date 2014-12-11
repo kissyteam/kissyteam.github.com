@@ -1,0 +1,26 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <script src="//g.alicdn.com/kissy/k/5.0.1/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+
+<h1>open in ios and shake your phone</h1>
+<script type="text/javascript">
+
+    require(['event-dom', 'event-dom/gesture/shake'], function (DomEvent, GestureShake) {
+        DomEvent.on(window, GestureShake.SHAKE, function (e) {
+            alert('i know u shake !');
+        });
+    });
+
+</script>
+
+</body>
+</html>

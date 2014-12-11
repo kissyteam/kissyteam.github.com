@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scale=no">
+	<title>Guides - KISSY v5.0 Documentation</title>
+	<link rel="shortcut icon" href="/5.0/assets/img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/github.css"/>
+	<script type="text/javascript" src="http://g.tbcdn.cn/kissy/edge/2014.09.05/seed.js" data-config="{combine:true}"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="inner">
+	<div class="toolbar">
+		<a href="/5.0">
+			<img class="mini-logo" src="/5.0/assets/img/mini-logo.png">
+		</a>
+		<ul class="nav clearfix">
+			<li class="docs">
+				<span>
+					Docs
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/guides/">Guides</a></li>
+					<li><a href="/5.0/api">Api Docs</a></li>
+					<li><a href="/5.0/demos">Demos</a></li>
+				</ul>
+			</li>
+			<li class="more">
+				<span>
+					More
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/more/faq.html">FAQ</a></li>
+					<li><a href="http://gallery.kissyui.com/">Gallery</a></li>
+					<li><a href="http://blog.kissyui.com/">KISSY Blog</a></li>
+					<li><a href="https://github.com/daxingplay/kmc">KMC</a></li>
+					<li><a href="https://github.com/minghe/generator-bee/wiki/generator-bee%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">Generator</a></li>
+				</ul>
+			</li>
+			<li class="split"></li>
+			<li class="nav-other"><a href="/5.0/quick-start.html">Quick Start</a></li>
+			<li class="nav-other"><a href="https://github.com/kissyteam/kissy">Contribute</a></li>
+			<li class="nav-other"><a target="_blank" href="/5.0/kissyup-middle.html">KISSY UP</a></li>
+		</ul>
+	</div>
+	<div class="search">
+		<script>
+			(function() {
+			var cx = '003618533255763067140:5nkycw1pbey';
+			var gcse = document.createElement('script');
+			gcse.type = 'text/javascript';
+			gcse.async = true;
+			gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+			    '//www.google.com/cse/cse.js?cx=' + cx;
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(gcse, s);
+			})();
+		</script>
+		<gcse:search></gcse:search>
+	</div>
+</div>
+	</div>
+	<div class="main">
+		<div class="guide">
+			<div class="logo-on-top clearfix">
+				<img src="/5.0/assets/img/logo-on-top.png">
+			</div>
+			<div class="inner clearfix">
+				<div id="sidebar">
+					<a class="link-apidocs btn btn-primary" href="../../api/classes/Path.html">API Docs</a>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">Outline</h3>
+						</div>
+						<div class="panel-body">
+							<ul class="outline">
+								<li class="level2"><a href="#用法">用法</a></li><li class="level2"><a href="#basename()  <code>&lt;static&gt;</code>">basename()  <code>&lt;static&gt;</code></a></li><li class="level3"><a href="#parameter">parameter</a></li><li class="level3"><a href="#return">return</a></li><li class="level3"><a href="#example">example</a></li><li class="level2"><a href="#dirname()  <code>&lt;static&gt;</code>">dirname()  <code>&lt;static&gt;</code></a></li><li class="level3"><a href="#parameter">parameter</a></li><li class="level3"><a href="#example">example</a></li><li class="level2"><a href="#extname()  <code>&lt;static&gt;</code>">extname()  <code>&lt;static&gt;</code></a></li><li class="level3"><a href="#example">example</a></li><li class="level2"><a href="#join()  <code>&lt;static&gt;</code>">join()  <code>&lt;static&gt;</code></a></li><li class="level3"><a href="#example">example</a></li><li class="level2"><a href="#normalize()  <code>&lt;static&gt;</code>">normalize()  <code>&lt;static&gt;</code></a></li><li class="level3"><a href="#example">example</a></li><li class="level2"><a href="#relative()  <code>&lt;static&gt;</code>">relative()  <code>&lt;static&gt;</code></a></li><li class="level3"><a href="#example">example</a></li><li class="level2"><a href="#resolve()  <code>&lt;static&gt;</code>">resolve()  <code>&lt;static&gt;</code></a></li><li class="level3"><a href="#example">example</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Features</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../guides/path/index.html">Path的基本介绍</a></p>
+						</div>
+					</div>
+					<div class="panel panel-primary ajax-load hide">
+						<div class="panel-heading">
+							<h3 class="panel-title">Demos</h3>
+						</div>
+						<div class="panel-body">
+							
+						</div>
+					</div>
+				</div>
+				<div id="main-content">
+					<p></p>
+<h1 id="Path的基本介绍">Path的基本介绍</h1><h2 id="用法">用法</h2><p>通过沙箱来调用</p>
+<pre><code><span class="hljs-built_in">require</span>([<span class="hljs-string">'path'</span>],<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(Path)</span></span>{
+    Path.do_sth();<span class="hljs-comment">// 执行操作</span>
+});
+</code></pre><h2 id="basename()  <code>&lt;static&gt;</code>">basename()  <code>&lt;static&gt;</code></h2><p><code>basename(path,ext) =&gt; String</code></p>
+<p>获取域名中的文件名</p>
+<h3 id="parameter">parameter</h3><ul>
+<li>path：String，路径字符串</li>
+<li>ext：String，需要过滤的扩展名，比如<code>.html</code></li>
+</ul>
+<h3 id="return">return</h3><p>返回文件名</p>
+<h3 id="example">example</h3><pre><code><span class="hljs-attribute">Path</span>.<span class="hljs-function">basename</span>(<span class="hljs-string">'http://www.taobao.com/index.html'</span>,<span class="hljs-string">'.html'</span>);<span class="hljs-comment">//=&gt; index</span>
+</code></pre><h2 id="dirname()  <code>&lt;static&gt;</code>">dirname()  <code>&lt;static&gt;</code></h2><p><code>dirname(path) =&gt; String</code></p>
+<p>返回path所指的文件所在的目录路径</p>
+<h3 id="parameter">parameter</h3><p>path（String），Path全称</p>
+<h3 id="example">example</h3><pre><code><span class="hljs-constant">Path.</span>dirname(<span class="hljs-string">'/home/bachi/daily/index.html'</span>);<span class="hljs-regexp">//</span>=&gt;<span class="hljs-regexp">/home/bachi</span><span class="hljs-regexp">/daily</span>
+</code></pre><h2 id="extname()  <code>&lt;static&gt;</code>">extname()  <code>&lt;static&gt;</code></h2><p><code>extname(path) =&gt; String</code></p>
+<p>获取路径所指文件的扩展名，比如<code>.html</code></p>
+<h3 id="example">example</h3><pre><code><span class="hljs-attribute">Path</span>.<span class="hljs-function">extname</span>(<span class="hljs-string">'/home/bachi/daily/index.html'</span>);<span class="hljs-comment">//=&gt; .html</span>
+</code></pre><h2 id="join()  <code>&lt;static&gt;</code>">join()  <code>&lt;static&gt;</code></h2><p><code>join(p1,p2,...) =&gt; String</code></p>
+<p>以此拼接p1、p2...,遇到<code>../</code>时回退一级目录</p>
+<h3 id="example">example</h3><pre><code><span class="hljs-comment">// ../../ 表示回退两级目录</span>
+Path.<span class="hljs-keyword">join</span>(<span class="hljs-string">'/home/bachi/daily/'</span>,<span class="hljs-string">'project'</span>,<span class="hljs-string">'../../'</span>,<span class="hljs-string">'index.html'</span>);<span class="hljs-comment">//=&gt; /home/bachi/index.html</span>
+</code></pre><h2 id="normalize()  <code>&lt;static&gt;</code>">normalize()  <code>&lt;static&gt;</code></h2><p><code>normalize(path) =&gt; String</code></p>
+<p>将path中的无关内容清理掉，返回直接的路径信息</p>
+<h3 id="example">example</h3><pre><code><span class="hljs-attribute">Path</span>.<span class="hljs-function">normalize</span>(<span class="hljs-string">'x/y/../z'</span>); <span class="hljs-comment">// =&gt; x/z/</span>
+<span class="hljs-attribute">Path</span>.<span class="hljs-function">normalize</span>(<span class="hljs-string">'x/y/z/../'</span>); <span class="hljs-comment">// =&gt; x/y/</span>
+</code></pre><h2 id="relative()  <code>&lt;static&gt;</code>">relative()  <code>&lt;static&gt;</code></h2><p><code>relative(from,to) =&gt; String</code></p>
+<p>计算相对路径</p>
+<h3 id="example">example</h3><pre><code><span class="hljs-constant">Path.</span>relative(<span class="hljs-string">'x/'</span>,<span class="hljs-string">'x/y/z'</span>); <span class="hljs-regexp">//</span> =&gt; <span class="hljs-string">'y/z'</span>
+<span class="hljs-constant">Path.</span>relative(<span class="hljs-string">'x/t/z'</span>,<span class="hljs-string">'x/'</span>); <span class="hljs-regexp">//</span> =&gt; <span class="hljs-string">'../../'</span>
+</code></pre><h2 id="resolve()  <code>&lt;static&gt;</code>">resolve()  <code>&lt;static&gt;</code></h2><p><code>resolve([from ...], to) =&gt; String</code></p>
+<p>得到绝对地址，算法逻辑参照NodeJS <a href="http://nodejs.org/api/path.html#path_path_resolve_from_to">Path.resolve</a>。</p>
+<h3 id="example">example</h3><pre><code>Path.<span class="hljs-function"><span class="hljs-title">resolve</span><span class="hljs-params">(<span class="hljs-string">'wwwroot'</span>, <span class="hljs-string">'static_files/png/'</span>, <span class="hljs-string">'../gif/image.gif'</span>)</span></span>
+<span class="hljs-comment">// =&gt; 'wwwroot/static_files/gif/image.gif'</span>
+
+Path.<span class="hljs-function"><span class="hljs-title">resolve</span><span class="hljs-params">(<span class="hljs-string">'/foo/bar'</span>, <span class="hljs-string">'/tmp/file/'</span>)</span></span>
+<span class="hljs-comment">// =&gt;    '/tmp/file'</span>
+</code></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="wrap-disqus">
+    <div class="top-repeat"></div>
+	<div id="disqus_thread"></div>
+</div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<div class="other-page">
+    <div class="wrap">
+        <div class="content">
+            <div class="wrap-content">
+                <p>@2010 - 2112 KISSY UI LIBARAY</p>
+                <div class="github-msg">
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=fork&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	</div>
+</body>
+</html>

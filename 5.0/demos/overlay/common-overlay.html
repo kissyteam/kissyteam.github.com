@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scale=no">
+	<title>Guides - KISSY v5.0 Documentation</title>
+	<link rel="shortcut icon" href="/5.0/assets/img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/5.0/assets/css/github.css"/>
+	<script type="text/javascript" src="http://g.tbcdn.cn/kissy/edge/2014.07.16/seed.js" data-config="{combine:true}"></script>
+	<link rel="stylesheet" href="/5.0/assets/css/component.css">
+</head>
+<body>
+	<div class="header">
+		<div class="inner">
+	<div class="toolbar">
+		<a href="/5.0">
+			<img class="mini-logo" src="/5.0/assets/img/mini-logo.png">
+		</a>
+		<ul class="nav clearfix">
+			<li class="docs">
+				<span>
+					Docs
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/guides/">Guides</a></li>
+					<li><a href="/5.0/api">Api Docs</a></li>
+					<li><a href="/5.0/demos">Demos</a></li>
+				</ul>
+			</li>
+			<li class="more">
+				<span>
+					More
+					<b class="caret"></b>
+				</span>
+				<ul>
+					<li><a href="/5.0/more/faq.html">FAQ</a></li>
+					<li><a href="http://gallery.kissyui.com/">Gallery</a></li>
+					<li><a href="http://blog.kissyui.com/">KISSY Blog</a></li>
+					<li><a href="https://github.com/daxingplay/kmc">KMC</a></li>
+					<li><a href="https://github.com/minghe/generator-bee/wiki/generator-bee%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">Generator</a></li>
+				</ul>
+			</li>
+			<li class="split"></li>
+			<li class="nav-other"><a href="/5.0/quick-start.html">Quick Start</a></li>
+			<li class="nav-other"><a href="https://github.com/kissyteam/kissy">Contribute</a></li>
+			<li class="nav-other"><a target="_blank" href="/5.0/kissyup-middle.html">KISSY UP</a></li>
+		</ul>
+	</div>
+	<div class="search">
+		<script>
+			(function() {
+			var cx = '003618533255763067140:5nkycw1pbey';
+			var gcse = document.createElement('script');
+			gcse.type = 'text/javascript';
+			gcse.async = true;
+			gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+			    '//www.google.com/cse/cse.js?cx=' + cx;
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(gcse, s);
+			})();
+		</script>
+		<gcse:search></gcse:search>
+	</div>
+</div>
+	</div>
+	<div class="main">
+		<div class="demo">
+			<div class="logo-on-top clearfix">
+				<img src="/5.0/assets/img/logo-on-top.png">
+			</div>
+			<div class="inner clearfix">
+				<div id="sidebar">
+					<a class="link-apidocs btn btn-primary" href="../../api/modules/overlay.html">API Docs</a>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Features</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../guides/overlay/index.html">Overlay基本介绍</a></p>
+						</div>
+					</div>
+					<div class="panel panel-primary ajax-load ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Demos</h3>
+						</div>
+						<div class="panel-body">
+							<p><a href="../../demos/overlay/animate-mask.html">mask动画示例</a></p><p><a href="../../demos/overlay/animate-target.html">target动画示例</a></p><p><a href="../../demos/overlay/common-overlay.html">多个触发元素公用一个弹出框</a></p><p><a href="../../demos/overlay/index.html">带遮罩的模态对话框</a></p><p><a href="../../demos/overlay/plugins-overlay.html">对话框-拖动、伸缩、限制</a></p><p><a href="../../demos/overlay/popup.html">内容提示框popup</a></p><p><a href="../../demos/overlay/tooltip.html">更小的内容提示tooltip</a></p>
+						</div>
+					</div>
+				</div>
+				<div id="main-content">
+					<p></p>
+<h1 id="多个触发元素公用一个弹出框">多个触发元素公用一个弹出框</h1><p><div class="ks-tabs ks-tabs-top" style="height:800px;">
+    <div class="ks-tabs-bar">
+        <div class="ks-tabs-tab ks-button">Source</div>
+        <div class="ks-tabs-tab ks-button ks-tabs-tab-selected">Output</div>
+        <div class="ks-tabs-tab ks-button">QRCode</div>
+    </div>
+    <div class="ks-tabs-body" style="overflow:hidden;">
+        <div class="ks-tabs-panel">
+            <div class="editor">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&#x2F;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+&lt;title&gt;多个触发元素公用一个弹出框&lt;&#x2F;title&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text&#x2F;css&quot; href=&quot;&#x2F;&#x2F;g.alicdn.com&#x2F;kissy&#x2F;k&#x2F;5.0.1&#x2F;css&#x2F;base.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text&#x2F;css&quot; href=&quot;&#x2F;&#x2F;g.alicdn.com&#x2F;kissy&#x2F;k&#x2F;5.0.1&#x2F;button&#x2F;assets&#x2F;dpl.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text&#x2F;css&quot; href=&quot;&#x2F;&#x2F;g.alicdn.com&#x2F;kissy&#x2F;k&#x2F;5.0.1&#x2F;overlay&#x2F;assets&#x2F;dpl.css&quot;&gt;
+&lt;style type=&quot;text&#x2F;css&quot;&gt;
+ul {
+padding: 0;
+margin: 0;
+}
+.shop-rank {
+    width: 300px;
+    font-size: 12px;
+}
+.shop-rank  li {
+    border-bottom: 1px dashed #EEEEEE;
+    height: 42px;
+    overflow: hidden;
+    padding: 9px 0;
+}
+.shop-rank .pic {
+    border: 1px solid #CCCCCC;
+    float: left;
+    height: 40px;
+    margin-right: 10px;
+    text-align: center;
+    width: 40px;
+}
+.shop-rank .pic a {
+    display: table-cell;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    width: 40px;
+}
+.shop-rank .pic img {
+    vertical-align: middle;
+}
+.shop-rank .desc, .shop-rank .price {
+    float: left;
+    height: 14px;
+    line-height: 1.2;
+    overflow: hidden;
+    text-align: left;
+    width: 120px;
+}
+.shop-rank .collecter, .shop-rank .sale {
+    float: left;
+    line-height: 1.4;
+    overflow: hidden;
+    width: 120px;
+}
+#popup3 {
+    background: white;
+}
+&lt;&#x2F;style&gt;
+&lt;script src=&quot;&#x2F;&#x2F;g.alicdn.com&#x2F;kissy&#x2F;k&#x2F;5.0.1&#x2F;seed-debug.js&quot; data-config=&quot;{combine:true}&quot;&gt;&lt;&#x2F;script&gt;
+&lt;&#x2F;head&gt;
+&lt;body&gt;
+&lt;div class=&quot;container&quot;&gt;
+    &lt;h1&gt;多个触发元素公用一个弹出框&lt;&#x2F;h1&gt;
+    &lt;p&gt;鼠标悬停在小图片上面出现的大图片是共用的一个弹出框，监听mouseenter事件并通过设置 align 属性来动态更新弹出框的定位信息。&lt;&#x2F;p&gt;
+    &lt;div class=&quot;shop-rank&quot; id=&quot;multi&quot;&gt;
+        &lt;ul&gt;
+            &lt;li&gt;
+                &lt;div class=&quot;pic&quot;&gt;
+                    &lt;a target=&quot;_blank&quot; href=&quot;http:&#x2F;&#x2F;item.taobao.com&#x2F;item.htm?id=3231736190&quot;&gt;&lt;img src=&quot;http:&#x2F;&#x2F;img03.taobaocdn.com&#x2F;bao&#x2F;uploaded&#x2F;i7&#x2F;T1ftRxXnRvXXalxZ.T_010955.jpg_40x40.jpg&quot; bigpicurl=&quot;http:&#x2F;&#x2F;img03.taobaocdn.com&#x2F;bao&#x2F;uploaded&#x2F;i7&#x2F;T1ftRxXnRvXXalxZ.T_010955.jpg_120x120.jpg&quot;&gt;&lt;&#x2F;a&gt;
+                &lt;&#x2F;div&gt;
+                &lt;div class=&quot;desc&quot;&gt;
+                    &lt;a target=&quot;_blank&quot; title=&quot;他她Tata 正品人气奢华皮草风牛皮女及踝靴FTJ23D火爆款&quot; href=&quot;http:&#x2F;&#x2F;item.taobao.com&#x2F;item.htm?id=3231736190&quot;&gt;他她Tata 正品人气奢华皮草风牛皮女及踝靴FTJ23D火爆款&lt;&#x2F;a&gt;
+                &lt;&#x2F;div&gt;
+                &lt;div class=&quot;price&quot;&gt;
+                    &lt;i&gt;&lt;&#x2F;i&gt;298.00元 i7&#x2F;T1ftRxXnRvXXalxZ.T_010955.jpg
+                &lt;&#x2F;div&gt;
+                &lt;div class=&quot;sale&quot;&gt;
+                    &lt;i&gt;&lt;&#x2F;i&gt;已售出 &lt;strong&gt;3799&lt;&#x2F;strong&gt; 笔
+                &lt;&#x2F;div&gt;
+            &lt;&#x2F;li&gt;
+            &lt;li&gt;
+                &lt;div class=&quot;pic&quot;&gt;
+                    &lt;a target=&quot;_blank&quot; href=&quot;http:&#x2F;&#x2F;item.taobao.com&#x2F;item.htm?id=9543317408&quot;&gt;&lt;img src=&quot;http:&#x2F;&#x2F;img01.taobaocdn.com&#x2F;bao&#x2F;uploaded&#x2F;i1&#x2F;T1n_p9Xm4jXXcYEmEY_030526.jpg_40x40.jpg&quot; bigpicurl=&quot;http:&#x2F;&#x2F;img01.taobaocdn.com&#x2F;bao&#x2F;uploaded&#x2F;i1&#x2F;T1n_p9Xm4jXXcYEmEY_030526.jpg_120x120.jpg&quot;&gt;&lt;&#x2F;a&gt;
+                &lt;&#x2F;div&gt;
+                &lt;div class=&quot;desc&quot;&gt;
+                    &lt;a target=&quot;_blank&quot; title=&quot;百丽belle 正品2011春季 高跟 粉色黑色漆牛皮女单鞋 3PQ04D&quot; href=&quot;http:&#x2F;&#x2F;item.taobao.com&#x2F;item.htm?id=9543317408&quot;&gt;百丽belle 正品2011春季 高跟 粉色黑色漆牛皮女单鞋 3PQ04D&lt;&#x2F;a&gt;
+                &lt;&#x2F;div&gt;
+                &lt;div class=&quot;price&quot;&gt;
+                    &lt;i&gt;&lt;&#x2F;i&gt;458.00元 i1&#x2F;T1n_p9Xm4jXXcYEmEY_030526.jpg
+                &lt;&#x2F;div&gt;
+                &lt;div class=&quot;sale&quot;&gt;
+                    &lt;i&gt;&lt;&#x2F;i&gt;已售出 &lt;strong&gt;1815&lt;&#x2F;strong&gt; 笔
+                &lt;&#x2F;div&gt;
+            &lt;&#x2F;li&gt;
+            &lt;li&gt;
+                &lt;div class=&quot;pic&quot;&gt;
+                    &lt;a target=&quot;_blank&quot; href=&quot;http:&#x2F;&#x2F;item.taobao.com&#x2F;item.htm?id=9138154640&quot;&gt;&lt;img src=&quot;http:&#x2F;&#x2F;img03.taobaocdn.com&#x2F;bao&#x2F;uploaded&#x2F;i7&#x2F;T1aJXZXfFsXXbGzYHb_092930.jpg_40x40.jpg&quot; bigpicurl=&quot;http:&#x2F;&#x2F;img03.taobaocdn.com&#x2F;bao&#x2F;uploaded&#x2F;i7&#x2F;T1aJXZXfFsXXbGzYHb_092930.jpg_120x120.jpg&quot;&gt;&lt;&#x2F;a&gt;
+                &lt;&#x2F;div&gt;
+                &lt;div class=&quot;desc&quot;&gt;
+                    &lt;a target=&quot;_blank&quot; title=&quot;商城母亲节包邮 百丽正品女鞋 belle 2011牛皮中跟 女单鞋 113-15&quot; href=&quot;http:&#x2F;&#x2F;item.taobao.com&#x2F;item.htm?id=9138154640&quot;&gt;商城母亲节包邮 百丽正品女鞋 belle 2011牛皮中跟 女单鞋 113-15&lt;&#x2F;a&gt;
+                &lt;&#x2F;div&gt;
+                &lt;div class=&quot;price&quot;&gt;
+                    &lt;i&gt;&lt;&#x2F;i&gt;358.00元 i7&#x2F;T1aJXZXfFsXXbGzYHb_092930.jpg
+                &lt;&#x2F;div&gt;
+                &lt;div class=&quot;sale&quot;&gt;
+                    &lt;i&gt;&lt;&#x2F;i&gt;已售出 &lt;strong&gt;1587&lt;&#x2F;strong&gt; 笔
+                &lt;&#x2F;div&gt;
+            &lt;&#x2F;li&gt;
+            &lt;li&gt;
+                &lt;div class=&quot;pic&quot;&gt;
+                    &lt;a target=&quot;_blank&quot; href=&quot;http:&#x2F;&#x2F;item.taobao.com&#x2F;item.htm?id=9172959292&quot;&gt;&lt;img src=&quot;http:&#x2F;&#x2F;img04.taobaocdn.com&#x2F;bao&#x2F;uploaded&#x2F;i4&#x2F;T1Iy0ZXnBhXXbWYAQ2_044742.jpg_40x40.jpg&quot; bigpicurl=&quot;http:&#x2F;&#x2F;img04.taobaocdn.com&#x2F;bao&#x2F;uploaded&#x2F;i4&#x2F;T1Iy0ZXnBhXXbWYAQ2_044742.jpg_120x120.jpg&quot;&gt;&lt;&#x2F;a&gt;
+                &lt;&#x2F;div&gt;
+                &lt;div class=&quot;desc&quot;&gt;
+                    &lt;a target=&quot;_blank&quot; title=&quot;他她tata 2011春季超高跟防水台女单鞋 J53-8D&quot; href=&quot;http:&#x2F;&#x2F;item.taobao.com&#x2F;item.htm?id=9172959292&quot;&gt;他她tata 2011春季超高跟防水台女单鞋 J53-8D&lt;&#x2F;a&gt;
+                &lt;&#x2F;div&gt;
+                &lt;div class=&quot;price&quot;&gt;
+                    &lt;i&gt;&lt;&#x2F;i&gt;398.00元 i4&#x2F;T1Iy0ZXnBhXXbWYAQ2_044742.jpg
+                &lt;&#x2F;div&gt;
+                &lt;div class=&quot;sale&quot;&gt;
+                    &lt;i&gt;&lt;&#x2F;i&gt;已售出 &lt;strong&gt;1583&lt;&#x2F;strong&gt; 笔
+                &lt;&#x2F;div&gt;
+            &lt;&#x2F;li&gt;
+            &lt;li&gt;
+                &lt;div class=&quot;pic&quot;&gt;
+                    &lt;a target=&quot;_blank&quot; href=&quot;http:&#x2F;&#x2F;item.taobao.com&#x2F;item.htm?id=5057404618&quot;&gt;&lt;img src=&quot;http:&#x2F;&#x2F;img04.taobaocdn.com&#x2F;bao&#x2F;uploaded&#x2F;i8&#x2F;T1wSFAXoxdXXbtWvsU_014508.jpg_40x40.jpg&quot; bigpicurl=&quot;http:&#x2F;&#x2F;img04.taobaocdn.com&#x2F;bao&#x2F;uploaded&#x2F;i8&#x2F;T1wSFAXoxdXXbtWvsU_014508.jpg_120x120.jpg&quot;&gt;&lt;&#x2F;a&gt;
+                &lt;&#x2F;div&gt;
+                &lt;div class=&quot;desc&quot;&gt;
+                    &lt;a target=&quot;_blank&quot; title=&quot;百丽belle正品 夏季新款 坡跟绵羊皮镶钻女凉鞋 3LC04D&quot; href=&quot;http:&#x2F;&#x2F;item.taobao.com&#x2F;item.htm?id=5057404618&quot;&gt;百丽belle正品 夏季新款 坡跟绵羊皮镶钻女凉鞋 3LC04D&lt;&#x2F;a&gt;
+                &lt;&#x2F;div&gt;
+                &lt;div class=&quot;price&quot;&gt;
+                    &lt;i&gt;&lt;&#x2F;i&gt;298.00元 i8&#x2F;T1wSFAXoxdXXbtWvsU_014508.jpg
+                &lt;&#x2F;div&gt;
+                &lt;div class=&quot;sale&quot;&gt;
+                    &lt;i&gt;&lt;&#x2F;i&gt;已售出 &lt;strong&gt;1547&lt;&#x2F;strong&gt; 笔
+                &lt;&#x2F;div&gt;
+            &lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+&lt;script type=&quot;text&#x2F;javascript&quot;&gt;
+    require([&#x27;node&#x27;, &#x27;overlay&#x27;], function ($, Overlay) {
+        &#x2F;&#x2F;新建共享popup层
+        var popup = new Overlay.Popup({
+            elStyle:{
+                border:&quot;2px solid gray&quot;,
+                lineHeight:0
+            },
+            width:120, &#x2F;&#x2F;配置高和宽
+            height:120,
+            effect:{
+                effect:&quot;fade&quot;, &#x2F;&#x2F;popup层显示动画效果，slide是展开，也可以&quot;fade&quot;渐变
+                duration:0.2
+            }
+        });
+        &#x2F;&#x2F; 注意：使用定制的显示&#x2F;隐藏方式
+        $(&quot;#multi&quot;).delegate(&quot;mouseenter&quot;, &quot;img&quot;, function (e) {
+            var target = $(e.target);
+            popup.set(&quot;content&quot;, &#x27;&lt;img src=&quot;&#x27; + target.attr(&#x27;bigpicurl&#x27;) + &#x27;&quot;&#x2F;&gt;&#x27;);
+            popup.set(&#x27;align&#x27;, {
+                node:target,
+                points:[&quot;tr&quot;, &quot;tl&quot;]
+            });
+            popup.show();
+        });
+
+        $(&quot;#multi&quot;).delegate(&quot;mouseleave&quot;, &quot;img&quot;, function (e) {
+            popup.hide();
+        });
+    });
+&lt;&#x2F;script&gt;
+&lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt; </div>
+        </div>
+        <div class="ks-tabs-panel ks-tabs-panel-selected">
+            <iframe class="output" frameborder="1">
+            	
+            </iframe>
+        </div>
+        <div class="ks-tabs-panel qrcode-wrap">
+            <div class="qrcode"></div>
+            <div class="content">
+                <p class="title">查看移动端演示</p>
+                <p class="qrcode-addr" qrcodeaddr="http://docs.kissyui.com/5.0/demos/overlay/cited-by-md/common-overlay.html" ="text">
+                    示例地址：
+                    <a href="http://docs.kissyui.com/5.0/demos/overlay/cited-by-md/common-overlay.html" target="_blank">http://docs.kissyui.com/5.0/demos/overlay/cited-by-md/common-overlay.html</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div></p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="wrap-disqus">
+    <div class="top-repeat"></div>
+	<div id="disqus_thread"></div>
+</div>
+<script>
+    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+     //var disqus_identifier = '/anim';
+     //var disqus_url = window.location;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+</script>
+<div class="other-page">
+    <div class="wrap">
+        <div class="content">
+            <div class="wrap-content">
+                <p>@2010 - 2112 KISSY UI LIBARAY</p>
+                <div class="github-msg">
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=kissyteam&repo=kissy&type=fork&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	</div>
+	<script type="text/javascript" src="/5.0/assets/js/ace-editor/ace.js"></script>
+	<script type="text/javascript" src="/5.0/assets/js/qrcodejs/qrcode.min.js"></script>
+	<script type="text/javascript" src="/5.0/assets/js/ajax-load.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
