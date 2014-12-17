@@ -5,9 +5,13 @@
     <title>KISSY - A Powerful JavaScript Framework</title>
     <meta name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/??bootstrap.css,normalize.css,kissy.css,prettify.css,forkit.css">
-    <script src="/1.4/source/guideline/templates/assets/??jquery.min.js,script.js"></script>
-    <script src="//g.alicdn.com/kissy/k/1.4.7/seed.js" type="text/javascript" data-config="{combine:true}"></script>
+    <script src="/1.4/source/guideline/templates/assets/jquery.min.js"></script>
+    <script src="/1.4/source/guideline/templates/assets/script.js"></script>
+    <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/bootstrap.css">
+    <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/normalize.css">
+    <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/kissy.css">
+    <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/prettify.css">
+    <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/forkit.css">
     <script src="/1.4/source/guideline/api/assets/highlight.pack.js"></script>
     <link href="/1.4/source/guideline/api/assets/tomorrow-night-bright.css" rel=stylesheet />
     <link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico">
@@ -74,7 +78,7 @@ h3 {
     color:blue;
 }
 </style></p>
-<h1>path</h1>
+<h1 id="path">path</h1>
 <blockquote>
 <p>当前浏览器地址的有关信息</p>
 </blockquote>
@@ -84,52 +88,52 @@ h3 {
 <pre><code>KISSY.use(&#39;path&#39;,function(S,Path){
     Path.do_sth();// 执行操作
 });</code></pre>
-<h3>basename()  <code>&lt;static&gt;</code></h3>
+<h3 id="basename-static-">basename()  <code>&lt;static&gt;</code></h3>
 <p><code>basename(path,ext) =&gt; String</code></p>
 <p>获取域名中的文件名</p>
-<h4>parameter</h4>
+<h4 id="parameter">parameter</h4>
 <ul>
 <li>path：String，路径字符串</li>
 <li>ext：String，需要过滤的扩展名，比如<code>.html</code></li>
 </ul>
-<h4>return</h4>
+<h4 id="return">return</h4>
 <p>返回文件名</p>
-<h4>example</h4>
+<h4 id="example">example</h4>
 <pre><code>Path.basename(&#39;http://www.taobao.com/index.html&#39;,&#39;.html&#39;);//=&gt; index</code></pre>
-<h3>dirname()  <code>&lt;static&gt;</code></h3>
+<h3 id="dirname-static-">dirname()  <code>&lt;static&gt;</code></h3>
 <p><code>dirname(path) =&gt; String</code></p>
 <p>返回path所指的文件所在的目录路径</p>
-<h4>parameter</h4>
+<h4 id="parameter">parameter</h4>
 <p>path（String），Path全称</p>
-<h4>example</h4>
+<h4 id="example">example</h4>
 <pre><code>Path.dirname(&#39;/home/bachi/daily/index.html&#39;);//=&gt;/home/bachi/daily</code></pre>
-<h3>extname()  <code>&lt;static&gt;</code></h3>
+<h3 id="extname-static-">extname()  <code>&lt;static&gt;</code></h3>
 <p><code>extname(path) =&gt; String</code></p>
 <p>获取路径所指文件的扩展名，比如<code>.html</code></p>
-<h4>example</h4>
+<h4 id="example">example</h4>
 <pre><code>Path.extname(&#39;/home/bachi/daily/index.html&#39;);//=&gt; .html</code></pre>
-<h3>join()  <code>&lt;static&gt;</code></h3>
+<h3 id="join-static-">join()  <code>&lt;static&gt;</code></h3>
 <p><code>join(p1,p2,...) =&gt; String</code></p>
 <p>以此拼接p1、p2...,遇到<code>../</code>时回退一级目录</p>
-<h4>example</h4>
+<h4 id="example">example</h4>
 <pre><code>// ../../ 表示回退两级目录
 Path.join(&#39;/home/bachi/daily/&#39;,&#39;project&#39;,&#39;../../&#39;,&#39;index.html&#39;);//=&gt; /home/bachi/index.html</code></pre>
-<h3>normalize()  <code>&lt;static&gt;</code></h3>
+<h3 id="normalize-static-">normalize()  <code>&lt;static&gt;</code></h3>
 <p><code>normalize(path) =&gt; String</code></p>
 <p>将path中的无关内容清理掉，返回直接的路径信息</p>
-<h4>example</h4>
+<h4 id="example">example</h4>
 <pre><code>Path.normalize(&#39;x/y/../z&#39;); // =&gt; x/z/
 Path.normalize(&#39;x/y/z/../&#39;); // =&gt; x/y/</code></pre>
-<h3>relative()  <code>&lt;static&gt;</code></h3>
+<h3 id="relative-static-">relative()  <code>&lt;static&gt;</code></h3>
 <p><code>relative(from,to) =&gt; String</code></p>
 <p>计算相对路径</p>
-<h4>example</h4>
+<h4 id="example">example</h4>
 <pre><code>Path.relative(&#39;x/&#39;,&#39;x/y/z&#39;); // =&gt; &#39;y/z&#39;
 Path.relative(&#39;x/t/z&#39;,&#39;x/&#39;); // =&gt; &#39;../../&#39;</code></pre>
-<h3>resolve()  <code>&lt;static&gt;</code></h3>
+<h3 id="resolve-static-">resolve()  <code>&lt;static&gt;</code></h3>
 <p><code>resolve([from ...], to) =&gt; String</code></p>
 <p>得到绝对地址，算法逻辑参照NodeJS <a href="http://nodejs.org/api/path.html#path_path_resolve_from_to">Path.resolve</a>。</p>
-<h4>example</h4>
+<h4 id="example">example</h4>
 <pre><code>KISSY.Path.resolve(&#39;wwwroot&#39;, &#39;static_files/png/&#39;, &#39;../gif/image.gif&#39;)
 // =&gt; &#39;wwwroot/static_files/gif/image.gif&#39;
 

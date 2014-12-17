@@ -5,9 +5,13 @@
     <title>KISSY - A Powerful JavaScript Framework</title>
     <meta name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/??bootstrap.css,normalize.css,kissy.css,prettify.css,forkit.css">
-    <script src="/1.4/source/guideline/templates/assets/??jquery.min.js,script.js"></script>
-    <script src="//g.alicdn.com/kissy/k/1.4.7/seed.js" type="text/javascript" data-config="{combine:true}"></script>
+    <script src="/1.4/source/guideline/templates/assets/jquery.min.js"></script>
+    <script src="/1.4/source/guideline/templates/assets/script.js"></script>
+    <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/bootstrap.css">
+    <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/normalize.css">
+    <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/kissy.css">
+    <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/prettify.css">
+    <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/forkit.css">
     <script src="/1.4/source/guideline/api/assets/highlight.pack.js"></script>
     <link href="/1.4/source/guideline/api/assets/tomorrow-night-bright.css" rel=stylesheet />
     <link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico">
@@ -69,19 +73,19 @@
     <article>
       
 
-	<h1>KISSY 浏览器测试基准</h1>
-<h2>浏览器支持列表</h2>
+	<h1 id="kissy-">KISSY 浏览器测试基准</h1>
+<h2 id="-">浏览器支持列表</h2>
 <p>KISSY 被设计为运行于绝大多数浏览器、设备环境。这些硬件环境包括：</p>
 <ul>
 <li>chrome/firefox/opera/safari 最新版本以及次新版本</li>
 <li>mobile safari/mobile chrome/mobile ie 最新版本以及次新版本</li>
 <li>ie6+</li>
 </ul>
-<h2>如何定义“通过测试“?</h2>
+<h2 id="-">如何定义“通过测试“?</h2>
 <p>KISSY 源码均提供测试用例，测试用例在这些环境中跑通即为通过测试，但测试用例是否反映真实场景和所有情形？应当辩证来对待。毕竟，测试用例只关注核心功能，且遵循等价类和边界值的原则进行用例抽取。但考虑到具体终端硬件配置、带宽、网速以及浏览器插件、杀毒软件等，这些都会影响 KISSY 代码的运行，这些因素，我们不考虑在测试因素之内。</p>
-<h2>浏览器分级支持</h2>
+<h2 id="-">浏览器分级支持</h2>
 <p>有必要对“浏览器支持”作一个完整的定义，这个定义应当包括视觉设计、开发和测试。而且要清楚的知道在什么条件下会有用户体验上的损失，这就是浏览器分级支持，大家在早先几年在 <a href="http://yuilibrary.com/yui/docs/tutorials/gbs/">YUI GBS</a> 上看到过这种分级，这种分级更多面向具体的项目、业务和工程，但对于底层 JS 库来说是不必分级，所有流行的浏览器都应当同时支持。</p>
-<h2>浏览器外壳和内核</h2>
+<h2 id="-">浏览器外壳和内核</h2>
 <p>这里是淘宝全网的浏览器使用情况，可以看到内核和外壳的占有情况，内环为内核，外环为外壳，这也是接下来要提到的浏览器同类项的数据基础： </p>
 <p><img src="http://gtms04.alicdn.com/tps/i4/T1ugCBFltdXXbsk2DF-577-351.png" alt=""></p>
 <p>不同的浏览器可能会采用相同的内核（渲染引擎），而外壳实现的差异性会影响整个网站功能。这也是为什么内核无法完全代表所有浏览器的原因。</p>

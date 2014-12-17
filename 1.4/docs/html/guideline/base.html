@@ -5,9 +5,13 @@
     <title>KISSY - A Powerful JavaScript Framework</title>
     <meta name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/??bootstrap.css,normalize.css,kissy.css,prettify.css,forkit.css">
-    <script src="/1.4/source/guideline/templates/assets/??jquery.min.js,script.js"></script>
-    <script src="//g.alicdn.com/kissy/k/1.4.7/seed.js" type="text/javascript" data-config="{combine:true}"></script>
+    <script src="/1.4/source/guideline/templates/assets/jquery.min.js"></script>
+    <script src="/1.4/source/guideline/templates/assets/script.js"></script>
+    <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/bootstrap.css">
+    <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/normalize.css">
+    <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/kissy.css">
+    <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/prettify.css">
+    <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/forkit.css">
     <script src="/1.4/source/guideline/api/assets/highlight.pack.js"></script>
     <link href="/1.4/source/guideline/api/assets/tomorrow-night-bright.css" rel=stylesheet />
     <link rel="shortcut icon" href="http://a.tbcdn.cn/s/kissy/favicon.ico">
@@ -69,7 +73,7 @@
     <article>
       
 
-	<h1>Base</h1>
+	<h1 id="base">Base</h1>
 <p>阅读之前先通读<a href="oo.html">KISSY 中的面向对象</a>。</p>
 <p>有了 augment，我们可以很方便得扩展类的原型；有了 extend，我们可以很方便地继承；那么 KISSY 对属性 getter、setter 的实现，是基于Base完成的。</p>
 <p>顾名思义，Base 是个基础类；他包含除了getter和setter之外，还包含自定义事件和插件机制。因此Base包括：</p>
@@ -87,7 +91,7 @@
 <p>在KISSY 1.3.x 中有一个别名RichBase，1.4.0 及以后版本将统一为Base，在实现上，Base 使用了自定义事件掺元对象<code>CustomEvent.Target</code>和内置的掺元对象<code>Attribute</code>。</p>
 </blockquote>
 <p>我们来分别看下Base的这几个特性</p>
-<h2>1，属性管理：Attribute</h2>
+<h2 id="1-attribute">1，属性管理：Attribute</h2>
 <p>Base 的属性配置来自 Attribute 模块，它提供如下方法：</p>
 <ul>
 <li>addAttr()</li>
@@ -201,9 +205,9 @@ var dog = new Dog();</code></pre>
         this.callSuper(v)
     }
 });</code></pre>
-<h2>2，自定义事件 CustomEvent</h2>
+<h2 id="2-customevent">2，自定义事件 CustomEvent</h2>
 <p>继承自Base的对象可以分发自定义事件，即实例上有<code>fire()</code>方法。比如上一段代码，bark() 函数中触发了一个自定义事件<code>bark</code>，绑定这个事件即可收到这个事件。具体用法可参照<a href="event.html">Event自定义事件部分</a>。</p>
-<h2>3，插件机制：Plugin</h2>
+<h2 id="3-plugin">3，插件机制：Plugin</h2>
 <p>ATTR 的作用是给类本身新增特性，完成类与类之间的代码共享。对于要给实例动态增加新特性，就需要新的机制，插件机制。Base提供了一个配置（plugins）和三个函数（plug、unplug和getPlugin）用来管理插件。在正式讲解之前，读者一定要明白，插件的本质是&quot;代码注入&quot;，即安装和卸载的行为分别执行一段外部脚本。</p>
 <p>插件实际上是一个简单对象，在类实例化的时候可以实例化plugin，也可以在实例化后插入plugin，当载入插件时，调用 plugin 的 pluginInitializer 初始化函数。在销毁插件的时候调用 pluginDestructor 析构函数。用法是调用实例的<code>plug(plugin)</code>方法。</p>
 <p>参数plugin可以是类，也可以是实例，如果是类则无参实例化plugin。 两者都会调用plugin的pluginInitializer初始化函数。推荐以实例的形式写插件。</p>

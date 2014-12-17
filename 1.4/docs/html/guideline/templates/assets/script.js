@@ -8,9 +8,6 @@ var getRandom = function (a) {
 };
 
 (function () {
-    if (location.hostname === 'kissyteam.github.io') {
-        location.hostname = 'docs.kissyui.com';
-    }
 
     $(document).ready(function () {
         $('#show-off').html('<img src="templates/assets/img/show-off-' + getRandom(4) + '.png" />');
