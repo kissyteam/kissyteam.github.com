@@ -4,12 +4,11 @@ body {
 }
 
 body {
-  background-image:url('./img/content-bg.png');
   font-family: 'Droid Sans', 'Verdana','微软雅黑',sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 14px;
+  line-height: 24px;
   color: #333;
-  overflow-x:hidden; /*fixes yeoman/yeoman.io#22 */
+  overflow-x:hidden;
 }
 
 
@@ -58,11 +57,11 @@ h2 {
 }
 
 h1 {
-  text-align: center;
   font-size: 24px;
   letter-spacing: 2px;
   line-height: 24px;
   text-transform: uppercase;
+  margin: 30px 0;
 }
 
 h2 {
@@ -94,12 +93,17 @@ h2 {
 #plugins-all p {
   text-align: center;
 }
-
+.github-count {
+    margin-bottom: 20px;
+}
 nav {
-  background-color:#EDEDED;
+  background-color:#2a3744;
   text-align: center;
   padding: 0 0 14px 0;
   font-family: 'Lekton', sans-serif;
+}
+nav a,a:visited,a:active{
+    color: #c0ccdb;
 }
 
 nav header {
@@ -141,9 +145,7 @@ nav ul {
 
 nav ul li {
   white-space: nowrap;
-  line-height: 21px;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  line-height: 30px;
 }
 
 nav ul li a {
@@ -155,25 +157,18 @@ nav ul li img {
 }
 
 .nav-divider {
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
-  margin-bottom: 10px
-}
-
-.nav-sub {
-  padding-left: 12px;
-  background-image: url( 'img/subnav-dot.png' );
-  background-repeat: no-repeat;
-  background-position: 0px 10px;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 15px;
+  margin-bottom: 15px
 }
 
 #content {
-  padding: 10px 25px 0 25px;
+    width: 80%;
+    float: left;
 }
 
 article {
-  max-width: 700px;
-  margin: auto;
+  margin: 20px;
 }
 
 .discovery-page article {
@@ -563,18 +558,19 @@ pre code {
 @media (min-width: 761px) {
 
   nav {
-    width: 250px;
+    width: 20%;
     height: 100%;
     float: left;
     padding: 0;
   }
 
   nav header {
-    padding: 40px 0 20px 0;
+    padding: 20px 26px;
+    text-align: left;
   }
 
   nav header img {
-
+     width: 100px;
   }
 
   .yt{
@@ -582,8 +578,7 @@ pre code {
   }
 
   #content {
-    padding: 30px 25px 0 25px;
-    margin: 0 0 0 250px;
+
   }
   .forkit-curtain .repo {
     width: 33%
@@ -615,5 +610,15 @@ pre code {
   }
 }
 
+}
+
+.jumbotron{
+    height:150px;
+}
+.jumbotron a{
+    width: 150px;
+    float: left;
+    margin-top: 5px;
+    margin-left: 10px;
 }
 
