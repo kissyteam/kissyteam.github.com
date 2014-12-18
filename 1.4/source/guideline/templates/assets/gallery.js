@@ -8,6 +8,8 @@ KISSY.add('gallery-js', function (S,Node,DataLazyload) {
             execScript: false
         });
     }
+    var d = $('#content').height();
+    $('#sidebar').css({ "min-height": d+40 });
 
 }, {
     requires: ['node','kg/datalazyload/2.0.0/']
