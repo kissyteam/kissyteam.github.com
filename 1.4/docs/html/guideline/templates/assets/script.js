@@ -25,7 +25,7 @@ var getRandom = function (a) {
         var w = $(window).width();
 
         if (w > 760) {
-            $('#sidebar').css({ "min-height": (d - 40) });
+            $('#sidebar').css({ "min-height": d+40 });
         } else {
             $('#sidebar').css({ "min-height": (100) });
         }

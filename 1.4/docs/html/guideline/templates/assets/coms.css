@@ -1,0 +1,740 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('http://at.alicdn.com/t/font_1411716561_5974455.eot'); /* IE9*/
+    src: url('http://at.alicdn.com/t/font_1411716561_5974455.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('http://at.alicdn.com/t/font_1411716561_5974455.woff') format('woff'), /* chrome、firefox */
+    url('http://at.alicdn.com/t/font_1411716561_5974455.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('http://at.alicdn.com/t/font_1411716561_5974455.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+h4{
+    margin: 0;
+}
+ul{
+    padding: 0;
+}
+
+.iconfont{
+    font-family: 'iconfont';
+    color: #999;
+    font-size: 16px;
+    margin-right: 5px;
+}
+#main{
+    position: relative;
+    z-index: 3;
+    padding: 30px;
+    margin: 0 auto;
+}
+@-webkit-keyframes swing {
+    20%, 40%, 60%, 80%, 100% {
+        -webkit-transform-origin: top center;
+    }
+ 
+    20% {
+        -webkit-transform: rotate(15deg);
+    }
+ 
+    40% {
+        -webkit-transform: rotate(-10deg);
+    }
+ 
+    60% {
+        -webkit-transform: rotate(5deg);
+    }
+ 
+    80% {
+        -webkit-transform: rotate(-5deg);
+    }
+ 
+    100% {
+        -webkit-transform: rotate(0deg);
+    }
+}
+ 
+@-moz-keyframes swing {
+    20% {
+        -moz-transform: rotate(15deg);
+    }
+ 
+    40% {
+        -moz-transform: rotate(-10deg);
+    }
+ 
+    60% {
+        -moz-transform: rotate(5deg);
+    }
+ 
+    80% {
+        -moz-transform: rotate(-5deg);
+    }
+ 
+    100% {
+        -moz-transform: rotate(0deg);
+    }
+}
+ 
+@-o-keyframes swing {
+    20% {
+        -o-transform: rotate(15deg);
+    }
+ 
+    40% {
+        -o-transform: rotate(-10deg);
+    }
+ 
+    60% {
+        -o-transform: rotate(5deg);
+    }
+ 
+    80% {
+        -o-transform: rotate(-5deg);
+    }
+ 
+    100% {
+        -o-transform: rotate(0deg);
+    }
+}
+ 
+@keyframes swing {
+    20% {
+        transform: rotate(15deg);
+    }
+ 
+    40% {
+        transform: rotate(-10deg);
+    }
+ 
+    60% {
+        transform: rotate(5deg);
+    }
+ 
+    80% {
+        transform: rotate(-5deg);
+    }
+ 
+    100% {
+        transform: rotate(0deg);
+    }
+}
+ 
+@-webkit-keyframes rotateIn {
+    0% {
+        opacity: 0;
+        transform:scale(1.5,1.5);
+    }
+
+    100% {
+        opacity: 0.8;
+        transform:scale(1,1);
+    }
+}
+ 
+@-moz-keyframes rotateIn {
+    0% {
+        opacity: 0;
+        transform:scale(1.5,1.5);
+    }
+
+    100% {
+        opacity: 0.8;
+        transform:scale(1,1);
+    }
+}
+ 
+@-o-keyframes rotateIn {
+    0% {
+        opacity: 0;
+        transform:scale(1.5,1.5);
+    }
+
+    100% {
+        opacity: 0.8;
+        transform:scale(1,1);
+    }
+}
+ 
+@keyframes rotateIn {
+    0% {
+        opacity: 0;
+        transform:scale(1.5,1.5);
+    }
+
+    100% {
+        opacity: 0.8;
+        transform:scale(1,1);
+    }
+}
+ 
+@-webkit-keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-2000px);
+    }
+ 
+    60% {
+        opacity: 1;
+        -webkit-transform: translateY(30px);
+    }
+ 
+    80% {
+        -webkit-transform: translateY(-10px);
+    }
+ 
+    100% {
+        -webkit-transform: translateY(0);
+    }
+}
+ 
+@-moz-keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        -moz-transform: translateY(-2000px);
+    }
+ 
+    60% {
+        opacity: 1;
+        -moz-transform: translateY(30px);
+    }
+ 
+    80% {
+        -moz-transform: translateY(-10px);
+    }
+ 
+    100% {
+        -moz-transform: translateY(0);
+    }
+}
+ 
+@-o-keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        -o-transform: translateY(-2000px);
+    }
+ 
+    60% {
+        opacity: 1;
+        -o-transform: translateY(30px);
+    }
+ 
+    80% {
+        -o-transform: translateY(-10px);
+    }
+ 
+    100% {
+        -o-transform: translateY(0);
+    }
+}
+ 
+@keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-2000px);
+    }
+ 
+    60% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+ 
+    80% {
+        transform: translateY(-10px);
+    }
+ 
+    100% {
+        transform: translateY(0);
+    }
+}
+ 
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Microsoft YaHei";
+    background: #F5F5F5;
+}
+ 
+ul {
+    list-style: none;
+}
+ 
+a {
+    text-decoration: none;
+}
+ 
+img {
+    max-width: 100%;
+}
+ 
+.l-left {
+    float: left;
+}
+ 
+.l-right {
+    float: right;
+}
+ 
+.l-fixed {
+    position: fixed;
+}
+.clearfix{
+    overflow:auto;
+    _height:1%;
+}
+ 
+.l-block {
+    display: block;
+}
+ 
+.l-inline {
+    display: inline;
+}
+ 
+.l-inline-block {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+
+.nav-tag-list{
+    height: 50px;
+    background-color: #fff;
+    position: relative;
+}
+.nav-tag-list:before{
+    content: ' ';
+    background: -webkit-linear-gradient(top, #BBB,#EEE ,#F3F3F3 20%);
+    background: -moz-linear-gradient(top, #BBB,#EEE ,#F3F3F3 20%);
+    background: -o-linear-gradient(top, #BBB,#EEE ,#F3F3F3 20%);
+    background: linear-gradient(top, #BBB,#EEE ,#F3F3F3 20%);
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+}
+.nav-tag-list a{
+    color: #333;
+    font-size: 16px;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 10px;
+    -webkit-transition: background 0.3s;
+    transition: background 0.3s;
+}
+.nav-tag-list a.current,.nav-tag-list a:hover{
+    background-color: #1CC6E9;
+    color: #fff;
+}
+
+.guide {
+    width: 90%;
+    margin: 0 auto;
+    height: 450px;
+    text-align: center;
+}
+ 
+.guide > .bd {
+    margin-top: 87px;
+    text-align: center;
+}
+ 
+.guide .guide-link {
+    width: 30%;
+    max-width: 284px;
+    height: 73px;
+    padding-top: 148px;
+    color: #333;
+    font-size: 26px;
+    background: url(http://gallery.kissyui.com/images/guide.png) no-repeat;
+}
+ 
+.guide .guide-link:hover {
+    -webkit-transform-origin: top center;
+    -moz-transform-origin: top center;
+    -o-transform-origin: top center;
+    transform-origin: top center;
+    -webkit-animation-name: swing;
+    -moz-animation-name: swing;
+    -o-animation-name: swing;
+    animation-name: swing;
+}
+ 
+.guide .dev {
+    float: right;
+    background-position: 32px 0;
+}
+ 
+.guide .spec {
+    display: inline-block;
+    background-position: -225px 0;
+}
+ 
+.guide .tool {
+    float: left;
+    background-position: -480px 0;
+}
+ 
+.guide .guide-link em {
+    display: block;
+    margin-top: 20px;
+    line-height: 73px;
+ 
+    font-style: normal;
+}
+ 
+.guide .ft {
+    margin-top: 65px;
+    text-align: center;
+}
+ 
+.guide .source {
+    display: block;
+    margin: 0 auto;
+    width: 363px;
+    height: 92px;
+    line-height: 92px;
+    padding-left: 109px;
+    text-align: left;
+    color: #fff;
+    background: #24abeb url(http://gallery.kissyui.com/images/source.png) 10px no-repeat;
+    font-size: 40px;
+}
+ 
+.contribute {
+    display: table;
+    min-height: 240px;
+    width: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #72cca7;
+    overflow: hidden;
+}
+ 
+.contribute .hd {
+    display: table-cell;
+    width: 30px;
+    min-height: 150px;
+    padding: 0 13px;
+    line-height: 40px;
+    background: #63b191;
+    vertical-align: middle;
+    text-align: center;
+}
+ 
+.contribute .title {
+    font-size: 20px;
+    color: #fff;
+}
+ 
+.contribute .bd {
+    display: table-cell;
+}
+ 
+.author-list {
+    margin-bottom: -10px;
+}
+ 
+.author-list .author {
+    display: inline-block;
+    position: relative;
+    margin-left: 14px;
+    margin-bottom: 14px;
+}
+ 
+.author-list .author-info {
+    text-align: center;
+    width: 50px;
+    height: 24px;
+    overflow: hidden;
+}
+
+.author-list .author a{
+    color: #333;
+}
+ 
+.author-list .author:hover .author-info {
+    display: block;
+    -webkit-animation-name: rotateIn;
+    -moz-animation-name: rotateIn;
+    -o-animation-name: rotateIn;
+    animation-name: rotateIn;
+}
+ 
+.author-list img {
+    width: 50px;
+    height: 50px;
+}
+ 
+.author-list .author-email {
+    font-size: 12px;
+}
+ 
+.author-list .author-name {
+    margin-top: 5px;
+    text-align: center;
+}
+.author-name a{
+    color:#666;
+}
+
+.component-list{
+    margin-bottom: 30px;
+}
+.component-list .item {
+    display: inline-block;
+    width: 220px;
+    height: 270px;
+    background: #2E3444;
+    margin: 20px;
+    margin-left: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.component-list .name {
+    padding: 20px 20px;
+    font-size: 20px;
+    color: #fff;
+}
+
+ 
+.component-list .avatar {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+}
+ 
+.component-list .desc {
+    font-size: 16px;
+    line-height: 26px;
+    height:160px;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+.component-list .desc p{
+    margin: 20px;
+    height: 100px;
+    overflow: hidden;
+}
+.component-list .desc a{
+    color: #666;
+}
+.component-list .desc img{
+    width: 220px;
+    max-width: 220px;
+    min-height: 160px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    opacity: 1;
+    -webkit-transition: top 0.3s, opacity 0.7s, -webkit-transform 0.3s;
+    -moz-transition: top 0.3s, opacity 0.7s, -moz-transform 0.3s;
+    transition: top 0.3s, opacity 0.7s, transform 0.3s;
+}
+.component-list .item:hover  .desc img{
+    top: -120px;
+    opacity: 0;
+}
+.com-links{
+    position: relative;
+    height: 30px;
+    overflow: hidden;
+}
+.c{
+    font-size: 12px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 60px;
+    color: #fff;
+    text-align: center;
+    -webkit-transition: background 0.3s;
+    transition: background 0.3s;
+    margin-left: 20px;
+    overflow: hidden;
+
+}
+.com-links .author-name{
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.com-links .author-name:active{
+    color: #fff;
+}
+.demo-link{
+    background-color: #81C8A6;
+    border-radius: 50px;
+    width: 50px;
+    line-height: 34px;
+    float: right;
+    position: absolute;
+    right:20px;
+    bottom: 10px;
+}
+.demo-link:hover{
+    background-color: #C66075;
+}
+.com-links .star-link{
+    background-color: #81C8A6;
+    margin-right: 40px;
+}
+.com-links .star-link span{
+    display: block;
+    padding-top: 10px;
+}
+.com-links .star-link:hover{
+    background-color: #C66075;
+}
+.com-links .author-link{
+    background-color: #0875B6;
+}
+ 
+.contact {
+    padding: 40px;
+}
+ 
+.contact .item {
+    float: left;
+    margin-right: 73px;
+    color: #fff;
+}
+.contact .title{
+    font-size: 16px;
+}
+.contact .desc {
+    margin-top: 15px;
+    font-size: 24px;
+}
+ 
+.contact a {
+    color: #fff;
+}
+ 
+.index-author {
+    height: 38px;
+    padding-right: 17px;
+    line-height: 38px;
+    background: #e3e1e1;
+    font-size: 14px;
+    display: none;
+}
+ 
+.controls .ks-button {
+    padding: 10px 12px;
+}
+.controls .active {
+    color: #333;
+    background-position: 0 -15px;
+    transition: background-position 0.1s linear;
+    background-color: #e6e6e6;
+}
+ 
+.component .search-box{
+    position: absolute;
+    top: 10px;
+    left:310px;
+}
+.component .search-box input{
+    width:300px;
+    padding:10px 12px;
+    border-radius: 3px;
+    border:1px solid #ccc;
+}
+.tag-list{
+    cursor: pointer;
+    padding:0;
+    margin: 0;
+    margin-top: 10px;
+}
+.tag-list li{
+    margin-right: 10px;
+    background-color: #fff;
+    padding: 4px 20px;
+    border: 1px solid #f5f5f5;
+    border-left: 4px solid #DB8167;
+    font-size: 14px;
+    border-radius: 3px;
+    margin-bottom:10px;
+}
+.author-tags-wrapper{
+    height: 82px;
+    overflow-y: hidden;
+}
+.author-tags{
+    margin-bottom: 0;
+}
+.author-tags li{
+    border-left-color: rgba(77, 90, 98, 0.65098);
+}
+.tag-list li:hover,.tag-list .tag-current{
+   border-color: #09C;
+}
+.ads{
+    margin-top:40px;
+}
+.ads li{
+    margin-right:15px;
+}
+.ads img{
+    width:300px;
+    height:100px;
+}
+/*标签页面*/
+.tag-page #header h2{
+    position: absolute;
+    left: 350px;
+    top: 20px;
+    color: #fff;
+    font-size: 30px;
+}
+.tag-page .component-list .item{
+    position: relative;
+    -webkit-transform: none;
+    transform: none;
+}
+
+.explain{
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+}
+.explain .iconfont{
+    font-size: 20px;
+}
+h2.h2{
+    font-size: 20px;
+    margin-top: 10px;
+    line-height: 22px;
+}
+h2.h2 .iconfont{
+    font-size: 22px;
+}
+.author-wrapper{
+    clear: both;
+    margin: 20px 0;
+}
+#star-list .component-list .item{
+    height: 270px;
+}
+
+.kissy-ui .item{
+    height: 230px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+}
