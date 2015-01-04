@@ -44,9 +44,7 @@
 
   <div id="content">
     <article>
-      
-
-	<h1 id="-node-kissy">在Node环境中运行kissy</h1>
+	    <h1 id="-node-kissy">在Node环境中运行kissy</h1>
 <p>KISSY 可以运行在 Node 环境中，由于KISSY下辖多数模块都依赖于DOM，只有seed、oo、base、xtemplate等组件可以完整运行于 Node，因此要获得Dom支持需要载入node模块<code>jsdom</code>，jsdom 可以在服务器端生成一套完整的浏览器宿主环境。</p>
 <h2 id="-node-kissy">在 node 环境中安装 kissy</h2>
 <p>这里使用了<a href="https://github.com/tmpvar/jsdom">JSDom</a> 来生成服务端的浏览器宿主环境，KISSY 可以和任何合法的 DOM 树结构一起工作。</p>
@@ -130,47 +128,24 @@ KISSY.use(&#39;a&#39;,function(S,A){
 <p>1，执行<code>eval()</code>时如果带有对KISSY的引用，会报错<code>KISSY is not defined</code>。比如在引用XTemplate的时候，要这样来获得KISSY全局对象</p>
 <pre><code>global.KISSY=require(&#39;kissy&#39;);</code></pre>
 
-
-<div id="disqus_thread"></div>
-<script>
-    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
-
-    // The following are highly recommended additional parameters. Remove the slashes in front to use.
-     //var disqus_identifier = '/anim';
-     //var disqus_url = window.location;
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    }
-</script>
-
-
-
-      
-  <style>
-	.github-btn {
-		border: 0 none;
-		overflow: hidden;
-		margin-top:4px;
-	}
-	footer {
-		border-top:1px solid #e2e2e2;
-		padding-top:20px;
-		clear:both;
-	}
-	/* iPhone 及以下 */
-	@media only screen and (max-width: 767px) {
-		.github-link {
-			display:none;
-		}
-	}
-  </style>
+          <style>
+            .github-btn {
+                border: 0 none;
+                overflow: hidden;
+                margin-top:4px;
+            }
+            footer {
+                border-top:1px solid #e2e2e2;
+                padding-top:20px;
+                clear:both;
+            }
+            /* iPhone 及以下 */
+            @media only screen and (max-width: 767px) {
+                .github-link {
+                    display:none;
+                }
+            }
+          </style>
     </article>
   </div>
   <script>

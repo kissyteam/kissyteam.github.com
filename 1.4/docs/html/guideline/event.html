@@ -44,9 +44,7 @@
 
   <div id="content">
     <article>
-      
-
-	<h1 id="event">event</h1>
+	    <h1 id="event">event</h1>
 <p>Event 模块是KISSY最重要的模块之一，他包含自定义事件机制、事件对象封装、DOM事件封装、面向多终端的事件行为统一。下辖多个子模块，被Node、DOM、Base分别依赖。通常DOM事件无需直接引用event，只需use(&#39;node&#39;)即可。使用use(&#39;base&#39;)时也无需手动引入event。如果想单独使用自定义事件，则需要use(&#39;event&#39;)。</p>
 <pre><code>KISSY.use(&#39;event&#39;,function(S,Event){
     // Your code..    
@@ -381,47 +379,24 @@ KISSY.use(&#39;klass&#39;,function(S,Klass){
 });</code></pre>
 <p>这是一个很纯粹的自定义事件（Base组件内置自定义事件机制），它有事件名称“afterOneSecond”，有事件的触发条件<code>self.fire(&#39;afterOneSecond&#39;)</code>，有事件的绑定，<code>k.on(&#39;afterOneSecond&#39;)</code>。这样这个事件就能顺利的发生，并被成功监听。在代码组织层面，一般<code>Klass</code>类中实现了事件命名、定义和实现，属于内聚的功能实现。而绑定事件时可以是Klass这段代码的用户，他不会去关心事件的具体实现，只要关心Klass&quot;暴露了什么事件可以让我绑定&quot;就可以了，这就是KISSY中使用自定义事件的用法。你可以通过Base来创建自定义事件。</p>
 
-
-<div id="disqus_thread"></div>
-<script>
-    if((window.location.hostname.indexOf("kissyui.com")!=-1 )&& window.localStorage.getItem("kissy-commment")!="0"){
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'kissy-docs'; // required: replace example with your forum shortname
-
-    // The following are highly recommended additional parameters. Remove the slashes in front to use.
-     //var disqus_identifier = '/anim';
-     //var disqus_url = window.location;
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    }
-</script>
-
-
-
-      
-  <style>
-	.github-btn {
-		border: 0 none;
-		overflow: hidden;
-		margin-top:4px;
-	}
-	footer {
-		border-top:1px solid #e2e2e2;
-		padding-top:20px;
-		clear:both;
-	}
-	/* iPhone 及以下 */
-	@media only screen and (max-width: 767px) {
-		.github-link {
-			display:none;
-		}
-	}
-  </style>
+          <style>
+            .github-btn {
+                border: 0 none;
+                overflow: hidden;
+                margin-top:4px;
+            }
+            footer {
+                border-top:1px solid #e2e2e2;
+                padding-top:20px;
+                clear:both;
+            }
+            /* iPhone 及以下 */
+            @media only screen and (max-width: 767px) {
+                .github-link {
+                    display:none;
+                }
+            }
+          </style>
     </article>
   </div>
   <script>
