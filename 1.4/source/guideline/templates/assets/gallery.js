@@ -61,7 +61,7 @@ KISSY.add('gallery-js', function (S,Node,DataLazyload, IO) {
             }
             appendCat();
             fixSidebarHeight();
-            IO.get('./tmp/coms/config.json',function(data){
+            IO.getJSON('./tmp/coms/config.json',function(data){
                 $coms.all('.item-link').each(function(item){
                     var url = item.attr('href');
                     item.attr('href', url.replace(/kissygalleryteam\.github\.io/g, data.domain));
