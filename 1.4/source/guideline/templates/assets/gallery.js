@@ -42,14 +42,15 @@ KISSY.add('gallery-js', function (S,Node,DataLazyload, IO) {
         sticky($cat);
     }
 
+    var $coms = $('#content article');
     IO({
         url:'./coms-list.html',
         type:"get",
+        cache: false,
         dataType:'html',
         success: function (d) {
 
-            $('#content article').append(d);
-
+            $coms.append(d);
             var $list = $('.J_Lazyload');
             if ($list.length) {
                 new DataLazyload({
@@ -60,11 +61,19 @@ KISSY.add('gallery-js', function (S,Node,DataLazyload, IO) {
             }
             appendCat();
             fixSidebarHeight();
+            IO.get('./tmp/coms/config.json',function(data){
+                $coms.all('.item-link').each(function(item){
+                    var url = item.attr('href');
+                    item.attr('href', url.replace(/kissygalleryteam\.github\.io/g, data.domain));
+                });
+            });
         },
         error: function(d){
             fixSidebarHeight();
         }
     });
+
+
 
 }, {
     requires: ['node','kg/datalazyload/2.0.0/', 'io']
