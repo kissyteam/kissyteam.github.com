@@ -56,10 +56,10 @@ KISSY is a powerful javascript framework for building cross end web application 
 
 # 使用 KISSY 1.4
 
-1. 下载 [KISSY 1.4.7](https://github.com/kissyteam/kissy/archive/1.4.7.zip)
-2. 通过 cdn 使用 `//g.alicdn.com/kissy/k/1.4.7/seed-min.js`
-3. npm 安装 KISSY: ``npm install kissy@1.4.7``
-4. bower 安装 KISSY: ``bower install kissy#1.4.7``
+1. 下载 [KISSY 1.4.8](https://github.com/kissyteam/kissy/archive/1.4.8.zip)
+2. 通过 cdn 使用 `//g.alicdn.com/kissy/k/1.4.8/seed-min.js`
+3. npm 安装 KISSY: ``npm install kissy@1.4.8``
+4. bower 安装 KISSY: ``bower install kissy#1.4.8``
 
 
 # 参与 KISSY

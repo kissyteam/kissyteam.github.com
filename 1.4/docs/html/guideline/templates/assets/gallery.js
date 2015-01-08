@@ -1,6 +1,7 @@
-KISSY.add('gallery-js', function (S,Node,DataLazyload, IO) {
+KISSY.add('gallery-js', function (S,Node,DataLazyload, IO, ComboBox, JSON) {
     var $ = Node.all,
-        win = $(window);
+        win = $(window),
+        domain = 'kissygalleryteam.github.io';
 
     function fixSidebarHeight(){
         var d = $('#content').height();
@@ -22,13 +23,80 @@ KISSY.add('gallery-js', function (S,Node,DataLazyload, IO) {
         },1000/60));
     }
 
-    function appendCat(){
-        var str = '<ul>';
-        $('.J_Floor').each(function (item) {
-            str += S.substitute('<li><a href="#" class="J_ScrollTo" data-scrollto="{to}">{name}</a></li>', {
-                name: item.text(),
-                to: item.offset().top
+    function renderSearchInput() {
+        var comboBox, data, tmpl;
+        var $comboBox = S.one("#combobox");
+        tmpl = "<a href='{url}'><div class='item-wrapper'>{name}<span> by {userName}</span></div></a>";
+
+        var $searchData = $('#J_SearchData'),
+            originData = [];
+
+        if ($searchData.length > 0) {
+            originData = JSON.parse($searchData.html());
+        }
+
+        $('#J_KISSYUI .name').each(function(item){
+            originData.push({
+                name: item.html(),
+                userName: 'kissyteam',
+                url: item.parent('a').attr('href')
             });
+        });
+
+        data = new ComboBox.LocalDataSource({
+            data: originData,
+            parse: function (query, results) {
+                var tmpData = [];
+                S.each(originData, function (item) {
+                    if (item.name.indexOf(query) > -1) {
+                        tmpData.push(item);
+                    }
+                });
+                return tmpData;
+            }
+        });
+        comboBox = new ComboBox({
+            prefixCls: 'search-',
+            placeholder: '点我搜索',
+            srcNode: $comboBox,
+            dataSource: data,
+            format: function (query, results) {
+                var ret;
+                ret = [];
+                S.each(results, function (r) {
+                    var item;
+                    if(!r.url){
+                        r.url = 'http://' + domain + '/' + r.name + '/doc/guide/index.html';
+                    }
+                    item = {
+                        textContent: r.name,
+                        content: S.substitute(tmpl, r)
+                    };
+                    return ret.push(item);
+                });
+                return ret;
+            }
+        });
+        comboBox.on('click', function (e) {
+            var item = e.target;
+            var data = item.get('value');
+            location.href = 'http://kpm.taobao.net/' + data.name + '/doc/guide/index.html';
+        });
+        comboBox.render();
+    }
+
+    function appendCat() {
+        var str = '<ul>',
+            allCount = 0,
+            count = 0;
+        $('.J_Floor').each(function (item) {
+            count = item.parent().next('.component-list').all('li').length;
+            str += S.substitute('<li><a href="#" class="J_ScrollTo" data-scrollto="{to}">{name}({num}枚)</a></li>', {
+                name: item.text(),
+                to: item.offset().top,
+                num: count
+            });
+            allCount += count;
         });
         str += '</ul>';
         var $cat = $(str);
@@ -39,17 +107,21 @@ KISSY.add('gallery-js', function (S,Node,DataLazyload, IO) {
             win.animate({scrollTop: $(e.target).attr('data-scrollto')}, 0.5);
         });
 
+        $('#q').attr('placeholder', allCount+'枚纯优秀组件，你值得搜索');
+
         sticky($cat);
+        renderSearchInput();
     }
 
+    var $coms = $('#content article');
     IO({
         url:'./coms-list.html',
         type:"get",
+        cache: false,
         dataType:'html',
         success: function (d) {
 
-            $('#content article').append(d);
-
+            $coms.append($(d));
             var $list = $('.J_Lazyload');
             if ($list.length) {
                 new DataLazyload({
@@ -60,6 +132,13 @@ KISSY.add('gallery-js', function (S,Node,DataLazyload, IO) {
             }
             appendCat();
             fixSidebarHeight();
+            IO.getJSON('./tmp/coms/config.json',function(data){
+                $coms.all('.item-link').each(function(item){
+                    var url = item.attr('href');
+                    domain = data.domain;
+                    item.attr('href', url.replace(/kissygalleryteam\.github\.io/g, data.domain));
+                });
+            });
         },
         error: function(d){
             fixSidebarHeight();
@@ -67,7 +146,7 @@ KISSY.add('gallery-js', function (S,Node,DataLazyload, IO) {
     });
 
 }, {
-    requires: ['node','kg/datalazyload/2.0.0/', 'io']
+    requires: ['node','kg/datalazyload/2.0.0/', 'io', 'combobox', 'json']
 });
 
 KISSY.use('gallery-js');
