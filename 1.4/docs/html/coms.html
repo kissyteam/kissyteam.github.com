@@ -6,7 +6,6 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <script src="http://g.alicdn.com/kissy/k/1.4.8/seed-min.js" data-config="{combine:true}"></script>
-    <script src="/1.4/source/guideline/templates/assets/gallery.js"></script>
     <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/bootstrap.css">
     <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/normalize.css">
     <link rel="stylesheet" href="/1.4/source/guideline/templates/assets/kissy-2.css">
@@ -35,9 +34,17 @@
 <div id="content">
     <article>
     <div class="component kissy-ui">
+<!--
+        <h2>kissy 共有优秀组件 <strong id="J_ComponentCount">*</strong> 个</h2>
+-->
+
+        <div id="combobox" class="search-combobox">
+            <div class="search-combobox-input-wrap">
+                <input id="q" name="q" type="text" placeholder="纯优秀组件，你值得搜索" autocomplete="off" autofocus="autofocus" class="search-combobox-input"></div>
+        </div>
         <h2 class="h2"><span class="iconfont">&#xe601;</span><span class="J_Floor">kissy ui</span></h2>
         <p class="explain"><span class="iconfont">&#xe600;</span><span>kissy ui 由kissy小组维护的精品ui组件集</span></p>
-        <ul class="component-list">
+        <ul id="J_KISSYUI" class="component-list">
             <li class="item">
                 <div class="desc">
                     <a href="/1.4/docs/html/api/overlay/overlay.html" target="_blank">
@@ -109,5 +116,6 @@
 
     </article>
 </div>
+<script src="/1.4/source/guideline/templates/assets/gallery.js"></script>
 </body>
 </html>
