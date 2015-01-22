@@ -1,4 +1,5 @@
 # What is KISSY ?
+
 <div class="github-count">
     <iframe class="github-btn"
             src="http://ghbtns.com/github-btn.html?user=kissyteam&amp;repo=kissy&amp;type=watch&amp;count=true"
@@ -46,7 +47,7 @@ KISSY is a powerful javascript framework for building cross end web application 
 <div class="jumbotron row-fluid">
     <div class="clearfix btn-wrapper">
         <a class="btn btn-primary btn-lg btn-block" href="/1.4/docs/html/api/" style="color:white"><span class="iconfont">&#xe603;</span>API 文档</a>
-        <a class="btn btn-info btn-lg btn-block" href="/1.4/docs/html/coms.html" style="color:white"><span class="iconfont">&#xe600;</span>组件列表</a>
+        <a class="btn btn-info btn-lg btn-block J_Coms" href="/1.4/docs/html/coms.html" style="color:white"><span class="iconfont">&#xe600;</span>组件列表</a>
         <a class="btn btn-info btn-lg btn-block" href="/1.4/docs/html/tutorials/" style="color:white"><span class="iconfont">&#xe601;</span>教程</a>
         <a class="btn btn-info btn-lg btn-block" href="/1.4/docs/html/demo/" style="color:white"><span class="iconfont">&#xe602;</span>DEMO 示例</a>
     </div>
