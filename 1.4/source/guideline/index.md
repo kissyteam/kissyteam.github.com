@@ -1,5 +1,4 @@
 # What is KISSY ?
-
 <div class="github-count">
     <iframe class="github-btn"
             src="http://ghbtns.com/github-btn.html?user=kissyteam&amp;repo=kissy&amp;type=watch&amp;count=true"
@@ -67,3 +66,5 @@ KISSY is a powerful javascript framework for building cross end web application 
 1. 通过 [任务面板](https://waffle.io/kissyteam/kissy) 了解 KISSY 将要做或正在做的事情.
 2. 通过 [issues](https://github.com/kissyteam/kissy/issues) 来提供反馈.
 3. 通过 [github](https://github.com/kissyteam/kissy/blob/master/CONTRIBUTING.md) 来给 KISSY 贡献代码.
+
+<script src="/lan.js"></script>
