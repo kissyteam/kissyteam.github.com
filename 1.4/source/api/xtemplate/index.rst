@@ -6,6 +6,7 @@ xtemplate
 
 | 富逻辑的 KISSY 模板引擎
 | 兼容 mustache
+| 这里的xtemplate已经停止维护，请使用新的(kg/xtemplate) (http://kpm.taobao.net/xtemplate/doc/guide/index.html)
 | :ref:`demo<xtemplate_demo>`
 
 
